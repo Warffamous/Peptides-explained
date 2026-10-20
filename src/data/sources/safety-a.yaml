@@ -1,0 +1,813 @@
+# Sources for the core harm-reduction pages (safety index, warning signs, before you consider,
+# sterile technique, injection safety, sharps disposal). Group: safety-a.
+# Every web page below was fetched on 20 October 2026 and says what it is cited for (see note).
+# Scholarly metadata was copied from the PubMed record, never from memory.
+
+# ------------------------------------------------------------------ injection practice: WHO, CDC
+
+who-2010-injection-toolkit:
+  type: report
+  authors: "World Health Organization"
+  title: "WHO best practices for injections and related procedures toolkit (WHO/EHT/10.02)"
+  container: "World Health Organization, Geneva"
+  year: 2010
+  url: https://www.who.int/publications/i/item/9789241599252
+  accessed: 2026-10-20
+  verified: url
+  note: "WHO publication page dated 3 January 2010; English PDF (9789241599252_eng.pdf, IRIS handle 10665/44298) read in full and re-checked by the fact-checker on 20 October 2026. Cited for: hand hygiene before preparing injections (soap and water or alcohol rub, at least 30 seconds); a new sterile syringe and needle for every procedure, including reconstitution; single-dose vials preferred, multi-dose vials only if there is no alternative; discard a multi-dose vial if sterility is compromised, it is undated or improperly stored, or within 24 hours if it has no preservative; wipe the septum with 60-70% alcohol and let it air-dry; do not touch the septum after disinfection; do not let the needle touch any surface; never re-enter a vial with a used needle or syringe; clean preparation surface; skin preparation table (subcutaneous injections: wash visibly dirty skin with soap and water; alcohol skin swabbing not required); avoid recapping, or use the one-handed scoop; discard sharps at once into a puncture-resistant container, seal at three-quarters full; needle-stick first aid (wash with soap and water, let the wound bleed freely); PEP as soon as possible, not effective beyond 72 hours; HBV, HCV and HIV transmission by shared or contaminated equipment."
+
+cdc-2024-preventing-unsafe-injection:
+  type: regulator
+  authors: "Centers for Disease Control and Prevention"
+  title: "Preventing Unsafe Injection Practices"
+  year: 2024
+  url: https://www.cdc.gov/injection-safety/hcp/clinical-safety/index.html
+  accessed: 2026-10-20
+  verified: url
+  note: "Page dated 26 March 2024. Multi-dose vials 'typically contain an antimicrobial preservative' to help limit bacterial growth, but 'the preservative does not have an effect on viruses nor does it provide complete protection against bacterial contamination'; assign a multi-dose vial to a single patient whenever possible; date it and discard it within 28 days unless the manufacturer states another date; never use single-dose vials for more than one patient and do not keep leftovers; a new sterile syringe and needle for each patient; do not leave a needle in a vial septum; consequences of unsafe practice include bloodborne virus transmission and outbreaks of bacterial or fungal infections."
+
+cdc-2024-safe-injection-practices:
+  type: regulator
+  authors: "Centers for Disease Control and Prevention"
+  title: "Safe Injection Practices to Prevent Transmission of Infections to Patients"
+  year: 2024
+  url: https://www.cdc.gov/injection-safety/hcp/clinical-guidance/index.html
+  accessed: 2026-10-20
+  verified: url
+  note: "Page dated 12 April 2024 (2007 isolation guideline, section IV.H). Use aseptic technique; needles and syringes are sterile single-use items; use single-dose vials whenever possible; if multi-dose vials must be used, the needle and syringe used to access them must be sterile; outbreaks of hepatitis B and C in outpatient care traced to breaches of these practices."
+
+# ------------------------------------------------------------------ product quality and stability
+
+fda-1993-lyophilization-guide:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Lyophilization of Parenteral (7/93): Guide to Inspections"
+  year: 1993
+  url: https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/inspection-guides/lyophilization-parenteral-793
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 11 November 2014. Cited for: in freeze-drying, sterility comes from earlier steps (filtering the bulk solution through a 0.22-micron bacteria-retentive filter, filling and loading the vials under aseptic conditions, sterilising the freeze-dryer), not from the drying itself; inspections found 'potency, sterility and stability problems' with freeze-dried products; microbial growth before filtration raises concern about endotoxins."
+
+morgan-2006-drying-microorganisms:
+  type: review
+  authors: "Morgan CA, Herman N, White PA, Vesey G"
+  title: "Preservation of micro-organisms by drying; a review"
+  container: "Journal of Microbiological Methods"
+  year: 2006
+  volume: "66"
+  pages: "183-193"
+  doi: 10.1016/j.mimet.2006.02.017
+  pmid: "16632005"
+  verified: pubmed
+  note: "Abstract: freeze drying 'is the preferred method for transporting and storing vast culture collections of micro-organism strain types'. Cited for: freeze-drying keeps microbes alive; it does not sterilise. Authors from BTF Pty Ltd (Australia), a company."
+
+manning-2010-protein-stability:
+  type: review
+  authors: "Manning MC, Chou DK, Murphy BM, Payne RW, Katayama DS"
+  title: "Stability of protein pharmaceuticals: an update"
+  container: "Pharmaceutical Research"
+  year: 2010
+  volume: "27"
+  pages: "544-575"
+  doi: 10.1007/s11095-009-0045-6
+  pmid: "20143256"
+  verified: pubmed
+  note: "Review of chemical and physical instability of protein and peptide drugs, in solution and in the dried state. Only the abstract was read; cited only for the general point that protein drugs are chemically and physically unstable and need formulation and storage to stay intact."
+
+zapadka-2017-peptide-aggregation:
+  type: review
+  authors: "Zapadka KL, Becher FJ, Gomes Dos Santos AL, Jackson SE"
+  title: "Factors affecting the physical stability (aggregation) of peptide therapeutics"
+  container: "Interface Focus"
+  year: 2017
+  volume: "7"
+  pages: "20170030"
+  doi: 10.1098/rsfs.2017.0030
+  pmid: "29147559"
+  pmcid: PMC5665799
+  verified: pubmed
+  note: "University of Cambridge and MedImmune. Read on the PMC article page: 'temperature, pressure, agitation and lyophilization/freeze drying can affect the aggregation of peptides, in many cases, in ways difficult to predict'; aggregation leads to 'a loss in activity' and to 'toxicity and immunogenicity'; solid (freeze-dried) form is used to increase chemical and physical stability, but freeze-drying itself can lead to more aggregation after reconstitution; insulin analogues precipitate with high temperature and mechanical agitation (table 1)."
+
+rosenberg-2006-aggregates-immunology:
+  type: review
+  authors: "Rosenberg AS"
+  title: "Effects of protein aggregates: an immunologic perspective"
+  container: "The AAPS Journal"
+  year: 2006
+  volume: "8"
+  pages: "E501-E507"
+  doi: 10.1208/aapsj080359
+  pmid: "17025268"
+  pmcid: PMC2761057
+  verified: pubmed
+  note: "Author at the FDA Center for Drug Evaluation and Research. Abstract: protein aggregates can enhance immune responses to the protein; aggregates have been linked to antibody-mediated adverse events with therapeutic proteins."
+
+smith-2013-fungal-methylprednisolone:
+  type: article
+  authors: "Smith RM, Schaefer MK, Kainer MA, Wise M, Finks J, et al."
+  title: "Fungal infections associated with contaminated methylprednisolone injections"
+  container: "The New England Journal of Medicine"
+  year: 2013
+  volume: "369"
+  pages: "1598-1609"
+  doi: 10.1056/NEJMoa1213978
+  pmid: "23252499"
+  verified: pubmed
+  note: "CDC and state health department outbreak investigation (observational). Preservative-free methylprednisolone acetate from a single compounding pharmacy; examination of unopened vials revealed fungus; 13,534 people potentially exposed; 749 cases in 20 states with 61 deaths as of 1 July 2013. Cited for: a product can be contaminated before it is opened, so careful technique by the user cannot make it safe."
+
+diao-2013-peptide-pharmacokinetics:
+  type: review
+  authors: "Diao L, Meibohm B"
+  title: "Pharmacokinetics and pharmacokinetic-pharmacodynamic correlations of therapeutic peptides"
+  container: "Clinical Pharmacokinetics"
+  year: 2013
+  volume: "52"
+  pages: "855-868"
+  doi: 10.1007/s40262-013-0079-0
+  pmid: "23719681"
+  verified: pubmed
+  note: "University of Tennessee. Abstract: peptides are generally freely filtered by the kidneys, and glomerular filtration plus renal proteolysis contribute to the elimination of many therapeutic peptides; anti-drug antibodies with hypersensitivity reactions have been described for some peptide therapeutics."
+
+# ------------------------------------------------------------------ labels used for general practice points
+
+dailymed-egrifta-sv-label:
+  type: label
+  authors: "U.S. Food and Drug Administration / DailyMed (National Library of Medicine)"
+  title: "EGRIFTA SV (tesamorelin for injection): prescribing information and instructions for use"
+  year: 2026
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=3d783378-b02d-4f19-99dd-0fc91a042224
+  accessed: 2026-10-20
+  verified: url
+  note: "Label effective 29 July 2026 per openFDA (BLA022505); DailyMed version published 31 July 2026. Contraindicated in active malignancy; tesamorelin raises growth hormone, 'a known growth factor', and IGF-1; hypersensitivity reactions occurred in trials ('seek immediate medical attention'); reconstitute by rolling the vial gently, 'Do not shake'; use only if clear, colourless and free of particles; inject into the abdomen and rotate sites; do not inject into scar tissue, bruises or the navel; injection-site reactions (redness, itching, pain, irritation, bruising) in 25% on tesamorelin versus 14% on placebo in the first 26 weeks of trials; do not share syringes or needles."
+
+dailymed-vyleesi-label:
+  type: label
+  authors: "U.S. Food and Drug Administration / DailyMed (National Library of Medicine)"
+  title: "VYLEESI (bremelanotide injection): prescribing information"
+  year: 2025
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f1d0c1b5-2f39-4bad-a6a4-0066e3ad5dcf
+  accessed: 2026-10-20
+  verified: url
+  note: "Label effective 13 November 2025 per openFDA (NDA210557); DailyMed version published 18 November 2025. Contraindicated in uncontrolled hypertension or known cardiovascular disease; transient blood pressure rise (up to 6 mmHg systolic, 3 mmHg diastolic, peak 2-4 hours after a dose) with heart rate fall; not recommended for people at high cardiovascular risk; focal hyperpigmentation; nausea in 40%."
+
+dailymed-bacteriostatic-water-label:
+  type: label
+  authors: "Hospira, Inc. / DailyMed (National Library of Medicine)"
+  title: "Bacteriostatic Water for Injection, USP: prescribing information"
+  year: 2026
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=87d6e9dc-fe3b-4593-ac9a-d7493d1959c7
+  accessed: 2026-10-20
+  verified: url
+  note: "Label effective 22 May 2026 per openFDA (NDA018802); DailyMed version published 8 July 2026. Sterile water containing benzyl alcohol 'added as a bacteriostatic preservative', supplied in a multiple-dose container; benzyl alcohol has been associated with toxicity in newborn babies, so it must not be used for them."
+
+dailymed-sterile-water-label:
+  type: label
+  authors: "Hospira, Inc. / DailyMed (National Library of Medicine)"
+  title: "Sterile Water for Injection, USP: prescribing information"
+  year: 2026
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=2b9ea23a-f9e9-48a8-25b7-519e3bbd6828
+  accessed: 2026-10-20
+  verified: url
+  note: "Label effective 18 March 2026 per openFDA (NDA018801); DailyMed version published 20 March 2026. Contains 'no bacteriostat, antimicrobial agent or added buffer' and is supplied only in single-dose containers; 'Do not use unless the solution is clear and seal intact. Do not reuse single-dose containers. Discard unused portion.'"
+
+# ------------------------------------------------------------------ injection technique and site rotation
+
+blanco-2013-lipohypertrophy:
+  type: article
+  authors: "Blanco M, Hernández MT, Strauss KW, Amaya M"
+  title: "Prevalence and risk factors of lipohypertrophy in insulin-injecting patients with diabetes"
+  container: "Diabetes & Metabolism"
+  year: 2013
+  volume: "39"
+  pages: "445-453"
+  doi: 10.1016/j.diabet.2013.05.006
+  pmid: "23886784"
+  verified: pubmed
+  note: "Multicentre observational study of 430 Spanish outpatients injecting insulin, injection sites examined by a nurse: 64.4% had lipohypertrophy; strongest link with not rotating sites (5% with lipohypertrophy among correct rotators; 98% of those with it rotated wrongly or not at all); also linked to reusing needles more than 5 times; lipohypertrophy linked to unexplained hypoglycaemia and glucose swings. First author's listed affiliation is Novartis Pharma; one author (Strauss) works for the needle maker BD."
+
+frid-2016-fitter-recommendations:
+  type: guideline
+  authors: "Frid AH, Kreugel G, Grassi G, Halimi S, Hicks D, et al."
+  title: "New Insulin Delivery Recommendations"
+  container: "Mayo Clinic Proceedings"
+  year: 2016
+  volume: "91"
+  pages: "1231-1255"
+  doi: 10.1016/j.mayocp.2016.06.010
+  pmid: "27594187"
+  verified: pubmed
+  note: "FITTER expert recommendations (183 experts, 54 countries, 2015). Abstract: lipohypertrophy 'distorts insulin absorption', injections should not be given into these lesions, and correct site rotation helps prevent them; inappropriate disposal of used sharps poses a risk of blood-borne infection. Several authors work for the needle maker BD."
+
+klein-2009-sterile-abscesses:
+  type: article
+  authors: "Klein NP, Edwards KM, Sparks RC, Dekker CL"
+  title: "Recurrent sterile abscesses following aluminium adjuvant-containing vaccines"
+  container: "BMJ Case Reports"
+  year: 2009
+  volume: "2009"
+  doi: 10.1136/bcr.09.2008.0951
+  pmid: "21686546"
+  pmcid: PMC3029045
+  verified: pubmed
+  note: "Two children (case reports, CDC-funded CISA network). Abstract: abscesses after injection are generally associated with microbial contamination; less commonly they are sterile, a reaction to an ingredient (here aluminium adjuvant)."
+
+# ------------------------------------------------------------------ before you consider: specific risks
+
+dreyer-2019-melanotan-priapism:
+  type: article
+  authors: "Dreyer BA, Amer T, Fraser M"
+  title: "Melanotan-induced priapism: a hard-earned tan"
+  container: "BMJ Case Reports"
+  year: 2019
+  volume: "12"
+  doi: 10.1136/bcr-2018-227644
+  pmid: "30796078"
+  pmcid: PMC6388891
+  verified: pubmed
+  note: "Single case report (Glasgow): low-flow priapism after subcutaneous melanotan injection, treated with aspiration and phenylephrine; erectile function not yet recovered at 4 weeks."
+
+nelson-2012-melanotan-rhabdomyolysis:
+  type: article
+  authors: "Nelson ME, Bryant SM, Aks SE"
+  title: "Melanotan II injection resulting in systemic toxicity and rhabdomyolysis"
+  container: "Clinical Toxicology"
+  year: 2012
+  volume: "50"
+  pages: "1169-1173"
+  doi: 10.3109/15563650.2012.740637
+  pmid: "23121206"
+  verified: pubmed
+  note: "Single case report (Chicago): a man who injected melanotan II bought online had a racing heart, agitation, rhabdomyolysis and kidney dysfunction, treated in intensive care; product identity confirmed by mass spectrometry. The dose in the report is not repeated on this site."
+
+cardones-2009-eruptive-nevi:
+  type: article
+  authors: "Cardones AR, Grichnik JM"
+  title: "alpha-Melanocyte-stimulating hormone-induced eruptive nevi"
+  container: "Archives of Dermatology"
+  year: 2009
+  volume: "145"
+  pages: "441-444"
+  doi: 10.1001/archdermatol.2008.623
+  pmid: "19380666"
+  verified: pubmed
+  note: "Single case report (University of Miami): a man with past melanoma and many atypical moles self-injected a synthetic alpha-MSH peptide; new moles appeared, many atypical, and existing moles darkened and grew, then lightened after stopping. Authors: such peptides 'can drive proliferation of neoplastic melanocytic cells in predisposed patients'."
+
+jebeile-2025-glp1-eating-behaviour:
+  type: review
+  authors: "Jebeile H, Danielsen YS, Sumithran P, Lorien S, Jardine IR, Baur LA, Lister NB"
+  title: "GLP-1 Receptor Agonist Medications for Obesity and Type 2 Diabetes Treatment: A Rapid Review of Changes in Eating Behaviors and Eating Disorder Risk"
+  container: "Obesity Reviews"
+  year: 2025
+  volume: "27"
+  pages: "e70049"
+  doi: 10.1111/obr.70049
+  pmid: "41340366"
+  verified: pubmed
+  note: "Rapid review, 25 studies (2 adolescent, n = 275; 23 adult, n = 8,722) to January 2025. Two studies reported eating-disorder adverse events; binge eating and food cravings mostly improved or were unchanged; 'limited data'. Cited for the honest finding in people with obesity, not for restrictive eating disorders. Year as given in the PubMed record; the issue is volume 27(4)."
+
+schaefer-2025-glp1-eating-disorders:
+  type: review
+  authors: "Schaefer LM, Kerver GA, Allison KC, Kohoutek B, Steffen KJ"
+  title: "Use (and Potential for Abuse) of Glucagon-Like Peptide-1 Medications Among Individuals with Eating Disorders: Empirical Review and Clinical Guidance"
+  container: "The Psychiatric Clinics of North America"
+  year: 2025
+  volume: "49"
+  pages: "183-202"
+  doi: 10.1016/j.psc.2025.08.013
+  pmid: "41708263"
+  verified: pubmed
+  note: "Narrative review. Abstract: GLP-1 medicines may reduce binge-eating symptoms in binge-eating disorder, but experts are concerned they may cause harm or be misused by some people with eating disorders; key knowledge gaps."
+
+guerdjikova-2024-semaglutide-anorexia:
+  type: article
+  authors: "Guerdjikova AI, Ward A, Ontiveros M, McElroy SL"
+  title: "Semaglutide Misuse in Atypical Anorexia Nervosa-A Case Report"
+  container: "Journal of Clinical Psychopharmacology"
+  year: 2024
+  volume: "44"
+  pages: "179-180"
+  doi: 10.1097/JCP.0000000000001820
+  pmid: "38329147"
+  verified: pubmed
+  note: "Single case report (letter). No abstract in PubMed; cited only for the fact that such misuse has been reported."
+
+haider-2026-glp1-adolescents:
+  type: article
+  authors: "Haider MA, Javed H"
+  title: "GLP-1 Receptor Agonists in Adolescents: Emerging Endocrine, Reproductive, and Psychosocial Concerns"
+  container: "Journal of Pediatric and Adolescent Gynecology"
+  year: 2026
+  doi: 10.1016/j.jpag.2026.06.017
+  pmid: "42364709"
+  verified: pubmed
+  note: "Commentary, not a study. Abstract: adolescence is 'the critical window for peak bone mass acquisition'; trials of liraglutide and semaglutide in adolescents showed no short-term effect on growth or puberty; long-term skeletal, reproductive and psychological outcomes are uncertain; concern about misuse or worsening of eating disorders."
+
+# ------------------------------------------------------------------ patient guidance: NHS (UK)
+
+nhs-cellulitis:
+  type: web
+  authors: "NHS (England)"
+  title: "Cellulitis"
+  year: 2024
+  url: https://www.nhs.uk/conditions/cellulitis/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 18 April 2024. Painful, hot, swollen skin: urgent GP appointment or NHS 111; call 999 or go to A&E with cellulitis plus very high temperature or shivering, fast heartbeat or breathing, confusion, cold clammy or pale skin; untreated it can spread to blood, muscles and bones; higher risk with a weakened immune system or injecting drugs."
+
+nhs-skin-abscess:
+  type: web
+  authors: "NHS (England)"
+  title: "Skin abscess"
+  year: 2026
+  url: https://www.nhs.uk/conditions/skin-abscess/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 13 October 2026. A painful lump containing pus, often warm; urgent GP appointment or NHS 111 if the lump is painful, red or hot, you feel hot, cold or shivery, or redness spreads away from the lump; see a GP if a lump grows or does not go away; usually caused by bacteria entering the skin; may need draining."
+
+nhs-boils:
+  type: web
+  authors: "NHS (England)"
+  title: "Boils"
+  year: 2023
+  url: https://www.nhs.uk/conditions/boils/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 20 June 2023. 'Do not pick, squeeze or pierce a boil'; urgent GP or 111 if the surrounding skin is hot, painful and swollen or you feel hot, cold or shivery; a GP may drain it."
+
+nhs-necrotising-fasciitis:
+  type: web
+  authors: "NHS (England)"
+  title: "Necrotising fasciitis"
+  year: 2026
+  url: https://www.nhs.uk/conditions/necrotising-fasciitis/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 2 February 2026. Rare, life-threatening infection of deeper skin layers; call 999 or go to A&E if a wound or red, swollen area is much more painful than expected, or has black, purple or grey blotches or blisters; can follow injecting drugs."
+
+nhs-sepsis:
+  type: web
+  authors: "NHS (England)"
+  title: "Sepsis"
+  year: 2026
+  url: https://www.nhs.uk/conditions/sepsis/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 14 May 2026. Call 999 or go to A&E if an adult is breathing very fast, is confused or has slurred speech, has blue, pale or blotchy skin, or a very high or very low temperature; skin infections such as cellulitis can lead to sepsis; higher risk with a weakened immune system or injecting drugs."
+
+nhs-anaphylaxis:
+  type: web
+  authors: "NHS (England)"
+  title: "Anaphylaxis"
+  year: 2023
+  url: https://www.nhs.uk/conditions/anaphylaxis/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 21 June 2023. Symptoms start within minutes: swelling of throat and tongue, difficulty breathing or swallowing, wheezing, hoarse voice, feeling faint; call 999; medicines are a known cause."
+
+nhs-acute-pancreatitis:
+  type: web
+  authors: "NHS (England)"
+  title: "Acute pancreatitis"
+  year: 2026
+  url: https://www.nhs.uk/conditions/acute-pancreatitis/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 11 March 2026. Sudden severe tummy pain that spreads to the back: call 999 or go to A&E; needs hospital treatment; medicines are among the less common causes."
+
+nhs-low-blood-sugar:
+  type: web
+  authors: "NHS (England)"
+  title: "Low blood sugar (hypoglycaemia)"
+  year: 2023
+  url: https://www.nhs.uk/conditions/low-blood-sugar-hypoglycaemia/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 3 August 2023. Symptoms include hunger, sweating, shaking, palpitations, confusion; severe low blood sugar can cause a fit or unconsciousness; give no food or drink to someone who cannot swallow safely; call 999 if the person is not responding normally or is unconscious and glucagon is not available; common with insulin and some tablets such as gliclazide; injecting in the same place too often is listed as a cause."
+
+nhs-stroke-symptoms:
+  type: web
+  authors: "NHS (England)"
+  title: "Symptoms of a stroke"
+  year: 2024
+  url: https://www.nhs.uk/conditions/stroke/symptoms/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 12 September 2024. FAST: face, arms, speech, time to call 999; other signs include weakness or numbness on one side, loss of sight, confusion, a severe headache; call 999 even if symptoms stop."
+
+nhs-headaches:
+  type: web
+  authors: "NHS (England)"
+  title: "Headaches"
+  year: 2024
+  url: https://www.nhs.uk/symptoms/headaches/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 17 April 2024. Call 999 or go to A&E for a headache that started suddenly and is extremely painful, or with a fit, numbness or weakness, confusion, loss of vision, stiff neck and high temperature."
+
+nhs-vision-loss:
+  type: web
+  authors: "NHS (England)"
+  title: "Vision loss"
+  year: 2025
+  url: https://www.nhs.uk/conditions/vision-loss/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 28 August 2025. Go to A&E or call 999 if you suddenly cannot see from one or both eyes."
+
+nhs-priapism:
+  type: web
+  authors: "NHS (England)"
+  title: "Priapism (painful erections)"
+  year: 2023
+  url: https://www.nhs.uk/symptoms/priapism-painful-erections/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 5 December 2023. Can cause permanent damage to the penis if not treated quickly; call 999 or go to A&E for an erection lasting more than 3 to 4 hours."
+
+nhs-jaundice:
+  type: web
+  authors: "NHS (England)"
+  title: "Jaundice"
+  year: 2024
+  url: https://www.nhs.uk/conditions/jaundice/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 22 January 2024. Yellow skin or whites of the eyes: urgent GP appointment or NHS 111; causes include liver disease, gallstones, hepatitis and pancreatitis."
+
+nhs-heart-palpitations:
+  type: web
+  authors: "NHS (England)"
+  title: "Heart palpitations"
+  year: 2026
+  url: https://www.nhs.uk/symptoms/heart-palpitations/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 17 March 2026. Usually harmless; see a GP if they keep coming back or last more than a few minutes; call 999 or go to A&E if they do not go away or come with chest pain, shortness of breath or fainting; medicines and drugs are listed causes."
+
+nhs-fainting:
+  type: web
+  authors: "NHS (England)"
+  title: "Fainting"
+  year: 2026
+  url: https://www.nhs.uk/symptoms/fainting/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 17 August 2026. See a GP if you have fainted; call 999 if the person cannot be woken within 1 minute, has chest pain or palpitations, has a fit, or fainted while exercising or lying down."
+
+nhs-shortness-of-breath:
+  type: web
+  authors: "NHS (England)"
+  title: "Shortness of breath"
+  year: 2024
+  url: https://www.nhs.uk/symptoms/shortness-of-breath/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 30 January 2024. Call 999 or go to A&E for severe difficulty breathing (gasping, unable to get words out), a tight or heavy chest, or sudden confusion."
+
+nhs-chest-pain:
+  type: web
+  authors: "NHS (England)"
+  title: "Chest pain"
+  year: 2023
+  url: https://www.nhs.uk/symptoms/chest-pain/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 8 August 2023. Call 999 for sudden chest pain or pressure that does not go away, pain spreading to the arm, neck, jaw, stomach or back, or chest pain with sweating, sickness or breathlessness: possible heart attack."
+
+nhs-moles:
+  type: web
+  authors: "NHS (England)"
+  title: "Moles"
+  year: 2023
+  url: https://www.nhs.uk/conditions/moles/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 4 July 2023. See a GP about a mole that changes size, shape or colour, is painful or itchy, bleeds or is crusty, or a new mark that has not gone after a few weeks; some moles can be a sign of melanoma."
+
+nhs-diarrhoea-vomiting:
+  type: web
+  authors: "NHS (England)"
+  title: "Diarrhoea and vomiting"
+  year: 2023
+  url: https://www.nhs.uk/symptoms/diarrhoea-and-vomiting/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 21 December 2023. Call NHS 111 now if you keep being sick and cannot keep fluid down."
+
+nhs-dehydration:
+  type: web
+  authors: "NHS (England)"
+  title: "Dehydration"
+  year: 2026
+  url: https://www.nhs.uk/conditions/dehydration/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 1 May 2026. Urgent GP or 111 for dark pee or peeing less than normal, dizziness that does not pass, or unusual tiredness; call 999 with signs of shock."
+
+nhs-anticoagulant-side-effects:
+  type: web
+  authors: "NHS (England)"
+  title: "Anticoagulant medicines: side effects"
+  year: 2024
+  url: https://www.nhs.uk/medicines/anticoagulants/side-effects/
+  accessed: 2026-10-20
+  verified: url
+  note: "Last reviewed 9 September 2024. The main side effect is bleeding too easily, including severe bruising, because these medicines increase the time it takes for blood to clot."
+
+# ------------------------------------------------------------------ patient guidance: MedlinePlus (US NLM)
+
+medlineplus-rhabdomyolysis:
+  type: web
+  authors: "MedlinePlus Medical Encyclopedia (U.S. National Library of Medicine)"
+  title: "Rhabdomyolysis"
+  year: 2025
+  url: https://medlineplus.gov/ency/article/000473.htm
+  accessed: 2026-10-20
+  verified: url
+  note: "Review date 2 September 2025. Breakdown of muscle releases myoglobin, which can damage the kidneys; symptoms include dark, red or cola-coloured urine, muscle aching, tenderness and weakness; causes include drugs and severe exertion; contact a provider if you have symptoms."
+
+medlineplus-malignant-hypertension:
+  type: web
+  authors: "MedlinePlus Medical Encyclopedia (U.S. National Library of Medicine)"
+  title: "Malignant hypertension"
+  year: 2025
+  url: https://medlineplus.gov/ency/article/000491.htm
+  accessed: 2026-10-20
+  verified: url
+  note: "Review date 1 April 2025. Very high blood pressure that comes on suddenly is a medical emergency; symptoms include blurred vision, confusion, chest pain, headache, nausea or vomiting, numbness or weakness, seizure; complications include stroke, heart damage, kidney failure and permanent blindness; go to the emergency room or call the emergency number."
+
+medlineplus-lymphangitis:
+  type: web
+  authors: "MedlinePlus Medical Encyclopedia (U.S. National Library of Medicine)"
+  title: "Lymphangitis"
+  year: 2025
+  url: https://medlineplus.gov/ency/article/007296.htm
+  accessed: 2026-10-20
+  verified: url
+  note: "Review date 12 May 2025. Infection of the lymph vessels, usually from a skin infection; red streaks from the infected area towards the armpit or groin, fever and chills; 'may spread within hours'; bacteria can spread into the blood; contact a provider or go to the emergency room."
+
+# ------------------------------------------------------------------ patient guidance: Netherlands
+
+thuisarts-sepsis:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb een sepsis"
+  year: 2022
+  url: https://www.thuisarts.nl/sepsis/ik-heb-sepsis
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 2 November 2022. Signs: fever or a low temperature, fast breathing, fast heartbeat, drowsiness or confusion; 'Neem direct contact op met uw huisarts of met de huisartsenpost'; sepsis can be life-threatening and needs fast hospital treatment."
+
+thuisarts-wondroos:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb wondroos"
+  year: 2026
+  url: https://www.thuisarts.nl/wondroos/ik-heb-wondroos
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 1 June 2026. A sudden warm, swollen, painful, red or dark area of skin; 'Bel direct je huisarts of de huisartsen-spoedpost'; needs antibiotics quickly. Uses the newer name huisartsen-spoedpost for the out-of-hours GP service."
+
+thuisarts-dikke-ogen-lippen:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik krijg ineens dikke ogen of lippen"
+  year: 2025
+  url: https://www.thuisarts.nl/dikke-ogen-of-lippen/ik-krijg-ineens-dikke-ogen-of-lippen
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 2 December 2025. Call the GP, huisartsen-spoedpost or 112 urgently if the tongue or throat swells, breathing is hard or wheezy, the voice is suddenly hoarse, you feel dizzy or faint, or have bad stomach cramps or vomiting; swelling without other symptoms: GP appointment on a working day; if a medicine caused it, do not take it again and tell every doctor and the pharmacy; 'Stop niet zomaar met je medicijnen' (do not just stop your medicines)."
+
+thuisarts-pijn-op-borst:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb pijn op mijn borst. Wat kan het zijn?"
+  year: 2026
+  url: https://www.thuisarts.nl/pijn-op-je-borst/pijn-op-borst-wat-kan-het-zijn
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 19 October 2026. Call 112 for chest pain or heavy pressure on the chest that stays when you sit still, possibly with sweating or nausea."
+
+thuisarts-verlamming:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb opeens een verlamde arm, verlamd been of scheve mond. Of ik praat, slik of zie opeens niet goed."
+  year: 2026
+  url: https://www.thuisarts.nl/opeens-verlamming/opeens-verlammingsverschijnselen
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 7 September 2026. Sudden weakness of an arm or leg, a drooping mouth, or sudden trouble speaking, swallowing or seeing: 'Bel direct 112, je huisarts of de huisartsen-spoedpost', also if the symptoms have gone."
+
+thuisarts-hiv-pep:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb onveilige seks gehad met iemand die hiv of misschien hiv heeft"
+  year: 2022
+  url: https://www.thuisarts.nl/hiv/ik-heb-onveilige-seks-gehad-met-iemand-die-hiv-of-misschien-hiv-heeft
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 6 October 2022. PEP (emergency HIV treatment) is possible after a prick from a needle with blood of someone who has or may have HIV, if less than 72 hours ago; start as soon as possible, preferably within 2 hours; available from the GGD (most reachable 24 hours a day) or the hospital emergency department; PEP against hepatitis B can also be discussed."
+
+thuisarts-insuline-spuiten:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik ga insuline spuiten bij diabetes type 2"
+  year: 2026
+  url: https://www.thuisarts.nl/diabetes-type-2/ik-ga-insuline-spuiten-bij-diabetes-type-2
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last changed 4 September 2026. A new needle for every injection; wash the skin with water and soap, no disinfectant, dry it well; belly and thighs; inject each day on a different patch of skin, moving about 1 cm; put the used needle in a special needle container."
+
+rivm-hygiene-piercing:
+  type: regulator
+  authors: "Rijksinstituut voor Volksgezondheid en Milieu (RIVM), Landelijk Centrum Hygiëne en Veiligheid"
+  title: "Hygiënerichtlijn voor piercen"
+  year: 2026
+  url: https://www.rivm.nl/hygienerichtlijnen/piercen
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last revised February 2026. Section 'Prikken aan een gebruikte naald': do not suck the wound, wash it thoroughly with mild liquid soap under running warm water, no hard brush, cover with a waterproof plaster, and contact the GP, regional GGD or hospital at once; treatment of a possible infection should ideally start within 1 hour and no later than 72 hours. Also: put used needles straight into a UN-approved needle container."
+
+rijksoverheid-urgent-medical-help:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Wat moet ik doen als iemand dringend medische hulp nodig heeft?"
+  year: 2026
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/eerstelijnszorg/wat-moet-ik-doen-als-iemand-dringend-medische-hulp-nodig-heeft
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "In a life-threatening situation, call 112 straight away; for less urgent problems, contact the GP (huisarts), the out-of-hours GP service (huisartsenpost) or the central doctors' service."
+
+rijksoverheid-huisartsenpost-seh:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Wanneer moet ik naar de huisartsenpost of de spoedeisende hulppost?"
+  year: 2026
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/eerstelijnszorg/huisartsenpost-spoedeisende-hulp
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Always contact the huisartsenpost before going to a hospital emergency department, except in a life-threatening situation, when you call 112; GP care, including the huisartsenpost, is fully reimbursed and does not use the deductible (eigen risico); hospital emergency care does."
+
+rijksoverheid-kca:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Waar kan ik klein chemisch afval (kca) inleveren?"
+  year: 2026
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/afval/waar-kan-ik-klein-chemisch-afval-kca-inleveren
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Municipalities must collect small chemical waste and decide how (municipal depot, chemokar or kca depot); contact your municipality; unused medicines can be returned to most pharmacies. The page does not mention needles."
+
+apotheek-medicijnafval:
+  type: web
+  authors: "Apotheek.nl (KNMP, Royal Dutch Pharmacists Association)"
+  title: "Medicijnafval: niet weggooien, maar inleveren"
+  year: 2025
+  url: https://www.apotheek.nl/zorg-van-de-apotheker/medicijnafval-niet-weggooien-maar-inleveren
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last updated 4 June 2025. 'Doe gebruikte naalden altijd in een naaldencontainer. Een naaldencontainer is te krijgen bij uw apotheek.' Return medicine waste to the pharmacy or to a municipal small chemical waste point (milieustraat, milieuplein); do not put medicines in the bin, sink or toilet."
+
+apotheek-nadroparine:
+  type: web
+  authors: "Apotheek.nl (KNMP, Royal Dutch Pharmacists Association)"
+  title: "Nadroparine"
+  year: 2025
+  url: https://www.apotheek.nl/medicijnen/nadroparine
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Last updated 3 July 2025. Example of Dutch pharmacy guidance for a medicine injected under the skin at home: put the syringe with needle in a special waste container, 'U kunt deze verkrijgen bij uw apotheek. Volle containers kunt u bij uw apotheek inleveren.'"
+
+drugsinfo-injecteren:
+  type: web
+  authors: "Trimbos-instituut (DRUGSinfo)"
+  title: "Injecteren (spuiten/slammen): risico's verminderen"
+  year: 2026
+  url: https://www.drugsinfo.nl/gezondheid/injecteren-spuiten-slammen-risicos-verminderen/
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Dutch harm-reduction guidance for people who inject drugs. Needles are only sharp on first use and re-use raises the chance of infection; sharing needles raises the risk of HIV and hepatitis B/C; cleaning the injection site helps prevent inflammation and abscesses, which a doctor must treat; pack used needles in a hard container; used needles can be handed in at pharmacies, hospitals, GGDs or addiction services."
+
+mainline-steroids-safe-injecting:
+  type: web
+  authors: "Stichting Mainline"
+  title: "Veilig injecteren van anabole steroïden"
+  year: 2023
+  url: https://mainline.nl/anabole-steroiden/veilig-injecteren/
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Dutch harm-reduction foundation; page modified 18 November 2023. Cited only for general principles: new, sterile material for every injection; sharing injection material, water, ampoules or vials risks infection and blood-borne viruses (hepatitis B, hepatitis C, HIV); rotate injection sites to prevent scar tissue; mix powder by turning the vial gently, not shaking. The page also contains steroid-specific technique and volumes, which this site does not repeat. Mainline's English home page said on 20 October 2026 that the organisation 'will soon cease to exist'."
+
+# ------------------------------------------------------------------ sharps disposal outside the Netherlands
+
+fda-sharps-disposal-steps:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Best Way to Get Rid of Used Needles and Other Sharps"
+  year: 2023
+  url: https://www.fda.gov/medical-devices/safely-using-sharps-needles-and-syringes-home-work-and-travel/best-way-get-rid-used-needles-and-other-sharps
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 10 August 2023. Two steps: put sharps in a sharps disposal container immediately after use; when about three-quarters full, follow community guidelines (drop-off sites such as pharmacies, hospitals, health departments; household hazardous waste sites; mail-back; special pick-up); overfilling raises the risk of needle-stick injury; do not reuse containers."
+
+fda-sharps-dos-donts:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "DOs and DON'Ts of Proper Sharps Disposal"
+  year: 2021
+  url: https://www.fda.gov/medical-devices/safely-using-sharps-needles-and-syringes-home-work-and-travel/dos-and-donts-proper-sharps-disposal
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 28 April 2021. Do not throw loose needles in the trash, flush them, or put them in the recycling bin ('they are not recyclable'); do not remove, bend, break or recap needles used by another person; keep containers away from children and pets; ask your pharmacist where to dispose of them."
+
+fda-sharps-containers:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Sharps Disposal Containers"
+  year: 2021
+  url: https://www.fda.gov/medical-devices/safely-using-sharps-needles-and-syringes-home-work-and-travel/sharps-disposal-containers
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 28 April 2021. If no approved container is available, a heavy-duty plastic household container (such as a laundry detergent bottle) can be used; any container should be heavy-duty plastic, close with a tight-fitting puncture-resistant lid, stay upright and stable, be leak-resistant and be labelled as hazardous waste."
+
+fda-sharps-no-container:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "What to Do if You Can't Find a Sharps Disposal Container"
+  year: 2021
+  url: https://www.fda.gov/medical-devices/safely-using-sharps-needles-and-syringes-home-work-and-travel/what-do-if-you-cant-find-sharps-disposal-container
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 28 April 2021. If you must recap, never bend or break the needle or remove it by hand; use a mechanical device or the one-handed method (cap on a flat surface, slide the needle in with one hand); never put loose sharps in trash or recycling or flush them."
+
+govuk-clinical-waste-collection:
+  type: regulator
+  authors: "GOV.UK"
+  title: "Request clinical waste collection"
+  year: 2026
+  url: https://www.gov.uk/request-clinical-waste-collection
+  accessed: 2026-10-20
+  verified: url
+  note: "England and Wales only: some councils collect and dispose of used syringes and other clinical waste; there may be a charge; postcode lookup for your council. (The former NHS page on disposing of sharps now redirects here.)"
+
+gesund-bund-arzneimittel-entsorgen:
+  type: regulator
+  authors: "Bundesministerium für Gesundheit (gesund.bund.de)"
+  title: "Umgang mit Arzneimitteln: Richtig lagern, einnehmen und entsorgen"
+  year: 2026
+  url: https://gesund.bund.de/arzneimittel-umgang
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+  note: "Status 17 February 2026. Disposal of medicines in Germany is regulated differently by region; in most regions via residual household waste (Restmüll), in others via mobile collection or recycling centres; never down the sink or toilet; ask a pharmacy or doctor's practice. Does not address needles specifically."
+
+# ------------------------------------------------------------------ confidentiality (Netherlands)
+
+knmg-beroepsgeheim:
+  type: web
+  authors: "KNMG (Royal Dutch Medical Association)"
+  title: "Medisch beroepsgeheim: wat en waarom"
+  year: 2024
+  url: https://www.knmg.nl/actueel/dossiers/beroepsgeheim/medisch-beroepsgeheim/wat-en-waarom
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Updated 26 January 2024. A doctor must keep silent about everything learned about a patient at work, so that everyone can share information with a doctor in confidence; there are special situations in which a doctor must or may break confidentiality."
+
+lareb-bijwerkingen-melden:
+  type: web
+  authors: "Bijwerkingencentrum Lareb"
+  title: "Alles over bijwerkingen melden"
+  year: 2026
+  url: https://www.lareb.nl/pages/alles-over-bijwerkingen-melden
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "'Iedereen kan een bijwerking bij ons melden', also on behalf of someone else; covers all medicines available in the Netherlands with or without prescription, including those bought via the internet, and other health products such as supplements and slimming products; Lareb does not share your report with your doctor or pharmacist."
+
+# ------------------------------------------------------------------ emergency numbers
+
+ec-112-emergency-number:
+  type: regulator
+  authors: "European Commission"
+  title: "112: the European emergency number"
+  year: 2026
+  url: https://digital-strategy.ec.europa.eu/en/policies/112
+  accessed: 2026-10-20
+  verified: url
+  note: "112 is the European emergency number, free of charge everywhere in the EU, for ambulance, fire brigade and police; the Netherlands is among the countries that use 112 as its only national emergency number; also works in some countries outside the EU."
