@@ -18,7 +18,7 @@ const items = BUILT_LOCALES.map((l) => {
 <details class="disclosure lang-switch">
   <summary class="disclosure__summary">
     <Icon name="globe" />
-    <span class="visually-hidden">{t(locale, 'common.utility.languageCurrent', { name: current.name })}</span>
+    <span class="visually-hidden lang-switch__label">{t(locale, 'common.utility.languageCurrent', { name: current.name })}</span>
     <span aria-hidden="true" class="lang-switch__code">{current.code.toUpperCase()}</span>
   </summary>
   <ul class="disclosure__panel lang-switch__list" role="list">

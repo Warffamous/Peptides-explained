@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import fs from 'node:fs';
+import remarkExplainerSources from './src/plugins/remark-explainer-sources.mjs';
 import remarkCitations from './src/plugins/remark-citations.mjs';
 import remarkFaq from './src/plugins/remark-faq.mjs';
 import rehypeGlossary from './src/plugins/rehype-glossary.mjs';
@@ -24,6 +25,24 @@ const SITE_URL = process.env.SITE_URL ?? site.siteUrl;
 
 const builtLocales = localeCfg.locales.filter((l) => l.status !== 'planned').map((l) => l.code);
 
+/**
+ * Dev only: the theme stylesheets are an endpoint (src/pages/themes/[theme].css.ts). In a build
+ * they are real files, but the dev server applies trailingSlash: 'always' to them and 404s on
+ * /themes/a.css. Rewrite the request to the slash form the dev server serves.
+ */
+function devThemeCss() {
+  return {
+    name: 'dev-theme-css',
+    apply: 'serve',
+    configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        if (req.url) req.url = req.url.replace(/^(\/(?:[^?]*\/)?themes\/[a-z]+\.css)(?=\?|$)/, '$1/');
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig({
   site: SITE_URL,
   base: BASE,
@@ -37,7 +56,7 @@ export default defineConfig({
   },
   integrations: [
     mdx({
-      remarkPlugins: [remarkCitations, remarkFaq],
+      remarkPlugins: [remarkExplainerSources, remarkCitations, remarkFaq],
       rehypePlugins: [[rehypeGlossary, { base: BASE }], rehypeTableWrap],
       optimize: false,
     }),
@@ -46,6 +65,7 @@ export default defineConfig({
   prefetch: false,
   devToolbar: { enabled: false },
   vite: {
+    plugins: [devThemeCss()],
     define: {
       __THEME__: JSON.stringify(THEME),
       __PSEUDO_RTL__: JSON.stringify(PSEUDO_RTL),

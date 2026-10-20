@@ -4,14 +4,17 @@ title: "BPC-157"
 description: "BPC-157 is an experimental peptide studied mainly in rats, mostly by one group in Zagreb. What it is, what the evidence shows, what is unknown, and its legal status."
 summary:
   - "BPC-157 is a lab-made chain of 15 amino acids. No country has approved it as a medicine."
-  - "Most of the research was done in rats. About three in four of the published papers come from one research group in Zagreb, Croatia."
-  - "Only three very small human reports have been published, all without a comparison group. Nobody knows if it works in people or how safe it is."
-  - "It is banned in sport at all times. In July 2026 a US advisory committee voted to recommend letting pharmacies prepare it, but that vote is only advice and the law has not changed."
+  - "Most research was done in rats. About three in four papers come from one group in Zagreb, Croatia."
+  - "Only four very small reports on people have been published in full. None had a comparison group."
+  - "Nobody knows if it works in people or how safe it is. It is banned in sport."
+  - "In July 2026, US advisers backed letting pharmacies make it. That was only advice; the law has not changed."
+glance:
+  main_risk: "Unknown effects in people, and products may be impure or contaminated."
 grade_rationale:
-  human_clinical: "Case reports. The only published human data are three small reports without a comparison group, all led by the same US clinician (16, 12 and 2 people). A randomised trial in 53 people with ulcerative colitis exists only as a 2005 conference abstract and was never published in full, so under our rubric it does not count as a published phase 2 trial."
+  human_clinical: "Case reports. The only published human data are four small reports without a comparison group: three led by the same US clinician (16, 12 and 2 people), and one on 3 dental patients who received BPC-157 mixed with four other drugs. A randomised phase 2 trial in 53 people with ulcerative colitis exists only as a 2005 conference abstract, and a placebo-controlled phase 1 study in 32 healthy men only as earlier abstracts. Neither was published in full, so under our rubric they do not count as published phase 1 or phase 2 trials."
   preclinical_volume: "Extensive. By our count on 20 October 2026, PubMed holds about 160 primary laboratory and animal studies of BPC-157, far above the threshold of 50."
-  independence: "Single group dominant. Authors from one group at the University of Zagreb appear on about 140 of roughly 160 primary experimental papers (about 85%). About 20 come from groups outside Zagreb, few of which repeat the group's experiments directly; the only direct repeat of the tendon-healing model (2026) found no statistically significant effect."
-  safety: "Uncharacterised. No peer-reviewed human study has collected adverse events systematically, and the FDA concluded in 2026 that the clinical safety information is insufficient to characterise the safety profile. The animal toxicology comes from one laboratory and lasts 28 days at most."
+  independence: "Single group dominant. Authors from one group at the University of Zagreb appear on about 140 of roughly 160 primary experimental papers (about 85%). About 20 come from groups outside Zagreb, few of which repeat the group's experiments directly. The only independent test of the rat Achilles-tendon claim (2026) found no statistically significant effect on tendon strength or overall tissue scores, though one collagen measure did differ."
+  safety: "Uncharacterised. The published human studies are tiny and short, and most do not say how safety was monitored; the FDA concluded in 2026 that the clinical safety information is insufficient to characterise the safety profile. The animal toxicology comes from one laboratory and lasts 28 days at most."
 mechanism:
   - kind: binding
     level: hypothesis
@@ -20,15 +23,15 @@ mechanism:
   - kind: signal
     level: in-vitro
     title: "Blood-vessel cells: VEGFR2 and nitric oxide"
-    detail: "In cultured human blood-vessel cells, BPC-157 increased the amount of the receptor VEGFR2 and switched on the VEGFR2–Akt–eNOS pathway that makes nitric oxide. Shown by one laboratory in Taiwan."
+    detail: "In cultured human blood-vessel cells, BPC-157 increased the amount of the receptor VEGFR2 and switched on the VEGFR2–Akt–eNOS pathway that makes nitric oxide. Shown by one laboratory in Taiwan; a Turkish group later found that it relaxed pieces of human artery mainly through nitric oxide."
   - kind: signal
     level: in-vitro
     title: "Tendon cells: FAK–paxillin and growth hormone receptor"
-    detail: "In rat tendon fibroblasts it increased activation of focal adhesion kinase (FAK) and paxillin, and raised the number of growth hormone receptors. Same Taiwanese laboratory; the developer's own lab reported faster switching-on of the repair gene EGR-1."
+    detail: "In rat tendon fibroblasts it increased activation of focal adhesion kinase (FAK) and paxillin, and raised the number of growth hormone receptors. Same Taiwanese laboratory. Separately, the developer's own lab reported that, in a human gut-cell line, it switched on the repair gene EGR-1 faster than a known growth factor."
   - kind: cellular
     level: in-vitro
     title: "Cells move, survive stress and form tubes"
-    detail: "Treated fibroblasts migrated and spread faster and survived oxidative stress better; endothelial cells formed more vessel-like tubes. BPC-157 alone did not make cells divide faster, and the Zagreb group found no direct effect on vessel growth in culture."
+    detail: "Treated fibroblasts migrated and spread faster and survived oxidative stress better; endothelial cells formed more vessel-like tubes. BPC-157 alone did not make tendon cells divide faster, although the Xi'an laboratory reported faster growth of endothelial cells. The Zagreb group found no direct effect on vessel growth in culture."
   - kind: tissue
     level: animal
     title: "More vessels and better-organised collagen in healing tissue"
@@ -36,11 +39,11 @@ mechanism:
   - kind: effect
     level: animal
     title: "Faster healing in rodent injury models"
-    detail: "Tendon, ligament, muscle and gut injuries healed faster in rats in many Zagreb studies. One independent tendon study (32 rats) saw a trend in the same direction that did not reach statistical significance."
+    detail: "Tendon, ligament, muscle and gut injuries healed faster in rats in many Zagreb studies. One independent tendon study (32 rats) saw stronger tendons and better tissue scores that did not reach statistical significance; one collagen measure did."
   - kind: effect
     level: hypothesis
     title: "Benefit for injured people: not shown"
-    detail: "No controlled human trial has been published. Whether any step above happens in people, at which amounts, and whether it improves recovery is unknown."
+    detail: "No controlled human trial has been published in full. Whether any step above happens in people, at which amounts, and whether it improves recovery is unknown."
 studies:
   chang-2011-tendon-fibroblasts:
     finding: "Tendon pieces from rats grew out cells faster with BPC-157; the cells migrated and spread more, survived hydrogen-peroxide stress better and showed more activated FAK and paxillin. Cell division itself did not increase."
@@ -52,20 +55,23 @@ studies:
     finding: "More blood-vessel growth in chick-egg membranes and in endothelial tube assays; faster blood-flow recovery and more vessels in ischaemic rat hind limbs; more VEGFR2 (but not more VEGF) in human endothelial cells, with VEGFR2–Akt–eNOS activation."
     limitation: "Mixed cell, egg and rat experiments from one laboratory; animal numbers and blinding not stated in the abstract; not replicated independently."
   hsieh-2020-enos:
-    finding: "BPC-157 widened isolated rat aorta rings in a concentration-dependent, endothelium-dependent way that was blocked by the nitric oxide synthase inhibitor L-NAME; in endothelial cells it activated Src, caveolin-1 and eNOS."
+    finding: "BPC-157 widened isolated rat aorta rings in a concentration-dependent, mainly endothelium-dependent way that was reduced by the nitric oxide synthase inhibitor L-NAME; in endothelial cells it activated Src, caveolin-1 and eNOS."
     limitation: "Isolated vessels and cells only; same Taiwanese laboratory; says nothing about blood pressure or healing in a living animal or person."
+  yildirim-2026-artery:
+    finding: "In rings of chest artery left over from heart-bypass surgery in 12 men, BPC-157 relaxed the artery more as the concentration rose. The effect was much larger with the vessel lining intact and was weakened when nitric oxide production was blocked with L-NAME."
+    limitation: "Pieces of artery in a lab bath, from men with severe coronary artery disease; concentrations far above blood levels measured in rats; no rings given only the solvent over the same time; part of the relaxation remained with nitric oxide blocked. Says nothing about blood pressure or healing."
   tkalcevic-2007-egr1:
-    finding: "In rats and diabetic mice, PL 14736 (BPC-157) increased granulation tissue and early collagen organisation in wounds, similar to becaplermin; in human Caco-2 cells it switched on EGR-1 faster than becaplermin."
-    limitation: "Run by the laboratory of the company developing PL 14736, so not independent of the developer; animal numbers not stated in the abstract."
+    finding: "PL 14736 (BPC-157) stimulated granulation tissue around implanted sponges in rats and in wounds of diabetic mice in a similar way to PDGF-BB, the growth factor in becaplermin gel, and was more active in organising collagen early; in a human gut-cell line it switched on EGR-1 faster than PDGF-BB."
+    limitation: "Run by the laboratory of the company developing PL 14736, whose staff also co-wrote papers with the Zagreb group, so not independent of the developer; animal numbers not stated in the abstract."
   staresinic-2003-achilles:
     finding: "After cutting the Achilles tendon in rats, daily BPC-157 improved load to failure, stiffness, a walking-function index and tissue appearance over 14 days compared with saline."
-    limitation: "Originating group; animal numbers and blinding not stated in the abstract; three doses a million-fold apart all worked, so no dose–response was shown; treatment started 30 minutes after injury."
+    limitation: "Originating group; animal numbers and blinding not stated in the abstract; three doses a million-fold apart were tested but the abstract reports no dose–response; treatment started 30 minutes after injury."
   klicek-2008-fistula:
     finding: "BPC-157 given by injection or in drinking water closed surgically created colon-to-skin fistulas in rats over 28 days; its effect persisted when nitric oxide production was blocked with L-NAME."
-    limitation: "Originating group; prevention-style design starting at surgery; the FDA noted no tissue histopathology data and no dose–response between the two doses tested."
+    limitation: "Originating group; treatment started 30 minutes after the fistula was made, so it says nothing about established fistulas; the FDA noted no tissue histopathology data and no dose–response between the two doses tested."
   bicer-2026-achilles:
-    finding: "In 32 rats with repaired Achilles tendons (8 per group), BPC-157 gave higher load to failure and better tissue scores than control, but neither difference reached statistical significance; TB-500 did. The combination added nothing."
-    limitation: "Small, four-week study; blinding of assessors not stated in the abstract; funding not stated in the abstract. Too small to rule a modest effect in or out."
+    finding: "In 32 rats with repaired Achilles tendons (8 per group), BPC-157 gave higher load to failure and better total tissue scores than control, but neither difference reached statistical significance; TB-500's did. One collagen measure (type I collagen staining) was significantly higher with BPC-157. The combination added nothing."
+    limitation: "Small, four-week study: each group's 8 tendons were split, 4 for strength testing and 4 for tissue analysis. Assessors were blinded and the authors declared no funding, but the study is too small to rule a modest effect in or out, and one positive result among many tissue measures is weak evidence."
   xu-2020-toxicology:
     finding: "Across studies in mice, rats, rabbits and dogs, single injections and 28-day repeated injections (rats and dogs) caused no serious toxicity; standard genotoxicity tests were negative; no malformations in a rat embryo–fetal study."
     limitation: "One laboratory; 28 days at most, intramuscular route only; histopathology data not published; the FDA re-analysis flagged clotting-time, liver and blood-fat changes; no carcinogenicity study."
@@ -74,36 +80,37 @@ studies:
     limitation: "Animals only; intravenous and intramuscular routes only; says nothing about subcutaneous, oral or nasal use, or about people."
   ruenzi-2005-colitis-abstract:
     finding: "In a randomised, double-blind trial of an enema (PL 14736) in 53 people with mild-to-moderate ulcerative colitis, a disease-activity score fell by 3.2 points with BPC-157 and 1.6 with placebo; the difference was not statistically significant."
-    limitation: "Published only as a conference abstract; the FDA called the data inadequate (endpoint, entry criteria and statistics unclear). Industry-sponsored; never followed by a full paper."
+    limitation: "Published only as a conference abstract; the FDA called the data inadequate (endpoint, entry criteria and statistics unclear). Part of the developer's own PL 14736 programme; never followed by a full paper."
   lee-2021-knee:
     finding: "Of 16 people with various kinds of knee pain who had received knee-joint injections of BPC-157 (some with thymosin beta-4), 14 said by phone that their pain had improved."
     limitation: "Retrospective phone survey, mostly 6–12 months after the injection; no comparison group, no validated pain scale, mixed diagnoses; one private clinic; funding not stated."
   lee-2024-interstitial-cystitis:
-    finding: "Twelve women with interstitial cystitis that had not responded to standard treatment had BPC-157 injected into the bladder wall once; 10 reported complete symptom resolution and no adverse events were reported."
+    finding: "Twelve women with interstitial cystitis that had not responded to pentosan polysulfate, an approved treatment, had BPC-157 injected into the bladder wall once; 10 reported complete symptom resolution and no adverse events were reported."
     limitation: "No comparison group, no blinding, self-rated global response only; one private clinic using a compounded product; follow-up not clearly described."
   lee-2025-intravenous:
     finding: "Two adults received intravenous BPC-157 on two consecutive days; blood tests and vital signs did not change and no side effects were reported."
     limitation: "Two people, both of whom had used intravenous BPC-157 before; three days of follow-up; cannot detect anything but very common, immediate effects."
+  froum-2026-nerve-cases:
+    finding: "Three dental patients with numbness after injury to a nerve in the lower jaw had weekly gum injections of a five-drug mixture that included BPC-157; feeling largely returned over about four weeks and no adverse events were reported."
+    limitation: "Three people, no comparison group, no standard nerve tests; BPC-157 was mixed with two other experimental peptides, a steroid and a local anaesthetic, and milder injuries of this nerve often recover by themselves. The authors say causality cannot be established. No funding declared."
 regulatory_notes:
   EU: "No authorised product and no application in EMA records (checked 20 October 2026)."
   NL: "Not authorised; supplying an unauthorised medicine is prohibited by the Geneesmiddelenwet."
   DE: "Not authorised; finished medicines need a licence under AMG § 21."
-  BE: "Not authorised; no national or EU licence."
+  BE: "Not authorised; the 1964 Medicines Act requires a national or EU licence, and none exists."
   UK: "Not authorised; supplying an unauthorised medicinal product is prohibited by the Human Medicines Regulations 2012."
-  US: "Not FDA-approved. The July 2026 advisory vote to allow compounding is non-binding; no rule has been made."
+  US: "Not FDA-approved. The July 2026 advisory vote to recommend pharmacy compounding is non-binding; no rule has been made."
   WADA: "Prohibited at all times under S0 since 1 January 2022; still named in the 2027 List."
 ---
 <Section id="what-it-is">
-
-<SequenceView />
 
 BPC-157 is a synthetic peptide: a chain of 15 amino acids, <Seq>Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val</Seq>, with ordinary free ends. Its formula is C62H98N16O22 and its mass is <Q>1419.5 Da</Q>.<Cite id="pubchem-bpc-157" /> Early laboratory work reported that it resists breakdown in gastric juice.<Cite id="fda-pcac-2026-bpc157-briefing" /> <Claim level="hypothesis">Four of its amino acids are proline, and proline-rich stretches resist many digestive enzymes, which may explain that stability</Claim>. In blood, by contrast, it is broken down within minutes.<Cite id="he-2022-pharmacokinetics" />
 
 ### Where the name comes from
 
-"BPC" stands for Body Protection Compound. In 1993 a group at the University of Zagreb reported isolating a protein of about 40,000 daltons from human gastric juice. They named it BPC and described BPC-157 as a 15-amino-acid fragment "thought to be essential for its activity".<Cite id="sikiric-1993-bpc-origin" /> That origin rests on the group's own reports. The FDA describes the peptide as "reported to be" such a fragment, and an independent review notes that its sequence resembles no known gut peptide.<Cite id="fda-pcac-2026-bpc157-briefing,jozwiak-2025-review" /> The peptide used in research is made by chemical synthesis.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" />
+"BPC" stands for Body Protection Compound. In 1993 a group at the University of Zagreb described a protein of about 40,000 daltons isolated from human gastric juice. They named it BPC and described BPC-157 as a 15-amino-acid fragment "thought to be essential for its activity".<Cite id="sikiric-1993-bpc-origin,fda-pcac-2026-bpc157-briefing" /> That origin rests on the group's own reports. The FDA describes the peptide as "reported to be" such a fragment, and an independent review notes that its sequence resembles no known gut peptide.<Cite id="fda-pcac-2026-bpc157-briefing,jozwiak-2025-review" /> The peptide used in research is made by chemical synthesis.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" />
 
-In the 1990s and 2000s the Croatian company PLIVA developed it under the codes PL 14736, PL-10 and PLD-116; the name bepecin also appears in databases.<Cite id="chembl-bpc-157,staresinic-2003-achilles,tkalcevic-2007-egr1" /> It has no official non-proprietary name. The FDA notes that "BPC-157" is only a common name, and that different chemical substances are sold under it.<Cite id="fda-pcac-2026-bpc157-briefing" />
+In the 1990s and 2000s the Croatian company PLIVA developed it under the codes PL 14736 and PLD-116; the names PL-10 and bepecin also appear in databases.<Cite id="chembl-bpc-157,staresinic-2003-achilles,tkalcevic-2007-egr1" /> It has no official non-proprietary name. The FDA notes that "BPC-157" is only a common name, and that different chemical substances are sold under it.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
 ### How it is made
 
@@ -123,7 +130,7 @@ Nobody knows how BPC-157 works, or whether it does anything in people. The FDA's
 
 ### Step 1: the missing receptor
 
-A drug normally starts by binding one specific target, such as a receptor or an enzyme. That binding is what makes its effects predictable and dose-dependent. For BPC-157 no target is established.<Cite id="fda-pcac-2026-bpc157-briefing" /> In 2026 a Chinese laboratory reported that, in cultured human endothelial cells, <Claim level="in-vitro">BPC-157 binds the protein FBXO22 and so protects the transcription factor BACH1 from breakdown, increasing cell growth and tube formation</Claim>.<Cite id="zhang-2026-fbxo22" /> It is the first specific partner proposed, from one laboratory, and not yet repeated.
+A drug normally starts by binding one specific target, such as a receptor or an enzyme. That binding is what makes its effects predictable and dose-dependent. For BPC-157 no target is established.<Cite id="fda-pcac-2026-bpc157-briefing" /> In 2026 the laboratory in Xi'an, China, that also ran the animal toxicology reported that, in cultured human endothelial cells (the cells that line blood vessels), <Claim level="in-vitro">BPC-157 binds the protein FBXO22 and so protects the transcription factor BACH1 from breakdown, increasing cell growth and tube formation</Claim>.<Cite id="zhang-2026-fbxo22" /> It is the first specific partner proposed, from one laboratory, and not yet repeated.
 
 There is also a timing puzzle. In rats and dogs, intact BPC-157 leaves the blood within minutes, cut into fragments and then amino acids,<Cite id="he-2022-pharmacokinetics" /> yet animal studies report effects that build up over days. Why is unknown.
 
@@ -132,21 +139,21 @@ There is also a timing puzzle. In rats and dogs, intact BPC-157 leaves the blood
 Most signalling data come from one laboratory at Chang Gung University in Taiwan, which has no link to Zagreb:
 
 - In human endothelial cells, <Claim level="in-vitro">BPC-157 raised levels of VEGFR2, the main receptor for the vessel-growth signal VEGF, and activated the VEGFR2–Akt–eNOS pathway</Claim>.<Cite id="hsieh-2017-vegfr2" />
-- In isolated rat aorta, <Claim level="in-vitro">it relaxed the vessel through nitric oxide made by the lining cells; blocking nitric oxide synthesis with L-NAME abolished the effect</Claim>.<Cite id="hsieh-2020-src-cav1-enos" />
+- In isolated rat aorta, <Claim level="in-vitro">it relaxed the vessel through nitric oxide made by the lining cells; blocking nitric oxide synthesis with L-NAME inhibited the effect</Claim>.<Cite id="hsieh-2020-src-cav1-enos" /> In 2026 a group in Ankara, Turkey, tested this in human tissue: in rings of chest artery left over from heart-bypass surgery in 12 men, <Claim level="in-vitro">BPC-157 relaxed the artery mostly through the vessel lining and nitric oxide, and L-NAME weakened the effect</Claim>. The authors note that their concentrations were far higher than the blood levels measured in rats.<Cite id="yildirim-2026-mammary-artery" />
 - In rat tendon fibroblasts, <Claim level="in-vitro">it increased activation of focal adhesion kinase (FAK) and paxillin, proteins that let a cell grip its surroundings and crawl, and the cells migrated faster and survived oxidative stress better</Claim>. They did not divide faster.<Cite id="chang-2011-tendon-fibroblasts" />
 - In the same cells, <Claim level="in-vitro">it raised the number of growth hormone receptors, so added growth hormone made the cells multiply more</Claim>.<Cite id="chang-2014-ghr" />
 
-The developer's laboratory reported that <Claim level="in-vitro">in a human gut-cell line PL 14736 switched on EGR-1, a gene cells turn on within minutes of injury, faster than the authorised growth factor becaplermin</Claim>.<Cite id="tkalcevic-2007-egr1" />
+The developer's laboratory reported that <Claim level="in-vitro">in a human gut-cell line PL 14736 switched on EGR-1, a gene cells turn on within minutes of injury, faster than PDGF-BB, the growth factor in the wound gel becaplermin</Claim>.<Cite id="tkalcevic-2007-egr1" />
 
-The laboratories do not always agree. The Taiwanese group saw more vessel-like tubes in culture; the Zagreb group reported "no direct angiogenic effect of BPC 157 on cell cultures".<Cite id="hsieh-2017-vegfr2,brcic-2009-angiogenesis" /> The nitric-oxide link is also untidy. The independent laboratory found eNOS activation, but in the Zagreb group's own rat experiments the protective effects largely persisted when nitric oxide synthesis was blocked.<Cite id="sikiric-1997-nitric-oxide,klicek-2008-fistula" /> These findings do not yet fit one causal story.
+The laboratories do not always agree. The Taiwanese group saw more vessel-like tubes in culture; the Zagreb group reported "no direct angiogenic effect of BPC 157 on cell cultures".<Cite id="hsieh-2017-vegfr2,brcic-2009-angiogenesis" /> The nitric-oxide link is also untidy. The Taiwanese and Turkish laboratories found effects that depend on nitric oxide, although part of the artery relaxation remained when it was blocked.<Cite id="hsieh-2020-src-cav1-enos,yildirim-2026-mammary-artery" /> In the Zagreb group's own rat experiments, by contrast, the protective effects largely persisted when nitric oxide synthesis was blocked.<Cite id="sikiric-1997-nitric-oxide,klicek-2008-fistula" /> These findings do not yet fit one causal story.
 
 ### Steps 5 and 6: tissue and healing in animals
 
-<Claim level="animal">Injured rat muscle and tendon showed more blood vessels and stronger VEGF staining</Claim>, <Claim level="animal">blood flow recovered faster in rats with a blocked leg artery</Claim>, and <Claim level="animal">wounds in rats and diabetic mice organised their collagen earlier</Claim>.<Cite id="brcic-2009-angiogenesis,hsieh-2017-vegfr2,tkalcevic-2007-egr1" /> The Zagreb reports of faster functional healing are discussed under the evidence below.
+<Claim level="animal">Injured rat muscle and tendon showed more blood vessels and stronger VEGF staining</Claim>, <Claim level="animal">blood flow recovered faster in rats with a blocked leg artery</Claim>, and <Claim level="animal">new tissue around sponges implanted in rats, and wounds in diabetic mice, organised their collagen earlier</Claim>.<Cite id="brcic-2009-angiogenesis,hsieh-2017-vegfr2,tkalcevic-2007-egr1" /> The Zagreb reports of faster functional healing are discussed under the evidence below.
 
 ### What the chain does not show
 
-The chain has three weak joints. No study measured the early steps and the healing outcome in the same animals, so the link between them is inferred. Nobody knows what concentration reaches a human tendon, so the cell concentrations cannot be translated. And many animal studies report the same benefit across doses a million-fold apart.<Cite id="staresinic-2003-achilles,fda-pcac-2026-bpc157-briefing" /> A real drug effect usually grows with dose up to a ceiling, so a flat response across that range weakens the causal inference.
+The chain has three weak joints. No study measured the early steps and the healing outcome in the same animals, so the link between them is inferred. Nobody knows what concentration reaches a human tendon, so the cell concentrations cannot be translated. And several of the Zagreb group's animal studies report the same benefit at a low and a high dose a thousand-fold apart.<Cite id="fda-pcac-2026-bpc157-briefing,cerovecki-2010-ligament" /> A real drug effect usually grows with dose up to a ceiling, so a flat response across that range weakens the causal inference.
 
 </Section>
 
@@ -158,63 +165,69 @@ The chain has three weak joints. No study measured the early steps and the heali
 
 | Level | Roughly how much | Who produced it | Main limitation |
 |---|---|---|---|
-| Cells and isolated tissue | A small share of the papers | Zagreb and others; most signalling work from one laboratory in Taiwan | Concentrations not linked to real exposure |
-| Animal injury models | About 140 papers from the Zagreb group; about 20 from groups outside Zagreb | Zagreb dominates; single studies from China, Taiwan, Turkey, South Korea and the USA | Mostly rats; treatment starts at injury; little direct repetition |
+| Cells and isolated tissue | A minority of the roughly 160 primary laboratory and animal papers | Zagreb and others; most signalling work from one laboratory in Taiwan; one human-artery study from Turkey | Concentrations not linked to real exposure |
+| Animal injury models | Most of the roughly 160 primary papers (cells and animals together: about 140 from the Zagreb group, about 20 from elsewhere) | Zagreb dominates; a few studies each from China, Taiwan and Turkey; single studies from South Korea and the USA | Mostly rats; treatment starts at or before injury; little direct repetition |
 | Toxicology and pharmacokinetics | Two papers | One laboratory in Xi'an, China | 28 days at most; injected routes only |
-| Humans, controlled | One trial, 53 people | Developer of PL 14736 | Conference abstract only; not statistically significant |
-| Humans, uncontrolled | Three reports, 30 people | Florida clinics, same lead author | No comparison group; self-reported outcomes |
+| Humans, controlled | Two trials: phase 1 in 32 healthy men, phase 2 in 53 people with ulcerative colitis | Developer of PL 14736 | Conference abstracts only; the phase 2 result was not statistically significant |
+| Humans, uncontrolled | Four reports, 33 people | Three from Florida clinics with the same lead author; one from US dentists | No comparison group; self-reported outcomes; one used a five-drug mixture |
 
 </Diagram>
 
-### Cells: one independent laboratory
+### Cells and isolated tissue: mostly one independent laboratory
 
-The four cell studies in the table come from one group at Chang Gung University: independent of Zagreb, but not of each other, and not repeated elsewhere.<Cite id="chang-2011-tendon-fibroblasts,chang-2014-ghr,hsieh-2017-vegfr2,hsieh-2020-src-cav1-enos" /> They show that the molecule can change a pathway in a dish, not that it helps a damaged tendon in a person.
+Four of the laboratory studies in the table come from one group at Chang Gung University: independent of Zagreb, but not of each other.<Cite id="chang-2011-tendon-fibroblasts,chang-2014-ghr,hsieh-2017-vegfr2,hsieh-2020-src-cav1-enos" /> They show that the molecule can change a pathway in a dish, not that it helps a damaged tendon in a person.
+
+Other groups have since reported two of the same effects. The Xi'an laboratory saw more vessel-like tubes in cultured human endothelial cells.<Cite id="zhang-2026-fbxo22,hsieh-2017-vegfr2" /> And in 2026 an Ankara team put rings of chest artery, left over from bypass surgery in 12 men, in a lab bath. BPC-157 relaxed the rings more as its concentration rose, mostly through the vessel lining and nitric oxide, as in the Taiwanese rat aorta.<Cite id="yildirim-2026-mammary-artery,hsieh-2020-src-cav1-enos" /> It is the first such test in pieces of human artery, but its limits are clear. The concentrations were far higher than blood levels measured in rats, the men had advanced heart disease, and no rings were given only the solvent over the same time. It shows an effect on artery tone in a dish, not on blood pressure or healing in a person.<Cite id="yildirim-2026-mammary-artery" />
 
 ### The originating group's animal studies
 
 Most of the literature is animal work by Predrag Sikirić, Sven Seiwerth and colleagues in Zagreb: by our count, about 140 primary experimental papers.<Cite id="pubmed-bpc157-count-2026-10-20" /> The history page [how one laboratory built the BPC-157 literature](/en/history/the-croatian-lab/) explains the count and why it matters.
 
-Two studies show the typical design. In 2003 the group cut the Achilles tendon in rats and gave daily intraperitoneal BPC-157 at <Q>10 µg/kg</Q>, <Q>10 ng/kg</Q> or <Q>10 pg/kg</Q>, or saline, starting 30 minutes after surgery. <Claim level="animal">Treated tendons were stronger and stiffer, the rats walked better, and the defect closed over 14 days</Claim>.<Cite id="staresinic-2003-achilles" /> In 2008 the group created colon-to-skin fistulas in rats, and <Claim level="animal">BPC-157 by injection or in drinking water closed them</Claim>.<Cite id="klicek-2008-fistula" /> Similar results were reported for ligament, muscle, nerve and gut injuries.<Cite id="cerovecki-2010-ligament,fda-pcac-2026-bpc157-briefing" />
+Two studies show the typical design. In 2003 the group cut the Achilles tendon in rats and gave daily intraperitoneal BPC-157 at <Q>10 µg/kg</Q>, <Q>10 ng/kg</Q> or <Q>10 pg/kg</Q>, or saline, starting 30 minutes after surgery. <Claim level="animal">Treated tendons were stronger and stiffer, the rats walked better, and the defect closed over 14 days</Claim>.<Cite id="staresinic-2003-achilles" /> In 2008 the group created colon-to-skin fistulas in rats, and <Claim level="animal">BPC-157 by injection or in drinking water closed them</Claim>.<Cite id="klicek-2008-fistula" /> Similar results were reported for ligament, muscle, nerve and gut injuries.<Cite id="cerovecki-2010-ligament,brcic-2009-angiogenesis,fda-pcac-2026-bpc157-briefing" />
 
-The FDA's 2026 review made three criticisms.<Cite id="fda-pcac-2026-bpc157-briefing" /> Low and high doses usually worked equally well, so no dose–response relationship was shown. Treatment usually started at the moment of injury, so it is unknown whether BPC-157 helps once damage is established, which is when a person would use it. And without a known target, biological plausibility is hard to judge. The abstracts of the studies cited here also do not say whether outcome assessors were blinded.
+The FDA's 2026 review looked closely at the group's gut, liver and fistula studies, the ones relevant to ulcerative colitis, and made three criticisms.<Cite id="fda-pcac-2026-bpc157-briefing" /> Low and high doses worked equally well, so no dose–response relationship was shown. Treatment started before, with or soon after the injury, so it is unknown whether BPC-157 helps once damage is established, which is when a person would use it. And without a known target, biological plausibility is hard to judge. The tendon and ligament studies above also started treatment 30 minutes after surgery, and the ligament study reported the same benefit at both of its doses.<Cite id="staresinic-2003-achilles,cerovecki-2010-ligament" /> Their abstracts also do not say whether outcome assessors were blinded.
 
 ### Independent animal studies
 
-Groups outside Zagreb have tested BPC-157 in their own rodent models. As early as 1995, an industry laboratory at Parke-Davis in the US found that <Claim level="animal">the peptide (then called BPC-15) reduced chemically induced colon damage in rats in a dose-dependent way</Claim>, one of the few reports with a dose–response.<Cite id="veljaca-1995-colitis" />
+Groups outside Zagreb have tested BPC-157 in their own rodent models.<Cite id="pubmed-bpc157-count-2026-10-20" /> As early as 1995, an industry laboratory at Parke-Davis in the US found that <Claim level="animal">the peptide (under the name BPC-15) reduced chemically induced colon damage in rats in a dose-dependent way</Claim>, one of the few reports with a dose–response.<Cite id="veljaca-1995-colitis" /> As in many Zagreb studies, treatment started at or before the moment of injury: here, one hour before.
 
-A direct repeat of the flagship tendon claim came only in 2026. A Turkish team repaired the Achilles tendons of 32 rats and gave BPC-157, TB-500, both, or nothing for four weeks. <Claim level="animal">BPC-157 gave higher load to failure and better tissue scores than control, but the differences were not statistically significant</Claim>; TB-500's were, and the combination added nothing.<Cite id="bicer-2026-achilles" /> With eight rats per group the study could miss a modest effect. Its result fits a benefit smaller than the "full recovery" the Zagreb studies describe, or none.
+A 2025 study from Ankara, with one author in common with the artery study, used a similar design. It used 24 rats in four groups of six, and gave BPC-157 at the start of a 45-minute block of blood flow to the legs. <Claim level="animal">Two hours after blood flow returned, the liver, kidneys and lungs of the treated rats showed less damage and more antioxidant activity than those of rats with the same injury and no treatment</Claim>.<Cite id="demirtas-2025-ischaemia-reperfusion" /> Treatment at the moment of injury and a two-hour follow-up say nothing about recovery from an established injury.
+
+The first independent test of the flagship tendon claim came only in 2026. A Turkish team cut and then surgically repaired the Achilles tendons of 32 rats and gave BPC-157, TB-500, both, or nothing for four weeks. (The Zagreb studies left the cut tendon unrepaired, so this is a related model, not an exact repeat.) <Claim level="animal">BPC-157 gave higher load to failure and better total tissue scores than control, but these differences were not statistically significant</Claim>; TB-500's were, and the combination added nothing. <Claim level="animal">One collagen measure, the staining of type I collagen, was significantly higher with BPC-157</Claim>.<Cite id="bicer-2026-achilles" /> The assessors did not know which treatment each tendon had received, a safeguard the abstracts of the Zagreb tendon and ligament studies cited here do not report. But each group's eight tendons were split, four for strength testing and four for tissue analysis, so the study could miss a modest effect, and a single positive result among many tissue measures is weak evidence.<Cite id="bicer-2026-achilles" /> Its result fits a benefit smaller than the "full recovery" the Zagreb studies describe, or none.
 
 ### Toxicology and pharmacokinetics
 
-The only formal toxicology comes from the Fourth Military Medical University in Xi'an, China, which was developing BPC-157 for wounds and burns. <Claim level="animal">Across mice, rats, rabbits and dogs, single and 28-day repeated intramuscular doses caused no serious toxicity; genotoxicity tests were negative, and a rat embryo–fetal study found no malformations</Claim>.<Cite id="xu-2020-preclinical-safety" /> The FDA's re-analysis of the same data flagged possible safety signals (see the risk profile below).<Cite id="fda-pcac-2026-bpc157-briefing" />
+The only formal toxicology comes from the Fourth Military Medical University in Xi'an, China, which was developing BPC-157 for wounds, severe trauma and burns.<Cite id="xu-2020-preclinical-safety,he-2022-pharmacokinetics" /> <Claim level="animal">Across mice, rats, rabbits and dogs, single and 28-day repeated intramuscular doses caused no serious toxicity; genotoxicity tests were negative, and a rat embryo–fetal study found no malformations</Claim>.<Cite id="xu-2020-preclinical-safety" /> The FDA's re-analysis of the same data flagged possible safety signals (see the risk profile below).<Cite id="fda-pcac-2026-bpc157-briefing" />
 
-The same laboratory studied 366 rats and 6 beagle dogs. Intact BPC-157 had a half-life of <Q>15.2 min</Q> in rats and <Q>5.3 min</Q> in dogs after intravenous dosing. Only part of an intramuscular dose reached the blood, and the peptide was degraded to fragments and then amino acids.<Cite id="he-2022-pharmacokinetics" /> There are no such data for subcutaneous, oral or nasal use in any species, and none in humans.<Cite id="fda-pcac-2026-bpc157-briefing" />
+The same laboratory studied 366 rats and 6 beagle dogs. Intact BPC-157 had a half-life of <Q>15.2 min</Q> in rats and <Q>5.3 min</Q> in dogs after intravenous dosing. Only part of an intramuscular dose reached the blood, and the peptide was degraded to fragments and then amino acids.<Cite id="he-2022-pharmacokinetics" /> The FDA found no animal or human data on how the body handles BPC-157 after subcutaneous, oral or nasal use. The only human blood measurements, after an enema, mostly found no peptide.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
 ### Human evidence
 
 **The PL 14736 programme.** PLIVA developed the peptide as an enema for inflammatory bowel disease. According to the FDA's summary of conference abstracts, a placebo-controlled phase 1 study randomised 32 healthy men. Headache and flatulence were the commonest complaints, at similar rates with peptide and placebo, and the peptide was mostly undetectable in blood.<Cite id="fda-pcac-2026-bpc157-briefing" /> In a randomised, double-blind phase 2 trial in 53 people with mild-to-moderate ulcerative colitis, <Claim level="human-controlled">a disease-activity score fell by 3.2 points with the peptide and 1.6 with placebo, and the confidence interval for the difference included zero</Claim>.<Cite id="fda-pcac-2026-bpc157-briefing" /> That trial appeared only as a 2005 conference abstract, which the FDA judged "inadequate to support the efficacy and safety" of BPC-157. No full report or later trial has been published since.
 
-**Three small uncontrolled reports.** All three share one lead author, took place at private clinics in Florida, and used products from US compounding pharmacies.<Cite id="fda-pcac-2026-bpc157-briefing" />
+**Four small uncontrolled reports.** Three of them share one lead author, took place at private clinics in Florida, and used products from US compounding pharmacies.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
 - In a retrospective chart review of knee-joint injections (some combined with thymosin beta-4), <Claim level="human-limited">14 of 16 people reached by phone months later said their pain had improved</Claim>.<Cite id="lee-2021-knee" />
-- Twelve women with interstitial cystitis that had not responded to standard treatment had injections into the bladder wall; <Claim level="human-limited">10 rated their symptoms as fully resolved, and no adverse events were reported</Claim>.<Cite id="lee-2024-interstitial-cystitis" />
+- Twelve women with interstitial cystitis that had not responded to pentosan polysulfate, an approved treatment, had injections into the bladder wall; <Claim level="human-limited">10 rated their symptoms as fully resolved, and no adverse events were reported</Claim>.<Cite id="lee-2024-interstitial-cystitis" />
 - In two adults given intravenous infusions on consecutive days, <Claim level="human-limited">blood tests and vital signs did not change</Claim>.<Cite id="lee-2025-intravenous" />
 
-A 2026 systematic review found only these three studies, 30 people in total, and rated the certainty of evidence as very low.<Cite id="poolton-2026-human-sr" />
+The fourth report came from a group of US dentists in 2026. Three patients had numbness in the lip and chin after injury to a nerve in the lower jaw. Each had weekly injections into the gum, for four weeks, of a mixture of five drugs: BPC-157, TB-500, a third experimental peptide (ARA-290), the steroid dexamethasone and a local anaesthetic. <Claim level="human-limited">Feeling largely returned, and no adverse events were reported</Claim>. The authors themselves say that milder injuries of this nerve often recover on their own, and that the steroid and the anaesthetic given at the same time could also explain the recovery. With five drugs at once, no single one can be credited.<Cite id="froum-2026-nerve-cases" /> One of the six authors lists the American Academy of Anti-Aging Medicine (A4M) as their affiliation. The authors declared no funding and no commercial or financial relationships that could be a conflict of interest.<Cite id="froum-2026-nerve-cases" />
 
-Uncontrolled reports cannot show benefit, for structural reasons. Knee and bladder pain come and go on their own. People seek treatment when symptoms are worst, so many improve afterwards whatever is done (regression to the mean). An injection from a confident clinician produces a real placebo response, and asking people months later adds recall bias. Only a comparison group given a dummy treatment separates these effects from a drug effect.
+A 2026 systematic review, which searched the literature up to 1 June 2026, found the first three studies, 30 people in total, and rated the certainty of evidence as very low.<Cite id="poolton-2026-human-sr" /> The dental report was published after that search.<Cite id="froum-2026-nerve-cases" />
+
+Uncontrolled reports cannot show benefit, for structural reasons. Knee and bladder pain come and go on their own, and many nerve injuries slowly heal by themselves. People seek treatment when symptoms are worst, so many improve afterwards whatever is done (regression to the mean). An injection from a confident clinician produces a real placebo response, and asking people months later adds recall bias. Only a comparison group given a dummy treatment separates these effects from a drug effect.
 
 ### Registered trials
 
-As of 20 October 2026, ClinicalTrials.gov lists four studies: a 2015 phase 1 study of oral tablets in Mexico, status unknown, with no results;<Cite id="ctgov-nct02637284" /> a randomised, placebo-controlled phase 2 trial of subcutaneous BPC-157 for acute hamstring strain in 120 people in China, recruiting, with primary completion expected in February 2027;<Cite id="ctgov-nct07437547" /> a 30-person randomised pilot after rotator-cuff surgery at a US university, not yet recruiting;<Cite id="ctgov-nct07803250" /> and a completed single-arm study of an oral consumer product, run by its maker, with no results posted.<Cite id="ctgov-nct07752381" />
+As of 20 October 2026, ClinicalTrials.gov lists four studies: a 2015 phase 1 study of oral tablets in Mexico, status unknown, with no results;<Cite id="ctgov-nct02637284" /> a randomised, placebo-controlled phase 2 trial of subcutaneous BPC-157 for acute hamstring strain in 120 people in China, recruiting, with primary completion expected in February 2027;<Cite id="ctgov-nct07437547" /> a small randomised pilot after rotator-cuff surgery at a US university, not yet recruiting, whose record contradicts itself on the comparison group (saline injections in one place, no treatment in another) and on size (20 or 30 participants);<Cite id="ctgov-nct07803250" /> and a completed single-arm study of an oral consumer product, run by its maker, with no results posted.<Cite id="ctgov-nct07752381" />
 
 <Callout type="uncertain" title="What would change this page">
-The hamstring trial is the first properly designed efficacy trial of BPC-157 in an injury: randomised, placebo-controlled, with imaging endpoints and an independent safety committee.<Cite id="ctgov-nct07437547" /> If it is published in full, whatever the result, it will tell us more than all existing human data. We will update the grades when it reports.
+The hamstring trial is the first trial of BPC-157 in an injury that is randomised, blinded and placebo-controlled and has started recruiting. It uses an MRI measure of the injury as one of its two main outcomes and has a data monitoring committee.<Cite id="ctgov-nct07437547" /> If it is published in full, whatever the result, it will tell us more than all existing human data. We will update the grades when it reports.
 </Callout>
 
 ### Where the evidence is genuinely promising
 
-This evidence is not worthless. Across many rodent models of tendon, ligament, muscle and gut injury the direction of effect is consistent, and laboratories outside Zagreb (in the US, Taiwan and Turkey among others) have reported effects in the same direction.<Cite id="veljaca-1995-colitis,hsieh-2017-vegfr2,bicer-2026-achilles" /> Animal toxicology so far shows no genotoxicity and no acute toxicity at high doses.<Cite id="xu-2020-preclinical-safety" /> Independent reviewers in sports medicine describe the preclinical record as promising while stressing how little human data exist.<Cite id="vasireddi-2025-systematic-review,mcguire-2025-review" /> Tendon and ligament injuries heal slowly and few medicines speed that healing, so a properly tested healing agent would be valuable.
+This evidence is not worthless. Across many rodent models of tendon, ligament, muscle and gut injury the direction of effect is consistent, and laboratories outside Zagreb (in the US, Taiwan and Turkey among others) have reported effects in the same direction.<Cite id="veljaca-1995-colitis,hsieh-2017-vegfr2,bicer-2026-achilles,demirtas-2025-ischaemia-reperfusion" /> Two findings from the Taiwanese cell laboratory have since been reported by other groups, one of them in human artery tissue.<Cite id="zhang-2026-fbxo22,yildirim-2026-mammary-artery" /> Animal toxicology so far shows no genotoxicity and no acute toxicity at high doses.<Cite id="xu-2020-preclinical-safety" /> Independent reviewers in sports medicine describe the preclinical record as promising while stressing how little human data exist.<Cite id="vasireddi-2025-systematic-review,mcguire-2025-review" /> Tendon and ligament injuries heal slowly and few medicines speed that healing, so a properly tested healing agent would be valuable.
 
 The gap has a real cost. In public records the developer's programme never went beyond a phase 2 trial that was not fully published, and two decades passed without a definitive trial. Into that gap came a grey market of unmonitored injections of products of unknown content. Promising animal data are a reason to run a good trial, not a substitute for one.
 
@@ -227,14 +240,14 @@ As of 20 October 2026, these are specifically unknown:
 - **Whether it works in people.** No controlled human trial has been published in full.<Cite id="poolton-2026-human-sr" />
 - **How it works.** No receptor or primary target is established.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Human pharmacokinetics.** There are no data for subcutaneous, oral, nasal or transdermal use. After an enema it was mostly undetectable in blood.<Cite id="fda-pcac-2026-bpc157-briefing" />
-- **Dose–response** in any species.<Cite id="fda-pcac-2026-bpc157-briefing" />
-- **Long-term safety.** The longest repeat-dose animal study lasted 28 days, and no person has been followed systematically beyond two weeks of use.<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing" />
-- **Cancer risk.** No carcinogenicity study exists, and effects on existing tumours are untested.<Cite id="fda-pcac-2026-bpc157-briefing" />
+- **Dose–response.** In the animal studies the FDA reviewed, low and high doses gave the same effect. One independent 1995 rat study did report a dose-dependent effect. There are no human dose–response data.<Cite id="fda-pcac-2026-bpc157-briefing,veljaca-1995-colitis" />
+- **Long-term safety.** The longest repeat-dose animal study lasted 28 days. In the published human studies use lasted at most four weeks, and most did not say how safety was monitored.<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing,froum-2026-nerve-cases" />
+- **Cancer risk.** The FDA found no carcinogenicity study, and effects on existing tumours are untested.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Reproduction.** There is one rat embryo–fetal study, with no fertility, postnatal or human pregnancy data.<Cite id="fda-pcac-2026-bpc157-briefing" />
-- **Immune reactions.** Immunogenicity has never been formally studied.<Cite id="fda-pcac-2026-bpc157-briefing" />
+- **Immune reactions.** Neither the nominators nor the FDA found any study that formally tested immunogenicity.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Interactions** with any other medicine.
-- **Whether the salt forms** (free base, acetate, trifluoroacetate) behave alike.<Cite id="fda-pcac-2026-bpc157-briefing" />
-- **What products contain.** Anti-doping laboratories confirmed the peptide in confiscated vials,<Cite id="cox-2017-doping-detection" /> but we found no published survey of the content, impurities or sterility of products on the market.
+- **Whether the salt forms** (free base, acetate, trifluoroacetate) behave alike.<Cite id="fda-pcac-2026-bpc157-briefing,pubchem-bpc-157" />
+- **What products contain.** A US sports drug-testing laboratory identified the peptide in confiscated vials,<Cite id="cox-2017-doping-detection" /> but we found no published survey of the content, impurities or sterility of products on the market.
 
 </Section>
 
@@ -248,9 +261,9 @@ All statuses were checked on 20 October 2026.
 
 No BPC-157 product has an EU marketing authorisation. EMA's medicines data, which include refused and withdrawn applications, contain no record of it, and the European Pharmacopoeia has no monograph.<Cite id="ema-medicines-search,ema-medicines-json,fda-pcac-2026-bpc157-briefing" /> The FDA found no approved product in any country.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
-- **Netherlands.** The CBG database lists no BPC-157 product.<Cite id="cbg-geneesmiddeleninformatiebank" /> Under the Geneesmiddelenwet a substance is a medicine if it is presented as treating disease, wounds or pain, or is meant to change body functions through a pharmacological effect (art. 1). Selling, supplying, stocking or importing a medicine without a marketing authorisation is prohibited, with narrow exceptions (art. 40).<Cite id="nl-geneesmiddelenwet" />
+- **Netherlands.** The CBG database lists no BPC-157 product.<Cite id="cbg-geneesmiddeleninformatiebank" /> Under the Geneesmiddelenwet a substance is a medicine if it is meant for, or presented as suitable for, curing or preventing disease, wounds or pain, or changing body functions through a pharmacological effect (art. 1). Selling, supplying, stocking or importing a medicine without a marketing authorisation is prohibited, with narrow exceptions (art. 40).<Cite id="nl-geneesmiddelenwet" />
 - **Germany.** Finished medicines may be marketed only with a national licence or an EU authorisation (AMG § 21); BPC-157 has neither.<Cite id="de-amg-21,ema-medicines-json" />
-- **Belgium.** There is no EU authorisation and no approved product anywhere.<Cite id="ema-medicines-json,fda-pcac-2026-bpc157-briefing" />
+- **Belgium.** A medicine may be placed on the market only after a national or EU marketing authorisation has been granted (Medicines Act of 25 March 1964, art. 6 § 1). BPC-157 has no EU authorisation, and the FDA found no approved product anywhere.<Cite id="be-medicines-law-1964,ema-medicines-json,fda-pcac-2026-bpc157-briefing" />
 
 <Callout type="legal" title="The US vote does not apply here">
 Nothing the FDA or its advisory committee decides changes the legal position in the Netherlands or anywhere else in the EU.
@@ -266,15 +279,15 @@ BPC-157 is not FDA-approved, has no US Pharmacopeia monograph and is part of no 
 
 The FDA nevertheless evaluated BPC-157 on its own initiative, for ulcerative colitis only, and its staff concluded that it should not be listed: it is not well characterised, and effectiveness and safety are unsupported.<Cite id="fda-pcac-2026-bpc157-briefing,fda-pcac-2026-briefing-intro" /> What happened next is the most misreported fact about BPC-157:
 
-- On 23 July 2026 the FDA's Pharmacy Compounding Advisory Committee (PCAC) voted 8–6 with one abstention to recommend BPC-157 for the 503A bulk drug substances list.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" />
-- The committee considered seven peptides over two days and recommended six: BPC-157, KPV, TB-500, MOTS-c, Semax and epitalon. Emideltide (DSIP) was not recommended.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" />
+- On 23 July 2026 the FDA's Pharmacy Compounding Advisory Committee (PCAC) voted 8–6 with one abstention to recommend BPC-157 for the 503A bulk drug substances list (count as reported from the public meeting; see below).<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" />
+- The committee considered seven peptides over two days.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" /> As reported from the meeting, it recommended six: BPC-157, KPV, TB-500, MOTS-c, Semax and epitalon. Emideltide (DSIP) was not recommended.
 - The vote is advisory and non-binding, and it went against the FDA staff's own recommendation.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" />
 - Legal compounding remains prohibited until the FDA formally adopts the recommendation and completes rulemaking.<Cite id="fda-503a-bulks-page" />
-- None of these is an approved medicine. A 503A listing, if it ever happens, would allow pharmacy compounding on prescription in the US. It is not a marketing authorisation, says nothing about efficacy, and changes nothing in the EU or the Netherlands.
+- None of these is an approved medicine. A 503A listing, if it ever happens, would allow pharmacy compounding on prescription in the US. It is not a marketing authorisation, says nothing about efficacy, and changes nothing in the EU or the Netherlands.<Cite id="fda-pcac-2026-presentations-day1,fda-pcac-2026-bpc157-briefing,fda-503a-bulks-page" />
 
-Even a listing would not bring product oversight. The FDA reminded the committee that a compounded drug is not FDA-approved, need not follow good manufacturing practice, and need not have its adverse events reported. Unless the listing sets limits, the substance can be compounded for any use and route.<Cite id="fda-pcac-2026-presentations-day1" />
+Even a listing would not make compounded BPC-157 an FDA-checked product. The FDA reminded the committee that a compounded drug is not FDA-approved and need not follow good manufacturing practice (although insanitary conditions remain prohibited), and that compounders need not report its adverse events to the FDA. Unless the listing sets limits, the substance can be compounded for any use and route.<Cite id="fda-pcac-2026-presentations-day1" />
 
-The FDA documents confirm the date, the seven peptides, the voting questions and the staff recommendation. The FDA had not posted written minutes by 20 October 2026, so the vote counts and the six-of-seven outcome are as reported from the public meeting; we will check them against the minutes.<Cite id="fda-pcac-2026-07-meeting" />
+The FDA documents confirm the date, the seven peptides, the voting questions and the staff recommendation. The voting questions asked about the free base and the acetate salt of BPC-157 separately.<Cite id="fda-pcac-2026-questions" /> The FDA had not posted written minutes by 20 October 2026, so the vote counts and the six-of-seven outcome are as reported from the public meeting; we will check them against the minutes, including whether the two BPC-157 votes differed.<Cite id="fda-pcac-2026-07-meeting" /> By the same date the FDA had not proposed a rule to add BPC-157 to the list.<Cite id="federalregister-503a-search-2026-10-20,fda-503a-bulks-page" />
 
 ### Sport (WADA)
 
@@ -286,13 +299,13 @@ BPC-157 has been named on the World Anti-Doping Agency's Prohibited List since 1
 
 ### What has been reported in people
 
-The published human studies reported no serious adverse events, but the FDA notes they were short, small and said little about how safety was monitored.<Cite id="fda-pcac-2026-bpc157-briefing" /> The FDA's adverse-event database held three reports up to 4 December 2025, all after injections: nine days of redness and swelling at the injection site (in someone also injecting thymosin); shortness of breath leading to an emergency visit; and diffuse darkening of the skin and gums after a week of a combined BPC-157 and TB-500 product labelled "for research purposes only", which recurred on restarting and stopped on stopping.<Cite id="fda-pcac-2026-bpc157-briefing" /> None proves that BPC-157 was the cause. US compounding pharmacies do not have to report adverse events, so the small number of reports says little about how often problems occur.
+The published human studies reported no serious adverse events, but the FDA notes they were short, small and said little about how safety was monitored.<Cite id="fda-pcac-2026-bpc157-briefing" /> The 2026 dental report, published after the FDA review, reported no adverse events.<Cite id="froum-2026-nerve-cases" /> The FDA's adverse-event database held three reports up to 4 December 2025, all after injections: nine days of redness and swelling at the injection site (in someone also injecting thymosin); shortness of breath leading to an emergency visit; and diffuse darkening of the skin and gums after a week of a combined BPC-157 and TB-500 product labelled "for research purposes only". The same reaction came back when the product was restarted, and there were no further reactions after the person stopped all peptides.<Cite id="fda-pcac-2026-bpc157-briefing" /> None proves that BPC-157 was the cause. US compounding pharmacies do not have to report adverse events to the FDA, so the small number of reports says little about how often problems occur.<Cite id="fda-pcac-2026-presentations-day1,fda-pcac-2026-bpc157-briefing" />
 
 ### What the animal toxicology flags
 
 The Chinese toxicology paper called BPC-157 well tolerated. The FDA's re-analysis of the same data described "clinically relevant safety signals":<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing" />
 
-- **Clotting.** A shortened clotting time (aPTT) in male rats and a prolonged one in dogs. In humans a shortened aPTT is a known risk factor for clots.
+- **Clotting.** A shortened clotting time (aPTT) in male rats and a prolonged one in male dogs. In humans a shortened aPTT is a known risk factor for clots, and a prolonged one can be a risk factor for bleeding.
 - **Liver and blood fats.** Rises in a liver enzyme (ALT), glucose and triglycerides in female rats after treatment stopped, and raised triglycerides in female dogs.
 - **Kidney marker.** Lower creatinine in dogs.
 
@@ -300,7 +313,7 @@ Each came from a single 28-day study, and longer studies would be needed to tell
 
 ### Product quality and immune reactions
 
-For most people the most immediate risk is the product. The certificates the FDA reviewed did not identify impurities or report tests for bacterial endotoxin or microbial contamination, both essential for anything injected.<Cite id="fda-pcac-2026-bpc157-briefing" /> Peptides can also clump together, and synthesis leaves near-copies of the chain; both present the repeated, unfamiliar patterns the immune system is built to notice. The FDA concluded that, injected or sprayed into the nose, BPC-157 "may pose a significant risk for immunogenicity", made worse by aggregation and impurities and never formally studied.<Cite id="fda-pcac-2026-bpc157-briefing" /> Consequences range from silent antibodies to allergic reactions. See [product risk](/en/safety/product-risk/).
+The most immediate risk may be the product itself. The certificates of analysis the FDA reviewed reported purity, but not specific impurities, clumps of peptide, or tests for bacterial endotoxin or microbial contamination. The FDA calls endotoxin testing critical for anything injected.<Cite id="fda-pcac-2026-bpc157-briefing" /> Peptides can clump together during storage, and synthesis leaves near-copies of the chain; both present the repeated, unfamiliar patterns the immune system is built to notice. The FDA concluded that, injected or sprayed into the nose, BPC-157 "may pose a significant risk for immunogenicity", possibly made worse by aggregation and impurities, and that no study has formally tested this. Consequences of an immune response range from antibodies that cause no symptoms to severe, even life-threatening, reactions.<Cite id="fda-pcac-2026-bpc157-briefing" /> See [product risk](/en/safety/product-risk/).
 
 ### Why an effect on cancer is theorised
 
@@ -313,9 +326,9 @@ The reasoning combines well-established cancer biology with findings about BPC-1
 
 So the worry is not that BPC-157 creates cancer: it was not genotoxic in standard tests.<Cite id="xu-2020-preclinical-safety" /> The worry is that something which helps vessels sprout and cells migrate could help an existing, perhaps undiagnosed, tumour grow or spread. Genotoxicity tests detect the DNA damage that starts a cancer; they cannot detect promotion of one that already exists. That needs long-term carcinogenicity studies and human follow-up. No carcinogenicity studies of BPC-157 in the regulatory sense have been published.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
-There are honest counter-arguments. The originating group argues that BPC-157 "controls" angiogenesis rather than simply driving it, and reports anti-tumour effects in some models.<Cite id="sikiric-2025-comment" /> An independent review found only one cancer-related study, a mouse model of cancer weight loss in which tumour volume did not differ significantly.<Cite id="jozwiak-2025-review" /> No published study shows tumour promotion. The risk is plausible but untested.
+There are honest counter-arguments. The originating group argues that BPC-157 "controls" angiogenesis rather than simply driving it, and reports anti-tumour effects in some models.<Cite id="sikiric-2025-comment" /> An independent review found only one cancer-related study, a mouse model of cancer weight loss in which tumour volume did not differ significantly.<Cite id="jozwiak-2025-review" /> We found no published study that shows tumour promotion. The risk is plausible but untested.
 
-A precedent shows why the question matters. Becaplermin (Regranex), an authorised growth-factor gel for diabetic foot ulcers, "promotes cellular proliferation and angiogenesis". Its 2011 label carried a boxed warning about more cancer deaths in people using three or more tubes. The warning was removed in November 2018, when the label reported the signal in one of three post-marketing studies, but the label still warns about cancers and forbids use over a known tumour.<Cite id="fda-regranex-label-2011,fda-regranex-label-2018" /> Such signals only emerge, and are only resolved, with large human datasets. BPC-157 has none.
+A precedent shows why the question matters. Becaplermin (Regranex), a growth-factor gel for diabetic foot ulcers authorised in the US (its EU authorisation ended in 2012), "promotes cellular proliferation and angiogenesis".<Cite id="fda-regranex-label-2018,ema-medicines-json" /> Its 2011 label carried a boxed warning about more cancer deaths in people using three or more tubes. The warning was removed in November 2018, when the label reported the signal in one of three post-marketing studies, but the label still warns about cancers and forbids use over a known tumour.<Cite id="fda-regranex-label-2011,fda-regranex-label-2018" /> Such signals only emerge, and are only resolved, with large human datasets. BPC-157 has none.
 
 ### Sport
 
@@ -325,15 +338,13 @@ BPC-157 is prohibited in sport at all times,<Cite id="wada-2026-list-en" /> and 
 
 <Section id="harm-reduction">
 
-This section is for people who use BPC-157 or have decided to. It is not a recommendation, and it gives no amounts, schedules or sources.
-
 ### Talk to a doctor first
 
-A doctor can check for the conditions where the theoretical risks matter most (cancer, pregnancy, clotting problems) and make sure the injury itself is properly diagnosed. A torn tendon or ligament may need imaging or surgery within weeks, and self-treatment can delay care that works. See [talking to your doctor](/en/talking-to-your-doctor/).
+A doctor can check for the conditions where the theoretical risks matter most: cancer, pregnancy and clotting problems. A doctor can also make sure the injury itself is properly diagnosed. A torn tendon or ligament may need a scan or surgery within weeks. Treating yourself can delay care that works. See [talking to your doctor](/en/talking-to-your-doctor/).
 
 ### Know what you cannot know about the product
 
-A vial labelled BPC-157 may hold a different salt, more or less peptide, near-copies of the chain, solvents or bacterial toxins, and nobody checked it ([product risk](/en/safety/product-risk/)). If you inject anything, follow [sterile technique](/en/safety/sterile-technique/): most immediate harm from injected products comes from infection and contamination.
+A vial labelled BPC-157 may hold a different salt, or more or less peptide than the label says. It may also hold near-copies of the chain, solvents or bacterial toxins. No regulator has checked it (see [product risk](/en/safety/product-risk/)). If you inject anything, follow [sterile technique](/en/safety/sterile-technique/). A contaminated product or needle can cause an infection.
 
 ### Checks that make mechanistic sense
 
@@ -342,9 +353,9 @@ Discuss these with a doctor, who decides what is appropriate:
 <Checklist>
 
 - **Cancer screening due for your age, and any unexplained lump, bleeding or weight loss checked first**, because of the theoretical effect on blood-vessel growth.
-- **Liver enzymes and blood fats**, because these rose in female rats and dogs.
+- **Liver enzymes and blood fats**, because both rose in female rats, and blood fats also rose in female dogs.
 - **Clotting tests, especially if you take a blood thinner or have had a clot**, because clotting times changed in rats and dogs.
-- **Kidney tests, telling the lab you use BPC-157**, because creatinine, the standard kidney marker, fell in dogs, and a falsely low value could hide a problem.
+- **Kidney tests, telling the doctor you use BPC-157**, because creatinine, the standard kidney marker, fell in dogs. If it does the same in people, a low value could make the kidneys look healthier than they are.
 
 </Checklist>
 
@@ -358,7 +369,7 @@ Discuss these with a doctor, who decides what is appropriate:
 ### Plausible interactions (none has been studied)
 
 - **Blood thinners and antiplatelet medicines**, because of the clotting changes in animals.
-- **Medicines that lower blood pressure or act through nitric oxide** (such as nitrates or sildenafil), because BPC-157 relaxed isolated arteries through nitric oxide.<Cite id="hsieh-2020-src-cav1-enos" />
+- **Medicines that lower blood pressure or act through nitric oxide** (such as nitrates or sildenafil), because BPC-157 relaxed isolated rat and human arteries through nitric oxide.<Cite id="hsieh-2020-src-cav1-enos,yildirim-2026-mammary-artery" />
 - **Cancer medicines that block blood-vessel growth**, because BPC-157 pushes the same pathway the other way.
 - **Combination products with other peptides**, such as TB-500 blends, which add a second unknown, make any reaction impossible to attribute, and gave no extra benefit in rats.<Cite id="bicer-2026-achilles,fda-pcac-2026-bpc157-briefing" />
 

@@ -23,6 +23,11 @@ export const BLOCK_COMPONENTS = [
   'GlossaryIndex',
   'SourcesIndex',
   'JurisdictionCard',
+  'Explainer',
+  // media pipeline (docs/MEDIA-GUIDE.md)
+  'Photo',
+  'Infographic',
+  'MediaCredits',
 ] as const;
 /** Valid only inside src/content/compounds/**. They read the compound from the page context. */
 export const COMPOUND_ONLY_COMPONENTS = ['Section', 'Mechanism', 'StudyTable', 'RegulatoryTable', 'AuthorisedProducts', 'SequenceView'] as const;

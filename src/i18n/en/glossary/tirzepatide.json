@@ -61,7 +61,9 @@
       "desensitised",
       "desensitized",
       "desensitizes",
-      "receptor desensitisation"
+      "receptor desensitisation",
+      "desensitises",
+      "desensitise"
     ],
     "definition": "A cell's response to a signal gets weaker when the signal goes on and on. Often the cell pulls receptors off its surface or switches them off.",
     "category": "biology",
@@ -340,7 +342,8 @@
     "aliases": [
       "AKI",
       "acute renal failure",
-      "kidney injury"
+      "kidney injury",
+      "acute kidney failure"
     ],
     "definition": "A sudden drop in how well the kidneys work, over hours or days. Severe dehydration, for example from long-lasting vomiting or diarrhoea, is one cause.",
     "category": "safety",
@@ -396,6 +399,105 @@
     ],
     "definition": "A Dutch lifestyle programme for people with overweight or obesity, with a focus on things like physical activity and diet. Dutch guidelines put it first, before obesity medicines are considered.",
     "category": "regulation",
+    "see_also": []
+  },
+  "gastroparesis": {
+    "term": "gastroparesis",
+    "aliases": [
+      "severe gastroparesis"
+    ],
+    "definition": "A condition in which the stomach empties very slowly, without a blockage. It causes nausea, vomiting and feeling full quickly.",
+    "category": "biology",
+    "see_also": [
+      "gastric-emptying"
+    ]
+  },
+  "anaphylaxis": {
+    "term": "anaphylaxis",
+    "aliases": [
+      "anaphylactic reaction",
+      "anaphylactic reactions"
+    ],
+    "definition": "A severe allergic reaction that affects the whole body within minutes. It can cause breathing problems and a sudden drop in blood pressure, and needs emergency care.",
+    "category": "safety",
+    "see_also": [
+      "angioedema"
+    ]
+  },
+  "angioedema": {
+    "term": "angioedema",
+    "aliases": [],
+    "definition": "Swelling deep under the skin, often of the face, lips, tongue or throat. Swelling in the throat can block breathing.",
+    "category": "safety",
+    "see_also": [
+      "anaphylaxis"
+    ]
+  },
+  "inr": {
+    "term": "INR",
+    "aliases": [
+      "international normalised ratio",
+      "international normalized ratio"
+    ],
+    "definition": "A blood test that shows how long blood takes to clot. People who take warfarin or similar medicines have it checked regularly.",
+    "category": "pharmacology",
+    "see_also": [
+      "narrow-therapeutic-index"
+    ]
+  },
+  "sglt2-inhibitor": {
+    "term": "SGLT2 inhibitor",
+    "aliases": [
+      "SGLT2 inhibitors"
+    ],
+    "definition": "A diabetes tablet that makes the kidneys pass more sugar into the urine. Examples are dapagliflozin and empagliflozin.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "metformin": {
+    "term": "metformin",
+    "aliases": [],
+    "definition": "The most common first tablet for type 2 diabetes. It lowers the amount of sugar the liver releases into the blood.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "insulin-glargine": {
+    "term": "insulin glargine",
+    "aliases": [
+      "glargine",
+      "long-acting insulin"
+    ],
+    "definition": "A long-acting insulin, usually injected once a day, that keeps a steady background level of insulin in the blood.",
+    "category": "pharmacology",
+    "see_also": [
+      "hypoglycaemia"
+    ]
+  },
+  "cohort-study": {
+    "term": "cohort study",
+    "aliases": [
+      "cohort studies",
+      "health-record study",
+      "health-record studies"
+    ],
+    "definition": "A study that follows groups of people who already use different treatments, without assigning treatments at random. Other differences between the groups can distort the result.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "gs-protein": {
+    "term": "Gs protein",
+    "aliases": [],
+    "definition": "A switch protein just inside the cell. When a receptor is activated, the Gs protein turns on an enzyme that makes the messenger cAMP.",
+    "category": "biology",
+    "see_also": [
+      "camp"
+    ]
+  },
+  "ileus": {
+    "term": "ileus",
+    "aliases": [],
+    "definition": "A condition in which the bowel stops moving food and fluid along, so they build up. It causes a swollen belly, pain and vomiting.",
+    "category": "safety",
     "see_also": []
   }
 }

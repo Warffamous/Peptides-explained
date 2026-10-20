@@ -41,12 +41,12 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search, ema-medicines-json] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
-  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
   - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-bpc157-briefing] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-bpc157-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-503a-categories-2026-05, fda-category-2-safety-risks] }
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2022-list-modifications, wada-2026-list-en, wada-2027-list-en] }
 studies:
-  # --- cells in a dish (independent group, Chang Gung University, Taiwan)
+  # --- cells and isolated tissue (independent groups: Chang Gung University, Taiwan; Ankara, Turkey)
   - id: chang-2011-tendon-fibroblasts
     source: chang-2011-tendon-fibroblasts
     year: 2011
@@ -57,13 +57,16 @@ studies:
     group: independent
     blinded: null
     controlled: true
+  # PMC6271067 acknowledgements: 'National Science Council of Taiwan and Chang Gung Memorial
+  # Hospital' supported the work (government + academic medical centre), so mixed. Corrected from
+  # 'undisclosed' at the completion fact-check, 20 October 2026.
   - id: chang-2014-ghr
     source: chang-2014-ghr
     year: 2014
     species: in-vitro
     n: null
     design: in-vitro
-    funding: undisclosed
+    funding: mixed
     group: independent
     blinded: null
     controlled: true
@@ -88,9 +91,26 @@ studies:
     group: independent
     blinded: null
     controlled: true
+  # Rings of internal mammary artery left over from bypass surgery in 12 men (14 consented, 2
+  # samples unusable), studied in an organ bath (PMC13163310). Lab experiment on human tissue, so
+  # species in-vitro (not 'human', which the StudyTable counts as a human study). n = patients.
+  # 'This research received no external funding'; hospital/university laboratory work, so academic
+  # (same convention as bicer-2026). No rings given solvent alone over the same time were reported;
+  # the comparisons (endothelium removed, L-NAME) test mechanism, not effect, so controlled: false.
+  - id: yildirim-2026-artery
+    source: yildirim-2026-mammary-artery
+    year: 2026
+    species: in-vitro
+    n: 12
+    design: in-vitro
+    funding: academic
+    group: independent
+    blinded: null
+    controlled: false
   # --- developer's own laboratory (PLIVA, Zagreb) — industry. Coded mixed, not independent:
-  # co-authors Mildner B and Perović D also appear on Zagreb-group papers (PMIDs 8298609,
-  # 9298922, 14554208), and PLIVA developed the group's compound under licence.
+  # co-authors Mildner B and Perović D also appear on Zagreb-group papers (Mildner B on PMID 8298609;
+  # Perović D on PMIDs 9298922 and 14554208; checked in PubMed 20 October 2026), and the group's own
+  # papers describe PLIVA's clinical development of their compound (PMIDs 14554208, 18818478).
   - id: tkalcevic-2007-egr1
     source: tkalcevic-2007-egr1
     year: 2007
@@ -125,6 +145,9 @@ studies:
   # --- independent animal studies
   # Full text: 'The authors received no financial support'; hospital/university work, so academic.
   # Assessors blinded (pathologist blinded to group; biomechanical specimens coded).
+  # n = 32 rats (8/group); each group split 4 biomechanics + 4 histology, so every comparison is
+  # n = 4 per group. BPC-157 vs control: load to failure adj. p = 0.389, total Bonar p = 0.273 (n.s.);
+  # Sirius red type I collagen intensity higher, p = 0.009 (third fact-check, 20 October 2026).
   - id: bicer-2026-achilles
     source: bicer-2026-achilles
     year: 2026
@@ -135,8 +158,8 @@ studies:
     group: independent
     blinded: true
     controlled: true
-  # Human artery segments left over from bypass surgery (12 patients), studied in an organ bath.
-  # 'This research received no external funding' (university work, so academic).
+  # Xi'an (Fourth Military Medical University / Air Force Medical University), the laboratory that
+  # was developing BPC-157 as a wound drug. Same laboratory as he-2022 and zhang-2026-fbxo22.
   - id: xu-2020-toxicology
     source: xu-2020-preclinical-safety
     year: 2020
@@ -158,9 +181,11 @@ studies:
     blinded: null
     controlled: false
   # --- humans
-  # Developer's trial (PL 14736; authors Ruenzi, Stolte, Veljaca, Oreskovic, Peterson per the FDA
-  # reference list). Coded mixed for the same reason as tkalcevic-2007: PLIVA's PL 14736 abstracts
-  # share authors (Mildner B) with the originating group. Known only via the FDA summary.
+  # Developer's trial (PL 14736; authors Ruenzi M, Stolte M, Veljaca M, Oreskovic K, Peterson J per
+  # the FDA reference list). Coded mixed for the same reason as tkalcevic-2007: it belongs to PLIVA's
+  # PL 14736 programme, whose phase 1 abstracts (Veljaca 2002, 2003) list Mildner B, a co-author of
+  # the originating group's 1993 paper. Ruenzi 2005 itself lists no Zagreb-group author. Known only
+  # via the FDA summary (conference abstract, Gastroenterology 128:A584).
   - id: ruenzi-2005-colitis-abstract
     source: fda-pcac-2026-bpc157-briefing
     year: 2005
@@ -202,9 +227,23 @@ studies:
     group: independent
     blinded: false
     controlled: false
-  # Three dental patients given a mixture (ARA-290, TB-500, BPC-157, dexamethasone, bupivacaine).
-  # 'Financial support was not received' (university-affiliated authors, so academic).
+  # Three dental patients given weekly gum injections of a five-drug mixture (ARA-290, TB-500,
+  # BPC-157, dexamethasone, bupivacaine with adrenaline) for 4 weeks (PMC13661421, published
+  # 30 September 2026). Authors: university, hospital, private practice and an anti-ageing medicine
+  # society. 'The author(s) declared that financial support was not received for this work', so
+  # there is no funder to classify: funding not-applicable (rendered as a dash; the limitation text
+  # says no funding was declared). Not academic, because the treatment setting is not stated.
+  - id: froum-2026-nerve-cases
+    source: froum-2026-nerve-cases
+    year: 2026
+    species: human
+    n: 3
+    design: case-series
+    funding: not-applicable
+    group: independent
+    blinded: false
+    controlled: false
 authorised_products: []
-related: []   # add tb-500 back when its page is finished (drafts/compounds/tb-500.yaml)
+related: [tb-500]
 last_reviewed: 2026-10-20
 reviewed_by: pending-medical-review

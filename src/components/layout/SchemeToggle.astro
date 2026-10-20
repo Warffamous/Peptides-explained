@@ -1,17 +1,26 @@
 ---
-/** Light/dark/automatic. Needs JavaScript, so it stays hidden until the boot script has run. */
+/**
+ * Light/dark/automatic. Needs JavaScript: without it, CSS hides it (structure.css, :root:not(.js)).
+ * It is NOT hidden with the hidden attribute until this script runs: the inline head script sets
+ * html.js before first paint, so the button is laid out from the start and the header never grows
+ * after load (that late reveal wrapped the utility row on phones: a layout shift).
+ */
 import { t } from '../../lib/i18n';
 import Icon from '../ui/Icon.astro';
 interface Props { locale: string }
 const { locale } = Astro.props;
 ---
-<button type="button" class="scheme-toggle" data-scheme-toggle hidden
+<button type="button" class="scheme-toggle" data-scheme-toggle
   data-label-auto={t(locale, 'common.utility.schemeAuto')}
   data-label-light={t(locale, 'common.utility.schemeLight')}
   data-label-dark={t(locale, 'common.utility.schemeDark')}
   aria-label={`${t(locale, 'common.utility.colourScheme')}: ${t(locale, 'common.utility.schemeAuto')}`}>
   <Icon name="sun" class="scheme-toggle__light" />
   <Icon name="moon" class="scheme-toggle__dark" />
+  {/* Shown only inside the phone menu (structure.css): the same words as the accessible name, with
+      the current setting, so a tap that changes nothing on screen (automatic to light on a light
+      screen) still says what it did. Hidden everywhere else, so updating it never moves anything. */}
+  <span class="scheme-toggle__text" aria-hidden="true">{`${t(locale, 'common.utility.colourScheme')}: ${t(locale, 'common.utility.schemeAuto')}`}</span>
 </button>
 <script>
   const btn = document.querySelector<HTMLButtonElement>('[data-scheme-toggle]');
@@ -20,14 +29,19 @@ const { locale } = Astro.props;
     const order = ['auto', 'light', 'dark'] as const;
     const label = (s: string) => `${btn.getAttribute('aria-label')!.split(':')[0]}: ${btn.dataset[`label${s[0].toUpperCase()}${s.slice(1)}`]}`;
     const current = () => (root.dataset.scheme as 'light' | 'dark' | undefined) ?? 'auto';
+    const text = btn.querySelector('.scheme-toggle__text');
+    const show = (s: string) => {
+      btn.setAttribute('aria-label', label(s));
+      if (text) text.textContent = label(s);
+    };
     btn.hidden = false;
-    btn.setAttribute('aria-label', label(current()));
+    show(current());
     btn.addEventListener('click', () => {
       const next = order[(order.indexOf(current()) + 1) % order.length];
       if (next === 'auto') delete root.dataset.scheme;
       else root.dataset.scheme = next;
       try { next === 'auto' ? localStorage.removeItem('pe-scheme') : localStorage.setItem('pe-scheme', next); } catch { /* ignore */ }
-      btn.setAttribute('aria-label', label(next));
+      show(next);
     });
   }
 </script>

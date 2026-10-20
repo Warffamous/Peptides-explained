@@ -1,0 +1,75 @@
+@import "../../base/beginner.css";
+
+/*
+ * A · Monograph — the beginner layer. The pharmacopoeia's "abstract" box and a hairline table of
+ * four plain answers. Ink and one accent; no colour coding, no rounded corners, no shadows, no motion.
+ * How settled an answer is shows the Monograph way, by line pattern above it (the same vocabulary as
+ * the status badge): solid = yes, dashed = partly, dotted = no. The words always say it first.
+ */
+
+/* ------------------------------------------------------------------ at a glance */
+.at-a-glance { margin-block: 0 var(--space-5); --pg-cut: var(--paper); }
+.at-a-glance__title {
+  margin-block-end: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--s--2);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* A hairline grid: the 1px gaps show the rule colour between paper cells, at any column count. */
+.at-a-glance__tiles { gap: 1px; background: var(--rule); border-block: 2px solid var(--ink); }
+@container doc (min-width: 34rem) { .at-a-glance__tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@container doc (min-width: 58rem) { .at-a-glance__tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.at-a-glance__tile { gap: var(--space-3); padding: var(--space-4) var(--space-3) var(--space-5); background: var(--paper); }
+.at-a-glance__q {
+  font-family: var(--font-mono);
+  font-size: var(--s--2);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.at-a-glance__a { gap: var(--space-3); }
+.at-a-glance__icon { padding: 0.3rem; border: var(--hair) solid var(--rule-strong); color: var(--ink); }
+.at-a-glance__icon .pictogram { inline-size: 1.6rem; block-size: 1.6rem; }
+.at-a-glance__body { gap: var(--space-2); }
+/* Every answer gets the rule's space, so answers in one row line up; only graded answers draw it. */
+.at-a-glance__body::before { content: ''; inline-size: 2.5rem; border-block-start: 3px solid transparent; }
+.at-a-glance__tile[data-tone] .at-a-glance__body::before { border-block-start-color: var(--ink); }
+.at-a-glance__tile[data-tone='partial'] .at-a-glance__body::before { border-block-start-style: dashed; }
+.at-a-glance__tile[data-tone='no'] .at-a-glance__body::before { border-block-start-style: dotted; }
+.at-a-glance__short { font-size: var(--s-2); font-weight: 650; letter-spacing: -0.015em; line-height: 1.1; }
+.at-a-glance__text { font-size: var(--s-0); line-height: 1.4; }
+.at-a-glance__text--risk { font-size: var(--s-1); font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
+.at-a-glance__code { font-family: var(--font-mono); font-size: var(--s--1); color: var(--ink-2); }
+.at-a-glance__more { font-size: var(--s--1); }
+.at-a-glance__more--signs { font-size: var(--s-0); font-weight: 600; }
+.at-a-glance__foot { margin-block-start: var(--space-2); font-size: var(--s--1); color: var(--ink-2); }
+
+/* ------------------------------------------------------------------ in short: the abstract box */
+.summary-box { margin-block-end: var(--space-6); padding: var(--space-5); border: 1px solid var(--rule-strong); border-block-start-width: 4px; }
+.summary-box__head { align-items: baseline; justify-content: space-between; margin-block-end: var(--space-4); }
+.summary-box__title { font-size: var(--s-2); font-weight: 650; letter-spacing: -0.015em; line-height: 1.2; }
+.summary-box__time { font-family: var(--font-mono); font-size: var(--s--1); color: var(--ink-2); }
+.summary-box__list { font-size: var(--s-1); line-height: 1.45; }
+.summary-box__item { column-gap: var(--space-4); padding-block: var(--space-3); border-block-start: var(--hair) solid var(--rule); }
+.summary-box__item:first-child { padding-block-start: 0; border-block-start: 0; }
+.summary-box__item:last-child { padding-block-end: 0; }
+.summary-box__marker {
+  min-inline-size: 2ch;
+  padding-block-start: 0.3em;
+  font-family: var(--font-mono);
+  font-size: var(--s--1);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.summary-box__marker::before { content: counter(summary, decimal-leading-zero); }
+.summary-box__text { max-inline-size: var(--measure); }
+.page--landing .summary-box__list { font-size: var(--s-2); line-height: 1.35; }
+
+/* ------------------------------------------------------------------ technical details */
+.compound-tech { padding-block-start: var(--space-4); border-block-start: 2px solid var(--ink); }
+.compound-tech__title { margin-block-end: var(--space-3); font-size: var(--s-1); font-weight: 650; letter-spacing: -0.01em; }

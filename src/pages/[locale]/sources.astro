@@ -1,6 +1,7 @@
 ---
 import BuiltinPage from '../../layouts/BuiltinPage.astro';
 import SourcesIndex from '../../components/mdx/SourcesIndex.astro';
+import MediaCredits from '../../components/mdx/MediaCredits.astro';
 import { BUILT_LOCALES } from '../../lib/config';
 import { t } from '../../lib/i18n';
 export const getStaticPaths = () => BUILT_LOCALES.map((l) => ({ params: { locale: l.code } }));
@@ -9,4 +10,5 @@ Astro.locals.locale = locale;
 ---
 <BuiltinPage locale={locale} routeKey="sources" title={t(locale, 'pages.sources.title')} description={t(locale, 'pages.sources.description')} summary={[t(locale, 'pages.sources.intro')]}>
   <SourcesIndex />
+  <MediaCredits />
 </BuiltinPage>

@@ -1,0 +1,110 @@
+---
+/**
+ * Explainer "glp1-action": how a long-acting GLP-1 receptor agonist (semaglutide) works.
+ * Anatomy, so it never mirrors in RTL. No text inside the SVG; words are Overlay labels, and every
+ * mark that carries meaning has its word beside it (docs/EXPLAINERS.md §1, rule 8a).
+ *   1 (k0) circulates bound to albumin (inset)        human
+ *   2 (k1) beta cells: more insulin when glucose high  human
+ *   3 (k2) alpha cells: less glucagon                  human
+ *   4 (k3) stomach empties a little more slowly        human
+ *   5 (k4) brain appetite areas (animal) → eats less (human)
+ * Layout, top to bottom: inset, brain and plate; the blood vessel (VY lower than the inset so its
+ * label fits under it); a band for the "more insulin" / "less glucagon" words; pancreas and stomach (OY).
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, link, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string }
+const { uid, levels: L, labels, locale } = Astro.props;
+const W = 480;
+const H = 404;
+const VY = 40; // blood vessel, shifted down from the original drawing
+const OY = 84; // pancreas and stomach, shifted down from the original drawing
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer glp1-action: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+const glow = `url(#${uid}-glow)`;
+const complexes = [64, 150, 232, 420];
+// Repeated shapes are written out, not <use>d: document CSS does not reach inside a <use> shadow tree.
+const HEX = 'M5 0L2.5 4.3H-2.5L-5 0L-2.5-4.3H2.5Z';
+const DIA = 'M0-5L4.5 0L0 5L-4.5 0Z';
+const cubes = [[26, 153], [40, 169], [102, 153], [116, 169], [196, 153], [214, 169], [266, 166], [452, 156]];
+const P = { w: W, h: H, locale };
+---
+<svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+  <defs>
+    <filter id={`${uid}-glow`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+  </defs>
+
+  <!-- blood vessel with glucose (the cubes pulse while the beta cells sense it) -->
+  <g transform={`translate(0 ${VY})`}>
+    <rect class="xp-vessel" x="10" y="148" width="460" height="34" rx="17" />
+    {cubes.map(([x, y], i) => <rect class:list={['xp-glu', x < 260 && 'xp-pulse']} x={x - 3.5} y={y - 3.5} width="7" height="7" rx="1.5" style={x < 260 ? at(1, 0.15 * (i % 4)) : undefined} />)}
+    <!-- 1: semaglutide bound to albumin, sliding along the vessel -->
+    {complexes.map((x, i) => (
+      <g class="xp-in xp-move" transform={`translate(${x} 165)`} style={at(0, 0.2 * i, '--dx:-44px')}>
+        <ellipse class="xp-alb" rx="12" ry="8.5" /><rect class="xp-drug" x="-13" y="-17.5" width="17" height="6.5" rx="3.25" /><path class="xp-tail" d="M2-11l3 2.5l-2.5 2.5l3 2.5" />
+      </g>
+    ))}
+  </g>
+  <!-- 1: the inset zooms in on one complex -->
+  <g class="xp-in" style={at(0, 0.9)}>
+    <circle class="xp-inset" cx="112" cy="70" r="56" />
+    <path class="xp-detail xp-zoom" d={`M146 115L152 ${154 + VY}M98 125L146 ${158 + VY}`} />
+    <ellipse class="xp-alb" cx="112" cy="84" rx="34" ry="23" />
+    <g class="xp-drug">{[[74, 46], [86, 39], [99, 36], [112, 37], [125, 41]].map(([x, y]) => <circle cx={x} cy={y} r="5.5" />)}</g>
+    <path class="xp-tail" d="M112 43l5 5l-5 4l5 4" />
+  </g>
+
+  <!-- pancreas: beta cell (receptors) and alpha cell; stomach with food -->
+  <g transform={`translate(0 ${OY})`}>
+    <path class="xp-organ" d="M38 258C36 232 62 220 92 222C124 224 150 232 186 232C222 232 252 226 266 236C278 245 270 262 252 266C220 272 186 272 156 278C122 285 96 300 68 296C48 293 39 278 38 258Z" />
+    <circle class="xp-cell xp-beta" cx="100" cy="256" r="21" />
+    <circle class="xp-cell xp-alpha" cx="200" cy="252" r="15" />
+    <path class="xp-rec" d="M88 239v-5l-3-4m3 4l3-4M100 235v-5l-3-4m3 4l3-4M112 239v-5l-3-4m3 4l3-4" />
+    <circle class="xp-ring xp-in" cx="100" cy="256" r="27" style={at(1, 0.6)} />
+    <circle class="xp-ring xp-in" cx="200" cy="252" r="21" style={at(2, 0.6)} />
+    <path class="xp-organ" d="M400 214C404 204 414 198 428 199C448 201 460 220 459 244C458 274 440 300 408 306C380 311 348 304 330 290L314 296L310 282L326 274C346 274 368 268 384 254C394 244 398 228 400 214Z" />
+    <path class="xp-organ xp-open" d="M312 289C302 292 296 300 294 312" />
+    <g class="xp-pulse" style={at(3, 0.8)}><path class="xp-food" d="M334 288C352 296 384 302 408 298C434 292 452 270 455 248C436 252 416 258 398 264C376 272 352 282 334 288Z" /></g>
+    <circle class="xp-ring xp-in" cx="314" cy="288" r="11" style={at(3, 0.6)} />
+    {[[302, 299], [296, 309]].map(([x, y], i) => <circle class="xp-food xp-in xp-move" cx={x} cy={y} r="3" style={at(3, 0.9 + 0.7 * i, '--dx:10px;--dy:-9px')} />)}
+  </g>
+
+  <!-- 2: link to beta cells; insulin released (labelled "more insulin") -->
+  <path {...link(L[1][0], 1)} d={`M118 ${183 + VY}C118 ${210 + VY} 103 ${200 + OY} 100 ${229 + OY}`} />
+  {[[40, 240], [54, 232], [68, 242]].map(([x, y], i) => <path class="xp-ins xp-in xp-move" transform={`translate(${x} ${y})`} d={HEX} style={at(1, 0.9 + 0.25 * i, '--dy:22px')} />)}
+
+  <!-- 3: link to alpha cells; glucagon falls (two granules leave, one stays; labelled "less glucagon") -->
+  <path {...link(L[2][0], 2)} d={`M204 ${183 + VY}C204 ${210 + VY} 200 ${215 + OY} 200 ${235 + OY}`} />
+  <path class="xp-gcg" transform="translate(222 240)" d={DIA} />
+  <path class="xp-gcg xp-out" transform="translate(236 250)" d={DIA} style={at(2, 0.9)} />
+  <path class="xp-gcg xp-out" transform="translate(230 228)" d={DIA} style={at(2, 1.2)} />
+
+  <!-- 4: link to the stomach -->
+  <path {...link(L[3][0], 3)} d={`M372 ${183 + VY}C372 ${210 + VY} 384 ${226 + OY} 389 ${244 + OY}`} />
+
+  <!-- 5: brain appetite areas (link from animal studies) → smaller meals (shown in people) -->
+  <path class="xp-organ" d="M238 74C234 46 258 24 288 24C306 14 336 16 350 30C370 34 380 54 374 72C380 88 370 104 354 106C348 116 334 120 322 114L320 126H310V112C288 116 264 112 250 100C240 94 238 84 238 74Z" />
+  <path class="xp-detail" d="M262 52C272 44 286 46 290 56M298 40C310 36 322 42 322 52M272 80C284 86 298 84 306 74M328 70C338 76 350 74 356 64M328 104C338 110 350 108 356 100" />
+  <path {...link(L[4][0], 4)} d={`M278 ${147 + VY}C278 ${120 + VY} 290 112 305 105`} />
+  <circle class="xp-hot xp-in xp-glow" cx="314" cy="102" r="8" filter={glow} style={at(4, 0.5)} />
+  <circle class="xp-plate" cx="446" cy="66" r="27" />
+  <circle class="xp-detail" cx="446" cy="66" r="20" />
+  <ellipse class="xp-food xp-shrink" cx="446" cy="66" rx="14" ry="10" style={at(4, 1.6, '--s:0.55')} />
+  <path {...link(L[4][1] ?? L[4][0], 4, 1)} d="M378 60C392 54 404 56 416 62" />
+</svg>
+<Overlay n={1} x={72} y={30} {...P} />
+<Overlay n={2} x={100} y={256 + OY} {...P} />
+<Overlay n={3} x={200} y={252 + OY} {...P} />
+<Overlay n={4} x={424} y={236 + OY} {...P} />
+<Overlay n={5} x={300} y={64} {...P} />
+<Overlay text={label('albumin')} x={112} y={130} align="center" max={40} tone="zone" {...P} />
+<Overlay text={label('blood')} x={350} y={157 + VY} align="center" {...P} />
+<Overlay text={label('insulin')} x={14} y={254} max={21} tone="note" k={1} lag={1.4} {...P} />
+<Overlay text={label('glucagon')} x={248} y={226} max={30} tone="note" k={2} lag={1.2} {...P} />
+<Overlay text={label('pancreas')} x={160} y={286 + OY} align="center" {...P} />
+<Overlay text={label('stomach')} x={322} y={228 + OY} align="center" {...P} />
+<Overlay text={label('brain')} x={230} y={96} align="end" {...P} />
+<Overlay text={label('food')} x={446} y={14} align="center" {...P} />
+<Overlay text={label('meals')} x={476} y={98} align="end" max={30} tone="note" k={4} lag={1.8} {...P} />

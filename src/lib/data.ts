@@ -64,6 +64,15 @@ export function shortAuthors(s: Source): string {
   return `${first} et al.`;
 }
 
+/**
+ * Short name for a figure's "Based on" line (<Explainer>, <Infographic>): "Kapitza et al. (2017)"
+ * for scholarly work; the document's own name for labels, regulator and web pages and laws
+ * ("Wegovy (semaglutide)", not an ambiguous "European Medicines Agency (2026)").
+ */
+export function shortSourceName(s: Source): string {
+  return ['label', 'regulator', 'web', 'law'].includes(s.type) ? s.title.split(/:\s|\s—\s/)[0] : `${shortAuthors(s)} (${s.year})`;
+}
+
 // ---------------------------------------------------------------- people
 export const PEOPLE = parseFile('/src/data/people.yaml', peopleFileSchema);
 export function getPerson(id: string) {

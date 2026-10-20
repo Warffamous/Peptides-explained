@@ -6,6 +6,9 @@
 @import "./tokens.css";
 @import "./layout.css";
 @import "./components.css";
+@import "./media.css";
+@import "./beginner.css";
+@import "./explainer.css";
 
 /* In the switchable build, markup that belongs to another design system is hidden. */
 [data-theme-only]:not([data-theme-only~="b"]) { display: none !important; }

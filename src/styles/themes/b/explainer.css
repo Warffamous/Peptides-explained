@@ -1,0 +1,115 @@
+/*
+ * Design B — animated explainers. Physical: molecules arrive on a spring, pins pop, proven links
+ * draw on with an ease-out and the whole plate carries a soft glow. Colour keeps its epistemic
+ * job: CYAN = demonstrated (people, animals, cells), AMBER = hypothesised. Molecules and chrome use
+ * the residue hues and the link colour, which stay out of that pair's way.
+ */
+@import "../../base/explainer.css";
+
+.explainer {
+  --xp-in-dur: 1.1s;
+  --xp-ease: var(--spring);
+  --xp-move: xp-move;
+  --xp-pin-in: xp-pop;
+  --xp-dashed-ease: var(--ease);
+  --xp-ghost: 0.3;
+  --xp-dim: 0.25;
+  --xp-cur-bg: var(--surface-2);
+  --xp-cur-n-ink: var(--text);
+  --xp-cur-n-bg: transparent;
+  margin-block: var(--space-4) var(--space-7);
+  padding: var(--space-5);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+:is(.prose, .csec) > .explainer { grid-column: wide; }
+.xp-kicker { font-size: var(--s--2); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
+.xp-title { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; color: var(--text); }
+.xp-stage { padding: var(--space-3); border-radius: var(--radius-sm); border: 1px solid var(--line); background: radial-gradient(110% 90% at 50% 30%, var(--surface-2), var(--ground)); }
+/* On a phone the card's padding ate a fifth of the width: the drawing and its words get it back. */
+@media (max-width: 30rem) {
+  .explainer { padding: var(--space-3); }
+  .xp-stage { padding: var(--space-2); }
+}
+.xp-art { filter: drop-shadow(0 0 6px rgb(124 140 255 / 0.18)); }
+:root[data-scheme='light'] .xp-art { filter: none; }
+.xp-art :is(.xp-link[data-level='human'], .xp-curve) { --xp-ease: var(--ease); }
+
+/* artwork */
+.xp-art .xp-vessel { fill: color-mix(in oklch, var(--res-positive) 9%, var(--surface)); stroke: color-mix(in oklch, var(--res-positive) 40%, var(--line)); stroke-width: 1.2; }
+.xp-art .xp-organ { fill: var(--surface-2); stroke: var(--line-strong); stroke-width: 1.6; }
+.xp-art .xp-open { fill: none; }
+.xp-art .xp-cell { fill: var(--surface); stroke: var(--text-3); stroke-width: 1.4; }
+.xp-art .xp-rec { stroke: var(--res-aromatic); stroke-width: 1.8; }
+.xp-art .xp-ring { fill: none; stroke: var(--res-aromatic); stroke-width: 1.6; }
+.xp-art .xp-alb { fill: var(--res-special); fill-opacity: 0.55; }
+.xp-art .xp-drug { fill: var(--res-hydrophobic); }
+.xp-art .xp-tail { stroke: var(--res-hydrophobic); stroke-width: 2; }
+.xp-art .xp-glu { fill: var(--res-polar); }
+.xp-art .xp-ins { fill: var(--res-aromatic); }
+.xp-art .xp-gcg { fill: var(--res-positive); }
+.xp-art .xp-food { fill: color-mix(in oklch, var(--res-nonstandard) 28%, var(--surface-2)); }
+.xp-art .xp-plate { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.4; }
+.xp-art .xp-detail { stroke: var(--line-strong); stroke-width: 1; }
+.xp-art .xp-inset { fill: var(--ground); stroke: var(--line-strong); stroke-width: 1; }
+.xp-art .xp-hot { fill: var(--cyan); }
+.xp-art .xp-arrow { stroke: var(--text); stroke-width: 2; }
+.xp-art .xp-link, .xp-key .xp-link { stroke: var(--cyan); stroke-width: 2.6; }
+.xp-art .xp-link[data-level='hypothesis'], .xp-key .xp-link[data-level='hypothesis'] { stroke: var(--amber); }
+.xp-key .xp-link { stroke-width: 2.2; }
+.xp-art .xp-zone { fill: color-mix(in oklch, var(--res-polar) 11%, transparent); }
+.xp-art .xp-danger { fill: color-mix(in oklch, var(--alert) 10%, transparent); }
+.xp-art .xp-danger-hot { fill: color-mix(in oklch, var(--alert) 16%, transparent); stroke: var(--alert); stroke-width: 1.2; }
+.xp-art .xp-axis { stroke: var(--text-3); stroke-width: 1.4; }
+.xp-art .xp-curve { stroke: var(--text); stroke-width: 3; }
+.xp-art .xp-curve--safe { stroke: var(--res-polar); }
+.xp-art .xp-su { fill: var(--res-negative); }
+.xp-art .xp-arrow--push { stroke: var(--res-negative); }
+.xp-art .xp-warn { fill: var(--alert); }
+.xp-art .xp-warn-mark { stroke: var(--ground); stroke-width: 2.6; }
+.xp-art .xp-warn-dot { fill: var(--ground); }
+.xp-art .xp-sugar { fill: var(--res-nonstandard); }
+.xp-art .xp-arrow--up { stroke: var(--res-polar); }
+
+/* overlays: neutral pins (colour is reserved for evidence) */
+.xp-pin { border-radius: 999px; background: var(--text); color: var(--ground); font-family: var(--font-mono); box-shadow: 0 0 0 3px var(--ground); }
+.xp-label { font-weight: 500; letter-spacing: 0.01em; color: var(--text-2); }
+.xp-label[data-tone='note'] { font-weight: 600; color: var(--text); }
+.xp-lico[data-icon='check'] { color: var(--res-polar); }
+.xp-lico[data-icon='warn'] { color: var(--alert); }
+.xp-lico[data-icon='warn'] :is(.xp-lico__mark, .xp-lico__dot) { stroke: var(--ground); fill: var(--ground); }
+.xp-lico[data-icon='warn'] .xp-lico__mark { stroke-width: 2; }
+.xp-lico[data-icon='sugar'] { color: var(--surface); }
+.xp-lico[data-icon='sugar'] .xp-lico__fill { fill: var(--res-nonstandard); }
+.xp-lico[data-icon='sugar'] .xp-lico__line { stroke-width: 1.2; }
+.xp-panel__title { font-size: var(--s--1); font-weight: 600; line-height: 1.3; color: var(--text); }
+
+/* the current step, under the stage: large, with a neutral round number */
+.xp-now > p { font-size: var(--s-0); line-height: 1.45; color: var(--text); }
+.xp-now__n { display: inline-grid; place-items: center; min-inline-size: 1.6em; block-size: 1.6em; margin-inline-end: 0.4em; border-radius: 999px; background: var(--text); color: var(--ground); font-family: var(--font-mono); font-size: var(--s--1); font-weight: 700; vertical-align: 0.05em; }
+
+/* controls */
+.xp-btn { min-block-size: 2.5rem; padding: 0.35rem 1rem; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--surface-2); color: var(--text); font-size: var(--s--1); font-weight: 600; transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease); }
+.xp-btn:hover { border-color: var(--link); }
+.xp-btn--toggle { background: color-mix(in oklch, var(--link) 16%, var(--surface-2)); border-color: color-mix(in oklch, var(--link) 50%, var(--line)); }
+.xp-progress { block-size: 4px; }
+.xp-seg { border-radius: 999px; background: var(--line); }
+.xp-seg::before { border-radius: 999px; background: var(--link); }
+.xp-rm-note { font-size: var(--s--2); color: var(--text-3); }
+
+/* the step list: cards, each edged in its evidence colour */
+.xp-steps { gap: var(--space-2); }
+.xp-step { --xp-cur-line: var(--cyan); gap: 0 var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); border: 1px solid var(--line); border-inline-start: 3px solid var(--cyan); }
+.xp-step[data-level='animal'] { border-inline-start-color: color-mix(in oklch, var(--cyan) 75%, var(--line)); border-inline-start-style: dashed; }
+.xp-step[data-level='in-vitro'] { border-inline-start-color: color-mix(in oklch, var(--cyan) 55%, var(--line)); border-inline-start-style: dashed; }
+.xp-step[data-level='hypothesis'] { --xp-cur-line: var(--amber); border-inline-start-color: var(--amber); border-inline-start-style: dotted; }
+.xp-step__n { font-family: var(--font-mono); font-weight: 700; color: var(--text-3); padding-block-start: 0.1em; }
+.xp-step__text { font-size: var(--s--1); line-height: 1.55; color: var(--text); }
+.xp-step__levels { margin-block-start: var(--space-2); font-size: var(--s--2); }
+.xp-summary { font-size: var(--s--1); color: var(--text-2); }
+.xp-legend { font-size: var(--s--2); color: var(--text-3); }
+.xp-legend__title { font-weight: 600; color: var(--text-2); }
+.xp-sources { font-size: var(--s--2); color: var(--text-3); }
+.xp-sources__label { font-weight: 600; color: var(--text-2); }
+.xp-review { font-size: var(--s--2); color: var(--text-3); }

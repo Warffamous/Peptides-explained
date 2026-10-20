@@ -1,0 +1,4 @@
+{
+  "$comment": "Time-boxed waivers for the plain-language word limits (scripts/validate-content.ts, docs/CONTENT-GUIDE.md section 4). In a listed file, a summary item, glance.main_risk or caption over 30 words is reported as a labelled WARNING until the 'until' date and fails the build again after it. Only for files another workstream had in flight when the limit was introduced (20 October 2026). Never add an entry for your own text: shorten the text. The validator says when an entry is unused or expired; then delete it.",
+  "waivers": []
+}

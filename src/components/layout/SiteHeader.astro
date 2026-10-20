@@ -12,6 +12,15 @@ interface Props { locale: string; routeKey: string }
 const { locale, routeKey } = Astro.props;
 const active = navSectionFor(routeKey);
 ---
+{/*
+  One header row at every width. "Warning signs" is always visible, one tap away. The other tools
+  (search, language, design, light/dark) sit inline on wide screens; below 60rem they are grouped
+  behind one "Menu" button that opens them as a popover (popovertarget: no JavaScript needed; light
+  dismiss and Esc close it). Without popover support the tools simply stay inline (structure.css).
+  The sheet covers the header, so opening it moves focus to its Close button (autofocus inside a
+  popover: no JavaScript; never used on page load, where the button is not rendered); Esc or Close
+  returns focus to "Menu".
+*/}
 <header class="site-header">
   <div class="site-header__inner">
     <a class="brand" href={routeUrl(locale, '')} aria-current={routeKey === '' ? 'page' : undefined}>
@@ -22,12 +31,23 @@ const active = navSectionFor(routeKey);
       <a class="utility-nav__alert" href={routeUrl(locale, 'safety/warning-signs')} aria-current={routeKey === 'safety/warning-signs' ? 'page' : undefined}>
         <Icon name="alert" /><span>{t(locale, 'common.utility.warningSigns')}</span>
       </a>
-      <a class="utility-nav__search" href={routeUrl(locale, 'search')} aria-current={routeKey === 'search' ? 'page' : undefined}>
-        <Icon name="search" /><span class="utility-nav__text">{t(locale, 'common.utility.search')}</span>
-      </a>
-      <LanguageSwitcher locale={locale} routeKey={routeKey} />
-      <ThemeSwitcher locale={locale} routeKey={routeKey} />
-      <SchemeToggle locale={locale} />
+      <button type="button" class="site-tools__open" popovertarget="site-tools">
+        <Icon name="menu" /><span class="site-tools__open-text">{t(locale, 'common.nav.menu')}</span>
+      </button>
+      <div class="site-tools" id="site-tools" popover>
+        <div class="site-tools__head">
+          <span class="site-tools__title" aria-hidden="true">{t(locale, 'common.nav.menu')}</span>
+          <button type="button" class="site-tools__close" popovertarget="site-tools" popovertargetaction="hide" autofocus>
+            <Icon name="close" /><span class="visually-hidden">{t(locale, 'common.nav.close')}</span>
+          </button>
+        </div>
+        <a class="utility-nav__search" href={routeUrl(locale, 'search')} aria-current={routeKey === 'search' ? 'page' : undefined}>
+          <Icon name="search" /><span class="utility-nav__text">{t(locale, 'common.utility.search')}</span>
+        </a>
+        <LanguageSwitcher locale={locale} routeKey={routeKey} />
+        <ThemeSwitcher locale={locale} routeKey={routeKey} />
+        <SchemeToggle locale={locale} />
+      </div>
     </nav>
   </div>
   <nav class="primary-nav" aria-label={t(locale, 'common.nav.label')}>

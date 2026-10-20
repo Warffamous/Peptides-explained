@@ -2,16 +2,23 @@
   "thymosin-beta-4": {
     "term": "thymosin beta-4",
     "aliases": ["thymosin β4", "Tβ4", "Tbeta4", "thymosin beta 4", "timbetasin"],
-    "definition": "A natural protein of 43 amino acids found in almost every cell. It holds single actin molecules ready for use and has been tested as eye drops and skin gel. It is not the same substance as TB-500.",
+    "definition": "A natural protein of 43 amino acids found inside many kinds of cells. It holds single actin units ready for use. It is not the same substance as TB-500.",
     "category": "biology",
     "see_also": ["actin", "heptapeptide"]
   },
   "actin": {
     "term": "actin",
-    "aliases": ["G-actin", "actin filaments", "actin monomers", "actin-binding"],
+    "aliases": ["G-actin", "actin filaments", "actin monomers", "actin-binding", "actin units"],
     "definition": "A protein that forms thin threads inside cells. Cells build and take apart these threads to change shape and to move.",
     "category": "biology",
-    "see_also": ["thymosin-beta-4"]
+    "see_also": ["thymosin-beta-4", "cytoskeleton"]
+  },
+  "cytoskeleton": {
+    "term": "cytoskeleton",
+    "aliases": ["actin cytoskeleton"],
+    "definition": "The network of protein threads inside a cell. It gives the cell its shape and lets it crawl and divide.",
+    "category": "biology",
+    "see_also": ["actin"]
   },
   "heptapeptide": {
     "term": "heptapeptide",
@@ -22,7 +29,7 @@
   },
   "n-terminal-acetylation": {
     "term": "acetylation",
-    "aliases": ["acetylated", "N-acetylated", "acetyl group", "N-terminal acetylation", "unacetylated"],
+    "aliases": ["acetylated", "N-acetylated", "acetyl group", "N-terminal acetylation", "unacetylated", "non-acetylated"],
     "definition": "Adding a small chemical group (an acetyl group) to a molecule. On a peptide it changes the charge and shape of the start of the chain, so it can change how the peptide works and how long it lasts.",
     "category": "chemistry",
     "see_also": []
@@ -31,6 +38,20 @@
     "term": "free base",
     "aliases": ["acetate salt", "acetate form", "salt form"],
     "definition": "The plain form of a drug molecule. A salt form, such as an acetate, is the same molecule paired with a small partner molecule. Regulators treat the two as different substances.",
+    "category": "chemistry",
+    "see_also": []
+  },
+  "metabolite": {
+    "term": "metabolite",
+    "aliases": ["metabolites", "breakdown product", "breakdown products"],
+    "definition": "A smaller substance the body makes when it breaks down a drug. A metabolite can be active, inactive or harmful.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "recombinant": {
+    "term": "recombinant",
+    "aliases": ["recombinant protein", "genetically engineered"],
+    "definition": "Made by cells, such as bacteria, that were given the gene for a human protein. The cells then produce the protein.",
     "category": "chemistry",
     "see_also": []
   },
@@ -44,16 +65,23 @@
   "prolyl-oligopeptidase": {
     "term": "prolyl oligopeptidase",
     "aliases": [],
-    "definition": "An enzyme in the body that cuts proteins just after the amino acid proline. It releases Ac-SDKP from thymosin beta-4.",
+    "definition": "An enzyme in the body that cuts short protein chains just after the amino acid proline. It is thought to release Ac-SDKP from thymosin beta-4.",
     "category": "biology",
     "see_also": ["ac-sdkp"]
   },
   "integrin-linked-kinase": {
     "term": "integrin-linked kinase",
     "aliases": ["ILK"],
-    "definition": "A protein inside cells that passes on signals from the points where the cell holds on to its surroundings. It helps cells survive and move, and it is very active in many cancers.",
+    "definition": "A protein inside cells that passes on signals from the points where the cell holds on to its surroundings. It helps cells survive and move, and some cancer cells make more of it.",
     "category": "biology",
-    "see_also": []
+    "see_also": ["akt"]
+  },
+  "akt": {
+    "term": "Akt",
+    "aliases": ["protein kinase B", "Akt signalling"],
+    "definition": "A switch protein inside cells that tells them to survive and grow. Many cancers keep it switched on.",
+    "category": "biology",
+    "see_also": ["integrin-linked-kinase"]
   },
   "atp-synthase": {
     "term": "ATP synthase",
@@ -62,12 +90,26 @@
     "category": "biology",
     "see_also": []
   },
+  "epicardium": {
+    "term": "epicardium",
+    "aliases": ["epicardial"],
+    "definition": "The thin outer layer of the heart. In the embryo, some of its cells help to build the heart's blood vessels.",
+    "category": "biology",
+    "see_also": []
+  },
   "metastasis": {
     "term": "metastasis",
     "aliases": ["metastases", "metastatic", "lung metastases"],
     "definition": "When cancer cells leave the first tumour and grow in another part of the body.",
     "category": "biology",
-    "see_also": []
+    "see_also": ["epithelial-mesenchymal-transition"]
+  },
+  "epithelial-mesenchymal-transition": {
+    "term": "epithelial-mesenchymal transition",
+    "aliases": ["EMT"],
+    "definition": "A change in which cells that normally sit tightly together in a layer loosen and start to crawl. Wound repair uses it, and so do cancers that spread.",
+    "category": "biology",
+    "see_also": ["metastasis"]
   },
   "mast-cell": {
     "term": "mast cell",
@@ -90,12 +132,33 @@
     "category": "regulation",
     "see_also": []
   },
+  "primary-endpoint": {
+    "term": "primary endpoint",
+    "aliases": ["primary endpoints", "primary outcome", "primary outcomes"],
+    "definition": "The main result a trial was designed to measure, chosen before it starts. Other results are less reliable, because with many measures some differ by chance.",
+    "category": "evidence",
+    "see_also": ["subgroup-analysis"]
+  },
+  "subgroup-analysis": {
+    "term": "subgroup analysis",
+    "aliases": ["subgroup", "subgroups"],
+    "definition": "Looking at results for only part of the people in a trial, such as those treated early. A positive subgroup in a trial that missed its main goal can be chance.",
+    "category": "evidence",
+    "see_also": ["primary-endpoint"]
+  },
+  "cornea": {
+    "term": "cornea",
+    "aliases": ["corneal", "corneas"],
+    "definition": "The clear front window of the eye. Small wounds on its surface usually heal within days.",
+    "category": "biology",
+    "see_also": ["neurotrophic-keratopathy"]
+  },
   "neurotrophic-keratopathy": {
     "term": "neurotrophic keratopathy",
     "aliases": ["neurotrophic keratitis", "neurotrophic corneal defects"],
     "definition": "An eye disease in which damaged nerves stop the clear front of the eye (the cornea) from healing. Small wounds on the eye surface stay open and can scar.",
     "category": "biology",
-    "see_also": []
+    "see_also": ["cornea"]
   },
   "dry-eye-disease": {
     "term": "dry eye disease",
@@ -138,6 +201,13 @@
     "definition": "Antibodies that the immune system makes against a medicine. They can make the medicine work less well or cause reactions.",
     "category": "pharmacology",
     "see_also": ["immunogenicity"]
+  },
+  "certificate-of-analysis": {
+    "term": "certificate of analysis",
+    "aliases": ["certificates of analysis", "CoA"],
+    "definition": "A document from a maker that lists the tests done on one batch of a product and the results. It is only as good as the tests it includes.",
+    "category": "safety",
+    "see_also": []
   },
   "wada-s2-3": {
     "term": "S2.3 (growth factors)",

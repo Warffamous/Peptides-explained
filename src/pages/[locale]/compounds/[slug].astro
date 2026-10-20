@@ -1,14 +1,17 @@
 ---
 /**
  * Compound page: localised prose (src/content/compounds/<locale>/<slug>.mdx) joined with
- * locale-independent facts (src/data/compounds/<slug>.yaml). Fixed structure:
- * 1 the 30-second version · evidence profile · 2–8 the MDX sections in fixed order · 9 sources.
+ * locale-independent facts (src/data/compounds/<slug>.yaml). Fixed structure, beginner first:
+ * title + status badge · at a glance · 1 the 30-second version · review line · page photo
+ * (beside the title on wide screens) · evidence profile, sequence, technical details · 2–8 the
+ * MDX sections in fixed order · 9 sources.
  */
 import { render } from 'astro:content';
 import DocLayout from '../../../layouts/DocLayout.astro';
 import { mdxComponents } from '../../../components/mdx';
 import EvidenceGrade from '../../../components/mdx/EvidenceGrade.astro';
 import SequenceView from '../../../components/mdx/SequenceView.astro';
+import AtAGlance from '../../../components/layout/AtAGlance.astro';
 import ThemeOnly from '../../../components/ui/ThemeOnly.astro';
 import Pictogram from '../../../components/ui/Pictogram.astro';
 import { BUILT_LOCALES } from '../../../lib/config';
@@ -16,6 +19,7 @@ import { compoundDataMap, resolveCompound, alternatesFor } from '../../../lib/co
 import { webPage } from '../../../lib/jsonld';
 import { t } from '../../../lib/i18n';
 import { formatNumber } from '../../../lib/format';
+import { mdxToPlain, readingMinutes, wordCount } from '../../../lib/readability';
 import { COMPOUND_SECTIONS } from '../../../schemas/vocab';
 
 export async function getStaticPaths() {
@@ -53,8 +57,10 @@ const authorised = data.category === 'authorised' || data.category === 'authoris
 const sectionsPresent = (COMPOUND_SECTIONS as readonly string[]).filter((s) => entry.body?.includes(`<Section id="${s}">`));
 const sectionTitle = (s: string) => t(locale, `compound.sections.${authorised && (s === 'mechanism' || s === 'harm-reduction') ? `${s}Authorised` : s}`);
 const toc = [
+  { id: 'at-a-glance', text: t(locale, 'beginner.glance.title') },
   { id: 'summary', text: t(locale, 'compound.sections.thirty-second') },
   { id: `grade-${slug}`, text: t(locale, 'evidence.title') },
+  { id: 'technical', text: t(locale, 'beginner.technical.title') },
   ...sectionsPresent.map((s) => ({ id: s, text: sectionTitle(s) })),
   { id: 'sources', text: t(locale, 'compound.sections.sources') },
 ];
@@ -75,6 +81,19 @@ const about = authorised
 const alternates = fallback ? [] : await alternatesFor(key);
 // Chemical formula with element counts as subscripts (input is validated to letters and digits).
 const formula = data.molecular.formula && /^[A-Za-z0-9()]+$/.test(data.molecular.formula) ? data.molecular.formula.replace(/(\d+)/g, '<sub>$1</sub>') : null;
+// Reading time for the whole page: the MDX body plus the frontmatter prose the page renders
+// (summary, grade rationale, mechanism steps, study findings, table notes).
+const pageWords =
+  wordCount(mdxToPlain(entry.body ?? '')) +
+  wordCount([
+    ...page.summary,
+    page.glance.main_risk ?? '',
+    ...Object.values(page.grade_rationale),
+    ...page.mechanism.flatMap((m) => [m.title, m.detail]),
+    ...Object.values(page.studies).flatMap((s) => [s.finding, s.limitation]),
+    ...Object.values(page.regulatory_notes),
+    ...Object.values(page.indications),
+  ].join(' '));
 const jsonld = webPage({ locale, key, title: page.title, description: page.description, lastReviewed: data.last_reviewed, reviewedBy: data.reviewed_by, medical: true, article: true, about, trail });
 ---
 <DocLayout
@@ -86,6 +105,7 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
   eyebrow={t(locale, `vocab.class.${data.class}`)}
   summary={page.summary}
   summaryTitle={t(locale, 'compound.sections.thirty-second')}
+  readingMinutes={readingMinutes(pageWords)}
   template="compound"
   section="compounds"
   lastReviewed={data.last_reviewed}
@@ -107,23 +127,27 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
       <ThemeOnly theme="c" as="span" class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></ThemeOnly>
       {t(locale, badgeKey)}
     </p>
-    <dl class="compound-facts">
-      {data.names.full && <div><dt>{t(locale, 'compound.names.full')}</dt><dd>{data.names.full}</dd></div>}
-      {data.names.inn && <div><dt>{t(locale, 'compound.names.inn')}</dt><dd>{data.names.inn}</dd></div>}
-      {data.names.other.length > 0 && <div><dt>{t(locale, 'compound.names.other')}</dt><dd>{data.names.other.join(', ')}</dd></div>}
-      {data.names.brands.length > 0 && <div><dt>{t(locale, 'compound.names.brands')}</dt><dd>{data.names.brands.join(', ')}</dd></div>}
-      <div><dt>{t(locale, 'compound.names.class')}</dt><dd>{t(locale, `vocab.class.${data.class}`)}</dd></div>
-      <div><dt>{t(locale, 'compound.names.bodySystems')}</dt><dd>{data.body_systems.map((b) => t(locale, `vocab.bodySystem.${b}`)).join(', ')}</dd></div>
-      {formula && <div><dt>{t(locale, 'compound.names.formula')}</dt><dd><bdi class="qty formula" set:html={formula} /></dd></div>}
-      {data.molecular.mass_da && <div><dt>{t(locale, 'compound.names.mass')}</dt><dd><bdi class="qty">{formatNumber(locale, data.molecular.mass_da)} Da</bdi></dd></div>}
-    </dl>
   </Fragment>
   <Fragment slot="lead">
     {data.status === 'stub' && <p class="notice notice--stub"><strong>{t(locale, 'common.stub.label')}.</strong> {t(locale, 'common.stub.notice')}</p>}
   </Fragment>
+  <AtAGlance slot="glance" locale={locale} data={data} mainRisk={page.glance.main_risk} hasRisksSection={sectionsPresent.includes('risks')} />
   <div class="compound-glance">
     <EvidenceGrade compound={slug} />
     <SequenceView compound={slug} />
+    <section class="compound-tech" id="technical" aria-labelledby="technical-title">
+      <h2 class="compound-tech__title" id="technical-title">{t(locale, 'beginner.technical.title')}</h2>
+      <dl class="compound-facts">
+        {data.names.full && <div><dt>{t(locale, 'compound.names.full')}</dt><dd>{data.names.full}</dd></div>}
+        {data.names.inn && <div><dt>{t(locale, 'compound.names.inn')}</dt><dd>{data.names.inn}</dd></div>}
+        {data.names.other.length > 0 && <div><dt>{t(locale, 'compound.names.other')}</dt><dd>{data.names.other.join(', ')}</dd></div>}
+        {data.names.brands.length > 0 && <div><dt>{t(locale, 'compound.names.brands')}</dt><dd>{data.names.brands.join(', ')}</dd></div>}
+        <div><dt>{t(locale, 'compound.names.class')}</dt><dd>{t(locale, `vocab.class.${data.class}`)}</dd></div>
+        <div><dt>{t(locale, 'compound.names.bodySystems')}</dt><dd>{data.body_systems.map((b) => t(locale, `vocab.bodySystem.${b}`)).join(', ')}</dd></div>
+        {formula && <div><dt>{t(locale, 'compound.names.formula')}</dt><dd><bdi class="qty formula" set:html={formula} /></dd></div>}
+        {data.molecular.mass_da && <div><dt>{t(locale, 'compound.names.mass')}</dt><dd><bdi class="qty">{formatNumber(locale, data.molecular.mass_da)} Da</bdi></dd></div>}
+      </dl>
+    </section>
   </div>
   <Content components={mdxComponents} />
 </DocLayout>

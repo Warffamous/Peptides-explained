@@ -1,0 +1,46 @@
+/*
+ * Beginner layer — structure shared by every design system: the "At a glance" strip, the
+ * "In short" summary box and the technical-details block that follows them on compound pages.
+ * Each design styles them in themes/<t>/beginner.css, which imports this file first.
+ * Logical properties only; nothing here depends on JavaScript or motion.
+ */
+
+/* ------------------------------------------------------------------ at a glance */
+.at-a-glance { min-inline-size: 0; }
+.at-a-glance__title { margin: 0; }
+.at-a-glance__tiles { display: grid; grid-template-columns: minmax(0, 1fr); margin: 0; }
+.at-a-glance__tile { display: flex; flex-direction: column; min-inline-size: 0; }
+.at-a-glance__q { margin: 0; }
+.at-a-glance__a { display: flex; align-items: flex-start; margin: 0; }
+.at-a-glance__icon { flex: none; display: block; line-height: 0; }
+.at-a-glance__icon .pictogram { display: block; fill: currentColor; }
+.at-a-glance__body { display: grid; align-content: start; gap: var(--space-1); min-inline-size: 0; }
+.at-a-glance__short, .at-a-glance__text, .at-a-glance__code { display: block; }
+.at-a-glance__more { justify-self: start; }
+.at-a-glance__foot { margin: 0; }
+
+/* ------------------------------------------------------------------ in short */
+.summary-box__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); }
+.summary-box__title { margin: 0; }
+.summary-box__time { display: flex; align-items: center; gap: 0.5em; margin: 0; }
+.summary-box__icon, .summary-box__time-icon { flex: none; line-height: 0; }
+.summary-box__icon .pictogram, .summary-box__time-icon .pictogram { display: block; fill: currentColor; }
+.summary-box__list { display: grid; margin: 0; padding: 0; list-style: none; counter-reset: summary; }
+.summary-box__item { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; counter-increment: summary; }
+.summary-box__marker::before { content: counter(summary); }
+/* A one-point summary (the built-in pages) needs no numbering. */
+.summary-box__item:only-child { grid-template-columns: minmax(0, 1fr); }
+.summary-box__item:only-child .summary-box__marker { display: none; }
+:lang(ar) .summary-box__marker::before { content: counter(summary, arabic-indic); }
+.summary-box__text { min-inline-size: 0; }
+
+/* ------------------------------------------------------------------ technical details */
+.compound-tech { min-inline-size: 0; }
+.compound-tech__title { margin: 0; }
+.compound-tech .compound-facts { margin-block-start: 0; }
+
+/* Forced colours drop backgrounds; keep every tile and box visibly bounded. */
+@media (forced-colors: active) {
+  .at-a-glance__tile, .summary-box, .compound-tech { border: 1px solid CanvasText; }
+  .at-a-glance__icon .pictogram, .summary-box__icon .pictogram, .summary-box__time-icon .pictogram { fill: CanvasText; }
+}

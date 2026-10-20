@@ -1,0 +1,52 @@
+# Animated explainers: the locale-independent half. See docs/EXPLAINERS.md.
+# Captions live in src/i18n/<locale>/explainers.json; artwork in src/components/explainers/<id>.astro.
+# levels: evidence for the link(s) drawn in that step — human (solid), animal / in-vitro (long dashes),
+# hypothesis (short dashes). pictogram: design C only, a name from src/components/ui/pictograms.ts.
+
+glp1-action:
+  duration: 12
+  mirror: false # anatomy: never mirrored
+  pages: [compounds/semaglutide]
+  sources:
+    - ema-epar-ozempic # SmPC 5.1 mechanism (glucose-dependent insulin, glucagon, early gastric emptying); 5.2 albumin >99%, half-life ~1 week
+    - ema-epar-wegovy # SmPC 4.5: no clinically relevant gastric-emptying effect at 2.4 mg, probably tolerance
+    - kapitza-2017-beta-cell # insulin up, glucagon down in people with type 2 diabetes
+    - gabery-2020-semaglutide-brain # brain sites: rodents
+    - friedrichsen-2021-appetite # less hunger, lower energy intake: people
+  steps:
+    - levels: [human] # albumin binding and ~1 week half-life measured in people (SmPC 5.2)
+      pictogram: body-cardiovascular
+    - levels: [human] # glucose-dependent insulin secretion (SmPC 5.1; Kapitza 2017)
+      pictogram: body-endocrine
+    - levels: [human] # lower glucagon when glucose is high (SmPC 5.1; Kapitza 2017)
+      pictogram: body-endocrine
+    - levels: [human] # minor early postprandial delay; fades (tolerance) at 2.4 mg
+      pictogram: body-gastrointestinal
+    - levels: [animal, human] # brain sites from rodents (Gabery 2020); eating less measured in people (Friedrichsen 2021)
+      pictogram: body-nervous
+  review:
+    status: pending
+    note: "Artwork and captions drafted 2026-10-20 from the Ozempic and Wegovy EU product information (fetched 2026-10-20) and the three cited trials/studies. Needs a medical reviewer to check the anatomy and the evidence levels. 2026-10-20: words added beside the inset, insulin, glucagon and the plate (clarity rule 8a); arrows replaced by those words; drawing unchanged otherwise."
+
+insulin-glp1-hypo:
+  duration: 15 # five scenes of 3 s: one message each
+  mirror: true # glucose-over-time charts: the time axis may run right-to-left in RTL
+  pages: [compounds/semaglutide]
+  sources:
+    - ema-epar-ozempic # SmPC 4.2 (with a sulfonylurea or insulin "a reduction in the dose … should be considered"), 4.4, 4.8 (no severe hypoglycaemia on monotherapy), 5.1 (glucose-dependent); package leaflet warning signs
+    - sola-2015-sulfonylureas # sulfonylurea insulin release is independent of glucose levels
+    - ada-2026-hypoglycaemia # glucose for the conscious person; call emergency services if unalert or unable to take carbohydrate; symptoms
+  steps:
+    - levels: [human] # glucose-dependent action, no severe hypoglycaemia on monotherapy (SmPC 5.1, 4.8)
+      pictogram: body-endocrine
+    - levels: [human] # insulin, and sulfonylurea-driven insulin release, act regardless of glucose (Sola 2015)
+      pictogram: risk-interaction
+    - levels: [human] # increased risk of hypoglycaemia in combination (SmPC 4.4, 4.8)
+      pictogram: callout-warning
+    - levels: [human] # dose reduction should be considered (SmPC 4.2, 4.4; package leaflet)
+      pictogram: status-investigational
+    - levels: [human] # signs (package leaflet; ADA), glucose if conscious, emergency services if not (ADA 2026, section 6)
+      pictogram: action-urgent
+  review:
+    status: pending
+    note: "Redrawn 2026-10-20 as two labelled charts (semaglutide alone / with insulin or a sulfonylurea), one message per scene. Interaction and dose advice from Ozempic SmPC 4.2/4.4/4.8 (advice to prescribers, no amounts; re-read 2026-10-20); warning signs from the Ozempic package leaflet and ADA; treatment and when to call emergency services from ADA Standards of Care 2026, section 6. First-reader test 2026-10-20: the dose labels now name the medicine (\"Usual / Smaller insulin or tablet dose\") so they cannot be read as a semaglutide dose change (SmPC 4.2: reduce the sulfonylurea or insulin dose)."

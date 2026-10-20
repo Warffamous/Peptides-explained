@@ -41,7 +41,7 @@ a:hover { text-decoration-thickness: 2px; }
 .brand-mark__res { fill: var(--res-hydrophobic); }
 .brand-mark__res--accent { fill: var(--cyan); filter: drop-shadow(0 0 4px var(--cyan)); }
 .utility-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-size: var(--s--1); }
-.utility-nav > a {
+.utility-nav__alert, .utility-nav__search, .site-tools__open {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
@@ -54,7 +54,7 @@ a:hover { text-decoration-thickness: 2px; }
   border: 1px solid var(--line);
   transition: border-color 0.2s var(--ease), transform 0.3s var(--spring);
 }
-.utility-nav > a:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+:is(.utility-nav__alert, .utility-nav__search, .site-tools__open):hover { border-color: var(--line-strong); transform: translateY(-1px); }
 .utility-nav__alert { color: var(--alert) !important; border-color: color-mix(in srgb, var(--alert) 40%, var(--line)) !important; }
 .utility-nav a[aria-current] { border-color: var(--link); }
 .utility-nav .icon { inline-size: 1.05em; block-size: 1.05em; }
@@ -122,14 +122,27 @@ a:hover { text-decoration-thickness: 2px; }
 .breadcrumbs__sep { inline-size: 0.85em; block-size: 0.85em; opacity: 0.6; }
 .site-main { padding-block: var(--space-6) var(--space-8); }
 
-/* The reading column, with named breakout tracks for wide figures. */
+/* The reading column, with named breakout tracks for wide figures. The text track's minimum is
+   min(100%, measure): without it the grid shares free space equally between the three bounded
+   tracks, and on a phone the reading column shrinks to a third of the screen. */
 .doc {
   display: grid;
-  grid-template-columns: [full-start] minmax(0, 1fr) [wide-start] minmax(0, calc((var(--wide) - var(--measure)) / 2)) [text-start] minmax(0, var(--measure)) [text-end] minmax(0, calc((var(--wide) - var(--measure)) / 2)) [wide-end] minmax(0, 1fr) [full-end];
+  grid-template-columns: [full-start] minmax(0, 1fr) [wide-start] minmax(0, calc((var(--wide) - var(--measure)) / 2)) [text-start] minmax(min(100%, var(--measure)), var(--measure)) [text-end] minmax(0, calc((var(--wide) - var(--measure)) / 2)) [wide-end] minmax(0, 1fr) [full-end];
   container-type: inline-size;
   container-name: doc;
 }
 .doc > * { grid-column: text; min-inline-size: 0; }
+/*
+ * From 64rem the title block spans the wide track's start (level with the "At a glance" cards below)
+ * and the page photo sits in the end track, pulled 9rem into the title's columns; the title block
+ * stops short of it by the same amount plus a gutter. structure.css orders photo and review line.
+ */
+@media (min-width: 64rem) {
+  .doc { --hero-pull: 9rem; }
+  .doc > :is(.doc-header, .doc-review) { grid-column: wide-start / text-end; }
+  .doc:has(> .hero) > :is(.doc-header, .doc-review) { margin-inline-end: calc(var(--hero-pull) + var(--space-6)); }
+  .doc > .hero { grid-column: text-end / wide-end; margin-inline-start: calc(-1 * var(--hero-pull)); }
+}
 .prose { display: grid; grid-template-columns: subgrid; grid-column: full; }
 .prose > *, .csec > * { grid-column: text; min-inline-size: 0; }
 .csec { grid-column: full; display: grid; grid-template-columns: subgrid; }
@@ -161,7 +174,68 @@ a:hover { text-decoration-thickness: 2px; }
 .root-chooser__list { display: grid; gap: var(--space-2); }
 .root-chooser__list a { display: block; padding: var(--space-4); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; }
 
+/*
+ * The header's "Menu" pill and, below 60rem, the sheet it opens (structure.css decides when): a lit
+ * panel that springs down from the top edge over a dimmed stage. Reduced motion keeps the state
+ * change without the movement (a11y.css).
+ */
+.site-tools__open { font: inherit; font-size: var(--s--1); }
+.site-tools__open .icon, .site-tools__close .icon { inline-size: 1.1rem; block-size: 1.1rem; }
+.site-tools:popover-open {
+  padding: var(--space-4) var(--pad) var(--space-5);
+  background: var(--surface-2);
+  color: var(--text);
+  border: 0;
+  border-block-end: 1px solid var(--line-strong);
+  border-end-start-radius: var(--radius);
+  border-end-end-radius: var(--radius);
+  box-shadow: 0 24px 48px rgb(0 0 0 / 0.45);
+  font-size: var(--s-0);
+  transition: transform 0.5s var(--spring), opacity 0.25s var(--ease), overlay 0.5s allow-discrete, display 0.5s allow-discrete;
+}
+@starting-style { .site-tools:popover-open { transform: translateY(-1.5rem); opacity: 0; } }
+.site-tools::backdrop { background: rgb(4 7 12 / 0.6); }
+.site-tools__head { margin-block-end: var(--space-2); }
+.site-tools__title { font-size: var(--s--1); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); }
+.site-tools__close { display: inline-grid; place-items: center; inline-size: 2.75rem; block-size: 2.75rem; padding: 0; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.site-tools:popover-open > .utility-nav__search,
+.site-tools:popover-open .disclosure__summary,
+.site-tools:popover-open .scheme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  inline-size: 100%;
+  min-block-size: 3.25rem;
+  margin-block-start: var(--space-2);
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--s-0);
+  text-align: start;
+  transform: none;
+}
+.site-tools:popover-open .disclosure__panel { margin-block-start: var(--space-1); padding: var(--space-1); background: var(--ground); border-color: var(--line); }
+.site-tools:popover-open .disclosure__panel a { font-size: var(--s-0); }
+
+/* Phones and small tablets (up to 600px): the brand sets on two lines so brand, "Warning signs"
+   and "Menu" share one row (on one line the brand pushed the tools onto a second row between 481
+   and 600px). Phones (30rem): a smaller brand, and "Menu" becomes a round icon button (its name
+   stays "Menu"). Below about 330px (high zoom) the tools wrap under the brand rather than scroll
+   sideways. */
+@media (max-width: 37.49rem) {
+  .site-header__inner { gap: var(--space-2) var(--space-3); }
+  .brand { line-height: 1.1; }
+  .brand__name { inline-size: min-content; }
+  .utility-nav { flex-wrap: nowrap; }
+}
 @media (max-width: 30rem) {
-  .utility-nav__text, .theme-switch__label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .utility-nav > a, .disclosure__summary { padding-inline: 0.7rem; }
+  .site-header__inner { padding-block: var(--space-4) var(--space-3); }
+  .brand { gap: var(--space-2); font-size: var(--s--1); letter-spacing: -0.01em; }
+  .brand-mark { inline-size: 1.75rem; block-size: 1.75rem; }
+  .utility-nav__alert { padding-inline: 0.75rem; }
+  .site-tools__open { justify-content: center; inline-size: 2.75rem; min-block-size: 2.75rem; padding: 0; }
+  .site-tools__open-text { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }

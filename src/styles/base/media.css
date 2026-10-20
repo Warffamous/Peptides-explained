@@ -1,0 +1,101 @@
+/*
+ * Media pipeline — structure shared by every design system: page photo, photo figure, atlas plate,
+ * image credits. Looks (frames, filters, marker colours, caption type) live in
+ * themes/<t>/media.css, which imports this file. Logical properties only.
+ *
+ * Photographs and artwork are never mirrored in RTL: they show real things. Only the layout around
+ * them mirrors. Plate markers are SVG coordinates on the art, so they stay put as well.
+ */
+
+/* ------------------------------------------------------------------ shared */
+.hero picture, .photo picture, .plate picture, .media-credits__thumb { display: block; }
+.hero__img, .photo__img, .plate__img, .media-credits__img { display: block; inline-size: 100%; block-size: auto; }
+.media-credit { overflow-wrap: anywhere; }
+.media-credit a { overflow-wrap: anywhere; }
+/* "Image details" is two short words: never split it over two lines. */
+.media-credit a.media-credit__details { white-space: nowrap; overflow-wrap: normal; }
+
+/* ------------------------------------------------------------------ page photo (hero) */
+.hero { margin: 0; min-inline-size: 0; }
+.hero__frame { position: relative; overflow: hidden; }
+/*
+ * The photo follows the beginner layer on phones and tablets (DocLayout order), so it can be a real
+ * photograph there: 16:9, capped on tablets so it stays a band. From 64rem it sits beside the title
+ * block at 3:2 (structure.css moves it; each design sets its column).
+ */
+.hero__img {
+  aspect-ratio: 16 / 9;
+  max-block-size: 24rem;
+  object-fit: cover;
+  object-position: var(--focal-narrow, 50% 50%);
+}
+@media (min-width: 64rem) {
+  .hero__img { aspect-ratio: 3 / 2; max-block-size: none; object-position: var(--focal-wide, 50% 50%); }
+}
+/* The short credit at every size: the full attribution is one tap away ("Image details"). */
+.hero__credit :is(.media-credit__org, .media-credit__via, .media-credit__lic) { display: none; }
+.hero__caption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.15rem var(--space-4, 1rem); }
+.hero__text { flex: 1 1 18rem; min-inline-size: 0; }
+.hero__credit { flex: 0 1 auto; }
+
+/* ------------------------------------------------------------------ photo figure */
+.photo { margin: 0; min-inline-size: 0; }
+.photo__frame { position: relative; overflow: hidden; }
+.photo__caption { display: grid; gap: 0.2rem; }
+
+/* ------------------------------------------------------------------ atlas plate */
+.plate { margin: 0; min-inline-size: 0; container-type: inline-size; container-name: plate; }
+.plate__body { display: grid; gap: var(--space-4, 1rem); align-items: start; }
+/* The key sits beside the art only when the plate itself is wide (so it reflows at 200% zoom). */
+@container plate (min-width: 40rem) {
+  .plate__body { grid-template-columns: minmax(0, 3fr) minmax(13rem, 2fr); }
+  /* Portrait artwork (a body map) stays a readable size instead of filling the column. */
+  .plate[data-shape='portrait'] .plate__body { grid-template-columns: minmax(0, 24rem) minmax(13rem, 1fr); }
+}
+.plate[data-shape='portrait'] .plate__art { inline-size: 100%; max-inline-size: 24rem; justify-self: center; }
+.plate__art { position: relative; min-inline-size: 0; }
+.plate__markers { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; overflow: visible; pointer-events: none; direction: ltr; }
+.plate__marker { transform-box: fill-box; transform-origin: center; }
+.plate__n { font-weight: 700; font-variant-numeric: tabular-nums; }
+/* Selector weight beats the prose list rules (.prose ol) so the key is never indented like a text list. */
+.plate ol.plate__legend { display: grid; gap: var(--space-3, 0.75rem); margin: 0; padding: 0; }
+.plate__item { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3, 0.75rem); align-items: start; }
+.plate__num { display: inline-grid; place-items: center; font-variant-numeric: tabular-nums; direction: ltr; unicode-bidi: isolate; }
+.plate__label { display: grid; gap: 0.15rem; }
+.plate__words-summary { cursor: pointer; }
+.plate__ref-n { font-size: 0.75em; line-height: 0; }
+.plate__art-note { display: block; }
+
+/*
+ * Pointing at a key entry highlights its marker (and the reverse is not needed: markers are not
+ * interactive). Pure CSS, no script; themes decide what "highlighted" looks like via --on.
+ */
+.plate__marker, .plate__item { --on: 0; }
+.plate:has(.plate__item:nth-child(1):hover) .plate__marker:nth-of-type(1),
+.plate:has(.plate__item:nth-child(2):hover) .plate__marker:nth-of-type(2),
+.plate:has(.plate__item:nth-child(3):hover) .plate__marker:nth-of-type(3),
+.plate:has(.plate__item:nth-child(4):hover) .plate__marker:nth-of-type(4),
+.plate:has(.plate__item:nth-child(5):hover) .plate__marker:nth-of-type(5),
+.plate:has(.plate__item:nth-child(6):hover) .plate__marker:nth-of-type(6),
+.plate:has(.plate__item:nth-child(7):hover) .plate__marker:nth-of-type(7),
+.plate:has(.plate__item:nth-child(8):hover) .plate__marker:nth-of-type(8),
+.plate:has(.plate__item:nth-child(9):hover) .plate__marker:nth-of-type(9),
+.plate__item:hover { --on: 1; }
+
+/* ------------------------------------------------------------------ image credits */
+.media-credits ul.media-credits__list { display: grid; gap: var(--space-5, 1.5rem); margin: 0; padding: 0; }
+.media-credits__item { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: var(--space-4, 1rem); align-items: start; scroll-margin-block-start: 5rem; }
+.media-credits__img { aspect-ratio: 1; object-fit: cover; object-position: var(--focal, 50% 50%); }
+.media-credits__meta { display: grid; gap: 0.2rem; }
+.media-credits__meta > div { display: grid; grid-template-columns: minmax(7rem, auto) minmax(0, 1fr); gap: 0 var(--space-3, 0.75rem); }
+.media-credits__meta dd { margin: 0; min-inline-size: 0; overflow-wrap: anywhere; }
+.media-credits ul.media-credits__sources { margin: 0; padding: 0; display: grid; gap: 0.25rem; }
+@media (max-width: 30rem) {
+  .media-credits__item { grid-template-columns: 4rem minmax(0, 1fr); }
+  .media-credits__meta > div { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media print {
+  .hero__img { max-block-size: 6cm; }
+  .plate__words { display: block; }
+}

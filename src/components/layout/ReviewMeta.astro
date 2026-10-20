@@ -4,14 +4,14 @@ import { getPerson, CORRECTIONS } from '../../lib/data';
 import { formatDate, isoDate } from '../../lib/format';
 import { routeUrl } from '../../lib/urls';
 
-interface Props { locale: string; lastReviewed: Date; reviewedBy: string; editedBy: string; routeKey: string; legal?: boolean; compact?: boolean }
-const { locale, lastReviewed, reviewedBy, editedBy, routeKey, legal = false, compact = false } = Astro.props;
+interface Props { locale: string; lastReviewed: Date; reviewedBy: string; editedBy: string; routeKey: string; legal?: boolean; compact?: boolean; class?: string }
+const { locale, lastReviewed, reviewedBy, editedBy, routeKey, legal = false, compact = false, class: cls } = Astro.props;
 const reviewer = getPerson(reviewedBy);
 const editor = getPerson(editedBy);
 const pending = reviewer.kind === 'placeholder';
 const corrections = CORRECTIONS.filter((c) => c.kind !== 'publication' && c.routes.includes(routeKey) && c.locales.includes(locale)).sort((a, b) => +b.date - +a.date);
 ---
-<div class:list={['review-meta', compact && 'review-meta--compact']}>
+<div class:list={['review-meta', compact && 'review-meta--compact', cls]}>
   <dl class="review-meta__list">
     <div class="review-meta__item">
       <dt>{t(locale, 'common.review.lastReviewed')}</dt>

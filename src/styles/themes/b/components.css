@@ -32,12 +32,22 @@
 .review-meta__pending { color: var(--amber); }
 .review-meta__notice { margin-block-start: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--amber-soft); color: var(--text-2); font-size: var(--s--1); }
 
+/*
+ * The review line near the top (DocLayout): directly under the summary on phones, at the foot of the
+ * title block from 64rem, level with the bottom of the photo beside it. A quiet readout on a hairline.
+ */
+.doc > .doc-review { margin-block: calc(var(--space-5) - var(--space-7)) var(--space-6); padding-block-start: var(--space-3); border-block-start: 1px solid var(--line); }
+.doc-review .review-meta__list { margin-block-start: 0; column-gap: var(--space-4); font-size: var(--s--2); line-height: 1.5; }
+@media (min-width: 64rem) {
+  /* space-5 under the title: B's display type hangs its descenders below the line box, and on a page
+     without a photo the review hairline follows directly (the home page's "p" touched it). */
+  .doc > .doc-header { align-self: start; padding-block-end: var(--space-5); }
+  .doc > .doc-review { align-self: end; margin-block: 0 var(--space-5); padding-block: var(--space-3) 0; }
+  .doc-review .review-meta__list { font-size: var(--s--1); }
+}
+
 /* ------------------------------------------------------------------ summary */
-.summary-box { margin-block-end: var(--space-7); padding: var(--space-5) var(--space-6); border-radius: var(--radius); background: linear-gradient(160deg, var(--surface-2), var(--surface)); border: 1px solid var(--line-strong); }
-.summary-box__title { font-size: var(--s--1); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cyan); margin-block-end: var(--space-4); }
-.summary-box__list { display: grid; gap: var(--space-3); padding: 0; list-style: none; font-size: var(--s-1); line-height: 1.5; }
-.summary-box__list li { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); }
-.summary-box__list li::before { content: ''; inline-size: 0.5rem; block-size: 0.5rem; margin-block-start: 0.65em; border-radius: 50%; background: var(--text-3); }
+/* summary box: see beginner.css */
 .toc { margin-block-end: var(--space-7); }
 .toc__title { font-size: var(--s--1); font-weight: 600; color: var(--text-3); margin-block-end: var(--space-3); }
 .toc__list { display: flex; flex-wrap: wrap; gap: var(--space-2); }

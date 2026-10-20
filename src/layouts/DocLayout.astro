@@ -12,6 +12,7 @@ import Toc from '../components/layout/Toc.astro';
 import SourceList from '../components/layout/SourceList.astro';
 import RelatedList from '../components/layout/RelatedList.astro';
 import Icon from '../components/ui/Icon.astro';
+import Hero from '../components/media/Hero.astro';
 import { t } from '../lib/i18n';
 import { getLocale, SOURCE_LOCALE } from '../lib/config';
 import { routeUrl } from '../lib/urls';
@@ -27,6 +28,8 @@ interface Props {
   eyebrow?: string;
   summary: string[];
   summaryTitle?: string;
+  /** Estimated minutes to read the whole page (src/lib/readability.ts), shown in the summary box. */
+  readingMinutes?: number;
   template: 'reference' | 'safety' | 'opinion' | 'landing' | 'index' | 'compound';
   section: string;
   lastReviewed: Date;
@@ -84,10 +87,21 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
           {p.opinion.updated && <><span> · </span><time datetime={isoDate(p.opinion.updated)}>{t(p.locale, 'common.opinion.updated', { date: formatDate(p.locale, p.opinion.updated) })}</time></>}
         </p>
       )}
-      <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} compact legal={p.legal} />
     </header>
     <slot name="lead" />
-    <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} />
+    {/*
+      Beginner layer first: the "At a glance" strip (compound pages), then the summary, before
+      anything else. DOM order is the phone order (and the reading and focus order): title ·
+      beginner layer · review line · page photo. On wide screens each design lifts the review line
+      under the title and sets the photo beside it with CSS `order` (base/structure.css). Focusable
+      content that moves: the photo's one "Image details" link, and the review line's corrections
+      link on the rare page that has a correction.
+    */}
+    <slot name="glance" />
+    <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} readingMinutes={p.readingMinutes} />
+    <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} compact legal={p.legal} class="doc-review" />
+    {/* Page photo (src/data/heroes.yaml). */}
+    <Hero locale={p.locale} routeKey={p.routeKey} />
     {p.toc && <Toc locale={p.locale} items={p.toc} />}
     <div class="prose">
       <slot />

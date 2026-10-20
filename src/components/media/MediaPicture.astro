@@ -1,0 +1,37 @@
+---
+/**
+ * Renders built <picture> sources (src/lib/media.ts buildPicture). Explicit width/height on the
+ * <img> and on art-directed <source>s reserve the space before the file arrives (zero CLS).
+ * alt="" only when the surrounding text carries the information (atlas plates, credit thumbnails).
+ */
+import type { BuiltPicture, PictureSource } from '../../lib/media';
+interface Props {
+  pictures: BuiltPicture[]; // more than one = art direction (sources with media queries first)
+  alt: string;
+  lang?: string;
+  eager?: boolean;
+  class?: string;
+  imgClass?: string;
+  style?: string;
+}
+const { pictures, alt, lang, eager = false, class: cls, imgClass, style } = Astro.props;
+const sources: PictureSource[] = pictures.flatMap((p) => p.sources);
+const img = pictures[pictures.length - 1].img;
+---
+<picture class={cls}>
+  {sources.map((s) => <source type={s.type} srcset={s.srcset} sizes={s.sizes} media={s.media} width={s.width} height={s.height} />)}
+  <img
+    class={imgClass}
+    src={img.src}
+    srcset={img.srcset}
+    sizes={img.sizes}
+    width={img.width}
+    height={img.height}
+    alt={alt}
+    lang={lang}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'auto' : 'async'}
+    fetchpriority={eager ? 'high' : undefined}
+    style={style}
+  />
+</picture>

@@ -1,0 +1,128 @@
+---
+/**
+ * "At a glance": four plain answers at the top of every compound page, before the 30-second
+ * version, for readers who need the essentials in seconds. Three answers are derived from the
+ * data file, so every compound with the same facts gets the same words in every locale:
+ *
+ *   approved  <- category (not-a-peptide: from the EU/other regulatory rows; never assumed)
+ *   tested    <- evidence.human_clinical
+ *   sport     <- the WADA regulatory row (status, scope, section); anything else says "see below"
+ *   risk      <- glance.main_risk in the page frontmatter; without it, a link to the warning signs
+ *
+ * One semantic <dl>. Meaning is carried by words first; the pictogram repeats it (Isotype),
+ * and design B's cyan↔amber (--frac) and A/C's line patterns (data-tone) only echo it.
+ * Design C's alert red is never used here: it is reserved for stop-now content.
+ */
+import Pictogram from '../ui/Pictogram.astro';
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { formatDate, isoDate } from '../../lib/format';
+import { HUMAN_CLINICAL } from '../../schemas/vocab';
+import type { CompoundData } from '../../schemas';
+
+interface Props { locale: string; data: CompoundData; mainRisk?: string; hasRisksSection?: boolean }
+const { locale: L, data, mainRisk, hasRisksSection = true } = Astro.props;
+const k = (key: string) => `beginner.glance.${key}`;
+type Tone = 'yes' | 'partial' | 'no';
+
+// 1. Is it an approved medicine?
+const isAuthorised = (j: string) => data.regulatory.some((r) => r.jurisdiction === j && r.status === 'authorised');
+const NON_EU = ['US', 'UK'];
+let approvedKey: string = data.category;
+if (data.category === 'not-a-peptide') {
+  approvedKey = isAuthorised('EU') ? 'not-a-peptide-authorised' : NON_EU.some(isAuthorised) ? 'not-a-peptide-authorised-elsewhere' : 'not-a-peptide-not-authorised';
+}
+const APPROVED_TONE: Record<string, { tone: Tone; frac: number }> = {
+  authorised: { tone: 'yes', frac: 1 },
+  'not-a-peptide-authorised': { tone: 'yes', frac: 1 },
+  'authorised-elsewhere': { tone: 'partial', frac: 0.67 },
+  'not-a-peptide-authorised-elsewhere': { tone: 'partial', frac: 0.67 },
+  investigational: { tone: 'no', frac: 0.33 },
+  experimental: { tone: 'no', frac: 0 },
+  'not-a-peptide-not-authorised': { tone: 'no', frac: 0 },
+};
+
+// 2. Has it been tested in people?
+const hc = data.evidence.human_clinical;
+const TESTED_TONE: Record<string, Tone> = { none: 'no', 'case-reports': 'partial', 'phase-1': 'partial', 'phase-2': 'partial', 'phase-3': 'yes', authorised: 'yes' };
+
+// 3. Is it allowed in sport? Only what the WADA row says; anything else points to the table.
+const wada = data.regulatory.find((r) => r.jurisdiction === 'WADA');
+type Sport = { icon: string; short: string; text: string; section?: string; link?: string };
+const sport: Sport = wada?.status === 'prohibited'
+  ? { icon: 'reg-prohibited', short: t(L, k('sport.prohibited.short')), text: t(L, k(`sport.prohibited.${wada.wada_scope ?? 'unscoped'}`)), section: wada.wada_section }
+  : wada?.status === 'not-listed'
+    ? { icon: 'reg-not-listed', short: t(L, k('sport.not-listed.short')), text: t(L, k('sport.not-listed.text')) }
+    : { icon: 'callout-uncertain', short: t(L, k('sport.unknown.short')), text: t(L, k('sport.unknown.text')), link: '#regulatory' };
+
+// The regulatory rows these answers rest on were last confirmed on this date.
+const checked = data.regulatory.filter((r) => r.jurisdiction === 'EU' || r.jurisdiction === 'WADA').map((r) => r.as_of).sort((a, b) => +b - +a)[0] ?? data.last_reviewed;
+
+const tiles = [
+  {
+    id: 'approved',
+    icon: `status-${data.category}`,
+    short: t(L, k(`approved.${approvedKey}.short`)),
+    text: t(L, k(`approved.${approvedKey}.text`)),
+    ...APPROVED_TONE[approvedKey],
+  },
+  {
+    id: 'tested',
+    icon: `tested-${hc}`,
+    short: t(L, k(`tested.${hc}.short`)),
+    text: t(L, k(`tested.${hc}.text`)),
+    tone: TESTED_TONE[hc],
+    frac: HUMAN_CLINICAL.indexOf(hc) / (HUMAN_CLINICAL.length - 1),
+  },
+];
+// Strings with a value that must stay bidi-isolated (a section code, a date) are split around it.
+const MARK = '\u0000';
+const [codeBefore, codeAfter] = t(L, k('sport.code'), { section: MARK }).split(MARK);
+const [checkedBefore, checkedAfter] = t(L, k('checked'), { date: MARK }).split(MARK);
+---
+<section class="at-a-glance" id="at-a-glance" aria-labelledby="at-a-glance-title">
+  <h2 class="at-a-glance__title" id="at-a-glance-title">{t(L, k('title'))}</h2>
+  <dl class="at-a-glance__tiles">
+    {tiles.map((tile) => (
+      <div class="at-a-glance__tile" data-q={tile.id} data-tone={tile.tone} style={`--frac:${tile.frac.toFixed(2)}`}>
+        <dt class="at-a-glance__q">{t(L, k(`${tile.id}.question`))}</dt>
+        <dd class="at-a-glance__a">
+          <span class="at-a-glance__icon"><Pictogram name={tile.icon} /></span>
+          <span class="at-a-glance__body">
+            <strong class="at-a-glance__short">{tile.short}<span class="visually-hidden">.</span></strong>
+            <span class="at-a-glance__text">{tile.text}</span>
+          </span>
+        </dd>
+      </div>
+    ))}
+    <div class="at-a-glance__tile" data-q="sport">
+      <dt class="at-a-glance__q">{t(L, k('sport.question'))}</dt>
+      <dd class="at-a-glance__a">
+        <span class="at-a-glance__icon"><Pictogram name={sport.icon} /></span>
+        <span class="at-a-glance__body">
+          <strong class="at-a-glance__short">{sport.short}<span class="visually-hidden">.</span></strong>
+          <span class="at-a-glance__text">{sport.text}</span>
+          {sport.section && <span class="at-a-glance__code">{codeBefore}<bdi class="qty">{sport.section}</bdi>{codeAfter}</span>}
+          {sport.link && <a class="at-a-glance__more" href={sport.link}>{t(L, 'compound.sections.regulatory')}</a>}
+        </span>
+      </dd>
+    </div>
+    <div class="at-a-glance__tile" data-q="risk">
+      <dt class="at-a-glance__q">{t(L, k('risk.question'))}</dt>
+      <dd class="at-a-glance__a">
+        <span class="at-a-glance__icon"><Pictogram name="callout-warning" /></span>
+        <span class="at-a-glance__body">
+          {mainRisk ? (
+            <>
+              <span class="at-a-glance__text at-a-glance__text--risk">{mainRisk}</span>
+              {hasRisksSection && <a class="at-a-glance__more" href="#risks">{t(L, k('risk.more'))}</a>}
+            </>
+          ) : (
+            <a class="at-a-glance__more at-a-glance__more--signs" href={routeUrl(L, 'safety/warning-signs')}>{t(L, k('risk.fallback'))}</a>
+          )}
+        </span>
+      </dd>
+    </div>
+  </dl>
+  <p class="at-a-glance__foot">{checkedBefore}<time datetime={isoDate(checked)}>{formatDate(L, checked)}</time>{checkedAfter}</p>
+</section>

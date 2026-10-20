@@ -31,6 +31,7 @@ import {
 } from '../src/schemas/index.ts';
 import * as V from '../src/schemas/vocab.ts';
 import { ALLOWED_COMPONENTS, COMPOUND_ONLY_COMPONENTS } from '../src/schemas/components.ts';
+import { wordCount, fleschReadingEase } from '../src/lib/readability.ts';
 import {
   ROOT,
   rel,
@@ -44,6 +45,8 @@ import {
   loadCommerceTokens,
   commerceRegex,
 } from './lib/load.ts';
+import { validateMedia } from './lib/validate-media.ts';
+import { checkExplainers } from './lib/explainers.ts';
 
 const args = process.argv.slice(2);
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
@@ -67,6 +70,47 @@ const allow = loadAllowlist();
 const commerce = loadCommerceTokens();
 const commerceRe = commerceRegex(commerce.tokens);
 const urlPatternRes = commerce.urlPatterns.map((p) => new RegExp(p, 'i'));
+
+// ------------------------------------------------------------------ plain language (beginner layer)
+/**
+ * Summary items, glance.main_risk and figure captions are what a reader with low health literacy
+ * reads first. Word counts apply in every locale; Flesch Reading Ease (src/lib/readability.ts)
+ * only to English text. See docs/CONTENT-GUIDE.md §4.
+ */
+const PLAIN = { warnWords: 18, maxWords: 30, minFlesch: 60, maxSummaryItems: 5 };
+const englishLocales = new Set(locales.filter((l) => l.bcp47.toLowerCase().startsWith('en')).map((l) => l.code));
+/**
+ * Time-boxed waivers (config/readability-waivers.json) for files another workstream had in flight
+ * when the word limits were introduced: over-length items there are reported as labelled warnings
+ * until the date, then fail again. They cover nothing but these word limits.
+ */
+type Waiver = { file: string; until: string; reason: string; used?: boolean };
+const waiverFile = path.join(ROOT, 'config/readability-waivers.json');
+const waivers: Waiver[] = fs.existsSync(waiverFile) ? ((readJson(waiverFile) as { waivers?: Waiver[] }).waivers ?? []) : [];
+const today = new Date().toISOString().slice(0, 10);
+const posix = (f: string) => rel(f).split(path.sep).join('/');
+const clip = (s: string) => (s.length > 100 ? `${s.slice(0, 97)}…` : s);
+function checkPlain(file: string, where: string, text: string, locale: string, names: string[] = []) {
+  const n = wordCount(text);
+  if (n > PLAIN.maxWords) {
+    const msg = `${where}: ${n} words (max ${PLAIN.maxWords}) — split it or cut it`;
+    const waiver = waivers.find((w) => w.file === posix(file) && today <= w.until);
+    if (waiver) {
+      waiver.used = true;
+      warn(file, `${msg} [waived until ${waiver.until}, an error after that: ${waiver.reason}]\n      > ${clip(text)}`);
+    } else err(file, `${msg}\n      > ${clip(text)}`);
+  } else if (n > PLAIN.warnWords) {
+    warn(file, `${where}: ${n} words (aim for ${PLAIN.warnWords} or fewer)\n      > ${clip(text)}`);
+  }
+  if (englishLocales.has(locale)) {
+    const f = fleschReadingEase(text, { names });
+    if (f < PLAIN.minFlesch) warn(file, `${where}: reading ease ${Math.round(f)} (aim for ${PLAIN.minFlesch}+: shorter sentences, everyday words)\n      > ${clip(text)}`);
+  }
+}
+function checkSummary(file: string, items: string[], locale: string, names: string[] = []) {
+  if (items.length > PLAIN.maxSummaryItems) warn(file, `summary: ${items.length} items (aim for ${PLAIN.maxSummaryItems} or fewer: only the essentials)`);
+  items.forEach((s, i) => checkPlain(file, `summary item ${i + 1}`, s, locale, names));
+}
 
 // ------------------------------------------------------------------ sources
 const sources = new Map<string, { file: string; doi?: string; url?: string }>();
@@ -175,6 +219,7 @@ const SECTION_RE = /<Section\s+id=["']([^"']+)["']\s*>/g;
 const MD_LINK_RE = /\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
 const HREF_RE = /href=["']([^"']+)["']/g;
 const DIAGRAM_RE = /<Diagram\s+([^>]*?)\s*(\/?)>/g;
+const CAPTION_RE = /<([A-Z][A-Za-z0-9]*)\b[^>]*?\bcaption=(["'])([\s\S]*?)\2/g;
 
 /** Phrases that tend to slip into promotion or dosing advice. Warnings, reviewed by hand. */
 const GUARDRAIL_PATTERNS: [RegExp, string][] = [
@@ -196,6 +241,7 @@ function checkBody(file: string, body: string, locale: string, kind: 'page' | 'c
     const name = m[1];
     if (!ALLOWED_COMPONENTS.includes(name as never)) err(file, `unknown MDX component <${name}> (allowed: see docs/CONTENT-GUIDE.md)`);
     if (kind === 'page' && COMPOUND_ONLY_COMPONENTS.includes(name as never)) err(file, `<${name}> is only valid on compound pages`);
+    if (kind === 'compound' && name === 'SequenceView') err(file, '<SequenceView> is already rendered by the compound layout (next to the evidence grade); remove it from the body');
   }
   for (const m of body.matchAll(CITE_RE)) for (const id of m[1].split(',').map((s) => s.trim())) requireSource(file, id, '<Cite>');
   for (const m of body.matchAll(CLAIM_RE)) if (!(V.CLAIM_LEVELS as readonly string[]).includes(m[1])) err(file, `<Claim level="${m[1]}"> — level must be one of ${V.CLAIM_LEVELS.join(', ')}`);
@@ -204,6 +250,8 @@ function checkBody(file: string, body: string, locale: string, kind: 'page' | 'c
     if (m[2] === '/') err(file, '<Diagram> must have children: the full text equivalent of the diagram');
     if (!/\bid=["'][a-z0-9-]+["']/.test(m[1])) err(file, '<Diagram> needs id="kebab-case-id"');
   }
+  // figure captions (diagrams, explainers, infographics, photos): the beginner reads them first
+  for (const m of body.matchAll(CAPTION_RE)) checkPlain(file, `<${m[1]}> caption`, m[3], locale);
   // links
   const links: { text: string; href: string }[] = [];
   for (const m of body.matchAll(MD_LINK_RE)) links.push({ text: m[1], href: m[2] });
@@ -254,6 +302,14 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
   }
   if (!compoundPages.has(slug)) compoundPages.set(slug, new Map());
   compoundPages.get(slug)!.set(locale, { file, data: r.data });
+
+  // beginner layer: plain summary and the "Biggest risk" tile
+  const names = [cd.names.common, cd.names.inn, ...cd.names.other, ...cd.names.brands].filter((n): n is string => !!n);
+  checkSummary(file, r.data.summary, locale, names);
+  if (r.data.glance.main_risk) checkPlain(file, 'glance.main_risk', r.data.glance.main_risk, locale, names);
+  else if (cd.status === 'complete' && cd.tier === 1) {
+    warn(file, 'glance.main_risk is missing: the "biggest risk" tile falls back to a link to the warning signs. Add at most 12 plain words condensed from this page\'s own risk section.');
+  }
 
   // sections in fixed order
   const sections = [...body.matchAll(SECTION_RE)].map((m) => m[1]);
@@ -327,6 +383,7 @@ for (const file of walk('src/content/pages', ['.mdx'])) {
   if (!pageRoutes.has(locale)) pageRoutes.set(locale, new Set());
   pageRoutes.get(locale)!.add(route);
   pageFiles.push({ file, locale, route, data: r.data, body });
+  checkSummary(file, r.data.summary, locale);
   requirePerson(file, r.data.reviewed_by, 'reviewed_by');
   if (r.data.opinion) requirePerson(file, r.data.opinion.signed_by, 'opinion.signed_by');
   r.data.further_reading.forEach((s) => requireSource(file, s, 'further_reading'));
@@ -390,6 +447,64 @@ for (const loc of localeCodes) {
   }
 }
 
+// ------------------------------------------------------------------ plain language: built-in pages
+// Glossary, sources, news and search take their one-item summary from pages.json
+// (keep in sync with src/pages/[locale]/{glossary,sources,news,search}.astro).
+const BUILTIN_SUMMARIES = ['glossary.intro', 'sources.intro', 'news.intro', 'search.privacy'];
+for (const loc of localeCodes) {
+  const file = path.join(ROOT, `src/i18n/${loc}/pages.json`);
+  if (!fs.existsSync(file)) continue;
+  const raw = readJson(file) as Record<string, Record<string, unknown> | undefined>;
+  for (const key of BUILTIN_SUMMARIES) {
+    const [ns, k] = key.split('.');
+    const v = raw[ns]?.[k];
+    if (typeof v === 'string') checkPlain(file, `pages.${key} (the summary of /${loc}/${ns}/)`, v, loc);
+  }
+}
+// Captions kept outside MDX: explainer step captions and image / infographic captions
+// (src/i18n/<locale>/{explainers,media,infographics}.json). Any "caption" string or "steps" list counts.
+function collectCaptions(node: unknown, at: string, out: [string, string][]) {
+  if (!node || typeof node !== 'object') return;
+  for (const [key, v] of Object.entries(node as Record<string, unknown>)) {
+    const where = at ? `${at}.${key}` : key;
+    if (key === 'caption' && typeof v === 'string') out.push([where, v]);
+    else if (key === 'steps' && Array.isArray(v)) v.forEach((s, i) => typeof s === 'string' && out.push([`${where}[${i + 1}]`, s]));
+    else collectCaptions(v, where, out);
+  }
+}
+for (const loc of localeCodes) {
+  for (const ns of ['explainers', 'media', 'infographics']) {
+    for (const file of [path.join(ROOT, `src/i18n/${loc}/${ns}.json`), ...walk(`src/i18n/${loc}/${ns}`, ['.json'])]) {
+      if (!fs.existsSync(file)) continue;
+      let data: unknown;
+      try { data = readJson(file); } catch { continue; } // reported by the JSON parse check
+      const caps: [string, string][] = [];
+      collectCaptions(data, '', caps);
+      for (const [where, text] of caps) checkPlain(file, `caption ${where}`, text, loc);
+    }
+  }
+}
+for (const w of waivers) {
+  if (today > w.until) warn(waiverFile, `waiver for ${w.file} expired on ${w.until}: remove the entry`);
+  else if (!w.used) warn(waiverFile, `waiver for ${w.file} is no longer needed (nothing there is over ${PLAIN.maxWords} words): remove the entry`);
+}
+
+// ------------------------------------------------------------------ media (images, heroes, infographics; docs/MEDIA-GUIDE.md)
+const mediaStats = validateMedia({
+  err,
+  warn,
+  zodIssues,
+  hasSource: (id) => sources.has(id),
+  allow,
+  localeCodes,
+  sourceLocale,
+  routeExists: (key) =>
+    BUILTIN_ROUTES.includes(key) || [...pageRoutes.values()].some((s) => s.has(key)) || (key.startsWith('compounds/') && compoundData.has(key.slice('compounds/'.length))),
+});
+
+// ------------------------------------------------------------------ animated explainers (docs/EXPLAINERS.md)
+checkExplainers({ err, warn, hasSource: (id) => sources.has(id), hasPerson: (id) => people.has(id), localeCodes, sourceLocale });
+
 // ------------------------------------------------------------------ report
 const filt = (xs: Issue[]) => (only ? xs.filter((x) => x.file.includes(only)) : xs);
 const E = filt(errors);
@@ -408,7 +523,7 @@ for (const [file, msgs] of group(E)) {
   for (const m of msgs) console.log(`  - ${m}`);
 }
 console.log(
-  `\nvalidated: ${sources.size} sources, ${compoundData.size} compound data files, ${[...compoundPages.values()].reduce((a, m) => a + m.size, 0)} compound pages, ${pageFiles.length} pages` +
+  `\nvalidated: ${sources.size} sources, ${compoundData.size} compound data files, ${[...compoundPages.values()].reduce((a, m) => a + m.size, 0)} compound pages, ${pageFiles.length} pages, ${mediaStats.images} images, ${mediaStats.infographics} infographics` +
     `\n${E.length} error(s), ${W.length} warning(s)${only ? ` (filtered by "${only}")` : ''}`,
 );
 if (E.length || (strict && W.length)) process.exit(1);

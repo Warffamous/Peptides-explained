@@ -31,11 +31,19 @@
 .review-meta__item dt::after { content: ':'; }
 .review-meta__notice { margin-block-start: var(--space-3); padding: var(--space-3) var(--space-4); background: var(--surface-2); border-radius: var(--radius); font-size: var(--s--1); }
 
+/*
+ * The review line near the top (DocLayout): a plain grey panel directly under the summary on phones,
+ * at the foot of the title block from 64rem (level with the bottom of the photo beside it).
+ */
+.doc > .doc-review { margin-block: calc(var(--space-4) - var(--space-6)) var(--space-6); padding: var(--space-3) var(--space-4); background: var(--surface-2); border-radius: var(--radius); }
+.doc-review .review-meta__list { margin-block-start: 0; }
+@media (min-width: 64rem) {
+  .doc > .doc-header { align-self: start; }
+  .doc > .doc-review { align-self: end; margin-block: 0 var(--space-6); }
+}
+
 /* ------------------------------------------------------------------ summary card */
-.summary-box { margin-block-end: var(--space-6); padding: var(--space-5); background: var(--primary-tint); border-inline-start: 8px solid var(--primary); border-radius: var(--radius); }
-.summary-box__title { font-size: var(--s-2); font-weight: 700; margin-block-end: var(--space-3); }
-.summary-box__list { padding-inline-start: 1.2em; display: grid; gap: var(--space-3); font-size: var(--s-1); line-height: 1.5; }
-.summary-box__list li::marker { color: var(--primary); font-size: 1.2em; }
+/* summary card: see beginner.css */
 .toc { margin-block-end: var(--space-6); padding: var(--space-4) var(--space-5); border: 2px solid var(--line); border-radius: var(--radius); }
 .toc__title { font-size: var(--s-1); font-weight: 700; margin-block-end: var(--space-2); }
 .toc__list { counter-reset: toc; display: grid; gap: 0; }
@@ -67,7 +75,9 @@
 
 /* ------------------------------------------------------------------ citations, claims, terms */
 .cite__marks { font-size: 0.75em; vertical-align: super; line-height: 0; }
-.cite__link { display: inline-block; min-inline-size: 1.4em; text-align: center; text-decoration: none; font-weight: 700; }
+/* The link's own line-height: inside the line-height: 0 marks an inline-block is 0px tall, and the
+   yellow focus block collapsed into a thin bar through the number. Line boxes do not grow. */
+.cite__link { display: inline-block; min-inline-size: 1.4em; line-height: 1.15; text-align: center; text-decoration: none; font-weight: 700; }
 .cite__link:hover { text-decoration: underline; }
 .claim-badge { display: inline-flex; align-items: center; gap: 0.3em; margin-inline-start: 0.25em; padding: 0.05rem 0.5rem; border: 2px solid var(--primary); border-radius: 999px; color: var(--primary); font-size: 0.78em; font-weight: 700; line-height: 1.4; vertical-align: 0.05em; white-space: nowrap; background: var(--surface); --pg-cut: var(--surface); }
 .claim-badge__icon .pictogram { inline-size: 1.15em; block-size: 1.15em; }

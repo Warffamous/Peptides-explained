@@ -1,0 +1,90 @@
+---
+/**
+ * <Infographic id="glp1-body-map" /> — a clinical atlas plate: text-free artwork (AI or open
+ * licence) with numbered markers drawn by an SVG overlay, and a numbered key in real, translatable
+ * HTML text. Data: src/data/infographics/<id>.yaml (art, markers in % of the artwork, sources).
+ * Text: src/i18n/<locale>/infographics.json (title, a label per marker, a full text equivalent).
+ *
+ * The artwork and the overlay are hidden from assistive technology: the key and the "in words"
+ * text carry everything the picture shows. Marker coordinates are physical positions on the art,
+ * which is never mirrored, so the overlay is identical in RTL; only the layout around it mirrors.
+ * The key sits beside the art when the plate is wide (container query) and below it otherwise,
+ * so it reflows at 200% zoom.
+ */
+import MediaPicture from '../media/MediaPicture.astro';
+import MediaCredit from '../media/MediaCredit.astro';
+import { getInfographic, getMedia, buildPicture } from '../../lib/media';
+import { getSource, shortSourceName } from '../../lib/data';
+import { tr, t, isFallback } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { ctxLocale, uid } from '../../lib/ctx';
+import { SOURCE_LOCALE, getLocale } from '../../lib/config';
+interface Props { id: string }
+const { id } = Astro.props;
+const L = ctxLocale(Astro);
+const g = getInfographic(id);
+const art = getMedia(g.art);
+const text = tr<{ title: string; markers: Record<string, { label: string; detail?: string }>; text: string }>(L, `infographics.${id}`);
+const lang = isFallback(L, `infographics.${id}.title`) ? SOURCE_LOCALE : undefined;
+const dir = lang ? getLocale(SOURCE_LOCALE).dir : undefined;
+const portrait = art.image.height > art.image.width * 1.05;
+// Portrait art is held to 24rem by the layout (media.css); landscape art takes ~3/5 of a wide plate.
+const pic = await buildPicture(art, { widths: [400, 640, 900, 1200], sizes: portrait ? '(min-width: 28rem) 24rem, 100vw' : '(min-width: 64rem) 36rem, 100vw' });
+const W = pic.img.width;
+const H = pic.img.height;
+const r = Math.round(W * 0.034);
+const markers = g.markers.map((mk, i) => ({ ...mk, n: i + 1, cx: (mk.x / 100) * W, cy: (mk.y / 100) * H, demonstrated: mk.level ? mk.level !== 'hypothesis' : undefined }));
+// "Based on": numbered links into this page's source list when the page cites the source
+// (compound pages know their numbering), otherwise to the entry in the site bibliography.
+const citeIndex = Astro.locals.compound?.citeIndex;
+const refs = g.sources.map((sid) => {
+  const s = getSource(sid);
+  const n = citeIndex?.get(sid);
+  return { sid, label: shortSourceName(s), href: n ? `#src-${n}` : `${routeUrl(L, 'sources')}#source-${sid}`, n };
+});
+const base = uid(Astro, `plate-${id}`);
+---
+<figure class="plate" id={base} aria-labelledby={`${base}-title`} data-art-origin={art.origin} data-shape={portrait ? 'portrait' : 'landscape'} lang={lang} dir={dir}>
+  <figcaption class="plate__title" id={`${base}-title`}>{text.title}</figcaption>
+  <div class="plate__body">
+    <div class="plate__art">
+      <MediaPicture pictures={[pic]} alt="" class="plate__picture" imgClass="plate__img" />
+      <svg class="plate__markers" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true" focusable="false" style={`--r: ${r}`}>
+        {markers.map((mk) => (
+          <g class="plate__marker" data-level={mk.level} data-evidence={mk.demonstrated === undefined ? undefined : mk.demonstrated ? 'demonstrated' : 'hypothesis'}>
+            <circle class="plate__halo" cx={mk.cx} cy={mk.cy} r={r * 1.45} />
+            <circle class="plate__dot" cx={mk.cx} cy={mk.cy} r={r} />
+            <text class="plate__n" x={mk.cx} y={mk.cy} dy="0.36em" text-anchor="middle" font-size={Math.round(r * 1.15)}>{mk.n}</text>
+          </g>
+        ))}
+      </svg>
+    </div>
+    <div class="plate__key">
+      <p class="plate__key-title" id={`${base}-key`}>{t(L, 'media-ui.plate.key')}</p>
+      <ol class="plate__legend" role="list" aria-labelledby={`${base}-key`}>
+        {markers.map((mk) => (
+          <li class="plate__item" data-evidence={mk.demonstrated === undefined ? undefined : mk.demonstrated ? 'demonstrated' : 'hypothesis'}>
+            <span class="plate__num" aria-hidden="true">{mk.n}</span>
+            <span class="plate__label">
+              <span class="visually-hidden">{t(L, 'media-ui.plate.marker', { n: mk.n })}: </span>
+              <strong class="plate__label-text">{text.markers[mk.key].label}</strong>
+              {text.markers[mk.key].detail && <span class="plate__detail">{text.markers[mk.key].detail}</span>}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+  <details class="plate__words">
+    <summary class="plate__words-summary">{t(L, 'media-ui.plate.inWords')}</summary>
+    <p class="plate__words-text">{text.text}</p>
+  </details>
+  <p class="plate__sources">
+    <span class="plate__sources-label">{t(L, 'media-ui.plate.basedOn')}:</span>{' '}
+    {refs.map((ref, i) => <>{i > 0 && '; '}<a class="plate__ref" href={ref.href}>{ref.label}{ref.n && <sup class="plate__ref-n"><bdi>[{ref.n}]</bdi></sup>}</a></>)}
+  </p>
+  <p class="plate__credit">
+    <MediaCredit locale={L} media={art} />{' '}
+    <span class="plate__art-note">{t(L, 'media-ui.plate.artNote')}</span>
+  </p>
+</figure>

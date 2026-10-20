@@ -28,9 +28,15 @@ import StudyTable from './StudyTable.astro';
 import RegulatoryTable from './RegulatoryTable.astro';
 import AuthorisedProducts from './AuthorisedProducts.astro';
 import SequenceView from './SequenceView.astro';
+import Photo from './Photo.astro';
+import Infographic from './Infographic.astro';
+import MediaCredits from './MediaCredits.astro';
+import Explainer from './Explainer.astro';
 
 export const mdxComponents = {
   Cite, Claim, Q, Seq, Term, Callout, Diagram, Checklist, Faq, FaqItem, EvidenceGrade, WarningSigns, PageList,
   CompoundIndex, Timeline, GradeRubric, GradeMatrix, CorrectionsLog, ChangeTracker, NewsList, GlossaryIndex,
   SourcesIndex, JurisdictionCard, Section, Mechanism, StudyTable, RegulatoryTable, AuthorisedProducts, SequenceView,
+  Explainer,
+  Photo, Infographic, MediaCredits,
 };

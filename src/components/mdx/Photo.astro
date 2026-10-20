@@ -1,0 +1,28 @@
+---
+/**
+ * <Photo id="lab-mouse" /> — a registered image (src/data/media.yaml) as a figure: responsive
+ * AVIF/WebP/JPEG, alt text and caption from src/i18n/<locale>/media.json, a short credit line,
+ * lazy-loaded. Use it for photographs, illustrations and figures; labelled artwork uses <Infographic>.
+ * Design A sets the caption in the margin on wide screens; B runs the image wide; C keeps it flat.
+ */
+import MediaPicture from '../media/MediaPicture.astro';
+import MediaCredit from '../media/MediaCredit.astro';
+import { getMedia, mediaText, buildPicture } from '../../lib/media';
+import { ctxLocale, uid } from '../../lib/ctx';
+interface Props { id: string }
+const { id } = Astro.props;
+const L = ctxLocale(Astro);
+const m = getMedia(id);
+const text = mediaText(L, id);
+const pic = await buildPicture(m, { widths: [480, 720, 960, 1280, 1600], sizes: '(min-width: 64rem) 52rem, (min-width: 48rem) 92vw, 100vw' });
+const figId = uid(Astro, `photo-${id}`);
+---
+<figure class="photo" id={figId} data-kind={m.kind} data-origin={m.origin}>
+  <div class="photo__frame">
+    <MediaPicture pictures={[pic]} alt={text.alt} lang={text.lang} class="photo__picture" imgClass="photo__img" style={`--focal: ${pic.focal}`} />
+  </div>
+  <figcaption class="photo__caption" lang={text.lang} dir={text.dir}>
+    {text.caption && <span class="photo__text">{text.caption}</span>}
+    <MediaCredit locale={L} media={m} class="photo__credit" />
+  </figcaption>
+</figure>

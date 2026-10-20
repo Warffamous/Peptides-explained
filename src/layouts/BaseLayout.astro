@@ -34,7 +34,7 @@ const source = getLocale(SOURCE_LOCALE);
     <a class="skip-link" href="#main">{t(locale, 'common.skipToContent')}</a>
     {BUILD_THEMES.includes('c') && <PictogramSprite />}
     <div class="site-banners" data-pagefind-ignore="all">
-      {REVIEW_BUILD && <p class="banner banner--review">{t(locale, 'common.reviewBuild', { theme: `${BUILD_THEME.toUpperCase()} · ${t(locale, `common.utility.designOptions.${BUILD_THEME}`)}` })}</p>}
+      {REVIEW_BUILD && <p class="banner banner--review">{t(locale, 'common.reviewBuild', { theme: t(locale, `common.utility.designOptions.${BUILD_THEME}`) })}</p>}
       {loc.status === 'preview' && <p class="banner banner--preview">{t(locale, 'common.translation.previewLocale', { language: loc.name })}</p>}
       <p class="banner banner--pseudo">{t(locale, 'common.pseudoRtl')} — <a href="?pseudo=off" lang={source.bcp47}>off</a></p>
     </div>

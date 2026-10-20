@@ -60,12 +60,22 @@
 .review-meta__pending { font-style: italic; color: var(--ink-2); }
 .review-meta__notice { margin-block-start: var(--space-3); font-size: var(--s--1); color: var(--ink-2); max-inline-size: var(--measure); border-inline-start: 2px solid var(--rule-strong); padding-inline-start: var(--space-3); }
 
-/* ------------------------------------------------------------------ summary box */
-.summary-box { margin-block-end: var(--space-6); padding: var(--space-4) var(--space-5); border: 1px solid var(--rule-strong); }
-.summary-box__title { font-family: var(--font-mono); font-size: var(--s--2); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-block-end: var(--space-3); }
-.summary-box__list { padding: 0; list-style: none; display: grid; gap: var(--space-2); font-size: var(--s-1); line-height: 1.45; }
-.summary-box__list li { padding-inline-start: 1.2em; text-indent: -1.2em; }
-.summary-box__list li::before { content: '—'; display: inline-block; inline-size: 1.2em; text-indent: 0; color: var(--ink-3); }
+/*
+ * The review line near the top (DocLayout): after the summary on phones, a colophon under the title
+ * block from 64rem. Small, quiet, on a hairline; it never pushes the beginner layer down.
+ */
+.doc > .doc-review { margin-block: calc(-1 * var(--space-3)) var(--space-5); padding-block-start: var(--space-2); border-block-start: var(--hair) solid var(--rule); }
+.doc-review .review-meta__list { margin-block-start: 0; column-gap: var(--space-4); font-size: var(--s--2); line-height: 1.5; }
+.doc-review .review-meta__item dt { font-family: var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; }
+@media (min-width: 64rem) {
+  /* The title block: eyebrow, title and badge on top, the review line at its foot, level with the
+     bottom of the photo beside it; one rule closes the block. */
+  .doc > .doc-header { align-self: start; margin-block-end: 0; padding-block-end: var(--space-4); border-block-end: 0; }
+  .doc > .doc-review { align-self: end; margin-block: 0 var(--space-6); padding-block: var(--space-2) var(--space-4); border-block-start: var(--hair) solid var(--rule); border-block-end: 1px solid var(--rule-strong); }
+  .doc-review .review-meta__list { font-size: var(--s--1); }
+}
+
+/* summary box: see beginner.css */
 
 /* ------------------------------------------------------------------ contents */
 .toc { margin-block-end: var(--space-6); }
@@ -573,7 +583,6 @@ a.term:hover { text-decoration-style: solid; color: var(--accent); }
 .standing-notice .icon { flex: none; inline-size: 1.15em; block-size: 1.15em; margin-block-start: 0.1em; }
 
 /* ------------------------------------------------------------------ landing */
-.page--landing .summary-box__list { font-size: var(--s-2); line-height: 1.35; }
 
 .icon { inline-size: 1.1em; block-size: 1.1em; vertical-align: -0.15em; }
 .pictogram { inline-size: 1.5em; block-size: 1.5em; fill: currentColor; }

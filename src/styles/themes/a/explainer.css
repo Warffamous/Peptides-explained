@@ -1,0 +1,111 @@
+/*
+ * Design A — animated explainers. Restraint: the drawing is made the way a plate is engraved.
+ * Proven links are DRAWN as lines (stroke-dashoffset, linear); weaker links keep their dash pattern
+ * and resolve in four plain steps; nothing travels, bounces or glows. Ink plus the one accent,
+ * hairline frames, square corners, no shadows or gradients. Evidence is carried by line pattern.
+ */
+@import "../../base/explainer.css";
+
+.explainer {
+  --xp-in-dur: 0.9s;
+  --xp-ease: linear;
+  --xp-move: xp-fade;
+  --xp-pin-in: xp-fade;
+  --xp-dashed-ease: steps(4, jump-end);
+  --xp-pulse: none;
+  --xp-ghost: 0.35;
+  --xp-dim: 0.22;
+  --xp-now: xp-now-cut;
+  --xp-cur-bg: var(--accent-tint);
+  --xp-cur-line: var(--accent);
+  --xp-cur-n-ink: var(--accent);
+  --xp-cur-n-bg: transparent;
+  border-block: 1px solid var(--rule-strong);
+  padding-block: var(--space-4) var(--space-5);
+  margin-block: var(--space-5) var(--space-6);
+}
+.xp-kicker { font-family: var(--font-mono); font-size: var(--s--2); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.xp-title { font-size: var(--s-1); font-weight: 650; letter-spacing: -0.01em; line-height: 1.25; color: var(--ink); }
+.xp-stage { border: var(--hair) solid var(--rule); background: var(--paper); padding: var(--space-3); }
+
+/* artwork */
+.xp-art .xp-vessel { fill: var(--tint); stroke: var(--ink-3); stroke-width: 1; }
+.xp-art .xp-organ { fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.xp-art .xp-open { fill: none; }
+.xp-art .xp-cell { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+.xp-art .xp-rec { stroke: var(--ink-2); stroke-width: 1.1; }
+.xp-art .xp-ring { fill: none; stroke: var(--accent); stroke-width: 1.3; }
+.xp-art .xp-alb { fill: var(--ramp-1); stroke: var(--ink-2); stroke-width: 0.9; }
+.xp-art .xp-drug { fill: var(--accent); }
+.xp-art .xp-tail { stroke: var(--accent); stroke-width: 1.6; }
+.xp-art .xp-glu { fill: none; stroke: var(--ink-3); stroke-width: 1; }
+.xp-art .xp-ins { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+.xp-art .xp-gcg { fill: var(--ink-3); }
+.xp-art .xp-food { fill: var(--ramp-2); }
+.xp-art .xp-plate { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+.xp-art .xp-detail { stroke: var(--ink-3); stroke-width: 0.9; }
+.xp-art .xp-inset { fill: var(--paper); stroke: var(--ink-3); stroke-width: 0.9; }
+.xp-art .xp-hot { fill: var(--accent); }
+.xp-art .xp-glow { filter: none; }
+.xp-art .xp-arrow { stroke: var(--ink); stroke-width: 1.6; }
+.xp-art .xp-link { stroke: var(--ink); stroke-width: 1.8; }
+.xp-art .xp-link[data-level='hypothesis'] { stroke: var(--ink-2); }
+.xp-art .xp-zone { fill: var(--tint); }
+.xp-art .xp-hatch { stroke: var(--ramp-3); stroke-width: 1; }
+.xp-art .xp-danger-hot { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.xp-art .xp-axis { stroke: var(--ink); stroke-width: 1.2; }
+.xp-art .xp-curve { stroke: var(--ink); stroke-width: 2.4; }
+.xp-art .xp-curve--safe { stroke: var(--accent); }
+.xp-art .xp-su { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+.xp-art .xp-warn { fill: var(--ink); }
+.xp-art .xp-warn-mark { stroke: var(--paper); stroke-width: 2.6; }
+.xp-art .xp-warn-dot { fill: var(--paper); }
+.xp-art .xp-sugar { fill: var(--paper); stroke: var(--ink); stroke-width: 1.4; }
+.xp-art .xp-arrow--up { stroke: var(--accent); }
+.xp-key .xp-link { stroke: var(--ink); stroke-width: 1.8; }
+.xp-key .xp-link[data-level='hypothesis'] { stroke: var(--ink-2); }
+
+/* overlays: numbered marks set like plate references */
+.xp-pin { background: var(--paper); color: var(--ink); border: 1px solid var(--ink); font-family: var(--font-mono); font-weight: 600; }
+.xp-label { font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+/* words that say what a line does are read as a sentence: set in the text face, in ink */
+.xp-label[data-tone='zone'] { background: var(--paper); padding-inline: 0.2em; margin-inline-start: -0.2em; }
+/* In a chart only words on the hatching (ground) get the paper backing; on the tinted band a paper box
+   read as one more shape */
+.xp-panel__art .xp-label[data-tone='zone']:not([data-ground]) { background: none; }
+.xp-panel__art .xp-label[data-ground] { background: var(--paper); padding-inline: 0.2em; margin-inline-start: -0.2em; }
+.xp-label[data-tone='note'] { font-family: inherit; letter-spacing: 0; text-transform: none; font-weight: 600; color: var(--ink); }
+.xp-lico[data-icon='check'] { color: var(--accent); }
+.xp-lico[data-icon='warn'] { color: var(--ink); }
+.xp-lico[data-icon='warn'] :is(.xp-lico__mark, .xp-lico__dot) { stroke: var(--paper); fill: var(--paper); }
+.xp-lico[data-icon='warn'] .xp-lico__mark { stroke-width: 2; }
+.xp-lico[data-icon='sugar'] { color: var(--ink); }
+.xp-lico[data-icon='sugar'] .xp-lico__fill { fill: var(--paper); stroke: currentColor; stroke-width: 1.4; stroke-linejoin: round; }
+.xp-lico[data-icon='sugar'] .xp-lico__line { stroke-width: 1.2; }
+.xp-panel__title { font-size: var(--s--1); font-weight: 650; line-height: 1.3; color: var(--ink); }
+
+/* the current step, under the plate: the sentence set large, its number like a plate reference */
+.xp-now { padding-block: var(--space-1) 0; }
+.xp-now > p { font-size: var(--s-0); line-height: 1.45; color: var(--ink); }
+.xp-now__n { display: inline-block; min-inline-size: 1.6em; margin-inline-end: 0.35em; padding-inline: 0.2em; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: var(--s--1); font-weight: 600; text-align: center; color: var(--ink); }
+
+/* controls */
+.xp-btn { min-block-size: 2.25rem; padding: 0.3rem 0.75rem; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); font-family: var(--font-mono); font-size: var(--s--2); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.xp-btn:hover { background: var(--ink); color: var(--paper); }
+.xp-progress { block-size: 2px; gap: 2px; }
+.xp-seg { background: var(--rule); }
+.xp-seg::before { background: var(--accent); }
+.xp-rm-note { font-size: var(--s--2); color: var(--ink-3); font-family: var(--font-mono); letter-spacing: 0.02em; }
+
+/* the step list: a compact storyboard between hairlines */
+.xp-steps { border-block-start: var(--hair) solid var(--rule-strong); }
+.xp-step { gap: 0 0.75rem; padding-block: 0.55rem; padding-inline: 0.6rem 0.25rem; border-block-end: var(--hair) solid var(--rule); border-inline-start-width: 2px; }
+.xp-step__n { font-family: var(--font-mono); font-size: var(--s--1); font-weight: 600; color: var(--ink-3); padding-block-start: 0.12em; min-inline-size: 1.2em; }
+.xp-step__text { font-size: var(--s--1); line-height: 1.5; color: var(--ink); }
+.xp-step__levels { margin-block-start: 0.35rem; font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+.xp-summary { font-size: var(--s--1); color: var(--ink-2); }
+.xp-legend { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.02em; color: var(--ink-2); }
+.xp-legend__title { text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); }
+.xp-sources { font-size: var(--s--2); color: var(--ink-3); }
+.xp-sources__label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; }
+.xp-review { font-size: var(--s--2); font-style: italic; color: var(--ink-3); }

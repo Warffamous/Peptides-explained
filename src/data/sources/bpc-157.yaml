@@ -3,6 +3,9 @@
 # NCBI E-utilities) and authors/title/journal/year/DOI/PMID were copied from the PubMed record.
 # Every regulator, law and registry URL was fetched on 20 October 2026 and contains what it is
 # cited for (see research/bpc-157.md, "Verification log").
+# Completion fact-check (20 October 2026): every PMID re-fetched with E-utilities esummary and
+# compared field by field (title, authors, journal, year, volume, pages, DOI, PMCID); all matched.
+# The froum-2026-nerve-cases source used by the compound page lives in shared.yaml (also cited by TB-500).
 
 # ---------------------------------------------------------------- identity, chemistry, databases
 
@@ -167,6 +170,7 @@ chang-2014-ghr:
   pmid: "25415472"
   pmcid: PMC6271067
   verified: pubmed
+  note: "Acknowledgements (PMC full text): supported by the National Science Council of Taiwan and Chang Gung Memorial Hospital."
 
 hsieh-2017-vegfr2:
   type: article
@@ -231,7 +235,7 @@ bicer-2026-achilles:
   doi: 10.52312/jdrs.2026.2951
   pmid: "42542926"
   verified: pubmed
-  note: "Full text (jointdrs.org): 8 rats per group, of which 4 tendons per group went to biomechanical testing and 4 to histology; pathologist blinded and biomechanical specimens coded; 'The authors received no financial support'. BPC-157 vs control: median load to failure 37.16 vs 26.91 N, adjusted p = 0.389."
+  note: "Full text (jointdrs.org): 8 rats per group, of which 4 tendons per group went to biomechanical testing and 4 to histology (so n = 4 per group for every analysis); pathologist blinded and biomechanical specimens coded; 'The authors received no financial support'. BPC-157 vs control: median load to failure 37.16 vs 26.91 N, adjusted p = 0.389; total Bonar score p = 0.273; Sirius red type I collagen intensity higher (p = 0.009). Earlier Zagreb models left the tendon unrepaired (authors' discussion)."
 
 yildirim-2026-mammary-artery:
   type: article
@@ -245,7 +249,7 @@ yildirim-2026-mammary-artery:
   pmid: "42123221"
   pmcid: PMC13163310
   verified: pubmed
-  note: "Ankara, Turkey; no Zagreb co-author. Artery remnants from 12 of 14 consenting bypass patients (PMC full text). 'This research received no external funding.'"
+  note: "Ankara, Turkey; no Zagreb co-author. Internal mammary artery remnants from 12 of 14 consenting male bypass patients, two rings each, endothelium intact or removed, organ bath; L-NAME weakened the relaxation; residual relaxation under L-NAME. Authors state the organ-bath concentrations 'substantially exceed systemic plasma levels'. No solvent-only time-control rings reported. 'This research received no external funding.' (PMC full text, read 20 October 2026). Article number 3488 from the PMC elocation-id; the PubMed record has no page field."
 
 demirtas-2025-ischaemia-reperfusion:
   type: article
@@ -259,7 +263,7 @@ demirtas-2025-ischaemia-reperfusion:
   pmid: "40005408"
   pmcid: PMC11857380
   verified: pubmed
-  note: "Ankara, Turkey; 24 rats randomised to four groups; BPC-157 given at the start of 45 min ischaemia, organs harvested after 2 h reperfusion."
+  note: "Ankara, Turkey (shares author Yıldırım AK with yildirim-2026-mammary-artery); no Zagreb co-author. 24 male Wistar rats randomised to four groups; BPC-157 given at the start of 45 min lower-limb ischaemia, liver, kidney and lung harvested after 2 h reperfusion (PubMed abstract)."
 
 zhang-2026-fbxo22:
   type: article
@@ -272,6 +276,7 @@ zhang-2026-fbxo22:
   pmid: "41606641"
   pmcid: PMC12947506
   verified: pubmed
+  note: "School of Pharmacy, Fourth Military Medical University, Xi'an: the same laboratory as xu-2020-preclinical-safety and he-2022-pharmacokinetics. FBXO22 binding and BACH1 stabilisation shown in human umbilical vein endothelial cells (PMC full text)."
 
 cox-2017-doping-detection:
   type: article
@@ -400,6 +405,7 @@ carmeliet-2011-angiogenesis:
   pages: "298-307"
   doi: 10.1038/nature10144
   pmid: "21593862"
+  pmcid: PMC4049445
   verified: pubmed
 
 sulzmaier-2014-fak-cancer:
@@ -412,6 +418,7 @@ sulzmaier-2014-fak-cancer:
   pages: "598-610"
   doi: 10.1038/nrc3792
   pmid: "25098269"
+  pmcid: PMC4365862
   verified: pubmed
 
 fda-regranex-label-2011:
@@ -446,6 +453,7 @@ ioannidis-2005-false-findings:
   pages: "e124"
   doi: 10.1371/journal.pmed.0020124
   pmid: "16060722"
+  pmcid: PMC1182327
   verified: pubmed
 
 sena-2010-publication-bias:
@@ -458,6 +466,7 @@ sena-2010-publication-bias:
   pages: "e1000344"
   doi: 10.1371/journal.pbio.1000344
   pmid: "20361022"
+  pmcid: PMC2846857
   verified: pubmed
 
 begley-2012-preclinical-standards:
@@ -483,6 +492,7 @@ macleod-2015-risk-of-bias:
   pages: "e1002273"
   doi: 10.1371/journal.pbio.1002273
   pmid: "26460723"
+  pmcid: PMC4603955
   verified: pubmed
 
 errington-2021-replicability:
@@ -539,7 +549,7 @@ fda-pcac-2026-questions:
   url: https://www.fda.gov/media/193711/download
   accessed: 2026-10-20
   verified: url
-  note: "The voting questions: whether BPC-157 (free base) and BPC-157 acetate should be placed on the 503A list."
+  note: "The voting questions: two separate votes, whether BPC-157 (free base) and whether BPC-157 acetate should be placed on the 503A list."
 
 fda-pcac-2026-presentations-day1:
   type: regulator
@@ -581,6 +591,17 @@ fda-category-2-safety-risks:
   verified: url
   note: "Lists BPC-157 among 'bulk drug substances previously in category 2 of the interim policies' whose nominations were withdrawn, with FDA's stated risks (immunogenicity, peptide-related impurities, API characterisation, limited safety information). Content current as of 22 April 2026. The page does not give the date BPC-157 was added to category 2."
 
+federalregister-503a-search-2026-10-20:
+  type: dataset
+  authors: "Office of the Federal Register"
+  title: "Federal Register document search, 20 October 2026: \"bulk drug substances\", published from 24 July 2026 — no proposed or final rule on the 503A bulks list"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=%22bulk+drug+substances%22&conditions%5Bpublication_date%5D%5Bgte%5D=07%2F24%2F2026
+  accessed: 2026-10-20
+  verified: url
+  note: "Run through the federalregister.gov documents API on 20 October 2026: 2 results (28 August 2026 notice on animal-drug compounding; 31 August 2026 information-collection notice), neither concerning the 503A bulks list. A wider search for FDA documents mentioning 'compounding' since 24 July 2026 (24 results) also contained no 503A bulks-list rule. The last 503A rulemaking listed on the FDA's 503A page is the September 2019 proposed rule."
+
 ctgov-nct02637284:
   type: registry
   authors: "ClinicalTrials.gov"
@@ -599,7 +620,7 @@ ctgov-nct07437547:
   url: https://clinicaltrials.gov/study/NCT07437547
   accessed: 2026-10-20
   verified: registry
-  note: "Recruiting; planned enrolment 120; single site in Shenzhen, China; primary completion estimated February 2027."
+  note: "Recruiting (start 2 February 2026); phase 2; planned enrolment 120; quadruple-masked, placebo-controlled; co-primary endpoints time to return to sport and MRI injury volume at day 14; has a data monitoring committee; single site in Shenzhen, China; primary completion estimated February 2027. Re-checked via the ClinicalTrials.gov API v2 on 20 October 2026."
 
 ctgov-nct07803250:
   type: registry
@@ -609,7 +630,7 @@ ctgov-nct07803250:
   url: https://clinicaltrials.gov/study/NCT07803250
   accessed: 2026-10-20
   verified: registry
-  note: "Not yet recruiting; university sponsor; planned start January 2027."
+  note: "Not yet recruiting; university sponsor; planned start January 2027; registered as phase 1. The record is internally inconsistent: enrolment 30 but summary says 'Twenty patients'; the comparator arm is 'normal saline' injections but the intervention entry calls it 'Sham (No Treatment)' with no placebo injections. Re-checked via the ClinicalTrials.gov API v2 on 20 October 2026."
 
 ctgov-nct07752381:
   type: registry
@@ -631,7 +652,7 @@ ema-medicines-json:
   url: https://www.ema.europa.eu/en/documents/report/medicines-output-medicines_json-report_en.json
   accessed: 2026-10-20
   verified: url
-  note: "2,754 records (timestamp 20 October 2026); none contains BPC-157, bepecin, PL 14736 or pentadecapeptide."
+  note: "2,754 records (timestamp 2026-10-20T06:11:41Z, re-downloaded 20 October 2026); none contains BPC-157, bepecin, PL 14736, pentadecapeptide or 'body protection'. Regranex (becaplermin): status Withdrawn, authorised 29/03/1999, authorisation ended 16/07/2012."
 
 de-amg-21:
   type: law

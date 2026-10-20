@@ -1,0 +1,88 @@
+# Image registry: one entry per image in src/assets/media/. See docs/MEDIA-GUIDE.md.
+# Alt text and captions live in src/i18n/<locale>/media.json (keyed by the same id).
+# Written by scripts/media/fetch-commons.ts and scripts/media/generate-image.ts; edit by hand freely.
+
+gila-monster:
+  file: gila-monster.jpg
+  kind: photo
+  origin: public-domain
+  license: public-domain
+  author: Jeff Servoss
+  credit: U.S. Fish and Wildlife Service
+  title: Reticulate Gila Monster
+  source_url: https://commons.wikimedia.org/wiki/File:Reticulate_Gila_Monster.jpg
+  retrieved: 2026-10-20
+  people: false
+  focal: 52% 58%
+  sources: [eng-1992-exendin-4, muller-2019-glp1-review, ema-epar-wegovy]
+lab-mouse:
+  file: lab-mouse.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-2.0-FR
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en
+  author: Rama
+  title: Lab mouse mg 3263
+  source_url: https://commons.wikimedia.org/wiki/File:Lab_mouse_mg_3263.jpg
+  retrieved: 2026-10-20
+  people: false
+  focal: 38% 66%
+  sources: [fda-pcac-2026-kpv-briefing]
+glp1-body-map:
+  file: glp1-body-map.png
+  kind: infographic-art
+  origin: ai-generated
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  author: AI-generated with gpt-image-2.5-sunburst-2026-09-08 for Peptides Explained
+  focal: 50% 40%
+  sources: []
+  ai:
+    model: gpt-image-2.5-sunburst-2026-09-08
+    prompt: "Front (anterior) view of an adult human head, neck and torso only, ending just below the hips, with the arms cut off at the shoulders, drawn as a soft, semi-transparent, gender-neutral body outline with no facial features, no nipples and no genitals. Inside it draw only three organs, anatomically correct in size, shape and position as seen from the front: (1) the brain inside the skull in true anterior view, showing the two frontal lobes with the temporal lobes at the sides; the cerebellum lies behind and is not visible; (2) the stomach, J-shaped, its rounded fundus tucked up under the left dome of the diaphragm behind the lower left ribs (the body's left is the viewer's right), the oesophagus entering it from above and the pylorus near the midline; (3) the pancreas, a slender lobulated gland lying across the spine at the level of the first lumbar vertebra, partly behind the lower edge of the stomach, its head on the body's right (viewer's left) cradled in the C-shaped curve of the duodenum and its tail reaching toward the body's left (viewer's right). Draw nothing else next to the stomach: no spleen, no liver, no membranes. Soft natural colours: brain pale pink-grey, stomach muted rose, pancreas pale yellow-ochre; only a very faint ribcage and spine. Centred composition with generous empty space around the brain, the stomach and the pancreas, on a plain very light warm-grey background."
+    preamble: v1
+    generated: 2026-10-20
+    review: ok
+    reviewed_by: editorial-board
+    review_note: "Pre-check by the media build agent on 20 October 2026; the owner still has to check it. Generation 1 (discarded): no text-like marks, but the brain was drawn as if seen from behind (cerebellum visible below the hemispheres in a front view), an unexplained pink crescent sat beside the stomach fundus, and arms, hands and thighs were included. Generation 2 (this file, corrected prompt): no letters, numbers, labels, logos or text-like marks found when inspected at full size; brain in front view with frontal and temporal lobes; oesophagus enters a J-shaped stomach on the body's left; the duodenal C-loop holds the head of the pancreas on the body's right, tail toward the left. Simplifications to judge: the pancreas is drawn below and in front of the stomach rather than mostly behind it; the duodenum ends as a cut tube; the stomach sits slightly low under the ribs. No facial features, nipples or genitals. Second check by the integration/QA agent on 20 October 2026 (full image plus head, upper-abdomen and pelvis crops at 2x): no letters, digits, labels, logos, watermarks or text-like texture anywhere, including inside the gyri and the pancreatic lobules. Confirmed: anterior brain with frontal and temporal lobes, no cerebellum; oesophagus descends left of midline into the cardia; J-shaped stomach on the body's left with the pylorus right of midline; duodenal C-loop around the pancreatic head on the body's right; pancreatic body across the spine at about T12-L1 with the tail rising toward the left; the lower edge of the stomach overlaps the upper edge of the pancreas, so the depth order is right (the pancreas is not drawn in front of the stomach, as the first pre-check put it; it is drawn mostly below it). Further simplifications for the owner to judge: the gastric fundus barely rises above the cardia (it normally domes up under the left diaphragm); the diaphragm, liver and spleen are omitted by design; the duodenum stops as a cut tube before crossing the midline; much more of the pancreas shows below the stomach than in a real front view; the figure continues to the upper thighs (smooth groin, no genital detail) although the prompt asked to end at the hips; faint fibrous strands sit between the temporal lobes where the brainstem would be. None of these changes what the three markers point at. Marker positions checked against the art: 1 on the brain midline, 2 on the body of the stomach, 3 on the pancreatic head/neck. Approved by the site owner on 20 October 2026, with these simplifications accepted for a teaching drawing."
+zagreb-medical-school:
+  file: zagreb-medical-school.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0/
+  author: Suradnik13
+  title: Medicinski fakultet Zagreb - glavni
+  source_url: https://commons.wikimedia.org/wiki/File:Medicinski_fakultet_Zagreb_-_glavni.jpg
+  retrieved: 2026-10-20
+  people: false
+  focal: 45% 42%
+  sources: []
+fibroblast-actin:
+  file: fibroblast-actin.jpg
+  kind: photo
+  origin: cc-by
+  license: CC-BY-2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  author: D. Burnette, J. Lippincott-Schwartz
+  credit: NICHD (Eunice Kennedy Shriver National Institute of Child Health and Human Development), via Flickr
+  title: Cells with nuclei in blue, mitochondria in green, and the actin cytoskeleton in red (19124186316)
+  source_url: https://commons.wikimedia.org/wiki/File:Cells_with_nuclei_in_blue,_mitochondria_in_green,_and_the_actin_cytoskeleton_in_red_(19124186316).jpg
+  retrieved: 2026-10-20
+  people: false
+  focal: 55% 36%
+  sources: [safer-1991-actin-sequestering]
+duodenum-villi:
+  file: duodenum-villi.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  author: CoRus13
+  title: Duodenal biopsy, low mag
+  source_url: https://commons.wikimedia.org/wiki/File:Duodenal_biopsy,_low_mag.jpg
+  retrieved: 2026-10-20
+  people: false
+  focal: 45% 42%
+  # Caption: K cells in the upper small intestine release GIP after a meal (Coskun 2018, introduction).
+  sources: [coskun-2018-ly3298176]

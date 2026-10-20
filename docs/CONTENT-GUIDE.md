@@ -55,9 +55,15 @@ of the following (verify each element against fda.gov before first use and cite 
 
 1. On 23 July 2026 the FDA's Pharmacy Compounding Advisory Committee (PCAC) voted 8–6 with one
    abstention to recommend BPC-157 for the 503A bulk drug substances list.
-2. The committee's recommendations covered six peptides in total (BPC-157, KPV, TB-500, MOTS-c,
-   Semax, epitalon) — confirm the exact list and per-peptide votes from FDA materials; if a primary
-   source contradicts this list, follow the primary source and flag it in your research notes.
+2. The committee considered **seven** peptides (the six below plus emideltide, also called DSIP)
+   and recommended **six** (BPC-157, KPV, TB-500, MOTS-c, Semax, epitalon). Confirm per-peptide
+   votes from FDA materials; if a primary source contradicts this, follow the primary source and
+   flag it in your research notes.
+   *Status of the sources (checked 20 October 2026):* FDA documents (meeting page, briefing
+   documents, voting questions) support "considered seven". The vote counts and the six-of-seven
+   outcome are not yet on any fda.gov page (no minutes posted). Until they are, cite the FDA
+   meeting page and voting questions, and write the counts as "as reported from the public
+   meeting". Each substance had separate votes for its salt forms (e.g. free base and acetate).
 3. The vote is **advisory and non-binding**, and went **against FDA staff's own recommendation**.
 4. Legal compounding remains prohibited until the FDA formally adopts the recommendation and
    completes rulemaking.
@@ -99,6 +105,7 @@ of the following (verify each element against fda.gov before first use and cite 
 | Timeline events / regulatory tracker / corrections | `src/data/{timeline,tracker,corrections}.yaml` + text in `src/i18n/<locale>/{timeline,tracker,corrections}.json` | editors |
 | Warning signs (single source of truth) | `src/i18n/<locale>/warning-signs.json` | safety editor |
 | People (reviewers, editors) | `src/data/people.yaml` | editors |
+| Images: files, licence registry, page heroes, infographic plates | `src/assets/media/`, `src/data/media.yaml`, `src/data/heroes.yaml`, `src/data/infographics/<id>.yaml`; alt text and captions in `src/i18n/<locale>/media.json`, plate text in `src/i18n/<locale>/infographics.json` (see `docs/MEDIA-GUIDE.md`) | writers, editors |
 
 Routes come from file paths: `src/content/pages/en/safety/sterile-technique.mdx` →
 `/en/safety/sterile-technique/`. `index.mdx` is the section landing. Slugs are English in
@@ -115,7 +122,7 @@ Run `npm run validate -- --only <part-of-your-path>` while writing.
 title: "Why peptides are injected, not swallowed"
 nav_title: "Why not a pill"            # optional, short label for menus
 description: "The gut treats a peptide drug like food protein. Here is the physical reason most peptides are injected, and how oral semaglutide works around it."   # 50–170 chars, meta description
-summary:                               # REQUIRED. "In short" box. B1. 2–6 short sentences.
+summary:                               # REQUIRED. "In short" box, the beginner entry point. 2–5 items, ≤18 words each (§4.1).
   - "Your gut breaks down protein into small pieces. Peptide drugs are made of the same building blocks, so the gut breaks them down too."
   - "Peptides are also too large and too water-loving to pass easily through the gut wall."
   - "That is why most peptide medicines are injected under the skin."
@@ -139,6 +146,33 @@ Legal jurisdiction pages add `jurisdiction: NL` (or DE, BE, UK, EU, US).
 
 **Never** put a `# ` heading in the body; the layout renders the title. Start body sections at
 `## `.
+
+### 4.1 The summary is the beginner layer
+
+The `summary` is the first text on every page, in a box set larger than the body ("In short";
+"The 30-second version" on compound pages). Many readers stop there. **Write it for a reader with
+low health literacy: everyday words, short sentences, the most important fact first.**
+
+- **One idea per item, one or two short sentences, at most 18 words.** The validator warns above
+  18 words and **fails above 30**. Aim for 3–5 items; it warns above 5.
+- **The most important fact first** (design C sets the first item in bold). On a compound page that
+  is usually "what it is and whether it is an approved medicine".
+- **Everyday words.** "Feel sick" rather than "nausea", "lab" rather than "in vitro", "three in four"
+  rather than "74.6%". If a technical word is unavoidable, say what it does ("a switch called
+  NF-κB"). Names are fine: the compound's own names and trade names do not count as hard words.
+- **Reading ease.** English items should score 60 or more on the Flesch Reading Ease scale
+  (`src/lib/readability.ts`; the validator warns below 60). Other locales get the word limits only.
+- **No new claims.** The summary condenses what the page says and cites below; never add a fact,
+  a number or a nuance that the body does not support. Shorter must not mean stronger: keep
+  "in mice", "in some groups", "only advice".
+- The same limits apply to every **caption**: `<Diagram caption>`, explainer step captions
+  (`src/i18n/<locale>/explainers.json`) and image captions (`src/i18n/<locale>/media.json`).
+- The box also shows **how long the whole page takes to read**. It is computed from the body at
+  build time (200 words a minute); do not write it.
+
+Before a page goes out: `npm run validate -- --only <your-file>` and fix every summary warning you
+can without losing meaning. `config/readability-waivers.json` holds time-boxed waivers for files
+another workstream had in flight when the 30-word limit arrived; never add one for your own text.
 
 ---
 
@@ -207,10 +241,12 @@ reviewed_by: pending-medical-review
 slug: bpc-157
 title: "BPC-157"
 description: "BPC-157 is an experimental peptide studied almost entirely in animals, mostly by one research group. What it is, what the evidence shows, and what is unknown."
-summary:                       # "The 30-second version". B1. 3–5 sentences. First thing on the page.
+summary:                       # "The 30-second version". 3–5 items, ≤18 words each (§4.1). Right after the glance strip.
   - "BPC-157 is a lab-made chain of 15 amino acids. It is not an approved medicine anywhere."
   - "Most research is in rats and mice, and most of it comes from one group in Zagreb."
   - "No controlled human trial results have been published, so its effects and risks in people are unknown."
+glance:
+  main_risk: "…"               # "Biggest risk" tile: ≤12 words, B1, condensed from YOUR risks section (§5.2 rules)
 grade_rationale:               # one or two sentences per axis explaining the grade
   human_clinical: "…"
   preclinical_volume: "…"
@@ -277,6 +313,32 @@ Rules:
   no props needed.
 - Tier 2 stubs need only `what-it-is`, `evidence`, `regulatory`, `risks` (others optional),
   a full data file and summary. Stubs still need honest evidence grades.
+
+**The beginner layer comes first.** Every compound page opens in this order: title and status
+badge → **At a glance** → **The 30-second version** (`summary`) → review line → page photo →
+evidence profile, sequence and technical details (INN, other names, formula, mass) → the sections.
+On wide screens the photo and the review line sit beside and under the title instead. The
+technical facts deliberately come after the plain answers.
+
+*At a glance* is four tiles. Three are written for you from the data file, so every compound with
+the same facts gets the same words, in every language:
+
+| Tile | Comes from | Example answers |
+|---|---|---|
+| Is it an approved medicine? | `category` (for `not-a-peptide`: the EU and other regulatory rows) | "Yes. Approved in the EU. Only with a doctor's prescription." · "No. Not approved as a medicine anywhere." |
+| Has it been tested in people? | `evidence.human_clinical` | none → "No" · case-reports → "Very little" · phase-1 → "A little" · phase-2 → "Some" · phase-3 / authorised → "Yes, large trials" |
+| Is it allowed in sport? | the `WADA` regulatory row | prohibited → "No. Banned in sport at all times" + the section (S0, S2 …) · not-listed → "Not banned" · anything else → "see the status table" (never a guess) |
+| What is the biggest risk? | `glance.main_risk` in the MDX frontmatter | without it, the tile links to the warning-signs page |
+
+So keep the data honest and the tiles stay honest. Change the words only in
+`src/i18n/<locale>/beginner.json`, never per page.
+
+`glance.main_risk` rules: **at most 12 words** (the schema fails above 12), B1, condensed from this
+page's own `risks` section with no new claim, the most important risk for most readers. Prefer the
+risk a reader can recognise or act on. Examples: "Many feel sick at first. Gallstones and an
+inflamed pancreas are rarer." (semaglutide) · "No reliable checks: vials may contain germs or the
+wrong substance." (KPV). The validator warns when a complete Tier 1 page has none. Never use alarm
+words or stop-now advice here: stop-now content belongs in `<WarningSigns />`.
 
 ### 5.3 The harm-reduction section
 
@@ -359,6 +421,11 @@ Four independent axes. Never collapse into one score, never add them up.
 |---|---|
 | `<Callout type="note\|tip\|warning\|stop\|legal\|uncertain" title="…">…</Callout>` | `stop` is **reserved for stop-now safety content** (seek care now). `uncertain` flags a genuinely open question. `legal` for jurisdiction-specific notes. |
 | `<Diagram id="kebab-id" caption="…">full text equivalent</Diagram>` | A diagram. The children are the **equivalent** of the diagram in words (a list or table that conveys the same information), not a label. Designers draw the SVG later from your description; until then the text renders as the figure. |
+| `<Explainer id="kebab-id" />` | A 10–15 second animated explainer (4–6 steps) of a mechanism or an interaction. Self-closing, `id` only: timing, the evidence level of each step and the **sources** live in `src/data/explainers.yaml`; the title, one B1 caption per step (≤ 18 words), the summary and any words shown on the picture live in `src/i18n/<locale>/explainers.json`; the artwork is `src/components/explainers/<id>.astro`. **No text inside the SVG** — not even numbers — so every word translates. Links are drawn by evidence: solid = shown in people, long dashes = animals or cells, short dashes = hypothesis (cyan/amber in design B). The step list is always visible as the text equivalent, and the "Based on" sources are numbered with the page's citations. Lead in with one sentence saying what the animation shows. How to add one: `docs/EXPLAINERS.md`. |
+| `<Photo id="lab-mouse" />` | A registered image (photo, illustration or figure) with its alt text, caption and credit line, responsive and lazy-loaded. Register it first (`npm run media:commons` / `media:generate`, `src/data/media.yaml`), then write alt text and an optional caption (≤ 30 words, sourced via the registry `sources:`) in `src/i18n/<locale>/media.json`. Rules: `docs/MEDIA-GUIDE.md`. |
+| `<Infographic id="glp1-body-map" />` | A labelled atlas plate: text-free artwork with numbered markers and a key in real text. Markers and sources in `src/data/infographics/<id>.yaml`; title, one label per marker and a full text equivalent in `src/i18n/<locale>/infographics.json`. AI art must be reviewed (`ai.review: ok`) before the page ships. |
+| `<MediaCredits />` | The full image credits (what each image shows, author, licence, source, AI model and review status). Already on `/sources/`. |
+| Page hero (no component) | One line in `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster`. Rendered after the summary on phones and beside the title on wide screens. Every page should have one. |
 | `<Checklist>` + markdown list + `</Checklist>` | A scannable checklist (what to bring to your doctor, aseptic steps). |
 | `<Faq>` `<FaqItem q="Question?">answer</FaqItem>` `</Faq>` | Real question-and-answer sections only. Emits FAQPage structured data. |
 | `<WarningSigns />` | The canonical stop-now list. `<WarningSigns only="injection" />` for a subset: `general`, `injection`, `allergic`, `cardiovascular`, `metabolic`, `neurological`. |

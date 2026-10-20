@@ -1,0 +1,9 @@
+# Atlas plate: where semaglutide acts. Text in src/i18n/<locale>/infographics.json; see docs/MEDIA-GUIDE.md §6.
+# x/y are percentages of the unmirrored artwork (src/data/media.yaml: glp1-body-map).
+art: glp1-body-map
+markers:
+  # brain: "less hunger" is measured in people, but that the brain is WHERE it acts rests on rodent work (Gabery 2020)
+  - { key: brain, x: 50, y: 7.8, level: animal }
+  - { key: stomach, x: 60, y: 53, level: human }
+  - { key: pancreas, x: 46, y: 62.4, level: human }
+sources: [friedrichsen-2021-appetite, gabery-2020-semaglutide-brain, ema-epar-wegovy, kapitza-2017-beta-cell, muller-2019-glp1-review]

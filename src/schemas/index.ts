@@ -218,6 +218,21 @@ export const compoundPageSchema = z.object({
   description: z.string().min(50).max(170),
   /** "The 30-second version". B1 reading level. 3–5 short sentences. */
   summary: summarySchema,
+  /**
+   * The "At a glance" strip above the summary. Three of its four tiles are derived from the data
+   * file (category, evidence.human_clinical, the WADA row); only the risk tile needs words.
+   */
+  glance: z
+    .object({
+      /**
+       * "Biggest risk" tile: at most 12 words, B1, condensed from this page's own risk section
+       * (no claim that is not made there). Without it the tile links to the warning-signs page.
+       */
+      main_risk: nonEmpty
+        .refine((s) => s.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length <= 12, { message: 'at most 12 words' })
+        .optional(),
+    })
+    .default({}),
   grade_rationale: z.object({
     human_clinical: nonEmpty,
     preclinical_volume: nonEmpty,

@@ -33,14 +33,19 @@ const FONT_PRELOAD: Record<string, string> = {
 const preloadFont = loc.script === 'arabic' ? 'noto-sans-arabic-arabic-wght-normal.woff2' : FONT_PRELOAD[DEFAULT_THEME];
 const switchable = BUILD_THEME === 'switchable';
 // Inline, render-blocking on purpose: applies stored theme/scheme and ?pseudo=rtl before first paint
-// so there is no flash. ~600 bytes; everything else is deferred.
-const boot = `(function(d,w){try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
+// so there is no flash. ~600 bytes; everything else is deferred. Another design's stylesheet replaces
+// the default <link> as a new element with blocking="render": a script-changed href is not
+// render-blocking in Chromium, so the page painted unstyled first and then jumped (a layout shift of
+// 0.3–1 in designs B and C). html.js is set first, outside the
+// try: when storage is blocked (access throws) the JS-only controls (scheme toggle, explainer
+// Pause/Replay) must still be laid out from the first paint and shown.
+const boot = `(function(d,w){d.documentElement.classList.add('js');try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
   (switchable
-    ? `var H=${JSON.stringify(themeHref)},t=q.get('theme');if(t&&H[t]){ls.setItem('pe-theme',t)}else{t=ls.getItem('pe-theme')}if(t&&H[t]&&t!==h.dataset.theme){h.dataset.theme=t;d.getElementById('theme-css').href=H[t]}`
+    ? `var H=${JSON.stringify(themeHref)},t=q.get('theme');if(t&&H[t]){ls.setItem('pe-theme',t)}else{t=ls.getItem('pe-theme')}if(t&&H[t]&&t!==h.dataset.theme){h.dataset.theme=t;var o=d.getElementById('theme-css'),n=o.cloneNode();n.setAttribute('blocking','render');n.href=H[t];o.replaceWith(n)}`
     : '') +
   `var s=ls.getItem('pe-scheme');if(s==='dark'||s==='light')h.dataset.scheme=s;` +
   `var p=q.get('pseudo');if(p==='rtl')ss.setItem('pe-pseudo','rtl');else if(p==='off')ss.removeItem('pe-pseudo');` +
-  `if(ss.getItem('pe-pseudo')==='rtl'){h.dir='rtl';h.dataset.pseudo='rtl'}h.classList.add('js')}catch(e){}})(document,window)`;
+  `if(ss.getItem('pe-pseudo')==='rtl'){h.dir='rtl';h.dataset.pseudo='rtl'}}catch(e){}})(document,window)`;
 ---
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />

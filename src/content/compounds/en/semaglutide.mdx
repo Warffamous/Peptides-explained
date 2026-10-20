@@ -3,11 +3,13 @@ slug: semaglutide
 title: "Semaglutide"
 description: "Semaglutide is an authorised GLP-1 medicine (Ozempic, Wegovy, Rybelsus). How it works, what the big trials show, its risks, and why online vials are not the same."
 summary:
-  - "Semaglutide is an authorised medicine in the EU. It is sold as Ozempic and Rybelsus for type 2 diabetes, and as Wegovy for weight management."
-  - "It copies a gut hormone called GLP-1. It lowers blood sugar when it is high and makes you feel full sooner."
-  - "Large trials in tens of thousands of people show lower blood sugar and weight. In some groups it also lowered the combined risk of heart attack, stroke or heart death, and of serious kidney disease."
-  - "Stomach side effects such as nausea are common, mostly at the start. Rarer risks include gallstones, pancreatitis and a rare eye condition. Much of the lost weight comes back after stopping."
-  - "Semaglutide sold online as a 'research chemical' is not the authorised medicine. Nobody knows what is really in it or how much."
+  - "Semaglutide is an authorised EU medicine. Ozempic and Rybelsus treat type 2 diabetes. Wegovy helps manage weight."
+  - "It copies a gut hormone called GLP-1. It lowers high blood sugar and makes you feel full sooner."
+  - "Large trials show lower blood sugar and weight. Some groups also had fewer serious heart and kidney problems."
+  - "Stomach problems are common at first. Rarer risks include gallstones, pancreatitis and a rare eye condition. Much of the lost weight comes back after stopping."
+  - "Online 'research' semaglutide is not the authorised medicine. Nobody knows what is in it, or how much."
+glance:
+  main_risk: "Many feel sick at first. Gallstones and an inflamed pancreas are rarer."
 grade_rationale:
   human_clinical: "Authorised in the EU since 2018 (Ozempic), with Rybelsus (2020) and Wegovy (2022; tablets 2026). The authorisations rest on phase 3 programmes and several completed cardiovascular and kidney outcome trials, each with thousands of participants."
   preclinical_volume: "Well over 50 primary animal and cell studies: a PubMed search on 20 October 2026 found 472 non-review records mentioning semaglutide together with rats or mice in the title or abstract. The animal record now matters mainly for the thyroid C-cell and pregnancy findings."
@@ -33,7 +35,7 @@ mechanism:
   - kind: tissue
     level: human
     title: "Less hunger, more fullness"
-    detail: "In rodents, semaglutide reaches the hindbrain and hypothalamus through areas where the blood–brain barrier is open; it does not cross the barrier itself. In a 20-week trial in 72 adults with obesity, people ate 35% less at a free-choice lunch and reported less hunger and fewer cravings. The human brain sites are inferred from animal work."
+    detail: "In rodents, semaglutide reaches the hindbrain and hypothalamus through areas where the blood–brain barrier is open; it does not cross the barrier itself. In a 20-week trial in 72 adults with obesity, people took in 35% fewer calories than with placebo at a free-choice lunch and reported less hunger and fewer cravings. The human brain sites are inferred from animal work."
   - kind: tissue
     level: human
     title: "Slower stomach emptying, mostly early on"
@@ -125,8 +127,6 @@ Most compounds on this site are experimental. Semaglutide is an authorised medic
 
 Semaglutide is a chain of 31 amino acids. Twenty-nine are the same as in human GLP-1 (7–37), the active form of a hormone the gut releases after a meal; the EU label calls this 94% sequence homology.<Cite id="ema-epar-wegovy" /> The chain starts <Seq>His-Aib-Glu-Gly-Thr-Phe</Seq>.
 
-<SequenceView />
-
 Three changes make the hormone last a week. Positions use the GLP-1 (7–37) numbering of the literature and the US label, in which the first histidine is position 7.<Cite id="fda-label-ozempic,lau-2015-semaglutide-discovery,pubchem-semaglutide" />
 
 - **Position 8:** alanine is replaced by Aib (2-aminoisobutyric acid), which stabilises the peptide against the enzyme DPP-4.
@@ -166,6 +166,10 @@ Lumping authorised GLP-1 medicines together with grey-market peptides misleads i
 
 Semaglutide switches on the GLP-1 receptor and keeps doing so for days. Most effects, wanted or unwanted, follow from where that receptor is found.
 
+The short animation shows where semaglutide acts in the body, one step at a time. The numbered chain after it gives each step in more detail, with the evidence behind it.
+
+<Explainer id="glp1-action" />
+
 <Mechanism />
 
 ### What each step rests on
@@ -173,6 +177,8 @@ Semaglutide switches on the GLP-1 receptor and keeps doing so for days. Most eff
 **Staying in the blood.** The EU label gives a half-life of about one week and more than 99% albumin binding, measured in people.<Cite id="ema-epar-wegovy" /> The chain is mechanical: albumin is too big for the kidneys to filter, so only the small free fraction is cleared, and Aib at position 8 protects against DPP-4. Semaglutide therefore stays in the circulation for about five to seven weeks after the last dose; side effects do not end the day you stop.<Cite id="ema-epar-wegovy,ema-epar-rybelsus" />
 
 **Receptor and cAMP.** Semaglutide is a direct agonist at the GLP-1 receptor, with an affinity measured in cell systems.<Cite id="chembl-semaglutide,lau-2015-semaglutide-discovery" /> The activated receptor switches on adenylate cyclase, so cAMP rises inside the cell; in beta cells, cAMP acts through PKA and Epac2 to increase insulin release.<Cite id="muller-2019-glp1-review" /> <Claim level="in-vitro">This chain is established in cell lines and animal islets</Claim>, not traced step by step in human pancreas.
+
+<Infographic id="glp1-body-map" />
 
 **Why the insulin effect depends on glucose.** cAMP amplifies an insulin release that glucose has already triggered; it does not start one. <Claim level="human-controlled">In a 12-week, manufacturer-funded, double-blind, placebo-controlled trial in 75 people with type 2 diabetes, semaglutide increased insulin secretion and lowered glucagon after meals</Claim>.<Cite id="kapitza-2017-beta-cell" /> The EU label adds that during hypoglycaemia semaglutide reduces insulin secretion and does not impair glucagon release.<Cite id="ema-epar-wegovy" /> That is why its own risk of low blood sugar is low, and why much of that protection is lost when it is combined with medicines that raise insulin regardless of glucose.
 
@@ -309,6 +315,10 @@ The PRAC classes NAION as very rare (up to 1 in 10,000 people): <Claim level="hu
 ### Low blood sugar
 
 Semaglutide's own risk of hypoglycaemia is low because its insulin effect depends on glucose, but it is not zero: in STEP 2, a weight trial in people with type 2 diabetes, clinically significant low blood sugar occurred in 6.2% with semaglutide versus 2.5% with placebo, with and without a sulfonylurea. Insulin and sulfonylureas act regardless of glucose, so in combination blood sugar can fall too low; the label says this risk can be lowered by reducing the dose of those medicines.<Cite id="ema-epar-wegovy" />
+
+The animation shows how the combination pushes blood sugar too low, and what to do about it.
+
+<Explainer id="insulin-glp1-hypo" />
 
 ### Thyroid C-cell tumours in rodents, and why they may not carry over
 

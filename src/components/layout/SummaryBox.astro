@@ -1,11 +1,42 @@
 ---
-import { t } from '../../lib/i18n';
-interface Props { locale: string; items: string[]; title?: string; id?: string }
-const { locale, items, title = t(locale, 'common.summary'), id = 'summary' } = Astro.props;
+/**
+ * The "In short" box: the beginner entry point of every page, and the first thing after the
+ * "At a glance" strip on compound pages. Larger type than the body, one marker per point,
+ * a plain heading and an estimate of how long the whole page takes to read.
+ *
+ * Still one list: the markers are decorative (aria-hidden, numbered by CSS counters so each
+ * design can number in its own way); assistive technology announces the list itself.
+ */
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+import { t, has } from '../../lib/i18n';
+import { getLocale } from '../../lib/config';
+import { formatNumber } from '../../lib/format';
+
+interface Props { locale: string; items: string[]; title?: string; id?: string; readingMinutes?: number }
+const { locale, items, title = t(locale, 'common.summary'), id = 'summary', readingMinutes } = Astro.props;
+
+let time: [string, string, string] | null = null;
+if (readingMinutes) {
+  const plural = new Intl.PluralRules(getLocale(locale).bcp47).select(readingMinutes);
+  const key = has(locale, `beginner.summary.readingTime.${plural}`) ? `beginner.summary.readingTime.${plural}` : 'beginner.summary.readingTime.other';
+  const MARK = '\u0000';
+  const [before, after] = t(locale, key, { minutes: MARK }).split(MARK);
+  time = [before, formatNumber(locale, readingMinutes), after];
+}
 ---
 <section class="summary-box" id={id} aria-labelledby={`${id}-title`}>
-  <h2 class="summary-box__title" id={`${id}-title`}>{title}</h2>
-  <ul class="summary-box__list">
-    {items.map((s) => <li>{s}</li>)}
+  <div class="summary-box__head">
+    <ThemeOnly theme="c" as="span" class="summary-box__icon"><Pictogram name="summary-plain" /></ThemeOnly>
+    <h2 class="summary-box__title" id={`${id}-title`}>{title}</h2>
+    {time && (
+      <p class="summary-box__time">
+        <ThemeOnly theme="c" as="span" class="summary-box__time-icon"><Pictogram name="summary-reading-time" /></ThemeOnly>
+        <span>{time[0]}<bdi class="qty">{time[1]}</bdi>{time[2]}</span>
+      </p>
+    )}
+  </div>
+  <ul class="summary-box__list" role="list">
+    {items.map((s) => <li class="summary-box__item"><span class="summary-box__marker" aria-hidden="true"></span><span class="summary-box__text">{s}</span></li>)}
   </ul>
 </section>

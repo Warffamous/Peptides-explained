@@ -1,0 +1,144 @@
+@import "../../base/media.css";
+
+/*
+ * A · Monograph — photographs and plates are printed, not displayed. One ink: every photo is set
+ * as an ink-blue duotone (greyscale screened onto the accent), framed by a hairline, with the
+ * credit in the mono face. Atlas plates read like an engraved pharmacopoeia plate: hairline
+ * numbered roundels, a ruled key. No rounded corners, no shadows, no gradients, no motion.
+ * The dark edition is a different printing: cream-on-black monochrome; plates become negatives.
+ */
+:root {
+  --photo-ground: var(--accent);
+  --photo-blend: screen;
+  --photo-filter: grayscale(1) contrast(1.06);
+  --plate-ground: var(--accent);
+  --plate-blend: screen;
+  --plate-filter: grayscale(1) contrast(1.45);
+}
+:root[data-scheme='dark'] {
+  --photo-ground: var(--ink);
+  --photo-blend: multiply;
+  --photo-filter: grayscale(1) brightness(0.74) contrast(1.08);
+  --plate-ground: var(--paper);
+  --plate-blend: normal;
+  --plate-filter: grayscale(1) invert(0.9) contrast(1.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) {
+    --photo-ground: var(--ink);
+    --photo-blend: multiply;
+    --photo-filter: grayscale(1) brightness(0.74) contrast(1.08);
+    --plate-ground: var(--paper);
+    --plate-blend: normal;
+    --plate-filter: grayscale(1) invert(0.9) contrast(1.05);
+  }
+}
+
+/* ------------------------------------------------------------------ duotone frame */
+.hero__frame, .photo__frame, .media-credits__thumb {
+  background: var(--photo-ground);
+  border: var(--hair) solid var(--rule-strong);
+  isolation: isolate;
+}
+.hero__img, .photo__img, .media-credits__img { filter: var(--photo-filter); mix-blend-mode: var(--photo-blend); }
+
+/* Credits are set like a plate legend: monospace, small, quiet. */
+.media-credit {
+  font-family: var(--font-mono);
+  font-size: var(--s--2);
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+}
+.media-credit a { color: var(--ink-2); text-decoration-thickness: var(--hair); }
+.media-credit a:hover { color: var(--accent); }
+
+/* ------------------------------------------------------------------ page photo */
+/* Phones and tablets: a plate after the beginner layer, on the text columns. From 64rem: the margin
+   columns beside the title block (layout.css), its top level with the eyebrow. */
+.doc > .hero { grid-column: 1 / -1; margin-block: 0 var(--space-6); }
+@container doc (min-width: 40rem) { .doc > .hero { grid-column: 1 / span 9; } }
+@media (min-width: 64rem) { .doc > .hero { grid-column: 9 / -1; margin-block: var(--space-4) var(--space-6); } }
+.hero__caption { padding-block: var(--space-2) 0; border-block-end: var(--hair) solid var(--rule); padding-block-end: var(--space-2); }
+.hero__text { font-size: var(--s--1); line-height: 1.45; color: var(--ink-2); max-inline-size: var(--measure); }
+
+/* ------------------------------------------------------------------ photo */
+.photo { margin-block: var(--space-2) var(--space-5); }
+.photo__caption { padding-block-start: var(--space-2); }
+.photo__text { font-size: var(--s--1); line-height: 1.45; color: var(--ink-2); max-inline-size: var(--measure); }
+/* Wide pages: the picture takes the text columns, its caption the margin, like a sidenote. */
+@container prose (min-width: 60rem) {
+  :is(.prose, .csec) > .photo { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: end; }
+  :is(.prose, .csec) > .photo > .photo__frame { grid-column: 1 / span 7; }
+  :is(.prose, .csec) > .photo > .photo__caption { grid-column: 9 / -1; padding-block: 0; border-block-start: var(--hair) solid var(--rule-strong); padding-block-start: var(--space-2); }
+}
+
+/* ------------------------------------------------------------------ atlas plate */
+.plate {
+  margin: var(--space-3) 0 var(--space-6);
+  border-block: 1px solid var(--rule-strong);
+  padding-block: var(--space-4);
+}
+.plate__title {
+  font-family: var(--font-mono);
+  font-size: var(--s--2);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-block-end: var(--space-4);
+}
+.plate__art { background: var(--plate-ground); border: var(--hair) solid var(--rule-strong); isolation: isolate; }
+.plate__img { filter: var(--plate-filter); mix-blend-mode: var(--plate-blend); }
+.plate__halo { fill: none; stroke: none; }
+/* Pointing at a key entry draws its roundel in a heavier rule — a state change, not an animation. */
+.plate__dot { fill: var(--paper); stroke: var(--ink); stroke-width: calc(1.25px + var(--on) * 2px); vector-effect: non-scaling-stroke; }
+.plate__n { fill: var(--ink); font-family: var(--font-mono); font-weight: 600; }
+
+.plate__key-title {
+  font-family: var(--font-mono);
+  font-size: var(--s--2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-block-end: var(--space-2);
+  border-block-end: var(--hair) solid var(--rule-strong);
+  margin-block-end: var(--space-3);
+}
+.plate ol.plate__legend { gap: 0; }
+.plate__item { padding-block: var(--space-2); border-block-end: var(--hair) solid var(--rule); font-size: var(--s--1); line-height: 1.45; }
+.plate__num {
+  inline-size: 1.75em;
+  block-size: 1.75em;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-size: var(--s--1);
+}
+.plate__item:hover .plate__num { background: var(--ink); color: var(--paper); }
+.plate__label-text { font-weight: 650; }
+.plate__detail { color: var(--ink-2); }
+.plate__words { margin-block-start: var(--space-4); font-size: var(--s--1); }
+.plate__words-summary { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.plate__words-text { margin-block-start: var(--space-2); max-inline-size: var(--measure); }
+.plate__sources, .plate__credit { margin-block-start: var(--space-3); font-family: var(--font-mono); font-size: var(--s--2); color: var(--ink-3); }
+.plate__sources a { color: var(--ink-2); }
+.plate__sources-label, .plate__art-note { text-transform: uppercase; letter-spacing: 0.04em; }
+.plate__credit { margin-block-start: var(--space-1); }
+
+/* ------------------------------------------------------------------ image credits */
+.media-credits { margin-block-start: var(--space-7); }
+.media-credits__title {
+  font-size: var(--s-2);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--rule-strong);
+  margin-block-end: var(--space-4);
+}
+.media-credits__intro { font-size: var(--s--1); color: var(--ink-2); max-inline-size: var(--measure); margin-block-end: var(--space-3); }
+.media-credits ul.media-credits__list { margin-block-start: var(--space-5); gap: 0; border-block-start: var(--hair) solid var(--rule-strong); }
+.media-credits__item { padding-block: var(--space-4); border-block-end: var(--hair) solid var(--rule); }
+.media-credits__shows { font-size: var(--s--1); margin-block-end: var(--space-2); max-inline-size: var(--measure); }
+.media-credits__kind { font-family: var(--font-mono); font-size: 0.85em; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+.media-credits__meta { font-size: var(--s--1); }
+.media-credits__meta dt { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); padding-block-start: 0.2em; }
+.media-credits__review[data-review='pending'] { font-style: italic; }

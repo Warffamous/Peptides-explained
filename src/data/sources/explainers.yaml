@@ -1,0 +1,31 @@
+# Sources first needed by the animated explainers (src/data/explainers.yaml).
+# Metadata copied from the PubMed records (PubMed MCP, 2026-10-20); the cited statements were
+# checked in the PMC full text on the same day.
+
+sola-2015-sulfonylureas:
+  type: review
+  authors: "Sola D, Rossi L, Schianca GP, Maffioli P, Bigliocca M, Mella R, Corlianò F, Fra GP, Bartoli E, Derosa G"
+  title: "Sulfonylureas and their use in clinical practice"
+  container: "Archives of Medical Science"
+  year: 2015
+  volume: "11"
+  pages: "840-848"
+  doi: 10.5114/aoms.2015.53304
+  pmid: "26322096"
+  pmcid: PMC4548036
+  verified: pubmed
+  note: "Cited for: sulfonylureas close the ATP-dependent potassium channel of beta cells, and 'the release of insulin induced by sulfonylureas is independent of glucose levels, and this can increase the risk of hypoglycemia' (Mechanism of action). Checked in the PMC full text."
+
+ada-2026-hypoglycaemia:
+  type: guideline
+  authors: "American Diabetes Association Professional Practice Committee for Diabetes"
+  title: "6. Glycemic Goals, Hypoglycemia, and Hyperglycemic Crises: Standards of Care in Diabetes—2026"
+  container: "Diabetes Care"
+  year: 2026
+  volume: "49"
+  pages: "S132-S149"
+  doi: 10.2337/dc26-S006
+  pmid: "41358894"
+  pmcid: PMC12690178
+  verified: pubmed
+  note: "Cited for recommendation 6.15: glucose is the preferred treatment for the conscious individual with glucose <70 mg/dL (<3.9 mmol/L); any glucose-containing carbohydrate may be used. Symptoms listed include shakiness, confusion, tachycardia, sweating and hunger. Checked in the PMC full text."

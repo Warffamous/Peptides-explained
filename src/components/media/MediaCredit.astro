@@ -1,0 +1,31 @@
+---
+/**
+ * The short credit line under every image: kind, author, institution, source (linked), licence
+ * (linked) and a link to the full entry in the image credits. AI artwork is always labelled
+ * "AI-generated illustration (model, date)". Full TASL attribution lives in <MediaCredits /> on
+ * /sources/; the "Image details" link goes there, so a design may shorten this line (the page
+ * photo always does, media.css) without losing the attribution.
+ */
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { formatDate } from '../../lib/format';
+import { licenceName, sourceHost, isAi, type Media } from '../../lib/media';
+interface Props { locale: string; media: Media; class?: string }
+const { locale, media: m, class: cls } = Astro.props;
+const kind = t(locale, `media-ui.kind.${m.kind}`);
+const licence = m.license === 'public-domain' ? t(locale, 'media-ui.credit.publicDomain') : licenceName(m.license);
+const own = m.license.startsWith('LicenseRef-');
+const details = `${routeUrl(locale, 'sources')}#image-${m.id}`;
+---
+<span class:list={['media-credit', cls]} data-origin={m.origin}>
+  {isAi(m) && m.ai
+    ? <span class="media-credit__who">{t(locale, 'media-ui.credit.aiWith', { model: m.ai.model, date: formatDate(locale, m.ai.generated) })}</span>
+    : <span class="media-credit__who">{t(locale, 'media-ui.credit.line', { kind, author: m.author })}</span>}{m.credit && !isAi(m) && <span class="media-credit__org">, {m.credit}</span>}
+  {m.source_url && <span class="media-credit__via"> (<a class="media-credit__source" href={m.source_url} rel="noopener">{sourceHost(m.source_url)}</a>)</span>}
+  {!own && (
+    <span class="media-credit__lic"><span class="media-credit__sep" aria-hidden="true"> · </span>{m.license_url
+      ? <a class="media-credit__licence" href={m.license_url} rel="noopener license">{licence}</a>
+      : <span class="media-credit__licence">{licence}</span>}</span>
+  )}
+  <span class="media-credit__more"><span class="media-credit__sep" aria-hidden="true"> · </span><a class="media-credit__details" href={details} aria-label={t(locale, 'media-ui.credit.detailsLabel', { kind, author: m.author })}>{t(locale, 'media-ui.credit.details')}</a></span>
+</span>

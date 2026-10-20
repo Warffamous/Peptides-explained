@@ -1,0 +1,16 @@
+# Page heroes: route key (no locale, no slashes at the ends; "" = landing page) -> media id from
+# src/data/media.yaml. Rendered by DocLayout directly under the page header, before the summary.
+# Pages without an entry show no hero. Locale-independent: alt text and captions are translated
+# in src/i18n/<locale>/media.json. See docs/MEDIA-GUIDE.md §4.
+# Every compound page needs one (content guide §5: title and badge -> page photo -> At a glance).
+# An image used as a page's hero should not also appear in that page's body.
+compounds/semaglutide: gila-monster
+compounds/kpv: lab-mouse
+# TB-500: a fragment of thymosin beta-4, the protein that holds single actin units inside cells.
+compounds/tb-500: fibroblast-actin
+# BPC-157: most of its research comes from one group in Zagreb (see history/the-croatian-lab).
+compounds/bpc-157: zagreb-medical-school
+history/the-croatian-lab: zagreb-medical-school
+# Tirzepatide: built on GIP, a hormone released by cells in the lining of the upper small intestine.
+compounds/tirzepatide: duodenum-villi
+# Retatrutide: also switches on the glucagon receptor; glucagon is made by cells in the pancreatic islets.

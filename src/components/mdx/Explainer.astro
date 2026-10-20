@@ -1,0 +1,140 @@
+---
+/**
+ * <Explainer id="…" />: a 10–15 second animated explainer. See docs/EXPLAINERS.md.
+ *
+ * - Artwork: src/components/explainers/<id>.astro — inline SVG, aria-hidden, NO text inside it.
+ *   Words on the picture are HTML overlays from i18n, so they translate.
+ * - One shared CSS timeline: every animated part is delayed by (its step × step length), and so is
+ *   the highlight on its caption. Sync needs no script.
+ * - The ordered step list is the text equivalent and is always in the DOM and visible.
+ * - Without JavaScript or with reduced motion the default state IS the final frame: nothing moves,
+ *   nothing is missing. src/scripts/explainer.ts only starts, pauses, loops (max 2 runs) and stops.
+ * - Sources come from the registry; remark-explainer-sources injects them as <Cite> slot children
+ *   so they are numbered with the page's citations.
+ */
+import { t, tr, isFallback } from '../../lib/i18n';
+import { ctxLocale, uid } from '../../lib/ctx';
+import { getExplainer, levelsUsed } from '../../lib/explainers';
+import { getSource, shortSourceName } from '../../lib/data';
+import { formatNumber } from '../../lib/format';
+import { getLocale, SOURCE_LOCALE } from '../../lib/config';
+import type { ExplainerText } from '../../schemas/explainers';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+
+interface Props { id: string }
+const { id } = Astro.props;
+const L = ctxLocale(Astro);
+const xp = getExplainer(id);
+const arts = import.meta.glob<{ default: (props: Record<string, unknown>) => unknown }>('../explainers/*.astro', { eager: true });
+const Art = arts[`../explainers/${id}.astro`]?.default;
+if (!Art) throw new Error(`<Explainer id="${id}">: no artwork at src/components/explainers/${id}.astro`);
+const text = tr<ExplainerText>(L, `explainers.${id}`);
+if (text.steps.length !== xp.steps.length) {
+  throw new Error(`<Explainer id="${id}">: ${text.steps.length} captions in ${L}/explainers.json but ${xp.steps.length} steps in src/data/explainers.yaml`);
+}
+const fallback = isFallback(L, `explainers.${id}`);
+const base = uid(Astro, `xp-${id}`);
+const titleId = `${base}-title`;
+const levels = xp.steps.map((s) => s.levels);
+const legend = levelsUsed(xp);
+
+// "Based on" line: a short name per source (shortSourceName, shared with <Infographic>), followed by
+// its citation marker (a named slot filled by remark-explainer-sources).
+const sources = await Promise.all(
+  xp.sources.map(async (sid, i) => ({
+    name: shortSourceName(getSource(sid)),
+    marker: Astro.slots.has(`src-${i}`) ? await Astro.slots.render(`src-${i}`) : '',
+  })),
+);
+const style = `--xp-dur:${xp.duration}s;--xp-steps:${xp.steps.length}`;
+---
+<figure
+  class="explainer"
+  id={base}
+  data-xp={id}
+  data-mirror={xp.mirror ? '' : undefined}
+  data-review={xp.review.status}
+  style={style}
+  aria-labelledby={titleId}
+  lang={fallback ? getLocale(SOURCE_LOCALE).bcp47 : undefined}
+>
+  <figcaption class="xp-head">
+    <span class="xp-kicker" data-pagefind-ignore>{t(L, 'explainer-ui.kicker', { seconds: formatNumber(L, xp.duration) })}</span>
+    <span class="xp-title" id={titleId}>{text.title}</span>
+  </figcaption>
+  <div class="xp-body">
+    <div class="xp-visual">
+      <div class="xp-stage" aria-hidden="true" data-pagefind-ignore="all">
+        <div class="xp-canvas"><Art uid={base} levels={levels} labels={text.labels} locale={L} /></div>
+      </div>
+      {/* The current step's sentence, large and right under the drawing while it plays (same clock),
+          so the eye never has to jump to the list; at rest it shows the still's caption. A visual
+          duplicate of the list and summary, so hidden from assistive technology. */}
+      <div class="xp-now" aria-hidden="true" data-pagefind-ignore="all">
+        {text.steps.map((caption, i) => (
+          <p class="xp-now__step" style={`--k:${i}`}><span class="xp-now__n"><bdi>{formatNumber(L, i + 1)}</bdi></span> {caption}</p>
+        ))}
+        {text.caption && <p class="xp-now__still">{text.caption}</p>}
+      </div>
+      <div class="xp-controls" role="group" aria-label={`${t(L, 'explainer-ui.controls')}: ${text.title}`} data-pagefind-ignore="all">
+        <button type="button" class="xp-btn xp-btn--toggle" data-xp-toggle data-state="paused" data-label-play={t(L, 'explainer-ui.play')} data-label-pause={t(L, 'explainer-ui.pause')}>
+          <svg class="xp-ico xp-ico--play" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M4 2.5v11l9-5.5z" /></svg>
+          <svg class="xp-ico xp-ico--pause" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3.5 2.5h3v11h-3zM9.5 2.5h3v11h-3z" /></svg>
+          <span class="xp-btn__label">{t(L, 'explainer-ui.play')}</span>
+        </button>
+        <button type="button" class="xp-btn xp-btn--replay" data-xp-replay>
+          <svg class="xp-ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 2.5a5.5 5.5 0 1 1-5.2 3.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M1.6 2.4l1.3 4.1 4-1.5z" /></svg>
+          <span class="xp-btn__label">{t(L, 'explainer-ui.replay')}</span>
+        </button>
+        <span class="xp-progress" aria-hidden="true">{xp.steps.map((_, i) => <span class="xp-seg" style={`--k:${i}`} />)}</span>
+        <span class="xp-clock" aria-hidden="true" />
+      </div>
+      <p class="xp-rm-note">{t(L, 'explainer-ui.reducedMotion')}</p>
+    </div>
+    <div class="xp-text">
+      <ol class="xp-steps" role="list" aria-label={t(L, 'explainer-ui.steps')}>
+        {text.steps.map((caption, i) => (
+          <li class="xp-step" style={`--k:${i}`} data-level={levels[i][0]}>
+            <span class="xp-step__n" aria-hidden="true"><bdi>{formatNumber(L, i + 1)}</bdi></span>
+            <div class="xp-step__body">
+              <p class="xp-step__text">
+                {xp.steps[i].pictogram && <ThemeOnly theme="c" as="span" class="xp-step__pg"><Pictogram name={xp.steps[i].pictogram!} /></ThemeOnly>}
+                {caption}
+              </p>
+              <p class="xp-step__levels">
+                <span class="visually-hidden">{t(L, 'explainer-ui.evidence')}: </span>
+                {levels[i].map((lv) => (
+                  <span class="level-badge" data-level={lv} title={t(L, `evidence.mechanismLevels.${lv}.long`)}>
+                    <ThemeOnly theme="c" as="span" class="level-badge__icon"><Pictogram name={`mech-${lv}`} /></ThemeOnly>
+                    {t(L, `evidence.mechanismLevels.${lv}.short`)}
+                  </span>
+                ))}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p class="xp-summary"><strong>{t(L, 'explainer-ui.inShort')}</strong> {text.summary}</p>
+      <p class="xp-legend">
+        <span class="xp-legend__title">{t(L, 'explainer-ui.legend')}</span>
+        {legend.map((lv) => (
+          <span class="xp-key">
+            <svg class="xp-key__line" viewBox="0 0 32 8" width="32" height="8" aria-hidden="true" focusable="false"><path class="xp-link" data-level={lv} d="M2 4H30" /></svg>
+            {t(L, `explainer-ui.lines.${lv}`)}
+          </span>
+        ))}
+      </p>
+      <p class="xp-sources">
+        <span class="xp-sources__label">{t(L, 'explainer-ui.basedOn')}</span>{' '}
+        {sources.map((s, i) => (
+          <>{i > 0 && t(L, 'explainer-ui.sep')}<span class="xp-src">{s.name}<Fragment set:html={s.marker} /></span></>
+        ))}
+      </p>
+      {xp.review.status === 'pending' && <p class="xp-review">{t(L, 'explainer-ui.reviewPending')}</p>}
+    </div>
+  </div>
+</figure>
+<script>
+  import '../../scripts/explainer.ts';
+</script>

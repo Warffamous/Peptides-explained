@@ -19,6 +19,8 @@
     "check:html": "tsx scripts/check-html.ts dist && tsx scripts/check-html.ts dist/a --base /a && tsx scripts/check-html.ts dist/b --base /b && tsx scripts/check-html.ts dist/c --base /c",
     "check": "npm run check:commerce && npm run check:html",
     "news": "tsx scripts/fetch-news.ts",
+    "media:commons": "tsx scripts/media/fetch-commons.ts",
+    "media:generate": "tsx scripts/media/generate-image.ts",
     "preview": "astro preview"
   },
   "dependencies": {

@@ -1,0 +1,82 @@
+---
+/**
+ * <MediaCredits /> — the image credits: every registered image with what it shows, who made it,
+ * the licence (linked), the source (linked), the date retrieved, the changes we made and the
+ * sources behind its caption. This is the complete TASL attribution (title, author, source,
+ * licence) that CC BY and CC BY-SA require; the short credit under each image links here.
+ * AI artwork is listed as "AI-generated illustration" with its model, date and review status.
+ * Rendered on /sources/; usable in any MDX page.
+ */
+import MediaPicture from '../media/MediaPicture.astro';
+import SourceRef from '../ui/SourceRef.astro';
+import { MEDIA, mediaText, buildPicture, licenceName, sourceHost, isAi } from '../../lib/media';
+import { getSource } from '../../lib/data';
+import { t } from '../../lib/i18n';
+import { formatDate } from '../../lib/format';
+import { ctxLocale } from '../../lib/ctx';
+const L = ctxLocale(Astro);
+const items = await Promise.all(
+  [...MEDIA.values()]
+    .sort((a, b) => a.id.localeCompare(b.id))
+    .map(async (m) => ({ m, text: mediaText(L, m.id), thumb: await buildPicture(m, { widths: [112, 224], sizes: '7rem', ratio: 1 }) })),
+);
+---
+<section class="media-credits" id="image-credits" aria-labelledby="image-credits-title">
+  <h2 class="media-credits__title" id="image-credits-title">{t(L, 'media-ui.credits.heading')}</h2>
+  <p class="media-credits__intro">{t(L, 'media-ui.credits.intro')} <span class="media-credits__count">({t(L, 'media-ui.credits.count', { n: items.length })})</span></p>
+  <p class="media-credits__intro">{t(L, 'media-ui.credits.aiNote')}</p>
+  <ul class="media-credits__list" role="list">
+    {items.map(({ m, text, thumb }) => (
+      <li class="media-credits__item" id={`image-${m.id}`} data-origin={m.origin}>
+        <MediaPicture pictures={[thumb]} alt="" class="media-credits__thumb" imgClass="media-credits__img" style={`--focal: ${thumb.focal}`} />
+        <div class="media-credits__body">
+          <p class="media-credits__shows" lang={text.lang} dir={text.dir}>
+            <span class="media-credits__kind">{isAi(m) ? t(L, 'media-ui.credit.ai') : t(L, `media-ui.kind.${m.kind}`)}.</span>{' '}
+            {text.alt}
+          </p>
+          <dl class="media-credits__meta">
+            {text.caption && <div><dt>{t(L, 'media-ui.credits.caption')}</dt><dd lang={text.lang}>{text.caption}</dd></div>}
+            <div><dt>{t(L, 'media-ui.credits.author')}</dt><dd>{m.author}{m.credit && <>, {m.credit}</>}</dd></div>
+            {m.title && <div><dt>{t(L, 'media-ui.credits.workTitle')}</dt><dd><cite>{m.title}</cite></dd></div>}
+            <div>
+              <dt>{t(L, 'media-ui.credits.licence')}</dt>
+              <dd>
+                {m.license.startsWith('LicenseRef-')
+                  ? t(L, 'media-ui.credits.ownLicence')
+                  : m.license_url
+                    ? <a href={m.license_url} rel="noopener license">{m.license === 'public-domain' ? t(L, 'media-ui.credit.publicDomain') : licenceName(m.license)}</a>
+                    : m.license === 'public-domain' ? t(L, 'media-ui.credit.publicDomain') : licenceName(m.license)}
+                {m.origin === 'cc-by-sa' && <> {t(L, 'media-ui.credits.shareAlike')}</>}
+              </dd>
+            </div>
+            {m.source_url && (
+              <div>
+                <dt>{t(L, 'media-ui.credits.source')}</dt>
+                <dd>
+                  <a href={m.source_url} rel="noopener">{t(L, 'media-ui.credits.sourceLink', { host: sourceHost(m.source_url) })}</a>
+                  {m.retrieved && <>, {t(L, 'media-ui.credits.retrieved', { date: formatDate(L, m.retrieved) })}</>}
+                </dd>
+              </div>
+            )}
+            {m.ai && (
+              <div>
+                <dt>{t(L, 'media-ui.credit.ai')}</dt>
+                <dd>
+                  {t(L, 'media-ui.credits.aiModel', { model: m.ai.model, date: formatDate(L, m.ai.generated) })}.{' '}
+                  <span class="media-credits__review" data-review={m.ai.review}>{t(L, m.ai.review === 'ok' ? 'media-ui.credits.reviewOk' : 'media-ui.credits.reviewPending')}</span>
+                </dd>
+              </div>
+            )}
+            <div><dt>{t(L, 'media-ui.credits.changes')}</dt><dd>{m.changes ?? t(L, 'media-ui.credits.defaultChanges')}</dd></div>
+            {m.sources.length > 0 && (
+              <div>
+                <dt>{t(L, 'media-ui.credits.basedOn')}</dt>
+                <dd><ul class="media-credits__sources" role="list">{m.sources.map((sid) => <li><SourceRef locale={L} source={getSource(sid)} /></li>)}</ul></dd>
+              </div>
+            )}
+          </dl>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

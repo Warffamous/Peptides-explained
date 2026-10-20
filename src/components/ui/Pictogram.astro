@@ -1,7 +1,12 @@
 ---
-import { PICTOGRAM_NAMES } from './pictograms';
+import { PICTOGRAMS, PICTOGRAM_NAMES } from './pictograms';
+import { BUILD_THEMES } from '../../lib/config';
 interface Props { name: string; label?: string; class?: string }
 const { name, label, class: cls } = Astro.props;
 if (!(PICTOGRAM_NAMES as readonly string[]).includes(name)) throw new Error(`unknown pictogram "${name}"`);
+// BaseLayout ships the <symbol> sprite only in builds that include design C. Builds without it
+// (the dedicated /a and /b review builds) draw the figure inline, so every design can use the
+// shared vocabulary (e.g. the "At a glance" strip) without paying for the whole sprite.
+const inline = !BUILD_THEMES.includes('c');
 ---
-<svg class:list={['pictogram', `pictogram--${name}`, cls]} viewBox="0 0 48 48" width="48" height="48" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'} focusable="false"><use href={`#pg-${name}`} /></svg>
+<svg class:list={['pictogram', `pictogram--${name}`, cls]} viewBox="0 0 48 48" width="48" height="48" role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'} focusable="false">{inline ? <g set:html={PICTOGRAMS[name]} /> : <use href={`#pg-${name}`} />}</svg>

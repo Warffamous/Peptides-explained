@@ -6,18 +6,23 @@ type Entry = { term: string; definition: string; category: string; see_also?: st
 const L = ctxLocale(Astro);
 const g = namespace<Record<string, Entry>>(L, 'glossary');
 const collator = new Intl.Collator(getLocale(L).dateLocale, { sensitivity: 'base' });
-const entries = Object.entries(g).sort(([, a], [, b]) => collator.compare(a.term, b.term));
-const letters = [...new Set(entries.map(([, e]) => e.term[0].toLocaleUpperCase(getLocale(L).dateLocale)))];
+// Terms such as "β-cell" are filed under their Latin reading (B), so the jump bar never shows a
+// second, look-alike letter. Ids stay raw Unicode; hrefs are percent-encoded and browsers decode them.
+const GREEK: Record<string, string> = { α: 'a', β: 'b', γ: 'g', δ: 'd', ε: 'e', κ: 'k', μ: 'm', ω: 'o' };
+const sortKey = (term: string) => { const latin = GREEK[term[0].toLowerCase()]; return latin ? latin + term.slice(1) : term; };
+const initial = (term: string) => sortKey(term)[0].toLocaleUpperCase(getLocale(L).dateLocale);
+const entries = Object.entries(g).sort(([, a], [, b]) => collator.compare(sortKey(a.term), sortKey(b.term)));
+const letters = [...new Set(entries.map(([, e]) => initial(e.term)))];
 ---
 <div class="glossary-index">
   <nav class="glossary-index__letters" aria-label={t(L, 'pages.glossary.jumpTo')}>
     <ul role="list">{letters.map((l) => <li><a href={`#letter-${encodeURIComponent(l)}`}>{l}</a></li>)}</ul>
   </nav>
   {letters.map((letter) => (
-    <section class="glossary-index__group" aria-labelledby={`letter-${encodeURIComponent(letter)}`}>
-      <h2 class="glossary-index__letter" id={`letter-${encodeURIComponent(letter)}`}>{letter}</h2>
+    <section class="glossary-index__group" aria-labelledby={`letter-${letter}`}>
+      <h2 class="glossary-index__letter" id={`letter-${letter}`}>{letter}</h2>
       <dl class="glossary-index__list">
-        {entries.filter(([, e]) => e.term[0].toLocaleUpperCase(getLocale(L).dateLocale) === letter).map(([id, e]) => (
+        {entries.filter(([, e]) => initial(e.term) === letter).map(([id, e]) => (
           <div class="glossary-index__entry" id={id} data-category={e.category}>
             <dt class="glossary-index__term">{e.term}{e.aliases && e.aliases.length > 0 && <span class="glossary-index__aliases"> ({e.aliases.join(', ')})</span>}</dt>
             <dd class="glossary-index__def">{e.definition}</dd>

@@ -7,12 +7,15 @@
 import { SITE, BUILD_THEME, DEFAULT_THEME } from '../../lib/config';
 import { themeBuildUrl } from '../../lib/urls';
 import { t } from '../../lib/i18n';
+import Icon from '../ui/Icon.astro';
 interface Props { locale: string; routeKey: string }
 const { locale, routeKey } = Astro.props;
 ---
 {SITE.themeSwitcher && (
   <details class="disclosure theme-switch" data-theme-switch>
     <summary class="disclosure__summary">
+      {/* The icon shows only in the phone menu, where every row starts with one (structure.css). */}
+      <Icon name="layout" class="theme-switch__icon" />
       <span class="theme-switch__label">{t(locale, 'common.utility.design')}</span>
       <span class="theme-switch__current" data-theme-current>{BUILD_THEME === 'switchable' ? DEFAULT_THEME.toUpperCase() : BUILD_THEME.toUpperCase()}</span>
     </summary>

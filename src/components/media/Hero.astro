@@ -1,0 +1,46 @@
+---
+/**
+ * Page photo, chosen per route in src/data/heroes.yaml (pages without an entry render nothing).
+ * DocLayout puts it after the beginner layer in the DOM: on phones and tablets it follows the
+ * summary and the review line (the beginner layer starts on the first screen); from 64rem each
+ * design sets it beside the title block (CSS order, base/structure.css). Art-directed crops:
+ * 16:9 below 64rem, 3:2 beside the title. Eager with fetchpriority=high (on wide screens it is
+ * often the LCP element) and explicit dimensions (zero layout shift).
+ *
+ * The credit is the short form at every size ("Photo: <author> · Image details"): its one link is
+ * the only focusable element that moves when the photo is lifted beside the title, and the full
+ * attribution (source, licence, institution) is where that link goes, in the image credits on
+ * /sources/. Each design system treats the photo differently (themes/<t>/media.css).
+ */
+import MediaPicture from './MediaPicture.astro';
+import MediaCredit from './MediaCredit.astro';
+import { heroFor, mediaText, buildPicture } from '../../lib/media';
+interface Props { locale: string; routeKey: string }
+const { locale, routeKey } = Astro.props;
+const m = heroFor(routeKey);
+const text = m ? mediaText(locale, m.id) : null;
+// The photo is small and, in two of the three designs, tinted or subdued: lower quality is
+// invisible here and keeps the files small (LCP on slow connections).
+const quality = { avif: 38, webp: 58, jpg: 64 };
+const wide = m ? await buildPicture(m, { widths: [480, 640, 800, 960], sizes: '(min-width: 80rem) 26rem, 34vw', ratio: 3 / 2, media: '(min-width: 64rem)', quality }) : null;
+const narrow = m ? await buildPicture(m, { widths: [480, 640, 800, 960, 1280], sizes: '(min-width: 48rem) 44rem, calc(100vw - 2rem)', ratio: 16 / 9, quality }) : null;
+---
+{m && text && wide && narrow && (
+  <figure class="hero" data-kind={m.kind} data-origin={m.origin} data-pagefind-ignore>
+    <div class="hero__frame">
+      <MediaPicture
+        pictures={[wide, narrow]}
+        alt={text.alt}
+        lang={text.lang}
+        eager
+        class="hero__picture"
+        imgClass="hero__img"
+        style={`--focal-narrow: ${narrow.focal}; --focal-wide: ${wide.focal}`}
+      />
+    </div>
+    <figcaption class="hero__caption" lang={text.lang} dir={text.dir}>
+      {text.caption && <span class="hero__text">{text.caption}</span>}
+      <MediaCredit locale={locale} media={m} class="hero__credit" />
+    </figcaption>
+  </figure>
+)}

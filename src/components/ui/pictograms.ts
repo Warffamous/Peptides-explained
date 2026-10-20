@@ -67,6 +67,15 @@ const antibody = () => `<path ${STROKE(5)} d="M24 44 V26 M24 26 L12 12 M24 26 L3
 const growth = () => `<rect x="5" y="30" width="9" height="14" rx="1"/><rect x="19" y="21" width="9" height="23" rx="1"/><rect x="33" y="12" width="9" height="32" rx="1"/><path ${STROKE(3.5)} d="M6 20 L20 10 L26 13 L38 4 M31 4 h7 v7"/>`;
 const harmsLens = () => `<path d="M20 6 L36 34 H4 Z"/><path ${CUT} d="M18.5 15 h3 v10 h-3 z M18.5 27.5 h3 v3 h-3 z"/><circle ${STROKE(4)} cx="34" cy="32" r="8"/><path ${STROKE(5)} d="M40 38 l5 5"/>`;
 const pulseHeart = () => `${heart()}<path ${CUT_STROKE(3)} d="M10 22 h8 l3 -6 l4 12 l3 -6 h10"/>`;
+/* Beginner layer. "Tested in people" counts people (Isotype: quantity by repetition, never colour):
+   none = the person struck through; one person; two; three; a crowd of six. */
+const personStruck = () => `${person()}<path ${CUT_STROKE(9)} d="M7 43 L41 5"/><path ${STROKE(4)} d="M7 43 L41 5"/>`;
+const people2 = () => person(13, 6, 0.9) + person(35, 6, 0.9);
+const crowd = () => [9, 24, 39].map((x) => person(x, 3, 0.5) + person(x, 25, 0.5)).join('');
+/** "In plain words": a speech bubble with two lines of text. */
+const speech = () => `<path d="M7 6 h34 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-19 l-10 9 v-9 h-5 a4 4 0 0 1 -4 -4 v-20 a4 4 0 0 1 4 -4 z"/><path ${CUT_STROKE(3.5)} d="M13 16 h22 M13 24 h14"/>`;
+/** Reading time: an open book. */
+const book = () => `<path d="M3 11 c7 -4 14 -3 19 1 v29 c-5 -4 -12 -5 -19 -2 z"/><path d="M45 11 c-7 -4 -14 -3 -19 1 v29 c5 -4 12 -5 19 -2 z"/>`;
 
 export const PICTOGRAMS: Record<string, string> = {
   'level-hypothesis': question(),
@@ -137,6 +146,16 @@ export const PICTOGRAMS: Record<string, string> = {
   'axis-preclinical_volume': papers(),
   'axis-independence': separate3(),
   'axis-safety': harmsLens(),
+  // beginner layer: "Has it been tested in people?" keyed by evidence.human_clinical
+  'tested-none': personStruck(),
+  'tested-case-reports': person(),
+  'tested-phase-1': people2(),
+  'tested-phase-2': people3(),
+  'tested-phase-3': crowd(),
+  'tested-authorised': crowd(),
+  // beginner layer: the summary box ("in plain words") and its reading time
+  'summary-plain': speech(),
+  'summary-reading-time': book(),
 };
 
 export const PICTOGRAM_NAMES = Object.keys(PICTOGRAMS) as readonly string[];

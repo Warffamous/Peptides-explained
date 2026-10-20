@@ -1,0 +1,168 @@
+/*
+ * Animated explainers (<Explainer id>): structure and the one shared timeline.
+ * Every animated part — artwork, pin, caption highlight, progress segment — is delayed by
+ * (--k × --xp-step) on the same clock, so sync needs no script. The default (un-animated) state of
+ * every part is the FINAL FRAME: that is what readers see without JavaScript, with reduced motion,
+ * in print, and when a run has finished. Themes choose the motion language and colours by setting
+ * --xp-in (keyframe), --xp-in-dur, --xp-ease and the role colours in themes/<t>/explainer.css.
+ */
+.explainer {
+  --xp-step: calc(var(--xp-dur, 12s) / var(--xp-steps, 5));
+  --xp-in-dur: 0.8s;
+  --xp-ease: ease-out;
+  margin-block: 0 var(--space-6, 2rem);
+  min-inline-size: 0;
+  container: xp / inline-size;
+}
+.xp-head { display: grid; gap: 0.15rem; margin-block-end: var(--space-4, 1rem); }
+.xp-body { display: grid; gap: var(--space-4, 1rem); }
+@container xp (min-width: 44rem) {
+  .xp-body { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: start; gap: var(--space-5, 1.5rem); }
+}
+.xp-visual { position: relative; display: grid; gap: var(--space-3, 0.75rem); align-content: start; min-inline-size: 0; }
+
+/* The stage: artwork plus HTML overlays. Positions follow the drawing, so the stage is LTR unless
+   the explainer opts in to mirroring (a direction-neutral flow such as a time axis). */
+.xp-stage { direction: ltr; --xp-sx: 1; }
+.xp-canvas { position: relative; container-type: inline-size; }
+[dir='rtl'] .explainer[data-mirror] .xp-stage { direction: rtl; --xp-sx: -1; }
+[dir='rtl'] .explainer[data-mirror] .xp-art { scale: -1 1; }
+.xp-art { display: block; inline-size: 100%; block-size: auto; overflow: visible; }
+.xp-pin, .xp-label { position: absolute; inset-inline-start: var(--x); inset-block-start: var(--y); pointer-events: none; }
+.xp-pin { translate: calc(-50% * var(--xp-sx)) -50%; display: grid; place-items: center; min-inline-size: 1.7em; block-size: 1.7em; padding-inline: 0.25em; font-size: clamp(0.72rem, 2.9cqi, 0.95rem); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.xp-label { --ax: 0%; --ay: 0%; translate: calc(var(--ax) * var(--xp-sx)) var(--ay); inline-size: max-content; max-inline-size: var(--mw, 34%); font-size: clamp(0.72rem, 2.8cqi, 0.95rem); line-height: 1.15; overflow-wrap: anywhere; }
+.xp-label bdi { white-space: pre-line; } /* a line break written into a label in the JSON is kept */
+.xp-label[data-align='center'] { --ax: -50%; text-align: center; }
+.xp-label[data-align='end'] { --ax: -100%; text-align: end; }
+.xp-label[data-valign='middle'] { --ay: -50%; }
+.xp-label[data-valign='bottom'] { --ay: -100%; }
+/* An icon on the picture always comes with its word: it is drawn inside the label, before the text. */
+.xp-lico { display: inline-block; inline-size: 1.15em; block-size: 1.15em; margin-inline-end: 0.2em; vertical-align: -0.2em; overflow: visible; }
+.xp-lico__line, .xp-lico__mark { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.xp-lico__fill, .xp-lico__dot { fill: currentColor; }
+
+/* Small multiples: two (or --xp-cols) charts side by side, stacked when the drawing is narrow. Each
+   panel has a title in the flow and its own canvas, so overlay positions and sizes follow the panel. */
+.xp-panels { display: grid; gap: var(--space-4, 1rem) var(--space-4, 1rem); }
+@container (min-width: 34rem) {
+  .xp-panels { grid-template-columns: repeat(var(--xp-cols, 2), minmax(0, 1fr)); }
+}
+.xp-panel { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: var(--space-1, 0.25rem); min-inline-size: 0; }
+.xp-panel__title { align-self: end; margin: 0; }
+.xp-panel__art { position: relative; container-type: inline-size; }
+.xp-panel__art .xp-label { font-size: clamp(0.875rem, 4.4cqi, 1.0625rem); } /* never below 14px: the words carry the message */
+
+/* Artwork roles shared by every design. */
+.xp-art :is(.xp-link, .xp-curve, .xp-arrow, .xp-detail, .xp-rec, .xp-tail, .xp-axis, .xp-open, .xp-hatch, .xp-warn-mark) { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.xp-link[data-level='animal'], .xp-link[data-level='in-vitro'] { stroke-dasharray: 8 5; }
+.xp-link[data-level='hypothesis'] { stroke-dasharray: 2 5; }
+.xp-link[data-level='human'], .xp-curve { --xp-in: var(--xp-draw, xp-draw); }
+.xp-link:not([data-level='human']) { --xp-in: var(--xp-dashed-in, xp-fade); --xp-ease: var(--xp-dashed-ease, ease-out); }
+.xp-move { --xp-in: var(--xp-move, xp-move); }
+.xp-in, .xp-out, .xp-shrink, .xp-pulse { transform-box: fill-box; transform-origin: 50% 50%; }
+.xp-out { opacity: 0; }
+.xp-shrink { scale: var(--s, 0.6); }
+.xp-ghost { opacity: var(--xp-ghost, 0.4); }
+.xp-danger-hot { opacity: 1; }
+
+/* Controls: not rendered without JavaScript (the inline head script sets html.js before first
+   paint, so their space is reserved and nothing shifts), invisible until the island is live, and
+   never shown with reduced motion. */
+.xp-controls { display: none; flex-wrap: wrap; align-items: center; gap: var(--space-2, 0.5rem) var(--space-3, 0.75rem); }
+:root.js .xp-controls { display: flex; }
+.explainer:not(.is-live) .xp-controls { visibility: hidden; }
+.xp-btn { display: inline-flex; align-items: center; gap: 0.45em; font: inherit; cursor: pointer; }
+.xp-ico { inline-size: 1em; block-size: 1em; flex: none; fill: currentColor; }
+.xp-btn--toggle[data-state='playing'] .xp-ico--play, .xp-btn--toggle:not([data-state='playing']) .xp-ico--pause { display: none; }
+/* Play ↔ Pause must not change the button's width (that moved Replay and the progress bar: a layout
+   shift on autoplay). Both words size the label's column as invisible, zero-height pseudo-elements;
+   visibility: hidden keeps them out of the accessible name. */
+.xp-btn--toggle { display: inline-grid; grid-template-columns: auto auto; column-gap: 0.45em; }
+.xp-btn--toggle > .xp-ico { grid-area: 1 / 1; }
+.xp-btn--toggle > .xp-btn__label, .xp-btn--toggle::before, .xp-btn--toggle::after { grid-area: 1 / 2; }
+.xp-btn--toggle::before, .xp-btn--toggle::after { block-size: 0; visibility: hidden; white-space: nowrap; }
+.xp-btn--toggle::before { content: attr(data-label-play); }
+.xp-btn--toggle::after { content: attr(data-label-pause); }
+.xp-progress { flex: 1 1 5rem; display: flex; gap: 3px; min-inline-size: 4rem; }
+.xp-seg { position: relative; flex: 1 1 0; overflow: hidden; }
+.xp-seg::before { content: ''; position: absolute; inset: 0; transform-origin: 0 50%; }
+[dir='rtl'] .xp-seg::before { transform-origin: 100% 50%; }
+.xp-clock { position: absolute; inline-size: 0; block-size: 0; overflow: hidden; }
+.xp-rm-note { display: none; margin: 0; }
+
+/* The current step's sentence, large, right under the drawing. All captions share one grid cell,
+   so the box is as tall as the longest one from the first paint (no layout shift). The step
+   captions only exist where they can play (script on, motion allowed); at rest — and without
+   JavaScript or with reduced motion — the box shows the still's caption, if the explainer has one. */
+.xp-now { display: grid; }
+.xp-now > p { grid-area: 1 / 1; margin: 0; }
+.xp-now__step { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  :root.js .xp-now__step { display: block; visibility: hidden; }
+}
+.xp-now__n { font-variant-numeric: tabular-nums; }
+
+/* Text equivalent: the ordered steps are always present and visible. */
+.xp-text { min-inline-size: 0; }
+.xp-steps { list-style: none; margin: 0; padding: 0; display: grid; }
+.xp-step { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; border-inline-start: 3px solid transparent; }
+.xp-step__text, .xp-step__levels { margin: 0; }
+.xp-step__levels { display: flex; flex-wrap: wrap; gap: 0.3em; }
+.xp-summary, .xp-legend, .xp-sources, .xp-review { margin-block: var(--space-3, 0.75rem) 0; margin-inline: 0; }
+.xp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em 0.9em; }
+.xp-key { display: inline-flex; align-items: center; gap: 0.4em; }
+.xp-key__line { inline-size: 2em; block-size: 0.5em; flex: none; overflow: visible; }
+.xp-sources .sidenote-wrap { display: none; }
+
+/* ------------------------------------------------------------------ the timeline (only while playing) */
+.explainer.is-playing :is(.xp-in, .xp-pin) { animation: var(--xp-in, xp-fade) var(--xp-in-dur) var(--xp-ease) calc(var(--k, 0) * var(--xp-step) + var(--lag, 0s)) 1 both; }
+.explainer.is-playing .xp-pin { --xp-in: var(--xp-pin-in, xp-fade); }
+.explainer.is-playing .xp-out { animation: xp-out var(--xp-in-dur) ease-in calc(var(--k, 0) * var(--xp-step) + var(--lag, 0s)) 1 both; }
+.explainer.is-playing .xp-shrink { animation: xp-shrink var(--xp-in-dur) var(--xp-ease) calc(var(--k, 0) * var(--xp-step) + var(--lag, 0s)) 1 both; }
+.explainer.is-playing .xp-ghost { animation: xp-ghost var(--xp-in-dur) ease-in-out calc(var(--k, 0) * var(--xp-step) + var(--lag, 0s)) 1 both; }
+.explainer.is-playing .xp-pulse { animation: var(--xp-pulse, xp-pulse) calc(var(--xp-step) * 0.6) ease-in-out calc(var(--k, 0) * var(--xp-step) + var(--lag, 0s)) 1 none; }
+.explainer.is-playing .xp-step { animation: xp-current var(--xp-step) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
+.explainer.is-playing .xp-step__n { animation: xp-current-n var(--xp-step) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
+.explainer.is-playing .xp-seg::before { animation: xp-fill var(--xp-step) linear calc(var(--k, 0) * var(--xp-step)) 1 both; }
+.explainer.is-playing .xp-clock { animation: xp-clock var(--xp-dur) linear 1 both; }
+/* One message per scene: an xp-focus part is strong during steps k … k + span − 1 and faded the
+   rest of the run (a last scene can take span 2 so it stays strong to the end). Not playing = the
+   final frame, where everything is strong. Words fade less than shapes. */
+.explainer.is-playing .xp-focus { opacity: var(--xp-dim, 0.3); animation: xp-lit calc(var(--span, 1) * var(--xp-step)) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
+:is(.xp-label, .xp-panel__title) .xp-focus, .xp-panel__title.xp-focus { --xp-dim: var(--xp-dim-text, 0.5); }
+.explainer.is-playing .xp-now__still { visibility: hidden; }
+.explainer.is-playing .xp-now__step { animation: var(--xp-now, xp-now) var(--xp-step) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
+.explainer.is-paused, .explainer.is-paused *, .explainer.is-paused *::before, .explainer.is-paused *::after { animation-play-state: paused !important; }
+
+@keyframes xp-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes xp-pop { from { opacity: 0; scale: 0.3; } to { opacity: 1; scale: 1; } }
+@keyframes xp-draw { from { stroke-dasharray: 1 2; stroke-dashoffset: 1.01; } to { stroke-dasharray: 1 2; stroke-dashoffset: 0; } }
+@keyframes xp-move { from { opacity: 0; translate: var(--dx, 0px) var(--dy, 0px); } to { opacity: 1; translate: 0 0; } }
+@keyframes xp-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes xp-shrink { from { scale: 1; } to { scale: var(--s, 0.6); } }
+@keyframes xp-ghost { from { opacity: 1; } to { opacity: var(--xp-ghost, 0.4); } }
+@keyframes xp-pulse { 0%, 100% { scale: 1; } 50% { scale: 1.18; } }
+@keyframes xp-current { from, to { background-color: var(--xp-cur-bg, transparent); border-inline-start-color: var(--xp-cur-line, currentColor); } }
+@keyframes xp-current-n { from, to { color: var(--xp-cur-n-ink, currentColor); background-color: var(--xp-cur-n-bg, transparent); } }
+@keyframes xp-fill { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes xp-clock { from { opacity: 0; } to { opacity: 0; } }
+@keyframes xp-lit { 0%, 100% { opacity: var(--xp-dim, 0.3); } 8%, 92% { opacity: 1; } }
+@keyframes xp-now { 0% { visibility: visible; opacity: 0; } 6%, 100% { visibility: visible; opacity: 1; } }
+@keyframes xp-now-cut { from, to { visibility: visible; } }
+
+/* Reduced motion: no animation at all, no controls; the final frame and the list say everything. */
+@media (prefers-reduced-motion: reduce) {
+  .explainer *, .explainer *::before, .explainer *::after { animation: none !important; }
+  .explainer .xp-controls { display: none !important; }
+  .explainer .xp-rm-note { display: block; }
+}
+@media print {
+  .explainer .xp-controls, .explainer .xp-rm-note, .explainer .xp-now__step { display: none !important; }
+  .explainer *, .explainer *::before, .explainer *::after { animation: none !important; }
+}
+@media (forced-colors: active) {
+  .xp-art :is(.xp-link, .xp-curve, .xp-arrow, .xp-organ, .xp-cell, .xp-axis, .xp-ring, .xp-plate) { stroke: CanvasText; }
+  .xp-art :is(.xp-drug, .xp-hot, .xp-warn) { fill: Highlight; }
+  .xp-pin { forced-color-adjust: none; background: Canvas; color: CanvasText; border: 1px solid CanvasText; }
+  .xp-step { border-inline-start-color: transparent; }
+}

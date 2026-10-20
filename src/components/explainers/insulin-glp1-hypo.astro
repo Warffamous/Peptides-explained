@@ -1,0 +1,88 @@
+---
+/**
+ * Explainer "insulin-glp1-hypo": semaglutide with insulin or a sulfonylurea, and low blood sugar.
+ * Two small charts of blood sugar over time, side by side (stacked when the drawing is narrow):
+ *   left   "Semaglutide alone": the line falls from High, slows down near normal, stays in range
+ *   right  "Semaglutide with insulin or a sulfonylurea tablet": the usual dose keeps falling into
+ *          Too low; a smaller dose stays in range; too low → take sugar, and the level comes back up
+ * Every mark on the drawing has its word beside it (labels in explainers.json); icons only inside a
+ * label, before the word. One message per scene: only the part being talked about is strong
+ * (xp-focus); the final frame — no JS, reduced motion, end of the run — shows and names everything.
+ * A time axis is direction-neutral, so this one may mirror in RTL (mirror: true in the registry).
+ *   1 (k0) left:  semaglutide alone lowers high sugar and works less near normal
+ *   2 (k1) right: insulin / a sulfonylurea at the usual dose: the line keeps falling through the range
+ *   3 (k2) right: it falls into Too low (hypoglycaemia)
+ *   4 (k3) right: a smaller insulin / tablet dose: slows down, stays in range (usual dose → ghost)
+ *   5 (k4) right: too low → take sugar now: the level comes back up
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string }
+const { uid, levels: L, labels, locale } = Astro.props;
+const W = 320;
+const H = 324; // room between the healthy range and Too low for the three-line dose label
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer insulin-glp1-hypo: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+const curve = (k: number, lag = 0, extra = '') => ({ class: `xp-curve xp-in${extra}`, 'data-level': L[k][0], pathLength: 1, style: at(k, lag) });
+const focus = (k: number, span = 1) => ({ class: 'xp-focus', style: `--k:${k};--span:${span}` });
+const P = { w: W, h: H, locale };
+// Falls from High and slows down as it reaches the healthy range (glucose-dependent): drawn for
+// "semaglutide alone" and again for "a smaller insulin or tablet dose".
+const SAFE = 'M96 36C132 38 144 128 184 132H312';
+const panels = [
+  { key: 'alone', k: 0, span: 1 },
+  { key: 'combo', k: 1, span: 4 },
+];
+---
+<div class="xp-panels">
+  {panels.map((p, i) => (
+    <div class="xp-panel">
+      <p class="xp-panel__title xp-focus" style={`--k:${p.k};--span:${p.span}`}><bdi>{label(p.key)}</bdi></p>
+      <div class="xp-panel__art">
+        <svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+          <defs>
+            <pattern id={`${uid}-hatch${i}`} width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path class="xp-hatch" d="M0 0V7" /></pattern>
+          </defs>
+          {/* the chart: healthy range, too-low zone, axes (blood sugar up, time to the right) */}
+          <g {...focus(p.k, p.span)}>
+            <rect class="xp-zone" x="23" y="96" width="289" height="76" />
+            <rect class="xp-danger" x="23" y="222" width="289" height="70" fill={`url(#${uid}-hatch${i})`} />
+            <path class="xp-axis" d="M22 24V294H312M16 32L22 24L28 32M305 288L312 294L305 300" />
+          </g>
+          {i === 0 ? (
+            <g {...focus(0)}><path {...curve(0, 0.2, ' xp-curve--safe')} d={SAFE} /></g>
+          ) : (
+            <>
+              {/* 2–3: the usual dose keeps falling, into Too low; from step 4 a ghost (what can happen) */}
+              <g class="xp-ghost" style={at(3, 0)}>
+                <g {...focus(1, 2)}><path {...curve(1, 0.2)} d="M96 36C124 38 132 112 140 172" /></g>
+                <g {...focus(2)}><path {...curve(2, 0)} d="M140 172C146 214 150 262 162 267" /></g>
+              </g>
+              <g {...focus(2)}><rect class="xp-danger-hot xp-in" x="23" y="222" width="289" height="70" style={at(2, 0.6)} /></g>
+              {/* 4: a smaller insulin or tablet dose: slows down and stays in range */}
+              <g {...focus(3)}><path {...curve(3, 0.2, ' xp-curve--safe')} d={SAFE} /></g>
+              {/* 5: too low → take sugar now: the level comes back up */}
+              <g {...focus(4, 2)}><path class="xp-arrow xp-arrow--up xp-in" d="M164 267C174 266 180 250 184 226M178.4 231.7L184 226L187.5 233.2" style={at(4, 0.3)} /></g>
+            </>
+          )}
+        </svg>
+        <Overlay text={label('sugar')} x={30} y={2} max={60} tone="axis" focus={p.k} span={p.span} {...P} />
+        <Overlay text={label('time')} x={312} y={300} align="end" max={40} tone="axis" focus={p.k} span={p.span} {...P} />
+        <Overlay text={label('high')} x={30} y={62} valign="middle" max={28} tone="zone" focus={p.k} span={p.span} {...P} />
+        <Overlay text={label('range')} x={30} y={134} valign="middle" max={30} tone="zone" focus={p.k} span={p.span} {...P} />
+        <Overlay text={label('low')} icon="warn" ground x={30} y={257} valign="middle" max={36} tone="zone" focus={i === 0 ? 0 : 2} span={i === 0 ? 1 : 3} {...P} />
+        {i === 0 ? (
+          <Overlay text={label('alone-line')} icon="check" x={176} y={117} valign="bottom" max={44} tone="note" k={0} lag={1.4} focus={0} {...P} />
+        ) : (
+          <>
+            <Overlay text={label('usual')} x={150} y={142} max={50} tone="note" k={1} lag={1.2} focus={1} span={2} {...P} />
+            <Overlay text={label('smaller')} icon="check" x={174} y={122} valign="bottom" max={46} tone="note" k={3} lag={1.3} focus={3} {...P} />
+            <Overlay text={label('treat')} icon="sugar" ground x={190} y={228} max={38} tone="note" k={4} lag={0.6} focus={4} span={2} {...P} />
+          </>
+        )}
+      </div>
+    </div>
+  ))}
+</div>

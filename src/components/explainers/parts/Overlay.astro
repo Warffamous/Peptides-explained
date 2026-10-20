@@ -1,0 +1,60 @@
+---
+/**
+ * HTML placed over an explainer's artwork: a step pin (number) or a word label. Positions are in
+ * the artwork's viewBox units and become percentages, so they track the drawing at any width.
+ * Pins appear in sync with their step (--k = n - 1). Text is real, translatable HTML in <bdi>.
+ * The stage is direction: ltr unless the explainer may mirror, so positions match the drawing.
+ *
+ * Labels can also (docs/EXPLAINERS.md §3.3):
+ *  - appear at a step (k, lag), like an xp-in part of the drawing;
+ *  - be strong only during their scene (focus, span) and faded otherwise while playing (xp-focus);
+ *  - carry a small icon that always sits right before the word (icon) — never an icon alone;
+ *  - hang from their anchor (valign) and wrap within a width (max, % of the canvas).
+ */
+import { formatNumber } from '../../../lib/format';
+import { at } from './timeline';
+interface Props {
+  /** Step number (1-based) for a pin; omit for a label. Pins only ON the element they number. */
+  n?: number;
+  /** Label text (from i18n). */
+  text?: string;
+  x: number;
+  y: number;
+  /** viewBox width and height of the artwork. */
+  w: number;
+  h: number;
+  align?: 'start' | 'center' | 'end';
+  /** Which edge of the label sits at y: its top (default), middle or bottom. */
+  valign?: 'top' | 'middle' | 'bottom';
+  /** Wrap width as a percentage of the canvas (default 34). */
+  max?: number;
+  /** Appear at step k (0-based), lag seconds into it. Omit: always there. */
+  k?: number;
+  lag?: number;
+  /** Strong only during steps focus … focus + span − 1 while playing; faded otherwise. */
+  focus?: number;
+  span?: number;
+  /** Icon drawn right before the word (in the label's own colour role). */
+  icon?: 'check' | 'warn' | 'sugar';
+  /** Style role: zone and axis words, a note on a line, a panel or warning word. */
+  tone?: 'zone' | 'axis' | 'note';
+  /** The word sits on a pattern (e.g. hatching): a design may give it a solid ground so it stays legible. */
+  ground?: boolean;
+  locale: string;
+}
+const { n, text, x, y, w, h, align = 'start', valign, max, k, lag = 0, focus, span = 1, icon, tone, ground, locale } = Astro.props;
+const pos = `--x:${((x / w) * 100).toFixed(2)}%;--y:${((y / h) * 100).toFixed(2)}%`;
+const style = [pos, k !== undefined && at(k, lag), max && `--mw:${max}%`].filter(Boolean).join(';');
+---
+{n !== undefined
+  ? <span class="xp-pin" style={`${pos};--k:${n - 1}`}><bdi>{formatNumber(locale, n)}</bdi></span>
+  : (
+    <span class:list={['xp-label', k !== undefined && 'xp-in']} data-align={align} data-valign={valign} data-tone={tone} data-ground={ground ? '' : undefined} style={style}>
+      <span class:list={['xp-label__in', focus !== undefined && 'xp-focus']} style={focus !== undefined ? `--k:${focus};--span:${span}` : undefined}>
+        {icon === 'check' && <svg class="xp-lico" data-icon="check" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path class="xp-lico__line" d="M2.5 8.6l3.6 3.6L13.6 4.2" /></svg>}
+        {icon === 'warn' && <svg class="xp-lico" data-icon="warn" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path class="xp-lico__fill" d="M8 1.2L15.4 14.4H.6Z" /><path class="xp-lico__mark" d="M8 5.6v4.4" /><circle class="xp-lico__dot" cx="8" cy="12.2" r="1.15" /></svg>}
+        {icon === 'sugar' && <svg class="xp-lico" data-icon="sugar" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path class="xp-lico__fill" d="M8 1.4L14.2 4.8V11.4L8 14.8L1.8 11.4V4.8Z" /><path class="xp-lico__line" d="M1.8 4.8L8 8.2L14.2 4.8M8 8.2V14.8" /></svg>}
+        <bdi>{text}</bdi>
+      </span>
+    </span>
+  )}

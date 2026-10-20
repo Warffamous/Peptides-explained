@@ -1,0 +1,344 @@
+# TB-500 / thymosin beta-4: locale-independent facts. Every value is sourced; see research/tb-500.md.
+#
+# WHICH MOLECULE THIS FILE DESCRIBES. "TB-500" is a common name, not a nonproprietary name. The FDA's
+# 2026 review, the doping-control literature and PubChem define it as the N-acetylated 7-residue
+# fragment Ac-LKKTETQ (residues 17–23 of thymosin beta-4). The sequence, identifiers and evidence grades
+# below describe that fragment. Full-length thymosin beta-4 (43 residues; INN timbetasin; trial codes
+# RGN-259, RGN-137, RGN-352; recombinant NL005) is a different molecule. Its human trials are listed as
+# structured studies because TB-500 is usually marketed on them, but they do not lift the fragment's
+# grades. Products sold as "TB-500" may contain either molecule or something else.
+slug: tb-500
+tier: 1
+status: complete
+# experimental, not investigational: the fragment has never been in formal clinical development.
+# The only registry record that names it (NCT07487363) calls itself "fictional". Full-length Tβ4 is
+# investigational (SEER-2, NCT05555589; NL005, NCT07586865) but is not what this slug's sequence is.
+category: experimental
+class: tissue-repair
+body_systems: [musculoskeletal, skin, cardiovascular]
+names:
+  common: TB-500
+  full: "Acetylated thymosin beta-4 fragment (residues 17–23)"
+  other: [TB500, TB 500, Ac-LKKTETQ, "thymosin beta-4 fragment 17–23"]
+  brands: []
+identifiers:
+  pubchem_cid: 62707662
+  cas: 885340-08-9
+  unii: QHK6Z47GTG
+molecular:
+  formula: C38H68N10O14
+  mass_da: 889.0
+  smiles: "C[C@H]([C@@H](C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@@H](CCC(=O)N)C(=O)O)NC(=O)[C@H](CCCCN)NC(=O)[C@H](CCCCN)NC(=O)[C@H](CC(C)C)NC(=O)C)O"
+  smiles_source: pubchem-tb-500
+sequence:
+  display: "Leu-Lys-Lys-Thr-Glu-Thr-Gln"
+  residues: [Leu, Lys, Lys, Thr, Glu, Thr, Gln]
+  n_terminus: Ac
+  c_terminus: OH
+  modifications:
+    - { position: 1, label: "Leu (thymosin beta-4 position 17): acetyl group added in the lab; inside the natural protein this leucine is not acetylated" }
+  bridges: []
+  source: pubchem-tb-500
+evidence:
+  human_clinical: case-reports
+  preclinical_volume: moderate
+  independence: few-groups
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, fda-pcac-2026-tb500-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, fda-pcac-2026-tb500-briefing] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2026-tb500-briefing] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-tb500-briefing] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-tb500-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks, fda-503a-categories-2026-05] }
+  # Named as an example under S2 (growth factors) from the 2018 List; S2.3 in the 2026 and 2027 Lists.
+  - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, since: 2018-01-01, as_of: 2026-10-20, sources: [wada-2018-list-modifications, wada-2026-list-en, wada-2027-list-en] }
+# "group" is relative to the dominant network in this literature: Allan Goldstein and Hynda Kleinman
+# (George Washington University; NIH) and the companies that developed thymosin beta-4 clinically
+# (RegeneRx; ReGenTree, sponsor of the later RGN-259 trials, whose parent company is HLB Therapeutics
+# per sosne-2022-seer1; Lenus Therapeutics, sponsor of the CELEB trial). Gabriel Sosne co-authored with
+# Goldstein (sosne-2010-active-sites) and Kleinman (sosne-2022-seer1), so his eye trials belong to it.
+# Fact-check 20 October 2026: Shah 2018 and Yoon 2021 recoded independent -> mixed (see their comments).
+studies:
+  # --- the TB-500 fragment or its LKKTETQ core, in cells and animals
+  - id: philp-2003-lkktetq
+    source: philp-2003-lkktetq-wounds
+    year: 2003
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: ho-2012-equine
+    source: ho-2012-equine-tb500
+    year: 2012
+    species: horse
+    n: null
+    design: pk
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  # mixed: Rojkind's own laboratory (VA / GWU), but the PMC full text says the peptides were "a kind gift"
+  # from RegeneRx, thanks A.L. Goldstein, and the paper is in the 5th Thymosin Symposium supplement.
+  - id: shah-2018-stellate
+    source: shah-2018-stellate-cells
+    year: 2018
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: government
+    group: mixed
+    blinded: null
+    controlled: true
+  # mixed: senior author Hee-Jae Cha (Kosin University, hcha@kosin.ac.kr) is the first author of
+  # cha-2003-metastasis from Kleinman's NIDCR group and co-authored with Kleinman from Kosin in 2007-2011
+  # (PubMed 17947589, 20013654, 20691219, 20975530). Kleinman is not an author of this paper.
+  - id: yoon-2021-ovarian-cells
+    source: yoon-2021-ovarian-cancer
+    year: 2021
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: mixed
+    blinded: null
+    controlled: true
+  - id: rahaman-2024-tb500
+    source: rahaman-2024-tb500-metabolites
+    year: 2024
+    species: mixed
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Same study and coding as on the BPC-157 page (pathologist blinded, specimens coded; no funding).
+  - id: bicer-2026-achilles
+    source: bicer-2026-achilles
+    year: 2026
+    species: rat
+    n: 32
+    design: animal
+    funding: academic
+    group: independent
+    blinded: true
+    controlled: true
+  # --- product analysis
+  - id: delcourt-2023-products
+    source: delcourt-2023-misbranded
+    year: 2023
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: government
+    group: independent
+    blinded: null
+    controlled: null
+  # --- full-length thymosin beta-4 in animals
+  - id: malinda-1999-rat-wounds
+    source: malinda-1999-wound-healing
+    year: 1999
+    species: rat
+    n: null
+    design: animal
+    funding: government
+    group: originating
+    blinded: null
+    controlled: true
+  - id: cha-2003-melanoma
+    source: cha-2003-metastasis
+    year: 2003
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: bock-marquette-2004-cardiac
+    source: bock-marquette-2004-cardiac
+    year: 2004
+    species: mouse
+    n: null
+    design: animal
+    funding: mixed
+    group: independent
+    blinded: null
+    controlled: true
+  - id: banerjee-2012-knockout
+    source: banerjee-2012-dispensable
+    year: 2012
+    species: mouse
+    n: null
+    design: animal
+    funding: mixed
+    group: independent
+    blinded: null
+    controlled: true
+  # --- humans: products called TB-500 or "TB4", always mixed with other substances
+  # Same coding as on the BPC-157 page: n = 16 people studied, of whom 4 also received "TB4".
+  - id: lee-2021-knee
+    source: lee-2021-knee
+    year: 2021
+    species: human
+    n: 16
+    design: case-series
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  # Aligned with the BPC-157 page: no funding declared, so no funder to classify.
+  - id: froum-2026-nerve-cases
+    source: froum-2026-nerve-cases
+    year: 2026
+    species: human
+    n: 3
+    design: case-series
+    funding: not-applicable
+    group: independent
+    blinded: false
+    controlled: false
+  # --- humans: full-length thymosin beta-4 (a different molecule)
+  - id: regenerx-pressure-ulcers
+    source: ctgov-nct00382174
+    year: 2010
+    species: human
+    n: 72
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: guarnera-2010-venous-ulcers
+    source: guarnera-2010-venous-ulcers
+    year: 2010
+    species: human
+    n: 73
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  # blinded: null. The abstract says "randomized, placebo-controlled" but not blinded; the full text is
+  # paywalled (Wiley 403). The registry record with the same four doses (NCT00743769) says double-blind
+  # but is "Withdrawn ... never initiated", so it cannot be used to describe this study.
+  - id: ruff-2010-phase1-iv
+    source: ruff-2010-phase1-iv
+    year: 2010
+    species: human
+    n: 40
+    design: phase-1
+    funding: industry
+    group: originating
+    blinded: null
+    controlled: true
+  - id: dunn-2010-neurotrophic
+    source: dunn-2010-neurotrophic-cases
+    year: 2010
+    species: human
+    n: 9
+    design: case-series
+    funding: undisclosed
+    group: originating
+    blinded: false
+    controlled: false
+  # mixed: RegeneRx sponsored; the registry summary states "Funding Source - FDA Office of Orphan
+  # Product Development (OOPD)".
+  - id: regenerx-epidermolysis-bullosa
+    source: ctgov-nct00311766
+    year: 2013
+    species: human
+    n: 30
+    design: phase-2
+    funding: mixed
+    group: originating
+    blinded: true
+    controlled: true
+  - id: regenerx-vitrectomy-cornea
+    source: ctgov-nct00598871
+    year: 2010
+    species: human
+    n: 12
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: sosne-2015-cae-dry-eye
+    source: sosne-2015-cae-dry-eye
+    year: 2015
+    species: human
+    n: 72
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: sosne-2015-severe-dry-eye
+    source: sosne-2015-severe-dry-eye
+    year: 2015
+    species: human
+    n: 9
+    design: phase-2
+    funding: undisclosed
+    group: originating
+    blinded: true
+    controlled: true
+  - id: wang-2021-rhtb4-phase1
+    source: wang-2021-rhtb4-phase1
+    year: 2021
+    species: human
+    n: 84
+    design: phase-1
+    funding: industry
+    group: independent
+    blinded: true
+    controlled: true
+  - id: arise-2-dry-eye
+    source: ctgov-nct02974907
+    year: 2022
+    species: human
+    n: 601
+    design: phase-3
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: seer-1-neurotrophic
+    source: sosne-2022-seer1
+    year: 2022
+    species: human
+    n: 18
+    design: phase-3
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: zhang-2025-stemi
+    source: zhang-2025-stemi
+    year: 2025
+    species: human
+    n: 96
+    design: rct
+    funding: mixed
+    group: independent
+    blinded: true
+    controlled: true
+  - id: arise-3-dry-eye
+    source: ctgov-nct03937882
+    year: 2026
+    species: human
+    n: 700
+    design: phase-3
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+authorised_products: []
+related: [bpc-157]
+last_reviewed: 2026-10-20
+reviewed_by: pending-medical-review

@@ -3,7 +3,7 @@
  * Small UI icons, drawn on a 24×24 grid with currentColor. Directional icons carry
  * class "icon--dir" and are mirrored under [dir="rtl"] by the base stylesheet.
  */
-interface Props { name: 'arrow' | 'chevron' | 'external' | 'search' | 'alert' | 'globe' | 'sun' | 'moon' | 'menu' | 'close' | 'check' | 'info' | 'book' | 'up'; label?: string; class?: string }
+interface Props { name: 'arrow' | 'chevron' | 'external' | 'search' | 'alert' | 'globe' | 'sun' | 'moon' | 'menu' | 'close' | 'check' | 'info' | 'book' | 'up' | 'layout'; label?: string; class?: string }
 const { name, label, class: cls } = Astro.props;
 const DIRECTIONAL = new Set(['arrow', 'chevron', 'external']);
 const paths: Record<string, string> = {
@@ -21,6 +21,7 @@ const paths: Record<string, string> = {
   info: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v6M12 7.5v.01',
   book: 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5zM4 19a2 2 0 0 1 2-2h13',
   up: 'M12 19V5M6 11l6-6 6 6',
+  layout: 'M4 4h16v16H4zM4 9h16M10 9v11',
 };
 const classes = ['icon', `icon--${name}`, DIRECTIONAL.has(name) && 'icon--dir', cls].filter(Boolean).join(' ');
 ---

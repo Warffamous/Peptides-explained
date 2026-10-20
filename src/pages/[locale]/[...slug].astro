@@ -10,6 +10,7 @@ import { BUILT_LOCALES, SOURCE_LOCALE } from '../../lib/config';
 import { allPages, splitPageId, resolvePage, alternatesFor } from '../../lib/content';
 import { webPage } from '../../lib/jsonld';
 import { t } from '../../lib/i18n';
+import { mdxToPlain, readingMinutes, wordCount } from '../../lib/readability';
 
 export async function getStaticPaths() {
   const pages = await allPages();
@@ -62,6 +63,7 @@ const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' 
   description={d.description}
   eyebrow={eyebrow}
   summary={d.summary}
+  readingMinutes={readingMinutes(wordCount(mdxToPlain(entry.body ?? '')) + wordCount(d.summary.join(' ')))}
   template={d.template}
   section={d.section}
   lastReviewed={d.last_reviewed}

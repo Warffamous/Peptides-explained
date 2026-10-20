@@ -61,8 +61,8 @@ a:hover { text-decoration-thickness: 1.5px; }
 .brand-mark__res--accent { fill: var(--accent); stroke: var(--accent); }
 
 .utility-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); font-size: var(--s--1); }
-.utility-nav > a { display: inline-flex; align-items: center; gap: 0.35em; color: var(--ink); text-decoration: none; padding-block: 0.25rem; }
-.utility-nav > a:hover { text-decoration: underline; }
+.utility-nav__alert, .utility-nav__search { display: inline-flex; align-items: center; gap: 0.35em; color: var(--ink); text-decoration: none; padding-block: 0.25rem; }
+:is(.utility-nav__alert, .utility-nav__search):hover { text-decoration: underline; }
 .utility-nav .icon { inline-size: 1.05em; block-size: 1.05em; }
 .utility-nav__alert { font-weight: 600; }
 .utility-nav__alert .icon { color: var(--ink); }
@@ -165,10 +165,12 @@ a:hover { text-decoration-thickness: 1.5px; }
 .doc > * { grid-column: 1 / -1; min-inline-size: 0; }
 @media (min-width: 64rem) {
   .doc > .doc-header,
+  .doc > .doc-review,
   .doc > .summary-box,
   .doc > .notice,
   .doc > .opinion-flag,
   .doc > .toc { grid-column: 1 / span 8; }
+  /* The page photo: a plate in the margin columns 9–12, beside the title block (media.css). */
 }
 
 /* ------------------------------------------------------------------ footer */
@@ -202,11 +204,65 @@ a:hover { text-decoration-thickness: 1.5px; }
 .root-chooser h1 { font-size: var(--s-3); font-weight: 650; letter-spacing: -0.02em; margin-block-end: var(--space-5); }
 .root-chooser__list a { display: block; padding-block: var(--space-3); border-block-end: var(--hair) solid var(--rule); color: var(--ink); text-decoration: none; }
 
-/* Narrow screens: utility labels become icon-only (names stay available to assistive technology). */
+/*
+ * The header's "Menu" button and, below 60rem, the sheet it opens (structure.css decides when).
+ * A printed index card: paper, a hairline frame, mono labels, rows divided by hairlines.
+ */
+.site-tools__open {
+  gap: 0.4em;
+  min-block-size: 2rem;
+  padding: 0.25rem 0.55rem;
+  background: none;
+  border: var(--hair) solid var(--rule-strong);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: var(--s--2);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.site-tools__open .icon, .site-tools__close .icon { inline-size: 1rem; block-size: 1rem; }
+.site-tools__open:hover { background: var(--tint); }
+.site-tools:popover-open {
+  padding: var(--space-3) var(--pad) var(--space-5);
+  background: var(--paper);
+  color: var(--ink);
+  border: 0;
+  border-block-end: 1px solid var(--rule-strong);
+  font-size: var(--s-0);
+}
+.site-tools::backdrop { background: rgb(17 17 17 / 0.35); }
+.site-tools__head { padding-block-end: var(--space-3); border-block-end: 1px solid var(--rule-strong); }
+.site-tools__title { font-family: var(--font-mono); font-size: var(--s--2); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+.site-tools__close { display: inline-grid; place-items: center; inline-size: 2.5rem; block-size: 2.5rem; padding: 0; background: none; border: var(--hair) solid var(--rule-strong); color: var(--ink); }
+.site-tools:popover-open > .utility-nav__search,
+.site-tools:popover-open .disclosure__summary,
+.site-tools:popover-open .scheme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  inline-size: 100%;
+  min-block-size: 3rem;
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--s-0);
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: start;
+}
+/* One hairline under each row (after the row reset above, which clears the buttons' frames). */
+.site-tools:popover-open > :not(.site-tools__head) { border-block-end: var(--hair) solid var(--rule); }
+.site-tools:popover-open .disclosure[open] > .disclosure__summary { background: none; color: var(--accent); }
+.site-tools:popover-open .disclosure__panel { padding: 0 0 var(--space-2); border: 0; background: none; }
+.site-tools:popover-open .disclosure__panel a { padding-inline: var(--space-4); font-size: var(--s-0); }
+
+/* Phones: the brand sets on two lines so brand, "Warning signs" and "Menu" share one row (below
+   about 340px, e.g. at high zoom, the tools wrap under the brand rather than scroll sideways). */
 @media (max-width: 30rem) {
-  .utility-nav { gap: var(--space-2); }
-  .utility-nav__text, .theme-switch__label {
-    position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
-  }
-  .site-header__inner { row-gap: var(--space-2); }
+  .site-header__inner { gap: var(--space-2) var(--space-3); padding-block: var(--space-3); }
+  .brand { gap: var(--space-2); font-size: var(--s--1); line-height: 1.1; }
+  .brand__name { inline-size: min-content; }
+  .utility-nav { flex-wrap: nowrap; gap: var(--space-3); }
 }
