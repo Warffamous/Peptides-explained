@@ -1,0 +1,32 @@
+---
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { resolvePage, resolveCompound } from '../../lib/content';
+import Icon from '../ui/Icon.astro';
+interface Props { locale: string; keys: string[] }
+const { locale, keys } = Astro.props;
+const items: { key: string; title: string; description: string }[] = [];
+for (const raw of keys) {
+  const key = raw.replace(/^\/+|\/+$/g, '');
+  if (key.startsWith('compounds/') && key.split('/').length === 2) {
+    const r = await resolveCompound(locale, key.split('/')[1]);
+    if (r) items.push({ key, title: r.entry.data.title, description: r.entry.data.description });
+  } else {
+    const r = await resolvePage(locale, key);
+    if (r) items.push({ key, title: r.entry.data.nav_title ?? r.entry.data.title, description: r.entry.data.description });
+  }
+}
+---
+{items.length > 0 && (
+  <nav class="related" aria-labelledby="related-title">
+    <h2 class="related__title" id="related-title">{t(locale, 'common.related')}</h2>
+    <ul class="related__list" role="list">
+      {items.map((it) => (
+        <li class="related__item">
+          <a href={routeUrl(locale, it.key)}><span class="related__name">{it.title}</span><Icon name="arrow" /></a>
+          <p class="related__desc">{it.description}</p>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

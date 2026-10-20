@@ -1,0 +1,20 @@
+---
+/** One formatted reference. Monospace-worthy parts (DOI, PMID) are bidi-isolated. */
+import { t } from '../../lib/i18n';
+import { formatDate } from '../../lib/format';
+import type { SourceEntry } from '../../lib/data';
+interface Props { locale: string; source: SourceEntry }
+const { locale, source: s } = Astro.props;
+const typeLabel = t(locale, `vocab.sourceType.${s.type}`);
+---
+<span class="ref" data-type={s.type}>
+  {s.authors && <span class="ref__authors">{s.authors}</span>}{' '}
+  <span class="ref__year">({s.year}).</span>{' '}
+  <cite class="ref__title" lang={s.lang !== locale ? s.lang : undefined}>{s.title}</cite>{s.container && <>. <span class="ref__container">{s.container}</span></>}{s.volume && <> <span class="ref__volume">{s.volume}</span></>}{s.pages && <>:<span class="ref__pages">{s.pages}</span></>}.{' '}
+  <span class="ref__type">{typeLabel}</span>{' '}
+  <a class="ref__link" href={s.href} rel="noopener" data-external>
+    {s.doi ? <bdi class="ref__doi">doi:{s.doi}</bdi> : s.pmid && !s.url ? <bdi>PMID {s.pmid}</bdi> : <span class="ref__url">{new URL(s.href).hostname.replace(/^www\./, '')}</span>}
+    <span class="visually-hidden"> ({t(locale, 'common.external')})</span>
+  </a>
+  {s.accessed && !s.doi && <span class="ref__accessed">— {t(locale, 'common.accessed', { date: formatDate(locale, s.accessed) })}</span>}
+</span>

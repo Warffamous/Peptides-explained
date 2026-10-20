@@ -1,0 +1,36 @@
+---
+/**
+ * Static, private search (Pagefind). The index is built after the site and loaded on demand,
+ * so it costs nothing on other pages. Without JavaScript the page lists every page instead.
+ */
+import BuiltinPage from '../../layouts/BuiltinPage.astro';
+import { BUILT_LOCALES } from '../../lib/config';
+import { t } from '../../lib/i18n';
+import { url, routeUrl } from '../../lib/urls';
+import { allPages, splitPageId, compoundDataMap } from '../../lib/content';
+export const getStaticPaths = () => BUILT_LOCALES.map((l) => ({ params: { locale: l.code } }));
+const { locale } = Astro.params as { locale: string };
+Astro.locals.locale = locale;
+const pages = (await allPages()).map((p) => ({ ...splitPageId(p.id), title: p.data.title })).filter((p) => p.locale === locale).sort((a, b) => a.key.localeCompare(b.key));
+const compounds = [...(await compoundDataMap()).values()].map((c) => ({ key: `compounds/${c.slug}`, title: c.names.common }));
+const all = [...pages, ...compounds].sort((a, b) => a.key.localeCompare(b.key));
+---
+<BuiltinPage locale={locale} routeKey="search" title={t(locale, 'pages.search.title')} description={t(locale, 'pages.search.description')} summary={[t(locale, 'pages.search.privacy')]} noindex>
+  <form class="search" role="search" data-search data-bundle={url('/pagefind/')} action={routeUrl(locale, 'search')} method="get">
+    <label class="search__label" for="search-q">{t(locale, 'pages.search.label')}</label>
+    <div class="search__row">
+      <input class="search__input" id="search-q" name="q" type="search" autocomplete="off" placeholder={t(locale, 'pages.search.placeholder')} />
+      <button class="search__button" type="submit">{t(locale, 'pages.search.button')}</button>
+    </div>
+    <p class="search__status" aria-live="polite" data-search-status data-t-results={t(locale, 'pages.search.results', { n: '{n}' })} data-t-none={t(locale, 'pages.search.noResults')} data-t-loading={t(locale, 'pages.search.loading')}></p>
+    <ol class="search__results" data-search-results role="list"></ol>
+  </form>
+  <noscript><p class="search__nojs">{t(locale, 'pages.search.noJs')}</p></noscript>
+  <section class="search__all" data-search-all aria-labelledby="all-pages-title">
+    <h2 id="all-pages-title">{t(locale, 'pages.search.allPages')}</h2>
+    <ul class="search__all-list">{all.map((p) => <li><a href={routeUrl(locale, p.key)}>{p.title}</a></li>)}</ul>
+  </section>
+  <script>
+    import '../../scripts/search.ts';
+  </script>
+</BuiltinPage>

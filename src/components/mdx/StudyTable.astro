@@ -1,0 +1,68 @@
+---
+/**
+ * The study-by-study evidence table: species, n, design, funding, independence — facts from
+ * the data file, findings and limits from the localised page. A real <table> for assistive
+ * technology; the themes restyle it (A: dense ruled table; B/C: cards on narrow screens).
+ */
+import { t } from '../../lib/i18n';
+import { ctxCompound } from '../../lib/ctx';
+import { getSource, shortAuthors } from '../../lib/data';
+import { formatNumber } from '../../lib/format';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+const c = ctxCompound(Astro, 'StudyTable');
+const L = c.locale;
+const studies = [...c.data.studies].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
+const count = (pred: (s: (typeof studies)[number]) => boolean) => studies.filter(pred).length;
+const human = count((s) => s.species === 'human');
+const animal = count((s) => !['human', 'in-vitro', 'in-silico', 'mixed', 'not-applicable'].includes(s.species));
+const invitro = count((s) => s.species === 'in-vitro');
+const other = studies.length - human - animal - invitro;
+const speciesIcon = (sp: string) => (sp === 'human' ? 'level-human-controlled' : sp === 'in-vitro' ? 'level-in-vitro' : sp === 'not-applicable' || sp === 'mixed' || sp === 'in-silico' ? 'level-hypothesis' : 'level-animal');
+---
+<div class="study-table" data-count={studies.length}>
+  <p class="study-table__summary">{t(L, 'compound.studies.summary', { total: studies.length, human, animal, invitro, other })}</p>
+  <div class="table-scroll" tabindex="0" role="region" aria-labelledby="studies-caption">
+    <table class="data-table study-table__table">
+      <caption id="studies-caption">{t(L, 'compound.studies.caption')}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{t(L, 'compound.studies.study')}</th>
+          <th scope="col">{t(L, 'compound.studies.species')}</th>
+          <th scope="col"><abbr title={t(L, 'compound.studies.nTitle')}>{t(L, 'compound.studies.n')}</abbr></th>
+          <th scope="col">{t(L, 'compound.studies.design')}</th>
+          <th scope="col">{t(L, 'compound.studies.funding')}</th>
+          <th scope="col">{t(L, 'compound.studies.group')}</th>
+          <th scope="col">{t(L, 'compound.studies.found')}</th>
+          <th scope="col">{t(L, 'compound.studies.limits')}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {studies.map((s) => {
+          const src = getSource(s.source);
+          const txt = c.page.studies[s.id];
+          const num = c.citeIndex.get(s.source);
+          const flags = [s.controlled === true && t(L, 'compound.studies.controlled'), s.controlled === false && t(L, 'compound.studies.uncontrolled'), s.blinded === true && t(L, 'compound.studies.blinded')].filter(Boolean);
+          return (
+            <tr data-species={s.species} data-design={s.design} data-group={s.group} data-funding={s.funding}>
+              <th scope="row" class="study-table__study">
+                <span class="study-table__ref">{shortAuthors(src)} <bdi class="qty">{s.year}</bdi></span>
+                {num && <sup class="cite__marks"><a class="cite__link" href={`#src-${num}`} aria-label={t(L, 'common.cite.label', { n: num })}>{num}</a></sup>}
+              </th>
+              <td data-label={t(L, 'compound.studies.species')} class="study-table__species">
+                <ThemeOnly theme="c" as="span"><Pictogram name={speciesIcon(s.species)} /></ThemeOnly>
+                {t(L, `vocab.species.${s.species}`)}
+              </td>
+              <td data-label={t(L, 'compound.studies.n')} class="study-table__n"><bdi class="qty">{s.n === null ? t(L, 'compound.studies.notReported') : formatNumber(L, s.n)}</bdi></td>
+              <td data-label={t(L, 'compound.studies.design')}>{t(L, `vocab.design.${s.design}`)}{flags.length > 0 && <span class="study-table__flags"> ({flags.join(', ')})</span>}</td>
+              <td data-label={t(L, 'compound.studies.funding')}>{t(L, `vocab.funding.${s.funding}`)}</td>
+              <td data-label={t(L, 'compound.studies.group')} data-group={s.group}>{t(L, `vocab.group.${s.group}`)}</td>
+              <td data-label={t(L, 'compound.studies.found')} class="study-table__found">{txt?.finding}</td>
+              <td data-label={t(L, 'compound.studies.limits')} class="study-table__limits">{txt?.limitation}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>

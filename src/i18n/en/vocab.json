@@ -1,0 +1,63 @@
+{
+  "species": {
+    "human": "Humans", "rat": "Rats", "mouse": "Mice", "rabbit": "Rabbits", "dog": "Dogs", "pig": "Pigs",
+    "sheep": "Sheep", "horse": "Horses", "primate": "Monkeys", "zebrafish": "Zebrafish", "other-animal": "Other animals",
+    "in-vitro": "Cells (lab)", "in-silico": "Computer model", "mixed": "Mixed", "not-applicable": "—"
+  },
+  "design": {
+    "in-vitro": "Laboratory (cells)", "animal": "Animal experiment", "case-report": "Case report", "case-series": "Case series",
+    "open-label": "Open-label study", "phase-1": "Phase I trial", "phase-2": "Phase II trial", "phase-3": "Phase III trial",
+    "rct": "Randomised controlled trial", "pk": "Pharmacokinetic study", "observational": "Observational study",
+    "post-marketing": "Post-marketing surveillance", "systematic-review": "Systematic review", "meta-analysis": "Meta-analysis",
+    "narrative-review": "Narrative review", "regulatory-assessment": "Regulatory assessment", "analytical": "Product testing"
+  },
+  "funding": {
+    "academic": "Academic", "government": "Government", "industry": "Industry", "mixed": "Mixed",
+    "undisclosed": "Not disclosed", "not-applicable": "—"
+  },
+  "group": {
+    "originating": "Originating group", "independent": "Independent group", "mixed": "Mixed", "not-applicable": "—"
+  },
+  "regStatus": {
+    "authorised": "Authorised", "not-authorised": "Not authorised", "refused": "Authorisation refused",
+    "withdrawn": "Withdrawn", "under-review": "Under review", "investigational": "Clinical trials only",
+    "prohibited": "Prohibited in sport", "not-listed": "Not on the Prohibited List"
+  },
+  "wadaScope": { "at-all-times": "at all times", "in-competition": "in competition" },
+  "jurisdiction": {
+    "EU": "European Union", "NL": "Netherlands", "DE": "Germany", "BE": "Belgium", "UK": "United Kingdom",
+    "US": "United States", "WADA": "Sport (WADA)"
+  },
+  "category": {
+    "authorised": "Authorised medicine (EU)", "authorised-elsewhere": "Authorised outside the EU",
+    "investigational": "In clinical development", "experimental": "Experimental", "not-a-peptide": "Not a peptide"
+  },
+  "class": {
+    "incretin": "Incretin (GLP-1 family)", "gh-axis": "Growth-hormone axis", "melanocortin": "Melanocortin",
+    "tissue-repair": "Proposed tissue repair", "immunomodulatory": "Immune-modulating", "mitochondrial": "Mitochondrial",
+    "neuroactive": "Acts on the brain", "dermal": "Skin and hair", "metabolic": "Metabolic", "longevity-claimed": "Longevity claims",
+    "non-peptide": "Not a peptide"
+  },
+  "bodySystem": {
+    "metabolic": "Metabolism", "cardiovascular": "Heart and blood vessels", "gastrointestinal": "Gut", "musculoskeletal": "Muscles, tendons, bones",
+    "nervous": "Brain and nerves", "endocrine": "Hormones", "immune": "Immune system", "skin": "Skin", "sexual": "Sexual function",
+    "renal": "Kidneys", "cellular": "Cells and mitochondria"
+  },
+  "sourceType": {
+    "article": "Research article", "review": "Review", "meta-analysis": "Meta-analysis", "trial": "Clinical trial",
+    "preprint": "Preprint (not peer-reviewed)", "book": "Book", "chapter": "Book chapter", "regulator": "Regulator",
+    "law": "Law", "guideline": "Guideline", "label": "Official product information", "registry": "Trial registration",
+    "dataset": "Dataset", "report": "Report", "web": "Web page"
+  },
+  "route": {
+    "subcutaneous": "Injection under the skin", "oral": "Tablet", "intranasal": "Nasal spray", "intravenous": "Into a vein", "topical": "On the skin"
+  },
+  "callout": {
+    "note": "Note", "tip": "Practical point", "warning": "Warning", "stop": "Stop and seek care", "legal": "Legal note", "uncertain": "Open question"
+  },
+  "warningAction": {
+    "emergency": "Call 112 now",
+    "urgent": "Get medical help today",
+    "stop": "Stop and contact a doctor"
+  }
+}

@@ -1,0 +1,70 @@
+---
+/**
+ * Headlines from vetted, non-commercial feeds (src/data/feeds.yaml -> scripts/fetch-news.ts ->
+ * src/data/news.json). Every item links to its original source. Items are labelled by source
+ * type and, heuristically, by study type — and the heuristic is disclosed.
+ */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { NEWS, FEEDS } from '../../lib/data';
+import { formatDate, isoDate } from '../../lib/format';
+import { routeUrl } from '../../lib/urls';
+import Icon from '../ui/Icon.astro';
+interface Props { limit?: number; compact?: boolean }
+const { limit = 60, compact = false } = Astro.props;
+const L = ctxLocale(Astro);
+const feeds = new Map(FEEDS.feeds.map((f) => [f.id, f]));
+const items = [...NEWS.items].sort((a, b) => +b.published - +a.published).slice(0, limit);
+const cats = [...new Set(items.map((i) => feeds.get(i.feed)?.category).filter(Boolean))] as string[];
+---
+<div class:list={['news', compact && 'news--compact']} data-news>
+  {!compact && (
+    <>
+      <p class="news__caution">{t(L, 'pages.news.caution')} <a href={routeUrl(L, 'evidence/how-to-read-a-study')}>{t(L, 'pages.news.cautionLink')}</a>.</p>
+      <p class="news__updated">{t(L, 'pages.news.updated', { date: formatDate(L, NEWS.generated) })}</p>
+      {cats.length > 1 && (
+        <div class="news__filters" hidden data-news-filters role="group" aria-label={t(L, 'pages.news.source')}>
+          <button type="button" data-filter="all" aria-pressed="true">{t(L, 'pages.news.filterAll')}</button>
+          {cats.map((c) => <button type="button" data-filter={c} aria-pressed="false">{t(L, `pages.news.categories.${c}`)}</button>)}
+        </div>
+      )}
+    </>
+  )}
+  {items.length === 0 ? <p class="news__empty">{t(L, 'pages.news.empty')}</p> : (
+    <ol class="news__list" role="list">
+      {items.map((it) => {
+        const f = feeds.get(it.feed);
+        const hint = it.study_hint !== 'unknown' ? t(L, `pages.news.hint.${it.study_hint}`) : '';
+        return (
+          <li class="news__item" data-category={f?.category} data-hint={it.study_hint}>
+            <p class="news__meta">
+              <span class="news__cat" data-category={f?.category}>{f && t(L, `pages.news.categories.${f.category}`)}</span>
+              {hint && <span class="news__hint">{hint}</span>}
+              <time datetime={isoDate(it.published)}>{formatDate(L, it.published)}</time>
+            </p>
+            <h3 class="news__title" lang={it.lang !== L ? it.lang : undefined}>
+              <a href={it.url} rel="noopener noreferrer nofollow" data-external>{it.title}<Icon name="external" /><span class="visually-hidden"> ({t(L, 'common.external')})</span></a>
+            </h3>
+            {!compact && it.summary && <p class="news__summary" lang={it.lang !== L ? it.lang : undefined}>{it.summary}</p>}
+            <p class="news__source">{t(L, 'pages.news.source')}: {f?.name}</p>
+          </li>
+        );
+      })}
+    </ol>
+  )}
+  {!compact && <p class="news__hint-note">{t(L, 'pages.news.hintNote')}</p>}
+</div>
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-news]')) {
+    const filters = root.querySelector<HTMLElement>('[data-news-filters]');
+    if (!filters) continue;
+    filters.hidden = false;
+    const items = [...root.querySelectorAll<HTMLElement>('.news__item')];
+    filters.addEventListener('click', (e) => {
+      const btn = (e.target as Element).closest<HTMLButtonElement>('button[data-filter]');
+      if (!btn) return;
+      filters.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      for (const it of items) it.hidden = btn.dataset.filter !== 'all' && it.dataset.category !== btn.dataset.filter;
+    });
+  }
+</script>

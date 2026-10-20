@@ -1,0 +1,30 @@
+---
+import { t, namespace } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { TRACKER, getSource, shortAuthors } from '../../lib/data';
+import { formatDate, isoDate } from '../../lib/format';
+import { routeUrl } from '../../lib/urls';
+const L = ctxLocale(Astro);
+const text = namespace<Record<string, { title: string; summary: string; next?: string }>>(L, 'tracker');
+const items = [...TRACKER].sort((a, b) => +b.updated - +a.updated);
+---
+<ul class="tracker" role="list">
+  {items.map((it) => (
+    <li class="tracker__item" data-status={it.status} data-jurisdiction={it.jurisdiction} id={`track-${it.id}`}>
+      <p class="tracker__head">
+        <span class="tracker__jurisdiction">{t(L, `vocab.jurisdiction.${it.jurisdiction}`)}</span>
+        <span class="status-badge" data-status={it.status}>{t(L, `pages.tracker.statuses.${it.status}`)}</span>
+      </p>
+      <h3 class="tracker__title">{text[it.id]?.title}</h3>
+      <p class="tracker__summary">{text[it.id]?.summary}</p>
+      <dl class="tracker__meta">
+        <div><dt>{t(L, 'pages.tracker.updated')}</dt><dd><time datetime={isoDate(it.updated)}>{formatDate(L, it.updated)}</time></dd></div>
+        {text[it.id]?.next && <div><dt>{t(L, 'pages.tracker.next')}</dt><dd>{text[it.id]?.next}{it.next_milestone && <> (<time datetime={isoDate(it.next_milestone)}>{formatDate(L, it.next_milestone)}</time>)</>}</dd></div>}
+      </dl>
+      <p class="tracker__links">
+        {it.compounds.map((c) => <a href={routeUrl(L, `compounds/${c}`)}>{c}</a>)}
+        {it.sources.map((s) => { const src = getSource(s); return <a href={src.href} rel="noopener" data-external>{shortAuthors(src)} ({src.year})</a>; })}
+      </p>
+    </li>
+  ))}
+</ul>

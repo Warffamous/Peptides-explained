@@ -1,0 +1,15 @@
+/* Minimal reset shared by all design systems. Logical properties only (stylelint enforces). */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; hanging-punctuation: first last; }
+body { margin: 0; min-block-size: 100vh; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ol, ul { margin: 0; }
+ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+img, svg, video { max-inline-size: 100%; block-size: auto; }
+svg { overflow: visible; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+table { border-collapse: collapse; }
+a { color: inherit; }
+abbr[title] { text-decoration: underline dotted; cursor: help; }
+[hidden] { display: none !important; }
+:target { scroll-margin-block-start: 5rem; }

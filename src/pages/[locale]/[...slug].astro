@@ -1,0 +1,85 @@
+---
+/**
+ * Every MDX page (src/content/pages/<locale>/**). The route key is the file path.
+ * Preview locales fall back to the English page (marked, noindex); planned locales get no routes.
+ */
+import { render } from 'astro:content';
+import DocLayout from '../../layouts/DocLayout.astro';
+import { mdxComponents } from '../../components/mdx';
+import { BUILT_LOCALES, SOURCE_LOCALE } from '../../lib/config';
+import { allPages, splitPageId, resolvePage, alternatesFor } from '../../lib/content';
+import { webPage } from '../../lib/jsonld';
+import { t } from '../../lib/i18n';
+
+export async function getStaticPaths() {
+  const pages = await allPages();
+  const out = [];
+  for (const loc of BUILT_LOCALES) {
+    const keys = new Set<string>();
+    for (const p of pages) {
+      const s = splitPageId(p.id);
+      if (s.locale === loc.code || (loc.status === 'preview' && s.locale === SOURCE_LOCALE)) keys.add(s.key);
+    }
+    for (const key of keys) out.push({ params: { locale: loc.code, slug: key || undefined }, props: { key } });
+  }
+  return out;
+}
+
+const { locale } = Astro.params as { locale: string };
+const { key } = Astro.props as { key: string };
+Astro.locals.locale = locale;
+const resolved = (await resolvePage(locale, key))!;
+const { entry, fallback } = resolved;
+const d = entry.data;
+const { Content, headings, remarkPluginFrontmatter: rpf } = await render(entry);
+
+// Breadcrumb trail: each ancestor section that has its own index page.
+const trail: { key: string; label: string }[] = [];
+const parts = key ? key.split('/') : [];
+for (let i = 0; i < parts.length; i++) {
+  const k = parts.slice(0, i + 1).join('/');
+  if (k === key) trail.push({ key: k, label: d.nav_title ?? d.title });
+  else {
+    const anc = await resolvePage(locale, k);
+    if (anc) trail.push({ key: k, label: anc.entry.data.nav_title ?? anc.entry.data.title });
+  }
+}
+const medical = ['basics', 'evidence', 'safety', 'guides', 'compounds', 'start'].includes(d.section);
+const alternates = fallback ? [] : await alternatesFor(key);
+const toc = d.template === 'landing' || d.template === 'index' ? [] : headings.filter((h) => h.depth === 2).map((h) => ({ id: h.slug, text: h.text }));
+const jsonld = webPage({
+  locale, key, title: d.title, description: d.description, lastReviewed: d.last_reviewed, reviewedBy: d.reviewed_by,
+  medical, article: d.template !== 'landing' && d.template !== 'index', faq: rpf.faq, trail,
+  opinion: d.opinion ? { published: d.opinion.published, signedBy: d.opinion.signed_by } : undefined,
+});
+const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' ? t(locale, 'common.opinion.label') : d.section === 'legal' && d.jurisdiction ? t(locale, `vocab.jurisdiction.${d.jurisdiction}`) : undefined;
+---
+<DocLayout
+  locale={locale}
+  routeKey={key}
+  alternates={alternates}
+  title={d.title}
+  description={d.description}
+  eyebrow={eyebrow}
+  summary={d.summary}
+  template={d.template}
+  section={d.section}
+  lastReviewed={d.last_reviewed}
+  reviewedBy={d.reviewed_by}
+  editedBy={d.edited_by}
+  readingLevel={d.reading_level}
+  citations={rpf.citations ?? []}
+  furtherReading={d.further_reading}
+  related={d.related}
+  terms={rpf.terms ?? []}
+  toc={toc}
+  trail={trail}
+  fallback={fallback}
+  translation={d.translation}
+  opinion={d.opinion}
+  jsonld={fallback ? [] : jsonld}
+  noindex={d.noindex || fallback}
+  legal={d.section === 'legal' || key === 'legal-routes'}
+>
+  <Content components={mdxComponents} />
+</DocLayout>

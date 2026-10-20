@@ -1,0 +1,44 @@
+---
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { PRIMARY_NAV, navSectionFor } from '../../lib/content';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeSwitcher from './ThemeSwitcher.astro';
+import SchemeToggle from './SchemeToggle.astro';
+import Icon from '../ui/Icon.astro';
+import BrandMark from '../ui/BrandMark.astro';
+
+interface Props { locale: string; routeKey: string }
+const { locale, routeKey } = Astro.props;
+const active = navSectionFor(routeKey);
+---
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href={routeUrl(locale, '')} aria-current={routeKey === '' ? 'page' : undefined}>
+      <BrandMark />
+      <span class="brand__name">{t(locale, 'common.brand')}</span>
+    </a>
+    <nav class="utility-nav" aria-label={t(locale, 'common.utility.label')}>
+      <a class="utility-nav__alert" href={routeUrl(locale, 'safety/warning-signs')} aria-current={routeKey === 'safety/warning-signs' ? 'page' : undefined}>
+        <Icon name="alert" /><span>{t(locale, 'common.utility.warningSigns')}</span>
+      </a>
+      <a class="utility-nav__search" href={routeUrl(locale, 'search')} aria-current={routeKey === 'search' ? 'page' : undefined}>
+        <Icon name="search" /><span class="utility-nav__text">{t(locale, 'common.utility.search')}</span>
+      </a>
+      <LanguageSwitcher locale={locale} routeKey={routeKey} />
+      <ThemeSwitcher locale={locale} routeKey={routeKey} />
+      <SchemeToggle locale={locale} />
+    </nav>
+  </div>
+  <nav class="primary-nav" aria-label={t(locale, 'common.nav.label')}>
+    <ul class="primary-nav__list" role="list">
+      {PRIMARY_NAV.map((n) => (
+        <li class="primary-nav__item">
+          <a href={routeUrl(locale, n.key)} aria-current={routeKey === n.key ? 'page' : active === n.id ? 'true' : undefined}>
+            {t(locale, `common.nav.${n.id}`)}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

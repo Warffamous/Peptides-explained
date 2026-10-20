@@ -1,0 +1,66 @@
+---
+/**
+ * The interactive history timeline. Complete as an ordered list without JavaScript; with it,
+ * readers can filter by category. Event text is localised (src/i18n/<locale>/timeline.json).
+ */
+import { t, namespace } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { TIMELINE, getSource, shortAuthors } from '../../lib/data';
+import { formatDate, isoDate } from '../../lib/format';
+import { routeUrl } from '../../lib/urls';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+const L = ctxLocale(Astro);
+const text = namespace<Record<string, { title: string; text: string }>>(L, 'timeline');
+const events = [...TIMELINE].sort((a, b) => a.year - b.year || (a.date && b.date ? +a.date - +b.date : 0));
+const cats = [...new Set(events.map((e) => e.category))];
+const decades = [...new Set(events.map((e) => Math.floor(e.year / 10) * 10))];
+---
+<div class="timeline" data-timeline>
+  <div class="timeline__filters" hidden data-timeline-filters role="group" aria-label={t(L, 'pages.timeline.filter')}>
+    <button type="button" data-filter="all" aria-pressed="true">{t(L, 'pages.timeline.all')}</button>
+    {cats.map((c) => <button type="button" data-filter={c} aria-pressed="false">{t(L, `pages.timeline.categories.${c}`)}</button>)}
+    <p class="timeline__count" aria-live="polite" data-timeline-count>{t(L, 'pages.timeline.count', { n: events.length })}</p>
+  </div>
+  <ThemeOnly theme="b c" as="nav" class="timeline__decades"><ul role="list">{decades.map((d) => <li><a href={`#decade-${d}`}><bdi>{d}s</bdi></a></li>)}</ul></ThemeOnly>
+  <ol class="timeline__list" role="list" data-count-template={t(L, 'pages.timeline.count', { n: '{n}' })}>
+    {events.map((e, i) => {
+      const tx = text[e.id];
+      const firstOfDecade = i === 0 || Math.floor(events[i - 1].year / 10) !== Math.floor(e.year / 10);
+      return (
+        <li class="timeline__event" data-category={e.category} id={firstOfDecade ? `decade-${Math.floor(e.year / 10) * 10}` : undefined}>
+          <p class="timeline__when">{e.date ? <time datetime={isoDate(e.date)}>{formatDate(L, e.date)}</time> : <time datetime={String(e.year)}><bdi>{e.year}</bdi></time>}</p>
+          <p class="timeline__cat">{t(L, `pages.timeline.categories.${e.category}`)}</p>
+          <h3 class="timeline__title">{tx?.title ?? e.id}</h3>
+          <p class="timeline__text">{tx?.text}</p>
+          <p class="timeline__meta">
+            {e.compounds.map((c) => <a class="timeline__compound" href={routeUrl(L, `compounds/${c}`)}>{c}</a>)}
+            <span class="timeline__sources">{e.sources.map((s) => { const src = getSource(s); return <a href={src.href} rel="noopener" data-external>{shortAuthors(src)} {src.year}</a>; })}</span>
+          </p>
+        </li>
+      );
+    })}
+  </ol>
+</div>
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-timeline]')) {
+    const filters = root.querySelector<HTMLElement>('[data-timeline-filters]');
+    const list = root.querySelector<HTMLElement>('.timeline__list');
+    const count = root.querySelector<HTMLElement>('[data-timeline-count]');
+    if (!filters || !list) continue;
+    filters.hidden = false;
+    const items = [...list.querySelectorAll<HTMLElement>('.timeline__event')];
+    filters.addEventListener('click', (e) => {
+      const btn = (e.target as Element).closest<HTMLButtonElement>('button[data-filter]');
+      if (!btn) return;
+      const f = btn.dataset.filter!;
+      filters.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      let n = 0;
+      for (const it of items) {
+        const show = f === 'all' || it.dataset.category === f;
+        it.hidden = !show;
+        if (show) n++;
+      }
+      if (count) count.textContent = (list.dataset.countTemplate ?? '{n}').replace('{n}', String(n));
+    });
+  }
+</script>

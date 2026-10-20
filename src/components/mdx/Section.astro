@@ -1,0 +1,17 @@
+---
+/** A fixed compound-page section. Titles come from the UI strings so every compound reads the same. */
+import { t } from '../../lib/i18n';
+import { ctxCompound } from '../../lib/ctx';
+import { COMPOUND_SECTIONS } from '../../schemas/vocab';
+interface Props { id: (typeof COMPOUND_SECTIONS)[number] }
+const { id } = Astro.props;
+const c = ctxCompound(Astro, 'Section');
+const authorised = c.data.category === 'authorised' || c.data.category === 'authorised-elsewhere';
+const titleKey = authorised && (id === 'mechanism' || id === 'harm-reduction') ? `${id}Authorised` : id;
+const n = COMPOUND_SECTIONS.indexOf(id) + 2; // section 1 is the 30-second version
+---
+<section class:list={['csec', `csec--${id}`]} id={id} aria-labelledby={`${id}-title`} data-section={id}>
+  <h2 class="csec__title" id={`${id}-title`}><span class="csec__num" aria-hidden="true">{n}</span> {t(c.locale, `compound.sections.${titleKey}`)}</h2>
+  {id === 'harm-reduction' && !authorised && <p class="csec__intro">{t(c.locale, 'compound.harmReductionIntro')}</p>}
+  <slot />
+</section>

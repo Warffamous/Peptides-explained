@@ -1,0 +1,38 @@
+---
+import { t } from '../../lib/i18n';
+import { getPerson, CORRECTIONS } from '../../lib/data';
+import { formatDate, isoDate } from '../../lib/format';
+import { routeUrl } from '../../lib/urls';
+
+interface Props { locale: string; lastReviewed: Date; reviewedBy: string; editedBy: string; routeKey: string; legal?: boolean; compact?: boolean }
+const { locale, lastReviewed, reviewedBy, editedBy, routeKey, legal = false, compact = false } = Astro.props;
+const reviewer = getPerson(reviewedBy);
+const editor = getPerson(editedBy);
+const pending = reviewer.kind === 'placeholder';
+const corrections = CORRECTIONS.filter((c) => c.kind !== 'publication' && c.routes.includes(routeKey) && c.locales.includes(locale)).sort((a, b) => +b.date - +a.date);
+---
+<div class:list={['review-meta', compact && 'review-meta--compact']}>
+  <dl class="review-meta__list">
+    <div class="review-meta__item">
+      <dt>{t(locale, 'common.review.lastReviewed')}</dt>
+      <dd><time datetime={isoDate(lastReviewed)}>{formatDate(locale, lastReviewed)}</time></dd>
+    </div>
+    <div class="review-meta__item">
+      <dt>{t(locale, 'common.review.reviewedBy')}</dt>
+      <dd class:list={[pending && 'review-meta__pending']}>{reviewer.name}{reviewer.credentials && <>, {reviewer.credentials}</>}</dd>
+    </div>
+    {!compact && (
+      <div class="review-meta__item">
+        <dt>{t(locale, 'common.review.editedBy')}</dt>
+        <dd>{editor.name}</dd>
+      </div>
+    )}
+    {corrections.length > 0 && (
+      <div class="review-meta__item">
+        <dt><a href={routeUrl(locale, 'about/corrections')}>{t(locale, 'common.review.correctionsLink')}</a></dt>
+        <dd>{corrections.map((c) => <time datetime={isoDate(c.date)}>{t(locale, 'common.review.corrected', { date: formatDate(locale, c.date) })}</time>)}</dd>
+      </div>
+    )}
+  </dl>
+  {pending && !compact && <p class="review-meta__notice">{t(locale, legal ? 'common.review.pendingLegal' : 'common.review.pending')}</p>}
+</div>

@@ -1,0 +1,35 @@
+---
+/**
+ * A diagram whose children are its full text equivalent. If a drawn SVG exists for the id
+ * (src/components/diagrams/<id>.astro), it is shown with role="img" and described by that text;
+ * otherwise the structured text itself is the figure. Either way no information is image-only.
+ */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+interface Props { id: string; caption?: string }
+const { id, caption } = Astro.props;
+const L = ctxLocale(Astro);
+const drawn = import.meta.glob<{ default: unknown }>('../diagrams/*.astro', { eager: true });
+const Drawn = drawn[`../diagrams/${id}.astro`]?.default as ((props: Record<string, unknown>) => unknown) | undefined;
+const capId = `diagram-${id}-caption`;
+const txtId = `diagram-${id}-text`;
+---
+<figure class:list={['diagram', Drawn ? 'diagram--drawn' : 'diagram--text']} id={`diagram-${id}`} aria-labelledby={caption ? capId : undefined}>
+  {Drawn ? (
+    <>
+      <div class="diagram__art" role="img" aria-labelledby={caption ? capId : undefined} aria-describedby={txtId}>
+        <Drawn locale={L} />
+      </div>
+      {caption && <figcaption class="diagram__caption" id={capId}>{caption}</figcaption>}
+      <details class="diagram__details">
+        <summary>{t(L, 'common.diagramText')}</summary>
+        <div class="diagram__text" id={txtId}><slot /></div>
+      </details>
+    </>
+  ) : (
+    <>
+      {caption && <figcaption class="diagram__caption" id={capId}>{caption}</figcaption>}
+      <div class="diagram__text" id={txtId}><slot /></div>
+    </>
+  )}
+</figure>

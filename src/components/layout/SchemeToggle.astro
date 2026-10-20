@@ -1,0 +1,33 @@
+---
+/** Light/dark/automatic. Needs JavaScript, so it stays hidden until the boot script has run. */
+import { t } from '../../lib/i18n';
+import Icon from '../ui/Icon.astro';
+interface Props { locale: string }
+const { locale } = Astro.props;
+---
+<button type="button" class="scheme-toggle" data-scheme-toggle hidden
+  data-label-auto={t(locale, 'common.utility.schemeAuto')}
+  data-label-light={t(locale, 'common.utility.schemeLight')}
+  data-label-dark={t(locale, 'common.utility.schemeDark')}
+  aria-label={`${t(locale, 'common.utility.colourScheme')}: ${t(locale, 'common.utility.schemeAuto')}`}>
+  <Icon name="sun" class="scheme-toggle__light" />
+  <Icon name="moon" class="scheme-toggle__dark" />
+</button>
+<script>
+  const btn = document.querySelector<HTMLButtonElement>('[data-scheme-toggle]');
+  if (btn) {
+    const root = document.documentElement;
+    const order = ['auto', 'light', 'dark'] as const;
+    const label = (s: string) => `${btn.getAttribute('aria-label')!.split(':')[0]}: ${btn.dataset[`label${s[0].toUpperCase()}${s.slice(1)}`]}`;
+    const current = () => (root.dataset.scheme as 'light' | 'dark' | undefined) ?? 'auto';
+    btn.hidden = false;
+    btn.setAttribute('aria-label', label(current()));
+    btn.addEventListener('click', () => {
+      const next = order[(order.indexOf(current()) + 1) % order.length];
+      if (next === 'auto') delete root.dataset.scheme;
+      else root.dataset.scheme = next;
+      try { next === 'auto' ? localStorage.removeItem('pe-scheme') : localStorage.setItem('pe-scheme', next); } catch { /* ignore */ }
+      btn.setAttribute('aria-label', label(next));
+    });
+  }
+</script>

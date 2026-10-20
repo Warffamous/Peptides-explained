@@ -1,0 +1,42 @@
+---
+/**
+ * The canonical stop-now list, from src/i18n/<locale>/warning-signs.json — one source of truth,
+ * reused on every page that needs it. Ordered by urgency: emergency, then urgent, then stop.
+ */
+import { t, namespace } from '../../lib/i18n';
+import { ctxLocale, uid as makeUid } from '../../lib/ctx';
+import { WARNING_GROUPS } from '../../schemas';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+import Icon from '../ui/Icon.astro';
+interface Props { only?: string; heading?: string }
+const L = ctxLocale(Astro);
+const { only, heading } = Astro.props;
+type Sign = { id: string; sign: string; why: string; action: 'emergency' | 'urgent' | 'stop' };
+const ns = namespace<Record<string, Sign[]>>(L, 'warning-signs');
+const groups = (only ? only.split(/[\s,]+/) : [...WARNING_GROUPS]).filter((g) => (WARNING_GROUPS as readonly string[]).includes(g));
+const seen = new Set<string>();
+const signs: Sign[] = [];
+for (const g of groups) for (const s of ns[g] ?? []) if (!seen.has(s.id)) { seen.add(s.id); signs.push(s); }
+const ACTIONS = ['emergency', 'urgent', 'stop'] as const;
+const uid = makeUid(Astro, 'warning-signs');
+---
+{signs.length > 0 && (
+  <section class="warning-signs" aria-labelledby={uid}>
+    <h3 class="warning-signs__title" id={uid}><Icon name="alert" />{heading ?? t(L, 'common.utility.warningSignsLong')}</h3>
+    {ACTIONS.map((action) => {
+      const list = signs.filter((s) => s.action === action);
+      return list.length > 0 && (
+        <div class="warning-signs__group" data-action={action}>
+          <p class="warning-signs__action">
+            <ThemeOnly theme="c" as="span"><Pictogram name={`action-${action}`} /></ThemeOnly>
+            {t(L, `vocab.warningAction.${action}`)}
+          </p>
+          <ul class="warning-signs__list">
+            {list.map((s) => <li class="warning-signs__item"><strong class="warning-signs__sign">{s.sign}</strong> <span class="warning-signs__why">{s.why}</span></li>)}
+          </ul>
+        </div>
+      );
+    })}
+  </section>
+)}

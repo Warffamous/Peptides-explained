@@ -1,0 +1,20 @@
+---
+/** Compact four-axis readout for cards and the matrix. Text, not a score. */
+import { t } from '../../lib/i18n';
+import { EVIDENCE_AXES, type EvidenceAxis } from '../../schemas/vocab';
+interface Props { evidence: Record<EvidenceAxis, string>; locale: string }
+const { evidence, locale: L } = Astro.props;
+const axes = Object.keys(EVIDENCE_AXES) as EvidenceAxis[];
+---
+<dl class="evidence-mini" aria-label={t(L, 'evidence.title')}>
+  {axes.map((a) => {
+    const scale = EVIDENCE_AXES[a] as readonly string[];
+    const step = scale.indexOf(evidence[a]);
+    return (
+      <div class="evidence-mini__axis" data-axis={a} data-step={step} data-max={scale.length - 1} style={`--frac:${scale.length > 1 ? step / (scale.length - 1) : 0}`}>
+        <dt>{t(L, `evidence.axes.${a}.name`)}</dt>
+        <dd>{t(L, `evidence.axes.${a}.values.${evidence[a]}`)}</dd>
+      </div>
+    );
+  })}
+</dl>

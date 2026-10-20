@@ -1,0 +1,34 @@
+---
+import { BUILT_LOCALES, getLocale } from '../../lib/config';
+import { routeUrl } from '../../lib/urls';
+import { t } from '../../lib/i18n';
+import { translationMatrix } from '../../lib/content';
+import Icon from '../ui/Icon.astro';
+
+interface Props { locale: string; routeKey: string }
+const { locale, routeKey } = Astro.props;
+const matrix = await translationMatrix();
+const have = matrix.get(routeKey) ?? new Set<string>();
+const current = getLocale(locale);
+const items = BUILT_LOCALES.map((l) => {
+  const exists = have.has(l.code) || l.status === 'preview';
+  return { l, href: exists ? routeUrl(l.code, routeKey) : routeUrl(l.code, ''), exists };
+});
+---
+<details class="disclosure lang-switch">
+  <summary class="disclosure__summary">
+    <Icon name="globe" />
+    <span class="visually-hidden">{t(locale, 'common.utility.languageCurrent', { name: current.name })}</span>
+    <span aria-hidden="true" class="lang-switch__code">{current.code.toUpperCase()}</span>
+  </summary>
+  <ul class="disclosure__panel lang-switch__list" role="list">
+    {items.map(({ l, href, exists }) => (
+      <li>
+        <a href={href} hreflang={l.hreflang} lang={l.bcp47} dir={l.dir} aria-current={l.code === locale ? 'true' : undefined}>
+          {l.name}
+          {!exists && <span class="lang-switch__note" lang={current.bcp47} dir={current.dir}>({t(locale, 'common.utility.notTranslated', { name: l.name })})</span>}
+        </a>
+      </li>
+    ))}
+  </ul>
+</details>

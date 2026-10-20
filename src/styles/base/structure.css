@@ -1,0 +1,38 @@
+/* Structural rules every design system depends on. */
+
+/* Directional icons mirror in RTL; sequences, quantities and DOIs never do. */
+[dir="rtl"] .icon--dir { transform: scaleX(-1); }
+.seq, .qty, .ref__doi, .seq-line, .seq-beads { direction: ltr; unicode-bidi: isolate; }
+bdi { unicode-bidi: isolate; }
+.seq { overflow-wrap: anywhere; }
+
+/* Banners shown only in specific modes. */
+.banner--pseudo { display: none; }
+html[data-pseudo="rtl"] .banner--pseudo { display: block; }
+
+/* Hidden glossary definitions (read through aria-describedby). */
+.glossary-defs { display: none; }
+
+/* The tooltip is positioned by script with logical insets. */
+.term-tip { position: absolute; z-index: 60; }
+
+/* Wide tables scroll inside their own region rather than the page (WCAG 1.4.10 reflow). */
+.table-scroll { overflow-x: auto; max-inline-size: 100%; }
+.table-scroll:focus-visible { outline-offset: 4px; }
+
+/* Never let long words, DOIs or URLs force horizontal page scroll (200% zoom). */
+.prose, .doc, .site-footer { overflow-wrap: break-word; }
+.ref__link, .ref__url { overflow-wrap: anywhere; }
+
+/* The pictogram sprite never takes space. */
+.pictogram-sprite { position: absolute; inline-size: 0; block-size: 0; overflow: hidden; }
+
+/* Details/summary disclosures used by language and design switchers. */
+.disclosure { position: relative; }
+.disclosure__summary { list-style: none; cursor: pointer; }
+.disclosure__summary::-webkit-details-marker { display: none; }
+
+@media print {
+  .site-header, .site-footer, .toc, .skip-link, .site-banners, .theme-switch, .scheme-toggle { display: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+}

@@ -1,0 +1,52 @@
+---
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { BUILT_LOCALES, CONTENT_AS_OF } from '../../lib/config';
+import { PRIMARY_NAV } from '../../lib/content';
+import { formatDate } from '../../lib/format';
+
+interface Props { locale: string }
+const { locale } = Astro.props;
+const about = [
+  ['about/editorial-policy', 'editorialPolicy'],
+  ['about/funding', 'funding'],
+  ['about/corrections', 'corrections'],
+  ['the-case-for-reform', 'reform'],
+  ['glossary', 'glossary'],
+  ['sources', 'sources'],
+] as const;
+---
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <p class="independence-marker">
+      <a href={routeUrl(locale, 'about/funding')}>
+        <span class="independence-marker__text">{t(locale, 'common.footer.independence')}</span>
+        <span class="visually-hidden"> — {t(locale, 'common.footer.independenceLink')}</span>
+      </a>
+    </p>
+    <div class="site-footer__cols">
+      <nav class="site-footer__col" aria-labelledby="footer-sections">
+        <h2 class="site-footer__heading" id="footer-sections">{t(locale, 'common.footer.sections')}</h2>
+        <ul role="list">
+          {PRIMARY_NAV.map((n) => <li><a href={routeUrl(locale, n.key)}>{t(locale, `common.nav.${n.id}`)}</a></li>)}
+          <li><a href={routeUrl(locale, 'talking-to-your-doctor')}>{t(locale, 'common.footer.doctor')}</a></li>
+          <li><a href={routeUrl(locale, 'legal-routes')}>{t(locale, 'common.footer.legalRoutes')}</a></li>
+        </ul>
+      </nav>
+      <nav class="site-footer__col" aria-labelledby="footer-about">
+        <h2 class="site-footer__heading" id="footer-about">{t(locale, 'common.footer.about')}</h2>
+        <ul role="list">
+          {about.map(([key, label]) => <li><a href={routeUrl(locale, key)}>{t(locale, `common.footer.${label}`)}</a></li>)}
+        </ul>
+      </nav>
+      <nav class="site-footer__col" aria-labelledby="footer-languages">
+        <h2 class="site-footer__heading" id="footer-languages">{t(locale, 'common.footer.languages')}</h2>
+        <ul role="list">
+          {BUILT_LOCALES.map((l) => <li><a href={routeUrl(l.code, '')} lang={l.bcp47} dir={l.dir} hreflang={l.hreflang}>{l.name}</a></li>)}
+        </ul>
+      </nav>
+    </div>
+    <p class="site-footer__privacy">{t(locale, 'common.footer.privacy')}</p>
+    <p class="site-footer__notice">{t(locale, 'common.footer.notice', { date: formatDate(locale, CONTENT_AS_OF) })}</p>
+  </div>
+</footer>

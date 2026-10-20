@@ -1,0 +1,65 @@
+---
+import { SITE, BUILD_THEME, BUILD_THEMES, DEFAULT_THEME, REVIEW_BUILD, DEFAULT_LOCALE, getLocale } from '../../lib/config';
+import { url, canonicalUrl } from '../../lib/urls';
+import { bundleTheme } from '../../lib/theme-css';
+import { t } from '../../lib/i18n';
+
+interface Props {
+  locale: string;
+  title: string;
+  description: string;
+  routeKey: string;
+  /** published locales that have a genuine translation of this route */
+  alternates: string[];
+  noindex?: boolean;
+  jsonld?: Record<string, unknown>[];
+  ogType?: 'website' | 'article';
+}
+const { locale, title, description, routeKey, alternates, noindex = false, jsonld = [], ogType = 'article' } = Astro.props;
+const loc = getLocale(locale);
+const brand = t(locale, 'common.brand');
+const fullTitle = routeKey === '' ? `${brand} — ${t(locale, 'common.tagline')}` : `${title} · ${brand}`;
+const canonical = canonicalUrl(locale, routeKey);
+const robots = noindex || REVIEW_BUILD || loc.status !== 'published' ? 'noindex, follow' : 'index, follow';
+
+// One stylesheet per design system. The switchable build ships all three and picks one before
+// first paint; dedicated builds ship only their own.
+const themeHref = Object.fromEntries(BUILD_THEMES.map((th) => [th, url(`/themes/${th}.css?v=${bundleTheme(th).hash}`)]));
+const FONT_PRELOAD: Record<string, string> = {
+  a: 'inter-latin-wght-normal.woff2',
+  b: 'outfit-latin-wght-normal.woff2',
+  c: 'source-sans-3-latin-wght-normal.woff2',
+};
+const preloadFont = loc.script === 'arabic' ? 'noto-sans-arabic-arabic-wght-normal.woff2' : FONT_PRELOAD[DEFAULT_THEME];
+const switchable = BUILD_THEME === 'switchable';
+// Inline, render-blocking on purpose: applies stored theme/scheme and ?pseudo=rtl before first paint
+// so there is no flash. ~600 bytes; everything else is deferred.
+const boot = `(function(d,w){try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
+  (switchable
+    ? `var H=${JSON.stringify(themeHref)},t=q.get('theme');if(t&&H[t]){ls.setItem('pe-theme',t)}else{t=ls.getItem('pe-theme')}if(t&&H[t]&&t!==h.dataset.theme){h.dataset.theme=t;d.getElementById('theme-css').href=H[t]}`
+    : '') +
+  `var s=ls.getItem('pe-scheme');if(s==='dark'||s==='light')h.dataset.scheme=s;` +
+  `var p=q.get('pseudo');if(p==='rtl')ss.setItem('pe-pseudo','rtl');else if(p==='off')ss.removeItem('pe-pseudo');` +
+  `if(ss.getItem('pe-pseudo')==='rtl'){h.dir='rtl';h.dataset.pseudo='rtl'}h.classList.add('js')}catch(e){}})(document,window)`;
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={robots} />
+<link rel="canonical" href={canonical} />
+{alternates.map((l) => <link rel="alternate" hreflang={getLocale(l).hreflang} href={canonicalUrl(l, routeKey)} />)}
+{alternates.includes(DEFAULT_LOCALE) && <link rel="alternate" hreflang="x-default" href={canonicalUrl(DEFAULT_LOCALE, routeKey)} />}
+<meta name="color-scheme" content="light dark" />
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content={brand} />
+<meta property="og:locale" content={loc.bcp47.replace('-', '_')} />
+<link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+<link rel="preload" href={url(`/fonts/${preloadFont}`)} as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" id="theme-css" href={themeHref[DEFAULT_THEME]} data-hrefs={switchable ? JSON.stringify(themeHref) : undefined} />
+<script is:inline set:html={boot} />
+{jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+<meta name="generator" content={`${SITE.brand} (static)`} />

@@ -1,0 +1,24 @@
+---
+/**
+ * Reference marker. Numbers are assigned at compile time by remark-citations (attribute n),
+ * in order of first appearance; only first occurrences carry the id the source list links back to.
+ * Design A shows a Tufte-style sidenote in the margin on wide screens.
+ */
+import { t } from '../../lib/i18n';
+import { getSource, shortAuthors } from '../../lib/data';
+import { ctxLocale } from '../../lib/ctx';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+interface Props { id: string; n?: string; first?: string }
+const { id, n = '', first = '' } = Astro.props;
+const locale = ctxLocale(Astro);
+const ids = id.split(',').map((s) => s.trim());
+const nums = n.split(',');
+const firsts = first.split(',');
+const refs = ids.map((sid, i) => {
+  const s = getSource(sid);
+  return { n: nums[i], first: firsts[i] === '1', short: `${shortAuthors(s)} (${s.year})`, title: s.title, container: s.container };
+});
+---
+<span class="cite"><sup class="cite__marks">{refs.map((r, i) => (
+  <>{i > 0 && <span class="cite__sep">,</span>}<a class="cite__link" href={`#src-${r.n}`} id={r.first ? `cite-${r.n}` : undefined} aria-label={t(locale, 'common.cite.labelWith', { n: r.n, ref: r.short })}>{r.n}</a></>
+))}</sup><ThemeOnly theme="a" as="span" class="sidenote-wrap"><span class="sidenote" aria-hidden="true">{refs.map((r) => <span class="sidenote__item"><span class="sidenote__n">{r.n}</span> {r.short}. <i>{r.container ?? r.title}</i>.</span>)}</span></ThemeOnly></span>

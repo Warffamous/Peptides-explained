@@ -1,0 +1,26 @@
+---
+/**
+ * Design B's evidence glyph: four quadrants, one per axis, each filled to its own radius.
+ * Deliberately NOT a radar polygon — connecting the axes would imply they combine.
+ * Decorative (aria-hidden): the <dl> beside it carries the information.
+ */
+interface Props { axes: { axis: string; step: number; max: number }[] }
+const { axes } = Astro.props;
+const R = 44;
+const C = 50;
+const quad = (i: number, frac: number) => {
+  const r = 8 + (R - 8) * frac;
+  const a0 = (-90 + i * 90) * (Math.PI / 180) + 0.06;
+  const a1 = (-90 + (i + 1) * 90) * (Math.PI / 180) - 0.06;
+  const p = (a: number, rr: number) => `${(C + rr * Math.cos(a)).toFixed(2)} ${(C + rr * Math.sin(a)).toFixed(2)}`;
+  return `M ${C} ${C} L ${p(a0, r)} A ${r} ${r} 0 0 1 ${p(a1, r)} Z`;
+};
+---
+<svg class="grade-glyph" viewBox="0 0 100 100" width="160" height="160" aria-hidden="true" focusable="false">
+  {[0.25, 0.5, 0.75, 1].map((f) => <circle class="grade-glyph__ring" cx={C} cy={C} r={8 + (R - 8) * f} fill="none" />)}
+  <line class="grade-glyph__axis" x1={C} y1={C - R - 2} x2={C} y2={C + R + 2} />
+  <line class="grade-glyph__axis" x1={C - R - 2} y1={C} x2={C + R + 2} y2={C} />
+  {axes.map((a, i) => (
+    <path class="grade-glyph__q" data-axis={a.axis} d={quad(i, a.max > 1 ? a.step / (a.max - 1) : 0)} />
+  ))}
+</svg>

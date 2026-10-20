@@ -1,0 +1,50 @@
+---
+/** Compound cards grouped by category — the authorised/investigational/experimental split is the point. */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { compoundDataMap, resolveCompound } from '../../lib/content';
+import { routeUrl } from '../../lib/urls';
+import EvidenceMini from '../ui/EvidenceMini.astro';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+const L = ctxLocale(Astro);
+const all = [...(await compoundDataMap()).values()];
+const GROUPS = [
+  { id: 'authorised', cats: ['authorised', 'authorised-elsewhere'], label: 'compound.index.authorisedGroup' },
+  { id: 'investigational', cats: ['investigational'], label: 'compound.index.investigationalGroup' },
+  { id: 'experimental', cats: ['experimental'], label: 'compound.index.experimentalGroup' },
+  { id: 'other', cats: ['not-a-peptide'], label: 'compound.index.otherGroup' },
+];
+const cards = [];
+for (const d of all) {
+  const r = await resolveCompound(L, d.slug);
+  if (r) cards.push({ d, page: r.entry.data, fallback: r.fallback });
+}
+cards.sort((a, b) => a.d.tier - b.d.tier || a.d.names.common.localeCompare(b.d.names.common));
+---
+<div class="compound-index">
+  {GROUPS.map((g) => {
+    const list = cards.filter((c) => g.cats.includes(c.d.category));
+    return list.length > 0 && (
+      <section class="compound-index__group" data-group={g.id} aria-labelledby={`cg-${g.id}`}>
+        <h2 class="compound-index__title" id={`cg-${g.id}`}>{t(L, g.label)}</h2>
+        <ul class="compound-cards" role="list">
+          {list.map(({ d, page, fallback }) => (
+            <li class="compound-card" data-category={d.category} data-class={d.class} data-status={d.status}>
+              <a class="compound-card__link" href={routeUrl(L, `compounds/${d.slug}`)}>
+                <ThemeOnly theme="c" as="span" class="compound-card__icon"><Pictogram name={`class-${d.class}`} /></ThemeOnly>
+                <span class="compound-card__name">{d.names.common}</span>
+              </a>
+              <p class="compound-card__meta">
+                <span class="compound-card__class">{t(L, `vocab.class.${d.class}`)}</span>
+                {d.status === 'stub' && <span class="compound-card__stub">{t(L, 'common.stub.label')}</span>}
+              </p>
+              <p class="compound-card__desc" lang={fallback ? 'en' : undefined}>{page.summary[0]}</p>
+              <EvidenceMini evidence={d.evidence} locale={L} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  })}
+</div>

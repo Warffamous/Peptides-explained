@@ -1,0 +1,38 @@
+---
+/**
+ * The causal chain as an ordered list — which IS the text equivalent of the diagram.
+ * Each step carries the evidence level of the link into it. Design B adds a scroll-driven
+ * SVG stage (MechanismStage); designs A and C draw the chain from this same list with CSS.
+ */
+import { t } from '../../lib/i18n';
+import { ctxCompound } from '../../lib/ctx';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+import MechanismStage from '../ui/MechanismStage.astro';
+const c = ctxCompound(Astro, 'Mechanism');
+const steps = c.page.mechanism;
+const L = c.locale;
+---
+<figure class="mechanism" data-steps={steps.length} aria-labelledby="mechanism-caption">
+  <figcaption class="mechanism__caption" id="mechanism-caption">{t(L, 'compound.mechanism.caption')}</figcaption>
+  <p class="mechanism__legend">{t(L, 'compound.mechanism.legend')}</p>
+  <div class="mechanism__body">
+    <ThemeOnly theme="b" class="mechanism__stage-wrap"><MechanismStage steps={steps} /></ThemeOnly>
+    <ol class="mechanism__steps" role="list">
+      {steps.map((s, i) => (
+        <li class="mechanism__step" data-kind={s.kind} data-level={s.level} data-step={i} style={`--i:${i}`}>
+          <p class="mechanism__meta">
+            <span class="mechanism__n">{t(L, 'compound.mechanism.step', { n: i + 1 })}</span>
+            <span class="mechanism__kind">{t(L, `evidence.mechanismKinds.${s.kind}`)}</span>
+            <span class="level-badge" data-level={s.level}>
+              <ThemeOnly theme="c" as="span" class="level-badge__icon"><Pictogram name={`mech-${s.level}`} /></ThemeOnly>
+              <span class="visually-hidden">{t(L, 'compound.mechanism.levelLabel')}: </span>{t(L, `evidence.mechanismLevels.${s.level}.short`)}
+            </span>
+          </p>
+          <h3 class="mechanism__title">{s.title}</h3>
+          <p class="mechanism__detail">{s.detail}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</figure>

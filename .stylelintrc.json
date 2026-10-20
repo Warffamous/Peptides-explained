@@ -1,0 +1,71 @@
+{
+  "$comment": "RTL is a v1 requirement: every layout must mirror correctly for Arabic. Physical horizontal properties are therefore banned in all design systems; use logical properties (margin-inline-start, inset-inline-end, text-align: start, float: inline-end \u2026). The build fails on any violation.",
+  "overrides": [
+    {
+      "files": [
+        "**/*.astro",
+        "**/*.html"
+      ],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "property-disallowed-list": [
+      [
+        "left",
+        "right",
+        "/^margin-(left|right)$/",
+        "/^padding-(left|right)$/",
+        "/^border-(left|right)(-.+)?$/",
+        "/^border-(top|bottom)-(left|right)-radius$/",
+        "/^scroll-(margin|padding)-(left|right)$/",
+        "/^overscroll-behavior-x$/"
+      ],
+      {
+        "message": "Physical direction property \u2014 use the logical equivalent (inline-start/inline-end) so the layout mirrors in RTL"
+      }
+    ],
+    "declaration-property-value-disallowed-list": [
+      {
+        "text-align": [
+          "left",
+          "right"
+        ],
+        "float": [
+          "left",
+          "right"
+        ],
+        "clear": [
+          "left",
+          "right"
+        ],
+        "caption-side": [
+          "left",
+          "right"
+        ],
+        "resize": [
+          "horizontal"
+        ],
+        "background-position": [
+          "/\\b(left|right)\\b/"
+        ],
+        "transform-origin": [
+          "/\\b(left|right)\\b/"
+        ],
+        "object-position": [
+          "/\\b(left|right)\\b/"
+        ],
+        "/^(margin|padding|inset|scroll-margin|scroll-padding|border-width|border-style|border-color)$/": [
+          "/^\\S+\\s+\\S+\\s+\\S+\\s+\\S+$/"
+        ],
+        "border-radius": [
+          "/^[^/]*\\S\\s+\\S/"
+        ]
+      },
+      {
+        "message": "Physical direction value \u2014 use start/end or inline-start/inline-end so the layout mirrors in RTL"
+      }
+    ],
+    "declaration-property-value-no-unknown": null
+  }
+}

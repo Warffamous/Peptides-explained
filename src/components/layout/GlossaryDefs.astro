@@ -1,0 +1,13 @@
+---
+/** Definitions for the terms auto-linked on this page. Hidden; referenced by aria-describedby and shown by the tooltip. */
+import { namespace } from '../../lib/i18n';
+interface Props { locale: string; terms: string[] }
+const { locale, terms } = Astro.props;
+const g = namespace<Record<string, { term: string; definition: string }>>(locale, 'glossary');
+const used = terms.filter((id) => g[id]);
+---
+{used.length > 0 && (
+  <div class="glossary-defs" hidden data-pagefind-ignore="all">
+    {used.map((id) => <span id={`gd-${id}`} data-term-def={id}><b>{g[id].term}</b>: {g[id].definition}</span>)}
+  </div>
+)}

@@ -1,0 +1,11 @@
+---
+import { t } from '../../lib/i18n';
+interface Props { locale: string; items: string[]; title?: string; id?: string }
+const { locale, items, title = t(locale, 'common.summary'), id = 'summary' } = Astro.props;
+---
+<section class="summary-box" id={id} aria-labelledby={`${id}-title`}>
+  <h2 class="summary-box__title" id={`${id}-title`}>{title}</h2>
+  <ul class="summary-box__list">
+    {items.map((s) => <li>{s}</li>)}
+  </ul>
+</section>

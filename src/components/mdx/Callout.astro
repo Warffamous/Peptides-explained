@@ -1,0 +1,24 @@
+---
+/** Callout box. type="stop" is reserved for stop-now safety content (design C's alert colour). */
+import { t } from '../../lib/i18n';
+import { ctxLocale, uid as makeUid } from '../../lib/ctx';
+import { CALLOUT_TYPES } from '../../schemas/vocab';
+import Icon from '../ui/Icon.astro';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+interface Props { type?: (typeof CALLOUT_TYPES)[number]; title?: string }
+const { type = 'note', title } = Astro.props;
+if (!CALLOUT_TYPES.includes(type)) throw new Error(`<Callout type="${type}"> is not valid`);
+const L = ctxLocale(Astro);
+const label = t(L, `vocab.callout.${type}`);
+const icon = type === 'stop' || type === 'warning' ? 'alert' : type === 'legal' ? 'book' : 'info';
+const uid = makeUid(Astro, 'callout');
+---
+<aside class:list={['callout', `callout--${type}`]} aria-labelledby={uid} data-callout={type}>
+  <p class="callout__title" id={uid}>
+    <ThemeOnly theme="c" as="span" class="callout__pictogram"><Pictogram name={`callout-${type}`} /></ThemeOnly>
+    <Icon name={icon} class="callout__icon" />
+    {title ? <><span class="visually-hidden">{label}: </span>{title}</> : label}
+  </p>
+  <div class="callout__body"><slot /></div>
+</aside>

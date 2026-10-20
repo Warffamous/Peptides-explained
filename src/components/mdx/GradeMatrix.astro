@@ -1,0 +1,74 @@
+---
+/**
+ * Every compound's evidence profile in one table. Sortable by one axis at a time (progressive
+ * enhancement); the static table is complete without JavaScript. Sorting arranges, never ranks.
+ */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { compoundDataMap } from '../../lib/content';
+import { routeUrl } from '../../lib/urls';
+import { EVIDENCE_AXES, type EvidenceAxis } from '../../schemas/vocab';
+const L = ctxLocale(Astro);
+const all = [...(await compoundDataMap()).values()].sort((a, b) => a.names.common.localeCompare(b.names.common));
+const axes = Object.keys(EVIDENCE_AXES) as EvidenceAxis[];
+---
+<div class="grade-matrix" data-grade-matrix>
+  <div class="grade-matrix__controls" hidden data-sort-controls>
+    <span class="grade-matrix__sort-label" id="gm-sort">{t(L, 'evidence.matrix.sortBy')}</span>
+    <div role="group" aria-labelledby="gm-sort" class="grade-matrix__buttons">
+      <button type="button" data-sort="name" aria-pressed="true">{t(L, 'evidence.matrix.sortName')}</button>
+      {axes.map((a) => <button type="button" data-sort={a} aria-pressed="false">{t(L, `evidence.axes.${a}.name`)}</button>)}
+    </div>
+  </div>
+  <p class="grade-matrix__note">{t(L, 'evidence.matrix.note')}</p>
+  <div class="table-scroll" tabindex="0" role="region" aria-labelledby="gm-caption">
+    <table class="data-table grade-matrix__table">
+      <caption id="gm-caption">{t(L, 'evidence.matrix.caption')}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{t(L, 'evidence.matrix.compound')}</th>
+          {axes.map((a) => <th scope="col" data-axis={a}>{t(L, `evidence.axes.${a}.name`)}</th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {all.map((d) => (
+          <tr data-name={d.names.common.toLowerCase()} data-category={d.category} {...Object.fromEntries(axes.map((a) => [`data-${a.replace('_', '-')}`, (EVIDENCE_AXES[a] as readonly string[]).indexOf(d.evidence[a])]))}>
+            <th scope="row"><a href={routeUrl(L, `compounds/${d.slug}`)}>{d.names.common}</a></th>
+            {axes.map((a) => {
+              const scale = EVIDENCE_AXES[a] as readonly string[];
+              const step = scale.indexOf(d.evidence[a]);
+              return (
+                <td data-axis={a} data-step={step} data-max={scale.length - 1} style={`--frac:${scale.length > 1 ? step / (scale.length - 1) : 0}`}>
+                  <span class="grade-matrix__cell">{t(L, `evidence.axes.${a}.values.${d.evidence[a]}`)}</span>
+                </td>
+              );
+            })}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+<script>
+  for (const root of document.querySelectorAll<HTMLElement>('[data-grade-matrix]')) {
+    const controls = root.querySelector<HTMLElement>('[data-sort-controls]');
+    const tbody = root.querySelector('tbody');
+    if (!controls || !tbody) continue;
+    controls.hidden = false;
+    const rows = [...tbody.querySelectorAll<HTMLTableRowElement>('tr')];
+    controls.addEventListener('click', (e) => {
+      const btn = (e.target as Element).closest<HTMLButtonElement>('button[data-sort]');
+      if (!btn) return;
+      const key = btn.dataset.sort!;
+      controls.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      const attr = key === 'name' ? 'name' : key.replace('_', '-');
+      const sorted = [...rows].sort((a, b) => {
+        if (key === 'name') return a.dataset.name!.localeCompare(b.dataset.name!);
+        const av = Number(a.dataset[attr.replace(/-([a-z])/g, (_, c) => c.toUpperCase())]);
+        const bv = Number(b.dataset[attr.replace(/-([a-z])/g, (_, c) => c.toUpperCase())]);
+        return bv - av || a.dataset.name!.localeCompare(b.dataset.name!);
+      });
+      tbody.append(...sorted);
+    });
+  }
+</script>

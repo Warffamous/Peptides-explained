@@ -1,0 +1,20 @@
+---
+/** Who to contact and where to report in a jurisdiction, from src/data/jurisdictions.yaml. */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { JURISDICTIONS } from '../../lib/data';
+interface Props { code: string }
+const L = ctxLocale(Astro);
+const j = JURISDICTIONS.find((x) => x.code === Astro.props.code);
+if (!j) throw new Error(`<JurisdictionCard code="${Astro.props.code}"> — not in src/data/jurisdictions.yaml`);
+const rows = [
+  ['regulator', j.regulator], ['inspectorate', j.inspectorate], ['reporting', j.reporting], ['anti_doping', j.anti_doping], ['medicines_law', j.medicines_law],
+].filter(([, v]) => v) as [string, { name: string; url: string }][];
+---
+<aside class="jurisdiction-card" data-jurisdiction={j.code} aria-labelledby={`jc-${j.code}`}>
+  <h3 class="jurisdiction-card__title" id={`jc-${j.code}`}>{t(L, `vocab.jurisdiction.${j.code}`)}</h3>
+  <dl class="jurisdiction-card__list">
+    <div><dt>{t(L, 'pages.jurisdiction.emergency')}</dt><dd><bdi class="qty">{j.emergency}</bdi></dd></div>
+    {rows.map(([k, v]) => <div><dt>{t(L, `pages.jurisdiction.${k}`)}</dt><dd><a href={v.url} rel="noopener" data-external>{v.name}</a></dd></div>)}
+  </dl>
+</aside>

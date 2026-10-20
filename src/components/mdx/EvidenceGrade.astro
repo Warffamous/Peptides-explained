@@ -1,0 +1,70 @@
+---
+/**
+ * The four-axis evidence profile. One semantic <dl>; each design system gives it its own
+ * visual identity (A: hairline ladder matrix; B: four-quadrant glyph; C: Isotype rows).
+ * The axes are never summed or averaged — the component has no notion of a total.
+ */
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import { EVIDENCE_AXES, type EvidenceAxis } from '../../schemas/vocab';
+import { getCompoundData, resolveCompound } from '../../lib/content';
+import { ctxLocale } from '../../lib/ctx';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+import GradeGlyph from '../ui/GradeGlyph.astro';
+
+interface Props { compound?: string; compact?: boolean; headingLevel?: 2 | 3 }
+const { compact = false, headingLevel = 2 } = Astro.props;
+const L = ctxLocale(Astro);
+const slug = Astro.props.compound ?? Astro.locals.compound?.slug;
+if (!slug) throw new Error('<EvidenceGrade> needs compound="slug" outside compound pages');
+const data = await getCompoundData(slug);
+const page = Astro.locals.compound?.slug === slug ? { entry: { data: Astro.locals.compound.page } } : await resolveCompound(L, slug);
+const rationale = page?.entry.data.grade_rationale;
+const axes = (Object.keys(EVIDENCE_AXES) as EvidenceAxis[]).map((axis) => {
+  const scale = EVIDENCE_AXES[axis] as readonly string[];
+  const value = data.evidence[axis];
+  const step = scale.indexOf(value);
+  return { axis, scale, value, step, max: scale.length };
+});
+const H = `h${headingLevel}` as 'h2' | 'h3';
+const id = `grade-${slug}${compact ? '-c' : ''}`;
+---
+<figure class:list={['grade', compact && 'grade--compact']} id={id} data-compound={slug} aria-labelledby={`${id}-title`}>
+  <figcaption class="grade__head">
+    <H class="grade__title" id={`${id}-title`}>{t(L, 'evidence.title')}{compact && <span class="visually-hidden">: {data.names.common}</span>}</H>
+    <p class="grade__subtitle">{t(L, 'evidence.subtitle')}</p>
+  </figcaption>
+  <ThemeOnly theme="b" class="grade__glyph-wrap"><GradeGlyph axes={axes} /></ThemeOnly>
+  <dl class="grade__axes">
+    {axes.map((a) => (
+      <div class="grade__axis" data-axis={a.axis} data-value={a.value} data-step={a.step} data-max={a.max} style={`--step:${a.step};--max:${a.max - 1};--frac:${a.max > 1 ? a.step / (a.max - 1) : 0}`}>
+        <dt class="grade__name">
+          <ThemeOnly theme="c" as="span" class="grade__icon"><Pictogram name={`axis-${a.axis}`} /></ThemeOnly>
+          <span class="grade__name-text">{t(L, `evidence.axes.${a.axis}.name`)}</span>
+          {!compact && <span class="grade__question">{t(L, `evidence.axes.${a.axis}.question`)}</span>}
+        </dt>
+        <dd class="grade__value">
+          <span class="grade__value-text">{t(L, `evidence.axes.${a.axis}.values.${a.value}`)}</span>
+          <span class="visually-hidden"> ({t(L, 'evidence.stepOf', { step: a.step + 1, max: a.max })})</span>
+        </dd>
+        <dd class="grade__scale" aria-hidden="true">
+          <ol class="grade__steps" role="list">
+            {a.scale.map((v, i) => (
+              <li class="grade__step" data-on={i <= a.step ? 'true' : undefined} data-current={i === a.step ? 'true' : undefined} data-value={v}>
+                <span class="grade__step-label">{t(L, `evidence.axes.${a.axis}.values.${v}`)}</span>
+              </li>
+            ))}
+          </ol>
+        </dd>
+        {!compact && rationale && <dd class="grade__why">{rationale[a.axis]}</dd>}
+      </div>
+    ))}
+  </dl>
+  {!compact && (
+    <p class="grade__foot">
+      <span class="grade__note">{t(L, 'evidence.why')}</span>{' '}
+      <a class="grade__rubric-link" href={routeUrl(L, 'evidence/evidence-grading')}>{t(L, 'evidence.rubricLink')}</a>
+    </p>
+  )}
+</figure>

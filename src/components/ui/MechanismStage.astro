@@ -1,0 +1,6 @@
+---
+/** Design B scroll-driven stage. Purely visual (aria-hidden): the step list is the accessible content. Drawn in design phase B. */
+interface Props { steps: { kind: string; level: string }[] }
+const { steps } = Astro.props;
+---
+<div class="mechanism-stage" aria-hidden="true" data-steps={steps.length}></div>

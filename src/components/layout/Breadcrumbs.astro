@@ -1,0 +1,21 @@
+---
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+import Icon from '../ui/Icon.astro';
+interface Props { locale: string; trail: { key: string; label: string }[] }
+const { locale, trail } = Astro.props;
+const items = [{ key: '', label: t(locale, 'common.home') }, ...trail];
+---
+{trail.length > 0 && (
+  <nav class="breadcrumbs" aria-label={t(locale, 'common.breadcrumb')}>
+    <ol class="breadcrumbs__list" role="list">
+      {items.map((it, i) => (
+        <li class="breadcrumbs__item">
+          {i < items.length - 1
+            ? <><a href={routeUrl(locale, it.key)}>{it.label}</a><Icon name="chevron" class="breadcrumbs__sep" /></>
+            : <span aria-current="page">{it.label}</span>}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}

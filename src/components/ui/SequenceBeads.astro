@@ -1,0 +1,25 @@
+---
+/**
+ * Design B hero: a bead chain generated from the real sequence. Bead size and colour encode
+ * side-chain chemistry; the path is a smooth wave whose phase is seeded by the sequence itself,
+ * so every compound's visual is unique and meaningful. Drawn in design phase B.
+ */
+import type { Residue } from '../../lib/sequence';
+interface Props { residues: Residue[]; seq: unknown; slug: string }
+const { residues } = Astro.props;
+const W = 640, H = 200;
+const n = residues.length;
+const seed = residues.reduce((a, r) => (a * 31 + r.base.charCodeAt(0) + r.base.charCodeAt(2)) % 997, 7);
+const pts = residues.map((r, i) => {
+  const t = n > 1 ? i / (n - 1) : 0.5;
+  const x = 40 + t * (W - 80);
+  const y = H / 2 + Math.sin(t * Math.PI * (1.6 + (seed % 5) * 0.35) + seed) * (H * 0.28);
+  return { r, x, y };
+});
+const d = pts.map((p, i) => `${i ? 'L' : 'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+const radius = (c: string) => (c === 'aromatic' ? 11 : c === 'special' ? 6 : c === 'nonstandard' ? 9 : 8);
+---
+<svg class="seq-beads" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet">
+  <path class="seq-beads__backbone" d={d} fill="none" />
+  {pts.map((p) => <circle class:list={['seq-beads__bead', `is-${p.r.cls}`, p.r.d && 'is-d']} cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r={radius(p.r.cls)} />)}
+</svg>

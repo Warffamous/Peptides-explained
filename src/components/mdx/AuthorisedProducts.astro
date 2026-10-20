@@ -1,0 +1,49 @@
+---
+/** The visibly distinct treatment for authorised medicines: badge, legal route, official labels. */
+import { t } from '../../lib/i18n';
+import { ctxCompound } from '../../lib/ctx';
+import { routeUrl } from '../../lib/urls';
+import { formatDate, isoDate } from '../../lib/format';
+import Icon from '../ui/Icon.astro';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+const c = ctxCompound(Astro, 'AuthorisedProducts');
+const L = c.locale;
+const eu = c.data.category === 'authorised';
+const regulators = [...new Set(c.data.authorised_products.map((p) => p.jurisdiction))].map((j) => t(L, `vocab.jurisdiction.${j}`)).join(', ');
+---
+<aside class:list={['authorised', eu ? 'authorised--eu' : 'authorised--elsewhere']} aria-labelledby="authorised-title">
+  <p class="authorised__badge" id="authorised-title">
+    <ThemeOnly theme="c" as="span"><Pictogram name={eu ? 'status-authorised' : 'status-authorised-elsewhere'} /></ThemeOnly>
+    <Icon name="check" class="authorised__check" />
+    {t(L, eu ? 'compound.authorised.badge' : 'compound.authorised.badgeElsewhere')}
+  </p>
+  <p class="authorised__explain">{eu ? t(L, 'compound.authorised.explain') : t(L, 'compound.authorised.explainElsewhere', { regulators })}</p>
+  <div class="authorised__route">
+    <h3 class="authorised__route-title">{t(L, 'compound.authorised.routeTitle')}</h3>
+    <p>{t(L, eu ? 'compound.authorised.routeText' : 'compound.authorised.routeElsewhere')} <a href={routeUrl(L, 'legal-routes')}>{t(L, 'compound.authorised.routeLink')}</a></p>
+  </div>
+  <div class="table-scroll" tabindex="0" role="region" aria-labelledby="products-caption">
+    <table class="data-table authorised__products">
+      <caption id="products-caption" class="visually-hidden">{t(L, 'compound.names.brands')}</caption>
+      <thead><tr>
+        <th scope="col">{t(L, 'compound.authorised.product')}</th>
+        <th scope="col">{t(L, 'compound.authorised.indication')}</th>
+        <th scope="col">{t(L, 'compound.authorised.jurisdiction')}</th>
+        <th scope="col">{t(L, 'compound.authorised.since')}</th>
+        <th scope="col">{t(L, 'compound.authorised.label')}</th>
+      </tr></thead>
+      <tbody>
+        {c.data.authorised_products.map((p) => (
+          <tr>
+            <th scope="row"><span class="authorised__name">{p.name}</span><span class="authorised__holder">{p.holder}</span></th>
+            <td data-label={t(L, 'compound.authorised.indication')}>{c.page.indications[p.id]} <span class="authorised__route-type">· {t(L, `vocab.route.${p.route}`)}</span></td>
+            <td data-label={t(L, 'compound.authorised.jurisdiction')}>{t(L, `vocab.jurisdiction.${p.jurisdiction}`)}</td>
+            <td data-label={t(L, 'compound.authorised.since')}><time datetime={isoDate(p.authorised)}>{formatDate(L, p.authorised)}</time></td>
+            <td data-label={t(L, 'compound.authorised.label')}><a href={p.label_url} rel="noopener" data-external>{t(L, 'compound.authorised.labelLink', { jurisdiction: p.jurisdiction })}<Icon name="external" /><span class="visually-hidden"> ({t(L, 'common.external')})</span></a></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</aside>

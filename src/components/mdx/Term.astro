@@ -1,0 +1,12 @@
+---
+/** Explicit glossary link (auto-linking covers the first plain-text use; use this for other spellings). */
+import { routeUrl } from '../../lib/urls';
+import { ctxLocale } from '../../lib/ctx';
+import { namespace } from '../../lib/i18n';
+interface Props { id: string }
+const { id } = Astro.props;
+const locale = ctxLocale(Astro);
+const g = namespace<Record<string, unknown>>(locale, 'glossary');
+if (!g[id]) throw new Error(`<Term id="${id}"> — no such glossary entry in ${locale}`);
+---
+<a class="term" href={`${routeUrl(locale, 'glossary')}#${id}`} data-term={id} aria-describedby={`gd-${id}`}><slot /></a>

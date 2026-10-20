@@ -1,0 +1,22 @@
+/* Accessibility utilities shared by all design systems. */
+.visually-hidden {
+  position: absolute !important;
+  inline-size: 1px; block-size: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip-path: inset(50%);
+  white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute; inset-inline-start: 1rem; inset-block-start: -10rem; z-index: 100;
+  padding: 0.75rem 1rem;
+}
+.skip-link:focus { inset-block-start: 1rem; }
+.site-main:focus { outline: none; }
+/* A focus indicator always exists, even before a theme styles it (WCAG 2.4.7 / 2.4.11). */
+:focus-visible { outline: 3px solid currentColor; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+@media (forced-colors: active) {
+  .claim-badge, .status-badge, .level-badge, .compound-badge { border: 1px solid CanvasText; }
+}

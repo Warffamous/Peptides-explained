@@ -1,0 +1,127 @@
+---
+/**
+ * Compound page: localised prose (src/content/compounds/<locale>/<slug>.mdx) joined with
+ * locale-independent facts (src/data/compounds/<slug>.yaml). Fixed structure:
+ * 1 the 30-second version · evidence profile · 2–8 the MDX sections in fixed order · 9 sources.
+ */
+import { render } from 'astro:content';
+import DocLayout from '../../../layouts/DocLayout.astro';
+import { mdxComponents } from '../../../components/mdx';
+import EvidenceGrade from '../../../components/mdx/EvidenceGrade.astro';
+import SequenceView from '../../../components/mdx/SequenceView.astro';
+import ThemeOnly from '../../../components/ui/ThemeOnly.astro';
+import Pictogram from '../../../components/ui/Pictogram.astro';
+import { BUILT_LOCALES } from '../../../lib/config';
+import { compoundDataMap, resolveCompound, alternatesFor } from '../../../lib/content';
+import { webPage } from '../../../lib/jsonld';
+import { t } from '../../../lib/i18n';
+import { formatNumber } from '../../../lib/format';
+import { COMPOUND_SECTIONS } from '../../../schemas/vocab';
+
+export async function getStaticPaths() {
+  const data = await compoundDataMap();
+  const out = [];
+  for (const loc of BUILT_LOCALES) {
+    for (const slug of data.keys()) {
+      if (await resolveCompound(loc.code, slug)) out.push({ params: { locale: loc.code, slug } });
+    }
+  }
+  return out;
+}
+
+const { locale, slug } = Astro.params as { locale: string; slug: string };
+Astro.locals.locale = locale;
+const data = (await compoundDataMap()).get(slug)!;
+const { entry, fallback } = (await resolveCompound(locale, slug))!;
+const page = entry.data;
+const { Content, remarkPluginFrontmatter: rpf } = await render(entry);
+
+// Source list: inline citations first (in order of appearance), then the sources behind the
+// data tables (studies, regulatory rows, sequence, product labels) so every table row links to one.
+const citations: string[] = [...(rpf.citations ?? [])];
+const add = (id?: string) => { if (id && !citations.includes(id)) citations.push(id); };
+data.studies.forEach((s) => add(s.source));
+data.regulatory.forEach((r) => r.sources.forEach(add));
+add(data.sequence?.source);
+add(data.molecular.smiles_source);
+data.authorised_products.forEach((p) => add(p.label_source));
+const citeIndex = new Map(citations.map((id, i) => [id, i + 1]));
+Astro.locals.compound = { slug, locale, data, page, citeIndex };
+
+const key = `compounds/${slug}`;
+const authorised = data.category === 'authorised' || data.category === 'authorised-elsewhere';
+const sectionsPresent = (COMPOUND_SECTIONS as readonly string[]).filter((s) => entry.body?.includes(`<Section id="${s}">`));
+const sectionTitle = (s: string) => t(locale, `compound.sections.${authorised && (s === 'mechanism' || s === 'harm-reduction') ? `${s}Authorised` : s}`);
+const toc = [
+  { id: 'summary', text: t(locale, 'compound.sections.thirty-second') },
+  { id: `grade-${slug}`, text: t(locale, 'evidence.title') },
+  ...sectionsPresent.map((s) => ({ id: s, text: sectionTitle(s) })),
+  { id: 'sources', text: t(locale, 'compound.sections.sources') },
+];
+const trail = [
+  { key: 'compounds', label: t(locale, 'compound.index.title') },
+  { key, label: data.names.common },
+];
+const badgeKey = {
+  authorised: 'compound.authorised.badge',
+  'authorised-elsewhere': 'compound.authorised.badgeElsewhere',
+  investigational: 'compound.investigationalBadge',
+  experimental: 'compound.experimentalBadge',
+  'not-a-peptide': 'compound.notPeptideBadge',
+}[data.category];
+const about = authorised
+  ? { '@type': 'Drug', name: data.names.common, ...(data.names.inn ? { nonProprietaryName: data.names.inn } : {}), ...(data.names.brands.length ? { alternateName: data.names.brands } : {}), prescriptionStatus: 'PrescriptionOnly' }
+  : { '@type': 'ChemicalSubstance', name: data.names.common, ...(data.names.other.length ? { alternateName: data.names.other } : {}) };
+const alternates = fallback ? [] : await alternatesFor(key);
+const jsonld = webPage({ locale, key, title: page.title, description: page.description, lastReviewed: data.last_reviewed, reviewedBy: data.reviewed_by, medical: true, article: true, about, trail });
+---
+<DocLayout
+  locale={locale}
+  routeKey={key}
+  alternates={alternates}
+  title={page.title}
+  description={page.description}
+  eyebrow={t(locale, `vocab.class.${data.class}`)}
+  summary={page.summary}
+  summaryTitle={t(locale, 'compound.sections.thirty-second')}
+  template="compound"
+  section="compounds"
+  lastReviewed={data.last_reviewed}
+  reviewedBy={data.reviewed_by}
+  editedBy={data.edited_by}
+  citations={citations}
+  inlineCitations={(rpf.citations ?? []).length}
+  terms={rpf.terms ?? []}
+  toc={toc}
+  trail={trail}
+  fallback={fallback}
+  translation={page.translation}
+  jsonld={fallback ? [] : jsonld}
+  noindex={fallback}
+  docClass={`compound compound--${data.category} compound--${data.status}`}
+>
+  <Fragment slot="header">
+    <p class="compound-badge" data-category={data.category}>
+      <ThemeOnly theme="c" as="span" class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></ThemeOnly>
+      {t(locale, badgeKey)}
+    </p>
+    <dl class="compound-facts">
+      {data.names.full && <div><dt>{t(locale, 'compound.names.full')}</dt><dd>{data.names.full}</dd></div>}
+      {data.names.inn && <div><dt>{t(locale, 'compound.names.inn')}</dt><dd>{data.names.inn}</dd></div>}
+      {data.names.other.length > 0 && <div><dt>{t(locale, 'compound.names.other')}</dt><dd>{data.names.other.join(', ')}</dd></div>}
+      {data.names.brands.length > 0 && <div><dt>{t(locale, 'compound.names.brands')}</dt><dd>{data.names.brands.join(', ')}</dd></div>}
+      <div><dt>{t(locale, 'compound.names.class')}</dt><dd>{t(locale, `vocab.class.${data.class}`)}</dd></div>
+      <div><dt>{t(locale, 'compound.names.bodySystems')}</dt><dd>{data.body_systems.map((b) => t(locale, `vocab.bodySystem.${b}`)).join(', ')}</dd></div>
+      {data.molecular.formula && <div><dt>{t(locale, 'compound.names.formula')}</dt><dd><bdi class="qty">{data.molecular.formula}</bdi></dd></div>}
+      {data.molecular.mass_da && <div><dt>{t(locale, 'compound.names.mass')}</dt><dd><bdi class="qty">{formatNumber(locale, data.molecular.mass_da)} Da</bdi></dd></div>}
+    </dl>
+  </Fragment>
+  <Fragment slot="lead">
+    {data.status === 'stub' && <p class="notice notice--stub"><strong>{t(locale, 'common.stub.label')}.</strong> {t(locale, 'common.stub.notice')}</p>}
+  </Fragment>
+  <div class="compound-glance">
+    <EvidenceGrade compound={slug} />
+    <SequenceView compound={slug} />
+  </div>
+  <Content components={mdxComponents} />
+</DocLayout>

@@ -1,0 +1,102 @@
+---
+/**
+ * Article shell shared by every content page. Enforces the per-page editorial duties:
+ * review date + named reviewer, the standing medical notice, the B1 summary first,
+ * sources last. Templates: reference | safety | opinion | landing | index | compound.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/layout/Breadcrumbs.astro';
+import ReviewMeta from '../components/layout/ReviewMeta.astro';
+import SummaryBox from '../components/layout/SummaryBox.astro';
+import Toc from '../components/layout/Toc.astro';
+import SourceList from '../components/layout/SourceList.astro';
+import RelatedList from '../components/layout/RelatedList.astro';
+import Icon from '../components/ui/Icon.astro';
+import { t } from '../lib/i18n';
+import { getLocale, SOURCE_LOCALE } from '../lib/config';
+import { routeUrl } from '../lib/urls';
+import { getPerson } from '../lib/data';
+import { formatDate, isoDate } from '../lib/format';
+
+interface Props {
+  locale: string;
+  routeKey: string;
+  alternates: string[];
+  title: string;
+  description: string;
+  eyebrow?: string;
+  summary: string[];
+  summaryTitle?: string;
+  template: 'reference' | 'safety' | 'opinion' | 'landing' | 'index' | 'compound';
+  section: string;
+  lastReviewed: Date;
+  reviewedBy: string;
+  editedBy: string;
+  readingLevel?: string;
+  citations?: string[];
+  inlineCitations?: number;
+  furtherReading?: string[];
+  related?: string[];
+  terms?: string[];
+  toc?: { id: string; text: string }[];
+  trail?: { key: string; label: string }[];
+  fallback?: boolean;
+  translation?: { method: string; review: string };
+  opinion?: { signed_by: string; published: Date; updated?: Date };
+  jsonld?: Record<string, unknown>[];
+  noindex?: boolean;
+  legal?: boolean;
+  docClass?: string;
+}
+const p = Astro.props;
+const loc = getLocale(p.locale);
+const contentLang = p.fallback ? getLocale(SOURCE_LOCALE) : loc;
+const showTranslationNotice = !p.fallback && p.locale !== SOURCE_LOCALE && p.translation?.review === 'pending';
+const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
+---
+<BaseLayout locale={p.locale} title={p.title} description={p.description} routeKey={p.routeKey} alternates={p.alternates} jsonld={p.jsonld} terms={p.terms} noindex={p.noindex} pageClass={`page--${p.template} section--${p.section}`}>
+  <Breadcrumbs slot="before-main" locale={p.locale} trail={p.trail ?? []} />
+  <article class:list={['doc', `doc--${p.template}`, p.docClass]} lang={p.fallback ? contentLang.bcp47 : undefined} dir={p.fallback ? contentLang.dir : undefined} data-pagefind-body>
+    {p.fallback && (
+      <p class="notice notice--fallback" lang={loc.bcp47} dir={loc.dir}>{t(p.locale, 'common.translation.fallback', { language: loc.name })}</p>
+    )}
+    {showTranslationNotice && (
+      <p class="notice notice--translation">
+        {t(p.locale, 'common.translation.pending')}{' '}
+        <a href={routeUrl(SOURCE_LOCALE, p.routeKey)} hreflang={SOURCE_LOCALE} lang={getLocale(SOURCE_LOCALE).bcp47}>{t(p.locale, 'common.translation.readEnglish')}</a>
+      </p>
+    )}
+    {p.template === 'opinion' && (
+      <aside class="opinion-flag" aria-label={t(p.locale, 'common.opinion.label')}>
+        <p class="opinion-flag__label">{t(p.locale, 'common.opinion.label')}</p>
+        <p class="opinion-flag__text">{t(p.locale, 'common.opinion.notice')}</p>
+      </aside>
+    )}
+    <header class="doc-header">
+      {p.eyebrow && <p class="doc-header__eyebrow">{p.eyebrow}</p>}
+      <h1 class="doc-header__title">{p.title}</h1>
+      <slot name="header" />
+      {signer && p.opinion && (
+        <p class="doc-header__byline">
+          <span>{t(p.locale, 'common.opinion.signed', { name: signer.name })}</span>
+          <span> · </span>
+          <time datetime={isoDate(p.opinion.published)}>{t(p.locale, 'common.opinion.published', { date: formatDate(p.locale, p.opinion.published) })}</time>
+          {p.opinion.updated && <><span> · </span><time datetime={isoDate(p.opinion.updated)}>{t(p.locale, 'common.opinion.updated', { date: formatDate(p.locale, p.opinion.updated) })}</time></>}
+        </p>
+      )}
+      <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} compact legal={p.legal} />
+    </header>
+    <slot name="lead" />
+    <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} />
+    {p.toc && <Toc locale={p.locale} items={p.toc} />}
+    <div class="prose">
+      <slot />
+    </div>
+    <SourceList locale={p.locale} ids={p.citations ?? []} inline={p.inlineCitations} further={p.furtherReading ?? []} />
+    <footer class="doc-footer">
+      {p.related && p.related.length > 0 && <RelatedList locale={p.locale} keys={p.related} />}
+      <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} legal={p.legal} />
+      <p class="standing-notice"><Icon name="info" />{t(p.locale, 'common.notice.standing')}</p>
+    </footer>
+  </article>
+</BaseLayout>

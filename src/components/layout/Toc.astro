@@ -1,0 +1,13 @@
+---
+import { t } from '../../lib/i18n';
+interface Props { locale: string; items: { id: string; text: string }[] }
+const { locale, items } = Astro.props;
+---
+{items.length >= 3 && (
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 class="toc__title" id="toc-title">{t(locale, 'common.onThisPage')}</h2>
+    <ol class="toc__list" role="list">
+      {items.map((it) => <li><a href={`#${it.id}`}>{it.text}</a></li>)}
+    </ol>
+  </nav>
+)}

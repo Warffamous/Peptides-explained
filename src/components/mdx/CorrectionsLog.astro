@@ -1,0 +1,25 @@
+---
+import { t, namespace } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { CORRECTIONS } from '../../lib/data';
+import { formatDate, isoDate } from '../../lib/format';
+import { routeUrl } from '../../lib/urls';
+const L = ctxLocale(Astro);
+const text = namespace<Record<string, { summary: string; detail?: string }>>(L, 'corrections');
+const items = [...CORRECTIONS].filter((c) => c.locales.includes(L) || c.locales.includes('*')).sort((a, b) => +b.date - +a.date);
+---
+<div class="corrections">
+  {items.length === 0 ? <p>{t(L, 'pages.corrections.empty')}</p> : (
+    <ol class="corrections__list" role="list" reversed>
+      {items.map((c) => (
+        <li class="corrections__item" data-kind={c.kind} id={`correction-${c.id}`}>
+          <p class="corrections__head"><time datetime={isoDate(c.date)}>{formatDate(L, c.date)}</time> · <span class="corrections__kind">{t(L, `pages.corrections.kinds.${c.kind}`)}</span></p>
+          <p class="corrections__summary">{text[c.id]?.summary}</p>
+          {text[c.id]?.detail && <p class="corrections__detail">{text[c.id]?.detail}</p>}
+          <p class="corrections__routes">{t(L, 'pages.corrections.affects')}: {c.routes.map((r, i) => <>{i > 0 && ', '}{r === '*' ? '—' : <a href={routeUrl(L, r)}>{r || '/'}</a>}</>)}</p>
+        </li>
+      ))}
+    </ol>
+  )}
+  <p class="corrections__feed"><a href={routeUrl(L, 'about/corrections') + 'feed.xml'}>{t(L, 'pages.corrections.feed')}</a></p>
+</div>

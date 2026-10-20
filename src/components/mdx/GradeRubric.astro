@@ -1,0 +1,40 @@
+---
+/** The published rubric: every axis, every level, with its definition. Generated from the same strings the badges use. */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { EVIDENCE_AXES, CLAIM_LEVELS, type EvidenceAxis } from '../../schemas/vocab';
+import ThemeOnly from '../ui/ThemeOnly.astro';
+import Pictogram from '../ui/Pictogram.astro';
+interface Props { claims?: boolean }
+const L = ctxLocale(Astro);
+const axes = Object.keys(EVIDENCE_AXES) as EvidenceAxis[];
+---
+<div class="rubric">
+  {axes.map((a) => (
+    <section class="rubric__axis" data-axis={a} aria-labelledby={`rubric-${a}`} id={`axis-${a.replace('_', '-')}`}>
+      <h3 class="rubric__name" id={`rubric-${a}`}>
+        <ThemeOnly theme="c" as="span"><Pictogram name={`axis-${a}`} /></ThemeOnly>
+        {t(L, `evidence.axes.${a}.name`)}
+      </h3>
+      <p class="rubric__question">{t(L, `evidence.axes.${a}.question`)}</p>
+      <ol class="rubric__levels">
+        {(EVIDENCE_AXES[a] as readonly string[]).map((v, i) => (
+          <li class="rubric__level" data-step={i}>
+            <span class="rubric__value">{t(L, `evidence.axes.${a}.values.${v}`)}</span>
+            <span class="rubric__explain">{t(L, `evidence.axes.${a}.explain.${v}`)}</span>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+  {Astro.props.claims !== false && (
+    <section class="rubric__claims" aria-labelledby="rubric-claims" id="claim-levels">
+      <h3 class="rubric__name" id="rubric-claims">{t(L, 'evidence.claim.label')}</h3>
+      <ul class="rubric__claim-list">
+        {CLAIM_LEVELS.map((lv) => (
+          <li><span class="claim-badge" data-level={lv}><ThemeOnly theme="c" as="span" class="claim-badge__icon"><Pictogram name={`level-${lv}`} /></ThemeOnly><span class="claim-badge__label">{t(L, `evidence.claim.levels.${lv}.short`)}</span></span> {t(L, `evidence.claim.levels.${lv}.long`)}</li>
+        ))}
+      </ul>
+    </section>
+  )}
+</div>
