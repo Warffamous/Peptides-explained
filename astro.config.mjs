@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import remarkCitations from './src/plugins/remark-citations.mjs';
 import remarkFaq from './src/plugins/remark-faq.mjs';
 import rehypeGlossary from './src/plugins/rehype-glossary.mjs';
+import rehypeTableWrap from './src/plugins/rehype-table-wrap.mjs';
 
 const site = JSON.parse(fs.readFileSync(new URL('./config/site.json', import.meta.url), 'utf8'));
 const localeCfg = JSON.parse(fs.readFileSync(new URL('./config/locales.json', import.meta.url), 'utf8'));
@@ -37,7 +38,7 @@ export default defineConfig({
   integrations: [
     mdx({
       remarkPlugins: [remarkCitations, remarkFaq],
-      rehypePlugins: [[rehypeGlossary, { base: BASE }]],
+      rehypePlugins: [[rehypeGlossary, { base: BASE }], rehypeTableWrap],
       optimize: false,
     }),
   ],

@@ -73,6 +73,8 @@ const about = authorised
   ? { '@type': 'Drug', name: data.names.common, ...(data.names.inn ? { nonProprietaryName: data.names.inn } : {}), ...(data.names.brands.length ? { alternateName: data.names.brands } : {}), prescriptionStatus: 'PrescriptionOnly' }
   : { '@type': 'ChemicalSubstance', name: data.names.common, ...(data.names.other.length ? { alternateName: data.names.other } : {}) };
 const alternates = fallback ? [] : await alternatesFor(key);
+// Chemical formula with element counts as subscripts (input is validated to letters and digits).
+const formula = data.molecular.formula && /^[A-Za-z0-9()]+$/.test(data.molecular.formula) ? data.molecular.formula.replace(/(\d+)/g, '<sub>$1</sub>') : null;
 const jsonld = webPage({ locale, key, title: page.title, description: page.description, lastReviewed: data.last_reviewed, reviewedBy: data.reviewed_by, medical: true, article: true, about, trail });
 ---
 <DocLayout
@@ -112,7 +114,7 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
       {data.names.brands.length > 0 && <div><dt>{t(locale, 'compound.names.brands')}</dt><dd>{data.names.brands.join(', ')}</dd></div>}
       <div><dt>{t(locale, 'compound.names.class')}</dt><dd>{t(locale, `vocab.class.${data.class}`)}</dd></div>
       <div><dt>{t(locale, 'compound.names.bodySystems')}</dt><dd>{data.body_systems.map((b) => t(locale, `vocab.bodySystem.${b}`)).join(', ')}</dd></div>
-      {data.molecular.formula && <div><dt>{t(locale, 'compound.names.formula')}</dt><dd><bdi class="qty">{data.molecular.formula}</bdi></dd></div>}
+      {formula && <div><dt>{t(locale, 'compound.names.formula')}</dt><dd><bdi class="qty formula" set:html={formula} /></dd></div>}
       {data.molecular.mass_da && <div><dt>{t(locale, 'compound.names.mass')}</dt><dd><bdi class="qty">{formatNumber(locale, data.molecular.mass_da)} Da</bdi></dd></div>}
     </dl>
   </Fragment>

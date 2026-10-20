@@ -17,7 +17,9 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
 .term-tip { position: absolute; z-index: 60; }
 
 /* Wide tables scroll inside their own region rather than the page (WCAG 1.4.10 reflow). */
-.table-scroll { overflow-x: auto; max-inline-size: 100%; }
+.table-scroll { overflow-x: auto; max-inline-size: 100%; position: relative; }
+/* Positioned so absolutely positioned descendants (visually-hidden labels) cannot escape the scroller and widen the page. */
+.primary-nav__list, .sequence__visual, .diagram__art { position: relative; }
 .table-scroll:focus-visible { outline-offset: 4px; }
 
 /* Never let long words, DOIs or URLs force horizontal page scroll (200% zoom). */
