@@ -1,0 +1,92 @@
+/*
+ * Design system A — "Monograph". Authority through restraint.
+ * Lineage: pharmacopoeia monographs, Swiss International Style, Tufte, Müller-Brockmann.
+ * One accent. Hairlines. No gradients, shadows or rounded corners. Monospace marks measured quantity.
+ * No red/green risk coding: epistemic strength is carried by line weight and pattern, never by colour.
+ */
+:root {
+  color-scheme: light;
+  --paper: #fdfdfb;
+  --ink: #111111;
+  --ink-2: #3b3b38; /* 11:1 on paper */
+  --ink-3: #5c5c57; /* 6.6:1 on paper — captions and metadata only */
+  --rule: #cfcfc7;
+  --rule-strong: #111111;
+  --tint: #f3f3ee;
+  --accent: #1a3a6b; /* deep ink blue, 11:1 on paper */
+  --accent-ink: #fdfdfb;
+  --accent-tint: #e9edf4;
+  /* Four-step neutral ramp + accent, used for evidence ladders */
+  --ramp-1: #e4e4dd;
+  --ramp-2: #b9b9b1;
+  --ramp-3: #7d7d77;
+  --ramp-4: #3b3b38;
+  --focus: #1a3a6b;
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans Arabic', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Type scale: minor third (1.2) on a 17px base. Dense, legible, reference-grade. */
+  --s--2: 0.7378rem;
+  --s--1: 0.8854rem;
+  --s-0: 1.0625rem;
+  --s-1: 1.275rem;
+  --s-2: 1.53rem;
+  --s-3: 1.836rem;
+  --s-4: clamp(2.1rem, 1.55rem + 2.2vw, 3.05rem);
+  --lh: 1.55;
+  --lh-tight: 1.15;
+  --measure: 39rem;
+
+  --hair: 0.5px;
+  --gap: clamp(1rem, 2vw, 1.75rem);
+  --pad: clamp(1rem, 4.5vw, 4rem);
+  --page-max: 80rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.25rem;
+  --space-7: 3.5rem;
+}
+
+/* Dark edition: warm near-black, paper-cream ink. A different printing, not an inversion. */
+:root[data-scheme='dark'] {
+  color-scheme: dark;
+  --paper: #141412;
+  --ink: #ebe6d8;
+  --ink-2: #cdc7b8;
+  --ink-3: #a59f91;
+  --rule: #3a3833;
+  --rule-strong: #ebe6d8;
+  --tint: #1c1b18;
+  --accent: #a9c0ea;
+  --accent-ink: #141412;
+  --accent-tint: #1e2532;
+  --ramp-1: #2a2925;
+  --ramp-2: #46443e;
+  --ramp-3: #77746b;
+  --ramp-4: #bdb7a8;
+  --focus: #a9c0ea;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) {
+    color-scheme: dark;
+    --paper: #141412;
+    --ink: #ebe6d8;
+    --ink-2: #cdc7b8;
+    --ink-3: #a59f91;
+    --rule: #3a3833;
+    --rule-strong: #ebe6d8;
+    --tint: #1c1b18;
+    --accent: #a9c0ea;
+    --accent-ink: #141412;
+    --accent-tint: #1e2532;
+    --ramp-1: #2a2925;
+    --ramp-2: #46443e;
+    --ramp-3: #77746b;
+    --ramp-4: #bdb7a8;
+    --focus: #a9c0ea;
+  }
+}

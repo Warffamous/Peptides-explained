@@ -17,6 +17,7 @@ const themes = arg('themes', 'a,b,c').split(',');
 const widths = arg('widths', '360,1280').split(',').map(Number);
 const paths = arg('paths', '/en/').split(',');
 const full = flag('full');
+const els = arg('el', '') ? arg('el', '').split('|') : [];
 fs.mkdirSync(out, { recursive: true });
 
 const TYPES = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.json': 'application/json', '.xml': 'application/xml' };
@@ -39,7 +40,13 @@ for (const theme of themes) {
       await page.goto(`http://localhost:4321${p}?${q}`, { waitUntil: 'networkidle' });
       await page.waitForTimeout(150);
       const name = `${theme}-${w}${flag('dark') ? '-dark' : ''}${flag('rtl') ? '-rtl' : ''}-${p.replace(/\//g, '_').replace(/^_|_$/g, '') || 'root'}.png`;
-      await page.screenshot({ path: path.join(out, name), fullPage: full });
+      if (els.length) {
+        for (const [i, sel] of els.entries()) {
+          const loc = page.locator(sel).first();
+          if (await loc.count()) { await loc.scrollIntoViewIfNeeded(); await page.waitForTimeout(400); await loc.screenshot({ path: path.join(out, name.replace('.png', `-el${i}.png`)) }); }
+          else console.log(`  (no element ${sel})`);
+        }
+      } else await page.screenshot({ path: path.join(out, name), fullPage: full });
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       console.log(`${name}${overflow > 0 ? `  ⚠ horizontal overflow ${overflow}px` : ''}`);
     }
