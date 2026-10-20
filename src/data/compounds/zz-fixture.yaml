@@ -1,0 +1,26 @@
+slug: zz-fixture
+tier: 1
+status: complete
+category: experimental
+class: tissue-repair
+body_systems: [musculoskeletal]
+names: { common: Fixture-1, full: Fixture compound, other: [FX-1] }
+molecular: { formula: C3H7NO2, mass_da: 89.09 }
+sequence:
+  display: "Lys-Pro-Val"
+  residues: [Lys, Pro, D-Phe, Aib]
+  n_terminus: Ac
+  c_terminus: NH2
+  source: zz-fixture-src
+evidence: { human_clinical: none, preclinical_volume: moderate, independence: few-groups, safety: uncharacterised }
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-bulk-substances-compounding] }
+  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-prohibited-list] }
+studies:
+  - { id: s1, source: zz-fixture-src, year: 2020, species: rat, n: 40, design: animal, funding: academic, group: originating, controlled: true }
+  - { id: s2, source: zz-fixture-src, year: 2021, species: in-vitro, n: null, design: in-vitro, funding: academic, group: independent }
+  - { id: s3, source: zz-fixture-src, year: 2022, species: human, n: 12, design: case-series, funding: undisclosed, group: independent, controlled: false }
+last_reviewed: 2026-10-20
+reviewed_by: pending-medical-review
