@@ -2,11 +2,15 @@
 /**
  * Design B hero: a bead chain generated from the real sequence. Bead size and colour encode
  * side-chain chemistry; the path is a smooth wave whose phase is seeded by the sequence itself,
- * so every compound's visual is unique and meaningful. Drawn in design phase B.
+ * so every compound's visual is unique and meaningful. Charge is drawn as well as coloured (a + or
+ * − inside the bead), and a plain key under the chain names every colour that appears in it
+ * (docs/EXPLAINERS.md rule 8: no colour whose meaning the reader must guess).
+ * Decorative (aria-hidden), like the key: the sequence printed under it carries the information.
  */
 import type { Residue } from '../../lib/sequence';
-interface Props { residues: Residue[]; seq: unknown; slug: string }
-const { residues } = Astro.props;
+import { t } from '../../lib/i18n';
+interface Props { residues: Residue[]; seq: unknown; slug: string; locale: string }
+const { residues, locale: L } = Astro.props;
 const W = 640, H = 200;
 const n = residues.length;
 const seed = residues.reduce((a, r) => (a * 31 + r.base.charCodeAt(0) + r.base.charCodeAt(2)) % 997, 7);
@@ -18,8 +22,31 @@ const pts = residues.map((r, i) => {
 });
 const d = pts.map((p, i) => `${i ? 'L' : 'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
 const radius = (c: string) => (c === 'aromatic' ? 11 : c === 'special' ? 6 : c === 'nonstandard' ? 9 : 8);
+const charge = (c: string, x: number, y: number, s = 3.6) =>
+  c === 'positive' ? `M ${x - s} ${y} H ${x + s} M ${x} ${y - s} V ${y + s}` : c === 'negative' ? `M ${x - s} ${y} H ${x + s}` : '';
+const ORDER = ['hydrophobic', 'aromatic', 'polar', 'positive', 'negative', 'special', 'nonstandard'] as const;
+const present = ORDER.filter((c) => residues.some((r) => r.cls === c));
+const hasD = residues.some((r) => r.d);
 ---
 <svg class="seq-beads" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet">
   <path class="seq-beads__backbone" d={d} fill="none" />
   {pts.map((p, i) => <circle class:list={['seq-beads__bead', `is-${p.r.cls}`, p.r.d && 'is-d']} style={`--i:${i}`} cx={p.x.toFixed(1)} cy={p.y.toFixed(1)} r={radius(p.r.cls)} />)}
+  {pts.map((p, i) => charge(p.r.cls, p.x, p.y) && <path class="seq-beads__charge" style={`--i:${i}`} d={charge(p.r.cls, p.x, p.y)} />)}
 </svg>
+<ul class="seq-key" role="list" aria-hidden="true">
+  {present.map((c) => (
+    <li class="seq-key__item">
+      <svg class="seq-key__svg" viewBox="0 0 20 20" width="20" height="20" focusable="false">
+        <circle class:list={['seq-key__bead', `is-${c}`]} cx="10" cy="10" r={c === 'special' ? 6 : c === 'aromatic' ? 9.5 : 8} />
+        {charge(c, 10, 10, 3.4) && <path class="seq-key__charge" d={charge(c, 10, 10, 3.4)} />}
+      </svg>
+      {t(L, `compound.sequence.residueKey.${c}`)}
+    </li>
+  ))}
+  {hasD && (
+    <li class="seq-key__item">
+      <svg class="seq-key__svg" viewBox="0 0 20 20" width="20" height="20" focusable="false"><circle class="seq-key__bead is-dform" cx="10" cy="10" r="8" /></svg>
+      {t(L, 'compound.sequence.residueKey.d')}
+    </li>
+  )}
+</ul>

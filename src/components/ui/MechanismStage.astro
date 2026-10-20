@@ -1,19 +1,33 @@
 ---
 /**
- * Design B's scroll-driven mechanism stage. A vertical cell schematic — extracellular space,
- * membrane with receptor, cytoplasm, nucleus, tissue, whole body — on which each causal step
- * appears as a numbered marker in the zone where it happens, joined to the previous step by a link
- * coloured by evidence (cyan = demonstrated, amber = hypothesised).
+ * Design B's scroll-driven mechanism stage. A vertical cell schematic — the peptide outside the
+ * cell, the membrane with its receptor, a signal inside the cell, the nucleus, tissue, the whole
+ * body — on which each causal step appears as a numbered circle in the zone where it happens,
+ * joined to the previous step by a line whose style says how well that link is shown (solid: in
+ * people; dashed: in animals; dotted: in cells; dotted amber to a hollow circle: hypothesised).
  *
- * Vertical on purpose: top-to-bottom is direction-neutral, so the stage never needs mirroring in RTL.
- * Without JavaScript (or with reduced motion) it is a complete static still with every step marked;
- * scripts/scroll-mechanism.ts advances it step by step as the reader scrolls the list beside it.
- * Decorative: the ordered list next to it carries the same information as text.
+ * Every glyph has a word (docs/EXPLAINERS.md rule 8): the zone words sit in a column beside the
+ * drawing with a leader to what they name, the key under it names the line styles and the numbered
+ * circle, and a line under the key says in words what the stage shows now. All words are HTML from
+ * i18n, so they translate and scale; numbers are HTML too (12px or more at every width).
+ *
+ * A dark island in both schemes (.b-dark re-declares B's dark tokens on this subtree).
+ * The canvas is one LTR box (600 × 560 units: a 200-unit word column, then the 400-unit drawing).
+ * Top-to-bottom is direction-neutral and the drawing is symmetric about its centre, so in RTL the
+ * box stays as it is and the words inside it still read right to left.
+ * Without JavaScript (or with reduced motion) it is a complete still with every step marked;
+ * scripts/scroll-mechanism.ts advances it step by step as the reader scrolls the list beside or
+ * below it. Decorative (aria-hidden): the ordered list carries the same information as text.
  */
-interface Props { steps: { kind: string; level: string }[] }
-const { steps } = Astro.props;
+import { t } from '../../lib/i18n';
+import { formatNumber } from '../../lib/format';
+interface Props { steps: { kind: string; level: string; title: string }[]; locale: string }
+const { steps, locale: L } = Astro.props;
 const W = 400;
-const ZONE_Y: Record<string, number> = { binding: 140, signal: 238, cellular: 336, tissue: 434, effect: 520 };
+const H = 560;
+const DX = 200; // the word column
+const CW = DX + W;
+const ZONE_Y: Record<string, number> = { binding: 140, signal: 238, cellular: 336, tissue: 434, effect: 512 };
 const perZone = new Map<string, number>();
 const totals = new Map<string, number>();
 for (const s of steps) totals.set(s.kind, (totals.get(s.kind) ?? 0) + 1);
@@ -21,7 +35,7 @@ const markers = steps.map((s, i) => {
   const j = perZone.get(s.kind) ?? 0;
   perZone.set(s.kind, j + 1);
   const n = totals.get(s.kind)!;
-  const x = W / 2 + (j - (n - 1) / 2) * 52;
+  const x = W / 2 + (j - (n - 1) / 2) * 64; // wide enough that a ringed current pin never covers its neighbour at 360px
   const y = ZONE_Y[s.kind] ?? 300;
   return { i, x, y, level: s.level, kind: s.kind };
 });
@@ -33,54 +47,98 @@ const link = (a: { x: number; y: number }, b: { x: number; y: number }) => {
 };
 const lipids = Array.from({ length: 19 }, (_, k) => 20 + k * 20).filter((x) => x < 160 || x > 240);
 const demonstrated = (lv: string) => lv !== 'hypothesis';
+const k = (key: string) => `compound.mechanism.stage.${key}`;
+const pct = (v: number, of: number) => `${((v / of) * 100).toFixed(2)}%`;
+
+// Words beside the drawing: [i18n key, zone it belongs to, label y, leader target x/y in drawing units].
+const COL_END = 184; // where the words end and the leaders start (canvas units)
+const zoneLabels = [
+  { key: 'peptide', zone: 'binding', y: 52, tx: 141, ty: 52 },
+  { key: 'membrane', zone: 'binding', y: 141, tx: 13, ty: 141 },
+  { key: 'signal', zone: 'signal', y: 238, tx: 152, ty: 258 },
+  { key: 'nucleus', zone: 'cellular', y: 336, tx: 121, ty: 336 },
+  { key: 'tissue', zone: 'tissue', y: 436, tx: 156, ty: 436 },
+  { key: 'body', zone: 'effect', y: 512, tx: 186, ty: 503 },
+];
+// The receptor's word sits inside the drawing, above the membrane and beside the coil.
+const receptor = { x: 246, y: 90, tx: 231, ty: 106 };
+const LEVEL_ORDER = ['human', 'animal', 'in-vitro', 'hypothesis'];
+const levels = LEVEL_ORDER.filter((lv) => steps.slice(1).some((s) => s.level === lv));
+const max = steps.length;
+// The number of the first hypothesised step, shown as the key's sample of a hollow circle (0: none).
+const hypoPin = steps.findIndex((s) => !demonstrated(s.level)) + 1;
+const nowTexts = steps.map((s, i) => t(L, k('now'), { n: formatNumber(L, i + 1), max: formatNumber(L, max), title: s.title }));
+const allText = t(L, k('all'), { n: formatNumber(L, max) });
 ---
-<div class="mechanism-stage" aria-hidden="true" data-steps={steps.length}>
-  <svg class="stage" viewBox={`0 0 ${W} 560`} width={W} height="560" focusable="false">
-    <defs>
-      <filter id="stage-glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="4" result="b" />
-        <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
-      </filter>
-    </defs>
-    <!-- zones -->
-    <g class="stage__zone" data-zone="binding">
-      <g class="stage__ligand">
-        {[0, 1, 2, 3, 4, 5].map((k) => <circle cx={150 + k * 20} cy={52 + Math.sin(k * 1.3) * 9} r={k % 2 ? 6 : 7.5} />)}
-      </g>
-      <g class="stage__membrane">
-        {lipids.map((x) => <><circle cx={x} cy="124" r="5.5" /><line x1={x} y1="130" x2={x} y2="138" /><circle cx={x} cy="158" r="5.5" /><line x1={x} y1="144" x2={x} y2="152" /></>)}
-      </g>
-      <path class="stage__receptor" d="M 166 108 v 62 h 9 v -62 h 9 v 62 h 9 v -62 h 9 v 62 h 9 v -62 h 9 v 62 h 9 v -62" fill="none" />
-    </g>
-    <g class="stage__zone" data-zone="signal">
-      <circle class="stage__node" cx="200" cy="212" r="9" />
-      <circle class="stage__node" cx="160" cy="262" r="7" />
-      <circle class="stage__node" cx="240" cy="262" r="7" />
-      <path class="stage__cascade" d="M 200 221 L 162 255 M 200 221 L 238 255" fill="none" />
-    </g>
-    <g class="stage__zone" data-zone="cellular">
-      <ellipse class="stage__nucleus" cx="200" cy="336" rx="78" ry="40" />
-      <path class="stage__dna" d="M 150 336 q 12 -12 25 0 t 25 0 t 25 0 t 25 0" fill="none" />
-    </g>
-    <g class="stage__zone" data-zone="tissue">
-      {[[170, 420], [200, 404], [230, 420], [170, 452], [200, 468], [230, 452], [200, 436]].map(([x, y]) => (
-        <path class="stage__cell" d={`M ${x} ${y - 15} l 13 7.5 v 15 l -13 7.5 l -13 -7.5 v -15 z`} />
+<div class="mechanism-stage b-dark" aria-hidden="true" data-steps={steps.length} data-now={JSON.stringify(nowTexts)} data-all={allText}>
+  <div class="stage__canvas">
+    <svg class="stage" viewBox={`0 0 ${CW} ${H}`} width={CW} height={H} focusable="false">
+      <!-- leaders from the words to what they name -->
+      {zoneLabels.map((l) => (
+        <g class="stage__lead" data-zone={l.zone}>
+          <path class="stage__leader" d={`M ${COL_END} ${l.y} L ${DX + l.tx - 4} ${l.y === l.ty ? l.y : l.ty}`} fill="none" />
+          <circle class="stage__leader-dot" cx={DX + l.tx - 2} cy={l.ty} r="2.5" />
+        </g>
       ))}
-    </g>
-    <g class="stage__zone" data-zone="effect">
-      <circle class="stage__body" cx="200" cy="500" r="9" />
-      <path class="stage__body" d="M 184 545 q 0 -30 16 -32 q 16 2 16 32" />
-    </g>
-    <!-- causal links and step markers -->
-    {markers.slice(1).map((m) => (
-      <path class:list={['stage__link', demonstrated(m.level) ? 'is-demonstrated' : 'is-hypothesis']} data-step={m.i} data-level={m.level} d={link(markers[m.i - 1], m)} pathLength="1" />
-    ))}
-    {markers.map((m) => (
-      <g class:list={['stage__marker', demonstrated(m.level) ? 'is-demonstrated' : 'is-hypothesis']} data-step={m.i} data-level={m.level} data-kind={m.kind}>
-        <circle class="stage__marker-halo" cx={m.x} cy={m.y} r="19" />
-        <circle class="stage__marker-dot" cx={m.x} cy={m.y} r="13" />
-        <text x={m.x} y={m.y + 4.5} text-anchor="middle">{m.i + 1}</text>
+      <g class="stage__lead" data-zone="binding">
+        <path class="stage__leader" d={`M ${DX + receptor.x - 4} ${receptor.y + 2} L ${DX + receptor.tx} ${receptor.ty - 2}`} fill="none" />
+        <circle class="stage__leader-dot" cx={DX + receptor.tx} cy={receptor.ty - 2} r="2.5" />
       </g>
+      <g transform={`translate(${DX} 0)`}>
+        <!-- zones -->
+        <g class="stage__zone" data-zone="binding">
+          <g class="stage__ligand">
+            {[0, 1, 2, 3, 4, 5].map((j) => <circle cx={150 + j * 20} cy={52 + Math.sin(j * 1.3) * 9} r={j % 2 ? 6 : 7.5} />)}
+          </g>
+          <g class="stage__membrane">
+            {lipids.map((x) => <><circle cx={x} cy="124" r="5.5" /><line x1={x} y1="130" x2={x} y2="138" /><circle cx={x} cy="158" r="5.5" /><line x1={x} y1="144" x2={x} y2="152" /></>)}
+          </g>
+          <path class="stage__receptor" d="M 169 108 v 62 h 9 v -62 h 9 v 62 h 9 v -62 h 9 v 62 h 9 v -62 h 9 v 62 h 9 v -62" fill="none" />
+        </g>
+        <g class="stage__zone" data-zone="signal">
+          <circle class="stage__node" cx="200" cy="212" r="9" />
+          <circle class="stage__node" cx="160" cy="262" r="7" />
+          <circle class="stage__node" cx="240" cy="262" r="7" />
+          <path class="stage__cascade" d="M 200 221 L 162 255 M 200 221 L 238 255" fill="none" />
+        </g>
+        <g class="stage__zone" data-zone="cellular">
+          <ellipse class="stage__nucleus" cx="200" cy="336" rx="78" ry="40" />
+          <path class="stage__dna" d="M 150 336 q 12 -12 25 0 t 25 0 t 25 0 t 25 0" fill="none" />
+        </g>
+        <g class="stage__zone" data-zone="tissue">
+          {[[170, 420], [200, 404], [230, 420], [170, 452], [200, 468], [230, 452], [200, 436]].map(([x, y]) => (
+            <path class="stage__cell" d={`M ${x} ${y - 15} l 13 7.5 v 15 l -13 7.5 l -13 -7.5 v -15 z`} />
+          ))}
+        </g>
+        <g class="stage__zone" data-zone="effect">
+          <circle class="stage__body" cx="200" cy="500" r="9" />
+          <path class="stage__body" d="M 184 545 q 0 -30 16 -32 q 16 2 16 32" />
+        </g>
+        <!-- causal links: line style by evidence level -->
+        {markers.slice(1).map((m) => (
+          <path class:list={['stage__link', demonstrated(m.level) ? 'is-demonstrated' : 'is-hypothesis']} data-step={m.i} data-level={m.level} d={link(markers[m.i - 1], m)} />
+        ))}
+      </g>
+    </svg>
+    {zoneLabels.map((l) => (
+      <span class="stage__label" data-zone={l.zone} style={`--x:0%;--y:${pct(l.y, H)};--w:${pct(COL_END - 6, CW)}`}><bdi>{t(L, k(l.key))}</bdi></span>
     ))}
-  </svg>
+    <span class="stage__label" data-zone="binding" data-align="start" style={`--x:${pct(DX + receptor.x, CW)};--y:${pct(receptor.y, H)};--w:${pct(CW - DX - receptor.x, CW)}`}><bdi>{t(L, k('receptor'))}</bdi></span>
+    {markers.map((m) => (
+      <span class:list={['stage__pin', demonstrated(m.level) ? 'is-demonstrated' : 'is-hypothesis']} data-step={m.i} data-level={m.level} style={`--x:${pct(DX + m.x, CW)};--y:${pct(m.y, H)}`}>{formatNumber(L, m.i + 1)}</span>
+    ))}
+  </div>
+  <ul class="stage-key" role="list">
+    <li class="stage-key__item"><span class="stage-key__pin">{formatNumber(L, 1)}</span>{t(L, k('keyPin'))}</li>
+    {hypoPin > 0 && <li class="stage-key__item stage-key__item--pin"><span class="stage-key__pin is-hypothesis">{formatNumber(L, hypoPin)}</span>{t(L, k('keyPinHypothesis'))}</li>}
+    <li class="stage-key__item stage-key__lead">{t(L, k('keyLines'))}</li>
+    {levels.map((lv) => (
+      <li class="stage-key__item">
+        <svg class="stage-key__line" data-level={lv} viewBox="0 0 32 12" width="32" height="12" focusable="false"><path d="M 2 6 H 30" /></svg>
+        {lv === 'hypothesis' && <span class="stage-key__ring" />}
+        {t(L, `evidence.mechanismLevels.${lv}.short`)}
+      </li>
+    ))}
+  </ul>
+  <p class="stage-now">{allText}</p>
 </div>

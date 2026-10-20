@@ -1,10 +1,12 @@
 @import "../../base/media.css";
 
 /*
- * C · Public Health — photographs in full colour, flat, with a solid high-contrast caption block
- * (never text on top of a picture). Atlas plates use the pictogram vocabulary's language: big
- * solid teal discs with white numbers on the art, the same discs in the key, 19px labels, and the
- * key drops below the picture on phones and at 200% zoom. No filters, no shadows, no motion.
+ * C · Public Health — photographs in full colour, flat, with a quiet caption panel (never text on
+ * top of a picture). Atlas plates use the pictogram vocabulary's language: big solid slate discs
+ * (--plate-mark, the light-scheme slate in both schemes, because plates always sit on white art)
+ * with white numbers on the art, the same discs in the key, 19px labels, and the key drops below
+ * the picture on phones and at 200% zoom. In the dark scheme the white art panel is dimmed to about
+ * 86% and framed with a hairline, never a bright slab. No shadows, no motion.
  */
 
 /* ------------------------------------------------------------------ photos */
@@ -15,12 +17,11 @@
   color: var(--text);
   border-end-start-radius: var(--radius);
   border-end-end-radius: var(--radius);
-  border-block-end: 3px solid var(--primary);
 }
 .hero__text, .photo__text { font-size: var(--s--1); line-height: 1.5; font-weight: 600; }
 .media-credit { font-size: var(--s--1); color: var(--text-2); }
 .media-credit a { color: var(--text); text-underline-offset: 0.15em; }
-.media-credit a:hover { color: var(--primary); }
+.media-credit a:hover { color: var(--link-hover); }
 .hero__caption .media-credit, .photo__caption .media-credit { display: block; }
 
 /* ------------------------------------------------------------------ page photo */
@@ -38,15 +39,16 @@
   margin: var(--space-3) 0 var(--space-6);
   padding: var(--space-4);
   background: var(--surface);
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
 }
 .plate__title { font-size: var(--s-1); font-weight: 700; line-height: 1.3; margin-block-end: var(--space-4); }
-.plate__art { border-radius: var(--radius); overflow: hidden; background: #ffffff; border: 2px solid var(--line); }
-.plate__halo { fill: #ffffff; }
+.plate__art { border-radius: var(--radius); overflow: hidden; background: var(--plate-bg); border: 1px solid var(--line); }
+.plate__img { filter: var(--plate-filter); }
+.plate__halo { fill: var(--plate-bg); }
 .plate__marker { transform: scale(calc(1.2 + var(--on) * 0.2)); }
-.plate__dot { fill: #00695c; stroke: #ffffff; stroke-width: 2.5px; vector-effect: non-scaling-stroke; }
-.plate__n { fill: #ffffff; font-family: var(--font-sans); font-weight: 700; }
+.plate__dot { fill: var(--plate-mark); stroke: var(--plate-bg); stroke-width: 2.5px; vector-effect: non-scaling-stroke; }
+.plate__n { fill: var(--plate-mark-ink); font-family: var(--font-sans); font-weight: 700; }
 
 .plate__key-title { font-size: var(--s-1); font-weight: 700; margin-block-end: var(--space-3); }
 .plate ol.plate__legend { gap: var(--space-4); }
@@ -57,16 +59,16 @@
   block-size: var(--tap);
   border-radius: 50%;
   /* The same disc as the marker on the art (which always sits on a white panel), in both schemes. */
-  background: #00695c;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  background: var(--plate-mark);
+  color: var(--plate-mark-ink);
+  border: 2px solid var(--plate-bg);
   font-weight: 700;
   font-size: var(--s-1);
 }
 .plate__item:hover .plate__num { outline: 3px solid var(--text); outline-offset: 2px; }
 .plate__label-text { font-weight: 700; }
 .plate__detail { color: var(--text-2); }
-.plate__words { margin-block-start: var(--space-5); border-block-start: 2px solid var(--line); padding-block-start: var(--space-3); }
+.plate__words { margin-block-start: var(--space-5); border-block-start: 1px solid var(--line); padding-block-start: var(--space-3); }
 /* Stays a list item so the native disclosure triangle (direction-aware in RTL) shows it can open. */
 .plate__words-summary { display: list-item; min-block-size: var(--tap); padding-block: 0.6rem; font-weight: 700; color: var(--primary); }
 .plate__words-text { margin-block-start: var(--space-2); }
@@ -79,7 +81,7 @@
 .media-credits__title { font-size: var(--s-3); font-weight: 700; line-height: 1.2; margin-block-end: var(--space-4); }
 .media-credits__intro { max-inline-size: var(--measure); margin-block-end: var(--space-3); }
 .media-credits ul.media-credits__list { margin-block-start: var(--space-5); }
-.media-credits__item { padding: var(--space-4); background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius); }
+.media-credits__item { padding: var(--space-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 .media-credits__thumb { border-radius: var(--radius); overflow: hidden; }
 .media-credits__shows { font-weight: 600; margin-block-end: var(--space-2); }
 .media-credits__kind { color: var(--primary); font-weight: 700; }

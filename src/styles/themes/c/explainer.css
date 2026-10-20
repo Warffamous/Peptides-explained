@@ -2,8 +2,11 @@
  * Design C — animated explainers. Public-information plainness: flat, bold, pictogram-like shapes,
  * thick strokes, the fine anatomical detail left out. Motion is the simplest there is: things
  * appear where they belong, a few molecules slide a short way, the active part gives one beat.
- * Teal for the medicine and its proven effects; alert red ONLY for the "too low" zone and the
- * warning mark (stop-now safety content). Big numbered pins, 44px controls, 19px captions.
+ * Slate for the medicine and its effects; evidence lines in the one-hue --level-* ramp on top of
+ * their line pattern (solid = people, long dashes = animals or cells, short dashes = an idea), so
+ * the pattern and the printed key carry the level, never the colour alone. Green only on the "yes"
+ * tick in a label; alert red ONLY for the "too low" zone and the warning mark (stop-now safety
+ * content). Big numbered pins, 44px controls, 19px captions, no word on the drawing below 14px.
  */
 @import "../../base/explainer.css";
 
@@ -21,7 +24,7 @@
   --xp-cur-n-bg: var(--primary-dark);
   margin-block: var(--space-5) var(--space-6);
   padding: var(--space-4);
-  border: 2px solid var(--line);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
 }
@@ -51,9 +54,11 @@
 .xp-art .xp-hot { fill: var(--primary); }
 .xp-art .xp-glow { filter: none; }
 .xp-art .xp-arrow { stroke: var(--text); stroke-width: 4; }
-.xp-art .xp-link, .xp-key .xp-link { stroke: var(--primary); stroke-width: 4; }
+.xp-art .xp-link, .xp-key .xp-link { stroke: var(--level-human); stroke-width: 4; }
 .xp-art .xp-link:is([data-level='animal'], [data-level='in-vitro']), .xp-key .xp-link:is([data-level='animal'], [data-level='in-vitro']) { stroke-dasharray: 10 6; }
-.xp-art .xp-link[data-level='hypothesis'], .xp-key .xp-link[data-level='hypothesis'] { stroke: var(--text-2); stroke-dasharray: 3 7; }
+.xp-art .xp-link[data-level='animal'], .xp-key .xp-link[data-level='animal'] { stroke: var(--level-animal); }
+.xp-art .xp-link[data-level='in-vitro'], .xp-key .xp-link[data-level='in-vitro'] { stroke: var(--level-cells); }
+.xp-art .xp-link[data-level='hypothesis'], .xp-key .xp-link[data-level='hypothesis'] { stroke: var(--level-hypothesis); stroke-dasharray: 3 7; }
 .xp-key .xp-link { stroke-width: 3; }
 .xp-art .xp-zone { fill: var(--primary-tint); }
 .xp-art .xp-danger { fill: var(--alert-tint); }
@@ -70,10 +75,10 @@
 
 /* overlays: big round numbered pins, bold labels on a solid ground */
 .xp-pin { border-radius: 50%; background: var(--primary); color: var(--primary-ink); font-size: clamp(0.85rem, 3.4cqi, 1.1rem); box-shadow: 0 0 0 3px var(--surface); }
-.xp-label { font-size: clamp(0.85rem, 3.3cqi, 1.0625rem); font-weight: 700; color: var(--text); background: var(--bg); padding-inline: 0.2em; border-radius: 3px; }
+.xp-label { font-size: clamp(0.875rem, 3.3cqi, 1.0625rem); font-weight: 700; color: var(--text); background: var(--bg); padding-inline: 0.2em; border-radius: 3px; }
 .xp-panel__art .xp-label { font-size: clamp(0.875rem, 4.4cqi, 1.0625rem); background: none; padding-inline: 0; }
 .xp-label:is([data-tone='zone'], [data-tone='axis']) { font-weight: 600; }
-.xp-lico[data-icon='check'] { color: var(--primary); }
+.xp-lico[data-icon='check'] { color: var(--positive); }
 .xp-lico[data-icon='check'] .xp-lico__line { stroke-width: 3; }
 .xp-lico[data-icon='warn'] { color: var(--alert); }
 .xp-lico[data-icon='warn'] :is(.xp-lico__mark, .xp-lico__dot) { stroke: var(--alert-ink); fill: var(--alert-ink); }
@@ -90,9 +95,10 @@
 .xp-now__n { display: inline-grid; place-items: center; inline-size: 1.7em; block-size: 1.7em; margin-inline-end: 0.35em; border-radius: 50%; background: var(--primary); color: var(--primary-ink); font-size: var(--s-0); font-weight: 700; vertical-align: 0.05em; }
 
 /* controls: 44px targets, primary action filled */
-.xp-btn { min-block-size: var(--tap); padding: 0.35rem 1rem; border: 2px solid var(--primary); border-radius: var(--radius); background: var(--surface); color: var(--primary); font-size: var(--s-0); font-weight: 700; }
-.xp-btn--toggle { background: var(--primary); color: var(--primary-ink); }
-.xp-btn:focus-visible { background-color: var(--focus-ring); color: #0b0c0c; border-color: #0b0c0c; }
+.xp-btn { min-block-size: var(--tap); padding: 0.35rem 1rem; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--surface); color: var(--text); font-size: var(--s-0); font-weight: 700; }
+.xp-btn:hover { background: var(--surface-2); }
+.xp-btn--toggle, .xp-btn--toggle:hover { background: var(--primary-fill); border-color: var(--primary); color: var(--primary-fill-ink); }
+.xp-btn:focus-visible { background-color: var(--focus-ring); color: var(--focus-ink); border-color: var(--focus-ink); }
 .xp-btn .xp-ico { inline-size: 1.1em; block-size: 1.1em; }
 .xp-progress { block-size: 8px; flex-basis: 100%; }
 .xp-seg { border-radius: 4px; background: var(--line); }
@@ -101,10 +107,10 @@
 
 /* the step list: numbered like a public-information leaflet */
 .xp-steps { gap: var(--space-3); }
-.xp-step { gap: 0 var(--space-3); padding: var(--space-3); border: 2px solid var(--line); border-inline-start-width: 6px; border-radius: var(--radius); }
+.xp-step { gap: 0 var(--space-3); padding: var(--space-3); border: 1px solid var(--line); border-inline-start-width: 6px; border-radius: var(--radius); }
 .xp-step__n { display: grid; place-items: center; inline-size: 2.2rem; block-size: 2.2rem; border-radius: 50%; background: var(--primary); color: var(--primary-ink); font-weight: 700; }
 .xp-step__text { font-size: var(--s-0); line-height: 1.5; color: var(--text); }
-.xp-step__pg .pictogram { inline-size: 1.6em; block-size: 1.6em; vertical-align: -0.4em; margin-inline-end: 0.35em; color: var(--primary); }
+.xp-step__pg .pictogram { inline-size: 1.6em; block-size: 1.6em; vertical-align: -0.4em; margin-inline-end: 0.35em; color: var(--text); }
 .xp-step__levels { margin-block-start: var(--space-2); font-size: var(--s--1); }
 .xp-summary { font-size: var(--s-0); padding: var(--space-3); background: var(--primary-tint); border-radius: var(--radius); }
 .xp-legend { font-size: var(--s--1); color: var(--text-2); }

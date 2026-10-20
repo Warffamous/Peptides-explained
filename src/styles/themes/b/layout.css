@@ -21,10 +21,9 @@ a:hover { text-decoration-thickness: 2px; }
 /* ------------------------------------------------------------------ header */
 .site-header {
   position: relative;
-  background: linear-gradient(180deg, rgb(77 208 225 / 0.06), transparent 70%);
+  background: var(--ground);
   border-block-end: 1px solid var(--line);
 }
-:root[data-scheme='light'] .site-header { background: linear-gradient(180deg, rgb(0 114 124 / 0.06), transparent 70%); }
 .site-header__inner {
   display: flex;
   flex-wrap: wrap;
@@ -39,7 +38,7 @@ a:hover { text-decoration-thickness: 2px; }
 .brand-mark { inline-size: 2rem; block-size: 2rem; }
 .brand-mark__bond { stroke: var(--line-strong); stroke-width: 2; }
 .brand-mark__res { fill: var(--res-hydrophobic); }
-.brand-mark__res--accent { fill: var(--cyan); filter: drop-shadow(0 0 4px var(--cyan)); }
+.brand-mark__res--accent { fill: var(--cyan); }
 .utility-nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-size: var(--s--1); }
 .utility-nav__alert, .utility-nav__search, .site-tools__open {
   display: inline-flex;
@@ -47,16 +46,18 @@ a:hover { text-decoration-thickness: 2px; }
   gap: 0.4em;
   min-block-size: 2.5rem;
   padding-inline: 0.85rem;
-  border-radius: 999px;
+  border-radius: var(--radius);
   color: var(--text);
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--line);
-  transition: border-color 0.2s var(--ease), transform 0.3s var(--spring);
+  transition: border-color 0.2s var(--ease);
 }
-:is(.utility-nav__alert, .utility-nav__search, .site-tools__open):hover { border-color: var(--line-strong); transform: translateY(-1px); }
-.utility-nav__alert { color: var(--alert) !important; border-color: color-mix(in srgb, var(--alert) 40%, var(--line)) !important; }
-.utility-nav a[aria-current] { border-color: var(--link); }
+:is(.utility-nav__alert, .utility-nav__search, .site-tools__open):hover { border-color: var(--line-strong); }
+/* "Warning signs": ink words with a small alert glyph. Red is kept for the stop-now content it leads to. */
+.utility-nav__alert { font-weight: 600; }
+.utility-nav__alert .icon { color: var(--alert); }
+.utility-nav a[aria-current] { border-color: var(--text); }
 .utility-nav .icon { inline-size: 1.05em; block-size: 1.05em; }
 
 .disclosure__summary {
@@ -65,13 +66,13 @@ a:hover { text-decoration-thickness: 2px; }
   gap: 0.4em;
   min-block-size: 2.5rem;
   padding-inline: 0.85rem;
-  border-radius: 999px;
+  border-radius: var(--radius);
   background: var(--surface);
   border: 1px solid var(--line);
   font-size: var(--s--1);
 }
 .disclosure__summary .icon { inline-size: 1.05em; block-size: 1.05em; }
-.disclosure[open] > .disclosure__summary { border-color: var(--link); }
+.disclosure[open] > .disclosure__summary { border-color: var(--text); }
 .disclosure__panel {
   position: absolute;
   inset-block-start: calc(100% + 8px);
@@ -79,30 +80,35 @@ a:hover { text-decoration-thickness: 2px; }
   z-index: 50;
   min-inline-size: 15rem;
   padding: var(--space-2);
-  background: var(--surface-2);
-  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: 0 24px 48px rgb(0 0 0 / 0.35);
+  box-shadow: var(--shadow-raised);
 }
 .disclosure__panel a { display: block; padding: 0.55rem 0.8rem; border-radius: var(--radius-sm); color: var(--text); text-decoration: none; font-size: var(--s--1); }
-.disclosure__panel a:hover { background: var(--surface); }
+.disclosure__panel a:hover { background: var(--surface-2); }
 .disclosure__panel a[aria-current] { background: var(--cyan-soft); color: var(--text); }
 .lang-switch__note { display: block; color: var(--text-3); font-size: var(--s--2); }
-.theme-switch__current { font-family: var(--font-mono); font-weight: 600; color: var(--cyan); }
-.scheme-toggle { display: inline-grid; place-items: center; inline-size: 2.5rem; block-size: 2.5rem; padding: 0; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.theme-switch__current { font-weight: 700; color: var(--text); }
+.scheme-toggle { display: inline-grid; place-items: center; inline-size: 2.5rem; block-size: 2.5rem; padding: 0; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
 .scheme-toggle .icon { inline-size: 1.1rem; block-size: 1.1rem; }
-.scheme-toggle__light { display: none; }
-:root[data-scheme='light'] .scheme-toggle__light { display: block; }
-:root[data-scheme='light'] .scheme-toggle__dark { display: none; }
+/* The icon shows the scheme in use: the sun in light, the moon in dark (chosen or from the system). */
+.scheme-toggle__dark { display: none; }
+:root[data-scheme='dark'] .scheme-toggle__light { display: none; }
+:root[data-scheme='dark'] .scheme-toggle__dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) .scheme-toggle__light { display: none; }
+  :root:not([data-scheme='light']) .scheme-toggle__dark { display: block; }
+}
 
 .primary-nav { max-inline-size: var(--wide); margin-inline: auto; padding-inline: var(--pad); }
-.primary-nav__list { display: flex; gap: var(--space-1); overflow-x: auto; scrollbar-width: none; padding-block: var(--space-2) var(--space-3); }
-.primary-nav__list::-webkit-scrollbar { display: none; }
+/* Never a sideways-scrolling strip cut mid-word: the items wrap (two rows on a phone). */
+.primary-nav__list { display: flex; flex-wrap: wrap; gap: var(--space-1); padding-block: var(--space-2) var(--space-3); }
 .primary-nav__item a {
   display: block;
   white-space: nowrap;
   padding: 0.45rem 0.9rem;
-  border-radius: 999px;
+  border-radius: var(--radius);
   color: var(--text-2);
   text-decoration: none;
   font-size: var(--s--1);
@@ -110,7 +116,7 @@ a:hover { text-decoration-thickness: 2px; }
   transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 .primary-nav__item a:hover { color: var(--text); background: var(--surface); }
-.primary-nav__item a[aria-current] { color: var(--text); background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line-strong); }
+.primary-nav__item a[aria-current] { color: var(--text); font-weight: 600; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--line); }
 
 /* ------------------------------------------------------------------ body */
 .site-body { padding-inline: var(--pad); }
@@ -142,6 +148,12 @@ a:hover { text-decoration-thickness: 2px; }
   .doc > :is(.doc-header, .doc-review) { grid-column: wide-start / text-end; }
   .doc:has(> .hero) > :is(.doc-header, .doc-review) { margin-inline-end: calc(var(--hero-pull) + var(--space-6)); }
   .doc > .hero { grid-column: text-end / wide-end; margin-inline-start: calc(-1 * var(--hero-pull)); }
+  /* The photo spans the title row and the review row. A flexible second row takes the photo's extra
+     height, so the review line follows the badge directly instead of floating below an empty band. */
+  .doc:has(> .hero):has(> .doc-header:first-child) { grid-template-rows: auto 1fr; }
+  /* With a notice above the title (translation, fallback, opinion) the flexible row moves down one. */
+  .doc:has(> .hero):has(> :first-child + .doc-header) { grid-template-rows: auto auto 1fr; }
+  .doc:has(> .hero):has(> :first-child + * + .doc-header) { grid-template-rows: auto auto auto 1fr; }
 }
 .prose { display: grid; grid-template-columns: subgrid; grid-column: full; }
 .prose > *, .csec > * { grid-column: text; min-inline-size: 0; }
@@ -153,21 +165,23 @@ a:hover { text-decoration-thickness: 2px; }
 .independence-marker a {
   display: inline-flex;
   padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--cyan);
   background: var(--ground);
   color: var(--text);
   text-decoration: none;
   font-size: var(--s--1);
   font-weight: 500;
 }
-.independence-marker a:hover { border-color: var(--cyan); }
+.independence-marker a:hover { border-color: var(--line-strong); border-inline-start-color: var(--cyan); }
 .site-footer__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: var(--space-6); }
 .site-footer__heading { font-size: var(--s--1); font-weight: 600; color: var(--text); margin-block-end: var(--space-3); }
 .site-footer__col li { margin-block: 0.35rem; }
 .site-footer__col a { color: var(--text-2); text-decoration: none; font-size: var(--s--1); }
 .site-footer__col a:hover { color: var(--text); }
-.site-footer__privacy, .site-footer__notice { font-size: var(--s--1); color: var(--text-3); max-inline-size: var(--measure); }
+/* Running sentences ("Information only, not medical advice…"): body text, so AAA (--text-2, 9:1+), not metadata grey. */
+.site-footer__privacy, .site-footer__notice { font-size: var(--s--1); color: var(--text-2); max-inline-size: var(--measure); }
 
 .root-chooser { max-inline-size: 30rem; margin: 18vh auto; padding-inline: var(--pad); }
 .root-chooser h1 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; margin-block-end: var(--space-5); }
@@ -183,21 +197,21 @@ a:hover { text-decoration-thickness: 2px; }
 .site-tools__open .icon, .site-tools__close .icon { inline-size: 1.1rem; block-size: 1.1rem; }
 .site-tools:popover-open {
   padding: var(--space-4) var(--pad) var(--space-5);
-  background: var(--surface-2);
+  background: var(--surface);
   color: var(--text);
   border: 0;
-  border-block-end: 1px solid var(--line-strong);
+  border-block-end: 1px solid var(--line);
   border-end-start-radius: var(--radius);
   border-end-end-radius: var(--radius);
-  box-shadow: 0 24px 48px rgb(0 0 0 / 0.45);
+  box-shadow: var(--shadow-raised);
   font-size: var(--s-0);
   transition: transform 0.5s var(--spring), opacity 0.25s var(--ease), overlay 0.5s allow-discrete, display 0.5s allow-discrete;
 }
 @starting-style { .site-tools:popover-open { transform: translateY(-1.5rem); opacity: 0; } }
-.site-tools::backdrop { background: rgb(4 7 12 / 0.6); }
+.site-tools::backdrop { background: var(--backdrop); }
 .site-tools__head { margin-block-end: var(--space-2); }
-.site-tools__title { font-size: var(--s--1); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-2); }
-.site-tools__close { display: inline-grid; place-items: center; inline-size: 2.75rem; block-size: 2.75rem; padding: 0; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--text); }
+.site-tools__title { font-size: var(--s--1); font-weight: 600; color: var(--text-2); }
+.site-tools__close { display: inline-grid; place-items: center; inline-size: 2.75rem; block-size: 2.75rem; padding: 0; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
 .site-tools:popover-open > .utility-nav__search,
 .site-tools:popover-open .disclosure__summary,
 .site-tools:popover-open .scheme-toggle {
@@ -217,7 +231,7 @@ a:hover { text-decoration-thickness: 2px; }
   text-align: start;
   transform: none;
 }
-.site-tools:popover-open .disclosure__panel { margin-block-start: var(--space-1); padding: var(--space-1); background: var(--ground); border-color: var(--line); }
+.site-tools:popover-open .disclosure__panel { margin-block-start: var(--space-1); padding: var(--space-1); background: var(--ground); border-color: var(--line); box-shadow: none; }
 .site-tools:popover-open .disclosure__panel a { font-size: var(--s-0); }
 
 /* Phones and small tablets (up to 600px): the brand sets on two lines so brand, "Warning signs"
@@ -226,6 +240,9 @@ a:hover { text-decoration-thickness: 2px; }
    stays "Menu"). Below about 330px (high zoom) the tools wrap under the brand rather than scroll
    sideways. */
 @media (max-width: 37.49rem) {
+  /* Two rows of nav items at 360px: tighter chips, nothing cut. */
+  .primary-nav__list { gap: 2px; padding-block: var(--space-1) var(--space-2); }
+  .primary-nav__item a { padding-inline: 0.45rem; }
   .site-header__inner { gap: var(--space-2) var(--space-3); }
   .brand { line-height: 1.1; }
   .brand__name { inline-size: min-content; }

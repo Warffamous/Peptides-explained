@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 4321
+    },
+    {
+      "name": "peptides-a2-mockup",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:/dev/Peptides-explained-a2", "run", "dev", "--", "--port", "4322"],
+      "port": 4322
     }
   ]
 }

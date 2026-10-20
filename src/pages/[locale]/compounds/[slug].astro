@@ -124,7 +124,7 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
 >
   <Fragment slot="header">
     <p class="compound-badge" data-category={data.category}>
-      <ThemeOnly theme="c" as="span" class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></ThemeOnly>
+      <ThemeOnly theme="b c" as="span" class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></ThemeOnly>
       {t(locale, badgeKey)}
     </p>
   </Fragment>

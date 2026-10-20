@@ -17,7 +17,7 @@ const L = c.locale;
   <figcaption class="mechanism__caption" id="mechanism-caption">{t(L, 'compound.mechanism.caption')}</figcaption>
   <p class="mechanism__legend">{t(L, 'compound.mechanism.legend')}</p>
   <div class="mechanism__body">
-    <ThemeOnly theme="b" class="mechanism__stage-wrap"><MechanismStage steps={steps} /></ThemeOnly>
+    <ThemeOnly theme="b" class="mechanism__stage-wrap"><MechanismStage steps={steps} locale={L} /></ThemeOnly>
     <ol class="mechanism__steps" role="list">
       {steps.map((s, i) => (
         <li class="mechanism__step" data-kind={s.kind} data-level={s.level} data-step={i} style={`--i:${i}`}>

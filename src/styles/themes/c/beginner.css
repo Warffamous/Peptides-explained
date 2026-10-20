@@ -3,9 +3,10 @@
 /*
  * C · Public Health — the beginner layer. Designed at 360px first: one answer per block, a big
  * Isotype figure and a big word for each, 19px text and up, nothing that needs a hover.
- * Teal is the only colour here. The alert red is never used in this layer: it is reserved for
- * stop-now content. "Not yet shown / not approved" answers get a dashed frame, as the status badge
- * does, so the difference never depends on colour.
+ * Pictograms are ink. Colour on a pictogram means something: green for "yes", ochre for "take care /
+ * partly / unknown". The alert red is never used in this layer: it is reserved for stop-now content.
+ * "Not yet shown / not approved" answers get a dashed frame, as the status badge does, so the
+ * difference never depends on colour. The summary card is the one calm highlighter on the page.
  */
 
 /*
@@ -23,11 +24,14 @@
 .at-a-glance__title { margin-block-end: var(--space-3); font-size: var(--s-2); font-weight: 700; line-height: 1.2; }
 .at-a-glance__tiles { gap: var(--space-3); }
 @container doc (min-width: 36rem) { .at-a-glance__tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.at-a-glance__tile { gap: var(--space-3); padding: var(--space-4); border: 3px solid var(--text); border-radius: var(--radius); background: var(--surface); }
-.at-a-glance__tile:is([data-tone='partial'], [data-tone='no']) { border-style: dashed; }
+.at-a-glance__tile { gap: var(--space-3); padding: var(--space-4); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.at-a-glance__tile:is([data-tone='partial'], [data-tone='no']) { border: 2px dashed var(--line-strong); }
 .at-a-glance__q { font-size: var(--s-0); font-weight: 700; line-height: 1.3; }
 .at-a-glance__a { gap: var(--space-4); }
-.at-a-glance__icon { color: var(--primary); }
+.at-a-glance__icon { color: var(--text); }
+.at-a-glance__tile[data-tone='yes'] .at-a-glance__icon { color: var(--positive); }
+/* Take care: a partial answer, the biggest-risk tile, and a sport status we could not confirm. */
+.at-a-glance__tile:is([data-tone='partial'], [data-q='risk'], [data-q='sport']:has(.at-a-glance__more)) .at-a-glance__icon { color: var(--caution); }
 .at-a-glance__icon .pictogram { inline-size: 3.25rem; block-size: 3.25rem; }
 .at-a-glance__short { font-size: var(--s-2); font-weight: 800; line-height: 1.1; }
 .at-a-glance__text { font-size: var(--s-0); line-height: 1.45; }
@@ -41,18 +45,18 @@
   --pg-cut: var(--primary-tint);
   margin-block-end: var(--space-6);
   padding: var(--space-5) var(--space-4);
-  border: 3px solid var(--primary);
-  border-inline-start-width: 10px;
+  border: 0;
+  border-inline-start: 6px solid var(--primary);
   border-radius: var(--radius);
   background: var(--primary-tint);
 }
 @container doc (min-width: 34rem) { .summary-box { padding: var(--space-5) var(--space-6) var(--space-6); } }
 .summary-box__head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-2) var(--space-3); margin-block-end: var(--space-5); }
-.summary-box__icon { color: var(--primary); }
+.summary-box__icon { color: var(--text); }
 .summary-box__icon .pictogram { inline-size: 3rem; block-size: 3rem; }
 .summary-box__title { font-size: var(--s-3); font-weight: 700; line-height: 1.15; }
 .summary-box__time { grid-column: 1 / -1; font-size: var(--s-0); font-weight: 600; }
-.summary-box__time-icon { color: var(--primary); }
+.summary-box__time-icon { color: var(--text); }
 .summary-box__time-icon .pictogram { inline-size: 1.9rem; block-size: 1.9rem; }
 .summary-box__list { gap: var(--space-4); font-size: var(--s-1); line-height: 1.5; }
 .summary-box__item { column-gap: var(--space-3); }
@@ -74,5 +78,5 @@
 @media (max-width: 29.99rem) { .summary-box__head { margin-block-end: var(--space-4); } }
 
 /* ------------------------------------------------------------------ technical details */
-.compound-tech { padding: var(--space-4) var(--space-5) var(--space-5); border: 3px solid var(--text); border-radius: var(--radius); background: var(--surface); }
+.compound-tech { padding: var(--space-4) var(--space-5) var(--space-5); border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 .compound-tech__title { margin-block-end: var(--space-2); font-size: var(--s-2); font-weight: 700; line-height: 1.2; }

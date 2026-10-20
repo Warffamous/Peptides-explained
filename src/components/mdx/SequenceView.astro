@@ -29,7 +29,7 @@ const residues = seq ? parseResidues(seq.residues) : [];
     {visual && (
       <>
         <ThemeOnly theme="a" class="sequence__visual sequence__visual--line"><SequenceLine residues={residues} seq={seq} /></ThemeOnly>
-        <ThemeOnly theme="b" class="sequence__visual sequence__visual--beads"><SequenceBeads residues={residues} seq={seq} slug={slug} /></ThemeOnly>
+        <ThemeOnly theme="b" class="sequence__visual sequence__visual--beads"><SequenceBeads residues={residues} seq={seq} slug={slug} locale={L} /></ThemeOnly>
       </>
     )}
     <p class="sequence__text"><bdi class="seq" dir="ltr" translate="no"><span class="sequence__term">{seq.n_terminus}–</span>{seq.display}<span class="sequence__term">–{seq.c_terminus}</span></bdi></p>

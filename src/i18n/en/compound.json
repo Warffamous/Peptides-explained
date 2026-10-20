@@ -39,6 +39,16 @@
     "dIsomer": "D-form (mirror-image) amino acid",
     "nonstandard": "non-standard amino acid",
     "readAs": "Read from the N-terminus (start) to the C-terminus (end).",
+    "residueKey": {
+      "hydrophobic": "Oily (avoids water)",
+      "aromatic": "Oily, with a ring",
+      "polar": "Water-loving",
+      "positive": "Charged +",
+      "negative": "Charged −",
+      "special": "Glycine or proline (shapes the chain)",
+      "nonstandard": "Not one of the 20 usual amino acids",
+      "d": "Mirror-image form (D-form)"
+    },
     "structure2d": "Two-dimensional structure"
   },
   "authorised": {
@@ -94,7 +104,21 @@
     "step": "Step {n}",
     "levelLabel": "How well this link is shown",
     "legend": "Each step is labelled with how well the link from the previous step is established.",
-    "textAlternative": "The diagram shows the same steps as this list."
+    "textAlternative": "The diagram shows the same steps as this list.",
+    "stage": {
+      "peptide": "Peptide",
+      "membrane": "Cell membrane",
+      "receptor": "Receptor",
+      "signal": "Signal inside the cell",
+      "nucleus": "Cell nucleus",
+      "tissue": "Tissue (many cells)",
+      "body": "Whole body",
+      "keyPin": "Step number, as in the list",
+      "keyPinHypothesis": "Hollow circle: this step is only hypothesised",
+      "keyLines": "Line to the next step, by how well it is shown:",
+      "now": "Step {n} of {max}: {title}",
+      "all": "All {n} steps are shown. The list explains each one."
+    }
   },
   "index": {
     "title": "Compounds",
