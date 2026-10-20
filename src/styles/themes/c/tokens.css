@@ -1,0 +1,97 @@
+/*
+ * Design system C — "Public Health". Authority through radical accessibility.
+ * Lineage: Dutch public information design (NS wayfinding, Rijksoverheid done well), Isotype
+ * (Neurath, Arntz), Vignelli. Designed at 360px first, usable over 3G and at 200% zoom.
+ * Colour is never the only carrier of meaning: every coloured element has a label and, where it
+ * helps, a pictogram. The alert red is reserved exclusively for stop-now safety content.
+ */
+:root {
+  color-scheme: light;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-2: #f0f2f1;
+  --text: #1c1c1c; /* 16:1 */
+  --text-2: #3d4442; /* 10:1 */
+  --text-3: #5a6360; /* 6:1 */
+  --line: #c9cfcd;
+  --line-strong: #1c1c1c;
+  --primary: #00695c; /* deep teal, 6.4:1 on --bg */
+  --primary-ink: #ffffff;
+  --primary-tint: #e0f0ed;
+  --primary-dark: #004d43;
+  --alert: #c62828; /* stop-now only */
+  --alert-ink: #ffffff;
+  --alert-tint: #fdecea;
+  --note-tint: #eef3f8;
+  --focus: #1c1c1c;
+  --focus-ring: #ffbf47; /* high-visibility focus, as on GOV.UK */
+  --pg-cut: var(--bg);
+
+  --font-sans: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, 'Noto Sans Arabic', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* 19px minimum body; generous line height; few, clearly different sizes. */
+  --s--1: 1.0625rem; /* 17px — the smallest text on the site */
+  --s-0: 1.1875rem; /* 19px body */
+  --s-1: 1.375rem;
+  --s-2: 1.6875rem;
+  --s-3: clamp(1.9rem, 1.5rem + 1.6vw, 2.4rem);
+  --s-4: clamp(2.1rem, 1.6rem + 2.4vw, 3rem);
+  --lh: 1.6;
+  --measure: 38rem;
+  --wide: 64rem;
+  --radius: 6px;
+  --pad: clamp(1rem, 4vw, 2rem);
+  --tap: 2.75rem; /* 44px minimum target */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+}
+
+/* High-contrast dark edition, following the reader's system setting. */
+:root[data-scheme='dark'] {
+  color-scheme: dark;
+  --bg: #121212;
+  --surface: #1c1c1c;
+  --surface-2: #262626;
+  --text: #f4f4f4;
+  --text-2: #d6d6d6;
+  --text-3: #b5b5b5;
+  --line: #4a4a4a;
+  --line-strong: #f4f4f4;
+  --primary: #5fcfc0;
+  --primary-ink: #0b1f1c;
+  --primary-tint: #143a35;
+  --primary-dark: #8fe3d8;
+  --alert: #ff8a80;
+  --alert-ink: #1f0606;
+  --alert-tint: #3a1414;
+  --note-tint: #1e2630;
+  --focus: #f4f4f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) {
+    color-scheme: dark;
+    --bg: #121212;
+    --surface: #1c1c1c;
+    --surface-2: #262626;
+    --text: #f4f4f4;
+    --text-2: #d6d6d6;
+    --text-3: #b5b5b5;
+    --line: #4a4a4a;
+    --line-strong: #f4f4f4;
+    --primary: #5fcfc0;
+    --primary-ink: #0b1f1c;
+    --primary-tint: #143a35;
+    --primary-dark: #8fe3d8;
+    --alert: #ff8a80;
+    --alert-ink: #1f0606;
+    --alert-tint: #3a1414;
+    --note-tint: #1e2630;
+    --focus: #f4f4f4;
+  }
+}

@@ -1,0 +1,93 @@
+/*
+ * Design system B — "Mechanism". Authority through demonstrated sophistication.
+ * Lineage: biotech interfaces, scientific visualisation, Ciechanowski's explainers, Observable.
+ * Colour carries epistemic meaning and nothing else: CYAN = demonstrated, AMBER = hypothesised.
+ * Every other hue (residue chemistry, links, chrome) is chosen to stay out of that pair's way.
+ * Dark is the default edition; light is a full alternative chosen with the scheme toggle.
+ */
+:root {
+  color-scheme: dark;
+  --ground: #0a0e14;
+  --surface: #0f151e;
+  --surface-2: #151d29;
+  --line: #233042;
+  --line-strong: #3a4a60;
+  --text: #e6edf3; /* 16:1 */
+  --text-2: #b4c0cf; /* 10:1 */
+  --text-3: #8795a8; /* 6.3:1 — metadata only */
+  --cyan: #4dd0e1; /* demonstrated */
+  --cyan-ink: #04161a;
+  --cyan-soft: rgb(77 208 225 / 0.14);
+  --amber: #ffb74d; /* hypothesised */
+  --amber-ink: #1d1203;
+  --amber-soft: rgb(255 183 77 / 0.14);
+  --link: #a5b4ff;
+  --alert: #ff8a80;
+  --focus: #a5b4ff;
+  /* residue chemistry — deliberately not cyan, not amber */
+  --res-hydrophobic: #7c8cff;
+  --res-aromatic: #c49bff;
+  --res-polar: #7ee2b8;
+  --res-positive: #ff8fc0;
+  --res-negative: #ff9a8a;
+  --res-special: #9aa6b6;
+  --res-nonstandard: #f2f5f8;
+  --glow: 0 0 0.75rem;
+
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Noto Sans Arabic', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* Type: confident display sizes, comfortable 19px body. Ratio 1.25 (major third). */
+  --s--2: 0.8rem;
+  --s--1: 0.9375rem;
+  --s-0: 1.1875rem;
+  --s-1: 1.4rem;
+  --s-2: 1.85rem;
+  --s-3: clamp(2rem, 1.5rem + 2vw, 2.6rem);
+  --s-4: clamp(2.6rem, 1.6rem + 4.6vw, 4.75rem);
+  --lh: 1.65;
+  --measure: 42rem;
+  --wide: 74rem;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --pad: clamp(1.1rem, 5vw, 3rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.5rem;
+  --space-7: 4.5rem;
+  --space-8: 7rem;
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Light edition: same semantics, darker cyan and amber so both pass AA on a light ground. */
+:root[data-scheme='light'] {
+  color-scheme: light;
+  --ground: #f6f8fb;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --line: #d7dee8;
+  --line-strong: #a9b5c5;
+  --text: #0b1220;
+  --text-2: #344256;
+  --text-3: #556275;
+  --cyan: #00727c;
+  --cyan-ink: #ffffff;
+  --cyan-soft: rgb(0 114 124 / 0.1);
+  --amber: #8f5300;
+  --amber-ink: #ffffff;
+  --amber-soft: rgb(143 83 0 / 0.1);
+  --link: #3346c8;
+  --alert: #b3261e;
+  --focus: #3346c8;
+  --res-hydrophobic: #4b5be0;
+  --res-aromatic: #8d5ad8;
+  --res-polar: #1f9a6a;
+  --res-positive: #cc3d7a;
+  --res-negative: #d4483a;
+  --res-special: #6b7686;
+  --res-nonstandard: #0b1220;
+}

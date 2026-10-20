@@ -21,6 +21,6 @@ const quad = (i: number, frac: number) => {
   <line class="grade-glyph__axis" x1={C} y1={C - R - 2} x2={C} y2={C + R + 2} />
   <line class="grade-glyph__axis" x1={C - R - 2} y1={C} x2={C + R + 2} y2={C} />
   {axes.map((a, i) => (
-    <path class="grade-glyph__q" data-axis={a.axis} d={quad(i, a.max > 1 ? a.step / (a.max - 1) : 0)} />
+    <path class="grade-glyph__q" data-axis={a.axis} style={`--frac:${a.max > 1 ? (a.step / (a.max - 1)).toFixed(3) : 0}`} d={quad(i, a.max > 1 ? a.step / (a.max - 1) : 0)} />
   ))}
 </svg>
