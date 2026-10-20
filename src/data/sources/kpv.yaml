@@ -1,0 +1,314 @@
+# Sources for the KPV compound page.
+# Every scholarly entry was looked up in PubMed on 20 October 2026 (PubMed MCP tool and
+# NCBI E-utilities) and authors/title/journal/year/DOI/PMID were copied from the PubMed record.
+# Every regulator, law and registry URL was fetched on 20 October 2026 and contains what it is
+# cited for (see research/kpv.md, "Verification log"). Shared regulatory sources (the PCAC
+# meeting page, intro, questions and day-1 slides, the WADA lists, the EMA and NL/DE/UK records)
+# are defined in shared.yaml and bpc-157.yaml and are reused by id, not re-registered here.
+
+# ---------------------------------------------------------------- identity, chemistry, databases
+
+kpv-pubchem:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 125672, Lys-Pro-Val (alpha-MSH (11-13))"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/125672
+  accessed: 2026-10-20
+  verified: url
+  note: "Free base/free acid H-Lys-Pro-Val-OH. Molecular formula C16H30N4O4, molecular weight 342.43, isomeric SMILES (PUG REST), CAS 67727-97-3; synonyms include Lys-Pro-Val, alpha-MSH(11-13), MSH (11-13), ACTH-(11-13), L-lysyl-L-prolyl-L-valine."
+
+kpv-gsrs-unii:
+  type: dataset
+  authors: "U.S. Food and Drug Administration, Global Substance Registration System"
+  title: "GSRS substance record: L-lysyl-L-prolyl-L-valine, UNII 7V6LGD8S5R"
+  container: "FDA Global Substance Registration System"
+  year: 2026
+  url: https://gsrs.ncats.nih.gov/ginas/app/beta/substances/7V6LGD8S5R
+  accessed: 2026-10-20
+  verified: url
+  note: "Free-base KPV, C16H30N4O4, MW 342.4344, status approved, record created 11 August 2026 (after the FDA briefing, which recorded no UNII)."
+
+# ---------------------------------------------------------------- alpha-MSH origin and the C-terminal tripeptide
+
+cody-1984-c-terminal-tripeptide:
+  type: article
+  authors: "Cody WL, Wilkes BC, Muska BJ, Hruby VJ, Castrucci AM, Hadley ME"
+  title: "Cyclic melanotropins. 5. Importance of the C-terminal tripeptide (Lys-Pro-Val)"
+  container: "Journal of Medicinal Chemistry"
+  year: 1984
+  volume: "27"
+  pages: "1186-1190"
+  doi: 10.1021/jm00375a018
+  pmid: "6332195"
+  verified: pubmed
+  note: "Supports that Lys-Pro-Val is the C-terminal tripeptide (residues 11-13) of alpha-MSH."
+
+# ---------------------------------------------------------------- anti-inflammatory pharmacology (several independent groups)
+
+hiltz-1989-cooh-fragment:
+  type: article
+  authors: "Hiltz ME, Lipton JM"
+  title: "Antiinflammatory activity of a COOH-terminal fragment of the neuropeptide alpha-MSH"
+  container: "FASEB Journal"
+  year: 1989
+  volume: "3"
+  pages: "2282-2284"
+  pmid: "2550304"
+  verified: pubmed
+  note: "PubMed record has no DOI. Mouse ear-swelling (contact irritant) model; alpha-MSH(11-13) reduced swelling dose-dependently. Lipton group, UT Southwestern."
+
+mandrika-2001-nfkb-no:
+  type: article
+  authors: "Mandrika I, Muceniece R, Wikberg JE"
+  title: "Effects of melanocortin peptides on lipopolysaccharide/interferon-gamma-induced NF-kappaB DNA binding and nitric oxide production in macrophage-like RAW 264.7 cells: evidence for dual mechanisms of action"
+  container: "Biochemical Pharmacology"
+  year: 2001
+  volume: "61"
+  pages: "613-621"
+  doi: 10.1016/s0006-2952(00)00583-9
+  pmid: "11239505"
+  verified: pubmed
+  note: "alpha-MSH(11-13) inhibited NF-kappaB translocation and NO production in RAW 264.7 macrophages without binding MC1R or raising cAMP. Uppsala/Riga, independent of other groups."
+
+getting-2003-dissection:
+  type: article
+  authors: "Getting SJ, Schiöth HB, Perretti M"
+  title: "Dissection of the anti-inflammatory effect of the core and C-terminal (KPV) alpha-melanocyte-stimulating hormone peptides"
+  container: "Journal of Pharmacology and Experimental Therapeutics"
+  year: 2003
+  volume: "306"
+  pages: "631-637"
+  doi: 10.1124/jpet.103.051623
+  pmid: "12750433"
+  verified: pubmed
+  note: "Mouse crystal-induced and IL-1beta peritonitis; KPV reduced neutrophil influx in mice with a non-functional MC1R and was not blocked by an MC3/4R antagonist; KPV did not raise cAMP. London."
+
+land-2012-bronchial:
+  type: article
+  authors: "Land SC"
+  title: "Inhibition of cellular and systemic inflammation cues in human bronchial epithelial cells by melanocortin-related peptides: mechanism of KPV action and a role for MC3R agonists"
+  container: "International Journal of Physiology, Pathophysiology and Pharmacology"
+  year: 2012
+  volume: "4"
+  pages: "59-73"
+  pmid: "22837805"
+  pmcid: PMC3403564
+  verified: pubmed
+  note: "PubMed record has no DOI. In human bronchial epithelial cells KPV blocked NF-kappaB by preventing nuclear import of p65RelA (interaction with the importin-alpha3 binding site), distinct from the MC3R-mediated effect of gamma-MSH."
+
+# ---------------------------------------------------------------- PepT1 and the colitis/wound models
+
+dalmasso-2008-pept1:
+  type: article
+  authors: "Dalmasso G, Charrier-Hisamuddin L, Nguyen HT, Yan Y, Sitaraman S, Merlin D"
+  title: "PepT1-mediated tripeptide KPV uptake reduces intestinal inflammation"
+  container: "Gastroenterology"
+  year: 2008
+  volume: "134"
+  pages: "166-178"
+  doi: 10.1053/j.gastro.2007.10.026
+  pmid: "18061177"
+  pmcid: PMC2431115
+  verified: pubmed
+  note: "Nanomolar KPV inhibited NF-kappaB and MAP-kinase signalling in human intestinal epithelial cells (Caco2-BBE, HT29-Cl.19A) and Jurkat T cells via PepT1; oral KPV reduced DSS- and TNBS-induced colitis in mice. Emory/Merlin group."
+
+kannengiesser-2008-colitis:
+  type: article
+  authors: "Kannengiesser K, Maaser C, Heidemann J, Luegering A, Ross M, Brzoska T, Böhm M, Luger TA, Domschke W, Kucharzik T"
+  title: "Melanocortin-derived tripeptide KPV has anti-inflammatory potential in murine models of inflammatory bowel disease"
+  container: "Inflammatory Bowel Diseases"
+  year: 2008
+  volume: "14"
+  pages: "324-331"
+  doi: 10.1002/ibd.20334
+  pmid: "18092346"
+  verified: pubmed
+  note: "KPV reduced DSS and CD45RBhi transfer colitis in mice (weight, histology, myeloperoxidase); effects persisted in MC1R-defective (MC1Re/e) mice. Münster dermatology group."
+
+laroui-2010-nanoparticles:
+  type: article
+  authors: "Laroui H, Dalmasso G, Nguyen HT, Yan Y, Sitaraman SV, Merlin D"
+  title: "Drug-loaded nanoparticles targeted to the colon with polysaccharide hydrogel reduce colitis in a mouse model"
+  container: "Gastroenterology"
+  year: 2010
+  volume: "138"
+  pages: "843-853.e1-2"
+  doi: 10.1053/j.gastro.2009.11.003
+  pmid: "19909746"
+  verified: pubmed
+  note: "KPV-loaded nanoparticles in an alginate/chitosan hydrogel reduced DSS colitis in mice; nanoparticle KPV was effective at a concentration 12,000-fold lower than free KPV. Emory/Merlin group."
+
+viennois-2016-cac:
+  type: article
+  authors: "Viennois E, Ingersoll SA, Ayyadurai S, Zhao Y, Wang L, Zhang M, Han MK, Garg P, Xiao B, Merlin D"
+  title: "Critical role of PepT1 in promoting colitis-associated cancer and therapeutic benefits of the anti-inflammatory PepT1-mediated tripeptide KPV in a murine model"
+  container: "Cellular and Molecular Gastroenterology and Hepatology"
+  year: 2016
+  volume: "2"
+  pages: "340-357"
+  doi: 10.1016/j.jcmgh.2016.01.006
+  pmid: "27458604"
+  pmcid: PMC4957955
+  verified: pubmed
+  note: "In the AOM/DSS mouse model, KPV reduced colitis-associated tumour number and size in wild-type mice but had no effect in PepT1-knockout mice, confirming PepT1-dependence. Georgia State/Merlin group."
+
+bonfiglio-2006-cornea:
+  type: article
+  authors: "Bonfiglio V, Camillieri G, Avitabile T, Leggio GM, Drago F"
+  title: "Effects of the COOH-terminal tripeptide alpha-MSH(11-13) on corneal epithelial wound healing: role of nitric oxide"
+  container: "Experimental Eye Research"
+  year: 2006
+  volume: "83"
+  pages: "1366-1372"
+  doi: 10.1016/j.exer.2006.07.014
+  pmid: "16965771"
+  verified: pubmed
+  note: "Topical KPV sped corneal re-epithelialisation in rabbits after mechanical abrasion; the effect was blocked by the nitric oxide synthase inhibitor L-NAME. Catania, Italy."
+
+pawar-2017-iontophoresis:
+  type: article
+  authors: "Pawar K, Kolli CS, Rangari VK, Babu RJ"
+  title: "Transdermal Iontophoretic Delivery of Lysine-Proline-Valine (KPV) Peptide Across Microporated Human Skin"
+  container: "Journal of Pharmaceutical Sciences"
+  year: 2017
+  volume: "106"
+  pages: "1814-1820"
+  doi: 10.1016/j.xphs.2017.03.017
+  pmid: "28343991"
+  verified: pubmed
+  note: "In human cadaver skin, passive KPV permeation was below the detection limit; iontophoresis and microneedles were needed to drive it into the epidermis. The single human-tissue study cited by the FDA."
+
+sung-2025-keratinocyte:
+  type: article
+  authors: "Sung J, Ju SY, Park S, Jung WK, Je JY, Lee SJ"
+  title: "Lysine-Proline-Valine peptide mitigates fine dust-induced keratinocyte apoptosis and inflammation by regulating oxidative stress and modulating the MAPK/NF-κB pathway"
+  container: "Tissue & Cell"
+  year: 2025
+  volume: "95"
+  pages: "102837"
+  doi: 10.1016/j.tice.2025.102837
+  pmid: "40073467"
+  verified: pubmed
+  note: "In human HaCaT keratinocytes and a 3D skin model, KPV reduced particulate-matter-induced reactive oxygen species, caspase-1/IL-1beta and NF-kappaB signalling. Authors include an employee of a cosmetic-ingredient company (declared)."
+
+xiao-2017-nanoparticles:
+  type: article
+  authors: "Xiao B, Xu Z, Viennois E, Zhang Y, Zhang Z, Zhang M, Han MK, Kang Y, Merlin D"
+  title: "Orally Targeted Delivery of Tripeptide KPV via Hyaluronic Acid-Functionalized Nanoparticles Efficiently Alleviates Ulcerative Colitis"
+  container: "Molecular Therapy"
+  year: 2017
+  volume: "25"
+  pages: "1628-1640"
+  doi: 10.1016/j.ymthe.2016.11.020
+  pmid: "28143741"
+  pmcid: PMC5498804
+  verified: pubmed
+  note: "Hyaluronic-acid nanoparticles delivered KPV to colonic epithelial cells and macrophages and reduced DSS colitis in mice. Southwest University (China) / Merlin group."
+
+# ---------------------------------------------------------------- reviews (context only; not counted as primary preclinical studies)
+
+luger-2007-review:
+  type: review
+  authors: "Luger TA, Brzoska T"
+  title: "alpha-MSH related peptides: a new class of anti-inflammatory and immunomodulating drugs"
+  container: "Annals of the Rheumatic Diseases"
+  year: 2007
+  volume: "66 Suppl 3"
+  pages: "iii52-iii55"
+  doi: 10.1136/ard.2007.079780
+  pmid: "17934097"
+  pmcid: PMC2095288
+  verified: pubmed
+
+brzoska-2008-review:
+  type: review
+  authors: "Brzoska T, Luger TA, Maaser C, Abels C, Böhm M"
+  title: "Alpha-melanocyte-stimulating hormone and related tripeptides: biochemistry, antiinflammatory and protective effects in vitro and in vivo, and future perspectives for the treatment of immune-mediated inflammatory diseases"
+  container: "Endocrine Reviews"
+  year: 2008
+  volume: "29"
+  pages: "581-602"
+  doi: 10.1210/er.2007-0027
+  pmid: "18612139"
+  verified: pubmed
+  note: "States that KPV retains the anti-inflammatory activity of alpha-MSH without its pigmentary (melanotropic) action."
+
+brzoska-2010-terminal-signal:
+  type: chapter
+  authors: "Brzoska T, Böhm M, Lügering A, Loser K, Luger TA"
+  title: "Terminal signal: anti-inflammatory effects of alpha-melanocyte-stimulating hormone related peptides beyond the pharmacophore"
+  container: "Advances in Experimental Medicine and Biology"
+  year: 2010
+  volume: "681"
+  pages: "107-116"
+  doi: 10.1007/978-1-4419-6354-3_8
+  pmid: "21222263"
+  verified: pubmed
+  note: "States that KPV lacks the sequence motif required to bind any known melanocortin receptor yet keeps most of the anti-inflammatory activity of alpha-MSH."
+
+bohm-2019-wound-review:
+  type: review
+  authors: "Böhm M, Luger T"
+  title: "Are melanocortin peptides future therapeutics for cutaneous wound healing?"
+  container: "Experimental Dermatology"
+  year: 2019
+  volume: "28"
+  pages: "219-224"
+  doi: 10.1111/exd.13887
+  pmid: "30661264"
+  verified: pubmed
+  note: "Cited by the FDA briefing as suggesting that clinical studies are needed to test whether KPV promotes wound healing."
+
+gravina-2023-melanocortin-ibd:
+  type: review
+  authors: "Gravina AG, Pellegrino R, Durante T, Palladino G, Imperio G, D'Amico G, Trotta MC, Dallio M, Romeo M, D'Amico M, Federico A"
+  title: "The Melanocortin System in Inflammatory Bowel Diseases: Insights into Its Mechanisms and Therapeutic Potentials"
+  container: "Cells"
+  year: 2023
+  volume: "12"
+  pages: "1889"
+  doi: 10.3390/cells12141889
+  pmid: "37508552"
+  pmcid: PMC10378568
+  verified: pubmed
+
+coutinho-2026-doping-review:
+  type: review
+  authors: "Coutinho LFD, De Oliveira Neves LF, Camilo RP"
+  title: "A new era of doping? Use of peptide and peptide-analog drugs in recreational and professional sport and bodybuilding: a critical review"
+  container: "Journal of Sports Medicine and Physical Fitness"
+  year: 2026
+  volume: "66"
+  pages: "880-885"
+  doi: 10.23736/S0022-4707.26.17773-1
+  pmid: "41880199"
+  verified: pubmed
+  note: "Lists KPV among synthetic peptide fragments promoted in bodybuilding; notes the largely unregulated supply chain, mislabelling and contamination."
+
+# ---------------------------------------------------------------- United States (FDA PCAC, KPV-specific)
+
+fda-pcac-2026-kpv-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for KPV-Related Bulk Drug Substances (KPV (free base) and KPV acetate), Pharmacy Compounding Advisory Committee meeting, 23-24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193346/download
+  accessed: 2026-10-20
+  verified: url
+  note: "Evaluation dated 12 May 2026. Characterisation (KPV not well-characterised; C16H30N4O4, MW 342.43 free base / 402.5 acetate; CAS 67727-97-3; no USAN/INN/IUPAC; no European or Japanese Pharmacopoeia monograph; EMA lists no KPV product); proposed use wound healing and inflammatory conditions, cream/gel 0.1% topical; no studies of KPV in humans; FAERS and HFCS searched to 3 December 2025 with no reports; no nonclinical tox, PK, genotoxicity, reproductive or carcinogenicity studies identified; immunogenicity/aggregation risk; KPV does not bind melanocortin receptors (Lyson 1994, Mandrika 2001, Tatro 1994) and its molecular targets are unknown; NF-kappaB inhibition and PepT1 uptake proposed. FDA proposes NOT to list KPV (free base) or KPV acetate."
+
+# ---------------------------------------------------------------- Belgium (medicines law)
+
+be-medicines-law-1964:
+  type: law
+  authors: "Belgische Staat / État belge"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 6 § 1 (vergunning voor het in de handel brengen vereist)"
+  container: "ejustice.just.fgov.be"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Art. 6 § 1: a medicine may be placed on the market only after a marketing authorisation has been granted by the minister (or delegate) under this law or by the European Commission under Community law."

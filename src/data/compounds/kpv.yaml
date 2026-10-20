@@ -1,0 +1,69 @@
+# KPV — locale-independent facts. Every value below is sourced; see research/kpv.md.
+slug: kpv
+tier: 1
+status: complete
+# experimental, not investigational: there is no registered clinical trial of KPV and no human
+# exposure data of any kind (FDA found none). All evidence is in cells and animals. Revisit if a
+# trial is registered or a regulator receives an application.
+category: experimental
+class: immunomodulatory
+body_systems: [immune, gastrointestinal, skin]
+names:
+  common: KPV
+  full: Lysine-Proline-Valine
+  other: [Lys-Pro-Val, "alpha-MSH(11-13)", "α-MSH(11-13)", "ACTH(11-13)", H-Lys-Pro-Val-OH]
+  brands: []
+identifiers:
+  pubchem_cid: 125672
+  cas: 67727-97-3             # same CAS cited for free base and acetate in most public references
+  unii: 7V6LGD8S5R            # free base; FDA GSRS record created 11 Aug 2026 (after the May 2026 FDA briefing, which recorded no UNII)
+molecular:
+  formula: C16H30N4O4         # free base; the acetate salt is C16H30N4O4·CH3COOH, 402.5 g/mol
+  mass_da: 342.43
+  smiles: "CC(C)[C@@H](C(=O)O)NC(=O)[C@@H]1CCCN1C(=O)[C@H](CCCCN)N"
+  smiles_source: kpv-pubchem
+# KPV is the C-terminal tripeptide (residues 11-13) of alpha-MSH, whose sequence is
+# Ac-Ser-Tyr-Ser-Met-Glu-His-Phe-Arg-Trp-Gly-Lys-Pro-Val-NH2 (positions 1-13). The free-base KPV
+# that the FDA assessed and that PubChem CID 125672 describes is the free acid, H-Lys-Pro-Val-OH.
+# In the native hormone the valine is C-terminally amidated; many studies use Ac-KPV-NH2 instead.
+sequence:
+  display: "Lys-Pro-Val"
+  residues: [Lys, Pro, Val]
+  n_terminus: H
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: kpv-pubchem
+evidence:
+  human_clinical: none
+  preclinical_volume: moderate
+  independence: few-groups
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search, ema-medicines-json, fda-pcac-2026-kpv-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-kpv-briefing] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-kpv-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-pcac-2026-questions, fda-category-2-safety-risks] }
+  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-20, sources: [wada-2026-list-en, wada-2027-list-en] }
+studies:
+  # --- anti-inflammatory pharmacology: several independent groups
+  - { id: hiltz-1989-ear-swelling, source: hiltz-1989-cooh-fragment, year: 1989, species: mouse, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: mandrika-2001-raw264, source: mandrika-2001-nfkb-no, year: 2001, species: in-vitro, n: null, design: in-vitro, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: getting-2003-peritonitis, source: getting-2003-dissection, year: 2003, species: mouse, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: land-2012-bronchial-nfkb, source: land-2012-bronchial, year: 2012, species: in-vitro, n: null, design: in-vitro, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  # --- wound / skin
+  - { id: bonfiglio-2006-cornea, source: bonfiglio-2006-cornea, year: 2006, species: rabbit, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: sung-2025-keratinocyte, source: sung-2025-keratinocyte, year: 2025, species: in-vitro, n: null, design: in-vitro, funding: industry, group: independent, blinded: null, controlled: true }
+  - { id: pawar-2017-skin-permeation, source: pawar-2017-iontophoresis, year: 2017, species: in-vitro, n: null, design: in-vitro, funding: undisclosed, group: independent, blinded: null, controlled: null }
+  # --- gut: the PepT1 / colitis programme (dominant group: Merlin laboratory, Emory / Georgia State)
+  - { id: dalmasso-2008-pept1, source: dalmasso-2008-pept1, year: 2008, species: mixed, n: null, design: animal, funding: government, group: originating, blinded: null, controlled: true }
+  - { id: kannengiesser-2008-colitis, source: kannengiesser-2008-colitis, year: 2008, species: mouse, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: laroui-2010-nanoparticles, source: laroui-2010-nanoparticles, year: 2010, species: mouse, n: null, design: animal, funding: government, group: originating, blinded: null, controlled: true }
+  - { id: viennois-2016-cac, source: viennois-2016-cac, year: 2016, species: mouse, n: null, design: animal, funding: government, group: originating, blinded: null, controlled: true }
+  - { id: xiao-2017-nanoparticles, source: xiao-2017-nanoparticles, year: 2017, species: mouse, n: null, design: animal, funding: mixed, group: originating, blinded: null, controlled: true }
+authorised_products: []
+related: [bpc-157]
+last_reviewed: 2026-10-20
+reviewed_by: pending-medical-review

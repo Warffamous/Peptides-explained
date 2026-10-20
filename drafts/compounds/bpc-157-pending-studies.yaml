@@ -1,0 +1,23 @@
+note: Added by the BPC-157 fact-checker before it was interrupted; each needs finding/limitation
+  text in src/content/compounds/en/bpc-157.mdx before moving back into src/data/compounds/bpc-157.yaml.
+studies:
+- id: yildirim-2026-artery
+  source: yildirim-2026-mammary-artery
+  year: 2026
+  species: in-vitro
+  n: 12
+  design: in-vitro
+  funding: academic
+  group: independent
+  blinded: null
+  controlled: true
+- id: froum-2026-nerve-cases
+  source: froum-2026-nerve-cases
+  year: 2026
+  species: human
+  n: 3
+  design: case-series
+  funding: academic
+  group: independent
+  blinded: false
+  controlled: false

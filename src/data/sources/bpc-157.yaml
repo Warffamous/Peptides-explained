@@ -1,0 +1,687 @@
+# Sources for the BPC-157 compound page and /history/the-croatian-lab.
+# Every scholarly entry was looked up in PubMed on 20 October 2026 (PubMed MCP tool and
+# NCBI E-utilities) and authors/title/journal/year/DOI/PMID were copied from the PubMed record.
+# Every regulator, law and registry URL was fetched on 20 October 2026 and contains what it is
+# cited for (see research/bpc-157.md, "Verification log").
+
+# ---------------------------------------------------------------- identity, chemistry, databases
+
+pubchem-bpc-157:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 9941957, BPC-157"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/9941957
+  accessed: 2026-10-20
+  verified: url
+  note: "Molecular formula C62H98N16O22, molecular weight 1419.5, isomeric SMILES (PUG REST), synonyms incl. the sequence Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val, CAS 137525-51-0, UNII 8ED8NXK95P, PL-14736, PLD-116, bepecin."
+
+chembl-bpc-157:
+  type: dataset
+  authors: "EMBL-EBI"
+  title: "ChEMBL compound report card: CHEMBL4297358 (BPC-157)"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297358
+  accessed: 2026-10-20
+  verified: url
+  note: "Synonyms Bepecin, PL-10, PL-14736, PLD-116; no curated mechanism of action."
+
+sikiric-1993-bpc-origin:
+  type: review
+  authors: "Sikirić P, Petek M, Rucman R, Seiwerth S, Grabarević Z, Rotkvić I, Turković B, Jagić V, Mildner B, Duvnjak M, et al."
+  title: "A new gastric juice peptide, BPC. An overview of the stomach-stress-organoprotection hypothesis and beneficial effects of BPC"
+  container: "Journal of Physiology, Paris"
+  year: 1993
+  volume: "87"
+  pages: "313-327"
+  doi: 10.1016/0928-4257(93)90038-u
+  pmid: "8298609"
+  verified: pubmed
+  note: "Describes BPC as a gastric-juice peptide of Mr 40,000 and BPC 157 as a 15-amino-acid fragment."
+
+# ---------------------------------------------------------------- originating group (Zagreb) and its industrial partner
+
+sikiric-1997-nitric-oxide:
+  type: article
+  authors: "Sikirić P, Seiwerth S, Grabarević Z, Rucman R, Petek M, et al."
+  title: "The influence of a novel pentadecapeptide, BPC 157, on N(G)-nitro-L-arginine methylester and L-arginine effects on stomach mucosa integrity and blood pressure"
+  container: "European Journal of Pharmacology"
+  year: 1997
+  volume: "332"
+  pages: "23-33"
+  doi: 10.1016/s0014-2999(97)01033-9
+  pmid: "9298922"
+  verified: pubmed
+
+staresinic-2003-achilles:
+  type: article
+  authors: "Staresinic M, Sebecic B, Patrlj L, Jadrijevic S, Suknaic S, et al."
+  title: "Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth"
+  container: "Journal of Orthopaedic Research"
+  year: 2003
+  volume: "21"
+  pages: "976-983"
+  doi: 10.1016/S0736-0266(03)00110-4
+  pmid: "14554208"
+  verified: pubmed
+
+tkalcevic-2007-egr1:
+  type: article
+  authors: "Tkalcević VI, Cuzić S, Brajsa K, Mildner B, Bokulić A, et al."
+  title: "Enhancement by PL 14736 of granulation and collagen organization in healing wounds and the potential role of egr-1 expression"
+  container: "European Journal of Pharmacology"
+  year: 2007
+  volume: "570"
+  pages: "212-221"
+  doi: 10.1016/j.ejphar.2007.05.072
+  pmid: "17628536"
+  verified: pubmed
+  note: "First author affiliated with PLIVA Research Institute, Zagreb (the company developing PL 14736). Co-authors Mildner B and Perović D also appear on Zagreb-group papers (Sikirić 1993, PMID 8298609; Sikirić 1997, PMID 9298922; Staresinic 2003, PMID 14554208), so the study is coded group: mixed."
+
+klicek-2008-fistula:
+  type: article
+  authors: "Klicek R, Sever M, Radic B, Drmic D, Kocman I, et al."
+  title: "Pentadecapeptide BPC 157, in clinical trials as a therapy for inflammatory bowel disease (PL14736), is effective in the healing of colocutaneous fistulas in rats: role of the nitric oxide-system"
+  container: "Journal of Pharmacological Sciences"
+  year: 2008
+  volume: "108"
+  pages: "7-17"
+  doi: 10.1254/jphs.fp0072161
+  pmid: "18818478"
+  verified: pubmed
+
+brcic-2009-angiogenesis:
+  type: article
+  authors: "Brcic L, Brcic I, Staresinic M, Novinscak T, Sikiric P, Seiwerth S"
+  title: "Modulatory effect of gastric pentadecapeptide BPC 157 on angiogenesis in muscle and tendon healing"
+  container: "Journal of Physiology and Pharmacology"
+  year: 2009
+  volume: "60 Suppl 7"
+  pages: "191-196"
+  pmid: "20388964"
+  verified: pubmed
+  note: "PubMed record has no DOI. Reports no direct angiogenic effect in cell culture but increased VEGF-associated vessel staining in healing rat muscle and tendon."
+
+cerovecki-2010-ligament:
+  type: article
+  authors: "Cerovecki T, Bojanic I, Brcic L, Radic B, Vukoja I, Seiwerth S, Sikiric P"
+  title: "Pentadecapeptide BPC 157 (PL 14736) improves ligament healing in the rat"
+  container: "Journal of Orthopaedic Research"
+  year: 2010
+  volume: "28"
+  pages: "1155-1161"
+  doi: 10.1002/jor.21107
+  pmid: "20225319"
+  verified: pubmed
+
+sikiric-2025-comment:
+  type: article
+  authors: "Sikiric P, Seiwerth S, Skrtic A, Staresinic M, Strbe S, et al."
+  title: "BPC 157 Therapy: Targeting Angiogenesis and Nitric Oxide's Cytotoxic and Damaging Actions, but Maintaining, Promoting, or Recovering Their Essential Protective Functions. Comment on Józwiak et al. Multifunctionality and Possible Medical Application of the BPC 157 Peptide-Literature and Patent Review. Pharmaceuticals 2025, 18, 185"
+  container: "Pharmaceuticals (Basel)"
+  year: 2025
+  volume: "18"
+  doi: 10.3390/ph18101450
+  pmid: "41155565"
+  pmcid: PMC12567428
+  verified: pubmed
+  note: "The originating group's published response to concerns about angiogenesis and tumours."
+
+# ---------------------------------------------------------------- groups independent of Zagreb
+
+veljaca-1995-colitis:
+  type: article
+  authors: "Veljaca M, Lesch CA, Pllana R, Sanchez B, Chan K, Guglietta A"
+  title: "BPC-15 reduces trinitrobenzene sulfonic acid-induced colonic damage in rats"
+  container: "Journal of Pharmacology and Experimental Therapeutics"
+  year: 1995
+  volume: "272"
+  pages: "417-422"
+  pmid: "7815358"
+  verified: pubmed
+  note: "PubMed record has no DOI. Authors at Parke-Davis Pharmaceutical Research, Ann Arbor. 'BPC 15' is listed as a synonym of BPC-157 in PubChem and in He 2022, and the FDA briefing cites the same authors' BPC-15 gastric-juice abstract as evidence about BPC-157. A 'Veljaca M' is later lead author of PLIVA's PL 14736 phase 1 abstracts (FDA reference list); whether this is the same person was not verified."
+
+chang-2011-tendon-fibroblasts:
+  type: article
+  authors: "Chang CH, Tsai WC, Lin MS, Hsu YH, Pang JH"
+  title: "The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration"
+  container: "Journal of Applied Physiology"
+  year: 2011
+  volume: "110"
+  pages: "774-780"
+  doi: 10.1152/japplphysiol.00945.2010
+  pmid: "21030672"
+  verified: pubmed
+
+chang-2014-ghr:
+  type: article
+  authors: "Chang CH, Tsai WC, Hsu YH, Pang JH"
+  title: "Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts"
+  container: "Molecules"
+  year: 2014
+  volume: "19"
+  pages: "19066-19077"
+  doi: 10.3390/molecules191119066
+  pmid: "25415472"
+  pmcid: PMC6271067
+  verified: pubmed
+
+hsieh-2017-vegfr2:
+  type: article
+  authors: "Hsieh MJ, Liu HT, Wang CN, Huang HY, Lin Y, et al."
+  title: "Therapeutic potential of pro-angiogenic BPC157 is associated with VEGFR2 activation and up-regulation"
+  container: "Journal of Molecular Medicine"
+  year: 2017
+  volume: "95"
+  pages: "323-333"
+  doi: 10.1007/s00109-016-1488-y
+  pmid: "27847966"
+  verified: pubmed
+
+hsieh-2020-src-cav1-enos:
+  type: article
+  authors: "Hsieh MJ, Lee CH, Chueh HY, Chang GJ, Huang HY, Lin Y, Pang JS"
+  title: "Modulatory effects of BPC 157 on vasomotor tone and the activation of Src-Caveolin-1-endothelial nitric oxide synthase pathway"
+  container: "Scientific Reports"
+  year: 2020
+  volume: "10"
+  pages: "17078"
+  doi: 10.1038/s41598-020-74022-y
+  pmid: "33051481"
+  pmcid: PMC7555539
+  verified: pubmed
+  note: "Funding: Chang Gung Memorial Hospital grants (acknowledgements, nature.com full text)."
+
+xu-2020-preclinical-safety:
+  type: article
+  authors: "Xu C, Sun L, Ren F, Huang P, Tian Z, et al."
+  title: "Preclinical safety evaluation of body protective compound-157, a potential drug for treating various wounds"
+  container: "Regulatory Toxicology and Pharmacology"
+  year: 2020
+  volume: "114"
+  pages: "104665"
+  doi: 10.1016/j.yrtph.2020.104665
+  pmid: "32334036"
+  verified: pubmed
+
+he-2022-pharmacokinetics:
+  type: article
+  authors: "He L, Feng D, Guo H, Zhou Y, Li Z, et al."
+  title: "Pharmacokinetics, distribution, metabolism, and excretion of body-protective compound 157, a potential drug for treating various wounds, in rats and dogs"
+  container: "Frontiers in Pharmacology"
+  year: 2022
+  volume: "13"
+  pages: "1026182"
+  doi: 10.3389/fphar.2022.1026182
+  pmid: "36588717"
+  pmcid: PMC9794587
+  verified: pubmed
+  note: "Funding: National Natural Science Foundation of China and Shaanxi provincial grants (PMC full text)."
+
+bicer-2026-achilles:
+  type: article
+  authors: "Biçer O, Adanir O, Güleryüz Y, Balci EC, Dinçel YM, et al."
+  title: "Effects of BPC-157 and TB-500 on Achilles tendon healing in rats: A histopathological and biomechanical study"
+  container: "Joint Diseases and Related Surgery"
+  year: 2026
+  volume: "37"
+  pages: "822-837"
+  doi: 10.52312/jdrs.2026.2951
+  pmid: "42542926"
+  verified: pubmed
+  note: "Full text (jointdrs.org): 8 rats per group, of which 4 tendons per group went to biomechanical testing and 4 to histology; pathologist blinded and biomechanical specimens coded; 'The authors received no financial support'. BPC-157 vs control: median load to failure 37.16 vs 26.91 N, adjusted p = 0.389."
+
+yildirim-2026-mammary-artery:
+  type: article
+  authors: "Yildirim AK, Dastan AO, Demeli Ertus M, Ensarioglu M, Karabacak K, Pehlivanoglu B"
+  title: "Endothelium-Dependent Nitric Oxide-Mediated Vasorelaxant Effects of BPC 157 in Human Internal Mammary Artery"
+  container: "Journal of Clinical Medicine"
+  year: 2026
+  volume: "15"
+  pages: "3488"
+  doi: 10.3390/jcm15093488
+  pmid: "42123221"
+  pmcid: PMC13163310
+  verified: pubmed
+  note: "Ankara, Turkey; no Zagreb co-author. Artery remnants from 12 of 14 consenting bypass patients (PMC full text). 'This research received no external funding.'"
+
+demirtas-2025-ischaemia-reperfusion:
+  type: article
+  authors: "Demirtaş H, Özer A, Yıldırım AK, Dursun AD, Sezen ŞC, Arslan M"
+  title: "Protective Effects of BPC 157 on Liver, Kidney, and Lung Distant Organ Damage in Rats with Experimental Lower-Extremity Ischemia-Reperfusion Injury"
+  container: "Medicina (Kaunas)"
+  year: 2025
+  volume: "61"
+  pages: "291"
+  doi: 10.3390/medicina61020291
+  pmid: "40005408"
+  pmcid: PMC11857380
+  verified: pubmed
+  note: "Ankara, Turkey; 24 rats randomised to four groups; BPC-157 given at the start of 45 min ischaemia, organs harvested after 2 h reperfusion."
+
+zhang-2026-fbxo22:
+  type: article
+  authors: "Zhang J, Liu M, Ou H, Wang Z, He L, et al."
+  title: "BPC157 drives angiogenesis through FBXO22-dependent stabilization of BACH1"
+  container: "Cell Communication and Signaling"
+  year: 2026
+  volume: "24"
+  doi: 10.1186/s12964-026-02694-6
+  pmid: "41606641"
+  pmcid: PMC12947506
+  verified: pubmed
+
+cox-2017-doping-detection:
+  type: article
+  authors: "Cox HD, Miller GD, Eichner D"
+  title: "Detection and in vitro metabolism of the confiscated peptides BPC 157 and MGF R23H"
+  container: "Drug Testing and Analysis"
+  year: 2017
+  volume: "9"
+  pages: "1490-1498"
+  doi: 10.1002/dta.2152
+  pmid: "28035768"
+  verified: pubmed
+
+# ---------------------------------------------------------------- human reports (one US clinic)
+
+lee-2021-knee:
+  type: article
+  authors: "Lee E, Padgett B"
+  title: "Intra-Articular Injection of BPC 157 for Multiple Types of Knee Pain"
+  container: "Alternative Therapies in Health and Medicine"
+  year: 2021
+  volume: "27"
+  pages: "8-13"
+  pmid: "34324435"
+  verified: pubmed
+  note: "PubMed record has no DOI."
+
+lee-2024-interstitial-cystitis:
+  type: article
+  authors: "Lee E, Walker C, Ayadi B"
+  title: "Effect of BPC-157 on Symptoms in Patients with Interstitial Cystitis: A Pilot Study"
+  container: "Alternative Therapies in Health and Medicine"
+  year: 2024
+  volume: "30"
+  pages: "12-17"
+  pmid: "39325560"
+  verified: pubmed
+  note: "PubMed record has no DOI."
+
+lee-2025-intravenous:
+  type: article
+  authors: "Lee E, Burgess K"
+  title: "Safety of Intravenous Infusion of BPC157 in Humans: A Pilot Study"
+  container: "Alternative Therapies in Health and Medicine"
+  year: 2025
+  volume: "31"
+  pages: "20-24"
+  pmid: "40131143"
+  verified: pubmed
+  note: "PubMed record has no DOI."
+
+# ---------------------------------------------------------------- reviews
+
+vasireddi-2025-systematic-review:
+  type: review
+  authors: "Vasireddi N, Hahamyan H, Salata MJ, Karns M, Calcei JG, et al."
+  title: "Emerging Use of BPC-157 in Orthopaedic Sports Medicine: A Systematic Review"
+  container: "HSS Journal"
+  year: 2025
+  volume: "21"
+  pages: "485-495"
+  doi: 10.1177/15563316251355551
+  pmid: "40756949"
+  pmcid: PMC12313605
+  verified: pubmed
+
+mcguire-2025-review:
+  type: review
+  authors: "McGuire FP, Martinez R, Lenz A, Skinner L, Cushman DM"
+  title: "Regeneration or Risk? A Narrative Review of BPC-157 for Musculoskeletal Healing"
+  container: "Current Reviews in Musculoskeletal Medicine"
+  year: 2025
+  volume: "18"
+  pages: "611-619"
+  doi: 10.1007/s12178-025-09990-7
+  pmid: "40789979"
+  pmcid: PMC12446177
+  verified: pubmed
+
+jozwiak-2025-review:
+  type: review
+  authors: "Józwiak M, Bauer M, Kamysz W, Kleczkowska P"
+  title: "Multifunctionality and Possible Medical Application of the BPC 157 Peptide-Literature and Patent Review"
+  container: "Pharmaceuticals (Basel)"
+  year: 2025
+  volume: "18"
+  pages: "185"
+  doi: 10.3390/ph18020185
+  pmid: "40005999"
+  pmcid: PMC11859134
+  verified: pubmed
+  note: "PMC full text: 'shows no sequence homology with known intestinal peptides'; patent table lists WO 1998/052973 'New BPC peptide salts with organo-protective activity…' (Sikiric P et al.); the only cancer-related study is a cachexia mouse model (Kang 2018, Sikirić co-author) in which tumour volume did not differ significantly. Its statement that BPC-157 is 'not currently listed' by WADA is wrong: it is named under S0 in the 2026 and 2027 Lists."
+
+poolton-2026-human-sr:
+  type: review
+  authors: "Poolton JT, Minett J, Kazmi A"
+  title: "Human evidence for BPC-157 in orthopaedic and regenerative medicine: a systematic review of efficacy and safety"
+  container: "Acta Orthopaedica Belgica"
+  year: 2026
+  volume: "92"
+  doi: 10.52628/92.3.15837
+  pmid: "42885452"
+  verified: pubmed
+
+# ---------------------------------------------------------------- cancer biology background (for the risk section)
+
+hanahan-2011-hallmarks:
+  type: review
+  authors: "Hanahan D, Weinberg RA"
+  title: "Hallmarks of cancer: the next generation"
+  container: "Cell"
+  year: 2011
+  volume: "144"
+  pages: "646-674"
+  doi: 10.1016/j.cell.2011.02.013
+  pmid: "21376230"
+  verified: pubmed
+
+carmeliet-2011-angiogenesis:
+  type: review
+  authors: "Carmeliet P, Jain RK"
+  title: "Molecular mechanisms and clinical applications of angiogenesis"
+  container: "Nature"
+  year: 2011
+  volume: "473"
+  pages: "298-307"
+  doi: 10.1038/nature10144
+  pmid: "21593862"
+  verified: pubmed
+
+sulzmaier-2014-fak-cancer:
+  type: review
+  authors: "Sulzmaier FJ, Jean C, Schlaepfer DD"
+  title: "FAK in cancer: mechanistic findings and clinical applications"
+  container: "Nature Reviews Cancer"
+  year: 2014
+  volume: "14"
+  pages: "598-610"
+  doi: 10.1038/nrc3792
+  pmid: "25098269"
+  verified: pubmed
+
+fda-regranex-label-2011:
+  type: label
+  authors: "U.S. Food and Drug Administration"
+  title: "REGRANEX (becaplermin) Gel 0.01% — Prescribing Information (2011), including boxed warning on increased rate of mortality secondary to malignancy"
+  container: "Drugs@FDA"
+  year: 2011
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2011/103691s5095lbl.pdf
+  accessed: 2026-10-20
+  verified: url
+
+fda-regranex-label-2018:
+  type: label
+  authors: "U.S. Food and Drug Administration"
+  title: "REGRANEX (becaplermin) Gel — Prescribing Information (2018): boxed warning on cancer mortality removed 11/2018; malignancy warning retained"
+  container: "Drugs@FDA"
+  year: 2018
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2018/103691s5134lbl.pdf
+  accessed: 2026-10-20
+  verified: url
+
+# ---------------------------------------------------------------- research methodology (history page)
+
+ioannidis-2005-false-findings:
+  type: article
+  authors: "Ioannidis JP"
+  title: "Why most published research findings are false"
+  container: "PLoS Medicine"
+  year: 2005
+  volume: "2"
+  pages: "e124"
+  doi: 10.1371/journal.pmed.0020124
+  pmid: "16060722"
+  verified: pubmed
+
+sena-2010-publication-bias:
+  type: article
+  authors: "Sena ES, van der Worp HB, Bath PM, Howells DW, Macleod MR"
+  title: "Publication bias in reports of animal stroke studies leads to major overstatement of efficacy"
+  container: "PLoS Biology"
+  year: 2010
+  volume: "8"
+  pages: "e1000344"
+  doi: 10.1371/journal.pbio.1000344
+  pmid: "20361022"
+  verified: pubmed
+
+begley-2012-preclinical-standards:
+  type: article
+  authors: "Begley CG, Ellis LM"
+  title: "Drug development: Raise standards for preclinical cancer research"
+  container: "Nature"
+  year: 2012
+  volume: "483"
+  pages: "531-533"
+  doi: 10.1038/483531a
+  pmid: "22460880"
+  verified: pubmed
+  note: "Findings confirmed in 6 of 53 (11%) 'landmark' studies (text checked on nature.com)."
+
+macleod-2015-risk-of-bias:
+  type: article
+  authors: "Macleod MR, Lawson McLean A, Kyriakopoulou A, Serghiou S, et al."
+  title: "Risk of Bias in Reports of In Vivo Research: A Focus for Improvement"
+  container: "PLoS Biology"
+  year: 2015
+  volume: "13"
+  pages: "e1002273"
+  doi: 10.1371/journal.pbio.1002273
+  pmid: "26460723"
+  verified: pubmed
+
+errington-2021-replicability:
+  type: article
+  authors: "Errington TM, Mathur M, Soderberg CK, Denis A, Perfito N, Iorns E, Nosek BA"
+  title: "Investigating the replicability of preclinical cancer biology"
+  container: "eLife"
+  year: 2021
+  volume: "10"
+  pages: "e71601"
+  doi: 10.7554/eLife.71601
+  pmid: "34874005"
+  pmcid: PMC8651293
+  verified: pubmed
+
+pubmed-bpc157-count-2026-10-20:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed search, 20 October 2026: (\"BPC 157\"[tiab] OR \"BPC-157\"[tiab] OR \"BPC157\"[tiab] OR \"PL 14736\"[tiab] OR \"PL-14736\"[tiab] OR \"bepecin\"[tiab] OR \"BPC 157\"[nm]) — 235 records, 175 with Sikiric P as author"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=%22BPC+157%22%5Btiab%5D+OR+%22BPC-157%22%5Btiab%5D+OR+BPC157%5Btiab%5D+OR+%22PL+14736%22%5Btiab%5D+OR+%22PL-14736%22%5Btiab%5D+OR+bepecin%5Btiab%5D+OR+%22BPC+157%22%5Bnm%5D
+  accessed: 2026-10-20
+  verified: url
+  note: "Counts made with NCBI E-utilities; method and record-level classification in research/bpc-157.md."
+
+# ---------------------------------------------------------------- United States (FDA)
+
+fda-pcac-2026-bpc157-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for BPC-157-Related Bulk Drug Substances (BPC-157 (free base) and BPC-157 acetate), Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193343/download
+  accessed: 2026-10-20
+  verified: url
+  note: "Evaluation dated 11 May 2026. Characterisation, nonclinical toxicology (incl. 'did not identify carcinogenicity studies'), human safety, FAERS reports, and the conclusion that 'there is no approved product containing BPC-157-related BDSs in any country'."
+
+fda-pcac-2026-briefing-intro:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document Introduction, Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193342/download
+  accessed: 2026-10-20
+  verified: url
+  note: "Lists the seven peptide groups considered and states 'FDA is proposing that BPC-157 (free base) NOT be included on the 503A Bulks List' (and the same for BPC-157 acetate)."
+
+fda-pcac-2026-questions:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Questions, Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193711/download
+  accessed: 2026-10-20
+  verified: url
+  note: "The voting questions: whether BPC-157 (free base) and BPC-157 acetate should be placed on the 503A list."
+
+fda-pcac-2026-presentations-day1:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Presentations, Pharmacy Compounding Advisory Committee meeting, 23 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193773/download
+  accessed: 2026-10-20
+  verified: url
+  note: "Introductory slide 'When a BDS is placed on the 503A Bulks List': the compounded product is not FDA-approved, need not follow CGMP, adverse events need not be reported, and unless limited the substance can be compounded for any use or route."
+
+fda-503a-bulks-page:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Bulk Drug Substances Used in Compounding Under Section 503A of the FD&C Act"
+  year: 2026
+  url: https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503a-fdc-act
+  accessed: 2026-10-20
+  verified: url
+  note: "Defines categories 1–3 of the interim policy and states that substances are added to the 503A list through notice-and-comment rulemaking. Content current as of 14 May 2026."
+
+fda-503a-categories-2026-05:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Bulk Drug Substances Nominated for Use in Compounding Under Section 503A of the Federal Food, Drug, and Cosmetic Act (categories 1–3), updated 14 May 2026"
+  year: 2026
+  url: https://www.fda.gov/media/94155/download
+  accessed: 2026-10-20
+  verified: url
+  note: "BPC-157 does not appear in category 1, 2 or 3."
+
+fda-category-2-safety-risks:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Certain Bulk Drug Substances for Use in Compounding that May Present Significant Safety Risks"
+  year: 2026
+  url: https://www.fda.gov/drugs/human-drug-compounding/certain-bulk-drug-substances-use-compounding-may-present-significant-safety-risks
+  accessed: 2026-10-20
+  verified: url
+  note: "Lists BPC-157 among 'bulk drug substances previously in category 2 of the interim policies' whose nominations were withdrawn, with FDA's stated risks (immunogenicity, peptide-related impurities, API characterisation, limited safety information). Content current as of 22 April 2026. The page does not give the date BPC-157 was added to category 2."
+
+ctgov-nct02637284:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT02637284 — Phase I, pilot study in healthy volunteers, to assess the safety and pharmacokinetics of PCO-02, which active ingredient is BPC-157"
+  year: 2015
+  url: https://clinicaltrials.gov/study/NCT02637284
+  accessed: 2026-10-20
+  verified: registry
+  note: "Status unknown; last update December 2015; no results posted."
+
+ctgov-nct07437547:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07437547 — A randomized, double-blind, placebo-controlled phase 2 trial of pentadecapeptide BPC 157 for accelerated repair of acute grade II hamstring strain confirmed by MRI"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07437547
+  accessed: 2026-10-20
+  verified: registry
+  note: "Recruiting; planned enrolment 120; single site in Shenzhen, China; primary completion estimated February 2027."
+
+ctgov-nct07803250:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07803250 — Impact of BPC-157 on recovery from rotator cuff repair surgery"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07803250
+  accessed: 2026-10-20
+  verified: registry
+  note: "Not yet recruiting; university sponsor; planned start January 2027."
+
+ctgov-nct07752381:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07752381 — A clinical trial to evaluate the effects of peptide gummies on markers of inflammation, physical performance, and recovery"
+  year: 2025
+  url: https://clinicaltrials.gov/study/NCT07752381
+  accessed: 2026-10-20
+  verified: registry
+  note: "Single-arm study of an oral consumer product said to contain BPC-157; sponsored by the product's maker; completed November 2025; no results posted. Product deliberately not named on the site."
+
+# ---------------------------------------------------------------- Europe and national law
+
+ema-medicines-json:
+  type: dataset
+  authors: "European Medicines Agency"
+  title: "Medicines data download (JSON report of all EPARs: authorised, refused, withdrawn and suspended medicines)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/report/medicines-output-medicines_json-report_en.json
+  accessed: 2026-10-20
+  verified: url
+  note: "2,754 records (timestamp 20 October 2026); none contains BPC-157, bepecin, PL 14736 or pentadecapeptide."
+
+de-amg-21:
+  type: law
+  authors: "Bundesministerium der Justiz"
+  title: "Arzneimittelgesetz (AMG), § 21 Zulassungspflicht"
+  container: "gesetze-im-internet.de"
+  year: 2026
+  url: https://www.gesetze-im-internet.de/amg_1976/__21.html
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+
+uk-hmr-2012-reg-46:
+  type: law
+  authors: "UK Parliament"
+  title: "The Human Medicines Regulations 2012 (SI 2012/1916), regulation 46: Requirement for authorisation"
+  container: "legislation.gov.uk"
+  year: 2012
+  url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/46
+  accessed: 2026-10-20
+  verified: url
+
+# ---------------------------------------------------------------- anti-doping
+
+wada-2022-list-modifications:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "Summary of Major Modifications and Explanatory Notes, 2022 Prohibited List"
+  year: 2021
+  url: https://www.wada-ama.org/sites/default/files/resources/files/2022list_explanatory_note_final_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "'BPC-157 is now prohibited under S0 following a recent re-evaluation and added as an example.'"
+
+wada-2026-list-en:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "World Anti-Doping Code International Standard: Prohibited List 2026"
+  year: 2025
+  url: https://www.wada-ama.org/sites/default/files/2025-09/2026list_en_final_clean_september_2025.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "S0 Non-approved substances, prohibited at all times, Specified Substances; names BPC-157."
+
+wada-2027-list-en:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "World Anti-Doping Code International Standard: Prohibited List 2027 (in effect 1 January 2027)"
+  year: 2026
+  url: https://www.wada-ama.org/sites/default/files/2026-09/2027list_en_final_clean_26_august_2026_2.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "S0 still names BPC-157 and now also lists 'peptides' among its examples."

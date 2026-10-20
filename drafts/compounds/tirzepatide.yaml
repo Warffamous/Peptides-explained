@@ -1,0 +1,105 @@
+slug: tirzepatide
+tier: 1
+status: complete
+category: authorised
+class: incretin
+body_systems: [metabolic, endocrine, cardiovascular, gastrointestinal]
+names:
+  common: Tirzepatide
+  inn: tirzepatide
+  other: [LY3298176]
+  brands: [Mounjaro, Zepbound]
+identifiers:
+  pubchem_cid: 166567236
+  chembl: CHEMBL4297839
+  cas: 2023788-19-2
+  unii: OYN3CCI6QE
+molecular:
+  formula: C225H348N48O68
+  mass_da: 4813.53          # FDA prescribing information, section 11 (PubChem computed: 4813; Coskun 2018: 4810.52)
+  smiles: "CC[C@H](C)[C@@H](C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CCCCNC(=O)COCCOCCNC(=O)COCCOCCNC(=O)CC[C@@H](C(=O)O)NC(=O)CCCCCCCCCCCCCCCCCCC(=O)O)C(=O)N[C@@H](C)C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CC2=CNC3=CC=CC=C32)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H]([C@@H](C)CC)C(=O)N[C@@H](C)C(=O)NCC(=O)NCC(=O)N4CCC[C@H]4C(=O)N[C@@H](CO)C(=O)N[C@@H](CO)C(=O)NCC(=O)N[C@@H](C)C(=O)N5CCC[C@H]5C(=O)N6CCC[C@H]6C(=O)N7CCC[C@H]7C(=O)N[C@@H](CO)C(=O)N)NC(=O)[C@H](CCCCN)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](CC(C)C)NC(=O)C(C)(C)NC(=O)[C@H]([C@@H](C)CC)NC(=O)[C@H](CO)NC(=O)[C@H](CC8=CC=C(C=C8)O)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](CO)NC(=O)[C@H]([C@@H](C)O)NC(=O)[C@H](CC9=CC=CC=C9)NC(=O)[C@H]([C@@H](C)O)NC(=O)CNC(=O)[C@H](CCC(=O)O)NC(=O)C(C)(C)NC(=O)[C@H](CC1=CC=C(C=C1)O)N"
+  smiles_source: pubchem-tirzepatide
+# Sequence: 39 residues, numbered 1–39 from the N-terminal tyrosine (the numbering used by the
+# FDA label, the EU SmPC and Coskun et al. 2018). Based on the GIP sequence; Aib at 2 and 13.
+sequence:
+  display: "Tyr-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Tyr-Ser-Ile-Aib-Leu-Asp-Lys-Ile-Ala-Gln-Lys*-Ala-Phe-Val-Gln-Trp-Leu-Ile-Ala-Gly-Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser-NH2 (*side chain on Lys)"
+  residues: [Tyr, Aib, Glu, Gly, Thr, Phe, Thr, Ser, Asp, Tyr, Ser, Ile, Aib, Leu, Asp, Lys, Ile, Ala, Gln, Lys, Ala, Phe, Val, Gln, Trp, Leu, Ile, Ala, Gly, Gly, Pro, Ser, Ser, Gly, Ala, Pro, Pro, Pro, Ser]
+  n_terminus: H
+  c_terminus: NH2
+  modifications:
+    - { position: 2, label: "Aib (2-aminoisobutyric acid): non-coded amino acid; protects the N-terminus against DPP-4 cleavage" }
+    - { position: 13, label: "Aib (2-aminoisobutyric acid): second non-coded amino acid" }
+    - { position: 20, label: "Lys: ε-amine carries 2×OEG ([2-(2-aminoethoxy)ethoxy]acetyl) – γGlu – 19-carboxynonadecanoyl (C20 fatty diacid, 1,20-eicosanedioic acid); drives albumin binding" }
+    - { position: 39, label: "Ser: C-terminal amide" }
+  bridges: []
+  source: pubchem-tirzepatide
+evidence:
+  human_clinical: authorised
+  preclinical_volume: extensive
+  independence: broadly-replicated
+  safety: well-characterised
+regulatory:
+  - { jurisdiction: EU, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, ema-mounjaro-procedural-steps, ema-mounjaro-procedural-steps-archive] }
+  - { jurisdiction: NL, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, fk-tirzepatide, fk-regeling-zorgverzekering-bijlage-2-tirzepatide, zin-tirzepatide-obesity-assessment] }
+  - { jurisdiction: DE, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, de-sgb5-34] }
+  - { jurisdiction: BE, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro] }
+  - { jurisdiction: UK, status: authorised, as_of: 2026-10-20, sources: [mhra-glp1-what-you-need-to-know, mhra-2026-falsified-mounjaro] }
+  - { jurisdiction: US, status: authorised, since: 2022-05-13, as_of: 2026-10-20, sources: [fda-drugsatfda-mounjaro, fda-drugsatfda-zepbound, fda-label-mounjaro, fda-label-zepbound] }
+  - { jurisdiction: WADA, status: not-listed, as_of: 2026-10-20, sources: [wada-prohibited-list, wada-2027-prohibited-list, wada-2026-monitoring-program, wada-2027-monitoring-program] }
+studies:
+  # in vitro and animal
+  - { id: willard-2020-receptor-pharmacology, source: willard-2020-imbalanced-biased, year: 2020, species: in-vitro, n: null, design: in-vitro, funding: mixed, group: originating, blinded: null, controlled: true }
+  - { id: samms-2021-insulin-sensitivity-mice, source: samms-2021-gipr-insulin-sensitivity, year: 2021, species: mouse, n: null, design: animal, funding: industry, group: originating, blinded: null, controlled: true }
+  - { id: killion-2018-gipr-antibody, source: killion-2018-gipr-antagonist, year: 2018, species: mixed, n: null, design: animal, funding: industry, group: independent, blinded: null, controlled: true }
+  - { id: killion-2020-desensitisation, source: killion-2020-gipr-desensitisation, year: 2020, species: mouse, n: null, design: animal, funding: industry, group: independent, blinded: null, controlled: true }
+  - { id: zhang-2021-brain-gipr, source: zhang-2021-cns-gipr, year: 2021, species: mouse, n: null, design: animal, funding: mixed, group: independent, blinded: null, controlled: true }
+  - { id: borner-2021-nausea-models, source: borner-2021-gipr-emesis, year: 2021, species: mixed, n: null, design: animal, funding: mixed, group: mixed, blinded: null, controlled: true }
+  # early human
+  - { id: coskun-2018-discovery, source: coskun-2018-ly3298176, year: 2018, species: mixed, n: 142, design: phase-1, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: frias-2018-phase-2, source: frias-2018-tirzepatide-phase2, year: 2018, species: human, n: 318, design: phase-2, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: heise-2022-islet-clamp, source: heise-2022-islet-function, year: 2022, species: human, n: 117, design: rct, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: heise-2023-energy-intake, source: heise-2023-appetite, year: 2023, species: human, n: 117, design: rct, funding: industry, group: originating, blinded: true, controlled: true }
+  # type 2 diabetes
+  - { id: surpass-1, source: rosenstock-2021-surpass-1, year: 2021, species: human, n: 478, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: surpass-2, source: frias-2021-surpass-2, year: 2021, species: human, n: 1879, design: phase-3, funding: industry, group: originating, blinded: false, controlled: true }
+  - { id: surpass-4, source: delprato-2021-surpass-4, year: 2021, species: human, n: 2002, design: phase-3, funding: industry, group: originating, blinded: false, controlled: true }
+  - { id: surpass-peds, source: hannon-2025-surpass-peds, year: 2025, species: human, n: 99, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: surpass-cvot, source: nicholls-2025-surpass-cvot, year: 2025, species: human, n: 13299, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  # obesity and weight-related conditions
+  - { id: surmount-1, source: jastreboff-2022-surmount-1, year: 2022, species: human, n: 2539, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: surmount-1-prediabetes, source: jastreboff-2025-surmount-1-prediabetes, year: 2025, species: human, n: 1032, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: surmount-4, source: aronne-2024-surmount-4, year: 2024, species: human, n: 670, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: surmount-osa, source: malhotra-2024-surmount-osa, year: 2024, species: human, n: 469, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: summit, source: packer-2025-summit, year: 2025, species: human, n: 731, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: surmount-5, source: aronne-2025-surmount-5, year: 2025, species: human, n: 751, design: phase-3, funding: industry, group: originating, blinded: false, controlled: true }
+  # independent and post-marketing
+  - { id: rodriguez-2024-cohort, source: rodriguez-2024-tirzepatide-semaglutide-cohort, year: 2024, species: human, n: 18386, design: observational, funding: undisclosed, group: independent, blinded: false, controlled: true }
+  - { id: mccall-2026-compounded-reports, source: mccall-2026-compounded-faers, year: 2026, species: human, n: null, design: post-marketing, funding: undisclosed, group: independent, blinded: false, controlled: true }
+authorised_products:
+  - id: mounjaro
+    name: Mounjaro
+    holder: Eli Lilly Nederland B.V.
+    jurisdiction: EU
+    authorised: 2022-09-15
+    route: subcutaneous
+    label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/mounjaro
+    label_source: ema-epar-mounjaro
+  - id: mounjaro-us
+    name: Mounjaro (US)
+    holder: Eli Lilly and Company
+    jurisdiction: US
+    authorised: 2022-05-13
+    route: subcutaneous
+    label_url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215866s044s045lbl.pdf
+    label_source: fda-label-mounjaro
+  - id: zepbound
+    name: Zepbound (US)
+    holder: Eli Lilly and Company
+    jurisdiction: US
+    authorised: 2023-11-08
+    route: subcutaneous
+    label_url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/217806Orig1s041correctedlbl.pdf
+    label_source: fda-label-zepbound
+related: [semaglutide]
+last_reviewed: 2026-10-20
+reviewed_by: pending-medical-review

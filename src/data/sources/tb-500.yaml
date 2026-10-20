@@ -1,0 +1,778 @@
+# Sources for the TB-500 / thymosin beta-4 compound page.
+# Every scholarly entry was looked up in PubMed on 20 October 2026 (PubMed MCP tool and NCBI
+# E-utilities esummary/efetch); authors, title, journal, year, volume, pages, DOI and PMID were
+# copied from the PubMed record. Every regulator, law and registry URL was fetched on
+# 20 October 2026 and contains what it is cited for (see research/tb-500.md, "Verification log").
+# Shared ids reused from other files (not re-registered here): fda-pcac-2026-07-meeting,
+# fda-pcac-2026-materials, ema-medicines-search, cbg-geneesmiddeleninformatiebank,
+# nl-geneesmiddelenwet, eu-directive-2001-83, wada-prohibited-list (shared.yaml);
+# fda-pcac-2026-briefing-intro, fda-pcac-2026-questions, fda-pcac-2026-presentations-day1,
+# fda-pcac-2026-bpc157-briefing, fda-503a-bulks-page, fda-503a-categories-2026-05,
+# fda-category-2-safety-risks, ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46,
+# wada-2026-list-en, wada-2027-list-en, bicer-2026-achilles, lee-2021-knee,
+# hanahan-2011-hallmarks, carmeliet-2011-angiogenesis (bpc-157.yaml).
+
+# ---------------------------------------------------------------- identity, chemistry, databases
+
+pubchem-tb-500:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 62707662 (TB-500; Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln-OH)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/62707662
+  accessed: 2026-10-20
+  verified: url
+  note: "PUG REST: molecular formula C38H68N10O14, molecular weight 889.0, isomeric SMILES; synonyms TB500, TB-500, 885340-08-9, UNII-QHK6Z47GTG, Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln-OH, TB 500 acetate."
+
+pubchem-thymosin-beta-4:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 45382195 (Thymosin Beta 4)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/45382195
+  accessed: 2026-10-20
+  verified: url
+  note: "PUG REST: molecular formula C212H350N56O78S, molecular weight 4963; a synonym gives the 43-residue sequence Ac-Ser-Asp-Lys-Pro-…-Gly-Glu-Ser-OH, identical in human, cattle, horse and rat."
+
+chembl-timbetasin:
+  type: dataset
+  authors: "EMBL-EBI"
+  title: "ChEMBL compound report cards: CHEMBL4594313 (timbetasin) and CHEMBL4594314 (timbetasin acetate)"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4594313
+  accessed: 2026-10-20
+  verified: url
+  note: "ChEMBL API: timbetasin has synonym types INN and USAN; biocomponent sequence SDKPDMAEIEKFDKSKLKKTETQEKNPLPSKETIEQEKQAGES with N-acetylserine; timbetasin acetate synonyms RGN-259, RGN-137, GBT-201, 'Thymosin b4'. No ChEMBL record found for TB-500."
+
+low-1981-sequence:
+  type: article
+  authors: "Low TL, Hu SK, Goldstein AL"
+  title: "Complete amino acid sequence of bovine thymosin beta 4: a thymic hormone that induces terminal deoxynucleotidyl transferase activity in thymocyte populations"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 1981
+  volume: "78"
+  pages: "1162-1166"
+  doi: 10.1073/pnas.78.2.1162
+  pmid: "6940133"
+  pmcid: PMC319967
+  verified: pubmed
+
+safer-1991-actin-sequestering:
+  type: article
+  authors: "Safer D, Elzinga M, Nachmias VT"
+  title: "Thymosin beta 4 and Fx, an actin-sequestering peptide, are indistinguishable"
+  container: "Journal of Biological Chemistry"
+  year: 1991
+  volume: "266"
+  pages: "4029-4032"
+  pmid: "1999398"
+  verified: pubmed
+  note: "PubMed record has no DOI. Tβ4 forms a 1:1 complex with actin monomers and inhibits polymerisation; at least 50% of platelet actin is unpolymerised and mostly bound to it."
+
+hannappel-1987-blood-levels:
+  type: article
+  authors: "Hannappel E, van Kampen M"
+  title: "Determination of thymosin beta 4 in human blood cells and serum"
+  container: "Journal of Chromatography"
+  year: 1987
+  volume: "397"
+  pages: "279-285"
+  doi: 10.1016/s0021-9673(01)85010-x
+  pmid: "3654821"
+  verified: pubmed
+  note: "Whole blood extract 16.3 µg/mL; plasma less than 1% of that; serum rises from 0.04 to 2.1 µg/mL within 24 h if left on the clot."
+
+mannherz-2009-beta-thymosins:
+  type: review
+  authors: "Mannherz HG, Hannappel E"
+  title: "The beta-thymosins: intracellular and extracellular activities of a versatile actin binding protein family"
+  container: "Cell Motility and the Cytoskeleton"
+  year: 2009
+  volume: "66"
+  pages: "839-851"
+  doi: 10.1002/cm.20371
+  pmid: "19405116"
+  verified: pubmed
+
+goldstein-2005-moonlights:
+  type: review
+  authors: "Goldstein AL, Hannappel E, Kleinman HK"
+  title: "Thymosin beta4: actin-sequestering protein moonlights to repair injured tissues"
+  container: "Trends in Molecular Medicine"
+  year: 2005
+  volume: "11"
+  pages: "421-429"
+  doi: 10.1016/j.molmed.2005.07.004
+  pmid: "16099219"
+  verified: pubmed
+
+sosne-2010-active-sites:
+  type: review
+  authors: "Sosne G, Qiu P, Goldstein AL, Wheater M"
+  title: "Biological activities of thymosin beta4 defined by active sites in short peptide sequences"
+  container: "FASEB Journal"
+  year: 2010
+  volume: "24"
+  pages: "2144-2151"
+  doi: 10.1096/fj.09-142307
+  pmid: "20179146"
+  verified: pubmed
+  note: "Attributes anti-inflammatory/antifibrotic activity to Ac-SDKP (residues 1–4) and migration, angiogenesis and wound healing to LKKTETQ (17–23)."
+
+freeman-2011-atp-synthase:
+  type: article
+  authors: "Freeman KW, Bowman BR, Zetter BR"
+  title: "Regenerative protein thymosin beta-4 is a novel regulator of purinergic signaling"
+  container: "FASEB Journal"
+  year: 2011
+  volume: "25"
+  pages: "907-915"
+  doi: 10.1096/fj.10-169417
+  pmid: "21106936"
+  verified: pubmed
+
+grillon-1990-acsdkp:
+  type: article
+  authors: "Grillon C, Rieger K, Bakala J, Schott D, Morgat JL, et al."
+  title: "Involvement of thymosin beta 4 and endoproteinase Asp-N in the biosynthesis of the tetrapeptide AcSerAspLysPro a regulator of the hematopoietic system"
+  container: "FEBS Letters"
+  year: 1990
+  volume: "274"
+  pages: "30-34"
+  doi: 10.1016/0014-5793(90)81322-f
+  pmid: "2253778"
+  verified: pubmed
+
+cavasin-2004-pop-acsdkp:
+  type: article
+  authors: "Cavasin MA, Rhaleb NE, Yang XP, Carretero OA"
+  title: "Prolyl oligopeptidase is involved in release of the antifibrotic peptide Ac-SDKP"
+  container: "Hypertension"
+  year: 2004
+  volume: "43"
+  pages: "1140-1145"
+  doi: 10.1161/01.HYP.0000126172.01673.84
+  pmid: "15037553"
+  pmcid: PMC4677773
+  verified: pubmed
+  note: "Ac-SDKP is hydrolysed almost exclusively by ACE; ACE inhibitors raise endogenous Ac-SDKP in rats."
+
+azizi-1996-ace-acsdkp:
+  type: article
+  authors: "Azizi M, Rousseau A, Ezan E, Guyene TT, Michelet S, et al."
+  title: "Acute angiotensin-converting enzyme inhibition increases the plasma level of the natural stem cell regulator N-acetyl-seryl-aspartyl-lysyl-proline"
+  container: "Journal of Clinical Investigation"
+  year: 1996
+  volume: "97"
+  pages: "839-844"
+  doi: 10.1172/JCI118484
+  pmid: "8609242"
+  pmcid: PMC507123
+  verified: pubmed
+  note: "Single dose of captopril in 8 healthy people (double-blind crossover): plasma Ac-SDKP rose about 5.5-fold."
+
+# ---------------------------------------------------------------- what TB-500 is: doping and product analyses
+
+esposito-2012-tb500-identity:
+  type: article
+  authors: "Esposito S, Deventer K, Goeman J, Van der Eycken J, Van Eenoo P"
+  title: "Synthesis and characterization of the N-terminal acetylated 17-23 fragment of thymosin beta 4 identified in TB-500, a product suspected to possess doping potential"
+  container: "Drug Testing and Analysis"
+  year: 2012
+  volume: "4"
+  pages: "733-738"
+  doi: 10.1002/dta.1402
+  pmid: "22962027"
+  verified: pubmed
+
+ho-2012-equine-tb500:
+  type: article
+  authors: "Ho EN, Kwok WH, Lau MY, Wong AS, Wan TS, et al."
+  title: "Doping control analysis of TB-500, a synthetic version of an active region of thymosin β₄, in equine urine and plasma by liquid chromatography-mass spectrometry"
+  container: "Journal of Chromatography A"
+  year: 2012
+  volume: "1265"
+  pages: "57-69"
+  doi: 10.1016/j.chroma.2012.09.043
+  pmid: "23084823"
+  verified: pubmed
+  note: "Hong Kong Jockey Club racing laboratory; 'the key ingredient of TB-500 is the peptide LKKTETQ with artificial acetylation of the N-terminus'."
+
+kwok-2013-horse-peptides:
+  type: article
+  authors: "Kwok WH, Ho EN, Lau MY, Leung GN, Wong AS, et al."
+  title: "Doping control analysis of seven bioactive peptides in horse plasma by liquid chromatography-mass spectrometry"
+  container: "Analytical and Bioanalytical Chemistry"
+  year: 2013
+  volume: "405"
+  pages: "2595-2606"
+  doi: 10.1007/s00216-012-6697-9
+  pmid: "23318763"
+  verified: pubmed
+
+rahaman-2024-tb500-metabolites:
+  type: article
+  authors: "Rahaman KA, Muresan AR, Min H, Son J, Han HS, et al."
+  title: "Simultaneous quantification of TB-500 and its metabolites in in-vitro experiments and rats by UHPLC-Q-Exactive orbitrap MS/MS and their screening by wound healing activities in-vitro"
+  container: "Journal of Chromatography B, Analytical Technologies in the Biomedical and Life Sciences"
+  year: 2024
+  volume: "1235"
+  pages: "124033"
+  doi: 10.1016/j.jchromb.2024.124033
+  pmid: "38382158"
+  verified: pubmed
+  note: "Korea Institute of Science and Technology doping control centre. Ac-LK main early metabolite, Ac-LKK detectable to 72 h in rat urine; only Ac-LKKTE showed significant scratch-wound closure; authors declare no competing interests."
+
+delcourt-2023-misbranded:
+  type: article
+  authors: "Delcourt V, Garcia P, Chabot B, Barnabé A, Bouscarel M, et al."
+  title: "TB500/TB1000 and SGF1000: A scientific approach for a better understanding of misbranded and adulterated drugs"
+  container: "Drug Testing and Analysis"
+  year: 2023
+  volume: "15"
+  pages: "458-464"
+  doi: 10.1002/dta.3421
+  pmid: "36482504"
+  verified: pubmed
+  note: "French horse-racing laboratory (GIE LCH). Abstract: TB500/TB1000 content 'not systematically consistent' with former descriptions. Full text not accessible (publisher 403); only the abstract is cited."
+
+delcourt-2025-equine-tb4:
+  type: article
+  authors: "Delcourt V, Garcia P, Chabot B, Aber N, Pescher M, et al."
+  title: "Equine Doping Controls of Thymosin β 4: A Population Study and Strategy for Misuse Detection"
+  container: "Drug Testing and Analysis"
+  year: 2025
+  volume: "17"
+  pages: "1071-1077"
+  doi: 10.1002/dta.3806
+  pmid: "39314109"
+  verified: pubmed
+  note: "Abstract: products online claim 'to contain a synthetic acetylated fragment of TB4 or TB4 itself'."
+
+# ---------------------------------------------------------------- preclinical efficacy: full-length Tβ4 and fragments
+
+malinda-1999-wound-healing:
+  type: article
+  authors: "Malinda KM, Sidhu GS, Mani H, Banaudha K, Maheshwari RK, et al."
+  title: "Thymosin beta4 accelerates wound healing"
+  container: "Journal of Investigative Dermatology"
+  year: 1999
+  volume: "113"
+  pages: "364-368"
+  doi: 10.1046/j.1523-1747.1999.00708.x
+  pmid: "10469335"
+  verified: pubmed
+
+philp-2003-lkktetq-wounds:
+  type: article
+  authors: "Philp D, Badamchian M, Scheremeta B, Nguyen M, Goldstein AL, et al."
+  title: "Thymosin beta 4 and a synthetic peptide containing its actin-binding domain promote dermal wound repair in db/db diabetic mice and in aged mice"
+  container: "Wound Repair and Regeneration"
+  year: 2003
+  volume: "11"
+  pages: "19-24"
+  doi: 10.1046/j.1524-475x.2003.11105.x
+  pmid: "12581423"
+  verified: pubmed
+
+bock-marquette-2004-cardiac:
+  type: article
+  authors: "Bock-Marquette I, Saxena A, White MD, Dimaio JM, Srivastava D"
+  title: "Thymosin beta4 activates integrin-linked kinase and promotes cardiac cell migration, survival and cardiac repair"
+  container: "Nature"
+  year: 2004
+  volume: "432"
+  pages: "466-472"
+  doi: 10.1038/nature03000
+  pmid: "15565145"
+  verified: pubmed
+
+smart-2007-epicardial:
+  type: article
+  authors: "Smart N, Risebro CA, Melville AA, Moses K, Schwartz RJ, et al."
+  title: "Thymosin beta4 induces adult epicardial progenitor mobilization and neovascularization"
+  container: "Nature"
+  year: 2007
+  volume: "445"
+  pages: "177-182"
+  doi: 10.1038/nature05383
+  pmid: "17108969"
+  verified: pubmed
+
+banerjee-2012-dispensable:
+  type: article
+  authors: "Banerjee I, Zhang J, Moore-Morris T, Lange S, Shen T, et al."
+  title: "Thymosin beta 4 is dispensable for murine cardiac development and function"
+  container: "Circulation Research"
+  year: 2012
+  volume: "110"
+  pages: "456-464"
+  doi: 10.1161/CIRCRESAHA.111.258616
+  pmid: "22158707"
+  pmcid: PMC3739283
+  verified: pubmed
+
+banerjee-2013-vascular:
+  type: article
+  authors: "Banerjee I, Moore Morris T, Evans SM, Chen J"
+  title: "Thymosin β4 is not required for embryonic viability or vascular development"
+  container: "Circulation Research"
+  year: 2013
+  volume: "112"
+  pages: "e25-e28"
+  doi: 10.1161/CIRCRESAHA.111.300197
+  pmid: "23371905"
+  pmcid: PMC3712119
+  verified: pubmed
+
+wyczolkowska-2007-mast-cells:
+  type: article
+  authors: "Wyczółkowska J, Walczak-Drzewiecka A, Wagner W, Dastych J"
+  title: "Thymosin beta4 and thymosin beta4-derived peptides induce mast cell exocytosis"
+  container: "Peptides"
+  year: 2007
+  volume: "28"
+  pages: "752-759"
+  doi: 10.1016/j.peptides.2007.01.004
+  pmid: "17289217"
+  verified: pubmed
+
+# ---------------------------------------------------------------- Tβ4 and tumours
+
+cha-2003-metastasis:
+  type: article
+  authors: "Cha HJ, Jeong MJ, Kleinman HK"
+  title: "Role of thymosin beta4 in tumor metastasis and angiogenesis"
+  container: "Journal of the National Cancer Institute"
+  year: 2003
+  volume: "95"
+  pages: "1674-1680"
+  doi: 10.1093/jnci/djg100
+  pmid: "14625258"
+  verified: pubmed
+
+kobayashi-2002-fibrosarcoma:
+  type: article
+  authors: "Kobayashi T, Okada F, Fujii N, Tomita N, Ito S, et al."
+  title: "Thymosin-beta4 regulates motility and metastasis of malignant mouse fibrosarcoma cells"
+  container: "American Journal of Pathology"
+  year: 2002
+  volume: "160"
+  pages: "869-882"
+  doi: 10.1016/s0002-9440(10)64910-3
+  pmid: "11891186"
+  pmcid: PMC1867176
+  verified: pubmed
+
+wang-2004-colorectal:
+  type: article
+  authors: "Wang WS, Chen PM, Hsiao HL, Wang HS, Liang WY, et al."
+  title: "Overexpression of the thymosin beta-4 gene is associated with increased invasion of SW480 colon carcinoma cells and the distant metastasis of human colorectal carcinoma"
+  container: "Oncogene"
+  year: 2004
+  volume: "23"
+  pages: "6666-6671"
+  doi: 10.1038/sj.onc.1207888
+  pmid: "15235586"
+  verified: pubmed
+
+huang-2007-emt:
+  type: article
+  authors: "Huang HC, Hu CH, Tang MC, Wang WS, Chen PM, et al."
+  title: "Thymosin beta4 triggers an epithelial-mesenchymal transition in colorectal carcinoma by upregulating integrin-linked kinase"
+  container: "Oncogene"
+  year: 2007
+  volume: "26"
+  pages: "2781-2790"
+  doi: 10.1038/sj.onc.1210078
+  pmid: "17072345"
+  verified: pubmed
+
+yoon-2021-ovarian-cancer:
+  type: article
+  authors: "Yoon HJ, Oh YL, Ko EJ, Kang A, Eo WK, et al."
+  title: "Effects of thymosin β4-derived peptides on migration and invasion of ovarian cancer cells"
+  container: "Genes & Genomics"
+  year: 2021
+  volume: "43"
+  pages: "987-993"
+  doi: 10.1007/s13258-021-01127-7
+  pmid: "34170491"
+  verified: pubmed
+
+# ---------------------------------------------------------------- human reports involving TB-500 itself
+
+froum-2026-nerve-cases:
+  type: article
+  authors: "Froum S, Estrin N, Pico G, Yakubov M, Ahmad P, et al."
+  title: "Case Report: Regenerative peptides for Inferior alveolar nerve injury: a narrative review with hypothesis-generating three clinical cases"
+  container: "Frontiers in Oral Health"
+  year: 2026
+  volume: "7"
+  pages: "1907109"
+  doi: 10.3389/froh.2026.1907109
+  pmid: "42876687"
+  pmcid: PMC13661421
+  verified: pubmed
+  note: "Three patients given repeated gum injections of a mixture of ARA-290, TB-500, BPC-157, dexamethasone and bupivacaine with adrenaline; authors state causality cannot be established."
+
+# ---------------------------------------------------------------- human trials of full-length Tβ4 (published)
+
+ruff-2010-phase1-iv:
+  type: trial
+  authors: "Ruff D, Crockford D, Girardi G, Zhang Y"
+  title: "A randomized, placebo-controlled, single and multiple dose study of intravenous thymosin beta4 in healthy volunteers"
+  container: "Annals of the New York Academy of Sciences"
+  year: 2010
+  volume: "1194"
+  pages: "223-229"
+  doi: 10.1111/j.1749-6632.2010.05474.x
+  pmid: "20536472"
+  verified: pubmed
+  note: "First author at ICON Development Solutions (a contract research organisation). Co-author D. Crockford is the RegeneRx clinical and regulatory affairs author of crockford-2007-regenerx, which describes this phase 1 protocol as RegeneRx's."
+
+guarnera-2010-venous-ulcers:
+  type: trial
+  authors: "Guarnera G, DeRosa A, Camerini R; 8 European sites"
+  title: "The effect of thymosin treatment of venous ulcers"
+  container: "Annals of the New York Academy of Sciences"
+  year: 2010
+  volume: "1194"
+  pages: "207-212"
+  doi: 10.1111/j.1749-6632.2010.05490.x
+  pmid: "20536470"
+  verified: pubmed
+
+crockford-2007-regenerx:
+  type: article
+  authors: "Crockford D"
+  title: "Development of thymosin beta4 for treatment of patients with ischemic heart disease"
+  container: "Annals of the New York Academy of Sciences"
+  year: 2007
+  volume: "1112"
+  pages: "385-395"
+  doi: 10.1196/annals.1415.051
+  pmid: "17947592"
+  verified: pubmed
+  note: "Author affiliation: Clinical and Regulatory Affairs, RegeneRx Biopharmaceuticals. Describes RegeneRx's development of Tβ4 for acute myocardial infarction and its phase 1 protocol in healthy volunteers."
+
+treadwell-2012-dermal-review:
+  type: review
+  authors: "Treadwell T, Kleinman HK, Crockford D, Hardy MA, Guarnera GT, et al."
+  title: "The regenerative peptide thymosin β4 accelerates the rate of dermal healing in preclinical animal models and in patients"
+  container: "Annals of the New York Academy of Sciences"
+  year: 2012
+  volume: "1270"
+  pages: "37-44"
+  doi: 10.1111/j.1749-6632.2012.06717.x
+  pmid: "23050815"
+  verified: pubmed
+
+dunn-2010-neurotrophic-cases:
+  type: article
+  authors: "Dunn SP, Heidemann DG, Chow CY, Crockford D, Turjman N, et al."
+  title: "Treatment of chronic nonhealing neurotrophic corneal epithelial defects with thymosin beta4"
+  container: "Annals of the New York Academy of Sciences"
+  year: 2010
+  volume: "1194"
+  pages: "199-206"
+  doi: 10.1111/j.1749-6632.2010.05471.x
+  pmid: "20536469"
+  verified: pubmed
+  note: "Nine compassionate-use patients; six with geographic defects healed, three with punctate defects did not change."
+
+sosne-2015-cae-dry-eye:
+  type: trial
+  authors: "Sosne G, Ousler GW"
+  title: "Thymosin beta 4 ophthalmic solution for dry eye: a randomized, placebo-controlled, Phase II clinical trial conducted using the controlled adverse environment (CAE™) model"
+  container: "Clinical Ophthalmology"
+  year: 2015
+  volume: "9"
+  pages: "877-884"
+  doi: 10.2147/OPTH.S80954
+  pmid: "26056426"
+  pmcid: PMC4445951
+  verified: pubmed
+
+sosne-2015-severe-dry-eye:
+  type: trial
+  authors: "Sosne G, Dunn SP, Kim C"
+  title: "Thymosin β4 significantly improves signs and symptoms of severe dry eye in a phase 2 randomized trial"
+  container: "Cornea"
+  year: 2015
+  volume: "34"
+  pages: "491-496"
+  doi: 10.1097/ICO.0000000000000379
+  pmid: "25826322"
+  verified: pubmed
+
+sosne-2022-seer1:
+  type: trial
+  authors: "Sosne G, Kleinman HK, Springs C, Gross RH, Sung J, et al."
+  title: "0.1% RGN-259 (Thymosin ß4) Ophthalmic Solution Promotes Healing and Improves Comfort in Neurotrophic Keratopathy Patients in a Randomized, Placebo-Controlled, Double-Masked Phase III Clinical Trial"
+  container: "International Journal of Molecular Sciences"
+  year: 2022
+  volume: "24"
+  doi: 10.3390/ijms24010554
+  pmid: "36613994"
+  pmcid: PMC9820614
+  verified: pubmed
+  note: "PMC full text: funded by ReGenTree, LLC; study designed by ReGenTree employees; two authors employed by ReGenTree."
+
+wang-2021-rhtb4-phase1:
+  type: trial
+  authors: "Wang X, Liu L, Qi L, Lei C, Li P, et al."
+  title: "A first-in-human, randomized, double-blind, single- and multiple-dose, phase I study of recombinant human thymosin β4 in healthy Chinese volunteers"
+  container: "Journal of Cellular and Molecular Medicine"
+  year: 2021
+  volume: "25"
+  pages: "8222-8228"
+  doi: 10.1111/jcmm.16693
+  pmid: "34346165"
+  pmcid: PMC8419156
+  verified: pubmed
+  note: "PMC full text: sponsor Beijing Northland Biotech; NL005 is a 44-residue recombinant protein; anti-drug antibodies positive in 1 of 108 single-dose samples and 1 of 28 multiple-dose subjects, all negative at follow-up."
+
+zhang-2025-stemi:
+  type: article
+  authors: "Zhang Y, Dong Q, Bian X, Qiao Z, Cui C, et al."
+  title: "Recombinant human thymosin beta 4 improves ischemic cardiac dysfunction in mice and patients with acute ST-segment elevation myocardial infarction after reperfusion"
+  container: "Cardiovascular Research"
+  year: 2025
+  volume: "121"
+  pages: "2747-2758"
+  doi: 10.1093/cvr/cvaf223
+  pmid: "41229390"
+  verified: pubmed
+  note: "Conflict-of-interest statement: three authors are employees of Beijing Northland Biotechnology; grant support from Chinese Academy of Medical Sciences and Peking Union Medical College."
+
+kruoch-2025-cochrane-nk:
+  type: meta-analysis
+  authors: "Kruoch Z, Choo AY, Kemp A, Gonzales M, Yim TW, et al."
+  title: "Medical and surgical interventions for neurotrophic keratopathy"
+  container: "Cochrane Database of Systematic Reviews"
+  year: 2025
+  volume: "12"
+  pages: "CD015723"
+  doi: 10.1002/14651858.CD015723.pub2
+  pmid: "41347649"
+  pmcid: PMC12679690
+  verified: pubmed
+  note: "For 0.1% RGN-259 (one trial, 18 participants): RR 9.00, 95% CI 0.57 to 141.88, low-certainty evidence."
+
+# ---------------------------------------------------------------- trial registry records (ClinicalTrials.gov API v2, 20 October 2026)
+
+ctgov-nct00382174:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT00382174 — Thymosin beta 4 in patients with pressure ulcers (phase 2, RegeneRx), results posted"
+  year: 2010
+  url: https://clinicaltrials.gov/study/NCT00382174
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed; 72 enrolled; wound healing 8 of 53 (Tβ4, three doses) vs 3 of 18 (placebo); serious adverse events 13 vs 5."
+
+ctgov-nct00832091:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT00832091 — Thymosin beta 4 in patients with venous stasis ulcers (phase 2, RegeneRx), results posted"
+  year: 2010
+  url: https://clinicaltrials.gov/study/NCT00832091
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed; 72 enrolled; healed 12 of 55 (Tβ4) vs 4 of 17 (placebo); serious adverse events 3 of 55 vs 1 of 17."
+
+ctgov-nct00311766:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT00311766 — Thymosin beta 4 for wound healing in epidermolysis bullosa (phase 2, RegeneRx), results posted"
+  year: 2014
+  url: https://clinicaltrials.gov/study/NCT00311766
+  accessed: 2026-10-20
+  verified: registry
+  note: "Terminated ('lack of patient availability and expiration of study drug'); 30 enrolled; healed 8 of 22 vs 5 of 8, p > 0.05 (Fisher exact)."
+
+ctgov-nct00598871:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT00598871 — Thymosin beta 4 for corneal wounds in diabetic patients after vitrectomy (phase 2), results posted"
+  year: 2015
+  url: https://clinicaltrials.gov/study/NCT00598871
+  accessed: 2026-10-20
+  verified: registry
+  note: "Terminated for slow recruitment; 12 enrolled."
+
+ctgov-nct02597803:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT02597803 — ARISE-1: RGN-259 ophthalmic solution for dry eye (phase 2/3, ReGenTree)"
+  year: 2019
+  url: https://clinicaltrials.gov/study/NCT02597803
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed June 2016; 317 enrolled; no results posted."
+
+ctgov-nct02974907:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT02974907 — ARISE-2: RGN-259 ophthalmic solution for dry eye (phase 3, ReGenTree), results posted"
+  year: 2022
+  url: https://clinicaltrials.gov/study/NCT02974907
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed; 601 enrolled; primary endpoints at day 29: ocular discomfort change 0.07 vs −0.04, corneal staining change 0.07 vs −0.01 (RGN-259 vs placebo); serious adverse events 3 of 299 vs 2 of 302."
+
+ctgov-nct03937882:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT03937882 — ARISE-3: RGN-259 ophthalmic solution for dry eye (phase 3, ReGenTree), results posted"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT03937882
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed; 700 enrolled; primary endpoints at day 15: inferior corneal staining change −0.41 vs −0.46, ocular discomfort −0.4 vs −0.4; serious adverse events 0 of 350 vs 0 of 349; other adverse events 47 of 350 vs 31 of 349. Last update 28 August 2026."
+
+ctgov-nct02600429:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT02600429 — SEER-1: RGN-259 for neurotrophic keratopathy (phase 3, ReGenTree), results posted"
+  year: 2023
+  url: https://clinicaltrials.gov/study/NCT02600429
+  accessed: 2026-10-20
+  verified: registry
+  note: "Terminated ('business decision'); 18 enrolled; complete healing at day 29: 6 of 10 vs 1 of 8."
+
+ctgov-nct05555589:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT05555589 — SEER-2: 0.1% RGN-259 for neurotrophic keratopathy (phase 3, ReGenTree)"
+  year: 2025
+  url: https://clinicaltrials.gov/study/NCT05555589
+  accessed: 2026-10-20
+  verified: registry
+  note: "Recruiting; estimated enrolment 70; estimated primary completion 30 April 2026; last update 23 December 2025."
+
+ctgov-nct05485818:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT05485818 — Phase IIa study of injectable recombinant human thymosin beta 4 in acute myocardial infarction (Beijing Northland Biotech)"
+  year: 2022
+  url: https://clinicaltrials.gov/study/NCT05485818
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed September 2021; 62 enrolled; no results posted."
+
+ctgov-nct05984134:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT05984134 — Phase IIb study of recombinant human thymosin β4 (NL005) in acute myocardial infarction (Beijing Northland Biotech)"
+  year: 2024
+  url: https://clinicaltrials.gov/study/NCT05984134
+  accessed: 2026-10-20
+  verified: registry
+  note: "Completed May 2023; 90 enrolled; no results posted."
+
+ctgov-nct07586865:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07586865 — Phase IIc study of recombinant human thymosin beta 4 injection (NL005) in acute myocardial infarction (Beijing Northland Biotech)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07586865
+  accessed: 2026-10-20
+  verified: registry
+  note: "Not yet recruiting; estimated enrolment 189; estimated start 18 May 2026."
+
+ctgov-nct01311518:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT01311518 — RGN-352 (injectable thymosin beta 4) in acute ST-elevation myocardial infarction (phase 2, RegeneRx)"
+  year: 2021
+  url: https://clinicaltrials.gov/study/NCT01311518
+  accessed: 2026-10-20
+  verified: registry
+  note: "Withdrawn ('Trial never initiated'); 0 enrolled."
+
+ctgov-nct07487363:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07487363 — 'TB-500 (Thymosin Beta 4 17-23 Fragment) for Cardiovascular Biomarkers in Stable ASCVD' (TBRIDGE-CV)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07487363
+  accessed: 2026-10-20
+  verified: registry
+  note: "Listed as recruiting, first posted 23 March 2026. Its brief summary begins: 'This fictional study is an example of a ClinicalTrials.gov-style record.' Not counted as evidence."
+
+# ---------------------------------------------------------------- United States (FDA)
+
+fda-pcac-2026-tb500-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for TB-500-Related Bulk Drug Substances (TB-500 (free base) and TB-500 acetate), Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193349/download
+  accessed: 2026-10-20
+  verified: url
+  note: "Evaluation dated 15 May 2026. Defines TB-500 as Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln-OH (C38H68N10O14, 889.01 g/mol, UNII QHK6Z47GTG, CAS 885340-08-9); 'thymosin beta-4 and TB-500 are not the same substance'; no human data found; no acute, repeat-dose, genotoxicity, reproductive or carcinogenicity studies identified; FAERS search to 26 March 2025 retrieved no reports; WADA 'S2.3'; no approved product in the EU, UK, Belgium, Germany and other listed countries; FDA proposes NOT adding either form."
+
+# ---------------------------------------------------------------- Europe and national law
+
+ema-orphan-designations-json:
+  type: dataset
+  authors: "European Medicines Agency"
+  title: "Orphan designations data download (JSON report of all EU orphan designations)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/report/medicines-output-orphan_designations-json-report_en.json
+  accessed: 2026-10-20
+  verified: url
+  note: "3,310 records (timestamp 20 October 2026); none contains thymosin, timbetasin, TB-500, TB500 or LKKTETQ."
+
+de-antidopg-anlage:
+  type: law
+  authors: "Bundesministerium der Justiz"
+  title: "Gesetz gegen Doping im Sport (Anti-Doping-Gesetz – AntiDopG), Anlage (zu § 2 Absatz 3)"
+  container: "gesetze-im-internet.de"
+  year: 2023
+  url: https://www.gesetze-im-internet.de/antidopg/anlage.html
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+  note: "Fundstelle BGBl. 2023 I, Nr. 67. Under 'Wachstumsfaktoren und Wachstumsfaktor-Modulatoren' lists 'Thymosin-beta-4 und seine Derivate, Zum Beispiel: TB-500'."
+
+de-antidopg-2:
+  type: law
+  authors: "Bundesministerium der Justiz"
+  title: "Gesetz gegen Doping im Sport (Anti-Doping-Gesetz – AntiDopG), § 2 Unerlaubter Umgang mit Dopingmitteln"
+  container: "gesetze-im-internet.de"
+  year: 2026
+  url: https://www.gesetze-im-internet.de/antidopg/__2.html
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+  note: "§ 2(3): prohibits acquiring, possessing or bringing into Germany a substance listed in the Anlage 'in nicht geringer Menge zum Zwecke des Dopings beim Menschen im Sport'."
+
+be-wet-geneesmiddelen-1964:
+  type: law
+  authors: "Koninkrijk België"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen [voor menselijk gebruik], artikel 6 § 1"
+  container: "Belgisch Staatsblad / ejustice.just.fgov.be"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&table_name=wet&cn=1964032530
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Art. 6 § 1: 'Een geneesmiddel mag slechts in de handel worden gebracht, nadat een vergunning voor het in de handel brengen' is granted by the minister or by the European Commission. Published 17 April 1964. Read via WebFetch (direct curl was blocked)."
+
+# ---------------------------------------------------------------- anti-doping
+
+wada-2018-list-modifications:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "Summary of Major Modifications and Explanatory Notes, 2018 Prohibited List"
+  year: 2017
+  url: https://www.wada-ama.org/sites/default/files/prohibited_list_2018_summary_of_modifications_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "S2: 'Thymosin-β4 and its derivatives, e.g. TB-500, were added as example of prohibited growth factors.'"

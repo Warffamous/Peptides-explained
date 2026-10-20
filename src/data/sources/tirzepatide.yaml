@@ -1,0 +1,610 @@
+# Sources for the tirzepatide compound page.
+# Scholarly entries: metadata copied from the PubMed record (E-utilities esummary/efetch and the
+# PubMed MCP) on 2026-10-20. Regulator, label and law entries: each URL was fetched on 2026-10-20
+# and says what it is cited for (see research/tirzepatide.md for the verification log).
+# Reused from other files (not re-registered here): knudsen-2010-thyroid-c-cells, muller-2019-glp1-review,
+# ema-prac-2024-04-suicidal-thoughts, ema-prac-2024-07-aspiration, fda-glp1-compounding-policy,
+# fda-unapproved-glp1-concerns, fda-2026-503b-glp1-exclusion-proposal, igj-2026-webshop-order-glp1,
+# mhra-glp1-what-you-need-to-know, cbg-glp1-position, zin-2025-obesity-staged-approach,
+# wada-2026-monitoring-program, wada-prohibited-list, lareb-home, neeland-2024-lean-mass.
+
+# ------------------------------------------------------------------ chemistry / identifiers
+
+pubchem-tirzepatide:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 166567236, Tirzepatide"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/166567236
+  accessed: 2026-10-20
+  verified: registry
+  note: "Isomeric SMILES, formula C225H348N48O68 and systematic name retrieved via PUG REST. The SMILES and IUPAC name give the sequence Tyr-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Tyr-Ser-Ile-Aib-Leu-Asp-Lys-Ile-Ala-Gln-Lys-Ala-Phe-Val-Gln-Trp-Leu-Ile-Ala-Gly-Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser-NH2 with the Lys20 side chain 2×[2-(2-aminoethoxy)ethoxy]acetyl – γGlu (1S) – 19-carboxynonadecanoyl. PubChem holds several tirzepatide CIDs with differing stereo-annotation; this CID carries the Mounjaro/Zepbound synonyms and L-configured (S) residues throughout."
+
+chembl-tirzepatide:
+  type: dataset
+  authors: "EMBL-EBI"
+  title: "ChEMBL compound CHEMBL4297839 (tirzepatide)"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4297839
+  accessed: 2026-10-20
+  verified: registry
+  note: "Max phase 4, first approval 2022, ATC A10BX16, synonym LY3298176; USAN stem -tide (-patide)."
+
+gsrs-tirzepatide:
+  type: dataset
+  authors: "U.S. Food and Drug Administration / NCATS"
+  title: "Global Substance Registration System: Tirzepatide (UNII OYN3CCI6QE)"
+  container: "GSRS"
+  year: 2026
+  url: https://gsrs.ncats.nih.gov/ginas/app/beta/substances/OYN3CCI6QE
+  accessed: 2026-10-20
+  verified: registry
+  note: "UNII OYN3CCI6QE; CAS 2023788-19-2; 39-residue protein record. Linked side-chain fragment named N6-(N-(hydrogen icosanedioyl)-γ-Glu-bis(iminobis(ethyleneoxy)acetyl))-lysine (UNII NVV1P9GCY2)."
+
+# ------------------------------------------------------------------ discovery and mechanism
+
+coskun-2018-ly3298176:
+  type: article
+  authors: "Coskun T, Sloop KW, Loghin C, Alsina-Fernandez J, Urva S, Bokvist KB, et al."
+  title: "LY3298176, a novel dual GIP and GLP-1 receptor agonist for the treatment of type 2 diabetes mellitus: From discovery to clinical proof of concept"
+  container: "Molecular Metabolism"
+  year: 2018
+  volume: "18"
+  pages: "3-14"
+  doi: 10.1016/j.molmet.2018.09.009
+  pmid: "30473097"
+  pmcid: PMC6308032
+  verified: pubmed
+  note: "Checked in PMC full text: 39-residue peptide, Aib at 2 and 13, C20 fatty diacid via a linker on Lys20, C-terminal amide; GIPR Ki 0.135 nM (comparable to native GIP), GLP-1R Ki 4.23 nM (about 5-fold weaker than native GLP-1); human half-life about 5 days (116.7 h); 142 people dosed in phase 1 (NCT02759107)."
+
+willard-2020-imbalanced-biased:
+  type: article
+  authors: "Willard FS, Douros JD, Gabe MB, Showalter AD, Wainscott DB, Suter TM, et al."
+  title: "Tirzepatide is an imbalanced and biased dual GIP and GLP-1 receptor agonist"
+  container: "JCI Insight"
+  year: 2020
+  volume: "5"
+  pages: "e140532"
+  doi: 10.1172/jci.insight.140532
+  pmid: "32730231"
+  pmcid: PMC7526454
+  verified: pubmed
+  note: "Lilly authors with Duke University co-authors (NIDDK grants). Predicted receptor occupancy favours GIPR; at GLP-1R biased towards cAMP over β-arrestin, weaker receptor internalisation; mouse islet experiments."
+
+samms-2021-gipr-insulin-sensitivity:
+  type: article
+  authors: "Samms RJ, Christe ME, Collins KA, Pirro V, Droz BA, Holland AK, et al."
+  title: "GIPR agonism mediates weight-independent insulin sensitization by tirzepatide in obese mice"
+  container: "Journal of Clinical Investigation"
+  year: 2021
+  volume: "131"
+  pages: "e146353"
+  doi: 10.1172/JCI146353
+  pmid: "34003802"
+  pmcid: PMC8203452
+  verified: pubmed
+  note: "Author affiliation (Lilly Research Laboratories, Indianapolis) confirmed on the publisher's article page; PubMed record lists no affiliations."
+
+killion-2018-gipr-antagonist:
+  type: article
+  authors: "Killion EA, Wang J, Yie J, Shi SD, Bates D, Min X, et al."
+  title: "Anti-obesity effects of GIPR antagonists alone and in combination with GLP-1R agonists in preclinical models"
+  container: "Science Translational Medicine"
+  year: 2018
+  volume: "10"
+  pages: "eaat3392"
+  doi: 10.1126/scitranslmed.aat3392
+  pmid: "30567927"
+  verified: pubmed
+  note: "Amgen. GIPR-blocking antibodies reduced weight gain in diet-induced obese mice and caused weight loss in obese monkeys; more weight loss when combined with GLP-1R agonists."
+
+killion-2020-gipr-desensitisation:
+  type: article
+  authors: "Killion EA, Chen M, Falsey JR, Sivits G, Hager T, Atangan L, et al."
+  title: "Chronic glucose-dependent insulinotropic polypeptide receptor (GIPR) agonism desensitizes adipocyte GIPR activity mimicking functional GIPR antagonism"
+  container: "Nature Communications"
+  year: 2020
+  volume: "11"
+  pages: "4981"
+  doi: 10.1038/s41467-020-18751-8
+  pmid: "33020469"
+  pmcid: PMC7536395
+  verified: pubmed
+
+zhang-2021-cns-gipr:
+  type: article
+  authors: "Zhang Q, Delessa CT, Augustin R, Bakhti M, Colldén G, Drucker DJ, et al."
+  title: "The glucose-dependent insulinotropic polypeptide (GIP) regulates body weight and food intake via CNS-GIPR signaling"
+  container: "Cell Metabolism"
+  year: 2021
+  volume: "33"
+  pages: "833-844.e5"
+  doi: 10.1016/j.cmet.2021.01.015
+  pmid: "33571454"
+  pmcid: PMC8035082
+  verified: pubmed
+  note: "Helmholtz Munich-led, with co-authors from Novo Nordisk Research Center Indianapolis and Boehringer Ingelheim; no Lilly affiliation."
+
+borner-2021-gipr-emesis:
+  type: article
+  authors: "Borner T, Geisler CE, Fortin SM, Cosgrove R, Alsina-Fernandez J, Dogra M, et al."
+  title: "GIP receptor agonism attenuates GLP-1 receptor agonist-induced nausea and emesis in preclinical models"
+  container: "Diabetes"
+  year: 2021
+  volume: "70"
+  pages: "2545-2553"
+  doi: 10.2337/db21-0459
+  pmid: "34380697"
+  pmcid: PMC8564411
+  verified: pubmed
+  note: "University of Pennsylvania-led with Lilly co-authors; NIDDK funding. Mice, rats and musk shrews."
+
+holst-2020-gip-coagonists:
+  type: review
+  authors: "Holst JJ, Rosenkilde MM"
+  title: "GIP as a therapeutic target in diabetes and obesity: insight from incretin co-agonists"
+  container: "Journal of Clinical Endocrinology and Metabolism"
+  year: 2020
+  volume: "105"
+  pages: "e2710-e2716"
+  doi: 10.1210/clinem/dgaa327
+  pmid: "32459834"
+  pmcid: PMC7308078
+  verified: pubmed
+
+nauck-1993-gip-type2:
+  type: article
+  authors: "Nauck MA, Heimesaat MM, Orskov C, Holst JJ, Ebert R, Creutzfeldt W"
+  title: "Preserved incretin activity of glucagon-like peptide 1 [7-36 amide] but not of synthetic human gastric inhibitory polypeptide in patients with type-2 diabetes mellitus"
+  container: "Journal of Clinical Investigation"
+  year: 1993
+  volume: "91"
+  pages: "301-307"
+  doi: 10.1172/JCI116186
+  pmid: "8423228"
+  pmcid: PMC330027
+  verified: pubmed
+
+jastreboff-2025-maridebart:
+  type: trial
+  authors: "Jastreboff AM, Ryan DH, Bays HE, Ebeling PR, Mackowski MG, Philipose N, et al."
+  title: "Once-monthly maridebart cafraglutide for the treatment of obesity — a phase 2 trial"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "393"
+  pages: "843-857"
+  doi: 10.1056/NEJMoa2504214
+  pmid: "40549887"
+  verified: pubmed
+  note: "Amgen. Not a tirzepatide study: a GLP-1R agonist combined with a GIPR-blocking antibody, cited for the agonism-versus-antagonism debate."
+
+heise-2022-islet-function:
+  type: trial
+  authors: "Heise T, Mari A, DeVries JH, Urva S, Li J, Pratt EJ, et al."
+  title: "Effects of subcutaneous tirzepatide versus placebo or semaglutide on pancreatic islet function and insulin sensitivity in adults with type 2 diabetes: a multicentre, randomised, double-blind, parallel-arm, phase 1 clinical trial"
+  container: "The Lancet Diabetes & Endocrinology"
+  year: 2022
+  volume: "10"
+  pages: "418-429"
+  doi: 10.1016/S2213-8587(22)00085-7
+  pmid: "35468322"
+  verified: pubmed
+  note: "NCT03951753; 117 participants; funded by Eli Lilly."
+
+heise-2023-appetite:
+  type: trial
+  authors: "Heise T, DeVries JH, Urva S, Li J, Pratt EJ, Thomas MK, et al."
+  title: "Tirzepatide reduces appetite, energy intake, and fat mass in people with type 2 diabetes"
+  container: "Diabetes Care"
+  year: 2023
+  volume: "46"
+  pages: "998-1004"
+  doi: 10.2337/dc22-1710
+  pmid: "36857477"
+  pmcid: PMC10154650
+  verified: pubmed
+  note: "Secondary analysis of the same 117-participant trial (tirzepatide 45, semaglutide 44, placebo 28)."
+
+# ------------------------------------------------------------------ type 2 diabetes trials
+
+frias-2018-tirzepatide-phase2:
+  type: trial
+  authors: "Frias JP, Nauck MA, Van J, Kutner ME, Cui X, Benson C, et al."
+  title: "Efficacy and safety of LY3298176, a novel dual GIP and GLP-1 receptor agonist, in patients with type 2 diabetes: a randomised, placebo-controlled and active comparator-controlled phase 2 trial"
+  container: "The Lancet"
+  year: 2018
+  volume: "392"
+  pages: "2180-2193"
+  doi: 10.1016/S0140-6736(18)32260-8
+  pmid: "30293770"
+  verified: pubmed
+  note: "NCT03131687."
+
+rosenstock-2021-surpass-1:
+  type: trial
+  authors: "Rosenstock J, Wysham C, Frías JP, Kaneko S, Lee CJ, Fernández Landó L, et al."
+  title: "Efficacy and safety of a novel dual GIP and GLP-1 receptor agonist tirzepatide in patients with type 2 diabetes (SURPASS-1): a double-blind, randomised, phase 3 trial"
+  container: "The Lancet"
+  year: 2021
+  volume: "398"
+  pages: "143-155"
+  doi: 10.1016/S0140-6736(21)01324-6
+  pmid: "34186022"
+  verified: pubmed
+  note: "SURPASS-1, NCT03954834."
+
+frias-2021-surpass-2:
+  type: trial
+  authors: "Frías JP, Davies MJ, Rosenstock J, Pérez Manghi FC, Fernández Landó L, Bergman BK, et al."
+  title: "Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes"
+  container: "New England Journal of Medicine"
+  year: 2021
+  volume: "385"
+  pages: "503-515"
+  doi: 10.1056/NEJMoa2107519
+  pmid: "34170647"
+  verified: pubmed
+  note: "SURPASS-2, NCT03987919."
+
+delprato-2021-surpass-4:
+  type: trial
+  authors: "Del Prato S, Kahn SE, Pavo I, Weerakkody GJ, Yang Z, Doupis J, et al."
+  title: "Tirzepatide versus insulin glargine in type 2 diabetes and increased cardiovascular risk (SURPASS-4): a randomised, open-label, parallel-group, multicentre, phase 3 trial"
+  container: "The Lancet"
+  year: 2021
+  volume: "398"
+  pages: "1811-1824"
+  doi: 10.1016/S0140-6736(21)02188-7
+  pmid: "34672967"
+  verified: pubmed
+  note: "SURPASS-4, NCT03730662."
+
+hannon-2025-surpass-peds:
+  type: trial
+  authors: "Hannon TS, Chao LC, Barrientos-Pérez M, Pamidipati KC, Landó LF, Lee CJ, et al."
+  title: "Efficacy and safety of tirzepatide in children and adolescents with type 2 diabetes (SURPASS-PEDS): a randomised, double-blind, placebo-controlled, phase 3 trial"
+  container: "The Lancet"
+  year: 2025
+  volume: "406"
+  pages: "1484-1496"
+  doi: 10.1016/S0140-6736(25)01774-X
+  pmid: "40975112"
+  verified: pubmed
+  note: "SURPASS-PEDS, NCT05260021."
+
+nicholls-2025-surpass-cvot:
+  type: trial
+  authors: "Nicholls SJ, Pavo I, Bhatt DL, Buse JB, Del Prato S, Kahn SE, et al."
+  title: "Cardiovascular outcomes with tirzepatide versus dulaglutide in type 2 diabetes"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "393"
+  pages: "2409-2420"
+  doi: 10.1056/NEJMoa2505928
+  pmid: "41406444"
+  verified: pubmed
+  note: "SURPASS-CVOT, NCT04255433."
+
+# ------------------------------------------------------------------ obesity and related trials
+
+jastreboff-2022-surmount-1:
+  type: trial
+  authors: "Jastreboff AM, Aronne LJ, Ahmad NN, Wharton S, Connery L, Alves B, et al."
+  title: "Tirzepatide once weekly for the treatment of obesity"
+  container: "New England Journal of Medicine"
+  year: 2022
+  volume: "387"
+  pages: "205-216"
+  doi: 10.1056/NEJMoa2206038
+  pmid: "35658024"
+  verified: pubmed
+  note: "SURMOUNT-1, NCT04184622."
+
+jastreboff-2025-surmount-1-prediabetes:
+  type: trial
+  authors: "Jastreboff AM, le Roux CW, Stefanski A, Aronne LJ, Halpern B, Wharton S, et al."
+  title: "Tirzepatide for obesity treatment and diabetes prevention"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "392"
+  pages: "958-971"
+  doi: 10.1056/NEJMoa2410819
+  pmid: "39536238"
+  verified: pubmed
+  note: "Three-year analysis of the 1,032 SURMOUNT-1 participants with prediabetes."
+
+aronne-2024-surmount-4:
+  type: trial
+  authors: "Aronne LJ, Sattar N, Horn DB, Bays HE, Wharton S, Lin WY, et al."
+  title: "Continued treatment with tirzepatide for maintenance of weight reduction in adults with obesity: the SURMOUNT-4 randomized clinical trial"
+  container: "JAMA"
+  year: 2024
+  volume: "331"
+  pages: "38-48"
+  doi: 10.1001/jama.2023.24945
+  pmid: "38078870"
+  pmcid: PMC10714284
+  verified: pubmed
+  note: "SURMOUNT-4, NCT04660643."
+
+malhotra-2024-surmount-osa:
+  type: trial
+  authors: "Malhotra A, Grunstein RR, Fietze I, Weaver TE, Redline S, Azarbarzin A, et al."
+  title: "Tirzepatide for the treatment of obstructive sleep apnea and obesity"
+  container: "New England Journal of Medicine"
+  year: 2024
+  volume: "391"
+  pages: "1193-1205"
+  doi: 10.1056/NEJMoa2404881
+  pmid: "38912654"
+  pmcid: PMC11598664
+  verified: pubmed
+  note: "SURMOUNT-OSA, NCT05412004 (two trials)."
+
+packer-2025-summit:
+  type: trial
+  authors: "Packer M, Zile MR, Kramer CM, Baum SJ, Litwin SE, Menon V, et al."
+  title: "Tirzepatide for heart failure with preserved ejection fraction and obesity"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "392"
+  pages: "427-437"
+  doi: 10.1056/NEJMoa2410027
+  pmid: "39555826"
+  verified: pubmed
+  note: "SUMMIT, NCT04847557."
+
+aronne-2025-surmount-5:
+  type: trial
+  authors: "Aronne LJ, Horn DB, le Roux CW, Ho W, Falcon BL, Gomez Valderas E, et al."
+  title: "Tirzepatide as compared with semaglutide for the treatment of obesity"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "393"
+  pages: "26-36"
+  doi: 10.1056/NEJMoa2416394
+  pmid: "40353578"
+  verified: pubmed
+  note: "SURMOUNT-5, NCT05822830; phase 3b, open-label."
+
+rodriguez-2024-tirzepatide-semaglutide-cohort:
+  type: article
+  authors: "Rodriguez PJ, Goodwin Cartwright BM, Gratzl S, Brar R, Baker C, Gluckman TJ, et al."
+  title: "Semaglutide vs tirzepatide for weight loss in adults with overweight or obesity"
+  container: "JAMA Internal Medicine"
+  year: 2024
+  volume: "184"
+  pages: "1056-1064"
+  doi: 10.1001/jamainternmed.2024.2525
+  pmid: "38976257"
+  pmcid: PMC11231910
+  verified: pubmed
+  note: "Truveta (US health-data company) authors; no manufacturer affiliation in the PubMed record."
+
+# ------------------------------------------------------------------ products outside the legal supply chain
+
+mccall-2026-compounded-faers:
+  type: article
+  authors: "McCall KL, Mastro Dwyer KA, Casey RT, Samana TN, Sulicz EK, Tso SY, et al."
+  title: "Safety analysis of compounded GLP-1 receptor agonists: a pharmacovigilance study using the FDA adverse event reporting system"
+  container: "Expert Opinion on Drug Safety"
+  year: 2026
+  volume: "25"
+  pages: "581-588"
+  doi: 10.1080/14740338.2025.2499670
+  pmid: "40285721"
+  verified: pubmed
+
+belcourt-2025-research-purposes:
+  type: article
+  authors: "Belcourt J, Ly P, White CM"
+  title: "Bypassing prescribers and pharmacists: online purchasing of semaglutide and tirzepatide \"for research purposes\""
+  container: "Annals of Pharmacotherapy"
+  year: 2025
+  volume: "59"
+  pages: "485-490"
+  doi: 10.1177/10600280241277551
+  pmid: "39285774"
+  verified: pubmed
+
+# ------------------------------------------------------------------ EU
+
+ema-epar-mounjaro:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Mounjaro (tirzepatide): EPAR — overview and product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/mounjaro
+  accessed: 2026-10-20
+  verified: url
+  note: "Marketing authorisation issued 15 September 2022 (CHMP opinion 21 July 2022); holder Eli Lilly Nederland B.V.; ATC A10BX16; prescription only. Product information (PDF, last updated 21 September 2026) read for SmPC 4.1 (indications), 4.3 (hypersensitivity only), 4.4 (pancreatitis, hypoglycaemia, dehydration and renal function, severe GI disease, retinopathy, aspiration), 4.5 (paracetamol and oral contraceptive studies: 'not considered clinically relevant'), 4.6 (contraception recommended; stop at least 1 month before planned pregnancy), 4.8 (frequencies, gallbladder, heart rate, immunogenicity, pancreatic enzymes, paediatric hypoglycaemia), 4.9, 5.1 (mechanism, SURPASS-CVOT, SUMMIT, SURMOUNT-OSA), 5.2 (half-life about 5 days, 99% albumin binding, 80% bioavailability), 5.3 (rat C-cell tumours)."
+
+ema-mounjaro-procedural-steps:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Mounjaro: EPAR — procedural steps taken and scientific information after authorisation"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/procedural-steps-after/mounjaro-epar-procedural-steps-taken-scientific-information-after-authorisation_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "EMA/VR/0000281937: paediatric type 2 diabetes extension (SURPASS-PEDS), CHMP opinion 11 December 2025, Commission decision 22 January 2026. EMA/VR/0000310637: SmPC 4.1, 4.4, 4.8, 5.1 updated with SURPASS-CVOT, opinion 25 June 2026."
+
+ema-mounjaro-procedural-steps-archive:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Mounjaro: EPAR — procedural steps taken and scientific information after authorisation (archive)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/procedural-steps-after/mounjaro-epar-procedural-steps-taken-scientific-information-after-authorisation-archive_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "II/0007: extension of indication to chronic weight management (SURMOUNT-1 and SURPASS-1 to -5), opinion 9 November 2023, Commission decision 11 December 2023. X/0015: KwikPen multidose strengths, decision 19 April 2024. II/0027 (OSA data, decision 14 February 2025) and II/0038 (HFpEF data) updated sections 4.1, 4.8 and 5.1."
+
+ema-2024-mounjaro-osa-outcome:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Outcome of assessment on use of Mounjaro in treatment of obstructive sleep apnoea (EMA/576853/2024)"
+  year: 2024
+  url: https://www.ema.europa.eu/en/documents/medicine-qa/questions-answers-outcome-assessment-use-mounjaro-treatment-obstructive-sleep-apnoea_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "13 December 2024: no separate OSA indication because use is covered by the weight-management indication; data added to the product information; two studies, 469 adults."
+
+ema-2026-mounjaro-hfpef-outcome:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Outcome of assessment on use of Mounjaro in treatment of heart failure with preserved ejection fraction in adults with obesity (EMA/18704/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/medicine-qa/questions-answers-outcome-assessment-use-mounjaro-treatment-heart-failure-preserved-ejection-fraction-adults-obesity_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "30 January 2026: no separate HFpEF indication; uncertainty whether results are independent of weight loss; fewer heart-failure hospitalisations and better quality of life, no reduction in cardiovascular death; data added to the product information."
+
+ema-2026-mounjaro-cvot-outcome:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Outcome of assessment on use of Mounjaro to reduce the risk of serious events affecting the heart and blood circulation (EMA/140483/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/medicine-qa/outcome-assessment-use-mounjaro-reduce-risk-serious-events-affecting-heart-blood-circulation_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "26 June 2026: no separate cardiovascular indication because use is covered by the type 2 diabetes indication; SURPASS-CVOT data (13,299 adults) added to the product information."
+
+# ------------------------------------------------------------------ Netherlands
+
+fk-tirzepatide:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Tirzepatide — Farmacotherapeutisch Kompas (preparaattekst)"
+  container: "Farmacotherapeutisch Kompas"
+  year: 2026
+  url: https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/t/tirzepatide
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Mounjaro: Bijlage 2 (conditional reimbursement), additional monitoring; presentations include single-dose vials and KwikPen. Advice: NHG-Standaard Diabetes mellitus type 2 (2024) advises against tirzepatide in type 2 diabetes without very high cardiovascular risk; NHG-Standaard Obesitas (2025) advises against it for obesity in primary care. Interactions: narrow-therapeutic-index oral drugs (vitamin K antagonists, digoxin), sulfonylurea/insulin, reports of lithium toxicity. Pregnancy: use discouraged; adequate contraception; stop at least 1 month before a planned pregnancy."
+
+fk-regeling-zorgverzekering-bijlage-2-tirzepatide:
+  type: law
+  authors: "Zorginstituut Nederland"
+  title: "Regeling zorgverzekering, bijlage 2 (as reproduced in the Farmacotherapeutisch Kompas) — item 194: tirzepatide"
+  container: "Farmacotherapeutisch Kompas"
+  year: 2026
+  url: https://www.farmacotherapeutischkompas.nl/algemeen/regeling-zorgverzekering
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Conditions: adults with type 2 diabetes and BMI ≥30 not controlled on metformin plus a sulfonylurea at maximum tolerated doses and not using insulin, or add-on to metformin and basal insulin after 3 months; or, with very high cardiovascular risk (proven cardiovascular disease and/or chronic kidney damage), add-on to an SGLT2 inhibitor and metformin."
+
+zin-tirzepatide-obesity-assessment:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Advies — wel of niet vergoeden tirzepatide (Mounjaro®) voor de behandeling van obesitas (werkagenda)"
+  year: 2026
+  url: https://www.zorginstituutnederland.nl/werkagenda/stofwisseling-en-hormoonhuishouding/gvs-advies-tirzepatide-mounjaro-voor-de-behandeling-van-obesitas
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Staged approach (BMI ≥30 with related disease, or BMI ≥35); dossier complete March 2026; first Scientific Advisory Council (WAR) discussion 5 October 2026; technical consultation expected early November 2026 (was 12–18 October 2026); later steps and publication 'nog niet bekend'."
+
+# ------------------------------------------------------------------ Germany
+
+de-sgb5-34:
+  type: law
+  authors: "Bundesministerium der Justiz"
+  title: "Sozialgesetzbuch (SGB) Fünftes Buch (V) — § 34 Ausgeschlossene Arznei-, Heil- und Hilfsmittel"
+  container: "gesetze-im-internet.de"
+  year: 2026
+  url: https://www.gesetze-im-internet.de/sgb_5/__34.html
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+  note: "§ 34(1): excluded from statutory insurance are medicines mainly used 'zur Abmagerung oder zur Zügelung des Appetits, zur Regulierung des Körpergewichts'."
+
+# ------------------------------------------------------------------ United Kingdom
+
+mhra-2026-falsified-mounjaro:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Falsified Mounjaro KwikPen 15mg pre-filled pens (Drug Safety Update)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/drug-safety-update/falsified-mounjaro-kwikpen-15mg-pre-filled-pens
+  accessed: 2026-10-20
+  verified: url
+  note: "Published 24 February 2026: five falsified 15 mg KwikPens with a batch number belonging to the genuine 7.5 mg pen, supplied by one UK online pharmacy; faulty mechanism; content likely tirzepatide but not of the quality and safety standards of legitimate pens; no reports of harm requiring treatment."
+
+# ------------------------------------------------------------------ United States
+
+fda-drugsatfda-mounjaro:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 215866 (Mounjaro, tirzepatide injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215866
+  accessed: 2026-10-20
+  verified: url
+  note: "Original approval 13 May 2022 (new molecular entity, priority review); new patient population (S-39, paediatric) 19 December 2025; new indication (S-44, SURPASS-CVOT) and new dosing regimen (S-45) 27 August 2026."
+
+fda-drugsatfda-zepbound:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 217806 (Zepbound, tirzepatide injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=217806
+  accessed: 2026-10-20
+  verified: url
+  note: "Original approval 8 November 2023; new indication (S-13, obstructive sleep apnoea) 20 December 2024; labelling change with clinical data (S-41, SURPASS-CVOT) 26 August 2026."
+
+fda-label-mounjaro:
+  type: label
+  authors: "U.S. Food and Drug Administration / Eli Lilly and Company"
+  title: "MOUNJARO (tirzepatide) injection — prescribing information (revised 08/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215866s044s045lbl.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Boxed warning (rat thyroid C-cell tumours); contraindications MTC/MEN 2 and serious hypersensitivity; 5.2–5.10; 7.2 and 8.3 (oral hormonal contraceptives: switch or add barrier method for 4 weeks after initiation and each dose escalation); 6.2 postmarketing; 11 (Aib at 2 and 13, C-terminal amide, Lys20 linked to 1,20-eicosanedioic acid, MW 4813.53 Da, C225H348N48O68); 12.3 (oral contraceptive Cmax −55 to −66% after first dose); 12.6 (anti-drug antibodies 51%); 13.1; 14.6 SURPASS-CVOT incl. all-cause death 8.5% vs 10.1% (not multiplicity-controlled)."
+
+fda-label-zepbound:
+  type: label
+  authors: "U.S. Food and Drug Administration / Eli Lilly and Company"
+  title: "ZEPBOUND (tirzepatide) injection — prescribing information (revised 08/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/217806Orig1s041correctedlbl.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Indications: weight reduction and long-term maintenance; moderate to severe OSA in adults with obesity. Recent Major Changes: 'Suicidal Behavior and Ideation (Removed) 02/2026'. 5.4 gallbladder (cholecystitis 0.7% vs 0.2%)."
+
+# ------------------------------------------------------------------ sport
+
+wada-2025-monitoring-program:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "The 2025 Monitoring Program"
+  year: 2024
+  url: https://www.wada-ama.org/sites/default/files/2024-09/2025_list_monitoring_program_en_final_clean_11_september_2024.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Item 6 lists semaglutide only; tirzepatide is not named."
+
+wada-2027-prohibited-list:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "World Anti-Doping Code International Standard: Prohibited List 2027"
+  year: 2026
+  url: https://www.wada-ama.org/sites/default/files/2026-09/2027list_en_final_clean_26_august_2026_2.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Comes into effect on 1 January 2027; tirzepatide and GLP-1 receptor agonists are not named."
+
+wada-2027-monitoring-program:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "The 2027 Monitoring Program"
+  year: 2026
+  url: https://www.wada-ama.org/sites/default/files/2026-09/2027_list_monitoring_program_en_final_clean_21_august_2026.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Item 6: 'GLP-1 Agonists — In and Out-of-Competition: Semaglutide and tirzepatide'."

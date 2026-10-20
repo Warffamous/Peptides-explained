@@ -1,0 +1,210 @@
+# BPC-157 — locale-independent facts. Every value below is sourced; see research/bpc-157.md.
+slug: bpc-157
+tier: 1
+status: complete
+# experimental, not investigational: the only formal clinical programme (PL 14736, enema for
+# ulcerative colitis, 2000s) stopped without a full publication; one small phase 2 trial is
+# recruiting (NCT07437547). The overwhelming majority of human exposure happens outside any
+# development programme. Revisit if NCT07437547 reports or a regulator receives an application.
+category: experimental
+class: tissue-repair
+body_systems: [musculoskeletal, gastrointestinal]
+names:
+  common: BPC-157
+  full: Body Protection Compound-157
+  other: [BPC 157, PL 14736, PL-10, PLD-116, bepecin]
+  brands: []
+identifiers:
+  pubchem_cid: 9941957
+  chembl: CHEMBL4297358
+  cas: 137525-51-0
+  unii: 8ED8NXK95P
+molecular:
+  formula: C62H98N16O22
+  mass_da: 1419.5
+  smiles: "C[C@@H](C(=O)N[C@@H](CC(=O)O)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@@H](C)C(=O)NCC(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)O)NC(=O)[C@@H]1CCCN1C(=O)[C@H](CCCCN)NC(=O)CNC(=O)[C@@H]2CCCN2C(=O)[C@@H]3CCCN3C(=O)[C@@H]4CCCN4C(=O)[C@H](CCC(=O)O)NC(=O)CN"
+  smiles_source: pubchem-bpc-157
+sequence:
+  display: "Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val"
+  residues: [Gly, Glu, Pro, Pro, Pro, Gly, Lys, Pro, Ala, Asp, Asp, Ala, Gly, Leu, Val]
+  n_terminus: H
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: pubchem-bpc-157
+evidence:
+  human_clinical: case-reports
+  preclinical_volume: extensive
+  independence: single-group-dominant
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search, ema-medicines-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-bpc157-briefing] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-bpc157-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-503a-categories-2026-05, fda-category-2-safety-risks] }
+  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2022-list-modifications, wada-2026-list-en, wada-2027-list-en] }
+studies:
+  # --- cells in a dish (independent group, Chang Gung University, Taiwan)
+  - id: chang-2011-tendon-fibroblasts
+    source: chang-2011-tendon-fibroblasts
+    year: 2011
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  - id: chang-2014-ghr
+    source: chang-2014-ghr
+    year: 2014
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  - id: hsieh-2017-vegfr2
+    source: hsieh-2017-vegfr2
+    year: 2017
+    species: mixed
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Isolated rat aorta plus human umbilical vein endothelial cells (PMC full text), so mixed.
+  - id: hsieh-2020-enos
+    source: hsieh-2020-src-cav1-enos
+    year: 2020
+    species: mixed
+    n: null
+    design: in-vitro
+    funding: academic
+    group: independent
+    blinded: null
+    controlled: true
+  # --- developer's own laboratory (PLIVA, Zagreb) — industry. Coded mixed, not independent:
+  # co-authors Mildner B and Perović D also appear on Zagreb-group papers (PMIDs 8298609,
+  # 9298922, 14554208), and PLIVA developed the group's compound under licence.
+  - id: tkalcevic-2007-egr1
+    source: tkalcevic-2007-egr1
+    year: 2007
+    species: mixed
+    n: null
+    design: animal
+    funding: industry
+    group: mixed
+    blinded: null
+    controlled: true
+  # --- originating group (Sikiric, Seiwerth and colleagues, University of Zagreb)
+  - id: staresinic-2003-achilles
+    source: staresinic-2003-achilles
+    year: 2003
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: klicek-2008-fistula
+    source: klicek-2008-fistula
+    year: 2008
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # --- independent animal studies
+  # Full text: 'The authors received no financial support'; hospital/university work, so academic.
+  # Assessors blinded (pathologist blinded to group; biomechanical specimens coded).
+  - id: bicer-2026-achilles
+    source: bicer-2026-achilles
+    year: 2026
+    species: rat
+    n: 32
+    design: animal
+    funding: academic
+    group: independent
+    blinded: true
+    controlled: true
+  # Human artery segments left over from bypass surgery (12 patients), studied in an organ bath.
+  # 'This research received no external funding' (university work, so academic).
+  - id: xu-2020-toxicology
+    source: xu-2020-preclinical-safety
+    year: 2020
+    species: mixed
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  - id: he-2022-pharmacokinetics
+    source: he-2022-pharmacokinetics
+    year: 2022
+    species: mixed
+    n: 372
+    design: pk
+    funding: government
+    group: independent
+    blinded: null
+    controlled: false
+  # --- humans
+  # Developer's trial (PL 14736; authors Ruenzi, Stolte, Veljaca, Oreskovic, Peterson per the FDA
+  # reference list). Coded mixed for the same reason as tkalcevic-2007: PLIVA's PL 14736 abstracts
+  # share authors (Mildner B) with the originating group. Known only via the FDA summary.
+  - id: ruenzi-2005-colitis-abstract
+    source: fda-pcac-2026-bpc157-briefing
+    year: 2005
+    species: human
+    n: 53
+    design: phase-2
+    funding: industry
+    group: mixed
+    blinded: true
+    controlled: true
+  - id: lee-2021-knee
+    source: lee-2021-knee
+    year: 2021
+    species: human
+    n: 16
+    design: case-series
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  - id: lee-2024-interstitial-cystitis
+    source: lee-2024-interstitial-cystitis
+    year: 2024
+    species: human
+    n: 12
+    design: open-label
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  # Prospective, IRB-approved single-arm pilot (not a retrospective series), so open-label.
+  - id: lee-2025-intravenous
+    source: lee-2025-intravenous
+    year: 2025
+    species: human
+    n: 2
+    design: open-label
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  # Three dental patients given a mixture (ARA-290, TB-500, BPC-157, dexamethasone, bupivacaine).
+  # 'Financial support was not received' (university-affiliated authors, so academic).
+authorised_products: []
+related: []   # add tb-500 back when its page is finished (drafts/compounds/tb-500.yaml)
+last_reviewed: 2026-10-20
+reviewed_by: pending-medical-review

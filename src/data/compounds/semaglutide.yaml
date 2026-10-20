@@ -1,0 +1,106 @@
+slug: semaglutide
+tier: 1
+status: complete
+category: authorised
+class: incretin
+body_systems: [metabolic, endocrine, cardiovascular, gastrointestinal, renal]
+names:
+  common: Semaglutide
+  inn: semaglutide
+  other: [NN9535, "NNC 0113-0217"]
+  brands: [Ozempic, Wegovy, Rybelsus]
+identifiers:
+  pubchem_cid: 56843331
+  chembl: CHEMBL2108724
+  cas: 910463-68-2
+  unii: 53AXN4NNHX
+molecular:
+  formula: C187H291N45O59
+  mass_da: 4113.58          # FDA prescribing information, section 11 (PubChem computed: 4114)
+  smiles: "CC[C@H](C)[C@@H](C(=O)N[C@@H](C)C(=O)N[C@@H](CC1=CNC2=CC=CC=C21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCCNC(=N)N)C(=O)NCC(=O)N[C@@H](CCCNC(=N)N)C(=O)NCC(=O)O)NC(=O)[C@H](CC3=CC=CC=C3)NC(=O)[C@H](CCC(=O)O)NC(=O)[C@H](CCCCNC(=O)COCCOCCNC(=O)COCCOCCNC(=O)CC[C@H](C(=O)O)NC(=O)CCCCCCCCCCCCCCCCC(=O)O)NC(=O)[C@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CCC(=O)N)NC(=O)CNC(=O)[C@H](CCC(=O)O)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CC4=CC=C(C=C4)O)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@H](C(C)C)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](CO)NC(=O)[C@H]([C@@H](C)O)NC(=O)[C@H](CC5=CC=CC=C5)NC(=O)[C@H]([C@@H](C)O)NC(=O)CNC(=O)[C@H](CCC(=O)O)NC(=O)C(C)(C)NC(=O)[C@H](CC6=CN=CN6)N"
+  smiles_source: pubchem-semaglutide
+# Sequence: 31 residues. `position` below is the 1-based index into `residues` (what the
+# sequence figure needs). Each label also gives the position in the GLP-1(7–37) numbering used
+# by the FDA label, Lau et al. 2015 and the literature (index + 6 = GLP-1 position).
+sequence:
+  display: "His-Aib-Glu-Gly-Thr-Phe-Thr-Ser-Asp-Val-Ser-Ser-Tyr-Leu-Glu-Gly-Gln-Ala-Ala-Lys*-Glu-Phe-Ile-Ala-Trp-Leu-Val-Arg-Gly-Arg-Gly (*side chain on Lys)"
+  residues: [His, Aib, Glu, Gly, Thr, Phe, Thr, Ser, Asp, Val, Ser, Ser, Tyr, Leu, Glu, Gly, Gln, Ala, Ala, Lys, Glu, Phe, Ile, Ala, Trp, Leu, Val, Arg, Gly, Arg, Gly]
+  n_terminus: H
+  c_terminus: OH
+  modifications:
+    - { position: 2, label: "Aib (GLP-1 position 8): replaces Ala of human GLP-1; stabilises the peptide against DPP-4 cleavage" }
+    - { position: 20, label: "Lys (GLP-1 position 26): ε-amine carries 2×OEG (8-amino-3,6-dioxaoctanoyl) – γGlu – 17-carboxyheptadecanoyl (C18 fatty diacid); drives albumin binding" }
+    - { position: 28, label: "Arg (GLP-1 position 34): replaces Lys of human GLP-1 so only one lysine is left for the fatty-acid side chain" }
+  bridges: []
+  source: pubchem-semaglutide
+evidence:
+  human_clinical: authorised
+  preclinical_volume: extensive
+  independence: broadly-replicated
+  safety: well-characterised
+regulatory:
+  - { jurisdiction: EU, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-wegovy-procedural-steps] }
+  - { jurisdiction: NL, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, fk-semaglutide, zin-wegovy-reassessment, cbg-ozempic-shortage] }
+  - { jurisdiction: DE, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, bfarm-glp1-shortage-archive] }
+  - { jurisdiction: BE, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic] }
+  - { jurisdiction: UK, status: authorised, as_of: 2026-10-20, sources: [mhra-glp1-what-you-need-to-know] }
+  - { jurisdiction: US, status: authorised, since: 2017-12-05, as_of: 2026-10-20, sources: [fda-drugsatfda-ozempic, fda-drugsatfda-rybelsus, fda-drugsatfda-wegovy, fda-drugsatfda-wegovy-tablets] }
+  - { jurisdiction: WADA, status: not-listed, as_of: 2026-10-20, sources: [wada-prohibited-list, wada-2026-monitoring-program] }
+# Nauck 1993 (n = 10) was removed as a structured study by the fact-checker: PubMed/NLM index it as a
+# "Controlled Clinical Trial", not an RCT, and no vocabulary value fits a small placebo-controlled
+# infusion study without documented randomisation. It is still cited in the prose.
+studies:
+  - { id: kreymann-1987-incretin, source: kreymann-1987-glp1, year: 1987, species: human, n: 7, design: rct, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: knudsen-2010-c-cells, source: knudsen-2010-thyroid-c-cells, year: 2010, species: mixed, n: null, design: animal, funding: industry, group: originating, blinded: null, controlled: true }
+  - { id: lau-2015-design, source: lau-2015-semaglutide-discovery, year: 2015, species: mixed, n: null, design: animal, funding: industry, group: originating, blinded: null, controlled: null }
+  - { id: buckley-2018-oral, source: buckley-2018-oral-semaglutide, year: 2018, species: mixed, n: null, design: pk, funding: industry, group: originating, blinded: null, controlled: null }
+  - { id: friedrichsen-2021-appetite, source: friedrichsen-2021-appetite, year: 2021, species: human, n: 72, design: rct, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: sustain-6, source: marso-2016-sustain-6, year: 2016, species: human, n: 3297, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: pioneer-1, source: aroda-2019-pioneer-1, year: 2019, species: human, n: 703, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: pioneer-6, source: husain-2019-pioneer-6, year: 2019, species: human, n: 3183, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: step-1, source: wilding-2021-step-1, year: 2021, species: human, n: 1961, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: step-1-extension, source: wilding-2022-step-1-extension, year: 2022, species: human, n: 327, design: rct, funding: industry, group: originating, blinded: null, controlled: true }
+  - { id: step-4, source: rubino-2021-step-4, year: 2021, species: human, n: 803, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: select, source: lincoff-2023-select, year: 2023, species: human, n: 17604, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: flow, source: perkovic-2024-flow, year: 2024, species: human, n: 3533, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: soul, source: mcguire-2025-soul, year: 2025, species: human, n: 9650, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: evoke, source: cummings-2026-evoke, year: 2026, species: human, n: 3808, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: hathaway-2024-naion, source: hathaway-2024-naion, year: 2024, species: human, n: 1689, design: observational, funding: academic, group: independent, blinded: false, controlled: true }
+  - { id: bezin-2023-thyroid, source: bezin-2023-thyroid-cancer, year: 2023, species: human, n: 47746, design: observational, funding: government, group: independent, blinded: false, controlled: true }
+  - { id: pasternak-2024-thyroid, source: pasternak-2024-thyroid-cancer, year: 2024, species: human, n: 437077, design: observational, funding: academic, group: independent, blinded: false, controlled: true }
+authorised_products:
+  - id: ozempic
+    name: Ozempic
+    holder: Novo Nordisk A/S
+    jurisdiction: EU
+    authorised: 2018-02-08
+    route: subcutaneous
+    label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/ozempic
+    label_source: ema-epar-ozempic
+  - id: rybelsus
+    name: Rybelsus
+    holder: Novo Nordisk A/S
+    jurisdiction: EU
+    authorised: 2020-04-03
+    route: oral
+    label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/rybelsus
+    label_source: ema-epar-rybelsus
+  - id: wegovy
+    name: Wegovy (injection)
+    holder: Novo Nordisk A/S
+    jurisdiction: EU
+    authorised: 2022-01-06
+    route: subcutaneous
+    label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
+    label_source: ema-epar-wegovy
+  - id: wegovy-tablets
+    name: Wegovy (tablets)
+    holder: Novo Nordisk A/S
+    jurisdiction: EU
+    authorised: 2026-07-14     # Commission decision on extension X/0000296344 (procedural steps document)
+    route: oral
+    label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
+    label_source: ema-epar-wegovy
+related: []
+last_reviewed: 2026-10-20
+reviewed_by: pending-medical-review

@@ -1,0 +1,401 @@
+{
+  "gip": {
+    "term": "GIP",
+    "aliases": [
+      "glucose-dependent insulinotropic polypeptide",
+      "gastric inhibitory polypeptide"
+    ],
+    "definition": "A hormone made in the upper gut after a meal. Like GLP-1, it tells the pancreas to release more insulin when blood sugar is high.",
+    "category": "biology",
+    "see_also": [
+      "gip-receptor",
+      "incretin",
+      "glp-1"
+    ]
+  },
+  "gip-receptor": {
+    "term": "GIP receptor",
+    "aliases": [
+      "GIPR",
+      "GIP receptors",
+      "GIP-receptor"
+    ],
+    "definition": "The receptor that the hormone GIP switches on. It is found on cells in the pancreas, in fat tissue and in parts of the brain.",
+    "category": "biology",
+    "see_also": [
+      "gip"
+    ]
+  },
+  "dual-agonist": {
+    "term": "dual agonist",
+    "aliases": [
+      "dual agonists",
+      "dual receptor agonist",
+      "co-agonist",
+      "co-agonists",
+      "co-agonism"
+    ],
+    "definition": "One drug molecule that switches on two different receptors. Tirzepatide switches on both the GIP receptor and the GLP-1 receptor.",
+    "category": "pharmacology",
+    "see_also": [
+      "gip-receptor",
+      "glp-1-receptor-agonist"
+    ]
+  },
+  "functional-antagonism": {
+    "term": "functional antagonism",
+    "aliases": [
+      "functional antagonist",
+      "functional GIPR antagonism"
+    ],
+    "definition": "When a drug that switches a receptor on is given for a long time, the cell may stop responding. The end result can then look like blocking the receptor, even though the drug is an activator.",
+    "category": "pharmacology",
+    "see_also": [
+      "receptor-desensitisation"
+    ]
+  },
+  "receptor-desensitisation": {
+    "term": "desensitisation",
+    "aliases": [
+      "desensitization",
+      "desensitised",
+      "desensitized",
+      "desensitizes",
+      "receptor desensitisation"
+    ],
+    "definition": "A cell's response to a signal gets weaker when the signal goes on and on. Often the cell pulls receptors off its surface or switches them off.",
+    "category": "biology",
+    "see_also": [
+      "functional-antagonism",
+      "receptor-internalisation"
+    ]
+  },
+  "biased-agonism": {
+    "term": "biased agonism",
+    "aliases": [
+      "biased agonist",
+      "signalling bias",
+      "signaling bias"
+    ],
+    "definition": "A receptor can pass on a signal along more than one route inside the cell. A biased drug switches on some of these routes more than others.",
+    "category": "pharmacology",
+    "see_also": [
+      "beta-arrestin",
+      "camp"
+    ]
+  },
+  "beta-arrestin": {
+    "term": "β-arrestin",
+    "aliases": [
+      "beta-arrestin",
+      "β-arrestins",
+      "beta-arrestins",
+      "β-arrestin1"
+    ],
+    "definition": "A protein inside cells that binds to an activated receptor. It helps switch the receptor off and pull it into the cell.",
+    "category": "biology",
+    "see_also": [
+      "receptor-internalisation",
+      "biased-agonism"
+    ]
+  },
+  "receptor-internalisation": {
+    "term": "receptor internalisation",
+    "aliases": [
+      "internalisation",
+      "internalization",
+      "receptor internalization"
+    ],
+    "definition": "When a cell pulls a receptor from its surface into the inside of the cell. Fewer receptors on the surface means a weaker response to the drug or hormone.",
+    "category": "biology",
+    "see_also": [
+      "beta-arrestin",
+      "receptor-desensitisation"
+    ]
+  },
+  "receptor-occupancy": {
+    "term": "receptor occupancy",
+    "aliases": [
+      "predicted receptor occupancy"
+    ],
+    "definition": "The share of receptors that a drug is bound to at a given moment. It is often estimated from drug levels in the blood rather than measured directly.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "insulin-sensitivity": {
+    "term": "insulin sensitivity",
+    "aliases": [
+      "insulin resistance",
+      "insulin sensitiser",
+      "insulin sensitizer",
+      "insulin sensitisation",
+      "insulin sensitization"
+    ],
+    "definition": "How well the body's tissues respond to insulin. With low insulin sensitivity (insulin resistance), more insulin is needed to move the same amount of sugar out of the blood.",
+    "category": "biology",
+    "see_also": [
+      "clamp-study"
+    ]
+  },
+  "clamp-study": {
+    "term": "clamp study",
+    "aliases": [
+      "hyperglycaemic clamp",
+      "hyperglycemic clamp",
+      "euglycaemic clamp",
+      "euglycemic clamp",
+      "hyperinsulinaemic euglycaemic clamp",
+      "clamp disposition index"
+    ],
+    "definition": "A detailed test in which blood sugar is held at a fixed level with a drip. Researchers then measure how much insulin the body makes, or how much sugar it takes up.",
+    "category": "evidence",
+    "see_also": [
+      "insulin-sensitivity"
+    ]
+  },
+  "adipocyte": {
+    "term": "fat cell",
+    "aliases": [
+      "adipocyte",
+      "adipocytes",
+      "fat cells",
+      "adipose tissue",
+      "white adipose tissue"
+    ],
+    "definition": "A cell that stores fat. Fat tissue is mostly made of these cells, and they also send hormone signals to the rest of the body.",
+    "category": "biology",
+    "see_also": []
+  },
+  "c-terminal-amide": {
+    "term": "C-terminal amide",
+    "aliases": [
+      "amidated",
+      "C-terminally amidated",
+      "amidation"
+    ],
+    "definition": "The end of a peptide chain finished with an amide group (–NH2) instead of an acid group. Many natural peptide hormones end this way.",
+    "category": "chemistry",
+    "see_also": []
+  },
+  "hypoglycaemia": {
+    "term": "hypoglycaemia",
+    "aliases": [
+      "hypoglycemia",
+      "low blood sugar",
+      "low blood glucose"
+    ],
+    "definition": "Blood sugar that is too low. It can cause shaking, sweating, confusion and drowsiness, and if severe it can lead to loss of consciousness.",
+    "category": "safety",
+    "see_also": [
+      "sulfonylurea"
+    ]
+  },
+  "prediabetes": {
+    "term": "prediabetes",
+    "aliases": [
+      "pre-diabetes"
+    ],
+    "definition": "Blood sugar that is higher than normal but not yet high enough to count as type 2 diabetes. People with prediabetes have a higher chance of developing diabetes.",
+    "category": "biology",
+    "see_also": [
+      "hba1c"
+    ]
+  },
+  "bmi": {
+    "term": "BMI",
+    "aliases": [
+      "body-mass index",
+      "body mass index"
+    ],
+    "definition": "Body mass index: your weight in kilograms divided by your height in metres squared. A BMI of 30 or more counts as obesity.",
+    "category": "biology",
+    "see_also": []
+  },
+  "obstructive-sleep-apnoea": {
+    "term": "obstructive sleep apnoea",
+    "aliases": [
+      "OSA",
+      "sleep apnoea",
+      "obstructive sleep apnea",
+      "sleep apnea"
+    ],
+    "definition": "A condition in which the throat keeps closing during sleep, so breathing stops or becomes very shallow many times a night. It is more common with obesity.",
+    "category": "biology",
+    "see_also": [
+      "apnoea-hypopnoea-index"
+    ]
+  },
+  "apnoea-hypopnoea-index": {
+    "term": "apnoea–hypopnoea index",
+    "aliases": [
+      "AHI",
+      "apnoea-hypopnoea index",
+      "apnea-hypopnea index"
+    ],
+    "definition": "The number of times per hour of sleep that breathing stops or becomes very shallow. It is used to measure how severe sleep apnoea is.",
+    "category": "evidence",
+    "see_also": [
+      "obstructive-sleep-apnoea"
+    ]
+  },
+  "hfpef": {
+    "term": "HFpEF",
+    "aliases": [
+      "heart failure with preserved ejection fraction"
+    ],
+    "definition": "A type of heart failure in which the heart still pumps with normal force but is too stiff to fill properly. It causes breathlessness, tiredness and swollen ankles.",
+    "category": "biology",
+    "see_also": [
+      "kccq"
+    ]
+  },
+  "kccq": {
+    "term": "KCCQ",
+    "aliases": [
+      "Kansas City Cardiomyopathy Questionnaire",
+      "KCCQ-CSS"
+    ],
+    "definition": "A questionnaire that people with heart failure fill in about their symptoms and daily limits. Scores run from 0 to 100; higher means fewer problems.",
+    "category": "evidence",
+    "see_also": [
+      "hfpef"
+    ]
+  },
+  "hazard-ratio": {
+    "term": "hazard ratio",
+    "aliases": [
+      "hazard ratios",
+      "HR"
+    ],
+    "definition": "A number that compares how often an event happens over time in two groups. A hazard ratio of 0.80 means the event happened about 20% less often in the first group.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "non-inferiority-trial": {
+    "term": "non-inferiority trial",
+    "aliases": [
+      "non-inferiority",
+      "noninferiority",
+      "non-inferior",
+      "noninferior"
+    ],
+    "definition": "A trial designed to show that a new treatment is not worse than an existing one by more than a set margin. It is not designed to show that the new treatment is better.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "open-label": {
+    "term": "open-label",
+    "aliases": [
+      "open label",
+      "unblinded"
+    ],
+    "definition": "A trial in which participants and doctors know which treatment each person gets. This can affect reported side effects and behaviour, such as eating less.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "randomised-withdrawal-trial": {
+    "term": "randomised withdrawal trial",
+    "aliases": [
+      "randomized withdrawal trial",
+      "randomised withdrawal",
+      "randomized withdrawal"
+    ],
+    "definition": "A trial in which everyone first takes the drug, and then some people are chosen at random to switch to placebo. It shows what happens when treatment stops.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "maximum-tolerated-dose": {
+    "term": "maximum tolerated dose",
+    "aliases": [
+      "MTD",
+      "maximum tolerated doses"
+    ],
+    "definition": "In a trial, the highest dose each person could take without side effects that made them stop. It differs from person to person.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "dulaglutide": {
+    "term": "dulaglutide",
+    "aliases": [
+      "Trulicity"
+    ],
+    "definition": "A GLP-1 receptor agonist injected once a week, authorised for type 2 diabetes. It was the comparison medicine in the SURPASS-CVOT trial of tirzepatide.",
+    "category": "pharmacology",
+    "see_also": [
+      "glp-1-receptor-agonist"
+    ]
+  },
+  "narrow-therapeutic-index": {
+    "term": "narrow therapeutic index",
+    "aliases": [
+      "narrow therapeutic range",
+      "narrow therapeutic window"
+    ],
+    "definition": "A medicine for which the amount that works is close to the amount that harms, such as warfarin or digoxin. Small changes in absorption can matter.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "acute-kidney-injury": {
+    "term": "acute kidney injury",
+    "aliases": [
+      "AKI",
+      "acute renal failure",
+      "kidney injury"
+    ],
+    "definition": "A sudden drop in how well the kidneys work, over hours or days. Severe dehydration, for example from long-lasting vomiting or diarrhoea, is one cause.",
+    "category": "safety",
+    "see_also": [
+      "egfr-kidney"
+    ]
+  },
+  "falsified-medicine": {
+    "term": "falsified medicine",
+    "aliases": [
+      "falsified medicines",
+      "falsified",
+      "counterfeit",
+      "counterfeit medicine",
+      "fake medicine",
+      "fake pens"
+    ],
+    "definition": "A product that pretends to be a real medicine, for example by copying its packaging or batch number. Its content, dose and sterility are unknown.",
+    "category": "safety",
+    "see_also": []
+  },
+  "outsourcing-facility": {
+    "term": "outsourcing facility",
+    "aliases": [
+      "outsourcing facilities",
+      "503B",
+      "503B outsourcing facility",
+      "503B bulks list"
+    ],
+    "definition": "A type of US compounding facility registered with the FDA under section 503B of US law. It may only compound from raw drug substance if that substance is on an FDA list of clinical need or the medicine is officially in shortage.",
+    "category": "regulation",
+    "see_also": [
+      "pharmacy-compounding",
+      "503a-bulks-list"
+    ]
+  },
+  "nhg-standaard": {
+    "term": "NHG-Standaard",
+    "aliases": [
+      "NHG-Standaarden",
+      "NHG standard",
+      "NHG guideline"
+    ],
+    "definition": "A treatment guideline for Dutch GPs, written by the Dutch College of General Practitioners (NHG).",
+    "category": "regulation",
+    "see_also": []
+  },
+  "combined-lifestyle-intervention": {
+    "term": "combined lifestyle intervention",
+    "aliases": [
+      "GLI",
+      "gecombineerde leefstijlinterventie"
+    ],
+    "definition": "A Dutch lifestyle programme for people with overweight or obesity, with a focus on things like physical activity and diet. Dutch guidelines put it first, before obesity medicines are considered.",
+    "category": "regulation",
+    "see_also": []
+  }
+}

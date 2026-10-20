@@ -1,0 +1,198 @@
+{
+  "pentadecapeptide": {
+    "term": "pentadecapeptide",
+    "aliases": ["pentadecapeptides"],
+    "definition": "A peptide made of exactly 15 amino acids. BPC-157 is a pentadecapeptide.",
+    "category": "chemistry",
+    "see_also": []
+  },
+  "angiogenesis": {
+    "term": "angiogenesis",
+    "aliases": ["angiogenic", "pro-angiogenic", "new blood vessel growth"],
+    "definition": "The growth of new small blood vessels from existing ones. Healing tissue needs it, and tumours also use it to get a blood supply.",
+    "category": "biology",
+    "see_also": ["vegfr2"]
+  },
+  "vegfr2": {
+    "term": "VEGFR2",
+    "aliases": ["VEGFR-2", "VEGF receptor 2", "vascular endothelial growth factor receptor 2"],
+    "definition": "A receptor on the cells that line blood vessels. When the growth signal VEGF binds to it, these cells divide and move, and new vessels can form.",
+    "category": "biology",
+    "see_also": ["angiogenesis"]
+  },
+  "nitric-oxide": {
+    "term": "nitric oxide",
+    "aliases": ["NO-system", "NO system"],
+    "definition": "A very small gas molecule that cells use as a signal. In blood vessels it relaxes the vessel wall, so the vessel widens.",
+    "category": "biology",
+    "see_also": ["enos"]
+  },
+  "enos": {
+    "term": "eNOS",
+    "aliases": ["endothelial nitric oxide synthase"],
+    "definition": "The enzyme in the inner lining of blood vessels that makes nitric oxide.",
+    "category": "biology",
+    "see_also": ["nitric-oxide"]
+  },
+  "focal-adhesion-kinase": {
+    "term": "focal adhesion kinase",
+    "aliases": ["FAK", "FAK–paxillin", "FAK-paxillin"],
+    "definition": "A protein inside cells that senses where the cell is attached to its surroundings. It helps the cell move and survive, and it is also very active in many tumours.",
+    "category": "biology",
+    "see_also": ["paxillin"]
+  },
+  "paxillin": {
+    "term": "paxillin",
+    "aliases": [],
+    "definition": "A support protein at the points where a cell holds on to its surroundings. It works together with focal adhesion kinase when a cell moves.",
+    "category": "biology",
+    "see_also": ["focal-adhesion-kinase"]
+  },
+  "growth-hormone-receptor": {
+    "term": "growth hormone receptor",
+    "aliases": ["growth-hormone receptor", "GH receptor"],
+    "definition": "The receptor on a cell that growth hormone binds to. A cell with more of these receptors can respond more strongly to the same amount of hormone.",
+    "category": "biology",
+    "see_also": []
+  },
+  "egr-1": {
+    "term": "EGR-1",
+    "aliases": ["egr-1", "early growth response 1", "early growth response gene 1"],
+    "definition": "A gene that cells switch on within minutes of injury or stimulation. Its protein then switches on other genes involved in repair and growth.",
+    "category": "biology",
+    "see_also": []
+  },
+  "fibroblast": {
+    "term": "fibroblast",
+    "aliases": ["fibroblasts", "tendon fibroblasts", "tendocytes"],
+    "definition": "A common cell in connective tissue such as tendon and skin. It makes collagen, the main structural protein of these tissues.",
+    "category": "biology",
+    "see_also": []
+  },
+  "intraperitoneal": {
+    "term": "intraperitoneal",
+    "aliases": ["intraperitoneally"],
+    "definition": "Injected into the belly cavity, the space around the gut. It is a common route in rat and mouse studies but is not how medicines are normally given to people.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "case-series": {
+    "term": "case series",
+    "aliases": ["case-series", "case series report"],
+    "definition": "A report on a group of patients who all had the same treatment, with no comparison group. It can raise questions but cannot show that the treatment caused the result.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "immunogenicity": {
+    "term": "immunogenicity",
+    "aliases": ["immunogenic"],
+    "definition": "The ability of a substance to make the immune system react against it. This can cause allergic reactions or make the body produce antibodies against the substance.",
+    "category": "pharmacology",
+    "see_also": ["peptide-aggregation"]
+  },
+  "peptide-aggregation": {
+    "term": "peptide aggregation",
+    "aliases": ["aggregation", "peptide aggregates"],
+    "definition": "When single peptide molecules stick together into clumps. Clumps can make a product less active and more likely to trigger the immune system.",
+    "category": "chemistry",
+    "see_also": ["immunogenicity"]
+  },
+  "carcinogenicity-study": {
+    "term": "carcinogenicity study",
+    "aliases": ["carcinogenicity studies", "carcinogenicity testing"],
+    "definition": "A long-term animal study that tests whether a substance causes tumours or makes them grow. Regulators usually ask for one when people will use a medicine for six months or more.",
+    "category": "safety",
+    "see_also": ["genotoxicity"]
+  },
+  "genotoxicity": {
+    "term": "genotoxicity",
+    "aliases": ["genotoxic", "mutagenic", "Ames test"],
+    "definition": "Damage to the genetic material (DNA) of cells, which can start a cancer. Genotoxicity tests check whether a substance causes this kind of damage.",
+    "category": "safety",
+    "see_also": ["carcinogenicity-study"]
+  },
+  "noael": {
+    "term": "NOAEL",
+    "aliases": ["no-observed-adverse-effect level", "no-observed-adverse-event level"],
+    "definition": "The highest dose in an animal study at which no harmful effects were seen. It only applies to that species, route and study length.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "endotoxin": {
+    "term": "endotoxin",
+    "aliases": ["endotoxins", "bacterial endotoxin", "bacterial endotoxins"],
+    "definition": "A toxic part of the outer wall of certain bacteria. It can survive sterilisation and causes fever or shock if injected, so injectable products must be tested for it.",
+    "category": "safety",
+    "see_also": []
+  },
+  "503a-bulks-list": {
+    "term": "503A bulks list",
+    "aliases": ["503A Bulks List", "503A bulk drug substances list", "503A list"],
+    "definition": "A US list of raw drug substances that licensed pharmacies may use to prepare medicines for individual prescriptions, even though no approved medicine contains them. Being on the list is not an approval.",
+    "category": "regulation",
+    "see_also": ["pharmacy-compounding", "pcac"]
+  },
+  "pharmacy-compounding": {
+    "term": "compounding",
+    "aliases": ["pharmacy compounding", "compounded", "compounding pharmacy", "compounding pharmacies"],
+    "definition": "When a pharmacy prepares a medicine itself for a particular patient, instead of supplying a factory-made, approved product. Compounded medicines are not checked by a regulator before use.",
+    "category": "regulation",
+    "see_also": ["503a-bulks-list"]
+  },
+  "pcac": {
+    "term": "PCAC",
+    "aliases": ["Pharmacy Compounding Advisory Committee"],
+    "definition": "An expert committee that advises the US Food and Drug Administration (FDA) on pharmacy compounding. Its votes are advice; the FDA does not have to follow them.",
+    "category": "regulation",
+    "see_also": ["503a-bulks-list"]
+  },
+  "fda-category-2": {
+    "term": "Category 2",
+    "aliases": ["category 2"],
+    "definition": "An FDA list of substances nominated for pharmacy compounding that the agency said may present significant safety risks. The FDA said it may take action against pharmacies that compound them.",
+    "category": "regulation",
+    "see_also": ["503a-bulks-list"]
+  },
+  "wada-s0": {
+    "term": "S0 (non-approved substances)",
+    "aliases": ["S0", "non-approved substances"],
+    "definition": "The section of the WADA Prohibited List for substances that no government health regulator has approved as a medicine. They are banned in sport at all times, in and out of competition.",
+    "category": "sport",
+    "see_also": []
+  },
+  "interstitial-cystitis": {
+    "term": "interstitial cystitis",
+    "aliases": ["bladder pain syndrome"],
+    "definition": "A long-term bladder condition that causes pain and a frequent, urgent need to pass urine, without an infection.",
+    "category": "biology",
+    "see_also": []
+  },
+  "ulcerative-colitis": {
+    "term": "ulcerative colitis",
+    "aliases": [],
+    "definition": "A long-term inflammatory disease of the large bowel. It causes bloody diarrhoea and can lead to serious complications, so it needs medical treatment.",
+    "category": "biology",
+    "see_also": []
+  },
+  "independent-replication": {
+    "term": "independent replication",
+    "aliases": ["replication", "replicated", "replicate", "independently replicated"],
+    "definition": "Repeating an experiment in another laboratory, by people who were not involved in the first study, to see whether the result holds.",
+    "category": "evidence",
+    "see_also": ["publication-bias"]
+  },
+  "publication-bias": {
+    "term": "publication bias",
+    "aliases": ["file-drawer problem"],
+    "definition": "The tendency for studies with positive results to be published more often than studies that found nothing. It makes treatments look better than they really are.",
+    "category": "evidence",
+    "see_also": ["independent-replication"]
+  },
+  "dose-response": {
+    "term": "dose–response relationship",
+    "aliases": ["dose-response", "dose–response", "dose-response relationship"],
+    "definition": "The pattern in which a larger dose gives a larger effect, up to a limit. Finding this pattern is one sign that the substance itself causes the effect.",
+    "category": "evidence",
+    "see_also": []
+  }
+}

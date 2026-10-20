@@ -1,0 +1,831 @@
+# Sources for the semaglutide compound page.
+# Scholarly entries: metadata copied from the PubMed record (E-utilities / PubMed MCP) on 2026-10-20.
+# Regulator, label and law entries: each URL was fetched on 2026-10-20 and says what it is cited for
+# (see research/semaglutide.md for the verification log).
+
+# ------------------------------------------------------------------ chemistry / identifiers
+
+pubchem-semaglutide:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 56843331, Semaglutide"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/56843331
+  accessed: 2026-10-20
+  verified: registry
+  note: "Isomeric SMILES, formula C187H291N45O59, CAS 910463-68-2, UNII 53AXN4NNHX and the systematic peptide name (His-Aib-…-Lys(N6-…17-carboxyheptadecanoyl-γGlu-2×OEG)-…-Arg-Gly-Arg-Gly) retrieved via PUG REST."
+
+chembl-semaglutide:
+  type: dataset
+  authors: "EMBL-EBI"
+  title: "ChEMBL compound CHEMBL2108724 (semaglutide): mechanism of action — glucagon-like peptide 1 receptor agonist"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL2108724
+  accessed: 2026-10-20
+  verified: registry
+
+# ------------------------------------------------------------------ GLP-1 physiology and history
+
+holst-1987-glp1:
+  type: article
+  authors: "Holst JJ, Orskov C, Nielsen OV, Schwartz TW"
+  title: "Truncated glucagon-like peptide I, an insulin-releasing hormone from the distal gut"
+  container: "FEBS Letters"
+  year: 1987
+  volume: "211"
+  pages: "169-174"
+  doi: 10.1016/0014-5793(87)81430-8
+  pmid: "3542566"
+  verified: pubmed
+
+mojsov-1987-glp1:
+  type: article
+  authors: "Mojsov S, Weir GC, Habener JF"
+  title: "Insulinotropin: glucagon-like peptide I (7-37) co-encoded in the glucagon gene is a potent stimulator of insulin release in the perfused rat pancreas"
+  container: "Journal of Clinical Investigation"
+  year: 1987
+  volume: "79"
+  pages: "616-619"
+  doi: 10.1172/JCI112855
+  pmid: "3543057"
+  pmcid: PMC424143
+  verified: pubmed
+
+kreymann-1987-glp1:
+  type: article
+  authors: "Kreymann B, Williams G, Ghatei MA, Bloom SR"
+  title: "Glucagon-like peptide-1 7-36: a physiological incretin in man"
+  container: "The Lancet"
+  year: 1987
+  volume: "2"
+  pages: "1300-1304"
+  doi: 10.1016/s0140-6736(87)91194-9
+  pmid: "2890903"
+  verified: pubmed
+
+nauck-1993-glp1-type2:
+  type: article
+  authors: "Nauck MA, Kleine N, Orskov C, Holst JJ, Willms B, Creutzfeldt W"
+  title: "Normalization of fasting hyperglycaemia by exogenous glucagon-like peptide 1 (7-36 amide) in type 2 (non-insulin-dependent) diabetic patients"
+  container: "Diabetologia"
+  year: 1993
+  volume: "36"
+  pages: "741-744"
+  doi: 10.1007/BF00401145
+  pmid: "8405741"
+  verified: pubmed
+
+deacon-1995-glp1-degradation:
+  type: article
+  authors: "Deacon CF, Nauck MA, Toft-Nielsen M, Pridal L, Willms B, Holst JJ"
+  title: "Both subcutaneously and intravenously administered glucagon-like peptide I are rapidly degraded from the NH2-terminus in type II diabetic patients and in healthy subjects"
+  container: "Diabetes"
+  year: 1995
+  volume: "44"
+  pages: "1126-1131"
+  doi: 10.2337/diab.44.9.1126
+  pmid: "7657039"
+  verified: pubmed
+
+muller-2019-glp1-review:
+  type: review
+  authors: "Müller TD, Finan B, Bloom SR, D'Alessio D, Drucker DJ, Flatt PR, et al."
+  title: "Glucagon-like peptide 1 (GLP-1)"
+  container: "Molecular Metabolism"
+  year: 2019
+  volume: "30"
+  pages: "72-130"
+  doi: 10.1016/j.molmet.2019.09.010
+  pmid: "31767182"
+  pmcid: PMC6812410
+  verified: pubmed
+  note: "Cited for: GLP-1R activation of adenylate cyclase/cAMP (PKA, Epac2) in beta cells; native GLP-1 half-life of about 1–2 minutes; DPP-4 cleavage to the low-affinity GLP-1(9-36). Checked in the PMC full text."
+
+# ------------------------------------------------------------------ discovery, pharmacology, mechanism
+
+lau-2015-semaglutide-discovery:
+  type: article
+  authors: "Lau J, Bloch P, Schäffer L, Pettersson I, Spetzler J, Kofoed J, et al."
+  title: "Discovery of the once-weekly glucagon-like peptide-1 (GLP-1) analogue semaglutide"
+  container: "Journal of Medicinal Chemistry"
+  year: 2015
+  volume: "58"
+  pages: "7370-7380"
+  doi: 10.1021/acs.jmedchem.5b00726
+  pmid: "26308095"
+  verified: pubmed
+
+knudsen-2010-thyroid-c-cells:
+  type: article
+  authors: "Bjerre Knudsen L, Madsen LW, Andersen S, Almholt K, de Boer AS, Drucker DJ, et al."
+  title: "Glucagon-like peptide-1 receptor agonists activate rodent thyroid C-cells causing calcitonin release and C-cell proliferation"
+  container: "Endocrinology"
+  year: 2010
+  volume: "151"
+  pages: "1473-1486"
+  doi: 10.1210/en.2009-1272
+  pmid: "20203154"
+  verified: pubmed
+
+buckley-2018-oral-semaglutide:
+  type: article
+  authors: "Buckley ST, Bækdal TA, Vegge A, Maarbjerg SJ, Pyke C, Ahnfelt-Rønne J, et al."
+  title: "Transcellular stomach absorption of a derivatized glucagon-like peptide-1 receptor agonist"
+  container: "Science Translational Medicine"
+  year: 2018
+  volume: "10"
+  pages: "eaar7047"
+  doi: 10.1126/scitranslmed.aar7047
+  pmid: "30429357"
+  verified: pubmed
+
+gabery-2020-semaglutide-brain:
+  type: article
+  authors: "Gabery S, Salinas CG, Paulsen SJ, Ahnfelt-Rønne J, Alanentalo T, Baquero AF, et al."
+  title: "Semaglutide lowers body weight in rodents via distributed neural pathways"
+  container: "JCI Insight"
+  year: 2020
+  volume: "5"
+  pages: "e133429"
+  doi: 10.1172/jci.insight.133429
+  pmid: "32213703"
+  pmcid: PMC7213778
+  verified: pubmed
+
+friedrichsen-2021-appetite:
+  type: trial
+  authors: "Friedrichsen M, Breitschaft A, Tadayon S, Wizert A, Skovgaard D"
+  title: "The effect of semaglutide 2.4 mg once weekly on energy intake, appetite, control of eating, and gastric emptying in adults with obesity"
+  container: "Diabetes, Obesity and Metabolism"
+  year: 2021
+  volume: "23"
+  pages: "754-762"
+  doi: 10.1111/dom.14280
+  pmid: "33269530"
+  pmcid: PMC7898914
+  verified: pubmed
+
+kapitza-2017-beta-cell:
+  type: trial
+  authors: "Kapitza C, Dahl K, Jacobsen JB, Axelsen MB, Flint A"
+  title: "Effects of semaglutide on beta cell function and glycaemic control in participants with type 2 diabetes: a randomised, double-blind, placebo-controlled trial"
+  container: "Diabetologia"
+  year: 2017
+  volume: "60"
+  pages: "1390-1399"
+  doi: 10.1007/s00125-017-4289-0
+  pmid: "28526920"
+  pmcid: PMC5491562
+  verified: pubmed
+
+# ------------------------------------------------------------------ outcome and efficacy trials
+
+marso-2016-sustain-6:
+  type: trial
+  authors: "Marso SP, Bain SC, Consoli A, Eliaschewitz FG, Jódar E, Leiter LA, et al."
+  title: "Semaglutide and cardiovascular outcomes in patients with type 2 diabetes"
+  container: "New England Journal of Medicine"
+  year: 2016
+  volume: "375"
+  pages: "1834-1844"
+  doi: 10.1056/NEJMoa1607141
+  pmid: "27633186"
+  verified: pubmed
+  note: "SUSTAIN-6, NCT01720446."
+
+aroda-2019-pioneer-1:
+  type: trial
+  authors: "Aroda VR, Rosenstock J, Terauchi Y, Altuntas Y, Lalic NM, Morales Villegas EC, et al."
+  title: "PIONEER 1: randomized clinical trial of the efficacy and safety of oral semaglutide monotherapy in comparison with placebo in patients with type 2 diabetes"
+  container: "Diabetes Care"
+  year: 2019
+  volume: "42"
+  pages: "1724-1732"
+  doi: 10.2337/dc19-0749
+  pmid: "31186300"
+  verified: pubmed
+
+husain-2019-pioneer-6:
+  type: trial
+  authors: "Husain M, Birkenfeld AL, Donsmark M, Dungan K, Eliaschewitz FG, Franco DR, et al."
+  title: "Oral semaglutide and cardiovascular outcomes in patients with type 2 diabetes"
+  container: "New England Journal of Medicine"
+  year: 2019
+  volume: "381"
+  pages: "841-851"
+  doi: 10.1056/NEJMoa1901118
+  pmid: "31185157"
+  verified: pubmed
+  note: "PIONEER 6, NCT02692716."
+
+mcguire-2025-soul:
+  type: trial
+  authors: "McGuire DK, Marx N, Mulvagh SL, Deanfield JE, Inzucchi SE, Pop-Busui R, et al."
+  title: "Oral semaglutide and cardiovascular outcomes in high-risk type 2 diabetes"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "392"
+  pages: "2001-2012"
+  doi: 10.1056/NEJMoa2501006
+  pmid: "40162642"
+  verified: pubmed
+  note: "SOUL, NCT03914326."
+
+perkovic-2024-flow:
+  type: trial
+  authors: "Perkovic V, Tuttle KR, Rossing P, Mahaffey KW, Mann JFE, Bakris G, et al."
+  title: "Effects of semaglutide on chronic kidney disease in patients with type 2 diabetes"
+  container: "New England Journal of Medicine"
+  year: 2024
+  volume: "391"
+  pages: "109-121"
+  doi: 10.1056/NEJMoa2403347
+  pmid: "38785209"
+  verified: pubmed
+  note: "FLOW, NCT03819153."
+
+wilding-2021-step-1:
+  type: trial
+  authors: "Wilding JPH, Batterham RL, Calanna S, Davies M, Van Gaal LF, Lingvay I, et al."
+  title: "Once-weekly semaglutide in adults with overweight or obesity"
+  container: "New England Journal of Medicine"
+  year: 2021
+  volume: "384"
+  pages: "989-1002"
+  doi: 10.1056/NEJMoa2032183
+  pmid: "33567185"
+  verified: pubmed
+  note: "STEP 1, NCT03548935."
+
+wilding-2022-step-1-extension:
+  type: trial
+  authors: "Wilding JPH, Batterham RL, Davies M, Van Gaal LF, Kandler K, Konakli K, et al."
+  title: "Weight regain and cardiometabolic effects after withdrawal of semaglutide: the STEP 1 trial extension"
+  container: "Diabetes, Obesity and Metabolism"
+  year: 2022
+  volume: "24"
+  pages: "1553-1564"
+  doi: 10.1111/dom.14725
+  pmid: "35441470"
+  pmcid: PMC9542252
+  verified: pubmed
+
+rubino-2021-step-4:
+  type: trial
+  authors: "Rubino D, Abrahamsson N, Davies M, Hesse D, Greenway FL, Jensen C, et al."
+  title: "Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance in adults with overweight or obesity: the STEP 4 randomized clinical trial"
+  container: "JAMA"
+  year: 2021
+  volume: "325"
+  pages: "1414-1425"
+  doi: 10.1001/jama.2021.3224
+  pmid: "33755728"
+  pmcid: PMC7988425
+  verified: pubmed
+  note: "STEP 4, NCT03548987."
+
+lincoff-2023-select:
+  type: trial
+  authors: "Lincoff AM, Brown-Frandsen K, Colhoun HM, Deanfield J, Emerson SS, Esbjerg S, et al."
+  title: "Semaglutide and cardiovascular outcomes in obesity without diabetes"
+  container: "New England Journal of Medicine"
+  year: 2023
+  volume: "389"
+  pages: "2221-2232"
+  doi: 10.1056/NEJMoa2307563
+  pmid: "37952131"
+  verified: pubmed
+  note: "SELECT, NCT03574597."
+
+wharton-2025-oasis-4:
+  type: trial
+  authors: "Wharton S, Lingvay I, Bogdanski P, Duque do Vale R, Jacob S, Karlsson T, et al."
+  title: "Oral semaglutide at a dose of 25 mg in adults with overweight or obesity"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "393"
+  pages: "1077-1087"
+  doi: 10.1056/NEJMoa2500969
+  pmid: "40934115"
+  verified: pubmed
+  note: "OASIS 4, NCT05564117."
+
+sanyal-2025-essence:
+  type: trial
+  authors: "Sanyal AJ, Newsome PN, Kliers I, Østergaard LH, Long MT, Kjær MS, et al."
+  title: "Phase 3 trial of semaglutide in metabolic dysfunction-associated steatohepatitis"
+  container: "New England Journal of Medicine"
+  year: 2025
+  volume: "392"
+  pages: "2089-2099"
+  doi: 10.1056/NEJMoa2413258
+  pmid: "40305708"
+  verified: pubmed
+  note: "ESSENCE, NCT04822181 (planned interim analysis of part 1)."
+
+loomba-2023-semaglutide-cirrhosis:
+  type: trial
+  authors: "Loomba R, Abdelmalek MF, Armstrong MJ, Jara M, Kjær MS, Krarup N, et al."
+  title: "Semaglutide 2·4 mg once weekly in patients with non-alcoholic steatohepatitis-related cirrhosis: a randomised, placebo-controlled phase 2 trial"
+  container: "The Lancet Gastroenterology & Hepatology"
+  year: 2023
+  volume: "8"
+  pages: "511-522"
+  doi: 10.1016/S2468-1253(23)00068-7
+  pmid: "36934740"
+  pmcid: PMC10792518
+  verified: pubmed
+  note: "NCT03987451. 71 adults with compensated NASH cirrhosis; no significant difference in fibrosis improvement or NASH resolution at 48 weeks. Funded by Novo Nordisk. Added by the fact-checker."
+
+bassler-2010-truncated-trials:
+  type: meta-analysis
+  authors: "Bassler D, Briel M, Montori VM, Lane M, Glasziou P, Zhou Q, et al."
+  title: "Stopping randomized trials early for benefit and estimation of treatment effects: systematic review and meta-regression analysis"
+  container: "JAMA"
+  year: 2010
+  volume: "303"
+  pages: "1180-1187"
+  doi: 10.1001/jama.2010.310
+  pmid: "20332404"
+  verified: pubmed
+  note: "Cited for: trials stopped early for benefit overestimate effects (ratio of relative risks 0.71), with large overestimates mainly in trials with fewer than 500 events. Added by the fact-checker."
+
+cummings-2026-evoke:
+  type: trial
+  authors: "Cummings JL, Atri A, Sano M, Zetterberg H, Scheltens P, Knop FK, et al."
+  title: "Efficacy and safety of oral semaglutide 14 mg (flexible dose) in early-stage symptomatic Alzheimer's disease (evoke and evoke+): two phase 3, randomised, placebo-controlled trials"
+  container: "The Lancet"
+  year: 2026
+  volume: "407"
+  pages: "2167-2179"
+  doi: 10.1016/S0140-6736(26)00459-9
+  pmid: "41865758"
+  verified: pubmed
+  note: "evoke NCT04777396, evoke+ NCT04777409."
+
+# ------------------------------------------------------------------ safety literature
+
+vilsboll-2018-retinopathy:
+  type: article
+  authors: "Vilsbøll T, Bain SC, Leiter LA, Lingvay I, Matthews D, Simó R, et al."
+  title: "Semaglutide, reduction in glycated haemoglobin and the risk of diabetic retinopathy"
+  container: "Diabetes, Obesity and Metabolism"
+  year: 2018
+  volume: "20"
+  pages: "889-897"
+  doi: 10.1111/dom.13172
+  pmid: "29178519"
+  pmcid: PMC5888154
+  verified: pubmed
+
+hathaway-2024-naion:
+  type: article
+  authors: "Hathaway JT, Shah MP, Hathaway DB, Zekavat SM, Krasniqi D, Gittinger JW, et al."
+  title: "Risk of nonarteritic anterior ischemic optic neuropathy in patients prescribed semaglutide"
+  container: "JAMA Ophthalmology"
+  year: 2024
+  volume: "142"
+  pages: "732-739"
+  doi: 10.1001/jamaophthalmol.2024.2296
+  pmid: "38958939"
+  pmcid: PMC11223051
+  verified: pubmed
+
+he-2022-gallbladder:
+  type: meta-analysis
+  authors: "He L, Wang J, Ping F, Yang N, Huang J, Li Y, et al."
+  title: "Association of glucagon-like peptide-1 receptor agonist use with risk of gallbladder and biliary diseases: a systematic review and meta-analysis of randomized clinical trials"
+  container: "JAMA Internal Medicine"
+  year: 2022
+  volume: "182"
+  pages: "513-519"
+  doi: 10.1001/jamainternmed.2022.0338
+  pmid: "35344001"
+  pmcid: PMC8961394
+  verified: pubmed
+
+bezin-2023-thyroid-cancer:
+  type: article
+  authors: "Bezin J, Gouverneur A, Pénichon M, Mathieu C, Garrel R, Hillaire-Buys D, et al."
+  title: "GLP-1 receptor agonists and the risk of thyroid cancer"
+  container: "Diabetes Care"
+  year: 2023
+  volume: "46"
+  pages: "384-390"
+  doi: 10.2337/dc22-1148
+  pmid: "36356111"
+  verified: pubmed
+
+pasternak-2024-thyroid-cancer:
+  type: article
+  authors: "Pasternak B, Wintzell V, Hviid A, Eliasson B, Gudbjörnsdottir S, Jonasson C, et al."
+  title: "Glucagon-like peptide 1 receptor agonist use and risk of thyroid cancer: Scandinavian cohort study"
+  container: "BMJ"
+  year: 2024
+  volume: "385"
+  pages: "e078225"
+  doi: 10.1136/bmj-2023-078225
+  pmid: "38683947"
+  pmcid: PMC11004669
+  verified: pubmed
+
+neeland-2024-lean-mass:
+  type: review
+  authors: "Neeland IJ, Linge J, Birkenfeld AL"
+  title: "Changes in lean body mass with glucagon-like peptide-1-based therapies and mitigation strategies"
+  container: "Diabetes, Obesity and Metabolism"
+  year: 2024
+  volume: "26 Suppl 4"
+  pages: "16-27"
+  doi: 10.1111/dom.15728
+  pmid: "38937282"
+  verified: pubmed
+
+# ------------------------------------------------------------------ EU labels and EMA
+
+ema-epar-ozempic:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Ozempic (semaglutide): EPAR — overview and product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/ozempic
+  accessed: 2026-10-20
+  verified: url
+  note: "EU marketing authorisation 8 February 2018; holder Novo Nordisk A/S; indication text; product information last updated 25 August 2026."
+
+ema-epar-wegovy:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Wegovy (semaglutide): EPAR — overview and product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
+  accessed: 2026-10-20
+  verified: url
+  note: "EU marketing authorisation 6 January 2022; injection and tablets; SmPC sections 4.3–4.8, 5.1–5.3 (contraindications, aspiration, pancreatitis, NAION, retinopathy, interactions, pregnancy, adverse-reaction frequencies, half-life, albumin binding, rodent C-cell tumours). Product information last updated 21 September 2026."
+
+ema-epar-rybelsus:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Rybelsus (semaglutide): EPAR — overview and product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/rybelsus
+  accessed: 2026-10-20
+  verified: url
+  note: "EU marketing authorisation 3 April 2020; SmPC 4.5 (levothyroxine +33% AUC), 5.2 (oral bioavailability about 1–2%, absorption in the stomach, salcaprozate sodium)."
+
+ema-wegovy-procedural-steps:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Wegovy: EPAR — procedural steps taken and scientific information after authorisation"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/procedural-steps-after/wegovy-epar-procedural-steps-taken-scientific-information-after-authorisation_en.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Extensions X/0000296344 (tablets: 1.5, 4, 9, 25 mg) and X/0000304416 (7.2 mg pen): CHMP opinion 21 May 2026, Commission decision 14 July 2026."
+
+ema-2026-wegovy-tablets:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "First oral GLP-1 treatment for weight management"
+  year: 2026
+  url: https://www.ema.europa.eu/en/news/first-oral-glp-1-treatment-weight-management
+  accessed: 2026-10-20
+  verified: url
+  note: "22 May 2026: CHMP recommended the oral (tablet) extension for adults; cites a phase 3 trial in 307 adults over 64 weeks (−13.61% vs −2.18% body weight)."
+
+ema-prac-2024-04-suicidal-thoughts:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Meeting highlights from the Pharmacovigilance Risk Assessment Committee (PRAC) 8-11 April 2024"
+  year: 2024
+  url: https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-8-11-april-2024
+  accessed: 2026-10-20
+  verified: url
+  note: "PRAC: available evidence does not support a causal association between GLP-1 receptor agonists and suicidal or self-injurious thoughts and actions; no product-information update needed."
+
+ema-prac-2024-07-aspiration:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Meeting highlights from the Pharmacovigilance Risk Assessment Committee (PRAC) 8-11 July 2024"
+  year: 2024
+  url: https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-8-11-july-2024
+  accessed: 2026-10-20
+  verified: url
+  note: "PRAC could not establish a causal association between GLP-1 analogues and aspiration, but recommended product-information wording on residual gastric content before general anaesthesia or deep sedation."
+
+ema-prac-2025-06-naion:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "PRAC concludes eye condition NAION is a very rare side effect of semaglutide medicines Ozempic, Rybelsus and Wegovy"
+  year: 2025
+  url: https://www.ema.europa.eu/en/news/prac-concludes-eye-condition-naion-very-rare-side-effect-semaglutide-medicines-ozempic-rybelsus-wegovy
+  accessed: 2026-10-20
+  verified: url
+  note: "Published 6 June 2025 (revised 13 June 2025)."
+
+ema-2023-falsified-ozempic:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "EMA alerts EU patients and healthcare professionals to reports of falsified Ozempic pens"
+  year: 2023
+  url: https://www.ema.europa.eu/en/news/ema-alerts-eu-patients-healthcare-professionals-reports-falsified-ozempic-pens
+  accessed: 2026-10-20
+  verified: url
+  note: "Published 18 October 2023."
+
+who-2024-falsified-semaglutide:
+  type: regulator
+  authors: "World Health Organization"
+  title: "WHO issues warning on falsified medicines used for diabetes treatment and weight loss"
+  year: 2024
+  url: https://www.who.int/news/item/20-06-2024-who-issues-warning-on-falsified-medicines-used-for-diabetes-treatment-and-weight-loss
+  accessed: 2026-10-20
+  verified: url
+  note: "Published 20 June 2024; refers to Medical Product Alert N°2/2024 (three falsified Ozempic batches: Brazil, UK, US, Oct–Dec 2023)."
+
+# ------------------------------------------------------------------ Netherlands
+
+fk-semaglutide:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Semaglutide — Farmacotherapeutisch Kompas (preparaattekst)"
+  container: "Farmacotherapeutisch Kompas"
+  year: 2026
+  url: https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/s/semaglutide
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Reimbursement status: Ozempic and Rybelsus Bijlage 2 (conditional); Wegovy not in the GVS. Prescribing advice for obesity (after combined lifestyle intervention); pregnancy advice."
+
+fk-regeling-zorgverzekering-bijlage-2:
+  type: law
+  authors: "Zorginstituut Nederland"
+  title: "Regeling zorgverzekering, bijlage 2 (as reproduced in the Farmacotherapeutisch Kompas) — item 146: dulaglutide en semaglutide"
+  container: "Farmacotherapeutisch Kompas"
+  year: 2026
+  url: https://www.farmacotherapeutischkompas.nl/algemeen/regeling-zorgverzekering
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+
+zin-2024-wegovy-not-reimbursed:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Zorginstituut: geen vergoeding Wegovy voor obesitas wegens onduidelijkheid gezondheidseffecten"
+  year: 2024
+  url: https://www.zorginstituutnederland.nl/actueel/nieuws/2024/07/16/wegovy-niet-vergoeden-uit-basispakket
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "16 July 2024: advice not to reimburse Wegovy for obesity; effective for weight but uncertain health gain, long-term effect and tapering; budget impact up to EUR 1.3 billion per year; global semaglutide shortage as an added consideration."
+
+zin-2024-wegovy-pharmacotherapeutic-report:
+  type: report
+  authors: "Zorginstituut Nederland"
+  title: "Farmacotherapeutisch rapport semaglutide (Wegovy®) bij de behandeling van gewichtsbeheersing bij obesitas of overgewicht in combinatie met een comorbiditeit"
+  year: 2024
+  url: https://www.farmacotherapeutischkompas.nl/binaries/content/assets/fk-gegenereerd/2024_semaglutide_wegovy__bij_gewichtsbeheersing_bij_obesitas_of_overgewicht_in_combinatie_met_comorbiditeit.pdf
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Dated 18 June 2024. Meets 'stand van wetenschap en praktijk' as add-on to a combined lifestyle intervention; no data beyond 2 years; weight returns on stopping; no studies of tapering."
+
+zin-wegovy-reassessment:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Advies — wel of niet vergoeden semaglutide (Wegovy®) voor de behandeling van obesitas (werkagenda)"
+  year: 2026
+  url: https://www.zorginstituutnederland.nl/werkagenda/stofwisseling-en-hormoonhuishouding/gvs-advies-semaglutide-wegovy-voor-de-behandeling-van-obesitas
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "Reassessment under the staged approach (BMI ≥30 with related disease, or BMI ≥35); first Scientific Advisory Council discussion 5 October 2026; consultation expected early November 2026; later steps 'nog niet bekend'."
+
+zin-2025-obesity-staged-approach:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Zorginstituut: obesitasmedicijnen eerst beschikbaar voor mensen met hoogste ziektelast"
+  year: 2025
+  url: https://www.zorginstituutnederland.nl/actueel/nieuws/2025/11/06/zorginstituut-obesitasmedicijnen-eerst-beschikbaar-voor-mensen-met-hoogste-ziektelast
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+
+cbg-ozempic-shortage:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "CBG waarschuwt voor aanhoudend tekort diabetesmedicijn Ozempic (news item with updates 2023–2025)"
+  year: 2023
+  url: https://www.cbg-meb.nl/actueel/nieuws/2023/03/17/cbg-waarschuwt-voor-aanhoudend-tekort-diabetesmedicijn-ozempic
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "17 March 2023 warning against use without a doctor; update of 2 December 2024: the Ozempic shortage in the Netherlands is resolved; notes it is unclear whether off-label use caused the shortage; IGJ closed several webshops in December 2022."
+
+cbg-2024-glp1-shortage-recommendations:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Aanbevelingen om tekorten GLP-1 receptor agonisten te beperken"
+  year: 2024
+  url: https://www.cbg-meb.nl/actueel/nieuws/2024/06/27/aanbevelingen-om-tekorten-glp-1-receptor-agonisten-te-beperken
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "27 June 2024: EMA's Medicine Shortage Steering Group (MSSG) recommendations; shortages since 2022, worsened by off-label slimming use by people without obesity; GLP-1 products sold online may be falsified."
+
+cbg-glp1-position:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Standpunt: Gebruik diabetes- en afslankmedicijnen alleen zoals ze bedoeld zijn"
+  year: 2026
+  url: https://www.cbg-meb.nl/onderwerpen/over-ons-ons-werk/over-cbg-ons-verhaal/over-cbg-standpunt-gebruik-diabetes--en-afslankmedicijnen-alleen-zoals-ze-bedoeld-zijn
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+
+igj-2023-falsified-ozempic:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Waarschuwing voor vervalste injectiepennen van diabetesmedicijn Ozempic"
+  year: 2023
+  url: https://www.igj.nl/actueel/nieuws/2023/10/25/waarschuwing-vervalste-injectiepennen-diabetesmedicijn-ozempic
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+
+# (igj-2026-webshop-order-glp1 removed by the fact-checker on 2026-10-20: the URL slug, the page title
+#  and the page body name the seller and list its web domains, so citing it would point readers to a
+#  seller — CONTENT-GUIDE §1. See research/semaglutide.md, fact-check log.)
+
+# ------------------------------------------------------------------ Germany, UK
+
+bfarm-ozempic-falsification:
+  type: regulator
+  authors: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)"
+  title: "Fälschung des Arzneimittels Ozempic® (updates 11.10.2023 – 15.02.2024)"
+  year: 2024
+  url: https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Rapid-Alert-System/Arzneimittelfaelschungen/Ozempic/_node.html
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+  note: "Falsified German-labelled Ozempic 1 mg pens contained insulin, not semaglutide (7 and 10 November 2023); falsified Ozempic reached patients in Austria; no further falsifications in the German legal supply chain by 15 February 2024."
+
+bfarm-glp1-shortage-archive:
+  type: regulator
+  authors: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)"
+  title: "Archiv Lieferengpässe — GLP-1-Rezeptor-Agonisten"
+  year: 2026
+  url: https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Lieferengpaesse/Archiv/glp.html
+  accessed: 2026-10-20
+  lang: de
+  verified: url
+  note: "Advisory board on supply shortages lifted its recommendation on Ozempic and Trulicity on 18 March 2026; earlier (5 April 2023) recommendation stressed avoiding off-label use."
+
+mhra-2023-fake-weight-loss-pens:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA warns of unsafe fake weight loss pens"
+  container: "GOV.UK"
+  year: 2023
+  url: https://www.gov.uk/government/news/mhra-warns-of-unsafe-fake-weight-loss-pens
+  accessed: 2026-10-20
+  verified: url
+  note: "26 October 2023: 369 potentially fake Ozempic pens seized since January 2023; hospitalisations with hypoglycaemic shock and coma suggesting insulin content."
+
+mhra-glp1-what-you-need-to-know:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "GLP-1 medicines for weight loss and diabetes: what you need to know"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/publications/glp-1-medicines-for-weight-loss-and-diabetes-what-you-need-to-know/glp-1-medicines-for-weight-loss-and-diabetes-what-you-need-to-know
+  accessed: 2026-10-20
+  verified: url
+  note: "First published 5 June 2025, updated 5 February 2026. Semaglutide (Wegovy, Ozempic, Rybelsus) licensed in the UK; prescription only; powder-in-vial products are not authorised."
+
+# ------------------------------------------------------------------ United States
+
+fda-drugsatfda-ozempic:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 209637 (Ozempic, semaglutide injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=209637
+  accessed: 2026-10-20
+  verified: url
+  note: "Original approval 5 December 2017; kidney-outcomes indication (supplement 25) 28 January 2025."
+
+fda-drugsatfda-rybelsus:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 213051 (Rybelsus and Ozempic semaglutide tablets)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213051
+  accessed: 2026-10-20
+  verified: url
+  note: "Original approval 20 September 2019; new indication (supplement 24) 17 October 2025."
+
+fda-drugsatfda-wegovy:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 215256 (Wegovy, semaglutide injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215256
+  accessed: 2026-10-20
+  verified: url
+  note: "Original approval 4 June 2021; cardiovascular indication (supplement 11) 8 March 2024; new indication (supplement 24) 15 August 2025."
+
+fda-drugsatfda-wegovy-tablets:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 218316 (Wegovy, semaglutide tablets)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=218316
+  accessed: 2026-10-20
+  verified: url
+  note: "Original approval 22 December 2025."
+
+fda-label-ozempic:
+  type: label
+  authors: "U.S. Food and Drug Administration / Novo Nordisk"
+  title: "OZEMPIC (semaglutide) injection — prescribing information (revised 05/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/209637s038lbl.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Boxed warning (rodent thyroid C-cell tumours); contraindication: personal or family history of MTC or MEN 2; section 11 (position 8 against DPP-4, position 26 lysine with spacer and C18 fatty di-acid, position 34 change, MW 4113.58, yeast fermentation); 13.1 carcinogenicity."
+
+fda-label-wegovy:
+  type: label
+  authors: "U.S. Food and Drug Administration / Novo Nordisk"
+  title: "WEGOVY (semaglutide) injection and tablets — prescribing information (revised 06/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Indications incl. MASH with moderate to advanced fibrosis (accelerated approval); Recent Major Changes lists 'Suicidal Behavior and Ideation (5.10) … (Removed) 01/2026' (the 02/2026 revision, 215256s033lbl.pdf, gives 02/2026); no NAION warning."
+
+fda-2024-compounded-semaglutide-dosing-errors:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA alerts health care providers, compounders and patients of dosing errors associated with compounded injectable semaglutide products"
+  year: 2024
+  url: https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-patients-dosing-errors-associated-compounded
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 26 July 2024."
+
+fda-glp1-compounding-policy:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA clarifies policies for compounders as national GLP-1 supply begins to stabilize"
+  year: 2026
+  url: https://www.fda.gov/drugs/drug-alerts-and-statements/fda-clarifies-policies-compounders-national-glp-1-supply-begins-stabilize
+  accessed: 2026-10-20
+  verified: url
+  note: "21 February 2025: semaglutide shortage resolved; 503A enforcement discretion ended after the 24 April 2025 court ruling; 503B until 22 May 2025; page current as of 1 April 2026."
+
+fda-unapproved-glp1-concerns:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA's concerns with unapproved GLP-1 drugs used for weight loss"
+  year: 2026
+  url: https://www.fda.gov/drugs/drug-alerts-and-statements/fdas-concerns-unapproved-glp-1-drugs-used-weight-loss
+  accessed: 2026-10-20
+  verified: url
+  note: "Content current as of 1 October 2026: 990 adverse-event reports for compounded semaglutide as of 31 May 2026; salt forms; fraudulent labels; counterfeit Ozempic; products falsely labelled 'for research purposes' or 'not for human consumption'."
+
+fda-2026-503b-glp1-exclusion-proposal:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA proposes to exclude semaglutide, tirzepatide, and liraglutide on 503B bulks list"
+  year: 2026
+  url: https://www.fda.gov/news-events/press-announcements/fda-proposes-exclude-semaglutide-tirzepatide-and-liraglutide-503b-bulks-list
+  accessed: 2026-10-20
+  verified: url
+  note: "Press release of 30 April 2026 (comments 'by June 29, 2026'); the Federal Register notice (FR Doc. 2026-08552) set 30 June 2026 and the deadline was later extended to 30 July 2026 (see fr-2026-12937-503b-comment-extension). No final determination found in the Federal Register as of 20 October 2026."
+
+fr-2026-12937-503b-comment-extension:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "List of Bulk Drug Substances for Which There Is a Clinical Need Under Section 503B of the Federal Food, Drug, and Cosmetic Act; Extension of Comment Period (FR Doc. 2026-12937)"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/2026/06/26/2026-12937/list-of-bulk-drug-substances-for-which-there-is-a-clinical-need-under-section-503b-of-the-federal
+  accessed: 2026-10-20
+  verified: url
+  note: "Published 26 June 2026. Extends comments on FDA's proposal not to include semaglutide, tirzepatide or liraglutide on the 503B Bulks List to 30 July 2026. Read via the federalregister.gov documents API (the HTML page returned a bot-check). Added by the fact-checker."
+
+# ------------------------------------------------------------------ sport
+
+wada-2026-monitoring-program:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "The 2026 Monitoring Program"
+  year: 2025
+  url: https://www.wada-ama.org/sites/default/files/2025-09/2026_list_monitoring_program_en_final_clean_september_2025.pdf
+  accessed: 2026-10-20
+  verified: url
+  note: "Item 6: markers of semaglutide and tirzepatide, in and out of competition. Semaglutide also appears in the 2024 and 2025 Monitoring Programs and not in the 2023 one (checked on wada-ama.org)."
