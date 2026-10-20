@@ -1,0 +1,147 @@
+# News sources. Each must be non-commercial, and every item link must land on a host in
+# config/link-allowlist.json (the fetcher drops anything else, and the commerce check backstops it).
+# A source is added only with a written reason ("why"). Items are collected by scripts/fetch-news.ts
+# (daily in CI) into src/data/news.json, then filtered to the keywords below.
+
+keywords:
+  - peptide
+  - peptides
+  - GLP-1
+  - glucagon-like peptide
+  - incretin
+  - semaglutide
+  - tirzepatide
+  - retatrutide
+  - liraglutide
+  - orforglipron
+  - BPC-157
+  - BPC 157
+  - thymosin
+  - TB-500
+  - KPV
+  - melanotan
+  - afamelanotide
+  - bremelanotide
+  - tesamorelin
+  - ipamorelin
+  - CJC-1295
+  - growth hormone secretagogue
+  - ghrelin
+  - MOTS-c
+  - epitalon
+  - semax
+  - selank
+  - GHK-Cu
+  - AOD-9604
+  - hexarelin
+  - elamipretide
+  - SS-31
+  - compounding
+  - compounded
+  - counterfeit
+  - falsified medicine
+  - obesity medicine
+  - weight-loss medicine
+  - longevity
+  - healthy ageing
+  - healthy aging
+
+feeds:
+  - id: ema-news
+    name: European Medicines Agency — news
+    kind: rss
+    url: https://www.ema.europa.eu/en/news.xml
+    homepage: https://www.ema.europa.eu/en/news-events
+    category: regulator
+    peer_reviewed: false
+    require_any: [use-keywords]
+    max_items: 15
+    why: The EU medicines regulator. Authorisation opinions, safety reviews and alerts about falsified medicines.
+
+  - id: fda-press
+    name: U.S. FDA — press releases
+    kind: rss
+    url: https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml
+    homepage: https://www.fda.gov/news-events/fda-newsroom/press-announcements
+    category: regulator
+    peer_reviewed: false
+    require_any: [use-keywords]
+    max_items: 15
+    why: The US medicines regulator. Approvals, compounding policy and enforcement actions.
+
+  - id: fda-drugs
+    name: U.S. FDA — drug news
+    kind: rss
+    url: https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml
+    homepage: https://www.fda.gov/drugs
+    category: regulator
+    peer_reviewed: false
+    require_any: [use-keywords]
+    max_items: 15
+    why: FDA's drug-specific updates, including safety communications and compounding notices.
+
+  - id: wada-news
+    name: World Anti-Doping Agency — news
+    kind: rss
+    url: https://www.wada-ama.org/en/rss.xml
+    homepage: https://www.wada-ama.org/en/news
+    category: anti-doping
+    peer_reviewed: false
+    require_any: [use-keywords, Prohibited List, prohibited list]
+    max_items: 10
+    why: The body that maintains the Prohibited List, on which most of the experimental peptides on this site appear.
+
+  - id: who-news
+    name: World Health Organization — news
+    kind: rss
+    url: https://www.who.int/rss-feeds/news-english.xml
+    homepage: https://www.who.int/news
+    category: public-health
+    peer_reviewed: false
+    require_any: [use-keywords]
+    max_items: 10
+    why: Global public-health guidance, including alerts on falsified GLP-1 medicines.
+
+  - id: pubmed-incretin-trials
+    name: PubMed — incretin medicine trials and meta-analyses
+    kind: pubmed
+    url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
+    homepage: https://pubmed.ncbi.nlm.nih.gov/
+    query: '(semaglutide[tiab] OR tirzepatide[tiab] OR retatrutide[tiab] OR "GLP-1 receptor agonist"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt])'
+    category: research
+    peer_reviewed: true
+    max_items: 20
+    why: The US National Library of Medicine's index of peer-reviewed biomedical journals, restricted to randomised trials and meta-analyses.
+
+  - id: pubmed-experimental-peptides
+    name: PubMed — experimental peptides
+    kind: pubmed
+    url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
+    homepage: https://pubmed.ncbi.nlm.nih.gov/
+    query: '"BPC 157"[tiab] OR "BPC-157"[tiab] OR "thymosin beta 4"[tiab] OR "thymosin beta-4"[tiab] OR melanotan[tiab] OR bremelanotide[tiab] OR ipamorelin[tiab] OR "CJC-1295"[tiab] OR tesamorelin[tiab] OR "MOTS-c"[tiab] OR epitalon[tiab] OR semax[tiab] OR selank[tiab] OR "GHK-Cu"[tiab] OR elamipretide[tiab]'
+    category: research
+    peer_reviewed: true
+    max_items: 20
+    why: New indexed papers on the experimental compounds covered on this site, including animal studies (labelled as such).
+
+  - id: pubmed-ageing
+    name: PubMed — ageing and longevity trials
+    kind: pubmed
+    url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
+    homepage: https://pubmed.ncbi.nlm.nih.gov/
+    query: '("healthy aging"[tiab] OR "healthy ageing"[tiab] OR longevity[tiab] OR geroscience[tiab] OR "biological age"[tiab]) AND (randomized controlled trial[pt] OR systematic review[pt])'
+    category: research
+    peer_reviewed: true
+    max_items: 15
+    why: Randomised trials and systematic reviews on ageing — the evidence standard the longevity claims made for peptides should meet.
+
+  - id: europepmc-preprints
+    name: Europe PMC — preprints
+    kind: europepmc
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/search
+    homepage: https://europepmc.org/
+    query: 'SRC:PPR AND (semaglutide OR tirzepatide OR retatrutide OR "BPC-157" OR "BPC 157" OR "thymosin beta 4" OR melanotan OR "growth hormone secretagogue" OR "MOTS-c" OR elamipretide)'
+    category: preprint
+    peer_reviewed: false
+    max_items: 15
+    why: Preprints indexed by Europe PMC (EMBL-EBI). Shown because they are often the first public data — and always labelled as not yet peer-reviewed.

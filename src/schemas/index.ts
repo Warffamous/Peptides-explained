@@ -338,7 +338,7 @@ export const correctionsTextSchema = z.record(kebab, z.object({ summary: nonEmpt
 export const feedSchema = z.object({
   id: kebab,
   name: nonEmpty,
-  kind: z.enum(['rss', 'atom', 'pubmed']),
+  kind: z.enum(['rss', 'atom', 'pubmed', 'europepmc']),
   url: z.string().url(), // feed URL, or E-utilities base for pubmed
   homepage: z.string().url(),
   query: z.string().optional(), // PubMed query for kind: pubmed

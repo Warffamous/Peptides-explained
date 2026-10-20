@@ -1,0 +1,32 @@
+name: Refresh newsfeed
+
+# Daily: collect headlines from the vetted feeds in src/data/feeds.yaml and commit the snapshot.
+# The push triggers a normal deploy. A failing feed keeps its previous items; it never fails the job.
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run news
+      - run: npm run validate
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- src/data/news.json; then echo "no change"; exit 0; fi
+          git config user.name "newsfeed-bot"
+          git config user.email "newsfeed-bot@users.noreply.github.com"
+          git add src/data/news.json
+          git commit -m "Refresh newsfeed $(date -u +%F)"
+          git push

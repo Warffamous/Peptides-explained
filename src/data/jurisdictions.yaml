@@ -1,0 +1,34 @@
+# Who to contact and where to report, per jurisdiction. Rendered by <JurisdictionCard code="…" />.
+# Verified 2026-10-20. Update the date in the corrections log when anything here changes.
+- code: NL
+  emergency: "112"
+  regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG)", url: "https://www.cbg-meb.nl/" }
+  inspectorate: { name: "Inspectie Gezondheidszorg en Jeugd (IGJ)", url: "https://www.igj.nl/" }
+  reporting: { name: "Bijwerkingencentrum Lareb", url: "https://www.lareb.nl/" }
+  anti_doping: { name: "Dopingautoriteit", url: "https://www.dopingautoriteit.nl/" }
+  medicines_law: { name: "Geneesmiddelenwet", url: "https://wetten.overheid.nl/BWBR0021505/" }
+- code: DE
+  emergency: "112"
+  regulator: { name: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)", url: "https://www.bfarm.de/" }
+  reporting: { name: "BfArM — Verdachtsfall einer Nebenwirkung melden", url: "https://www.bfarm.de/" }
+  anti_doping: { name: "Nationale Anti Doping Agentur (NADA)", url: "https://www.nada.de/" }
+  medicines_law: { name: "Arzneimittelgesetz (AMG)", url: "https://www.gesetze-im-internet.de/amg_1976/" }
+- code: BE
+  emergency: "112"
+  regulator: { name: "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS)", url: "https://www.famhp.be/" }
+  reporting: { name: "FAMHP — report a side effect", url: "https://www.famhp.be/" }
+- code: UK
+  emergency: "999"
+  regulator: { name: "Medicines and Healthcare products Regulatory Agency (MHRA)", url: "https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency" }
+  reporting: { name: "Yellow Card scheme", url: "https://yellowcard.mhra.gov.uk/" }
+  anti_doping: { name: "UK Anti-Doping (UKAD)", url: "https://www.ukad.org.uk/" }
+  medicines_law: { name: "Human Medicines Regulations 2012", url: "https://www.legislation.gov.uk/uksi/2012/1916/contents" }
+- code: US
+  emergency: "911"
+  regulator: { name: "U.S. Food and Drug Administration (FDA)", url: "https://www.fda.gov/" }
+  reporting: { name: "FDA MedWatch", url: "https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program" }
+  anti_doping: { name: "U.S. Anti-Doping Agency (USADA)", url: "https://www.usada.org/" }
+- code: EU
+  emergency: "112"
+  regulator: { name: "European Medicines Agency (EMA)", url: "https://www.ema.europa.eu/" }
+  medicines_law: { name: "Directive 2001/83/EC", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20220101" }
