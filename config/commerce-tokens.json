@@ -1,0 +1,12 @@
+{
+  "$comment": "Tokens that must never appear in a link (href or link text) or call-to-action. Matched case-insensitively on word boundaries. Includes planned-locale equivalents so new locales are covered before they launch.",
+  "tokens": {
+    "en": ["buy", "buying", "shop", "shopping", "cart", "checkout", "order", "order now", "discount", "coupon", "promo code", "vendor", "vendors", "supplier", "suppliers", "affiliate", "for sale", "price", "prices", "deal", "deals"],
+    "nl": ["bestellen", "bestel", "kopen", "koop", "korting", "kortingscode", "winkel", "winkelwagen", "leverancier", "aanbieding"],
+    "de": ["kaufen", "bestellen", "rabatt", "gutschein", "warenkorb", "händler", "lieferant"],
+    "pl": ["kup", "kupić", "sklep", "zamów", "rabat", "kupon", "koszyk", "dostawca"],
+    "tr": ["satın al", "sipariş", "indirim", "kupon", "mağaza", "sepet", "tedarikçi"],
+    "ar": ["اشتر", "شراء", "متجر", "خصم", "كوبون", "اطلب", "سلة"]
+  },
+  "urlPatterns": ["[?&](ref|aff|affiliate|partner|coupon|promo|utm_[a-z]+)=", "/go/", "/out/", "bit\\.ly", "tinyurl\\.com", "amzn\\.to", "t\\.co/", "linktr\\.ee"]
+}

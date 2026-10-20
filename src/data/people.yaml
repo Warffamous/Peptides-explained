@@ -1,0 +1,22 @@
+# People and roles. Only entries with kind: person and active: true are ever emitted as
+# schema.org reviewedBy. Placeholders render as an honest "review pending" notice.
+# To add the named medical reviewer: add an entry with kind: person, role: medical-reviewer,
+# credentials and big_number, active: true — then change reviewed_by on the pages they signed off.
+
+pending-medical-review:
+  kind: placeholder
+  name: Independent medical review pending
+  role: medical-reviewer
+  active: false
+
+pending-legal-review:
+  kind: placeholder
+  name: Independent legal review pending
+  role: legal-reviewer
+  active: false
+
+editorial-board:
+  kind: organisation
+  name: Editorial board
+  role: editorial-board
+  active: true

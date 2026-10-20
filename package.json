@@ -1,0 +1,26 @@
+{
+  "name": "peptides-explained",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent, non-commercial, multilingual public-health explainer on therapeutic peptides.",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "validate": "tsx scripts/validate-content.ts"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
+    "astro": "^5.18.2",
+    "gray-matter": "^4.0.3",
+    "yaml": "^2.9.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
