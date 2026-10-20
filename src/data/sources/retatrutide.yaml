@@ -1,26 +1,25 @@
-# Sources for the retatrutide compound page.
-# Scholarly entries: metadata copied from the PubMed record (E-utilities esummary / PubMed MCP) on 2026-10-20.
+# Sources for the retatrutide compound page (re-verified from scratch on 2026-10-20; see research/retatrutide.md).
+# Scholarly entries: metadata copied from the PubMed record (NCBI E-utilities efetch/esummary and the PubMed MCP).
 # Registry entries: read from the ClinicalTrials.gov API v2 on 2026-10-20.
-# Regulator, law and filing entries: each URL was fetched on 2026-10-20 and says what it is cited for
-# (see research/retatrutide.md for the verification log).
-# Reused from other files (not re-registered here): igj-2026-webshop-order-glp1, fda-unapproved-glp1-concerns,
-# ema-epar-wegovy, knudsen-2010-thyroid-c-cells, lau-2015-semaglutide-discovery (semaglutide.yaml);
-# ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46, wada-2026-list-en, wada-2027-list-en,
-# fda-pcac-2026-briefing-intro (bpc-157.yaml); nl-geneesmiddelenwet, fda-pcac-2026-07-meeting, lareb-home (shared.yaml);
-# wada-2026-monitoring-program (semaglutide.yaml).
+# Regulator, law and filing entries: each URL fetched on 2026-10-20; the note says what it is cited for.
+# Reused from other files (not re-registered here): nl-geneesmiddelenwet, cbg-geneesmiddeleninformatiebank,
+# be-medicines-law-1964, fda-pcac-2026-07-meeting, lareb-home (shared.yaml); ema-medicines-json, de-amg-21,
+# uk-hmr-2012-reg-46, wada-2026-list-en, wada-2027-list-en (bpc-157.yaml); fda-unapproved-glp1-concerns,
+# neeland-2024-lean-mass, knudsen-2010-thyroid-c-cells (semaglutide.yaml); usc-21-355, mhra-2026-10-counterfeit-pens,
+# mhra-2026-07-no-summer-shortcut, wada-2027-list-explanatory-note, ukad-2027-list-summary (legal-b.yaml).
 
 # ------------------------------------------------------------------ identity and structure
 
 pubchem-retatrutide:
   type: dataset
   authors: "National Center for Biotechnology Information"
-  title: "PubChem Compound Summary for CID 171390338 (retatrutide; deposited by IUPHAR/BPS Guide to Pharmacology as GTPL13769)"
+  title: "PubChem Compound Summary for CID 171390338 (compound title 'Triple G'; deposited substances named retatrutide map here)"
   container: "PubChem"
   year: 2026
   url: https://pubchem.ncbi.nlm.nih.gov/compound/171390338
   accessed: 2026-10-20
   verified: registry
-  note: "Formula C221H342N46O68, computed molecular weight 4731, exact mass 4730.478 (PUG REST). The name 'retatrutide' does not resolve to a single CID; most depositor records (CAS 2381089-83-2) map here. This record leaves the alpha carbons of the two isoleucines undefined."
+  note: "PUG REST: formula C221H342N46O68, computed molecular weight 4731, exact mass 4730.4784689. The compound name 'retatrutide' does not resolve to a CID, but the substance records deposited under that name (30 SIDs checked) map to this CID. This record leaves two stereocentres undefined."
 
 pubchem-retatrutide-cid-171934787:
   type: dataset
@@ -31,7 +30,7 @@ pubchem-retatrutide-cid-171934787:
   url: https://pubchem.ncbi.nlm.nih.gov/compound/171934787
   accessed: 2026-10-20
   verified: registry
-  note: "Used only for the isomeric SMILES: same connectivity as CID 171390338 (identical connectivity SMILES), same neutral formula C221H342N46O68, with every stereocentre defined (all L-amino acids, consistent with the USAN/INN systematic name). Despite its title, the structure contains no sodium."
+  note: "Used only for the isomeric SMILES. Same connectivity SMILES as CID 171390338 (compared character by character), same neutral formula C221H342N46O68 and weight 4731, with every stereocentre defined. Despite its title, the structure contains no sodium."
 
 gsrs-retatrutide:
   type: dataset
@@ -42,18 +41,18 @@ gsrs-retatrutide:
   url: https://gsrs.ncats.nih.gov/ginas/app/api/v1/substances(NOP2Y096GV)?view=full
   accessed: 2026-10-20
   verified: registry
-  note: "Protein record: 39-residue sequence YAQGTFTSDYSILLDKKAQAAFIEYLLEGGPSSGAPPPS with the systematic name giving Aib at positions 2 and 20, 2-methyl-L-leucine at 13, Lys17 N6-[N-(19-carboxy-1-oxononadecyl)-L-gamma-glutamyl-2-[2-(2-aminoethoxy)ethoxy]acetyl], C-terminal serinamide. Names: retatrutide [INN], RETATRUTIDE [USAN], LY3437943. CAS 2381089-83-2. (The GSRS 'estimated' formula covers the unmodified backbone only.)"
+  note: "Protein record, one 39-residue subunit YAQGTFTSDYSILLDKKAQAAFIEYLLEGGPSSGAPPPS. The systematic name gives 2-methylalanyl (Aib) at positions 2 and 20, 2-methyl-L-leucyl at 13, Lys17 N6-[N-(19-carboxy-1-oxononadecyl)-L-gamma-glutamyl-2-[2-(2-aminoethoxy)ethoxy]acetyl], and a C-terminal L-serinamide. Names: retatrutide [INN], RETATRUTIDE [USAN], LY3437943. Codes: CAS 2381089-83-2, INN 12350."
 
 chembl-retatrutide:
   type: dataset
   authors: "EMBL-EBI"
-  title: "ChEMBL compound CHEMBL5095485 (retatrutide): mechanisms of action — glucagon receptor agonist, GLP-1 receptor agonist, GIP receptor agonist"
+  title: "ChEMBL compound CHEMBL5095485 (retatrutide): mechanisms of action"
   container: "ChEMBL"
   year: 2026
   url: https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL5095485
   accessed: 2026-10-20
   verified: registry
-  note: "Max phase 3; USAN 2022; INN cross-reference list 128."
+  note: "Three curated mechanisms, all agonist, direct interaction: glucagon receptor (CHEMBL1985), GLP-1 receptor (CHEMBL1784), GIP receptor (CHEMBL4383). Max phase 3; USAN 2022; INN cross-reference list 128."
 
 li-2024-retatrutide-structure:
   type: article
@@ -67,9 +66,9 @@ li-2024-retatrutide-structure:
   pmid: "39019866"
   pmcid: PMC11255275
   verified: pubmed
-  note: "Research letter (Shanghai Institute of Materia Medica / Fudan University; funded by NSFC and other Chinese public grants). Cryo-EM structures of retatrutide bound to GLP-1R, GIPR and GCGR, each in complex with Gs (2.68, 3.26 and 2.84 Å); acylation at Lys17. Checked in PMC full text."
+  note: "Research letter (Shanghai Institute of Materia Medica, Fudan University). Checked in PMC full text: cryo-EM structures of retatrutide bound to GLP-1R, GIPR and GCGR, each with the Gs protein (2.68, 3.26 and 2.84 Å); fatty diacid linked at Lys17. Partly funded by the National Natural Science Foundation of China."
 
-# ------------------------------------------------------------------ developer preclinical and phase 1
+# ------------------------------------------------------------------ developer: discovery and phase 1
 
 coskun-2022-ly3437943-discovery:
   type: article
@@ -82,7 +81,7 @@ coskun-2022-ly3437943-discovery:
   doi: 10.1016/j.cmet.2022.07.013
   pmid: "35985340"
   verified: pubmed
-  note: "All authors Eli Lilly. Abstract: balanced GCGR and GLP-1R activity, more GIPR activity in vitro; in obese mice, GCGR-mediated energy expenditure added to intake reduction; phase 1 single ascending dose study with weight reduction persisting to day 43. Full text not accessible (paywall); details taken from the abstract only."
+  note: "Eli Lilly authors. Abstract only (no PMC full text): in vitro balanced GCGR and GLP-1R activity, more GIPR activity; in obese mice GCGR-mediated energy expenditure added to intake reduction; single-ascending-dose phase 1 with weight reduction persisting to day 43 after one dose."
 
 ctgov-nct03841630:
   type: registry
@@ -92,7 +91,7 @@ ctgov-nct03841630:
   url: https://clinicaltrials.gov/study/NCT03841630
   accessed: 2026-10-20
   verified: registry
-  note: "Completed; actual enrolment 45; start 13 March 2019; sponsor Eli Lilly."
+  note: "Completed; randomised, double-masked (participant, investigator), placebo arm; actual enrolment 45; started 13 March 2019; sponsor Eli Lilly; no results posted."
 
 urva-2022-ly3437943-phase-1b:
   type: trial
@@ -105,9 +104,9 @@ urva-2022-ly3437943-phase-1b:
   doi: 10.1016/S0140-6736(22)02033-5
   pmid: "36354040"
   verified: pubmed
-  note: "NCT04143802. 72 participants, 12 weeks; half-life approximately 6 days; 29 discontinued the study prematurely."
+  note: "NCT04143802. 72 participants at four US centres, 12 weeks; 29 discontinued prematurely; half-life about 6 days; funded by Eli Lilly."
 
-# ------------------------------------------------------------------ phase 2 and secondary analyses
+# ------------------------------------------------------------------ phase 2 and secondary analyses (developer)
 
 jastreboff-2023-retatrutide-phase-2:
   type: trial
@@ -120,7 +119,7 @@ jastreboff-2023-retatrutide-phase-2:
   doi: 10.1056/NEJMoa2301972
   pmid: "37366315"
   verified: pubmed
-  note: "NCT04881760. 338 adults with obesity or overweight, 48 weeks; dose-dependent heart-rate increases peaked at 24 weeks and declined thereafter (abstract). Funded by Eli Lilly."
+  note: "NCT04881760. 338 adults, 48 weeks; weight change -24.2% at the highest dose vs -2.1% placebo; gastrointestinal events dose-related, partly mitigated by a lower starting dose; dose-dependent heart-rate increases peaked at 24 weeks and declined thereafter. Funded by Eli Lilly."
 
 ctgov-nct04881760:
   type: registry
@@ -130,7 +129,7 @@ ctgov-nct04881760:
   url: https://clinicaltrials.gov/study/NCT04881760
   accessed: 2026-10-20
   verified: registry
-  note: "Results first posted 13 September 2023. Adverse-event tables used: allodynia 4/62 in the highest-dose group vs 0/70 placebo; sensitive skin and hyperaesthesia in single participants across groups; serious events include one acute pancreatitis (highest dose) and one acute cholecystitis."
+  note: "Results first posted 13 September 2023 (adverse-event threshold 5%). Allodynia 4/62 in the highest-dose group, 0 in all other groups including placebo (0/70); hyperaesthesia and sensitive skin in single participants across groups; serious: one acute pancreatitis (highest dose), one acute cholecystitis, one cardiac failure."
 
 rosenstock-2023-retatrutide-t2d-phase-2:
   type: trial
@@ -143,7 +142,7 @@ rosenstock-2023-retatrutide-t2d-phase-2:
   doi: 10.1016/S0140-6736(23)01053-X
   pmid: "37385280"
   verified: pubmed
-  note: "NCT04867785. 281 adults with type 2 diabetes, 36 weeks, placebo and dulaglutide comparators. Funded by Eli Lilly."
+  note: "NCT04867785. 281 adults at 42 US centres, 36 weeks; placebo and dulaglutide comparators; no severe hypoglycaemia, no deaths. Funded by Eli Lilly."
 
 ctgov-nct04867785:
   type: registry
@@ -153,7 +152,7 @@ ctgov-nct04867785:
   url: https://clinicaltrials.gov/study/NCT04867785
   accessed: 2026-10-20
   verified: registry
-  note: "Results first posted 3 July 2023. Serious adverse events include one atrial fibrillation (8 mg slow-escalation arm), two acute pancreatitis (0.5 mg and 8 mg arms), two congestive heart failure."
+  note: "Results first posted 3 July 2023. Serious adverse events: one atrial fibrillation (a higher-dose slow-escalation arm, 1/26), two acute pancreatitis (1/47 lowest dose, 1/26), two congestive heart failure, one chronic cholecystitis; none of these in the placebo arm (0/45)."
 
 sanyal-2024-retatrutide-masld:
   type: trial
@@ -167,7 +166,7 @@ sanyal-2024-retatrutide-masld:
   pmid: "38858523"
   pmcid: PMC11271400
   verified: pubmed
-  note: "Substudy of NCT04881760, 98 participants with at least 10% liver fat. Checked in PMC full text: relative potency vs native ligands 0.3 (GCGR), 0.4 (GLP-1R), 8.9 (GIPR); half-life about 6 days; beta-hydroxybutyrate increases; no hepatotoxicity signal; no multiplicity control; 48-week MRI missing for 56.1%."
+  note: "Substudy of NCT04881760, 98 participants with at least 10% liver fat. Checked in PMC full text: in cell studies retatrutide is 0.3 and 0.4 times as active as the native ligands at the human glucagon and GLP-1 receptors and 8.9 times as active at the GIP receptor; half-life about 6 days; beta-hydroxybutyrate rose two- to threefold without ketoacidosis; no hepatotoxicity signal; no multiplicity control; 48-week MRI missing for 56.1%."
 
 coskun-2025-retatrutide-body-composition:
   type: trial
@@ -180,7 +179,7 @@ coskun-2025-retatrutide-body-composition:
   doi: 10.1016/S2213-8587(25)00092-0
   pmid: "40609566"
   verified: pubmed
-  note: "Substudy of NCT04867785: 189 enrolled, 103 with baseline and week-36 DXA. Funded by Eli Lilly."
+  note: "Substudy of NCT04867785: 189 enrolled, 155 with a baseline DXA scan, 103 with scans at baseline and week 36. All authors Eli Lilly employees; funded by Eli Lilly."
 
 kanu-2025-retatrutide-appetite:
   type: trial
@@ -194,6 +193,7 @@ kanu-2025-retatrutide-appetite:
   pmid: "40916752"
   pmcid: PMC12587234
   verified: pubmed
+  note: "Prespecified exploratory questionnaire analyses in 275 adults from NCT04867785; most authors Eli Lilly employees."
 
 heerspink-2025-retatrutide-kidney:
   type: article
@@ -207,6 +207,7 @@ heerspink-2025-retatrutide-kidney:
   pmid: "40630318"
   pmcid: PMC12231004
   verified: pubmed
+  note: "Post hoc analysis of both phase 2 trials (281 and 338 participants); first author University of Groningen, others Eli Lilly."
 
 wen-2025-retatrutide-angptl38:
   type: article
@@ -220,7 +221,7 @@ wen-2025-retatrutide-angptl38:
   pmid: "40726454"
   pmcid: PMC12409240
   verified: pubmed
-  note: "Post hoc analyses of both phase 2 trials plus primary human hepatocytes, in which glucagon and retatrutide lowered ANGPTL3/8 secretion and a glucagon-receptor antagonist antibody blocked this."
+  note: "All authors Eli Lilly. Post hoc analyses of both phase 2 trials, plus primary human hepatocytes in which glucagon and retatrutide lowered ANGPTL3/8 secretion and a glucagon-receptor antagonist antibody blocked this."
 
 pasqualotto-2024-retatrutide-meta-analysis:
   type: meta-analysis
@@ -234,9 +235,9 @@ pasqualotto-2024-retatrutide-meta-analysis:
   pmid: "39318607"
   pmcid: PMC11420505
   verified: pubmed
-  note: "Three RCTs, 640 patients (Urva 2022, Rosenstock 2023, Jastreboff 2023). Checked in PMC full text: hypersensitivity RR 3.79 (95% CI 1.20–11.96); cardiac arrhythmias RR 3.41 (0.86–13.55, p = 0.08). The pooled pulse-rate and LDL results are printed with identical numbers, so the pulse-rate figure is not used on our page."
+  note: "Three RCTs, 640 patients. Checked in PMC full text: hypersensitivity RR 3.79 (95% CI 1.20-11.96); cardiac arrhythmias RR 3.41 (0.86-13.55, p = 0.08). The pooled pulse-rate result is printed with exactly the same numbers as the LDL result, so it is not used on our page. No funding statement found."
 
-# ------------------------------------------------------------------ phase 3 (published)
+# ------------------------------------------------------------------ phase 3 (published in full)
 
 bajaj-2026-transcend-t2d-1:
   type: trial
@@ -249,7 +250,7 @@ bajaj-2026-transcend-t2d-1:
   doi: 10.1016/S0140-6736(26)00967-0
   pmid: "42250575"
   verified: pubmed
-  note: "NCT06354660. 537 adults, 40 weeks, 48 sites in the USA, Mexico and India. Funded by Eli Lilly."
+  note: "NCT06354660. 537 adults, 40 weeks, 48 sites in the USA, Mexico and India; HbA1c -1.69 to -1.94 vs -0.81 placebo; weight -11.5% to -15.3% vs -2.6%; discontinuation for adverse events 2-5% vs 0%; no severe hypoglycaemia. Funded by Eli Lilly."
 
 bellido-2026-triumph-2:
   type: trial
@@ -262,7 +263,7 @@ bellido-2026-triumph-2:
   doi: 10.1016/S0140-6736(26)01861-1
   pmid: "42810372"
   verified: pubmed
-  note: "NCT05929079. 1,152 adults, 80 weeks, 92 centres in eight countries; hypotension and dysaesthesia frequencies and discontinuations from the abstract. Funded by Eli Lilly."
+  note: "NCT05929079. 1,152 adults, 80 weeks, 92 centres in eight countries. Abstract: weight -11.9%, -16.8%, -18.8% vs -5.1%; diarrhoea 27-34% vs 13%; nausea 14-28% vs 8%; hypotension 1-6% vs <1%; dysaesthesia 4-7% vs 1%; discontinuation for adverse events or death 4%, 12%, 8% vs 5%; 6 deaths on retatrutide, 1 on placebo, all judged unrelated by the investigator. Funded by Eli Lilly."
 
 jastreboff-2026-triumph-1:
   type: trial
@@ -273,9 +274,9 @@ jastreboff-2026-triumph-1:
   doi: 10.1056/NEJMoa2604169
   pmid: "42814954"
   verified: pubmed
-  note: "TRIUMPH-1, NCT05929066. Published online 29 September 2026 (volume and pages not yet assigned in PubMed on 20 October 2026). 2,339 randomised, 80 weeks; knee osteoarthritis (574) and obstructive sleep apnoea (243) subgroups. Funded by Eli Lilly. Only the abstract was accessible."
+  note: "TRIUMPH-1, NCT05929066. Published online 29 September 2026; volume and pages not yet assigned in PubMed on 20 October 2026. 2,339 randomised, 80 weeks; weight -17.6%, -23.7%, -25.0% vs -3.9%; knee osteoarthritis subgroup (574) and obstructive sleep apnoea subgroup (243). Funded by Eli Lilly. Only the abstract was accessible."
 
-# ------------------------------------------------------------------ registry: phase 3 and other trials
+# ------------------------------------------------------------------ registry: phase 3 status, unpublished studies, access
 
 ctgov-nct05929066:
   type: registry
@@ -285,7 +286,7 @@ ctgov-nct05929066:
   url: https://clinicaltrials.gov/study/NCT05929066
   accessed: 2026-10-20
   verified: registry
-  note: "Completed (primary completion 6 April 2026). Exclusion criteria include diabetes, personal or family history of medullary thyroid carcinoma or MEN 2, and previous pancreatitis. No results posted."
+  note: "Completed (primary completion 6 April 2026); actual enrolment 2,335. Exclusion criteria include diabetes, a personal or family history of medullary thyroid carcinoma or MEN-2, and previous pancreatitis. No results posted."
 
 ctgov-nct05882045:
   type: registry
@@ -295,47 +296,27 @@ ctgov-nct05882045:
   url: https://clinicaltrials.gov/study/NCT05882045
   accessed: 2026-10-20
   verified: registry
-  note: "Completed (primary completion 16 April 2026); actual enrolment 1,946; no results posted; no journal publication found in PubMed on 20 October 2026."
+  note: "Completed 14 May 2026 (primary completion 16 April 2026); actual enrolment 1,946; no results posted; no results paper in PubMed on 20 October 2026."
 
 ctgov-nct05931367:
   type: registry
   authors: "ClinicalTrials.gov"
-  title: "NCT05931367 — A Phase 3 Study to Investigate the Efficacy and Safety of LY3437943 Once Weekly in Participants Who Have Obesity or Overweight and Osteoarthritis of the Knee (TRIUMPH-4)"
+  title: "NCT05931367 — A Phase 3 Study to Investigate the Efficacy and Safety of LY3437943 Once Weekly in Participants Who Have Obesity or Overweight and Osteoarthritis of the Knee: A Randomized, Double-Blind, Placebo-Controlled Trial (TRIUMPH-4)"
   year: 2026
   url: https://clinicaltrials.gov/study/NCT05931367
   accessed: 2026-10-20
   verified: registry
-  note: "Completed 14 November 2025; actual enrolment 445; primary outcomes WOMAC pain and percent body-weight change at week 68; no results posted; no journal publication found in PubMed on 20 October 2026."
-
-ctgov-nct06383390:
-  type: registry
-  authors: "ClinicalTrials.gov"
-  title: "NCT06383390 — The Effect of Retatrutide Once Weekly on Cardiovascular Outcomes and Kidney Outcomes in Adults Living With Obesity (TRIUMPH-Outcomes)"
-  year: 2026
-  url: https://clinicaltrials.gov/study/NCT06383390
-  accessed: 2026-10-20
-  verified: registry
-  note: "Event-driven phase 3 trial, planned enrolment 10,000; active, not recruiting; primary completion estimated February 2029; sites include Belgium, Germany, the Netherlands and the United Kingdom."
-
-ctgov-nct07165028:
-  type: registry
-  authors: "ClinicalTrials.gov"
-  title: "NCT07165028 — A Master Protocol for a Randomized, Controlled, Clinical Trial of Multiple Pharmacologic Agents in Adult Participants With Metabolic Dysfunction-Associated Steatotic Liver Disease Who Are at Increased Risk of Developing Major Adverse Liver Outcomes"
-  year: 2026
-  url: https://clinicaltrials.gov/study/NCT07165028
-  accessed: 2026-10-20
-  verified: registry
-  note: "Phase 3 (tirzepatide, retatrutide, placebo); recruiting; planned enrolment 4,500; primary completion estimated August 2030; sites include Belgium, Germany, the Netherlands and the United Kingdom."
+  note: "Completed 14 November 2025; actual enrolment 445; no results posted; no results paper in PubMed on 20 October 2026."
 
 ctgov-nct06260722:
   type: registry
   authors: "ClinicalTrials.gov"
-  title: "NCT06260722 — Effect of Retatrutide Compared With Semaglutide in Adult Participants With Type 2 Diabetes and Inadequate Glycemic Control With Metformin With or Without SGLT2 Inhibitor (TRANSCEND-T2D-2)"
+  title: "NCT06260722 — A Phase 3, Randomized, Multicenter, Open-label Study to Investigate the Efficacy and Safety of Retatrutide Once Weekly Compared With Semaglutide Once Weekly in Adult Participants With Type 2 Diabetes and Inadequate Glycemic Control With Metformin With or Without SGLT2 Inhibitor (TRANSCEND-T2D-2)"
   year: 2026
   url: https://clinicaltrials.gov/study/NCT06260722
   accessed: 2026-10-20
   verified: registry
-  note: "Open-label phase 3 against semaglutide; planned enrolment 1,250; active, not recruiting; primary completion 27 August 2026; no results posted."
+  note: "Open-label phase 3 against semaglutide; estimated enrolment 1,250; active, not recruiting; primary completion 27 August 2026 (actual); no results posted."
 
 ctgov-nct06662383:
   type: registry
@@ -345,7 +326,27 @@ ctgov-nct06662383:
   url: https://clinicaltrials.gov/study/NCT06662383
   accessed: 2026-10-20
   verified: registry
-  note: "Planned enrolment 800; active, not recruiting; primary completion estimated November 2026."
+  note: "Estimated enrolment 800; active, not recruiting; primary completion estimated November 2026; sites include Germany."
+
+ctgov-nct06383390:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT06383390 — A Phase 3, Randomized, Double-Blind, Placebo-Controlled, Event-Driven Study to Investigate the Effect of Retatrutide on the Incidence of Major Adverse Cardiovascular Events and Major Adverse Kidney Events in Participants With Body Mass Index ≥27 kg/m2 and Atherosclerotic Cardiovascular Disease and/or Chronic Kidney Disease (TRIUMPH-Outcomes)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT06383390
+  accessed: 2026-10-20
+  verified: registry
+  note: "Event-driven, placebo-controlled phase 3; estimated enrolment 10,000; active, not recruiting; primary completion estimated February 2029; sites in 27 countries including Belgium, Germany, the Netherlands and the United Kingdom."
+
+ctgov-nct07165028:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07165028 — A Master Protocol for a Randomized, Controlled, Clinical Trial of Multiple Pharmacologic Agents in Adult Participants With Metabolic Dysfunction-Associated Steatotic Liver Disease Who Are at Increased Risk of Developing Major Adverse Liver Outcomes"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07165028
+  accessed: 2026-10-20
+  verified: registry
+  note: "Phase 3 with tirzepatide, retatrutide and placebo arms; recruiting; estimated enrolment 4,500; primary completion estimated August 2030; sites include Belgium, Germany, the Netherlands ('s-Hertogenbosch, Amsterdam, Nijmegen, Rotterdam, Utrecht, Zwolle) and the United Kingdom."
 
 ctgov-nct06313528:
   type: registry
@@ -355,7 +356,7 @@ ctgov-nct06313528:
   url: https://clinicaltrials.gov/study/NCT06313528
   accessed: 2026-10-20
   verified: registry
-  note: "Completed (primary completion 26 August 2025); enrolment 85; no results posted and no publication found on 20 October 2026."
+  note: "Completed (primary completion 26 August 2025); actual enrolment 85; no results posted; no publication found in PubMed on 20 October 2026."
 
 ctgov-nct06039826:
   type: registry
@@ -365,7 +366,7 @@ ctgov-nct06039826:
   url: https://clinicaltrials.gov/study/NCT06039826
   accessed: 2026-10-20
   verified: registry
-  note: "Completed (primary completion 11 July 2024); enrolment 46; no results posted and no publication found on 20 October 2026."
+  note: "Postmenopausal women with overweight or obesity; completed (primary completion 11 July 2024); actual enrolment 46; no results posted; no publication found on 20 October 2026."
 
 ctgov-nct05445232:
   type: registry
@@ -375,7 +376,7 @@ ctgov-nct05445232:
   url: https://clinicaltrials.gov/study/NCT05445232
   accessed: 2026-10-20
   verified: registry
-  note: "Completed (primary completion 24 February 2023); enrolment 32; probe drugs midazolam, warfarin and caffeine; no results posted and no publication found on 20 October 2026."
+  note: "Probe drugs midazolam, warfarin and caffeine; completed (primary completion 24 February 2023); actual enrolment 32; no results posted; no publication found on 20 October 2026."
 
 ctgov-nct07629401:
   type: registry
@@ -385,7 +386,18 @@ ctgov-nct07629401:
   url: https://clinicaltrials.gov/study/NCT07629401
   accessed: 2026-10-20
   verified: registry
-  note: "Status 'available'; single-patient expanded access requested by the treating physician for adults with BMI of 35 or more and at least two serious or life-threatening obesity-related complications, refractory to the best approved therapy and unable to join a trial; availability depends on geography and supply."
+  note: "Status 'available' (last update 6 August 2026). Single-patient expanded access requested by the treating physician, for adults with a BMI of 35 or more and at least two serious or life-threatening obesity-related complications, refractory to the best approved therapy and unable to join a trial; 'availability will depend on geography, product supply' and individual eligibility."
+
+pubmed-retatrutide-count-2026-10-20:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches, 20 October 2026: (retatrutide[tiab] OR LY3437943[tiab]) — 207 records; AND randomized controlled trial[pt] — 10 records, 0 after NOT lilly[ad]"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=%28retatrutide%5Btiab%5D+OR+LY3437943%5Btiab%5D%29+AND+randomized+controlled+trial%5Bpt%5D
+  accessed: 2026-10-20
+  verified: url
+  note: "Counts made with NCBI E-utilities esearch and re-run by the fact-checker the same day (207 and 10/0 confirmed). Companion search: (retatrutide[tiab] OR LY3437943[tiab]) AND (mice OR mouse OR rats OR rat OR rodent* OR hamster*)[tiab] NOT review[pt] — 19 records at writing, 20 at fact-check (PMID 42878930, rats, added 20 October 2026). Of the 20: 2 are not primary studies, 1 is human heart tissue (40613938), 1 is Lilly's discovery paper; about 16 are independent primary animal studies. Record-level classification in research/retatrutide.md."
 
 # ------------------------------------------------------------------ company filings (SEC)
 
@@ -398,7 +410,7 @@ sec-lilly-2026-q2-results:
   url: https://www.sec.gov/Archives/edgar/data/59478/000005947826000077/q226lillysalesandearningsp.htm
   accessed: 2026-10-20
   verified: url
-  note: "States that the clinical data package is complete to support global registrations for obesity, obstructive sleep apnoea and knee osteoarthritis pain, 'with plans to submit a Biologics License Application to the U.S. FDA in the first quarter of 2027'. No later Lilly 8-K had been filed by 20 October 2026 (EDGAR submissions index checked)."
+  note: "'The clinical data package is now complete to support global registrations for obesity, obstructive sleep apnea, and knee osteoarthritis pain, with plans to submit a Biologics License Application to the U.S. FDA in the first quarter of 2027.' The EDGAR submissions index showed no later Lilly 8-K or 10-Q up to 20 October 2026."
 
 sec-lilly-2025-q4-results:
   type: report
@@ -409,9 +421,9 @@ sec-lilly-2025-q4-results:
   url: https://www.sec.gov/Archives/edgar/data/59478/000005947826000008/q425lillysalesandearningsp.htm
   accessed: 2026-10-20
   verified: url
-  note: "Lists the company announcement that retatrutide 'delivered weight loss of up to an average of 71.2 lbs along with substantial relief from osteoarthritis pain in first successful Phase 3 trial' (TRIUMPH-4). Cited only to show that the result was company-announced, not peer-reviewed."
+  note: "Lists positive phase 3 results of 'retatrutide for people with obesity and knee osteoarthritis' (TRIUMPH-4) as a company announcement. Cited only to show that this result was announced by the company, not published."
 
-# ------------------------------------------------------------------ regulators and law
+# ------------------------------------------------------------------ regulators
 
 ema-2026-10-under-evaluation:
   type: regulator
@@ -421,7 +433,18 @@ ema-2026-10-under-evaluation:
   url: https://www.ema.europa.eu/en/documents/report/applications-new-human-medicines-under-evaluation-october-2026_en.xlsx
   accessed: 2026-10-20
   verified: url
-  note: "First published 9 October 2026. Lists the INN of every validated initial marketing-authorisation application under evaluation; retatrutide is not listed (orforglipron and semaglutide entries are)."
+  note: "Spreadsheet dated 5 October 2026 listing the INN of each initial marketing-authorisation application under evaluation. Retatrutide is not listed; orforglipron (obesity and type 2 diabetes) and three semaglutide applications are."
+
+cbg-compassionate-use-list:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Overzicht van goedgekeurde compassionate use programma's"
+  year: 2026
+  url: https://www.cbg-meb.nl/onderwerpen/handelsvergunning-voor-aanvraag-handelsvergunning/hv-compassionate-use-programma/overzicht-goedgekeurde-cup
+  accessed: 2026-10-20
+  lang: nl
+  verified: url
+  note: "List of compassionate-use programmes approved by the CBG (page sort date 10 July 2026). It does not mention retatrutide or LY3437943; the Lilly Nederland entries are for other, older programmes."
 
 mhra-2025-retatrutide-seizure:
   type: regulator
@@ -432,30 +455,7 @@ mhra-2025-retatrutide-seizure:
   url: https://www.gov.uk/government/news/mhra-smashes-majorillicitweight-loss-medicine-production-facility-in-record-seizure
   accessed: 2026-10-20
   verified: url
-  note: "Published 24 October 2025. 'Retatrutide is GLP-1 medicine in clinical development, which has not been approved for UK use. Outside of authorised clinical trials, any products being sold in the UK that claim to contain retatrutide are likely to be illegal and are potentially dangerous to people's health.' More than 2,000 unlicensed retatrutide and tirzepatide pens seized in Northampton."
-
-be-medicines-law-1964:
-  type: law
-  authors: "Koninkrijk België / Royaume de Belgique"
-  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 6, § 1"
-  container: "Belgisch Staatsblad / ejustice.just.fgov.be"
-  year: 1964
-  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
-  accessed: 2026-10-20
-  lang: nl
-  verified: url
-  note: "Art. 6 § 1: a medicine may be placed on the market only after a marketing authorisation has been granted by the minister (or delegate) or by the European Commission."
-
-us-fdca-505:
-  type: law
-  authors: "United States Congress"
-  title: "21 U.S. Code § 355 — New drugs (Federal Food, Drug, and Cosmetic Act § 505), subsection (a)"
-  container: "Legal Information Institute, Cornell Law School"
-  year: 2026
-  url: https://www.law.cornell.edu/uscode/text/21/355
-  accessed: 2026-10-20
-  verified: url
-  note: "'No person shall introduce or deliver for introduction into interstate commerce any new drug, unless an approval of an application ... is effective with respect to such drug.'"
+  note: "First published 24 October 2025. 'Retatrutide is GLP-1 medicine in clinical development, which has not been approved for UK use. Outside of authorised clinical trials, any products being sold in the UK that claim to contain retatrutide are likely to be illegal and are potentially dangerous to people's health.' More than 2,000 unlicensed retatrutide and tirzepatide pens seized (the October 2026 MHRA release describes the same raid as 5,000 pens)."
 
 # ------------------------------------------------------------------ glucagon physiology and the heart
 
@@ -471,7 +471,7 @@ elmendorf-2026-glucagon-iuphar-review:
   pmid: "41478576"
   pmcid: PMC12910462
   verified: pubmed
-  note: "Checked in PMC full text: GCGR agonism raises energy expenditure robustly in rodents, human evidence limited to acute infusions; GCGR activates hepatic amino-acid uptake and catabolism; skeletal muscle does not express the GCGR; possible 'excessive lean mass catabolism'; mechanistic data mainly from rodents. One author previously received Lilly research support."
+  note: "Checked in PMC full text: GCGR agonism raises energy expenditure in rodents; in humans the evidence 'is limited ... and relies on acute infusion studies'; glucagon drives hepatic amino-acid uptake and catabolism; possible impacts include 'excessive lean mass catabolism'. One author previously received Lilly research support."
 
 salem-2016-glucagon-energy-expenditure:
   type: article
@@ -485,6 +485,7 @@ salem-2016-glucagon-energy-expenditure:
   pmid: "26434748"
   pmcid: PMC4710848
   verified: pubmed
+  note: "11 healthy men; a glucagon infusion raised energy expenditure by 15% (cold exposure 14%), without brown-fat activation."
 
 neumann-2025-retatrutide-mouse-atria:
   type: article
@@ -498,7 +499,7 @@ neumann-2025-retatrutide-mouse-atria:
   pmid: "40464942"
   pmcid: PMC12678479
   verified: pubmed
-  note: "Martin Luther University Halle-Wittenberg; university funding."
+  note: "Martin Luther University Halle-Wittenberg; no competing interests. Retatrutide raised the beating rate of isolated mouse right atria through the glucagon receptor, cAMP and PKA: the GCGR antagonist adomeglivant significantly reduced the raised rate (GLP-1R and GIPR antagonists did not), H89 attenuated it, propranolol did not; no rise in left-atrial force. Animal numbers per experiment not checked."
 
 neumann-2026-retatrutide-human-atria:
   type: article
@@ -512,7 +513,7 @@ neumann-2026-retatrutide-human-atria:
   pmid: "40613938"
   pmcid: PMC12894140
   verified: pubmed
-  note: "Published online 4 July 2025; issue dated January 2026. Atrial tissue from adults with severe coronary heart disease undergoing open-heart surgery."
+  note: "Published online 4 July 2025. Atrial tissue from 29 adults (24 men, 5 women, aged 52-84) with severe coronary disease undergoing open-heart surgery; retatrutide raised force of contraction, reduced by GLP-1R, GIPR and GCGR antagonists. 'No external funding.'"
 
 aranda-domene-2023-glucagon-human-heart:
   type: article
@@ -526,6 +527,21 @@ aranda-domene-2023-glucagon-human-heart:
   pmid: "37254135"
   pmcid: PMC10230788
   verified: pubmed
+  note: "Human atrial, ventricular and sinoatrial-node tissue: glucagon had no effect on force or rate and glucagon receptors were not detected; in rat hearts glucagon raised both."
+
+takahashi-2026-af-mice:
+  type: article
+  authors: "Takahashi M, Abe I, Yoshida N, Katoh D, Fujita D, Goto S, et al."
+  title: "Kynurenic acid mediates epicardial fat-induced lymphatic metabolic dysfunction in atrial fibrillation"
+  container: "Nature Communications"
+  year: 2026
+  volume: "17"
+  pages: "6616"
+  doi: 10.1038/s41467-026-72974-9
+  pmid: "42156758"
+  pmcid: PMC13381822
+  verified: pubmed
+  note: "Oita University and others; no competing interests. Funding (PMC full text): JSPS KAKENHI and AMED (Japanese public funders) plus the Japanese Circulation Society, the Takeda Science Foundation and a Sakakibara Memorial grant, so coded as mixed. Checked in PMC full text (Fig. 5): male C57BL/6J mice on normal or high-fat diet, with or without LY3437943 every third day for 3 weeks (body-weight groups 20 + 18 + 19 + 20 = 77 mice); the obese treated mice lost weight and fat, and atrial fibrillation became harder to induce by burst pacing."
 
 # ------------------------------------------------------------------ independent animal studies
 
@@ -541,7 +557,7 @@ briand-2026-retatrutide-mash-models:
   pmid: "41741376"
   pmcid: PMC13250738
   verified: pubmed
-  note: "Authors employed by two contract-research companies (Physiogenex, Janvier Labs); no Lilly author."
+  note: "Authors employed by two contract-research companies; no Lilly author; no funding statement in the PMC full text, so funding is coded as undisclosed. Mice: 31% weight loss, fat and lean mass both reduced, energy expenditure not significantly changed; hamsters: lean mass not different after 5 weeks, liver triglycerides halved, histology scores not improved."
 
 hitaka-2026-retatrutide-mc4r:
   type: article
@@ -555,7 +571,7 @@ hitaka-2026-retatrutide-mc4r:
   pmid: "41723268"
   pmcid: PMC13056526
   verified: pubmed
-  note: "Authors employed by a contract-research company (Axcelead); no Lilly author; funding not stated."
+  note: "Authors employed by a contract-research company (Axcelead); no Lilly author; no funding statement found. MC4R knockout mice, 21 days: weight -24.1% with retatrutide; fat and lean mass both reduced; energy expenditure fell with all three drugs."
 
 # ------------------------------------------------------------------ syntheses and reviews
 
@@ -571,6 +587,7 @@ chen-2026-glp1-network-meta-analysis:
   pmid: "42688617"
   pmcid: PMC13536023
   verified: pubmed
+  note: "58 trials, 24,214 participants, searches to 6 March 2026; retatrutide -22.10% vs placebo (95% CI -25.60 to -18.60); low-certainty evidence of higher discontinuation with retatrutide. Funded by the National Natural Science Foundation of China."
 
 kaczynski-2026-retatrutide-review:
   type: review
@@ -584,7 +601,7 @@ kaczynski-2026-retatrutide-review:
   pmid: "42792699"
   pmcid: PMC13604614
   verified: pubmed
-  note: "Checked in PMC full text (searches to 6 August 2026). Cited only for its summary of company-reported dysaesthesia rates (TRIUMPH-1 up to 12.5% vs 0.9%; TRIUMPH-4 8.8% and 20.9% vs 0.7%), its reading of TRANSCEND-T2D-1 dysaesthesia (4%, 2%, 4% vs 0%), and the statement that the mechanism is unknown."
+  note: "Checked in PMC full text (searches to 6 August 2026; no Lilly relationship declared). Cited only for: TRANSCEND-T2D-1 dysaesthesia 4%, 2%, 4% vs 0%, three severe; company-reported (not peer-reviewed) dysaesthesia rates in TRIUMPH-4 (8.8% and 20.9% vs 0.7%) and TRIUMPH-1 (up to 12.5% vs 0.9%); 'The mechanism underlying retatrutide-associated dysesthesia remains unknown.'"
 
 # ------------------------------------------------------------------ human exposure outside trials (independent)
 
@@ -600,7 +617,7 @@ sehgal-2026-retatrutide-social-media:
   pmid: "42873503"
   pmcid: PMC13670051
   verified: pubmed
-  note: "University of Pennsylvania; funded by the Penn Medicine Communication Research Institute. Checked in PMC full text."
+  note: "University of Pennsylvania; funded in part by the Penn Medicine Communication Research Institute. Checked in PMC full text: 13,589 Reddit users reporting use (March 2023 to December 2025); among 7,823 with a mapped symptom: increased appetite 17.1%, fatigue 15.2%, nausea 11.6%, insomnia 6.1%, heart rate increased 4.8%, tachycardia 3.8%, allodynia 2.1%, hyperaesthesia 2.1%, palpitations 1.9%. Authors call it hypothesis-generating."
 
 piatkowski-2026-retatrutide-product-testing:
   type: article
@@ -614,7 +631,18 @@ piatkowski-2026-retatrutide-product-testing:
   pmid: "42559975"
   pmcid: PMC13445994
   verified: pubmed
-  note: "Letter, University of Queensland; funders listed in PMC include the National Health and Medical Research Council. Three products: 51%, 190% and 165% of labelled content; lead 0.7 mg/kg; sterility and endotoxin not tested (read on the PMC article page)."
+  note: "Letter, University of Queensland (one author is the head of a private drug-testing service). Read on the PMC article page (20 October 2026): three products labelled 10 mg, submitted anonymously, all contained retatrutide, at 51.3%, 165.0% and 190.0% of the label; lead 0.7 mg/kg, which the authors judge well below the ICH Q3D limit for injectables (0.14% of the permitted daily exposure); sterility and endotoxin not tested. No study grant: the first author has NHMRC and Queensland government and NGO support, so funding is coded as mixed. The letter also cites media reports of severe adverse events, including acute liver failure."
+
+rubin-2026-jama-news:
+  type: article
+  authors: "Rubin R"
+  title: "Unapproved GLP-1 Drugs Retatrutide and Zenagamtide Sold Online Are No Bargain"
+  container: "JAMA"
+  year: 2026
+  doi: 10.1001/jama.2026.20514
+  pmid: "42853576"
+  verified: pubmed
+  note: "JAMA Medical News (journalism, not research), published online 9 October 2026. Read on jamanetwork.com: the Victoria Department of Health in Australia 'received reports of 6 cases of liver toxicity'; Australian laboratory testing of one product sold as retatrutide found 'a high dose of semaglutide and no retatrutide'; the FDA 'has issued 21 warning letters, dating back to December 2024, to entities selling retatrutide'."
 
 buzzi-2026-retatrutide-case-report:
   type: article
@@ -628,6 +656,7 @@ buzzi-2026-retatrutide-case-report:
   pmid: "42843917"
   pmcid: PMC13646524
   verified: pubmed
+  note: "University Hospital Zurich. A woman in her mid-20s admitted with 5 days of nausea and vomiting after four weekly injections of an unverified product given in a wellness setting by a non-medical 'life coach'; Naranjo score 7 (probable). No specific grant."
 
 branine-2026-retatrutide-ketosis-case:
   type: article
@@ -641,6 +670,7 @@ branine-2026-retatrutide-ketosis-case:
   pmid: "42669023"
   pmcid: PMC13525912
   verified: pubmed
+  note: "Edinburgh Royal Infirmary. Man in his mid-30s with type 1 diabetes: vomiting, ketonaemia up to 4.3 mmol/L, acute kidney injury and later recurrent hypoglycaemia after an online product sold as retatrutide; Shigella also grew; the author states causation cannot be established. No financial support."
 
 carneiro-2026-retatrutide-antidoping:
   type: article
@@ -654,4 +684,27 @@ carneiro-2026-retatrutide-antidoping:
   pmid: "42745421"
   pmcid: PMC13578828
   verified: pubmed
-  note: "LADETEC, Federal University of Rio de Janeiro (WADA-accredited laboratory); funded by CNPq and FINEP."
+  note: "LADETEC, Federal University of Rio de Janeiro; supported by CNPq and FINEP (Brazilian public funders). Checked in PMC full text: four volunteers who had obtained the product themselves self-injected on day 1 and day 7; plasma samples taken up to 56 days after the first injection (49 days after the second) still contained retatrutide in all four; neither intact peptide nor metabolites found in urine. The paper names the product's supplier; our page does not."
+
+urva-2023-retatrutide-gastric-emptying:
+  type: article
+  authors: "Urva S, O'Farrell L, Du Y, Loh MT, Hemmingway A, Qu H, et al."
+  title: "The novel GIP, GLP-1 and glucagon receptor agonist retatrutide delays gastric emptying"
+  container: "Diabetes, Obesity and Metabolism"
+  year: 2023
+  volume: "25"
+  pages: "2784-2788"
+  doi: 10.1111/dom.15167
+  pmid: "37311727"
+  verified: pubmed
+  note: "All authors Eli Lilly. No abstract in PubMed or Europe PMC and no free full text; MeSH indexing includes Humans and Type 2 diabetes. Cited only for the finding stated in its title."
+
+ctgov-retatrutide-search-2026-10-20:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "ClinicalTrials.gov search, 20 October 2026: intervention 'retatrutide OR LY3437943' — 34 records"
+  year: 2026
+  url: https://clinicaltrials.gov/search?intr=retatrutide%20OR%20LY3437943
+  accessed: 2026-10-20
+  verified: registry
+  note: "Read through the API v2. 33 records sponsored by Eli Lilly and one phase 2 record sponsored by 'Hudson Biotech' (NCT07467447, China). Conditions listed: obesity or overweight, type 2 diabetes, chronic kidney disease, sleep apnoea, MASLD, knee osteoarthritis, chronic low back pain, cardiovascular disease, hepatic and renal impairment, healthy volunteers. No record lists type 1 diabetes."
