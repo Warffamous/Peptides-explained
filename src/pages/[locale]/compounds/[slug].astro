@@ -12,12 +12,16 @@ import { mdxComponents } from '../../../components/mdx';
 import EvidenceGrade from '../../../components/mdx/EvidenceGrade.astro';
 import SequenceView from '../../../components/mdx/SequenceView.astro';
 import AtAGlance from '../../../components/layout/AtAGlance.astro';
+import StopStrip from '../../../components/layout/StopStrip.astro';
+import FactSheet from '../../../components/layout/FactSheet.astro';
+import ReadingTools from '../../../components/layout/ReadingTools.astro';
+import InDetail from '../../../components/mdx/InDetail.astro';
 import ThemeOnly from '../../../components/ui/ThemeOnly.astro';
 import Pictogram from '../../../components/ui/Pictogram.astro';
 import { BUILT_LOCALES } from '../../../lib/config';
 import { compoundDataMap, resolveCompound, alternatesFor } from '../../../lib/content';
 import { webPage } from '../../../lib/jsonld';
-import { t } from '../../../lib/i18n';
+import { t, tr } from '../../../lib/i18n';
 import { formatNumber } from '../../../lib/format';
 import { mdxToPlain, readingMinutes, wordCount } from '../../../lib/readability';
 import { COMPOUND_SECTIONS } from '../../../schemas/vocab';
@@ -49,6 +53,9 @@ data.regulatory.forEach((r) => r.sources.forEach(add));
 add(data.sequence?.source);
 add(data.molecular.smiles_source);
 data.authorised_products.forEach((p) => add(p.label_source));
+// The stop strip and the fact sheet are rendered outside the MDX: their sources join the list too.
+page.glance.stop_signs?.forEach((s) => s.sources.forEach(add));
+page.glance.facts.forEach((f) => f.sources.forEach(add));
 const citeIndex = new Map(citations.map((id, i) => [id, i + 1]));
 Astro.locals.compound = { slug, locale, data, page, citeIndex };
 
@@ -56,8 +63,12 @@ const key = `compounds/${slug}`;
 const authorised = data.category === 'authorised' || data.category === 'authorised-elsewhere';
 const sectionsPresent = (COMPOUND_SECTIONS as readonly string[]).filter((s) => entry.body?.includes(`<Section id="${s}">`));
 const sectionTitle = (s: string) => t(locale, `compound.sections.${authorised && (s === 'mechanism' || s === 'harm-reduction') ? `${s}Authorised` : s}`);
+// "Less text, more visuals": pages whose depth sits in "In detail" folds get the reading tools
+// ("Open all details"), a folded source list, and a reading time for the short version too.
+const hasFolds = entry.body?.includes('<InDetail') ?? false;
 const toc = [
   { id: 'at-a-glance', text: t(locale, 'beginner.glance.title') },
+  ...(page.glance.stop_signs ? [{ id: 'stop-strip', text: t(locale, 'beginner.stop.title') }] : []),
   { id: 'summary', text: t(locale, 'compound.sections.thirty-second') },
   { id: `grade-${slug}`, text: t(locale, 'evidence.title') },
   { id: 'technical', text: t(locale, 'beginner.technical.title') },
@@ -81,19 +92,69 @@ const about = authorised
 const alternates = fallback ? [] : await alternatesFor(key);
 // Chemical formula with element counts as subscripts (input is validated to letters and digits).
 const formula = data.molecular.formula && /^[A-Za-z0-9()]+$/.test(data.molecular.formula) ? data.molecular.formula.replace(/(\d+)/g, '<sub>$1</sub>') : null;
-// Reading time for the whole page: the MDX body plus the frontmatter prose the page renders
-// (summary, grade rationale, mechanism steps, study findings, table notes).
+// Technical details (names, class, formula, mass): one list, shown open or inside the "In detail" fold.
+type TechFact = { label: string; value: string; qty?: boolean; formula?: boolean };
+const techFacts: TechFact[] = [
+  ...(data.names.full ? [{ label: t(locale, 'compound.names.full'), value: data.names.full }] : []),
+  ...(data.names.inn ? [{ label: t(locale, 'compound.names.inn'), value: data.names.inn }] : []),
+  ...(data.names.other.length > 0 ? [{ label: t(locale, 'compound.names.other'), value: data.names.other.join(', ') }] : []),
+  ...(data.names.brands.length > 0 ? [{ label: t(locale, 'compound.names.brands'), value: data.names.brands.join(', ') }] : []),
+  { label: t(locale, 'compound.names.class'), value: t(locale, `vocab.class.${data.class}`) },
+  { label: t(locale, 'compound.names.bodySystems'), value: data.body_systems.map((b) => t(locale, `vocab.bodySystem.${b}`)).join(', ') },
+  ...(formula ? [{ label: t(locale, 'compound.names.formula'), value: formula, qty: true, formula: true }] : []),
+  ...(data.molecular.mass_da ? [{ label: t(locale, 'compound.names.mass'), value: `${formatNumber(locale, data.molecular.mass_da)} Da`, qty: true }] : []),
+];
+// Words that live in component props rather than between tags: section leads, figure titles and
+// detail lines, key numbers, comparison and timeline labels (question="…", title="…", label: "…").
+const propText = (src: string) =>
+  [...src.matchAll(/\b(?:question|title|detail|label|value|who|text|axis|a|b)\s*[=:]\s*"([^"]*)"/g)].map((m) => m[1]).join(' ');
+// Explainers carry their words in i18n: the title, step captions and summary are always visible.
+const explainerText = (src: string) =>
+  [...src.matchAll(/<Explainer\s+id="([^"]+)"/g)]
+    .map((m) => {
+      const x = tr<{ title: string; steps: string[]; summary: string }>(locale, `explainers.${m[1]}`);
+      return [x.title, ...x.steps, x.summary].join(' ');
+    })
+    .join(' ');
+const body = entry.body ?? '';
+// Reading time for the whole page: the MDX body (with its props and explainers) plus the
+// frontmatter prose the page renders (summary, grade rationale, mechanism steps, study findings,
+// table notes, the stop strip and fact sheet).
 const pageWords =
-  wordCount(mdxToPlain(entry.body ?? '')) +
+  wordCount(mdxToPlain(body)) +
+  wordCount(propText(body)) +
+  wordCount(explainerText(body)) +
   wordCount([
     ...page.summary,
+    page.lede ?? '',
     page.glance.main_risk ?? '',
     ...Object.values(page.grade_rationale),
     ...page.mechanism.flatMap((m) => [m.title, m.detail]),
     ...Object.values(page.studies).flatMap((s) => [s.finding, s.limitation]),
     ...Object.values(page.regulatory_notes),
     ...Object.values(page.indications),
+    ...(page.glance.stop_signs ?? []).map((s) => s.text),
+    ...page.glance.facts.flatMap((f) => [f.label, f.value]),
   ].join(' '));
+// The short version: everything outside the folds (the body without its <InDetail> blocks, with
+// the words in its props and explainers, plus the lede, summary, fact sheet, stop strip and risk
+// tile). Tables, the causal chain, study notes and the grade reasons are folded.
+const shortBody = body.replace(/<InDetail\s[\s\S]*?<\/InDetail>/g, ' ');
+// The At a glance tiles and the evidence card are fixed strings from i18n (about 150 words).
+const BEGINNER_CARDS_WORDS = 150;
+const shortWords = hasFolds
+  ? BEGINNER_CARDS_WORDS +
+    wordCount(mdxToPlain(shortBody)) +
+    wordCount(propText(shortBody)) +
+    wordCount(explainerText(shortBody)) +
+    wordCount([
+      ...page.summary,
+      page.lede ?? '',
+      page.glance.main_risk ?? '',
+      ...(page.glance.stop_signs ?? []).map((s) => s.text),
+      ...page.glance.facts.flatMap((f) => [f.label, f.value]),
+    ].join(' '))
+  : 0;
 const jsonld = webPage({ locale, key, title: page.title, description: page.description, lastReviewed: data.last_reviewed, reviewedBy: data.reviewed_by, medical: true, article: true, about, trail });
 ---
 <DocLayout
@@ -106,6 +167,9 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
   summary={page.summary}
   summaryTitle={t(locale, 'compound.sections.thirty-second')}
   readingMinutes={readingMinutes(pageWords)}
+  readingMinutesShort={hasFolds ? readingMinutes(shortWords) : undefined}
+  lede={page.lede}
+  foldSources={hasFolds}
   template="compound"
   section="compounds"
   lastReviewed={data.last_reviewed}
@@ -131,23 +195,28 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
   <Fragment slot="lead">
     {data.status === 'stub' && <p class="notice notice--stub"><strong>{t(locale, 'common.stub.label')}.</strong> {t(locale, 'common.stub.notice')}</p>}
   </Fragment>
-  <AtAGlance slot="glance" locale={locale} data={data} mainRisk={page.glance.main_risk} hasRisksSection={sectionsPresent.includes('risks')} />
+  <Fragment slot="glance">
+    <AtAGlance locale={locale} data={data} mainRisk={page.glance.main_risk} hasRisksSection={sectionsPresent.includes('risks')} />
+    {page.glance.stop_signs && <StopStrip locale={locale} signs={page.glance.stop_signs} citeIndex={citeIndex} />}
+  </Fragment>
+  <FactSheet slot="facts" locale={locale} data={data} facts={page.glance.facts} />
+  {hasFolds && <ReadingTools slot="tools" locale={locale} />}
   <div class="compound-glance">
-    <EvidenceGrade compound={slug} />
-    <SequenceView compound={slug} />
-    <section class="compound-tech" id="technical" aria-labelledby="technical-title">
-      <h2 class="compound-tech__title" id="technical-title">{t(locale, 'beginner.technical.title')}</h2>
-      <dl class="compound-facts">
-        {data.names.full && <div><dt>{t(locale, 'compound.names.full')}</dt><dd>{data.names.full}</dd></div>}
-        {data.names.inn && <div><dt>{t(locale, 'compound.names.inn')}</dt><dd>{data.names.inn}</dd></div>}
-        {data.names.other.length > 0 && <div><dt>{t(locale, 'compound.names.other')}</dt><dd>{data.names.other.join(', ')}</dd></div>}
-        {data.names.brands.length > 0 && <div><dt>{t(locale, 'compound.names.brands')}</dt><dd>{data.names.brands.join(', ')}</dd></div>}
-        <div><dt>{t(locale, 'compound.names.class')}</dt><dd>{t(locale, `vocab.class.${data.class}`)}</dd></div>
-        <div><dt>{t(locale, 'compound.names.bodySystems')}</dt><dd>{data.body_systems.map((b) => t(locale, `vocab.bodySystem.${b}`)).join(', ')}</dd></div>
-        {formula && <div><dt>{t(locale, 'compound.names.formula')}</dt><dd><bdi class="qty formula" set:html={formula} /></dd></div>}
-        {data.molecular.mass_da && <div><dt>{t(locale, 'compound.names.mass')}</dt><dd><bdi class="qty">{formatNumber(locale, data.molecular.mass_da)} Da</bdi></dd></div>}
-      </dl>
-    </section>
+    <EvidenceGrade compound={slug} foldWhy={hasFolds} />
+    {hasFolds ? (
+      <InDetail title={t(locale, 'beginner.technical.fold')} id="technical">
+        <SequenceView compound={slug} />
+        <dl class="compound-facts">{techFacts.map((f) => <div><dt>{f.label}</dt><dd>{f.qty ? <bdi class:list={['qty', f.formula && 'formula']} set:html={f.value} /> : f.value}</dd></div>)}</dl>
+      </InDetail>
+    ) : (
+      <>
+        <SequenceView compound={slug} />
+        <section class="compound-tech" id="technical" aria-labelledby="technical-title">
+          <h2 class="compound-tech__title" id="technical-title">{t(locale, 'beginner.technical.title')}</h2>
+          <dl class="compound-facts">{techFacts.map((f) => <div><dt>{f.label}</dt><dd>{f.qty ? <bdi class:list={['qty', f.formula && 'formula']} set:html={f.value} /> : f.value}</dd></div>)}</dl>
+        </section>
+      </>
+    )}
   </div>
   <Content components={mdxComponents} />
 </DocLayout>

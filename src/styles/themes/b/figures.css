@@ -1,0 +1,31 @@
+@import "../../base/figures.css";
+
+/*
+ * B · Mechanism — "less text, more visuals" components in a neutral treatment: B's surfaces,
+ * lines and radius; cyan only where B's grammar allows it (a demonstrated quantity: key numbers,
+ * filled icon-array squares, timeline bars). The alert red is used only in the stop strip.
+ */
+:root {
+  --fig-ink: var(--text);
+  --fig-ink-2: var(--text-2);
+  --fig-ink-3: var(--text-3);
+  --fig-line: var(--line);
+  --fig-line-strong: var(--line-strong);
+  --fig-accent: var(--cyan);
+  --fig-paper: var(--surface);
+  --fig-tint: var(--surface-2);
+  --fig-alert: var(--alert);
+  --fig-alert-tint: color-mix(in srgb, var(--alert) 12%, var(--surface));
+  --fig-radius: var(--radius-sm);
+  --fig-lede: var(--s-1);
+}
+.lead__q { color: var(--cyan); font-family: var(--font-mono); font-size: var(--s--1); }
+.in-detail__time, .fig__card, .time-strip__tick, .icon-array__count, .key-number__value { font-family: var(--font-mono); }
+.reading-tools { padding: var(--space-3) var(--space-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.stop-strip { border: 1px solid color-mix(in srgb, var(--alert) 45%, transparent); border-inline-start-width: 4px; }
+.fig, .key-numbers { padding: var(--space-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.key-numbers > .key-number { padding-block-start: var(--space-2); }
+.fact-sheet { padding: var(--space-3) var(--space-4); background: var(--surface); border-radius: var(--radius-sm); }
+.icon-array__sq { fill: transparent; }
+.verdict[data-verdict='yes'] .verdict__mark { stroke: var(--surface); }
+:is(.prose, .csec) > :is(.fig, .key-numbers, .lead) { grid-column: text; }

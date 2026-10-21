@@ -1,0 +1,225 @@
+/*
+ * "Less text, more visuals" — structure shared by every design system (docs/design/
+ * DESIGN-DIRECTIONS-2026-10.md §3.2; CONTENT-GUIDE §9): the title lede, section leads, "In detail"
+ * folds and the reading-tools row, the "Stop and get help" strip, the fact sheet, and the figures
+ * (key numbers, comparison tables, icon arrays, time strips) with their data cards.
+ *
+ * Colours come from a small set of --fig-* variables that each design maps in its own
+ * themes/<t>/figures.css (which imports this file first); the fallbacks keep everything legible
+ * if a design maps nothing. Logical properties only; nothing here needs JavaScript or motion.
+ */
+:root {
+  --fig-ink: currentColor;
+  --fig-ink-2: currentColor;
+  --fig-ink-3: currentColor;
+  --fig-line: currentColor;
+  --fig-line-strong: currentColor;
+  --fig-accent: currentColor;
+  --fig-paper: Canvas;
+  --fig-tint: transparent;
+  --fig-alert: currentColor;
+  --fig-alert-tint: transparent;
+  --fig-radius: 0;
+  --fig-small: var(--s--1);
+  --fig-tiny: var(--s--2, var(--s--1));
+  --fig-lede: var(--s-1);
+}
+
+/* ------------------------------------------------------------------ title lede */
+.doc-header__lede { margin: var(--space-3) 0 0; font-size: var(--fig-lede); line-height: 1.35; max-inline-size: 38ch; text-wrap: pretty; }
+
+/* ------------------------------------------------------------------ section lead: question, then the answer */
+.lead { display: grid; gap: var(--space-1); margin-block: 0 var(--space-5); }
+.lead__q { margin: 0; font-weight: 600; color: var(--fig-ink-2); }
+.lead__a { font-size: var(--fig-lede); line-height: 1.35; max-inline-size: 40ch; text-wrap: pretty; }
+.lead__a > * { margin: 0; }
+
+/* ------------------------------------------------------------------ "In detail" folds */
+.in-detail { margin: 0; border-block-end: 1px solid var(--fig-line); }
+:is(.csec, .in-detail__body, .prose, .compound-glance, .grade, .source-list) > .in-detail:not(.in-detail + .in-detail) { border-block-start: 1px solid var(--fig-line); }
+.in-detail + :not(.in-detail) { margin-block-start: var(--space-5); }
+.in-detail__summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  min-block-size: 2.75rem;
+  padding-block: var(--space-3);
+  cursor: pointer;
+  list-style: none;
+}
+.in-detail__summary::-webkit-details-marker { display: none; }
+/* A plus that becomes a minus: two bars, so it needs no font and no direction. */
+.in-detail__icon { display: grid; place-items: center; inline-size: 1.1rem; block-size: 1.1rem; align-self: center; border: 1px solid var(--fig-ink); border-radius: var(--fig-radius); }
+.in-detail__icon::before, .in-detail__icon::after { content: ''; grid-area: 1 / 1; inline-size: 0.6rem; block-size: 1.5px; background: var(--fig-ink); }
+.in-detail__icon::after { rotate: 90deg; }
+.in-detail[open] > .in-detail__summary .in-detail__icon::after { display: none; }
+.in-detail__head { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.5em; min-inline-size: 0; }
+.in-detail__label { font-size: var(--fig-tiny); color: var(--fig-ink-3); }
+/* A run of folds reads as one list under one "In detail": the word is shown on the first fold only
+   (screen readers still hear it on every one). */
+.in-detail + .in-detail > .in-detail__summary .in-detail__label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.in-detail__title { font-weight: 600; }
+.in-detail__time { font-size: var(--fig-tiny); color: var(--fig-ink-3); white-space: nowrap; }
+.in-detail__summary:hover .in-detail__title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.in-detail__body { padding-block: var(--space-2) var(--space-5); min-inline-size: 0; }
+.in-detail__body > :last-child { margin-block-end: 0; }
+
+/* The reading-tools row: one line on how the page is built, and "Open all details". The button is
+   the JavaScript control; without JavaScript a checkbox shows every fold's content by CSS alone
+   (where the browser can style ::details-content). html.js is set before first paint. */
+.reading-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-4); margin-block: 0 var(--space-5); }
+.reading-tools__text { margin: 0; font-size: var(--fig-small); color: var(--fig-ink-2); max-inline-size: 46ch; }
+.reading-tools__toggle { display: inline-flex; align-items: center; gap: 0.5em; min-block-size: 2.75rem; padding: 0.4rem 0.9rem; font: inherit; font-weight: 600; color: var(--fig-ink); background: var(--fig-paper); border: 1px solid var(--fig-ink); border-radius: var(--fig-radius); cursor: pointer; }
+.reading-tools__icon { display: grid; place-items: center; inline-size: 0.9rem; block-size: 0.9rem; }
+.reading-tools__icon::before, .reading-tools__icon::after { content: ''; grid-area: 1 / 1; inline-size: 0.9rem; block-size: 2px; background: currentColor; }
+.reading-tools__icon::after { rotate: 90deg; }
+.reading-tools__toggle[data-state='open'] .reading-tools__icon::after { display: none; }
+.reading-tools__nojs { display: inline-flex; align-items: center; gap: 0.5em; min-block-size: 2.75rem; font-weight: 600; cursor: pointer; }
+.reading-tools__check { inline-size: 1.25rem; block-size: 1.25rem; margin: 0; accent-color: var(--fig-accent); }
+:root:not(.js) .reading-tools__toggle, :root.js .reading-tools__nojs { display: none; }
+@supports not selector(::details-content) {
+  .reading-tools__nojs { display: none; }
+}
+@supports selector(::details-content) {
+  :root:not(.js):has(.reading-tools__check:checked) .in-detail::details-content { content-visibility: visible; display: block; block-size: auto; }
+}
+
+/* ------------------------------------------------------------------ "Stop and get help" strip */
+.stop-strip { --pg-cut: var(--fig-alert-tint); margin-block: 0 var(--space-6); padding: var(--space-4) var(--space-5); background: var(--fig-alert-tint); border-inline-start: 4px solid var(--fig-alert); border-radius: var(--fig-radius); }
+.stop-strip__title { display: flex; align-items: center; gap: 0.45em; margin: 0 0 var(--space-3); color: var(--fig-alert); font-size: var(--s-1); font-weight: 700; line-height: 1.2; }
+.stop-strip__glyph { flex: none; inline-size: 1.1em; block-size: 1.1em; }
+.stop-strip__list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: var(--space-3) var(--space-5); margin: 0; padding: 0; list-style: none; }
+.stop-strip__item { display: flex; align-items: center; gap: var(--space-3); min-inline-size: 0; }
+.stop-strip__icon { flex: none; line-height: 0; color: var(--fig-alert); }
+.stop-strip__icon .pictogram { display: block; inline-size: 2.75rem; block-size: 2.75rem; fill: currentColor; }
+.stop-strip__text { font-weight: 600; line-height: 1.35; color: var(--fig-ink); }
+.stop-strip__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--space-2) var(--space-5); margin-block-start: var(--space-4); padding-block-start: var(--space-3); border-block-start: 1px solid var(--fig-alert); }
+.stop-strip__call { display: flex; align-items: center; gap: var(--space-2); margin: 0; color: var(--fig-alert); }
+.stop-strip__call-icon { flex: none; line-height: 0; }
+.stop-strip__call-icon .pictogram { display: block; inline-size: 1.75rem; block-size: 1.75rem; fill: currentColor; }
+.stop-strip__links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); margin: 0; }
+.stop-strip__links a { color: var(--fig-ink); font-weight: 600; }
+
+/* ------------------------------------------------------------------ fact sheet (label / value) */
+.fact-sheet { min-inline-size: 0; margin-block: 0 var(--space-5); }
+.fact-sheet__list { display: grid; grid-template-columns: minmax(0, 1fr); margin: 0; border-block-start: 1px solid var(--fig-line); }
+.fact-sheet__row { display: grid; grid-template-columns: minmax(7rem, 2fr) minmax(0, 3fr); column-gap: var(--space-4); padding-block: var(--space-2); border-block-end: 1px solid var(--fig-line); }
+.fact-sheet__row dt { color: var(--fig-ink-3); font-size: var(--fig-small); }
+.fact-sheet__row dd { margin: 0; font-size: var(--fig-small); font-weight: 600; }
+.fact-sheet__note { margin: var(--space-2) 0 0; font-size: var(--fig-tiny); color: var(--fig-ink-3); }
+
+/* ------------------------------------------------------------------ figure anatomy: label, takeaway, detail · data card */
+/* Figures are numbered in page order. .prose is a size container (style containment), so the
+   counter starts on its first child, whose scope includes the sections that follow it. */
+.doc, .prose > :first-child { counter-reset: fig; }
+/* Component lists are figures, not text lists: no list indent, no measure (beats `.prose ul`). */
+ul:is(.time-strip__rows, .icon-array__rows, .stop-strip__list) { margin: 0; padding: 0; list-style: none; }
+p.time-strip__text { max-inline-size: none; }
+li:is(.time-strip__row, .icon-array__row, .stop-strip__item) { max-inline-size: none; margin: 0; }
+.fig { counter-increment: fig; margin: 0 0 var(--space-6); min-inline-size: 0; }
+.fig__head { display: grid; gap: var(--space-1); margin-block-end: var(--space-4); }
+.fig__label { font-size: var(--fig-tiny); color: var(--fig-ink-3); }
+.fig__label::after { content: ' ' counter(fig); }
+.fig__title { font-weight: 600; line-height: 1.3; max-inline-size: 52ch; text-wrap: pretty; }
+.fig__detail { font-size: var(--fig-small); color: var(--fig-ink-2); max-inline-size: 62ch; }
+.fig__card { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); margin: var(--space-3) 0 0; padding-block-start: var(--space-2); border-block-start: 1px solid var(--fig-line); font-size: var(--fig-tiny); color: var(--fig-ink-3); }
+.fig__field { min-inline-size: 0; }
+.fig__key { color: var(--fig-ink-3); }
+
+/* ------------------------------------------------------------------ key numbers */
+.key-numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--space-5) var(--gap, var(--space-5)); margin-block: 0 var(--space-6); }
+/* Four numbers make a 2 × 2 block, never 3 + 1. */
+@media (min-width: 40rem) {
+  .key-numbers--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.key-number { display: grid; align-content: start; gap: var(--space-1); margin: 0 0 var(--space-5); min-inline-size: 0; padding-block-start: var(--space-3); border-block-start: 2px solid var(--fig-ink); }
+.key-numbers > .key-number { margin: 0; }
+.key-number__title { margin: 0; font-weight: 600; line-height: 1.3; }
+.key-number__value { margin: 0; font-size: clamp(2.25rem, 1.9rem + 1.4vw, 3rem); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; color: var(--fig-accent); font-variant-numeric: tabular-nums; }
+.key-number__unit { font-size: var(--s-0); font-weight: 400; letter-spacing: 0; }
+.key-number__label { margin: 0; font-size: var(--fig-small); line-height: 1.45; color: var(--fig-ink-2); max-inline-size: 40ch; }
+.key-number .fig__card { margin-block-start: var(--space-2); }
+
+/* ------------------------------------------------------------------ comparison table: a word plus a glyph in every answer */
+.compare__table { container-type: inline-size; container-name: compare; }
+.compare table { inline-size: 100%; border-collapse: collapse; }
+.compare :is(th, td) { padding-block: var(--space-3); padding-inline: 0 var(--space-4); text-align: start; vertical-align: top; border-block-end: 1px solid var(--fig-line); }
+.compare thead th { font-weight: 600; font-size: var(--fig-small); color: var(--fig-ink-2); border-block-end: 2px solid var(--fig-ink); }
+.compare tbody th { font-weight: 600; }
+.compare td { font-size: var(--fig-small); line-height: 1.4; }
+.compare td > .verdict { display: flex; margin-block-end: 0.2rem; font-size: var(--s-0); }
+.verdict { display: inline-flex; align-items: center; gap: 0.4em; margin-inline-end: 0.3em; white-space: nowrap; }
+.verdict__glyph { flex: none; inline-size: 1.2em; block-size: 1.2em; overflow: visible; }
+.verdict__box { fill: none; stroke: var(--fig-ink); stroke-width: 1.5; }
+.verdict__mark { fill: none; stroke: var(--fig-ink); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.verdict[data-verdict='yes'] .verdict__box { fill: var(--fig-ink); }
+.verdict[data-verdict='yes'] .verdict__mark { stroke: var(--fig-paper); }
+.verdict__hatch { fill: none; stroke: var(--fig-ink-3); stroke-width: 1; }
+.verdict__clear { fill: var(--fig-paper); }
+.verdict__word { font-weight: 700; }
+/* Narrow: every row is a card, the question on top and each answer under its column's name. */
+@container compare (max-width: 38rem) {
+  .compare table, .compare tbody, .compare tr { display: block; }
+  .compare thead { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .compare tr { padding-block: var(--space-3); border-block-end: 1px solid var(--fig-line); }
+  .compare tbody tr:first-child { border-block-start: 2px solid var(--fig-ink); }
+  .compare tbody th { display: block; padding: 0 0 var(--space-2); border: 0; font-size: var(--s-0); }
+  .compare td { display: block; padding-block: var(--space-2); padding-inline: 0; border: 0; }
+  .compare td::before { content: attr(data-label); display: block; margin-block-end: 0.15rem; font-size: var(--fig-tiny); color: var(--fig-ink-3); }
+}
+
+/* ------------------------------------------------------------------ icon arrays (people in 100) */
+.icon-array__rows { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: var(--space-5) var(--space-6); margin: 0; padding: 0; list-style: none; }
+.icon-array__row { display: grid; gap: var(--space-2); min-inline-size: 0; }
+.icon-array__label { margin: 0; font-weight: 600; }
+.icon-array__pair { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-5); }
+.icon-array__cell { display: grid; gap: var(--space-1); justify-items: start; }
+.icon-array__grid { display: block; inline-size: 6.125rem; block-size: 6.125rem; direction: ltr; }
+.icon-array__sq { fill: var(--fig-paper); stroke: var(--fig-ink-3); stroke-width: 1; }
+.icon-array__sq.is-on { fill: var(--fig-accent); stroke: var(--fig-accent); }
+.icon-array__cell[data-group='b'] .icon-array__sq.is-on { fill: var(--fig-ink-2); stroke: var(--fig-ink-2); }
+.icon-array__n { margin: 0; font-size: var(--fig-small); line-height: 1.3; }
+.icon-array__count { display: block; font-variant-numeric: tabular-nums; }
+.icon-array__group { color: var(--fig-ink-2); }
+
+/* ------------------------------------------------------------------ time and duration strips */
+.time-strip__rows { display: grid; gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+.time-strip__row { display: grid; gap: var(--space-1); min-inline-size: 0; }
+.time-strip__label { margin: 0; font-weight: 600; font-size: var(--fig-small); line-height: 1.35; }
+.time-strip__track { position: relative; block-size: 0.875rem; border-block-end: 1px solid var(--fig-line); }
+.time-strip__bar { position: absolute; inset-block: 0; inset-inline-start: calc(var(--from) * 100%); inline-size: max(3px, calc((var(--to) - var(--from)) * 100%)); background: var(--fig-accent); }
+.time-strip__bar.is-unknown { background: repeating-linear-gradient(-45deg, var(--fig-ink-3) 0 1px, transparent 1px 6px); outline: 1px solid var(--fig-ink-3); outline-offset: -1px; }
+.time-strip__text { max-inline-size: none; margin: 0; padding-inline-start: calc(var(--from) * 100%); font-size: var(--fig-small); line-height: 1.35; color: var(--fig-ink-2); }
+.time-strip__text.is-end { padding-inline-start: 0; text-align: end; }
+.time-strip__unknown { font-weight: 600; color: var(--fig-ink); }
+.time-strip__axis { position: relative; block-size: 1.75rem; margin-block-start: var(--space-3); border-block-start: 1px solid var(--fig-ink); }
+/* Zero-width anchors: the year centres on its tick in both directions; the ends stay inside. */
+.time-strip__tick { position: absolute; inset-block-start: 0; inset-inline-start: calc(var(--at) * 100%); display: flex; justify-content: center; inline-size: 0; padding-block-start: 0.4rem; font-size: var(--fig-tiny); color: var(--fig-ink-2); white-space: nowrap; }
+.time-strip__tick::before { content: ''; position: absolute; inset-block-start: -1px; inset-inline-start: 0; block-size: 0.3rem; border-inline-start: 1px solid var(--fig-ink); }
+.time-strip__tick.is-first { justify-content: flex-start; }
+.time-strip__tick.is-last { justify-content: flex-end; }
+.time-strip__axis-label { margin: 0; font-size: var(--fig-tiny); color: var(--fig-ink-3); }
+
+/* ------------------------------------------------------------------ evidence profile: the reasons, folded */
+.grade > .in-detail { grid-column: 1 / -1; }
+.grade__whys { display: grid; gap: var(--space-3); margin: 0; }
+.grade__whys-row { display: grid; gap: var(--space-1); }
+.grade__whys-row dt { font-weight: 600; }
+.grade__whys-row dd { margin: 0; max-inline-size: 66ch; }
+
+/* ------------------------------------------------------------------ print: everything open */
+@media print {
+  .in-detail::details-content { content-visibility: visible; display: block; block-size: auto; }
+  .reading-tools, .in-detail__icon, .in-detail__time { display: none; }
+  .stop-strip { break-inside: avoid; }
+}
+
+/* Forced colours: keep frames, bars and filled squares visible. */
+@media (forced-colors: active) {
+  .stop-strip, .reading-tools__toggle, .in-detail__icon { border: 1px solid CanvasText; }
+  .time-strip__bar { background: CanvasText; forced-color-adjust: none; }
+  .icon-array__sq.is-on { fill: CanvasText; }
+  .verdict[data-verdict='yes'] .verdict__box { fill: CanvasText; }
+  .verdict[data-verdict='yes'] .verdict__mark { stroke: Canvas; }
+}

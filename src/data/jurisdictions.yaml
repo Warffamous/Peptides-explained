@@ -1,5 +1,8 @@
 # Who to contact and where to report, per jurisdiction. Rendered by <JurisdictionCard code="…" />.
 # Verified 2026-10-20. Update the date in the corrections log when anything here changes.
+# emergency: the country's number, as data. It reaches a page only through the locale's
+# common.emergency.jurisdiction string: the English site never prints a number (owner's decision,
+# 20 October 2026: "call your local emergency service number"); the Dutch site says "Bel 112".
 - code: NL
   emergency: "112"
   regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG)", url: "https://www.cbg-meb.nl/" }

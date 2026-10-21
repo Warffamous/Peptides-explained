@@ -86,6 +86,10 @@
   --res-hydrophobic: #4b5be0;
   --res-aromatic: #8d5ad8;
   --res-polar: #1f9a6a;
+  /* Text in these hues needs more than the fills: #1f9a6a is 3.6:1 on white (sequence text), and the
+     cyan level badge fell to 4.4:1 on a highlighted step. Text-only variants (AAA on white). */
+  --res-polar-text: #0f5c40;
+  --cyan-text: #005f67;
   --res-positive: #cc3d7a;
   --res-negative: #d4483a;
   --res-special: #6b7686;

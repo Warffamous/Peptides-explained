@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import fs from 'node:fs';
 import remarkExplainerSources from './src/plugins/remark-explainer-sources.mjs';
 import remarkCitations from './src/plugins/remark-citations.mjs';
+import remarkFigureSources from './src/plugins/remark-figure-sources.mjs';
 import remarkFaq from './src/plugins/remark-faq.mjs';
 import rehypeGlossary from './src/plugins/rehype-glossary.mjs';
 import rehypeTableWrap from './src/plugins/rehype-table-wrap.mjs';
@@ -56,7 +57,7 @@ export default defineConfig({
   },
   integrations: [
     mdx({
-      remarkPlugins: [remarkExplainerSources, remarkCitations, remarkFaq],
+      remarkPlugins: [remarkExplainerSources, remarkFigureSources, remarkCitations, remarkFaq],
       rehypePlugins: [[rehypeGlossary, { base: BASE }], rehypeTableWrap],
       optimize: false,
     }),

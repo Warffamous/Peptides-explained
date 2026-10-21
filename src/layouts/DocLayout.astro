@@ -30,6 +30,12 @@ interface Props {
   summaryTitle?: string;
   /** Estimated minutes to read the whole page (src/lib/readability.ts), shown in the summary box. */
   readingMinutes?: number;
+  /** Minutes for the short version (everything outside the "In detail" folds); with it the box says both. */
+  readingMinutesShort?: number;
+  /** One sentence under the title (22–24 px): what it is and the one thing to know. */
+  lede?: string;
+  /** Fold the source list (pages with "In detail" folds): the heading stays, the list opens on demand. */
+  foldSources?: boolean;
   template: 'reference' | 'safety' | 'opinion' | 'landing' | 'index' | 'compound';
   section: string;
   lastReviewed: Date;
@@ -78,6 +84,7 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
     <header class="doc-header">
       {p.eyebrow && <p class="doc-header__eyebrow">{p.eyebrow}</p>}
       <h1 class="doc-header__title">{p.title}</h1>
+      {p.lede && <p class="doc-header__lede">{p.lede}</p>}
       <slot name="header" />
       {signer && p.opinion && (
         <p class="doc-header__byline">
@@ -98,15 +105,19 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
       link on the rare page that has a correction.
     */}
     <slot name="glance" />
-    <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} readingMinutes={p.readingMinutes} />
+    <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} readingMinutes={p.readingMinutes} readingMinutesShort={p.readingMinutesShort} />
+    {/* Fact sheet (compound pages): after the summary on phones, under the title from 64rem. */}
+    <slot name="facts" />
     <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} compact legal={p.legal} class="doc-review" />
     {/* Page photo (src/data/heroes.yaml). */}
     <Hero locale={p.locale} routeKey={p.routeKey} />
     {p.toc && <Toc locale={p.locale} items={p.toc} />}
+    {/* Reading tools ("Open all details") on pages with "In detail" folds. */}
+    <slot name="tools" />
     <div class="prose">
       <slot />
     </div>
-    <SourceList locale={p.locale} ids={p.citations ?? []} inline={p.inlineCitations} further={p.furtherReading ?? []} />
+    <SourceList locale={p.locale} ids={p.citations ?? []} inline={p.inlineCitations} further={p.furtherReading ?? []} fold={p.foldSources} />
     <footer class="doc-footer">
       {p.related && p.related.length > 0 && <RelatedList locale={p.locale} keys={p.related} />}
       <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} legal={p.legal} />

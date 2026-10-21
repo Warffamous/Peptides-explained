@@ -13,6 +13,8 @@ import { z } from 'zod';
 import * as V from './vocab';
 
 const isoDate = z.coerce.date();
+/** Words a reader has to read (same rule as src/lib/readability.ts). */
+const maxWords = (s: string, n: number) => s.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length <= n;
 const kebab = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'must be kebab-case (a-z, 0-9, hyphens)');
 const nonEmpty = z.string().trim().min(1);
 
@@ -231,8 +233,41 @@ export const compoundPageSchema = z.object({
       main_risk: nonEmpty
         .refine((s) => s.split(/\s+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length <= 12, { message: 'at most 12 words' })
         .optional(),
+      /**
+       * "Stop and get help" strip, rendered directly after At a glance: exactly three signs, each at
+       * most 8 words, B1, with a pictogram (the word always carries the meaning). Condensed from this
+       * page's own stop-now content and the label; every sign names its sources. Without it the strip
+       * is not rendered and the warning-signs link in the header is the only route.
+       */
+      stop_signs: z
+        .array(
+          z.object({
+            icon: z.enum(V.STOP_SIGN_ICONS),
+            text: nonEmpty.refine((s) => maxWords(s, 8), { message: 'at most 8 words' }),
+            sources: z.array(kebab).min(1),
+          }),
+        )
+        .length(3)
+        .optional(),
+      /**
+       * Compound-specific rows of the fact sheet beside the title (label/value, each value at most
+       * 10 words): how it is taken, how often, how long it lasts. Class, EU status and human testing
+       * are added from the data file. Facts only; label facts from the SmPC, never a dose.
+       */
+      facts: z
+        .array(
+          z.object({
+            label: nonEmpty.refine((s) => maxWords(s, 4), { message: 'at most 4 words' }),
+            value: nonEmpty.refine((s) => maxWords(s, 10), { message: 'at most 10 words' }),
+            sources: z.array(kebab).min(1),
+          }),
+        )
+        .max(4)
+        .default([]),
     })
     .default({}),
+  /** One sentence under the title (22–24 px): what it is and the one thing to know. B1, at most 25 words. */
+  lede: nonEmpty.refine((s) => maxWords(s, 25), { message: 'at most 25 words' }).optional(),
   grade_rationale: z.object({
     human_clinical: nonEmpty,
     preclinical_volume: nonEmpty,
@@ -383,7 +418,9 @@ export const newsFileSchema = z.object({ generated: isoDate, items: z.array(news
 
 export const jurisdictionSchema = z.object({
   code: z.enum(V.JURISDICTIONS),
-  emergency: z.string(), // "112"
+  // The jurisdiction's emergency number, as data. Pages never print it directly: they use the
+  // locale's common.emergency.* strings (English: "your local emergency number"; Dutch: 112).
+  emergency: z.string(),
   urgent_care: z.string().optional(), // e.g. "huisartsenpost" — localised label key in i18n
   regulator: z.object({ name: nonEmpty, url: z.string().url() }).optional(),
   inspectorate: z.object({ name: nonEmpty, url: z.string().url() }).optional(),
@@ -402,7 +439,7 @@ export const warningSignSchema = z.object({
   sign: nonEmpty,
   /** One sentence: why this matters (the mechanism or the danger). */
   why: nonEmpty,
-  /** emergency = call 112 now; urgent = same-day doctor/out-of-hours service; stop = stop and contact a doctor soon */
+  /** emergency = call the emergency number now (common.emergency.now); urgent = same-day doctor/out-of-hours service; stop = stop and contact a doctor soon */
   action: z.enum(['emergency', 'urgent', 'stop']),
 });
 export const warningSignsFileSchema = z.object(

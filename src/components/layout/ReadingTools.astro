@@ -1,0 +1,25 @@
+---
+/**
+ * The reading-tools row before the first section of a page with "In detail" folds: one line on how
+ * the page is built, and the page-level "Open all details" / "Close all details" control.
+ *
+ * With JavaScript (html.js is set before first paint, so there is no layout shift): a button
+ * (src/scripts/in-detail.ts). Without JavaScript: a checkbox that shows every fold's content by CSS
+ * alone (base/figures.css, :has() and ::details-content, where supported); each fold still opens on
+ * its own everywhere.
+ */
+import { t } from '../../lib/i18n';
+interface Props { locale: string }
+const { locale: L } = Astro.props;
+---
+<div class="reading-tools" data-pagefind-ignore>
+  <p class="reading-tools__text">{t(L, 'figures.tools.text')}</p>
+  <button type="button" class="reading-tools__toggle" data-open-all data-state="closed" data-label-open={t(L, 'figures.tools.open')} data-label-close={t(L, 'figures.tools.close')}>
+    <span class="reading-tools__icon" aria-hidden="true"></span>
+    <span data-label>{t(L, 'figures.tools.open')}</span>
+  </button>
+  <label class="reading-tools__nojs"><input type="checkbox" class="reading-tools__check" /> {t(L, 'figures.tools.noJs')}</label>
+</div>
+<script>
+  import '../../scripts/in-detail.ts';
+</script>

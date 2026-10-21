@@ -1,0 +1,35 @@
+@import "../../base/figures.css";
+
+/*
+ * C · Public Health — "less text, more visuals" components in a neutral treatment: C's sizes
+ * (17px is the smallest text), its line and radius, the primary colour for the drug, and the
+ * alert red only in the stop strip (C's rule: red is stop-now content and nothing else).
+ */
+:root {
+  --fig-ink: var(--text);
+  --fig-ink-2: var(--text-2);
+  --fig-ink-3: var(--text-3);
+  --fig-line: var(--line);
+  --fig-line-strong: var(--line-strong);
+  --fig-accent: var(--primary);
+  --fig-paper: var(--surface);
+  --fig-tint: var(--surface-2);
+  --fig-alert: var(--alert);
+  --fig-alert-tint: var(--alert-tint);
+  --fig-radius: var(--radius);
+  --fig-small: var(--s--1);
+  --fig-tiny: var(--s--1);
+  --fig-lede: var(--s-1);
+}
+.lead__q { color: var(--primary-dark, var(--primary)); font-size: var(--s-0); }
+.lead__a { font-weight: 600; }
+.stop-strip { border: 2px solid var(--alert); border-inline-start-width: 6px; }
+.reading-tools__toggle { min-block-size: var(--tap, 2.75rem); border-width: 2px; }
+.in-detail__summary { min-block-size: var(--tap, 2.75rem); }
+.in-detail__icon { border-width: 2px; }
+.key-number { border-block-start-color: var(--primary); }
+/* Sections may hold wide figures (DESIGN-DIRECTIONS §6.6: tables get the full content width); text
+   inside them stays on the measure (layout.css). */
+.prose > .csec { max-inline-size: var(--wide); }
+.csec > :is(.fig, .key-numbers, .in-detail) { max-inline-size: var(--wide); }
+.in-detail__body > :where(p, ul, ol, h3, h4, .callout, .checklist) { max-inline-size: var(--measure); }

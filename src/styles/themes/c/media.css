@@ -47,6 +47,20 @@
 .plate__marker { transform: scale(calc(1.2 + var(--on) * 0.2)); }
 .plate__dot { fill: #00695c; stroke: #ffffff; stroke-width: 2.5px; vector-effect: non-scaling-stroke; }
 .plate__n { fill: #ffffff; font-family: var(--font-sans); font-weight: 700; }
+/* Dark: never a white block on the dark page. A plate with a dark version of its art (art_dark)
+   shows that one as drawn; a light-only art is dimmed on a soft grey panel. */
+:root[data-scheme='dark'] { --plate-show-light: none; --plate-show-dark: block; }
+:root[data-scheme='dark'] .plate__art { background: #dcdcdc; }
+:root[data-scheme='dark'] .plate__img { filter: brightness(0.86); }
+:root[data-scheme='dark'] .plate[data-dark-art] .plate__art { background: var(--bg); }
+:root[data-scheme='dark'] .plate[data-dark-art] .plate__img { filter: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) { --plate-show-light: none; --plate-show-dark: block; }
+  :root:not([data-scheme='light']) .plate__art { background: #dcdcdc; }
+  :root:not([data-scheme='light']) .plate__img { filter: brightness(0.86); }
+  :root:not([data-scheme='light']) .plate[data-dark-art] .plate__art { background: var(--bg); }
+  :root:not([data-scheme='light']) .plate[data-dark-art] .plate__img { filter: none; }
+}
 
 .plate__key-title { font-size: var(--s-1); font-weight: 700; margin-block-end: var(--space-3); }
 .plate ol.plate__legend { gap: var(--space-4); }

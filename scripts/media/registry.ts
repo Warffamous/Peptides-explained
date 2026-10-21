@@ -10,6 +10,30 @@ import { ROOT } from '../lib/load.ts';
 import { mediaEntrySchema, type MediaEntry } from '../../src/schemas/media.ts';
 
 export { ROOT };
+
+/**
+ * The owner's main checkout. When this tree is a git worktree, its .git is a FILE
+ * ("gitdir: <main>/.git/worktrees/<name>") and the worktree's commondir points back to <main>/.git.
+ * Owner-level files that must not fork per worktree live in the main checkout: the .env with the
+ * API key (read in place, never copied) and the media-usage.jsonl cost log. Outside a worktree this
+ * is ROOT.
+ */
+export function mainCheckoutRoot(): string {
+  try {
+    const dotGit = path.join(ROOT, '.git');
+    if (!fs.statSync(dotGit).isFile()) return ROOT;
+    const gitdir = fs.readFileSync(dotGit, 'utf8').match(/^gitdir:\s*(.+)$/m)?.[1]?.trim();
+    if (!gitdir) return ROOT;
+    const abs = path.resolve(ROOT, gitdir);
+    const commondirFile = path.join(abs, 'commondir');
+    const common = fs.existsSync(commondirFile) ? path.resolve(abs, fs.readFileSync(commondirFile, 'utf8').trim()) : path.resolve(abs, '../..');
+    const main = path.dirname(common);
+    return fs.existsSync(main) ? main : ROOT;
+  } catch {
+    return ROOT;
+  }
+}
+export const MAIN_ROOT = mainCheckoutRoot();
 export const MEDIA_DIR = path.join(ROOT, 'src/assets/media');
 export const REGISTRY = path.join(ROOT, 'src/data/media.yaml');
 export const MEDIA_TEXT = path.join(ROOT, 'src/i18n/en/media.json');
@@ -27,11 +51,12 @@ export type HttpResult = { status: number; statusText: string; type: string; bod
 /**
  * Minimal HTTPS client without a connection pool (agent: false), so every socket is closed when its
  * response ends. fetch() keeps sockets alive, and on Windows a process that ends while they close
- * can trip a libuv assertion. Follows up to 5 redirects. Headers are never logged.
+ * can trip a libuv assertion. Follows up to 5 redirects. Headers are never logged. The body may be a
+ * string (JSON) or a Buffer (multipart/form-data for image uploads).
  */
 export function httpRequest(
   url: string,
-  { method = 'GET', headers = {}, body, timeoutMs = 120_000 }: { method?: string; headers?: Record<string, string>; body?: string; timeoutMs?: number } = {},
+  { method = 'GET', headers = {}, body, timeoutMs = 120_000 }: { method?: string; headers?: Record<string, string>; body?: string | Buffer; timeoutMs?: number } = {},
   redirects = 5,
 ): Promise<HttpResult> {
   return new Promise((resolve, reject) => {

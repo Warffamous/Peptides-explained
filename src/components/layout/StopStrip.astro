@@ -1,0 +1,41 @@
+---
+/**
+ * "Stop and get help" strip: rendered by the compound page directly after "At a glance", so the
+ * three signs that matter most for this compound are on the first screens, not at the end of the
+ * page (docs/design/DESIGN-DIRECTIONS-2026-10.md §3.1, backlog item 2). Driven by
+ * glance.stop_signs in the compound frontmatter: three signs of at most 8 words, each a pictogram
+ * AND the words (the pictogram is decorative; the words carry the meaning), each with its sources.
+ * Then the locale's emergency instruction (common.emergency.ifSevere: "If it is severe, call your
+ * local emergency number." in English, which never prints 112; the Dutch pages say 112) and two
+ * links: the full stop-now list further down this page (#stop-now) and the warning-signs page.
+ *
+ * Stop-now content: with the stop-now list itself, the only place where a design may use its
+ * alert colour. Never folded.
+ */
+import Pictogram from '../ui/Pictogram.astro';
+import Icon from '../ui/Icon.astro';
+import CiteMarks from '../ui/CiteMarks.astro';
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+type Sign = { icon: string; text: string; sources: string[] };
+interface Props { locale: string; signs: Sign[]; citeIndex: Map<string, number>; fullListId?: string }
+const { locale: L, signs, citeIndex, fullListId = 'stop-now' } = Astro.props;
+---
+<section class="stop-strip" id="stop-strip" aria-labelledby="stop-strip-title">
+  <h2 class="stop-strip__title" id="stop-strip-title"><Icon name="alert" class="stop-strip__glyph" /><span>{t(L, 'beginner.stop.title')}</span></h2>
+  <ul class="stop-strip__list" role="list">
+    {signs.map((s) => (
+      <li class="stop-strip__item">
+        <span class="stop-strip__icon"><Pictogram name={s.icon} /></span>
+        <span class="stop-strip__text">{s.text}<CiteMarks locale={L} ids={s.sources} index={citeIndex} /></span>
+      </li>
+    ))}
+  </ul>
+  <div class="stop-strip__foot">
+    <p class="stop-strip__call"><span class="stop-strip__call-icon"><Pictogram name="action-emergency" /></span><strong>{t(L, 'common.emergency.ifSevere')}</strong></p>
+    <p class="stop-strip__links">
+      <a href={`#${fullListId}`}>{t(L, 'beginner.stop.more')}</a>
+      <a href={routeUrl(L, 'safety/warning-signs')}>{t(L, 'beginner.stop.page')}</a>
+    </p>
+  </div>
+</section>

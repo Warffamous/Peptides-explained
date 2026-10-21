@@ -30,7 +30,7 @@ const uid = makeUid(Astro, 'warning-signs');
         <div class="warning-signs__group" data-action={action}>
           <p class="warning-signs__action">
             <ThemeOnly theme="c" as="span"><Pictogram name={`action-${action}`} /></ThemeOnly>
-            {t(L, `vocab.warningAction.${action}`)}
+            {action === 'emergency' ? t(L, 'common.emergency.now') : t(L, `vocab.warningAction.${action}`)}
           </p>
           <ul class="warning-signs__list">
             {list.map((s) => <li class="warning-signs__item"><strong class="warning-signs__sign">{s.sign}</strong> <span class="warning-signs__why">{s.why}</span></li>)}

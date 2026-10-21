@@ -188,6 +188,12 @@ export const STUB_SECTIONS = ['what-it-is', 'evidence', 'regulatory', 'risks'] a
 
 export const CALLOUT_TYPES = ['note', 'tip', 'warning', 'stop', 'legal', 'uncertain'] as const;
 
+/** Pictograms for the "Stop and get help" strip (glance.stop_signs): what the person notices. */
+export const STOP_SIGN_ICONS = ['sign-belly-pain', 'sign-low-sugar', 'sign-allergic', 'sign-vision'] as const;
+
+/** The three answers of a <Compare> cell (<Verdict is="…" />): always a word plus a glyph, never colour alone. */
+export const VERDICTS = ['yes', 'no', 'unknown'] as const;
+
 /** Amino-acid residue codes accepted in sequence data. D- prefix marks D-isomers. */
 export const STANDARD_RESIDUES = [
   'Ala', 'Arg', 'Asn', 'Asp', 'Cys', 'Gln', 'Glu', 'Gly', 'His', 'Ile',

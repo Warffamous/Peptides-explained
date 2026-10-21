@@ -33,6 +33,9 @@
   .xp-stage { padding: var(--space-2); }
 }
 .xp-art { filter: drop-shadow(0 0 6px rgb(124 140 255 / 0.18)); }
+/* On a picture (registry art): the picture is the stage; halos and the scene veil in the ground colour. */
+.explainer { --xp-ground: var(--ground); --xp-halo-w: 6; --xp-veil: 0.62; }
+.explainer[data-backdrop] .xp-stage { background: var(--ground); overflow: hidden; }
 :root[data-scheme='light'] .xp-art { filter: none; }
 .xp-art :is(.xp-link[data-level='human'], .xp-curve) { --xp-ease: var(--ease); }
 
@@ -111,5 +114,6 @@
 .xp-legend { font-size: var(--s--2); color: var(--text-3); }
 .xp-legend__title { font-weight: 600; color: var(--text-2); }
 .xp-sources { font-size: var(--s--2); color: var(--text-3); }
+.xp-credit { font-size: var(--s--2); color: var(--text-3); }
 .xp-sources__label { font-weight: 600; color: var(--text-2); }
 .xp-review { font-size: var(--s--2); color: var(--text-3); }

@@ -1,0 +1,67 @@
+---
+/**
+ * <TimeStrip title="…" detail="…" min={2017} max={2027} step={2} axis="Year" source="…"
+ *   rows={[{ label: "Ozempic", spans: [{ from: "2018-02-08", to: "2026-10-20", text: "EU since 8 February 2018" }] }]} />
+ *
+ * A duration or timeline strip (the DRUGSinfo "how long does it last" bar; docs/design/
+ * DESIGN-DIRECTIONS-2026-10.md §3.2 "Timeline and duration strip"): a hairline axis, one row per
+ * thing, spans as bars. `from`/`to` are numbers on the axis or ISO dates (turned into years).
+ * A span with `unknown: true` is drawn as a labelled hatched block ("Not known"), never as a gap.
+ * Every bar has its words on the line under it, in normal text flow, so nothing overlaps at 360 px
+ * and the words are the text equivalent. Time axes mirror in RTL (logical insets only).
+ */
+import FigCard from './FigCard.astro';
+import { t } from '../../lib/i18n';
+import { ctxLocale, uid } from '../../lib/ctx';
+import { formatNumber } from '../../lib/format';
+type Span = { from: number | string; to: number | string; text: string; unknown?: boolean };
+type Row = { label: string; spans: Span[] };
+interface Props { title: string; detail?: string; min: number; max: number; step?: number; axis?: string; rows: Row[]; source?: string; checked?: string }
+const { title, detail, min, max, step = 1, axis, rows, source, checked } = Astro.props;
+const L = ctxLocale(Astro);
+const id = uid(Astro, 'ts');
+const year = (v: number | string) => {
+  if (typeof v === 'number') return v;
+  const d = new Date(`${v}T00:00:00Z`);
+  const y = d.getUTCFullYear();
+  const start = Date.UTC(y, 0, 1);
+  return y + (d.getTime() - start) / (Date.UTC(y + 1, 0, 1) - start);
+};
+const pos = (v: number | string) => Math.min(1, Math.max(0, (year(v) - min) / (max - min)));
+const ticks: number[] = [];
+for (let v = min; v <= max + 1e-9; v += step) ticks.push(Math.round(v * 100) / 100);
+// Calendar years are written as they are ("2018"), other quantities in the locale's number format.
+const fmt = (n: number) => (min > 1000 ? String(n) : formatNumber(L, n));
+---
+<figure class="time-strip fig" aria-labelledby={`${id}-title`}>
+  <figcaption class="fig__head">
+    <span class="fig__label" aria-hidden="true">{t(L, 'figures.fig')}</span>
+    <span class="fig__title" id={`${id}-title`}>{title}</span>
+    {detail && <span class="fig__detail">{detail}</span>}
+  </figcaption>
+  <ul class="time-strip__rows" role="list">
+    {rows.map((r) => (
+      <li class="time-strip__row">
+        <p class="time-strip__label">{r.label}</p>
+        <div class="time-strip__track" aria-hidden="true">
+          {r.spans.map((s) => <span class:list={['time-strip__bar', s.unknown && 'is-unknown']} style={`--from:${pos(s.from).toFixed(4)};--to:${pos(s.to).toFixed(4)}`} />)}
+        </div>
+        {r.spans.map((s) => {
+          const f = pos(s.from);
+          return (
+            <p class:list={['time-strip__text', s.unknown && 'is-unknown', f > 0.55 && 'is-end']} style={`--from:${f.toFixed(4)}`}>
+              {s.unknown && <span class="time-strip__unknown">{t(L, 'figures.timeStrip.unknown')}: </span>}{s.text}
+            </p>
+          );
+        })}
+      </li>
+    ))}
+  </ul>
+  <div class="time-strip__axis" aria-hidden="true">
+    {ticks.map((v, i) => <span class:list={['time-strip__tick', i === 0 && 'is-first', i === ticks.length - 1 && 'is-last']} style={`--at:${pos(v).toFixed(4)}`}><bdi>{fmt(v)}</bdi></span>)}
+  </div>
+  {axis && <p class="time-strip__axis-label" aria-hidden="true">{axis}</p>}
+  <FigCard locale={L} source={source} checked={checked}><slot name="cite" /></FigCard>
+</figure>
+{/* No fill on first view (src/scripts/fig-reveal.ts is no longer loaded): nothing on the page moves
+    unless the reader starts it (owner's decision, 20 October 2026). */}

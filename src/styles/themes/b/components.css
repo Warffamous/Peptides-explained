@@ -1,7 +1,7 @@
 /* B · Mechanism — components. */
 
 .qty, .seq, .ref__doi, time, .data-table td.study-table__n { font-family: var(--font-mono); font-size: 0.86em; font-variant-numeric: tabular-nums; }
-.seq { color: var(--res-polar); }
+.seq { color: var(--res-polar-text, var(--res-polar)); }
 
 /* ------------------------------------------------------------------ notices */
 .notice { margin-block: 0 var(--space-5); padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--surface-2); color: var(--text-2); font-size: var(--s--1); border: 1px solid var(--line); }
@@ -56,13 +56,13 @@
 
 /* ------------------------------------------------------------------ prose */
 .prose p, .prose li { color: var(--text); }
-:where(.prose, .csec) > p { margin-block: 0 var(--space-5); }
-:where(.prose, .csec) > :is(ul, ol) { margin-block: 0 var(--space-5); padding-inline-start: 1.3em; }
+:where(.prose, .csec, .in-detail__body) > p { margin-block: 0 var(--space-5); }
+:where(.prose, .csec, .in-detail__body) > :is(ul, ol) { margin-block: 0 var(--space-5); padding-inline-start: 1.3em; }
 :where(.prose, .csec) li { margin-block: 0.4rem; }
 :where(.prose, .csec) li::marker { color: var(--text-3); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-block: var(--space-8) var(--space-5); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-0); font-weight: 600; margin-block: var(--space-5) var(--space-2); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-block: var(--space-8) var(--space-5); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-0); font-weight: 600; margin-block: var(--space-5) var(--space-2); }
 .prose strong { font-weight: 600; color: var(--text); }
 .prose blockquote { margin: 0 0 var(--space-5); padding: var(--space-3) var(--space-5); border-inline-start: 3px solid var(--line-strong); color: var(--text-2); }
 .prose table:not(.data-table) { inline-size: 100%; margin-block-end: var(--space-5); font-size: var(--s--1); border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
@@ -136,10 +136,8 @@ a.term:hover { color: var(--link); }
 .seq-beads__bead.is-nonstandard { fill: var(--ground); stroke: var(--res-nonstandard); stroke-width: 2.5; }
 .seq-beads__bead.is-d { stroke: var(--res-nonstandard); stroke-dasharray: 3 2; }
 .seq-beads { filter: drop-shadow(0 0 10px rgb(124 140 255 / 0.25)); }
-@media (prefers-reduced-motion: no-preference) {
-  .seq-beads__bead { animation: b-bead 1.2s var(--spring) both; animation-delay: calc(var(--i, 0) * 40ms); }
-}
-@keyframes b-bead { from { transform: scale(0.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+/* The beads no longer spring in when the sequence appears: nothing on the page moves unless the
+   reader starts it (owner's decision, 20 October 2026). */
 .seq-beads__bead { transform-box: fill-box; transform-origin: center; }
 .sequence__text { font-size: var(--s--1); color: var(--text-2); }
 .sequence__term { color: var(--text-3); }
@@ -210,7 +208,7 @@ a.term:hover { color: var(--link); }
 .mechanism__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; font-size: var(--s--2); color: var(--text-3); }
 .mechanism__n { font-family: var(--font-mono); font-weight: 700; color: var(--text-2); }
 .mechanism__kind { text-transform: uppercase; letter-spacing: 0.06em; }
-.level-badge { display: inline-flex; align-items: center; gap: 0.35em; padding: 0.05rem 0.6rem; border-radius: 999px; background: var(--cyan-soft); color: var(--cyan); font-weight: 600; }
+.level-badge { display: inline-flex; align-items: center; gap: 0.35em; padding: 0.05rem 0.6rem; border-radius: 999px; background: var(--cyan-soft); color: var(--cyan-text, var(--cyan)); font-weight: 600; }
 .level-badge[data-level='hypothesis'] { background: var(--amber-soft); color: var(--amber); }
 .mechanism__title { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-2); }
 .mechanism__detail { color: var(--text-2); font-size: var(--s--1); line-height: 1.6; }
@@ -249,7 +247,9 @@ a.term:hover { color: var(--link); }
 
 /* ------------------------------------------------------------------ authorised */
 .authorised { grid-column: wide; margin-block: 0 var(--space-7); padding: var(--space-5) var(--space-6); border-radius: var(--radius); background: radial-gradient(120% 140% at 0% 0%, var(--cyan-soft), var(--surface) 60%); border: 1px solid color-mix(in oklch, var(--cyan) 50%, var(--line)); }
-.authorised__badge { display: inline-flex; align-items: center; gap: 0.5em; padding: 0.3rem 0.9rem; border-radius: 999px; background: var(--cyan); color: var(--cyan-ink); font-weight: 700; font-size: var(--s--1); }
+/* .authorised scope: the badge is a <p>, and ".prose p" would otherwise paint it in body-text colour
+   (light text on cyan in dark, 1.6:1). */
+.authorised .authorised__badge { display: inline-flex; align-items: center; gap: 0.5em; padding: 0.3rem 0.9rem; border-radius: 999px; background: var(--cyan); color: var(--cyan-ink); font-weight: 700; font-size: var(--s--1); }
 .authorised--elsewhere .authorised__badge { background: none; color: var(--cyan); box-shadow: inset 0 0 0 1.5px var(--cyan); }
 .authorised__check { inline-size: 1.1em; block-size: 1.1em; }
 .authorised__explain { margin-block: var(--space-4); max-inline-size: var(--measure); color: var(--text); }

@@ -1,0 +1,130 @@
+@import "../../base/figures.css";
+
+/*
+ * A · Monograph — "less text, more visuals" (DESIGN-DIRECTIONS-2026-10.md §3.2). The figures are
+ * drawn the way the rest of A is printed: paper and ink, one accent for "the drug / the answer",
+ * hairlines, square corners, no shadows. Mono only for quantities and the few field names of a
+ * data card. The alert colour appears in the stop strip and nowhere else on the page body.
+ */
+:root {
+  --fig-ink: var(--ink);
+  --fig-ink-2: var(--ink-2);
+  --fig-ink-3: var(--ink-3);
+  --fig-line: var(--rule);
+  --fig-line-strong: var(--rule-strong);
+  --fig-accent: var(--accent);
+  --fig-paper: var(--paper);
+  --fig-tint: var(--tint);
+  --fig-alert: var(--alert);
+  --fig-alert-tint: var(--alert-tint);
+  --fig-radius: 0;
+  --fig-lede: var(--s-lede);
+}
+
+/* ------------------------------------------------------------------ title lede */
+.doc-header__lede { margin-block-start: var(--space-4); color: var(--ink); font-weight: 400; letter-spacing: -0.01em; max-inline-size: 34ch; }
+
+/* ------------------------------------------------------------------ section leads */
+.lead { margin-block-end: var(--space-6); }
+.lead__q { font-size: var(--s-0); font-weight: 600; color: var(--accent); }
+.lead__a { color: var(--ink); letter-spacing: -0.01em; }
+@container prose (min-width: 60rem) {
+  .csec > .lead { grid-column: 1 / span 8; }
+}
+
+/* ------------------------------------------------------------------ "In detail": hairline rows, a square plus */
+.in-detail__summary { padding-block: var(--space-3); }
+.in-detail__label { font-weight: 600; letter-spacing: 0; }
+.in-detail__title { font-size: var(--s-0); color: var(--ink); }
+.in-detail[open] > .in-detail__summary .in-detail__title { color: var(--accent); }
+.in-detail__time { font-family: var(--font-mono); }
+.in-detail__summary:focus-visible { outline-offset: -2px; }
+.in-detail[open] > .in-detail__summary { border-block-end: var(--hair) solid var(--rule); }
+.in-detail__body { padding-block: var(--space-4) var(--space-6); }
+/* In a section the fold's body uses the section grid: text on the measure, citations in the margin. */
+.csec > .in-detail { grid-column: 1 / -1; }
+.in-detail__body { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); align-content: start; }
+.in-detail__body > * { grid-column: 1 / -1; min-inline-size: 0; }
+.in-detail__body > p { margin-block: 0 var(--space-4); }
+@container prose (min-width: 60rem) {
+  .in-detail__body > :where(p, ul, ol, h3, h4, blockquote, .callout, .checklist, .warning-signs) { grid-column: 1 / span 7; }
+  .in-detail__body > :is(p, ul > li, ol > li) .sidenote-wrap { display: inline; }
+}
+.in-detail__body > h3:first-child { margin-block-start: 0; }
+
+.reading-tools { padding-block: var(--space-3); border-block: 1px solid var(--rule-strong); }
+.reading-tools__toggle { font-size: var(--s--1); }
+.reading-tools__toggle:hover { background: var(--stamp); color: var(--stamp-ink); }
+.reading-tools__toggle[data-state='open'] { background: var(--stamp); color: var(--stamp-ink); }
+.reading-tools__nojs { font-size: var(--s--1); }
+
+/* ------------------------------------------------------------------ stop strip: the one alert block near the top */
+.stop-strip { padding: var(--space-4) var(--space-5) var(--space-4); }
+.stop-strip__title { font-family: var(--font-sans); font-size: 1.375rem; letter-spacing: -0.01em; }
+.stop-strip__text { font-size: var(--s-0); }
+.stop-strip__call { font-size: var(--s-0); }
+.stop-strip__links { font-size: var(--s--1); }
+
+/* ------------------------------------------------------------------ fact sheet: the monograph header */
+.fact-sheet__list { border-block-start-color: var(--rule-strong); }
+.fact-sheet__row { border-block-end-color: var(--rule); }
+.fact-sheet__row dt { font-size: var(--s--1); color: var(--ink-3); }
+.fact-sheet__row dd { font-size: var(--s--1); font-weight: 600; color: var(--ink); }
+.fact-sheet__note { font-size: var(--s--2); }
+/* Wide screens: under the title, beside the photo (the dead space the audit found). */
+@media (min-width: 64rem) {
+  .doc > .fact-sheet { order: 2; grid-column: 1 / span 8; align-self: start; margin-block: 0 var(--space-4); }
+  .fact-sheet__list { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--gap); }
+  .fact-sheet__row { grid-template-columns: minmax(0, 1fr); align-content: start; row-gap: 0.1rem; }
+  .doc:has(> .fact-sheet) > .hero { grid-row: span 3; }
+}
+
+/* ------------------------------------------------------------------ figure anatomy */
+.fig { padding-block-start: var(--space-3); border-block-start: 1px solid var(--rule-strong); }
+.fig__label { font-family: var(--font-mono); font-size: var(--s--2); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.fig__title { font-size: var(--s-0); font-weight: 600; color: var(--ink); }
+.fig__detail { font-size: var(--s--1); }
+.fig__card { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.01em; }
+.fig__key { font-size: var(--s--2); letter-spacing: 0.08em; text-transform: uppercase; }
+.fig__card .cite__marks { font-size: 0.9em; vertical-align: 0.3em; }
+
+/* ------------------------------------------------------------------ key numbers */
+.key-number { border-block-start-color: var(--ink); }
+.key-number__title { font-size: var(--s-0); color: var(--ink); }
+.key-number__value { font-family: var(--font-mono); font-weight: 500; letter-spacing: -0.03em; }
+.key-number__label { font-size: var(--s--1); }
+.key-number .fig__card { border-block-start: 0; padding-block-start: 0; }
+
+/* ------------------------------------------------------------------ comparison table */
+.compare thead th { font-size: var(--s--1); color: var(--ink); }
+.compare tbody th { font-size: var(--s-0); }
+.compare td { font-size: var(--s--1); color: var(--ink-2); }
+.compare .verdict__word { color: var(--ink); }
+
+/* ------------------------------------------------------------------ icon arrays */
+.icon-array__label { font-size: var(--s-0); }
+.icon-array__count { font-family: var(--font-mono); font-size: var(--s-0); font-weight: 600; color: var(--ink); }
+.icon-array__cell[data-group='a'] .icon-array__count { color: var(--accent); }
+/* Filled squares take the accent FILL (tokens.css): on paper the accent itself, in dark a quieter
+   blue, so a block of squares never glows; the placebo squares a neutral fill that stays below it. */
+.icon-array__sq.is-on { fill: var(--accent-fill); stroke: var(--accent-fill); }
+.icon-array__cell[data-group='b'] .icon-array__sq.is-on { fill: var(--fill-2); stroke: var(--fill-2); }
+
+/* ------------------------------------------------------------------ time strips */
+.time-strip__label { font-size: var(--s--1); }
+.time-strip__text { font-size: var(--s--1); }
+.time-strip__tick { font-family: var(--font-mono); font-size: var(--s--2); }
+.time-strip__bar { background: var(--accent-fill); }
+.time-strip__bar.is-unknown { background: repeating-linear-gradient(-45deg, var(--fig-stroke) 0 1px, transparent 1px 6px); outline-color: var(--fig-stroke); }
+/* The bars are always drawn at full length. There is no fill on first view any more: nothing on
+   the page moves unless the reader starts it (owner's decision, 20 October 2026). */
+
+/* ------------------------------------------------------------------ the grade reasons, folded */
+/* With the reasons in the fold under the card, an axis keeps no empty "why" row. */
+.grade__axis:not(:has(.grade__why)) { grid-template-areas: 'name' 'value' 'scale'; }
+@container doc (min-width: 46rem) {
+  .grade__axis:not(:has(.grade__why)) { grid-template-areas: 'name scale value'; }
+}
+.grade .in-detail { margin-block-start: var(--space-2); }
+.grade__whys-row dt { font-size: var(--s--1); }
+.grade__whys-row dd { font-size: var(--s--1); color: var(--ink-2); }

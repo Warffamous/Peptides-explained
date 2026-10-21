@@ -47,6 +47,16 @@ Therefore, in content:
 - The distinction between **authorised**, **under regulatory review** and **unapproved**.
 - The authorised molecule is not the grey-market vial: "semaglutide" bought online as a research
   chemical is an unauthorised product of unknown quality even though Ozempic is authorised.
+- **The emergency number, by locale** (owner's decision, 20 October 2026). The English site is read
+  in many countries, so it **never prints 112** (or any other emergency number): write "call your
+  local emergency number" ("If it is severe, call your local emergency number."). Only the Dutch
+  pages say 112 ("Bel 112"). Components never hard-code a number: they use the locale's
+  `common.emergency.*` strings (`call`, `now`, `ifSevere`, `jurisdiction`), and
+  `src/data/jurisdictions.yaml` keeps each country's number as data for the Dutch strings only. The
+  validator fails an English content or i18n file that prints 112 as a phone number (112 near a
+  calling word such as call, phone, dial, emergency or ambulance, or any 112 in stop-now content);
+  other numbers such as "week 112", "1,112", "volume 112" or a count or measurement ("112 participants",
+  "112 mg/dL") are left alone.
 
 ### The FDA PCAC vote (July 2026): the canonical framing
 
@@ -245,8 +255,13 @@ summary:                       # "The 30-second version". 3–5 items, ≤18 wor
   - "BPC-157 is a lab-made chain of 15 amino acids. It is not an approved medicine anywhere."
   - "Most research is in rats and mice, and most of it comes from one group in Zagreb."
   - "No controlled human trial results have been published, so its effects and risks in people are unknown."
+lede: "…"                      # optional: one sentence under the title (22–24 px), ≤25 words, B1 (§9.1)
 glance:
   main_risk: "…"               # "Biggest risk" tile: ≤12 words, B1, condensed from YOUR risks section (§5.2 rules)
+  stop_signs:                  # optional: the "Stop and get help" strip after At a glance (§9.1). Exactly 3.
+    - { icon: sign-belly-pain, text: "Severe belly pain, often spreading to your back", sources: [ema-epar-wegovy] }
+  facts:                       # optional: up to 4 label/value rows for the fact sheet beside the title (§9.1)
+    - { label: "How it is taken", value: "Injection under the skin, or a tablet", sources: [ema-epar-ozempic] }
 grade_rationale:               # one or two sentences per axis explaining the grade
   human_clinical: "…"
   preclinical_volume: "…"
@@ -435,6 +450,36 @@ Four independent axes. Never collapse into one score, never add them up.
 | `<Timeline />`, `<GradeRubric />`, `<GradeMatrix />`, `<CorrectionsLog />`, `<ChangeTracker />`, `<NewsList />`, `<GlossaryIndex />`, `<SourcesIndex />`, `<JurisdictionCard code="NL" />` | Page-specific widgets driven by data. Place where the page needs them. |
 
 Markdown tables are fine for small comparisons. Use them instead of inventing components.
+
+### 9.1 Less text, more visuals (design A blueprint; all designs render it)
+
+The rules and the page blueprint are in `docs/design/DESIGN-DIRECTIONS-2026-10.md` §3.2–3.3. The
+first page built this way is semaglutide; use it as the worked example. In short: **every section
+opens with a question and a one-sentence answer, then ONE figure, at most about 80 words of prose,
+and the existing depth folded under "In detail"**. Nothing is deleted: every sentence, citation,
+claim badge, study, table and source stays on the page, inside a fold if it is depth.
+
+| Component | Use |
+|---|---|
+| `<Lead question="Does it work?">One-sentence answer.</Lead>` | The section opener, first thing inside a `<Section>`. The fixed section title stays (the layout renders it); the question is the reader's, the answer condenses what the section shows and cites below it. B1, at most 18 words (the validator warns above 18 and checks reading ease). No new claims. |
+| `<InDetail title="Who paid for the evidence">…markdown…</InDetail>` | The fold for depth. A native `<details>`: it opens by click, keyboard, find-in-page and links to anything inside it; it prints open; the page gets an "Open all details" control (with a no-JavaScript fallback) as soon as one fold exists. Title: what the fold holds, in plain words, often the old `###` heading. A fold may contain `###` subheadings, tables, explainers and plates. **Never** put stop-now content (`<Callout type="stop">`, `<WarningSigns />`) in a fold, and never nest folds (the validator fails both). Prefer a few folds per section over many: a run of folds reads as one list. |
+| `<KeyNumber title="Weight fell by about 15% on average" value="14.9%" label="average weight lost in 68 weeks, against 2.4% with placebo" who="STEP 1: 1,961 adults with obesity or overweight, without diabetes" source="wilding-2021-step-1" level="established" />` | One of the two to four numbers that matter in a section. `title` is the takeaway, `value` the quantity exactly as the source gives it (mono), `label` one plain line saying what it counts (natural frequencies help: "6.5 in 100"), `who` the trial and who took part (shown in the data card; keep the population qualifiers, never generalise beyond them), `source` is numbered with the page's citations, `level` is a claim level. Two or more in a row are laid out side by side automatically. Never a dose. |
+| `<Compare title="…takeaway…" detail="…">` + a markdown table + `</Compare>` | A comparison table as a figure: option names as column heads, one plain question per row, and every answer cell starting with `<Verdict is="yes\|no\|unknown" />` (the word plus a glyph), then a short reason with its `<Cite>`. No colour coding. Below 38 rem each row becomes a card. |
+| `<IconArray title="…" detail="…" a="Semaglutide" b="Placebo" source="…" level="…" rows={[{ label: "Feeling sick (nausea)", a: 43.9, b: 16.1 }]} />` | "x in 100" side by side for medicine and placebo, one 10 × 10 grid per group, the count written beside it ("44 in 100"). Values are rounded to whole people; keep the exact percentages in the text (in a fold). |
+| `<TimeStrip title="…" detail="…" min={2017} max={2027} step={2} axis="Year" source="…" checked="2026-10-20" rows={[{ label: "…", spans: [{ from: "2018-02-08", to: "2026-10-20", text: "since 8 February 2018" }] }]} />` | A duration or timeline strip: one row per thing, spans as bars, `unknown: true` for a labelled hatched "Not known" block (never a gap). Every bar has its words on the line under it. Time axes mirror in RTL. |
+
+Figures (`Compare`, `IconArray`, `TimeStrip`) carry a takeaway `title` (one sentence that states the
+finding, B1) and a data card with the sources; key numbers carry the same card. The validator checks
+required props, plain-language titles, labels and answers, and that every `source` id exists.
+
+**Page-level parts written in the frontmatter** (compound pages):
+
+- `lede`: one sentence under the title: what it is and the one thing to know. At most 25 words.
+- `glance.stop_signs`: exactly three signs, each at most 8 words, B1, each with a pictogram (`sign-belly-pain`, `sign-low-sugar`, `sign-allergic`, `sign-vision`; the word always carries the meaning) and its `sources`. Condense them from this page's own stop-now list and the label; no new advice. The strip adds the locale's emergency line (English: "If it is severe, call your local emergency number."; Dutch: "Is het ernstig? Bel 112."; see §1), a link to the full stop-now list (give the stop callout `id="stop-now"`; the validator checks it) and to the warning-signs page. It is rendered directly after At a glance and is never folded.
+- `glance.facts`: up to four label/value rows for the fact sheet beside the title (label ≤ 4 words, value ≤ 10 words, sources required): how it is taken, how often, how long it lasts. Class, status in the EU and testing in people come from the data file. Label facts only, never a dose.
+
+With at least one fold on the page, the summary box says how long the short version takes and how
+long everything takes, and the source list is folded too (its numbers still link both ways).
 
 ## 10. Links
 

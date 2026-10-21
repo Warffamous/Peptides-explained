@@ -32,6 +32,13 @@ import Photo from './Photo.astro';
 import Infographic from './Infographic.astro';
 import MediaCredits from './MediaCredits.astro';
 import Explainer from './Explainer.astro';
+import Lead from './Lead.astro';
+import InDetail from './InDetail.astro';
+import KeyNumber from './KeyNumber.astro';
+import Compare from './Compare.astro';
+import Verdict from './Verdict.astro';
+import IconArray from './IconArray.astro';
+import TimeStrip from './TimeStrip.astro';
 
 export const mdxComponents = {
   Cite, Claim, Q, Seq, Term, Callout, Diagram, Checklist, Faq, FaqItem, EvidenceGrade, WarningSigns, PageList,
@@ -39,4 +46,6 @@ export const mdxComponents = {
   SourcesIndex, JurisdictionCard, Section, Mechanism, StudyTable, RegulatoryTable, AuthorisedProducts, SequenceView,
   Explainer,
   Photo, Infographic, MediaCredits,
+  // "less text, more visuals" (CONTENT-GUIDE §9)
+  Lead, InDetail, KeyNumber, Compare, Verdict, IconArray, TimeStrip,
 };

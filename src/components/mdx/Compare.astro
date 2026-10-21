@@ -1,0 +1,42 @@
+---
+/**
+ * <Compare title="…takeaway…" detail="…one line…"> + a markdown table + </Compare> — a comparison
+ * table as a figure (docs/design/DESIGN-DIRECTIONS-2026-10.md §3.2 "Comparison table"): the option
+ * names as column heads, one row per plain question, and every answer cell starting with
+ * <Verdict is="yes|no|unknown" /> (the word plus a glyph), then a short reason with its <Cite>.
+ * No colour coding. The title states the finding; the table is the text itself, so it needs no
+ * other alternative, is found by find-in-page and prints as it is.
+ *
+ * The rendered table is finished here: the first cell of each row becomes its row header
+ * (<th scope="row">), each answer cell carries its column's name (data-label), so below 40rem every
+ * row can be set as a card with "Pharmacy medicine: Yes …" (the label above the value), and the
+ * scroll region is named by the figure title.
+ */
+import { t } from '../../lib/i18n';
+import { ctxLocale, uid } from '../../lib/ctx';
+interface Props { title: string; detail?: string }
+const { title, detail } = Astro.props;
+const L = ctxLocale(Astro);
+const id = uid(Astro, 'compare');
+const plain = (s: string) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').replace(/"/g, '&quot;').trim();
+let html = Astro.slots.has('default') ? await Astro.slots.render('default') : '';
+const labels = [...(/<thead>([\s\S]*?)<\/thead>/.exec(html)?.[1] ?? '').matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((m) => plain(m[1]));
+html = html
+  .replace(/<tbody>([\s\S]*?)<\/tbody>/, (_all, body: string) => `<tbody>${body.replace(/<tr>([\s\S]*?)<\/tr>/g, (_row, cells: string) => {
+    let i = 0;
+    return `<tr>${cells.replace(/<td(\b[^>]*)>([\s\S]*?)<\/td>/g, (_cell, attrs: string, inner: string) => {
+      const k = i++;
+      return k === 0 ? `<th scope="row"${attrs}>${inner}</th>` : `<td${attrs} data-label="${labels[k] ?? ''}">${inner}</td>`;
+    })}</tr>`;
+  })}</tbody>`)
+  .replace(/<thead>([\s\S]*?)<\/thead>/, (_all, head: string) => `<thead>${head.replace(/<th\b([^>]*)>/g, '<th$1 scope="col">')}</thead>`)
+  .replace(/<div class="table-scroll table-scroll--prose" tabindex="0">/, `<div class="table-scroll table-scroll--prose" tabindex="0" role="region" aria-labelledby="${id}-title">`);
+---
+<figure class="compare fig" aria-labelledby={`${id}-title`}>
+  <figcaption class="fig__head">
+    <span class="fig__label" aria-hidden="true">{t(L, 'figures.fig')}</span>
+    <span class="fig__title" id={`${id}-title`}>{title}</span>
+    {detail && <span class="fig__detail">{detail}</span>}
+  </figcaption>
+  <div class="compare__table"><Fragment set:html={html} /></div>
+</figure>

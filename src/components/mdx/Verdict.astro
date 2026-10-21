@@ -1,0 +1,18 @@
+---
+/**
+ * <Verdict is="yes|no|unknown" /> — one answer in a <Compare> table: always the WORD plus a glyph
+ * (a filled tick, a cross, a hatched question mark), never colour alone. The word comes from
+ * src/i18n/<locale>/figures.json, so it translates; the glyph is decorative.
+ */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { VERDICTS } from '../../schemas/vocab';
+interface Props { is: (typeof VERDICTS)[number] }
+const { is: v } = Astro.props;
+if (!VERDICTS.includes(v)) throw new Error(`<Verdict is="${v}"> must be one of ${VERDICTS.join(', ')}`);
+const L = ctxLocale(Astro);
+const MARK = { yes: 'M5 10.5l3.5 3.5 6.5-7.5', no: 'M6 6l8 8M14 6l-8 8', unknown: 'M7.7 7.7a2.4 2.4 0 1 1 3.3 2.2c-.7.3-1 .8-1 1.6M10 14.3v.01' }[v];
+// "Unknown": 45° hatching inside the square, the design's mark for "not known" (DESIGN-DIRECTIONS §3.1).
+const HATCH = 'M1 7L7 1M1 13L13 1M1 19L19 1M7 19L19 7M13 19L19 13';
+---
+<span class="verdict" data-verdict={v}><svg class="verdict__glyph" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false">{v === 'unknown' && <><path class="verdict__hatch" d={HATCH} /><circle class="verdict__clear" cx="10" cy="10.5" r="5.6" /></>}<rect class="verdict__box" x="0.75" y="0.75" width="18.5" height="18.5" /><path class="verdict__mark" d={MARK} /></svg><strong class="verdict__word">{t(L, `figures.verdict.${v}`)}</strong></span>

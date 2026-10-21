@@ -7,10 +7,17 @@
  * - One shared CSS timeline: every animated part is delayed by (its step × step length), and so is
  *   the highlight on its caption. Sync needs no script.
  * - The ordered step list is the text equivalent and is always in the DOM and visible.
- * - Without JavaScript or with reduced motion the default state IS the final frame: nothing moves,
- *   nothing is missing. src/scripts/explainer.ts only starts, pauses, loops (max 2 runs) and stops.
+ * - Nothing plays by itself. The default state IS the final frame (with JavaScript, without it and
+ *   with reduced motion): the complete still, its caption large under it and the step list. The
+ *   reader starts the animation with "Play the n-second animation"; src/scripts/explainer.ts only
+ *   starts, pauses, resumes and ends one run, which rests on the final frame again.
  * - Sources come from the registry; remark-explainer-sources injects them as <Cite> slot children
  *   so they are numbered with the page's citations.
+ * - Optional raster backdrop (registry `art`, and `art_dark` for the dark scheme): text-free art
+ *   from src/data/media.yaml drawn UNDER the SVG overlay, which keeps every word, ring, arrow and
+ *   moving mark. Both pictures are lazy and the one the scheme hides is display: none, so only the
+ *   visible one is downloaded; the overlay SVG has the same proportions and reserves the space
+ *   (zero layout shift). The artwork receives the backdrop's size to check its viewBox against it.
  */
 import { t, tr, isFallback } from '../../lib/i18n';
 import { ctxLocale, uid } from '../../lib/ctx';
@@ -21,6 +28,9 @@ import { getLocale, SOURCE_LOCALE } from '../../lib/config';
 import type { ExplainerText } from '../../schemas/explainers';
 import ThemeOnly from '../ui/ThemeOnly.astro';
 import Pictogram from '../ui/Pictogram.astro';
+import MediaPicture from '../media/MediaPicture.astro';
+import MediaCredit from '../media/MediaCredit.astro';
+import { getMedia, buildPicture } from '../../lib/media';
 
 interface Props { id: string }
 const { id } = Astro.props;
@@ -48,6 +58,19 @@ const sources = await Promise.all(
   })),
 );
 const style = `--xp-dur:${xp.duration}s;--xp-steps:${xp.steps.length}`;
+
+// Raster backdrop: the light picture, and optionally the dark-scheme version of the same picture.
+const art = xp.art ? getMedia(xp.art) : undefined;
+const artDark = xp.art_dark ? getMedia(xp.art_dark) : undefined;
+if (art && artDark && Math.abs(artDark.image.width / artDark.image.height - art.image.width / art.image.height) > 0.01) {
+  throw new Error(`<Explainer id="${id}">: art_dark "${xp.art_dark}" must have the same proportions as art "${xp.art}" (the overlay is placed on both)`);
+}
+// The stage is the wider grid column from 44rem of figure width, the full width below it.
+const artSizes = '(min-width: 64rem) 40rem, calc(100vw - 2rem)';
+const artWidths = [360, 480, 640, 800, 1024];
+const pic = art ? await buildPicture(art, { widths: artWidths, sizes: artSizes }) : undefined;
+const picDark = artDark ? await buildPicture(artDark, { widths: artWidths, sizes: artSizes }) : undefined;
+const backdrop = art ? { width: art.image.width, height: art.image.height } : undefined;
 ---
 <figure
   class="explainer"
@@ -55,6 +78,7 @@ const style = `--xp-dur:${xp.duration}s;--xp-steps:${xp.steps.length}`;
   data-xp={id}
   data-mirror={xp.mirror ? '' : undefined}
   data-review={xp.review.status}
+  data-backdrop={art ? '' : undefined}
   style={style}
   aria-labelledby={titleId}
   lang={fallback ? getLocale(SOURCE_LOCALE).bcp47 : undefined}
@@ -66,7 +90,11 @@ const style = `--xp-dur:${xp.duration}s;--xp-steps:${xp.steps.length}`;
   <div class="xp-body">
     <div class="xp-visual">
       <div class="xp-stage" aria-hidden="true" data-pagefind-ignore="all">
-        <div class="xp-canvas"><Art uid={base} levels={levels} labels={text.labels} locale={L} /></div>
+        <div class="xp-canvas" data-backdrop={art ? '' : undefined}>
+          {pic && <MediaPicture pictures={[pic]} alt="" class={picDark ? 'xp-backdrop xp-backdrop--light' : 'xp-backdrop'} imgClass="xp-backdrop__img" />}
+          {picDark && <MediaPicture pictures={[picDark]} alt="" class="xp-backdrop xp-backdrop--dark" imgClass="xp-backdrop__img" />}
+          <Art uid={base} levels={levels} labels={text.labels} locale={L} backdrop={backdrop} />
+        </div>
       </div>
       {/* The current step's sentence, large and right under the drawing while it plays (same clock),
           so the eye never has to jump to the list; at rest it shows the still's caption. A visual
@@ -77,15 +105,29 @@ const style = `--xp-dur:${xp.duration}s;--xp-steps:${xp.steps.length}`;
         ))}
         {text.caption && <p class="xp-now__still">{text.caption}</p>}
       </div>
+      {/* One button, four faces: Play (nothing ever starts by itself) → Pause while playing →
+          Continue when paused → Replay once the run has ended on the final frame. All faces share
+          one grid cell, so the button is as wide as its longest face from the first paint and a
+          change of state never moves anything (no layout shift). Inactive faces are
+          visibility: hidden, so only the current one is the button's accessible name. */}
       <div class="xp-controls" role="group" aria-label={`${t(L, 'explainer-ui.controls')}: ${text.title}`} data-pagefind-ignore="all">
-        <button type="button" class="xp-btn xp-btn--toggle" data-xp-toggle data-state="paused" data-label-play={t(L, 'explainer-ui.play')} data-label-pause={t(L, 'explainer-ui.pause')}>
-          <svg class="xp-ico xp-ico--play" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M4 2.5v11l9-5.5z" /></svg>
-          <svg class="xp-ico xp-ico--pause" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3.5 2.5h3v11h-3zM9.5 2.5h3v11h-3z" /></svg>
-          <span class="xp-btn__label">{t(L, 'explainer-ui.play')}</span>
-        </button>
-        <button type="button" class="xp-btn xp-btn--replay" data-xp-replay>
-          <svg class="xp-ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 2.5a5.5 5.5 0 1 1-5.2 3.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M1.6 2.4l1.3 4.1 4-1.5z" /></svg>
-          <span class="xp-btn__label">{t(L, 'explainer-ui.replay')}</span>
+        <button type="button" class="xp-btn xp-btn--toggle" data-xp-toggle data-state="idle">
+          <span class="xp-btn__face" data-face="idle">
+            <svg class="xp-ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M4 2.5v11l9-5.5z" /></svg>
+            <span class="xp-btn__label">{t(L, 'explainer-ui.play', { seconds: formatNumber(L, xp.duration) })}</span>
+          </span>
+          <span class="xp-btn__face" data-face="playing">
+            <svg class="xp-ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M3.5 2.5h3v11h-3zM9.5 2.5h3v11h-3z" /></svg>
+            <span class="xp-btn__label">{t(L, 'explainer-ui.pause')}</span>
+          </span>
+          <span class="xp-btn__face" data-face="paused">
+            <svg class="xp-ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M4 2.5v11l9-5.5z" /></svg>
+            <span class="xp-btn__label">{t(L, 'explainer-ui.resume')}</span>
+          </span>
+          <span class="xp-btn__face" data-face="ended">
+            <svg class="xp-ico" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 2.5a5.5 5.5 0 1 1-5.2 3.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /><path d="M1.6 2.4l1.3 4.1 4-1.5z" /></svg>
+            <span class="xp-btn__label">{t(L, 'explainer-ui.replay')}</span>
+          </span>
         </button>
         <span class="xp-progress" aria-hidden="true">{xp.steps.map((_, i) => <span class="xp-seg" style={`--k:${i}`} />)}</span>
         <span class="xp-clock" aria-hidden="true" />
@@ -131,6 +173,12 @@ const style = `--xp-dur:${xp.duration}s;--xp-steps:${xp.steps.length}`;
           <>{i > 0 && t(L, 'explainer-ui.sep')}<span class="xp-src">{s.name}<Fragment set:html={s.marker} /></span></>
         ))}
       </p>
+      {art && (
+        <p class="xp-credit">
+          <MediaCredit locale={L} media={art} />{' '}
+          <span class="xp-art-note">{t(L, 'explainer-ui.artNote')}</span>
+        </p>
+      )}
       {xp.review.status === 'pending' && <p class="xp-review">{t(L, 'explainer-ui.reviewPending')}</p>}
     </div>
   </div>

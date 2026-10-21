@@ -425,20 +425,20 @@ The data card is where today's inline "HUMANS, LIMITED" tags go, so they stop in
 | **Key-number figure** | the 2–3 numbers per section that matter | numeral in JetBrains Mono 40–48 px, unit at 18 px, one plain line in natural frequencies ("about 1 in 7"), source and date in mono 13 px; **no count-up animation** | WHO "Key facts", FRANK "5–30 mins", OWID headline values |
 | **Icon array (x in 100)** | side effects, risks, shares of studies | 10×10 grid of 8 px squares (A uses squares; people pictograms are C's language); filled squares in accent, empty ones with a 1 px `--ink-3` outline; the count written beside it ("44 in 100 felt sick"); medicine and placebo side by side | Isotype heritage, The Pudding's syringe forest |
 | **Comparison table** | "pharmacy medicine vs online research vial"; fragment vs whole protein | hairline rows, the option names as column heads in Inter 600; every answer is a **word plus a glyph** (Yes with a filled tick, No with a cross, Unknown with a hatched "?"); no colour coding | Thuisarts "keuzekaarten", Museum für Gestaltung label/value lists |
-| **Timeline and duration strip** | half-life and duration, approval history, evidence history | a hairline axis with mono ticks; segments as accent bars; **"Unknown: never measured in people" as a labelled hatched block** rather than a gap; mirrors in RTL (time axes only); one-time fill on first view, 400 ms or less, none under reduced motion | the DRUGSinfo duration bar, the FT progress bar |
+| **Timeline and duration strip** | half-life and duration, approval history, evidence history | a hairline axis with mono ticks; segments as accent bars; **"Unknown: never measured in people" as a labelled hatched block** rather than a gap; mirrors in RTL (time axes only); drawn at full length, no fill on first view (owner's decision, 20 October 2026: nothing moves unless the reader starts it) | the DRUGSinfo duration bar, the FT progress bar |
 | **Evidence map** | every compound's evidence section | a dot grid: rows = cells / animals / people (small studies) / people (large trials); columns = originating group / independent; one dot per study, hollow dot = no effect found; counts in mono at the row ends | Our World in Data dot plots, Distill small multiples |
 | **Status matrix** | the law by country, sport | rows EU / NL / DE / BE / UK / US / WADA; columns authorised / prescription / reimbursed / banned in sport; glyph plus word in every cell; "checked on" date in mono | GOV.UK summary list, the pharmacopoeia monograph header |
 | **Metaphor drawing** | one per hard concept: half-life as a bath draining; albumin as a ferry; a receptor as a lock | a hairline line drawing beside the real diagram, introduced with "Think of it like…" and labelled "comparison"; never a cartoon and never an anthropomorphised drug | Quanta's LEGO DNA, Kurzgesagt's sketch-stage metaphors |
 
 #### Motion grammar for A ("almost no motion", made informative)
 
-- **Allowed:**
+- **The reader starts every motion** (owner's decision, 20 October 2026): nothing moves on load, on scroll or on hover by itself. Explainers play only after "Play the n-second animation" (docs/EXPLAINERS.md §3.4). The one-time fill on first view that this section used to allow is withdrawn (21 October 2026: the time strips, the connectors of the mechanism step list in A and the sequence beads in B are drawn still).
+- **Allowed (each a response to the reader's own action):**
   - state changes in a stepper or toggle: 200–300 ms ease-out, a cross-fade plus a line draw;
-  - a one-time fill of a ladder, timeline or icon array the first time it scrolls into view (400 ms or less);
   - `<details>` height easing of 200 ms or less;
   - highlighting a body-map region on tap or focus;
   - a reader-dragged slider with one variable, only where it shows time or a state, never an amount (for example "days since an injection"), labelled "Illustration, not dosing guidance".
-- **Not allowed:** autoplay loops; count-up numbers; scroll-jacking or parallax; springs or bounce (those belong to B); anything that moves for more than 5 seconds without a pause control.
+- **Not allowed:** autoplay of any kind, loops included; fills or draws triggered by scrolling; count-up numbers; scroll-jacking or parallax; springs or bounce (those belong to B); anything that moves for more than 5 seconds without a pause control.
 - **Reduced motion and no JS:** the end state appears instantly, and every animated figure must make sense as a still.
 
 #### Progressive disclosure in three layers
@@ -459,7 +459,7 @@ On a compound page this takes the default-open view from 8,247–13,242 words to
 2. **In short.** 3–5 numbered bullets of at most 18 words. The first says what it is; the last says what to do if you feel unwell.
 3. **At a glance.** Six fixed fields in a fixed order on every compound: *Approved as a medicine? · Tested in people? · How is it taken? · How long does it last? · Biggest risk · Allowed in sport?* Each has a short answer of 1–3 words, one sentence and a "More" link.
 4. **Evidence strip.** The same 5-step ladder on every compound (cells → animals → small human studies → large trials → approved), filled to the level reached, plus one key number ("0 published human trials").
-5. **Stop and get help (strip).** The three most important signs for this compound, each with a pictogram and words, "Call 112 now if…", and a link to the full list.
+5. **Stop and get help (strip).** The three most important signs for this compound, each with a pictogram and words, the emergency line ("If it is severe, call your local emergency number." in English; 112 only on the Dutch pages, owner's decision of 20 October 2026), and a link to the full list.
 6. **What is it?** Fact sheet in detail; sequence; a comparison table where names mislead (TB-500 fragment vs whole protein; pharmacy semaglutide vs research vial).
 7. **How does it work?** A stepper explainer in the margin locator style, plus the metaphor drawing. *In detail:* "What each step rests on".
 8. **What does the evidence show?** Evidence map plus 2–3 key numbers or small multiples. *In detail:* the study table and every study.
