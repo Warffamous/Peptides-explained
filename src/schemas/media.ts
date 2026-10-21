@@ -127,6 +127,8 @@ export const infographicSchema = z
           y: z.number().min(0).max(100),
           /** How well the labelled effect is shown (design B colours demonstrated cyan, hypothesis amber). */
           level: z.enum(MECHANISM_LEVELS).optional(),
+          /** Marker size relative to the default (e.g. 0.7 to keep a small structure visible). */
+          scale: z.number().min(0.5).max(1.5).optional(),
         }),
       )
       .min(1)

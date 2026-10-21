@@ -42,7 +42,7 @@ const picDark = artDark ? await buildPicture(artDark, { widths: [400, 640, 900, 
 const W = pic.img.width;
 const H = pic.img.height;
 const r = Math.round(W * 0.034);
-const markers = g.markers.map((mk, i) => ({ ...mk, n: i + 1, cx: (mk.x / 100) * W, cy: (mk.y / 100) * H, demonstrated: mk.level ? mk.level !== 'hypothesis' : undefined }));
+const markers = g.markers.map((mk, i) => ({ ...mk, n: i + 1, r: Math.round(r * (mk.scale ?? 1)), cx: (mk.x / 100) * W, cy: (mk.y / 100) * H, demonstrated: mk.level ? mk.level !== 'hypothesis' : undefined }));
 // "Based on": numbered links into this page's source list when the page cites the source
 // (compound pages know their numbering), otherwise to the entry in the site bibliography.
 const citeIndex = Astro.locals.compound?.citeIndex;
@@ -63,9 +63,9 @@ const base = uid(Astro, `plate-${id}`);
       <svg class="plate__markers" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true" focusable="false" style={`--r: ${r}`}>
         {markers.map((mk) => (
           <g class="plate__marker" data-level={mk.level} data-evidence={mk.demonstrated === undefined ? undefined : mk.demonstrated ? 'demonstrated' : 'hypothesis'}>
-            <circle class="plate__halo" cx={mk.cx} cy={mk.cy} r={r * 1.45} />
-            <circle class="plate__dot" cx={mk.cx} cy={mk.cy} r={r} />
-            <text class="plate__n" x={mk.cx} y={mk.cy} dy="0.36em" text-anchor="middle" font-size={Math.round(r * 1.15)}>{mk.n}</text>
+            <circle class="plate__halo" cx={mk.cx} cy={mk.cy} r={mk.r * 1.45} />
+            <circle class="plate__dot" cx={mk.cx} cy={mk.cy} r={mk.r} />
+            <text class="plate__n" x={mk.cx} y={mk.cy} dy="0.36em" text-anchor="middle" font-size={Math.round(mk.r * 1.15)}>{mk.n}</text>
           </g>
         ))}
       </svg>

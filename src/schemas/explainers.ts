@@ -13,7 +13,7 @@ const nonEmpty = z.string().trim().min(1);
 
 /** Total length of one run, in seconds. Shorter is a flicker, longer loses the reader. */
 export const EXPLAINER_MIN_S = 10;
-export const EXPLAINER_MAX_S = 15;
+export const EXPLAINER_MAX_S = 30; // owner, 21 Oct 2026: about 5 s per scene so the large caption can be read
 
 export const explainerStepSchema = z.object({
   /**
