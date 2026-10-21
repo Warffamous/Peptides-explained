@@ -8,8 +8,41 @@ summary:
   - "TB-500 itself has never been tested in a proper trial in people. Its risks in people are unknown."
   - "The whole protein was tried as eye drops in large trials. Those trials mostly missed their main goals."
   - "It is banned in sport. US advisers backed letting pharmacies make it, but that was only advice."
+lede: "A lab-made piece of a natural protein. No proper trial in people. Vials may hold something else."
 glance:
   main_risk: "No proper human trials. Vials may hold the wrong substance or germs."
+  # "Stop and get help" strip, condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">). The FDA's 2026 review supports the gaps that create the
+  # risks (no germ or endotoxin testing on the certificate it found; immunogenicity when injected
+  # under the skin or into muscle; no carcinogenicity study), but it does not describe the signs
+  # themselves, so signs 1 and 2 also cite the NHS condition pages that do (the KPV page's
+  # precedent). Sign 3 rests on the cancer-spread studies of the whole protein. The fourth item of
+  # the stop list (darker skin or gums) rests on one report and stays in the full list.
+  stop_signs:
+    - icon: sign-infection
+      text: "Hot, red, swollen injection site, or fever"
+      sources: [nhs-cellulitis, fda-pcac-2026-tb500-briefing]
+    - icon: sign-allergic
+      text: "Hives, swollen face or throat, hard to breathe"
+      sources: [nhs-anaphylaxis, fda-pcac-2026-tb500-briefing, wyczolkowska-2007-mast-cells]
+    - icon: sign-mole
+      text: "New lump, changing mole, or unexplained weight loss"
+      sources: [nhs-cancer-symptoms, nhs-moles, cha-2003-metastasis, kobayashi-2002-fibrosarcoma, fda-pcac-2026-tb500-briefing]
+  # Fact sheet beside the title: identity and study facts already on this page, never a dose.
+  # "Whole-protein trials": about 1,800 participants with published or posted results (research/tb-500.md §3).
+  facts:
+    - label: "Made of"
+      value: "Seven amino acids: positions 17–23 of thymosin beta-4"
+      sources: [pubchem-tb-500, esposito-2012-tb500-identity, chembl-timbetasin]
+    - label: "How long it lasts"
+      value: "Horse blood: unmeasurable after 6–10 hours; no human data"
+      sources: [ho-2012-equine-tb500, fda-pcac-2026-tb500-briefing]
+    - label: "Trials of TB-500"
+      value: "No real trial on ClinicalTrials.gov (checked 20 October 2026)"
+      sources: [ctgov-nct07487363, fda-pcac-2026-tb500-briefing]
+    - label: "Whole-protein trials"
+      value: "About 1,800 people, mostly eye drops; no clear benefit shown"
+      sources: [ruff-2010-phase1-iv, wang-2021-rhtb4-phase1, zhang-2025-stemi, ctgov-nct00382174, guarnera-2010-venous-ulcers, ctgov-nct00311766, ctgov-nct00598871, dunn-2010-neurotrophic-cases, sosne-2015-cae-dry-eye, sosne-2015-severe-dry-eye, ctgov-nct02974907, ctgov-nct03937882, sosne-2022-seer1]
 grade_rationale:
   human_clinical: "Case reports. No study of TB-500 itself in people has been published; the FDA found no human data in May 2026. Since then one report has appeared of 3 dental patients given a five-drug mixture that included TB-500, and an earlier knee study gave 4 people BPC-157 together with a product called 'TB4'. Full-length thymosin beta-4, a different 43-amino-acid molecule, reached phase 3 trials as eye drops; those trials do not count for the 7-amino-acid fragment."
   preclinical_volume: "Moderate, at the low end. By our PubMed count on 20 October 2026, 8 primary studies test what the fragment or its LKKTETQ core does in cells or animals, and 4 more describe how it is broken down in horses, rats and human tissue samples (another 7 are doping-laboratory detection methods or product analyses). The more than 1,100 PubMed records that name thymosin beta-4 in the title or abstract almost all concern the whole protein, not TB-500."
@@ -126,6 +159,24 @@ regulatory_notes:
 ---
 <Section id="what-it-is">
 
+<Lead question="What is TB-500?">A lab-made copy of a small piece of a natural protein. It is not an approved medicine.</Lead>
+
+<Compare title="TB-500 is a small lab-made piece of a bigger natural protein. The two are not the same." detail="The lab-made piece and the whole protein it copies, side by side, as of 20 October 2026.">
+
+| | Thymosin beta-4 (the whole protein) | TB-500 (the lab-made piece) |
+|---|---|---|
+| A whole natural protein? | <Verdict is="yes" /> A chain of 43 amino acids. Many kinds of human cells hold large amounts of it.<Cite id="chembl-timbetasin,safer-1991-actin-sequestering,mannherz-2009-beta-thymosins" /> | <Verdict is="no" /> A lab-made copy of 7 of its amino acids, positions 17 to 23.<Cite id="esposito-2012-tb500-identity,pubchem-tb-500" /> |
+| Has the part that grips actin? | <Verdict is="yes" /> The stretch LKKTET, at positions 17 to 22.<Cite id="wyczolkowska-2007-mast-cells,fda-pcac-2026-tb500-briefing,sosne-2010-active-sites" /> | <Verdict is="yes" /> It contains the same stretch. Whether it grips actin is not known.<Cite id="sosne-2010-active-sites,fda-pcac-2026-tb500-briefing" /> |
+| An official medicine name? | <Verdict is="yes" /> Timbetasin. Trial codes include RGN-259 and RGN-137.<Cite id="chembl-timbetasin" /> | <Verdict is="no" /> "TB-500" is only a common name.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| Tested in trials in people? | <Verdict is="yes" /> Up to phase 3, mostly as eye drops and skin gel. Most found no clear benefit.<Cite id="ctgov-nct02974907,ctgov-nct03937882,ctgov-nct00382174,ctgov-nct00832091" /> | <Verdict is="no" /> There is no trial.<Cite id="fda-pcac-2026-tb500-briefing,ctgov-nct07487363" /> |
+| Approved as a medicine in the EU? | <Verdict is="no" /> EMA's data hold no record of it.<Cite id="ema-medicines-search,ema-medicines-json" /> | <Verdict is="no" /> EMA's data hold no record of it.<Cite id="ema-medicines-search,ema-medicines-json" /> |
+
+</Compare>
+
+TB-500 is promoted online for tendon, muscle, ligament and bone injuries, wounds, inflammation, hair growth, heart health and much else.<Cite id="fda-pcac-2026-tb500-briefing" /> That reputation borrows almost entirely from research on the whole protein. It is also sold in blends with BPC-157.<Cite id="fda-pcac-2026-bpc157-briefing,fda-pcac-2026-tb500-briefing" /> See the [BPC-157 page](/en/compounds/bpc-157/).
+
+<InDetail title="The molecule, and two molecules that share one name">
+
 TB-500 is a synthetic peptide of seven amino acids, <Seq>Ac-Leu-Lys-Lys-Thr-Glu-Thr-Gln-OH</Seq>, with an acetyl group on its first amino acid. Its formula is C38H68N10O14 and its mass is <Q>889.0 Da</Q>.<Cite id="pubchem-tb-500,fda-pcac-2026-tb500-briefing" /> It is a copy of positions 17 to 23 of thymosin beta-4, a natural protein of 43 amino acids.<Cite id="esposito-2012-tb500-identity,ho-2012-equine-tb500,chembl-timbetasin" />
 
 ### Two molecules, one name
@@ -147,23 +198,44 @@ The confusion around TB-500 starts with its name. Several websites, the FDA note
 
 </Diagram>
 
+</InDetail>
+
+<InDetail title="Where it came from">
+
 Thymosin beta-4 was first sequenced in 1981 from calf thymus, which is where the name comes from.<Cite id="low-1981-sequence" /> It was first thought to be a thymus hormone, but it is present in large amounts inside many kinds of cells, where it holds single units of actin.<Cite id="safer-1991-actin-sequestering,mannherz-2009-beta-thymosins" /> In 2003 an NIH group reported that a peptide copying positions 17 to 23 could, on its own, help wounds close in old mice.<Cite id="philp-2003-lkktetq-wounds" /> According to the FDA, TB-500 appears to have been made first in that work. A veterinary preparation called TB-500 appeared in about 2011, aimed at racehorses and racing greyhounds.<Cite id="fda-pcac-2026-tb500-briefing,ho-2012-equine-tb500" />
 
-### How it is made, and why the label means little
+</InDetail>
+
+<InDetail title="How it is made, and why the label means little">
 
 TB-500 can be made by solid-phase peptide synthesis, the usual method for short peptides: amino acids are joined one by one on resin beads, the last one is acetylated, and the chain is cut free.<Cite id="fda-pcac-2026-tb500-briefing,esposito-2012-tb500-identity" /> Each step can leave shortened or wrongly built chains behind. It is sold as a free base or as an acetate salt, which the FDA treats as two different substances.<Cite id="fda-pcac-2026-tb500-briefing" />
 
 The bigger problem is identity. The FDA found "multiple salts, and derivatives, including different active moieties" sold under the same common name.<Cite id="fda-pcac-2026-tb500-briefing" /> A French horse-racing laboratory reported that products sold as TB500 or TB1000 did not consistently contain what their descriptions said, and the same laboratory noted in 2025 that many products online claim to contain either the acetylated fragment "or TB4 itself".<Cite id="delcourt-2023-misbranded,delcourt-2025-equine-tb4" /> A German anti-doping laboratory found thymosin beta-4 among confiscated black-market products.<Cite id="krug-2014-black-market-germany" /> So a vial labelled TB-500 may contain the 7-amino-acid fragment, the whole 43-amino-acid protein, something else, or a mixture.
 
-### Why people have heard of it
-
-TB-500 is promoted online for tendon, muscle, ligament and bone injuries, wounds, inflammation, hair growth, heart health and much else.<Cite id="fda-pcac-2026-tb500-briefing" /> That reputation borrows almost entirely from research on the whole protein. It is also sold in blends with BPC-157.<Cite id="fda-pcac-2026-bpc157-briefing,fda-pcac-2026-tb500-briefing" /> See the [BPC-157 page](/en/compounds/bpc-157/).
+</InDetail>
 
 </Section>
 
 <Section id="mechanism">
 
-Nobody knows what TB-500 does in the body, or whether it does anything useful. The chain below is pieced together from studies of the whole protein, of the unacetylated core LKKTETQ and, in only a few cases, of TB-500 itself. Each step is labelled with how well it is shown for TB-500.
+<Lead question="How does it work?">Nobody knows. Most clues come from the whole protein. Only a few come from TB-500 itself.</Lead>
+
+<Compare title="Some steps were seen in cells or animals. None has been shown in people." detail="The proposed chain for TB-500, step by step, and where each step was seen.">
+
+| | In cells or animals | In people |
+|---|---|---|
+| Grips actin, as the whole protein does? | <Verdict is="unknown" /> The whole protein does, in test tubes. For TB-500 this is only a hypothesis.<Cite id="safer-1991-actin-sequestering,fda-pcac-2026-tb500-briefing" /> | <Verdict is="unknown" /> Not studied in people. |
+| Broken down quickly? | <Verdict is="yes" /> In horses, blood levels could not be measured after 6 to 10 hours. Enzymes cut it into shorter pieces, also in human tissue samples.<Cite id="ho-2012-equine-tb500,rahaman-2024-tb500-metabolites" /> | <Verdict is="unknown" /> No study has measured TB-500 in human blood.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| Helps cells close a wound in a dish? | <Verdict is="no" /> TB-500 itself did not close scratch "wounds" in a layer of cells. One of its breakdown pieces closed them slightly.<Cite id="rahaman-2024-tb500-metabolites" /> | <Verdict is="unknown" /> Not studied in people. |
+| Faster healing in animals? | <Verdict is="yes" /> In two studies, neither repeated: mouse skin wounds (the core without its acetyl group) and rat tendons (a product sold as TB-500).<Cite id="philp-2003-lkktetq-wounds,bicer-2026-achilles" /> | <Verdict is="unknown" /> There is no trial of TB-500 in people.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+
+</Compare>
+
+Nobody knows what TB-500 does in the body, or whether it does anything useful.
+
+<InDetail title="Step by step: the proposed chain and what each step rests on">
+
+The chain below is pieced together from studies of the whole protein, of the unacetylated core LKKTETQ and, in only a few cases, of TB-500 itself. Each step is labelled with how well it is shown for TB-500.
 
 <Mechanism />
 
@@ -185,15 +257,33 @@ Doping laboratories have studied what happens to TB-500 because they need to det
 
 <Claim level="in-vitro">The whole protein made skin cells crawl faster in a lab chamber</Claim>.<Cite id="malinda-1999-wound-healing" /> For TB-500 itself the picture is mixed. <Claim level="in-vitro">It did not close scratch "wounds" in a layer of fibroblasts, but its breakdown product Ac-LKKTE closed them slightly</Claim>, so any healing effect may come from that product.<Cite id="rahaman-2024-tb500-metabolites" /> <Claim level="in-vitro">The LKKTETQ peptide reduced growth-factor-driven activation and movement of scar-forming liver cells</Claim>, the opposite direction to the wound story,<Cite id="shah-2018-stellate-cells" /> and <Claim level="in-vitro">made mast cells release their contents</Claim>.<Cite id="wyczolkowska-2007-mast-cells" /> The few animal results, including mouse skin wounds and rat tendons, are discussed under the evidence below.<Cite id="philp-2003-lkktetq-wounds,bicer-2026-achilles" />
 
-### What TB-500 cannot do
+</InDetail>
+
+<InDetail title="What TB-500 cannot do, and the protein's disputed natural role">
 
 Some of thymosin beta-4's reported actions depend on a part that TB-500 does not have.<Cite id="sosne-2010-active-sites" /> The body cuts the protein's first four amino acids off as the peptide Ac-SDKP. The enzyme prolyl oligopeptidase does this, and the enzyme ACE breaks Ac-SDKP down again.<Cite id="grillon-1990-acsdkp,cavasin-2004-pop-acsdkp" /> <Claim level="animal">Ac-SDKP reduced scarring of the heart and kidneys in rats with high blood pressure</Claim>.<Cite id="cavasin-2004-pop-acsdkp" /> TB-500 starts at position 17, so it cannot produce Ac-SDKP, and any benefit that depends on Ac-SDKP does not apply to it. The heart-cell survival signal described below was found with the whole protein; whether the fragment can trigger it is unknown.<Cite id="bock-marquette-2004-cardiac" />
 
 The whole protein's natural role is also disputed. A 2007 study reported severe heart-vessel defects in mice with reduced thymosin beta-4,<Cite id="smart-2007-epicardial,banerjee-2012-dispensable" /> but <Claim level="animal">mice bred with none at all were born with normal hearts and blood vessels</Claim>.<Cite id="banerjee-2012-dispensable,banerjee-2013-vascular" /> What extra protein does in an experiment may not reflect what the body's own protein is for.
 
+</InDetail>
+
 </Section>
 
 <Section id="evidence">
+
+<Lead question="Does it work?">Unknown. TB-500 was never tested alone in people. Most trials of the whole protein found no clear benefit.</Lead>
+
+<KeyNumber title="No trial has tested TB-500 on its own in people" value="0" unit="trials" label="of TB-500 on its own in people. None is published, and no real one is registered." who="FDA review, May 2026: no human data. ClinicalTrials.gov, 20 October 2026: no real trial. Two small reports involved products mixed with other drugs: 3 dental patients given TB-500 in a five-drug mix (Froum 2026), and 4 people given BPC-157 with an undefined 'TB4' (Lee 2021)" source="fda-pcac-2026-tb500-briefing,ctgov-nct07487363,froum-2026-nerve-cases,lee-2021-knee" />
+
+<KeyNumber title="In its two largest trials, the whole protein missed both main goals" value="601 and 700" unit="people" label="with dry eye, in two eye-drop trials. In both, neither main goal was better than with placebo." who="ARISE-2 and ARISE-3: randomised, placebo-controlled phase 3 trials of whole thymosin beta-4 eye drops (RGN-259), not TB-500; results on the trial register only" source="ctgov-nct02974907,ctgov-nct03937882" level="human-controlled" />
+
+<KeyNumber title="In one rat study, a product sold as TB-500 gave stronger repaired tendons" value="37.4 vs 26.9" unit="newtons" label="typical force a mended tendon took before it gave way, with the product and with a dummy injection" who="Biçer 2026, Turkey: median load to failure; 32 rats in four groups of 8 (4 tendons per group in each test), four weeks, pathologist blinded; the product came from a research-chemical seller, with no reported sequence or purity" source="bicer-2026-achilles" level="animal" />
+
+The whole protein's biology is real, and laboratories inside and outside the originating group found that adding it helps wounds or injured hearts in animals.<Cite id="safer-1991-actin-sequestering,malinda-1999-wound-healing,bock-marquette-2004-cardiac" /> In people it has been given by drip, gel and eye drops with few side effects, which is useful safety information for that molecule and those routes.<Cite id="ruff-2010-phase1-iv,wang-2021-rhtb4-phase1,ctgov-nct03937882" /> The one independent rat study of a TB-500 product on a tendon was positive.<Cite id="bicer-2026-achilles" />
+
+But the gap is wide. The trials that tested the whole protein properly mostly missed their main goals, and TB-500 has never been tested in people. Meanwhile the grey market sells the fragment on the protein's reputation. A trial of TB-500 itself, made to medicine standards, could answer what years of online use have not.
+
+<InDetail title="Every study in one table, and where the evidence comes from">
 
 <StudyTable />
 
@@ -209,6 +299,10 @@ Each row says which molecule was tested. Few are about TB-500 itself.
 
 </Diagram>
 
+</InDetail>
+
+<InDetail title="Cell and animal studies, one by one">
+
 ### TB-500 and its core in cells and animals
 
 The FDA found no animal study of TB-500's effect on wounds in 2026, and only one cell study: the negative scratch test above.<Cite id="fda-pcac-2026-tb500-briefing,rahaman-2024-tb500-metabolites" /> The founding study, from the NIH group that also developed the whole protein, used the core without its acetyl group. <Claim level="animal">In 26-month-old mice, LKKTETQ on small skin wounds increased closure and collagen at day 7, much like the whole protein</Claim>.<Cite id="philp-2003-lkktetq-wounds" /> The FDA notes that only one strength was tested and that the result cannot simply be carried over to TB-500.<Cite id="fda-pcac-2026-tb500-briefing" />
@@ -219,7 +313,9 @@ In 2026 a Turkish team tested a product called TB-500 on an injury in rats. They
 
 The originating group reported in 1999 that <Claim level="animal">thymosin beta-4, put on skin wounds or injected into the abdomen of rats, increased new skin cover by 42% at day 4 and up to 61% at day 7</Claim>.<Cite id="malinda-1999-wound-healing" /> An independent laboratory in Texas reported in 2004 that, after tying off a heart artery in mice, <Claim level="animal">thymosin beta-4 switched on the cell-survival signals integrin-linked kinase and Akt, more heart-muscle cells survived early, and heart function was better</Claim>.<Cite id="bock-marquette-2004-cardiac" />
 
-### The whole protein in people
+</InDetail>
+
+<InDetail title="The whole protein in people: injection, skin gel and eye drops">
 
 The US company RegeneRx developed thymosin beta-4 in three forms: a skin gel (RGN-137), eye drops (RGN-259, whose later trials were sponsored by the company ReGenTree) and an injection (RGN-352).<Cite id="chembl-timbetasin,crockford-2007-regenerx,ctgov-nct01311518,ctgov-nct02974907" /> A Chinese company later made a genetically engineered version, NL005.<Cite id="wang-2021-rhtb4-phase1" />
 
@@ -238,6 +334,10 @@ The US company RegeneRx developed thymosin beta-4 in three forms: a skin gel (RG
 
 We found no journal paper for any of the three ARISE trials; the register records are the only public account of their results.
 
+</InDetail>
+
+<InDetail title="Reports in people involving TB-500, and registered trials">
+
 ### Human reports involving products called TB-500
 
 In a Florida knee-pain phone survey, 4 of 16 people had received BPC-157 with an undefined product called "TB4", and 3 of those 4 reported relief.<Cite id="lee-2021-knee" /> In 2026, a US dental team described three patients with numbness after a jaw-nerve injury who had weekly gum injections of five drugs, including TB-500. Feeling largely returned, but the authors say causality cannot be established.<Cite id="froum-2026-nerve-cases" /> Neither report can show what TB-500 did: it was never given alone, and there was no comparison group.
@@ -246,15 +346,28 @@ In a Florida knee-pain phone survey, 4 of 16 people had received BPC-157 with an
 
 As of 20 October 2026, ClinicalTrials.gov lists no real trial of TB-500. One record that names it describes itself in its own summary as a "fictional study".<Cite id="ctgov-nct07487363" /> For the whole protein, the phase 3 eye-drop trial SEER-2 is still listed as recruiting, although the date by which it expected to collect its main results, 30 April 2026, has passed.<Cite id="ctgov-nct05555589" /> A phase 2 heart-attack trial of NL005 with 189 planned participants was listed as not yet recruiting when its record was last updated, on 14 May 2026.<Cite id="ctgov-nct07586865" /> A Chinese hospital trial of a wound dressing that slowly releases thymosin beta-4, in 20 people with hard-to-heal wounds, finished in 2015 and has posted no results.<Cite id="ctgov-nct02668055" />
 
-### Where the evidence is genuinely promising
-
-The whole protein's biology is real, and laboratories inside and outside the originating group found that adding it helps wounds or injured hearts in animals.<Cite id="safer-1991-actin-sequestering,malinda-1999-wound-healing,bock-marquette-2004-cardiac" /> In people it has been given by drip, gel and eye drops with few side effects, which is useful safety information for that molecule and those routes.<Cite id="ruff-2010-phase1-iv,wang-2021-rhtb4-phase1,ctgov-nct03937882" /> The one independent rat study of a TB-500 product on a tendon was positive.<Cite id="bicer-2026-achilles" />
-
-But the gap is wide. The trials that tested the whole protein properly mostly missed their main goals, and TB-500 has never been tested in people. Meanwhile the grey market sells the fragment on the protein's reputation. A trial of TB-500 itself, made to medicine standards, could answer what years of online use have not.
+</InDetail>
 
 </Section>
 
 <Section id="unknowns">
+
+<Lead question="What is still not known?">Whether it does anything in people, what is in a vial, and whether it is toxic.</Lead>
+
+<Compare title="None of these questions has been answered for TB-500." detail="Open questions about TB-500, as of 20 October 2026.">
+
+| Open question | Answer |
+|---|---|
+| Does it do anything in people? | <Verdict is="unknown" /> No human study of TB-500 alone exists.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| What does a vial contain? | <Verdict is="unknown" /> It may be the fragment, the whole protein or something else.<Cite id="fda-pcac-2026-tb500-briefing,delcourt-2023-misbranded,delcourt-2025-equine-tb4" /> |
+| What happens to it in a person's blood? | <Verdict is="unknown" /> No one has measured it in human blood.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| Has it been tested for harm in animals? | <Verdict is="no" /> There are no toxicity studies of any kind.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| Does it affect existing tumours? | <Verdict is="unknown" /> Untested. In mice, tumour cells that make more of the whole protein spread more.<Cite id="cha-2003-metastasis,kobayashi-2002-fibrosarcoma,yoon-2021-ovarian-cancer" /> |
+| Can it trigger immune reactions? | <Verdict is="unknown" /> No study has tested this.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+
+</Compare>
+
+<InDetail title="All eight open questions, with their sources">
 
 As of 20 October 2026, these are specifically unknown:
 
@@ -267,13 +380,39 @@ As of 20 October 2026, these are specifically unknown:
 - **Immune reactions.** No study has tested whether TB-500 triggers antibodies.<Cite id="fda-pcac-2026-tb500-briefing" />
 - **Dose–response, long-term use and interactions** with any medicine.
 
+</InDetail>
+
 </Section>
 
 <Section id="regulatory">
 
+<Lead question="Is it legal?">Not approved in the EU, UK or US, and banned in sport. The US vote was only advice.</Lead>
+
+<Compare title="Not an approved medicine in the EU or the US. The July 2026 vote did not change that." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 20 October 2026.">
+
+| | Netherlands and the EU | United States |
+|---|---|---|
+| Approved as a medicine? | <Verdict is="no" /> No EU or Dutch authorisation. EMA's data hold no record of TB-500 or thymosin beta-4.<Cite id="ema-medicines-search,ema-medicines-json,ema-orphan-designations-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Not FDA-approved.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| Legal to sell or supply as a medicine? | <Verdict is="no" /> Dutch law forbids selling or supplying a medicine that has no marketing authorisation, with narrow exceptions.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> Pharmacies may not legally make it until the FDA accepts the advice and makes a rule adding it to the 503A list.<Cite id="fda-503a-bulks-page,fda-pcac-2026-tb500-briefing" /> |
+| Changed by the July 2026 US vote? | <Verdict is="no" /> Nothing the FDA or its advisers decide changes the law here.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> On 23 July 2026, the FDA's Pharmacy Compounding Advisory Committee voted 8–6, with one abstention, to recommend BPC-157 for the 503A list. The TB-500 vote had the same split. Of the seven peptides it considered, it recommended six. These numbers are as reported from the public meeting. The vote was only advice, and went against FDA staff's own recommendation.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions,fda-pcac-2026-briefing-intro,fda-pcac-2026-tb500-briefing" /> |
+| Would a US listing make it an approved medicine? | <Verdict is="no" /> It would change nothing in the EU or the Netherlands.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> It would allow pharmacy compounding on prescription in the US. It is not an approval and says nothing about efficacy.<Cite id="fda-pcac-2026-presentations-day1,fda-503a-bulks-page" /> |
+| Allowed in sport? | <Verdict is="no" /> Banned at all times, and named on the list since 2018.<Cite id="wada-2018-list-modifications,wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule applies.<Cite id="wada-2026-list-en" /> |
+
+</Compare>
+
+<InDetail title="Status in each country, and in sport">
+
 <RegulatoryTable />
 
 All statuses were checked on 20 October 2026.
+
+### Sport (WADA)
+
+Thymosin beta-4 "and its derivatives, e.g. TB-500" were named on the World Anti-Doping Agency's Prohibited List in 2018, as examples of prohibited growth factors.<Cite id="wada-2018-list-modifications" /> They sit under S2.3, prohibited at all times, in the 2026 List and in the 2027 List that takes effect on 1 January 2027.<Cite id="wada-2026-list-en,wada-2027-list-en" /> Racing authorities forbid it in horses as well.<Cite id="delcourt-2025-equine-tb4" />
+
+</InDetail>
+
+<InDetail title="The European Union, the Netherlands, Germany, Belgium and the United Kingdom">
 
 ### European Union and member states
 
@@ -291,7 +430,9 @@ Nothing the FDA or its advisory committee decides changes the legal position in 
 
 Selling or supplying an unauthorised medicinal product is prohibited (Human Medicines Regulations 2012, regulation 46), and no TB-500 product is authorised.<Cite id="uk-hmr-2012-reg-46,fda-pcac-2026-tb500-briefing" />
 
-### United States
+</InDetail>
+
+<InDetail title="The United States, and the July 2026 vote point by point">
 
 TB-500 is not FDA-approved, is part of no approved drug and has no official US monograph, so a pharmacy could legally compound with it under section 503A only if it were placed on the 503A bulks list through rulemaking.<Cite id="fda-pcac-2026-tb500-briefing,fda-503a-bulks-page" /> The FDA had earlier listed "thymosin beta-4, fragment (LKKTETQ), also known as TB-500" among substances that may present significant safety risks (Category 2), citing immunogenicity, impurities and the absence of human data. It now appears among substances whose nominations were withdrawn.<Cite id="fda-category-2-safety-risks,fda-503a-categories-2026-05" />
 
@@ -305,15 +446,30 @@ The FDA evaluated TB-500 anyway, for wound healing. Its staff proposed that neit
 
 The voting questions asked about TB-500 free base and TB-500 acetate separately.<Cite id="fda-pcac-2026-questions" /> The FDA had not posted minutes by 20 October 2026, so the counts above are as reported from the public meeting. By the same date it had not proposed a rule to add TB-500 to the list.<Cite id="fda-pcac-2026-07-meeting,federalregister-503a-search-2026-10-20" /> Even a listing would not make compounded TB-500 an FDA-checked product: compounded drugs are not FDA-approved, and adverse events need not be reported to the FDA.<Cite id="fda-pcac-2026-presentations-day1" />
 
-### Sport (WADA)
-
-Thymosin beta-4 "and its derivatives, e.g. TB-500" were named on the World Anti-Doping Agency's Prohibited List in 2018, as examples of prohibited growth factors.<Cite id="wada-2018-list-modifications" /> They sit under S2.3, prohibited at all times, in the 2026 List and in the 2027 List that takes effect on 1 January 2027.<Cite id="wada-2026-list-en,wada-2027-list-en" /> Racing authorities forbid it in horses as well.<Cite id="delcourt-2025-equine-tb4" />
+</InDetail>
 
 </Section>
 
 <Section id="risks">
 
-### What has been reported in people
+<Lead question="What are the risks?">Its risks in people are unknown. Worries include unchecked products, immune reactions and helping a hidden tumour grow.</Lead>
+
+<Compare title="Several harms are possible. None has been studied properly in people." detail="What the FDA's review and the lab and animal findings suggest, as of 20 October 2026.">
+
+| Possible harm | Shown in people? |
+|---|---|
+| Infection from germs or bacterial toxins in the product | <Verdict is="unknown" /> The product certificate the FDA found did not test for germs or bacterial toxins.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| An immune reaction, from harmless antibodies to severe reactions | <Verdict is="unknown" /> The FDA says that, injected under the skin or into muscle, it may pose a significant risk. No study has tested this.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+| Itching, redness and swelling | <Verdict is="unknown" /> In a dish, the 17–23 peptide made mast cells release their contents. Whether this happens in skin is unknown.<Cite id="wyczolkowska-2007-mast-cells" /> |
+| Helping a hidden tumour grow or spread | <Verdict is="unknown" /> A worry based on animal and cell studies of the whole protein and some of its pieces. It is untested for TB-500.<Cite id="cha-2003-metastasis,kobayashi-2002-fibrosarcoma,yoon-2021-ovarian-cancer,fda-pcac-2026-tb500-briefing" /> |
+| Darker skin and gums | <Verdict is="unknown" /> Reported once, after a product that mixed BPC-157 and TB-500. The FDA could not say which caused it.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Harm to an unborn baby | <Verdict is="unknown" /> There are no reproductive studies of TB-500.<Cite id="fda-pcac-2026-tb500-briefing" /> |
+
+</Compare>
+
+TB-500 and thymosin beta-4 are prohibited in sport at all times, and methods to detect TB-500 and its breakdown products have been published.<Cite id="wada-2026-list-en,ho-2012-equine-tb500,rahaman-2024-tb500-metabolites" />
+
+<InDetail title="What has been reported in people">
 
 No harm from TB-500 alone has been published. The FDA's adverse-event database held no TB-500 reports up to 26 March 2025, and its food and supplement complaint system held two reports on blended TB-500 and BPC-157 products, neither with a safety assessment.<Cite id="fda-pcac-2026-tb500-briefing" /> That silence does not mean TB-500 is harmless: reporting is voluntary, and the FDA does not receive all reports.<Cite id="fda-pcac-2026-tb500-briefing" />
 
@@ -321,7 +477,9 @@ One report, found in the FDA's separate review of BPC-157, shows what can happen
 
 In trials of the whole protein, side effects were usually similar to placebo.<Cite id="ruff-2010-phase1-iv,ctgov-nct02974907,wang-2021-rhtb4-phase1" /> In ARISE-3, 47 of 350 people on the drops reported other adverse events against 31 of 349 on placebo, and in the Chinese volunteers antibodies against the protein appeared briefly in 2 of the 82 people tested.<Cite id="ctgov-nct03937882,wang-2021-rhtb4-phase1" /> These data come from a different molecule, mostly put on the eye or skin, for days or weeks.
 
-### Why an effect on cancer is theorised
+</InDetail>
+
+<InDetail title="Why an effect on cancer is theorised">
 
 The worry follows from what thymosin beta-4 does, in four steps:
 
@@ -331,6 +489,10 @@ The worry follows from what thymosin beta-4 does, in four steps:
 4. **Fragments can do it too.** <Claim level="in-vitro">In ovarian cancer cells, several thymosin beta-4 fragments, including one containing positions 17–23 and some without the actin-binding site, increased movement and invasion</Claim>.<Cite id="yoon-2021-ovarian-cancer" />
 
 So the concern is not that TB-500 starts a cancer. It is that something which helps cells crawl and vessels grow could help an existing, perhaps undiagnosed, tumour grow or spread. The argument has limits. In the animal studies the tumour cells made extra protein themselves; nobody injected TB-500. In the Chinese volunteers, small temporary rises in a tumour marker occurred with both drug and placebo.<Cite id="wang-2021-rhtb4-phase1" /> No carcinogenicity study of TB-500 exists.<Cite id="fda-pcac-2026-tb500-briefing" /> The risk is plausible but untested.
+
+</InDetail>
+
+<InDetail title="Immune reactions, the product itself, and pregnancy">
 
 ### Immune and allergic reactions
 
@@ -346,23 +508,38 @@ The most immediate risk may be what is in the vial. The certificate of analysis 
 
 There are no reproductive or developmental studies of TB-500.<Cite id="fda-pcac-2026-tb500-briefing" /> Cell movement and vessel growth are central to how an embryo forms, and the role of thymosin beta-4 in heart development is disputed.<Cite id="smart-2007-epicardial,banerjee-2012-dispensable" />
 
-### Sport
-
-TB-500 and thymosin beta-4 are prohibited in sport at all times, and methods to detect TB-500 and its breakdown products have been published.<Cite id="wada-2026-list-en,ho-2012-equine-tb500,rahaman-2024-tb500-metabolites" />
+</InDetail>
 
 </Section>
 
 <Section id="harm-reduction">
 
+<Lead question="How can someone lower the risk?">Talk to a doctor first, treat any vial as unchecked, and know when to stop.</Lead>
+
 ### Talk to a doctor first
 
 A doctor can check for the conditions where the theoretical risks matter most: cancer, pregnancy and allergies. A doctor can also make sure the injury is properly diagnosed. A torn tendon or ligament may need a scan, or surgery within weeks. Treating yourself can delay care that works. See [talking to your doctor](/en/talking-to-your-doctor/).
 
-### Know what you cannot know about the product
+<Callout type="stop" title="Stop and get help if" id="stop-now">
+- the injection site becomes hot, red, swollen or painful, or you get a fever (infection);
+- you get hives, swelling of the face or throat, or difficulty breathing (allergic reaction);
+- your skin or gums darken, as in one reported case with a TB-500 blend;
+- you notice a new lump, a changing mole, or unexplained weight loss.<Cite id="nhs-cancer-symptoms,nhs-moles" />
+
+If it is severe, call your local emergency number.
+</Callout>
+
+<Cite id="nhs-cellulitis,nhs-anaphylaxis,fda-pcac-2026-tb500-briefing,wyczolkowska-2007-mast-cells,fda-pcac-2026-bpc157-briefing,nhs-moles,cha-2003-metastasis" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="What you cannot know about the product">
 
 A vial labelled TB-500 may hold a different peptide, a different salt, or more or less than the label says. It may also hold near-copies of the chain, solvents or bacterial toxins. No regulator has checked it (see [product risk](/en/safety/product-risk/)). If you inject anything, follow [sterile technique](/en/safety/sterile-technique/) and [injection safety](/en/safety/injection-safety/). A dirty product or needle can cause an infection.
 
-### Checks that make sense
+</InDetail>
+
+<InDetail title="Checks that make sense, and why">
 
 There is no blood test that shows whether TB-500 is working or harming you. No organ is known to be at special risk, because no toxicology studies exist. Discuss these with a doctor, who decides what is right for you:
 
@@ -375,12 +552,9 @@ There is no blood test that shows whether TB-500 is working or harming you. No o
 
 </Checklist>
 
-### Stop and get help if
+</InDetail>
 
-- the injection site becomes hot, red, swollen or painful, or you get a fever (infection);
-- you get hives, swelling of the face or throat, or difficulty breathing (allergic reaction);
-- your skin or gums darken, as in one reported case with a TB-500 blend;
-- you notice a new lump, a changing mole, or unexplained weight loss.
+<InDetail title="Interactions, and who should not use it at all">
 
 ### Plausible interactions (none has been studied)
 
@@ -396,6 +570,6 @@ There is no blood test that shows whether TB-500 is working or harming you. No o
 - **People who have had severe allergic reactions, or who have a mast-cell disorder**, because the fragment triggered mast cells in the lab.
 - **Athletes subject to anti-doping rules**, because it is prohibited at all times.
 
-<WarningSigns only="general,injection,allergic" />
+</InDetail>
 
 </Section>
