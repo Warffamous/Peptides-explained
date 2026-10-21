@@ -7,9 +7,40 @@ summary:
   - "Most research was done in rats. About three in four papers come from one group in Zagreb, Croatia."
   - "Only four very small reports on people have been published in full. None had a comparison group."
   - "Nobody knows if it works in people or how safe it is. It is banned in sport."
-  - "In July 2026, US advisers backed letting pharmacies make it. That was only advice; the law has not changed."
+  - "In July 2026, US advisers backed letting pharmacies make it. It was only advice; the law is unchanged."
+lede: "A lab-made peptide, mostly studied in rats by one Zagreb group. Nobody knows what it does in people."
 glance:
-  main_risk: "Unknown effects in people, and products may be impure or contaminated."
+  main_risk: "Unknown effects in people. Vials may hold germs or the wrong substance."
+  # "Stop and get help" strip, condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">) and the FDA's 2026 review (injection-site reaction report,
+  # no endotoxin or microbial testing, immunogenicity, clotting signals) plus the angiogenesis
+  # findings behind the tumour concern. Icon: STOP_SIGN_ICONS has no pictogram for an infected
+  # injection site or for bleeding or a clot, so all three use sign-allergic (a swelling) until
+  # one is added; the words carry the meaning (research/bpc-157.md, section 9).
+  stop_signs:
+    - icon: sign-infection
+      text: "Hot, red, swollen injection site, or fever"
+      sources: [fda-pcac-2026-bpc157-briefing]
+    - icon: sign-allergic
+      text: "Hives, swollen face or throat, hard to breathe"
+      sources: [fda-pcac-2026-bpc157-briefing]
+    - icon: sign-bleeding
+      text: "New lump, unexplained bleeding, or one swollen leg"
+      sources: [fda-pcac-2026-bpc157-briefing, hsieh-2017-vegfr2]
+  # Fact sheet beside the title: study facts from this page, never a dose.
+  facts:
+    - label: "Main research source"
+      value: "One Zagreb group: about 140 of 160 lab papers"
+      sources: [pubmed-bpc157-count-2026-10-20]
+    - label: "Routes with human results"
+      value: "Enema, and injections into joint, bladder wall, vein or gum"
+      sources: [fda-pcac-2026-bpc157-briefing, lee-2021-knee, lee-2024-interstitial-cystitis, lee-2025-intravenous, froum-2026-nerve-cases]
+    - label: "Half-life in animals"
+      value: "15 min in rats, 5 in dogs, into a vein"
+      sources: [he-2022-pharmacokinetics]
+    - label: "Trials under way"
+      value: "One placebo-controlled trial recruiting (hamstring strain, China)"
+      sources: [ctgov-nct07437547]
 grade_rationale:
   human_clinical: "Case reports. The only published human data are four small reports without a comparison group: three led by the same US clinician (16, 12 and 2 people), and one on 3 dental patients who received BPC-157 mixed with four other drugs. A randomised phase 2 trial in 53 people with ulcerative colitis exists only as a 2005 conference abstract, and a placebo-controlled phase 1 study in 32 healthy men only as earlier abstracts. Neither was published in full, so under our rubric they do not count as published phase 1 or phase 2 trials."
   preclinical_volume: "Extensive. By our count on 20 October 2026, PubMed holds about 160 primary laboratory and animal studies of BPC-157, far above the threshold of 50."
@@ -94,7 +125,7 @@ studies:
     finding: "Three dental patients with numbness after injury to a nerve in the lower jaw had weekly gum injections of a five-drug mixture that included BPC-157; feeling largely returned over about four weeks and no adverse events were reported."
     limitation: "Three people, no comparison group, no standard nerve tests; BPC-157 was mixed with two other experimental peptides, a steroid and a local anaesthetic, and milder injuries of this nerve often recover by themselves. The authors say causality cannot be established. No funding declared."
 regulatory_notes:
-  EU: "No authorised product and no application in EMA records (checked 20 October 2026)."
+  EU: "No authorised product, and no record in EMA's medicines data (checked 20 October 2026)."
   NL: "Not authorised; supplying an unauthorised medicine is prohibited by the Geneesmiddelenwet."
   DE: "Not authorised; finished medicines need a licence under AMG § 21."
   BE: "Not authorised; the 1964 Medicines Act requires a national or EU licence, and none exists."
@@ -104,27 +135,61 @@ regulatory_notes:
 ---
 <Section id="what-it-is">
 
+<Lead question="What is BPC-157?">A lab-made chain of 15 amino acids. No country has approved it as a medicine.</Lead>
+
+<Compare title="BPC-157 is made in a lab, has no official medicine name, and is approved nowhere." detail="What is known about the substance sold under this name, checked on 20 October 2026.">
+
+| | BPC-157 |
+|---|---|
+| Made in a lab? | <Verdict is="yes" /> By chemical synthesis, one amino acid at a time.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" /> |
+| A substance the body makes? | <Verdict is="unknown" /> A Zagreb group reported it as part of a protein in stomach juice. Its sequence looks like no known gut peptide.<Cite id="sikiric-1993-bpc-origin,jozwiak-2025-review" /> |
+| An official medicine name? | <Verdict is="no" /> "BPC-157" is only a common name.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| One substance under that name? | <Verdict is="no" /> Different substances are sold under it, such as a free base or an acetate salt.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Approved as a medicine anywhere? | <Verdict is="no" /> The FDA found no approved product in any country.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+
+</Compare>
+
+BPC-157 is promoted online for tendon, ligament, muscle and gut problems, with record search interest in 2024.<Cite id="fda-pcac-2026-bpc157-briefing,vasireddi-2025-systematic-review" /> That popularity does not rest on human trials, because there are almost none.
+
+<InDetail title="The molecule, and how it is made">
+
 BPC-157 is a synthetic peptide: a chain of 15 amino acids, <Seq>Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val</Seq>, with ordinary free ends. Its formula is C62H98N16O22 and its mass is <Q>1419.5 Da</Q>.<Cite id="pubchem-bpc-157" /> Early laboratory work reported that it resists breakdown in gastric juice.<Cite id="fda-pcac-2026-bpc157-briefing" /> <Claim level="hypothesis">Four of its amino acids are proline, and proline-rich stretches resist many digestive enzymes, which may explain that stability</Claim>. In blood, by contrast, it is broken down within minutes.<Cite id="he-2022-pharmacokinetics" />
-
-### Where the name comes from
-
-"BPC" stands for Body Protection Compound. In 1993 a group at the University of Zagreb described a protein of about 40,000 daltons isolated from human gastric juice. They named it BPC and described BPC-157 as a 15-amino-acid fragment "thought to be essential for its activity".<Cite id="sikiric-1993-bpc-origin,fda-pcac-2026-bpc157-briefing" /> That origin rests on the group's own reports. The FDA describes the peptide as "reported to be" such a fragment, and an independent review notes that its sequence resembles no known gut peptide.<Cite id="fda-pcac-2026-bpc157-briefing,jozwiak-2025-review" /> The peptide used in research is made by chemical synthesis.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" />
-
-In the 1990s and 2000s the Croatian company PLIVA developed it under the codes PL 14736 and PLD-116; the names PL-10 and bepecin also appear in databases.<Cite id="chembl-bpc-157,staresinic-2003-achilles,tkalcevic-2007-egr1" /> It has no official non-proprietary name. The FDA notes that "BPC-157" is only a common name, and that different chemical substances are sold under it.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
 ### How it is made
 
 It is made by solid-phase peptide synthesis: amino acids are added one at a time to a chain anchored on resin beads, then the chain is cut free and purified. Each step can leave shortened or wrongly built chains, solvents and reagents behind. Commercial material comes as a free base or as an acetate salt, which the FDA treats as different substances; PubChem also lists a trifluoroacetate salt.<Cite id="fda-pcac-2026-bpc157-briefing,pubchem-bpc-157" />
 
-### Why people have heard of it
+</InDetail>
 
-BPC-157 is promoted online for tendon, ligament, muscle and gut problems, with record search interest in 2024.<Cite id="fda-pcac-2026-bpc157-briefing,vasireddi-2025-systematic-review" /> That popularity does not rest on human trials, because there are almost none.
+<InDetail title="Where the name comes from, and who developed it">
+
+"BPC" stands for Body Protection Compound. In 1993 a group at the University of Zagreb described a protein of about 40,000 daltons isolated from human gastric juice. They named it BPC and described BPC-157 as a 15-amino-acid fragment "thought to be essential for its activity".<Cite id="sikiric-1993-bpc-origin,fda-pcac-2026-bpc157-briefing" /> That origin rests on the group's own reports. The FDA describes the peptide as "reported to be" such a fragment, and an independent review notes that its sequence resembles no known gut peptide.<Cite id="fda-pcac-2026-bpc157-briefing,jozwiak-2025-review" /> The peptide used in research is made by chemical synthesis.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" />
+
+In the 1990s and 2000s the Croatian company PLIVA developed it under the codes PL 14736 and PLD-116; the names PL-10 and bepecin also appear in databases.<Cite id="chembl-bpc-157,staresinic-2003-achilles,tkalcevic-2007-egr1" /> It has no official non-proprietary name. The FDA notes that "BPC-157" is only a common name, and that different chemical substances are sold under it.<Cite id="fda-pcac-2026-bpc157-briefing" />
+
+</InDetail>
 
 </Section>
 
 <Section id="mechanism">
 
-Nobody knows how BPC-157 works, or whether it does anything in people. The FDA's 2026 review says its molecular targets "have not been identified and its mechanisms of action remain poorly understood".<Cite id="fda-pcac-2026-bpc157-briefing" /> What exists is a set of observations in cells and rats that no single study connects, and none was made in a person.
+<Lead question="How does it work?">Nobody knows how it works, or whether it does anything in people.</Lead>
+
+<Compare title="Some steps were seen in the lab or in rats. None has been shown in people." detail="The proposed chain, step by step, and where each step was seen.">
+
+| | In the lab or in rats | In people |
+|---|---|---|
+| Binds one known target? | <Verdict is="unknown" /> None is established. One 2026 cell study proposes a protein called FBXO22; it has not been repeated.<Cite id="fda-pcac-2026-bpc157-briefing,zhang-2026-fbxo22" /> | <Verdict is="unknown" /> Not studied in people. |
+| Switches on blood-vessel signals? | <Verdict is="yes" /> In cells, mostly in one lab in Taiwan. Pieces of human artery in a dish relaxed, mostly through nitric oxide.<Cite id="hsieh-2017-vegfr2,hsieh-2020-src-cav1-enos,yildirim-2026-mammary-artery" /> | <Verdict is="unknown" /> Not measured in a living person. |
+| Cells move faster and survive stress? | <Verdict is="yes" /> In rat tendon cells, in the same lab in Taiwan.<Cite id="chang-2011-tendon-fibroblasts" /> | <Verdict is="unknown" /> Not measured in people. |
+| More blood vessels in healing tissue? | <Verdict is="yes" /> In injured rats, mostly reported by the Zagreb group.<Cite id="brcic-2009-angiogenesis,hsieh-2017-vegfr2" /> | <Verdict is="unknown" /> Not measured in people. |
+| Faster healing? | <Verdict is="yes" /> In many Zagreb rat studies. One independent tendon test found no significant gain in strength, though one collagen measure improved.<Cite id="staresinic-2003-achilles,bicer-2026-achilles" /> | <Verdict is="unknown" /> No controlled trial has been published in full.<Cite id="poolton-2026-human-sr" /> |
+
+</Compare>
+
+The FDA's 2026 review says its molecular targets "have not been identified and its mechanisms of action remain poorly understood".<Cite id="fda-pcac-2026-bpc157-briefing" /> What exists is a set of observations in cells and rats that no single study connects, and none was made in a person.
+
+<InDetail title="Step by step: the proposed chain and what each step rests on">
 
 <Mechanism />
 
@@ -151,17 +216,35 @@ The laboratories do not always agree. The Taiwanese group saw more vessel-like t
 
 <Claim level="animal">Injured rat muscle and tendon showed more blood vessels and stronger VEGF staining</Claim>, <Claim level="animal">blood flow recovered faster in rats with a blocked leg artery</Claim>, and <Claim level="animal">new tissue around sponges implanted in rats, and wounds in diabetic mice, organised their collagen earlier</Claim>.<Cite id="brcic-2009-angiogenesis,hsieh-2017-vegfr2,tkalcevic-2007-egr1" /> The Zagreb reports of faster functional healing are discussed under the evidence below.
 
-### What the chain does not show
+</InDetail>
+
+<InDetail title="Three weak links: what the chain does not show">
 
 The chain has three weak joints. No study measured the early steps and the healing outcome in the same animals, so the link between them is inferred. Nobody knows what concentration reaches a human tendon, so the cell concentrations cannot be translated. And several of the Zagreb group's animal studies report the same benefit at a low and a high dose a thousand-fold apart.<Cite id="fda-pcac-2026-bpc157-briefing,cerovecki-2010-ligament" /> A real drug effect usually grows with dose up to a ceiling, so a flat response across that range weakens the causal inference.
+
+</InDetail>
 
 </Section>
 
 <Section id="evidence">
 
+<Lead question="Does it work?">Unknown in people. Rat studies mostly show faster healing, but most come from one group.</Lead>
+
+<KeyNumber title="Most lab and animal studies come from one group in Zagreb" value="about 140 of 160" label="lab and animal papers have authors from one group in Zagreb" who="Not people: roughly 160 primary lab and animal studies in PubMed, about 20 of them from outside Zagreb (our count, 20 October 2026)" source="pubmed-bpc157-count-2026-10-20" level="animal" />
+
+<KeyNumber title="An independent tendon test found no clear gain in strength" value="32" unit="rats" label="with repaired tendons. Strength and overall tissue scores were not clearly better; one collagen measure was." who="Biçer 2026, Turkey: 32 rats in four groups of 8 (4 per group in each test), four weeks, assessors blinded" source="bicer-2026-achilles" level="animal" />
+
+<KeyNumber title="The one finished controlled trial in patients found no clear benefit" value="3.2 vs 1.6" label="points that a colitis score fell, with the peptide and with placebo. The gap could be chance." who="PL 14736 phase 2: 53 people with mild-to-moderate ulcerative colitis, enema, randomised and double-blind; a 2005 conference abstract only" source="fda-pcac-2026-bpc157-briefing" level="human-controlled" />
+
+<KeyNumber title="Four small reports on people had no comparison group" value="33" unit="people" label="in all four reports together. None had a group of untreated people to compare with." who="Lee 2021 (16 people), Lee 2024 (12), Lee 2025 (2) and Froum 2026 (3); no comparison group in any" source="lee-2021-knee,lee-2024-interstitial-cystitis,lee-2025-intravenous,froum-2026-nerve-cases" level="human-limited" />
+
+This evidence is not worthless. Across many rodent models of tendon, ligament, muscle and gut injury the direction of effect is consistent, and laboratories outside Zagreb (in the US, Taiwan and Turkey among others) have reported effects in the same direction.<Cite id="veljaca-1995-colitis,hsieh-2017-vegfr2,bicer-2026-achilles,demirtas-2025-ischaemia-reperfusion" /> Promising animal data are a reason to run a good trial, not a substitute for one.
+
+<InDetail title="Every study in one table, and where the evidence comes from">
+
 <StudyTable />
 
-<Diagram id="bpc-157-evidence-map" caption="Where the BPC-157 evidence comes from (counted 20 October 2026)">
+<Diagram id="bpc-157-evidence-map" caption="Where the evidence on BPC-157 comes from. We counted it on 20 October 2026.">
 
 | Level | Roughly how much | Who produced it | Main limitation |
 |---|---|---|---|
@@ -172,6 +255,10 @@ The chain has three weak joints. No study measured the early steps and the heali
 | Humans, uncontrolled | Four reports, 33 people | Three from Florida clinics with the same lead author; one from US dentists | No comparison group; self-reported outcomes; one used a five-drug mixture |
 
 </Diagram>
+
+</InDetail>
+
+<InDetail title="Cell and animal studies, one by one">
 
 ### Cells and isolated tissue: mostly one independent laboratory
 
@@ -195,11 +282,17 @@ A 2025 study from Ankara, with one author in common with the artery study, used 
 
 The first independent test of the flagship tendon claim came only in 2026. A Turkish team cut and then surgically repaired the Achilles tendons of 32 rats and gave BPC-157, TB-500, both, or nothing for four weeks. (The Zagreb studies left the cut tendon unrepaired, so this is a related model, not an exact repeat.) <Claim level="animal">BPC-157 gave higher load to failure and better total tissue scores than control, but these differences were not statistically significant</Claim>; TB-500's were, and the combination added nothing. <Claim level="animal">One collagen measure, the staining of type I collagen, was significantly higher with BPC-157</Claim>.<Cite id="bicer-2026-achilles" /> The assessors did not know which treatment each tendon had received, a safeguard the abstracts of the Zagreb tendon and ligament studies cited here do not report. But each group's eight tendons were split, four for strength testing and four for tissue analysis, so the study could miss a modest effect, and a single positive result among many tissue measures is weak evidence.<Cite id="bicer-2026-achilles" /> Its result fits a benefit smaller than the "full recovery" the Zagreb studies describe, or none.
 
-### Toxicology and pharmacokinetics
+</InDetail>
+
+<InDetail title="Toxicology, and how fast the body breaks it down">
 
 The only formal toxicology comes from the Fourth Military Medical University in Xi'an, China, which was developing BPC-157 for wounds, severe trauma and burns.<Cite id="xu-2020-preclinical-safety,he-2022-pharmacokinetics" /> <Claim level="animal">Across mice, rats, rabbits and dogs, single and 28-day repeated intramuscular doses caused no serious toxicity; genotoxicity tests were negative, and a rat embryo–fetal study found no malformations</Claim>.<Cite id="xu-2020-preclinical-safety" /> The FDA's re-analysis of the same data flagged possible safety signals (see the risk profile below).<Cite id="fda-pcac-2026-bpc157-briefing" />
 
 The same laboratory studied 366 rats and 6 beagle dogs. Intact BPC-157 had a half-life of <Q>15.2 min</Q> in rats and <Q>5.3 min</Q> in dogs after intravenous dosing. Only part of an intramuscular dose reached the blood, and the peptide was degraded to fragments and then amino acids.<Cite id="he-2022-pharmacokinetics" /> The FDA found no animal or human data on how the body handles BPC-157 after subcutaneous, oral or nasal use. The only human blood measurements, after an enema, mostly found no peptide.<Cite id="fda-pcac-2026-bpc157-briefing" />
+
+</InDetail>
+
+<InDetail title="Studies in people, and the trials still running">
 
 ### Human evidence
 
@@ -225,15 +318,30 @@ As of 20 October 2026, ClinicalTrials.gov lists four studies: a 2015 phase 1 stu
 The hamstring trial is the first trial of BPC-157 in an injury that is randomised, blinded and placebo-controlled and has started recruiting. It uses an MRI measure of the injury as one of its two main outcomes and has a data monitoring committee.<Cite id="ctgov-nct07437547" /> If it is published in full, whatever the result, it will tell us more than all existing human data. We will update the grades when it reports.
 </Callout>
 
-### Where the evidence is genuinely promising
+</InDetail>
 
-This evidence is not worthless. Across many rodent models of tendon, ligament, muscle and gut injury the direction of effect is consistent, and laboratories outside Zagreb (in the US, Taiwan and Turkey among others) have reported effects in the same direction.<Cite id="veljaca-1995-colitis,hsieh-2017-vegfr2,bicer-2026-achilles,demirtas-2025-ischaemia-reperfusion" /> Two findings from the Taiwanese cell laboratory have since been reported by other groups, one of them in human artery tissue.<Cite id="zhang-2026-fbxo22,yildirim-2026-mammary-artery" /> Animal toxicology so far shows no genotoxicity and no acute toxicity at high doses.<Cite id="xu-2020-preclinical-safety" /> Independent reviewers in sports medicine describe the preclinical record as promising while stressing how little human data exist.<Cite id="vasireddi-2025-systematic-review,mcguire-2025-review" /> Tendon and ligament injuries heal slowly and few medicines speed that healing, so a properly tested healing agent would be valuable.
+<InDetail title="Where the evidence is genuinely promising, and what the gap costs">
 
-The gap has a real cost. In public records the developer's programme never went beyond a phase 2 trial that was not fully published, and two decades passed without a definitive trial. Into that gap came a grey market of unmonitored injections of products of unknown content. Promising animal data are a reason to run a good trial, not a substitute for one.
+Two findings from the Taiwanese cell laboratory have since been reported by other groups, one of them in human artery tissue.<Cite id="zhang-2026-fbxo22,yildirim-2026-mammary-artery" /> Animal toxicology so far shows no genotoxicity and no acute toxicity at high doses.<Cite id="xu-2020-preclinical-safety" /> Independent reviewers in sports medicine describe the preclinical record as promising while stressing how little human data exist.<Cite id="vasireddi-2025-systematic-review,mcguire-2025-review" /> Tendon and ligament injuries heal slowly and few medicines speed that healing, so a properly tested healing agent would be valuable.
+
+The gap has a real cost. In public records the developer's programme never went beyond a phase 2 trial that was not fully published, and two decades passed without a definitive trial. Into that gap came a grey market of unmonitored injections of products of unknown content.
+
+</InDetail>
 
 </Section>
 
 <Section id="unknowns">
+
+<Lead question="What is still not known?">Whether it works in people, what longer use does, and what products contain.</Lead>
+
+<TimeStrip title="Safety was tested for four weeks at most. Longer use has not been tested for safety." detail="How many weeks of use the safety evidence covers, in animals and in people. One rat healing study gave it daily for up to 90 days, but it was not a safety study." min={0} max={24} step={4} axis="Weeks of use" source="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing,froum-2026-nerve-cases,cerovecki-2010-ligament" checked="2026-10-20" rows={[
+  { label: "Longest safety (toxicity) study in animals: rats and dogs", spans: [{ from: 0, to: 4, text: "28 days" }] },
+  { label: "Longest use in the published human reports", spans: [{ from: 0, to: 4, text: "four weeks at most" }] },
+  { label: "Longest rat healing study (ligament)", spans: [{ from: 0, to: 12.9, text: "up to 90 days; not a safety study" }] },
+  { label: "Safety of longer use", spans: [{ from: 4, to: 24, text: "no safety studies in animals or people", unknown: true }] },
+]} />
+
+<InDetail title="All eleven open questions, with their sources">
 
 As of 20 October 2026, these are specifically unknown:
 
@@ -241,7 +349,7 @@ As of 20 October 2026, these are specifically unknown:
 - **How it works.** No receptor or primary target is established.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Human pharmacokinetics.** There are no data for subcutaneous, oral, nasal or transdermal use. After an enema it was mostly undetectable in blood.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Dose–response.** In the animal studies the FDA reviewed, low and high doses gave the same effect. One independent 1995 rat study did report a dose-dependent effect. There are no human dose–response data.<Cite id="fda-pcac-2026-bpc157-briefing,veljaca-1995-colitis" />
-- **Long-term safety.** The longest repeat-dose animal study lasted 28 days. In the published human studies use lasted at most four weeks, and most did not say how safety was monitored.<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing,froum-2026-nerve-cases" />
+- **Long-term safety.** The longest repeat-dose toxicity study in animals lasted 28 days. In the published human studies use lasted at most four weeks, and most did not say how safety was monitored.<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing,froum-2026-nerve-cases" />
 - **Cancer risk.** The FDA found no carcinogenicity study, and effects on existing tumours are untested.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Reproduction.** There is one rat embryo–fetal study, with no fertility, postnatal or human pregnancy data.<Cite id="fda-pcac-2026-bpc157-briefing" />
 - **Immune reactions.** Neither the nominators nor the FDA found any study that formally tested immunogenicity.<Cite id="fda-pcac-2026-bpc157-briefing" />
@@ -249,13 +357,39 @@ As of 20 October 2026, these are specifically unknown:
 - **Whether the salt forms** (free base, acetate, trifluoroacetate) behave alike.<Cite id="fda-pcac-2026-bpc157-briefing,pubchem-bpc-157" />
 - **What products contain.** A US sports drug-testing laboratory identified the peptide in confiscated vials,<Cite id="cox-2017-doping-detection" /> but we found no published survey of the content, impurities or sterility of products on the market.
 
+</InDetail>
+
 </Section>
 
 <Section id="regulatory">
 
+<Lead question="Is it legal?">It is approved nowhere and banned in sport. The 2026 US vote was only advice.</Lead>
+
+<Compare title="It is not an approved medicine anywhere. The July 2026 US vote did not change that." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 20 October 2026.">
+
+| | Netherlands and the EU | United States |
+|---|---|---|
+| Approved as a medicine? | <Verdict is="no" /> No EU or Dutch authorisation. EMA's medicines data hold no record of it.<Cite id="ema-medicines-search,ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Not FDA-approved.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Legal to sell or supply as a medicine? | <Verdict is="no" /> Dutch law forbids selling or supplying a medicine that has no marketing authorisation, with narrow exceptions.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> Pharmacies may not legally make it until the FDA accepts the advice and makes a rule adding it to the 503A list.<Cite id="fda-503a-bulks-page,fda-pcac-2026-bpc157-briefing" /> |
+| Changed by the July 2026 US vote? | <Verdict is="no" /> Nothing the FDA or its advisers decide changes the law here.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> On 23 July 2026, the FDA's Pharmacy Compounding Advisory Committee voted 8–6, with one abstention, to recommend it for the 503A list. These numbers are as reported from the public meeting. It recommended six of the seven peptides it considered. The vote was only advice, and went against FDA staff's own recommendation.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions,fda-pcac-2026-briefing-intro" /> |
+| Would a US listing make it an approved medicine? | <Verdict is="no" /> It would change nothing in the EU or the Netherlands.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> It would allow pharmacy compounding on prescription in the US. It is not an approval and says nothing about efficacy.<Cite id="fda-pcac-2026-presentations-day1,usc-21-353a,fda-503a-bulks-page" /> |
+| Allowed in sport? | <Verdict is="no" /> Banned at all times since 1 January 2022.<Cite id="wada-2022-list-modifications,wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule applies.<Cite id="wada-2026-list-en" /> |
+
+</Compare>
+
+<InDetail title="Status in each country, and in sport">
+
 <RegulatoryTable />
 
 All statuses were checked on 20 October 2026.
+
+### Sport (WADA)
+
+BPC-157 has been named on the World Anti-Doping Agency's Prohibited List since 1 January 2022, under S0 (non-approved substances), and is banned at all times.<Cite id="wada-2022-list-modifications,wada-2026-list-en" /> The 2027 List, in force from 1 January 2027, still names it and adds "peptides" in general to the S0 examples.<Cite id="wada-2027-list-en" /> (A 2025 review states that it is no longer listed; that is wrong.<Cite id="jozwiak-2025-review" />) S0 covers substances with "no current approval by any governmental regulatory health authority for human therapeutic use", so a US compounding listing, which is not an approval, would not by itself change that status.<Cite id="wada-2026-list-en" />
+
+</InDetail>
+
+<InDetail title="The European Union, the Netherlands, Germany, Belgium and the United Kingdom">
 
 ### European Union and member states
 
@@ -273,7 +407,9 @@ Nothing the FDA or its advisory committee decides changes the legal position in 
 
 Selling or supplying an unauthorised medicinal product is prohibited (Human Medicines Regulations 2012, regulation 46), and no BPC-157 product is authorised.<Cite id="uk-hmr-2012-reg-46,fda-pcac-2026-bpc157-briefing" />
 
-### United States
+</InDetail>
+
+<InDetail title="The United States, and the July 2026 vote point by point">
 
 BPC-157 is not FDA-approved, has no US Pharmacopeia monograph and is part of no approved drug. A pharmacy may therefore compound with it only once it is placed on the 503A bulks list through rulemaking.<Cite id="fda-503a-bulks-page,fda-pcac-2026-bpc157-briefing" /> The FDA had earlier put BPC-157 in Category 2 of its interim policy, for substances that may present significant safety risks. When the nominators withdrew, it moved to a list of withdrawn substances; on the FDA's 14 May 2026 list it is in no category.<Cite id="fda-category-2-safety-risks,fda-503a-categories-2026-05" />
 
@@ -283,25 +419,42 @@ The FDA nevertheless evaluated BPC-157 on its own initiative, for ulcerative col
 - The committee considered seven peptides over two days.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" /> As reported from the meeting, it recommended six: BPC-157, KPV, TB-500, MOTS-c, Semax and epitalon. Emideltide (DSIP) was not recommended.
 - The vote is advisory and non-binding, and it went against the FDA staff's own recommendation.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" />
 - Legal compounding remains prohibited until the FDA formally adopts the recommendation and completes rulemaking.<Cite id="fda-503a-bulks-page" />
-- None of these is an approved medicine. A 503A listing, if it ever happens, would allow pharmacy compounding on prescription in the US. It is not a marketing authorisation, says nothing about efficacy, and changes nothing in the EU or the Netherlands.<Cite id="fda-pcac-2026-presentations-day1,fda-pcac-2026-bpc157-briefing,fda-503a-bulks-page" />
+- None of these is an approved medicine. A 503A listing, if it ever happens, would allow pharmacy compounding on prescription in the US. It is not a marketing authorisation, says nothing about efficacy, and changes nothing in the EU or the Netherlands.<Cite id="fda-pcac-2026-presentations-day1,usc-21-353a,fda-pcac-2026-bpc157-briefing,fda-503a-bulks-page" />
 
 Even a listing would not make compounded BPC-157 an FDA-checked product. The FDA reminded the committee that a compounded drug is not FDA-approved and need not follow good manufacturing practice (although insanitary conditions remain prohibited), and that compounders need not report its adverse events to the FDA. Unless the listing sets limits, the substance can be compounded for any use and route.<Cite id="fda-pcac-2026-presentations-day1" />
 
 The FDA documents confirm the date, the seven peptides, the voting questions and the staff recommendation. The voting questions asked about the free base and the acetate salt of BPC-157 separately.<Cite id="fda-pcac-2026-questions" /> The FDA had not posted written minutes by 20 October 2026, so the vote counts and the six-of-seven outcome are as reported from the public meeting; we will check them against the minutes, including whether the two BPC-157 votes differed.<Cite id="fda-pcac-2026-07-meeting" /> By the same date the FDA had not proposed a rule to add BPC-157 to the list.<Cite id="federalregister-503a-search-2026-10-20,fda-503a-bulks-page" />
 
-### Sport (WADA)
-
-BPC-157 has been named on the World Anti-Doping Agency's Prohibited List since 1 January 2022, under S0 (non-approved substances), and is banned at all times.<Cite id="wada-2022-list-modifications,wada-2026-list-en" /> The 2027 List, in force from 1 January 2027, still names it and adds "peptides" in general to the S0 examples.<Cite id="wada-2027-list-en" /> (A 2025 review states that it is no longer listed; that is wrong.<Cite id="jozwiak-2025-review" />) S0 covers substances with "no current approval by any governmental regulatory health authority for human therapeutic use", so a US compounding listing, which is not an approval, would not by itself change that status.<Cite id="wada-2026-list-en" />
+</InDetail>
 
 </Section>
 
 <Section id="risks">
 
-### What has been reported in people
+<Lead question="What are the risks?">Its risks in people are unknown. Animal tests and unchecked products point to possible harms.</Lead>
+
+<Compare title="Several harms are possible. None has been studied properly in people." detail="What lab and animal findings suggest, and what is known in people, as of 20 October 2026.">
+
+| Possible harm | Shown in people? |
+|---|---|
+| Infection from germs or bacterial toxins in the product | <Verdict is="unknown" /> The product certificates the FDA reviewed did not report tests for them.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| An immune reaction, from mild to life-threatening | <Verdict is="unknown" /> The FDA says that, injected or sprayed into the nose, it may pose a significant risk. The FDA found no study that tested this.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Changes in blood clotting | <Verdict is="unknown" /> Clotting times changed in 28-day tests in rats and in dogs, both from one lab.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Changes in a liver enzyme and blood fats | <Verdict is="unknown" /> Both rose in female rats; blood fats also rose in female dogs.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Helping a hidden tumour grow | <Verdict is="unknown" /> A worry based on cell and rat findings. It is untested.<Cite id="hsieh-2017-vegfr2,chang-2011-tendon-fibroblasts,fda-pcac-2026-bpc157-briefing" /> |
+| Darker skin and gums | <Verdict is="unknown" /> Reported once to the FDA, after a product that mixed BPC-157 and TB-500. It does not show that BPC-157 was the cause.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+
+</Compare>
+
+BPC-157 is prohibited in sport at all times,<Cite id="wada-2026-list-en" /> and methods to detect it in urine have been published.<Cite id="cox-2017-doping-detection" />
+
+<InDetail title="What has been reported in people">
 
 The published human studies reported no serious adverse events, but the FDA notes they were short, small and said little about how safety was monitored.<Cite id="fda-pcac-2026-bpc157-briefing" /> The 2026 dental report, published after the FDA review, reported no adverse events.<Cite id="froum-2026-nerve-cases" /> The FDA's adverse-event database held three reports up to 4 December 2025, all after injections: nine days of redness and swelling at the injection site (in someone also injecting thymosin); shortness of breath leading to an emergency visit; and diffuse darkening of the skin and gums after a week of a combined BPC-157 and TB-500 product labelled "for research purposes only". The same reaction came back when the product was restarted, and there were no further reactions after the person stopped all peptides.<Cite id="fda-pcac-2026-bpc157-briefing" /> None proves that BPC-157 was the cause. US compounding pharmacies do not have to report adverse events to the FDA, so the small number of reports says little about how often problems occur.<Cite id="fda-pcac-2026-presentations-day1,fda-pcac-2026-bpc157-briefing" />
 
-### What the animal toxicology flags
+</InDetail>
+
+<InDetail title="What the animal toxicology flags">
 
 The Chinese toxicology paper called BPC-157 well tolerated. The FDA's re-analysis of the same data described "clinically relevant safety signals":<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing" />
 
@@ -311,11 +464,15 @@ The Chinese toxicology paper called BPC-157 well tolerated. The FDA's re-analysi
 
 Each came from a single 28-day study, and longer studies would be needed to tell whether the signals are real.<Cite id="fda-pcac-2026-bpc157-briefing" />
 
-### Product quality and immune reactions
+</InDetail>
 
-The most immediate risk may be the product itself. The certificates of analysis the FDA reviewed reported purity, but not specific impurities, clumps of peptide, or tests for bacterial endotoxin or microbial contamination. The FDA calls endotoxin testing critical for anything injected.<Cite id="fda-pcac-2026-bpc157-briefing" /> Peptides can clump together during storage, and synthesis leaves near-copies of the chain; both present the repeated, unfamiliar patterns the immune system is built to notice. The FDA concluded that, injected or sprayed into the nose, BPC-157 "may pose a significant risk for immunogenicity", possibly made worse by aggregation and impurities, and that no study has formally tested this. Consequences of an immune response range from antibodies that cause no symptoms to severe, even life-threatening, reactions.<Cite id="fda-pcac-2026-bpc157-briefing" /> See [product risk](/en/safety/product-risk/).
+<InDetail title="Product quality and immune reactions">
 
-### Why an effect on cancer is theorised
+The most immediate risk may be the product itself. The certificates of analysis the FDA reviewed reported purity, but not specific impurities, clumps of peptide, or tests for bacterial endotoxin or microbial contamination. The FDA calls endotoxin testing critical for anything injected.<Cite id="fda-pcac-2026-bpc157-briefing" /> Peptides can clump together during storage, and synthesis leaves near-copies of the chain; both present the repeated, unfamiliar patterns the immune system is built to notice. The FDA concluded that, injected or sprayed into the nose, BPC-157 "may pose a significant risk for immunogenicity", possibly made worse by aggregation and impurities. Neither the nominators nor the FDA found a study that formally tested this. Consequences of an immune response range from antibodies that cause no symptoms to severe, even life-threatening, reactions.<Cite id="fda-pcac-2026-bpc157-briefing" /> See [product risk](/en/safety/product-risk/).
+
+</InDetail>
+
+<InDetail title="Why an effect on cancer is theorised">
 
 The reasoning combines well-established cancer biology with findings about BPC-157 from cells and rats:
 
@@ -330,23 +487,36 @@ There are honest counter-arguments. The originating group argues that BPC-157 "c
 
 A precedent shows why the question matters. Becaplermin (Regranex), a growth-factor gel for diabetic foot ulcers authorised in the US (its EU authorisation ended in 2012), "promotes cellular proliferation and angiogenesis".<Cite id="fda-regranex-label-2018,ema-medicines-json" /> Its 2011 label carried a boxed warning about more cancer deaths in people using three or more tubes. The warning was removed in November 2018, when the label reported the signal in one of three post-marketing studies, but the label still warns about cancers and forbids use over a known tumour.<Cite id="fda-regranex-label-2011,fda-regranex-label-2018" /> Such signals only emerge, and are only resolved, with large human datasets. BPC-157 has none.
 
-### Sport
-
-BPC-157 is prohibited in sport at all times,<Cite id="wada-2026-list-en" /> and methods to detect it in urine have been published.<Cite id="cox-2017-doping-detection" />
+</InDetail>
 
 </Section>
 
 <Section id="harm-reduction">
 
+<Lead question="How can someone lower the risk?">Talk to a doctor first, treat any vial as unchecked, and know when to stop.</Lead>
+
 ### Talk to a doctor first
 
 A doctor can check for the conditions where the theoretical risks matter most: cancer, pregnancy and clotting problems. A doctor can also make sure the injury itself is properly diagnosed. A torn tendon or ligament may need a scan or surgery within weeks. Treating yourself can delay care that works. See [talking to your doctor](/en/talking-to-your-doctor/).
 
-### Know what you cannot know about the product
+<Callout type="stop" title="Stop and get help if" id="stop-now">
+- the injection site becomes hot, red, swollen or painful, or you get a fever (infection or contamination);
+- you get hives, swelling of the face or throat, or difficulty breathing (allergic reaction);
+- your skin or gums darken, as in one reported case;
+- you notice a new lump, unexplained bleeding or bruising, or pain and swelling in one leg.
+</Callout>
+
+<Cite id="fda-pcac-2026-bpc157-briefing,hsieh-2017-vegfr2" />
+
+<WarningSigns />
+
+<InDetail title="What you cannot know about the product">
 
 A vial labelled BPC-157 may hold a different salt, or more or less peptide than the label says. It may also hold near-copies of the chain, solvents or bacterial toxins. No regulator has checked it (see [product risk](/en/safety/product-risk/)). If you inject anything, follow [sterile technique](/en/safety/sterile-technique/). A contaminated product or needle can cause an infection.
 
-### Checks that make mechanistic sense
+</InDetail>
+
+<InDetail title="Checks that make sense, and why">
 
 Discuss these with a doctor, who decides what is appropriate:
 
@@ -359,12 +529,9 @@ Discuss these with a doctor, who decides what is appropriate:
 
 </Checklist>
 
-### Stop and get help if
+</InDetail>
 
-- the injection site becomes hot, red, swollen or painful, or you get a fever (infection or contamination);
-- you get hives, swelling of the face or throat, or difficulty breathing (allergic reaction);
-- your skin or gums darken, as in one reported case;
-- you notice a new lump, unexplained bleeding or bruising, or pain and swelling in one leg.
+<InDetail title="Interactions, and who should not use it at all">
 
 ### Plausible interactions (none has been studied)
 
@@ -381,6 +548,6 @@ Discuss these with a doctor, who decides what is appropriate:
 - **Anyone with a clotting disorder or on anticoagulants**, because of the animal clotting signals.
 - **Athletes subject to anti-doping rules**, because it is prohibited at all times.
 
-<WarningSigns />
+</InDetail>
 
 </Section>

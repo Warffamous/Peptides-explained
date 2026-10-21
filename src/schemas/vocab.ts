@@ -189,7 +189,7 @@ export const STUB_SECTIONS = ['what-it-is', 'evidence', 'regulatory', 'risks'] a
 export const CALLOUT_TYPES = ['note', 'tip', 'warning', 'stop', 'legal', 'uncertain'] as const;
 
 /** Pictograms for the "Stop and get help" strip (glance.stop_signs): what the person notices. */
-export const STOP_SIGN_ICONS = ['sign-belly-pain', 'sign-low-sugar', 'sign-allergic', 'sign-vision'] as const;
+export const STOP_SIGN_ICONS = ['sign-belly-pain', 'sign-low-sugar', 'sign-allergic', 'sign-vision', 'sign-infection', 'sign-bleeding', 'sign-heart', 'sign-mole', 'sign-clock'] as const;
 
 /** The three answers of a <Compare> cell (<Verdict is="…" />): always a word plus a glyph, never colour alone. */
 export const VERDICTS = ['yes', 'no', 'unknown'] as const;

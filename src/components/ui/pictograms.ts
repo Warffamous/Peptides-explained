@@ -83,6 +83,16 @@ const signBellyPain = () => `<g transform="translate(1 6) scale(0.78)">${stomach
 const signLowSugar = () => `<path d="M4 19 l12 -7 l12 7 v15 l-12 7 l-12 -7 z"/><path ${CUT_STROKE(2.5)} d="M4 19 l12 7 l12 -7 M16 26 v15"/><path ${STROKE(4.5)} d="M39 6 v32 M32 30 l7 8 l7 -8"/>`;
 /** Swelling of the face or throat, trouble breathing: head and shoulders, swelling marks at the throat, breath lines. */
 const signAllergic = () => `<circle cx="20" cy="13" r="9"/><path d="M4 46 c0 -10 6 -15 16 -15 s16 5 16 15 z"/><path d="M15 21 h10 v9 h-10 z"/><path ${STROKE(3)} d="M10 26 q-4 -1 -5 -5 M30 26 q4 -1 5 -5"/><path ${STROKE(3)} d="M33 11 q4 -3 8 0 t8 0 M33 18 q4 -3 8 0 t8 0"/>`;
+/** Infected injection site or fever: a swollen bump on the skin line with heat waves rising from it. */
+const signInfection = () => `<path d="M2 40 h12 c2 -14 18 -14 20 0 h12 v6 h-44 z"/><path ${STROKE(3)} d="M16 22 q-3 -4 0 -8 t0 -8 M24 20 q-3 -4 0 -8 t0 -8 M32 22 q-3 -4 0 -8 t0 -8"/>`;
+/** Unexplained bleeding: a single drop. */
+const signBleeding = () => `<g transform="translate(4 2) scale(0.85)">${drop()}</g>`;
+/** Chest pain or a racing, uneven heartbeat: a heart with a pulse line. */
+const signHeart = () => pulseHeart();
+/** A new or changing mole: an uneven dark spot with a dashed ring around it. */
+const signMole = () => `<path d="M24 13 c7 0 11 4 10 10 c-1 5 2 9 -3 12 c-5 3 -9 -1 -13 0 c-5 1 -8 -4 -7 -9 c1 -6 6 -13 13 -13 z"/><circle ${STROKE(2.5)} stroke-dasharray="4 4" cx="24" cy="24" r="21"/>`;
+/** Something that lasts too long (e.g. an erection over 3 hours): a clock. */
+const signClock = () => `<circle ${STROKE(4)} cx="24" cy="24" r="19"/><path ${STROKE(4)} d="M24 12 v12 l8 6"/>`;
 /** Sudden loss of vision: an eye with a slash. */
 const signVision = () => `<path d="M2 24 C10 12 38 12 46 24 C38 36 10 36 2 24 z"/><circle cx="24" cy="24" r="7" ${CUT}/><circle cx="24" cy="24" r="3.5"/><path ${CUT_STROKE(7)} d="M8 42 L40 6"/><path ${STROKE(3.5)} d="M8 42 L40 6"/>`;
 
@@ -170,6 +180,11 @@ export const PICTOGRAMS: Record<string, string> = {
   'sign-low-sugar': signLowSugar(),
   'sign-allergic': signAllergic(),
   'sign-vision': signVision(),
+  'sign-infection': signInfection(),
+  'sign-bleeding': signBleeding(),
+  'sign-heart': signHeart(),
+  'sign-mole': signMole(),
+  'sign-clock': signClock(),
 };
 
 export const PICTOGRAM_NAMES = Object.keys(PICTOGRAMS) as readonly string[];
