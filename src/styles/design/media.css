@@ -1,7 +1,7 @@
-@import "../../base/media.css";
+@import "../base/media.css";
 
 /*
- * B · Mechanism — photographs are context, not the subject: natural colour in a hairline frame,
+ * Photographs are context, not the subject: natural colour in a hairline frame,
  * slightly dimmed in the dark edition. Plates (the body map, the atlas) are specimens on a light
  * table: the artwork sits on a light panel with a 1px line; in the dark edition the panel and the
  * art are dimmed to about 85%, never a bright white slab on the dark ground. Markers use the
@@ -57,15 +57,16 @@
 .media-credit a:hover { color: var(--link); }
 
 /* ------------------------------------------------------------------ page photo */
-/* Phones and tablets: after the beginner layer, on the reading column. From 64rem: beside the title
-   block, its top level with the eyebrow (placement in layout.css). */
-.doc > .hero { margin-block: 0 var(--space-7); }
-@media (min-width: 64rem) { .doc > .hero { margin-block: var(--space-4) var(--space-5); } }
+/* Phones and tablets: after the beginner layer, on the reading column. From 64rem: in the aside
+   beside the title block, its top level with the eyebrow (placement in layout.css). */
+.doc > .hero { margin-block: 0 var(--space-6); }
+@media (min-width: 64rem) { .doc > .hero { margin-block: var(--space-2) var(--space-5); } }
 .hero__caption { padding-block-start: var(--space-3); padding-inline: var(--space-2); }
 .hero__text { font-size: var(--s--1); line-height: 1.5; color: var(--text-2); max-inline-size: var(--measure); }
 
 /* ------------------------------------------------------------------ photo */
-:is(.prose, .csec) > .photo { grid-column: wide; justify-self: center; inline-size: min(100%, 52rem); margin-block: var(--space-4) var(--space-7); }
+/* A photo in the text runs wider than the reading column but starts on its edge, like every block. */
+:is(.prose, .csec) > .photo { grid-column: wide; justify-self: start; inline-size: min(100%, 52rem); margin-block: var(--space-4) var(--space-7); }
 .photo__caption { padding-block-start: var(--space-3); padding-inline: var(--space-2); max-inline-size: var(--measure); }
 .photo__text { font-size: var(--s--1); line-height: 1.5; color: var(--text-2); }
 

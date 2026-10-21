@@ -1,6 +1,6 @@
 /**
- * Pictogram vocabulary — design system C's signature (Isotype logic, after Otto Neurath and
- * Gerd Arntz: one symbol, one meaning, in every language). Flat filled figures on a 48×48 grid,
+ * Pictogram vocabulary (Isotype logic, after Otto Neurath and Gerd Arntz: one symbol, one
+ * meaning, in every language), used in the At a glance cards, the stop strip and the status badge. Flat filled figures on a 48×48 grid,
  * drawn in currentColor; cut-outs use --pg-cut (the surface colour behind the symbol).
  *
  * Rules: the same idea always uses the same figure (a person is always this person; a group of

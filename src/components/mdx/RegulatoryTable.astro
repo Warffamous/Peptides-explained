@@ -3,8 +3,6 @@ import { t } from '../../lib/i18n';
 import { ctxCompound } from '../../lib/ctx';
 import { formatDate, isoDate } from '../../lib/format';
 import { JURISDICTIONS } from '../../schemas/vocab';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 const c = ctxCompound(Astro, 'RegulatoryTable');
 const L = c.locale;
 const rows = [...c.data.regulatory].sort((a, b) => JURISDICTIONS.indexOf(a.jurisdiction) - JURISDICTIONS.indexOf(b.jurisdiction));
@@ -27,7 +25,6 @@ const rows = [...c.data.regulatory].sort((a, b) => JURISDICTIONS.indexOf(a.juris
             <th scope="row">{t(L, `vocab.jurisdiction.${r.jurisdiction}`)}</th>
             <td data-label={t(L, 'compound.regulatoryTable.status')}>
               <span class="status-badge" data-status={r.status}>
-                <ThemeOnly theme="c" as="span" class="status-badge__icon"><Pictogram name={`reg-${r.status}`} /></ThemeOnly>
                 {t(L, `vocab.regStatus.${r.status}`)}{r.wada_section && <> · <bdi class="qty">{r.wada_section}</bdi></>}{r.wada_scope && <>, {t(L, `vocab.wadaScope.${r.wada_scope}`)}</>}
               </span>
               {r.since && <span class="reg-table__since">{t(L, 'compound.regulatoryTable.since')} <time datetime={isoDate(r.since)}>{formatDate(L, r.since)}</time></span>}

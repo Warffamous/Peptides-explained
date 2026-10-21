@@ -11,8 +11,8 @@ recommends no vendor, and never makes a claim it cannot source.
 
 ## 1. The rules on one screen
 
-- **Every page gets a photograph** (owner's decision, 20 October 2026), and each design treats it
-  in its own way. A page hero is one line in `src/data/heroes.yaml`.
+- **Every page gets a photograph** (owner's decision, 20 October 2026), in natural colour in a
+  hairline frame (§7). A page hero is one line in `src/data/heroes.yaml`.
 - **Licences:** public domain, CC0, CC BY and CC BY-SA only. Never NC, ND, "free to view",
   "editorial use", all-rights-reserved or unknown.
 - **Self-host every file.** No hotlinking, no embeds, no image CDNs: viewing a page must not send
@@ -254,8 +254,8 @@ Alt text is written for someone who cannot see the image, in **B1 English**.
    sources: [friedrichsen-2021-appetite, ema-epar-wegovy, kapitza-2017-beta-cell]
    ```
 
-   `level` says how well the labelled effect is shown; design B colours markers cyan
-   (demonstrated) or amber (hypothesis), and neutral when it is omitted.
+   `level` says how well the labelled effect is shown; markers are cyan (demonstrated) or amber
+   (hypothesis), and neutral when it is omitted.
 3. **Write the text** in `src/i18n/<locale>/infographics.json`: a title, one label (and optional
    detail) per marker key, and a **full text equivalent** that says everything the plate shows.
    Labels follow the page's claims and sources; nothing new appears only on a plate.
@@ -280,31 +280,35 @@ art_dark: glp1-body-map-v2-dark   # optional; a separate media.yaml entry, kind:
   (its own registry entry, alt text in `media.json` and review note). **Same proportions**: `<Infographic>` fails the build when the
   aspect ratios differ by more than 1%, because the markers are placed in % of the art and are
   shared by both versions. Check that every marker still sits on its organ in the dark version.
-- The page shows the light art in the light scheme and the dark art in the dark scheme (every
-  design follows the reader's setting or the toggle; B is light when there is none). Both pictures are lazy, so the
-  hidden one is never downloaded; print always uses the light art.
-- With a dark art the frame drops its light panel and dimming in dark. Without one, each design
-  dims the light art on a soft light panel in dark (never inverted).
+- The page shows the light art in the light scheme and the dark art in the dark scheme (the site
+  follows the reader's setting or the toggle, and is light when there is none). Both pictures are
+  lazy, so the hidden one is never downloaded; print always uses the light art.
+- With a dark art the frame drops its light panel and dimming in dark. Without one, the light art
+  is dimmed to about 85% on a soft light panel in dark (never inverted).
 
 ---
 
-## 7. How each design treats images
+## 7. How the design treats images
 
-| | A · Monograph | B · Mechanism | C · Public Health |
-|---|---|---|---|
-| Photos | Natural colour (`saturate(0.9)`), hairline frame, credit in the mono face; caption in the margin on wide pages. Dark: the same photo at 90% brightness, never tinted or inverted. | Natural colour in a hairline frame, rounded; slightly dimmed in the dark edition. | Full colour, flat, solid high-contrast caption bar underneath; never text on the picture. |
-| Hero | A plate in the margin columns beside the title, caption and mono credit under a hairline. | Rounded photo sunk into the ground, beside the title on wide screens. | Flat photo with caption bar, in its own column beside the title on wide screens. |
-| Plates | Natural-colour art at least half the column wide, hairline roundels, ruled key. Dark: the `art_dark` version as drawn on the paper; without one, the light art dimmed to 85% on a warm `#E9E5DC` panel, never inverted. | Specimen on a light table; cyan/amber epistemic markers with a spring highlight. Dark: the `art_dark` version as drawn on the card surface, markers in the dark edition's tones; without one, the light art dimmed to 85% on a `#D9DEE5` panel. | Big solid slate discs (`--plate-mark`) on the art and in the key; key below on phones. Dark: the `art_dark` version on the page colour with light-slate discs; without one, the light art dimmed to 86% on a soft panel. |
+The site has one design, "Mechanism" (the owner's decision of 21 October 2026; the earlier
+three-design comparison is preserved at the git tag `three-designs-2026-10-21`). Its image rules
+(`src/styles/design/media.css`):
+
+| | Treatment |
+|---|---|
+| Photos | Natural colour (`saturate(0.92)`) in a hairline frame with the 8 px radius; caption and short credit under it. Dark: the same photo slightly dimmed (`brightness(0.88)`), never tinted or inverted. In the text a photo runs wider than the reading column but starts on the page's one left edge. |
+| Hero | Phones and tablets: a 16:9 photo after the beginner layer. From 64 rem: a 3:2 photo in the aside beside the title, the review line and the fact sheet (compound pages) or the summary (other pages), its top level with the eyebrow. |
+| Plates | A specimen on a light table: the art on a light panel with a 1 px line; cyan/amber epistemic markers (neutral without a level) that grow a little when their key item is highlighted. Dark: the `art_dark` version as drawn on the card surface, markers in the dark tones; without one, the light art dimmed to 85% on a `#D9DEE5` panel. |
 
 The page photo never pushes the beginner layer down. The DOM order (= reading and focus order) is
-title → "At a glance" → summary → review line → photo, which is what phones and tablets show: a
-16:9 photo (capped at 24 rem high) after the summary. From 64 rem `base/structure.css` lifts the
-photo beside the title block (3:2, in A the margin columns 9–12, in B the end track pulled 9 rem
-inwards, in C a 22 rem second column) and the review line to the foot of that block. So at
-360×740 the title and the first "At a glance" tile (or the first summary point) are on the first
-screen, and at 1280×900 the title, the photo and the start of the beginner layer are. B and C also
-tighten the space above the page title on phones (themes/<t>/beginner.css). Every compound page
-has a hero; an image that is a page's hero is not repeated in that page's body.
+title → "At a glance" → stop strip → summary → fact sheet → review line → photo, which is what
+phones and tablets show: a 16:9 photo (capped at 24 rem high) after them. From 64 rem
+`base/structure.css` lifts the review line and the fact sheet under the title and the photo
+beside them (3:2, in the aside track; on 64–74 rem screens it takes up to 6.5 rem of the reading
+column, see `design/layout.css`). So at 360×740 the title and the first "At a glance" card are on
+the first screen and the whole stop strip ends within the second; at 1280×900 the title, lede,
+badge, fact sheet, photo and the start of "At a glance" are on the first screen. Every compound
+page has a hero; an image that is a page's hero is not repeated in that page's body.
 
 ---
 
@@ -315,7 +319,7 @@ has a hero; an image that is a page's hero is not repeated in that page's body.
 - The build makes **AVIF + WebP + JPEG** at responsive widths with `astro:assets` `getImage()`
   (`src/lib/media.ts`), with explicit `width`/`height` so nothing shifts (zero CLS).
 - **Heroes** are cropped at build time around the focal point (16:9 below 64 rem, 3:2 beside the
-  title), encoded at lower quality (they are small and, in A and B, tinted), `loading=eager`
+  title), encoded at lower quality (they are small and slightly subdued), `loading=eager`
   and `fetchpriority=high`. Budget: phone AVIF ≤ 40 KB at 480 w (the Gila monster hero is ~11 KB at
   480 w and ~32 KB at 800 w).
 - **Everything else is lazy** (`loading=lazy`, `decoding=async`).

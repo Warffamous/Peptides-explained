@@ -1,6 +1,9 @@
 /*
- * Design system B — "Mechanism". Authority through demonstrated sophistication.
- * Lineage: scientific visualisation, Ciechanowski's explainers, Observable.
+ * The site's design, "Mechanism" (the only design since 21 October 2026; docs/design/
+ * DESIGN-DIRECTIONS-2026-10.md, "Decision"). Authority through demonstrated mechanism, set in a
+ * calm, clinical register: modest display sizes, hairlines and white space doing the work, colour
+ * spent on meaning only. Lineage: scientific visualisation (Ciechanowski's explainers, Observable)
+ * and public-health reference pages (NHS, Thuisarts).
  *
  * Colour carries epistemic meaning and nothing else:
  *   CYAN  = demonstrated (in people, animals or cells; the line style says which),
@@ -11,8 +14,8 @@
  *
  * Schemes (DESIGN-DIRECTIONS-2026-10 §4): light by default, dark when the reader's system asks for
  * it, and the scheme toggle (html[data-scheme]) overrides both. The scroll-driven mechanism stage
- * is a dark island in both schemes: `.b-dark` re-declares the dark tokens on its own subtree.
- * Contrast of every role pair: docs/design (B contrast table), computed by script.
+ * is a dark island in both schemes: `.dark-island` re-declares the dark tokens on its own subtree.
+ * Contrast of every role pair: docs/design/DESIGN-DIRECTIONS-2026-10.md §4, computed by script.
  */
 :root {
   color-scheme: light;
@@ -33,7 +36,7 @@
   --amber-ink: #ffffff;
   --amber-soft: rgb(143 83 0 / 0.1);
   --link: #2b3bb0; /* 8.4:1 */
-  --alert: #a8173c; /* crimson, stop-now only: 6.9:1, white on it 7.4:1 */
+  --alert: #991436; /* crimson, stop-now only: 7.9:1 (7.4:1 on --alert-tint), white on it 8.4:1 */
   --alert-ink: #ffffff;
   --alert-tint: #fbeef1;
   --focus: #2b3bb0;
@@ -51,16 +54,20 @@
   --font-sans: 'Outfit', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Noto Sans Arabic', sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 
-  /* Type: confident display sizes, comfortable 19px body. Ratio 1.25 (major third).
-     No word below 14px (--s--2); mono only for numbers and dates. */
+  /* Type: a comfortable 19px body (Outfit has a small x-height) and modest headings, so the page
+     reads as a clinical reference, not a product launch: page title 34–52px, section titles
+     24–30px, sub-headings 21px. No word below 14px (--s--2); mono only for numbers and dates. */
   --s--2: 0.875rem;
   --s--1: 0.9375rem;
   --s-0: 1.1875rem;
-  --s-1: 1.4rem;
-  --s-2: 1.85rem;
-  --s-3: clamp(2rem, 1.5rem + 2vw, 2.6rem);
-  --s-4: clamp(2.6rem, 1.6rem + 4.6vw, 4.75rem);
+  --s-1: 1.3125rem;
+  --s-2: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);
+  --s-3: clamp(1.5rem, 1.3rem + 0.75vw, 1.875rem);
+  --s-4: clamp(2.125rem, 1.6rem + 2.2vw, 3.25rem);
   --lh: 1.65;
+  /* One left edge: the reading column (--measure) starts where the wide track starts; the rest of
+     the wide track is the aside (the page photo, "On this page") and room for wide figures and
+     tables (layout.css). */
   --measure: 42rem;
   --wide: 74rem;
   /* One radius for cards, chips and buttons; pills only on inline claim tags. */
@@ -74,14 +81,14 @@
   --space-4: 1rem;
   --space-5: 1.5rem;
   --space-6: 2.5rem;
-  --space-7: 3rem;
-  --space-8: 4.5rem;
+  --space-7: 2.75rem;
+  --space-8: 3.75rem;
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Dark edition (chosen with the toggle) and the dark island (the mechanism stage, in both schemes). */
-:root[data-scheme='dark'], .b-dark {
+:root[data-scheme='dark'], .dark-island {
   color-scheme: dark;
   --ground: #0a0e14;
   --surface: #0f151e;
@@ -100,7 +107,7 @@
   --amber-ink: #1d1203;
   --amber-soft: rgb(232 177 95 / 0.14);
   --link: #a5b4ff;
-  --alert: #f4796e; /* 7.2:1 */
+  --alert: #f78c80; /* 8.3:1 (7.5:1 on --alert-tint) */
   --alert-ink: #0a0e14;
   --alert-tint: #2a1416;
   --focus: #a5b4ff;
@@ -115,7 +122,7 @@
   --res-nonstandard: #f2f5f8;
 }
 /* The island must not inherit the light page's computed text colour. */
-.b-dark { color: var(--text); }
+.dark-island { color: var(--text); }
 
 /* The reader's system setting, unless they chose light with the toggle. */
 @media (prefers-color-scheme: dark) {
@@ -138,7 +145,7 @@
     --amber-ink: #1d1203;
     --amber-soft: rgb(232 177 95 / 0.14);
     --link: #a5b4ff;
-    --alert: #f4796e;
+    --alert: #f78c80;
     --alert-ink: #0a0e14;
     --alert-tint: #2a1416;
     --focus: #a5b4ff;

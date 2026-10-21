@@ -1,7 +1,7 @@
 /*
- * Media pipeline — structure shared by every design system: page photo, photo figure, atlas plate,
+ * Media pipeline — the bare structure of the page photo, photo figure, atlas plate,
  * image credits. Looks (frames, filters, marker colours, caption type) live in
- * themes/<t>/media.css, which imports this file. Logical properties only.
+ * design/media.css, which imports this file. Logical properties only.
  *
  * Photographs and artwork are never mirrored in RTL: they show real things. Only the layout around
  * them mirrors. Plate markers are SVG coordinates on the art, so they stay put as well.
@@ -21,7 +21,7 @@
 /*
  * The photo follows the beginner layer on phones and tablets (DocLayout order), so it can be a real
  * photograph there: 16:9, capped on tablets so it stays a band. From 64rem it sits beside the title
- * block at 3:2 (structure.css moves it; each design sets its column).
+ * block at 3:2 (structure.css moves it; design/layout.css sets its column).
  */
 .hero__img {
   aspect-ratio: 16 / 9;
@@ -55,8 +55,8 @@
 .plate[data-shape='portrait'] .plate__art { inline-size: 100%; max-inline-size: 24rem; justify-self: center; }
 .plate__art { position: relative; min-inline-size: 0; }
 /* A plate may have a dark-scheme version of its art (art_dark in src/data/infographics/<id>.yaml).
-   Each design says which one its current scheme shows (--plate-show-light / --plate-show-dark in
-   themes/<t>/media.css: every design follows the reader's setting or the toggle). Both pictures
+   The current scheme says which one shows (--plate-show-light / --plate-show-dark in
+   design/media.css, which follows the reader's setting or the toggle). Both pictures
    are lazy, so the hidden one is never fetched; same proportions, so the markers fit both. */
 .plate .plate__picture--light { display: var(--plate-show-light, block); }
 .plate .plate__picture--dark { display: var(--plate-show-dark, none); }
@@ -78,7 +78,7 @@
 
 /*
  * Pointing at a key entry highlights its marker (and the reverse is not needed: markers are not
- * interactive). Pure CSS, no script; themes decide what "highlighted" looks like via --on.
+ * interactive). Pure CSS, no script; design/media.css decides what "highlighted" looks like via --on.
  */
 .plate__marker, .plate__item { --on: 0; }
 .plate:has(.plate__item:nth-child(1):hover) .plate__marker:nth-of-type(1),

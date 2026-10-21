@@ -8,7 +8,6 @@ import { ctxLocale } from '../../lib/ctx';
 import { TIMELINE, getSource, shortAuthors } from '../../lib/data';
 import { formatDate, isoDate } from '../../lib/format';
 import { routeUrl } from '../../lib/urls';
-import ThemeOnly from '../ui/ThemeOnly.astro';
 const L = ctxLocale(Astro);
 const text = namespace<Record<string, { title: string; text: string }>>(L, 'timeline');
 const events = [...TIMELINE].sort((a, b) => a.year - b.year || (a.date && b.date ? +a.date - +b.date : 0));
@@ -21,7 +20,7 @@ const decades = [...new Set(events.map((e) => Math.floor(e.year / 10) * 10))];
     {cats.map((c) => <button type="button" data-filter={c} aria-pressed="false">{t(L, `pages.timeline.categories.${c}`)}</button>)}
     <p class="timeline__count" aria-live="polite" data-timeline-count>{t(L, 'pages.timeline.count', { n: events.length })}</p>
   </div>
-  <ThemeOnly theme="b c" as="nav" class="timeline__decades"><ul role="list">{decades.map((d) => <li><a href={`#decade-${d}`}><bdi>{d}s</bdi></a></li>)}</ul></ThemeOnly>
+  <nav class="timeline__decades"><ul role="list">{decades.map((d) => <li><a href={`#decade-${d}`}><bdi>{d}s</bdi></a></li>)}</ul></nav>
   <ol class="timeline__list" role="list" data-count-template={t(L, 'pages.timeline.count', { n: '{n}' })}>
     {events.map((e, i) => {
       const tx = text[e.id];

@@ -1,7 +1,7 @@
 ---
 /**
- * The four-axis evidence profile. One semantic <dl>; each design system gives it its own
- * visual identity (A: hairline ladder matrix; B: labelled ladders; C: Isotype rows).
+ * The four-axis evidence profile. One semantic <dl>, drawn as one labelled ladder per axis
+ * (every step of the axis's own scale named, the reached steps filled, the current one ringed).
  * The axes are never summed or averaged — the component has no notion of a total.
  */
 import { t } from '../../lib/i18n';
@@ -9,8 +9,6 @@ import { routeUrl } from '../../lib/urls';
 import { EVIDENCE_AXES, type EvidenceAxis } from '../../schemas/vocab';
 import { getCompoundData, resolveCompound } from '../../lib/content';
 import { ctxLocale } from '../../lib/ctx';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 import InDetail from './InDetail.astro';
 
 /** foldWhy: the reason for each grade, and the note on reading the card, move into one "In detail" fold under the card. */
@@ -40,7 +38,6 @@ const id = `grade-${slug}${compact ? '-c' : ''}`;
     {axes.map((a) => (
       <div class="grade__axis" data-axis={a.axis} data-value={a.value} data-step={a.step} data-max={a.max} style={`--step:${a.step};--max:${a.max - 1};--frac:${a.max > 1 ? a.step / (a.max - 1) : 0}`}>
         <dt class="grade__name">
-          <ThemeOnly theme="c" as="span" class="grade__icon"><Pictogram name={`axis-${a.axis}`} /></ThemeOnly>
           <span class="grade__name-text">{t(L, `evidence.axes.${a.axis}.name`)}</span>
           {!compact && <span class="grade__question">{t(L, `evidence.axes.${a.axis}.question`)}</span>}
         </dt>

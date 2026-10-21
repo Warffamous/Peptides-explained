@@ -1,0 +1,106 @@
+@import "../base/figures.css";
+
+/*
+ * "Less text, more visuals" components (DESIGN-DIRECTIONS-2026-10 §3.2, §4): the design's surfaces,
+ * hairlines and one 8px radius, no glows. Colour keeps its epistemic job: cyan only
+ * for a demonstrated quantity (key numbers, filled icon-array squares, time-strip bars), as a mark or
+ * as large numerals; words stay in the text colours (the question above a lead, the fold labels).
+ * Amber is never used here (it means "hypothesised" and nothing else); the alert crimson appears
+ * only in the stop strip. Mono only for numbers and dates; no word below 14px (--s--2).
+ */
+:root {
+  --fig-ink: var(--text);
+  --fig-ink-2: var(--text-2);
+  --fig-ink-3: var(--text-3);
+  --fig-line: var(--line);
+  --fig-line-strong: var(--line-strong);
+  --fig-accent: var(--cyan);
+  --fig-paper: var(--surface);
+  --fig-tint: var(--surface-2);
+  --fig-alert: var(--alert);
+  --fig-alert-tint: var(--alert-tint);
+  --fig-radius: var(--radius);
+  --fig-small: var(--s--1);
+  --fig-tiny: var(--s--2);
+  --fig-lede: var(--s-1);
+}
+.lead__q { color: var(--text-2); font-size: var(--s--1); font-weight: 600; }
+/* Numerals and years only (a fold's reading time and the data card are words with numbers: sans). */
+.time-strip__tick, .icon-array__count, .key-number__value { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.reading-tools { padding: var(--space-3) var(--space-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+/* The line and the button share one row wherever the button fits beside a few words. */
+.reading-tools__text { flex: 1 1 16rem; max-inline-size: none; }
+.reading-tools__toggle { border-color: var(--line-strong); background: var(--surface-2); }
+.reading-tools__toggle:hover { border-color: var(--link); }
+.fig, .key-numbers { padding: var(--space-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.key-numbers > .key-number { padding-block-start: var(--space-2); }
+.icon-array__sq { fill: transparent; }
+.verdict[data-verdict='yes'] .verdict__mark { stroke: var(--surface); }
+:is(.prose, .csec) > :is(.fig:not(.compare), .lead) { grid-column: text; }
+/* A row of key numbers takes the wide track: four numbers stand side by side on a wide screen
+   (2 × 2 on tablets, one column on phones), so the big cyan numerals read as one comparison. */
+:is(.prose, .csec) > .key-numbers { grid-column: wide; }
+@container doc (min-width: 68rem) {
+  .key-numbers--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .key-numbers--4 .key-number__value { font-size: 2.5rem; }
+}
+
+/* ------------------------------------------------------------------ stop and get help */
+/* The one red block near the top: a hairline frame in the alert colour with a 4px start edge, on the
+   alert tint. As wide as the "At a glance" cards above it; three signs side by side from 48rem. */
+.doc > .stop-strip { grid-column: wide; }
+.stop-strip { margin-block-end: var(--space-6); border: 1px solid color-mix(in srgb, var(--alert) 45%, transparent); border-inline-start-width: 4px; }
+.stop-strip__title { font-size: var(--s-1); }
+.stop-strip__list { gap: var(--space-3) var(--space-5); }
+.stop-strip__text { font-size: var(--s-0); }
+.stop-strip__call { font-size: var(--s-0); }
+.stop-strip__links { font-size: var(--s--1); }
+/* Phones: tighter, so the whole strip ends within the first two screens (360 × 740). */
+@media (max-width: 29.99rem) {
+  .stop-strip { margin-block-end: var(--space-5); padding: 0.625rem var(--space-4); }
+  .stop-strip__title { margin-block-end: var(--space-2); font-size: 1.1875rem; }
+  .stop-strip__list { gap: var(--space-2); }
+  .stop-strip__icon .pictogram { inline-size: 2.25rem; block-size: 2.25rem; }
+  .stop-strip__text { font-size: 1.0625rem; }
+  .stop-strip__foot { margin-block-start: var(--space-2); padding-block-start: var(--space-2); }
+  .stop-strip__call { align-items: flex-start; font-size: 1.0625rem; }
+}
+
+/* ------------------------------------------------------------------ fact sheet */
+/* Phones and tablets: a card after the summary, one label/value row per fact. From 64rem: under the
+   title and the review line, beside the photo (layout.css), as a 3-column sheet with the label
+   above each value (the pharmacopoeia monograph header), so the key facts share the first screen
+   with the title. */
+.fact-sheet { padding: var(--space-3) var(--space-4); background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+@media (min-width: 64rem) {
+  .doc > .fact-sheet { container: fact-sheet / inline-size; margin-block-end: var(--space-6); padding: var(--space-1) var(--space-4) var(--space-3); }
+  .doc > .fact-sheet .fact-sheet__list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-5); border-block-start: 0; }
+  .doc > .fact-sheet .fact-sheet__row { grid-template-columns: minmax(0, 1fr); align-content: start; row-gap: 0.1rem; padding-block: var(--space-2); border-block: 0; }
+  .doc > .fact-sheet .fact-sheet__row:nth-child(n + 3) { border-block-start: 1px solid var(--line); }
+  .doc > .fact-sheet .fact-sheet__row dd { font-size: 1.0625rem; line-height: 1.4; }
+  .doc > .fact-sheet .fact-sheet__note { margin-block-start: var(--space-1); }
+}
+/* Three across once the sheet is wide enough for short values on one or two lines. */
+@container fact-sheet (min-width: 32rem) {
+  .doc > .fact-sheet .fact-sheet__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .doc > .fact-sheet .fact-sheet__row:nth-child(3) { border-block-start: 0; }
+}
+
+/* ------------------------------------------------------------------ tables and wide figures */
+/* Tables and comparison figures get the wide track (the reading column plus the aside), so their
+   rows stay short. A plain table is never narrower than the reading column, and only as wide as its
+   content needs. Inside an "In detail" fold (which sits in the reading column) the wide components
+   reach into the aside by the same amount: the reading column starts at the wide track's start, so
+   min(100cqi, --wide) of the page (.doc is the container) ends exactly at the wide track's end. */
+:is(.prose, .csec) > :is(.table-scroll--prose, .compare) { grid-column: wide; }
+.table-scroll--prose > table:not(.data-table) { inline-size: auto; min-inline-size: min(100%, var(--measure)); }
+.in-detail__body > :is(.table-scroll, .compare, .authorised, .study-table, .reg-table, .mechanism, .explainer, .plate, .diagram, .timeline, .grade-matrix) { inline-size: min(100cqi, var(--wide)); max-inline-size: none; }
+/* The comparison table is the whole figure: no running-text spacing under it inside the card
+   (components.css gives tables and their scroll box room below them in prose). */
+.compare .table-scroll { margin-block-end: 0; }
+.compare .table-scroll > table { margin-block-end: 0; }
+/* The evidence card's folded reasons: set like the unfolded ones (.grade__why in components.css). */
+.grade .in-detail { margin-block-start: var(--space-4); }
+.grade__whys-row :is(dt, dd) { font-size: var(--s--1); }
+.grade__whys-row dd { color: var(--text-2); }
+.grade .in-detail .grade__foot { margin-block-start: var(--space-4); }

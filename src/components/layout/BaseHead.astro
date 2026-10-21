@@ -1,7 +1,7 @@
 ---
-import { SITE, BUILD_THEME, BUILD_THEMES, DEFAULT_THEME, REVIEW_BUILD, DEFAULT_LOCALE, getLocale } from '../../lib/config';
+import { SITE, DEFAULT_LOCALE, getLocale } from '../../lib/config';
 import { url, canonicalUrl } from '../../lib/urls';
-import { bundleTheme } from '../../lib/theme-css';
+import { bundleSiteCss } from '../../lib/site-css';
 import { t } from '../../lib/i18n';
 
 interface Props {
@@ -14,36 +14,27 @@ interface Props {
   noindex?: boolean;
   jsonld?: Record<string, unknown>[];
   ogType?: 'website' | 'article';
+  /** Id of an element the first paint waits for (<link rel="expect" blocking="render">). */
+  renderAfter?: string;
 }
-const { locale, title, description, routeKey, alternates, noindex = false, jsonld = [], ogType = 'article' } = Astro.props;
+const { locale, title, description, routeKey, alternates, noindex = false, jsonld = [], ogType = 'article', renderAfter } = Astro.props;
 const loc = getLocale(locale);
 const brand = t(locale, 'common.brand');
 const fullTitle = routeKey === '' ? `${brand} — ${t(locale, 'common.tagline')}` : `${title} · ${brand}`;
 const canonical = canonicalUrl(locale, routeKey);
-const robots = noindex || REVIEW_BUILD || loc.status !== 'published' ? 'noindex, follow' : 'index, follow';
+const robots = noindex || loc.status !== 'published' ? 'noindex, follow' : 'index, follow';
 
-// One stylesheet per design system. The switchable build ships all three and picks one before
-// first paint; dedicated builds ship only their own.
-const themeHref = Object.fromEntries(BUILD_THEMES.map((th) => [th, url(`/themes/${th}.css?v=${bundleTheme(th).hash}`)]));
-const FONT_PRELOAD: Record<string, string> = {
-  a: 'inter-latin-wght-normal.woff2',
-  b: 'outfit-latin-wght-normal.woff2',
-  c: 'source-sans-3-latin-wght-normal.woff2',
-};
-const preloadFont = loc.script === 'arabic' ? 'noto-sans-arabic-arabic-wght-normal.woff2' : FONT_PRELOAD[DEFAULT_THEME];
-const switchable = BUILD_THEME === 'switchable';
-// Inline, render-blocking on purpose: applies stored theme/scheme and ?pseudo=rtl before first paint
-// so there is no flash. ~600 bytes; everything else is deferred. Another design's stylesheet replaces
-// the default <link> as a new element with blocking="render": a script-changed href is not
-// render-blocking in Chromium, so the page painted unstyled first and then jumped (a layout shift of
-// 0.3–1 in designs B and C). html.js is set first, outside the
-// try: when storage is blocked (access throws) the JS-only controls (scheme toggle, explainer
-// Pause/Replay) must still be laid out from the first paint and shown.
+// The site's one stylesheet, content-hashed (src/lib/site-css.ts).
+const cssHref = url(`/styles/site.css?v=${bundleSiteCss().hash}`);
+// The body face (Outfit, Latin) or, on Arabic-script pages, Noto Sans Arabic.
+const preloadFont = loc.script === 'arabic' ? 'noto-sans-arabic-arabic-wght-normal.woff2' : 'outfit-latin-wght-normal.woff2';
+// Inline, render-blocking on purpose: applies the stored light/dark choice and ?pseudo=rtl before
+// first paint, so there is no flash. Well under 1 KB; everything else is deferred. html.js is set
+// first, outside the try: when storage is blocked (access throws) the JS-only controls (scheme
+// toggle, explainer Pause/Replay) must still be laid out from the first paint and shown.
+// A design choice saved by earlier preview builds ('pe-theme') is removed, and ?theme= is ignored.
 const boot = `(function(d,w){d.documentElement.classList.add('js');try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
-  (switchable
-    ? `var H=${JSON.stringify(themeHref)},t=q.get('theme');if(t&&H[t]){ls.setItem('pe-theme',t)}else{t=ls.getItem('pe-theme')}if(t&&H[t]&&t!==h.dataset.theme){h.dataset.theme=t;var o=d.getElementById('theme-css'),n=o.cloneNode();n.setAttribute('blocking','render');n.href=H[t];o.replaceWith(n)}`
-    : '') +
-  `var s=ls.getItem('pe-scheme');if(s==='dark'||s==='light')h.dataset.scheme=s;` +
+  `ls.removeItem('pe-theme');var s=ls.getItem('pe-scheme');if(s==='dark'||s==='light')h.dataset.scheme=s;` +
   `var p=q.get('pseudo');if(p==='rtl')ss.setItem('pe-pseudo','rtl');else if(p==='off')ss.removeItem('pe-pseudo');` +
   `if(ss.getItem('pe-pseudo')==='rtl'){h.dir='rtl';h.dataset.pseudo='rtl'}}catch(e){}})(document,window)`;
 ---
@@ -64,7 +55,12 @@ const boot = `(function(d,w){d.documentElement.classList.add('js');try{var h=d.d
 <meta property="og:locale" content={loc.bcp47.replace('-', '_')} />
 <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
 <link rel="preload" href={url(`/fonts/${preloadFont}`)} as="font" type="font/woff2" crossorigin />
-<link rel="stylesheet" id="theme-css" href={themeHref[DEFAULT_THEME]} data-hrefs={switchable ? JSON.stringify(themeHref) : undefined} />
+<link rel="stylesheet" href={cssHref} />
+{/* From 64rem the review line and fact sheet are placed above "At a glance" with CSS order, but come
+    after it in the DOM. A browser that paints while the HTML is still arriving would show the page
+    top without them and then push "At a glance" down (a layout shift on slow machines). This holds
+    the first paint until the page top is complete (Chromium; elsewhere it is ignored). */}
+{renderAfter && <link rel="expect" href={`#${renderAfter}`} blocking="render" />}
 <script is:inline set:html={boot} />
 {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
 <meta name="generator" content={`${SITE.brand} (static)`} />

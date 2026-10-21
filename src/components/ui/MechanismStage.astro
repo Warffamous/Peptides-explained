@@ -1,6 +1,6 @@
 ---
 /**
- * Design B's scroll-driven mechanism stage. A vertical cell schematic — the peptide outside the
+ * The scroll-paced mechanism stage. A vertical cell schematic — the peptide outside the
  * cell, the membrane with its receptor, a signal inside the cell, the nucleus, tissue, the whole
  * body — on which each causal step appears as a numbered circle in the zone where it happens,
  * joined to the previous step by a line whose style says how well that link is shown (solid: in
@@ -11,7 +11,7 @@
  * circle, and a line under the key says in words what the stage shows now. All words are HTML from
  * i18n, so they translate and scale; numbers are HTML too (12px or more at every width).
  *
- * A dark island in both schemes (.b-dark re-declares B's dark tokens on this subtree).
+ * A dark island in both schemes (.dark-island re-declares the dark tokens on this subtree).
  * The canvas is one LTR box (600 × 560 units: a 200-unit word column, then the 400-unit drawing).
  * Top-to-bottom is direction-neutral and the drawing is symmetric about its centre, so in RTL the
  * box stays as it is and the words inside it still read right to left.
@@ -70,7 +70,7 @@ const hypoPin = steps.findIndex((s) => !demonstrated(s.level)) + 1;
 const nowTexts = steps.map((s, i) => t(L, k('now'), { n: formatNumber(L, i + 1), max: formatNumber(L, max), title: s.title }));
 const allText = t(L, k('all'), { n: formatNumber(L, max) });
 ---
-<div class="mechanism-stage b-dark" aria-hidden="true" data-steps={steps.length} data-now={JSON.stringify(nowTexts)} data-all={allText}>
+<div class="mechanism-stage dark-island" aria-hidden="true" data-steps={steps.length} data-now={JSON.stringify(nowTexts)} data-all={allText}>
   <div class="stage__canvas">
     <svg class="stage" viewBox={`0 0 ${CW} ${H}`} width={CW} height={H} focusable="false">
       <!-- leaders from the words to what they name -->

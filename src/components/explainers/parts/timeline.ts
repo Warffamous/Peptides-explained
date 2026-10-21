@@ -7,7 +7,7 @@
  *   xp-shrink  shrinks to --s at step k     default: shrunk
  *   xp-ghost   fades to a ghost at step k   default: ghosted
  *   xp-pulse   emphasised during step k     default: still
- *   xp-link    a causal link; data-level sets the line pattern (and colour in design B)
+ *   xp-link    a causal link; data-level sets the line pattern and colour
  */
 export type Level = 'hypothesis' | 'in-vitro' | 'animal' | 'human';
 

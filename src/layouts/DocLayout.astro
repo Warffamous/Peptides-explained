@@ -63,7 +63,7 @@ const contentLang = p.fallback ? getLocale(SOURCE_LOCALE) : loc;
 const showTranslationNotice = !p.fallback && p.locale !== SOURCE_LOCALE && p.translation?.review === 'pending';
 const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
 ---
-<BaseLayout locale={p.locale} title={p.title} description={p.description} routeKey={p.routeKey} alternates={p.alternates} jsonld={p.jsonld} terms={p.terms} noindex={p.noindex} pageClass={`page--${p.template} section--${p.section}`}>
+<BaseLayout locale={p.locale} title={p.title} description={p.description} routeKey={p.routeKey} alternates={p.alternates} jsonld={p.jsonld} terms={p.terms} noindex={p.noindex} fallback={p.fallback} renderAfter="page-top-end" pageClass={`page--${p.template} section--${p.section}`}>
   <Breadcrumbs slot="before-main" locale={p.locale} trail={p.trail ?? []} />
   <article class:list={['doc', `doc--${p.template}`, p.docClass]} lang={p.fallback ? contentLang.bcp47 : undefined} dir={p.fallback ? contentLang.dir : undefined} data-pagefind-body>
     {p.fallback && (
@@ -99,10 +99,11 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
     {/*
       Beginner layer first: the "At a glance" strip (compound pages), then the summary, before
       anything else. DOM order is the phone order (and the reading and focus order): title ·
-      beginner layer · review line · page photo. On wide screens each design lifts the review line
-      under the title and sets the photo beside it with CSS `order` (base/structure.css). Focusable
-      content that moves: the photo's one "Image details" link, and the review line's corrections
-      link on the rare page that has a correction.
+      beginner layer · fact sheet · review line · page photo · on this page. From 64rem the review
+      line and the fact sheet move up under the title, the photo beside them and "On this page"
+      beside the summary, with CSS `order` (base/structure.css; columns in design/layout.css).
+      Focusable content that moves: the photo's one "Image details" link, and the review line's
+      corrections link on the rare page that has a correction.
     */}
     <slot name="glance" />
     <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} readingMinutes={p.readingMinutes} readingMinutesShort={p.readingMinutesShort} />
@@ -111,6 +112,8 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
     <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} compact legal={p.legal} class="doc-review" />
     {/* Page photo (src/data/heroes.yaml). */}
     <Hero locale={p.locale} routeKey={p.routeKey} />
+    {/* End of the reordered page top: the first paint waits for this marker (BaseHead, rel="expect"). */}
+    <span id="page-top-end" hidden></span>
     {p.toc && <Toc locale={p.locale} items={p.toc} />}
     {/* Reading tools ("Open all details") on pages with "In detail" folds. */}
     <slot name="tools" />

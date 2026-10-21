@@ -10,7 +10,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, walk, readYaml, readJson, readMdx } from './load.ts';
 import { explainerRegistrySchema, explainerTextFileSchema, type Explainer } from '../../src/schemas/explainers.ts';
-import { PICTOGRAM_NAMES } from '../../src/components/ui/pictograms.ts';
 
 type Report = (file: string, msg: string) => void;
 type Ctx = {
@@ -46,9 +45,6 @@ export function checkExplainers(ctx: Ctx): number {
       if (Buffer.byteLength(src) > ART_BUDGET) warn(art, `artwork source is ${(Buffer.byteLength(src) / 1024).toFixed(1)} KB; aim for ≤ ${ART_BUDGET / 1024} KB of SVG`);
     }
     for (const s of x.sources) if (!ctx.hasSource(s)) err(regFile, `${id}: unknown source id "${s}"`);
-    x.steps.forEach((s, i) => {
-      if (s.pictogram && !PICTOGRAM_NAMES.includes(s.pictogram)) err(regFile, `${id}: step ${i + 1}: unknown pictogram "${s.pictogram}"`);
-    });
     if (x.review.status === 'ok') {
       if (!x.review.by || !x.review.on) err(regFile, `${id}: review.status ok needs review.by (person id) and review.on (date)`);
       else if (!ctx.hasPerson(x.review.by)) err(regFile, `${id}: review.by "${x.review.by}" is not in src/data/people.yaml`);

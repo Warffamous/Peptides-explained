@@ -16,7 +16,6 @@ import StopStrip from '../../../components/layout/StopStrip.astro';
 import FactSheet from '../../../components/layout/FactSheet.astro';
 import ReadingTools from '../../../components/layout/ReadingTools.astro';
 import InDetail from '../../../components/mdx/InDetail.astro';
-import ThemeOnly from '../../../components/ui/ThemeOnly.astro';
 import Pictogram from '../../../components/ui/Pictogram.astro';
 import { BUILT_LOCALES } from '../../../lib/config';
 import { compoundDataMap, resolveCompound, alternatesFor } from '../../../lib/content';
@@ -188,7 +187,7 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
 >
   <Fragment slot="header">
     <p class="compound-badge" data-category={data.category}>
-      <ThemeOnly theme="b c" as="span" class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></ThemeOnly>
+      <span class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></span>
       {t(locale, badgeKey)}
     </p>
   </Fragment>

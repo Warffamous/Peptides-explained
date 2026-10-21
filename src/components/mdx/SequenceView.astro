@@ -1,15 +1,13 @@
 ---
 /**
  * The compound's primary structure, from the data layer. Text first (always LTR, bidi-isolated),
- * with a generated visual per design system: A draws a technical line diagram, B a bead chain
- * derived from the real residues. Every visual is aria-hidden; the text carries the information.
+ * with a bead chain generated from the real residues (SequenceBeads). The visual is aria-hidden;
+ * the text carries the information.
  */
 import { t } from '../../lib/i18n';
 import { ctxLocale } from '../../lib/ctx';
 import { getCompoundData } from '../../lib/content';
 import { parseResidues } from '../../lib/sequence';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import SequenceLine from '../ui/SequenceLine.astro';
 import SequenceBeads from '../ui/SequenceBeads.astro';
 interface Props { compound?: string; visual?: boolean }
 const L = ctxLocale(Astro);
@@ -28,8 +26,7 @@ const residues = seq ? parseResidues(seq.residues) : [];
     </figcaption>
     {visual && (
       <>
-        <ThemeOnly theme="a" class="sequence__visual sequence__visual--line"><SequenceLine residues={residues} seq={seq} /></ThemeOnly>
-        <ThemeOnly theme="b" class="sequence__visual sequence__visual--beads"><SequenceBeads residues={residues} seq={seq} slug={slug} locale={L} /></ThemeOnly>
+        <div class="sequence__visual sequence__visual--beads"><SequenceBeads residues={residues} seq={seq} slug={slug} locale={L} /></div>
       </>
     )}
     <p class="sequence__text"><bdi class="seq" dir="ltr" translate="no"><span class="sequence__term">{seq.n_terminus}–</span>{seq.display}<span class="sequence__term">–{seq.c_terminus}</span></bdi></p>

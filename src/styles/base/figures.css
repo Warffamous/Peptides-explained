@@ -1,12 +1,11 @@
 /*
- * "Less text, more visuals" — structure shared by every design system (docs/design/
+ * "Less text, more visuals" — the bare structure (docs/design/
  * DESIGN-DIRECTIONS-2026-10.md §3.2; CONTENT-GUIDE §9): the title lede, section leads, "In detail"
  * folds and the reading-tools row, the "Stop and get help" strip, the fact sheet, and the figures
  * (key numbers, comparison tables, icon arrays, time strips) with their data cards.
  *
- * Colours come from a small set of --fig-* variables that each design maps in its own
- * themes/<t>/figures.css (which imports this file first); the fallbacks keep everything legible
- * if a design maps nothing. Logical properties only; nothing here needs JavaScript or motion.
+ * Colours come from a small set of --fig-* variables that design/figures.css maps to the design's
+ * tokens (it imports this file first); the fallbacks keep everything legible if nothing is mapped. Logical properties only; nothing here needs JavaScript or motion.
  */
 :root {
   --fig-ink: currentColor;

@@ -1,5 +1,5 @@
 /*
- * B · Mechanism — components.
+ * Components.
  * Colour roles (tokens.css): cyan = demonstrated, amber = hypothesised and nothing else, neutral grey
  * with a dashed outline = no / not authorised / not tested / pending, alert = stop-now only.
  * Words carry every meaning; colour and line style only repeat it. No glows, no lit gradients.
@@ -25,15 +25,16 @@
 .opinion-flag__text { margin-block-start: var(--space-3); color: var(--text-2); font-size: var(--s--1); }
 
 /* ------------------------------------------------------------------ header of a document */
-.doc-header { padding-block: var(--space-4) var(--space-6); }
-/* The class line: plain words in secondary ink, after a small neutral bead (B's residue motif). */
-.doc-header__eyebrow { display: inline-flex; gap: 0.55em; align-items: center; font-size: var(--s--1); font-weight: 600; letter-spacing: 0.01em; color: var(--text-2); margin-block-end: var(--space-4); }
+.doc-header { padding-block: var(--space-2) var(--space-5); }
+/* The class line: plain words in secondary ink, after a small neutral bead (the residue motif). */
+.doc-header__eyebrow { display: inline-flex; gap: 0.55em; align-items: center; font-size: var(--s--1); font-weight: 600; letter-spacing: 0.01em; color: var(--text-2); margin-block-end: var(--space-3); }
 .doc-header__eyebrow::before { content: ''; flex: none; inline-size: 0.55rem; block-size: 0.55rem; border-radius: 50%; background: var(--res-hydrophobic); }
-.doc-header__title { font-size: var(--s-4); line-height: 1.02; font-weight: 600; letter-spacing: -0.035em; text-wrap: balance; }
+/* The title: modest and firm (34–52px), not a display headline. */
+.doc-header__title { font-size: var(--s-4); line-height: 1.08; font-weight: 600; letter-spacing: -0.022em; text-wrap: balance; }
 .doc-header__byline { margin-block-start: var(--space-4); color: var(--text-2); }
 
 /* Status badge: glyph plus words, 1px border; only "Authorised medicine" is filled; dashed = not authorised. */
-.compound-badge { display: inline-flex; align-items: center; gap: 0.5em; margin-block-start: var(--space-5); padding: 0.35rem 0.8rem; border-radius: var(--radius); font-size: var(--s--1); font-weight: 600; background: var(--surface); color: var(--text-2); border: 1px dashed var(--text-3); }
+.compound-badge { display: inline-flex; align-items: center; gap: 0.5em; margin-block-start: var(--space-4); padding: 0.35rem 0.8rem; border-radius: var(--radius); font-size: var(--s--1); font-weight: 600; background: var(--surface); color: var(--text-2); border: 1px dashed var(--text-3); }
 .compound-badge__icon { display: inline-flex; line-height: 0; color: var(--text-3); }
 .compound-badge__icon .pictogram { inline-size: 1.35em; block-size: 1.35em; }
 .compound-badge[data-category='authorised'] { background: var(--cyan-text); color: var(--cyan-ink); border: 1px solid var(--cyan-text); }
@@ -58,23 +59,26 @@
  * The review line near the top (DocLayout): directly under the summary on phones; from 64rem
  * directly under the title block (beside the photo), so no empty band opens between badge and line.
  */
-.doc > .doc-review { margin-block: calc(var(--space-5) - var(--space-7)) var(--space-6); padding-block-start: var(--space-3); border-block-start: 1px solid var(--line); }
+.doc > .doc-review { margin-block: calc(-1 * var(--space-2)) var(--space-6); padding-block-start: var(--space-3); border-block-start: 1px solid var(--line); }
 .doc-review .review-meta__list { margin-block-start: 0; column-gap: var(--space-4); font-size: var(--s--1); line-height: 1.5; }
 @media (min-width: 64rem) {
-  /* space-5 under the title: B's display type hangs its descenders below the line box, and on a page
-     without a photo the review hairline follows directly (the home page's "p" touched it). */
-  .doc > .doc-header { align-self: start; padding-block-end: var(--space-5); }
-  .doc > .doc-review { align-self: start; margin-block: 0 var(--space-5); padding-block: var(--space-3) 0; }
+  /* Under the title block: the review line (a hairline above it), then the fact sheet. */
+  .doc > .doc-header { padding-block-end: var(--space-4); }
+  .doc > .doc-review { margin-block: 0 var(--space-4); padding-block: var(--space-3) 0; }
 }
 
-/* ------------------------------------------------------------------ on this page: a numbered list */
-/* summary box: see beginner.css */
-.toc { margin-block-end: var(--space-7); padding-block: var(--space-4) var(--space-3); border-block: 1px solid var(--line); }
+/* ------------------------------------------------------------------ on this page: a plain list */
+/* summary box: see beginner.css. No counter: the list mixes the beginner blocks with the numbered
+   compound sections, so its own 1, 2, 3… would not match the numbers on the section titles. */
+.toc { margin-block-end: var(--space-6); padding-block: var(--space-4) var(--space-3); border-block: 1px solid var(--line); }
 .toc__title { font-size: var(--s--1); font-weight: 600; color: var(--text-2); margin-block-end: var(--space-2); }
-.toc__list { margin: 0; padding: 0; list-style: none; counter-reset: toc; columns: 2 17rem; column-gap: var(--space-6); }
-.toc__list li { display: grid; grid-template-columns: 2.1em minmax(0, 1fr); align-items: baseline; break-inside: avoid; padding-block: 0.3rem; counter-increment: toc; font-size: var(--s--1); line-height: 1.4; }
-.toc__list li::before { content: counter(toc); font-family: var(--font-mono); font-size: 0.94em; color: var(--text-3); font-variant-numeric: tabular-nums; }
-:lang(ar) .toc__list li::before { content: counter(toc, arabic-indic); }
+.toc__list { margin: 0; padding: 0; list-style: none; columns: 2 17rem; column-gap: var(--space-6); }
+/* Beside "In short" (from 64rem, layout.css): one column with a hairline at its start, like a margin note. */
+@media (min-width: 64rem) {
+  .doc:not(:has(> .hero)) > .toc, .doc:has(> .fact-sheet) > .toc { padding-block: var(--space-1) 0; padding-inline-start: var(--space-5); border-block: 0; border-inline-start: 1px solid var(--line); }
+  .doc:not(:has(> .hero)) > .toc .toc__list, .doc:has(> .fact-sheet) > .toc .toc__list { columns: auto; }
+}
+.toc__list li { break-inside: avoid; padding-block: 0.3rem; font-size: var(--s--1); line-height: 1.4; }
 .toc__list a { color: var(--link); text-decoration: none; }
 .toc__list a:hover { text-decoration: underline; }
 
@@ -85,40 +89,52 @@
 :where(.prose, .csec, .in-detail__body) > :is(ul, ol) { margin-block: 0 var(--space-5); padding-inline-start: 1.3em; }
 :where(.prose, .csec) li { margin-block: 0.4rem; }
 :where(.prose, .csec) li::marker { color: var(--text-3); }
-:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-block: var(--space-8) var(--space-5); }
-:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; margin-block: var(--space-8) var(--space-4); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; margin-block: var(--space-6) var(--space-3); }
 :where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-0); font-weight: 600; margin-block: var(--space-5) var(--space-2); }
+/* A page whose text opens with a heading (the home page): the summary above already gives the gap. */
+:where(.prose) > h2:first-child { margin-block-start: var(--space-4); }
 .prose strong { font-weight: 600; color: var(--text); }
 .prose blockquote { margin: 0 0 var(--space-5); padding: var(--space-3) var(--space-5); border-inline-start: 3px solid var(--line-strong); color: var(--text-2); }
 .prose table:not(.data-table) { inline-size: 100%; margin-block-end: var(--space-5); font-size: var(--s--1); border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .prose table:not(.data-table) th, .prose table:not(.data-table) td { text-align: start; vertical-align: top; padding: var(--space-3); border-block-end: 1px solid var(--line); }
 .prose table:not(.data-table) th { background: var(--surface-2); font-weight: 600; }
 
+/* Section titles: the number in a small bead (the same mark as the "In short" points), then the
+   title; a hairline above each section instead of a display-size heading. */
 .csec { margin-block-start: var(--space-8); }
-.csec__title { display: grid; gap: var(--space-2); font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; margin-block-end: var(--space-5); }
-.csec__num { font-family: var(--font-mono); font-size: var(--s--1); font-weight: 500; letter-spacing: 0.04em; color: var(--text-3); }
-.csec__num::before { content: '§ '; }
+/* margin-block-start 0: the section's own margin gives the gap (the prose h2 margin would double it,
+   since grid items' margins do not collapse). */
+.csec__title { display: flex; align-items: baseline; gap: var(--space-3); padding-block-start: var(--space-4); border-block-start: 1px solid var(--line); font-size: var(--s-3); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; margin-block: 0 var(--space-4); }
+.csec__num { flex: none; display: inline-grid; place-items: center; inline-size: 1.6em; block-size: 1.6em; translate: 0 -0.1em; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--surface-2); font-family: var(--font-mono); font-size: max(0.55em, 0.875rem); font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
 .csec__intro { padding: var(--space-3) var(--space-4); border-radius: var(--radius); background: var(--surface-2); color: var(--text-2); font-size: var(--s--1); margin-block-end: var(--space-5); }
 
 /* ------------------------------------------------------------------ citations, claims, terms */
 .cite__marks { font-size: max(0.62em, 0.75rem); vertical-align: super; line-height: 0; margin-inline-start: 0.1em; }
 .cite__link { text-decoration: none; color: var(--link); padding-inline: 0.12em; }
 .cite__link:hover { text-decoration: underline; }
+/* A <Cite> on its own line: "Sources 3, 46, 7" under the block it cites, in small secondary ink. */
+.cite-line { margin-block: calc(-1 * var(--space-2)) var(--space-5); font-size: var(--s--1); line-height: 1.5; color: var(--text-2); }
+.cite-line .cite__marks { font-size: inherit; vertical-align: baseline; line-height: inherit; margin-inline-start: 0; }
+.cite-line .cite__link { padding-inline: 0.1em; }
 /* Inline claim tags: the one place pills stay. Glyph + word, 14px or more. */
-.claim-badge { display: inline-flex; align-items: center; gap: 0.35em; margin-inline-start: 0.2em; padding-block: 0; padding-inline: 0.5em 0.6em; border-radius: var(--radius-pill); font-size: max(0.75em, 0.875rem); font-weight: 600; line-height: 1.6; vertical-align: 0.1em; white-space: nowrap; background: var(--cyan-soft); color: var(--cyan-text); }
-.claim-badge::before { content: ''; flex: none; inline-size: 0.55em; block-size: 0.55em; border-radius: 50%; background: currentColor; }
-.claim-badge[data-level='hypothesis'] { background: var(--amber-soft); color: var(--amber-text); }
-.claim-badge[data-level='hypothesis']::before { background: none; box-shadow: inset 0 0 0 1.5px currentColor; }
-.claim-badge[data-level='in-vitro']::before { background: none; border: 1.5px dotted currentColor; }
-.claim-badge[data-level='animal']::before { background: none; border: 1.5px dashed currentColor; }
-.claim-badge[data-level='established'] { background: var(--cyan-text); color: var(--cyan-ink); }
+/* Restrained: a hairline tag with the word in secondary ink; only the small glyph carries the
+   evidence colour (cyan = demonstrated, its line style says where). A hypothesis keeps its word in
+   amber too, so an idea never reads like a finding. */
+.claim-badge { display: inline-flex; align-items: center; gap: 0.35em; margin-inline-start: 0.2em; padding-block: 0; padding-inline: 0.45em 0.55em; border-radius: var(--radius-pill); font-size: max(0.75em, 0.875rem); font-weight: 600; line-height: 1.55; vertical-align: 0.1em; white-space: nowrap; background: var(--surface); border: 1px solid var(--line); color: var(--text-2); }
+.claim-badge::before { content: ''; flex: none; inline-size: 0.6em; block-size: 0.6em; border-radius: 50%; background: var(--cyan); }
+.claim-badge[data-level='hypothesis'] { color: var(--amber-text); border-color: color-mix(in srgb, var(--amber) 45%, var(--line)); }
+.claim-badge[data-level='hypothesis']::before { background: none; box-shadow: inset 0 0 0 1.5px var(--amber); }
+.claim-badge[data-level='in-vitro']::before { background: none; border: 1.5px dotted var(--cyan); }
+.claim-badge[data-level='animal']::before { background: none; border: 1.5px dashed var(--cyan); }
+.claim-badge[data-level='established'] { color: var(--text); border-color: var(--line-strong); }
 a.term { color: inherit; text-decoration: underline dotted var(--text-3); text-underline-offset: 0.22em; }
 a.term:hover { color: var(--link); }
 .term-tip { max-inline-size: 22rem; padding: var(--space-3) var(--space-4); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line-strong); box-shadow: var(--shadow-raised); font-size: var(--s--1); line-height: 1.5; color: var(--text); }
 
 /* ------------------------------------------------------------------ evidence profile: labelled ladders */
 /*
- * One ladder per axis, the same anatomy as in A and C: every step of the axis's own scale is drawn
+ * One ladder per axis: every step of the axis's own scale is drawn
  * and named, reached steps are filled, the current one is ringed and its name set in ink. No polar
  * glyph and no cyan-to-amber mix: a grade is not a hypothesis.
  */
@@ -127,7 +143,6 @@ a.term:hover { color: var(--link); }
 .grade__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2) var(--space-5); }
 .grade__title { font-size: var(--s-2); font-weight: 600; letter-spacing: -0.025em; }
 .grade__subtitle { color: var(--text-2); font-size: var(--s--1); }
-.grade__glyph-wrap { display: none; }
 .grade__axes { display: grid; gap: var(--space-3); margin: 0; }
 .grade__axis { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: 'name value' 'scale scale' 'why why'; gap: var(--space-3) var(--space-4); padding: var(--space-4); border-radius: var(--radius-sm); background: var(--ground); border: 1px solid var(--line); }
 .grade__name { grid-area: name; display: grid; }
@@ -197,7 +212,7 @@ a.term:hover { color: var(--link); }
 
 /* ------------------------------------------------------------------ mechanism: the scroll-driven stage */
 /*
- * The stage is a dark island in both schemes (.b-dark in MechanismStage.astro re-declares the dark
+ * The stage is a dark island in both schemes (.dark-island in MechanismStage.astro re-declares the dark
  * tokens). Every glyph on it has a word; the key under the drawing names the line styles and the
  * numbered circles. Wide containers: the stage is sticky beside the step cards. Narrow ones: the
  * stage (with its "now showing" line) is pinned at the top and the cards pass entirely below it,
@@ -276,7 +291,6 @@ a.term:hover { color: var(--link); }
 .stage-key__pin { flex: none; display: inline-grid; place-items: center; inline-size: 1.5rem; block-size: 1.5rem; border-radius: 50%; background: var(--cyan); color: var(--cyan-ink); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; }
 /* What the stage shows right now, in words (updated by the script; the final state without it). */
 .stage-now { margin: var(--space-3) 0 0; padding-inline: var(--space-2); font-size: var(--s--1); line-height: 1.4; color: var(--text); }
-.stage-now__n { font-family: var(--font-mono); font-size: 0.94em; font-weight: 700; color: var(--text-2); }
 /* The pin sample and the lead sentence each take a whole row; the line samples share the next one. */
 .stage-key__item:first-child, .stage-key__item--pin, .stage-key__lead { flex-basis: 100%; }
 .stage-key__pin.is-hypothesis { background: var(--ground); color: var(--amber); border: 2px dashed var(--amber); }
@@ -311,7 +325,6 @@ a.term:hover { color: var(--link); }
 .level-badge[data-level='in-vitro']::before { border-block-start-style: dotted; }
 .level-badge[data-level='hypothesis'] { background: var(--amber-soft); color: var(--amber-text); }
 .level-badge[data-level='hypothesis']::before { border-block-start-style: dotted; }
-.level-badge__icon { display: none; }
 .mechanism__title { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-2); }
 .mechanism__detail { color: var(--text-2); font-size: var(--s--1); line-height: 1.6; }
 
@@ -326,8 +339,8 @@ a.term:hover { color: var(--link); }
 .study-table, .reg-table { grid-column: wide; }
 .study-table__summary { color: var(--text-2); font-size: var(--s--1); margin-block-end: var(--space-3); }
 .study-table__table { min-inline-size: 58rem; }
-.study-table__table tr[data-species='human'] > th { border-inline-start: 3px solid var(--cyan); }
-.study-table__table tr:not([data-species='human']) > th { border-inline-start: 3px dashed var(--cyan); }
+.study-table__table tbody tr[data-species='human'] > th { border-inline-start: 3px solid var(--cyan); }
+.study-table__table tbody tr:not([data-species='human']) > th { border-inline-start: 3px dashed var(--cyan); }
 .study-table__ref { font-weight: 600; }
 .study-table__flags { color: var(--text-2); }
 .study-table__found { min-inline-size: 16rem; }
@@ -336,7 +349,6 @@ a.term:hover { color: var(--link); }
 .reg-table__since { display: block; font-size: var(--s--2); color: var(--text-2); }
 .reg-table__note { color: var(--text-2); }
 .status-badge { display: inline-flex; align-items: center; gap: 0.35em; padding: 0.1rem 0.55rem; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--line); font-size: var(--s--2); font-weight: 600; white-space: nowrap; color: var(--text); }
-.status-badge__icon { display: none; }
 .status-badge[data-status='authorised'], .status-badge[data-status='in-force'], .status-badge[data-status='adopted'] { background: var(--cyan-soft); border-color: transparent; color: var(--cyan-text); }
 .status-badge[data-status='prohibited'] { background: var(--surface); border-color: var(--line-strong); color: var(--text); }
 .status-badge:is([data-status='not-authorised'], [data-status='refused'], [data-status='withdrawn'], [data-status='under-review'], [data-status='investigational'], [data-status='advisory-vote'], [data-status='rulemaking'], [data-status='consultation'], [data-status='proposed'], [data-status='stalled'], [data-status='watching']) { background: var(--surface); border: 1px dashed var(--text-3); color: var(--text-2); }
@@ -378,9 +390,9 @@ a.term:hover { color: var(--link); }
 
 /* ------------------------------------------------------------------ callouts */
 .callout { margin-block: 0 var(--space-6); padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
-.callout__title { display: flex; align-items: center; gap: 0.5em; font-weight: 600; margin-block-end: var(--space-2); }
-.callout__icon { inline-size: 1.15em; block-size: 1.15em; }
-.callout__pictogram { display: none; }
+/* The glyph sits on the first line of the title, also when the title wraps to two or three lines. */
+.callout__title { display: flex; align-items: flex-start; gap: 0.5em; font-weight: 600; line-height: 1.35; margin-block-end: var(--space-2); }
+.callout__icon { flex: none; inline-size: 1.15em; block-size: 1.15em; margin-block-start: 0.1em; }
 .callout__body > :last-child { margin-block-end: 0; }
 .callout__body p { margin-block-end: var(--space-3); color: var(--text-2); }
 /* Uncertain: neutral and dashed (unknown is not a hypothesis, so not amber). */
@@ -420,7 +432,8 @@ a.term:hover { color: var(--link); }
 .warning-signs__group[data-action='emergency'] .warning-signs__action { background: var(--alert); border-color: var(--alert); color: var(--alert-ink); }
 .warning-signs__list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-3); }
 .warning-signs__sign { font-weight: 600; }
-.warning-signs__why { color: var(--text-2); font-size: var(--s--1); }
+/* The sign in bold, then why it matters on its own line. */
+.warning-signs__why { display: block; margin-block-start: 0.15rem; color: var(--text-2); font-size: var(--s--1); }
 
 /* ------------------------------------------------------------------ cards and lists */
 .page-list { display: grid; gap: var(--space-3); margin-block-end: var(--space-6); }
@@ -583,10 +596,5 @@ a.term:hover { color: var(--link); }
 .standing-notice { display: flex; gap: var(--space-3); align-items: flex-start; padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface-2); color: var(--text-2); font-size: var(--s--1); }
 .standing-notice .icon { flex: none; inline-size: 1.2em; block-size: 1.2em; color: var(--link); margin-block-start: 0.1em; }
 
-/* Home: a 56px title (not 96px), and the summary on the title's grid from 64rem. */
-.page--landing .doc-header__title { font-size: clamp(2.6rem, 1.9rem + 2.8vw, 3.5rem); }
-@media (min-width: 64rem) {
-  .doc > .summary-box { grid-column: wide-start / text-end; }
-}
 .icon { inline-size: 1.1em; block-size: 1.1em; vertical-align: -0.15em; }
 .pictogram { inline-size: 1.5em; block-size: 1.5em; fill: currentColor; }

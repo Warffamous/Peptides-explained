@@ -1,4 +1,4 @@
-/* B · Mechanism — page structure. One centred reading column with wide breakouts; one idea per viewport. */
+/* Page structure: header, breadcrumbs, the page grid (one left edge, an aside), footer. */
 
 html {
   background: var(--ground);
@@ -30,9 +30,10 @@ a:hover { text-decoration-thickness: 2px; }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3) var(--space-5);
-  max-inline-size: var(--wide);
+  /* The header's content box is exactly the page's wide track, so brand, menu and title share one edge. */
+  max-inline-size: calc(var(--wide) + 2 * var(--pad));
   margin-inline: auto;
-  padding: var(--space-5) var(--pad) var(--space-3);
+  padding: var(--space-4) var(--pad) var(--space-2);
 }
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--text); text-decoration: none; font-weight: 600; font-size: var(--s-1); letter-spacing: -0.02em; }
 .brand-mark { inline-size: 2rem; block-size: 2rem; }
@@ -89,7 +90,6 @@ a:hover { text-decoration-thickness: 2px; }
 .disclosure__panel a:hover { background: var(--surface-2); }
 .disclosure__panel a[aria-current] { background: var(--cyan-soft); color: var(--text); }
 .lang-switch__note { display: block; color: var(--text-3); font-size: var(--s--2); }
-.theme-switch__current { font-weight: 700; color: var(--text); }
 .scheme-toggle { display: inline-grid; place-items: center; inline-size: 2.5rem; block-size: 2.5rem; padding: 0; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); }
 .scheme-toggle .icon { inline-size: 1.1rem; block-size: 1.1rem; }
 /* The icon shows the scheme in use: the sun in light, the moon in dark (chosen or from the system). */
@@ -101,13 +101,14 @@ a:hover { text-decoration-thickness: 2px; }
   :root:not([data-scheme='light']) .scheme-toggle__dark { display: block; }
 }
 
-.primary-nav { max-inline-size: var(--wide); margin-inline: auto; padding-inline: var(--pad); }
-/* Never a sideways-scrolling strip cut mid-word: the items wrap (two rows on a phone). */
-.primary-nav__list { display: flex; flex-wrap: wrap; gap: var(--space-1); padding-block: var(--space-2) var(--space-3); }
+.primary-nav { --nav-pad: 0.75rem; max-inline-size: calc(var(--wide) + 2 * var(--pad)); margin-inline: auto; padding-inline: var(--pad); }
+/* Never a sideways-scrolling strip cut mid-word: the items wrap (two rows on a phone). The list is
+   pulled out by the items' own padding, so the first word sits on the page edge. */
+.primary-nav__list { display: flex; flex-wrap: wrap; gap: var(--space-1); margin-inline: calc(-1 * var(--nav-pad)); padding-block: var(--space-1) var(--space-2); }
 .primary-nav__item a {
   display: block;
   white-space: nowrap;
-  padding: 0.45rem 0.9rem;
+  padding: 0.4rem var(--nav-pad);
   border-radius: var(--radius);
   color: var(--text-2);
   text-decoration: none;
@@ -120,40 +121,56 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ------------------------------------------------------------------ body */
 .site-body { padding-inline: var(--pad); }
-.breadcrumbs { max-inline-size: var(--wide); margin-inline: auto; padding-block: var(--space-5) 0; font-size: var(--s--1); }
+.breadcrumbs { max-inline-size: var(--wide); margin-inline: auto; padding-block: var(--space-4) 0; font-size: var(--s--1); }
 .breadcrumbs__list { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; align-items: center; }
 .breadcrumbs__item { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-3); }
 .breadcrumbs a { color: var(--text-2); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--text); }
 .breadcrumbs__sep { inline-size: 0.85em; block-size: 0.85em; opacity: 0.6; }
-.site-main { padding-block: var(--space-6) var(--space-8); }
+.site-main { padding-block: var(--space-5) var(--space-8); }
 
-/* The reading column, with named breakout tracks for wide figures. The text track's minimum is
-   min(100%, measure): without it the grid shares free space equally between the three bounded
-   tracks, and on a phone the reading column shrinks to a third of the screen. */
+/*
+ * One left edge. The reading column starts where the wide track starts, so the title, the
+ * beginner layer, the contents, the section headings and the body text all share one edge; the
+ * rest of the wide track is the aside, which holds the page photo beside the title and "On this
+ * page" beside the summary, and gives wide figures and tables their room. On phones the aside is
+ * empty (0) and every track is the screen's width.
+ *
+ * Tracks: full | wide = text + aside | full. The text track's minimum is min(100%, measure):
+ * without it the grid would share free space between the bounded tracks and, on a phone, shrink
+ * the reading column. The aside grows to (wide − measure) before the outer tracks take the rest.
+ */
 .doc {
   display: grid;
-  grid-template-columns: [full-start] minmax(0, 1fr) [wide-start] minmax(0, calc((var(--wide) - var(--measure)) / 2)) [text-start] minmax(min(100%, var(--measure)), var(--measure)) [text-end] minmax(0, calc((var(--wide) - var(--measure)) / 2)) [wide-end] minmax(0, 1fr) [full-end];
+  grid-template-columns: [full-start] minmax(0, 1fr) [wide-start text-start] minmax(min(100%, var(--measure)), var(--measure)) [text-end aside-start] minmax(0, calc(var(--wide) - var(--measure))) [aside-end wide-end] minmax(0, 1fr) [full-end];
   container-type: inline-size;
   container-name: doc;
 }
 .doc > * { grid-column: text; min-inline-size: 0; }
 /*
- * From 64rem the title block spans the wide track's start (level with the "At a glance" cards below)
- * and the page photo sits in the end track, pulled 9rem into the title's columns; the title block
- * stops short of it by the same amount plus a gutter. structure.css orders photo and review line.
+ * From 64rem the page top is two columns (structure.css sets the order):
+ *   compound pages:  title | photo · review line | photo · fact sheet | photo, then the "At a glance"
+ *                    cards and the stop strip across the wide track, then "In short" | "On this page";
+ *   other pages:     title | photo · review line | photo · "In short" | photo, then "On this page";
+ *   without a photo: title · review line · "In short" | "On this page".
+ * The photo spans three rows; the last of them is flexible and takes the photo's extra height, so
+ * the rows above it stay tight instead of each opening an empty band. A notice above the title
+ * (translation, fallback, opinion) adds a plain row before them. Where the aside is narrower than a
+ * useful photo (64–74rem screens) the photo takes up to 6.5rem of the reading column, and the
+ * blocks beside it stop short by the same amount (--hero-pull, 0 at full width).
  */
 @media (min-width: 64rem) {
-  .doc { --hero-pull: 9rem; }
-  .doc > :is(.doc-header, .doc-review) { grid-column: wide-start / text-end; }
-  .doc:has(> .hero) > :is(.doc-header, .doc-review) { margin-inline-end: calc(var(--hero-pull) + var(--space-6)); }
-  .doc > .hero { grid-column: text-end / wide-end; margin-inline-start: calc(-1 * var(--hero-pull)); }
-  /* The photo spans the title row and the review row. A flexible second row takes the photo's extra
-     height, so the review line follows the badge directly instead of floating below an empty band. */
-  .doc:has(> .hero):has(> .doc-header:first-child) { grid-template-rows: auto 1fr; }
-  /* With a notice above the title (translation, fallback, opinion) the flexible row moves down one. */
-  .doc:has(> .hero):has(> :first-child + .doc-header) { grid-template-rows: auto auto 1fr; }
-  .doc:has(> .hero):has(> :first-child + * + .doc-header) { grid-template-rows: auto auto auto 1fr; }
+  .doc { --hero-pull: max(0px, 22.5rem - (min(100cqi, var(--wide)) - var(--measure))); }
+  .doc > .hero { grid-column: aside; grid-row: span 3; margin-inline-start: calc(var(--space-6) - var(--hero-pull)); }
+  .doc:has(> .hero) > :is(.doc-header, .doc-review, .fact-sheet) { margin-inline-end: var(--hero-pull); }
+  .doc:has(> .hero):not(:has(> .fact-sheet)) > .summary-box { margin-inline-end: var(--hero-pull); }
+  .doc:has(> .hero) { grid-template-rows: auto auto 1fr; }
+  .doc:has(> .hero):has(> :first-child + .doc-header) { grid-template-rows: auto auto auto 1fr; }
+  .doc:has(> .hero):has(> :first-child + * + .doc-header) { grid-template-rows: auto auto auto auto 1fr; }
+  .doc > :is(.doc-header, .doc-review, .fact-sheet, .summary-box) { align-self: start; }
+  .doc > .toc { grid-column: aside; align-self: start; margin-inline-start: var(--space-6); }
+  /* A photo beside "In short" leaves "On this page" its own row under them, in the reading column. */
+  .doc:has(> .hero):not(:has(> .fact-sheet)) > .toc { grid-column: text; margin-inline-start: 0; }
 }
 .prose { display: grid; grid-template-columns: subgrid; grid-column: full; }
 .prose > *, .csec > * { grid-column: text; min-inline-size: 0; }
@@ -161,20 +178,20 @@ a:hover { text-decoration-thickness: 2px; }
 
 /* ------------------------------------------------------------------ footer */
 .site-footer { margin-block-start: var(--space-8); border-block-start: 1px solid var(--line); background: var(--surface); }
-.site-footer__inner { max-inline-size: var(--wide); margin-inline: auto; padding: var(--space-6) var(--pad) var(--space-7); display: grid; gap: var(--space-6); }
+.site-footer__inner { max-inline-size: calc(var(--wide) + 2 * var(--pad)); margin-inline: auto; padding: var(--space-6) var(--pad) var(--space-7); display: grid; gap: var(--space-6); }
 .independence-marker a {
   display: inline-flex;
   padding: 0.6rem 1.1rem;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  border-inline-start: 3px solid var(--cyan);
+  border-inline-start: 3px solid var(--line-strong);
   background: var(--ground);
   color: var(--text);
   text-decoration: none;
   font-size: var(--s--1);
   font-weight: 500;
 }
-.independence-marker a:hover { border-color: var(--line-strong); border-inline-start-color: var(--cyan); }
+.independence-marker a:hover { border-color: var(--line-strong); }
 .site-footer__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: var(--space-6); }
 .site-footer__heading { font-size: var(--s--1); font-weight: 600; color: var(--text); margin-block-end: var(--space-3); }
 .site-footer__col li { margin-block: 0.35rem; }
@@ -242,14 +259,15 @@ a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 37.49rem) {
   /* Two rows of nav items at 360px: tighter chips, nothing cut. */
   .primary-nav__list { gap: 2px; padding-block: var(--space-1) var(--space-2); }
-  .primary-nav__item a { padding-inline: 0.45rem; }
+  .primary-nav { --nav-pad: 0.45rem; }
+  .primary-nav__item a { padding-block: 0.3rem; }
   .site-header__inner { gap: var(--space-2) var(--space-3); }
   .brand { line-height: 1.1; }
   .brand__name { inline-size: min-content; }
   .utility-nav { flex-wrap: nowrap; }
 }
 @media (max-width: 30rem) {
-  .site-header__inner { padding-block: var(--space-4) var(--space-3); }
+  .site-header__inner { padding-block: var(--space-3) var(--space-2); }
   .brand { gap: var(--space-2); font-size: var(--s--1); letter-spacing: -0.01em; }
   .brand-mark { inline-size: 1.75rem; block-size: 1.75rem; }
   .utility-nav__alert { padding-inline: 0.75rem; }

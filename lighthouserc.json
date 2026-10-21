@@ -1,5 +1,5 @@
 {
-  "$comment": "Performance budget enforced in CI: Lighthouse >= 95 on all four categories, mobile emulation with simulated throttling, for every design system.",
+  "$comment": "Performance budget enforced in CI: Lighthouse >= 95 on all four categories, mobile emulation with simulated throttling.",
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
@@ -9,10 +9,7 @@
         "http://localhost/en/compounds/bpc-157/",
         "http://localhost/en/compounds/semaglutide/",
         "http://localhost/en/safety/warning-signs/",
-        "http://localhost/a/en/compounds/bpc-157/",
-        "http://localhost/b/en/compounds/bpc-157/",
-        "http://localhost/c/en/compounds/bpc-157/",
-        "http://localhost/c/en/safety/sterile-technique/",
+        "http://localhost/en/safety/sterile-technique/",
         "http://localhost/nl/compounds/bpc-157/"
       ],
       "settings": { "formFactor": "mobile", "throttlingMethod": "simulate", "skipAudits": ["is-crawlable", "canonical"] }

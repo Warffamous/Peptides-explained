@@ -1,6 +1,6 @@
 /**
- * Design B: advances the mechanism stage as the reader scrolls the step list.
- * Active only when design B is showing and motion is allowed; otherwise the stage stays a
+ * Advances the mechanism stage as the reader scrolls the step list (the reader's own scrolling
+ * paces it; nothing moves by itself). Active only when motion is allowed; otherwise the stage stays a
  * complete static still (every step marked, the "all steps" line under it), so no information
  * depends on this script.
  *
@@ -28,7 +28,7 @@ function teardown() {
 
 function setup() {
   teardown();
-  if (document.documentElement.dataset.theme !== 'b' || reduce.matches) return;
+  if (reduce.matches) return;
   for (const fig of document.querySelectorAll<HTMLElement>('.mechanism')) {
     const stage = fig.querySelector<HTMLElement>('.mechanism-stage');
     const wrap = fig.querySelector<HTMLElement>('.mechanism__stage-wrap');
@@ -102,6 +102,5 @@ function setup() {
 }
 
 setup();
-document.addEventListener('pe:themechange', setup);
 reduce.addEventListener('change', setup);
 short.addEventListener('change', setup);

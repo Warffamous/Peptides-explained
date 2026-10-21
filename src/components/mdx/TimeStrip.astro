@@ -63,5 +63,5 @@ const fmt = (n: number) => (min > 1000 ? String(n) : formatNumber(L, n));
   {axis && <p class="time-strip__axis-label" aria-hidden="true">{axis}</p>}
   <FigCard locale={L} source={source} checked={checked}><slot name="cite" /></FigCard>
 </figure>
-{/* No fill on first view (src/scripts/fig-reveal.ts is no longer loaded): nothing on the page moves
+{/* Drawn still, at full length (no fill on first view): nothing on the page moves
     unless the reader starts it (owner's decision, 20 October 2026). */}

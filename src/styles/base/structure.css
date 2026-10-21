@@ -1,8 +1,8 @@
-/* Structural rules every design system depends on. */
+/* Structural rules the design depends on: direction, isolation, the header sheet, the page-top order. */
 
 /* Directional icons mirror in RTL; sequences, quantities and DOIs never do. */
 [dir="rtl"] .icon--dir { transform: scaleX(-1); }
-.seq, .qty, .ref__doi, .seq-line, .seq-beads { direction: ltr; unicode-bidi: isolate; }
+.seq, .qty, .ref__doi, .seq-beads { direction: ltr; unicode-bidi: isolate; }
 bdi { unicode-bidi: isolate; }
 /* Dates take their direction from their own text (like <bdi>): an English "20 October 2026" in an
    RTL page must not become "October 2026 20"; an Arabic date stays RTL. */
@@ -29,14 +29,16 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
 .prose, .doc, .site-footer { overflow-wrap: break-word; }
 .ref__link, .ref__url { overflow-wrap: anywhere; }
 
-/* The pictogram sprite never takes space. */
-.pictogram-sprite { position: absolute; inline-size: 0; block-size: 0; overflow: hidden; }
 
 /* JS-only controls are hidden without JavaScript (html.js is set by the inline head script before
    first paint, so with JavaScript they are laid out from the start: no layout shift). */
 :root:not(.js) .scheme-toggle { display: none !important; }
+/* Filter rows that their script reveals (news, timeline) are laid out from the first paint when
+   JavaScript runs, so the reveal never moves the list below them (zero layout shift). */
+/* !important: it must beat the reset's [hidden] { display: none !important }. */
+:root.js :is([data-news-filters], [data-timeline-filters])[hidden] { display: flex !important; }
 
-/* Details/summary disclosures used by language and design switchers. */
+/* Details/summary disclosure used by the language switcher. */
 .disclosure { position: relative; }
 .disclosure__summary { list-style: none; cursor: pointer; }
 .disclosure__summary::-webkit-details-marker { display: none; }
@@ -46,10 +48,10 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
  * Wide screens, and browsers without popover support: the tools are laid out inline, as if the
  * popover wrapper were not there (display: contents overrides the UA's closed-popover display: none).
  * Below 60rem, with popover support, they sit behind the "Menu" button (popovertarget, no
- * JavaScript) and open as a sheet; each design styles the sheet in its layout.css.
+ * JavaScript) and open as a sheet, styled in design/layout.css.
  */
 .site-tools { display: contents; }
-.utility-nav .site-tools__open, .site-tools__head, .scheme-toggle__text, .theme-switch__icon { display: none; }
+.utility-nav .site-tools__open, .site-tools__head, .scheme-toggle__text { display: none; }
 .site-tools__open, .site-tools__close { cursor: pointer; font: inherit; }
 .utility-nav__alert { white-space: nowrap; }
 @supports selector(:popover-open) {
@@ -74,32 +76,37 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
   }
   .site-tools:popover-open .site-tools__head { display: flex; align-items: center; justify-content: space-between; }
   /* Inside the sheet every tool is a full-width row with a visible label. */
-  .site-tools:popover-open :is(.utility-nav__text, .theme-switch__label, .lang-switch__label) {
+  .site-tools:popover-open :is(.utility-nav__text, .lang-switch__label) {
     position: static !important; inline-size: auto; block-size: auto; margin: 0; overflow: visible; clip-path: none; white-space: normal;
   }
   .site-tools:popover-open .lang-switch__code { display: none; }
   .site-tools:popover-open .scheme-toggle__text { display: inline; }
-  .site-tools:popover-open .theme-switch__icon { display: inline; }
-  /* The language and design lists open in place, inside the sheet. */
+  /* The language list opens in place, inside the sheet. */
   .site-tools:popover-open .disclosure__panel { position: static; min-inline-size: 0; box-shadow: none; }
 }
 
 /*
  * Page top (DocLayout.astro). The DOM order is the phone order, which is also the reading and focus
- * order: title · beginner layer (at a glance, in short) · review line · page photo. From 64rem the
- * review line moves up under the title and the photo beside the two (each design places the columns
- * in its layout.css or media.css). Focusable content that moves: the photo's "Image details" link,
- * and the review line's corrections link on a page that has a correction.
+ * order: title · beginner layer (at a glance, stop strip, in short) · fact sheet · review line ·
+ * page photo · on this page. From 64rem the review line and the fact sheet move up under the title,
+ * the photo beside them, and "On this page" beside "In short" (columns in design/layout.css).
+ * Focusable content that moves: the photo's "Image details" link, and the review line's corrections
+ * link on a page that has a correction; the fact sheet has no links.
+ * Because the moved blocks come later in the DOM, the first paint waits until they are parsed
+ * (BaseHead: <link rel="expect" href="#page-top-end" blocking="render">), or a slow machine would
+ * paint "At a glance" high and then push it down.
  */
 @media (min-width: 64rem) {
-  /* Placement order: header, then the photo (beside it), then the review line (under the header). */
-  .doc > * { order: 3; }
+  /* Placement order: header, then the photo (beside it), the review line and the fact sheet (under
+     the header), then everything else in DOM order. */
+  .doc > * { order: 4; }
   .doc > :is(.notice--fallback, .notice--translation, .opinion-flag, .doc-header) { order: 0; }
-  .doc > .hero { order: 1; grid-row: span 2; align-self: start; }
+  .doc > .hero { order: 1; align-self: start; }
   .doc > .doc-review { order: 2; }
+  .doc > .fact-sheet { order: 3; }
 }
 
 @media print {
-  .site-header, .site-footer, .toc, .skip-link, .site-banners, .theme-switch, .scheme-toggle { display: none !important; }
+  .site-header, .site-footer, .toc, .skip-link, .site-banners, .scheme-toggle { display: none !important; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
 }

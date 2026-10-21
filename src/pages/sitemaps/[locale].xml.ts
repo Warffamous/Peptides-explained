@@ -1,10 +1,10 @@
 /** Per-locale sitemap with the full hreflang matrix (xhtml:link alternates) for every URL. */
 import type { APIRoute } from 'astro';
-import { PUBLISHED_LOCALES, REVIEW_BUILD, getLocale, DEFAULT_LOCALE } from '../../lib/config';
+import { PUBLISHED_LOCALES, getLocale, DEFAULT_LOCALE } from '../../lib/config';
 import { translationMatrix } from '../../lib/content';
 import { canonicalUrl } from '../../lib/urls';
 
-export const getStaticPaths = () => (REVIEW_BUILD ? [] : PUBLISHED_LOCALES.map((l) => ({ params: { locale: l.code } })));
+export const getStaticPaths = () => PUBLISHED_LOCALES.map((l) => ({ params: { locale: l.code } }));
 
 export const GET: APIRoute = async ({ params }) => {
   const locale = params.locale as string;

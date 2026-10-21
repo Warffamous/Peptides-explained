@@ -1,8 +1,8 @@
-import { SITE, BUILD_THEME } from './config';
+import { SITE } from './config';
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-/** Prefix a root-relative path with the build base (/a, /b, /c for review builds). */
+/** Prefix a root-relative path with the build base ("/" unless astro.config.mjs sets another). */
 export function url(path: string): string {
   const p = path.startsWith('/') ? path : `/${path}`;
   return `${BASE}${p}`;
@@ -14,21 +14,8 @@ export function routeUrl(locale: string, key: string): string {
   return url(`/${locale}/${k ? k + '/' : ''}`);
 }
 
-/** Absolute canonical URL. Review builds (/a /b /c) canonicalise to the root site. */
+/** Absolute canonical URL on the public site (config/site.json siteUrl). */
 export function canonicalUrl(locale: string, key: string): string {
   const k = key.replace(/^\/+|\/+$/g, '');
   return new URL(`/${locale}/${k ? k + '/' : ''}`, SITE.siteUrl).href;
 }
-
-/** Same route in a dedicated review build for theme t (assumes builds deployed at /a/, /b/, /c/). */
-export function themeBuildUrl(t: string, locale: string, key: string): string {
-  const k = key.replace(/^\/+|\/+$/g, '');
-  return `/${t}/${locale}/${k ? k + '/' : ''}`;
-}
-
-export function rootRouteUrl(locale: string, key: string): string {
-  const k = key.replace(/^\/+|\/+$/g, '');
-  return `/${locale}/${k ? k + '/' : ''}`;
-}
-
-export const IS_SWITCHABLE = BUILD_THEME === 'switchable';

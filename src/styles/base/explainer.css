@@ -3,8 +3,8 @@
  * Every animated part — artwork, pin, caption highlight, progress segment — is delayed by
  * (--k × --xp-step) on the same clock, so sync needs no script. The default (un-animated) state of
  * every part is the FINAL FRAME: that is what readers see without JavaScript, with reduced motion,
- * in print, and when a run has finished. Themes choose the motion language and colours by setting
- * --xp-in (keyframe), --xp-in-dur, --xp-ease and the role colours in themes/<t>/explainer.css.
+ * in print, and when a run has finished. design/explainer.css sets the motion language and colours:
+ * --xp-in (keyframe), --xp-in-dur, --xp-ease and the role colours.
  */
 .explainer {
   --xp-step: calc(var(--xp-dur, 12s) / var(--xp-steps, 5));
@@ -31,8 +31,8 @@
 
 /* Raster backdrop (registry art / art_dark, docs/EXPLAINERS.md §3.6): text-free art under the SVG
    overlay. The overlay SVG stays in the flow with the same proportions, so it reserves the space
-   before the picture arrives (zero layout shift) and paints above it. Each design says which picture
-   its scheme shows through --plate-show-light / --plate-show-dark (themes/<t>/media.css, shared with
+   before the picture arrives (zero layout shift) and paints above it. The scheme says which picture
+   shows through --plate-show-light / --plate-show-dark (design/media.css, shared with
    the atlas plates); both are lazy, so the hidden one is never downloaded. Print uses the light one. */
 .explainer { --xp-ground: Canvas; }
 .explainer[data-backdrop] .xp-stage { padding: 0; }
@@ -43,7 +43,7 @@
 .xp-backdrop__img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
 /* On a picture, words get a soft backing in the page colour so an organ edge never weakens them.
    One box behind all lines of a label (inline-block): a backing per line would paint the second
-   line's box over the first line's descenders ("Semaglutide" read as "Semaqlutide" in C at 360 px). */
+   line's box over the first line's descenders ("Semaglutide" read as "Semaqlutide" at 360 px in bold type). */
 .explainer[data-backdrop] .xp-label__in { display: inline-block; background: color-mix(in srgb, var(--xp-ground) 84%, transparent); padding-inline: 0.2em; }
 /* A word on a picture may run past its wrap width rather than break in the middle ("Semaglutid-e"). */
 .explainer[data-backdrop] .xp-label { overflow-wrap: normal; }
@@ -76,7 +76,7 @@
 .xp-panel__art { position: relative; container-type: inline-size; }
 .xp-panel__art .xp-label { font-size: clamp(0.875rem, 4.4cqi, 1.0625rem); } /* never below 14px: the words carry the message */
 
-/* Artwork roles shared by every design. */
+/* Artwork roles. */
 .xp-art :is(.xp-link, .xp-curve, .xp-arrow, .xp-detail, .xp-rec, .xp-tail, .xp-axis, .xp-open, .xp-hatch, .xp-warn-mark) { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .xp-link[data-level='animal'], .xp-link[data-level='in-vitro'] { stroke-dasharray: 8 5; }
 .xp-link[data-level='hypothesis'] { stroke-dasharray: 2 5; }
@@ -85,8 +85,8 @@
 .xp-link[data-level='human'], .xp-curve { --xp-in: var(--xp-draw, xp-draw); }
 .xp-link:not([data-level='human']) { --xp-in: var(--xp-dashed-in, xp-fade); --xp-ease: var(--xp-dashed-ease, ease-out); }
 .xp-move { --xp-in: var(--xp-move, xp-move); }
-/* Molecules carried along a vessel: they glide in from --dx over most of their step (every design;
-   A glides linearly, without bounce). The final frame has them at rest. */
+/* Molecules carried along a vessel: they glide in from --dx over most of their step, linearly and
+   without bounce. The final frame has them at rest. */
 .explainer .xp-flow { --xp-in: var(--xp-flow, xp-flow); --xp-in-dur: calc(var(--xp-step) * 0.8); --xp-ease: var(--xp-flow-ease, linear); }
 .xp-in, .xp-out, .xp-shrink, .xp-pulse { transform-box: fill-box; transform-origin: 50% 50%; }
 .xp-out { opacity: 0; }
@@ -138,11 +138,10 @@
 .xp-step__text, .xp-step__levels { margin: 0; }
 .xp-step__levels { display: flex; flex-wrap: wrap; gap: 0.3em; }
 .xp-summary, .xp-legend, .xp-sources, .xp-review { margin-block: var(--space-3, 0.75rem) 0; margin-inline: 0; }
-.xp-credit { margin-block: var(--space-1, 0.25rem) 0; margin-inline: 0; } /* the picture's credit and note: set like the sources line (themes) */
+.xp-credit { margin-block: var(--space-1, 0.25rem) 0; margin-inline: 0; } /* the picture's credit and note: set like the sources line (design/explainer.css) */
 .xp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em 0.9em; }
 .xp-key { display: inline-flex; align-items: center; gap: 0.4em; }
 .xp-key__line { inline-size: 2em; block-size: 0.5em; flex: none; overflow: visible; }
-.xp-sources .sidenote-wrap { display: none; }
 
 /* ------------------------------------------------------------------ the timeline (only while playing) */
 .explainer.is-playing :is(.xp-in, .xp-pin) { animation: var(--xp-in, xp-fade) var(--xp-in-dur) var(--xp-ease) calc(var(--k, 0) * var(--xp-step) + var(--lag, 0s)) 1 both; }

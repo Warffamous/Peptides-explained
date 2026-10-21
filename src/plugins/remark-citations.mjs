@@ -26,8 +26,13 @@ export default function remarkCitations() {
         } else first.push('0');
         return index.get(id);
       });
-      node.attributes = node.attributes.filter((a) => a.name !== 'n' && a.name !== 'first');
+      node.attributes = node.attributes.filter((a) => a.name !== 'n' && a.name !== 'first' && a.name !== 'block');
       node.attributes.push({ type: 'mdxJsxAttribute', name: 'n', value: nums.join(',') });
+      // A <Cite> on its own line cites the block above it: rendered as a "Sources …" line, not a
+      // lone superscript floating between blocks.
+      // Cites placed in a component's named slot (explainer and figure sources) stay markers.
+      const slotted = node.attributes.some((a) => a.type === 'mdxJsxAttribute' && a.name === 'slot');
+      if (node.type === 'mdxJsxFlowElement' && !slotted) node.attributes.push({ type: 'mdxJsxAttribute', name: 'block', value: '1' });
       // marks first occurrences so only they carry the back-link target id (ids must be unique)
       node.attributes.push({ type: 'mdxJsxAttribute', name: 'first', value: first.join(',') });
     });

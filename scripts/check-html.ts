@@ -7,7 +7,7 @@
  *  - no physical-direction inline styles in rendered HTML (RTL backstop for stylelint)
  *  - first-load JavaScript per page ≤ 40 KB gzipped (performance budget)
  *
- *   npx tsx scripts/check-html.ts [dist] [--base /a]
+ *   npx tsx scripts/check-html.ts [dist]
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -16,8 +16,7 @@ import { parse, type HTMLElement } from 'node-html-parser';
 import { walk, rel } from './lib/load.ts';
 
 const args = process.argv.slice(2);
-const dist = path.resolve(args.find((a) => !a.startsWith('--') && !args[args.indexOf(a) - 1]?.startsWith('--base')) ?? 'dist');
-const base = args.includes('--base') ? args[args.indexOf('--base') + 1].replace(/\/$/, '') : '';
+const dist = path.resolve(args.find((a) => !a.startsWith('--')) ?? 'dist');
 const JS_BUDGET = 40 * 1024;
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -29,8 +28,7 @@ if (!files.length) {
   process.exit(1);
 }
 const exists = (urlPath: string) => {
-  let p = decodeURIComponent(urlPath.split('#')[0].split('?')[0]);
-  if (base && p.startsWith(base)) p = p.slice(base.length) || '/';
+  const p = decodeURIComponent(urlPath.split('#')[0].split('?')[0]);
   const fsPath = path.join(dist, p);
   return fs.existsSync(fsPath) && (fs.statSync(fsPath).isFile() || fs.existsSync(path.join(fsPath, 'index.html')));
 };
@@ -83,7 +81,6 @@ for (const file of files) {
     if (href.startsWith('#')) {
       if (href.length > 1 && !ids.has(decodeURIComponent(href.slice(1)))) errors.push(`${where}: in-page link ${href} has no target`);
     } else if (href.startsWith('/') && !href.startsWith('//')) {
-      if (/^\/(?:a|b|c)\//.test(href) && !base) continue; // links into the sibling review builds
       if (!exists(href)) errors.push(`${where}: broken internal link ${href}`);
     }
   }
@@ -99,8 +96,7 @@ for (const file of files) {
   let js = 0;
   const seen = new Set<string>();
   const addJs = (src: string) => {
-    let p = src.split('?')[0];
-    if (base && p.startsWith(base)) p = p.slice(base.length);
+    const p = src.split('?')[0];
     const fsPath = path.join(dist, p);
     if (seen.has(fsPath) || !fs.existsSync(fsPath)) return;
     seen.add(fsPath);

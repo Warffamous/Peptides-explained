@@ -1,4 +1,4 @@
-/* Minimal reset shared by all design systems. Logical properties only (stylelint enforces). */
+/* Minimal reset. Logical properties only (stylelint enforces). */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; hanging-punctuation: first last; }
 body { margin: 0; min-block-size: 100vh; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }

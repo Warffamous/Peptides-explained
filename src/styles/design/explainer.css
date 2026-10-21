@@ -1,11 +1,11 @@
 /*
- * Design B — animated explainers. Physical: molecules arrive on a spring, pins pop, proven links
+ * Animated explainers. Physical: molecules arrive on a spring, pins pop, proven links
  * draw on with an ease-out. Solid strokes, no glow. Colour keeps its epistemic job: CYAN =
  * demonstrated (people, animals, cells; the line style says which), AMBER = hypothesised. Molecules
  * and chrome use the residue hues and the link colour, which stay out of that pair's way.
  * Words on the drawings are 14px or more, numerals 12px or more.
  */
-@import "../../base/explainer.css";
+@import "../base/explainer.css";
 
 .explainer {
   --xp-in-dur: 1.1s;

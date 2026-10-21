@@ -26,8 +26,6 @@ import { getSource, shortSourceName } from '../../lib/data';
 import { formatNumber } from '../../lib/format';
 import { getLocale, SOURCE_LOCALE } from '../../lib/config';
 import type { ExplainerText } from '../../schemas/explainers';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 import MediaPicture from '../media/MediaPicture.astro';
 import MediaCredit from '../media/MediaCredit.astro';
 import { getMedia, buildPicture } from '../../lib/media';
@@ -141,14 +139,12 @@ const backdrop = art ? { width: art.image.width, height: art.image.height } : un
             <span class="xp-step__n" aria-hidden="true"><bdi>{formatNumber(L, i + 1)}</bdi></span>
             <div class="xp-step__body">
               <p class="xp-step__text">
-                {xp.steps[i].pictogram && <ThemeOnly theme="c" as="span" class="xp-step__pg"><Pictogram name={xp.steps[i].pictogram!} /></ThemeOnly>}
                 {caption}
               </p>
               <p class="xp-step__levels">
                 <span class="visually-hidden">{t(L, 'explainer-ui.evidence')}: </span>
                 {levels[i].map((lv) => (
                   <span class="level-badge" data-level={lv} title={t(L, `evidence.mechanismLevels.${lv}.long`)}>
-                    <ThemeOnly theme="c" as="span" class="level-badge__icon"><Pictogram name={`mech-${lv}`} /></ThemeOnly>
                     {t(L, `evidence.mechanismLevels.${lv}.short`)}
                   </span>
                 ))}

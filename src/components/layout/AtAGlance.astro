@@ -9,9 +9,9 @@
  *   sport     <- the WADA regulatory row (status, scope, section); anything else says "see below"
  *   risk      <- glance.main_risk in the page frontmatter; without it, a link to the warning signs
  *
- * One semantic <dl>. Meaning is carried by words first; the pictogram repeats it (Isotype),
- * and design B's cyan↔amber (--frac) and A/C's line patterns (data-tone) only echo it.
- * Design C's alert red is never used here: it is reserved for stop-now content.
+ * One semantic <dl>. Meaning is carried by words first; the pictogram repeats it (Isotype), and
+ * the ring around it (data-tone: cyan for yes, a solid grey ring for partly, a dashed one for no)
+ * only echoes it. The alert red is never used here: it is reserved for stop-now content.
  */
 import Pictogram from '../ui/Pictogram.astro';
 import { t } from '../../lib/i18n';

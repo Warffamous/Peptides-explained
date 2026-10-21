@@ -3,8 +3,6 @@
 import { t } from '../../lib/i18n';
 import { ctxLocale } from '../../lib/ctx';
 import { CLAIM_LEVELS } from '../../schemas/vocab';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 interface Props { level: (typeof CLAIM_LEVELS)[number] }
 const { level } = Astro.props;
 if (!CLAIM_LEVELS.includes(level)) throw new Error(`<Claim level="${level}"> is not a valid level`);
@@ -13,4 +11,4 @@ const short = t(locale, `evidence.claim.levels.${level}.short`);
 const long = t(locale, `evidence.claim.levels.${level}.long`);
 const rank = CLAIM_LEVELS.indexOf(level);
 ---
-<span class="claim" data-level={level}><span class="claim__text"><slot /></span>{' '}<span class="claim-badge" data-level={level} data-rank={rank} title={long}><ThemeOnly theme="c" as="span" class="claim-badge__icon"><Pictogram name={`level-${level}`} /></ThemeOnly><span class="claim-badge__label" aria-hidden="true">{short}</span><span class="visually-hidden">({t(locale, 'common.claimBadge', { level: long })})</span></span></span>
+<span class="claim" data-level={level}><span class="claim__text"><slot /></span>{' '}<span class="claim-badge" data-level={level} data-rank={rank} title={long}><span class="claim-badge__label" aria-hidden="true">{short}</span><span class="visually-hidden">({t(locale, 'common.claimBadge', { level: long })})</span></span></span>

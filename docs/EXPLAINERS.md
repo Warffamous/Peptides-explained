@@ -31,7 +31,7 @@ Live examples: `glp1-action` (mechanism section) and `insulin-glp1-hypo` (risks 
    animation has finished. Design the final frame first; the animation only reveals it.
 4. **Evidence is drawn honestly.** Every causal link has the evidence level of the step it belongs to:
    solid = shown in people, long dashes = shown in animals or cells, short dashes = a hypothesis
-   (and, in design B, cyan for demonstrated, amber for hypothesised). When one step draws two links
+   (drawn cyan when demonstrated, amber when hypothesised). When one step draws two links
    with different support (e.g. "brain areas from animal studies → eating less measured in people"),
    list both levels for that step.
 5. **Sources are declared, not implied.** Every explainer lists its sources in the registry. They are
@@ -85,7 +85,7 @@ Live examples: `glp1-action` (mechanism section) and `insulin-glp1-hypo` (risks 
 | Picture under the overlay (optional) | `art` / `art_dark` in the registry → `src/data/media.yaml` | Text-free art (`kind: infographic-art`), e.g. AI art made with `npm run media:generate` (MEDIA-GUIDE §3); `art_dark` is the same picture for the dark scheme. |
 | New sources | `src/data/sources/explainers.yaml` (or the topic's own file) | Metadata copied from PubMed / the fetched page, never from memory. |
 | Engine | `src/components/mdx/Explainer.astro`, `src/scripts/explainer.ts`, `src/plugins/remark-explainer-sources.mjs` | |
-| Styles | `src/styles/base/explainer.css` (structure, timeline), `src/styles/themes/<a\|b\|c>/explainer.css` (motion language, colours) | |
+| Styles | `src/styles/base/explainer.css` (structure, timeline), `src/styles/design/explainer.css` (motion language, colours) | |
 
 ## 3. How it works
 
@@ -114,8 +114,8 @@ Write positions with the helpers from `parts/timeline.ts`:
 | `xp-shrink` | shrinks to `--s` at step k (e.g. "lower dose") | shrunk |
 | `xp-ghost` | fades to a ghost at step k ("what would have happened") | ghosted |
 | `xp-pulse` | one beat of emphasis during step k | still |
-| `xp-link` + `data-level` | a causal link; pattern (and colour in B) from the level | drawn |
-| `xp-curve` | a data line (drawn on in A and B, appears in C) | drawn |
+| `xp-link` + `data-level` | a causal link; pattern and colour from the level | drawn |
+| `xp-curve` | a data line, drawn on | drawn |
 | `xp-focus` + `--span` | strong during steps k … k + span − 1, faded the rest of the run (rule 8b) | strong |
 | `xp-flow` | with `xp-in`: glides in from `--dx` over most of its step (molecules carried by a vessel) | in place |
 | `xp-veil` + `--span` | on a picture (§3.6): covers all but the scene's part during steps k … k + span − 1 | hidden |
@@ -123,30 +123,33 @@ Write positions with the helpers from `parts/timeline.ts`:
 
 `xp-focus` is how a scene puts one message forward: wrap each part in a group with the step(s) it
 belongs to, e.g. `<g class="xp-focus" style="--k:2"><path class="xp-curve xp-in" …/></g>`. It only
-acts while playing (the final frame shows everything strong), shapes fade to `--xp-dim` (set per
-design) and words fade less. Give the last scene `--span:2` so it stays strong to the end of the run.
+acts while playing (the final frame shows everything strong), shapes fade to `--xp-dim` (set in
+`design/explainer.css`) and words fade less. Give the last scene `--span:2` so it stays strong to the end of the run.
 Overlay labels take the same as `focus`/`span` props.
 
 Do not put two of `xp-in`, `xp-out`, `xp-shrink`, `xp-ghost`, `xp-pulse` on the same element: nest
 groups instead (`<g class="xp-in"><g class="xp-shrink">…`). Do not use `<use>`: page CSS cannot
 style the inside of a `<use>` copy, so repeated shapes are written out (a `.map()` is fine).
 
-Role classes give the colours, which each design sets: `xp-vessel`, `xp-organ`, `xp-cell`, `xp-rec`,
+Role classes give the colours, set in `src/styles/design/explainer.css`: `xp-vessel`, `xp-organ`, `xp-cell`, `xp-rec`,
 `xp-ring`, `xp-alb`, `xp-drug`, `xp-tail`, `xp-glu`, `xp-ins`, `xp-gcg`, `xp-su`, `xp-food`,
 `xp-plate`, `xp-inset`, `xp-hot`, `xp-arrow`, `xp-zone`, `xp-danger`, `xp-danger-hot`, `xp-axis`,
-`xp-warn`, `xp-sugar`, `xp-detail` (fine detail, dropped in design C). Add a role to all three theme
-files when you need a new one.
+`xp-warn`, `xp-sugar`, `xp-detail` (fine detail). Add a role there when you need a new one.
 
-### 3.2 Three motion languages
+### 3.2 Motion language
 
-| | A Monograph | B Mechanism | C Public Health |
-|---|---|---|---|
-| Proven links | drawn on as a line, linear | drawn on, ease-out, no glow | appear |
-| Weaker links | dashes resolve in four plain steps | fade in, amber if hypothesis | appear, thick dashes |
-| Molecules | appear in place (no travel); carried along a vessel (`xp-flow`) they glide once, linearly | arrive on a spring | slide a short way |
-| Pins | square, hairline, monospace | round, neutral (colour is for evidence) | big slate discs |
-| Danger zone | hatched ink, no red | alert tint | alert red (stop-now content only) |
-| Detail | hairline anatomy | full detail | fine detail dropped, bold shapes |
+One design, "Mechanism" (the owner's decision of 21 October 2026; see
+`docs/design/DESIGN-DIRECTIONS-2026-10.md`, "Decision"). Its motion is physical but quiet, and it
+runs only after the reader presses Play (§3.4):
+
+| | |
+|---|---|
+| Proven links | drawn on with an ease-out, solid strokes, no glow |
+| Weaker links | fade in; amber when the link is a hypothesis |
+| Molecules | arrive on a spring; carried along a vessel (`xp-flow`) they glide once, linearly |
+| Pins | round and neutral (colour is kept for evidence) |
+| Danger zone | the alert tint |
+| Detail | full anatomical detail, in the residue hues and hairlines |
 
 ### 3.3 Overlays (pins and words on the picture)
 
@@ -162,13 +165,13 @@ missing. Keep labels short and put them where a longer translation still fits; c
 | `max` | wrap width as % of the canvas (default 34) |
 | `k`, `lag` | the word appears with its part of the drawing (as `xp-in`) |
 | `focus`, `span` | strong only during its scene (as `xp-focus`) |
-| `icon` | `check`, `warn` or `sugar`: drawn inside the label before the word, coloured by the design (never an icon on its own, rule 8a). Add new icons to `Overlay.astro` and the three theme files. |
-| `tone` | `zone`, `axis` or `note` (a short sentence about a line): each design styles them; A sets notes in the text face, not its uppercase plate lettering |
-| `ground` | the word sits on a pattern (A's hatching): A gives it a paper backing so it stays legible; other words in a chart get none (a box on a tinted band reads as one more shape) |
+| `icon` | `check`, `warn` or `sugar`: drawn inside the label before the word, coloured by `design/explainer.css` (never an icon on its own, rule 8a). Add new icons to `Overlay.astro` and that file. |
+| `tone` | `zone`, `axis` or `note` (a short sentence about a line); a note is set in ink at weight 600, zone and axis words in secondary ink |
+| `ground` | the word sits on a pattern: the stylesheet may give it a backing so it stays legible (no pattern sits under words in the current drawings, so none is drawn); other words in a chart get none (a box on a tinted band reads as one more shape) |
 
 A `\n` in a label is a line break (the translator decides where, e.g. `"Smaller insulin\nor tablet dose:\nstays in range"`).
 Words in a chart panel are at least 14 px (0.875rem); keep each line short enough to sit between its
-line and the next mark at 360 px, and check it in all three designs (their faces differ in width).
+line and the next mark at 360 px, and check it with the longest translation you expect.
 
 ### 3.3a Panels (small multiples)
 
@@ -218,8 +221,7 @@ sides together with their drawings. See `insulin-glp1-hypo`.
   drawing scrolled off the top: Play then first scrolls the drawing, caption and button into view
   (as much as fits, the button always included).
 - **The current step, large, under the drawing** (rule 8d): the engine repeats each step caption in a
-  box right under the stage, shown only during its step on the same clock (A cuts, B and C fade in
-  briefly). All captions share one grid cell, so the box is as tall as the longest from the first
+  box right under the stage, shown only during its step on the same clock (it fades in briefly). All captions share one grid cell, so the box is as tall as the longest from the first
   paint: no layout shift. At rest the box shows the still's `caption`. It is `aria-hidden`: the list
   and the summary carry the same words for assistive technology.
 - `prefers-reduced-motion: reduce`: no animation at all, no controls, a one-line note; the final frame,
@@ -262,15 +264,15 @@ glp1-action:
   receives `backdrop: { width, height }` and throws if it does not match, and `<Explainer>` fails the
   build when `art_dark` differs from `art` by more than 1%.
 - **Only the visible picture is downloaded.** Both are `loading="lazy"` responsive pictures (AVIF,
-  WebP, JPEG at 360–1024 px, `astro:assets`); the one the scheme hides is `display: none` (each
-  design sets `--plate-show-light` / `--plate-show-dark`, shared with atlas plates), so it is never
+  WebP, JPEG at 360–1024 px, `astro:assets`); the one the scheme hides is `display: none` (`design/media.css`
+  sets `--plate-show-light` / `--plate-show-dark`, shared with atlas plates), so it is never
   fetched. The overlay SVG keeps its `width`/`height`, so the space is reserved before the picture
   arrives (no layout shift). Print uses the light picture.
 - The figure gets `data-backdrop`: the stage loses its padding (the picture is the stage) and the
   credit line of the picture ("AI-generated illustration (model, date) · CC BY 4.0 · Image details")
   appears under the sources, with the note that the words and marks are added by the site.
 - Plan the picture for the words: ask the image model for clear background where the labels go and
-  check the layout at 360 px in all three designs (C's bold labels are the widest).
+  check the layout at 360 px (the bold notes are the widest words).
 - The pictures are AI art with `ai.review: pending` until the owner has checked them (MEDIA-GUIDE §3);
   the validator lists the explainer among the places that use them.
 
@@ -283,8 +285,7 @@ glp1-action:
 2. **Verify** every fact against a primary source (PubMed tools, the EMA/FDA label, a guideline). Reuse
    registered source ids; add new ones to `src/data/sources/explainers.yaml` with metadata copied from
    the record and a `note` saying what you cite them for.
-3. **Register** it in `src/data/explainers.yaml`: `duration` (10–15), `steps` with `levels` (and a C
-   `pictogram` per step), `sources`, `mirror`, `pages`, `review: { status: pending }`.
+3. **Register** it in `src/data/explainers.yaml`: `duration` (10–15), `steps` with `levels`, `sources`, `mirror`, `pages`, `review: { status: pending }`.
 4. **Write the captions** in `src/i18n/en/explainers.json`: `title`, one caption per step (B1, ≤ 18
    words, reading ease ≥ 60), `summary`, the still's `caption`, `labels`.
 5. **Draw** `src/components/explainers/<id>.astro`: a `viewBox` SVG with `width`/`height` set (no
@@ -293,7 +294,7 @@ glp1-action:
    about 10 KB. Or generate a text-free picture (light and dark, MEDIA-GUIDE §3) and draw only the
    overlay on it (§3.6).
 6. **Place** it with a one-sentence lead-in: `<Explainer id="<id>" />`, and add the route to `pages`.
-7. **Check**: `npm run validate`, `npm run lint:css`, then look at it in all three designs, light and
+7. **Check**: `npm run validate`, `npm run lint:css`, then look at it in light and
    dark, at 360 px and 1280 px, with `?pseudo=rtl`, with reduced motion and with JavaScript off. Take a
    still of every scene and the final frame and do the 5-second test (rule 8g).
 
@@ -312,10 +313,10 @@ A medical reviewer signs off with `review: { status: ok, by: <person id>, on: <d
       the overlay's rings and words, and the light and dark pictures show the same thing.
 - [ ] Captions are B1, one idea per sentence, no dose numbers, no advice beyond the label or guideline.
 - [ ] Nothing looks like a product, a vendor's vial, a brand, a before/after, or glamorised injecting.
-- [ ] Works and stays legible in A, B and C, light and dark, 360 px and 1280 px, RTL, reduced motion, no JS.
+- [ ] Works and stays legible in light and dark, 360 px and 1280 px, RTL, reduced motion, no JS.
 - [ ] Nothing plays until the reader presses "Play the n-second animation"; the run ends on the final
       frame and the button then says Replay; the button never changes width.
-- [ ] Red is used in design C only for stop-now safety content.
+- [ ] Red (the alert colour) is used only for stop-now safety content.
 
 ## 6. Backlog
 
@@ -365,14 +366,14 @@ Each needs the same verification as any page. Levels are a first estimate to che
 4. MC4R in the brain: sexual arousal (bremelanotide, authorised in the US), less appetite (human).
 5. The same receptors raise blood pressure briefly and cause nausea and flushing (human).
 
-**contamination-infection** — `safety/sterile-technique`, `safety/product-risk`. Skin cross-section, no mirror; C may use alert red for the sepsis signs.
+**contamination-infection** — `safety/sterile-technique`, `safety/product-risk`. Skin cross-section, no mirror; the sepsis signs may use the alert red (stop-now content).
 1. Bacteria are in a non-sterile vial, on the skin or on the needle (human).
 2. The needle carries them under the skin (human).
 3. In the tissue they multiply; the body walls them off: an abscess forms (human).
 4. Bacteria can spread into the blood: sepsis (human).
 5. Warning signs: spreading redness, heat, swelling, pus, fever, feeling very ill → get help now (human).
 
-**angiogenesis-double-edge** — `compounds/bpc-157`, `compounds/tb-500`. Hypothesis-level throughout; mostly dashed (amber in B). Place only after the BPC-157 rewrite is finished.
+**angiogenesis-double-edge** — `compounds/bpc-157`, `compounds/tb-500`. Hypothesis-level throughout; mostly dashed (amber). Place only after the BPC-157 rewrite is finished.
 1. In rat and cell studies the peptide increased growth-factor signalling (VEGF pathway) (animal / in-vitro).
 2. New small blood vessels grew into injured tissue in rats (animal).
 3. Injured tendon or gut healed faster in those rat models (animal).

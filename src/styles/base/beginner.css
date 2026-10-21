@@ -1,7 +1,7 @@
 /*
- * Beginner layer — structure shared by every design system: the "At a glance" strip, the
+ * Beginner layer — the bare structure of the "At a glance" strip, the
  * "In short" summary box and the technical-details block that follows them on compound pages.
- * Each design styles them in themes/<t>/beginner.css, which imports this file first.
+ * design/beginner.css gives them their look and imports this file first.
  * Logical properties only; nothing here depends on JavaScript or motion.
  */
 
@@ -23,8 +23,6 @@
 .summary-box__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); }
 .summary-box__title { margin: 0; }
 .summary-box__time { display: flex; align-items: center; gap: 0.5em; margin: 0; }
-.summary-box__icon, .summary-box__time-icon { flex: none; line-height: 0; }
-.summary-box__icon .pictogram, .summary-box__time-icon .pictogram { display: block; fill: currentColor; }
 .summary-box__list { display: grid; margin: 0; padding: 0; list-style: none; counter-reset: summary; }
 .summary-box__item { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; counter-increment: summary; }
 .summary-box__marker::before { content: counter(summary); }
@@ -42,5 +40,5 @@
 /* Forced colours drop backgrounds; keep every tile and box visibly bounded. */
 @media (forced-colors: active) {
   .at-a-glance__tile, .summary-box, .compound-tech { border: 1px solid CanvasText; }
-  .at-a-glance__icon .pictogram, .summary-box__icon .pictogram, .summary-box__time-icon .pictogram { fill: CanvasText; }
+  .at-a-glance__icon .pictogram { fill: CanvasText; }
 }

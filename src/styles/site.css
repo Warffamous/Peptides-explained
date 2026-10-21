@@ -1,0 +1,18 @@
+/*
+ * The site's one stylesheet: design "Mechanism" (chosen 21 October 2026; docs/design/
+ * DESIGN-DIRECTIONS-2026-10.md, "Decision"). Bundled by Lightning CSS (src/lib/site-css.ts) into
+ * /styles/site.css. base/ holds structure that does not depend on the look (reset, accessibility
+ * helpers, the header sheet, the page-top order, the bare anatomy of the beginner layer, figures,
+ * media and explainers); design/ holds the look: tokens, type, layout and every component's skin.
+ */
+@import "./base/reset.css";
+@import "./base/a11y.css";
+@import "./base/structure.css";
+@import "./design/fonts.css";
+@import "./design/tokens.css";
+@import "./design/layout.css";
+@import "./design/components.css";
+@import "./design/media.css";
+@import "./design/beginner.css";
+@import "./design/explainer.css";
+@import "./design/figures.css";

@@ -3,7 +3,6 @@ import { t } from '../../lib/i18n';
 import { routeUrl } from '../../lib/urls';
 import { PRIMARY_NAV, navSectionFor } from '../../lib/content';
 import LanguageSwitcher from './LanguageSwitcher.astro';
-import ThemeSwitcher from './ThemeSwitcher.astro';
 import SchemeToggle from './SchemeToggle.astro';
 import Icon from '../ui/Icon.astro';
 import BrandMark from '../ui/BrandMark.astro';
@@ -14,7 +13,7 @@ const active = navSectionFor(routeKey);
 ---
 {/*
   One header row at every width. "Warning signs" is always visible, one tap away. The other tools
-  (search, language, design, light/dark) sit inline on wide screens; below 60rem they are grouped
+  (search, language, light/dark) sit inline on wide screens; below 60rem they are grouped
   behind one "Menu" button that opens them as a popover (popovertarget: no JavaScript needed; light
   dismiss and Esc close it). Without popover support the tools simply stay inline (structure.css).
   The sheet covers the header, so opening it moves focus to its Close button (autofocus inside a
@@ -45,7 +44,6 @@ const active = navSectionFor(routeKey);
           <Icon name="search" /><span class="utility-nav__text">{t(locale, 'common.utility.search')}</span>
         </a>
         <LanguageSwitcher locale={locale} routeKey={routeKey} />
-        <ThemeSwitcher locale={locale} routeKey={routeKey} />
         <SchemeToggle locale={locale} />
       </div>
     </nav>

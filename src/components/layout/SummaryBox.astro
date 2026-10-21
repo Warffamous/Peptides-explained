@@ -7,8 +7,6 @@
  * Still one list: the markers are decorative (aria-hidden, numbered by CSS counters so each
  * design can number in its own way); assistive technology announces the list itself.
  */
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 import { t, has } from '../../lib/i18n';
 import { getLocale } from '../../lib/config';
 import { formatNumber } from '../../lib/format';
@@ -32,11 +30,9 @@ if (readingMinutes && readingMinutesShort) {
 ---
 <section class="summary-box" id={id} aria-labelledby={`${id}-title`}>
   <div class="summary-box__head">
-    <ThemeOnly theme="c" as="span" class="summary-box__icon"><Pictogram name="summary-plain" /></ThemeOnly>
     <h2 class="summary-box__title" id={`${id}-title`}>{title}</h2>
     {time && (
       <p class="summary-box__time">
-        <ThemeOnly theme="c" as="span" class="summary-box__time-icon"><Pictogram name="summary-reading-time" /></ThemeOnly>
         <span>{time.map((part, i) => (i % 2 ? <bdi class="qty">{part}</bdi> : part))}</span>
       </p>
     )}

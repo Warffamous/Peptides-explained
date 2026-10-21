@@ -3,8 +3,7 @@ import BaseHead from '../components/layout/BaseHead.astro';
 import SiteHeader from '../components/layout/SiteHeader.astro';
 import SiteFooter from '../components/layout/SiteFooter.astro';
 import GlossaryDefs from '../components/layout/GlossaryDefs.astro';
-import PictogramSprite from '../components/ui/PictogramSprite.astro';
-import { getLocale, DEFAULT_THEME, BUILD_THEME, BUILD_THEMES, PSEUDO_RTL, REVIEW_BUILD, SOURCE_LOCALE } from '../lib/config';
+import { getLocale, PSEUDO_RTL, SOURCE_LOCALE } from '../lib/config';
 import { t } from '../lib/i18n';
 
 interface Props {
@@ -18,24 +17,26 @@ interface Props {
   terms?: string[];
   pageClass?: string;
   ogType?: 'website' | 'article';
+  /** The page shows its own "not yet translated, you are reading English" notice: the site-wide preview banner would repeat it. */
+  fallback?: boolean;
+  /** Id of an element the first paint waits for (BaseHead). */
+  renderAfter?: string;
 }
-const { locale, title, description, routeKey, alternates, noindex, jsonld, terms = [], pageClass, ogType } = Astro.props;
+const { locale, title, description, routeKey, alternates, noindex, jsonld, terms = [], pageClass, ogType, fallback = false, renderAfter } = Astro.props;
 Astro.locals.locale = locale;
 const loc = getLocale(locale);
 const dir = PSEUDO_RTL ? 'rtl' : loc.dir;
 const source = getLocale(SOURCE_LOCALE);
 ---
 <!doctype html>
-<html lang={loc.bcp47} dir={dir} data-theme={DEFAULT_THEME} data-build={BUILD_THEME} data-pseudo={PSEUDO_RTL ? 'rtl' : undefined}>
+<html lang={loc.bcp47} dir={dir} data-pseudo={PSEUDO_RTL ? 'rtl' : undefined}>
   <head>
-    <BaseHead {locale} {title} {description} {routeKey} {alternates} {noindex} {jsonld} {ogType} />
+    <BaseHead {locale} {title} {description} {routeKey} {alternates} {noindex} {jsonld} {ogType} {renderAfter} />
   </head>
   <body class:list={['page', pageClass]}>
     <a class="skip-link" href="#main">{t(locale, 'common.skipToContent')}</a>
-    {BUILD_THEMES.includes('c') && <PictogramSprite />}
     <div class="site-banners" data-pagefind-ignore="all">
-      {REVIEW_BUILD && <p class="banner banner--review">{t(locale, 'common.reviewBuild', { theme: t(locale, `common.utility.designOptions.${BUILD_THEME}`) })}</p>}
-      {loc.status === 'preview' && <p class="banner banner--preview">{t(locale, 'common.translation.previewLocale', { language: loc.name })}</p>}
+      {loc.status === 'preview' && !fallback && <p class="banner banner--preview">{t(locale, 'common.translation.previewLocale', { language: loc.name })}</p>}
       <p class="banner banner--pseudo">{t(locale, 'common.pseudoRtl')} — <a href="?pseudo=off" lang={source.bcp47}>off</a></p>
     </div>
     <SiteHeader {locale} {routeKey} />

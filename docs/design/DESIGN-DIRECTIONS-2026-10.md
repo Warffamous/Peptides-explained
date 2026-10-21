@@ -1,6 +1,82 @@
 # Design directions, October 2026
 
-**Date:** 20 October 2026 · **Owner of this document:** design lead · **Status:** proposal for the owner's decision. Nothing in the site has been changed by this document.
+## Decision (21 October 2026)
+
+**The owner chose design B, "Mechanism", as the only design for the whole site. Designs A
+("Monograph") and C ("Public Health") are retired.** The three-design version (all three
+stylesheets, the design switcher, the `?theme=` parameter and the `/a`, `/b`, `/c` review
+builds) is preserved at the git tag `three-designs-2026-10-21`; nothing of A or C is left in the
+working tree.
+
+What that means in the code:
+
+- **One stylesheet.** `src/styles/site.css` imports `src/styles/base/*` (structure) and
+  `src/styles/design/*` (B's look), bundled by Lightning CSS (`src/lib/site-css.ts`) into
+  `/styles/site.css` with a content hash. Fonts: Outfit, JetBrains Mono (numbers and dates) and
+  Noto Sans Arabic; Inter, Source Sans 3 and IBM Plex Mono are gone.
+- **No switcher, one build.** The "Design" control, `?theme=`, the stored `pe-theme` preference
+  (removed on the next visit), the review-build banner, `THEME`/`BASE` and `scripts/build-all.mjs`
+  are gone; `npm run build` builds the site and `npm run check:html` checks `dist/`.
+- **B's markup only.** Visuals that only A or C drew are deleted (A's sequence line diagram and
+  margin sidenotes, C's pictograms beside callouts, badges, grades, study rows and explainer steps);
+  the pictogram vocabulary stays for what B uses (At a glance, the stop strip, the status badge).
+- **Schemes.** B follows the reader's light/dark setting (light when there is none); the toggle
+  overrides it. The scroll-paced mechanism stage stays a dark island in both schemes
+  (`.dark-island`). The owner's rules stand: a word on every visual, the beginner layer first,
+  photos on every page, nothing moves until the reader presses Play (the mechanism stage advances
+  only as the reader scrolls), no 112 on English pages and 112 on Dutch pages, dark as good as light.
+
+**B's weaknesses from the side-by-side comparison, and what was done** (in B's own language: its
+type, cards, beads and epistemic colours stay):
+
+| Weakness | Change |
+|---|---|
+| Least dense: at 1280 the first screen held only the title and At a glance | Title 52 px (was 76), tighter header and page top; **A's fact sheet borrowed**: under the title and the review line, beside the photo, as a 2–3 column card. At 1280×900 the first screen now shows title, lede, badge, review line, fact sheet, photo and the start of At a glance. |
+| On phones the stop strip was not within the first two screens | Compact answer cards (glyph beside the answer, 17 px sentences) and a tighter strip; on semaglutide at 360×740 the whole "Stop and get help" strip now ends at about 1,470 px, inside the second screen. |
+| Section headings about 56 px with "§ 3" and teal/cyan accents read as a tech start-up | Section titles 24–30 px with the number in a small bead (the mark of the "In short" points) and a hairline above, with gentler letter-spacing; claim tags are hairline tags with only the glyph in cyan; At a glance answers in ink (the cyan ring stays on "Yes"); footer marker neutral. Cyan stays for data: key numbers, ladders, evidence lines. |
+| Body column about 670 px made tables run long | Tables, comparison figures, rows of key numbers, study and regulatory tables, explainers, plates and the mechanism stage take the full wide track (1,184 px), also inside "In detail" folds; body text stays at 42 rem. |
+| Stepped left edges (header, glance and summary wide; contents, tools and body indented) | One left edge: the reading column starts where the wide track starts; the brand, menu, breadcrumbs, title, beginner layer, contents and body share it. The rest of the wide track is an aside for the photo (beside the title) and "On this page" (beside "In short"). |
+
+**Independent QA pass (21 October 2026, after the consolidation).** Fixed:
+
+- **Double gap above section titles.** The prose h2 margin (3.75 rem) added to the section's own
+  margin, because grid items' margins do not collapse: 120 px of empty space before every hairline.
+  The section title now has no top margin of its own.
+- **"On this page" is a plain list.** Its own numbers (1–13) did not match the numbers in the
+  section beads (2–8), so "6" in the list was section 2 on the page. This replaces the "numbered
+  list" of §4.6; the point of §4.6, no pill cloud, stands.
+- **Stop-now text at AAA.** The alert ink was 6.5:1 on the alert tint (the stop strip's call line,
+  the stop callout's title). Light alert is now `#991436` (7.4:1 on the tint, 7.9:1 on the ground,
+  white on it 8.4:1), dark alert `#F78C80` (7.5:1 on the tint). The deuteranope distance from amber
+  grows (ΔE 26 → 28 light, 19 → 22 dark).
+- **Warning-signs list.** The sign and its explanation ran together with no space ("…or
+  shiveringThese can be…", also for screen readers). The explanation now has its own line.
+- **A `<Cite>` on its own line** rendered as a lone superscript between blocks; it is now a small
+  "Sources 3, 46, 7" line under the block it cites (17 places).
+- **Callout titles that wrap** keep the glyph on their first line.
+- **Layout shift at the page top on slow machines** (CLS up to 0.13 on semaglutide at 1280 with a
+  6× slower CPU): Chrome painted while the HTML was still arriving, before the review line and fact
+  sheet (placed above "At a glance" with CSS `order`, but later in the DOM) existed, then pushed "At
+  a glance" down. The first paint now waits for a marker after the page photo
+  (`<link rel="expect" href="#page-top-end" blocking="render">`, DocLayout and BaseHead).
+- **Layout shift on the news page under a slow CPU** (CLS about 0.002): the reset's
+  `[hidden] { display: none !important }` beat the rule that lays out the filter row from the first
+  paint.
+- **Preview banner and fallback notice said the same thing** on untranslated Dutch pages; the
+  banner now shows only on pages without the notice.
+- The stylesheet gets a year-long immutable cache (`public/_headers`; its URL carries the content
+  hash). One dead rule removed.
+
+The sections below are the proposal as it stood on 20 October 2026, kept for the record. Read
+them with this decision in mind: the "less text, more visuals" system (§3.2: word budget, question
+headings, figure anatomy, motion grammar, three layers of disclosure) applies to the site in B's
+treatment; §4 lists the B refinements (done earlier, before this decision); §5 and §6 still apply,
+with "all designs" read as "the design". The C colour options (§2, Appendix B) and the A-specific
+refinements (§3.1, §3.4) are not used.
+
+---
+
+**Date:** 20 October 2026 · **Owner of this document:** design lead · **Status:** proposal for the owner's decision (decided 21 October 2026, see "Decision" above).
 
 **What this answers.** The owner said on 20 October 2026: "I really dislike the colours of design C" and "I like design A since it feels nice and minimalist, but it requires more animations and infographics to feel truly intuitive and informative, because currently there is too much text." This document turns three research reports into decisions:
 

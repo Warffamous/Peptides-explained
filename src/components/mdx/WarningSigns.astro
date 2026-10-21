@@ -6,8 +6,6 @@
 import { t, namespace } from '../../lib/i18n';
 import { ctxLocale, uid as makeUid } from '../../lib/ctx';
 import { WARNING_GROUPS } from '../../schemas';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 import Icon from '../ui/Icon.astro';
 interface Props { only?: string; heading?: string }
 const L = ctxLocale(Astro);
@@ -29,11 +27,10 @@ const uid = makeUid(Astro, 'warning-signs');
       return list.length > 0 && (
         <div class="warning-signs__group" data-action={action}>
           <p class="warning-signs__action">
-            <ThemeOnly theme="c" as="span"><Pictogram name={`action-${action}`} /></ThemeOnly>
             {action === 'emergency' ? t(L, 'common.emergency.now') : t(L, `vocab.warningAction.${action}`)}
           </p>
           <ul class="warning-signs__list">
-            {list.map((s) => <li class="warning-signs__item"><strong class="warning-signs__sign">{s.sign}</strong> <span class="warning-signs__why">{s.why}</span></li>)}
+            {list.map((s) => <li class="warning-signs__item"><strong class="warning-signs__sign">{s.sign}</strong>{' '}<span class="warning-signs__why">{s.why}</span></li>)}
           </ul>
         </div>
       );

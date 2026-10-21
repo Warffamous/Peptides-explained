@@ -165,8 +165,8 @@ low health literacy: everyday words, short sentences, the most important fact fi
 
 - **One idea per item, one or two short sentences, at most 18 words.** The validator warns above
   18 words and **fails above 30**. Aim for 3–5 items; it warns above 5.
-- **The most important fact first** (design C sets the first item in bold). On a compound page that
-  is usually "what it is and whether it is an approved medicine".
+- **The most important fact first.** On a compound page that is usually "what it is and whether it
+  is an approved medicine".
 - **Everyday words.** "Feel sick" rather than "nausea", "lab" rather than "in vitro", "three in four"
   rather than "74.6%". If a technical word is unavoidable, say what it does ("a switch called
   NF-κB"). Names are fine: the compound's own names and trade names do not count as hard words.
@@ -424,7 +424,7 @@ Four independent axes. Never collapse into one score, never add them up.
 
 | Component | Use | Example |
 |---|---|---|
-| `<Cite id="src-id" />` | Reference marker. Multiple: `id="a,b"`. Every factual claim needs one. | `…in 1977.<Cite id="nobel-1977" />` |
+| `<Cite id="src-id" />` | Reference marker. Multiple: `id="a,b"`. Every factual claim needs one. On its own line (a blank line before and after), it cites the block above it (a list, a callout) and shows as a small "Sources 3, 46, 7" line under that block. | `…in 1977.<Cite id="nobel-1977" />` |
 | `<Claim level="animal">…</Claim>` | Wraps an assertion and badges its evidence level. Use on every efficacy or mechanism claim. Levels: `hypothesis`, `in-vitro`, `animal`, `human-limited` (case reports, small uncontrolled), `human-controlled` (controlled trials), `established` (authorised use / consistent phase III). | `<Claim level="animal">BPC-157 accelerated tendon healing in rats</Claim>` |
 | `<Q>…</Q>` | A measured quantity (dose-as-studied, concentration, half-life, mass, n). Monospace, bidi-isolated. | `<Q>t½ ≈ 165 h</Q>` |
 | `<Seq>…</Seq>` | An amino-acid sequence inline. Always LTR. | `<Seq>Lys-Pro-Val</Seq>` |
@@ -436,7 +436,7 @@ Four independent axes. Never collapse into one score, never add them up.
 |---|---|
 | `<Callout type="note\|tip\|warning\|stop\|legal\|uncertain" title="…">…</Callout>` | `stop` is **reserved for stop-now safety content** (seek care now). `uncertain` flags a genuinely open question. `legal` for jurisdiction-specific notes. |
 | `<Diagram id="kebab-id" caption="…">full text equivalent</Diagram>` | A diagram. The children are the **equivalent** of the diagram in words (a list or table that conveys the same information), not a label. Designers draw the SVG later from your description; until then the text renders as the figure. |
-| `<Explainer id="kebab-id" />` | A 10–15 second animated explainer (4–6 steps) of a mechanism or an interaction. Self-closing, `id` only: timing, the evidence level of each step and the **sources** live in `src/data/explainers.yaml`; the title, one B1 caption per step (≤ 18 words), the summary and any words shown on the picture live in `src/i18n/<locale>/explainers.json`; the artwork is `src/components/explainers/<id>.astro`. **No text inside the SVG** — not even numbers — so every word translates. Links are drawn by evidence: solid = shown in people, long dashes = animals or cells, short dashes = hypothesis (cyan/amber in design B). The step list is always visible as the text equivalent, and the "Based on" sources are numbered with the page's citations. Lead in with one sentence saying what the animation shows. How to add one: `docs/EXPLAINERS.md`. |
+| `<Explainer id="kebab-id" />` | A 10–15 second animated explainer (4–6 steps) of a mechanism or an interaction. Self-closing, `id` only: timing, the evidence level of each step and the **sources** live in `src/data/explainers.yaml`; the title, one B1 caption per step (≤ 18 words), the summary and any words shown on the picture live in `src/i18n/<locale>/explainers.json`; the artwork is `src/components/explainers/<id>.astro`. **No text inside the SVG** — not even numbers — so every word translates. Links are drawn by evidence: solid = shown in people, long dashes = animals or cells, short dashes = hypothesis (demonstrated links are drawn cyan, a hypothesis amber). The step list is always visible as the text equivalent, and the "Based on" sources are numbered with the page's citations. Lead in with one sentence saying what the animation shows. How to add one: `docs/EXPLAINERS.md`. |
 | `<Photo id="lab-mouse" />` | A registered image (photo, illustration or figure) with its alt text, caption and credit line, responsive and lazy-loaded. Register it first (`npm run media:commons` / `media:generate`, `src/data/media.yaml`), then write alt text and an optional caption (≤ 30 words, sourced via the registry `sources:`) in `src/i18n/<locale>/media.json`. Rules: `docs/MEDIA-GUIDE.md`. |
 | `<Infographic id="glp1-body-map" />` | A labelled atlas plate: text-free artwork with numbered markers and a key in real text. Markers and sources in `src/data/infographics/<id>.yaml`; title, one label per marker and a full text equivalent in `src/i18n/<locale>/infographics.json`. AI art must be reviewed (`ai.review: ok`) before the page ships. |
 | `<MediaCredits />` | The full image credits (what each image shows, author, licence, source, AI model and review status). Already on `/sources/`. |
@@ -451,7 +451,13 @@ Four independent axes. Never collapse into one score, never add them up.
 
 Markdown tables are fine for small comparisons. Use them instead of inventing components.
 
-### 9.1 Less text, more visuals (design A blueprint; all designs render it)
+**Where blocks land.** The site has one design ("Mechanism"; docs/design/DESIGN-DIRECTIONS-2026-10.md,
+"Decision"), with one left edge: body text, headings, leads and most figures sit in the reading
+column; tables, comparison figures, rows of key numbers, explainers, the mechanism stage, plates
+and study and regulatory tables take the full width on wide screens (also inside an "In detail"
+fold). Authors do not choose widths; write the component and the layout places it.
+
+### 9.1 Less text, more visuals
 
 The rules and the page blueprint are in `docs/design/DESIGN-DIRECTIONS-2026-10.md` §3.2–3.3. The
 first page built this way is semaglutide; use it as the worked example. In short: **every section

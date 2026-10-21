@@ -18,12 +18,10 @@ export const EXPLAINER_MAX_S = 30; // owner, 21 Oct 2026: about 5 s per scene so
 export const explainerStepSchema = z.object({
   /**
    * How well each causal link drawn in this step is shown (same scale as the <Mechanism> chain):
-   * human = solid line, animal / in-vitro = long dashes, hypothesis = short dashes (amber in design B).
+   * human = solid line, animal / in-vitro = long dashes, hypothesis = short dashes (drawn amber).
    * Usually one; a step that draws two links with different support lists both, in drawing order.
    */
   levels: z.array(z.enum(MECHANISM_LEVELS)).min(1).max(3),
-  /** Design C: optional pictogram from src/components/ui/pictograms.ts shown beside the caption. */
-  pictogram: z.string().optional(),
 });
 
 export const explainerSchema = z.object({

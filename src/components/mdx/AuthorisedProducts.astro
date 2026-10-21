@@ -5,8 +5,6 @@ import { ctxCompound } from '../../lib/ctx';
 import { routeUrl } from '../../lib/urls';
 import { formatDate, isoDate } from '../../lib/format';
 import Icon from '../ui/Icon.astro';
-import ThemeOnly from '../ui/ThemeOnly.astro';
-import Pictogram from '../ui/Pictogram.astro';
 const c = ctxCompound(Astro, 'AuthorisedProducts');
 const L = c.locale;
 const eu = c.data.category === 'authorised';
@@ -14,7 +12,6 @@ const regulators = [...new Set(c.data.authorised_products.map((p) => p.jurisdict
 ---
 <aside class:list={['authorised', eu ? 'authorised--eu' : 'authorised--elsewhere']} aria-labelledby="authorised-title">
   <p class="authorised__badge" id="authorised-title">
-    <ThemeOnly theme="c" as="span"><Pictogram name={eu ? 'status-authorised' : 'status-authorised-elsewhere'} /></ThemeOnly>
     <Icon name="check" class="authorised__check" />
     {t(L, eu ? 'compound.authorised.badge' : 'compound.authorised.badgeElsewhere')}
   </p>
