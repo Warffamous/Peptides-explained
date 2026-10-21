@@ -91,6 +91,8 @@ const signBleeding = () => `<g transform="translate(4 2) scale(0.85)">${drop()}<
 const signHeart = () => pulseHeart();
 /** A new or changing mole: an uneven dark spot with a dashed ring around it. */
 const signMole = () => `<path d="M24 13 c7 0 11 4 10 10 c-1 5 2 9 -3 12 c-5 3 -9 -1 -13 0 c-5 1 -8 -4 -7 -9 c1 -6 6 -13 13 -13 z"/><circle ${STROKE(2.5)} stroke-dasharray="4 4" cx="24" cy="24" r="21"/>`;
+/** Fever or chills: a thermometer. */
+const signFever = () => `<path d="M20 6 a4 4 0 0 1 8 0 v24 a9 9 0 1 1 -8 0 z"/><path ${CUT_STROKE(3)} d="M24 10 v22"/><path ${STROKE(3)} d="M34 10 h6 M34 17 h4 M34 24 h6"/>`;
 /** Something that lasts too long (e.g. an erection over 3 hours): a clock. */
 const signClock = () => `<circle ${STROKE(4)} cx="24" cy="24" r="19"/><path ${STROKE(4)} d="M24 12 v12 l8 6"/>`;
 /** Sudden loss of vision: an eye with a slash. */
@@ -185,6 +187,7 @@ export const PICTOGRAMS: Record<string, string> = {
   'sign-heart': signHeart(),
   'sign-mole': signMole(),
   'sign-clock': signClock(),
+  'sign-fever': signFever(),
 };
 
 export const PICTOGRAM_NAMES = Object.keys(PICTOGRAMS) as readonly string[];

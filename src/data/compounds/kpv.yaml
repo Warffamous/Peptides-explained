@@ -49,14 +49,14 @@ regulatory:
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-20, sources: [wada-2026-list-en, wada-2027-list-en] }
 studies:
   # --- anti-inflammatory pharmacology: several independent groups
-  - { id: hiltz-1989-ear-swelling, source: hiltz-1989-cooh-fragment, year: 1989, species: mouse, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: hiltz-1989-ear-swelling, source: hiltz-1989-cooh-fragment, year: 1989, species: mouse, n: null, design: animal, funding: mixed, group: independent, blinded: null, controlled: true }
   - { id: mandrika-2001-raw264, source: mandrika-2001-nfkb-no, year: 2001, species: in-vitro, n: null, design: in-vitro, funding: undisclosed, group: independent, blinded: null, controlled: true }
   - { id: getting-2003-peritonitis, source: getting-2003-dissection, year: 2003, species: mouse, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
   - { id: land-2012-bronchial-nfkb, source: land-2012-bronchial, year: 2012, species: in-vitro, n: null, design: in-vitro, funding: undisclosed, group: independent, blinded: null, controlled: true }
   # --- wound / skin
   - { id: bonfiglio-2006-cornea, source: bonfiglio-2006-cornea, year: 2006, species: rabbit, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
   - { id: sung-2025-keratinocyte, source: sung-2025-keratinocyte, year: 2025, species: in-vitro, n: null, design: in-vitro, funding: industry, group: independent, blinded: null, controlled: true }
-  - { id: pawar-2017-skin-permeation, source: pawar-2017-iontophoresis, year: 2017, species: in-vitro, n: null, design: in-vitro, funding: undisclosed, group: independent, blinded: null, controlled: null }
+  - { id: pawar-2017-skin-permeation, source: pawar-2017-iontophoresis, year: 2017, species: in-vitro, n: null, design: in-vitro, funding: government, group: independent, blinded: null, controlled: null }
   # --- gut: the PepT1 / colitis programme (dominant group: Merlin laboratory, Emory / Georgia State)
   - { id: dalmasso-2008-pept1, source: dalmasso-2008-pept1, year: 2008, species: mixed, n: null, design: animal, funding: government, group: originating, blinded: null, controlled: true }
   - { id: kannengiesser-2008-colitis, source: kannengiesser-2008-colitis, year: 2008, species: mouse, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
