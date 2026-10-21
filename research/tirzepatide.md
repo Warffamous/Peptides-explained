@@ -394,3 +394,262 @@ cells here release GIP" (K cells are a minority of the lining).
 ## Editor decision, 20 October 2026
 
 - mhra-2026-falsified-mounjaro is kept. It is an official MHRA safety communication on gov.uk; the seller is named only in its body text (not in the URL or title), and this page never names the seller. The IGJ source dropped from semaglutide was a different case. Rule going forward: a regulator warning that mentions a seller may be cited; our own text, link text and URLs never name or point to a seller.
+
+---
+
+## 7. Restructure into the "less text, more visuals" layout (21 October 2026)
+
+Files changed: `src/content/compounds/en/tirzepatide.mdx` and this section. Model: `semaglutide.mdx`
+(the authorised-medicine template) and the restructured `bpc-157.mdx`, `kpv.mdx` and `tb-500.mdx`;
+CONTENT-GUIDE §5.2 and §9.1. This is a restructure, not a rewrite: the existing text moved into
+`<InDetail>` folds, and each section now opens with a `<Lead>` and one figure built from facts and
+sources already on the page. The data file, sources file, glossary and the shared media files were
+not touched; the hero (`compounds/tirzepatide: duodenum-villi`) already existed with alt text and a
+caption. No new source was registered.
+
+### 7.1 What changed, section by section
+
+| Section | Lead (question → answer) | The one figure | Open prose (outside the figure) | Folds |
+|---|---|---|---|---|
+| what-it-is | What is tirzepatide? → a prescription medicine that copies two gut hormones; online vials are a different product | `<Compare>` authorised (Mounjaro, Zepbound) vs outside the legal supply chain, 5 rows (the HEAD table, now with verdicts and cites) | the "Why this page looks different" note | the authorised products and their approval dates (with `<AuthorisedProducts />`); the molecule and where it came from; pens, vials and why "tirzepatide" is not one thing |
+| mechanism | What does it do in the body? → acts on two gut-hormone receptors; more insulin when sugar is high, less hunger | the existing `<Diagram id="tirzepatide-two-receptors">` (unchanged) | the two-sentence intro | step by step (`<Mechanism />` and "What each step rests on"); the open GIP question with the `uncertain` callout |
+| evidence | Does it work? → yes for blood sugar and weight, in large trials; much of the weight returns after stopping | 4 `<KeyNumber>`: SURMOUNT-1 15.0–20.9% (established); SURPASS-1 HbA1c 1.87–2.07 points lower (established); SURPASS-CVOT 12.2 vs 13.1 in 100, "not more often than" dulaglutide (human-controlled); SURMOUNT-4 14.0% regained vs a further 5.5% lost (human-controlled) | "Who paid for the evidence" (open, so the funding caveat sits next to the numbers) | study table; type 2 diabetes and the heart trial; weight, stopping and the comparison with semaglutide; sleep apnoea, heart failure and the liver |
+| unknowns | What is still not known? → many years of use, how to stop, muscle, thyroid, pregnancy | `<TimeStrip>` years of use: SURPASS-CVOT median about 4 years, SURMOUNT-1 prediabetes 176 weeks, longer use "Not known" | none | all seven open questions |
+| regulatory | Is it legal? → yes on prescription in the EU, UK and US; Dutch basic insurance pays only for some diabetes use | `<TimeStrip>` of five authorisations (EU 15 Sep 2022, 11 Dec 2023, 22 Jan 2026; US 13 May 2022, 8 Nov 2023), checked 20 October 2026 | none | status table and WADA; EU and the Netherlands; Germany, Belgium, UK, US |
+| risks | What are the risks? → many feel sick at first; gallbladder and pancreas problems are rarer | 3 `<KeyNumber>` from the EU SmPC weight trial: stomach or gut problems 55.6–60.8% vs 30.3%; nausea 24.6–33.3% vs 9.5%; stopped 1.9–4.4% vs 0.5% | the source sentence and the low-blood-sugar paragraph (the risk a reader can act on) | stomach and gut details; gallbladder and pancreas; thyroid tumours in rats; anaesthesia and tablets; muscle, eyes, mood, pregnancy and other effects |
+| harm-reduction | How do I use it safely? → only on prescription, from a pharmacy; tell your doctor about other medicines; know when to get help | the stop callout (now `id="stop-now"`) and `<WarningSigns only="general,injection,allergic,metabolic" />`, both moved to the top of the section and never folded | HEAD's opening paragraph (legal route; no doses) | the legal route and why an online vial is different; fake pens and the checklist; who should not use it, interactions and checks |
+
+**Frontmatter.** Added `lede` (18 words, reading ease 66): "A weekly injection on prescription for type 2
+diabetes and weight. Online “research” vials are not the same." Added `glance.stop_signs` (3) and
+`glance.facts` (4). Every other frontmatter key (`title`, `description`, `summary`, `glance.main_risk`,
+`grade_rationale`, `mechanism`, `studies`, `regulatory_notes`, `indications`) is byte-identical to HEAD:
+the frontmatter was assembled by script from `git show HEAD:…` with only the additions inserted.
+
+**Stop strip.** (1) `sign-belly-pain` "Severe belly pain, often spreading to your back"; (2) `sign-low-sugar`
+"Sweaty, confused or drowsy (low blood sugar)"; (3) `sign-allergic` "Swollen lips or throat, or trouble
+breathing". All cite `ema-epar-mounjaro`. The wording follows the Mounjaro package leaflet, re-read today
+from the product-information PDF (pancreatitis: "severe pain in the stomach and back which does not go
+away"; low-sugar signs include drowsiness, confusion and sweating; allergic reaction: "breathing problems,
+rapid swelling of the lips, tongue and/or throat"). The semaglutide strip says "Shaky" and "face"; those
+words are not in the Mounjaro leaflet, so they were not copied. The other two stop items (dehydration;
+infection after a product from outside a pharmacy) have no matching label stop sign or pictogram and stay
+in the full list.
+
+**Fact sheet.** How it is taken: injection under the skin (SmPC 4.2: abdomen, thigh or upper arm); how often:
+once a week (SmPC 4.2, 5.2); how long it lasts: half-life about five days (SmPC 5.2: "approximately 5 days,
+enabling once weekly administration"); what it acts on: two receptors, GIP and GLP-1 (SmPC 5.1;
+`coskun-2018-ly3298176`). No dose.
+
+**Emergency number.** HEAD already used "call your local emergency number" twice in the stop callout and
+never printed 112 as a phone number. The only "112" in the file is "at week 112" (SURMOUNT-MAINTAIN), twice,
+which the validator leaves alone. The stop strip adds the locale's standard emergency line itself.
+
+### 7.2 Verification of the new figure, lead and fact-sheet text (21 October 2026)
+
+Every statement on the new figures condenses a sentence already on the page and cites that sentence's own
+source ids. Re-checked against the primary records today:
+
+- **PubMed abstracts** (NCBI efetch, PMIDs 35658024, 34186022, 41406444, 38078870, 39536238): SURMOUNT-1
+  −15.0/−19.5/−20.9% vs −3.1% at 72 weeks, 2,539 adults without diabetes; SURPASS-1 HbA1c −1.87/−1.89/−2.07%
+  vs +0.04% at 40 weeks, 478 adults, no clinically significant hypoglycaemia; SURPASS-CVOT 13,299 randomised,
+  801 (12.2%) vs 862 (13.1%), HR 0.92 (95.3% CI 0.83–1.01), non-inferiority only; SURMOUNT-4 670 randomised
+  after a mean 20.9% loss in 36 weeks, −5.5% vs +14.0% over 52 weeks; SURMOUNT-1 prediabetes 176 weeks.
+- **EU product information** (PDF downloaded from ema.europa.eu today and converted with pdftotext): weight
+  trial without T2DM, gastrointestinal disorders 55.6/60.8/59.2% vs 30.3%, nausea 24.6/33.3/31.0% vs 9.5%,
+  permanent discontinuation for GI events 1.9/4.4/4.1% vs **0.5%**; SURPASS-CVOT "median follow-up time was
+  4.0 years" (so `ema-epar-mounjaro` was added to the CVOT key number and the unknowns time strip);
+  half-life, route, albumin binding and mechanism text as above; package-leaflet wording for the stop strip.
+- **EMA EPAR page**: "Marketing authorisation issued 15/09/2022". **Drugs@FDA** overview pages: Mounjaro
+  05/13/2022; Zepbound 11/08/2023 (and 12/20/2024 for sleep apnoea). Both EMA procedural-steps PDFs, re-downloaded
+  today: II/0007 (extension to chronic weight management) opinion 09/11/2023, decision 11/12/2023;
+  EMA/VR/0000281937 (C.I.6, new indication, children from 10) opinion 11/12/2025, decision 22/01/2026.
+- **CBG position page** (fetched today): "je weet niet wat je koopt. Het is onduidelijk wat erin zit" and
+  "het is belangrijk dat een arts en apotheker de behandeling begeleiden" (supports two comparison cells).
+- **MHRA** (both pages fetched today): over 12,000 fake retatrutide and tirzepatide pens seized on
+  14 October 2026; the falsified 15 mg KwikPen contained tirzepatide but "we cannot be sure that the pen is
+  sterile".
+
+### 7.3 Nothing lost: the check against git HEAD
+
+A script in the session scratchpad (not committed) compares `git show HEAD:src/content/compounds/en/tirzepatide.mdx`
+with the new file:
+
+- `<Cite>` tags: HEAD 126, now 132, **0 lost**; 71 distinct ids before and after, none used less often,
+  no new ids on the page (the six extra tags put existing ids on the comparison figure's cells).
+- `<Claim>` (level and exact text): 24 → 24, **0 lost, 0 changed**. `<Q>` 7 → 7, `<Seq>` 1 → 1, internal
+  links 3 → 3. Data components 10 → 10 (`AuthorisedProducts`, `Mechanism`, `StudyTable`, `RegulatoryTable`,
+  the `Diagram`, `Checklist`, `WarningSigns`, and the note, uncertain and stop callouts).
+- Body sentences: **250 of 250 found verbatim**. No sentence was reworded.
+- Stop callout: the five items are identical to HEAD; only `id="stop-now"` was added, and it moved up.
+- Tables: the diagram's rows are unchanged. The what-it-is comparison table became the `<Compare>` figure
+  (as on the semaglutide page), so its 5 rows no longer exist as plain rows. Of its 15 cells, 12 are in the
+  figure verbatim. Three were reworded to fit a yes/no figure: "Content" → "Contents known?"; its
+  outside-the-chain cell "Unknown; fake pens have been seized" → `No` + "You do not know what is in it; fake
+  pens have been seized" (the CBG wording the page already quotes); "Sterility" / "Unknown" → "Made sterile?"
+  / `Unknown` + "For fake pens found in the UK, sterility could not be assured" (the MHRA Drug Safety Update
+  the page already cites). The other row heads became questions ("Amount per dose known?", "Risk
+  information?", "Medical follow-up?").
+- `###` headings no longer used as headings (10): they became fold titles ("Pens, vials and why
+  “tirzepatide” is not one thing", "The open question: what does the GIP half do?", "Sleep apnoea, heart
+  failure and the liver", "Stomach and gut: the details", "Gallbladder and pancreas", "Thyroid tumours in
+  rats, and why they may not carry over", "Anaesthesia, the contraceptive pill and other tablets", "Fake pens,
+  and how to check yours"), or were dropped because the text is now open prose ("Who paid for the evidence",
+  "Low blood sugar").
+- **One number is new on the page**: the 0.5% placebo discontinuation in the third risks key number. It is in
+  the SmPC sentence the folded text already cites for 1.9–4.4%, and was read in the PDF today.
+
+### 7.4 Visible words (the formula in `src/pages/[locale]/compounds/[slug].astro`)
+
+| | Before (HEAD, no folds) | After |
+|---|---|---|
+| Visible with folds closed (includes the fixed 150 At-a-glance and evidence-card words) | 6,757 | **1,420** |
+| Whole page, everything open (includes the 150) | 6,757 | 7,518 (+761: figures, leads, fold titles, stop strip, fact sheet, lede) |
+| Visible body words per section (after; leads and figures included) | | what-it-is 172, mechanism 163, evidence 237, unknowns 80, regulatory 100, risks 169, harm-reduction 181 |
+
+The rendered page (the running dev server, `localhost:4321/en/compounds/tirzepatide/`, HTTP 200) says "About 8
+minutes for the short version; 37 with every detail open". It renders 7 leads, 21 folds, 1 comparison, 7 key
+numbers, 2 time strips, the diagram, the stop strip with three signs, `id="stop-now"`, the fact sheet and the
+lede. No horizontal page scroll at 375 px; the diagram's four-column table scrolls inside its own frame (as
+before). The short version is under the 1,500–2,000 aim because the figures carry most of the content and only
+four short passages stay open; more prose could be opened if the owner wants it.
+
+### 7.5 Editorial decisions for the reviewer
+
+1. **Explainers not reused.** `insulin-glp1-hypo` names semaglutide in its title, step 1 and still caption
+   ("Semaglutide alone lowers high blood sugar…"), and `glp1-action` is drawn and captioned for semaglutide.
+   Placing either here would mislabel the medicine. Proposed instead (not built): a medicine-neutral variant
+   of the low-sugar explainer and the backlog `incretin-multi-agonism` explainer (EXPLAINERS.md §6).
+2. **The heart key number** says "not more often than with an older medicine", the trial's own
+   non-inferiority result; the regulators' wider conclusion stays in the fold with its caveat.
+3. **"Who paid for the evidence" stays open** in the evidence section, so the funding caveat sits next to
+   the numbers (CONTENT-GUIDE §1: uncertainty in both directions). Semaglutide folds it.
+4. **The Netherlands cost-and-access paragraph stays folded**, as on the semaglutide page; the regulatory
+   lead carries the one-line access fact.
+
+### 7.6 Validator and checks
+
+- `npx tsx scripts/validate-content.ts --only tirzepatide`: **0 errors, 0 warnings**. Draft wordings fixed on
+  the way: lede (22 words → 18; reading ease 66), regulatory time-strip title (reading ease 49 → 89), the
+  stomach key-number label (57 → 70).
+- Whole repository: 0 errors, 26 warnings, none in tirzepatide files.
+- The MDX body compiles with `@mdx-js/mdx` + `remark-gfm`.
+- The regulatory time strip first had one tick per year, which crowded the axis at 375 px; it now has one
+  every two years.
+
+### 7.7 Open questions (new)
+
+1. The stop callout (unchanged from HEAD) says "Shaking" and "Swelling of the face"; the Mounjaro leaflet lists
+   drowsiness, confusion and sweating, and swelling of the lips, tongue or throat. Both are standard signs,
+   but neither word is in the cited label. Add a general hypoglycaemia source (e.g. the registered
+   `ada-2026-hypoglycaemia`) and an anaphylaxis source (e.g. `nhs-anaphylaxis`), or align the wording?
+2. Should "Who paid for the evidence" be open on every authorised-medicine page (semaglutide folds it)?
+3. A medicine-neutral low-blood-sugar explainer would serve this page, semaglutide and retatrutide alike.
+
+---
+
+## 8. Fact-check log: the restructured page (independent fact-checker, 21 October 2026)
+
+Scope: `src/content/compounds/en/tirzepatide.mdx` after the §7 restructure, and this file. Focus on what
+the restructure added (lede, stop strip, fact sheet, 7 leads, the comparison figure, 7 key numbers, 2 time
+strips) plus a full re-check of every source the page cites. The data file, sources file and glossary
+were not edited (not in this assignment).
+
+### What was checked, and how
+- **All 29 scholarly sources in `tirzepatide.yaml` plus the 4 reused PubMed sources** (knudsen-2010,
+  lau-2015, neeland-2024, he-2022): one NCBI esummary call, compared field by field by script with the
+  registry (authors in order, title, year, volume, pages, DOI, PMCID). All match; the only differences are
+  PubMed's abbreviated page ranges (e.g. 301-7 vs 301-307) and e-locators PubMed leaves blank. All 29 DOIs
+  return HTTP 200 from the DOI handle API. No wrong or fabricated DOI.
+- **Abstracts** (NCBI efetch, 20 PMIDs) for every trial number on the page and in the study findings:
+  SURMOUNT-1, SURPASS-1, SURPASS-CVOT, SURMOUNT-4, SURMOUNT-1 prediabetes, SURMOUNT-MAINTAIN, SURPASS-2,
+  SURPASS-4, SURPASS-PEDS, phase 2 (Frias 2018), Heise 2022 and 2023, SURMOUNT-OSA, SUMMIT, SURMOUNT-5,
+  SYNERGY-NASH, Rodriguez 2024, McCall 2026, maridebart cafraglutide, Nauck 1993. Every number matches.
+- **All 23 structured studies**: species, n, design, funding, group, blinded and controlled re-read
+  against those abstracts. No field needed changing (SURPASS-2, SURPASS-4 and SURMOUNT-5 open-label;
+  SURMOUNT-4 and -MAINTAIN double-blind after an open-label lead-in; n = randomised).
+- **EU product information PDF** (downloaded today, pdftotext): weight-trial GI figures 55.6/60.8/59.2% vs
+  30.3%, nausea 24.6/33.3/31.0% vs 9.5%, permanent stops 1.9/4.4/4.1% vs 0.5% (all three risk key numbers
+  correct; one study, "patients without T2DM"); hypoglycaemia 10-14% with a sulphonylurea, 14-19% with
+  basal insulin; CVOT median follow-up 4.0 years; half-life about 5 days "enabling once weekly
+  administration"; subcutaneous route; 5.1 receptor locations (diagram rows correct); insulin secretion
+  "in a glucose dependent manner"; 15 169 adults in 14 completed phase 3 studies; ADA 45.1-65.1%; heart
+  rate +2 to +6 bpm; amylase 23-38%, lipase 28-42%; SUMMIT CV deaths 10 vs 5; DEXA substudy; rat C-cell
+  tumours; Annex IIA batch release; package-leaflet stop signs. EPAR page: authorisation 15/09/2022,
+  product information last updated 21/09/2026 (no newer procedure).
+- **EMA procedural-steps PDFs** (both re-downloaded): II/0007 opinion 09/11/2023, decision 11/12/2023;
+  EMA/VR/0000281937 opinion 11/12/2025, decision 22/01/2026; EMA/VR/0000310637 outcome 25/06/2026.
+- **Drugs@FDA** (both overviews re-fetched): Mounjaro ORIG-1 05/13/2022, S-39 12/19/2025, S-44/S-45
+  08/27/2026; Zepbound ORIG-1 11/08/2023, S-13 (OSA) 12/20/2024, S-42 02/25/2026, S-41 08/26/2026.
+- **Status checks today**: Federal Register API (tirzepatide, from 1 Jan 2026) still returns only the 503B
+  proposal (2026-08552), the comment extension (2026-12937) and an unrelated guidance notice, so no final
+  503B decision. FDA concerns page (current as of 10/01/2026: more than 730 compounded-tirzepatide reports
+  to 31 May 2026; dosing errors from patients measuring doses; 28-day vial advice). FDA compounding page
+  (2 Oct and 19 Dec 2024; 5 and 19 Mar 2025). FDA PCAC July 2026 page: seven substances, tirzepatide not
+  among them (the page says only that it was not considered, so the five-element PCAC framing is not
+  needed). ZIN werkagenda: first WAR 5 Oct 2026, consultation "naar verwachting begin november 2026". FK
+  Regeling zorgverzekering item 194 and FK preparaattekst unchanged. MHRA DSU (24 Feb 2026) and MHRA news
+  (15 Oct 2026: more than 12,000 pens, one raid in Birmingham). CBG position page. WADA 2026 and 2027 Lists
+  (no tirzepatide; 2027 List in effect 1 January 2027) and Monitoring Programs (2025: semaglutide only;
+  2026: "Markers of Semaglutide and Tirzepatide"; 2027: "GLP-1 Agonists: Semaglutide and tirzepatide").
+- **Reused sources newly cited** (see changes): `ada-2026-hypoglycaemia` (esummary matches; PMC HTML:
+  symptoms "include ... shakiness, irritability, confusion, tachycardia, sweating, and hunger";
+  recommendation 6.15, glucose for the conscious individual) and `sola-2015-sulfonylureas` (esummary
+  matches; Europe PMC full text: "the release of insulin induced by sulfonylureas is independent of glucose
+  levels").
+- **Page photo**: Commons file page confirms CC BY-SA 4.0, own work by CoRus13, "normal mucosa, H&E"; no
+  person, no product. Alt text and caption accurate.
+- **Explainers**: confirmed that `glp1-action` and `insulin-glp1-hypo` name semaglutide in their titles and
+  step captions, so not reusing them here is correct.
+- **Guardrails**: no dosing guidance (studied doses only in `<Q>` inside study descriptions; the fact sheet
+  gives label route, frequency and half-life, which CONTENT-GUIDE §9.1 allows); no superlatives, hype
+  words, testimonials or sourcing hints; no commerce words in link text; internal links only to
+  `/en/talking-to-your-doctor/`, `/en/safety/product-risk/` and `/en/safety/sterile-technique/`; no `# `
+  heading; no emergency phone number (only "week 112").
+
+### What was changed (MDX)
+1. **Comparison figure, three cells without a source.** "Amount per dose known? No: depends on your own
+   measuring" now adds that the FDA has had reports of measuring errors (`fda-unapproved-glp1-concerns`;
+   worded as reports, because the FDA says the events "may be related" to dosing errors). "Made sterile?
+   Yes: a condition of the authorisation" had no source and the EU product information does not say it;
+   now "made by a manufacturer named in the authorisation, which releases each batch" (Annex IIA,
+   `ema-epar-mounjaro`). "Risk information? No: none" now carries the CBG's own reason ("onduidelijk ...
+   hoe je het moet gebruiken en dus ook wat de gevolgen voor je gezondheid zijn", `cbg-glp1-position`).
+2. **SURMOUNT-4 key number.** The `who` line dropped the trial's population qualifier: SURMOUNT-4
+   excluded diabetes. Now "adults with obesity or overweight, without diabetes, who had first lost 20.9%
+   on average". The label said "body weight regained", which can be read as 14% of the lost weight; the
+   14.0% is the change in body weight from week 36, so it now says "weight gain in 52 weeks after
+   switching to placebo".
+3. **Stop callout (resolves open question 7.7.1).** "Swelling of the face, lips or throat" became
+   "Swelling of the lips, tongue or throat" (the leaflet's words, and the site's own warning-signs list).
+   "Shaking" is kept, because the site's warning-signs list uses it and the ADA Standards list shakiness;
+   `ada-2026-hypoglycaemia` was added to the callout's citation line, which also supports "take something
+   sugary if you can swallow safely".
+4. **Low-blood-sugar paragraph (open in the risks section).** "Insulin and sulfonylureas act regardless
+   of glucose" had no source of its own; it now cites the SmPC (tirzepatide's glucose-dependent insulin
+   secretion) and `sola-2015-sulfonylureas`. That insulin itself lowers glucose regardless of the level is
+   basic pharmacology and is not separately sourced.
+5. **Netherlands (fairness, the opposite failure).** The page reported that Dutch GP guidance advises
+   against tirzepatide, but not two qualifiers in the same FK text: the multidisciplinary obesity
+   guideline (2023) was written before tirzepatide was on the market, and guidance in other countries
+   leaves more room to prescribe it. Added one sentence (`fk-tirzepatide`).
+
+Validator after the changes: `--only tirzepatide` 0 errors, 0 warnings (one key-number label went to 20
+words during editing and was shortened). The page renders (HTTP 200 on the dev server) and shows the new
+cells, the callout wording and the two added sources in the source list.
+
+### Checked and left as they are
+- **Heart key number** ("not more often than with an older medicine"): a fair plain reading of a
+  non-inferiority result with HR 0.92 (95.3% CI 0.83-1.01); the fold explains "not worse, not shown better".
+- **Unknowns time strip** ("followed people for about four years"): the median follow-up was 4.0 years,
+  so some people were followed longer; "about" covers it, and the fold says "a median of about four
+  years". SURPASS-CVOT is the longest tirzepatide trial (SURMOUNT-1 prediabetes: 176 + 17 weeks).
+- **Stop strip, fact sheet, lede, leads, risk key numbers, regulatory time strip**: all supported by the
+  page's own text and the sources above.
+- **"Made sterile? Yes: a condition of the authorisation"** is also the semaglutide page's wording; the
+  semaglutide fact-checker may want the same change.
+
+### Remaining concerns for the reviewer
+- Visible words with folds closed are about 1,450, still a little under the 1,500-2,000 aim; opening one
+  short fold (for example the approval dates) would close the gap.
+- The UK row says "licensed" from the MHRA guidance page; no MHRA product-licence page is cited.
+- Open questions 5.1-5.8 and 7.7.2-7.7.3 still stand.

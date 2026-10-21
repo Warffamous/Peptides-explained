@@ -141,3 +141,7 @@ I confirmed the S-011 and S-025 indications by downloading those label versions 
 - **STEP 1 DXA lean-mass percentages.** Not used (full text not accessed).
 - **Detailed cardiovascular, renal and anti-inflammatory mechanisms.** Not asserted beyond the label's "not established".
 - **The grey-market pull of non-reimbursement.** No data found; worded as an inference.
+
+## Fix, 21 October 2026
+
+- Compare figure (what-it-is): two authorised-medicine cells had no source. 'Made sterile? A condition of the authorisation' now reads 'Made by a manufacturer named in the authorisation, which releases each batch' (EU product information, Annex II A, ema-epar-wegovy), matching the fix the tirzepatide fact-checker made on that page. 'Official label, updated' now cites ema-epar-wegovy, and the online-vial cell uses the CBG's own reason (cbg-glp1-position), as on the tirzepatide page.
