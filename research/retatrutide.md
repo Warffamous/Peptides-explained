@@ -48,8 +48,8 @@ PubChem's compound title; "reta" is the grey-market name used by regulators' war
 | TRIUMPH-2 (NCT05929079) | 1,152 | 80 wk, obesity + T2D | weight −11.9/−16.8/−18.8 vs −5.1; diarrhoea 27–34% vs 13%; nausea 14–28% vs 8%; hypotension 1–6% vs <1%; dysaesthesia 4–7% vs 1%; discontinuation 4/12/8% vs 5%; deaths 6 vs 1 | `bellido-2026-triumph-2` |
 | TRIUMPH-1 (NCT05929066) | 2,339 randomised | 80 wk, obesity, no diabetes | weight −17.6/−23.7/−25.0 vs −3.9; WOMAC pain and AHI benefits (ITT AHI −22.8/−34.3/−32.1 vs −9.6) | `jastreboff-2026-triumph-1` |
 
-Unpublished on 20 October 2026 (PubMed searched by NCT number and acronym): TRIUMPH-3 (1,946, completed
-April 2026), TRIUMPH-4 (445, completed November 2025), TRANSCEND-T2D-2 (vs semaglutide; primary completion
+Unpublished on 20 October 2026 (PubMed searched by NCT number and acronym): TRIUMPH-3 (1,946, primary
+completion 16 April 2026, study completion 14 May 2026), TRIUMPH-4 (445, completed November 2025), TRANSCEND-T2D-2 (vs semaglutide; primary completion
 27 August 2026), the energy-expenditure phase 1 (NCT06313528), the oral-contraceptive study (NCT06039826)
 and the CYP probe-drug study (NCT05445232). The only PubMed hit for "TRIUMPH-3"/"TRIUMPH-4" is the TRIUMPH
 design paper (PMID 41090431), not results.
@@ -361,3 +361,284 @@ framing is not triggered.
 - The Halle group's 2025 paper on glucagon and human atria (Int J Mol Sci 26:698, cited inside Neumann 2026)
   was not added as a source; if the medical reviewer wants the glucagon-receptor disagreement documented
   further, it should be verified and registered.
+
+---
+
+## 8. Restructure into the "less text, more visuals" layout (21 October 2026)
+
+Files changed: `src/content/compounds/en/retatrutide.mdx` and this section. Model: `semaglutide.mdx` and the
+restructured `tirzepatide.mdx`, `bpc-157.mdx`, `kpv.mdx`, `tb-500.mdx`; CONTENT-GUIDE §5.2 and §9.1. This is a
+restructure, not a rewrite: the existing text moved into `<InDetail>` folds, and each section now opens with a
+`<Lead>` and one figure built from facts and sources already on the page. The data file, the sources file, the
+glossary and the shared media files were not touched. The hero (`compounds/retatrutide: human-pancreatic-islet`)
+already existed with alt text and a caption, so no media was registered. No new source was registered.
+
+### 8.1 What changed, section by section
+
+| Section | Lead (question → answer) | The one figure | Open prose (outside the figure) | Folds |
+|---|---|---|---|---|
+| what-it-is | What is retatrutide? → a drug still in testing that acts like three hormones at once; no country has approved it | `<Compare>` "Retatrutide in a trial" vs "Sold online as 'retatrutide'", 5 rows (HEAD's table, now with verdicts and cell cites); HEAD's block cite line kept under it | the dated status paragraph (investigational; not on the EMA list of 5 Oct 2026; Lilly plans an FDA filing in Q1 2027) | the developer and the legal callout; the molecule and where it came from; why so many people have heard of it |
+| mechanism | What does it do in the body? → acts like three hormones; people feel less hungry; in mice the body also burned more energy | the existing `<Diagram id="retatrutide-three-receptors">` (unchanged) with its cite line | the three-sentence intro | step by step (`<Mechanism />` and "What each step rests on"); the open glucagon question (uncertain callout and the "costs" paragraph) |
+| evidence | Does it work? → in large trials weight fell a lot and blood sugar improved; the maker paid for every trial | 3 `<KeyNumber>`: TRIUMPH-1 17.6–25.0% vs 3.9%; TRIUMPH-2 11.9–18.8% vs 5.1%; TRANSCEND-T2D-1 HbA1c −1.69 to −1.94 points vs −0.81 (all `human-controlled`) | "Weight is a surrogate …" and the funding paragraph ("All 10 randomised-trial records …"), so both caveats sit next to the numbers | study table and trial-status table; early and phase 3 results and the unpublished trials; substudies and independent research; the indirect comparison and "promising / what the wait costs" |
+| unknowns | What is still not known? → what longer use does, whether the faster heartbeat matters, what products sold online contain | `<TimeStrip>` years of use: longest published trials 80 weeks (about 1.5 years); longer use "Not known" | none | all ten open questions |
+| regulatory | Is it legal? → approved nowhere and banned in sport; in the EU, in practice, legal only in a trial | `<Compare>` Netherlands and the EU vs United States, 5 rows (approved? applied? legal to sell? legal route outside a trial? allowed in sport?) | none | status table and WADA; EU and the Netherlands; Germany, Belgium, UK, US |
+| risks | What are the risks? → many feel sick or get diarrhoea; some get a faster heartbeat or odd skin feelings | 4 `<KeyNumber>` from TRIUMPH-2: diarrhoea 27–34% vs 13%; nausea 14–28% vs 8%; dysaesthesia 4–7% vs 1%; permanent stopping for side effects or death 4–12% vs 5% | the "Faster heartbeat" item (moved out of the list, wording unchanged) | everything the trials reported; why a heart-rhythm effect is theorised; muscle, low blood sugar, thyroid and pregnancy; outside trials and sport |
+| harm-reduction | How can someone lower the risk? → ask about a trial or an approved medicine; treat any online product as unchecked; know when to stop | the stop callout (now `id="stop-now"`) and `<WarningSigns only="general,injection,allergic,cardiovascular,metabolic" />`, moved up and never folded | "The legal routes" (both paragraphs) and the skin-sensation sentence after the stop list | what you cannot know about an online product; checks (checklist); interactions and who should not use it |
+
+**Frontmatter.** Added `lede` (18 words, reading ease 71): "A drug still in trials, approved nowhere. Tested
+products sold as retatrutide held wrong amounts or another drug." ("Tested products", not "online products": the
+three Piatkowski products were "sold in Australia", and the letter does not say they were bought online.) Added
+`glance.stop_signs` (3) and `glance.facts` (4). Every other frontmatter key is identical to HEAD (checked by
+script after parsing both with gray-matter): the frontmatter was assembled from `git show HEAD:…` with only the
+additions inserted. `glance.main_risk` was already present and is unchanged.
+
+**Stop strip.** (1) `sign-belly-pain` "Severe belly pain, often spreading to your back": sources
+`nhs-acute-pancreatitis` (call 999 for sudden severe tummy pain spreading to the back), `ctgov-nct04881760`,
+`ctgov-nct04867785` (the serious pancreatitis cases in the phase 2 results), `ema-epar-mounjaro` (class risk).
+(2) `sign-heart` "Racing heartbeat with chest pain or fainting": `nhs-heart-palpitations` (call 999 if
+palpitations come with chest pain, shortness of breath, or feeling faint or fainting), `jastreboff-2023-retatrutide-phase-2`
+(heart rate rose with dose), `pasqualotto-2024-retatrutide-meta-analysis` (rhythm problems more frequent, not
+significant). (3) `sign-allergic` "Swollen lips or throat, or trouble breathing": `nhs-anaphylaxis` (lips, mouth,
+throat or tongue suddenly swollen; struggling to breathe), `pasqualotto-2024-retatrutide-meta-analysis`
+(allergic-type reactions RR 3.79). All three condense items of the page's own stop list. The other three stop
+items (liver injury, dehydration, ketoacidosis in type 1 diabetes) have no matching pictogram and stay in the
+full list. The NHS ids are reused from `safety-a.yaml`, not re-registered; the four NHS pages (the three above
+plus `nhs-jaundice`) were re-fetched today and say what they are cited for. They were also added to the stop
+callout's own citation line, so the "get help now" advice has a general medical source as well as the
+retatrutide trial sources (the semaglutide and tirzepatide pages cite the label for this; there is no label here).
+
+**Fact sheet.** How it is taken: "Injection under the skin (in the trials)" (TRIUMPH-1, TRIUMPH-2 and
+TRANSCEND-T2D-1 abstracts: "once-weekly subcutaneous injection"; registry NCT05929066: "Administered SC"). How
+long it lasts: "Half-life about six days" (Urva 2022). What it acts on: "Three receptors: GIP, GLP-1 and glucagon"
+(ChEMBL, Coskun 2022). Developer: "Eli Lilly (development code LY3437943)" (Coskun 2022 and Urva 2022, both
+Lilly papers with LY3437943 in the title). **Decision:** the weekly injection schedule is left out of the fact
+sheet on purpose. Semaglutide and tirzepatide state "how often" because it is label information for an authorised
+medicine; for an unapproved compound that is dosed from trial reports, a frequency row reads like part of a
+protocol (§4 already explains why trial arms are not given in mg). "Under the skin" is new to the page as a
+detail (the body says "injectable"); it is sourced and not a dose.
+
+**Emergency number.** HEAD already wrote "call your local emergency number" twice in the stop callout and never
+printed 112. The rendered page's only "112" strings are SVG coordinates in the sequence figure. The stop strip
+adds the locale's emergency line itself.
+
+### 8.2 Verification of the new figure, lead and fact-sheet text (21 October 2026)
+
+Every statement on the new figures condenses a sentence already on the page and cites that sentence's own
+source, except the few cell cites listed below. Re-checked against the primary records today:
+
+- **PubMed abstracts** (NCBI efetch, PMIDs 42814954, 42810372, 42250575, 36354040, 37366315). TRIUMPH-1: 2,339
+  randomised, −17.6/−23.7/−25.0% vs −3.9% at 80 weeks, adults with obesity without diabetes, once-weekly
+  subcutaneous injection. TRIUMPH-2: 1,152 randomised, −11.9/−16.8/−18.8% vs −5.1% at 80 weeks; diarrhoea 27%,
+  34%, 34% vs 13%; nausea 14%, 21%, 28% vs 8%; dysesthesia 4%, 6%, 7% vs 1%; hypotension 1%, 5%, 6% vs <1%;
+  permanent discontinuation for adverse events or death 4% (4 mg), 12% (9 mg), 8% (12 mg) vs 5%; deaths 2 + 3 + 1
+  vs 1, all judged unrelated. TRANSCEND-T2D-1: 537 randomised, HbA1c −1.69/−1.86/−1.94 vs −0.81 at 40 weeks; weight
+  −11.5/−13.9/−15.3 vs −2.6%; no severe hypoglycaemia. All key-number values and labels match.
+- **ClinicalTrials.gov API v2, NCT05929066** (fetched today): sponsor Eli Lilly; `oversightHasDmc: true` (a data
+  monitoring committee); three retatrutide dose arms and placebo, "Administered SC"; secondary outcomes include
+  blood measures (HbA1c, triglycerides, non-HDL cholesterol, fasting insulin, hsCRP, eGFR) at baseline and week
+  80. This supports the comparison cells "Fixed by the trial" and "Visits, blood tests, a safety committee".
+- **FDA "concerns with unapproved GLP-1 drugs" page** (fetched today): retatrutide "cannot be used in
+  compounding under federal law", is not a component of any FDA-approved drug, and was sold falsely labelled "for
+  research purposes". Supports "Not FDA-approved".
+- **NHS pages** (fetched today): acute pancreatitis, heart palpitations, anaphylaxis, jaundice (wording above).
+- Every other figure cell repeats a sentence already on the page with that sentence's cite (EMA list of 5 October
+  2026, CBG database, CBG compassionate-use list, Geneesmiddelenwet art. 40, 21 U.S.C. § 355, SEC 8-K, expanded
+  access NCT07629401, WADA 2026 List S0). Those sources were verified on 20 October (§2 and §7) and not re-fetched.
+
+### 8.3 Nothing lost: the check against git HEAD
+
+A script in the session scratchpad (not committed) compared `git show HEAD:src/content/compounds/en/retatrutide.mdx`
+with the new file:
+
+- `<Cite>` tags: HEAD 145, now 162, **0 uses lost**; 78 distinct ids before, 82 now. The four new ids are the
+  NHS pages on the stop callout's citation line (above); the other extra tags put existing ids on figure cells.
+- `<Claim>` (level and exact text): 29 → 29, **0 lost, 0 changed**. `<Q>` 2 → 2, `<Seq>` 1 → 1, internal links
+  11 → 11. Data components unchanged in number: `Mechanism`, `StudyTable`, `RegulatoryTable`, the `Diagram`,
+  `Checklist`, `WarningSigns`, and the legal, uncertain and stop callouts.
+- Body sentences: **276 of 276 found verbatim**. No sentence was reworded. One sentence was added in the fold
+  "Why so many people have heard of it": "The comparison at the top of this section sets out the differences row
+  by row." (navigation only, as on the tirzepatide page).
+- Headings: 31 of 32 `###` headings survive as a heading or a fold title. "How it compares, and who paid" was
+  split: the comparison paragraph keeps the heading "How it compares with other medicines" in a fold, and the
+  funding paragraph is now open in the evidence section.
+- Stop callout: the six items are identical to HEAD; `id="stop-now"` was added, the citation line gained the four
+  NHS ids, and the callout moved to the top of the section with `<WarningSigns />`.
+- Tables: the trial-status table and the diagram table are unchanged. The what-it-is table became the first
+  `<Compare>` figure, so its rows no longer exist as plain rows. Cells kept verbatim: "Made and tested by the
+  developer", "Fixed by the trial", "Depends on the label and your own measuring", "Required", "Visits, blood
+  tests, a safety committee", "None", "Illegal to sell or supply". Reworded to fit a yes/no figure: the row heads
+  became questions ("Contents known?", "Amount per dose fixed?", "Sterile?", "Safety follow-up?", "Legal to
+  supply?"); "Unknown: tested products held …" lost its "Unknown:" (the `No` verdict carries it); the sterility
+  cell "Unknown" became `Unknown` + "No published study has tested this" (the page's own sentence, Piatkowski);
+  the trial-side "Legal" became "Medicines for research are an exception in the law" (Geneesmiddelenwet art.
+  40(3)(b), as the NL section says).
+
+### 8.4 Visible words (the formula in `src/pages/[locale]/compounds/[slug].astro`)
+
+| | Before (HEAD, no folds) | After |
+|---|---|---|
+| Visible with folds closed (includes the fixed 150 At-a-glance and evidence-card words) | 6,533 | **1,574** |
+| Whole page, everything open | 6,533 | 7,368 (+835: figures, leads, fold titles, stop strip, fact sheet, lede, the 150) |
+| Visible body words per section (after; leads and figures included) | | what-it-is 199, mechanism 195, evidence 181, unknowns 74, regulatory 188, risks 159, harm-reduction 261 |
+
+The running dev server (`localhost:4321/en/compounds/retatrutide/`, HTTP 200) says "About 8 minutes for the short
+version; 37 with every detail open". It renders 7 leads, 20 folds, 2 comparisons, 7 key numbers, 1 time strip,
+the diagram, the stop strip with three signs, `id="stop-now"`, the fact sheet (4 rows plus the data rows) and the
+lede. No horizontal page scroll at 375 px (scrollWidth = clientWidth = 375). Harm-reduction is the longest open
+section because the stop list, which must never be folded, is long (six items).
+
+### 8.5 Editorial decisions for the reviewer
+
+1. **Explainers not reused.** `glp1-action` and `insulin-glp1-hypo` name semaglutide in their titles and step
+   captions, and the low-sugar explainer tells the reader that "your prescriber may lower your dose", which does
+   not fit an unapproved drug with no prescriber. Placing either here would mislabel the medicine. Proposed
+   instead (not built): the backlog `incretin-multi-agonism` explainer (EXPLAINERS.md §6) and a
+   `retatrutide-heart-rate` explainer (see the summary returned with this run).
+2. **Risk figure as key numbers, not an icon array.** `<IconArray>` takes one value per group; TRIUMPH-2 reports
+   three dose groups, and the page reports ranges. Picking one dose would add a dose-specific figure the page does
+   not otherwise give (§4: no mg values for trial arms). The ranges are shown as key numbers instead.
+3. **Funding and surrogate caveats stay open** in the evidence section, next to the numbers (as on tirzepatide).
+4. **The "Faster heartbeat" item is open** in the risks section: the raised heart rate is the retatrutide-specific
+   signal and has no number to put in a figure.
+5. **"Up to 12 in 100 stopped for good"**: the highest stopping rate was in the middle dose group (12% at 9 mg,
+   8% at 12 mg, 4% at 4 mg, 5% placebo); the label says "depending on the dose", and the key number does not claim
+   a dose trend.
+
+### 8.6 Validator and checks
+
+- `npx tsx scripts/validate-content.ts --only retatrutide`: **0 errors, 0 warnings**. Draft wordings fixed on the
+  way: regulatory lead (20 → 18 words), the regulatory comparison title (reading ease 54 → 82), the diarrhoea key
+  number title (6 → 72; "diarrhoea" alone scores very low) and label (57 → 63), the skin key-number label (60 → 77).
+- Whole repository: 0 errors, 26 warnings, none in retatrutide files. `--only media`: 0 / 0.
+- The page renders on the dev server with every new part present (checked in the browser: leads, key-number
+  titles, both comparisons, the time strip, the fact sheet and the stop strip).
+
+### 8.7 Open questions (new)
+
+1. **Two comparison cells have no source of their own** (inherited from HEAD's table, where the block citation
+   did not cover them either): trial side "Made and tested by the developer" and "Sterile? Required". Both are true
+   under EU law (investigational medicinal products must be made and released under GMP: Regulation (EU)
+   536/2014, art. 61–63), but no such source is registered and this assignment could not add one. Register the
+   Clinical Trials Regulation (eur-lex.europa.eu is on the allowlist) and cite it on these two cells.
+2. **Heart stop sign wording.** The strip says "Racing heartbeat with chest pain or fainting" (NHS wording); the
+   full list also names pounding or irregular beats, dizziness and breathlessness. Confirm the condensation.
+3. Open questions in §4 and the remaining concerns in §7 (FAMHP item, size of the heart-rate rise, IGJ exemption,
+   BLA vs NDA route) still stand.
+
+---
+
+## 9. Fact-check log: the restructured page (independent fact-check, 21 October 2026)
+
+Scope: `src/content/compounds/en/retatrutide.mdx` (the restructure in §8) and this file. The data file, the
+sources file, the glossary and the shared media files were read and checked but not edited (outside this
+assignment). Every check below was made today against the primary record, not against §2, §7 or §8.
+
+### What was checked, and how
+
+- **Scholarly metadata (35 PMIDs).** NCBI esummary in one batch for the 31 PMIDs in `retatrutide.yaml` and the
+  four reused scholarly ids (`neeland-2024-lean-mass`, `knudsen-2010-thyroid-c-cells`, `wilding-2022-step-1-extension`,
+  `aronne-2024-surmount-4`). Authors, title, journal, year, volume, pages, DOI and PMCID match every entry. No DOI
+  or PMID error. Publication dates confirmed in the XML: TRANSCEND-T2D-1 online 6 June 2026, TRIUMPH-1 and
+  TRIUMPH-2 online 29 September 2026 (TRIUMPH-2 print issue 10 October), so "published June / September 2026" is right.
+- **Abstracts read in full (efetch):** TRIUMPH-1, TRIUMPH-2, TRANSCEND-T2D-1, both phase 2 trials, phase 1b, the
+  liver-fat and body-composition substudies, Kanu, Salem, Wen, Chen, Briand, Hitaka, Carneiro, Buzzi. Every number
+  in the seven key numbers, the time strip and the study findings matches: TRIUMPH-1 2,339 randomised,
+  -17.6/-23.7/-25.0% vs -3.9%, AHI (ITT) -22.8/-34.3/-32.1 vs -9.6, 574 and 243 in the subgroups; TRIUMPH-2 1,152,
+  -11.9/-16.8/-18.8% vs -5.1%, diarrhoea 27/34/34% vs 13%, nausea 14/21/28% vs 8%, dysaesthesia 4/6/7% vs 1%,
+  hypotension 1/5/6% vs <1%, permanent stopping for adverse events or death 4/12/8% vs 5%, deaths 2+3+1 vs 1;
+  TRANSCEND-T2D-1 537, HbA1c -1.69/-1.86/-1.94 vs -0.81, weight -11.5/-13.9/-15.3% vs -2.6%, stopping 2-5% vs 0%;
+  Chen 58 trials, 24,214 people, retatrutide -22.10% (-25.60 to -18.60), tirzepatide -19.28% (-20.39 to -18.16),
+  so the intervals overlap.
+- **Full texts (PMC, efetch db=pmc):** Pasqualotto (RR 3.79, 1.20-11.96; RR 3.41, 0.86-13.55), Sehgal (13,589 users,
+  7,823 with a mapped symptom, heart rate increased 374 = 4.8%, allodynia and hyperaesthesia 2.1% each; list order
+  increased appetite, fatigue, increased energy, nausea, food craving, insomnia), Neumann 2026 (24 men and 5 women,
+  aged 52-84, severe coronary disease; "No external funding"), Neumann 2025 (adomeglivant, H89, propranolol), Hitaka
+  (21 days; 24.1/19.7/31.6%), Takahashi (LY3437943 every third day for 3 weeks), Carneiro (injections at 0 h and
+  168 h, so a week apart; all four still positive at 1,344 h = 56 days; nothing in urine), Piatkowski (PMC article
+  page: 51.3/165.0/190.0%; lead 0.14% of the injectable PDE; "Sterility and endotoxin contamination were not
+  assessed").
+- **Registry (ClinicalTrials.gov API v2, today).** NCT05929066, NCT05929079, NCT05882045, NCT05931367, NCT06260722,
+  NCT06662383, NCT06383390, NCT07165028, NCT06313528, NCT06039826, NCT05445232, NCT07629401, NCT03841630, NCT06354660:
+  statuses, dates and enrolments unchanged and as on the page. NCT05929066: data monitoring committee yes, both arms
+  "Administered SC", inclusion BMI 30 or more, or 27 or more with hypertension, dyslipidaemia, sleep apnoea or
+  cardiovascular disease. NCT07629401 criteria as on the page. Search `retatrutide OR LY3437943`: still 34 records;
+  Netherlands sites only in NCT06383390 and NCT07165028 (so "Dutch hospitals and practices take part in two" is
+  right); German sites in NCT06383390, NCT06662383, NCT07165028 and one phase 1 study (NCT06982859).
+- **PubMed counts re-run today:** 207 records; 10 RCT records, 0 after `NOT lilly[ad]`; animal-term search 20. Unchanged.
+- **Regulators and law (fetched today).** EMA under-evaluation xlsx (EMA/222468/2026, 5 October 2026: orforglipron
+  present, retatrutide and LY3437943 absent); EMA medicines JSON (0 hits for retatrutide or LY3437943, tirzepatide
+  present); FDA unapproved-GLP-1 page (content current 1 October 2026: retatrutide "cannot be used in compounding under
+  federal law", not a component of FDA-approved drugs, sold falsely "for research purposes"); FDA PCAC meeting page
+  (seven peptides including emideltide/DSIP; no retatrutide); MHRA releases of 24 October 2025, 24 July 2026 and
+  15 October 2026 and the MHRA GLP-1 page (quotes and the tirzepatide barrier-method advice confirmed); WADA 2026 and
+  2027 List PDFs (S0 wording as quoted; no "retatrutide" or "GLP-1"); NHS acute pancreatitis, heart palpitations,
+  jaundice and anaphylaxis pages (the stop-strip and stop-list wording is supported); Geneesmiddelenwet art. 18,
+  27 and 40 (text read on wetten.overheid.nl). A web search found no report of a regulatory submission for
+  retatrutide anywhere by 21 October 2026; Lilly's next quarterly report is not yet out.
+- **Structured studies (data file).** Species, n, design, funding, group, blinding and control of all 22 entries
+  agree with the abstracts and full texts above. No change needed.
+- **Hero photo.** Commons API: "File:Human pancreatic islet.jpg", CC BY-SA 3.0, author Afferent, "red = glucagon
+  antibody, blue = insulin antibody". Stained tissue only; licence allowed; alt text accurate.
+
+### Errors found and fixed
+
+1. **Two unsourced comparison cells (§8.7 item 1) now have a source.** The Geneesmiddelenwet requires a licence to
+   prepare or import medicines for research (art. 18(1), first sentence) and requires the licence holder to prepare
+   medicines under good manufacturing practice (art. 27(1); "fabrikant" is defined as the art. 18 licence holder).
+   Trial side, "Contents known?": "Made and tested by the developer" became "The developer's own drug, made under a
+   licence to strict manufacturing rules" (registry NCT05929066 for the drug and sponsor, Geneesmiddelenwet for the
+   rules). "Sterile?": "Required" became "Required: trial medicines must follow good manufacturing practice"
+   (Geneesmiddelenwet). The statute says GMP, not "sterile" in so many words; GMP for an injectable includes sterile
+   manufacture. If the reviewer wants that step explicit, register EU GMP Annex 1 or Regulation 536/2014 art. 63.
+2. **Summary item 5 said "Products bought online".** No cited source says the tested products were bought online
+   (Piatkowski: "sold as retatrutide", submitted anonymously to a testing service; JAMA: one product tested in
+   Australia). Now "Tested products held wrong amounts, and one held a different drug", matching the lede.
+3. **TRIUMPH-1 key number "who" narrowed the population.** The registry includes BMI 27 or more with a weight-related
+   condition, not only obesity. Now "adults with obesity, or overweight with a related condition, without diabetes",
+   with the registry added to the key number's sources (the guide's STEP 1 example uses the same qualifier).
+4. **TRIUMPH-2 "who" (evidence and risks key numbers).** The abstract enrolled adults with type 2 diabetes and a
+   BMI of 27 or more. Now "adults with type 2 diabetes and a BMI of 27 or more". Prose elsewhere keeps the paper's
+   own title wording ("obesity and type 2 diabetes").
+5. **Phase 2 obesity prose.** "338 adults with obesity" became "338 adults with obesity or overweight" (abstract:
+   BMI 30 or more, or 27 to under 30 with a weight-related condition), matching the study-table finding.
+6. **This file, §1.** TRIUMPH-3 "completed April 2026" corrected to primary completion 16 April and study completion
+   14 May 2026, as on the page.
+
+### Checked and found correct (no change)
+
+Lede; `glance.main_risk`; the three stop signs (each condenses an item of the stop list and is supported by the NHS
+page and the trial sources it cites); the fact sheet (route from all three phase 3 abstracts and the registry,
+half-life from Urva 2022, receptors from ChEMBL and Coskun 2022, developer code); all seven leads; both Compare
+figures (every other cell matches its cited source; "Safety follow-up? None" for online products is definitional);
+the time strip (80 weeks = 1.53 years); the "Faster heartbeat" paragraph (no accessible source gives the size of
+the rise: searched again in the Sanyal, Elmendorf, Kaczynski and Heerspink full texts and the phase 2 abstracts);
+the stop callout and `id="stop-now"`; `<WarningSigns />` not folded; no fold nested. Claim levels: animal and
+cell findings are badged as such, human trials as human-controlled, the glucagon-energy share and the rhythm risk
+as hypotheses. Guardrails: no dose guidance (the only quantity in `<Q>` is the 10 mg label of the tested products;
+trial arms are never given in mg), no "safe" or "proven" about use, no superlatives, no seller, no sourcing hint,
+no testimonial (the Reddit study is reported as posts, with its limits), no commerce words; internal links only to
+planned routes (compounds/semaglutide, compounds/tirzepatide, legal/research-use-only, legal/nl,
+legal/sport-and-doping, talking-to-your-doctor, legal-routes, safety/product-risk, safety/sterile-technique); no `#`
+or `##` heading; no emergency number printed (rendered page checked: no "112"). PCAC: the page mentions the July
+2026 meeting only to say retatrutide was not among the seven peptides (confirmed on the FDA page today); it does not
+report the vote, so the five-element framing is not triggered. Balance: the promising evidence (three published,
+placebo-controlled phase 3 trials in more than 4,000 people) and the real cost of the wait are stated plainly; the
+risk section reports the counter-arguments on heart rhythm. Not scaremongering.
+
+Validator after the fixes: `npx tsx scripts/validate-content.ts --only retatrutide` gives 0 errors, 0 warnings. The
+page renders on the dev server (HTTP 200) with the new cell text and "who" lines.
+
+### Open questions added for the reviewers
+
+- **Legal reviewer:** Geneesmiddelenwet art. 18(6)(a) exempts importing a medicine "clearly intended for own use" from
+  the licence requirement of art. 18, but art. 40(2) forbids importing a medicine without a marketing authorisation,
+  and none of the exceptions in art. 40(3) covers personal use. Whether a buyer who imports retatrutide for themselves
+  commits an offence in the Netherlands is therefore a real question for the legal pages; this page says only that
+  selling and supplying are illegal. Art. 40(3)(f) also allows a compassionate-use programme while trials are
+  ongoing, so a programme for retatrutide would be legally possible; none is approved (CBG list).
+- **Medical reviewer, optional additions:** the registry also lists a completed metoprolol interaction study
+  (NCT06808802) and an active weight-maintenance phase 3 trial (NCT06859268). Neither is on the page; both would need
+  registering as sources first.
+- The §8.7 heart-stop-sign question and the open points in §4 and §7 (FAMHP item, size of the heart-rate rise, BLA
+  versus NDA route) still stand. The header of this file still gives the pre-restructure source count (78 distinct
+  ids); after §8 the page cites 82 (the four NHS ids added).

@@ -7,9 +7,42 @@ summary:
   - "It acts like three hormones at once. People feel less hungry. In mice, the body burned more energy."
   - "Over 80 weeks, the top dose cut weight by a quarter on average in people with obesity."
   - "Common side effects are feeling sick and diarrhoea. Some people had a faster heartbeat or odd skin feelings."
-  - "Selling it outside trials is illegal. Products bought online held wrong amounts, and one held a different drug."
+  - "Selling it outside trials is illegal. Tested products held wrong amounts, and one held a different drug."
+lede: "A drug still in trials, approved nowhere. Tested products sold as retatrutide held wrong amounts or another drug."
 glance:
   main_risk: "Feeling sick and a faster heartbeat. Online products may be fake."
+  # "Stop and get help" strip, condensed from this page's own stop-now list (harm-reduction section,
+  # <Callout id="stop-now">): pancreatitis (serious cases in the phase 2 registry results; a known
+  # class risk in the Mounjaro EU product information), the heart-rate and rhythm signal, and the
+  # allergic-type reactions in the pooled early trials. The NHS pages give the general "get help now"
+  # signs (pain spreading to the back; palpitations with chest pain or fainting; swollen lips or throat,
+  # struggling to breathe). The other three stop items (liver injury, dehydration, ketoacidosis in
+  # type 1 diabetes) have no matching pictogram and stay in the full list.
+  stop_signs:
+    - icon: sign-belly-pain
+      text: "Severe belly pain, often spreading to your back"
+      sources: [nhs-acute-pancreatitis, ctgov-nct04881760, ctgov-nct04867785, ema-epar-mounjaro]
+    - icon: sign-heart
+      text: "Racing heartbeat with chest pain or fainting"
+      sources: [nhs-heart-palpitations, jastreboff-2023-retatrutide-phase-2, pasqualotto-2024-retatrutide-meta-analysis]
+    - icon: sign-allergic
+      text: "Swollen lips or throat, or trouble breathing"
+      sources: [nhs-anaphylaxis, pasqualotto-2024-retatrutide-meta-analysis]
+  # Fact sheet beside the title: facts from the trial papers and the registry, never a dose. The
+  # trial injection schedule is left out on purpose (see research/retatrutide.md §8).
+  facts:
+    - label: "How it is taken"
+      value: "Injection under the skin (in the trials)"
+      sources: [jastreboff-2026-triumph-1, bellido-2026-triumph-2, bajaj-2026-transcend-t2d-1, ctgov-nct05929066]
+    - label: "How long it lasts"
+      value: "Half-life about six days"
+      sources: [urva-2022-ly3437943-phase-1b]
+    - label: "What it acts on"
+      value: "Three receptors: GIP, GLP-1 and glucagon"
+      sources: [chembl-retatrutide, coskun-2022-ly3437943-discovery]
+    - label: "Developer"
+      value: "Eli Lilly (development code LY3437943)"
+      sources: [coskun-2022-ly3437943-discovery, urva-2022-ly3437943-phase-1b]
 grade_rationale:
   human_clinical: "Phase 3. Three phase 3 trials are completed and published in full: TRANSCEND-T2D-1 (537 adults with type 2 diabetes, 40 weeks, The Lancet, June 2026), TRIUMPH-2 (1,152 adults with obesity and type 2 diabetes, 80 weeks, The Lancet, September 2026) and TRIUMPH-1 (2,339 adults with obesity, 80 weeks, NEJM, September 2026). No regulator has authorised it, so the grade stops at phase 3."
   preclinical_volume: "Moderate. By our count on 20 October 2026, PubMed holds about 20 primary cell, tissue and animal studies that tested retatrutide: about 17 animal studies (one of them Lilly's) plus a handful of cell and tissue studies. That is inside the 10–50 band. Most are recent, small and from single laboratories."
@@ -122,13 +155,35 @@ regulatory_notes:
 ---
 <Section id="what-it-is">
 
-Retatrutide is an injectable peptide made by Eli Lilly, also known by its development code LY3437943. It switches on three hormone receptors at once: the receptors for GIP, GLP-1 and glucagon.<Cite id="chembl-retatrutide,coskun-2022-ly3437943-discovery" /> That is why it is called a triple agonist.
+<Lead question="What is retatrutide?">A drug still in testing that acts like three hormones at once. No country has approved it.</Lead>
+
+<Compare title="A trial product and a product sold online under the same name are not the same thing." detail="What is known about each, from the trial records, product tests and the law.">
+
+| | Retatrutide in a trial | Sold online as "retatrutide" |
+|---|---|---|
+| Contents known? | <Verdict is="yes" /> The developer's own drug, made under a licence to strict manufacturing rules<Cite id="ctgov-nct05929066,nl-geneesmiddelenwet" /> | <Verdict is="no" /> Tested products held half to nearly double the label, and one held a different drug<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news" /> |
+| Amount per dose fixed? | <Verdict is="yes" /> Fixed by the trial<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> Depends on the label and your own measuring<Cite id="piatkowski-2026-retatrutide-product-testing" /> |
+| Sterile? | <Verdict is="yes" /> Required: trial medicines must follow good manufacturing practice<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="unknown" /> No published study has tested this<Cite id="piatkowski-2026-retatrutide-product-testing" /> |
+| Safety follow-up? | <Verdict is="yes" /> Visits, blood tests, a safety committee<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> None |
+| Legal to supply? | <Verdict is="yes" /> Medicines for research are an exception in the law<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> Illegal to sell or supply<Cite id="nl-geneesmiddelenwet" /> |
+
+</Compare>
+
+<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,nl-geneesmiddelenwet" />
 
 It is investigational. As of 20 October 2026, no regulator anywhere has authorised it, and it is not on the European Medicines Agency (EMA) list of applications under assessment dated 5 October 2026.<Cite id="ema-medicines-json,ema-2026-10-under-evaluation,fda-unapproved-glp1-concerns,mhra-2026-10-counterfeit-pens" /> In a filing with the US financial regulator in August 2026, Lilly said that it plans to ask the US Food and Drug Administration (FDA) for approval in the first quarter of 2027.<Cite id="sec-lilly-2026-q2-results" />
+
+<InDetail title="The developer, and why it is legal only inside a trial">
+
+Retatrutide is an injectable peptide made by Eli Lilly, also known by its development code LY3437943. It switches on three hormone receptors at once: the receptors for GIP, GLP-1 and glucagon.<Cite id="chembl-retatrutide,coskun-2022-ly3437943-discovery" /> That is why it is called a triple agonist.
 
 <Callout type="legal" title="Investigational means: in practice, legal only inside a trial">
 A medicine needs a marketing authorisation before anyone may sell or supply it. Dutch law forbids selling, supplying, stocking or importing a medicine without one. The exceptions are narrow: medicines for research, formal compassionate-use programmes, and a special exemption from the health inspectorate.<Cite id="nl-geneesmiddelenwet" /> So outside an approved trial, every product sold as "retatrutide" is unauthorised, whatever its label says. See [research use only](/en/legal/research-use-only/).
 </Callout>
+
+</InDetail>
+
+<InDetail title="The molecule, and where it came from">
 
 ### What the molecule is
 
@@ -145,25 +200,21 @@ Its formula is C221H342N46O68 and its mass is about <Q>4731 Da</Q>.<Cite id="pub
 
 Lilly described it in 2022. <Claim level="in-vitro">In cell assays it was about equally active at the glucagon and GLP-1 receptors and more active at the GIP receptor</Claim>: about 0.3, 0.4 and 8.9 times as active as the body's own hormones.<Cite id="coskun-2022-ly3437943-discovery,sanyal-2024-retatrutide-masld" /> The first study in people started in March 2019.<Cite id="ctgov-nct03841630" /> [Semaglutide](/en/compounds/semaglutide/) acts on one of these receptors (GLP-1), and [tirzepatide](/en/compounds/tirzepatide/), also made by Lilly, acts on two (GIP and GLP-1). Retatrutide adds glucagon.<Cite id="ema-epar-wegovy,ema-epar-mounjaro,chembl-retatrutide" />
 
-### Why so many people have heard of it
+</InDetail>
+
+<InDetail title="Why so many people have heard of it">
 
 Its trial results drew wide attention (see the evidence below), and long before any approval it reached a grey market. The UK regulator dismantled an illegal factory making retatrutide and tirzepatide pens in October 2025, and seized more than 12,000 fake pens in October 2026.<Cite id="mhra-2025-retatrutide-seizure,mhra-2026-10-counterfeit-pens" /> In July 2026 it warned people not to be tempted by "the online hype around retatrutide".<Cite id="mhra-2026-07-no-summer-shortcut" /> In the United States, the FDA has warned companies that sold it falsely labelled "for research purposes".<Cite id="fda-unapproved-glp1-concerns" />
 
-The trial evidence on this page belongs to a product of known content, given in a supervised trial. A vial or pen bought online shares the name and none of those guarantees.
+The trial evidence on this page belongs to a product of known content, given in a supervised trial. A vial or pen bought online shares the name and none of those guarantees. The comparison at the top of this section sets out the differences row by row.
 
-| | Retatrutide in a trial | Sold online as "retatrutide" |
-|---|---|---|
-| Content | Made and tested by the developer | Unknown: tested products held half to nearly double the label, and one held a different drug |
-| Amount per dose | Fixed by the trial | Depends on the label and your own measuring |
-| Sterility | Required | Unknown |
-| Safety follow-up | Visits, blood tests, a safety committee | None |
-| Legal status | Legal | Illegal to sell or supply |
-
-<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,nl-geneesmiddelenwet" />
+</InDetail>
 
 </Section>
 
 <Section id="mechanism">
+
+<Lead question="What does it do in the body?">It acts like three hormones. People feel less hungry. In mice, the body also burned more energy.</Lead>
 
 Retatrutide switches on three receptors and keeps doing so for days. The GLP-1 and GIP receptors are the ones tirzepatide uses. The glucagon receptor is the new part, and it raises most of the open questions.
 
@@ -180,6 +231,8 @@ Retatrutide switches on three receptors and keeps doing so for days. The GLP-1 a
 
 <Cite id="ema-epar-mounjaro,elmendorf-2026-glucagon-iuphar-review,coskun-2022-ly3437943-discovery,kanu-2025-retatrutide-appetite,sanyal-2024-retatrutide-masld,chen-2026-glp1-network-meta-analysis" />
 
+<InDetail title="Step by step: the chain of effects and its evidence">
+
 <Mechanism />
 
 ### What each step rests on
@@ -192,15 +245,35 @@ Retatrutide switches on three receptors and keeps doing so for days. The GLP-1 a
 
 **The liver.** <Claim level="in-vitro">In human liver cells, retatrutide lowered the release of ANGPTL3/8, a protein that slows the breakdown of blood fats, and a glucagon-receptor blocker stopped this</Claim>.<Cite id="wen-2025-retatrutide-angptl38" /> In the liver-fat substudy, liver fat fell most in people who lost the most weight, and ketones, a sign of fat burning, rose by about 80% to 180% at the three higher dose levels, without ketoacidosis.<Cite id="sanyal-2024-retatrutide-masld" /> Weight loss and a direct liver effect probably both contribute; the trials cannot separate them.
 
+</InDetail>
+
+<InDetail title="The open question: what does the glucagon part add?">
+
 <Callout type="uncertain" title="What does the glucagon part add in people?">
 In an indirect comparison of separate trials, average weight loss beyond placebo was 22.1% with retatrutide and 19.3% with tirzepatide, and the uncertainty ranges of the two overlapped.<Cite id="chen-2026-glp1-network-meta-analysis" /> <Claim level="hypothesis">Part of the extra loss may come from more energy being used, as in mice</Claim>. But no published human study separates the two, and in one independent study obese mice lost 31% of their weight with no significant change in energy expenditure.<Cite id="briand-2026-retatrutide-mash-models" /> A head-to-head trial against tirzepatide in 800 adults is due to finish its main phase in November 2026.<Cite id="ctgov-nct06662383" />
 </Callout>
 
 The glucagon part may also have costs: in mice it speeds the heart's pacemaker, and glucagon breaks down amino acids, which could cost lean tissue. Both are discussed under the risks.<Cite id="neumann-2025-retatrutide-mouse-atria,elmendorf-2026-glucagon-iuphar-review" />
 
+</InDetail>
+
 </Section>
 
 <Section id="evidence">
+
+<Lead question="Does it work?">In large trials, weight fell a lot and blood sugar improved. The maker paid for every trial.</Lead>
+
+<KeyNumber title="Weight fell by up to a quarter on average" value="17.6–25.0%" label="average weight lost in 80 weeks, depending on the dose, against 3.9% with placebo" who="TRIUMPH-1: 2,339 adults with obesity, or overweight with a related condition, without diabetes" source="jastreboff-2026-triumph-1,ctgov-nct05929066" level="human-controlled" />
+
+<KeyNumber title="Weight also fell in people with type 2 diabetes" value="11.9–18.8%" label="average weight lost in 80 weeks, depending on the dose, against 5.1% with placebo" who="TRIUMPH-2: 1,152 adults with type 2 diabetes and a BMI of 27 or more" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Long-term blood sugar (HbA1c) fell more than with placebo" value="1.69–1.94" label="percentage points fall in HbA1c in 40 weeks, against 0.81 with placebo" who="TRANSCEND-T2D-1: 537 adults with type 2 diabetes on diet and exercise alone" source="bajaj-2026-transcend-t2d-1" level="human-controlled" />
+
+Weight is a surrogate: it predicts, but is not the same as, fewer heart attacks, strokes or deaths. No outcome trial has reported.<Cite id="ctgov-nct06383390" />
+
+All 10 randomised-trial records on retatrutide in PubMed have at least one Lilly-affiliated author.<Cite id="pubmed-retatrutide-count-2026-10-20" /> That is normal before approval and does not make the results false. But the company chose the questions, the comparators and the timing of publication.
+
+<InDetail title="Every study in one table, and where the trials stand">
 
 <StudyTable />
 
@@ -223,9 +296,13 @@ All human trials so far were designed, paid for and largely written by the devel
 
 <Cite id="ctgov-nct03841630,urva-2022-ly3437943-phase-1b,jastreboff-2023-retatrutide-phase-2,rosenstock-2023-retatrutide-t2d-phase-2,bajaj-2026-transcend-t2d-1,bellido-2026-triumph-2,jastreboff-2026-triumph-1,ctgov-nct05882045,ctgov-nct05931367,ctgov-nct06260722,ctgov-nct06662383,ctgov-nct06383390" />
 
+</InDetail>
+
+<InDetail title="What the trials found, and what is not yet published">
+
 ### Early trials
 
-In a 12-week phase 1b trial in 72 adults with type 2 diabetes, <Claim level="human-controlled">glucose and HbA1c fell at the three highest dose levels, and weight fell by up to about 9 kg more than with placebo</Claim>; 29 people left early.<Cite id="urva-2022-ly3437943-phase-1b" /> In a 48-week phase 2 trial in 338 adults with obesity, <Claim level="human-controlled">mean weight fell by up to 24.2% at the highest dose, against 2.1% with placebo</Claim>.<Cite id="jastreboff-2023-retatrutide-phase-2" /> In a phase 2 trial in 281 adults with type 2 diabetes, <Claim level="human-controlled">HbA1c fell by up to 2.02 percentage points at 24 weeks, against 0.01 with placebo and 1.41 with dulaglutide, an authorised GLP-1 medicine</Claim>.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2" />
+In a 12-week phase 1b trial in 72 adults with type 2 diabetes, <Claim level="human-controlled">glucose and HbA1c fell at the three highest dose levels, and weight fell by up to about 9 kg more than with placebo</Claim>; 29 people left early.<Cite id="urva-2022-ly3437943-phase-1b" /> In a 48-week phase 2 trial in 338 adults with obesity or overweight, <Claim level="human-controlled">mean weight fell by up to 24.2% at the highest dose, against 2.1% with placebo</Claim>.<Cite id="jastreboff-2023-retatrutide-phase-2" /> In a phase 2 trial in 281 adults with type 2 diabetes, <Claim level="human-controlled">HbA1c fell by up to 2.02 percentage points at 24 weeks, against 0.01 with placebo and 1.41 with dulaglutide, an authorised GLP-1 medicine</Claim>.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2" />
 
 ### Phase 3: what has been published
 
@@ -235,11 +312,13 @@ TRIUMPH-2 randomised 1,152 adults with obesity and type 2 diabetes in eight coun
 
 TRIUMPH-1 randomised 2,339 adults with obesity but no diabetes. <Claim level="human-controlled">Over 80 weeks mean weight fell by 17.6%, 23.7% and 25.0%, against 3.9% with placebo</Claim>. Knee pain improved more than with placebo in 574 people with knee osteoarthritis, and breathing pauses and shallow breaths during sleep fell by 22.8 to 34.3 an hour, against 9.6 with placebo, in 243 people with sleep apnoea.<Cite id="jastreboff-2026-triumph-1" /> We could read only the abstracts of TRIUMPH-1 and TRIUMPH-2.
 
-Weight is a surrogate: it predicts, but is not the same as, fewer heart attacks, strokes or deaths. No outcome trial has reported.<Cite id="ctgov-nct06383390" />
-
 ### Announced by the company, not yet published
 
 TRIUMPH-3 and TRIUMPH-4 have finished, and Lilly has announced positive results.<Cite id="ctgov-nct05882045,ctgov-nct05931367,sec-lilly-2025-q4-results,sec-lilly-2026-q2-results,kaczynski-2026-retatrutide-review" /> Company announcements give headline (topline) numbers before independent experts have checked the full data. We will report their figures once the trials are published.
+
+</InDetail>
+
+<InDetail title="Substudies, and research outside the company">
 
 ### What the substudies add
 
@@ -251,11 +330,13 @@ TRIUMPH-3 and TRIUMPH-4 have finished, and Lilly has announced positive results.
 
 No group outside Lilly has run a trial in people. About 16 small animal studies come from independent groups.<Cite id="pubmed-retatrutide-count-2026-10-20" /> In one, <Claim level="animal">retatrutide lowered weight and liver fat in obese mice and hamsters</Claim>; in another, it lowered weight in mice lacking a key appetite receptor. In both, lean mass fell along with fat in mice.<Cite id="briand-2026-retatrutide-mash-models,hitaka-2026-retatrutide-mc4r" /> Independent studies of heart tissue, products and use outside trials are covered under the risks.
 
-### How it compares, and who paid
+</InDetail>
+
+<InDetail title="How it compares, and what the wait costs">
+
+### How it compares with other medicines
 
 An independent network meta-analysis of 58 trials (24,214 adults without diabetes) estimated <Claim level="human-controlled">22.1% more weight loss than placebo with retatrutide, and 19.3% with tirzepatide</Claim>, with low-certainty evidence that more people stop retatrutide.<Cite id="chen-2026-glp1-network-meta-analysis" /> These are indirect comparisons; direct trials against semaglutide and tirzepatide have not reported.<Cite id="ctgov-nct06260722,ctgov-nct06662383" />
-
-All 10 randomised-trial records on retatrutide in PubMed have at least one Lilly-affiliated author.<Cite id="pubmed-retatrutide-count-2026-10-20" /> That is normal before approval and does not make the results false. But the company chose the questions, the comparators and the timing of publication.
 
 ### Where the evidence is genuinely promising, and what the wait costs
 
@@ -263,9 +344,20 @@ This is not a weak evidence base. Three placebo-controlled phase 3 trials in mor
 
 The wait has costs. Most people who see the headlines cannot get the drug legally outside a trial, and a grey market of unknown products has filled the gap.<Cite id="mhra-2026-10-counterfeit-pens,piatkowski-2026-retatrutide-product-testing" /> The wait also has reasons: questions about heart rate, skin sensations, lean mass and long-term outcomes are still open.<Cite id="ctgov-nct06383390" />
 
+</InDetail>
+
 </Section>
 
 <Section id="unknowns">
+
+<Lead question="What is still not known?">What longer use does, whether the faster heartbeat matters, and what products sold online contain.</Lead>
+
+<TimeStrip title="The longest published trials lasted 80 weeks. What longer use does is not known." detail="Years of use covered by the published trials, counted from the start of treatment." min={0} max={4} step={1} axis="Years of use" source="jastreboff-2026-triumph-1,bellido-2026-triumph-2" rows={[
+  { label: "Longest published trials (TRIUMPH-1 and TRIUMPH-2)", spans: [{ from: 0, to: 1.53, text: "80 weeks, about a year and a half" }] },
+  { label: "Longer use", spans: [{ from: 1.53, to: 4, text: "not covered by the published trials", unknown: true }] },
+]} />
+
+<InDetail title="All ten open questions, with their sources">
 
 As of 20 October 2026, these are specifically unknown:
 
@@ -280,13 +372,39 @@ As of 20 October 2026, these are specifically unknown:
 - **Pregnancy and breastfeeding.** We found no published human data.
 - **What grey-market products contain.** Only three have been tested in a published study, none for sterility.<Cite id="piatkowski-2026-retatrutide-product-testing" />
 
+</InDetail>
+
 </Section>
 
 <Section id="regulatory">
 
+<Lead question="Is it legal?">Approved nowhere and banned in sport. In the EU, in practice, it is legal only in a trial.</Lead>
+
+<Compare title="No country has approved it, and selling it is against the law." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 20 October 2026.">
+
+| | Netherlands and the EU | United States |
+|---|---|---|
+| Approved as a medicine? | <Verdict is="no" /> No EU authorisation. The CBG database lists no retatrutide product.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Not FDA-approved.<Cite id="fda-unapproved-glp1-concerns" /> |
+| Has the maker asked for approval? | <Verdict is="no" /> It is not on the EMA list of applications under evaluation dated 5 October 2026.<Cite id="ema-2026-10-under-evaluation" /> | <Verdict is="no" /> Not yet. Lilly plans to apply in the first quarter of 2027.<Cite id="sec-lilly-2026-q2-results" /> |
+| Legal to sell or supply? | <Verdict is="no" /> Dutch law forbids it without a marketing authorisation, with narrow exceptions.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> A new drug may not be sold across state lines without an approved application.<Cite id="usc-21-355" /> |
+| A legal way to get it outside a trial? | <Verdict is="no" /> None that we know of. No approved compassionate-use programme includes it.<Cite id="cbg-compassionate-use-list" /> | <Verdict is="yes" /> A doctor may ask for it through Lilly's single-patient expanded-access programme, under strict conditions.<Cite id="ctgov-nct07629401" /> |
+| Allowed in sport? | <Verdict is="no" /> Not named, but covered by S0: prohibited at all times.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule applies.<Cite id="wada-2026-list-en" /> |
+
+</Compare>
+
+<InDetail title="Status in each country and in sport">
+
 <RegulatoryTable />
 
 All statuses were checked on 20 October 2026.
+
+### Sport (WADA)
+
+Retatrutide is not named on the 2026 Prohibited List or on the 2027 List that takes effect on 1 January 2027.<Cite id="wada-2026-list-en,wada-2027-list-en" /> On the wording of section S0, it is still prohibited at all times. S0 covers any substance not addressed elsewhere on the List "with no current approval by any governmental regulatory health authority for human therapeutic use", including "drugs under pre-clinical or clinical development".<Cite id="wada-2026-list-en" /> WADA's 2027 explanatory note and UK Anti-Doping both stress that a peptide does not have to be named to fall under S0.<Cite id="wada-2027-list-explanatory-note,ukad-2027-list-summary" /> An approval anywhere would change this, so it needs rechecking. See [sport and doping](/en/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="The European Union and the Netherlands">
 
 ### European Union
 
@@ -295,6 +413,10 @@ No retatrutide product has an EU marketing authorisation. It is absent from the 
 ### Netherlands
 
 The CBG database lists no retatrutide product.<Cite id="cbg-geneesmiddeleninformatiebank" /> The Geneesmiddelenwet forbids selling, supplying, stocking, offering or importing a medicine without a marketing authorisation (article 40). The exceptions include medicines for research, approved compassionate-use programmes, and an exemption that the Health and Youth Care Inspectorate (IGJ) can grant (article 40, third paragraph).<Cite id="nl-geneesmiddelenwet" /> The CBG's list of approved programmes does not include retatrutide.<Cite id="cbg-compassionate-use-list" /> We know of no inspectorate exemption for retatrutide, so in practice the only legal way to receive it is in a trial; Dutch hospitals and practices take part in two.<Cite id="ctgov-nct06383390,ctgov-nct07165028" /> See [the law in the Netherlands](/en/legal/nl/).
+
+</InDetail>
+
+<InDetail title="Germany, Belgium, the United Kingdom and the United States">
 
 ### Germany
 
@@ -314,26 +436,39 @@ A new drug may not be sold across state lines without an approved application.<C
 
 Outside trials, a physician may request it through Lilly's single-patient expanded-access programme. It is meant for an adult with a BMI of 35 or more whose obesity has not responded to approved weight-loss treatment, with at least two serious obesity-related complications and no access to a trial; availability depends on geography and supply.<Cite id="ctgov-nct07629401" /> Lilly plans to submit a Biologics License Application in the first quarter of 2027; until the FDA approves it, retatrutide stays unapproved.<Cite id="sec-lilly-2026-q2-results" /> Retatrutide was not among the seven peptides the FDA's compounding advisory committee considered in July 2026.<Cite id="fda-pcac-2026-07-meeting" />
 
-### Sport (WADA)
-
-Retatrutide is not named on the 2026 Prohibited List or on the 2027 List that takes effect on 1 January 2027.<Cite id="wada-2026-list-en,wada-2027-list-en" /> On the wording of section S0, it is still prohibited at all times. S0 covers any substance not addressed elsewhere on the List "with no current approval by any governmental regulatory health authority for human therapeutic use", including "drugs under pre-clinical or clinical development".<Cite id="wada-2026-list-en" /> WADA's 2027 explanatory note and UK Anti-Doping both stress that a peptide does not have to be named to fall under S0.<Cite id="wada-2027-list-explanatory-note,ukad-2027-list-summary" /> An approval anywhere would change this, so it needs rechecking. See [sport and doping](/en/legal/sport-and-doping/).
+</InDetail>
 
 </Section>
 
 <Section id="risks">
 
+<Lead question="What are the risks?">Many feel sick or get diarrhoea. Some get a faster heartbeat or odd skin feelings.</Lead>
+
+<KeyNumber title="Up to about 1 in 3 had diarrhoea" value="27–34%" label="had loose stools (diarrhoea), depending on the dose. With placebo it was 13%" who="TRIUMPH-2: 1,152 adults with type 2 diabetes and a BMI of 27 or more, 80 weeks" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Many felt sick" value="14–28%" label="had nausea, depending on the dose. With placebo it was 8%" who="The same trial (TRIUMPH-2)" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Some had burning, tingling or painful skin" value="4–7%" label="had odd skin feelings, depending on the dose. With placebo it was 1%" who="The same trial (TRIUMPH-2)" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Up to 12 in 100 stopped for good" value="4–12%" label="stopped because of side effects or death, depending on the dose. With placebo it was 5%" who="The same trial (TRIUMPH-2)" source="bellido-2026-triumph-2" level="human-controlled" />
+
+**Faster heartbeat.** In the phase 2 obesity trial, heart rate rose with dose, peaked at 24 weeks and then fell. The abstracts we could read do not give the size of the rise.<Cite id="jastreboff-2023-retatrutide-phase-2" />
+
+<InDetail title="Everything the trials reported">
+
 ### What the trials reported
 
 - **Stomach and gut.** Nausea, diarrhoea, vomiting and constipation were the most common side effects, mostly mild to moderate and related to dose.<Cite id="jastreboff-2023-retatrutide-phase-2,rosenstock-2023-retatrutide-t2d-phase-2" /> In TRIUMPH-2, diarrhoea affected 27% to 34% against 13% on placebo, and nausea 14% to 28% against 8%.<Cite id="bellido-2026-triumph-2" />
 - **Stopping.** In TRIUMPH-2, 4% to 12% stopped because of side effects or death, against 5% on placebo; in TRANSCEND-T2D-1, 2% to 5% against none.<Cite id="bellido-2026-triumph-2,bajaj-2026-transcend-t2d-1" />
-- **Faster heartbeat.** In the phase 2 obesity trial, heart rate rose with dose, peaked at 24 weeks and then fell. The abstracts we could read do not give the size of the rise.<Cite id="jastreboff-2023-retatrutide-phase-2" />
 - **Low blood pressure.** In TRIUMPH-2, 1% to 6% against fewer than 1% on placebo.<Cite id="bellido-2026-triumph-2" />
 - **Abnormal skin sensations.** Burning, tingling or painful skin (dysaesthesia) affected 4% to 7% in TRIUMPH-2, against 1% on placebo.<Cite id="bellido-2026-triumph-2" /> In the phase 2 obesity trial, 4 of 62 people on the highest dose had allodynia, against none in any other group.<Cite id="ctgov-nct04881760" /> In the unpublished TRIUMPH-4, the company reported higher rates, up to about one in five at the highest dose; this figure has not been peer-reviewed. Most reported cases were mild to moderate, and the mechanism is unknown.<Cite id="kaczynski-2026-retatrutide-review" /> The EU product information for semaglutide (Wegovy) and tirzepatide (Mounjaro) also lists dysaesthesia, so it may not be unique to retatrutide.<Cite id="ema-epar-wegovy,ema-epar-mounjaro" />
 - **Allergic-type reactions.** Pooling three early trials, they were more frequent than with placebo (risk ratio 3.79, 95% CI 1.20–11.96).<Cite id="pasqualotto-2024-retatrutide-meta-analysis" />
 - **Pancreas and gallbladder.** A few serious cases of acute pancreatitis (three) and gallbladder inflammation (two) occurred across the two phase 2 trials.<Cite id="ctgov-nct04881760,ctgov-nct04867785" /> Both are known, uncommon risks of GLP-1-based drugs.<Cite id="ema-epar-mounjaro" />
 - **Deaths.** TRIUMPH-2 recorded six deaths on retatrutide and one on placebo; the investigators judged all unrelated to the drug.<Cite id="bellido-2026-triumph-2" />
 
-### Why a heart-rhythm effect is theorised
+</InDetail>
+
+<InDetail title="Why a heart-rhythm effect is theorised">
 
 1. **Retatrutide raises heart rate in people,** in a dose-related way.<Cite id="jastreboff-2023-retatrutide-phase-2" />
 2. **In mice, the glucagon receptor speeds the pacemaker.** <Claim level="animal">In isolated mouse atria, retatrutide raised the beating rate through the glucagon receptor and cAMP; a glucagon-receptor blocker reduced this rise</Claim>.<Cite id="neumann-2025-retatrutide-mouse-atria" />
@@ -341,6 +476,10 @@ Retatrutide is not named on the 2026 Prohibited List or on the 2027 List that ta
 4. **Early numbers point the same way, without proof.** <Claim level="human-controlled">Pooling three early trials, rhythm problems were about three times as frequent as with placebo, but not statistically significantly (risk ratio 3.41, 95% CI 0.86–13.55)</Claim>.<Cite id="pasqualotto-2024-retatrutide-meta-analysis" /> One person in the phase 2 diabetes trial had a serious episode of atrial fibrillation.<Cite id="ctgov-nct04867785" />
 
 There are honest counter-arguments. A Spanish laboratory study found no glucagon receptors and no glucagon effect on rate or force in human heart tissue, unlike in rats.<Cite id="aranda-domene-2023-glucagon-human-heart" /> That conflicts with the German human-tissue study above, so the two laboratories disagree about glucagon receptors in the human heart.<Cite id="neumann-2026-retatrutide-human-atria" /> Weight loss itself may protect: <Claim level="animal">in obese mice, three weeks of retatrutide made atrial fibrillation harder to trigger</Claim>.<Cite id="takahashi-2026-af-mice" /> And the rise in heart rate faded after 24 weeks.<Cite id="jastreboff-2023-retatrutide-phase-2" /> The outcomes trial is designed to settle this.<Cite id="ctgov-nct06383390" />
+
+</InDetail>
+
+<InDetail title="Muscle, low blood sugar, the thyroid and pregnancy">
 
 ### Muscle and lean mass
 
@@ -354,6 +493,10 @@ No severe low blood sugar was reported in the phase 2 diabetes trial or in TRANS
 
 <Claim level="animal">GLP-1 receptor agonists stimulate thyroid C-cells in rodents</Claim>; human and monkey C-cells carry few GLP-1 receptors, so the relevance to people is uncertain.<Cite id="knudsen-2010-thyroid-c-cells" /> The US labels of authorised drugs of this class warn about medullary thyroid cancer.<Cite id="fda-label-mounjaro" /> TRIUMPH-1 excluded people with a personal or family history of medullary thyroid carcinoma or MEN-2.<Cite id="ctgov-nct05929066" /> We found no published carcinogenicity or reproduction studies of retatrutide.
 
+</InDetail>
+
+<InDetail title="What happens outside trials, and in sport">
+
 ### What happens outside trials
 
 - **Wrong amounts.** Three products sold as <Q>10 mg</Q> in Australia held 51%, 165% and 190% of the label; a trace of lead was well below safety limits, and none was tested for sterility.<Cite id="piatkowski-2026-retatrutide-product-testing" />
@@ -366,9 +509,13 @@ No severe low blood sugar was reported in the phase 2 diabetes trial or in TRANS
 
 Retatrutide is prohibited at all times under S0.<Cite id="wada-2026-list-en" /> <Claim level="human-limited">An anti-doping laboratory still detected it in the blood of four users 56 days after the first of two injections</Claim>.<Cite id="carneiro-2026-retatrutide-antidoping" />
 
+</InDetail>
+
 </Section>
 
 <Section id="harm-reduction">
+
+<Lead question="How can someone lower the risk?">Ask about a trial or an approved medicine. Treat any online product as unchecked. Know when to stop.</Lead>
 
 ### The legal routes
 
@@ -376,13 +523,32 @@ In the EU, retatrutide is in practice legal only inside a trial. You can look fo
 
 Two related medicines are authorised: [semaglutide](/en/compounds/semaglutide/) and [tirzepatide](/en/compounds/tirzepatide/). They come with a label, a known dose and medical follow-up. A doctor can tell you whether one of them suits you. See [talking to your doctor](/en/talking-to-your-doctor/) and [legal routes](/en/legal-routes/).
 
-### What you cannot know about an online product
+### When to stop and get help
+
+<Callout type="stop" title="Get medical help now" id="stop-now">
+- **Severe, constant pain in the upper belly**, often spreading to the back, with or without vomiting: possible pancreatitis. Stop and get urgent care.
+- **A racing, pounding or irregular heartbeat with dizziness, fainting, chest pain or breathlessness:** call your local emergency number.
+- **Yellow skin or eyes, dark urine, or easy bruising:** possible liver injury. Stop and get same-day care.
+- **Vomiting so much you cannot keep fluids down, or passing very little urine:** risk of dehydration and kidney injury. Get same-day care.
+- **Swelling of the face, lips or throat, or difficulty breathing:** possible allergic reaction. Call your local emergency number.
+- **With type 1 diabetes: vomiting, fast breathing or high ketones:** possible ketoacidosis. Get emergency care.
+</Callout>
+
+<Cite id="ctgov-nct04881760,jastreboff-2023-retatrutide-phase-2,rubin-2026-jama-news,pasqualotto-2024-retatrutide-meta-analysis,branine-2026-retatrutide-ketosis-case,nhs-acute-pancreatitis,nhs-heart-palpitations,nhs-jaundice,nhs-anaphylaxis" />
+
+Burning, tingling or painful skin is not an emergency, but it is a reason to stop and see a doctor. In the trials most cases were mild to moderate; the cause is not known.<Cite id="kaczynski-2026-retatrutide-review" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,metabolic" />
+
+<InDetail title="What you cannot know about an online product">
 
 You cannot see what is in a vial or pen. Tested products held from half to nearly twice the amount on the label, and one held semaglutide instead.<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news" /> No published study has tested them for sterility. See [product risk](/en/safety/product-risk/). If you inject anything, follow [sterile technique](/en/safety/sterile-technique/): a dirty product or needle can cause an infection.
 
 About half of an injected dose is still in the body six days later.<Cite id="urva-2022-ly3437943-phase-1b" /> So if you get a side effect, stopping will not end it the next day.
 
-### Checks that make sense, and why
+</InDetail>
+
+<InDetail title="Checks that make sense, and why">
 
 Discuss these with a doctor, who decides what is right for you. Tell them what you used.
 
@@ -398,20 +564,9 @@ Discuss these with a doctor, who decides what is right for you. Tell them what y
 
 <Cite id="jastreboff-2023-retatrutide-phase-2,pasqualotto-2024-retatrutide-meta-analysis,rubin-2026-jama-news,branine-2026-retatrutide-ketosis-case" />
 
-### When to stop and get help
+</InDetail>
 
-<Callout type="stop" title="Get medical help now">
-- **Severe, constant pain in the upper belly**, often spreading to the back, with or without vomiting: possible pancreatitis. Stop and get urgent care.
-- **A racing, pounding or irregular heartbeat with dizziness, fainting, chest pain or breathlessness:** call your local emergency number.
-- **Yellow skin or eyes, dark urine, or easy bruising:** possible liver injury. Stop and get same-day care.
-- **Vomiting so much you cannot keep fluids down, or passing very little urine:** risk of dehydration and kidney injury. Get same-day care.
-- **Swelling of the face, lips or throat, or difficulty breathing:** possible allergic reaction. Call your local emergency number.
-- **With type 1 diabetes: vomiting, fast breathing or high ketones:** possible ketoacidosis. Get emergency care.
-</Callout>
-
-<Cite id="ctgov-nct04881760,jastreboff-2023-retatrutide-phase-2,rubin-2026-jama-news,pasqualotto-2024-retatrutide-meta-analysis,branine-2026-retatrutide-ketosis-case" />
-
-Burning, tingling or painful skin is not an emergency, but it is a reason to stop and see a doctor. In the trials most cases were mild to moderate; the cause is not known.<Cite id="kaczynski-2026-retatrutide-review" />
+<InDetail title="Interactions, and who should not use it at all">
 
 ### Plausible interactions (none published)
 
@@ -429,6 +584,6 @@ Burning, tingling or painful skin is not an emergency, but it is a reason to sto
 - **Children and teenagers**: all published trials were in adults.<Cite id="jastreboff-2026-triumph-1,bajaj-2026-transcend-t2d-1" />
 - **Athletes subject to anti-doping rules**: it is prohibited at all times and detectable for weeks.<Cite id="wada-2026-list-en,carneiro-2026-retatrutide-antidoping" />
 
-<WarningSigns only="general,injection,allergic,cardiovascular,metabolic" />
+</InDetail>
 
 </Section>
