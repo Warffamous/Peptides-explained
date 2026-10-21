@@ -278,3 +278,278 @@ Scope: the six safety pages, `src/i18n/en/warning-signs.json`, `src/data/sources
   the same change.
 - Whether `red-streaks` and `fever-after-injection` should be "emergency" (NHS) rather than "urgent" with a 112 trigger
   (Dutch GP advice) remains a medical decision.
+
+---
+
+## Restructure into the new page structure (21 October 2026)
+
+Owner decision of 21 October 2026 (CONTENT-GUIDE §5.2 and §9.1; model: `compounds/en/semaglutide.mdx`): every
+section opens with `<Lead question>` and a one-sentence B1 answer, then one figure, at most about 80 words of open
+prose, and the depth in `<InDetail>` folds. This was a restructure, not a rewrite: no sentence, `<Cite>`, `<Claim>`,
+table, study or source was removed, and no new claim was added. Files touched: the six safety pages and these notes.
+`src/data/heroes.yaml`, `src/data/media.yaml` and `src/i18n/en/media.json` already held a photo, alt text and caption
+for all six routes (see "Media" above), so nothing was added there. Sources and glossary files were not changed.
+
+### What each page now looks like
+
+| Page | Leads | Folds | Figures (one per section) |
+|---|---|---|---|
+| `safety` (index) | 3 | 1 | Diagram `what-clean-steps-can-fix` (what clean steps can and cannot fix); `PageList`; a small table of the five guidance bodies and what each is used for. The stop callout stays first and open. |
+| `safety/warning-signs` | 5 | **0** | Diagram `three-levels-of-help` (wraps the three-level list), Diagram `infection-spreads` (wraps the infection paragraphs as a 4-step chain), Checklist (while you wait), the existing Checklist (what to bring), Diagram `where-to-report` (reporting schemes as a table), the provenance list as a table. `<WarningSigns />` and the stop callout stay open; the stop callout now has `id="stop-now"`. |
+| `safety/before-you-consider` | 14 | 15 | Diagram `red-lines-overview` (unchanged, open), TimeStrip (stop before a planned pregnancy: Wegovy 2 months, Mounjaro 1 month, experimental peptides "not known"), Compare (under 18), Compare (cancer: BPC-157 / TB-500 / growth hormone boosters), Explainer `insulin-glp1-hypo`, Compare (PT-141 / melanotan II), Diagram `appetite-and-restriction`, Compare (kidneys: semaglutide / unapproved), Compare (thyroid: EU / US label), Diagram `weak-immune-system`, Diagram `blood-thinners`, Compare (sport), Diagram `rules-for-everyone`, Checklist (questions for your doctor). |
+| `safety/sterile-technique` | 10 | 6 | Diagram `contamination-to-infection` (unchanged), Checklist (before you start), Checklist (handling the vial: the old bullet list), TimeStrip (how long an opened vial may be used), Compare (sterile vs bacteriostatic water: the old table), Diagram `mix-gently` (the old mixing list), KeyNumber 2–8 °C (Wegovy label), Checklist (when to throw a vial away), KeyNumber 749 (2012–2013 outbreak). |
+| `safety/injection-safety` | 6 | 5 | Diagram `injection-layer-and-places` (wraps the label sentences), two KeyNumbers (64% and 5%, Blanco 2013), Diagram `skin-to-avoid`, Checklist (needle-stick), Diagram `normal-reaction-or-infection` (unchanged, open), IconArray 25 vs 14 in 100 (tesamorelin vs placebo; inside a fold), Diagram `mild-or-severe-allergy` (open: it contains emergency advice). |
+| `safety/sharps-disposal` | 4 | 4 | Diagram `needles-never-here`, Checklist (use it safely), stop callout (open, unchanged) plus TimeStrip (hours after a prick: RIVM 1 h / 72 h; Thuisarts PEP 2 h / 72 h), Compare (DE / BE / UK / US). |
+
+Structural changes worth knowing: on `before-you-consider` "### Tell your doctor" became its own `## Tell your doctor`
+section (so the checklist is that section's figure), and the three "Never …" `###` headings became the rule column of
+the `rules-for-everyone` table and the titles of three folds. On `sharps-disposal` the four country `###` sections sit
+in one fold, each still with its `<JurisdictionCard>`. No other heading text changed; no page links to an anchor on these
+pages (grep of `src` and `docs`), so the changed table of contents breaks nothing.
+
+### Nothing lost: the check against git HEAD
+
+Script (session scratchpad, not committed): for each page, `git show HEAD:<file>` against the working copy. It turns
+every HEAD body into plain text (tags removed, fold titles kept, table rows split into cells), splits it into sentences
+and cells, and checks that each one occurs, normalised (lower case, letters and digits only), in the new body. It also
+counts every `<Cite>` id, and checks every `<Claim level>…</Claim>`, `<Q>`/`<Seq>`, internal link and component
+occurrence, and the frontmatter keys.
+
+| Page | HEAD sentences and cells | Missing | `<Cite>` ids HEAD → now (distinct) | Claims, links, components lost | Frontmatter changed |
+|---|---|---|---|---|---|
+| index | 24 | 0 | 11 → 20 (9 → 9) | 0 | none |
+| warning-signs | 139 | 0 | 77 → 77 (50 → 50) | 0 | none |
+| before-you-consider | 201 | 0 | 60 → 97 (34 → 34) | 0 | none |
+| sterile-technique | 158 | 0 | 56 → 56 (22 → 22) | 0 | none |
+| injection-safety | 120 | 0 | 52 → 52 (25 → 25) | 0 | none |
+| sharps-disposal | 100 | 0 | 41 → 46 (15 → 15) | 0 | none |
+
+Extra citations are on the new figures and reuse ids already on the same page; no new source id was introduced on any
+page. On warning-signs, the single citation group `mhra-yellow-card,bfarm-risiken-melden,fda-medwatch` was split into
+one id per table row. Three row labels of the sterile-technique water table were extended into questions for the
+Compare format ("What is in it" → "What is in it: is there a preservative?"); the original label text is kept at the
+start of each row and every cell's original text follows its `<Verdict>`.
+
+One `<Claim>` moved from open text into a fold: on before-you-consider, `<Claim level="hypothesis">Whether these
+peptides could feed a hidden or treated tumour in people has never been studied.</Claim>` now sits in the fold "What the
+lab and animal studies found, and what nobody knows". The open cancer Compare says the same thing in every column
+("Could it feed a tumour in people? Unknown: never studied"), and the advice "If you have had cancer, or have an
+unexplained lump, do not use them" stays open. Reviewer: move it back to open text if you prefer the badge visible.
+
+### Visible words, before and after (folds closed)
+
+Generic pages have no short-version formula yet, so this adapts the compound-page formula in
+`src/pages/[locale]/compounds/[slug].astro`: `mdxToPlain(body without <InDetail>)` + the text in props (`question`,
+`title`, `detail`, `label`, `value`, `who`, `text`, `axis`, `a`, `b`, and here also `caption`) + explainer title, steps
+and summary + the summary items. The `<WarningSigns />` list and `<PageList />` come from i18n/data and are not counted.
+
+| Page | Before (HEAD, no folds) | After, folds closed | After, everything open |
+|---|---|---|---|
+| index | 310 | 430 | 483 |
+| warning-signs | 1,326 | 1,513 (no folds by design) | 1,513 |
+| before-you-consider | 2,035 | 1,982 | 3,109 |
+| sterile-technique | 1,559 | 1,496 | 2,062 |
+| injection-safety | 1,242 | 1,103 | 1,555 |
+| sharps-disposal | 1,018 | 839 | 1,326 |
+
+Why the drop is modest: these pages were already mostly checklists, action tables and stop-now lists, which must stay
+open; the new leads and figure titles add words. Open prose outside figures is now at most about 80 words per section
+except: warning-signs (no folds), injection-safety "Change the spot every time" (96: the caveat that the evidence is
+from insulin, plus the four practical bullets), and sharps-disposal "In the Netherlands" (110: the three return
+options). Before-you-consider stays near 2,000 because the 12-row red-lines table (about 290 words) stays open as the
+page's overview and each of its 13 sections now has a lead and a small figure.
+
+### Verification of the facts on the new figures (21 October 2026)
+
+Every number on a figure repeats a fact the page already stated, with that sentence's own source, re-checked today:
+
+- **Blanco 2013** (PubMed 23886784, DOI 10.1016/j.diabet.2013.05.006, abstract): 430 outpatients injecting insulin,
+  injection sites examined by a diabetes nurse; LH in 64.4%; "Of the patients who correctly rotated sites, only 5% had
+  LH"; 98% of those with LH did not rotate or rotated incorrectly; MeSH Spain; first author affiliated with Novartis
+  Pharma. The KeyNumbers say "observational study in Spain" and carry level `human-limited` (uncontrolled), and the open
+  text says the evidence is from insulin and hardly studied for other peptides.
+- **Smith 2013** (PubMed 23252499, DOI 10.1056/NEJMoa1213978): preservative-free methylprednisolone acetate from a
+  single compounding pharmacy; "examination of unopened vials later revealed fungus"; as of 1 July 2013, 749 cases in
+  20 states, 61 deaths. KeyNumber level `human-limited` (outbreak investigation, uncontrolled).
+- **EGRIFTA SV label** (openFDA, effective 29 July 2026): "The incidence of injection site reactions was 25% in EGRIFTA
+  treated patients and 14% in placebo-treated patients during the first 26 weeks"; trial population "HIV-infected
+  patients with lipodystrophy and excess abdominal fat" (740 treated, 543 in the 26-week placebo-controlled phase). The
+  IconArray detail names this population ("adults with HIV and extra belly fat"); level `human-controlled`.
+- **EU Wegovy product information** (EMA PDF, downloaded today): "Store in a refrigerator (2 °C – 8 °C). Do not
+  freeze. Keep away from the cooling element"; "discontinued at least 2 months before a planned pregnancy"; adolescents
+  aged 12 years and above. **EU Mounjaro product information**: "discontinued at least 1 month before a planned
+  pregnancy due to the long half-life".
+- **FDA, unapproved GLP-1 drugs** (content current as of 1 October 2026, fetched today): multi-dose vials within 28
+  days of first use, discard even if medication remains; a new sterile needle and syringe for every dose; do not use an
+  injectable GLP-1 that arrives warm; "research purposes" products are "of unknown quality".
+- **RIVM piercing guideline / Thuisarts PEP / WHO toolkit** (as verified on 20 October, notes above): treatment ideally
+  within 1 hour and no later than 72 hours (RIVM); PEP preferably within 2 hours, not after 72 hours (Thuisarts, WHO).
+- Compare cells on before-you-consider and sharps-disposal repeat the page's own sentences and sources (Hsieh 2017,
+  Cha 2003, PCAC TB-500 briefing, EGRIFTA SV, Vyleesi, EMA medicines search, Nelson 2012, Wegovy and Ozempic labels,
+  WADA 2026/2027 lists and Codes, gesund.bund.de, GOV.UK, FDA sharps pages). Two cells state an inference from the
+  page's facts and say so plainly: melanotan II "No EU label, because it is not authorised", and growth hormone boosters
+  "banned at all times" (the WADA lists name CJC-1295, ipamorelin and tesamorelin under S2, prohibited at all times, as
+  checked by the fact-check of 20 October).
+
+### Emergency number
+
+No English 112 phone mention existed on these pages before or after. Rendered check (dev server, 375 px and desktop):
+the only "112" on any of the six pages is the title of the source `ec-112-emergency-number` ("112: the European
+emergency number") in the source list of warning-signs, which the validator does not flag and which was there at HEAD.
+Reviewer: keep it (it is a title, and the callout says "the one for an ambulance in the country you are in"), or cite a
+different page.
+
+### Rendering check
+
+Dev server (`localhost:4321`), all six routes return 200; at 375 px no page scrolls sideways; leads, folds, Compare,
+KeyNumber, IconArray, TimeStrip (numeric axes 0–3 months, 0–28 days, 0–72 hours) and the explainer render; time-strip
+texts and key-number values read as intended. Generic pages show the folds but not the "Open all details" control (see
+contract issues in the structured return).
+
+### Decisions for the reviewer
+
+1. **Warning-signs page kept fully unfolded.** The assignment said "keep the warning-signs page and every stop-now
+   block unfolded". I read that as the whole page: it got leads and figures that wrap existing lists (no duplicated
+   text), but no folds, so its open word count rose by 187 (leads and captions).
+2. **One figure per section, with these exceptions:** the "What is normal" section on injection-safety has the action
+   table open and the tesamorelin IconArray in a fold (the table holds emergency advice and must stay open; two open
+   figures would break the rule); the stop callout on sharps-disposal comes before its TimeStrip; "Next steps" on
+   sterile-technique has a lead and a link list but no figure.
+3. **Intros without a lead.** Page intros of 80 words or fewer before the first `##` (sterile-technique,
+   injection-safety, sharps-disposal, warning-signs) have no lead; the summary box already answers "what is this page".
+4. **Diagram ids are new design work.** Thirteen new `<Diagram id>`s render as structured text until a designer draws
+   them (listed in the structured return of this pass).
+
+### Open questions added by the restructure
+
+1. Is the sterile-technique TimeStrip clear enough that "28 days" is a maximum, not a target? Its title and texts say
+   "thrown away 28 days after first use" and "never past 28 days".
+2. The `2–8 °C` KeyNumber is the Wegovy label's rule, introduced "for example". Could a reader take it as storage advice
+   for unlabelled products? The lead says "Follow the leaflet" and the open text says nobody knows how products from
+   outside a pharmacy were stored.
+3. The under-18 Compare puts "Wegovy from age 12, on prescription" beside "There is nothing to go on" for unapproved
+   peptides. Honest in both directions, but confirm it does not read as an invitation for teenagers.
+
+---
+
+## Fact-check log (independent fact-checker, 21 October 2026: the restructure)
+
+Scope: the six safety pages after the 21 October restructure (leads, folds and the new figures), these notes,
+`src/data/sources/safety-a.yaml` (73 ids: 16 PubMed, 57 web), the reused sources from other groups that the new
+figures rely on, and the six page photos.
+
+### Sources re-checked
+
+- **PubMed (16 of 16)**, `get_article_metadata` by PMID: Morgan 2006, Manning 2010, Zapadka 2017, Rosenberg 2006,
+  Smith 2013, Diao 2013, Blanco 2013, Frid 2016, Klein 2009, Dreyer 2019, Nelson 2012, Cardones 2009, Jebeile 2025,
+  Schaefer 2025, Guerdjikova 2024, Haider 2026. Authors, title, journal, volume, pages, DOI and PMID all match. No
+  fabricated or mismatched DOI. Also re-checked for the new cancer Compare: Hsieh 2017 (PMID 27847966; HUVEC tube
+  formation, chick CAM, rat hind-limb ischaemia) and Cha 2003 (PMID 14625258; mouse B16-F10 melanoma cells
+  overexpressing thymosin beta-4: more lung nodules and 4.4-fold more tumour vessels).
+- **Web (57 of 57)**: fetched with curl on 21 October 2026, converted to text and searched for the cited statement.
+  Every NHS "page last reviewed" date, MedlinePlus review date, Thuisarts "laatst gewijzigd" date, FDA "content
+  current as of" date, apotheek.nl date, KNMG date, gesund.bund.de "Stand" and Mainline `dateModified` matches the
+  notes. The two CDC pages (403 to curl) were read with WebFetch (dated 26 March 2024 and 12 April 2024).
+  `rivm.nl` refused connections from this machine; the RIVM piercing guideline text was read in the Internet Archive
+  copy of 22 April 2026 (needle-stick steps and "idealiter binnen 1 uur en niet later dan 72 uur" confirmed).
+- **WHO toolkit**: English PDF re-downloaded through the IRIS API and searched: discard a preservative-free
+  multi-dose vial "within 24 hours of opening, or after the time recommended by the manufacturer"; discard if
+  undated; one-hand scoop; "allow injury to bleed freely"; PEP not effective beyond 72 hours; transmission "in the
+  absence of visible blood contamination".
+- **Labels**: EU Wegovy and Mounjaro product information PDFs (EMA, downloaded today); US Ozempic label PDF
+  (accessdata.fda.gov, 209637s038); DailyMed Egrifta SV, Vyleesi, Bacteriostatic Water and Sterile Water.
+- **Other reused sources**: FDA "concerns with unapproved GLP-1 drugs" (WebFetch, content current 1 October 2026);
+  WADA Prohibited Lists 2026 and 2027 (Internet Archive copies of the wada-ama.org PDFs; the live host returned an
+  empty 202 response); FDA PCAC briefings for BPC-157, TB-500 and KPV (fda.gov PDFs); MHRA fake pens; FDA compounded
+  semaglutide dosing errors; reporting-scheme URLs (Lareb, Yellow Card, BfArM, MedWatch, EMA NAION, EMA search: all 200).
+- **Photos**: Commons licences re-queried through the API: public domain (hand-washing, Bacillus plates, staph SEM),
+  CC0 (ambulance), CC BY-SA 4.0 (stethoscope), CC BY-SA 3.0 (sharps bin). All allowed. Hand-washing and sharps-bin
+  images viewed again: no needle, vial, product, brand or face. Alt text and captions accurate.
+
+### Claims changed (21 October 2026)
+
+1. **Multi-dose vial, CDC row** (sterile-technique TimeStrip): "throw it away 28 days after first use, even with liquid
+   left (CDC)". The CDC page says to discard within 28 days "unless the manufacturer states another date" and does not
+   say "even with liquid left" (that is the FDA's wording). Now: "unless the maker gives another date (CDC)". The fold
+   bullet that attributed "even if there is liquid left" to the CDC was corrected the same way.
+2. **FDA 28-day advice misattributed in scope** (TimeStrip row and fold bullet): the page said the FDA advice applies
+   to "a product from outside a pharmacy". The FDA page gives it for compounded GLP-1 medicines in multi-dose vials,
+   which come from (compounding) pharmacies. Now: "Compounded GLP-1 medicine in a multi-dose vial (US)" and "For
+   compounded GLP-1 medicines in multi-dose vials, the FDA is stricter ...". This error was already in HEAD.
+3. **Warm deliveries**: "complaints about GLP-1 products that arrived warm" now "compounded GLP-1 products" (FDA:
+   "certain compounded GLP-1 drugs have arrived warm").
+4. **Lead "A multi-dose vial: no longer than 28 days"** now "usually no more than 28 days" (CDC allows the maker's own
+   date); the TimeStrip title likewise says "usually".
+5. **"Mistakes are common"** (mixing powders): no source quantifies this. Now "Mistakes happen, and some have been
+   serious", citing the FDA dosing-error alert already used in the fold below.
+6. **Eating-disorder diagram, step 1** ("GLP-1 type products make you less hungry and full sooner") cited Jebeile 2025,
+   whose abstract does not say this. Now cites the Wegovy SmPC 5.1 ("reduces feelings of hunger", "increases feelings
+   of satiety, fullness") and Haider 2026 ("potent appetite-suppressing effects").
+7. **Cancer Compare**: the row "Pushes growth in lab or animal studies?" answered "yes" for growth hormone boosters with
+   a human label fact about tesamorelin, and the Egrifta label was the only source for CJC-1295 and ipamorelin. The row
+   is now "Pushes blood vessel growth or growth signals?"; the cell says tesamorelin raises GH and IGF-1 (Egrifta
+   label) and that the WADA list classes CJC-1295 and ipamorelin as growth hormone releasing factors (S2.2.4, checked
+   in the 2026 list). The fold sentence was corrected the same way. Title adjusted to match.
+8. **Cancer lead "No."** answered "Can I use them if I have, or had, cancer?" for all products, but the page's red line
+   is for healing and growth peptides (GLP-1 medicines are not red-lined for cancer, apart from MTC/MEN 2). Now "Not
+   healing or growth peptides. They push growth signals that could help a tumour grow." The page's first lead and the
+   second summary item were narrowed the same way ("So is cancer, for healing and growth peptides").
+9. **Thyroid**: the lead "GLP-1 medicine labels warn about both" was wrong for the EU label, which has no MTC warning.
+   Now "Labels warn about pancreatitis. The US label also warns about thyroid cancer." The EU column now gives the EU
+   label's own position: the relevance for humans "is considered to be low, but cannot be completely excluded" (SmPC
+   5.3), so the page is honest in both directions; the fold says the same.
+10. **Rules-for-everyone diagram**: "Never share needles ... | The next person can get HIV ..., even with a new needle"
+    read oddly for needles; now "Blood on them can pass on HIV and hepatitis B or C. A shared vial or pen can do this
+    even with a new needle." The citations for "looks wrong" and "never stop a prescribed medicine" sat on reasons
+    their sources do not state (Thuisarts says "Stop niet zomaar met je medicijnen", not that the condition returns);
+    the cites now sit on the rule they support.
+11. **Blanco KeyNumber**: value "64%" now "64.4%", exactly as the abstract gives it (CONTENT-GUIDE §9.1); the fold
+    sentence was split for B1 and keeps "nearly two in three".
+12. **PEP TimeStrip**: the bar from 2 to 72 hours was labelled "after 72 hours it no longer works", which describes the
+    time after the bar. Now "still possible up to 72 hours; after that it no longer works" (Thuisarts, WHO).
+13. **Injection-site lead and diagram caption**: "Where do peptide medicines go? Into the fat just under the skin" was
+    broader than the page ("most"). Now "Most go into the fat just under the skin. Never inject them into a vein."
+14. **PT-141 lead**: "raises blood pressure for hours" now "for some hours" (Vyleesi: peak at 2 to 4 hours, usually
+    resolves within 12 hours), consistent with the Compare cell.
+15. **Index leads**: "Why give safety advice ...?" now actually answers ("Because clean steps prevent many
+    infections ..."); "Official health bodies" now "Mostly official health bodies and Dutch GPs" (Thuisarts is the
+    Dutch GP college's site, and two harm-reduction organisations are also cited).
+16. **B1**: four sentences of 22 to 24 words split (index stop callout, the tesamorelin and Blanco fold sentences, the
+    strict-liability fold sentence).
+17. **Sources file**: the `rivm-hygiene-piercing` note said "Last revised February 2026"; the guideline was fully
+    revised in 2021 with an interim change in February 2026 (note corrected, archive copy recorded).
+    `nhs-cancer-symptoms` URL updated to the page the old address now redirects to (`/conditions/cancer/`; quote
+    re-confirmed there).
+
+### Checked and left unchanged
+
+- Pregnancy TimeStrip (Wegovy "at least 2 months", Mounjaro "at least 1 month" before a planned pregnancy; EU PI
+  section 4.6), Wegovy age 12+, 2 to 8 °C, kidney Compare (renal impairment did not change PK in a clinically relevant
+  way; more GI effects with moderate impairment; not recommended in severe impairment), INR with acenocoumarol, PT-141
+  Compare (Vyleesi contraindications), sport Compare (S0 names BPC-157; S2.2.4 names CJC-1295, ipamorelin and
+  tesamorelin; both prohibited at all times in the 2026 and 2027 lists), the 749 KeyNumber (Smith 2013: 749 cases in 20
+  states, 61 deaths, fungus in unopened vials), the tesamorelin IconArray (25% vs 14%, first 26 weeks, HIV-infected
+  adults with lipodystrophy and excess abdominal fat; rotation "to decrease injection site reactions"), the 5%
+  KeyNumber, PCAC briefing facts (one rat teratology study, no malformations, no complete reproductive-cycle studies;
+  aPTT changes in 28-day rat and dog studies; no reproductive studies for TB-500 or KPV), water Compare, sharps Compare.
+- Guardrails: no doses, protocols, sourcing hints, testimonials or superlatives; no commerce words in link text;
+  "safe" only in "'No data' does not mean 'safe'" and about disposal. No PCAC vote on these pages, so the five
+  canonical elements did not apply. No English emergency phone number; the only "112" is a source title.
+- Internal links all go to planned routes; no `# ` heading in any body.
+- Not scaremongering: the pregnancy, cancer, thyroid and eating-disorder sections state where evidence is reassuring
+  (no birth defects in the one BPC-157 rat study; EU thyroid risk "considered low"; eating behaviour mostly improved or
+  unchanged in Jebeile 2025).
+
+### Validator
+
+`npx tsx scripts/validate-content.ts --only safety`: 0 errors, 8 warnings (the same `related:` routes other groups have
+not written yet). `--only sources`: 0 errors, 0 warnings. Full repository: 0 errors.
+
+### Open items for the reviewer (added 21 October 2026)
+
+- The sharps "needles-never-here" diagram says "not down the toilet or the sink" but cites only the FDA, which names
+  the toilet; the sink is common sense rather than sourced.
+- The mild-allergy advice "Stop using the product" is right for an unapproved product, but Thuisarts advises not to
+  stop a prescribed medicine on your own. A reader on a prescribed medicine should call the prescriber first; consider
+  adding "If a doctor prescribed it, call them before you stop."
+- `rivm.nl` was unreachable from the fact-checker's machine; re-check the live page once more before publication.

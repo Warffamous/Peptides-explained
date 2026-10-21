@@ -10,7 +10,9 @@ import { BUILT_LOCALES, SOURCE_LOCALE } from '../../lib/config';
 import { allPages, splitPageId, resolvePage, alternatesFor } from '../../lib/content';
 import { webPage } from '../../lib/jsonld';
 import { t } from '../../lib/i18n';
-import { mdxToPlain, readingMinutes, wordCount } from '../../lib/readability';
+import { readingMinutes, wordCount } from '../../lib/readability';
+import { bodyWords, hasFolds as bodyHasFolds, withoutFolds } from '../../lib/reading';
+import ReadingTools from '../../components/layout/ReadingTools.astro';
 
 export async function getStaticPaths() {
   const pages = await allPages();
@@ -53,6 +55,13 @@ const jsonld = webPage({
   medical, article: d.template !== 'landing' && d.template !== 'index', faq: rpf.faq, trail,
   opinion: d.opinion ? { published: d.opinion.published, signedBy: d.opinion.signed_by } : undefined,
 });
+// Reading time: the whole page and, when the page has 'In detail' folds, the short version with
+// every fold closed, counted the same way as on compound pages (src/lib/reading.ts).
+const body = entry.body ?? '';
+const folds = bodyHasFolds(body);
+const summaryWords = wordCount(d.summary.join(' '));
+const pageWords = bodyWords(locale, body) + summaryWords;
+const shortWords = folds ? bodyWords(locale, withoutFolds(body)) + summaryWords : 0;
 const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' ? t(locale, 'common.opinion.label') : d.section === 'legal' && d.jurisdiction ? t(locale, `vocab.jurisdiction.${d.jurisdiction}`) : undefined;
 ---
 <DocLayout
@@ -63,7 +72,9 @@ const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' 
   description={d.description}
   eyebrow={eyebrow}
   summary={d.summary}
-  readingMinutes={readingMinutes(wordCount(mdxToPlain(entry.body ?? '')) + wordCount(d.summary.join(' ')))}
+  readingMinutes={readingMinutes(pageWords)}
+  readingMinutesShort={folds ? readingMinutes(shortWords) : undefined}
+  foldSources={folds}
   template={d.template}
   section={d.section}
   lastReviewed={d.last_reviewed}
@@ -83,5 +94,6 @@ const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' 
   noindex={d.noindex || fallback}
   legal={d.section === 'legal' || key === 'legal-routes'}
 >
+  {folds && <ReadingTools slot="tools" locale={locale} />}
   <Content components={mdxComponents} />
 </DocLayout>
