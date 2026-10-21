@@ -8,7 +8,7 @@ import { mdxToPlain, wordCount } from './readability';
 /** Words that live in component props rather than between tags: section leads, figure titles and
  *  detail lines, key numbers, comparison and timeline labels (question="…", title="…", label: "…"). */
 export const propText = (src: string) =>
-  [...src.matchAll(/\b(?:question|title|detail|label|value|who|text|axis|a|b)\s*[=:]\s*"([^"]*)"/g)].map((m) => m[1]).join(' ');
+  [...src.matchAll(/\b(?:question|title|detail|label|value|who|counted|text|axis|a|b)\s*[=:]\s*"([^"]*)"/g)].map((m) => m[1]).join(' ');
 
 /** Explainers carry their words in i18n: the title, step captions and summary are always visible. */
 export const explainerText = (locale: string, src: string) =>

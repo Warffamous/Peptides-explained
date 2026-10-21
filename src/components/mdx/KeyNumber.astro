@@ -8,7 +8,8 @@
  * headline values; docs/design/DESIGN-DIRECTIONS-2026-10.md §3.2 "Key-number figure"): a takeaway
  * title, the quantity in the monospace face, one plain line that says what the number counts
  * (natural frequencies where they help: "about 1 in 7"), and a data card with the trial and who took
- * part (`who`), the source and the evidence level. No count-up animation.
+ * part (`who`) or, for a count that is not about people (papers, studies), what was counted
+ * (`counted`), the source and the evidence level. No count-up animation.
  *
  * `source` is numbered with the page's citations (remark-figure-sources); `level` is a claim level
  * (evidence.json). Consecutive key numbers are grouped into one row by remark-figure-sources (a
@@ -17,8 +18,8 @@
 import FigCard from './FigCard.astro';
 import { ctxLocale, uid } from '../../lib/ctx';
 import { CLAIM_LEVELS, type ClaimLevel } from '../../schemas/vocab';
-interface Props { title: string; value: string; unit?: string; label: string; who?: string; source?: string; level?: ClaimLevel; checked?: string }
-const { title, value, unit, label, who, source, level, checked } = Astro.props;
+interface Props { title: string; value: string; unit?: string; label: string; who?: string; counted?: string; source?: string; level?: ClaimLevel; checked?: string }
+const { title, value, unit, label, who, counted, source, level, checked } = Astro.props;
 if (level && !CLAIM_LEVELS.includes(level)) throw new Error(`<KeyNumber level="${level}"> is not a claim level`);
 const L = ctxLocale(Astro);
 const id = uid(Astro, 'kn');
@@ -27,5 +28,5 @@ const id = uid(Astro, 'kn');
   <p class="key-number__title" id={`${id}-t`}>{title}</p>
   <p class="key-number__value" id={`${id}-v`}><bdi class="key-number__qty">{value}</bdi>{unit && <span class="key-number__unit"> {unit}</span>}</p>
   <p class="key-number__label" id={`${id}-l`}>{label}</p>
-  <FigCard locale={L} who={who} source={source} level={level} checked={checked}><slot name="cite" /></FigCard>
+  <FigCard locale={L} who={who} counted={counted} source={source} level={level} checked={checked}><slot name="cite" /></FigCard>
 </figure>

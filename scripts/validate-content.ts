@@ -257,7 +257,7 @@ function checkVisuals(file: string, body: string, locale: string) {
     const label = attr(tag, 'label');
     if (label) checkPlain(file, '<KeyNumber> label', label, locale);
     // A number without its population is a generalisation (CONTENT-GUIDE §1: species, n and design).
-    if (!attr(tag, 'who')) warn(file, '<KeyNumber> without who="…": name the study and who took part (shown in the data card)');
+    if (!attr(tag, 'who') && !attr(tag, 'counted')) warn(file, '<KeyNumber> without who="…" (the study and who took part) or counted="…" (what was counted, for numbers that are not about people)');
     const level = attr(tag, 'level');
     if (level && !(V.CLAIM_LEVELS as readonly string[]).includes(level)) err(file, `<KeyNumber level="${level}"> — level must be one of ${V.CLAIM_LEVELS.join(', ')}`);
   }

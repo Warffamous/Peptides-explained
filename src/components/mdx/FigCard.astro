@@ -10,13 +10,14 @@ import { t } from '../../lib/i18n';
 import { getSource, shortSourceName } from '../../lib/data';
 import { formatDate, isoDate } from '../../lib/format';
 import type { ClaimLevel } from '../../schemas/vocab';
-interface Props { locale: string; source?: string; level?: ClaimLevel; checked?: string; note?: string; who?: string }
-const { locale: L, source, level, checked, note, who } = Astro.props;
+interface Props { locale: string; source?: string; level?: ClaimLevel; checked?: string; note?: string; who?: string; counted?: string }
+const { locale: L, source, level, checked, note, who, counted } = Astro.props;
 const names = (source ?? '').split(',').map((s) => s.trim()).filter(Boolean).map((id) => shortSourceName(getSource(id)));
 ---
 <p class="fig__card">
   {note && <span class="fig__field fig__field--note">{note}</span>}
   {who && <span class="fig__field"><span class="fig__key">{t(L, 'figures.who')}</span> {who}</span>}
+  {counted && <span class="fig__field"><span class="fig__key">{t(L, 'figures.counted')}</span> {counted}</span>}
   {names.length > 0 && (
     <span class="fig__field"><span class="fig__key">{t(L, names.length > 1 ? 'figures.sources' : 'figures.source')}</span> {names.join('; ')}<slot /></span>
   )}
