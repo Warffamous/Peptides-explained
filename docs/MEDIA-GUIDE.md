@@ -96,14 +96,31 @@ regenerating the picture.
 ### The tool
 
 ```sh
-npm run media:generate -- --check                                   # key valid? which model?
-npm run media:generate -- glp1-body-map infographic-art "Front view of …" --dry-run
-npm run media:generate -- glp1-body-map infographic-art "Front view of …" --size 1024x1536 --quality high
+npm run media:generate -- --check                                   # key valid? which model? where is the cost log?
+npm run media:generate -- glp1-body-map-v2 infographic-art "Front view of …" --dry-run
+npm run media:generate -- glp1-body-map-v2 infographic-art "Front view of …" --size 1024x1536 --quality high
+npm run media:generate -- glp1-body-map-v2-dark infographic-art --from glp1-body-map-v2 --dark --dry-run
+npm run media:generate -- glp1-body-map-v2-dark infographic-art --from glp1-body-map-v2 --dark
+npm run media:generate -- --usage                                   # every image so far and the estimated cost
 ```
 
 - The key is read from `.env` (`OPENAI_API_KEY=…`, git-ignored) with `process.loadEnvFile`, sent
   only to `api.openai.com`, and never printed, logged or written anywhere else. API error messages
-  are scrubbed of anything key-like before printing.
+  are scrubbed of anything key-like before printing. In a **git worktree** without its own `.env`,
+  the tool reads the main checkout's `.env` in place (found through the worktree's `.git` file); it
+  never copies the key into the worktree.
+- **Cost log.** Every billed call (generation or edit) appends a line to `media-usage.jsonl` in the
+  root of the **main checkout**, also when the tool runs in a worktree, so the owner has one log.
+  `--usage` prints it with the estimated cost per image (from the token counts OpenAI returns and
+  the price table in `scripts/media/usage-log.ts`; the OpenAI dashboard is the authority).
+- **Dark versions (edit mode).** `--from <id> --dark` sends the registered image to
+  `POST /v1/images/edits` with a fixed instruction: the same drawing (composition, positions,
+  shapes, framing; nothing added, removed or moved), only the background becomes a very dark warm
+  near-black and the line work and tones are adjusted to read on it; still no text. It uses the
+  source's size and model, the preamble `v1-dark` (the v1 rules with a dark-ground palette sentence),
+  and records `ai.edited_from`. `--from <id> "<instruction>"` makes any other edit of a registered
+  image. Check the result against the original: same size, same organ positions (a plate's markers
+  and an explainer's overlay are placed in % of the art).
 - **Use `--dry-run` first.** It prints the model and the full prompt without generating (no cost).
 - Every prompt gets a fixed **style preamble** (`STYLE_PREAMBLE`, versioned `v1`, in
   `scripts/media/generate-image.ts`): calm clinical atlas style; light neutral palette that works on
@@ -187,6 +204,7 @@ lab-mouse:
 | Page hero (every page) | `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster` (route key, no locale; `""` is the landing page). DocLayout renders it after the beginner layer and the review line on phones and tablets, and beside the title block from 64 rem (§7). |
 | In the text | `<Photo id="lab-mouse" />` |
 | Labelled plate | `<Infographic id="glp1-body-map" />` (§6) |
+| Under an animated explainer | `art` / `art_dark` in `src/data/explainers.yaml` (EXPLAINERS.md §3.6) |
 | Image credits | `<MediaCredits />` — already on `/sources/`; usable on any page |
 
 ### Credit
@@ -249,15 +267,34 @@ Alt text is written for someone who cannot see the image, in **B1 English**.
 Markers are SVG coordinates on the art, so they never move in RTL; the layout around the art
 mirrors, the art does not.
 
+**A dark version of the art (`art_dark`).** A light plate on a dark page is a bright panel, so a
+plate should have a second, dark-scheme rendering of the same artwork:
+
+```yaml
+art: glp1-body-map-v2
+art_dark: glp1-body-map-v2-dark   # optional; a separate media.yaml entry, kind: infographic-art
+```
+
+- It is the **same drawing** (same composition, organ positions and framing) on a near-black
+  ground, made with the edit mode (`--from <light-id> --dark`, §3) and reviewed like any AI art
+  (its own registry entry, alt text in `media.json` and review note). **Same proportions**: `<Infographic>` fails the build when the
+  aspect ratios differ by more than 1%, because the markers are placed in % of the art and are
+  shared by both versions. Check that every marker still sits on its organ in the dark version.
+- The page shows the light art in the light scheme and the dark art in the dark scheme (every
+  design follows the reader's setting or the toggle; B is light when there is none). Both pictures are lazy, so the
+  hidden one is never downloaded; print always uses the light art.
+- With a dark art the frame drops its light panel and dimming in dark. Without one, each design
+  dims the light art on a soft light panel in dark (never inverted).
+
 ---
 
 ## 7. How each design treats images
 
 | | A · Monograph | B · Mechanism | C · Public Health |
 |---|---|---|---|
-| Photos | Ink-blue duotone (greyscale screened onto the accent), hairline frame, credit in the mono face; caption in the margin on wide pages. Dark: cream-on-black monochrome. | Subdued (less saturation and brightness), soft vignette sinking into the #0A0E14 ground, rounded frame, wide. | Full colour, flat, solid high-contrast caption bar underneath; never text on the picture. |
+| Photos | Natural colour (`saturate(0.9)`), hairline frame, credit in the mono face; caption in the margin on wide pages. Dark: the same photo at 90% brightness, never tinted or inverted. | Natural colour in a hairline frame, rounded; slightly dimmed in the dark edition. | Full colour, flat, solid high-contrast caption bar underneath; never text on the picture. |
 | Hero | A plate in the margin columns beside the title, caption and mono credit under a hairline. | Rounded photo sunk into the ground, beside the title on wide screens. | Flat photo with caption bar, in its own column beside the title on wide screens. |
-| Plates | Engraved plate: greyscale art, hairline roundels, ruled key. Dark: negative plate. | Specimen on a light table; cyan/amber epistemic markers with a spring highlight. | Big solid teal discs on the art and in the key; key below on phones. |
+| Plates | Natural-colour art at least half the column wide, hairline roundels, ruled key. Dark: the `art_dark` version as drawn on the paper; without one, the light art dimmed to 85% on a warm `#E9E5DC` panel, never inverted. | Specimen on a light table; cyan/amber epistemic markers with a spring highlight. Dark: the `art_dark` version as drawn on the card surface, markers in the dark edition's tones; without one, the light art dimmed to 85% on a `#D9DEE5` panel. | Big solid slate discs (`--plate-mark`) on the art and in the key; key below on phones. Dark: the `art_dark` version on the page colour with light-slate discs; without one, the light art dimmed to 86% on a soft panel. |
 
 The page photo never pushes the beginner layer down. The DOM order (= reading and focus order) is
 title → "At a glance" → summary → review line → photo, which is what phones and tablets show: a
@@ -289,7 +326,8 @@ has a hero; an image that is a page's hero is not repeated in that page's body.
 ## 9. What the validator checks
 
 Errors: an image file in `src/assets/media/` that is not registered · an image referenced by a
-hero, `<Photo>`, `<Infographic>` or a plate that is not registered · a registered file that does not
+hero, `<Photo>`, `<Infographic>`, a plate or an explainer's `art`/`art_dark` that is not registered
+(an explainer picture must be text-free art) · a registered file that does not
 exist · missing English alt text · a licence that is NC/ND/unknown or does not match the origin ·
 `source_url` or `license_url` on a host not in the allowlist · an AI entry without model, prompt or
 date · AI artwork as `kind: photo` or with `people: true` · identifiable people from a non-public-

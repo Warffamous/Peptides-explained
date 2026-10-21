@@ -1,0 +1,31 @@
+---
+/**
+ * <KeyNumber title="Weight fell by about 15%" value="14.9%" label="average weight lost over 68
+ *   weeks, against 2.4% with placebo (STEP 1, 1,961 adults)" source="wilding-2021-step-1"
+ *   level="established" />
+ *
+ * One of the two to four numbers per section that matter (WHO "Key facts", Our World in Data
+ * headline values; docs/design/DESIGN-DIRECTIONS-2026-10.md §3.2 "Key-number figure"): a takeaway
+ * title, the quantity in the monospace face, one plain line that says what the number counts
+ * (natural frequencies where they help: "about 1 in 7"), and a data card with the trial and who took
+ * part (`who`), the source and the evidence level. No count-up animation.
+ *
+ * `source` is numbered with the page's citations (remark-figure-sources); `level` is a claim level
+ * (evidence.json). Consecutive key numbers are grouped into one row by remark-figure-sources (a
+ * plain <div class="key-numbers">), so there is no separate group component.
+ */
+import FigCard from './FigCard.astro';
+import { ctxLocale, uid } from '../../lib/ctx';
+import { CLAIM_LEVELS, type ClaimLevel } from '../../schemas/vocab';
+interface Props { title: string; value: string; unit?: string; label: string; who?: string; source?: string; level?: ClaimLevel; checked?: string }
+const { title, value, unit, label, who, source, level, checked } = Astro.props;
+if (level && !CLAIM_LEVELS.includes(level)) throw new Error(`<KeyNumber level="${level}"> is not a claim level`);
+const L = ctxLocale(Astro);
+const id = uid(Astro, 'kn');
+---
+<figure class="key-number" aria-labelledby={`${id}-t ${id}-v ${id}-l`}>
+  <p class="key-number__title" id={`${id}-t`}>{title}</p>
+  <p class="key-number__value" id={`${id}-v`}><bdi class="key-number__qty">{value}</bdi>{unit && <span class="key-number__unit"> {unit}</span>}</p>
+  <p class="key-number__label" id={`${id}-l`}>{label}</p>
+  <FigCard locale={L} who={who} source={source} level={level} checked={checked}><slot name="cite" /></FigCard>
+</figure>

@@ -28,6 +28,30 @@
 [dir='rtl'] .explainer[data-mirror] .xp-stage { direction: rtl; --xp-sx: -1; }
 [dir='rtl'] .explainer[data-mirror] .xp-art { scale: -1 1; }
 .xp-art { display: block; inline-size: 100%; block-size: auto; overflow: visible; }
+
+/* Raster backdrop (registry art / art_dark, docs/EXPLAINERS.md §3.6): text-free art under the SVG
+   overlay. The overlay SVG stays in the flow with the same proportions, so it reserves the space
+   before the picture arrives (zero layout shift) and paints above it. Each design says which picture
+   its scheme shows through --plate-show-light / --plate-show-dark (themes/<t>/media.css, shared with
+   the atlas plates); both are lazy, so the hidden one is never downloaded. Print uses the light one. */
+.explainer { --xp-ground: Canvas; }
+.explainer[data-backdrop] .xp-stage { padding: 0; }
+.xp-canvas[data-backdrop] > .xp-art { position: relative; }
+.xp-backdrop { position: absolute; inset: 0; display: block; }
+.xp-canvas .xp-backdrop--light { display: var(--plate-show-light, block); }
+.xp-canvas .xp-backdrop--dark { display: var(--plate-show-dark, none); }
+.xp-backdrop__img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
+/* On a picture, words get a soft backing in the page colour so an organ edge never weakens them.
+   One box behind all lines of a label (inline-block): a backing per line would paint the second
+   line's box over the first line's descenders ("Semaglutide" read as "Semaqlutide" in C at 360 px). */
+.explainer[data-backdrop] .xp-label__in { display: inline-block; background: color-mix(in srgb, var(--xp-ground) 84%, transparent); padding-inline: 0.2em; }
+/* A word on a picture may run past its wrap width rather than break in the middle ("Semaglutid-e"). */
+.explainer[data-backdrop] .xp-label { overflow-wrap: normal; }
+/* Lines and rings drawn on a picture get a halo in the page colour (same timing as the line). */
+.xp-art .xp-halo.xp-halo { fill: none; stroke: var(--xp-ground); stroke-width: var(--xp-halo-w, 5); stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
+/* One message per scene on a picture: a veil in the page colour covers everything but the part
+   being talked about, only while its scene plays (--k, --span). Never in the final frame. */
+.xp-art .xp-veil { fill: var(--xp-ground); fill-rule: evenodd; visibility: hidden; opacity: 0; }
 .xp-pin, .xp-label { position: absolute; inset-inline-start: var(--x); inset-block-start: var(--y); pointer-events: none; }
 .xp-pin { translate: calc(-50% * var(--xp-sx)) -50%; display: grid; place-items: center; min-inline-size: 1.7em; block-size: 1.7em; padding-inline: 0.25em; font-size: clamp(0.72rem, 2.9cqi, 0.95rem); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
 .xp-label { --ax: 0%; --ay: 0%; translate: calc(var(--ax) * var(--xp-sx)) var(--ay); inline-size: max-content; max-inline-size: var(--mw, 34%); font-size: clamp(0.72rem, 2.8cqi, 0.95rem); line-height: 1.15; overflow-wrap: anywhere; }
@@ -56,34 +80,39 @@
 .xp-art :is(.xp-link, .xp-curve, .xp-arrow, .xp-detail, .xp-rec, .xp-tail, .xp-axis, .xp-open, .xp-hatch, .xp-warn-mark) { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .xp-link[data-level='animal'], .xp-link[data-level='in-vitro'] { stroke-dasharray: 8 5; }
 .xp-link[data-level='hypothesis'] { stroke-dasharray: 2 5; }
+.xp-ring[data-level='animal'], .xp-ring[data-level='in-vitro'] { stroke-dasharray: 7 5; }
+.xp-ring[data-level='hypothesis'] { stroke-dasharray: 2 5; }
 .xp-link[data-level='human'], .xp-curve { --xp-in: var(--xp-draw, xp-draw); }
 .xp-link:not([data-level='human']) { --xp-in: var(--xp-dashed-in, xp-fade); --xp-ease: var(--xp-dashed-ease, ease-out); }
 .xp-move { --xp-in: var(--xp-move, xp-move); }
+/* Molecules carried along a vessel: they glide in from --dx over most of their step (every design;
+   A glides linearly, without bounce). The final frame has them at rest. */
+.explainer .xp-flow { --xp-in: var(--xp-flow, xp-flow); --xp-in-dur: calc(var(--xp-step) * 0.8); --xp-ease: var(--xp-flow-ease, linear); }
 .xp-in, .xp-out, .xp-shrink, .xp-pulse { transform-box: fill-box; transform-origin: 50% 50%; }
 .xp-out { opacity: 0; }
 .xp-shrink { scale: var(--s, 0.6); }
 .xp-ghost { opacity: var(--xp-ghost, 0.4); }
 .xp-danger-hot { opacity: 1; }
 
-/* Controls: not rendered without JavaScript (the inline head script sets html.js before first
-   paint, so their space is reserved and nothing shifts), invisible until the island is live, and
-   never shown with reduced motion. */
+/* Controls: nothing plays until the reader presses Play. Not rendered without JavaScript (the inline
+   head script sets html.js before first paint, so their space is reserved and nothing shifts),
+   invisible until the island is live, and never shown with reduced motion. */
 .xp-controls { display: none; flex-wrap: wrap; align-items: center; gap: var(--space-2, 0.5rem) var(--space-3, 0.75rem); }
 :root.js .xp-controls { display: flex; }
 .explainer:not(.is-live) .xp-controls { visibility: hidden; }
 .xp-btn { display: inline-flex; align-items: center; gap: 0.45em; font: inherit; cursor: pointer; }
 .xp-ico { inline-size: 1em; block-size: 1em; flex: none; fill: currentColor; }
-.xp-btn--toggle[data-state='playing'] .xp-ico--play, .xp-btn--toggle:not([data-state='playing']) .xp-ico--pause { display: none; }
-/* Play ↔ Pause must not change the button's width (that moved Replay and the progress bar: a layout
-   shift on autoplay). Both words size the label's column as invisible, zero-height pseudo-elements;
-   visibility: hidden keeps them out of the accessible name. */
-.xp-btn--toggle { display: inline-grid; grid-template-columns: auto auto; column-gap: 0.45em; }
-.xp-btn--toggle > .xp-ico { grid-area: 1 / 1; }
-.xp-btn--toggle > .xp-btn__label, .xp-btn--toggle::before, .xp-btn--toggle::after { grid-area: 1 / 2; }
-.xp-btn--toggle::before, .xp-btn--toggle::after { block-size: 0; visibility: hidden; white-space: nowrap; }
-.xp-btn--toggle::before { content: attr(data-label-play); }
-.xp-btn--toggle::after { content: attr(data-label-pause); }
-.xp-progress { flex: 1 1 5rem; display: flex; gap: 3px; min-inline-size: 4rem; }
+/* Play → Pause → Continue → Replay must never change the button's width (that would move the
+   progress bar: a layout shift). Every face sits in the same grid cell, so the longest one sizes the
+   button; only the current face is visible, and visibility: hidden keeps the others out of the
+   accessible name. */
+.xp-btn--toggle { display: inline-grid; max-inline-size: 100%; }
+.xp-btn__face { grid-area: 1 / 1; display: inline-flex; align-items: center; justify-content: center; gap: 0.45em; visibility: hidden; }
+.xp-btn--toggle:is([data-state='idle'], :not([data-state])) > [data-face='idle'],
+.xp-btn--toggle[data-state='playing'] > [data-face='playing'],
+.xp-btn--toggle[data-state='paused'] > [data-face='paused'],
+.xp-btn--toggle[data-state='ended'] > [data-face='ended'] { visibility: visible; }
+.xp-progress { flex: 1 1 3rem; display: flex; gap: 3px; min-inline-size: 2.5rem; } /* stays beside the Play button at 360 px */
 .xp-seg { position: relative; flex: 1 1 0; overflow: hidden; }
 .xp-seg::before { content: ''; position: absolute; inset: 0; transform-origin: 0 50%; }
 [dir='rtl'] .xp-seg::before { transform-origin: 100% 50%; }
@@ -109,6 +138,7 @@
 .xp-step__text, .xp-step__levels { margin: 0; }
 .xp-step__levels { display: flex; flex-wrap: wrap; gap: 0.3em; }
 .xp-summary, .xp-legend, .xp-sources, .xp-review { margin-block: var(--space-3, 0.75rem) 0; margin-inline: 0; }
+.xp-credit { margin-block: var(--space-1, 0.25rem) 0; margin-inline: 0; } /* the picture's credit and note: set like the sources line (themes) */
 .xp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em 0.9em; }
 .xp-key { display: inline-flex; align-items: center; gap: 0.4em; }
 .xp-key__line { inline-size: 2em; block-size: 0.5em; flex: none; overflow: visible; }
@@ -130,6 +160,7 @@
    final frame, where everything is strong. Words fade less than shapes. */
 .explainer.is-playing .xp-focus { opacity: var(--xp-dim, 0.3); animation: xp-lit calc(var(--span, 1) * var(--xp-step)) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
 :is(.xp-label, .xp-panel__title) .xp-focus, .xp-panel__title.xp-focus { --xp-dim: var(--xp-dim-text, 0.5); }
+.explainer.is-playing .xp-veil { animation: xp-veil calc(var(--span, 1) * var(--xp-step)) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
 .explainer.is-playing .xp-now__still { visibility: hidden; }
 .explainer.is-playing .xp-now__step { animation: var(--xp-now, xp-now) var(--xp-step) linear calc(var(--k, 0) * var(--xp-step)) 1 none; }
 .explainer.is-paused, .explainer.is-paused *, .explainer.is-paused *::before, .explainer.is-paused *::after { animation-play-state: paused !important; }
@@ -138,6 +169,8 @@
 @keyframes xp-pop { from { opacity: 0; scale: 0.3; } to { opacity: 1; scale: 1; } }
 @keyframes xp-draw { from { stroke-dasharray: 1 2; stroke-dashoffset: 1.01; } to { stroke-dasharray: 1 2; stroke-dashoffset: 0; } }
 @keyframes xp-move { from { opacity: 0; translate: var(--dx, 0px) var(--dy, 0px); } to { opacity: 1; translate: 0 0; } }
+@keyframes xp-flow { from { opacity: 0; translate: var(--dx, -40px) 0; } 18% { opacity: 1; } to { opacity: 1; translate: 0 0; } }
+@keyframes xp-veil { 0% { visibility: visible; opacity: 0; } 7%, 93% { visibility: visible; opacity: var(--xp-veil, 0.62); } 100% { visibility: visible; opacity: 0; } }
 @keyframes xp-out { from { opacity: 1; } to { opacity: 0; } }
 @keyframes xp-shrink { from { scale: 1; } to { scale: var(--s, 0.6); } }
 @keyframes xp-ghost { from { opacity: 1; } to { opacity: var(--xp-ghost, 0.4); } }
@@ -158,11 +191,15 @@
 }
 @media print {
   .explainer .xp-controls, .explainer .xp-rm-note, .explainer .xp-now__step { display: none !important; }
+  .xp-canvas .xp-backdrop--light { display: block; }
+  .xp-canvas .xp-backdrop--dark { display: none; }
   .explainer *, .explainer *::before, .explainer *::after { animation: none !important; }
 }
 @media (forced-colors: active) {
   .xp-art :is(.xp-link, .xp-curve, .xp-arrow, .xp-organ, .xp-cell, .xp-axis, .xp-ring, .xp-plate) { stroke: CanvasText; }
   .xp-art :is(.xp-drug, .xp-hot, .xp-warn) { fill: Highlight; }
   .xp-pin { forced-color-adjust: none; background: Canvas; color: CanvasText; border: 1px solid CanvasText; }
+  .xp-art .xp-halo.xp-halo { stroke: Canvas; }
+  .xp-art .xp-veil { display: none; }
   .xp-step { border-inline-start-color: transparent; }
 }

@@ -52,6 +52,8 @@ export const aiInfoSchema = z.object({
   review: z.enum(['pending', 'ok']),
   review_note: z.string().default(''),
   reviewed_by: kebab.optional(),
+  /** Made with the edits endpoint from this registered image (e.g. its dark-scheme version). */
+  edited_from: kebab.optional(),
 });
 
 export const mediaEntrySchema = z
@@ -110,6 +112,12 @@ export const infographicSchema = z
   .object({
     /** Media id of the text-free artwork (kind: infographic-art). */
     art: kebab,
+    /**
+     * Optional media id of the dark-scheme version of the same artwork (kind: infographic-art):
+     * same composition and proportions, so the markers land on the same spots. Shown instead of
+     * `art` when the page is dark; without it the light art is dimmed on a light panel.
+     */
+    art_dark: kebab.optional(),
     /** Numbered markers on the art, in reading order. x/y are percentages of the unmirrored artwork. */
     markers: z
       .array(

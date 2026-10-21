@@ -3,7 +3,7 @@
 /*
  * C · Public Health — photographs in full colour, flat, with a quiet caption panel (never text on
  * top of a picture). Atlas plates use the pictogram vocabulary's language: big solid slate discs
- * (--plate-mark, the light-scheme slate in both schemes, because plates always sit on white art)
+ * (--plate-mark: the light-scheme slate on white art in both schemes; the light slate on dark art)
  * with white numbers on the art, the same discs in the key, 19px labels, and the key drops below
  * the picture on phones and at 200% zoom. In the dark scheme the white art panel is dimmed to about
  * 86% and framed with a hairline, never a bright slab. No shadows, no motion.
@@ -49,6 +49,16 @@
 .plate__marker { transform: scale(calc(1.2 + var(--on) * 0.2)); }
 .plate__dot { fill: var(--plate-mark); stroke: var(--plate-bg); stroke-width: 2.5px; vector-effect: non-scaling-stroke; }
 .plate__n { fill: var(--plate-mark-ink); font-family: var(--font-sans); font-weight: 700; }
+/* Dark: never a white block on the dark page. Light-only art keeps the dimmed panel (--plate-bg,
+   --plate-filter in tokens.css). A plate with a dark version of its art (art_dark), and an explainer
+   drawn on registry art, shows that one as drawn, on the page colour; its discs (on the art and in
+   the key alike) turn to the dark edition's light slate so they stand off the dark art. */
+:root[data-scheme='dark'] { --plate-show-light: none; --plate-show-dark: block; }
+:root[data-scheme='dark'] .plate[data-dark-art] { --plate-bg: var(--bg); --plate-filter: none; --plate-mark: var(--primary); --plate-mark-ink: var(--primary-ink); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) { --plate-show-light: none; --plate-show-dark: block; }
+  :root:not([data-scheme='light']) .plate[data-dark-art] { --plate-bg: var(--bg); --plate-filter: none; --plate-mark: var(--primary); --plate-mark-ink: var(--primary-ink); }
+}
 
 .plate__key-title { font-size: var(--s-1); font-weight: 700; margin-block-end: var(--space-3); }
 .plate ol.plate__legend { gap: var(--space-4); }

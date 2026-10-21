@@ -1,0 +1,55 @@
+---
+/**
+ * <IconArray title="…" detail="…" a="Semaglutide" b="Placebo" source="ema-epar-wegovy"
+ *   rows={[{ label: "Feeling sick (nausea)", a: 43.9, b: 16.1 }, …]} />
+ *
+ * "x in 100" as a picture (Isotype heritage; docs/design/DESIGN-DIRECTIONS-2026-10.md §3.2 "Icon
+ * array"): for each row, a 10×10 grid of squares per group, the filled squares counting people in
+ * 100, with the count written beside it in words ("44 in 100"). The grids are decorative; the words
+ * carry everything (they are the text equivalent). Percentages are rounded to whole people; the
+ * exact values stay in the text of the section.
+ */
+import FigCard from './FigCard.astro';
+import { t } from '../../lib/i18n';
+import { ctxLocale, uid } from '../../lib/ctx';
+import { formatNumber } from '../../lib/format';
+import type { ClaimLevel } from '../../schemas/vocab';
+type Row = { label: string; a: number; b: number };
+interface Props { title: string; detail?: string; a: string; b: string; rows: Row[]; source?: string; level?: ClaimLevel }
+const { title, detail, a, b, rows, source, level } = Astro.props;
+const L = ctxLocale(Astro);
+const id = uid(Astro, 'ia');
+const S = 8; // square
+const G = 2; // gap
+const W = 10 * S + 9 * G;
+const squares = Array.from({ length: 100 }, (_, i) => ({ x: (i % 10) * (S + G), y: Math.floor(i / 10) * (S + G) }));
+const groups = (r: Row) => [
+  { key: 'a', name: a, n: Math.round(r.a) },
+  { key: 'b', name: b, n: Math.round(r.b) },
+];
+---
+<figure class="icon-array fig" aria-labelledby={`${id}-title`}>
+  <figcaption class="fig__head">
+    <span class="fig__label" aria-hidden="true">{t(L, 'figures.fig')}</span>
+    <span class="fig__title" id={`${id}-title`}>{title}</span>
+    {detail && <span class="fig__detail">{detail}</span>}
+  </figcaption>
+  <ul class="icon-array__rows" role="list">
+    {rows.map((r) => (
+      <li class="icon-array__row">
+        <p class="icon-array__label">{r.label}</p>
+        <div class="icon-array__pair">
+          {groups(r).map((g) => (
+            <div class="icon-array__cell" data-group={g.key}>
+              <svg class="icon-array__grid" viewBox={`0 0 ${W} ${W}`} width={W} height={W} aria-hidden="true" focusable="false">
+                {squares.map((sq, i) => <rect class:list={['icon-array__sq', i < g.n && 'is-on']} x={sq.x + 0.5} y={sq.y + 0.5} width={S - 1} height={S - 1} />)}
+              </svg>
+              <p class="icon-array__n"><strong class="icon-array__count"><bdi>{t(L, 'figures.iconArray.perHundred', { n: formatNumber(L, g.n) })}</bdi></strong> <span class="icon-array__group">{g.name}</span></p>
+            </div>
+          ))}
+        </div>
+      </li>
+    ))}
+  </ul>
+  <FigCard locale={L} source={source} level={level} note={t(L, 'figures.iconArray.square')}><slot name="cite" /></FigCard>
+</figure>

@@ -54,13 +54,13 @@
 .toc__list a::before { content: counter(toc); display: inline-grid; place-items: center; flex: none; inline-size: 1.9rem; block-size: 1.9rem; border-radius: 50%; background: var(--primary); color: var(--primary-ink); font-weight: 700; font-size: var(--s--1); }
 
 /* ------------------------------------------------------------------ prose: short blocks, frequent headings */
-:where(.prose, .csec) > p { margin-block: 0 var(--space-4); }
-:where(.prose, .csec) > :is(ul, ol) { margin-block: 0 var(--space-4); padding-inline-start: 1.4em; }
+:where(.prose, .csec, .in-detail__body) > p { margin-block: 0 var(--space-4); }
+:where(.prose, .csec, .in-detail__body) > :is(ul, ol) { margin-block: 0 var(--space-4); padding-inline-start: 1.4em; }
 :where(.prose, .csec) li { margin-block: var(--space-2); }
 :where(.prose, .csec) li::marker { color: var(--primary); font-weight: 700; }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 700; line-height: 1.2; margin-block: var(--space-7) var(--space-4); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-2); font-weight: 700; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-1); font-weight: 700; margin-block: var(--space-5) var(--space-2); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 700; line-height: 1.2; margin-block: var(--space-7) var(--space-4); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-2); font-weight: 700; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-1); font-weight: 700; margin-block: var(--space-5) var(--space-2); }
 .prose strong { font-weight: 700; }
 .prose blockquote { margin: 0 0 var(--space-4); padding: var(--space-3) var(--space-4); border-inline-start: 6px solid var(--line); background: var(--surface-2); }
 .prose table:not(.data-table) { inline-size: 100%; border-collapse: collapse; font-size: var(--s--1); }
@@ -77,9 +77,10 @@
 
 /* ------------------------------------------------------------------ citations, claims, terms */
 .cite__marks { font-size: 0.75em; vertical-align: super; line-height: 0; }
-/* The link's own line-height: inside the line-height: 0 marks an inline-block is 0px tall, and the
-   yellow focus block collapsed into a thin bar through the number. Line boxes do not grow. */
-.cite__link { display: inline-block; min-inline-size: 1.4em; line-height: 1.15; text-align: center; text-decoration: none; font-weight: 700; }
+/* Inline, not inline-block: an inline-block number is a break opportunity of its own, so it wrapped
+   alone onto the next line ("…your back" / "3"). An inline link paints its focus block over the
+   glyphs' content area whatever the line-height, so the yellow block keeps its full height. */
+.cite__link { display: inline; padding-inline: 0.15em; text-decoration: none; font-weight: 700; }
 .cite__link:hover { text-decoration: underline; }
 /*
  * Evidence tags (inline claim tags and step levels): glyph plus word in a 1px frame. The level is

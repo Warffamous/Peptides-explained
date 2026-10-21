@@ -30,7 +30,7 @@ import {
   type CompoundData,
 } from '../src/schemas/index.ts';
 import * as V from '../src/schemas/vocab.ts';
-import { ALLOWED_COMPONENTS, COMPOUND_ONLY_COMPONENTS } from '../src/schemas/components.ts';
+import { ALLOWED_COMPONENTS, COMPOUND_ONLY_COMPONENTS, SOURCED_FIGURES } from '../src/schemas/components.ts';
 import { wordCount, fleschReadingEase } from '../src/lib/readability.ts';
 import {
   ROOT,
@@ -220,6 +220,62 @@ const MD_LINK_RE = /\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
 const HREF_RE = /href=["']([^"']+)["']/g;
 const DIAGRAM_RE = /<Diagram\s+([^>]*?)\s*(\/?)>/g;
 const CAPTION_RE = /<([A-Z][A-Za-z0-9]*)\b[^>]*?\bcaption=(["'])([\s\S]*?)\2/g;
+// "Less text, more visuals" components (CONTENT-GUIDE §9). Literal string attributes only; an
+// opening tag may also carry {…} expression props (rows={[…]}), which may contain ">".
+const attr = (tag: string, name: string) => new RegExp(`\\b${name}=(["'])([\\s\\S]*?)\\1`).exec(tag)?.[2];
+const openTags = (body: string, name: string) =>
+  [...body.matchAll(new RegExp(`<${name}\\b((?:[^>"'{]|"[^"]*"|'[^']*'|\\{(?:[^{}]|\\{(?:[^{}]|\\{[^{}]*\\})*\\})*\\})*)>`, 'g'))].map((m) => m[1]);
+const FIGURE_TITLE_COMPONENTS = ['Compare', 'KeyNumber', 'IconArray', 'TimeStrip'];
+
+/**
+ * The "less text, more visuals" components: required props, plain-language takeaways, sources that
+ * exist, and the one rule that keeps safety visible: stop-now content is never folded away.
+ */
+function checkVisuals(file: string, body: string, locale: string) {
+  for (const tag of openTags(body, 'Lead')) if (!attr(tag, 'question')) err(file, '<Lead> needs question="…" (the reader\'s question this section answers)');
+  for (const m of body.matchAll(/<Lead\b[^>]*>([\s\S]*?)<\/Lead>/g)) {
+    const answer = m[1].replace(/<[^>]+>/g, ' ').trim();
+    if (!answer) err(file, '<Lead> needs a one-sentence answer between its tags');
+    else checkPlain(file, '<Lead> answer', answer, locale);
+  }
+  for (const tag of openTags(body, 'InDetail')) if (!attr(tag, 'title')) err(file, '<InDetail> needs title="…" (what the fold holds, in plain words)');
+  for (const m of body.matchAll(/<InDetail\b[\s\S]*?<\/InDetail>/g)) {
+    if (/<Callout\s+type=["']stop["']/.test(m[0]) || /<WarningSigns\b/.test(m[0])) {
+      err(file, 'stop-now content (<Callout type="stop">, <WarningSigns />) must never sit inside an <InDetail> fold');
+    }
+    if (/<InDetail\b/.test(m[0].slice(1))) err(file, '<InDetail> folds cannot be nested');
+  }
+  for (const name of FIGURE_TITLE_COMPONENTS) {
+    for (const tag of openTags(body, name)) {
+      const title = attr(tag, 'title');
+      if (!title) err(file, `<${name}> needs title="…": one sentence that states the finding`);
+      else checkPlain(file, `<${name}> title`, title, locale);
+    }
+  }
+  for (const tag of openTags(body, 'KeyNumber')) {
+    for (const req of ['value', 'label']) if (!attr(tag, req)) err(file, `<KeyNumber> needs ${req}="…"`);
+    const label = attr(tag, 'label');
+    if (label) checkPlain(file, '<KeyNumber> label', label, locale);
+    // A number without its population is a generalisation (CONTENT-GUIDE §1: species, n and design).
+    if (!attr(tag, 'who')) warn(file, '<KeyNumber> without who="…": name the study and who took part (shown in the data card)');
+    const level = attr(tag, 'level');
+    if (level && !(V.CLAIM_LEVELS as readonly string[]).includes(level)) err(file, `<KeyNumber level="${level}"> — level must be one of ${V.CLAIM_LEVELS.join(', ')}`);
+  }
+  for (const name of SOURCED_FIGURES) {
+    for (const tag of openTags(body, name)) {
+      const src = attr(tag, 'source');
+      if (!src) err(file, `<${name}> needs source="id" (numbered with the page's citations)`);
+      else for (const id of src.split(',').map((x) => x.trim())) requireSource(file, id, `<${name} source>`);
+    }
+  }
+  for (const m of body.matchAll(/<Verdict\s+is=["']([^"']+)["']/g)) {
+    if (!(V.VERDICTS as readonly string[]).includes(m[1])) err(file, `<Verdict is="${m[1]}"> — must be one of ${V.VERDICTS.join(', ')}`);
+  }
+  for (const m of body.matchAll(/<Compare\b[\s\S]*?<\/Compare>/g)) {
+    if (!/\n\|.*\|\s*\n\|\s*:?-{3,}/.test(m[0])) err(file, '<Compare> must wrap a markdown table');
+    if (!/<Verdict\b/.test(m[0])) err(file, '<Compare> answer cells start with <Verdict is="yes|no|unknown" /> (a word plus a glyph)');
+  }
+}
 
 /** Phrases that tend to slip into promotion or dosing advice. Warnings, reviewed by hand. */
 const GUARDRAIL_PATTERNS: [RegExp, string][] = [
@@ -252,6 +308,7 @@ function checkBody(file: string, body: string, locale: string, kind: 'page' | 'c
   }
   // figure captions (diagrams, explainers, infographics, photos): the beginner reads them first
   for (const m of body.matchAll(CAPTION_RE)) checkPlain(file, `<${m[1]}> caption`, m[3], locale);
+  checkVisuals(file, body, locale);
   // links
   const links: { text: string; href: string }[] = [];
   for (const m of body.matchAll(MD_LINK_RE)) links.push({ text: m[1], href: m[2] });
@@ -306,6 +363,16 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
   // beginner layer: plain summary and the "Biggest risk" tile
   const names = [cd.names.common, cd.names.inn, ...cd.names.other, ...cd.names.brands].filter((n): n is string => !!n);
   checkSummary(file, r.data.summary, locale, names);
+  if (r.data.lede) checkPlain(file, 'lede', r.data.lede, locale, names);
+  // "Stop and get help" strip and fact sheet: sourced and plain; the strip links to the full stop-now list.
+  r.data.glance.stop_signs?.forEach((sg, i) => {
+    checkPlain(file, `glance.stop_signs[${i + 1}]`, sg.text, locale, names);
+    sg.sources.forEach((id) => requireSource(file, id, `glance.stop_signs[${i + 1}]`));
+  });
+  r.data.glance.facts.forEach((f, i) => f.sources.forEach((id) => requireSource(file, id, `glance.facts[${i + 1}]`)));
+  if (r.data.glance.stop_signs && !/<Callout\s+type=["']stop["'][^>]*\bid=["']stop-now["']/.test(body)) {
+    err(file, 'glance.stop_signs links to the full stop-now list: give the stop callout id="stop-now" (<Callout type="stop" id="stop-now" …>)');
+  }
   if (r.data.glance.main_risk) checkPlain(file, 'glance.main_risk', r.data.glance.main_risk, locale, names);
   else if (cd.status === 'complete' && cd.tier === 1) {
     warn(file, 'glance.main_risk is missing: the "biggest risk" tile falls back to a link to the warning signs. Add at most 12 plain words condensed from this page\'s own risk section.');
@@ -487,6 +554,69 @@ for (const loc of localeCodes) {
 for (const w of waivers) {
   if (today > w.until) warn(waiverFile, `waiver for ${w.file} expired on ${w.until}: remove the entry`);
   else if (!w.used) warn(waiverFile, `waiver for ${w.file} is no longer needed (nothing there is over ${PLAIN.maxWords} words): remove the entry`);
+}
+
+// ------------------------------------------------------------------ emergency number (CONTENT-GUIDE §1)
+/**
+ * The English site is read in many countries, so it never prints 112 as a phone number (owner's
+ * decision, 20 October 2026): it says "call your local emergency number" (common.emergency.* in
+ * components). Dutch pages say 112. A "112" that is a phone number is one with a calling word near
+ * it (call, phone, dial, emergency, ambulance …), or any 112 in a safety string (a stop callout, a
+ * stop sign, the warning signs, the emergency and notice strings). Other numbers are left alone:
+ * "week 112", "volume 112", "JCI112855" and "1,112" do not match.
+ */
+const NUMBER_112 = /(?<![\w.,/-])112(?![\w]|[.,]\d)/g;
+// A count, a measurement or a point in a study is never a phone number, even next to a calling word
+// ("112 participants were called back", "above 112 mg/dL? Call your doctor", "at week 112 … call").
+const NOT_A_PHONE = /^[\s-]*(?:%|(?:mg|mmol|µg|mcg|kg|g|ml|l|dl|percent|participants?|people|persons?|adults?|children|patients?|subjects?|volunteers?|cases?|weeks?|days?|months?|years?|hours?|minutes?)\b)/i;
+const NOT_A_PHONE_BEFORE = /\b(?:week|day|month|year|volume|vol\.|issue|page|pp?\.|ref\.|table|figure|fig\.|study|trial|step)\s*$/i;
+const CALL_WORDS = /\b(?:call(?:s|ed|ing)?|phone|telephone|ring|dial(?:l?ing)?|bel(?:len|t)?|emergenc(?:y|ies)|ambulances?|paramedics?|noodnummer|alarmnummer|hotline)\b/i;
+const SAFETY_KEYS = /(?:^|\.)(?:emergency|stop|stop_signs|warning|warnings|warningAction|warning-signs|notice|call)(?:\.|$)/i;
+const EMERGENCY_MSG = 'prints 112 as a phone number: the English site says "call your local emergency number" (components: common.emergency.*); only Dutch pages say 112';
+const seen112 = new Set<string>();
+function find112(file: string, text: string, safety = false, where = '') {
+  for (const m of text.matchAll(NUMBER_112)) {
+    const i = m.index ?? 0;
+    if (NOT_A_PHONE.test(text.slice(i + 3, i + 20)) || NOT_A_PHONE_BEFORE.test(text.slice(Math.max(0, i - 12), i))) continue;
+    // whole words only: a window cut through "below" must not leave "bel"
+    const from = Math.max(0, i - 60);
+    const to = Math.min(text.length, i + 43);
+    let near = text.slice(from, to).replace(/\s+/g, ' ');
+    if (from > 0 && /\S/.test(text[from - 1])) near = near.replace(/^\S*/, '');
+    if (to < text.length && /\S/.test(text[to])) near = near.replace(/\S*$/, '');
+    near = near.trim();
+    if (!(safety || CALL_WORDS.test(near)) || seen112.has(file + near)) continue;
+    seen112.add(file + near);
+    const line = text.slice(0, i).split('\n').length;
+    err(file, `${where || `line ~${line}:`} ${EMERGENCY_MSG}\n      > ${clip(near)}`);
+  }
+}
+function walkStrings(node: unknown, at: string, out: [string, string][]) {
+  if (typeof node === 'string') out.push([at, node]);
+  else if (Array.isArray(node)) node.forEach((x, i) => walkStrings(x, `${at}.${i}`, out));
+  else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) walkStrings(v, at ? `${at}.${k}` : k, out);
+}
+for (const loc of englishLocales) {
+  for (const file of [...walk(`src/content/compounds/${loc}`, ['.mdx', '.md']), ...walk(`src/content/pages/${loc}`, ['.mdx', '.md'])]) {
+    const raw = fs.readFileSync(file, 'utf8');
+    find112(file, raw);
+    // Stop-now content: any 112 at all.
+    for (const m of raw.matchAll(/<Callout\s+type=["']stop["'][\s\S]*?<\/Callout>/g)) find112(file, m[0], true, 'stop callout:');
+    const glance = readMdx(file).data.glance as { stop_signs?: { text?: string }[] } | undefined;
+    (glance?.stop_signs ?? []).forEach((s, i) => find112(file, s.text ?? '', true, `glance.stop_signs[${i + 1}]:`));
+  }
+  for (const file of walk(`src/i18n/${loc}`, ['.json'])) {
+    let data: unknown;
+    try {
+      data = readJson(file);
+    } catch {
+      continue; // reported by the JSON parse check
+    }
+    const strings: [string, string][] = [];
+    walkStrings(data, '', strings);
+    const ns = path.basename(file, '.json');
+    for (const [at, s] of strings) find112(file, s, SAFETY_KEYS.test(`${ns}.${at}`), `${at}:`);
+  }
 }
 
 // ------------------------------------------------------------------ media (images, heroes, infographics; docs/MEDIA-GUIDE.md)

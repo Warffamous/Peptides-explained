@@ -1,5 +1,10 @@
 ---
-/** Who to contact and where to report in a jurisdiction, from src/data/jurisdictions.yaml. */
+/**
+ * Who to contact and where to report in a jurisdiction, from src/data/jurisdictions.yaml.
+ * The emergency row is the locale's instruction (common.emergency.jurisdiction). English pages are
+ * read in many countries, so the English string leaves the number out ("Call the local emergency
+ * number"); the Dutch string is "Bel {number}" and prints the jurisdiction's own number.
+ */
 import { t } from '../../lib/i18n';
 import { ctxLocale } from '../../lib/ctx';
 import { JURISDICTIONS } from '../../lib/data';
@@ -14,7 +19,7 @@ const rows = [
 <aside class="jurisdiction-card" data-jurisdiction={j.code} aria-labelledby={`jc-${j.code}`}>
   <h3 class="jurisdiction-card__title" id={`jc-${j.code}`}>{t(L, `vocab.jurisdiction.${j.code}`)}</h3>
   <dl class="jurisdiction-card__list">
-    <div><dt>{t(L, 'pages.jurisdiction.emergency')}</dt><dd><bdi class="qty">{j.emergency}</bdi></dd></div>
+    <div><dt>{t(L, 'pages.jurisdiction.emergency')}</dt><dd>{t(L, 'common.emergency.jurisdiction', { number: j.emergency })}</dd></div>
     {rows.map(([k, v]) => <div><dt>{t(L, `pages.jurisdiction.${k}`)}</dt><dd><a href={v.url} rel="noopener" data-external>{v.name}</a></dd></div>)}
   </dl>
 </aside>

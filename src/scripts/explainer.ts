@@ -1,102 +1,106 @@
 /**
- * Playback for <Explainer> figures (docs/EXPLAINERS.md). The timeline itself is pure CSS: every
+ * Playback for <Explainer> figures (docs/EXPLAINERS.md §3.4). The timeline itself is pure CSS: every
  * part is delayed by its step, so artwork and captions stay in sync without script. This only
- * starts, pauses, loops and stops it:
- *  - autoplay once the artwork is at least half in view, unless the reader asked for reduced
- *    motion (then nothing plays and the controls stay hidden) or to save data;
- *  - at most two runs, then rest on the final frame (the same frame shown without JavaScript);
- *  - a visible Pause/Play and Replay control (WCAG 2.2.2); pause while scrolled out of view.
+ * starts, pauses, resumes and ends it. Nothing ever plays by itself:
+ *  - at rest the figure shows the final frame (the same frame as without JavaScript) and one
+ *    button, "Play the n-second animation";
+ *  - while playing the button says Pause, when paused Continue, and after the single run the
+ *    figure rests on the final frame again and the button says Replay (WCAG 2.2.2);
+ *  - only while a run is under way: scrolling the drawing out of view pauses it, scrolling back
+ *    resumes it;
+ *  - with reduced motion nothing plays and the button stays hidden (CSS); a note says why.
  */
-const MAX_RUNS = 2;
+type State = 'idle' | 'playing' | 'paused' | 'ended';
 const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData);
 const teardowns: (() => void)[] = [];
 
 function init(fig: HTMLElement) {
-  const q = <T extends Element>(s: string) => fig.querySelector<T>(s);
-  const ctl = q<HTMLElement>('.xp-controls');
-  const toggle = q<HTMLButtonElement>('[data-xp-toggle]');
-  const replay = q<HTMLButtonElement>('[data-xp-replay]');
-  const clock = q<HTMLElement>('.xp-clock');
-  const stage = q<HTMLElement>('.xp-stage');
-  const label = toggle?.querySelector('.xp-btn__label');
-  if (!ctl || !toggle || !replay || !clock || !stage || !label) return;
+  const toggle = fig.querySelector<HTMLButtonElement>('[data-xp-toggle]');
+  const clock = fig.querySelector<HTMLElement>('.xp-clock');
+  const stage = fig.querySelector<HTMLElement>('.xp-stage');
+  const visual = fig.querySelector<HTMLElement>('.xp-visual');
+  if (!toggle || !clock || !stage) return;
   const cls = fig.classList;
-  let runs = 0;
-  let max = 1;
-  let started = false;
+  let state: State = 'idle';
   let autoPaused = false;
+  let io: IntersectionObserver | null = null;
 
-  const sync = () => {
-    const playing = cls.contains('is-playing') && !cls.contains('is-paused');
-    toggle.dataset.state = playing ? 'playing' : 'paused';
-    label.textContent = (playing ? toggle.dataset.labelPause : toggle.dataset.labelPlay) ?? '';
+  const set = (s: State) => {
+    state = s;
+    toggle.dataset.state = s;
+    cls.toggle('is-paused', s === 'paused');
   };
-  const restart = () => {
+  // Watched only during a run. The observer's first report is where the drawing is now (the reader
+  // may have pressed Play with it half off screen), so only a later scroll away pauses.
+  const watch = (on: boolean) => {
+    if (on && !io) {
+      let first = true;
+      io = new IntersectionObserver(
+        ([e]) => {
+          if (!e.isIntersecting) {
+            if (!first && state === 'playing') pause(true);
+          } else if (autoPaused && e.intersectionRatio >= 0.25) resume();
+          first = false;
+        },
+        { threshold: [0, 0.25] },
+      );
+      io.observe(stage);
+    } else if (!on && io) {
+      io.disconnect();
+      io = null;
+    }
+  };
+  const start = () => {
+    // On a phone the button sits under the drawing and its caption, so the reader may press Play
+    // with the drawing scrolled off the top. Bring the drawing, caption and button into view (or as
+    // much of them as fits, button included) before the run starts.
+    const r = stage.getBoundingClientRect();
+    if (Math.min(r.bottom, innerHeight) - Math.max(r.top, 0) < r.height / 2) {
+      (visual ?? stage).scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
     cls.remove('is-playing', 'is-paused');
     void fig.offsetWidth; // flush styles so every animation starts again from zero
     cls.add('is-playing');
-  };
-  const play = (n: number) => {
-    runs = 0;
-    max = n;
     autoPaused = false;
-    restart();
-    sync();
+    set('playing');
+    watch(true);
   };
-  const stop = () => {
-    cls.remove('is-playing', 'is-paused');
-    sync();
-  };
-  const pause = (auto: boolean) => {
-    if (!cls.contains('is-playing') || cls.contains('is-paused')) return;
-    cls.add('is-paused');
+  function pause(auto: boolean) {
     autoPaused = auto;
-    sync();
-  };
-  const resume = () => {
-    cls.remove('is-paused');
+    set('paused');
+    if (!auto) watch(false);
+  }
+  function resume() {
     autoPaused = false;
-    sync();
+    set('playing');
+    watch(true);
+  }
+  const end = () => {
+    cls.remove('is-playing', 'is-paused');
+    autoPaused = false;
+    set('ended');
+    watch(false);
   };
 
   const onEnd = (e: AnimationEvent) => {
-    if (e.target !== clock) return;
-    if (++runs < max) restart();
-    else stop();
+    if (e.target === clock) end();
   };
   const onToggle = () => {
-    if (cls.contains('is-paused')) resume();
-    else if (cls.contains('is-playing')) pause(false);
-    else play(1);
+    if (state === 'playing') pause(false);
+    else if (state === 'paused') resume();
+    else start();
   };
-  const onReplay = () => play(1);
   clock.addEventListener('animationend', onEnd);
   toggle.addEventListener('click', onToggle);
-  replay.addEventListener('click', onReplay);
-
-  const io = new IntersectionObserver(
-    ([e]) => {
-      if (e.intersectionRatio >= 0.5) {
-        if (!started && !saveData) {
-          started = true;
-          play(MAX_RUNS);
-        } else if (autoPaused) resume();
-      } else pause(true);
-    },
-    { threshold: [0, 0.5] },
-  );
-  io.observe(stage);
+  set('idle');
   cls.add('is-live');
-  sync();
 
   teardowns.push(() => {
-    io.disconnect();
+    watch(false);
     clock.removeEventListener('animationend', onEnd);
     toggle.removeEventListener('click', onToggle);
-    replay.removeEventListener('click', onReplay);
-    stop();
-    cls.remove('is-live');
+    cls.remove('is-live', 'is-playing', 'is-paused');
+    set('idle');
   });
 }
 

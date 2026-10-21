@@ -54,6 +54,16 @@
 }
 .plate[data-shape='portrait'] .plate__art { inline-size: 100%; max-inline-size: 24rem; justify-self: center; }
 .plate__art { position: relative; min-inline-size: 0; }
+/* A plate may have a dark-scheme version of its art (art_dark in src/data/infographics/<id>.yaml).
+   Each design says which one its current scheme shows (--plate-show-light / --plate-show-dark in
+   themes/<t>/media.css: every design follows the reader's setting or the toggle). Both pictures
+   are lazy, so the hidden one is never fetched; same proportions, so the markers fit both. */
+.plate .plate__picture--light { display: var(--plate-show-light, block); }
+.plate .plate__picture--dark { display: var(--plate-show-dark, none); }
+@media print {
+  :root .plate .plate__picture--light { display: block; }
+  :root .plate .plate__picture--dark { display: none; }
+}
 .plate__markers { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; overflow: visible; pointer-events: none; direction: ltr; }
 .plate__marker { transform-box: fill-box; transform-origin: center; }
 .plate__n { font-weight: 700; font-variant-numeric: tabular-nums; }

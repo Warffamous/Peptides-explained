@@ -32,6 +32,13 @@
 .xp-kicker { font-size: var(--s--1); font-weight: 700; color: var(--primary); }
 .xp-title { font-size: var(--s-2); font-weight: 700; line-height: 1.25; color: var(--text); }
 .xp-stage { padding: var(--space-2); border-radius: var(--radius); background: var(--bg); }
+/* On a picture (registry art): the picture is the stage; halos and the scene veil in the page colour. */
+.explainer { --xp-ground: var(--bg); --xp-halo-w: 7.5; --xp-veil: 0.72; }
+.explainer[data-backdrop] .xp-stage { overflow: hidden; }
+/* On a phone the card's padding would take a tenth of the picture's width: give it back. */
+@media (max-width: 30rem) {
+  .explainer[data-backdrop] { padding: var(--space-2); }
+}
 .xp-art .xp-move { --xp-in-dur: 0.7s; }
 
 /* artwork: bold and flat; fine detail is dropped */
@@ -116,5 +123,6 @@
 .xp-legend { font-size: var(--s--1); color: var(--text-2); }
 .xp-legend__title { font-weight: 700; color: var(--text); }
 .xp-sources { font-size: var(--s--1); color: var(--text-2); }
+.xp-credit { font-size: var(--s--1); color: var(--text-2); }
 .xp-sources__label { font-weight: 700; color: var(--text); }
 .xp-review { font-size: var(--s--1); color: var(--text-2); }

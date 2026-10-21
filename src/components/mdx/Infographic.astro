@@ -29,7 +29,16 @@ const lang = isFallback(L, `infographics.${id}.title`) ? SOURCE_LOCALE : undefin
 const dir = lang ? getLocale(SOURCE_LOCALE).dir : undefined;
 const portrait = art.image.height > art.image.width * 1.05;
 // Portrait art is held to 24rem by the layout (media.css); landscape art takes ~3/5 of a wide plate.
-const pic = await buildPicture(art, { widths: [400, 640, 900, 1200], sizes: portrait ? '(min-width: 28rem) 24rem, 100vw' : '(min-width: 64rem) 36rem, 100vw' });
+const sizes = portrait ? '(min-width: 28rem) 24rem, 100vw' : '(min-width: 64rem) 36rem, 100vw';
+const pic = await buildPicture(art, { widths: [400, 640, 900, 1200], sizes });
+// Optional dark-scheme version of the same artwork (art_dark): shown instead of the light art when
+// the page is dark, so the plate is never a bright panel on a dark page. It must have the same
+// composition and proportions, because the markers are placed in % of the art.
+const artDark = g.art_dark ? getMedia(g.art_dark) : undefined;
+if (artDark && Math.abs(artDark.image.width / artDark.image.height - art.image.width / art.image.height) > 0.01) {
+  throw new Error(`<Infographic id="${id}">: art_dark "${g.art_dark}" must have the same proportions as "${g.art}" (the markers are placed in % of the art)`);
+}
+const picDark = artDark ? await buildPicture(artDark, { widths: [400, 640, 900, 1200], sizes }) : undefined;
 const W = pic.img.width;
 const H = pic.img.height;
 const r = Math.round(W * 0.034);
@@ -44,11 +53,13 @@ const refs = g.sources.map((sid) => {
 });
 const base = uid(Astro, `plate-${id}`);
 ---
-<figure class="plate" id={base} aria-labelledby={`${base}-title`} data-art-origin={art.origin} data-shape={portrait ? 'portrait' : 'landscape'} lang={lang} dir={dir}>
+<figure class="plate" id={base} aria-labelledby={`${base}-title`} data-art-origin={art.origin} data-shape={portrait ? 'portrait' : 'landscape'} data-dark-art={picDark ? '' : undefined} lang={lang} dir={dir}>
   <figcaption class="plate__title" id={`${base}-title`}>{text.title}</figcaption>
   <div class="plate__body">
     <div class="plate__art">
-      <MediaPicture pictures={[pic]} alt="" class="plate__picture" imgClass="plate__img" />
+      {/* Both pictures are lazy: the one hidden by the colour scheme (display: none) is never fetched. */}
+      <MediaPicture pictures={[pic]} alt="" class={picDark ? 'plate__picture plate__picture--light' : 'plate__picture'} imgClass="plate__img" />
+      {picDark && <MediaPicture pictures={[picDark]} alt="" class="plate__picture plate__picture--dark" imgClass="plate__img" />}
       <svg class="plate__markers" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true" focusable="false" style={`--r: ${r}`}>
         {markers.map((mk) => (
           <g class="plate__marker" data-level={mk.level} data-evidence={mk.demonstrated === undefined ? undefined : mk.demonstrated ? 'demonstrated' : 'hypothesis'}>

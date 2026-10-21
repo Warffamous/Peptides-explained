@@ -1,9 +1,13 @@
 # Atlas plate: where semaglutide acts. Text in src/i18n/<locale>/infographics.json; see docs/MEDIA-GUIDE.md §6.
-# x/y are percentages of the unmirrored artwork (src/data/media.yaml: glp1-body-map).
-art: glp1-body-map
+# x/y are percentages of the unmirrored artwork (src/data/media.yaml: glp1-body-map-v2). The dark-scheme
+# version (glp1-body-map-v2-dark) is the same drawing at the same size, so the markers fit both; checked
+# by screenshot on 20 October 2026: 1 on the brain, 2 on the body of the stomach, 3 on the head of the
+# pancreas inside the duodenal C-loop, in both versions.
+art: glp1-body-map-v2
+art_dark: glp1-body-map-v2-dark
 markers:
   # brain: "less hunger" is measured in people, but that the brain is WHERE it acts rests on rodent work (Gabery 2020)
-  - { key: brain, x: 50, y: 7.8, level: animal }
-  - { key: stomach, x: 60, y: 53, level: human }
-  - { key: pancreas, x: 46, y: 62.4, level: human }
+  - { key: brain, x: 50, y: 9.7, level: animal }
+  - { key: stomach, x: 64.5, y: 58.9, level: human }
+  - { key: pancreas, x: 42.8, y: 70, level: human }
 sources: [friedrichsen-2021-appetite, gabery-2020-semaglutide-brain, ema-epar-wegovy, kapitza-2017-beta-cell, muller-2019-glp1-review]

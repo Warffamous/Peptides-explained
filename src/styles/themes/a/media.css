@@ -1,37 +1,40 @@
 @import "../../base/media.css";
 
 /*
- * A · Monograph — photographs and plates are printed, not displayed. One ink: every photo is set
- * as an ink-blue duotone (greyscale screened onto the accent), framed by a hairline, with the
- * credit in the mono face. Atlas plates read like an engraved pharmacopoeia plate: hairline
+ * A · Monograph — photographs and plates are printed, not displayed: natural colour, framed by a
+ * hairline, with the credit in the mono face. Atlas plates read like a pharmacopoeia plate: hairline
  * numbered roundels, a ruled key. No rounded corners, no shadows, no gradients, no motion.
- * The dark edition is a different printing: cream-on-black monochrome; plates become negatives.
+ * The dark edition dims photographs a little and shows a plate's dark art (art_dark) as drawn; it
+ * never inverts or tints a picture.
  */
 :root {
-  --photo-ground: var(--accent);
-  --photo-blend: screen;
-  --photo-filter: grayscale(1) contrast(1.06);
-  --plate-ground: var(--accent);
-  --plate-blend: screen;
-  --plate-filter: grayscale(1) contrast(1.45);
-}
-:root[data-scheme='dark'] {
-  --photo-ground: var(--ink);
-  --photo-blend: multiply;
-  --photo-filter: grayscale(1) brightness(0.74) contrast(1.08);
-  --plate-ground: var(--paper);
+  --photo-ground: var(--tint);
+  --photo-blend: normal;
+  --photo-filter: saturate(0.9);
+  --plate-ground: #fdfdfb;
   --plate-blend: normal;
-  --plate-filter: grayscale(1) invert(0.9) contrast(1.05);
+  --plate-filter: none;
 }
+/* Dark: photographs a little dimmer; a plate shows its dark version of the art (art_dark) as drawn,
+   on the paper; a plate without one is dimmed to about 85% on a warm paper panel with a hairline,
+   never inverted. */
+:root[data-scheme='dark'] {
+  --photo-filter: saturate(0.9) brightness(0.9);
+  --plate-ground: #e9e5dc;
+  --plate-filter: brightness(0.85);
+  --plate-show-light: none;
+  --plate-show-dark: block;
+}
+:root[data-scheme='dark'] .plate[data-dark-art] { --plate-ground: var(--paper); --plate-filter: none; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-scheme='light']) {
-    --photo-ground: var(--ink);
-    --photo-blend: multiply;
-    --photo-filter: grayscale(1) brightness(0.74) contrast(1.08);
-    --plate-ground: var(--paper);
-    --plate-blend: normal;
-    --plate-filter: grayscale(1) invert(0.9) contrast(1.05);
+    --photo-filter: saturate(0.9) brightness(0.9);
+    --plate-ground: #e9e5dc;
+    --plate-filter: brightness(0.85);
+    --plate-show-light: none;
+    --plate-show-dark: block;
   }
+  :root:not([data-scheme='light']) .plate[data-dark-art] { --plate-ground: var(--paper); --plate-filter: none; }
 }
 
 /* ------------------------------------------------------------------ duotone frame */
@@ -78,14 +81,7 @@
   border-block: 1px solid var(--rule-strong);
   padding-block: var(--space-4);
 }
-.plate__title {
-  font-family: var(--font-mono);
-  font-size: var(--s--2);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-block-end: var(--space-4);
-}
+.plate__title { font-size: var(--s-0); font-weight: 650; margin-block-end: var(--space-4); }
 .plate__art { background: var(--plate-ground); border: var(--hair) solid var(--rule-strong); isolation: isolate; }
 .plate__img { filter: var(--plate-filter); mix-blend-mode: var(--plate-blend); }
 .plate__halo { fill: none; stroke: none; }
@@ -94,10 +90,8 @@
 .plate__n { fill: var(--ink); font-family: var(--font-mono); font-weight: 600; }
 
 .plate__key-title {
-  font-family: var(--font-mono);
-  font-size: var(--s--2);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: var(--s--1);
+  font-weight: 600;
   color: var(--ink-3);
   padding-block-end: var(--space-2);
   border-block-end: var(--hair) solid var(--rule-strong);
@@ -117,11 +111,11 @@
 .plate__label-text { font-weight: 650; }
 .plate__detail { color: var(--ink-2); }
 .plate__words { margin-block-start: var(--space-4); font-size: var(--s--1); }
-.plate__words-summary { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.plate__words-summary { font-size: var(--s--1); font-weight: 600; color: var(--accent); }
 .plate__words-text { margin-block-start: var(--space-2); max-inline-size: var(--measure); }
 .plate__sources, .plate__credit { margin-block-start: var(--space-3); font-family: var(--font-mono); font-size: var(--s--2); color: var(--ink-3); }
 .plate__sources a { color: var(--ink-2); }
-.plate__sources-label, .plate__art-note { text-transform: uppercase; letter-spacing: 0.04em; }
+.plate__sources-label, .plate__art-note { font-weight: 600; }
 .plate__credit { margin-block-start: var(--space-1); }
 
 /* ------------------------------------------------------------------ image credits */
@@ -138,7 +132,14 @@
 .media-credits ul.media-credits__list { margin-block-start: var(--space-5); gap: 0; border-block-start: var(--hair) solid var(--rule-strong); }
 .media-credits__item { padding-block: var(--space-4); border-block-end: var(--hair) solid var(--rule); }
 .media-credits__shows { font-size: var(--s--1); margin-block-end: var(--space-2); max-inline-size: var(--measure); }
-.media-credits__kind { font-family: var(--font-mono); font-size: 0.85em; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+.media-credits__kind { font-size: max(0.85em, 0.8125rem); color: var(--ink-3); }
 .media-credits__meta { font-size: var(--s--1); }
-.media-credits__meta dt { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); padding-block-start: 0.2em; }
+.media-credits__meta dt { font-size: var(--s--2); font-weight: 600; color: var(--ink-3); padding-block-start: 0.2em; }
 .media-credits__review[data-review='pending'] { font-style: italic; }
+
+/* Plates take at least half of the column (DESIGN-DIRECTIONS §3.1): the body map is no longer a
+   210px sliver beside its key. */
+.plate[data-shape='portrait'] .plate__art { max-inline-size: 32rem; }
+@container plate (min-width: 40rem) {
+  .plate[data-shape='portrait'] .plate__body { grid-template-columns: minmax(0, 1fr) minmax(13rem, 1fr); }
+}

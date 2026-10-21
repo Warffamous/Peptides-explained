@@ -1,0 +1,35 @@
+---
+/**
+ * Fact sheet: a compact label/value list (the pharmacopoeia monograph header; Museum für Gestaltung
+ * label/value lists). On phones it follows the summary; from 64rem it fills the empty space under
+ * the title, beside the photo (structure.css). Three rows come from the data file, so every compound
+ * with the same facts says the same; the rest are glance.facts in the compound frontmatter (how it
+ * is taken, how often, how long it lasts: label facts, never a dose). It has no links, so moving it
+ * on wide screens does not change the focus order.
+ */
+import { t } from '../../lib/i18n';
+import type { CompoundData } from '../../schemas';
+type Fact = { label: string; value: string };
+interface Props { locale: string; data: CompoundData; facts: Fact[] }
+const { locale: L, data, facts } = Astro.props;
+const eu = data.regulatory.find((r) => r.jurisdiction === 'EU');
+const status = eu
+  ? eu.since && eu.status === 'authorised'
+    ? t(L, 'beginner.facts.statusSince', { status: t(L, `vocab.regStatus.${eu.status}`), year: eu.since.getUTCFullYear() })
+    : t(L, `vocab.regStatus.${eu.status}`)
+  : null;
+const rows: Fact[] = [
+  { label: t(L, 'beginner.facts.class'), value: t(L, `vocab.class.${data.class}`) },
+  ...facts,
+  ...(status ? [{ label: t(L, 'beginner.facts.status'), value: status }] : []),
+  // The short answer only ("Yes", "A little", "No"): the sentence is in the At a glance tile.
+  { label: t(L, 'beginner.facts.tested'), value: t(L, `beginner.glance.tested.${data.evidence.human_clinical}.short`) },
+];
+---
+<section class="fact-sheet" aria-labelledby="fact-sheet-title">
+  <h2 class="fact-sheet__title visually-hidden" id="fact-sheet-title">{t(L, 'beginner.facts.title')}</h2>
+  <dl class="fact-sheet__list">
+    {rows.map((r) => <div class="fact-sheet__row"><dt>{r.label}</dt><dd>{r.value}</dd></div>)}
+  </dl>
+  <p class="fact-sheet__note">{t(L, 'beginner.facts.note')}</p>
+</section>

@@ -26,8 +26,9 @@ Live examples: `glp1-action` (mechanism section) and `insulin-glp1-hypo` (risks 
 2. **The step list is the text equivalent.** The ordered list of captions is always in the page and
    always visible. The artwork is `aria-hidden`; nothing it shows may be missing from the list.
 3. **The still picture is complete.** The default (un-animated) state of every part of the drawing is
-   the **final frame**. That is what readers get with JavaScript off, with reduced motion, in print,
-   and after the animation has finished. Design the final frame first; the animation only reveals it.
+   the **final frame**. That is what every reader sees first (nothing plays until the reader presses
+   Play, §3.4), and what they get with JavaScript off, with reduced motion, in print, and after the
+   animation has finished. Design the final frame first; the animation only reveals it.
 4. **Evidence is drawn honestly.** Every causal link has the evidence level of the step it belongs to:
    solid = shown in people, long dashes = shown in animals or cells, short dashes = a hypothesis
    (and, in design B, cyan for demonstrated, amber for hypothesised). When one step draws two links
@@ -79,8 +80,9 @@ Live examples: `glp1-action` (mechanism section) and `insulin-glp1-hypo` (risks 
 |---|---|---|
 | Registry (locale-independent) | `src/data/explainers.yaml` | duration, steps with evidence levels, sources, `mirror`, pages, review status. Schema: `src/schemas/explainers.ts`. |
 | Captions | `src/i18n/<locale>/explainers.json` | `{ "<id>": { "title", "steps": [one per step], "summary", "caption", "labels": { key: word } } }`. `caption` (optional, but give one): the still's one sentence, shown large under the final frame; it may say nothing the summary does not. A label may contain `\n` for a line break the translator chooses. |
-| UI strings | `src/i18n/<locale>/explainer-ui.json` | Play, Pause, Replay, legend, "Based on", notices. |
-| Artwork | `src/components/explainers/<id>.astro` | Inline SVG + overlays. Helpers in `src/components/explainers/parts/`. |
+| UI strings | `src/i18n/<locale>/explainer-ui.json` | The button's four faces (`play` "Play the {seconds}-second animation", `pause`, `resume` "Continue", `replay`), legend, "Based on", notices. |
+| Artwork | `src/components/explainers/<id>.astro` | Inline SVG + overlays. Helpers in `src/components/explainers/parts/`. With a picture (§3.6) this file is the overlay drawn on it. |
+| Picture under the overlay (optional) | `art` / `art_dark` in the registry → `src/data/media.yaml` | Text-free art (`kind: infographic-art`), e.g. AI art made with `npm run media:generate` (MEDIA-GUIDE §3); `art_dark` is the same picture for the dark scheme. |
 | New sources | `src/data/sources/explainers.yaml` (or the topic's own file) | Metadata copied from PubMed / the fetched page, never from memory. |
 | Engine | `src/components/mdx/Explainer.astro`, `src/scripts/explainer.ts`, `src/plugins/remark-explainer-sources.mjs` | |
 | Styles | `src/styles/base/explainer.css` (structure, timeline), `src/styles/themes/<a\|b\|c>/explainer.css` (motion language, colours) | |
@@ -93,7 +95,8 @@ The figure carries `--xp-dur` (seconds) and `--xp-steps`; each step lasts `--xp-
 Every animated part has `--k` (its step, 0-based) and optionally `--lag` (seconds into the step), and
 starts at `k × step + lag`. The caption highlight, the step pins, the progress segments and the
 artwork all use the same clock, so they cannot drift apart. The script
-(`src/scripts/explainer.ts`, under 1 KB gzipped) only adds and removes `is-playing` / `is-paused`.
+(`src/scripts/explainer.ts`, under 1 KB gzipped) only adds and removes `is-playing` / `is-paused` when
+the reader presses the button, and sets the button's `data-state` (`idle`, `playing`, `paused`, `ended`).
 
 Write positions with the helpers from `parts/timeline.ts`:
 
@@ -114,6 +117,9 @@ Write positions with the helpers from `parts/timeline.ts`:
 | `xp-link` + `data-level` | a causal link; pattern (and colour in B) from the level | drawn |
 | `xp-curve` | a data line (drawn on in A and B, appears in C) | drawn |
 | `xp-focus` + `--span` | strong during steps k … k + span − 1, faded the rest of the run (rule 8b) | strong |
+| `xp-flow` | with `xp-in`: glides in from `--dx` over most of its step (molecules carried by a vessel) | in place |
+| `xp-veil` + `--span` | on a picture (§3.6): covers all but the scene's part during steps k … k + span − 1 | hidden |
+| `xp-halo` | on a picture: the same line or ring under itself, in the page colour, on the same timing | drawn |
 
 `xp-focus` is how a scene puts one message forward: wrap each part in a group with the step(s) it
 belongs to, e.g. `<g class="xp-focus" style="--k:2"><path class="xp-curve xp-in" …/></g>`. It only
@@ -135,10 +141,10 @@ files when you need a new one.
 
 | | A Monograph | B Mechanism | C Public Health |
 |---|---|---|---|
-| Proven links | drawn on as a line, linear | drawn on, ease-out, soft glow | appear |
+| Proven links | drawn on as a line, linear | drawn on, ease-out, no glow | appear |
 | Weaker links | dashes resolve in four plain steps | fade in, amber if hypothesis | appear, thick dashes |
-| Molecules | appear in place (no travel) | arrive on a spring | slide a short way |
-| Pins | square, hairline, monospace | round, neutral (colour is for evidence) | big teal discs |
+| Molecules | appear in place (no travel); carried along a vessel (`xp-flow`) they glide once, linearly | arrive on a spring | slide a short way |
+| Pins | square, hairline, monospace | round, neutral (colour is for evidence) | big slate discs |
 | Danger zone | hatched ink, no red | alert tint | alert red (stop-now content only) |
 | Detail | hairline anatomy | full detail | fine detail dropped, bold shapes |
 
@@ -185,10 +191,32 @@ sides together with their drawings. See `insulin-glp1-hypo`.
 
 ### 3.4 Playback and accessibility
 
-- Autoplay only when the artwork is at least half in view, motion is allowed and the reader has not
-  asked to save data. At most **two runs**, then rest on the final frame.
-- A visible **Pause/Play** and **Replay** control with text labels (WCAG 2.2.2), keyboard-operable,
-  in a labelled group. Playback pauses while scrolled out of view and resumes when back.
+- **The reader starts every animation. Nothing ever plays by itself** (owner's decision, 20 October
+  2026): no autoplay on load, on scroll or on hover. The default state, with JavaScript too, is the
+  complete final still with all its labels, the still's `caption` large under it, the step list, and
+  one clear button: **"Play the 15-second animation"** (the length comes from `duration`).
+- **Give each scene time to be read.** The large caption under the drawing changes with every scene,
+  so a scene of under 3 s is too fast for a 15–18-word caption (reader test of `glp1-action`, 20
+  October 2026: at 2.4 s per scene it was raised to 15 s for five scenes). Even 3 s is short: most
+  adults need 4–5 s for 18 words and a slow reader 7 s or more (reader re-test, 21 October 2026), so
+  the drawing and its word must carry each scene on their own, and the caption supports them. Whether
+  to raise the 15-second cap (about 5 s per scene) or to show a shorter scene title while it plays is
+  open for the owner. Within a scene the word starts to appear in its first second, together with
+  the ring or line it names, and is fully visible 1.2–2 s into the scene; moving marks follow. A word that
+  only appears at the end of its scene is missing for most of it.
+- That one button changes its words with the state: **Pause** while playing, **Continue** when
+  paused, and **Replay** once the single run has ended. A run always ends by resting on the final
+  frame again. The button is keyboard-operable, has a visible text label in every state (WCAG 2.2.2)
+  and sits in a labelled group ("Animation controls: <title>") with an `aria-hidden` progress bar.
+- **No layout shift between states:** the four faces of the button share one grid cell, so the
+  button is as wide as its longest face from the first paint; the inactive faces are
+  `visibility: hidden`, which also keeps them out of the accessible name. Never size the button by
+  its current words.
+- **Only while a run is under way**, scrolling the drawing out of view pauses it and scrolling back
+  resumes it. At rest, after the end and after the reader pauses, nothing is observed.
+- On a phone the button sits under the drawing and its caption, so a reader can press Play with the
+  drawing scrolled off the top: Play then first scrolls the drawing, caption and button into view
+  (as much as fits, the button always included).
 - **The current step, large, under the drawing** (rule 8d): the engine repeats each step caption in a
   box right under the stage, shown only during its step on the same clock (A cuts, B and C fade in
   briefly). All captions share one grid cell, so the box is as tall as the longest from the first
@@ -207,6 +235,45 @@ a direction-neutral flow — typically a time axis — may opt in with `mirror: 
 under `dir="rtl"` the artwork and its overlays then mirror together. Captions, numbers and controls
 follow the page direction as usual; numbers are in `<bdi>`.
 
+### 3.6 A picture under the overlay (`art`, `art_dark`)
+
+An explainer may draw its animation on a picture instead of on hand-drawn line art (owner's decision,
+20 October 2026, for `glp1-action`):
+
+```yaml
+glp1-action:
+  art: glp1-action-art            # media id: text-free art, kind infographic-art
+  art_dark: glp1-action-art-dark  # optional: the same picture for the dark scheme
+```
+
+- **The picture carries no meaning on its own and no text** (rule 1 still holds: every word is an
+  overlay label). It is the anatomy; everything that *happens* is drawn by the overlay SVG on top of
+  it: molecules gliding along a vessel (`xp-flow` with `--dx`), lines (`link()`), rings on the organ
+  being discussed (`xp-ring`, dashed with `data-level` for weaker evidence), insulin and glucagon
+  marks, and the words.
+- **One message per scene** (rule 8b) on a picture: a raster cannot be faded part by part, so each
+  scene has an `xp-veil` path (the whole canvas minus a hole around the scene's part, `fill-rule:
+  evenodd`, `--k` and `--span` like `xp-focus`). The veil is in the page colour and exists only while
+  its scene plays; the final frame has no veil. Overlay marks and labels still take `xp-focus`.
+- Lines and rings on a picture get a halo in the page colour: draw the same path twice, first with
+  `xp-halo` (`{ ...link(level, k), class: 'xp-link xp-halo xp-in' }`), on the same timing. Labels on a
+  picture get a soft backing in the page colour and never break a word in the middle.
+- **Same proportions.** The overlay's `viewBox` must have the picture's aspect ratio; the artwork
+  receives `backdrop: { width, height }` and throws if it does not match, and `<Explainer>` fails the
+  build when `art_dark` differs from `art` by more than 1%.
+- **Only the visible picture is downloaded.** Both are `loading="lazy"` responsive pictures (AVIF,
+  WebP, JPEG at 360–1024 px, `astro:assets`); the one the scheme hides is `display: none` (each
+  design sets `--plate-show-light` / `--plate-show-dark`, shared with atlas plates), so it is never
+  fetched. The overlay SVG keeps its `width`/`height`, so the space is reserved before the picture
+  arrives (no layout shift). Print uses the light picture.
+- The figure gets `data-backdrop`: the stage loses its padding (the picture is the stage) and the
+  credit line of the picture ("AI-generated illustration (model, date) · CC BY 4.0 · Image details")
+  appears under the sources, with the note that the words and marks are added by the site.
+- Plan the picture for the words: ask the image model for clear background where the labels go and
+  check the layout at 360 px in all three designs (C's bold labels are the widest).
+- The pictures are AI art with `ai.review: pending` until the owner has checked them (MEDIA-GUIDE §3);
+  the validator lists the explainer among the places that use them.
+
 ## 4. Adding an explainer
 
 1. **Outline** 4–6 steps on paper: for each, what happens, where, and how well it is shown. Decide the
@@ -223,7 +290,8 @@ follow the page direction as usual; numbers are in `<bdi>`.
 5. **Draw** `src/components/explainers/<id>.astro`: a `viewBox` SVG with `width`/`height` set (no
    layout shift), role classes, `link()`/`at()` from `parts/timeline.ts`, `xp-focus` per scene, a word
    from `labels` beside every element, pins only on the element they number. Keep the SVG under
-   about 10 KB.
+   about 10 KB. Or generate a text-free picture (light and dark, MEDIA-GUIDE §3) and draw only the
+   overlay on it (§3.6).
 6. **Place** it with a one-sentence lead-in: `<Explainer id="<id>" />`, and add the route to `pages`.
 7. **Check**: `npm run validate`, `npm run lint:css`, then look at it in all three designs, light and
    dark, at 360 px and 1280 px, with `?pseudo=rtl`, with reduced motion and with JavaScript off. Take a
@@ -240,9 +308,13 @@ A medical reviewer signs off with `review: { status: ok, by: <person id>, on: <d
       only on their element, every line and zone named in the final frame, a still caption, and each
       still passes the 5-second test.
 - [ ] No text, numbers or letters inside the SVG; overlay words are in `labels`.
+- [ ] With a picture (§3.6): the picture's own review (`ai.review_note`) is done, its anatomy matches
+      the overlay's rings and words, and the light and dark pictures show the same thing.
 - [ ] Captions are B1, one idea per sentence, no dose numbers, no advice beyond the label or guideline.
 - [ ] Nothing looks like a product, a vendor's vial, a brand, a before/after, or glamorised injecting.
 - [ ] Works and stays legible in A, B and C, light and dark, 360 px and 1280 px, RTL, reduced motion, no JS.
+- [ ] Nothing plays until the reader presses "Play the n-second animation"; the run ends on the final
+      frame and the button then says Replay; the button never changes width.
 - [ ] Red is used in design C only for stop-now safety content.
 
 ## 6. Backlog

@@ -81,13 +81,13 @@
 /* ------------------------------------------------------------------ prose */
 /* Zero specificity: a component's own colour (a badge, a callout line) always wins over prose ink. */
 :where(.prose) :where(p, li) { color: var(--text); }
-:where(.prose, .csec) > p { margin-block: 0 var(--space-5); }
-:where(.prose, .csec) > :is(ul, ol) { margin-block: 0 var(--space-5); padding-inline-start: 1.3em; }
+:where(.prose, .csec, .in-detail__body) > p { margin-block: 0 var(--space-5); }
+:where(.prose, .csec, .in-detail__body) > :is(ul, ol) { margin-block: 0 var(--space-5); padding-inline-start: 1.3em; }
 :where(.prose, .csec) li { margin-block: 0.4rem; }
 :where(.prose, .csec) li::marker { color: var(--text-3); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-block: var(--space-8) var(--space-5); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
-:where(.prose, .csec, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-0); font-weight: 600; margin-block: var(--space-5) var(--space-2); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h2 { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-block: var(--space-8) var(--space-5); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h3 { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-block: var(--space-6) var(--space-3); }
+:where(.prose, .csec, .in-detail__body, .callout__body, .faq__a, .diagram__text) > h4 { font-size: var(--s-0); font-weight: 600; margin-block: var(--space-5) var(--space-2); }
 .prose strong { font-weight: 600; color: var(--text); }
 .prose blockquote { margin: 0 0 var(--space-5); padding: var(--space-3) var(--space-5); border-inline-start: 3px solid var(--line-strong); color: var(--text-2); }
 .prose table:not(.data-table) { inline-size: 100%; margin-block-end: var(--space-5); font-size: var(--s--1); border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -178,10 +178,8 @@ a.term:hover { color: var(--link); }
 .seq-beads__bead.is-d { stroke: var(--res-nonstandard); stroke-dasharray: 3 2; }
 /* Charge is drawn as well as coloured: + and − marks inside the charged beads. */
 .seq-beads__charge, .seq-key__charge { fill: none; stroke: var(--surface); stroke-width: 2.2; stroke-linecap: round; pointer-events: none; }
-@media (prefers-reduced-motion: no-preference) {
-  .seq-beads__bead, .seq-beads__charge { animation: b-bead 1.2s var(--spring) both; animation-delay: calc(var(--i, 0) * 40ms); }
-}
-@keyframes b-bead { from { transform: scale(0.4); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+/* The beads are drawn still: nothing on the page moves unless the reader starts it (owner's decision,
+   20 October 2026; DESIGN-DIRECTIONS-2026-10 §3.2, motion grammar). */
 .seq-beads__bead, .seq-beads__charge { transform-box: fill-box; transform-origin: center; }
 /* The plain key for the residue colours (only the kinds present in this sequence). */
 .seq-key { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); margin: var(--space-3) 0 0; padding: 0; list-style: none; font-size: var(--s--2); color: var(--text-2); }
@@ -364,6 +362,19 @@ a.term:hover { color: var(--link); }
 .authorised__name { display: block; font-weight: 600; }
 .authorised__holder, .authorised__route-type { display: block; font-size: var(--s--2); color: var(--text-2); font-weight: 400; }
 .authorised .icon--external { inline-size: 0.9em; block-size: 0.9em; vertical-align: -0.1em; margin-inline-start: 0.25em; }
+/* The block now sits in an "In detail" fold in the reading column. When it is narrower than the
+   five-column table needs, each product becomes a card (as the study table does on a phone)
+   instead of a table squeezed to a few words per line or scrolled sideways. */
+.authorised { container: authorised / inline-size; }
+@container authorised (max-width: 46rem) {
+  .authorised__products { min-inline-size: 0; }
+  .authorised__products thead { display: none; }
+  .authorised__products, .authorised__products tbody { display: grid; gap: var(--space-3); }
+  .authorised__products tr { display: grid; gap: var(--space-2); padding: var(--space-4); border-radius: var(--radius); border: 1px solid var(--line); }
+  .authorised__products :is(th, td) { display: block; padding: 0; border: 0; }
+  .authorised__products td::before { content: attr(data-label); display: block; font-size: var(--s--2); font-weight: 600; color: var(--text-2); }
+  .authorised .table-scroll { overflow: visible; margin-block-end: 0; }
+}
 
 /* ------------------------------------------------------------------ callouts */
 .callout { margin-block: 0 var(--space-6); padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }

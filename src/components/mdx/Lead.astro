@@ -1,0 +1,15 @@
+---
+/**
+ * <Lead question="Is it legal?">Yes, on prescription: …</Lead> — the opener of a section in the
+ * "less text, more visuals" layout (docs/design/DESIGN-DIRECTIONS-2026-10.md §3.2 rule 2): the
+ * reader's question, then a one-sentence answer set large (the lede). Someone who reads only the
+ * section titles and these answers gets the beginner version of the page. The answer condenses
+ * what the section shows and cites below it; it adds no claim of its own.
+ */
+interface Props { question: string }
+const { question } = Astro.props;
+---
+<div class="lead">
+  <p class="lead__q">{question}</p>
+  <div class="lead__a"><slot /></div>
+</div>

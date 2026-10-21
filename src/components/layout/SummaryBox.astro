@@ -13,11 +13,16 @@ import { t, has } from '../../lib/i18n';
 import { getLocale } from '../../lib/config';
 import { formatNumber } from '../../lib/format';
 
-interface Props { locale: string; items: string[]; title?: string; id?: string; readingMinutes?: number }
-const { locale, items, title = t(locale, 'common.summary'), id = 'summary', readingMinutes } = Astro.props;
+interface Props { locale: string; items: string[]; title?: string; id?: string; readingMinutes?: number; readingMinutesShort?: number }
+const { locale, items, title = t(locale, 'common.summary'), id = 'summary', readingMinutes, readingMinutesShort } = Astro.props;
 
-let time: [string, string, string] | null = null;
-if (readingMinutes) {
+let time: string[] | null = null;
+if (readingMinutes && readingMinutesShort) {
+  // "The short version takes about 9 minutes. Everything, with all details open, takes about 52 minutes."
+  const MARK = '\u0000';
+  const [a, b, c] = t(locale, 'beginner.summary.readingTimeSplit', { short: MARK, full: MARK }).split(MARK);
+  time = [a, formatNumber(locale, readingMinutesShort), b, formatNumber(locale, readingMinutes), c];
+} else if (readingMinutes) {
   const plural = new Intl.PluralRules(getLocale(locale).bcp47).select(readingMinutes);
   const key = has(locale, `beginner.summary.readingTime.${plural}`) ? `beginner.summary.readingTime.${plural}` : 'beginner.summary.readingTime.other';
   const MARK = '\u0000';
@@ -32,7 +37,7 @@ if (readingMinutes) {
     {time && (
       <p class="summary-box__time">
         <ThemeOnly theme="c" as="span" class="summary-box__time-icon"><Pictogram name="summary-reading-time" /></ThemeOnly>
-        <span>{time[0]}<bdi class="qty">{time[1]}</bdi>{time[2]}</span>
+        <span>{time.map((part, i) => (i % 2 ? <bdi class="qty">{part}</bdi> : part))}</span>
       </p>
     )}
   </div>

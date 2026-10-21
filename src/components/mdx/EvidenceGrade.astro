@@ -11,9 +11,11 @@ import { getCompoundData, resolveCompound } from '../../lib/content';
 import { ctxLocale } from '../../lib/ctx';
 import ThemeOnly from '../ui/ThemeOnly.astro';
 import Pictogram from '../ui/Pictogram.astro';
+import InDetail from './InDetail.astro';
 
-interface Props { compound?: string; compact?: boolean; headingLevel?: 2 | 3 }
-const { compact = false, headingLevel = 2 } = Astro.props;
+/** foldWhy: the reason for each grade, and the note on reading the card, move into one "In detail" fold under the card. */
+interface Props { compound?: string; compact?: boolean; headingLevel?: 2 | 3; foldWhy?: boolean }
+const { compact = false, headingLevel = 2, foldWhy = false } = Astro.props;
 const L = ctxLocale(Astro);
 const slug = Astro.props.compound ?? Astro.locals.compound?.slug;
 if (!slug) throw new Error('<EvidenceGrade> needs compound="slug" outside compound pages');
@@ -55,11 +57,22 @@ const id = `grade-${slug}${compact ? '-c' : ''}`;
             ))}
           </ol>
         </dd>
-        {!compact && rationale && <dd class="grade__why">{rationale[a.axis]}</dd>}
+        {!compact && !foldWhy && rationale && <dd class="grade__why">{rationale[a.axis]}</dd>}
       </div>
     ))}
   </dl>
-  {!compact && (
+  {!compact && foldWhy && rationale && (
+    <InDetail title={t(L, 'evidence.whyFold')}>
+      <dl class="grade__whys">
+        {axes.map((a) => <div class="grade__whys-row"><dt>{t(L, `evidence.axes.${a.axis}.name`)}</dt><dd>{rationale[a.axis]}</dd></div>)}
+      </dl>
+      <p class="grade__foot">
+        <span class="grade__note">{t(L, 'evidence.why')}</span>{' '}
+        <a class="grade__rubric-link" href={routeUrl(L, 'evidence/evidence-grading')}>{t(L, 'evidence.rubricLink')}</a>
+      </p>
+    </InDetail>
+  )}
+  {!compact && !foldWhy && (
     <p class="grade__foot">
       <span class="grade__note">{t(L, 'evidence.why')}</span>{' '}
       <a class="grade__rubric-link" href={routeUrl(L, 'evidence/evidence-grading')}>{t(L, 'evidence.rubricLink')}</a>

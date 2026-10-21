@@ -4,7 +4,8 @@
  * Errors: unregistered image file · image referenced (hero, <Photo>, <Infographic>, plate art) but
  * not registered · registered file missing · missing alt text in the source locale · disallowed
  * licence (NC/ND/unknown, or not matching the origin) · source_url/license_url host not on the
- * link allowlist · AI entry without model/prompt/date · infographic without data, text or labels.
+ * link allowlist · AI entry without model/prompt/date · infographic without data, text or labels ·
+ * an explainer backdrop (explainers.yaml art / art_dark) that is not registered text-free art.
  * Warning: AI artwork whose scientific review is still pending (a page must not ship with it).
  */
 import fs from 'node:fs';
@@ -116,7 +117,31 @@ export function validateMedia(ctx: Ctx): { images: number; infographics: number;
     if (media.has(r.data.art) && media.get(r.data.art)!.kind !== 'infographic-art') err(file, `art "${r.data.art}" must be kind: infographic-art (text-free artwork)`);
     for (const s of r.data.sources) if (!ctx.hasSource(s)) err(file, `sources: unknown source id "${s}"`);
     use(r.data.art, `infographic ${id}`);
+    if (r.data.art_dark) {
+      // the dark-scheme version of the same art (<Infographic> checks at build time that the proportions match)
+      requireMedia(file, r.data.art_dark, 'art_dark');
+      if (media.has(r.data.art_dark) && media.get(r.data.art_dark)!.kind !== 'infographic-art') err(file, `art_dark "${r.data.art_dark}" must be kind: infographic-art (text-free artwork)`);
+      if (r.data.art_dark === r.data.art) err(file, 'art_dark is the same image as art: give the dark version its own media entry, or leave art_dark out');
+      use(r.data.art_dark, `infographic ${id} (dark)`);
+    }
   }
+  // Explainer backdrops (src/data/explainers.yaml art / art_dark): text-free art under the overlay.
+  // <Explainer> checks at build time that both pictures and the overlay share their proportions.
+  const xpFile = path.join(ROOT, 'src/data/explainers.yaml');
+  if (fs.existsSync(xpFile)) {
+    const reg = (readYaml(xpFile) ?? {}) as Record<string, { art?: string; art_dark?: string; pages?: string[] }>;
+    for (const [xid, x] of Object.entries(reg)) {
+      for (const field of ['art', 'art_dark'] as const) {
+        const mid = x?.[field];
+        if (!mid) continue;
+        requireMedia(xpFile, mid, `explainer ${xid}: ${field}`);
+        const kind = media.get(mid)?.kind;
+        if (kind && kind !== 'infographic-art' && kind !== 'illustration') err(xpFile, `explainer ${xid}: ${field} "${mid}" must be text-free art (kind: infographic-art or illustration), not ${kind}`);
+        use(mid, `explainer ${xid}${field === 'art_dark' ? ' (dark)' : ''}${x.pages?.length ? ` on ${x.pages.join(', ')}` : ''}`);
+      }
+    }
+  }
+
   for (const loc of ctx.localeCodes) {
     const file = path.join(ROOT, `src/i18n/${loc}/infographics.json`);
     if (!fs.existsSync(file)) {
@@ -152,8 +177,9 @@ export function validateMedia(ctx: Ctx): { images: number; infographics: number;
       const id = ID_ATTR.exec(m[1])?.[1];
       if (!id) { err(file, '<Infographic> needs id="infographic-id"'); continue; }
       if (!infographics.has(id)) err(file, `<Infographic id="${id}">: no data file src/data/infographics/${id}.yaml`);
-      const art = (readYaml(path.join(ROOT, `src/data/infographics/${id}.yaml`)) as { art?: string } | null)?.art;
-      if (art) use(art, where);
+      const g = readYaml(path.join(ROOT, `src/data/infographics/${id}.yaml`)) as { art?: string; art_dark?: string } | null;
+      if (g?.art) use(g.art, where);
+      if (g?.art_dark) use(g.art_dark, where);
     }
   }
 

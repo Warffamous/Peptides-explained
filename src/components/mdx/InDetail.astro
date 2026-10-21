@@ -1,0 +1,42 @@
+---
+/**
+ * <InDetail title="Kidneys: the FLOW trial">…markdown…</InDetail> — the fold for depth (layer 3 of
+ * the progressive disclosure in docs/design/DESIGN-DIRECTIONS-2026-10.md §3.2). A native
+ * <details>: it works without JavaScript, by keyboard and with every screen reader, and browsers
+ * open it by themselves for find-in-page and for a link to something inside it. Everything is in
+ * the HTML (Pagefind indexes it) and everything prints open (base/figures.css and
+ * src/scripts/in-detail.ts). The page-level "Open all details" control (ReadingTools.astro) opens
+ * and closes every fold at once.
+ *
+ * The summary says how long the fold takes to read, computed from its rendered text, so the reader
+ * knows the cost before opening it.
+ */
+import { t } from '../../lib/i18n';
+import { ctxLocale } from '../../lib/ctx';
+import { wordCount, readingMinutes } from '../../lib/readability';
+interface Props { title: string; id?: string }
+const { title, id } = Astro.props;
+const L = ctxLocale(Astro);
+const html = Astro.slots.has('default') ? await Astro.slots.render('default') : '';
+// Readable words only: drop scripts, the explainer stage (a visual duplicate), tags and entities.
+const text = html
+  .replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/gi, ' ')
+  .replace(/<[^>]+aria-hidden="true"[^>]*>[\s\S]*?<\/(?:div|span)>/gi, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&[a-z#0-9]+;/gi, ' ');
+const n = readingMinutes(wordCount(text));
+---
+<details class="in-detail" id={id} data-in-detail>
+  <summary class="in-detail__summary">
+    <span class="in-detail__icon" aria-hidden="true"></span>
+    <span class="in-detail__head">
+      <span class="in-detail__label">{t(L, 'figures.inDetail.label')}<span class="visually-hidden">: </span></span>
+      <span class="in-detail__title">{title}</span>
+    </span>
+    <span class="in-detail__time"><span aria-hidden="true"><bdi>{t(L, 'figures.inDetail.minutes', { n })}</bdi></span><span class="visually-hidden">, {t(L, 'figures.inDetail.minutesLong', { n })}</span></span>
+  </summary>
+  <div class="in-detail__body"><Fragment set:html={html} /></div>
+</details>
+<script>
+  import '../../scripts/in-detail.ts';
+</script>

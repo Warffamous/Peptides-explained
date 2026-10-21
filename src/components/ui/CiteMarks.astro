@@ -1,0 +1,16 @@
+---
+/**
+ * Citation numbers for text rendered outside the MDX body (the stop strip, the fact sheet): the
+ * same markup as <Cite>, numbered from the page's citation index, so every number links into the
+ * page's source list. Ids not in the index are skipped (the compound page adds them before render).
+ */
+import { t } from '../../lib/i18n';
+interface Props { locale: string; ids: string[]; index: Map<string, number> }
+const { locale: L, ids, index } = Astro.props;
+const nums = ids.map((id) => index.get(id)).filter((n): n is number => !!n);
+---
+{nums.length > 0 && (
+  <sup class="cite__marks">{nums.map((n, i) => (
+    <>{i > 0 && <span class="cite__sep">,</span>}<a class="cite__link" href={`#src-${n}`} aria-label={t(L, 'common.cite.label', { n })}>{n}</a></>
+  ))}</sup>
+)}

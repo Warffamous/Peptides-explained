@@ -27,6 +27,12 @@
 .xp-kicker { font-family: var(--font-mono); font-size: var(--s--2); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
 .xp-title { font-size: var(--s-1); font-weight: 650; letter-spacing: -0.01em; line-height: 1.25; color: var(--ink); }
 .xp-stage { border: var(--hair) solid var(--rule); background: var(--paper); padding: var(--space-3); }
+/* On a picture (registry art): the lines carry a little more weight than A's hairline drawings, a
+   halo and the scene veil are in the paper colour, and the veil leaves the scene's organ clear. */
+.explainer { --xp-ground: var(--paper); --xp-halo-w: 5; --xp-veil: 0.7; }
+.explainer[data-backdrop] .xp-art .xp-link { stroke-width: 2.2; }
+.explainer[data-backdrop] .xp-art .xp-ring { stroke-width: 2.4; }
+.explainer[data-backdrop] .xp-art .xp-food { fill: var(--ramp-3); } /* the food marks read on the picture in both schemes */
 
 /* artwork */
 .xp-art .xp-vessel { fill: var(--tint); stroke: var(--ink-3); stroke-width: 1; }
@@ -67,7 +73,8 @@
 
 /* overlays: numbered marks set like plate references */
 .xp-pin { background: var(--paper); color: var(--ink); border: 1px solid var(--ink); font-family: var(--font-mono); font-weight: 600; }
-.xp-label { font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+.xp-label { font-size: clamp(0.875rem, 2.8cqi, 1rem); font-weight: 500; color: var(--ink-2); }
+.xp-pin { font-size: clamp(0.75rem, 2.9cqi, 0.95rem); }
 /* words that say what a line does are read as a sentence: set in the text face, in ink */
 .xp-label[data-tone='zone'] { background: var(--paper); padding-inline: 0.2em; margin-inline-start: -0.2em; }
 /* In a chart only words on the hatching (ground) get the paper backing; on the tinted band a paper box
@@ -90,11 +97,15 @@
 .xp-now__n { display: inline-block; min-inline-size: 1.6em; margin-inline-end: 0.35em; padding-inline: 0.2em; border: 1px solid var(--ink); font-family: var(--font-mono); font-size: var(--s--1); font-weight: 600; text-align: center; color: var(--ink); }
 
 /* controls */
-.xp-btn { min-block-size: 2.25rem; padding: 0.3rem 0.75rem; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); font-family: var(--font-mono); font-size: var(--s--2); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
-.xp-btn:hover { background: var(--ink); color: var(--paper); }
+.xp-btn { min-block-size: 2.25rem; padding: 0.3rem 0.75rem; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); font-size: var(--s--1); font-weight: 600; }
+.xp-btn:hover { background: var(--stamp); color: var(--stamp-ink); }
+/* The one button that starts the animation: a clear, filled call to action (the quieter accent fill
+   in dark, so it does not glow). Hover keeps the stamp of every other A button. */
+.xp-btn--toggle { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--accent-fill-ink); }
+.xp-btn--toggle:hover { background: var(--stamp); border-color: var(--ink); color: var(--stamp-ink); }
 .xp-progress { block-size: 2px; gap: 2px; }
 .xp-seg { background: var(--rule); }
-.xp-seg::before { background: var(--accent); }
+.xp-seg::before { background: var(--accent-fill); }
 .xp-rm-note { font-size: var(--s--2); color: var(--ink-3); font-family: var(--font-mono); letter-spacing: 0.02em; }
 
 /* the step list: a compact storyboard between hairlines */
@@ -102,10 +113,11 @@
 .xp-step { gap: 0 0.75rem; padding-block: 0.55rem; padding-inline: 0.6rem 0.25rem; border-block-end: var(--hair) solid var(--rule); border-inline-start-width: 2px; }
 .xp-step__n { font-family: var(--font-mono); font-size: var(--s--1); font-weight: 600; color: var(--ink-3); padding-block-start: 0.12em; min-inline-size: 1.2em; }
 .xp-step__text { font-size: var(--s--1); line-height: 1.5; color: var(--ink); }
-.xp-step__levels { margin-block-start: 0.35rem; font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); }
+.xp-step__levels { margin-block-start: 0.35rem; font-size: var(--s--2); color: var(--ink-3); }
 .xp-summary { font-size: var(--s--1); color: var(--ink-2); }
 .xp-legend { font-family: var(--font-mono); font-size: var(--s--2); letter-spacing: 0.02em; color: var(--ink-2); }
-.xp-legend__title { text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); }
+.xp-legend__title { font-family: var(--font-sans); font-weight: 600; color: var(--ink-3); }
 .xp-sources { font-size: var(--s--2); color: var(--ink-3); }
-.xp-sources__label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em; }
+.xp-credit { font-family: var(--font-mono); font-size: var(--s--2); color: var(--ink-3); } /* as the plate credit (media.css) */
+.xp-sources__label { font-weight: 600; }
 .xp-review { font-size: var(--s--2); font-style: italic; color: var(--ink-3); }

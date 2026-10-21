@@ -34,6 +34,14 @@ export const explainerSchema = z.object({
   sources: z.array(kebab).min(1),
   /** true only when the artwork is a direction-neutral flow (e.g. a time axis) that may mirror in RTL. Anatomy never mirrors. */
   mirror: z.boolean().default(false),
+  /**
+   * Optional raster backdrop: media ids (src/data/media.yaml, text-free art) drawn UNDER the SVG
+   * overlay. The overlay keeps every word, ring, arrow and moving mark (docs/EXPLAINERS.md §3.6).
+   * `art_dark` is the same picture for the dark scheme (same proportions; the build checks it).
+   * Only the picture the reader's scheme shows is downloaded (both are lazy; the other is display: none).
+   */
+  art: kebab.optional(),
+  art_dark: kebab.optional(),
   /** Route keys where the explainer is placed (documentation; the validator checks each use is listed). */
   pages: z.array(z.string()).default([]),
   /** Scientific/anatomical review of the artwork and captions. Starts pending; a notice is shown until ok. */
@@ -43,6 +51,9 @@ export const explainerSchema = z.object({
     on: z.coerce.date().optional(),
     note: z.string().optional(),
   }),
+}).superRefine((x, ctx) => {
+  if (x.art_dark && !x.art) ctx.addIssue({ code: 'custom', path: ['art_dark'], message: 'art_dark needs art (the light picture) as well' });
+  if (x.art_dark && x.art_dark === x.art) ctx.addIssue({ code: 'custom', path: ['art_dark'], message: 'art_dark is the same image as art: give the dark version its own media entry, or leave art_dark out' });
 });
 export type Explainer = z.infer<typeof explainerSchema>;
 export const explainerRegistrySchema = z.record(kebab, explainerSchema);

@@ -76,6 +76,15 @@ const crowd = () => [9, 24, 39].map((x) => person(x, 3, 0.5) + person(x, 25, 0.5
 const speech = () => `<path d="M7 6 h34 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-19 l-10 9 v-9 h-5 a4 4 0 0 1 -4 -4 v-20 a4 4 0 0 1 4 -4 z"/><path ${CUT_STROKE(3.5)} d="M13 16 h22 M13 24 h14"/>`;
 /** Reading time: an open book. */
 const book = () => `<path d="M3 11 c7 -4 14 -3 19 1 v29 c-5 -4 -12 -5 -19 -2 z"/><path d="M45 11 c-7 -4 -14 -3 -19 1 v29 c5 -4 12 -5 19 -2 z"/>`;
+/* Stop-now signs (what the person notices). Drawn small and plain: the word beside it carries the meaning. */
+/** Severe belly pain: the stomach with three short pain rays. */
+const signBellyPain = () => `<g transform="translate(1 6) scale(0.78)">${stomach()}</g><path ${STROKE(3.5)} d="M37 12 l7 -4 M39 24 h8 M37 36 l7 4"/>`;
+/** Low blood sugar: a sugar cube and a falling arrow. */
+const signLowSugar = () => `<path d="M4 19 l12 -7 l12 7 v15 l-12 7 l-12 -7 z"/><path ${CUT_STROKE(2.5)} d="M4 19 l12 7 l12 -7 M16 26 v15"/><path ${STROKE(4.5)} d="M39 6 v32 M32 30 l7 8 l7 -8"/>`;
+/** Swelling of the face or throat, trouble breathing: head and shoulders, swelling marks at the throat, breath lines. */
+const signAllergic = () => `<circle cx="20" cy="13" r="9"/><path d="M4 46 c0 -10 6 -15 16 -15 s16 5 16 15 z"/><path d="M15 21 h10 v9 h-10 z"/><path ${STROKE(3)} d="M10 26 q-4 -1 -5 -5 M30 26 q4 -1 5 -5"/><path ${STROKE(3)} d="M33 11 q4 -3 8 0 t8 0 M33 18 q4 -3 8 0 t8 0"/>`;
+/** Sudden loss of vision: an eye with a slash. */
+const signVision = () => `<path d="M2 24 C10 12 38 12 46 24 C38 36 10 36 2 24 z"/><circle cx="24" cy="24" r="7" ${CUT}/><circle cx="24" cy="24" r="3.5"/><path ${CUT_STROKE(7)} d="M8 42 L40 6"/><path ${STROKE(3.5)} d="M8 42 L40 6"/>`;
 
 export const PICTOGRAMS: Record<string, string> = {
   'level-hypothesis': question(),
@@ -156,6 +165,11 @@ export const PICTOGRAMS: Record<string, string> = {
   // beginner layer: the summary box ("in plain words") and its reading time
   'summary-plain': speech(),
   'summary-reading-time': book(),
+  // "Stop and get help" strip (glance.stop_signs in the compound frontmatter): what the person notices.
+  'sign-belly-pain': signBellyPain(),
+  'sign-low-sugar': signLowSugar(),
+  'sign-allergic': signAllergic(),
+  'sign-vision': signVision(),
 };
 
 export const PICTOGRAM_NAMES = Object.keys(PICTOGRAMS) as readonly string[];
