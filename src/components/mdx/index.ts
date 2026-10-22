@@ -39,6 +39,8 @@ import Compare from './Compare.astro';
 import Verdict from './Verdict.astro';
 import IconArray from './IconArray.astro';
 import TimeStrip from './TimeStrip.astro';
+import ProductCheck from './ProductCheck.astro';
+import OrganCards from './OrganCards.astro';
 
 export const mdxComponents = {
   Cite, Claim, Q, Seq, Term, Callout, Diagram, Checklist, Faq, FaqItem, EvidenceGrade, WarningSigns, PageList,
@@ -48,4 +50,8 @@ export const mdxComponents = {
   Photo, Infographic, MediaCredits,
   // "less text, more visuals" (CONTENT-GUIDE §9)
   Lead, InDetail, KeyNumber, Compare, Verdict, IconArray, TimeStrip,
+  // harm reduction: "check before you use it" (CONTENT-GUIDE §1a, §9)
+  ProductCheck,
+  // organ-by-organ cards (compound pages; CONTENT-GUIDE §9)
+  OrganCards,
 };

@@ -1,0 +1,61 @@
+# Organ-by-organ cards for compounds/retatrutide (<OrganCards id="retatrutide" />, CONTENT-GUIDE §9).
+# The mechanism figure of the page since 22 October 2026 (it replaced the incretin-three-receptors animation).
+# Words: src/i18n/<locale>/organ-cards.json → "retatrutide". Pictures: _organs.yaml.
+# Every level and source below is one the page itself cites for the same claim. Not approved: the
+# figure head says so, and so does the molecule's word in the cell panel.
+page: compounds/retatrutide
+approved: false
+status_sources: [ema-medicines-json, ema-2026-10-under-evaluation, fda-unapproved-glp1-concerns, mhra-2026-10-counterfeit-pens] # the page's own sources for 'no regulator anywhere has authorised it' (20 October 2026)
+receptors: [glp1, gip, glucagon]
+cell:
+  level: in-vitro # cryo-EM: bound to all three receptors, each coupled to Gs (Li 2024); activity at all three in cell assays (Coskun 2022)
+  sources: [li-2024-retatrutide-structure, coskun-2022-ly3437943-discovery]
+cards:
+  - organ: pancreas
+    cell: beta-cell
+    receptors: [glp1, gip] # the receptors tirzepatide also uses: both on pancreatic beta cells (Mounjaro SmPC 5.1)
+    level: human # HbA1c fell in every published diabetes trial (Rosenstock 2023; TRANSCEND-T2D-1; TRIUMPH-2)
+    sources: [rosenstock-2023-retatrutide-t2d-phase-2, bajaj-2026-transcend-t2d-1, bellido-2026-triumph-2, ema-epar-mounjaro]
+  - organ: brain
+    cell: nerve-cell
+    receptors: [glp1, gip] # both in brain areas for appetite (Mounjaro SmPC 5.1)
+    level: human # less hunger and less urge to overeat on higher doses than on placebo: 275 adults with type 2 diabetes (Kanu 2025)
+    sources: [kanu-2025-retatrutide-appetite, ema-epar-mounjaro]
+    note:
+      level: animal # which brain cells: from rodent work with a related GLP-1 receptor drug (Gabery 2020), as the replaced animation said
+      sources: [gabery-2020-semaglutide-brain]
+  - organ: stomach
+    cell: stomach-wall
+    receptors: [glp1] # GLP-1 receptors on muscle and nerve cells of the stomach wall (Müller 2019)
+    level: human # nausea and diarrhoea were the most common side effects (phase 2 trials)
+    sources: [jastreboff-2023-retatrutide-phase-2, rosenstock-2023-retatrutide-t2d-phase-2, muller-2019-glp1-review]
+    note:
+      level: human # a short company report says retatrutide delays stomach emptying (title and index terms only; Humans, type 2 diabetes)
+      sources: [urva-2023-retatrutide-gastric-emptying]
+  - organ: liver
+    cell: liver-cell
+    receptors: [glucagon] # the glucagon receptor is most abundant in the liver (Elmendorf 2026)
+    level: human # liver fat fell by up to 82% at 24 weeks in 98 adults, most in those who lost most weight (Sanyal 2024)
+    sources: [sanyal-2024-retatrutide-masld, elmendorf-2026-glucagon-iuphar-review]
+    note:
+      level: in-vitro # human liver cells: ANGPTL3/8 release fell, stopped by a glucagon-receptor blocker (Wen 2025)
+      sources: [wen-2025-retatrutide-angptl38]
+  - organ: fat
+    cell: fat-cell
+    receptors: [gip, glucagon] # GIP receptors on fat cells (Mounjaro SmPC 5.1); white and brown fat express the glucagon receptor (Elmendorf 2026)
+    level: human # body fat fell by about a quarter at the higher doses over 36 weeks (DXA, 103 with complete scans; Coskun 2025)
+    sources: [coskun-2025-retatrutide-body-composition, ema-epar-mounjaro, elmendorf-2026-glucagon-iuphar-review]
+    note:
+      level: animal # extra energy expenditure through the glucagon part in obese mice (Coskun 2022); the human study has no posted results (NCT06313528)
+      sources: [coskun-2022-ly3437943-discovery, ctgov-nct06313528]
+  - organ: muscle
+    cell: muscle-fibre
+    receptors: []
+    level: human # lean mass fell with fat; the company authors judged the share similar to other obesity drugs (DXA substudy, 103 people; Coskun 2025)
+    sources: [coskun-2025-retatrutide-body-composition]
+    note:
+      level: unknown # how much of the lean tissue lost is muscle, and whether strength or falls are affected (the page's unknowns list)
+      sources: [coskun-2025-retatrutide-body-composition, elmendorf-2026-glucagon-iuphar-review]
+review:
+  status: pending
+  note: "Built 22 October 2026 (organ-cards builder) at the owner's request: the owner found the incretin-three-receptors animation too busy (it mixed WHERE the drug acts with WHAT happens there). The cards replace it as the mechanism figure; the animation's text that the cards do not carry (large weight loss in TRIUMPH-1, glucagon's share not known, brain areas from animal studies) is kept in the mechanism section's first fold. Levels and sources are the page's own. Muscle: the task brief expected 'not known'; a body-composition substudy did measure lean mass (DXA, 103 people with complete scans, company authors), so the card reports that, and 'not known' is kept for what the page lists as unknown (how much of it is muscle; strength and falls). Stomach: the effect line is the side effects (nausea, diarrhoea; phase 2 trials), and the slower stomach is a note resting on a company report we could read only by its title. Fat: the extra energy use in mice is a whole-body measure, shown on the fat card as the replaced animation did. Simplifications for the reviewer: schematic cells with upright receptors; the stomach close-up draws only the GLP-1 receptor; the beta cell draws only the GLP-1 and GIP receptors. Independent review, 22 October 2026: Coskun 2025 abstract (PubMed 40609566) re-read: adults with type 2 diabetes, 103 with DXA at baseline and week 36; total fat mass fell 26.1% (8 mg pooled) and 23.2% (12 mg) against 4.5% with placebo; 'The proportion of lean mass loss to weight loss was similar to other obesity treatments' (the authors' comparison with other studies, not a head-to-head test). The muscle line said 'similar to other drugs', which went beyond the source; it now says 'typical of obesity drugs' and names the population. Sanyal 2024 full text: n = 98 with obesity or overweight and at least 10% liver fat (type 2 diabetes excluded); relative liver fat change up to -82.4% at 24 weeks; reductions strongly associated with weight loss. The brain, liver, fat and muscle lines now name who was studied."

@@ -47,6 +47,8 @@ import {
 } from './lib/load.ts';
 import { validateMedia } from './lib/validate-media.ts';
 import { checkExplainers } from './lib/explainers.ts';
+import { checkProductCheck } from './lib/product-check.ts';
+import { checkOrganCards } from './lib/organ-cards.ts';
 
 const args = process.argv.slice(2);
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
@@ -634,6 +636,20 @@ const mediaStats = validateMedia({
 
 // ------------------------------------------------------------------ animated explainers (docs/EXPLAINERS.md)
 checkExplainers({ err, warn, hasSource: (id) => sources.has(id), hasPerson: (id) => people.has(id), localeCodes, sourceLocale });
+
+// ------------------------------------------------------------------ "check before you use it" (<ProductCheck />, CONTENT-GUIDE §1a, §9)
+checkProductCheck({
+  err,
+  warn,
+  hasSource: (id) => sources.has(id),
+  routeExists: (key) => BUILTIN_ROUTES.includes(key) || [...pageRoutes.values()].some((s) => s.has(key)) || (key.startsWith('compounds/') && compoundData.has(key.slice('compounds/'.length))),
+  checkPlain,
+  localeCodes,
+  sourceLocale,
+});
+
+// ------------------------------------------------------------------ organ-by-organ cards (<OrganCards />, CONTENT-GUIDE §9)
+checkOrganCards({ err, warn, hasSource: (id) => sources.has(id), hasPerson: (id) => people.has(id), checkPlain, localeCodes, sourceLocale });
 
 // ------------------------------------------------------------------ report
 // Paths use backslashes on Windows; compare with forward slashes so `--only legal/nl` works everywhere.

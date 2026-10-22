@@ -1,0 +1,146 @@
+{
+  "ui": {
+    "kicker": "Figure · organ by organ",
+    "notApproved": "Not approved as a medicine anywhere (20 October 2026)",
+    "notApprovedShort": "not approved",
+    "cell": {
+      "title": "How it works in a cell",
+      "outside": "Outside the cell",
+      "surface": "Cell surface",
+      "inside": "Inside the cell",
+      "camp": "More cAMP: a messenger inside the cell",
+      "responds": "The cell responds. What it does depends on the cell: see the cards below.",
+      "stepsLabel": "What the drawing shows, step by step",
+      "dockOne": "A receptor is a kind of switch on the outside of a cell. {drug} fits into {receptors}.",
+      "dockMany": "A receptor is a kind of switch on the outside of a cell. {drug} fits into {receptors}.",
+      "signalOne": "The receptor then switches on a messenger inside the cell, called cAMP.",
+      "signalMany": "Each receptor then switches on a messenger inside the cell, called cAMP.",
+      "respond": "cAMP makes the cell respond. What it does depends on the cell, as the cards show."
+    },
+    "cardsTitle": "Organ by organ: where it acts, and what happens there",
+    "receptors": {
+      "glp1": "GLP-1 receptor",
+      "gip": "GIP receptor",
+      "glucagon": "Glucagon receptor"
+    },
+    "receptorsList": {
+      "glp1": "the GLP-1 receptor",
+      "gip": "the GIP receptor",
+      "glucagon": "the glucagon receptor"
+    },
+    "organs": {
+      "brain": "Brain",
+      "pancreas": "Pancreas",
+      "stomach": "Stomach",
+      "liver": "Liver",
+      "fat": "Fat tissue",
+      "muscle": "Muscle"
+    },
+    "cells": {
+      "beta-cell": "Beta cell, which makes insulin",
+      "nerve-cell": "Nerve cell",
+      "stomach-wall": "Muscle and nerve cells in the stomach wall",
+      "liver-cell": "Liver cell",
+      "fat-cell": "Fat cell",
+      "muscle-fibre": "Muscle fibre"
+    },
+    "closeUp": "Close-up",
+    "noReceptor": "No receptor drawn: this card shows what changed with weight loss",
+    "levels": {
+      "human": "Shown in people",
+      "animal": "Shown in animals",
+      "in-vitro": "Shown in cells in the lab",
+      "hypothesis": "An idea, not yet shown",
+      "unknown": "Not known"
+    },
+    "legend": "Lines:",
+    "lines": {
+      "human": "solid = shown in people",
+      "lab": "long dashes = shown in animals or in cells in the lab",
+      "hypothesis": "short dashes = an idea, not yet shown",
+      "unknown": "short grey dashes = not known"
+    },
+    "pictures": "Pictures:",
+    "artNote": "The pictures contain no text. The words and the cell drawings are added by this site.",
+    "reviewPending": "This figure has not yet been checked by a medical reviewer."
+  },
+  "semaglutide": {
+    "title": "Semaglutide acts on one receptor. What happens depends on the organ.",
+    "detail": "How it works in one cell, then in each organ, and how well each effect is shown.",
+    "drug": "Semaglutide",
+    "cards": {
+      "pancreas": {
+        "effect": "More insulin when blood sugar is high, and less glucagon."
+      },
+      "brain": {
+        "effect": "Less hunger: adults with obesity ate about a third less at a test lunch.",
+        "note": "which brain cells it reaches."
+      },
+      "stomach": {
+        "effect": "Food leaves the stomach a little more slowly after a meal. This fades with time."
+      },
+      "fat": {
+        "effect": "A body scan of 140 adults with obesity or overweight showed that most weight lost was fat."
+      },
+      "muscle": {
+        "effect": "In 140 adults with obesity or overweight, lean mass, which includes muscle, fell too, but less than fat.",
+        "note": "what this means for strength in older or frail people."
+      }
+    }
+  },
+  "tirzepatide": {
+    "title": "Tirzepatide acts on two receptors. What happens depends on the organ.",
+    "detail": "How it works in one cell, then in each organ, and how well each effect is shown.",
+    "drug": "Tirzepatide",
+    "cards": {
+      "pancreas": {
+        "effect": "More insulin when blood sugar is high, and less glucagon."
+      },
+      "brain": {
+        "effect": "Less hunger: adults with type 2 diabetes ate less at a test lunch.",
+        "note": "which brain cells it reaches, and what GIP adds there."
+      },
+      "stomach": {
+        "effect": "Food leaves the stomach more slowly at first. This fades over time."
+      },
+      "fat": {
+        "effect": "A body scan of adults with obesity or overweight showed that most weight lost was fat.",
+        "note": "through the GIP receptor, fat tissue took up more sugar, so insulin worked better."
+      },
+      "muscle": {
+        "effect": "In adults with obesity or overweight, lean mass, which includes muscle, fell too, but less than fat.",
+        "note": "whether this matters for strength and falls in older people."
+      }
+    }
+  },
+  "retatrutide": {
+    "title": "Retatrutide acts on three receptors. What happens depends on the organ.",
+    "detail": "How it works in one cell, then in each organ, and how well each effect is shown.",
+    "drug": "Retatrutide",
+    "cards": {
+      "pancreas": {
+        "effect": "In all published diabetes trials, blood sugar fell."
+      },
+      "brain": {
+        "effect": "Adults with type 2 diabetes on higher doses felt less hungry than those on placebo.",
+        "note": "which brain cells take part, from studies of related medicines."
+      },
+      "stomach": {
+        "effect": "Feeling sick and diarrhoea were the most common side effects.",
+        "note": "a short report by the maker says food leaves the stomach more slowly."
+      },
+      "liver": {
+        "effect": "In 98 adults with obesity and fatty liver, liver fat fell up to four-fifths, partly through weight loss.",
+        "note": "it worked on liver cells through the glucagon receptor."
+      },
+      "fat": {
+        "effect": "In adults with type 2 diabetes, higher doses cut body fat by about a quarter in 36 weeks.",
+        "note": "mice burned more energy. Results in people are not published yet."
+      },
+      "muscle": {
+        "effect": "Adults with type 2 diabetes lost lean mass too. The maker called the share typical of obesity drugs.",
+        "note": "how much of it was muscle, and what happens to strength."
+      }
+    }
+  }
+}

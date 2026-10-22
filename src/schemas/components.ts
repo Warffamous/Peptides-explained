@@ -43,9 +43,17 @@ export const BLOCK_COMPONENTS = [
   'Compare',
   'IconArray',
   'TimeStrip',
+  // harm reduction: "If your product did not come from a pharmacy: check before you use it"
+  // (CONTENT-GUIDE §1a, §9; data src/data/product-check.yaml, words src/i18n/<locale>/product-check.json)
+  'ProductCheck',
 ] as const;
 /** Valid only inside src/content/compounds/**. They read the compound from the page context. */
-export const COMPOUND_ONLY_COMPONENTS = ['Section', 'Mechanism', 'StudyTable', 'RegulatoryTable', 'AuthorisedProducts', 'SequenceView'] as const;
+export const COMPOUND_ONLY_COMPONENTS = [
+  'Section', 'Mechanism', 'StudyTable', 'RegulatoryTable', 'AuthorisedProducts', 'SequenceView',
+  // organ-by-organ cards: numbered with the compound page's own source list (CONTENT-GUIDE §9;
+  // data src/data/organ-cards/<id>.yaml, words src/i18n/<locale>/organ-cards.json)
+  'OrganCards',
+] as const;
 export const ALLOWED_COMPONENTS = [...INLINE_COMPONENTS, ...BLOCK_COMPONENTS, ...COMPOUND_ONLY_COMPONENTS] as const;
 /** Figure components whose `source="id,id"` prop is numbered with the page's citations (remark-figure-sources). */
 export const SOURCED_FIGURES = ['KeyNumber', 'IconArray', 'TimeStrip'] as const;

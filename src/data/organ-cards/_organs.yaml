@@ -1,0 +1,32 @@
+# Organ pictures for <OrganCards> (docs/CONTENT-GUIDE.md §9; schema: src/schemas/organ-cards.ts).
+# Every organ-card figure takes its pictures from here, so the same organ looks the same on every page.
+#
+# art: registered text-free AI art (src/data/media.yaml) and its dark-scheme version. The dark
+#   version has the same composition (bounding boxes within 2 px of the light file, checked
+#   22 October 2026), so one window fits both. ground / ground_dark: the art's plain background,
+#   measured at the corner; it fills the tile where a window runs past the edge of the art.
+# organs: window = [left, top, width] of a 4:3 crop in pixels of the 1024 x 1024 original, measured on
+#   the unmirrored light image (the height is width x 3/4). Each window keeps a margin of plain
+#   background around the organ's bounding box (the boxes are in the media review notes).
+#   hide = [x, y, width, height] of a neighbouring specimen that falls inside the window (the plate
+#   shows six specimens side by side). It is cropped out with clip-path, never painted over; the
+#   tile shows the art's own ground there. Checked 22 October 2026 with a script: no pixel of
+#   another specimen is left inside any window, and no hide rectangle touches its own organ.
+art:
+  plate:
+    light: incretin-receptors-art
+    dark: incretin-receptors-art-dark
+    ground: "#f5f4f0"
+    ground_dark: "#191614"
+  muscle:
+    light: muscle-tissue-art
+    dark: muscle-tissue-art-dark
+    ground: "#f2f2f0"
+    ground_dark: "#1e1915"
+organs:
+  brain: { art: plate, window: [255, 16, 500] } # brain 323-687 x 42-364
+  liver: { art: plate, window: [-6, 369, 419], hide: [[384, 480, 44, 84]] } # liver 23-383 x 394-658; hides the end of the blood vessel
+  stomach: { art: plate, window: [587, 296, 518], hide: [[575, 285, 116, 92], [575, 478, 92, 86]] } # stomach 693-1000 x 323-657; hides the cerebellum and the blood vessel
+  pancreas: { art: plate, window: [112, 633, 534] } # pancreas 157-601 x 743-923
+  fat: { art: plate, window: [615, 680, 396] } # fat block 672-954 x 744-913
+  muscle: { art: muscle, window: [70, 182, 890] } # muscle block 111-919 x 345-686

@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import remarkExplainerSources from './src/plugins/remark-explainer-sources.mjs';
 import remarkCitations from './src/plugins/remark-citations.mjs';
 import remarkFigureSources from './src/plugins/remark-figure-sources.mjs';
+import remarkProductCheckSources from './src/plugins/remark-product-check-sources.mjs';
 import remarkFaq from './src/plugins/remark-faq.mjs';
 import rehypeGlossary from './src/plugins/rehype-glossary.mjs';
 import rehypeTableWrap from './src/plugins/rehype-table-wrap.mjs';
@@ -53,7 +54,7 @@ export default defineConfig({
   },
   integrations: [
     mdx({
-      remarkPlugins: [remarkExplainerSources, remarkFigureSources, remarkCitations, remarkFaq],
+      remarkPlugins: [remarkExplainerSources, remarkFigureSources, remarkProductCheckSources, remarkCitations, remarkFaq],
       rehypePlugins: [rehypeGlossary, rehypeTableWrap],
       optimize: false,
     }),

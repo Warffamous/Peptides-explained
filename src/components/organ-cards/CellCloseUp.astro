@@ -1,0 +1,68 @@
+---
+/**
+ * A small schematic close-up of one cell for an organ card: the cell's outline, its nucleus, and the
+ * medicine's receptor types that act on this cell, drawn upright on its surface (shape per type,
+ * see shapes.ts). Decorative for assistive technology (aria-hidden): the card says the cell's name
+ * and lists each receptor with the same shape and its word, right beside the drawing.
+ * No text inside the SVG.
+ */
+import type { OcCell, OcReceptor } from '../../schemas/organ-cards';
+import { CUP, spread, surfaceY } from './shapes';
+interface Props { cell: OcCell; receptors: OcReceptor[] }
+const { cell, receptors } = Astro.props;
+const xs = spread(receptors.length);
+const placed = receptors.map((r, i) => ({ r, x: xs[i], y: surfaceY(cell, xs[i]) }));
+// muscle fibre: cross-striation every 6 units, inside the rounded outline
+const stripes = Array.from({ length: 15 }, (_, i) => 18 + i * 6);
+---
+<svg class="oc-close" viewBox="0 0 120 80" width="120" height="80" aria-hidden="true" focusable="false" data-cell={cell}>
+  {cell === 'beta-cell' && (
+    <g>
+      <ellipse class="oc-cellbody" cx="60" cy="50" rx="40" ry="26" />
+      <ellipse class="oc-nucleus" cx="68" cy="54" rx="11" ry="9" />
+    </g>
+  )}
+  {cell === 'nerve-cell' && (
+    <g>
+      <path class="oc-fibre" d="M39 44L20 32L6 28M37 53L18 61L4 67M45 62L35 77M85 49H117M106 49L116 39M106 49L116 59" />
+      <ellipse class="oc-cellbody" cx="60" cy="48" rx="25" ry="17" />
+      <circle class="oc-nucleus" cx="60" cy="50" r="7" />
+    </g>
+  )}
+  {cell === 'stomach-wall' && (
+    <g>
+      <path class="oc-cellbody" d="M8 40Q60 20 112 40Q60 60 8 40Z" />
+      <ellipse class="oc-nucleus" cx="60" cy="40" rx="9" ry="4" />
+      <path class="oc-cellbody" d="M14 61Q60 45 106 61Q60 77 14 61Z" />
+      <ellipse class="oc-nucleus" cx="58" cy="61" rx="8" ry="3.5" />
+      <path class="oc-fibre" d="M2 74Q30 70 60 75T118 73" />
+    </g>
+  )}
+  {cell === 'liver-cell' && (
+    <g>
+      <path class="oc-cellbody" d="M34 24H86L106 50L86 76H34L14 50Z" />
+      <circle class="oc-nucleus" cx="60" cy="52" r="10" />
+    </g>
+  )}
+  {cell === 'fat-cell' && (
+    <g>
+      <circle class="oc-cellbody" cx="60" cy="50" r="28" />
+      <circle class="oc-droplet" cx="57" cy="51" r="22" />
+      <ellipse class="oc-nucleus" cx="83.5" cy="52" rx="2.6" ry="7" />
+    </g>
+  )}
+  {cell === 'muscle-fibre' && (
+    <g>
+      <rect class="oc-cellbody" x="8" y="30" width="104" height="32" rx="16" />
+      <path class="oc-stripe" d={stripes.map((x) => `M${x} 33V59`).join('')} />
+      <ellipse class="oc-nucleus" cx="34" cy="33.5" rx="6" ry="2.2" />
+      <ellipse class="oc-nucleus" cx="80" cy="33.5" rx="6" ry="2.2" />
+    </g>
+  )}
+  {placed.map((p) => (
+    <g class="oc-rec" data-r={p.r} transform={`translate(${p.x} ${p.y.toFixed(1)}) scale(1.35)`}>
+      <path class="oc-rec__stem" d="M0 -0.5V7" />
+      <path class="oc-rec__cup" d={CUP[p.r]} />
+    </g>
+  ))}
+</svg>

@@ -1,0 +1,48 @@
+# Organ-by-organ cards for compounds/tirzepatide (<OrganCards id="tirzepatide" />, CONTENT-GUIDE §9).
+# The mechanism figure of the page since 22 October 2026 (it replaced the incretin-two-receptors animation).
+# Words: src/i18n/<locale>/organ-cards.json → "tirzepatide". Pictures: _organs.yaml.
+# Every level and source below is one the page itself cites for the same claim.
+page: compounds/tirzepatide
+approved: true
+receptors: [glp1, gip]
+cell:
+  level: in-vitro # binds both receptors in cell assays (Coskun 2018); both switch on Gs and cAMP (Willard 2020: cells, mouse islets)
+  sources: [coskun-2018-ly3298176, willard-2020-imbalanced-biased]
+cards:
+  - organ: pancreas
+    cell: beta-cell
+    receptors: [glp1, gip] # Mounjaro SmPC 5.1: both receptors on pancreatic alpha and beta cells
+    level: human # more insulin secretion, lower glucagon after meals: 117 adults with type 2 diabetes (Heise 2022); SmPC 5.1 glucose-dependent
+    sources: [ema-epar-mounjaro, heise-2022-islet-function]
+  - organ: brain
+    cell: nerve-cell
+    receptors: [glp1, gip] # SmPC 5.1: both receptors in the brain areas important to appetite regulation
+    level: human # less appetite and energy intake at a test lunch: same 117-person trial (Heise 2023)
+    sources: [heise-2023-appetite, ema-epar-mounjaro]
+    note:
+      level: animal # SmPC 5.1 "Animal studies show that tirzepatide distributes to and activates neurons in brain regions involved in regulation of appetite"; GIP through brain GIP receptors in mice (Zhang 2021)
+      sources: [ema-epar-mounjaro, zhang-2021-cns-gipr]
+  - organ: stomach
+    cell: stomach-wall
+    receptors: [glp1] # the receptor behind the slower stomach; GLP-1 receptors on muscle and nerve cells of the stomach wall (Müller 2019)
+    level: human # SmPC: delay in gastric emptying that diminishes over time
+    sources: [ema-epar-mounjaro, muller-2019-glp1-review]
+  - organ: fat
+    cell: fat-cell
+    receptors: [gip] # SmPC 5.1: GIP receptors are also present on adipocytes
+    level: human # SmPC 5.1: "The body weight reduction is mostly due to reduced fat mass"; SURMOUNT-1 DEXA sub-study: "most of the total weight loss was attributable to a reduction in fat tissue" (as the semaglutide and retatrutide fat cards: what was measured in people first)
+    sources: [ema-epar-mounjaro]
+    note:
+      level: animal # through the GIP receptor on fat cells: obese mice without GLP-1 receptors, more glucose uptake into fat tissue, better insulin sensitivity (Samms 2021); SmPC 5.1 "Animal studies show that tirzepatide can modulate fat utilization through the GIP receptor"
+      sources: [samms-2021-gipr-insulin-sensitivity, ema-epar-mounjaro]
+  - organ: muscle
+    cell: muscle-fibre
+    receptors: []
+    level: human # SmPC 5.1 (SURMOUNT-1 DEXA sub-study): greater reduction in fat mass than in lean body mass; lean mass includes organs and water (Neeland 2024)
+    sources: [ema-epar-mounjaro, neeland-2024-lean-mass]
+    note:
+      level: unknown # whether lean-mass loss matters for strength and falls in older people is open (the page's unknowns list)
+      sources: [ema-epar-mounjaro, neeland-2024-lean-mass]
+review:
+  status: pending
+  note: "Built 22 October 2026 (organ-cards builder) at the owner's request: the owner found the incretin-two-receptors animation too busy (it mixed WHERE the drug acts with WHAT happens there). The cards replace it as the mechanism figure; the animation's step 4 (head-to-head trials against semaglutide) and step 5 (GIP's share not known) are kept as text in the mechanism section's first fold. Levels and sources are the page's own: Coskun 2018 and Willard 2020 for the cell panel; the Mounjaro SmPC 5.1 for which cells carry which receptor (both on alpha and beta cells, in the gut and in brain areas for appetite; GIP also on fat cells); Heise 2022 and 2023 for insulin, glucagon and appetite in 117 adults with type 2 diabetes; Zhang 2021 and the SmPC's animal studies for the brain cells; Samms 2021 (obese mice) for fat tissue; the SmPC's SURMOUNT-1 DEXA sub-study for fat and lean mass, with Neeland 2024. Simplifications for the reviewer: the stomach close-up draws only the GLP-1 receptor (the receptor behind the slower stomach; the SmPC places both receptors in the gut); the muscle close-up carries no receptor, because the card reports what the scans measured with weight loss. Changed 22 October 2026 (second organ-cards pass): the fat card now leads with what was measured in people (the SmPC: weight loss mostly fat) and gives the GIP receptor on fat cells (Samms 2021, mice) as its note, as the semaglutide and retatrutide fat cards do. Independent review, 22 October 2026: Mounjaro SmPC 5.1 re-read (EMA product information PDF): the SURMOUNT-1 DEXA sub-study (no N given in the SmPC) showed 'greater reduction in fat mass than in lean body mass' after 72 weeks; SURMOUNT-1 enrolled adults with obesity, or overweight with a weight-related comorbidity. Samms 2021 abstract (PubMed 34003802): in obese Glp-1r-null mice tirzepatide improved insulin sensitivity by enhancing glucose disposal in white fat. The brain, fat and muscle lines now name who was studied (adults with type 2 diabetes; adults with obesity or overweight)."

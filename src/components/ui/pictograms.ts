@@ -97,6 +97,26 @@ const signFever = () => `<path d="M20 6 a4 4 0 0 1 8 0 v24 a9 9 0 1 1 -8 0 z"/><
 const signClock = () => `<circle ${STROKE(4)} cx="24" cy="24" r="19"/><path ${STROKE(4)} d="M24 12 v12 l8 6"/>`;
 /** Sudden loss of vision: an eye with a slash. */
 const signVision = () => `<path d="M2 24 C10 12 38 12 46 24 C38 36 10 36 2 24 z"/><circle cx="24" cy="24" r="7" ${CUT}/><circle cx="24" cy="24" r="3.5"/><path ${CUT_STROKE(7)} d="M8 42 L40 6"/><path ${STROKE(3.5)} d="M8 42 L40 6"/>`;
+/* "Check before you use it" (<ProductCheck />): what the reader checks on the product they have. A plain
+   vial (no dots: the dotted vial means "contamination"), a small badge for the thing checked. */
+const vialPlain = () => `<path d="M18 4 h12 v6 h-1 v4 c4 2 6 5 6 9 v17 a4 4 0 0 1 -4 4 h-14 a4 4 0 0 1 -4 -4 v-17 c0 -4 2 -7 6 -9 v-4 h-1 z"/>`;
+const badgeCheck = () => `<circle cx="37" cy="37" r="10"/><path ${CUT_STROKE(3)} d="M32 37 l3.5 3.5 l6.5 -7"/>`;
+/** The seal is whole: a vial with its cap band cut out, and a check badge. */
+const checkSeal = () => `${vialPlain()}<rect x="17" y="9" width="14" height="3" ${CUT}/>${badgeCheck()}`;
+/** The label: a vial with a label band and two lines of text. */
+const checkLabel = () => `${vialPlain()}<rect x="14" y="24" width="20" height="14" rx="1.5" ${CUT}/><path ${STROKE(2.5)} d="M17 29 h14 M17 34 h9"/>`;
+/** How it looks: an open eye (the same eye as the vision sign, without the slash). */
+const checkLook = () => `<path d="M2 24 C10 12 38 12 46 24 C38 36 10 36 2 24 z"/><circle cx="24" cy="24" r="7" ${CUT}/><circle cx="24" cy="24" r="3.5"/>`;
+/** The lab report: a page with lines and a round stamp. */
+const checkCertificate = () => `<path d="M8 3 h22 l10 10 v32 h-32 z"/><path ${CUT} d="M30 3 v10 h10 z" opacity="0.5"/><path ${CUT_STROKE(2.5)} d="M13 17 h14 M13 23 h20 M13 29 h12"/><circle cx="31" cy="36" r="6" ${CUT}/><circle cx="31" cy="36" r="3"/>`;
+/** Kept cold: a snowflake. */
+const checkCold = () => `<path ${STROKE(4)} d="M24 4 v40 M6.7 14 l34.6 20 M6.7 34 l34.6 -20"/><path ${STROKE(3)} d="M18 7 l6 5 l6 -5 M18 41 l6 -5 l6 5 M6 21 l7 3 l-1 -8 M42 27 l-7 -3 l1 8 M6 27 l7 -3 l-1 8 M42 21 l-7 3 l1 -8"/>`;
+/** A new sterile needle and syringe every time: the syringe with a check badge. */
+const checkNewNeedle = () => `<g transform="translate(-3 -3) scale(0.9)">${syringe()}</g>${badgeCheck()}`;
+/** Keep the vial and its papers: a box with a lid. */
+const checkKeep = () => `<path d="M4 16 h40 v6 h-40 z"/><path d="M7 25 h34 v18 a2 2 0 0 1 -2 2 h-30 a2 2 0 0 1 -2 -2 z"/><rect x="18" y="29" width="12" height="4" rx="2" ${CUT}/><path ${STROKE(3)} d="M16 12 l8 -8 l8 8"/>`;
+/** Tell a doctor: a person and a speech bubble. */
+const checkDoctor = () => `${person(16, 8, 0.85)}<path d="M28 3 h16 a3 3 0 0 1 3 3 v10 a3 3 0 0 1 -3 3 h-9 l-5 5 v-5 h-2 a3 3 0 0 1 -3 -3 v-10 a3 3 0 0 1 3 -3 z"/><path ${CUT_STROKE(2.2)} d="M31 9 h10 M31 13.5 h6"/>`;
 
 export const PICTOGRAMS: Record<string, string> = {
   'level-hypothesis': question(),
@@ -188,6 +208,15 @@ export const PICTOGRAMS: Record<string, string> = {
   'sign-mole': signMole(),
   'sign-clock': signClock(),
   'sign-fever': signFever(),
+  // "Check before you use it" (<ProductCheck />, src/data/product-check.yaml); the stop item reuses action-stop.
+  'check-seal': checkSeal(),
+  'check-label': checkLabel(),
+  'check-look': checkLook(),
+  'check-certificate': checkCertificate(),
+  'check-cold': checkCold(),
+  'check-new-needle': checkNewNeedle(),
+  'check-keep': checkKeep(),
+  'check-doctor': checkDoctor(),
 };
 
 export const PICTOGRAM_NAMES = Object.keys(PICTOGRAMS) as readonly string[];

@@ -1,0 +1,57 @@
+# <ProductCheck />: "If your product did not come from a pharmacy: check before you use it"
+# (owner request, 22 October 2026; docs/CONTENT-GUIDE.md §1a and §9).
+#
+# The order of the checks, the pictogram for each (src/components/ui/pictograms.ts), the sources
+# (numbered with the page's citations by src/plugins/remark-product-check-sources.mjs) and the
+# internal pages each check links to. The words are in src/i18n/<locale>/product-check.json.
+#
+# Legal line (CONTENT-GUIDE §1, §1a): negative signs only, each sourced to a regulator, a label or a
+# clinical source, and the intro says plainly that no check proves a product is good. No amounts,
+# volumes, schedules, mixing sums, and nothing about where to get a product or how to judge a seller.
+# What each source is cited for: research/harm-reduction-pass.md.
+
+intro_sources: [igj-online-medicijnen, ashraf-2024-online-semaglutide, smith-2013-fungal-methylprednisolone]
+
+items:
+  - id: seal
+    icon: check-seal
+    sources: [fda-considering-online-pharmacy, dailymed-sterile-water-label, who-2010-injection-toolkit]
+
+  - id: label
+    icon: check-label
+    sources: [eu-directive-2001-83, fda-considering-online-pharmacy]
+
+  - id: look
+    icon: check-look
+    sources: [dailymed-egrifta-sv-label, ema-epar-wegovy]
+
+  - id: certificate
+    icon: check-certificate
+    sources: [ema-ich-q7-gmp-api, ema-2025-synthetic-peptides-guideline, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, janvier-2018-falsified-peptides-belgium]
+    links: [safety/product-risk#what-a-lab-certificate-shows-and-what-it-does-not]
+
+  - id: storage
+    icon: check-cold
+    sources: [ema-epar-wegovy, fda-unapproved-glp1-concerns, manning-2010-protein-stability, who-2010-injection-toolkit]
+    links: [safety/sterile-technique#when-to-throw-a-vial-away]
+
+  - id: clean
+    icon: check-new-needle
+    sources: [who-2010-injection-toolkit, cdc-2024-preventing-unsafe-injection, fda-unapproved-glp1-concerns]
+    links: [safety/sterile-technique]
+
+  - id: keep
+    icon: check-keep
+    sources: [nhs-poisoning, antonacci-2026-falsified-semaglutide-coma]
+    links: [safety/if-something-goes-wrong]
+
+  - id: doctor
+    icon: check-doctor
+    sources: [thuisarts-naar-de-huisarts, vic-health-2026-retatrutide-liver, knmg-beroepsgeheim]
+    links: [safety/monitoring, talking-to-your-doctor]
+
+  - id: stop
+    icon: action-stop
+    sources: [nhs-cellulitis, nhs-sepsis, nhs-anaphylaxis]
+    links: [safety/warning-signs]
+    emergency: true

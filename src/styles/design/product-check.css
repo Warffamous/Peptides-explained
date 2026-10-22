@@ -1,0 +1,56 @@
+/*
+ * <ProductCheck /> — "If your product did not come from a pharmacy: check before you use it"
+ * (src/components/mdx/ProductCheck.astro; CONTENT-GUIDE §9). Practical help, not an alarm: a plain
+ * surface card with a strong hairline, neutral ink, and one round tile per pictogram. No cyan (it means
+ * "demonstrated"), no amber ("hypothesised") and no alert crimson (stop-now content only): the stop
+ * check carries the emergency line in bold text. Two columns where they fit, one on phones.
+ * On paper: every check gets a tick box, and internal links print their path.
+ */
+:is(.prose, .csec) > .product-check { grid-column: wide; }
+.product-check {
+  margin-block: 0 var(--space-6);
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+.product-check__title { margin: 0 0 var(--space-2); font-size: var(--s-1); font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; text-wrap: balance; }
+.product-check__intro { margin: 0 0 var(--space-3); max-inline-size: 62ch; color: var(--text-2); }
+.product-check__print { display: none; }
+.product-check__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr)); gap: 0 var(--space-6); margin: 0; padding: 0; list-style: none; }
+/* The compound-specific line and the closing warning-signs check take a whole row, so the eight
+   checks in between always pair up in two columns. */
+.product-check__item:is(.product-check__item--extra, [data-check='stop']) { grid-column: 1 / -1; }
+:where(.prose, .csec) li.product-check__item { margin: 0; }
+.product-check__item { display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); gap: var(--space-3); align-items: start; max-inline-size: none; padding-block: var(--space-4); border-block-start: 1px solid var(--line); }
+.product-check__icon { --pg-cut: var(--surface-2); display: grid; place-items: center; inline-size: 2.75rem; block-size: 2.75rem; border-radius: 50%; background: var(--surface-2); color: var(--text); }
+.product-check__icon .pictogram { display: block; inline-size: 1.75rem; block-size: 1.75rem; fill: currentColor; }
+.product-check__check { margin: 0; font-weight: 600; line-height: 1.35; color: var(--text); }
+.product-check__points { margin: var(--space-2) 0 0; padding-inline-start: 1.15em; font-size: var(--s--1); line-height: 1.45; color: var(--text-2); }
+:where(.prose, .csec) .product-check__points li { margin-block: 0.2rem; color: var(--text-2); }
+.product-check__text { margin: var(--space-1) 0 0; font-size: var(--s--1); line-height: 1.5; color: var(--text-2); }
+.product-check__emergency { color: var(--text); font-weight: 700; }
+.product-check__links { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); margin: var(--space-2) 0 0; font-size: var(--s--1); font-weight: 600; line-height: 1.4; }
+.product-check__box { display: none; }
+/* The compound-specific line: the same row, its tile outlined so it reads as "about this product". */
+.product-check__item--extra .product-check__icon { --pg-cut: var(--surface); background: var(--surface); box-shadow: inset 0 0 0 2px var(--line-strong); }
+
+@media (max-width: 29.99rem) {
+  .product-check { padding: var(--space-4); }
+  .product-check__item { grid-template-columns: 2.25rem minmax(0, 1fr); padding-block: var(--space-3); }
+  .product-check__icon { inline-size: 2.25rem; block-size: 2.25rem; }
+  .product-check__icon .pictogram { inline-size: 1.5rem; block-size: 1.5rem; }
+}
+
+@media print {
+  .product-check { border: 1px solid CanvasText; break-inside: auto; }
+  .product-check__print { display: block; margin: 0 0 var(--space-2); font-size: var(--s--1); }
+  .product-check__item { grid-template-columns: 2.25rem minmax(0, 1fr) 1.4rem; break-inside: avoid; }
+  .product-check__box { display: block; inline-size: 1.1rem; block-size: 1.1rem; margin-block-start: 0.15em; border: 2px solid CanvasText; border-radius: 3px; }
+  .product-check__links a[href^="/"]::after { content: " (" attr(href) ")"; font-weight: 400; }
+}
+
+@media (forced-colors: active) {
+  .product-check__icon { border: 1px solid CanvasText; }
+  .product-check__icon .pictogram { fill: CanvasText; }
+}

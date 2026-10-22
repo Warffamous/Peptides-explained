@@ -1,0 +1,95 @@
+---
+/**
+ * <ProductCheck /> — "If your product did not come from a pharmacy: check before you use it"
+ * (owner request, 22 October 2026; docs/CONTENT-GUIDE.md §1a and §9).
+ *
+ * A scannable checklist for people who already have a product: the seal, the label, how it looks,
+ * what a lab report does not prove, storage, clean steps, keeping the vial, a doctor for checks, and
+ * the warning signs. Every check is a pictogram AND its words (the pictogram is decorative; the words
+ * carry the meaning, docs/EXPLAINERS.md rule 8a). Static HTML: it works without JavaScript and prints
+ * as a list with a tick box per check.
+ *
+ * - Order, pictograms, sources and links: src/data/product-check.yaml. Words:
+ *   src/i18n/<locale>/product-check.json. The emergency line is the locale's
+ *   common.emergency.ifSevere ("call your local emergency number" in English; never a number).
+ * - Sources are injected by src/plugins/remark-product-check-sources.mjs as <Cite> children in named
+ *   slots ("src-intro", "src-item-<id>", "src-extra"), so they are numbered with the page's citations.
+ *   The "src-" prefix matters: Astro drops a prop that shares its name with a slot.
+ * - Optional compound-specific line: extra="…" with its own sources in extraSources="id,id" (the
+ *   validator checks both). It is placed after the check named by extraAfter (default: the label).
+ *   On a compound page it is labelled "For <compound>".
+ * - A link to the page the list is on is dropped; a link to a section of that page becomes "#anchor".
+ * - Negative signs only: the intro says that no check shows a product is good (CONTENT-GUIDE §1a).
+ */
+import Pictogram from '../ui/Pictogram.astro';
+import { t, tr } from '../../lib/i18n';
+import { ctxLocale, uid as makeUid } from '../../lib/ctx';
+import { routeUrl } from '../../lib/urls';
+import { PRODUCT_CHECK } from '../../lib/product-check';
+import { productCheckTextSchema } from '../../schemas/product-check';
+
+interface Props { extra?: string; extraSources?: string; extraAfter?: string; extraIcon?: string }
+const { extra, extraAfter = 'label', extraIcon = 'check-label' } = Astro.props;
+const L = ctxLocale(Astro);
+// Parsed with the validator's schema, so optional fields (points, links) get their defaults.
+const parsedText = productCheckTextSchema.safeParse(tr<unknown>(L, 'product-check'));
+if (!parsedText.success) {
+  throw new Error(`<ProductCheck>: ${L}/product-check.json is invalid:\n` + parsedText.error.issues.map((i) => `  ${i.path.join('.')}: ${i.message}`).join('\n'));
+}
+const text = parsedText.data;
+const uid = makeUid(Astro, 'product-check');
+const here = Astro.url.pathname;
+const slot = async (name: string) => (Astro.slots.has(name) ? await Astro.slots.render(name) : '');
+
+if (extra && !PRODUCT_CHECK.items.some((it) => it.id === extraAfter)) {
+  throw new Error(`<ProductCheck extraAfter="${extraAfter}">: no check with that id in src/data/product-check.yaml`);
+}
+
+type Row = { id: string; icon: string; title: string; points: string[]; text: string; emergency: boolean; links: { href: string; text: string }[]; marks: string; extra?: boolean };
+const rows: Row[] = [];
+for (const it of PRODUCT_CHECK.items) {
+  const tx = text.items[it.id];
+  if (!tx) throw new Error(`<ProductCheck>: no text for check "${it.id}" in ${L}/product-check.json`);
+  if (tx.links.length !== it.links.length) {
+    throw new Error(`<ProductCheck>: check "${it.id}" has ${it.links.length} link(s) in src/data/product-check.yaml but ${tx.links.length} link text(s) in ${L}/product-check.json`);
+  }
+  const links = it.links
+    .map((key, i) => {
+      const [route, anchor] = key.split('#');
+      const path = routeUrl(L, route);
+      if (path === here) return anchor ? { href: `#${anchor}`, text: tx.links[i] } : null;
+      return { href: anchor ? `${path}#${anchor}` : path, text: tx.links[i] };
+    })
+    .filter((l): l is { href: string; text: string } => l !== null);
+  rows.push({ id: it.id, icon: it.icon, title: tx.title, points: tx.points, text: tx.text, emergency: it.emergency, links, marks: await slot(`src-item-${it.id}`) });
+  if (extra && it.id === extraAfter) {
+    const compound = Astro.locals.compound;
+    const title = compound ? t(L, 'product-check.extra', { name: compound.data.names.common }) : t(L, 'product-check.extraGeneric');
+    rows.push({ id: 'extra', icon: extraIcon, title, points: [], text: extra, emergency: false, links: [], marks: await slot('src-extra'), extra: true });
+  }
+}
+const intro = await slot('src-intro');
+---
+<section class="product-check" aria-labelledby={uid} data-product-check>
+  <h3 class="product-check__title" id={uid}>{text.title}</h3>
+  <p class="product-check__intro">{text.intro}<Fragment set:html={intro} /></p>
+  <p class="product-check__print">{text.print}</p>
+  <ul class="product-check__list" role="list">
+    {rows.map((r) => (
+      <li class:list={['product-check__item', r.extra && 'product-check__item--extra']} data-check={r.id}>
+        <span class="product-check__icon"><Pictogram name={r.icon} /></span>
+        <div class="product-check__body">
+          <p class="product-check__check">{r.title}</p>
+          {r.points.length > 0 && (
+            <ul class="product-check__points">{r.points.map((p) => <li>{p}</li>)}</ul>
+          )}
+          <p class="product-check__text">{r.text}{r.emergency && <> <strong class="product-check__emergency">{t(L, 'common.emergency.ifSevere')}</strong></>}<Fragment set:html={r.marks} /></p>
+          {r.links.length > 0 && (
+            <p class="product-check__links">{r.links.map((l) => <a href={l.href}>{l.text}</a>)}</p>
+          )}
+        </div>
+        <span class="product-check__box" aria-hidden="true"></span>
+      </li>
+    ))}
+  </ul>
+</section>

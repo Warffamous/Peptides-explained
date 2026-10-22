@@ -1,0 +1,57 @@
+{
+  "title": "If your product did not come from a pharmacy: check before you use it",
+  "intro": "These checks can show that something is wrong. None of them can show that a product is good or free of germs.",
+  "extra": "For {name}",
+  "extraGeneric": "For this product",
+  "print": "Tick each box when you have checked it.",
+  "items": {
+    "seal": {
+      "title": "The seal and the vial are whole",
+      "text": "A broken cap or seal, or a cracked vial, can let germs in. Then do not use it."
+    },
+    "label": {
+      "title": "The label shows the name, amount, batch number and expiry date",
+      "text": "In the EU, a medicine must show all four, even on a small vial. If one is missing, or the date has passed, that is a warning sign. Take a photo of the label."
+    },
+    "look": {
+      "title": "It looks right",
+      "text": "A liquid, or a powder after mixing, should be clear and colourless, with no bits. Is it cloudy, has it changed colour, or do you see bits? Then do not use it."
+    },
+    "certificate": {
+      "title": "A lab report proves little if:",
+      "points": [
+        "its batch number is not the one on your vial;",
+        "it does not name the lab, or has no date or signature;",
+        "it shows only purity (HPLC), with no test of what it is, such as mass spectrometry;",
+        "it has no test for germs (sterility) or for toxins from germs (endotoxin)."
+      ],
+      "text": "Even a full report covers only one sample. A report from the seller comes from someone who gains if it looks good. It cannot show that your vial is clean.",
+      "links": ["What a certificate of analysis shows, and what it does not"]
+    },
+    "storage": {
+      "title": "It was kept as the label says",
+      "text": "Heat, freezing and sunlight can damage a peptide. Did it arrive warm, or was it frozen? Then do not use it. Often nobody can tell you how it was kept on the way. If you cannot know, you cannot rule out damage. When in doubt, throw it out.",
+      "links": ["When to throw a vial away"]
+    },
+    "clean": {
+      "title": "Clean steps, and a new sterile needle and syringe every time",
+      "text": "Wash your hands and wipe the rubber top with alcohol. Never share a needle, a syringe or a vial.",
+      "links": ["Sterile technique, step by step"]
+    },
+    "keep": {
+      "title": "Keep the vial, its label and any papers",
+      "text": "Keep them, even when the vial is empty, until you know you feel well. If you need a doctor, bring them. A lab can test what was inside.",
+      "links": ["If something goes wrong"]
+    },
+    "doctor": {
+      "title": "Tell a doctor, and agree which checks fit you",
+      "text": "A doctor can help you choose blood tests that fit what you use. In the Netherlands, your doctor must keep what you say private.",
+      "links": ["Which checks matter, and why", "Talking to your doctor"]
+    },
+    "stop": {
+      "title": "Know the warning signs before you start",
+      "text": "Spreading redness, fever, a swollen face or hard breathing need help fast.",
+      "links": ["All warning signs, and how fast to act"]
+    }
+  }
+}

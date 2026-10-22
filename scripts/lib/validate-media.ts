@@ -27,6 +27,8 @@ type Ctx = {
 const IMAGE_EXT = /\.(?:jpe?g|png|webp|avif|gif|tiff?|svg)$/i;
 const PHOTO_RE = /<Photo\b([^>]*)\/?>/g;
 const INFOGRAPHIC_RE = /<Infographic\b([^>]*)\/?>/g;
+/** Organ-by-organ cards: their pictures come from src/data/organ-cards/_organs.yaml (checked in organ-cards.ts). */
+const ORGAN_CARDS_RE = /<OrganCards\b([^>]*)\/?>/g;
 const ID_ATTR = /\bid=["']([^"']+)["']/;
 
 export function validateMedia(ctx: Ctx): { images: number; infographics: number; pendingAi: string[] } {
@@ -180,6 +182,17 @@ export function validateMedia(ctx: Ctx): { images: number; infographics: number;
       const g = readYaml(path.join(ROOT, `src/data/infographics/${id}.yaml`)) as { art?: string; art_dark?: string } | null;
       if (g?.art) use(g.art, where);
       if (g?.art_dark) use(g.art_dark, where);
+    }
+    // Organ cards: the art behind every organ picture on the figure (errors are reported by organ-cards.ts).
+    for (const m of body.matchAll(ORGAN_CARDS_RE)) {
+      const id = ID_ATTR.exec(m[1])?.[1];
+      const figFile = path.join(ROOT, `src/data/organ-cards/${id}.yaml`);
+      const artFile = path.join(ROOT, 'src/data/organ-cards/_organs.yaml');
+      if (!id || !fs.existsSync(figFile) || !fs.existsSync(artFile)) continue;
+      const fig = readYaml(figFile) as { cards?: { organ?: string }[] } | null;
+      const oa = readYaml(artFile) as { art?: Record<string, { light?: string; dark?: string }>; organs?: Record<string, { art?: string }> } | null;
+      const arts = new Set((fig?.cards ?? []).map((c) => oa?.organs?.[c.organ ?? '']?.art).filter(Boolean) as string[]);
+      for (const a of arts) for (const mid of [oa?.art?.[a]?.light, oa?.art?.[a]?.dark]) if (mid) use(mid, `${where} (organ cards ${id})`);
     }
   }
 

@@ -169,7 +169,11 @@ incretin-two-receptors:
   # brain, liver, a short blood vessel, stomach, pancreas and a block of fat under the skin.
   art: incretin-receptors-art
   art_dark: incretin-receptors-art-dark
-  pages: [compounds/tirzepatide]
+  # Not placed since 22 October 2026: the owner found it too busy (WHERE the drug acts mixed with WHAT
+  # happens there); <OrganCards id="tirzepatide" /> replaced it as the mechanism figure of
+  # compounds/tirzepatide, and its step 4-5 text moved into that section's receptor-table fold.
+  # Kept registered for now (the owner may retire it).
+  pages: []
   sources:
     - coskun-2018-ly3298176 # cell assays: binds the GIP receptor like GIP, the GLP-1 receptor about 5 times more weakly; the first human study could not separate the two receptors
     - willard-2020-imbalanced-biased # imbalanced and biased dual agonist (cells, mouse islets)
@@ -198,7 +202,11 @@ incretin-three-receptors:
   mirror: false # anatomy: never mirrored
   art: incretin-receptors-art # the same picture as incretin-two-receptors
   art_dark: incretin-receptors-art-dark
-  pages: [compounds/retatrutide]
+  # Not placed since 22 October 2026: the owner found it too busy; <OrganCards id="retatrutide" />
+  # replaced it as the mechanism figure of compounds/retatrutide, and the text the cards do not carry
+  # (TRIUMPH-1 weight loss, brain areas from animal studies) moved into that section's receptor-table
+  # fold. Kept registered for now (the owner may retire it).
+  pages: []
   sources:
     - li-2024-retatrutide-structure # cryo-EM: bound to the GLP-1, GIP and glucagon receptors
     - coskun-2022-ly3437943-discovery # cells: activity at all three receptors; obese mice: extra energy expenditure through the glucagon receptor

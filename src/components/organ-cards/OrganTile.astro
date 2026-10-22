@@ -1,0 +1,46 @@
+---
+/**
+ * One organ picture for an organ card: a 4:3 window cut from registered text-free art
+ * (src/data/organ-cards/_organs.yaml). The crop is done in CSS, not by re-encoding: the whole
+ * picture is placed in an overflow-hidden tile, scaled and shifted so only the window shows, and a
+ * neighbouring specimen inside the window is cropped out with clip-path (never painted over). Every
+ * tile of one art uses the same single 1024 px file, so a page downloads each picture once (AVIF
+ * ~36 KB), lazily, and only the one for the reader's colour scheme (the other is display: none).
+ * Decorative (alt=""): the card's own words name the organ. Never mirrored in RTL.
+ */
+import MediaPicture from '../media/MediaPicture.astro';
+import { getMedia, buildPicture, type Media } from '../../lib/media';
+import { ORGAN_ART } from '../../lib/organ-cards';
+import type { OcOrgan } from '../../schemas/organ-cards';
+interface Props { organ: OcOrgan }
+const { organ } = Astro.props;
+const spec = ORGAN_ART.organs[organ];
+if (!spec) throw new Error(`[organ-cards] no picture for organ "${organ}" in src/data/organ-cards/_organs.yaml`);
+const art = ORGAN_ART.art[spec.art];
+if (!art) throw new Error(`[organ-cards] organ "${organ}": unknown art "${spec.art}" in _organs.yaml`);
+const light = getMedia(art.light);
+const dark = art.dark ? getMedia(art.dark) : undefined;
+if (dark && (dark.image.width !== light.image.width || dark.image.height !== light.image.height)) {
+  throw new Error(`[organ-cards] "${art.dark}" must have the same size as "${art.light}" (one window fits both)`);
+}
+const { width: Wi, height: Hi } = light.image;
+const [x, y, w] = spec.window;
+const h = (w * 3) / 4;
+const pct = (v: number) => `${(Math.round(v * 1000) / 1000).toString()}%`;
+// The picture's box, relative to the tile: width in % of the tile width, offsets in % of the tile.
+const place = `inline-size:${pct((Wi / w) * 100)};inset-inline-start:${pct((-x / w) * 100)};inset-block-start:${pct((-y / h) * 100)}`;
+// Neighbouring specimens: holes in a clip-path polygon (even-odd), in % of the picture's own box.
+const holes = spec.hide.map(([hx, hy, hw, hh]) => {
+  const [x1, y1, x2, y2] = [hx / Wi, hy / Hi, (hx + hw) / Wi, (hy + hh) / Hi].map((v) => pct(v * 100));
+  return `${x1} ${y1},${x1} ${y2},${x2} ${y2},${x2} ${y1},${x1} ${y1},0% 0%`;
+});
+const clip = holes.length ? `;clip-path:polygon(evenodd,0% 0%,100% 0%,100% 100%,0% 100%,0% 0%,${holes.join(',')})` : '';
+const build = (m: Media) => buildPicture(m, { widths: [m.image.width], sizes: `${m.image.width}px` });
+const pic = await build(light);
+const picDark = dark ? await build(dark) : undefined;
+const ground = `--oc-ground:${art.ground};--oc-ground-dark:${art.ground_dark ?? art.ground}`;
+---
+<div class="oc-tile" style={ground} data-organ={organ}>
+  <MediaPicture pictures={[pic]} alt="" class={picDark ? 'oc-tile__pic oc-tile__pic--light' : 'oc-tile__pic'} imgClass="oc-tile__img" style={place + clip} />
+  {picDark && <MediaPicture pictures={[picDark]} alt="" class="oc-tile__pic oc-tile__pic--dark" imgClass="oc-tile__img" style={place + clip} />}
+</div>

@@ -1,0 +1,44 @@
+# Organ-by-organ cards for compounds/semaglutide (<OrganCards id="semaglutide" />, CONTENT-GUIDE §9).
+# Words: src/i18n/<locale>/organ-cards.json → "semaglutide". Pictures: _organs.yaml.
+# Every level and source below is one the page itself cites for the same claim.
+page: compounds/semaglutide
+approved: true
+receptors: [glp1]
+cell:
+  level: in-vitro # receptor binding measured in cell systems; cAMP chain in cell lines and animal islets
+  sources: [chembl-semaglutide, muller-2019-glp1-review]
+cards:
+  - organ: pancreas
+    cell: beta-cell
+    receptors: [glp1]
+    level: human # more insulin, less glucagon when glucose is high: 75 people with type 2 diabetes (Kapitza 2017); Wegovy SmPC 5.1
+    sources: [kapitza-2017-beta-cell, ema-epar-wegovy]
+  - organ: brain
+    cell: nerve-cell
+    receptors: [glp1]
+    level: human # 35% lower energy intake at a test lunch, less hunger: 72 adults with obesity (Friedrichsen 2021); SmPC 5.1: GLP-1 receptors in brain areas for appetite
+    sources: [friedrichsen-2021-appetite, ema-epar-wegovy]
+    note:
+      level: animal # which brain areas: rodents (Gabery 2020); SmPC 5.1 "Animal studies show that semaglutide works in the brain through the GLP-1 receptor"
+      sources: [gabery-2020-semaglutide-brain, ema-epar-wegovy]
+  - organ: stomach
+    cell: stomach-wall
+    receptors: [glp1]
+    level: human # minor delay early after a meal, fading with tolerance (SmPC 4.5, 5.1; no clear delay at week 20 in Friedrichsen 2021); GLP-1 receptors on muscle and nerve cells of the stomach wall (Müller 2019)
+    sources: [ema-epar-wegovy, friedrichsen-2021-appetite, muller-2019-glp1-review]
+  - organ: fat
+    cell: fat-cell
+    receptors: [] # the label names no fat-tissue receptor action; the card shows what the body scans measured
+    level: human # SmPC 5.1: DEXA sub-study of STEP 1 (N = 140): fat mass fell more than lean mass; "most of the total weight loss was attributable to a reduction in fat tissue, including visceral fat"
+    sources: [ema-epar-wegovy]
+  - organ: muscle
+    cell: muscle-fibre
+    receptors: []
+    level: human # SmPC 5.1 (STEP 1 DEXA, N = 140): greater reduction in fat mass than in lean body mass; lean mass includes muscle, organs and water (Neeland 2024)
+    sources: [ema-epar-wegovy, neeland-2024-lean-mass]
+    note:
+      level: unknown # what lean-mass loss means for strength and function in older or frail people is open (Neeland 2024, a narrative review)
+      sources: [neeland-2024-lean-mass]
+review:
+  status: pending
+  note: "Built 22 October 2026 (organ-cards builder) at the owner's request, as an extra figure in the mechanism section (the glp1-action animation and the glp1-body-map plate stay). Levels and sources are the page's own: Kapitza 2017 and the Wegovy SmPC for the pancreas, Friedrichsen 2021 and the SmPC for the brain (where in the brain: Gabery 2020, rodents), the SmPC for the stomach (minor early delay that fades) with Müller 2019 for GLP-1 receptors on muscle and nerve cells of the stomach wall, and the SmPC's STEP 1 DEXA sub-study (N = 140) for fat and lean mass, with Neeland 2024 for what lean mass includes and the open question about strength. Simplifications for the reviewer: the cell close-ups are schematic (one cell, receptors drawn upright on its top edge); the fat and muscle close-ups carry no receptor, because the card reports what the scans measured with weight loss, not a direct action on those cells. Independent review, 22 October 2026: Wegovy SmPC 5.1 re-read (EMA product information PDF): 'In a sub-study in STEP 1 (N = 140)' DEXA showed 'greater reduction in fat mass than in lean body mass'; 'most of the total weight loss was attributable to a reduction in fat tissue'; STEP 1 enrolled adults with obesity, or overweight with a weight-related comorbidity. The brain, fat and muscle lines now name who was studied (adults with obesity; 140 adults with obesity or overweight), so no line reads as true for everyone."

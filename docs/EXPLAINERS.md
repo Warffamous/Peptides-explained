@@ -333,7 +333,17 @@ Each needs the same verification as any page. Levels are a first estimate to che
 | `angiogenesis-double-edge` (backlog item below) | `compounds/bpc-157`, `compounds/tb-500` | 21 October 2026 |
 | `kpv-pept1-nfkb` | `compounds/kpv` | 21 October 2026 |
 | `contamination-infection` (backlog item below) | `safety/sterile-technique`, `safety/injection-safety` | 21 October 2026 |
-| `incretin-two-receptors` and `incretin-three-receptors` (backlog item `incretin-multi-agonism`, split in two) | `compounds/tirzepatide`; `compounds/retatrutide` | 21 October 2026 |
+| `incretin-two-receptors` and `incretin-three-receptors` (backlog item `incretin-multi-agonism`, split in two) | none since 22 October 2026 (were `compounds/tirzepatide`; `compounds/retatrutide`) | 21 October 2026; taken off the pages 22 October 2026 |
+
+**Replaced by a static figure (owner, 22 October 2026).** The owner found the two incretin animations too
+busy: one drawing of all organs mixed WHERE the drug acts with WHAT happens there. On tirzepatide and
+retatrutide the mechanism figure is now `<OrganCards id="…" />` (CONTENT-GUIDE §9): first one cell
+(receptors docking, cAMP, the cell responds), then one card per organ with its picture, a cell close-up,
+one effect line and its evidence level, in the same line style as these animations. The text the cards
+do not carry (the head-to-head trials, TRIUMPH-1, brain areas from animal studies) moved into each
+mechanism section's receptor-table fold. The two explainers stay registered, with `pages: []`, until the
+owner retires them; their artwork and captions are unchanged. Rule 8 applies to the cards as well: a word
+beside every element, receptor types told apart by shape and word, never colour alone.
 
 Not built yet: `why-not-a-pill`, `receptor-signalling`, `half-life-steady-state`, `gh-axis-feedback`,
 `melanocortin-receptors`.
@@ -368,7 +378,7 @@ Not built yet: `why-not-a-pill`, `receptor-signalling`, `half-life-steady-state`
 5. A GHRH analogue (tesamorelin, CJC-1295) pushes step 1; a ghrelin-receptor agonist (ipamorelin) pushes the pituitary directly (human for tesamorelin; human-limited/phase 1–2 for the others).
 6. Sustained pushing raises IGF-1; long-term effects outside trials are unknown (hypothesis for long-term harms).
 
-**incretin-multi-agonism** — **Built** 21 October 2026, split in two: `incretin-two-receptors` (tirzepatide) and `incretin-three-receptors` (retatrutide). The outline below is kept as the plan it was built from. `compounds/tirzepatide`, `compounds/retatrutide`. Anatomy, no mirror.
+**incretin-multi-agonism** — **Built** 21 October 2026, split in two: `incretin-two-receptors` (tirzepatide) and `incretin-three-receptors` (retatrutide); **replaced on both pages by `<OrganCards>` on 22 October 2026** (see the note under the table above). The outline below is kept as the plan it was built from. `compounds/tirzepatide`, `compounds/retatrutide`. Anatomy, no mirror.
 1. One molecule binds more than one receptor (in-vitro).
 2. GLP-1 receptor: insulin, glucagon, stomach, appetite, as in `glp1-action` (human).
 3. GIP receptor: more insulin when glucose is high; effects on fat tissue and the brain (human for insulin; animal for fat/brain).

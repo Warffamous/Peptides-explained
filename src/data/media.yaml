@@ -508,3 +508,169 @@ law-library-shelf:
   people: false
   focal: 50% 45%
   sources: []
+muscle-tissue-art:
+  file: muscle-tissue-art.png
+  kind: infographic-art
+  origin: ai-generated
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  author: AI-generated with gpt-image-2.5-sunburst-2026-09-08 for Peptides Explained
+  focal: 50% 50%
+  sources: []
+  ai:
+    model: gpt-image-2.5-sunburst-2026-09-08
+    prompt: "A square teaching plate showing exactly one specimen and nothing else on one plain background, in a calm anatomy-atlas style. The specimen: a short, neat, rectangular block of human skeletal muscle, cut cleanly and flat at both ends, lying horizontally and seen from the front and slightly above in gentle three-quarter perspective, so that the cut end on the viewer's left and the long top and front surfaces are visible. On the cut end: many rounded bundles of muscle fibres packed closely together, each bundle wrapped in a thin pale sheath, the whole block wrapped in a thin pale whitish-grey outer sheath. On the top and front surfaces: long, straight, parallel muscle fibres running the whole length of the block, with a very fine, even cross-striation. Muted natural rose-red to brick-red muscle colour, softly shaded; pale whitish-grey connective tissue. No fat, no skin, no bone, no tendon, no blood vessels, no blood, no other organs, no hands, no instruments. The block sits in the centre, about 22% to 78% of the width and 36% to 64% of the height, with generous plain empty background all around it. Plain, uniform very light warm-grey background; flat, even light; no cast shadows, no vignette, no frame; soft, clean edges; muted natural colours."
+    preamble: v1
+    generated: 2026-10-22
+    review: pending
+    review_note: "Pre-check by the organ-cards builder agent on 22 October 2026; the owner still has to check it. Made for the muscle cards of <OrganCards> (semaglutide, tirzepatide, retatrutide), in the style of incretin-receptors-art (same model, size 1024x1024, a single specimen). One generation (1 billed call), kept. Opened at full size and in 2x crops of the cut end and the far end: no letters, digits, labels, logos or text-like texture. Anatomy: a block of skeletal muscle in three-quarter view; the cut end on the viewer's left shows about 20 rounded fascicles packed together, each wrapped in a thin pale sheath (perimysium) and filled with small rounded fibres; a thin translucent outer sheath (epimysium) wraps the block; the top and front surfaces show the fascicles as long parallel rods with an even cross-striation. Simplifications: the striation is drawn on whole fascicles (in reality it belongs to each fibre's sarcomeres and is not visible at this scale); the far end is rounded off rather than cut flat; no blood vessels or nerves. Bounding box (pixels of 1024): 111-919 x 345-686. Used as the muscle picture in src/data/organ-cards/_organs.yaml (window 70, 182, width 890). Independent reviewer, 22 October 2026 (review stays pending for the owner): opened at full size and in 2x crops of the cut end, the middle and the far end; no letters, digits, labels, logos or text-like marks; the background outside the specimen is uniform (no pixel more than 12 grey levels from the corner colour). Anatomy agrees with the note above: fascicles in their sheaths on the cut end, small rounded fibres inside each, a thin outer sheath, parallel fascicles with cross-striation along the block. Two simplifications for the owner to accept: the striation is drawn on whole fascicles, and the far end is rounded instead of cut flat as the prompt asked. Nothing misleading for a reader at card size."
+muscle-tissue-art-dark:
+  file: muscle-tissue-art-dark.png
+  kind: infographic-art
+  origin: ai-generated
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  author: AI-generated with gpt-image-2.5-sunburst-2026-09-08 for Peptides Explained
+  focal: 50% 50%
+  sources: []
+  ai:
+    model: gpt-image-2.5-sunburst-2026-09-08
+    prompt: "Recreate the supplied illustration as its dark-background edition. Keep everything else identical: the same composition, framing, scale and crop; every structure in exactly the same position, size, shape and outline; the same anatomy; nothing added, nothing removed, nothing moved. Change only the colours: the plain background becomes a very dark, warm near-black (charcoal with a faint brown warmth) that fills the whole canvas edge to edge, with no vignette, frame, border or gradient; outlines and translucent tones that were dark on light become soft light warm-grey line work so they read on the dark ground; the organs keep their natural hues, a little richer so they stand out calmly on the dark ground, without glowing. Still absolutely no text, letters, numbers, labels or marks that look like writing."
+    preamble: v1-dark
+    generated: 2026-10-22
+    review: pending
+    review_note: "Pre-check by the organ-cards builder agent on 22 October 2026; the owner still has to check it. Made with the edits endpoint (--dark) from muscle-tissue-art, 1 billed call. Opened at full size: no letters, digits, labels, logos or text-like texture. Background a warm near-black (about #1e1915); the muscle keeps its colour, a little richer. Same composition and size (1024x1024); bounding box 111-920 x 343-686, within 2 px of the light file, so the one crop window in _organs.yaml fits both. Independent reviewer, 22 October 2026 (review stays pending for the owner): opened at full size and in 2x crops of the cut end and the far end; no letters, digits, labels, logos or text-like marks; the background outside the specimen is uniform (no pixel more than 12 grey levels from the corner colour). Same anatomy and the same two simplifications as the light file (striation on whole fascicles, rounded far end); the pale sheaths read clearly on the dark ground."
+    edited_from: muscle-tissue-art
+reichstag-berlin-west:
+  file: reichstag-berlin-west.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  author: Jürgen Matern
+  credit: Own work(JMatern_071104_8454-8458_WC.jpg)
+  title: Reichstag building Berlin view from west before sunset
+  source_url: https://commons.wikimedia.org/wiki/File:Reichstag_building_Berlin_view_from_west_before_sunset.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 55%
+  sources: []
+palace-of-westminster-dusk:
+  file: palace-of-westminster-dusk.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-2.5
+  license_url: https://creativecommons.org/licenses/by-sa/2.5
+  author: Diliff
+  title: Palace of Westminster, London - Feb 2007
+  source_url: https://commons.wikimedia.org/wiki/File:Palace_of_Westminster,_London_-_Feb_2007.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 55%
+  sources: []
+fda-white-oak-building:
+  file: fda-white-oak-building.jpg
+  kind: photo
+  origin: public-domain
+  license: public-domain
+  author: The U.S. Food and Drug Administration
+  credit: FDA Bldg 62 - Exterior
+  title: FDA Bldg 62 - Exterior (5161375340)
+  source_url: https://commons.wikimedia.org/wiki/File:FDA_Bldg_62_-_Exterior_(5161375340).jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 45% 50%
+  sources: []
+athletics-track-lanes:
+  file: athletics-track-lanes.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  author: Santeri Viinamäki
+  title: Athletics track start line numbers 1, 2, 3
+  source_url: https://commons.wikimedia.org/wiki/File:Athletics_track_start_line_numbers_1,_2,_3.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  sources: []
+flags-european-parliament-strasbourg:
+  file: flags-european-parliament-strasbourg.jpg
+  kind: photo
+  origin: cc0
+  license: CC0-1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+  author: Syced
+  title: December 2007, flags in front of Louise Weiss building 2
+  source_url: https://commons.wikimedia.org/wiki/File:December_2007,_flags_in_front_of_Louise_Weiss_building_2.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 45%
+  sources: []
+protein-model-csiro:
+  file: protein-model-csiro.jpg
+  kind: illustration
+  origin: cc-by
+  license: CC-BY-3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  author: CSIRO
+  credit: CSIRO ScienceImage
+  title: CSIRO ScienceImage 1788 Molecular model of a protein
+  source_url: https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_1788_Molecular_model_of_a_protein.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  sources: []
+ball-and-stick-model:
+  file: ball-and-stick-model.jpg
+  kind: photo
+  origin: cc-by
+  license: CC-BY-2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  author: Paul Hudson from United Kingdom
+  credit: Molecule
+  title: Molecule (1)
+  source_url: https://commons.wikimedia.org/wiki/File:Molecule_(1).jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  sources: []
+endothelial-cells-fluorescent:
+  file: endothelial-cells-fluorescent.jpg
+  kind: photo
+  origin: cc-by
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0
+  author: Erin Rod
+  title: Bovine Pulmonary Artery Endothelial Cells Fluorescent Image
+  source_url: https://commons.wikimedia.org/wiki/File:Bovine_Pulmonary_Artery_Endothelial_Cells_Fluorescent_Image.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  sources: []
+wooden-hourglass:
+  file: wooden-hourglass.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0/
+  author: User:S Sepp
+  title: Wooden hourglass 3
+  source_url: https://commons.wikimedia.org/wiki/File:Wooden_hourglass_3.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  sources: []
+gastric-mucosa-he:
+  file: gastric-mucosa-he.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  author: Nephron
+  title: Normal gastric mucosa intermed mag
+  source_url: https://commons.wikimedia.org/wiki/File:Normal_gastric_mucosa_intermed_mag.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 20%
+  sources: []

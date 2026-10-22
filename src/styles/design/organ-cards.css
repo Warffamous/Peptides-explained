@@ -1,0 +1,217 @@
+/*
+ * <OrganCards id="…" /> — organ-by-organ cards (src/components/mdx/OrganCards.astro; CONTENT-GUIDE §9).
+ * First "How it works in a cell" (a schematic on the ground colour, like an explainer's stage), then
+ * one card per organ: 3 columns on a wide figure, 2 on tablets, 1 on phones (container queries, so it
+ * also reflows at 200% zoom and inside an "In detail" fold).
+ *
+ * Colour keeps its jobs (tokens.css): CYAN = demonstrated (people, animals or cells; the line style
+ * says which), AMBER = hypothesised, neutral grey with dashes = not known / not approved. Receptor
+ * types use the residue hues, which stay out of that pair's way, and are told apart by SHAPE and WORD
+ * as well (never colour alone). No word below 14px. Logical properties only; the organ pictures and the
+ * drawings are never mirrored, the layout around them is.
+ */
+
+/* ------------------------------------------------------------------ frame */
+:is(.prose, .csec) > .organ-cards { grid-column: wide; }
+/* Inside a fold the figure reaches into the aside, like the other wide figures (base/figures.css). */
+.in-detail__body > .organ-cards { inline-size: min(100cqi, var(--wide)); max-inline-size: none; }
+.organ-cards {
+  container: oc / inline-size;
+  min-inline-size: 0;
+  margin-block: var(--space-4) var(--space-7);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+@media (max-width: 30rem) {
+  .organ-cards { padding: var(--space-3); }
+}
+.oc-head { display: grid; gap: 0.15rem; margin-block-end: var(--space-4); }
+.oc-kicker { font-size: var(--s--2); font-weight: 600; color: var(--text-2); }
+.oc-title { font-size: var(--s-1); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; color: var(--text); text-wrap: balance; }
+.oc-detail { max-inline-size: 62ch; font-size: var(--s--1); color: var(--text-2); }
+/* "Not approved": neutral grey with a dashed outline (tokens.css: no / not authorised). */
+.oc-status {
+  justify-self: start;
+  margin-block-start: var(--space-2);
+  padding: 0.15rem 0.65rem;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: var(--radius-sm);
+  font-size: var(--s--1);
+  font-weight: 600;
+  color: var(--text);
+}
+.oc-sub { margin: 0 0 var(--space-3); font-size: var(--s-0); font-weight: 600; line-height: 1.3; color: var(--text); }
+
+/* ------------------------------------------------------------------ 1. how it works in a cell */
+.oc-cell { padding: var(--space-4); border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--ground); }
+@media (max-width: 30rem) {
+  .oc-cell { padding: var(--space-3) var(--space-2); }
+}
+.oc-cell__body { display: grid; gap: var(--space-4); }
+@container oc (min-width: 46rem) {
+  .oc-cell__body { grid-template-columns: max-content minmax(15rem, 1fr); align-items: start; gap: var(--space-6); }
+}
+/*
+ * The drawing is a grid: a zone column (outside / cell surface / inside) and one column per receptor
+ * type. The art row has a fixed height (6.5rem), so the zone words, the membrane band behind the
+ * receptors and the receptors in each small SVG (viewBox 56 × 104 = 3.5rem × 6.5rem) line up at any
+ * width: the band runs from 2.25rem to 3.5rem, as the cell surface does in the SVG (y 36–56).
+ */
+.oc-diagram {
+  display: grid;
+  /* A single receptor gets a wider column (18rem), so the cAMP line and "the cell responds" do not wrap
+     into a narrow tower; two or three receptors get up to 9rem each. */
+  grid-template-columns: minmax(5.75rem, 7rem) repeat(var(--oc-n, 2), minmax(3.6rem, max(9rem, calc(18rem / var(--oc-n, 2)))));
+  grid-template-rows: auto auto 6.5rem auto auto;
+  row-gap: var(--space-2);
+  max-inline-size: 100%;
+  font-size: var(--s--2);
+  line-height: 1.2;
+  color: var(--text-2);
+}
+.oc-diagram > * { min-inline-size: 0; margin: 0; }
+.oc-diagram__drug { grid-row: 1; grid-column: 2 / -1; display: flex; align-items: center; justify-content: center; gap: 0.4em; font-size: var(--s--1); font-weight: 600; color: var(--text); text-align: center; }
+/* On a phone the receptor columns are narrow: the medicine's word takes the whole row, so
+   "Retatrutide (not approved)" stays on one line beside its glyph. */
+@container oc (max-width: 24rem) {
+  .oc-diagram__drug { grid-column: 1 / -1; }
+}
+.oc-diagram__name { grid-row: 2; display: flex; flex-direction: column; align-items: center; gap: 0.15rem; padding-inline: 0.15rem; font-weight: 600; color: var(--text); text-align: center; }
+.oc-diagram__zones { position: relative; grid-row: 3; grid-column: 1; }
+.oc-zone { position: absolute; inset-inline: 0; display: flex; align-items: center; padding-inline-end: var(--space-2); font-weight: 500; color: var(--text-2); }
+.oc-zone[data-zone='out'] { inset-block-start: 0; block-size: 2.25rem; }
+.oc-zone[data-zone='surface'] { inset-block-start: 2.25rem; block-size: 1.25rem; font-weight: 600; color: var(--text); white-space: nowrap; }
+.oc-zone[data-zone='in'] { inset-block-start: 3.5rem; block-size: 3rem; }
+/* The cell surface (membrane): a band with its two edges, behind the receptors. */
+.oc-diagram__band {
+  grid-row: 3;
+  grid-column: 2 / -1;
+  align-self: start;
+  margin-block-start: 2.25rem;
+  block-size: 1.25rem;
+  border-block: 2px solid var(--line-strong);
+  background: color-mix(in oklch, var(--res-special) 18%, var(--ground));
+}
+.oc-dock { grid-row: 3; justify-self: center; inline-size: 3.5rem; block-size: 6.5rem; overflow: visible; }
+.oc-diagram__camp { grid-row: 4; grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 0.45em; text-align: center; }
+.oc-diagram__resp { grid-row: 5; grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 0.2rem; text-align: center; }
+.oc-diagram__resp > span { padding: 0.35rem 0.7rem; border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); font-weight: 500; color: var(--text); }
+.oc-glyph { flex: none; overflow: visible; }
+
+.oc-cell__text { display: grid; gap: var(--space-3); align-content: start; }
+ol.oc-steps { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
+li.oc-step { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3); margin: 0; font-size: var(--s--1); line-height: 1.5; color: var(--text); }
+.oc-step__n { display: inline-grid; place-items: center; inline-size: 1.6em; block-size: 1.6em; border-radius: 50%; background: var(--text); color: var(--ground); font-family: var(--font-mono); font-size: var(--s--2); font-weight: 700; }
+
+/* ------------------------------------------------------------------ drawings: receptors, medicine, signal, cells */
+.oc-rec { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.oc-rec__cup { stroke-width: 2.6; }
+.oc-rec__stem { stroke-width: 3.4; }
+.oc-rec[data-r='glp1'] { stroke: var(--res-aromatic); }
+.oc-rec[data-r='gip'] { stroke: var(--res-polar); }
+.oc-rec[data-r='glucagon'] { stroke: var(--res-positive); }
+.oc-drug { fill: var(--res-hydrophobic); stroke: none; }
+.oc-signal { fill: none; stroke: var(--cyan); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.oc-signal[data-level='animal'], .oc-signal[data-level='in-vitro'] { stroke-dasharray: 5 3.5; stroke-linecap: butt; }
+.oc-signal[data-level='hypothesis'] { stroke: var(--amber); stroke-dasharray: 1.5 3.5; }
+.oc-camp { fill: var(--res-negative); }
+.oc-close { display: block; inline-size: 100%; block-size: auto; overflow: visible; }
+.oc-cellbody { fill: var(--surface-2); stroke: var(--text-3); stroke-width: 1.4; }
+.oc-nucleus { fill: color-mix(in oklch, var(--text-3) 30%, var(--surface-2)); stroke: var(--text-3); stroke-width: 1; }
+.oc-droplet { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1; }
+.oc-fibre { fill: none; stroke: var(--text-3); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.oc-stripe { stroke: var(--line-strong); stroke-width: 1; }
+
+/* ------------------------------------------------------------------ the evidence line style (as in explainers) */
+.oc-line { flex: none; overflow: visible; }
+.oc-line path { fill: none; stroke: var(--cyan); stroke-width: 2.4; }
+.oc-line path[data-level='animal'], .oc-line path[data-level='in-vitro'] { stroke-dasharray: 7 4; }
+.oc-line path[data-level='hypothesis'] { stroke: var(--amber); stroke-dasharray: 1 4.5; stroke-linecap: round; }
+.oc-line path[data-level='unknown'] { stroke: var(--text-3); stroke-dasharray: 1 4.5; stroke-linecap: round; }
+.oc-level { display: grid; grid-template-columns: 2rem minmax(0, 1fr); column-gap: var(--space-2); align-items: start; margin: 0; font-size: var(--s--2); line-height: 1.45; font-weight: 600; color: var(--cyan-text); }
+.oc-level > .oc-line { margin-block-start: 0.5em; }
+.oc-level[data-level='hypothesis'] { color: var(--amber-text); }
+.oc-level[data-level='unknown'] { color: var(--text-2); }
+.oc-level--note { font-weight: 400; color: var(--text-2); }
+.oc-level--note[data-level] { color: var(--text-2); }
+.oc-level--note .oc-level__word { font-weight: 600; color: var(--cyan-text); }
+.oc-level--note[data-level='hypothesis'] .oc-level__word { color: var(--amber-text); }
+.oc-level--note[data-level='unknown'] .oc-level__word { color: var(--text); }
+
+/* ------------------------------------------------------------------ 2. the organ cards */
+.oc-organs { margin-block-start: var(--space-5); }
+ul.oc-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+@container oc (min-width: 36rem) {
+  ul.oc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@container oc (min-width: 54rem) {
+  ul.oc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* Each card's start edge is drawn like its effect line: solid = people, dashed = animals or cells,
+   dotted amber = an idea, dotted grey = not known (as the explainer step cards). */
+li.oc-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--cyan);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+li.oc-card[data-level='animal'], li.oc-card[data-level='in-vitro'] { border-inline-start-style: dashed; }
+li.oc-card[data-level='hypothesis'] { border-inline-start-style: dotted; border-inline-start-color: var(--amber); }
+li.oc-card[data-level='unknown'] { border-inline-start-style: dotted; border-inline-start-color: var(--text-3); }
+.oc-card__name { margin: 0; font-size: var(--s-0); font-weight: 600; line-height: 1.25; color: var(--text); }
+.oc-card__effect { margin: var(--space-1) 0 0; font-size: 1.0625rem; line-height: 1.45; font-weight: 500; color: var(--text); text-wrap: pretty; }
+
+/* The organ picture: a 4:3 window on the art (OrganTile.astro). The tile is the art's own ground, so a
+   window that runs past the art's edge, or a neighbour cropped out, shows nothing but plain ground. */
+.oc-tile { position: relative; overflow: hidden; aspect-ratio: 4 / 3; direction: ltr; border-radius: var(--radius-sm); background: var(--oc-ground, var(--surface-2)); }
+.oc-tile picture { display: block; }
+.oc-tile .oc-tile__pic--light { display: var(--plate-show-light, block); }
+.oc-tile .oc-tile__pic--dark { display: var(--plate-show-dark, none); }
+.oc-tile img.oc-tile__img { position: absolute; display: block; max-inline-size: none; block-size: auto; }
+:root[data-scheme='dark'] .oc-tile { background: var(--oc-ground-dark, var(--surface-2)); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) .oc-tile { background: var(--oc-ground-dark, var(--surface-2)); }
+}
+@media print {
+  :root .oc-tile { background: var(--oc-ground); }
+  :root .oc-tile .oc-tile__pic--light { display: block; }
+  :root .oc-tile .oc-tile__pic--dark { display: none; }
+}
+
+/* The cell close-up and its words, side by side. */
+.oc-card__cell { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--space-3); align-items: center; padding-block: var(--space-1); }
+.oc-card__cellwords { display: grid; gap: 0.3rem; min-inline-size: 0; }
+.oc-card__cellname { font-size: var(--s--1); font-weight: 600; line-height: 1.3; color: var(--text); }
+ul.oc-chips { display: flex; flex-wrap: wrap; gap: 0.2rem 0.75rem; margin: 0; padding: 0; list-style: none; }
+.oc-chip { display: inline-flex; align-items: center; gap: 0.3em; margin: 0; font-size: var(--s--2); line-height: 1.3; font-weight: 500; color: var(--text-2); }
+.oc-chip--none { display: block; color: var(--text-2); }
+
+/* ------------------------------------------------------------------ legend, credits, review */
+.oc-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem var(--space-4); margin: var(--space-4) 0 0; font-size: var(--s--2); color: var(--text-2); }
+.oc-legend__title { flex-basis: 100%; font-weight: 600; }
+@container oc (min-width: 46rem) {
+  .oc-legend__title { flex-basis: auto; }
+}
+/* The line sample keeps its own column, so a key that wraps on a phone stays beside its line. */
+.oc-key { display: inline-grid; grid-template-columns: 2rem minmax(0, auto); column-gap: 0.45em; align-items: start; }
+.oc-key > .oc-line { margin-block-start: 0.45em; }
+.oc-credit { margin: var(--space-2) 0 0; font-size: var(--s--2); color: var(--text-2); }
+.oc-credit__label { font-weight: 600; }
+.oc-credit__note { display: block; }
+.oc-review { margin: var(--space-1) 0 0; font-size: var(--s--2); color: var(--text-2); }
+
+/* Windows high contrast: lines and frames keep their meaning through the line style. */
+@media (forced-colors: active) {
+  .oc-line path, .oc-signal { stroke: CanvasText; }
+  .oc-rec { stroke: CanvasText; }
+  .oc-drug, .oc-camp { fill: CanvasText; }
+  .oc-diagram__band { border-color: CanvasText; }
+}

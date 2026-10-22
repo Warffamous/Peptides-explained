@@ -1,0 +1,178 @@
+---
+/**
+ * <OrganCards id="tirzepatide" /> — organ-by-organ cards (docs/CONTENT-GUIDE.md §9). A static figure
+ * that keeps WHERE a medicine acts apart from WHAT happens there (owner, 22 October 2026: the
+ * all-organs-in-one receptor animations were too busy):
+ *
+ *  1. "How it works in a cell": the cell surface with the medicine's receptor types side by side,
+ *     the molecule docking in each, the cAMP signal inside and "the cell responds". Every part has
+ *     its word; receptor types differ by SHAPE and WORD (shapes.ts), never by colour alone. The
+ *     drawing is aria-hidden; the numbered steps beside it are its text equivalent.
+ *  2. One card per organ or tissue (3 columns on wide figures, 2 on tablets, 1 on phones): the organ
+ *     picture (a crop of registered text-free art, OrganTile), a cell close-up with the receptors
+ *     on that cell and their words, ONE plain effect line, and its evidence level as a word plus the
+ *     site's line style (solid = people, long dashes = animals or cells, short dashes = not known).
+ *
+ * Data: src/data/organ-cards/<id>.yaml (levels, sources); words: src/i18n/<locale>/organ-cards.json.
+ * Citation marks are numbered from the page's own source list (compound pages only); the validator
+ * fails a figure whose source is not cited elsewhere on its page, so every mark has a number.
+ */
+import { t, tr, isFallback } from '../../lib/i18n';
+import { ctxLocale, ctxCompound, uid } from '../../lib/ctx';
+import { getLocale, SOURCE_LOCALE } from '../../lib/config';
+import { getOrganCards, levelsUsed, ORGAN_ART } from '../../lib/organ-cards';
+import { getMedia, type Media } from '../../lib/media';
+import { formatNumber } from '../../lib/format';
+import type { OrganCardsText } from '../../schemas/organ-cards';
+import CiteMarks from '../ui/CiteMarks.astro';
+import MediaCredit from '../media/MediaCredit.astro';
+import OrganTile from '../organ-cards/OrganTile.astro';
+import CellCloseUp from '../organ-cards/CellCloseUp.astro';
+import { CUP, SEAT, hexagon } from '../organ-cards/shapes';
+
+interface Props { id: string }
+const { id } = Astro.props;
+const L = ctxLocale(Astro);
+const { citeIndex } = ctxCompound(Astro, 'OrganCards');
+const x = getOrganCards(id);
+const text = tr<OrganCardsText>(L, `organ-cards.${id}`);
+const ui = (key: string, vars?: Record<string, string | number>) => t(L, `organ-cards.ui.${key}`, vars);
+for (const c of x.cards) {
+  if (!text.cards[c.organ]?.effect) throw new Error(`<OrganCards id="${id}">: no effect line for "${c.organ}" in ${L}/organ-cards.json`);
+  if (c.note && !text.cards[c.organ].note) throw new Error(`<OrganCards id="${id}">: card "${c.organ}" has a note in the data but no note text in ${L}/organ-cards.json`);
+}
+const fallback = isFallback(L, `organ-cards.${id}.title`);
+const base = uid(Astro, `oc-${id}`);
+const receptorList = new Intl.ListFormat(getLocale(L).dateLocale ?? getLocale(L).bcp47, { style: 'long', type: 'conjunction' }).format(x.receptors.map((r) => ui(`receptorsList.${r}`)));
+const drugWord = x.approved ? text.drug : `${text.drug} (${ui('notApprovedShort')})`;
+const steps = [ui(x.receptors.length > 1 ? 'cell.dockMany' : 'cell.dockOne', { drug: text.drug, receptors: receptorList }), ui(x.receptors.length > 1 ? 'cell.signalMany' : 'cell.signalOne'), ui('cell.respond')];
+// Animals and cells share one line style (long dashes), so they share one legend entry.
+const legend = [...new Set(levelsUsed(x).map((lv) => (lv === 'animal' || lv === 'in-vitro' ? 'lab' : lv)))];
+// One credit line per picture used (the light version; the dark one is the same drawing).
+const arts: Media[] = [...new Set(x.cards.map((c) => ORGAN_ART.organs[c.organ]?.art))].filter(Boolean).map((a) => getMedia(ORGAN_ART.art[a!].light));
+---
+<figure class="organ-cards" id={base} aria-labelledby={`${base}-title`} data-oc={id} data-review={x.review.status} lang={fallback ? getLocale(SOURCE_LOCALE).bcp47 : undefined}>
+  <figcaption class="oc-head">
+    <span class="oc-kicker" data-pagefind-ignore>{ui('kicker')}</span>
+    <span class="oc-title" id={`${base}-title`}>{text.title}</span>
+    <span class="oc-detail">{text.detail}</span>
+    {!x.approved && (
+      <span class="oc-status"><span class="oc-status__text">{ui('notApproved')}</span><CiteMarks locale={L} ids={x.status_sources} index={citeIndex} /></span>
+    )}
+  </figcaption>
+
+  <section class="oc-cell" aria-labelledby={`${base}-cell`}>
+    <p class="oc-sub" id={`${base}-cell`}>{ui('cell.title')}</p>
+    <div class="oc-cell__body">
+      {/* The drawing: words are HTML in the grid, shapes are small SVGs; the steps beside it say the same. */}
+      <div class="oc-diagram" aria-hidden="true" data-pagefind-ignore="all" style={`--oc-n:${x.receptors.length}`}>
+        <p class="oc-diagram__drug">
+          <svg class="oc-glyph oc-glyph--drug" viewBox="-7 -7 14 14" width="14" height="14" focusable="false"><path class="oc-drug" d={hexagon(0, 0, 6)} /></svg>
+          <span>{drugWord}</span>
+        </p>
+        {x.receptors.map((r, i) => (
+          <p class="oc-diagram__name" style={`grid-column:${i + 2}`}>
+            <svg class="oc-glyph" viewBox="-10 -15 20 24" width="15" height="18" focusable="false"><g class="oc-rec" data-r={r}><path class="oc-rec__stem" d="M0 -0.5V7" /><path class="oc-rec__cup" d={CUP[r]} /></g></svg>
+            <span>{ui(`receptors.${r}`)}</span>
+          </p>
+        ))}
+        <div class="oc-diagram__zones">
+          <span class="oc-zone" data-zone="out">{ui('cell.outside')}</span>
+          <span class="oc-zone" data-zone="surface">{ui('cell.surface')}</span>
+          <span class="oc-zone" data-zone="in">{ui('cell.inside')}</span>
+        </div>
+        <div class="oc-diagram__band"></div>
+        {x.receptors.map((r, i) => (
+          <svg class="oc-dock" style={`grid-column:${i + 2}`} viewBox="0 0 56 104" width="56" height="104" focusable="false">
+            <g class="oc-rec" data-r={r} transform="translate(28 36) scale(1.5)">
+              <path class="oc-rec__stem" d="M0 -0.5V17.5" />
+              <path class="oc-rec__cup" d={CUP[r]} />
+              <path class="oc-drug" d={hexagon(0, SEAT[r], 4.6)} />
+            </g>
+            <path class="oc-signal" data-level={x.cell.level} d="M28 66V86" />
+            <path class="oc-signal oc-signal--head" d="M23.5 82L28 88L32.5 82" />
+            <circle class="oc-camp" cx="19" cy="97" r="3" />
+            <circle class="oc-camp" cx="28" cy="99" r="3" />
+            <circle class="oc-camp" cx="37" cy="97" r="3" />
+          </svg>
+        ))}
+        <p class="oc-diagram__camp">
+          <svg class="oc-glyph" viewBox="0 0 22 10" width="22" height="10" focusable="false"><circle class="oc-camp" cx="4" cy="5" r="3" /><circle class="oc-camp" cx="11" cy="5" r="3" /><circle class="oc-camp" cx="18" cy="5" r="3" /></svg>
+          <span>{ui('cell.camp')}</span>
+        </p>
+        <p class="oc-diagram__resp">
+          <svg class="oc-glyph oc-glyph--arrow" viewBox="0 0 12 22" width="12" height="22" focusable="false"><path class="oc-signal" data-level={x.cell.level} d="M6 1V19" /><path class="oc-signal oc-signal--head" d="M2 15L6 21L10 15" /></svg>
+          <span>{ui('cell.responds')}</span>
+        </p>
+      </div>
+      <div class="oc-cell__text">
+        <ol class="oc-steps" role="list" aria-label={ui('cell.stepsLabel')}>
+          {steps.map((s, i) => (
+            <li class="oc-step"><span class="oc-step__n" aria-hidden="true"><bdi>{formatNumber(L, i + 1)}</bdi></span><span class="oc-step__text">{s}</span></li>
+          ))}
+        </ol>
+        <p class="oc-level" data-level={x.cell.level}>
+          <svg class="oc-line" viewBox="0 0 32 8" width="32" height="8" aria-hidden="true" focusable="false"><path data-level={x.cell.level} d="M2 4H30" /></svg>
+          <span>{ui(`levels.${x.cell.level}`)}<CiteMarks locale={L} ids={x.cell.sources} index={citeIndex} /></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="oc-organs" aria-labelledby={`${base}-organs`}>
+    <p class="oc-sub" id={`${base}-organs`}>{ui('cardsTitle')}</p>
+    <ul class="oc-grid" role="list">
+      {x.cards.map((c) => (
+        <li class="oc-card" data-level={c.level} data-organ={c.organ}>
+          <p class="oc-card__name">{ui(`organs.${c.organ}`)}</p>
+          <OrganTile organ={c.organ} />
+          <div class="oc-card__cell">
+            <CellCloseUp cell={c.cell} receptors={c.receptors} />
+            <div class="oc-card__cellwords">
+              <span class="oc-card__cellname"><span class="visually-hidden">{ui('closeUp')}: </span>{ui(`cells.${c.cell}`)}</span>
+              {c.receptors.length > 0 ? (
+                <ul class="oc-chips" role="list">
+                  {c.receptors.map((r) => (
+                    <li class="oc-chip">
+                      <svg class="oc-glyph" viewBox="-10 -15 20 24" width="15" height="18" aria-hidden="true" focusable="false"><g class="oc-rec" data-r={r}><path class="oc-rec__stem" d="M0 -0.5V7" /><path class="oc-rec__cup" d={CUP[r]} /></g></svg>
+                      <span>{ui(`receptors.${r}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <span class="oc-chip oc-chip--none">{ui('noReceptor')}</span>
+              )}
+            </div>
+          </div>
+          <p class="oc-card__effect">{text.cards[c.organ].effect}<CiteMarks locale={L} ids={c.sources} index={citeIndex} /></p>
+          <p class="oc-level" data-level={c.level}>
+            <svg class="oc-line" viewBox="0 0 32 8" width="32" height="8" aria-hidden="true" focusable="false"><path data-level={c.level} d="M2 4H30" /></svg>
+            <span>{ui(`levels.${c.level}`)}</span>
+          </p>
+          {c.note && (
+            <p class="oc-level oc-level--note" data-level={c.note.level}>
+              <svg class="oc-line" viewBox="0 0 32 8" width="32" height="8" aria-hidden="true" focusable="false"><path data-level={c.note.level} d="M2 4H30" /></svg>
+              <span><strong class="oc-level__word">{ui(`levels.${c.note.level}`)}:</strong> {text.cards[c.organ].note}<CiteMarks locale={L} ids={c.note.sources} index={citeIndex} /></span>
+            </p>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <p class="oc-legend">
+    <span class="oc-legend__title">{ui('legend')}</span>
+    {legend.map((lv) => (
+      <span class="oc-key">
+        <svg class="oc-line" viewBox="0 0 32 8" width="32" height="8" aria-hidden="true" focusable="false"><path data-level={lv === 'lab' ? 'animal' : lv} d="M2 4H30" /></svg>
+        {ui(`lines.${lv}`)}
+      </span>
+    ))}
+  </p>
+  <p class="oc-credit">
+    <span class="oc-credit__label">{ui('pictures')}</span>{' '}
+    {arts.map((m, i) => <>{i > 0 && <span aria-hidden="true"> · </span>}<MediaCredit locale={L} media={m} /></>)}{' '}
+    <span class="oc-credit__note">{ui('artNote')}</span>
+  </p>
+  {x.review.status === 'pending' && <p class="oc-review">{ui('reviewPending')}</p>}
+</figure>
