@@ -1,0 +1,203 @@
+---
+title: "How we grade evidence: four questions, never one score"
+nav_title: "Evidence grading"
+description: "The rubric behind every evidence profile on this site: four separate axes, the thresholds for each, the claim badges, their limits and how a grade changes."
+summary:
+  - "Every compound gets four separate grades. We never add them up into one score."
+  - "Four questions: tested in people? How much lab research? How many research groups? How well are harms known?"
+  - "One score would hide the shape: many rat studies from one lab, and almost no data in people."
+  - "Badges in the text say what each claim rests on: cells, animals or people."
+  - "A grade changes when new evidence is published. Every change is logged with its date."
+section: evidence
+order: 3
+template: reference
+reading_level: B2
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review
+related:
+  - evidence/how-to-read-a-study
+  - evidence/the-translation-gap
+  - history/the-croatian-lab
+  - about/editorial-policy
+  - about/corrections
+further_reading:
+  - guyatt-2008-grade
+---
+
+This is the rubric behind the evidence profile on every compound page. It sets out what we grade, the rule and threshold for each grade, what the claim badges in the text mean, and where the rubric stops being useful.
+
+## Why four questions and not one score
+
+<Lead question="Why not give each compound a simple score?">Because one number hides where the evidence is strong and where it is missing.</Lead>
+
+<EvidenceGrade compound="bpc-157" headingLevel={3} foldWhy />
+
+BPC-157 shows why. It has a large animal literature, about 160 primary studies. About 85 in 100 of them come from one research group. The only published human data are a few small reports without a comparison group, plus trials known only from short conference abstracts.<Cite id="pubmed-bpc157-count-2026-10-20,poolton-2026-human-sr,fda-pcac-2026-bpc157-briefing" /> An average of those facts would read "medium" and describe none of them.
+
+<InDetail title="What a single score would hide">
+
+The four grades together have a shape, and the shape is the information. Two compounds with the same "average" can be in completely different situations:
+
+<Diagram id="same-score-different-shape" caption="Two very different situations could get the same average score. Four grades keep them apart.">
+
+| | Compound A (the BPC-157 pattern) | Compound B (an invented example) |
+|---|---|---|
+| Tested in people | Case reports only | A published phase 2 trial |
+| Lab and animal research | Extensive: more than 50 studies | Minimal: fewer than 10 |
+| Research groups | One group dominates | A few groups |
+| Harms in people | Uncharacterised | Partial |
+| What it means | Much animal work, little of it independently checked, almost nothing in people | Little animal work, but a real controlled test in people |
+
+</Diagram>
+
+A star rating would put both somewhere in the middle. A reader deciding whether to trust an effect, or how cautious to be about harm, needs to know which situation applies. So the four grades sit side by side and are never added, averaged or ranked.
+
+The grades describe the published evidence. They are not a verdict on whether a compound works, and not a judgement of the people who did the research: for BPC-157, see [the Croatian lab](/en/history/the-croatian-lab/).
+
+</InDetail>
+
+## The four questions, and how each grade is given
+
+<Lead question="How is each grade decided?">By a written rule for each question, with thresholds, applied to what has been published.</Lead>
+
+<GradeRubric claims={false} />
+
+Each grade comes with a short reason on the compound page ("Why these grades"). The rules below are the ones our editors apply. When a compound falls between two steps, we say so in the reason instead of hiding the judgement.
+
+<InDetail title="The full rules, with thresholds">
+
+| Axis | Values | Assigned by |
+|---|---|---|
+| Human clinical evidence | none · case reports · phase 1 · phase 2 · phase 3 · authorised | The highest completed and published human evidence. Registered but unpublished trials do not count. "Authorised" means a regulator has granted marketing authorisation somewhere, for some indication. |
+| Preclinical volume | minimal (fewer than 10 published animal or cell studies) · moderate (10 to 50) · extensive (more than 50) | A count of primary preclinical publications, not reviews |
+| Source independence | single group dominant (more than about 70% of primary studies from one group) · few groups (2 to 4 groups account for most) · broadly replicated (many independent groups, and key findings replicated) | The authors and affiliations of the primary studies |
+| Safety characterisation | uncharacterised (no systematic human safety data) · partial (some human exposure data, short-term or small) · well characterised (large trials plus post-marketing surveillance) | Human data only |
+
+### Human clinical evidence
+
+We take the highest level of human evidence that is both **completed and published**. A trial that is registered, or reported only as a conference abstract, does not count, because nobody outside can check its methods and results. BPC-157 is the clearest case: a randomised phase 2 trial in 53 people with ulcerative colitis exists only as a 2005 conference abstract, so the grade is "case reports", not "phase 2".<Cite id="fda-pcac-2026-bpc157-briefing" /> "Authorised" means a medicines regulator has granted marketing authorisation somewhere for some use. It describes the whole programme of trials behind that decision, not every use people put the medicine to.
+
+### Preclinical volume
+
+We count **primary** laboratory and animal publications: studies that report their own experiments. Reviews, commentaries and letters are left out, because a review that repeats a study is not a second experiment. The thresholds are fewer than 10, 10 to 50, and more than 50. For BPC-157 we searched PubMed, removed records tagged as reviews, comments, letters, editorials or errata, sorted the rest by hand, and counted about 160 primary laboratory and animal studies.<Cite id="pubmed-bpc157-count-2026-10-20" />
+
+### Source independence
+
+We look at who wrote the primary studies. If more than about 70% come from one group (counting its collaborators), the grade is "single group dominant". If two to four groups account for most of the work, it is "few groups". "Broadly replicated" needs many independent groups **and** repeats of the key findings. Independence matters because one group's shared methods, models and expectations can carry the same error into every study it publishes; a second laboratory with its own methods is less likely to repeat that error. When independent scientists have tried to repeat published preclinical findings, many did not hold up.<Cite id="begley-2012-preclinical-standards,errington-2021-replicability" />
+
+### Safety characterisation
+
+We use **human data only**. Animal toxicology tells you what to look for, not what happens in people. "Uncharacterised" means no systematic human safety data. "Partial" means some exposure in people, but short-term or small. "Well characterised" needs large trials **plus** monitoring after the medicine reaches the market, because only then are enough people exposed for long enough to see uncommon harms.
+
+</InDetail>
+
+## Every compound side by side
+
+<Lead question="How do the compounds compare?">The table shows all four grades for every compound. Sorting arranges them; it never ranks them.</Lead>
+
+<GradeMatrix />
+
+Read the table one column at a time. A compound can be "authorised" for human evidence and still depend on one company for its key trials; another can have many animal studies and nothing in people. Each compound page explains its own grades.
+
+<InDetail title="Where the rubric needed a judgement call">
+
+No rubric fits every case. Two examples from this site:
+
+- **Retatrutide** has published phase 3 results, but every human trial was sponsored and largely written by one company, while about 15 independent laboratories have each published one or two small animal or tissue studies.<Cite id="pubmed-retatrutide-count-2026-10-20" /> "Few groups" is the closest fit for independence, but it is a judgement: the key human findings have not been repeated outside the company. The compound page says so in its reason for the grade.
+- **Semaglutide** is graded "broadly replicated" although the manufacturer paid for every pivotal trial. The compound page gives the reason: the core effects on blood sugar and weight have been reproduced in studies without company authors, and the main safety questions were tested by independent academic groups and by regulators.<Cite id="hathaway-2024-naion,pasternak-2024-thyroid-cancer,ema-prac-2024-04-suicidal-thoughts" /> Funding and independence are related, but they are not the same question (see [conflicts of interest](/en/evidence/conflicts-of-interest/)).
+
+In such cases the written reason on the compound page carries more information than the grade itself. See the [retatrutide](/en/compounds/retatrutide/) and [semaglutide](/en/compounds/semaglutide/) pages.
+
+</InDetail>
+
+## What the badges in the text mean
+
+<Lead question="What do the small labels next to claims mean?">They say what kind of evidence each claim rests on: an idea, cells, animals or people.</Lead>
+
+<Diagram id="claim-and-mechanism-levels" caption="Each claim has a label for what it rests on, from an idea to large trials.">
+
+| Label in the text | What it means | What it does not mean |
+|---|---|---|
+| Hypothesis | Proposed, not shown in any experiment | That it is false |
+| Cells | Shown in cells or tissue in the laboratory | That it happens in a living body |
+| Animals | Shown in animal studies | That it happens in people |
+| Humans, limited | Seen in people in case reports or small uncontrolled studies | That the treatment caused it |
+| Human trials | Shown in controlled human trials | That it holds for every group of people, or for every use |
+| Established | Established in large trials and authorised use | That rare or long-term harms are all known |
+
+</Diagram>
+
+The steps in each compound's mechanism chain use a shorter scale: hypothesised, in cells, in animals, in humans. Each step's label says how well the link **into** that step has been shown. In the animated explainers, a solid line means shown in people, long dashes shown in animals or cells, and short dashes an idea.
+
+<InDetail title="How the labels are used">
+
+A label goes on every claim about what a compound does or how it works. It describes the claim, not the compound: on a single page, one claim can be marked "Animals" and the next "Human trials". A claim that reports a rat study is labelled "Animals" even when the compound is an authorised medicine, because the label is about that sentence's evidence.
+
+The mechanism chain on a compound page is read link by link. A chain can be well shown at the first step (the molecule binds its receptor, measured in cells) and only hypothesised at a later one (that this binding is what heals a tendon). The weakest link limits the whole chain: a pathway is only as well established as its least-tested step. That is why each step carries its own label.
+
+</InDetail>
+
+## What the grades cannot tell you
+
+<Lead question="Does a good grade mean a compound is harmless?">No. A grade describes how much is known. It does not say that harm is absent.</Lead>
+
+<Diagram id="what-a-grade-does-not-say" caption="What a grade says, and what it does not.">
+
+| A grade says | It does not say |
+|---|---|
+| How far testing in people has gone | That the compound works for you |
+| How many lab and animal studies exist | That those studies were well done |
+| How many groups did the research | That any one study is right or wrong |
+| How well harms in people are known | That a product sold under the name contains what was studied |
+| "Well characterised" | That every rare or long-term harm is known |
+
+</Diagram>
+
+<Cite id="macleod-2015-risk-of-bias,ema-prac-2025-06-naion,ashraf-2024-online-semaglutide,fda-pcac-2026-tb500-briefing" />
+
+Counting studies is not judging their quality. And the grades are about the molecule as it was studied, not about a vial: a product from outside the legal supply chain can contain a different amount, or a different substance (see [product risk](/en/safety/product-risk/)).
+
+<InDetail title="Counting is not quality, and known is not complete">
+
+### Counting is not quality
+
+"Extensive" preclinical volume means there are more than 50 primary studies, not that they are good. In animal research many studies do not report randomisation, blinding or how their size was chosen, and published animal studies lean towards positive results.<Cite id="macleod-2015-risk-of-bias,sena-2010-publication-bias" /> When independent scientists tried to repeat landmark preclinical findings, many did not hold up.<Cite id="begley-2012-preclinical-standards,errington-2021-replicability" /> That is why preclinical volume is always read together with independence, and why [the translation gap](/en/evidence/the-translation-gap/) explains what animal studies can and cannot show.
+
+### Known is not complete
+
+"Well characterised" safety still leaves rare harms to be found. Semaglutide was authorised in the EU in 2018 after large trials, and in June 2025 the EMA's safety committee concluded that NAION, an eye condition that can cause sudden loss of vision, is a very rare side effect: one that may affect up to 1 in 10,000 people taking it.<Cite id="ema-epar-ozempic,ema-prac-2025-06-naion" /> Trials of a few thousand people can easily miss a harm that rare; wider use over years can find it.
+
+### This rubric is not GRADE
+
+Guideline groups worldwide use GRADE to rate how much confidence a body of evidence deserves for one specific question, from "high" to "very low". It starts randomised trials high and observational studies low, and moves them down for study limitations, inconsistency, indirectness, imprecision and reporting bias.<Cite id="guyatt-2008-grade" /> Our rubric does something coarser and different: it describes the overall state of the evidence on a compound, across all its claimed uses. It does not tell anyone whether to use a treatment, and it cannot replace a GRADE assessment for a clinical question.
+
+</InDetail>
+
+## How a grade changes
+
+<Lead question="Can a grade change?">Yes. If new evidence is published or we find a mistake, it changes. Every change is logged.</Lead>
+
+<Diagram id="how-a-grade-changes" caption="A grade changes only for a published reason, and every change is logged.">
+
+1. **New evidence is published**, for example a trial reported in full, or an independent laboratory repeats a key experiment. Or a reader or editor finds an error.
+2. **An editor checks it** against the rules on this page.
+3. **The data file is updated.** The grade is stored once and shown in every language, so it cannot drift between translations.
+4. **The reason is rewritten** on the compound page, saying what changed and why.
+5. **The change is logged** with its date and the pages it affects.
+
+</Diagram>
+
+Every change to a grade is listed in the [corrections log](/en/about/corrections/), with its date. How we choose and check sources is set out in the [editorial policy](/en/about/editorial-policy/).
+
+<InDetail title="What would move a grade, with examples">
+
+Grades move in both directions, and we would report either.
+
+- **Human clinical evidence** moves up when a trial is published in full. If the old BPC-157 phase 2 trial were published with its full data, it would count; so would the results of a registered trial, once published.<Cite id="fda-pcac-2026-bpc157-briefing" /> It never moves up for a press release or a registration.
+- **Independence** moves up when other laboratories repeat the key findings, and stays where it is when new papers only review old ones. Between 2024 and 2026, most new BPC-157 records in PubMed (34 of 52) did not list the Zagreb group's leader as an author, but more than half of those were tagged as reviews, comments, letters or editorials, which do not count as repeats.<Cite id="pubmed-bpc157-count-2026-10-20" />
+- **Safety** moves from "uncharacterised" to "partial" only with systematic safety data from people, collected in a study, not with an absence of reports.
+- **Any grade** moves down if we find we counted wrongly, or if a published study is retracted.
+
+[The Croatian lab](/en/history/the-croatian-lab/) sets out the five things that would change the BPC-157 picture.
+
+</InDetail>

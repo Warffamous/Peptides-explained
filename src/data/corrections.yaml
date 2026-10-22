@@ -1,0 +1,17 @@
+# Corrections log (schema: correctionSchema in src/schemas/index.ts). Text per locale in
+# src/i18n/<locale>/corrections.json, keyed by id. Newest entries are shown first on /about/corrections/.
+#
+# kind:
+#   publication        first publication of a version (not shown as "Corrected" on the pages it covers)
+#   substantive        a fact, number, source, grade or safety statement was wrong and has been changed
+#   clarification      the facts were right but the wording could mislead; reworded
+#   regulatory-update  the law or a regulatory status changed after we checked it; page brought up to date
+#   minor              typos, broken links, formatting; logged in batches
+# routes: route keys affected ("compounds/bpc-157"); "*" = the whole site.
+# Never invent an entry. Every substantive entry says what was wrong, what it says now, and the source.
+
+- id: v1-first-publication
+  date: 2026-10-20
+  kind: publication
+  routes: ["*"]
+  locales: [en, nl]

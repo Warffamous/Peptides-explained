@@ -1,0 +1,685 @@
+{
+  "hierarchy-of-evidence": {
+    "term": "hierarchy of evidence",
+    "aliases": [
+      "evidence pyramid",
+      "evidence hierarchy"
+    ],
+    "definition": "A ranking of study types by how well they can show cause and effect: cell and animal studies at the bottom, randomised trials and reviews of trials near the top.",
+    "category": "evidence",
+    "see_also": [
+      "randomised-controlled-trial",
+      "systematic-review"
+    ]
+  },
+  "observational-study": {
+    "term": "observational study",
+    "aliases": [
+      "observational studies",
+      "observational evidence",
+      "observational research"
+    ],
+    "definition": "A study that watches what happens to people who chose, or were given, a treatment in daily life. Nobody decides by chance who gets what, so other differences between the groups can explain the result.",
+    "category": "evidence",
+    "see_also": [
+      "confounding",
+      "cohort-study",
+      "randomised-controlled-trial"
+    ]
+  },
+  "case-control-study": {
+    "term": "case-control study",
+    "aliases": [
+      "case-control studies"
+    ],
+    "definition": "A study that starts with people who have a disease (cases) and compares them with similar people who do not (controls), looking back at what they were exposed to.",
+    "category": "evidence",
+    "see_also": [
+      "observational-study"
+    ]
+  },
+  "systematic-review": {
+    "term": "systematic review",
+    "aliases": [
+      "systematic reviews"
+    ],
+    "definition": "A review that searches for every study on a question with a method set in advance, judges each study's quality and sums up the whole body of evidence.",
+    "category": "evidence",
+    "see_also": [
+      "meta-analysis",
+      "narrative-review"
+    ]
+  },
+  "meta-analysis": {
+    "term": "meta-analysis",
+    "aliases": [
+      "meta-analyses",
+      "pooled analysis"
+    ],
+    "definition": "A calculation that combines the results of several studies into one overall estimate. It is only as good as the studies that go into it.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "narrative-review": {
+    "term": "narrative review",
+    "aliases": [
+      "narrative reviews",
+      "review article",
+      "review articles"
+    ],
+    "definition": "A review in which the authors choose which studies to discuss, without a set search method. Useful as an overview, but open to the authors' own selection.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "umbrella-review": {
+    "term": "umbrella review",
+    "aliases": [
+      "umbrella reviews"
+    ],
+    "definition": "A review of systematic reviews: it collects many reviews on related questions and compares what they found.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "control-group": {
+    "term": "control group",
+    "aliases": [
+      "control groups",
+      "comparison group",
+      "comparison groups"
+    ],
+    "definition": "The group in a study that does not get the treatment being tested, or gets a placebo or another treatment. Without it you cannot tell what would have happened anyway.",
+    "category": "evidence",
+    "see_also": [
+      "placebo",
+      "randomisation"
+    ]
+  },
+  "randomisation": {
+    "term": "randomisation",
+    "aliases": [
+      "randomization",
+      "random allocation",
+      "randomly assigned",
+      "randomly allocated"
+    ],
+    "definition": "Deciding by chance, like a coin toss, who gets the treatment and who does not. It tends to make the groups alike in everything except the treatment, including things nobody measured. The bigger the groups, the better this works.",
+    "category": "evidence",
+    "see_also": [
+      "control-group",
+      "allocation-concealment"
+    ]
+  },
+  "allocation-concealment": {
+    "term": "allocation concealment",
+    "aliases": [
+      "concealed allocation",
+      "concealment of allocation"
+    ],
+    "definition": "Keeping the next group assignment hidden from the researchers until a participant has joined, so they cannot steer particular people or animals into one group.",
+    "category": "evidence",
+    "see_also": [
+      "randomisation"
+    ]
+  },
+  "blinding": {
+    "term": "blinding",
+    "aliases": [
+      "blinded",
+      "double-blind",
+      "double blind",
+      "double blinding",
+      "blinded outcome assessment",
+      "single-blind"
+    ],
+    "definition": "Keeping participants, researchers or the people who measure the results from knowing who got the treatment. Expectations then cannot colour what is reported or measured.",
+    "category": "evidence",
+    "see_also": [
+      "placebo",
+      "open-label"
+    ]
+  },
+  "sample-size": {
+    "term": "sample size",
+    "aliases": [
+      "sample sizes",
+      "sample size calculation",
+      "number of participants"
+    ],
+    "definition": "The number of people or animals in a study, often written as n. A good study works out in advance how many it needs.",
+    "category": "evidence",
+    "see_also": [
+      "statistical-power"
+    ]
+  },
+  "statistical-power": {
+    "term": "statistical power",
+    "aliases": [
+      "underpowered",
+      "low power",
+      "well-powered"
+    ],
+    "definition": "The chance that a study finds an effect if the effect is real. Small studies have low power: they miss real effects, and the effects they do find are often too large.",
+    "category": "evidence",
+    "see_also": [
+      "sample-size",
+      "false-positive"
+    ]
+  },
+  "false-positive": {
+    "term": "false positive",
+    "aliases": [
+      "false positives",
+      "false-positive result"
+    ],
+    "definition": "A result that seems to show an effect when there is none, for example by chance in a small study.",
+    "category": "evidence",
+    "see_also": [
+      "p-value",
+      "statistical-power"
+    ]
+  },
+  "pre-registration": {
+    "term": "pre-registration",
+    "aliases": [
+      "preregistration",
+      "pre-registered",
+      "preregistered",
+      "trial registration",
+      "registered trial",
+      "trial registry",
+      "trial registries"
+    ],
+    "definition": "Publishing a study's plan, including its main outcome, in a public register before it starts. Later changes to the plan can then be seen.",
+    "category": "evidence",
+    "see_also": [
+      "selective-outcome-reporting",
+      "primary-endpoint"
+    ]
+  },
+  "selective-outcome-reporting": {
+    "term": "selective outcome reporting",
+    "aliases": [
+      "outcome switching",
+      "outcome reporting bias",
+      "selective reporting"
+    ],
+    "definition": "Reporting the results that came out well and leaving out, or quietly changing, the ones that did not.",
+    "category": "evidence",
+    "see_also": [
+      "pre-registration",
+      "publication-bias"
+    ]
+  },
+  "surrogate-endpoint": {
+    "term": "surrogate endpoint",
+    "aliases": [
+      "surrogate endpoints",
+      "surrogate end point",
+      "surrogate end points",
+      "surrogate outcome",
+      "surrogate outcomes",
+      "surrogate marker"
+    ],
+    "definition": "A measurement that stands in for what really matters, such as a blood value instead of heart attacks. It is quicker to measure, but improving it does not always help the patient.",
+    "category": "evidence",
+    "see_also": [
+      "clinical-endpoint"
+    ]
+  },
+  "clinical-endpoint": {
+    "term": "clinical endpoint",
+    "aliases": [
+      "clinical endpoints",
+      "clinical outcome",
+      "clinical outcomes",
+      "hard endpoint",
+      "hard endpoints"
+    ],
+    "definition": "An outcome that matters to the patient directly: living longer, avoiding a heart attack, walking again, feeling better.",
+    "category": "evidence",
+    "see_also": [
+      "surrogate-endpoint"
+    ]
+  },
+  "effect-size": {
+    "term": "effect size",
+    "aliases": [
+      "effect sizes",
+      "size of the effect"
+    ],
+    "definition": "How big a difference a treatment makes, for example how many kilograms or how many fewer heart attacks. It is a different question from whether the difference could be chance.",
+    "category": "evidence",
+    "see_also": [
+      "p-value",
+      "confidence-interval"
+    ]
+  },
+  "p-value": {
+    "term": "p-value",
+    "aliases": [
+      "p-values",
+      "P value",
+      "P values",
+      "statistically significant",
+      "statistical significance",
+      "not statistically significant"
+    ],
+    "definition": "A number that says how surprising the data would be if the treatment had no effect at all and the study was done properly. A small p-value is called statistically significant. It does not say how big or how important an effect is.",
+    "category": "evidence",
+    "see_also": [
+      "effect-size",
+      "confidence-interval",
+      "false-positive"
+    ]
+  },
+  "relative-risk": {
+    "term": "relative risk",
+    "aliases": [
+      "relative risks",
+      "relative risk reduction",
+      "risk ratio",
+      "risk ratios"
+    ],
+    "definition": "A comparison of risk between two groups as a ratio or a percentage: \"20% fewer\". It does not tell you how common the problem was to begin with.",
+    "category": "evidence",
+    "see_also": [
+      "absolute-risk",
+      "hazard-ratio"
+    ]
+  },
+  "absolute-risk": {
+    "term": "absolute risk",
+    "aliases": [
+      "absolute risks",
+      "absolute risk reduction",
+      "absolute difference"
+    ],
+    "definition": "How many people out of a group are affected, for example 8 in 100. The absolute difference between two groups is the number of people a treatment actually changes things for.",
+    "category": "evidence",
+    "see_also": [
+      "relative-risk",
+      "number-needed-to-treat",
+      "natural-frequency"
+    ]
+  },
+  "number-needed-to-treat": {
+    "term": "number needed to treat",
+    "aliases": [
+      "NNT",
+      "numbers needed to treat"
+    ],
+    "definition": "How many people need a treatment for one of them to avoid one bad outcome over a given time. It is 100 divided by the absolute difference in percentage points.",
+    "category": "evidence",
+    "see_also": [
+      "absolute-risk"
+    ]
+  },
+  "natural-frequency": {
+    "term": "natural frequency",
+    "aliases": [
+      "natural frequencies"
+    ],
+    "definition": "A risk written as a count of people, such as \"15 in 1,000\", rather than as a percentage or a ratio. Most people find counts easier to understand.",
+    "category": "evidence",
+    "see_also": [
+      "absolute-risk"
+    ]
+  },
+  "confounding": {
+    "term": "confounding",
+    "aliases": [
+      "confounder",
+      "confounders",
+      "confounding factor",
+      "confounding factors"
+    ],
+    "definition": "When a third factor affects both who gets a treatment and the outcome, so the treatment looks as if it caused something it did not. Healthier people choosing a pill is a common example.",
+    "category": "evidence",
+    "see_also": [
+      "observational-study",
+      "randomisation"
+    ]
+  },
+  "preprint": {
+    "term": "preprint",
+    "aliases": [
+      "preprints",
+      "preprint server",
+      "preprint servers"
+    ],
+    "definition": "A research paper posted online before peer review. Anyone can read it early, but no outside expert has checked it yet.",
+    "category": "evidence",
+    "see_also": [
+      "peer-review"
+    ]
+  },
+  "spin": {
+    "term": "spin",
+    "aliases": [
+      "reporting spin"
+    ],
+    "definition": "Wording that makes a result look better than the data show, for example highlighting a side result when the main result was negative.",
+    "category": "evidence",
+    "see_also": [
+      "p-value",
+      "primary-endpoint"
+    ]
+  },
+  "risk-of-bias": {
+    "term": "risk of bias",
+    "aliases": [
+      "risk-of-bias assessment",
+      "risk-of-bias assessments"
+    ],
+    "definition": "A structured check of how a study was done (randomisation, blinding, missing data, reporting) to judge how likely its result is distorted.",
+    "category": "evidence",
+    "see_also": [
+      "randomisation",
+      "blinding"
+    ]
+  },
+  "grade-approach": {
+    "term": "GRADE",
+    "aliases": [
+      "GRADE approach",
+      "GRADE system"
+    ],
+    "definition": "An international method for rating how much confidence a body of evidence deserves for one specific question, used by many guideline groups. Ratings run from high to very low.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "animal-model": {
+    "term": "animal model",
+    "aliases": [
+      "animal models",
+      "disease model",
+      "disease models",
+      "injury model",
+      "injury models"
+    ],
+    "definition": "An animal in which researchers create a condition, such as a cut tendon or a blocked artery, to stand in for a human disease. The model is never exactly the human disease.",
+    "category": "evidence",
+    "see_also": [
+      "external-validity",
+      "translational-research"
+    ]
+  },
+  "inbred-strain": {
+    "term": "inbred strain",
+    "aliases": [
+      "inbred strains",
+      "inbred animals"
+    ],
+    "definition": "Laboratory animals bred brother to sister for many generations, so they are almost genetically identical. That makes results tidy, and less like a varied human population.",
+    "category": "biology",
+    "see_also": [
+      "animal-model"
+    ]
+  },
+  "translational-research": {
+    "term": "translational research",
+    "aliases": [
+      "animal-to-human translation",
+      "translational"
+    ],
+    "definition": "The work of carrying a finding from cells or animals into tested treatments for people, and the study of how often that succeeds.",
+    "category": "evidence",
+    "see_also": [
+      "animal-model",
+      "first-in-human-trial"
+    ]
+  },
+  "external-validity": {
+    "term": "external validity",
+    "aliases": [
+      "generalisability",
+      "generalizability"
+    ],
+    "definition": "Whether a result found in one setting, such as young healthy rats, also holds in another, such as older patients with other illnesses.",
+    "category": "evidence",
+    "see_also": [
+      "internal-validity",
+      "animal-model"
+    ]
+  },
+  "internal-validity": {
+    "term": "internal validity",
+    "aliases": [],
+    "definition": "Whether a study's own result is trustworthy: whether the difference it found was caused by the treatment and not by bias or chance.",
+    "category": "evidence",
+    "see_also": [
+      "external-validity",
+      "risk-of-bias"
+    ]
+  },
+  "allometric-scaling": {
+    "term": "allometric scaling",
+    "aliases": [
+      "allometry",
+      "allometric",
+      "body-surface-area scaling",
+      "body surface area scaling",
+      "dose scaling"
+    ],
+    "definition": "Adjusting a dose between species of different sizes using body weight or body surface area. In drug development it is one step towards a cautious first test dose in people, not a way to find a dose that works.",
+    "category": "pharmacology",
+    "see_also": [
+      "first-in-human-trial",
+      "mabel"
+    ]
+  },
+  "first-in-human-trial": {
+    "term": "first-in-human trial",
+    "aliases": [
+      "first-in-human",
+      "first-in-human trials",
+      "first in human"
+    ],
+    "definition": "The first time a new medicine is given to people, often to a few healthy volunteers (for some medicines, patients), one small step at a time, under close medical watch.",
+    "category": "evidence",
+    "see_also": [
+      "clinical-trial-phases",
+      "mabel"
+    ]
+  },
+  "mabel": {
+    "term": "MABEL",
+    "aliases": [
+      "minimal anticipated biological effect level"
+    ],
+    "definition": "The lowest amount expected to have any effect at all in people, estimated from laboratory and animal data, ideally including human cells. European guidance asks for it when the first dose for people is chosen.",
+    "category": "regulation",
+    "see_also": [
+      "first-in-human-trial",
+      "noael"
+    ]
+  },
+  "monoclonal-antibody": {
+    "term": "monoclonal antibody",
+    "aliases": [
+      "monoclonal antibodies"
+    ],
+    "definition": "A lab-made antibody designed to attach to one specific target in the body. Many modern medicines are monoclonal antibodies.",
+    "category": "biology",
+    "see_also": []
+  },
+  "t-cell": {
+    "term": "T cell",
+    "aliases": [
+      "T cells",
+      "T-cell",
+      "T-cells",
+      "T lymphocytes"
+    ],
+    "definition": "A type of white blood cell that directs and carries out immune responses.",
+    "category": "biology",
+    "see_also": [
+      "cytokine-storm"
+    ]
+  },
+  "superagonist": {
+    "term": "superagonist",
+    "aliases": [
+      "superagonists"
+    ],
+    "definition": "A molecule that switches a receptor on more strongly than the body's own signal does. TGN1412 was designed as one for a switch on T cells.",
+    "category": "pharmacology",
+    "see_also": [
+      "agonist",
+      "t-cell"
+    ]
+  },
+  "cytokine-storm": {
+    "term": "cytokine storm",
+    "aliases": [
+      "cytokine release syndrome",
+      "cytokine-release syndrome"
+    ],
+    "definition": "A sudden flood of immune signalling molecules that causes fever, low blood pressure and organ damage. It can be life-threatening.",
+    "category": "safety",
+    "see_also": [
+      "cytokine",
+      "t-cell"
+    ]
+  },
+  "post-marketing-surveillance": {
+    "term": "post-marketing surveillance",
+    "aliases": [
+      "post-marketing",
+      "postmarketing surveillance",
+      "post-marketing safety monitoring"
+    ],
+    "definition": "The tracking of side effects after a medicine is on the market, when far more people use it than in the trials. It is how rare harms are found.",
+    "category": "safety",
+    "see_also": [
+      "pharmacovigilance"
+    ]
+  },
+  "conflict-of-interest": {
+    "term": "conflict of interest",
+    "aliases": [
+      "conflicts of interest",
+      "competing interest",
+      "competing interests",
+      "COI",
+      "financial conflict of interest",
+      "financial conflicts of interest"
+    ],
+    "definition": "A situation in which a researcher, author or adviser could gain, for example money or reputation, from a particular result. It does not make the result false, but it calls for independent checks.",
+    "category": "evidence",
+    "see_also": [
+      "study-sponsor",
+      "key-opinion-leader"
+    ]
+  },
+  "study-sponsor": {
+    "term": "study sponsor",
+    "aliases": [
+      "trial sponsor",
+      "sponsored study",
+      "sponsored studies",
+      "industry-sponsored",
+      "industry sponsorship"
+    ],
+    "definition": "The organisation that pays for and is responsible for a study, such as a company, a university or a government funder.",
+    "category": "evidence",
+    "see_also": [
+      "conflict-of-interest"
+    ]
+  },
+  "ghost-writing": {
+    "term": "ghost-writing",
+    "aliases": [
+      "ghostwriting",
+      "ghost-written",
+      "ghostwritten",
+      "ghost author",
+      "ghost authors",
+      "ghost authorship"
+    ],
+    "definition": "When the real writer of a paper, often paid by a company, is not named as an author.",
+    "category": "evidence",
+    "see_also": [
+      "guest-authorship",
+      "conflict-of-interest"
+    ]
+  },
+  "guest-authorship": {
+    "term": "guest authorship",
+    "aliases": [
+      "honorary authorship",
+      "guest author",
+      "guest authors",
+      "honorary author",
+      "honorary authors"
+    ],
+    "definition": "When someone is named as an author who did little or none of the work, often to lend the paper a respected name.",
+    "category": "evidence",
+    "see_also": [
+      "ghost-writing"
+    ]
+  },
+  "key-opinion-leader": {
+    "term": "key opinion leader",
+    "aliases": [
+      "key opinion leaders",
+      "KOL",
+      "KOLs"
+    ],
+    "definition": "An expert whom companies pay to speak, advise or teach about a product or a field, because other people trust them.",
+    "category": "evidence",
+    "see_also": [
+      "conflict-of-interest"
+    ]
+  },
+  "predatory-journal": {
+    "term": "predatory journal",
+    "aliases": [
+      "predatory journals",
+      "predatory publisher",
+      "predatory publishers",
+      "predatory publishing"
+    ],
+    "definition": "A publication that charges authors to publish but skips real peer review and editing, so almost anything gets printed.",
+    "category": "evidence",
+    "see_also": [
+      "peer-review",
+      "impact-factor"
+    ]
+  },
+  "impact-factor": {
+    "term": "impact factor",
+    "aliases": [
+      "impact metric",
+      "impact metrics",
+      "journal impact factor"
+    ],
+    "definition": "A number that measures how often a journal's papers are cited on average. It says nothing about whether a single paper is right, and fake versions exist.",
+    "category": "evidence",
+    "see_also": [
+      "predatory-journal"
+    ]
+  },
+  "citation-laundering": {
+    "term": "citation laundering",
+    "aliases": [
+      "citation distortion",
+      "citation bias",
+      "citation amplification"
+    ],
+    "definition": "Our name for a claim gaining authority by being cited from paper to paper, often review to review, without new data, until a guess reads like a fact.",
+    "category": "evidence",
+    "see_also": [
+      "narrative-review",
+      "independent-replication"
+    ]
+  }
+}

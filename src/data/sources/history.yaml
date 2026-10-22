@@ -1,0 +1,578 @@
+# Sources for the History section: history/ (index), history/timeline (with src/data/timeline.yaml) and
+# history/how-we-got-here. Group "history". Written 22 October 2026. Every entry re-checked by the independent
+# fact-checker on 22 October 2026 (PubMed records, Crossref, and fresh fetches of every URL); us-fdc-act-1938 and
+# nobel-1977-medicine-press were added by the fact-checker. See research/history.md, "Fact-check log".
+#
+# How each entry was checked (22 October 2026):
+# - Scholarly entries: authors, title, journal, year, volume, pages, DOI, PMID and PMCID copied from the PubMed record
+#   (PubMed tools). The two 1950s-60s chemistry papers in the Journal of the American Chemical Society are not in
+#   PubMed: their metadata were copied from the Crossref record of the DOI (verified: doi).
+# - Regulator, law and web entries: fetched with curl and read for the sentence each one supports (see the note).
+#   EUR-Lex returns HTTP 202 with an empty body to scripts, so EU texts were read through the Publications Office
+#   CELLAR resolver (publications.europa.eu/resource/celex/<CELEX>), which returns the same document; the url field
+#   gives the allowlisted EUR-Lex address.
+# - Drugs@FDA dates: the ORIG-1 approval date on the Drugs@FDA overview page, cross-checked against the openFDA
+#   drugsfda API (api.fda.gov) on the same day.
+#
+# Reused from other files, not repeated here: eu-directive-2001-83, nl-geneesmiddelenwet, fda-pcac-2026-07-meeting,
+# fda-pcac-2026-materials (shared.yaml); nobel-1958-sanger-speech, nobel-1984-merrifield-press,
+# johnson-1983-recombinant-insulin, lupron-depot-label, bauer-1982-octreotide, ema-epar-byetta, ema-epar-victoza
+# (basics.yaml); holst-1987-glp1, mojsov-1987-glp1, kreymann-1987-glp1, fda-drugsatfda-ozempic, ema-epar-ozempic,
+# fda-drugsatfda-wegovy, ema-epar-wegovy, ema-2023-falsified-ozempic, igj-2023-falsified-ozempic,
+# mhra-2023-fake-weight-loss-pens, bfarm-ozempic-falsification, who-2024-falsified-semaglutide,
+# fda-glp1-compounding-policy, fda-2024-compounded-semaglutide-dosing-errors (semaglutide.yaml); eng-1992-exendin-4
+# (media.yaml); fda-drugsatfda-mounjaro, ema-epar-mounjaro, fda-drugsatfda-zepbound, belcourt-2025-research-purposes
+# (tirzepatide.yaml); wada-2022-list-modifications, wada-2026-list-en, fda-category-2-safety-risks,
+# fda-pcac-2026-bpc157-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-questions (bpc-157.yaml);
+# wada-2018-list-modifications (tb-500.yaml); fda-pcac-2026-semax-briefing, mhra-2026-01-seizures-2025,
+# mhra-2026-05-largest-seizure (legal-b.yaml); eu-regulation-726-2004 (legal-a.yaml); wong-2019-clinical-trial-success,
+# cbg-compassionate-use-criteria, nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring (guides.yaml);
+# kim-2011-thalidomide-review, fda-kelsey-history, ec-pharma-legislation-timeline, davis-2017-ema-cancer-approvals,
+# wouters-2020-rd-investment, ema-2021-repurposing-pilot, ema-conditional-marketing-authorisation (about.yaml).
+
+# ---------------------------------------------------------------- insulin and the first peptide hormones
+
+banting-1922-pancreatic-extracts:
+  type: article
+  authors: "Banting FG, Best CH, Collip JB, Campbell WR, Fletcher AA"
+  title: "Pancreatic Extracts in the Treatment of Diabetes Mellitus"
+  container: "Canadian Medical Association Journal"
+  year: 1922
+  volume: "12"
+  pages: "141-146"
+  pmid: "20314060"
+  pmcid: PMC1524425
+  verified: pubmed
+  note: "March 1922. The Toronto team's first clinical report on pancreatic extract (insulin) in people with diabetes. The PubMed record has no abstract and no DOI. Cited for: the first published report of insulin treatment, 1922."
+
+fda-history-100-years-insulin:
+  type: regulator
+  authors: "U.S. Food and Drug Administration (FDA History Office)"
+  title: "100 Years of Insulin"
+  year: 2022
+  url: https://www.fda.gov/about-fda/fda-history-exhibits/100-years-insulin
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 8 June 2022. Banting and Best began work in May 1921; Collip improved the purity of the extracts from December 1921; 'clinical studies by January 1922' showed lower blood sugar; first publication February 1922; Eli Lilly scaled up production from 1922. 'On October 28, 1982, after only 5 months of review, the FDA approved Humulin, the first biosynthetic human insulin product and the first approved medical product of any kind that derived from this technology' (recombinant DNA)."
+
+nobel-1923-medicine:
+  type: web
+  authors: "Nobel Prize Outreach"
+  title: "The Nobel Prize in Physiology or Medicine 1923: Summary"
+  container: "NobelPrize.org"
+  year: 1923
+  url: https://www.nobelprize.org/prizes/medicine/1923/summary/
+  accessed: 2026-10-22
+  verified: url
+  note: "'Awarded jointly to Frederick Grant Banting and John James Rickard Macleod \"for the discovery of insulin\".'"
+
+duvigneaud-1953-oxytocin:
+  type: article
+  authors: "du Vigneaud V, Ressler C, Swan JM, Roberts CW, Katsoyannis PG, Gordon S"
+  title: "The synthesis of an octapeptide amide with the hormonal activity of oxytocin"
+  container: "Journal of the American Chemical Society"
+  year: 1953
+  volume: "75"
+  pages: "4879-4880"
+  doi: 10.1021/ja01115a553
+  verified: doi
+  note: "October 1953. Metadata from the Crossref record of the DOI; the paper is not indexed in PubMed. Cited for: the first laboratory synthesis of a peptide hormone, oxytocin, as the title states. (The title says 'octapeptide' because the two linked cysteines were counted as one cystine; the site gives no residue count for oxytocin.)"
+
+nobel-1955-chemistry:
+  type: web
+  authors: "Nobel Prize Outreach"
+  title: "The Nobel Prize in Chemistry 1955: Summary"
+  container: "NobelPrize.org"
+  year: 1955
+  url: https://www.nobelprize.org/prizes/chemistry/1955/summary/
+  accessed: 2026-10-22
+  verified: url
+  note: "'Awarded to Vincent du Vigneaud \"for his work on biochemically important sulphur compounds, especially for the first synthesis of a polypeptide hormone\".'"
+
+ryle-1955-insulin-disulphide:
+  type: article
+  authors: "Ryle AP, Sanger F, Smith LF, Kitai R"
+  title: "The disulphide bonds of insulin"
+  container: "Biochemical Journal"
+  year: 1955
+  volume: "60"
+  pages: "541-556"
+  doi: 10.1042/bj0600541
+  pmid: "13249947"
+  pmcid: PMC1216151
+  verified: pubmed
+  note: "August 1955. No abstract in PubMed. Cited for: Sanger's group reported how the two insulin chains are joined by disulphide bonds, completing the structure (the Nobel presentation speech, nobel-1958-sanger-speech, describes the work on how the 51 amino acids are linked in two chains)."
+
+nobel-1958-chemistry:
+  type: web
+  authors: "Nobel Prize Outreach"
+  title: "The Nobel Prize in Chemistry 1958: Summary"
+  container: "NobelPrize.org"
+  year: 1958
+  url: https://www.nobelprize.org/prizes/chemistry/1958/summary/
+  accessed: 2026-10-22
+  verified: url
+  note: "'Awarded to Frederick Sanger \"for his work on the structure of proteins, especially that of insulin\".'"
+
+merrifield-1963-solid-phase:
+  type: article
+  authors: "Merrifield RB"
+  title: "Solid Phase Peptide Synthesis. I. The Synthesis of a Tetrapeptide"
+  container: "Journal of the American Chemical Society"
+  year: 1963
+  volume: "85"
+  pages: "2149-2154"
+  doi: 10.1021/ja00897a025
+  verified: doi
+  note: "July 1963. Metadata from the Crossref record of the DOI; not indexed in PubMed. Cited for: the first description of solid-phase peptide synthesis (with nobel-1984-merrifield-press for the method and the 1984 prize)."
+
+matsuo-1971-lhrh:
+  type: article
+  authors: "Matsuo H, Baba Y, Nair RM, Arimura A, Schally AV"
+  title: "Structure of the porcine LH- and FSH-releasing hormone. I. The proposed amino acid sequence"
+  container: "Biochemical and Biophysical Research Communications"
+  year: 1971
+  volume: "43"
+  pages: "1334-1339"
+  doi: 10.1016/s0006-291x(71)80019-0
+  pmid: "4936338"
+  verified: pubmed
+  note: "18 June 1971. No abstract in PubMed. Cited for: Schally's group proposed the amino-acid sequence of the hypothalamic hormone that releases LH and FSH (GnRH), the template for later GnRH analogues such as leuprolide."
+
+brazeau-1973-somatostatin:
+  type: article
+  authors: "Brazeau P, Vale W, Burgus R, Ling N, Butcher M, Rivier J, Guillemin R"
+  title: "Hypothalamic polypeptide that inhibits the secretion of immunoreactive pituitary growth hormone"
+  container: "Science"
+  year: 1973
+  volume: "179"
+  pages: "77-79"
+  doi: 10.1126/science.179.4068.77
+  pmid: "4682131"
+  verified: pubmed
+  note: "5 January 1973. Abstract: a peptide isolated from sheep hypothalamus inhibits growth-hormone secretion in vitro (rat and human GH) and in rats; its 14-amino-acid structure is given; the synthetic copy is biologically active. The abstract does not use the name somatostatin; the name is supported by nobel-1977-medicine-press (fact-checker, 22 October 2026). Cited for: discovery of somatostatin, the template for octreotide."
+
+nobel-1977-medicine:
+  type: web
+  authors: "Nobel Prize Outreach"
+  title: "The Nobel Prize in Physiology or Medicine 1977: Summary"
+  container: "NobelPrize.org"
+  year: 1977
+  url: https://www.nobelprize.org/prizes/medicine/1977/summary/
+  accessed: 2026-10-22
+  verified: url
+  note: "'Divided, one half jointly to Roger Guillemin and Andrew V. Schally \"for their discoveries concerning the peptide hormone production of the brain\" and the other half to Rosalyn Yalow \"for the development of radioimmunoassays of peptide hormones\".'"
+
+nobel-1977-medicine-press:
+  type: web
+  authors: "The Nobel Assembly at the Karolinska Institute"
+  title: "The Nobel Prize in Physiology or Medicine 1977: Press release"
+  container: "NobelPrize.org"
+  year: 1977
+  url: https://www.nobelprize.org/prizes/medicine/1977/press-release/
+  accessed: 2026-10-22
+  verified: url
+  note: "Added by the fact-checker, 22 October 2026. Press release of October 1977. Guillemin worked with hypothalamic tissue from sheep and Schally with tissue from pigs; after TRF, 'Within two years LH-RH was isolated, sequenced and synthesized, firstly by Schally and shortly afterwards by Guillemin'; among later hypothalamic peptides, 'the first inhibitor of pituitary function: somatostatin, which decreases the production of pituitary growth hormone'. Cited for: the names LH-RH (GnRH) and somatostatin, and their roles."
+
+friedman-2024-lasker-glp1:
+  type: article
+  authors: "Friedman JM"
+  title: "The discovery and development of GLP-1 based drugs that have revolutionized the treatment of obesity"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2024
+  volume: "121"
+  pages: "e2415550121"
+  doi: 10.1073/pnas.2415550121
+  pmid: "39297680"
+  pmcid: PMC11441540
+  verified: pubmed
+  note: "19 September 2024. Abstract: the 2024 Lasker~DeBakey Clinical Medical Research Award went to Joel Habener and Svetlana Mojsov 'for their discovery of a new hormone GLP-1(7-37)' and to Lotte Knudsen 'for her role in developing sustained acting versions of this hormone as a treatment for obesity'. (Knudsen works for Novo Nordisk; see the Knudsen JAMA essay, PMID 39297716.) The title's wording is the author's, not this site's. The Lasker Foundation's own site is not on the link allowlist, so this PubMed-indexed account is cited instead."
+
+knudsen-2024-lasker-glp1-obesity:
+  type: article
+  authors: "Knudsen LB"
+  title: "GLP-1 for Treating Obesity-Origin, History, and Evolution: 2024 Lasker-DeBakey Clinical Medical Research Award"
+  container: "JAMA"
+  year: 2024
+  doi: 10.1001/jama.2024.18000
+  pmid: "39297716"
+  verified: pubmed
+  note: "19 September 2024; no abstract in PubMed. The PubMed record gives the author's affiliation as Novo Nordisk, Maaloev, Denmark. Cited only for that affiliation (a conflict of interest worth naming in the Lasker event)."
+
+# ---------------------------------------------------------------- thalidomide
+
+vargesson-2015-thalidomide:
+  type: review
+  authors: "Vargesson N"
+  title: "Thalidomide-induced teratogenesis: history and mechanisms"
+  container: "Birth Defects Research. Part C, Embryo Today: Reviews"
+  year: 2015
+  volume: "105"
+  pages: "140-156"
+  doi: 10.1002/bdrc.21096
+  pmid: "26043938"
+  pmcid: PMC4737249
+  verified: pubmed
+  note: "University of Aberdeen. Read in PMC full text. Released in the late 1950s by Chemie Grünenthal as a sedative, then used for morning sickness; 'marketed and distributed in 46 countries'; 'advertised as completely safe' until banned in November 1961; Lenz (Germany) and McBride (Australia) confirmed the link in 1961; 'Between 1957 and 1962, thalidomide caused severe birth defects in over 10,000 children'; 'Infant mortality in babies born with severe thalidomide embryopathy is as high as 40%'; withdrawn in the UK in November 1961 and from most of the world by 1962; not licensed in the US because of Frances Kelsey; mice are less sensitive to thalidomide than primates and rabbits, so the disaster showed species differences in drug response and changed drug testing; the sensitive window is days 20-36 after fertilisation."
+
+# ---------------------------------------------------------------- regulation: United States
+
+fda-history-milestones:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Milestones in U.S. Food and Drug Law"
+  year: 2023
+  url: https://www.fda.gov/about-fda/fda-history/milestones-us-food-and-drug-law
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 30 January 2023. 1937: Elixir of Sulfanilamide, containing diethylene glycol, 'kills 107 persons, many of whom are children'. 1938: the FD&C Act requires new drugs 'to be shown safe before marketing'. 1951: Durham-Humphrey Amendment (prescription-only drugs). 1962: thalidomide 'found to have caused birth defects in thousands of babies born in western Europe'; news of Frances Kelsey keeping it off the US market; Kefauver-Harris Drug Amendments: 'For the first time, drug manufacturers are required to prove to FDA the effectiveness of their products before marketing them.' 1966: FDA contracts the National Academy of Sciences to evaluate the effectiveness of 4,000 drugs approved on safety alone between 1938 and 1962. 1983: Orphan Drug Act. 1992: Prescription Drug User Fee Act."
+
+fda-2006-promoting-safe-effective-drugs:
+  type: web
+  authors: "Meadows M (FDA Consumer magazine)"
+  title: "Promoting Safe and Effective Drugs for 100 Years"
+  container: "FDA Consumer magazine, Centennial Edition, January–February 2006 (fda.gov)"
+  year: 2006
+  url: https://www.fda.gov/about-fda/histories-product-regulation/promoting-safe-effective-drugs-100-years
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 23 April 2019. 1906 Act: 'no requirement ... that any information be submitted to the FDA before marketing'. 1938 Act passed after 107 people died from Elixir Sulfanilamide (a 'chemical relative of antifreeze'); signed 25 June 1938; under it, an application 'automatically became approved' if the FDA did not act in time. October 1962 amendments: firms had to provide 'substantial evidence of effectiveness'; Temple: 'That evidence had to consist of adequate and well-controlled studies, a revolutionary requirement' and the FDA had to specifically approve an application before marketing; the Secretary was asked to set rules for investigations, 'including a requirement for the informed consent of study subjects'; the amendments formalised good manufacturing practices, required adverse-event reporting and moved prescription-drug advertising to the FDA. Treatment IND proposed 1982, final regulation 1987. Accelerated approval 'formalized in 1992', based on an effect such as tumour shrinkage, on condition the maker verifies clinical benefit. PDUFA 1992: user fees to speed reviews; Woodcock: the review process was criticised 'for being too slow'."
+
+us-fdc-act-1938:
+  type: law
+  authors: "United States Congress"
+  title: "Federal Food, Drug, and Cosmetic Act, Public No. 717 (75th Congress), chapter 675, 52 Stat. 1040, approved 25 June 1938"
+  container: "United States Statutes at Large, volume 52"
+  year: 1938
+  url: https://www.govinfo.gov/content/pkg/STATUTE-52/pdf/STATUTE-52-Pg1040-2.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Added by the fact-checker, 22 October 2026. Read in full (pdftotext of the Statutes at Large PDF from govinfo.gov; the file opens with the end of chapter 653 and then 'June 25, 1938 [S.5] [Public, No. 717] [CHAPTER 675] AN ACT ... Federal Food, Drug, and Cosmetic Act'). Sec. 505(b): a new-drug application must contain full reports of the investigations made to show whether or not the drug is safe for use, its components and composition, and 'a full description of the methods used in, and the facilities and controls used for, the manufacture, processing, and packing of such drug'. Sec. 505(c): the application 'shall become effective on the sixtieth day after the filing thereof' unless the Secretary postpones it (to at most 180 days). Sec. 505(d): the Secretary refuses to let it become effective if the reports 'do not include adequate tests by all methods reasonably applicable to show whether or not such drug is safe', if the tests show it unsafe or do not show it safe, or if the manufacturing methods, facilities and controls 'are inadequate to preserve its identity, strength, quality, and purity'. No effectiveness requirement. Cited for: the 1938 safety and manufacturing requirements, and the 60-day default."
+
+us-pl-87-781-drug-amendments-1962:
+  type: law
+  authors: "United States Congress"
+  title: "Public Law 87-781 (Drug Amendments of 1962), 76 Stat. 780, approved 10 October 1962"
+  container: "United States Statutes at Large, volume 76"
+  year: 1962
+  url: https://www.govinfo.gov/content/pkg/STATUTE-76/pdf/STATUTE-76-Pg780.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Read in full (pdftotext). Title: 'to assure the safety, effectiveness, and reliability of drugs'. Sec. 102: an application is refused if 'there is a lack of substantial evidence that the drug will have the effect it purports or is represented to have'; 'substantial evidence' means 'evidence consisting of adequate and well-controlled investigations, including clinical investigations, by experts qualified by scientific training and experience'. Sec. 103: investigators must inform people given investigational drugs (or their representatives) and 'obtain the consent of such human beings or their representatives, except where they deem it not feasible or, in their professional judgment, contrary to the best interests of such human beings'. Also manufacturing controls (Sec. 101), records and reports (Sec. 103) and prescription-drug advertisements (Sec. 131)."
+
+junod-2008-fda-clinical-trials-history:
+  type: report
+  authors: "Junod SW (FDA History Office)"
+  title: "FDA and Clinical Drug Trials: A Short History"
+  container: "U.S. Food and Drug Administration; originally published in: A Quick Guide to Clinical Trials (Bioplan, 2008), pp. 25-55"
+  year: 2008
+  url: https://www.fda.gov/media/110437/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Read in full (pdftotext). The 1938 Act subjected new drugs to pre-market safety review. Thalidomide: never approved in the US because of Kelsey's concerns, but the sponsor sent samples to thousands of US doctors, whose patients became 'unwitting subjects'; 'more than a dozen thalidomide babies' are believed born in the US as a result; countries around the world updated their drug laws. 1970 'evidence rules': 'uncontrolled studies are not acceptable evidence to support claims of effectiveness'. Treatment IND (1987); parallel track (1990-1992); in 1992 accelerated-approval regulations gave explicit authority to rely on a surrogate marker; FDA usually requires post-market study to verify benefit."
+
+ecfr-21-314-126:
+  type: law
+  authors: "U.S. Food and Drug Administration (Code of Federal Regulations)"
+  title: "21 CFR 314.126 Adequate and well-controlled studies"
+  container: "Electronic Code of Federal Regulations"
+  year: 2002
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-D/section-314.126
+  accessed: 2026-10-22
+  verified: url
+  note: "Text read through the eCFR versioner API (version of 1 October 2026; last amended 2002). (a): 'The purpose of conducting clinical investigations of a drug is to distinguish the effect of a drug from other influences, such as spontaneous change in the course of the disease, placebo effect, or biased observation.' (b): a valid comparison with a control (placebo, dose-comparison, no-treatment, active or historical), assignment that minimises bias (ordinarily randomisation), measures to minimise bias such as blinding, well-defined and reliable assessment. (d): the test drug must be 'standardized as to identity, strength, quality, purity, and dosage form to give significance to the results'. (e): 'Uncontrolled studies or partially controlled studies are not acceptable as the sole basis for the approval of claims of effectiveness.'"
+
+# ---------------------------------------------------------------- regulation: Europe and the Netherlands
+
+eu-directive-65-65:
+  type: law
+  authors: "Council of the European Economic Community"
+  title: "Council Directive 65/65/EEC of 26 January 1965 on the approximation of provisions laid down by law, regulation or administrative action relating to proprietary medicinal products"
+  container: "Official Journal of the European Communities, 022, 9 February 1965, pp. 369-373"
+  year: 1965
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31965L0065
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through CELLAR. Recitals: 'the primary purpose of any rules concerning the production and distribution of proprietary medicinal products must be to safeguard public health', but by 'means which will not hinder the development of the pharmaceutical industry or trade'. Art. 3: no proprietary medicinal product may be placed on the market in a Member State without an authorisation. Art. 4(8): the application includes results of physico-chemical, biological or microbiological tests, pharmacological and toxicological tests and clinical trials. Art. 5: refused if harmful in normal use, if 'its therapeutic efficacy is lacking or is insufficiently substantiated by the applicant', or if its composition is not as declared. Art. 7: decision within 120 days (plus 90 in exceptional cases). Art. 10: valid five years, renewable. Repealed and replaced by Directive 2001/83/EC (art. 128)."
+
+eu-directive-2001-83-original:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Directive 2001/83/EC of 6 November 2001 on the Community code relating to medicinal products for human use (text as adopted)"
+  container: "Official Journal of the European Communities, L 311, 28 November 2001, pp. 67-128"
+  year: 2001
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32001L0083
+  accessed: 2026-10-22
+  verified: url
+  note: "Original text, read through CELLAR (the consolidated text is eu-directive-2001-83). Art. 5: a Member State may exclude medicines supplied 'in response to a bona fide unsolicited order, formulated in accordance with the specifications of an authorized health care professional and for use by his individual patients on his direct personal responsibility'. Art. 6(1): no medicine on the market without a marketing authorisation (national, or under Regulation 2309/93). Art. 22: in exceptional circumstances an authorisation may be granted subject to specific obligations (further studies, reporting of adverse reactions). Art. 26: refusal grounds as in Directive 65/65 (harmful; efficacy lacking or insufficiently substantiated; composition not as declared). Art. 128: repeals Directive 65/65/EEC and ten later directives."
+
+eu-regulation-2309-93:
+  type: law
+  authors: "Council of the European Communities"
+  title: "Council Regulation (EEC) No 2309/93 of 22 July 1993 laying down Community procedures for the authorization and supervision of medicinal products for human and veterinary use and establishing a European Agency for the Evaluation of Medicinal Products"
+  container: "Official Journal of the European Communities, L 214, 24 August 1993, pp. 1-21"
+  year: 1993
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:31993R2309
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through CELLAR. Establishes the European Agency for the Evaluation of Medicinal Products (today's EMA) and the Community (centralised) authorisation procedure. Art. 74: Titles I, II, III and V enter into force on 1 January 1995. Replaced by Regulation 726/2004."
+
+ema-history:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "History of EMA"
+  year: 2026
+  url: https://www.ema.europa.eu/en/about-us/history-ema
+  accessed: 2026-10-22
+  verified: url
+  note: "'Founded in 1995'; 'EMA was set up in 1995 to harmonise the work of existing national medicine regulatory bodies'; London 1995-2019, then Amsterdam; responsibilities for rare-disease medicines since 2000, children's medicines since 2006, advanced therapies since 2007; PRAC created 2012. '2015 marked the 50th anniversary of the introduction of the first EU legislation on human medicines. On 26 January 1965, the Council Directive 65/65 ... was adopted.'"
+
+ec-legal-framework-medicines:
+  type: regulator
+  authors: "European Commission, Directorate-General for Health and Food Safety"
+  title: "Legal framework governing medicinal products for human use in the EU"
+  year: 2026
+  url: https://health.ec.europa.eu/medicinal-products/legal-framework-governing-medicinal-products-human-use-eu_en
+  accessed: 2026-10-22
+  verified: url
+  note: "Section '50 years of pharmaceutical legislation': 'Much of the impetus behind the adoption of the legal framework stemmed from the determination to prevent a recurrence of the thalidomide disaster of the late 1950s'; it 'made it clear that to safeguard public health, no medicinal product must ever again be marketed without prior authorisation'. Requirements now primarily in Directive 2001/83/EC and Regulation 726/2004; authorisation centrally (Commission, EMA assessment) or nationally."
+
+ema-accelerated-assessment:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Accelerated assessment"
+  year: 2026
+  url: https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/accelerated-assessment
+  accessed: 2026-10-22
+  verified: url
+  note: "Assessment under the centralised procedure 'can take up to 210 days, not counting clock stops'; the CHMP 'can reduce the timeframe to 150 days' for products 'of major interest for public health and therapeutic innovation'."
+
+ema-prime:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "PRIME: priority medicines"
+  year: 2026
+  url: https://www.ema.europa.eu/en/human-regulatory-overview/research-development/prime-priority-medicines
+  accessed: 2026-10-22
+  verified: url
+  note: "'PRIME is a scheme run by the European Medicines Agency (EMA) to enhance support for the development of medicines targeting unmet medical needs. It is based on early dialogue with companies to optimise development plans and speed up evaluation.' Medicines in PRIME can expect to be eligible for accelerated assessment. The reflection paper was adopted by the CHMP in February 2016; the applicant guidance and justification template were first published on 7 March 2016."
+
+ema-compassionate-use:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Compassionate use"
+  year: 2026
+  url: https://www.ema.europa.eu/en/human-regulatory-overview/research-development/compassionate-use
+  accessed: 2026-10-22
+  verified: url
+  note: "Compassionate use lets 'products in development' be made available to groups of patients with no satisfactory authorised therapy 'who cannot enter clinical trials'; programmes are run by Member States under their own rules (Art. 83 of Regulation 726/2004); EMA recommendations 'do not create a legal framework'. Not to be confused with 'named-patient basis' treatment, where a doctor obtains a medicine directly from the manufacturer for an individual patient on the doctor's own responsibility. Patients should first be considered for clinical trials."
+
+ema-epar-scenesse:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Scenesse (afamelanotide): EPAR — overview and product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/scenesse
+  accessed: 2026-10-22
+  verified: url
+  note: "An implant for erythropoietic protoporphyria (EPP), a rare disease causing intolerance to light. CHMP opinion 23 October 2014; marketing authorisation issued 22 December 2014; holder Clinuvel Europe Limited. Authorised under 'exceptional circumstances' because 'it has not been possible to obtain complete information about the benefits of Scenesse, in part due to the rarity of the disease'; EMA reviews new information every year."
+
+nl-wog-1958:
+  type: law
+  authors: "Koninkrijk der Nederlanden"
+  title: "Wet van 28 juli 1958, houdende nieuwe regelen nopens de geneesmiddelenvoorziening en de uitoefening der artsenijbereidkunst (Wet op de geneesmiddelenvoorziening), Stb. 1958, 408"
+  container: "Staatsblad van het Koninkrijk der Nederlanden"
+  year: 1958
+  url: https://repository.overheid.nl/frbr/officielepublicaties/stb/1958/stb-1958-408/1/pdf/stb-1958-408.pdf
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Read in full (pdftotext; identical to zoek.officielebekendmakingen.nl/stb-1958-408.pdf). Replaced the pharmacy law of 1 June 1865. Art. 3(1): the College ter beoordeling van verpakte geneesmiddelen keeps a register of packaged medicines that may be made and supplied, and enters those that 'naar redelijkerwijze mag worden aangenomen de aangeprezen werking bezitten, niet schadelijk zijn voor de gezondheid bij gebruik overeenkomstig het voorschrift'. Art. 3(3): making, selling, supplying or importing unregistered packaged medicines is prohibited; art. 3(4): exceptions for products still being tested. Art. 29: the College is set up for registration and withdrawal of registration. Art. 37 (re-read by the fact-checker, 22 October 2026): the act 'treedt in werking op een door Ons te bepalen tijdstip' and parts may come into force at different times. The date the registration articles came into force is not printed in the act and was not verified."
+
+nl-geneesmiddelenwet-2007-version:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet (BWBR0021505), version in force from 1 July 2007"
+  container: "wetten.overheid.nl"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2007-07-01
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Wet van 8 februari 2007 tot vaststelling van een nieuwe Geneesmiddelenwet (Stb. 2007, 93). The 'informatie' page gives the new act's date of entry into force as 1 July 2007 (commencement decree Stb. 2007, 227). Art. 132: 'De Wet op de Geneesmiddelenvoorziening wordt ingetrokken.'"
+
+# ---------------------------------------------------------------- the costs and the debate
+
+andersson-1992-drug-lag:
+  type: review
+  authors: "Andersson F"
+  title: "The drug lag issue: the debate seen from an international perspective"
+  container: "International Journal of Health Services"
+  year: 1992
+  volume: "22"
+  pages: "53-72"
+  doi: 10.2190/9Y32-X86Y-M3F0-JQFC
+  pmid: "1735628"
+  verified: pubmed
+  note: "Literature review (MEDTAP Europe, Battelle Institute, London). Abstract: 'drug lag' is whether important new drugs are introduced relatively late, or at all, in a country; most studies found the United States, Sweden and Norway to have a long delay, the United Kingdom and West Germany in general the shortest; the US and Norway introduced 'far fewer new drugs than any other industrialized country'; one study linked regulatory processing time to delay, another found an increasing influence of regulatory stringency on the number of new drugs."
+
+downing-2012-regulatory-review:
+  type: article
+  authors: "Downing NS, Aminawung JA, Shah ND, Braunstein JB, Krumholz HM, Ross JS"
+  title: "Regulatory review of novel therapeutics--comparison of three regulatory agencies"
+  container: "New England Journal of Medicine"
+  year: 2012
+  volume: "366"
+  pages: "2284-2293"
+  doi: 10.1056/NEJMsa1200223
+  pmid: "22591257"
+  pmcid: PMC3504361
+  verified: pubmed
+  note: "Yale; funded by the Pew Charitable Trusts. 510 applications for novel therapeutics approved 2001-2010 (225 FDA, 186 EMA, 99 Health Canada). Median time to complete the first review: 303 days FDA, 366 days EMA, 352 days Health Canada. Of 190 agents approved in both the US and Europe, 121 (63.7%) were first approved in the US."
+
+darrow-2020-fda-approval-history:
+  type: article
+  authors: "Darrow JJ, Avorn J, Kesselheim AS"
+  title: "FDA Approval and Regulation of Pharmaceuticals, 1983-2018"
+  container: "JAMA"
+  year: 2020
+  volume: "323"
+  pages: "164-176"
+  doi: 10.1001/jama.2019.20288
+  pmid: "31935033"
+  verified: pubmed
+  note: "PORTAL, Brigham and Women's Hospital and Harvard Medical School. Abstract: FDA review times fell 'from more than 3 years in 1983 to less than 1 year in 2017, but total time from the authorization of clinical testing to approval has remained at approximately 8 years'; 81% (48/59) of new drugs in 2018 used at least one expedited programme; the share of approvals supported by at least 2 pivotal trials fell from 80.6% (1995-1997) to 52.8% (2015-2017); user fees paid about 80% of new-drug review staff salaries in 2018; 'The FDA has increasingly accepted less data and more surrogate measures, and has shortened its review times.'"
+
+dimasi-2016-rd-costs:
+  type: article
+  authors: "DiMasi JA, Grabowski HG, Hansen RW"
+  title: "Innovation in the pharmaceutical industry: New estimates of R&D costs"
+  container: "Journal of Health Economics"
+  year: 2016
+  volume: "47"
+  pages: "20-33"
+  doi: 10.1016/j.jhealeco.2016.01.012
+  pmid: "26928437"
+  verified: pubmed
+  note: "Tufts Center for the Study of Drug Development. Abstract: R&D costs of 106 randomly selected new drugs from a survey of 10 pharmaceutical firms; average out-of-pocket cost per approved new compound $1,395 million; capitalised at 10.5% a year, total pre-approval cost $2,558 million (2013 dollars), including the costs of abandoned compounds. The underlying company data are confidential, which is one reason the estimate is disputed (compare wouters-2020-rd-investment, from public data)."
+
+gyawali-2019-accelerated-approval:
+  type: article
+  authors: "Gyawali B, Hey SP, Kesselheim AS"
+  title: "Assessment of the Clinical Benefit of Cancer Drugs Receiving Accelerated Approval"
+  container: "JAMA Internal Medicine"
+  year: 2019
+  volume: "179"
+  pages: "906-913"
+  doi: 10.1001/jamainternmed.2019.0462
+  pmid: "31135808"
+  pmcid: PMC6547118
+  verified: pubmed
+  note: "PORTAL, Harvard. Of 93 cancer-drug indications given FDA accelerated approval from 11 December 1992 to 31 May 2017, confirmatory trials showed improved overall survival for 19 (20%); 19 (20%) confirmed only the same surrogate and 20 (21%) a different surrogate; others were delayed, pending or ongoing. The FDA's own 2018 review had called the pathway successful because 5 of 93 had been withdrawn."
+
+verbaanderd-2021-repurposing-funding:
+  type: article
+  authors: "Verbaanderd C, Rooman I, Huys I"
+  title: "Exploring new uses for existing drugs: innovative mechanisms to fund independent clinical research"
+  container: "Trials"
+  year: 2021
+  volume: "22"
+  pages: "322"
+  doi: 10.1186/s13063-021-05273-x
+  pmid: "33947441"
+  pmcid: PMC8093905
+  verified: pubmed
+  note: "KU Leuven and the Anticancer Fund. Abstract: 'due to a lack of economic incentives, pharmaceutical developers are rarely interested to invest in research with approved medicines, especially when they are out of basic patent or regulatory protection'; new uses are then studied mainly in independent trials, and phase III trials need additional funding. Based on a literature search and interviews with 16 European stakeholders."
+
+# ---------------------------------------------------------------- approvals: Drugs@FDA and labels
+
+fda-drugsatfda-humulin-r:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: BLA 018780 (Humulin R, insulin human)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018780
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 28 October 1982 (holder Lilly). 'This Former NDA Was Deemed To Be a BLA on March 23, 2020.'"
+
+fda-drugsatfda-lupron:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 019010 (Lupron, leuprolide acetate injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=019010
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 9 April 1985 (now AbbVie Endocrine Inc.)."
+
+fda-drugsatfda-sandostatin:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 019667 (Sandostatin, octreotide acetate injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=019667
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 21 October 1988 (Novartis)."
+
+fda-drugsatfda-byetta:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 021773 (Byetta, exenatide injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=021773
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 28 April 2005 (now AstraZeneca AB); active ingredient listed as exenatide synthetic."
+
+dailymed-byetta-label:
+  type: label
+  authors: "U.S. National Library of Medicine (DailyMed)"
+  title: "BYETTA (exenatide) injection: prescribing information"
+  container: "DailyMed"
+  year: 2025
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=53d03c03-ebf7-418d-88a8-533eabd2ee4f
+  accessed: 2026-10-22
+  verified: url
+  note: "Revised 9/2025. Section 11: 'BYETTA (exenatide) is a synthetic peptide, GLP-1 receptor agonist, that was originally identified in the lizard Heloderma suspectum. Exenatide is a 39-amino acid peptide amide.'"
+
+fda-drugsatfda-victoza:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 022341 (Victoza, liraglutide injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022341
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 25 January 2010 (Novo Nordisk Inc.)."
+
+fda-drugsatfda-egrifta:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: BLA 022505 (Egrifta, tesamorelin)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=022505
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 10 November 2010 (Theratechnologies); a former NDA deemed to be a BLA."
+
+fda-drugsatfda-vyleesi:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 210557 (Vyleesi, bremelanotide acetate injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=210557
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 21 June 2019 (holder now Cosette)."
+
+fda-drugsatfda-scenesse:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 210797 (Scenesse, afamelanotide implant)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=210797
+  accessed: 2026-10-22
+  verified: url
+  note: "ORIG-1 approval 8 October 2019 (Clinuvel Inc.)."

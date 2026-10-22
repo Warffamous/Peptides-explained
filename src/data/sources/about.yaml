@@ -1,0 +1,233 @@
+# Sources for the About section (about/, about/editorial-policy, about/funding, about/corrections) and the signed
+# opinion page the-case-for-reform. Group "about". Written 22 October 2026.
+#
+# How each entry was checked:
+# - Scholarly entries: metadata (authors, title, journal, year, volume, pages, DOI, PMID, PMCID) copied from the PubMed
+#   record (PubMed tool and NCBI E-utilities esummary/efetch) on 22 October 2026; numbers taken from the PubMed
+#   abstract unless the note says otherwise.
+# - Web, regulator and law entries: fetched with curl on 22 October 2026 and read for the sentence each one supports
+#   (see the note). EUR-Lex texts are read through the Publications Office CELLAR resolver, as the legal groups do.
+#
+# Reused from other files, not repeated here. Re-read by us on 22 October 2026 for the sentence our pages use them for:
+# eu-directive-2001-83, fda-pcac-2026-07-meeting, fda-unapproved-glp1-concerns, cbg-glp1-position, ema-pharma-reform-page,
+# mhra-2026-01-seizures-2025, mhra-2026-05-largest-seizure, lareb-bijwerkingen-melden, dopingautoriteit-2025-harm-
+# reduction-chair, igj-2025-illegal-online-medicines, cbg-compassionate-use-criteria (pages fetched) and weber-2017,
+# janvier-2018, zinzi-2026, jastreboff-2026-triumph-1 (PubMed abstracts). The rest rely on the owning group's note and
+# fact-check log (see research/about.md). Full list:
+# eu-directive-2001-83 (arts. 10, 86-88 read via CELLAR), nl-geneesmiddelenwet, ema-medicines-search,
+# fda-pcac-2026-07-meeting (no minutes posted; "non-binding recommendations") (shared.yaml); nl-gnw-art-1-reclame,
+# nl-gnw-art-84-85-advertising, nl-gnw-art-101-fines, cjeu-2009-damgaard (legal-a.yaml);
+# nl-gmw-art-40-handelsvergunning, wong-2019-clinical-trial-success, dopingautoriteit-2025-harm-reduction-chair,
+# cbg-compassionate-use-criteria (guides.yaml); lareb-bijwerkingen-melden, knmg-beroepsgeheim (safety-a.yaml);
+# weber-2017-swiss-border, mhra-2026-01-seizures-2025, mhra-2026-05-largest-seizure, ema-pharma-reform-page,
+# fda-pcac-2026-semax-briefing (legal-b.yaml); janvier-2018-falsified-peptides-belgium, ashraf-2024-online-semaglutide,
+# zinzi-2026-counterfeit-semaglutide-eudravigilance, igj-2025-illegal-online-medicines, lareb-2021-illegal-medicines
+# (safety-b.yaml); begley-2012-preclinical-standards, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-briefing-intro,
+# fda-pcac-2026-questions, fda-pcac-2026-presentations-day1, fda-503a-bulks-page (bpc-157.yaml);
+# fda-unapproved-glp1-concerns, cbg-glp1-position, zin-2024-wegovy-not-reimbursed, ema-epar-wegovy,
+# bfarm-ozempic-falsification (semaglutide.yaml); piatkowski-2026-retatrutide-product-testing,
+# jastreboff-2026-triumph-1, ema-2026-10-under-evaluation (retatrutide.yaml).
+
+# ---------------------------------------------------------------- the precautionary case: thalidomide and evidence first
+
+kim-2011-thalidomide-review:
+  type: review
+  authors: "Kim JH, Scialli AR"
+  title: "Thalidomide: the tragedy of birth defects and the effective treatment of disease"
+  container: "Toxicological Sciences"
+  year: 2011
+  volume: "122"
+  pages: "1-6"
+  doi: 10.1093/toxsci/kfr088
+  pmid: "21507989"
+  verified: pubmed
+  note: "Narrative review for the Society of Toxicology's 50th anniversary. Abstract: thalidomide was widely used in the late 1950s and early 1960s for nausea in pregnant women and caused severe birth defects in thousands of children; it was banned in most countries, later proved useful in leprosy and multiple myeloma; in rural areas without extensive medical surveillance, its use by pregnant women with leprosy has continued to cause malformations; the tragedy prompted US and international regulators to develop systematic toxicity testing protocols."
+
+fda-kelsey-history:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Frances Oldham Kelsey: Medical reviewer famous for averting a public health tragedy"
+  year: 2018
+  url: https://www.fda.gov/about-fda/fda-history-exhibits/frances-oldham-kelsey-medical-reviewer-famous-averting-public-health-tragedy
+  accessed: 2026-10-22
+  verified: url
+  note: "FDA history page, content current as of 1 February 2018. Kelsey joined the FDA as a medical officer in 1960; one of her first applications was thalidomide, 'already available in dozens of countries'; despite constant pressure from the company she refused to approve it because of inadequate evidence; about a year later researchers in Germany and Australia linked it to severe birth defects 'that eventually were shown to involve thousands of babies'; it was never marketed in the US, and the near disaster helped pass the 1962 Drug Amendments. President Kennedy gave her the President's Award for Distinguished Federal Civilian Service in 1962."
+
+ec-pharma-legislation-timeline:
+  type: regulator
+  authors: "European Commission, Directorate-General for Health and Food Safety"
+  title: "50 years of EU pharmaceutical legislation: milestones (timeline)"
+  year: 2015
+  url: https://ec.europa.eu/health/50_years_of_eu_milestones/timeline.htm
+  accessed: 2026-10-22
+  verified: url
+  note: "Timeline page. 1965: 'The use of the drug thalidomide in the 1960s caused thousands of infants to be born with birth defects. Following this, the EC proposed the very first piece of pharmaceutical legislation, directive 65/65 – establishing the fundamental principle that medicinal products need to be independently evaluated and authorised before being placed on the market.' 2008: thalidomide authorised as a treatment in multiple myeloma. 2010: new EU pharmacovigilance rules, including direct patient reporting of adverse events. Year of the page (50th anniversary of Directive 65/65) inferred from its title; no date is printed."
+
+commons-fda-kelsey-photo:
+  type: web
+  authors: "U.S. Food and Drug Administration (photograph and description), via Wikimedia Commons"
+  title: "President Kennedy & Frances O. Kelsey (FDA 172)"
+  year: 2012
+  url: https://commons.wikimedia.org/wiki/File:President_Kennedy_%26_Frances_O._Kelsey_(FDA_172)_(8212346106).jpg
+  accessed: 2026-10-22
+  verified: url
+  note: "The FDA's own description of the photo used as the hero of the-case-for-reform: 'After signing the Kefauver-Harris Drug Amendments on October 10, 1962, President Kennedy presented a pen to those observing the momentous event, including Dr. Frances O. Kelsey.' Public domain (work of the FDA). Cited only for the photo caption."
+
+davis-2017-ema-cancer-approvals:
+  type: article
+  authors: "Davis C, Naci H, Gurpinar E, Poplavska E, Pinto A, Aggarwal A"
+  title: "Availability of evidence of benefits on overall survival and quality of life of cancer drugs approved by European Medicines Agency: retrospective cohort study of drug approvals 2009-13"
+  container: "BMJ"
+  year: 2017
+  volume: "359"
+  pages: "j4530"
+  doi: 10.1136/bmj.j4530
+  pmid: "28978555"
+  pmcid: PMC5627352
+  verified: pubmed
+  note: "Retrospective cohort of EMA cancer approvals 2009-2013: 48 drugs for 68 indications; 8 (12%) approved on a single-arm study; at approval, significant survival gain in 24 of 68 (35%), median gain 2.7 months, and better quality of life in 7 (10%); after a median 5.4 years, 35 (51%) had shown a significant improvement in survival or quality of life and 33 (49%) remained uncertain. Academic authors (King's College London, LSE, LSHTM)."
+
+# ---------------------------------------------------------------- the cost of evidence, and who pays for it
+
+wouters-2020-rd-investment:
+  type: article
+  authors: "Wouters OJ, McKee M, Luyten J"
+  title: "Estimated Research and Development Investment Needed to Bring a New Medicine to Market, 2009-2018"
+  container: "JAMA"
+  year: 2020
+  volume: "323"
+  pages: "844-853"
+  doi: 10.1001/jama.2020.1166
+  pmid: "32125404"
+  pmcid: PMC7054832
+  verified: pubmed
+  note: "Of 355 new drugs and biologics approved by the FDA 2009-2018, R&D spending was publicly available for 63 (18%), from 47 companies. Counting failed trials, the median capitalised R&D investment per new medicine was estimated at $985.3 million (95% CI $683.6-1228.9 million) and the mean at $1335.9 million (2018 US dollars, 10.5% cost of capital). Data mainly from smaller firms, orphan and first-in-class drugs. Two errata were published in JAMA in September 2022; the abstract in the PMC version (read 22 October 2026) still gives the $985 million median."
+
+ema-2021-repurposing-pilot:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Repurposing of authorised medicines: pilot to support not-for-profit organisations and academia"
+  year: 2021
+  url: https://www.ema.europa.eu/en/news/repurposing-authorised-medicines-pilot-support-not-profit-organisations-and-academia
+  accessed: 2026-10-22
+  verified: url
+  note: "News of 28 October 2021. EMA and the Heads of Medicines Agencies launch a pilot giving regulatory support, mainly scientific advice, to not-for-profit organisations and academia that want to generate evidence for a new use of an authorised medicine that is out of patent and data protection. EMA writes that marketing authorisation holders 'sometimes ... lack the incentives or the commercial interest' to do the research for old medicines no longer protected by a patent or data exclusivity, which 'could be a wasted opportunity for public health'. Only for authorised medicines; it does not cover substances that were never authorised."
+
+ema-conditional-marketing-authorisation:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Conditional marketing authorisation"
+  year: 2026
+  url: https://www.ema.europa.eu/en/human-regulatory-overview/marketing-authorisation/conditional-marketing-authorisation
+  accessed: 2026-10-22
+  verified: url
+  note: "For medicines that address an unmet medical need, a conditional marketing authorisation can be granted on less comprehensive clinical data than normally required when the benefit of immediate availability outweighs the risk that more data are still needed. Legal basis: art. 14-a of Regulation 726/2004 and Regulation 507/2006. All criteria: positive benefit-risk balance; the applicant is likely to provide comprehensive data later; an unmet need; benefit of immediate availability greater than the risk. Valid one year, renewable annually; the holder must fulfil specific obligations (studies or more data) within set timelines; EMA can suspend or revoke if benefits no longer outweigh risks."
+
+# ---------------------------------------------------------------- hidden use, missing signals, and drug checking
+
+pope-2004-steroid-users-physicians:
+  type: article
+  authors: "Pope HG Jr, Kanayama G, Ionescu-Pioggia M, Hudson JI"
+  title: "Anabolic steroid users' attitudes towards physicians"
+  container: "Addiction"
+  year: 2004
+  volume: "99"
+  pages: "1189-1194"
+  doi: 10.1111/j.1360-0443.2004.00781.x
+  pmid: "15317640"
+  verified: pubmed
+  note: "Interviews with 80 weightlifters recruited by advertisement in Massachusetts and Florida (43 anabolic steroid users, 37 non-users). Users rated physicians no more reliable on steroids than friends, websites or their dealers; 40% trusted their dealer's information at least as much as any physician's; 56% had never told any physician about their steroid use. About anabolic steroids, not peptides; cited as the closest published evidence on hidden use of performance and image substances."
+
+pope-2014-ped-endocrine-statement:
+  type: guideline
+  authors: "Pope HG Jr, Wood RI, Rogol A, Nyberg F, Bowers L, Bhasin S"
+  title: "Adverse health consequences of performance-enhancing drugs: an Endocrine Society scientific statement"
+  container: "Endocrine Reviews"
+  year: 2014
+  volume: "35"
+  pages: "341-375"
+  doi: 10.1210/er.2013-1058
+  pmid: "24423981"
+  pmcid: PMC4026349
+  verified: pubmed
+  note: "Scientific statement. Abstract: the vast majority of users of performance-enhancing drugs are not athletes but non-athlete weightlifters; adverse health effects are greatly underappreciated; because randomised trials cannot ethically reproduce the doses and circumstances of use, observational studies are needed to collect outcome data; the statement aims to focus the attention of the medical community and policymakers on this use as a public health problem."
+
+hazell-2006-adr-under-reporting:
+  type: review
+  authors: "Hazell L, Shakir SA"
+  title: "Under-reporting of adverse drug reactions: a systematic review"
+  container: "Drug Safety"
+  year: 2006
+  volume: "29"
+  pages: "385-396"
+  doi: 10.2165/00002018-200629050-00003
+  pmid: "16689555"
+  verified: pubmed
+  note: "Systematic review of 37 studies from 12 countries (43 estimates): the median under-reporting rate of adverse drug reactions to spontaneous reporting systems was 94% (interquartile range 82-98%); still 85% for specific serious reaction-drug combinations. Drug Safety Research Unit, Southampton. About medicines used in normal care, not unauthorised products."
+
+maghsoudi-2022-drug-checking:
+  type: review
+  authors: "Maghsoudi N, Tanguay J, Scarfone K, Rammohan I, Ziegler C, Werb D, Scheim AI"
+  title: "Drug checking services for people who use drugs: a systematic review"
+  container: "Addiction"
+  year: 2022
+  volume: "117"
+  pages: "532-544"
+  doi: 10.1111/add.15734
+  pmid: "34729849"
+  pmcid: PMC9299873
+  verified: pubmed
+  note: "Systematic review (epub December 2021; issue 2022): 90 studies, 65 (72%) from Europe, 79 (88%) cross-sectional. Drug checking services 'appear to influence behavioural intentions and the behaviour of people who use drugs', particularly when a result is unexpected; market monitoring by such services is well established in Europe. Barriers include lack of access and legal and privacy concerns. Evidence mostly cross-sectional; about recreational drugs, not peptides."
+
+brunt-2011-dims:
+  type: review
+  authors: "Brunt TM, Niesink RJ"
+  title: "The Drug Information and Monitoring System (DIMS) in the Netherlands: implementation, results, and international comparison"
+  container: "Drug Testing and Analysis"
+  year: 2011
+  volume: "3"
+  pages: "621-634"
+  doi: 10.1002/dta.323
+  pmid: "21898860"
+  verified: pubmed
+  note: "Trimbos Institute. Abstract: the Dutch Ministry of Health has made testing of illicit drugs for drug users possible since the 1990s to prevent serious health hazards from unexpected dangerous substances; in nearly two decades more than 100,000 samples were handed in at DIMS testing facilities; markets monitored were ecstasy, amphetamine, cocaine and hallucinogens."
+
+# ---------------------------------------------------------------- money and research results
+
+lundh-2017-industry-sponsorship:
+  type: review
+  authors: "Lundh A, Lexchin J, Mintzes B, Schroll JB, Bero L"
+  title: "Industry sponsorship and research outcome"
+  container: "Cochrane Database of Systematic Reviews"
+  year: 2017
+  volume: "2"
+  pages: "MR000033"
+  doi: 10.1002/14651858.MR000033.pub3
+  pmid: "28207928"
+  pmcid: PMC8132492
+  verified: pubmed
+  note: "Cochrane methodology review, 75 papers. Industry-sponsored drug and device studies more often had favourable efficacy results (RR 1.27, 95% CI 1.17-1.37; moderate-quality evidence) and favourable conclusions (RR 1.34, 1.19-1.51; low-quality evidence) than studies with other sponsors; no difference in most standard risk-of-bias items, and industry studies more often had low risk of bias from blinding. Authors conclude there is an industry bias that standard risk-of-bias assessments do not explain."
+
+# ---------------------------------------------------------------- privacy and the site's own references
+
+nl-telecommunicatiewet-art-11-7a:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Telecommunicatiewet, artikel 11.7a (opslaan van of toegang tot informatie in de randapparatuur van een gebruiker)"
+  container: "wetten.overheid.nl (BWBR0009950), version in force from 15 August 2026"
+  year: 1998
+  url: https://wetten.overheid.nl/BWBR0009950/2026-08-15/#Hoofdstuk11_Paragraaf11.1_Artikel11.7a
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: storing or reading information on a user's device is only allowed after clear and complete information and the user's consent. Lid 3: this does not apply when the storage or access is solely to carry out the communication, or is strictly necessary to provide the information-society service the user has asked for (or, with no or minor privacy impact, to measure the quality or effectiveness of the service). The Dutch implementation of the ePrivacy Directive's cookie rule."
+
+pubmed-about-nlm:
+  type: web
+  authors: "U.S. National Library of Medicine"
+  title: "About PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/about/
+  accessed: 2026-10-22
+  verified: url
+  note: "'Available to the public online since 1996, PubMed was developed and is maintained by the ... National Library of Medicine (NLM)'. Cited for the caption of the About page photo and for where the site's study records come from."

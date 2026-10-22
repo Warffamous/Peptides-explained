@@ -1,0 +1,573 @@
+# Sources for the Evidence section (group evidence): evidence/index, how-to-read-a-study,
+# the-translation-gap, evidence-grading and conflicts-of-interest.
+# Every scholarly entry was looked up on 22 October 2026 with the PubMed tools (get_article_metadata)
+# and its metadata copied from the record. Numbers used on the pages were read in the abstract, the
+# PMC full text or the official document named in the note. Regulator pages were fetched with curl
+# or WebFetch on the accessed date. Ids already registered by other groups (ioannidis-2005-false-findings,
+# sena-2010-publication-bias, begley-2012-preclinical-standards, macleod-2015-risk-of-bias,
+# errington-2021-replicability, pubmed-bpc157-count-2026-10-20, fda-pcac-2026-bpc157-briefing,
+# poolton-2026-human-sr, wong-2019-clinical-trial-success, lundh-2017-industry-sponsorship (about.yaml), lincoff-2023-select,
+# knudsen-2010-thyroid-c-cells, ema-prac-2025-06-naion, ashraf-2024-online-semaglutide) are reused,
+# not re-registered here.
+
+# ---------------------------------------------------------------- study design and reading a study
+
+murad-2016-evidence-pyramid:
+  type: article
+  authors: "Murad MH, Asi N, Alsawas M, Alahdab F"
+  title: "New evidence pyramid"
+  container: "Evidence-Based Medicine"
+  year: 2016
+  volume: "21"
+  pages: "125-127"
+  doi: 10.1136/ebmed-2016-110401
+  pmid: "27339128"
+  pmcid: PMC4975798
+  verified: pubmed
+  note: "Mayo Clinic. Cited for: the evidence pyramid ranks study designs, with systematic reviews and meta-analyses at the top; the authors argue that systematic reviews are better seen as a lens for appraising the studies beneath them than as a layer above them."
+
+guyatt-2008-grade:
+  type: article
+  authors: "Guyatt GH, Oxman AD, Vist GE, Kunz R, Falck-Ytter Y, Alonso-Coello P, Schünemann HJ, et al."
+  title: "GRADE: an emerging consensus on rating quality of evidence and strength of recommendations"
+  container: "BMJ"
+  year: 2008
+  volume: "336"
+  pages: "924-926"
+  doi: 10.1136/bmj.39489.470347.AD
+  pmid: "18436948"
+  pmcid: PMC2335261
+  verified: pubmed
+  note: "Read on the PMC article page (22 October 2026): four levels (high, moderate, low, very low); evidence from randomised trials 'begins as high quality', observational studies start as 'low quality'; quality is lowered for study limitations, inconsistency, indirectness, imprecision and reporting bias, and may be raised for a very large effect, a dose-response relation, or when plausible biases would shrink the effect."
+
+stampfer-1991-oestrogen-heart:
+  type: meta-analysis
+  authors: "Stampfer MJ, Colditz GA"
+  title: "Estrogen replacement therapy and coronary heart disease: a quantitative assessment of the epidemiologic evidence"
+  container: "Preventive Medicine"
+  year: 1991
+  volume: "20"
+  pages: "47-63"
+  doi: 10.1016/0091-7435(91)90006-p
+  pmid: "1826173"
+  verified: pubmed
+  note: "Channing Laboratory, Boston. Abstract: 15 of 16 prospective studies found lower coronary risk in oestrogen users; a quantitative overview of all study types together (case-control, cross-sectional and prospective) gave a relative risk of 0.56 (95% CI 0.50-0.61), and 0.50 for internally controlled prospective and angiographic studies only; the authors judged the protective effect 'unlikely to be explained by confounding factors'. Cited as the observational evidence that the WHI trial later contradicted."
+
+rossouw-2002-whi:
+  type: trial
+  authors: "Rossouw JE, Anderson GL, Prentice RL, LaCroix AZ, Kooperberg C, Stefanick ML, et al."
+  title: "Risks and benefits of estrogen plus progestin in healthy postmenopausal women: principal results from the Women's Health Initiative randomized controlled trial"
+  container: "JAMA"
+  year: 2002
+  volume: "288"
+  pages: "321-333"
+  doi: 10.1001/jama.288.3.321
+  pmid: "12117397"
+  verified: pubmed
+  note: "Women's Health Initiative, NHLBI. Abstract: 16,608 postmenopausal women aged 50-79 with an intact uterus randomised to oestrogen plus progestin or placebo; stopped after a mean 5.2 years; coronary heart disease hazard ratio 1.29 (95% CI 1.02-1.63); 'this regimen should not be initiated or continued for primary prevention of CHD'."
+
+schulz-1995-empirical-bias:
+  type: meta-analysis
+  authors: "Schulz KF, Chalmers I, Hayes RJ, Altman DG"
+  title: "Empirical evidence of bias. Dimensions of methodological quality associated with estimates of treatment effects in controlled trials"
+  container: "JAMA"
+  year: 1995
+  volume: "273"
+  pages: "408-412"
+  doi: 10.1001/jama.273.5.408
+  pmid: "7823387"
+  verified: pubmed
+  note: "Abstract: 250 controlled trials from 33 meta-analyses; odds ratios exaggerated by 41% in trials with inadequately concealed allocation and by 30% when concealment was unclear; trials that were not double-blind exaggerated odds ratios by 17%."
+
+chan-2004-outcome-reporting:
+  type: article
+  authors: "Chan AW, Hróbjartsson A, Haahr MT, Gøtzsche PC, Altman DG"
+  title: "Empirical evidence for selective reporting of outcomes in randomized trials: comparison of protocols to published articles"
+  container: "JAMA"
+  year: 2004
+  volume: "291"
+  pages: "2457-2465"
+  doi: 10.1001/jama.291.20.2457
+  pmid: "15161896"
+  verified: pubmed
+  note: "Abstract: 102 Danish trials, 122 articles, 3,736 outcomes; statistically significant outcomes more likely to be fully reported (efficacy OR 2.4, harm OR 4.7); 62% of trials had at least one primary outcome changed, introduced or omitted compared with the protocol."
+
+de-angelis-2004-trial-registration:
+  type: article
+  authors: "De Angelis C, Drazen JM, Frizelle FA, Haug C, Hoey J, Horton R, et al."
+  title: "Clinical trial registration: a statement from the International Committee of Medical Journal Editors"
+  container: "New England Journal of Medicine"
+  year: 2004
+  volume: "351"
+  pages: "1250-1251"
+  doi: 10.1056/NEJMe048225
+  pmid: "15356289"
+  verified: pubmed
+  note: "Editorial published simultaneously in several ICMJE journals. NEJM full text was not reachable (HTTP 403); the policy wording was read in the identical CMAJ copy (PMC516198, 22 October 2026): member journals require registration in a public trials registry 'as a condition of consideration for publication', for trials starting enrolment after 1 July 2005; ongoing trials had to register by 13 September 2005."
+
+button-2013-power-failure:
+  type: review
+  authors: "Button KS, Ioannidis JPA, Mokrysz C, Nosek BA, Flint J, Robinson ESJ, Munafò MR"
+  title: "Power failure: why small sample size undermines the reliability of neuroscience"
+  container: "Nature Reviews Neuroscience"
+  year: 2013
+  volume: "14"
+  pages: "365-376"
+  doi: 10.1038/nrn3475
+  pmid: "23571845"
+  verified: pubmed
+  note: "University of Bristol. Abstract: low statistical power reduces the chance of detecting a true effect and also reduces the likelihood that a statistically significant result reflects a true effect; consequences include overestimated effect sizes and low reproducibility."
+
+scott-2008-als-mouse:
+  type: article
+  authors: "Scott S, Kranz JE, Cole J, Lincecum JM, Thompson K, Kelly N, et al."
+  title: "Design, power, and interpretation of studies in the standard murine model of ALS"
+  container: "Amyotrophic Lateral Sclerosis"
+  year: 2008
+  volume: "9"
+  pages: "4-15"
+  doi: 10.1080/17482960701856300
+  pmid: "18273714"
+  verified: pubmed
+  note: "ALS Therapy Development Institute (non-profit). Abstract: at least 50 publications describe agents that extend the lifespan of the SOD1(G93A) mouse, but no agent besides riluzole showed clinical efficacy; 5,429 mice from the institute's efficacy studies analysed to derive an optimal design; 8 compounds retested with an adequately designed and powered study design showed no survival benefit (including riluzole); 'the majority of published effects are most likely measurements of noise'."
+
+fleming-1996-surrogate-endpoints:
+  type: review
+  authors: "Fleming TR, DeMets DL"
+  title: "Surrogate end points in clinical trials: are we being misled?"
+  container: "Annals of Internal Medicine"
+  year: 1996
+  volume: "125"
+  pages: "605-613"
+  doi: 10.7326/0003-4819-125-7-199610010-00011
+  pmid: "8815760"
+  verified: pubmed
+  note: "University of Washington. PubMed record (no abstract). Cited for the concept that a treatment can improve a surrogate end point without improving, or while worsening, the clinical outcome the surrogate is meant to predict."
+
+echt-1991-cast:
+  type: trial
+  authors: "Echt DS, Liebson PR, Mitchell LB, Peters RW, Obias-Manno D, Barker AH, et al."
+  title: "Mortality and morbidity in patients receiving encainide, flecainide, or placebo. The Cardiac Arrhythmia Suppression Trial"
+  container: "New England Journal of Medicine"
+  year: 1991
+  volume: "324"
+  pages: "781-788"
+  doi: 10.1056/NEJM199103213241201
+  pmid: "1900101"
+  verified: pubmed
+  note: "CAST, US government funded. Abstract: patients after a heart attack whose extra heartbeats (ventricular ectopy) could be suppressed were randomised to drug or placebo; 1,498 patients; after a mean 10 months, 43 arrhythmic deaths with drug versus 16 with placebo (P = 0.0004); encainide and flecainide were stopped because of excess mortality."
+
+greenland-2016-p-values:
+  type: article
+  authors: "Greenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG"
+  title: "Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations"
+  container: "European Journal of Epidemiology"
+  year: 2016
+  volume: "31"
+  pages: "337-350"
+  doi: 10.1007/s10654-016-0149-3
+  pmid: "27209009"
+  pmcid: PMC4877414
+  verified: pubmed
+  note: "Abstract: correct interpretation of P values and confidence intervals is widely misunderstood; selecting analyses by the P values they produce can give small P values even when the tested hypothesis is correct; lists 25 common misinterpretations."
+
+gigerenzer-2007-health-statistics:
+  type: review
+  authors: "Gigerenzer G, Gaissmaier W, Kurz-Milcke E, Schwartz LM, Woloshin S"
+  title: "Helping doctors and patients make sense of health statistics"
+  container: "Psychological Science in the Public Interest"
+  year: 2007
+  volume: "8"
+  pages: "53-96"
+  doi: 10.1111/j.1539-6053.2008.00033.x
+  pmid: "26161749"
+  verified: pubmed
+  note: "Max Planck Institute for Human Development (Harding Center for Risk Literacy) with Dartmouth. Abstract: a 25% reduction in breast-cancer deaths from mammography screening means 1 fewer death in 1,000 women; recommends absolute instead of relative risks and natural frequencies."
+
+brierley-2022-preprints:
+  type: article
+  authors: "Brierley L, Nanni F, Polka JK, Dey G, Pálfy M, Fraser N, Coates JA"
+  title: "Tracking changes between preprint posting and journal publication during a pandemic"
+  container: "PLoS Biology"
+  year: 2022
+  volume: "20"
+  pages: "e3001285"
+  doi: 10.1371/journal.pbio.3001285
+  pmid: "35104285"
+  pmcid: PMC8806067
+  verified: pubmed
+  note: "Abstract: bioRxiv and medRxiv preprints later published in journals (to 30 April 2020; PMC full text: COVID-19 pairs January-April 2020, non-COVID-19 pairs September 2019-April 2020); the conclusions of 7.2% of non-COVID-19 and 17.2% of COVID-19 abstracts changed by publication, and most changes did not qualitatively change the conclusions. Only preprints that were later published were studied."
+
+schroter-2008-peer-review-errors:
+  type: trial
+  authors: "Schroter S, Black N, Evans S, Godlee F, Osorio L, Smith R"
+  title: "What errors do peer reviewers detect, and does training improve their ability to detect them?"
+  container: "Journal of the Royal Society of Medicine"
+  year: 2008
+  volume: "101"
+  pages: "507-514"
+  doi: 10.1258/jrsm.2008.080062
+  pmid: "18840867"
+  pmcid: PMC2586872
+  verified: pubmed
+  note: "BMJ. Abstract: 607 BMJ peer reviewers randomised to training or control and sent three test papers, each with nine major errors inserted; at baseline (paper 1) reviewers found on average 2.58 of the nine major errors, and 2.71 and 3.0 on papers 2 and 3."
+
+sumner-2014-press-releases:
+  type: article
+  authors: "Sumner P, Vivian-Griffiths S, Boivin J, Williams A, Venetis CA, Davies A, et al."
+  title: "The association between exaggeration in health related science news and academic press releases: retrospective observational study"
+  container: "BMJ"
+  year: 2014
+  volume: "349"
+  pages: "g7015"
+  doi: 10.1136/bmj.g7015
+  pmid: "25498121"
+  pmcid: PMC4262123
+  verified: pubmed
+  note: "Cardiff University. Abstract: 462 press releases from 20 UK universities (2011) and 668 news stories; 36% (95% CI 28-46%) contained exaggerated inference to humans from animal research; when they did, 86% of the news stories did too, against 10% when the press release was not exaggerated. Fact-check (PMC full text, 22 October 2026): the 36% is of press releases on non-human studies ('For studies on animals, cells, or simulations, 36% of press releases exhibited inflated inference to humans'), not of all 462; the pages say so."
+
+boutron-2010-spin:
+  type: article
+  authors: "Boutron I, Dutton S, Ravaud P, Altman DG"
+  title: "Reporting and interpretation of randomized controlled trials with statistically nonsignificant results for primary outcomes"
+  container: "JAMA"
+  year: 2010
+  volume: "303"
+  pages: "2058-2064"
+  doi: 10.1001/jama.2010.651
+  pmid: "20501928"
+  verified: pubmed
+  note: "Oxford Centre for Statistics in Medicine. Abstract: 72 randomised trials published in December 2006 with a statistically nonsignificant primary outcome; spin in the conclusions of 42 abstracts (58.3%) and in the title of 13 (18.0%)."
+
+yavchitz-2012-spin-press:
+  type: article
+  authors: "Yavchitz A, Boutron I, Bafeta A, Marroun I, Charles P, Mantz J, Ravaud P"
+  title: "Misrepresentation of randomized controlled trials in press releases and news coverage: a cohort study"
+  container: "PLoS Medicine"
+  year: 2012
+  volume: "9"
+  pages: "e1001308"
+  doi: 10.1371/journal.pmed.1001308
+  pmid: "22984354"
+  pmcid: PMC3439420
+  verified: pubmed
+  note: "INSERM, Paris. Abstract: 70 press releases about two-arm randomised trials; spin in 28 (40%) article abstract conclusions and 33 (47%) press releases; spin in the press release was associated with spin in the abstract conclusion (RR 5.6)."
+
+# ---------------------------------------------------------------- animal-to-human translation
+
+hackam-2006-animal-translation:
+  type: article
+  authors: "Hackam DG, Redelmeier DA"
+  title: "Translation of research evidence from animals to humans"
+  container: "JAMA"
+  year: 2006
+  volume: "296"
+  pages: "1731-1732"
+  doi: 10.1001/jama.296.14.1731
+  pmid: "17032985"
+  verified: pubmed
+  note: "Research letter (University of Toronto). Metadata from PubMed; full text paywalled (HTTP 403 on 22 October 2026). The figures we use are as restated by the first author in hackam-2007-translating-animal-research ('76 highly cited ... animal studies'; 'only just over a third translated at the level of human randomised trials') and by van-der-worp-2010-animal-models ('about one-third ... translated at the level of human randomised trials, and one-tenth of the interventions were subsequently approved'; median citation count 889)."
+
+hackam-2007-translating-animal-research:
+  type: article
+  authors: "Hackam DG"
+  title: "Translating animal research into clinical benefit"
+  container: "BMJ"
+  year: 2007
+  volume: "334"
+  pages: "163-164"
+  doi: 10.1136/bmj.39104.362951.80
+  pmid: "17255568"
+  pmcid: PMC1782020
+  verified: pubmed
+  note: "Editorial. Read on the PMC article page (22 October 2026): 'In our systematic review of 76 highly cited (and therefore probably influential) animal studies ... only just over a third translated at the level of human randomised trials'; 'only eight of the 113 animal studies on thrombolysis for stroke reported a sample size calculation'."
+
+van-der-worp-2010-animal-models:
+  type: article
+  authors: "van der Worp HB, Howells DW, Sena ES, Porritt MJ, Rewell S, O'Collins V, Macleod MR"
+  title: "Can animal models of disease reliably inform human studies?"
+  container: "PLoS Medicine"
+  year: 2010
+  volume: "7"
+  pages: "e1000245"
+  doi: 10.1371/journal.pmed.1000245
+  pmid: "20361020"
+  pmcid: PMC2846855
+  verified: pubmed
+  note: "UMC Utrecht with Edinburgh and Melbourne. Read in PMC full text (22 October 2026): about 500 'neuroprotective' strategies improved outcome in animal stroke models, but only aspirin and very early thrombolysis proved effective in patients; disease induced in animals that are young and otherwise healthy, versus elderly patients with co-morbidities; homogeneous animals versus heterogeneous patients; about 10% of focal ischaemia studies used animals with hypertension and fewer than 1% animals with diabetes; median time from ischaemia to treatment in the animal studies 10 minutes; infarct volume at 1-3 days versus functional outcome at 3 months in patients; a priori sample size calculations reported in 0-3% of studies in systematic reviews; Table 2: randomisation reported in 2% to 67% of studies across 17 systematic reviews, under half in most (fact-check 22 October 2026; the pages no longer say 'about a third or fewer'); even inbred rat strains vary because of the way disease is induced."
+
+ineichen-2024-animal-to-human:
+  type: article
+  authors: "Ineichen BV, Furrer E, Grüninger SL, Zürrer WE, Macleod MR"
+  title: "Analysis of animal-to-human translation shows that only 5% of animal-tested therapeutic interventions obtain regulatory approval for human applications"
+  container: "PLoS Biology"
+  year: 2024
+  volume: "22"
+  pages: "e3002667"
+  doi: 10.1371/journal.pbio.3002667
+  pmid: "38870090"
+  pmcid: PMC11175415
+  verified: pubmed
+  note: "University of Zurich and University of Edinburgh; umbrella review. Read in PMC full text (22 October 2026): 122 systematic reviews, 54 diseases, 367 therapies; for the 281 therapies with more than 10 years since the first animal study, 50% entered any human study, 40% a randomised trial and 5% were approved; in 62 therapies with at least 5 animal studies, 79% of 1,496 animal studies, 62% of 515 clinical studies and 50% of 220 RCTs were positive, a relative risk of 0.86 that the authors call 86% concordance; median 5, 7 and 10 years to any human study, an RCT and approval; reasons discussed include young healthy animals and missing blinding or randomisation."
+
+mestas-2004-mice-not-men:
+  type: review
+  authors: "Mestas J, Hughes CCW"
+  title: "Of mice and not men: differences between mouse and human immunology"
+  container: "Journal of Immunology"
+  year: 2004
+  volume: "172"
+  pages: "2731-2738"
+  doi: 10.4049/jimmunol.172.5.2731
+  pmid: "14978070"
+  verified: pubmed
+  note: "University of California, Irvine. Abstract: lists differences between mouse and human immune systems (balance of white-cell types, Toll receptors, cytokines and their receptors, costimulatory molecules and more) that should be taken into account when mice are used as preclinical models."
+
+seok-2013-mouse-inflammation:
+  type: article
+  authors: "Seok J, Warren HS, Cuenca AG, Mindrinos MN, Baker HV, Xu W, et al."
+  title: "Genomic responses in mouse models poorly mimic human inflammatory diseases"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2013
+  volume: "110"
+  pages: "3507-3512"
+  doi: 10.1073/pnas.1222878110
+  pmid: "23401516"
+  pmcid: PMC3587220
+  verified: pubmed
+  note: "Inflammation and the Host Response to Injury research programme (Stanford and others; NIH funded). Abstract: gene responses to trauma, burns and endotoxin were highly similar between human conditions, but responses in the corresponding mouse models correlated poorly with the human ones; the mouse orthologs were close to random in matching (R² between 0.0 and 0.1)."
+
+takao-2015-mouse-inflammation-reanalysis:
+  type: article
+  authors: "Takao K, Miyakawa T"
+  title: "Genomic responses in mouse models greatly mimic human inflammatory diseases"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2015
+  volume: "112"
+  pages: "1167-1172"
+  doi: 10.1073/pnas.1401965111
+  pmid: "25092317"
+  pmcid: PMC4313832
+  verified: pubmed
+  note: "National Institute for Physiological Sciences (Okazaki) and Fujita Health University, Japan. Added by the fact-checker (22 October 2026) so that seok-2013-mouse-inflammation is not presented as uncontested. Abstract: re-evaluated the same gene expression datasets used by Seok 2013, focusing on genes significantly changed in both humans and mice; the mouse models showed significant correlations with the human conditions (Spearman 0.43-0.68; 77-93% of genes changed in the same direction). Epub 4 August 2014; print issue 2015."
+
+bebarta-2003-randomisation-blinding:
+  type: article
+  authors: "Bebarta V, Luyten D, Heard K"
+  title: "Emergency medicine animal research: does use of randomization and blinding affect the results?"
+  container: "Academic Emergency Medicine"
+  year: 2003
+  volume: "10"
+  pages: "684-687"
+  doi: 10.1111/j.1553-2712.2003.tb00056.x
+  pmid: "12782533"
+  verified: pubmed
+  note: "University of Colorado. Abstract: 290 animal studies with two or more groups presented at emergency-medicine meetings 1997-2001; studies without randomisation were more likely to report a positive outcome (OR 3.4, 95% CI 1.7-6.9), and so were studies without blinding (OR 3.2, 95% CI 1.3-7.7); neither versus both, OR 5.2."
+
+sengupta-2013-rat-age:
+  type: review
+  authors: "Sengupta P"
+  title: "The laboratory rat: relating its age with human's"
+  container: "International Journal of Preventive Medicine"
+  year: 2013
+  volume: "4"
+  pages: "624-630"
+  pmid: "23930179"
+  pmcid: PMC3733029
+  verified: pubmed
+  note: "University of Calcutta. No DOI in PubMed. Read in PMC full text (22 October 2026): 'Laboratory rats live about 2-3.5 years (average 3 years)'; sexually mature at about six weeks; in adulthood one rat month is comparable to about three human years. Cited only for how compressed a rat's life is."
+
+sharma-2009-dose-extrapolation:
+  type: review
+  authors: "Sharma V, McNeill JH"
+  title: "To scale or not to scale: the principles of dose extrapolation"
+  container: "British Journal of Pharmacology"
+  year: 2009
+  volume: "157"
+  pages: "907-921"
+  doi: 10.1111/j.1476-5381.2009.00267.x
+  pmid: "19508398"
+  pmcid: PMC2737649
+  verified: pubmed
+  note: "University of British Columbia. Abstract: differences in drug transport, metabolism and dose-response can override the effect of size alone; drugs unlikely to suit simple allometric scaling include highly protein-bound drugs, drugs with extensive metabolism or active transport, and drugs whose targets differ between species in expression, affinity and distribution. Used for principles only; the page gives no scaling factor or formula."
+
+fda-2005-starting-dose-guidance:
+  type: regulator
+  authors: "U.S. Food and Drug Administration, Center for Drug Evaluation and Research"
+  title: "Guidance for Industry: Estimating the Maximum Safe Starting Dose in Initial Clinical Trials for Therapeutics in Adult Healthy Volunteers"
+  year: 2005
+  url: https://www.fda.gov/media/72309/download
+  accessed: 2026-10-22
+  verified: url
+  note: "PDF downloaded and read 22 October 2026 (July 2005, 28 pages). Cited for: the process derives a cautious starting dose for first-in-human trials in healthy volunteers 'regardless of the projected clinical use'; it starts from the highest dose without observed adverse effects in animal toxicity studies, scales it, and applies a safety factor for 'enhanced sensitivity ... in humans', toxicities that are hard to detect in animals 'e.g., headache, myalgias, mental disturbances', 'differences in receptor densities or affinities', unexpected toxicities and differences in absorption, distribution, metabolism and excretion; 'human bioavailability and metabolism may differ significantly from that of animals'; it 'does not address dose escalation'. The page deliberately reproduces none of its factors."
+
+ema-2017-first-in-human-guideline:
+  type: regulator
+  authors: "European Medicines Agency, Committee for Medicinal Products for Human Use"
+  title: "Guideline on strategies to identify and mitigate risks for first-in-human and early clinical trials with investigational medicinal products (EMEA/CHMP/SWP/28367/07 Rev. 1)"
+  year: 2017
+  url: https://www.ema.europa.eu/en/strategies-identify-mitigate-risks-first-human-early-clinical-trials-investigational-medicinal-products-scientific-guideline
+  accessed: 2026-10-22
+  verified: url
+  note: "Page fetched and PDF read 22 October 2026: published 25 July 2017, in effect 1 February 2018. Cited for: 'The expected exposure in humans ... is considered more relevant than the relative dose levels between animals and humans'; the starting dose relates to the minimal anticipated biological effect level (MABEL), the pharmacologically active dose or the NOAEL depending on uncertainty; species relevance must be justified; sentinel dosing with an observation period before the rest of a cohort; 'some serious toxicities are poorly translated to humans'. Fact-check (page and PDF re-read 22 October 2026): section 7.2 says the starting dose should be related to the MABEL, PAD or NOAEL depending on uncertainty, and that 'The starting dose for healthy volunteers should be a dose expected to result in an exposure lower than the PAD, unless a robust scientific rationale can be provided for a higher dose'; MABEL/PAD estimates are asked for generally, not only for high-risk products; 'A cautious approach' is required for products with high human-specificity. The page's document history lists the first version (EMEA/CHMP/SWP/28367/07, published 19 July 2007, legal effective date 1 September 2007), preceded by a 2007 draft on 'first-in-man clinical trials for potential high-risk medicinal products'; cited for 'the next year' after TGN1412. The page does not itself name TGN1412, so the site states the sequence, not a cause."
+
+suntharalingam-2006-tgn1412:
+  type: article
+  authors: "Suntharalingam G, Perry MR, Ward S, Brett SJ, Castello-Cortes A, Brunner MD, Panoskaltsis N"
+  title: "Cytokine storm in a phase 1 trial of the anti-CD28 monoclonal antibody TGN1412"
+  container: "New England Journal of Medicine"
+  year: 2006
+  volume: "355"
+  pages: "1018-1028"
+  doi: 10.1056/NEJMoa063842
+  pmid: "16908486"
+  verified: pubmed
+  note: "Northwick Park Hospital, London (the treating intensive-care team). Abstract: six healthy young men received a single intravenous dose of the CD28 superagonist antibody; within 90 minutes all six had a systemic inflammatory response; within 12 to 16 hours they were critically ill with lung injury, kidney failure and disseminated intravascular coagulation; two needed intensive organ support for 8 and 16 days; all six survived."
+
+eastwood-2010-tgn1412-cd28:
+  type: article
+  authors: "Eastwood D, Findlay L, Poole S, Bird C, Wadhwa M, Moore M, et al."
+  title: "Monoclonal antibody TGN1412 trial failure explained by species differences in CD28 expression on CD4+ effector memory T-cells"
+  container: "British Journal of Pharmacology"
+  year: 2010
+  volume: "161"
+  pages: "512-526"
+  doi: 10.1111/j.1476-5381.2010.00922.x
+  pmid: "20880392"
+  pmcid: PMC2990151
+  verified: pubmed
+  note: "NIBSC, UK. Abstract: the cytokine storm was 'not predicted by pre-clinical safety testing'; CD4+ effector memory T cells drive the TGN1412 response in human cells; 'In contrast to humans, CD28 is not expressed on the CD4+ effector memory T-cells of all species used for pre-clinical safety testing, so cannot be stimulated by TGN1412'."
+
+# ---------------------------------------------------------------- conflicts of interest
+
+wang-2010-rosiglitazone-coi:
+  type: article
+  authors: "Wang AT, McCoy CP, Murad MH, Montori VM"
+  title: "Association between industry affiliation and position on cardiovascular risk with rosiglitazone: cross sectional systematic review"
+  container: "BMJ"
+  year: 2010
+  volume: "340"
+  pages: "c1344"
+  doi: 10.1136/bmj.c1344
+  pmid: "20299696"
+  pmcid: PMC2841746
+  verified: pubmed
+  note: "Mayo Clinic. Abstract: 202 articles commenting on rosiglitazone and heart attack risk; only 108 (53%) had a conflict of interest statement; authors with a favourable view were more likely to have financial ties with makers of diabetes drugs (rate ratio 3.38) and with rosiglitazone's makers (4.29); not necessarily causal."
+
+ross-2008-rofecoxib-ghostwriting:
+  type: article
+  authors: "Ross JS, Hill KP, Egilman DS, Krumholz HM"
+  title: "Guest authorship and ghostwriting in publications related to rofecoxib: a case study of industry documents from rofecoxib litigation"
+  container: "JAMA"
+  year: 2008
+  volume: "299"
+  pages: "1800-1812"
+  doi: 10.1001/jama.299.15.1800
+  pmid: "18413874"
+  verified: pubmed
+  note: "Abstract: about 250 litigation documents; company employees and medical publishing companies prepared manuscripts, then recruited academic authors; 22 of 24 trial articles disclosed company support, but only 36 of 72 review articles (50%) disclosed sponsorship or author payment."
+
+wislar-2011-ghost-authorship:
+  type: article
+  authors: "Wislar JS, Flanagin A, Fontanarosa PB, Deangelis CD"
+  title: "Honorary and ghost authorship in high impact biomedical journals: a cross sectional survey"
+  container: "BMJ"
+  year: 2011
+  volume: "343"
+  pages: "d6128"
+  doi: 10.1136/bmj.d6128
+  pmid: "22028479"
+  pmcid: PMC3202014
+  verified: pubmed
+  note: "Authors from JAMA (American Medical Association). Abstract: 630 of 896 corresponding authors of 2008 articles in six high-impact journals responded; 21.0% of articles had honorary or ghost authors, or both; 17.6% honorary, 7.9% ghost."
+
+shamseer-2017-predatory-journals:
+  type: article
+  authors: "Shamseer L, Moher D, Maduekwe O, Turner L, Barbour V, Burch R, et al."
+  title: "Potential predatory and legitimate biomedical journals: can you tell the difference? A cross-sectional comparison"
+  container: "BMC Medicine"
+  year: 2017
+  volume: "15"
+  pages: "28"
+  doi: 10.1186/s12916-017-0785-9
+  pmid: "28298236"
+  pmcid: PMC5353955
+  verified: pubmed
+  note: "Ottawa Hospital Research Institute. Abstract: predatory journals 'actively solicit manuscripts and charge publications fees without providing robust peer review and editorial services'; 93 potential predatory, 99 open-access and 100 subscription journals compared; homepage spelling errors 66% versus 6% (open access) and 3% (subscription); distorted or possibly unauthorised images 63% versus 5% and 1%; a bogus impact metric 33% versus 3% and 0%; editors whose affiliation could not be verified 73% versus 2% and 1%; median fee US$100 versus US$1,865 and US$3,000."
+
+grudniewicz-2019-predatory-definition:
+  type: article
+  authors: "Grudniewicz A, Moher D, Cobey KD, Bryson GL, Cukier S, Allen K, et al."
+  title: "Predatory journals: no definition, no defence"
+  container: "Nature"
+  year: 2019
+  volume: "576"
+  pages: "210-212"
+  doi: 10.1038/d41586-019-03759-y
+  pmid: "31827288"
+  verified: pubmed
+  note: "Comment. PubMed record (no abstract); the Nature page (fetched 22 October 2026, full text paywalled) states that leading scholars and publishers from ten countries agreed a definition of predatory publishing. Cited only for that."
+
+greenberg-2009-citation-distortion:
+  type: article
+  authors: "Greenberg SA"
+  title: "How citation distortions create unfounded authority: analysis of a citation network"
+  container: "BMJ"
+  year: 2009
+  volume: "339"
+  pages: "b2680"
+  doi: 10.1136/bmj.b2680
+  pmid: "19622839"
+  pmcid: PMC2714656
+  verified: pubmed
+  note: "Harvard Medical School. Abstract: a complete citation network on one claim (beta amyloid in inclusion body myositis): 242 papers, 675 citations, 220,553 citation paths supporting it; unfounded authority built by citation bias against refuting papers, amplification by papers with no data on the claim, and invention, including the conversion of hypothesis into fact through citation alone."
+
+dejong-2016-industry-meals:
+  type: article
+  authors: "DeJong C, Aguilar T, Tseng CW, Lin GA, Boscardin WJ, Dudley RA"
+  title: "Pharmaceutical industry-sponsored meals and physician prescribing patterns for Medicare beneficiaries"
+  container: "JAMA Internal Medicine"
+  year: 2016
+  volume: "176"
+  pages: "1114-1122"
+  doi: 10.1001/jamainternmed.2016.2765
+  pmid: "27322350"
+  verified: pubmed
+  note: "UCSF. Abstract: 279,669 physicians; 95% of payments for four promoted drugs were meals, mean value under US$20; a single sponsored meal was associated with higher prescribing of the promoted brand (odds ratios 1.18 to 2.18); the authors stress association, not cause and effect."
+
+drazen-2010-icmje-coi-form:
+  type: article
+  authors: "Drazen JM, de Leeuw PW, Laine C, Mulrow C, DeAngelis CD, Frizelle FA, et al."
+  title: "Toward more uniform conflict disclosures — the updated ICMJE conflict of interest reporting form"
+  container: "New England Journal of Medicine"
+  year: 2010
+  volume: "363"
+  pages: "188-189"
+  doi: 10.1056/NEJMe1006030
+  pmid: "20627859"
+  verified: pubmed
+  note: "Editorial by ICMJE editors. PubMed record (no abstract). Cited for: medical journals use a shared, standard form on which authors declare financial and other relationships."
+
+gell-2026-influencer-drug-promotion:
+  type: review
+  authors: "Gell S, Dave S, Willis E, Vitale EJ, Woloshin S, Heiss R"
+  title: "Prescription drug promotion by social media influencers: a systematic scoping review"
+  container: "JAMA Network Open"
+  year: 2026
+  volume: "9"
+  pages: "e262738"
+  doi: 10.1001/jamanetworkopen.2026.2738
+  pmid: "41870429"
+  pmcid: PMC13010202
+  verified: pubmed
+  note: "MCI Innsbruck, University of Vienna and the Lisa Schwartz Foundation (non-profit). Published 2 March 2026; metadata from PubMed. Abstract: preregistered scoping review, 12 articles (8 empirical); three themes: misinformation from influencers' limited expertise with audiences of low health literacy; weak regulatory oversight and inconsistent disclosure; personal and parasocial narratives that blur the line between testimony and paid promotion; the evidence base is small and fragmented."
+
+cms-open-payments:
+  type: regulator
+  authors: "Centers for Medicare & Medicaid Services"
+  title: "What is Open Payments?"
+  year: 2026
+  url: https://www.cms.gov/priorities/key-initiatives/open-payments
+  accessed: 2026-10-22
+  verified: url
+  note: "Fetched 22 October 2026: 'a national disclosure program'; 'a publicly accessible database of payments that reporting entities, including drug and medical device companies, make to covered recipients like physicians'. US only."
