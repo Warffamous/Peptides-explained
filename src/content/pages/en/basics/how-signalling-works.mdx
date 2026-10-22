@@ -1,0 +1,184 @@
+---
+title: "How signalling works: receptors, messages and side effects"
+nav_title: "How signalling works"
+description: "Peptides act by switching receptors on or off. How a signal is passed and multiplied inside a cell, why one molecule has many effects, and why precise is not harmless."
+summary:
+  - "Most peptide medicines work from outside the cell. They fit a receptor, like a key in a lock."
+  - "The receptor passes the message inside the cell. On its way in, the signal grows stronger."
+  - "One receptor sits in many organs. So one medicine has many effects, good and bad."
+  - "A precise key can still harm you: in the wrong organ, in large amounts, or over time."
+  - "The body pushes back. Cells turn down receptors, and hormone systems brake themselves."
+section: basics
+order: 2
+template: reference
+reading_level: B2
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review
+related:
+  - basics/what-is-a-peptide
+  - basics/pharmacokinetics
+  - compounds/semaglutide
+  - evidence/the-translation-gap
+further_reading: []
+---
+
+A peptide medicine does nothing by itself. It works by passing a message to a cell, and the cell does the rest. This page explains how that message travels, and why a precise message can still have unwanted effects.
+
+## Receptors: locks on the cell surface
+
+<Lead question="How does a peptide tell a cell what to do?">It fits a receptor on the cell surface and switches it on, like a key in a lock.</Lead>
+
+<Diagram id="receptor-signalling-chain" caption="A message outside the cell becomes a chain of switches inside it.">
+
+1. **The key arrives.** A hormone or peptide medicine reaches the cell through the blood.
+2. **It fits the lock.** It binds a receptor that sits in the cell's outer wall and reaches through to the inside.
+3. **The receptor changes shape.** On the inside it switches on a helper protein, a G protein.
+4. **A second messenger is made.** The G protein switches on an enzyme that makes many molecules of a small messenger, cAMP.
+5. **The signal spreads.** cAMP switches on enzymes (kinases) that change many other proteins. The cell responds, for example by releasing insulin.
+6. **The signal stops.** The receptor is switched off or pulled inside the cell, so the message does not run forever.
+
+</Diagram>
+
+<Cite id="muller-2019-glp1-review,paramonov-2015-camp,rajagopal-2018-gpcr-desensitisation" />
+
+Peptides are large and water-loving, so most cannot pass through the oily outer wall of a cell.<Cite id="di-2015-peptide-adme" /> They act on receptors at the surface instead. Many peptide hormones use this family of receptors, called G-protein-coupled receptors (GPCRs).<Cite id="davenport-2020-peptide-gpcr" />
+
+<InDetail title="Receptor families, and why a small signal has a big effect">
+
+### A large family of drug targets
+
+GPCRs are the most studied drug targets: one analysis counted 475 drugs, about 34% of all drugs approved in the United States, that act at 108 different GPCRs.<Cite id="hauser-2017-gpcr-drugs" /> Many of the body's own peptides act on them, and nearly 50 approved peptide medicines target them, most of them copies or modified versions of a natural peptide.<Cite id="davenport-2020-peptide-gpcr" /> G proteins are used by virtually all cells in the body.<Cite id="wettschureck-2005-g-proteins" />
+
+Not every hormone passes its message on through cAMP. Growth hormone, for example, acts on its own receptor and signals inside the cell through a different route, the STAT 5b pathway.<Cite id="veldhuis-2001-gh-pulsatility" />
+
+### The GLP-1 receptor as a worked example
+
+When GLP-1 or a medicine such as semaglutide binds the GLP-1 receptor, the receptor switches on an enzyme (adenylate cyclase) and cAMP rises. In the insulin-making beta cells of the pancreas, cAMP acts through two proteins, PKA and Epac2, to increase insulin release.<Cite id="muller-2019-glp1-review" /> <Claim level="in-vitro">This chain has been worked out mainly in cell lines and animal islets</Claim>.<Cite id="muller-2019-glp1-review" />
+
+### Amplification
+
+cAMP is one of the main second messengers that GPCRs use. A small signal at the cell surface is multiplied on its way inward: the kinase that cAMP switches on amplifies the signal again, and the effect reaching the cell's nucleus is larger still.<Cite id="paramonov-2015-camp" /> That is why tiny amounts of a hormone can have large effects, and why a receptor does not need to be fully occupied to give a full response.<Cite id="berg-2018-inverse-agonism" />
+
+</InDetail>
+
+## Grip and push: affinity and efficacy
+
+<Lead question="Does binding to a receptor mean switching it on?">No. How tightly a molecule binds and how hard it pushes are two separate things.</Lead>
+
+<Compare title="Three molecules can all bind the same receptor and still do different things." detail="How pharmacologists describe what a molecule does at its receptor.">
+
+| | Full agonist | Partial agonist | Antagonist |
+|---|---|---|---|
+| Binds the receptor? | <Verdict is="yes" /> Yes<Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /> Yes<Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /> Yes<Cite id="berg-2018-inverse-agonism" /> |
+| Switches it fully on? | <Verdict is="yes" /> Gives the largest response the cell can make<Cite id="santiago-2021-core-concepts" /> | <Verdict is="no" /> Only part of the way, even when every receptor is taken<Cite id="santiago-2021-core-concepts" /> | <Verdict is="no" /> Does not switch it on at all<Cite id="santiago-2021-core-concepts" /> |
+| Can it weaken the body's own signal? | <Verdict is="no" /> Not directly: it adds its own push<Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /> It takes receptors away from a stronger signal<Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /> It blocks the receptor<Cite id="berg-2018-inverse-agonism" /> |
+
+</Compare>
+
+Affinity is how tightly a molecule grips its receptor. Efficacy is how strongly it switches the receptor on once bound.<Cite id="berg-2018-inverse-agonism,santiago-2021-core-concepts" /> Most peptide medicines that act on GPCRs are agonists made by changing a natural peptide.<Cite id="davenport-2020-peptide-gpcr" /> Orforglipron, a small-molecule GLP-1 medicine, is a partial agonist.<Cite id="kawai-2020-orforglipron-structure,fda-2026-foundayo-approval" />
+
+<InDetail title="Affinity, efficacy and potency in more detail">
+
+- **Affinity** is a fixed property of each drug–receptor pair. It is often expressed as the concentration needed to occupy half of the receptors.<Cite id="berg-2018-inverse-agonism" />
+- **Efficacy** cannot be measured directly. It is inferred from the response, which also depends on how many receptors a cell has and how well the cell turns an active receptor into a response.<Cite id="berg-2018-inverse-agonism" />
+- **Potency** is the amount of drug needed for a given effect. It reflects both affinity and efficacy.<Cite id="santiago-2021-core-concepts" />
+- **Inverse agonists** turn down a receptor that is active on its own, the opposite of an agonist.<Cite id="santiago-2021-core-concepts,berg-2018-inverse-agonism" />
+- **Biased agonists** switch on some of a receptor's signals more than others. A single drug can act as an agonist for one signal and an antagonist for another at the same receptor.<Cite id="berg-2018-inverse-agonism" /> <Claim level="in-vitro">In its developers' laboratory tests, orforglipron favoured the G-protein signal of the GLP-1 receptor over a second route (the recruitment of beta-arrestins)</Claim>.<Cite id="kawai-2020-orforglipron-structure" />
+
+Grip is not everything. In cell tests, semaglutide bound the GLP-1 receptor about three times less tightly than liraglutide, its predecessor. Its designers accepted that in exchange for tighter binding to albumin in the blood, which makes it last about a week.<Cite id="lau-2015-semaglutide-discovery,ema-epar-wegovy" /> How long a molecule stays at its target matters as much as how hard it grips; see [pharmacokinetics](/en/basics/pharmacokinetics/).
+
+</InDetail>
+
+## One molecule, many effects
+
+<Lead question="Why does one medicine have so many effects?">Because the same receptor sits in many organs. The key opens every lock that fits.</Lead>
+
+The short animation shows where one peptide medicine, semaglutide, acts in the body, one step at a time.
+
+<Explainer id="glp1-action" />
+
+GLP-1 receptors are found on insulin-making cells in the pancreas, in the brain and nerves, in the heart and blood vessels, the kidneys, the lungs and the lining of the gut.<Cite id="wang-2022-therapeutic-peptides" /> A medicine cannot choose which of them it reaches. The wanted effect in one organ and the side effect in another often come from the very same receptor.
+
+<InDetail title="The same receptor, wanted and unwanted effects">
+
+| Where the GLP-1 receptor is | What happens there | Wanted or not? |
+|---|---|---|
+| Pancreas | More insulin when blood sugar is high, less glucagon | Wanted in type 2 diabetes |
+| Brain | Less hunger, more fullness | Wanted for weight management |
+| Stomach and gut | Food leaves the stomach more slowly | Mixed. Stomach and gut problems, such as feeling sick, are the most common side effects |
+| Thyroid C-cells of rats and mice | Over time, tumours in two-year rodent studies | Unwanted; relevance for people considered low but not excluded |
+
+<Cite id="wang-2022-therapeutic-peptides,muller-2019-glp1-review,ema-epar-wegovy,knudsen-2010-thyroid-c-cells" />
+
+In the main placebo-controlled Wegovy weight trials (STEP 1 to 4, 68 weeks), nausea was reported by 43.9% of people on semaglutide against 16.1% on placebo.<Cite id="ema-epar-wegovy" /> The thyroid finding shows a second point: receptors differ between species. <Claim level="animal">Rat and mouse thyroid C-cells carry GLP-1 receptors, while human and monkey C-cells had low levels</Claim>, which is one reason a result in rodents may not carry over to people.<Cite id="knudsen-2010-thyroid-c-cells" /> More on this on [the translation gap](/en/evidence/the-translation-gap/).
+
+</InDetail>
+
+## Precise is not the same as harmless
+
+<Lead question="If a peptide is very specific, can it still cause harm?">Yes. It can act in the wrong organ, hit other receptors at higher amounts, or push growth.</Lead>
+
+<KeyNumber title="Occasional use: dark skin patches were rare" value="1 in 100" label="developed dark patches of skin in the main trials" who="Bremelanotide (Vyleesi), US label: phase 3 placebo-controlled trials in 1,247 premenopausal women, used at most eight times a month" source="dailymed-vyleesi-label" level="human-controlled" />
+
+<KeyNumber title="Daily use: dark patches were common" value="38 in 100" label="developed dark patches after eight days of daily use" who="Bremelanotide (Vyleesi), US label: a separate study with daily use for eight days" source="dailymed-vyleesi-label" level="human-limited" />
+
+Bremelanotide, an authorised US medicine, switches on several related receptors. One of them, MC1R, sits on pigment cells, so more exposure meant more dark patches.<Cite id="dailymed-vyleesi-label" /> Selectivity is never absolute: it falls as the concentration of a drug rises.<Cite id="santiago-2021-core-concepts" />
+
+<InDetail title="Four ways a precise key causes trouble">
+
+### 1. The right receptor in the wrong tissue
+
+The receptor a medicine is aimed at often also sits elsewhere. GLP-1 medicines slow the stomach because the stomach responds to GLP-1 too (see the table above).<Cite id="muller-2019-glp1-review,ema-epar-wegovy" />
+
+### 2. Other receptors
+
+Few molecules fit only one receptor. The US label states that bremelanotide "nonselectively activates several receptor subtypes" of the melanocortin family, with MC1R and MC4R the most relevant. MC1R sits on pigment cells (melanocytes), where switching it on increases pigment. Dark patches appeared on the face, gums and breasts. The label warns that they may not clear completely after stopping.<Cite id="dailymed-vyleesi-label" />
+
+### 3. More drug, less selectivity
+
+A drug's preference for one target over another depends on concentration. Pharmacology teaching states it plainly: the higher the dose, the lower the selectivity and the greater the chance of harm.<Cite id="santiago-2021-core-concepts" /> This is one reason the dose and the purity of a product matter so much, and why an unknown amount in a vial is a risk of its own (see [product risk](/en/safety/product-risk/)).
+
+### 4. Growth signals are shared with tumours
+
+Some peptides act on growth pathways: they push cells to divide, survive or grow new blood vessels. Cancers depend on the same capabilities: sustained growth signalling and the growth of new blood vessels are two of the recognised hallmarks of cancer.<Cite id="hanahan-2011-hallmarks" /> In a review of 21 observational (case-control) studies with 3,609 people with cancer and 7,137 without, higher blood levels of the growth factor IGF-1 went with modestly more prostate cancer and premenopausal breast cancer. Such studies show a link, not cause and effect.<Cite id="renehan-2004-igf1-cancer" /> In the first of two randomised, placebo-controlled trials in healthy adults, with authors from the developer, a single injection of CJC-1295, an experimental peptide, raised IGF-1 for 9 to 11 days; the abstract does not give the number of participants.<Cite id="teichman-2006-cjc1295" /> <Claim level="hypothesis">Whether unapproved peptides that push growth signals for months or years change cancer risk in people has not been studied</Claim>. Overstimulated receptors can, in principle, drive uncontrolled growth, which is one reason cells have brakes on them.<Cite id="rajagopal-2018-gpcr-desensitisation" />
+
+</InDetail>
+
+## The body pushes back
+
+<Lead question="Does a peptide keep working the same way over time?">Often not. Cells turn down receptors that are used too much. Hormone systems brake themselves.</Lead>
+
+<Diagram id="gh-axis-feedback" caption="Growth hormone is controlled by a loop that brakes itself.">
+
+1. **The brain gives the order.** The hypothalamus releases GHRH, a peptide, in pulses.
+2. **The pituitary answers.** It releases growth hormone in pulses.
+3. **The body responds.** Growth hormone raises IGF-1, a growth factor in the blood.
+4. **The brake.** Growth hormone and IGF-1 act back on the brain and pituitary. More somatostatin and less GHRH slow the next pulse.
+5. **What a medicine changes.** A peptide that pushes step 1 or step 2 raises the output, and the loop tries to adjust.
+
+</Diagram>
+
+<Cite id="desousa-2025-gh-feedback,veldhuis-2001-gh-pulsatility,teichman-2006-cjc1295" />
+
+Two kinds of push-back matter. Cells turn down receptors that are stimulated without pause (desensitisation).<Cite id="rajagopal-2018-gpcr-desensitisation" /> And hormone systems use feedback loops that sense the result and slow the source.<Cite id="desousa-2025-gh-feedback" /> Both can make an effect fade, or even reverse.
+
+<InDetail title="Desensitisation and feedback, with medicines as examples">
+
+### Desensitisation: from minutes to days
+
+When a GPCR is stimulated again and again, the cell responds less. Within minutes, proteins called beta-arrestins stop the receptor from switching on its G protein. Over hours to days, receptors are pulled inside the cell and broken down, and the cell makes fewer new ones.<Cite id="rajagopal-2018-gpcr-desensitisation" /> Pharmacologists call a reduced response to repeated or prolonged exposure tolerance.<Cite id="santiago-2021-core-concepts" />
+
+Two examples from authorised medicines:
+
+- **A fading side effect.** Semaglutide slows the stomach. Yet at the standard weight-management strength, the EU label reports no clinically relevant effect on how fast the stomach empties, "probably due to a tolerance effect".<Cite id="ema-epar-wegovy" />
+- **An effect that reverses.** GnRH, a brain hormone, tells the pituitary to release LH and FSH, which keep the sex hormones going. <Claim level="animal">In a study in rhesus monkeys whose own GnRH signal had been switched off, hourly pulses of GnRH restarted this system, while a constant infusion did not, and switching from pulses to a constant infusion could desensitise it again</Claim>.<Cite id="belchetz-1978-gnrh-pulses" /> Leuprolide, a long-acting GnRH copy, shows the same in people: it at first raises LH, FSH and testosterone, and given continuously it lowers them, with testosterone falling to castrate levels within two to four weeks.<Cite id="lupron-depot-label" />
+
+<KeyNumber title="Given without a break, it shut down the sex hormones" value="2–4 weeks" label="until the male sex hormone fell very low, after a first rise" who="People treated with continuous leuprolide (Lupron Depot), US label" source="lupron-depot-label" level="established" />
+
+### Feedback: the body's thermostat
+
+Hormone systems are built like a thermostat. Growth hormone is released in pulses driven by GHRH and restrained by somatostatin. A burst of growth hormone feeds back on the brain within a short time, increasing somatostatin and reducing GHRH, and IGF-1 adds a slower brake.<Cite id="veldhuis-2001-gh-pulsatility" /> These negative feedback loops act at both the brain and the pituitary.<Cite id="desousa-2025-gh-feedback" />
+
+The pattern matters as well as the amount: a review reports that separate pulses of growth hormone drive bone growth and switch on the IGF-1 gene in muscle more effectively than a steady level.<Cite id="veldhuis-2001-gh-pulsatility" /> So a peptide that changes the pattern can act differently from the body's own pulses. <Claim level="hypothesis">For most unapproved peptides that act on the growth-hormone system, what long-term use does to these loops in people is unknown</Claim>. The two trials of CJC-1295 in healthy adults showed growth hormone and IGF-1 raised for days after an injection, but they lasted 28 and 49 days, not years.<Cite id="teichman-2006-cjc1295" />
+
+</InDetail>

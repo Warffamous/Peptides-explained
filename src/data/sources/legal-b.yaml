@@ -1,17 +1,46 @@
-# Sources for the legal pages for Germany, the UK and the US, sport and doping, and the
-# regulatory tracker (/legal/de, /legal/uk, /legal/us, /legal/sport-and-doping, /legal/whats-changing).
-# Every law and regulator URL below was fetched on 20 October 2026 and contains what it is cited for
-# (see research/legal-b.md, "Verification log"). Scholarly entries were looked up in PubMed on the same
-# day and authors/title/journal/year/DOI/PMID copied from the PubMed record.
-# Sources already registered elsewhere are reused by id and not repeated here (de-amg-21,
-# uk-hmr-2012-reg-46, de-antidopg-2, de-antidopg-anlage, wada-2026-list-en, wada-2027-list-en,
-# wada-2022-list-modifications, wada-2026-monitoring-program, wada-2027-monitoring-program,
-# fda-pcac-2026-07-meeting, fda-pcac-2026-briefing-intro, fda-pcac-2026-questions,
-# fda-pcac-2026-presentations-day1, fda-pcac-2026-bpc157-briefing, fda-503a-bulks-page,
-# fda-503a-categories-2026-05, fda-category-2-safety-risks, fda-glp1-compounding-policy,
-# fda-unapproved-glp1-concerns, fda-2026-503b-glp1-exclusion-proposal, zin-wegovy-reassessment).
+# Sources for the legal pages for Germany, the UK and the US, sport and doping, and the regulatory
+# tracker (/legal/de, /legal/uk, /legal/us, /legal/sport-and-doping, /legal/whats-changing, and
+# src/data/tracker.yaml).
+#
+# Re-verified on 22 October 2026 (group legal-b, third run). Two earlier runs were interrupted; this run treated
+# every entry as unverified, fetched every URL again with curl (HTTP 200 for all) and read each page or PDF as text
+# against what it is cited for (research/legal-b.md, "Verification log"). Law pages: gesetze-im-internet.de,
+# recht.bund.de (BGBl PDF), legislation.gov.uk, law.cornell.edu. eCFR text through the eCFR versioner API (the HTML
+# page is a script shell); Federal Register documents and searches through the federalregister.gov documents API
+# (the HTML pages answer scripts with a bot check). GOV.UK dates through the GOV.UK content API. FDA, WADA, UKAD,
+# Dopingautoriteit, BfArM, EMA and European Parliament (OEIL) pages fetched directly; PDFs converted with pdftotext.
+# Scholarly entries (krug-2014, weber-2017) looked up in PubMed on 22 October 2026 and authors, title, journal, year,
+# volume, pages, DOI and PMID compared with the PubMed record.
+#
+# Cited by other groups' pages too (keep): de-amg-2, de-dmmv-2023, krug-2014-black-market-germany,
+# bfarm-risiken-melden, mhra-2026-10-counterfeit-pens, mhra-2026-07-no-summer-shortcut, mhra-yellow-card,
+# ukad-2027-list-summary, usc-21-355, usc-21-353a, fda-personal-importation, fda-warning-letters-index, fda-medwatch,
+# wada-code-2021, wada-code-2027, wada-2027-list-explanatory-note, the three dopingautoriteit-* pages,
+# weber-2017-swiss-border, ema-pharma-reform-page and the two OEIL procedure files.
+#
+# Reused from other files, not repeated here: de-amg-21, uk-hmr-2012-reg-46, wada-2022-list-modifications,
+# wada-2026-list-en, wada-2027-list-en, fda-pcac-2026-briefing-intro, fda-pcac-2026-questions,
+# fda-pcac-2026-presentations-day1, fda-pcac-2026-bpc157-briefing, fda-503a-bulks-page, fda-503a-categories-2026-05,
+# fda-category-2-safety-risks (bpc-157.yaml); de-antidopg-2, de-antidopg-anlage (tb-500.yaml);
+# wada-2026-monitoring-program, fda-glp1-compounding-policy, fda-unapproved-glp1-concerns,
+# fda-2026-503b-glp1-exclusion-proposal, fr-2026-12937-503b-comment-extension, mhra-glp1-what-you-need-to-know
+# (semaglutide.yaml); wada-2027-monitoring-program (tirzepatide.yaml); igj-2025-online-nepapotheken, ecfr-21-201-128
+# (legal-a.yaml); fda-pcac-2026-07-meeting, fda-pcac-2026-materials, fr-2026-07361-pcac-notice, wada-prohibited-list
+# (shared.yaml). Each of those was also re-fetched on 22 October 2026 for what our pages cite it for.
+#
+# Independent fact-check, 22 October 2026: every URL in this file and every reused source the five pages and the
+# tracker cite was fetched again and read for the sentence it supports; krug-2014 and weber-2017 compared with the
+# PubMed records (PMIDs 25168622, 28156209). Notes corrected: uk-mda-1971-sch-2 (zilpaterol), mhra-specials-guidance
+# (publication date), usc-21-333 (unverified fine clause), usc-21-381 (Treasury threshold), krug-2014 (base of the
+# 12.8%), fda-warning-letters-index (letters re-read). See research/legal-b.md, "Fact-check log".
+#
+# Seller names: FDA warning letters and one IGJ order of August 2026 name online sellers and their web addresses.
+# The site never names or links a seller (CONTENT-GUIDE §1), so those pages are not registered; the warning-letter
+# index is cited instead and the individual letters are listed by number only in its note.
 
 # ---------------------------------------------------------------- Germany: Arzneimittelgesetz (AMG)
+# The AMG was last amended by Art. 2 Abs. 4 of the law of 12 May 2026 (BGBl. 2026 I Nr. 143), according to the
+# "Stand" line of gesetze-im-internet.de on 22 October 2026. The sections below were read in that version.
 
 de-amg-2:
   type: law
@@ -20,10 +49,10 @@ de-amg-2:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__2.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "§ 2(1): medicines are substances presented for treating or preventing disease (Nr. 1), or that 'can be' applied to or given to a person to restore, correct or influence physiological functions by a pharmacological, immunological or metabolic action (Nr. 2a). § 2(3a): a product that meets the medicine definition and could also fall in another category (food, cosmetic) is a medicine."
+  note: "§ 2(1) Nr. 1: substances intended for use in or on the human body and presented as having properties for healing, relieving or preventing human disease; Nr. 2a: substances that can be used in or on the body, or given to a person, to restore, correct or influence physiological functions by a pharmacological, immunological or metabolic action. § 2(3a): a product that meets a medicine definition and may also fall under another product category (food, cosmetic and so on) is a medicine."
 
 de-amg-4:
   type: law
@@ -32,10 +61,10 @@ de-amg-4:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__4.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "§ 4(1): definition of Fertigarzneimittel (made in advance and placed on the market in a package intended for the consumer, or made by an industrial process). § 4(17): 'Inverkehrbringen ist das Vorrätighalten zum Verkauf oder zu sonstiger Abgabe, das Feilhalten, das Feilbieten und die Abgabe an andere.'"
+  note: "§ 4(1): Fertigarzneimittel = medicines made in advance and placed on the market in a package intended for the consumer (or made by an industrial process). § 4(17): 'Inverkehrbringen ist das Vorrätighalten zum Verkauf oder zu sonstiger Abgabe, das Feilhalten, das Feilbieten und die Abgabe an andere.'"
 
 de-amg-5:
   type: law
@@ -44,10 +73,10 @@ de-amg-5:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__5.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "Bans placing on the market, or using on another person, a medicine with a reasoned suspicion of harmful effects beyond what medical science finds acceptable."
+  note: "§ 5(1): it is forbidden to place 'bedenkliche' medicines on the market or to use them on another person. § 5(2): 'bedenklich' = a reasoned suspicion, by the current state of science, that normal use causes harmful effects beyond what medical science finds acceptable."
 
 de-amg-8:
   type: law
@@ -56,10 +85,10 @@ de-amg-8:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__8.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "Bans making or placing on the market medicines of significantly reduced quality, with misleading labels, or falsified medicines (§ 8(1) and (2))."
+  note: "§ 8(1): ban on making or placing on the market medicines or active substances of significantly reduced quality, or with misleading names, information or presentation (including claims of effects they do not have). § 8(2): ban on making, placing on the market or otherwise trading in falsified medicines or active substances."
 
 de-amg-73:
   type: law
@@ -68,10 +97,10 @@ de-amg-73:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__73.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "§ 73(1): medicines needing authorisation may be brought into Germany only if authorised there and the recipient is a pharmacy, wholesaler etc., or (Nr. 1a) sent by a licensed EU/EEA mail-order pharmacy. § 73(1b): bringing in falsified medicines is prohibited. § 73(2) Nr. 6: amounts matching usual personal need brought in on entry; Nr. 6a: medicines that may be marketed in the country of origin, obtained without commercial or professional brokerage, in amounts matching usual personal need, from an EU/EEA state. § 73(3): pharmacy import of unauthorised medicines on individual order."
+  note: "§ 73(1): medicines that need an authorisation may be brought into Germany only if they are authorised (or exempt) for Germany and the recipient is a pharmaceutical company, wholesaler, pharmacy and so on (Nr. 1), or, for mail order to the end user, they are sent by an EU/EEA pharmacy allowed to do mail order (Nr. 1a). § 73(1b): bringing falsified medicines or active substances into Germany is forbidden. § 73(2): § 73(1) sentence 1 does not apply, among others, to medicines brought in on entry in an amount matching usual personal need (Nr. 6), and to medicines that may be marketed in the country of origin and are obtained from an EU/EEA state without commercial or professional brokerage in an amount matching usual personal need (Nr. 6a). § 73(3): pharmacies may bring in unauthorised finished medicines in small amounts on the order of individual persons, if they may be lawfully marketed in the country they come from and no identical medicine is available in Germany; a prescription is required when they come from outside the EU/EEA. § 73(4): for Nr. 6 and 6a, the AMG does not apply except §§ 5, 8, 13–20a, 52a, 64–69 and 78."
 
 de-amg-95:
   type: law
@@ -80,10 +109,10 @@ de-amg-95:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__95.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "Up to three years' imprisonment or a fine, e.g. for placing a 'bedenkliches' medicine on the market (§ 5) or trading in falsified or quality-reduced medicines (§ 8); attempt punishable; one to ten years in especially serious cases (e.g. endangering the health of many people)."
+  note: "§ 95(1): up to three years' imprisonment or a fine, e.g. Nr. 1 (placing a 'bedenkliches' medicine on the market or using it on others, § 5) and Nr. 3a (making or trading in quality-reduced or falsified medicines, § 8(1) Nr. 1 or (2)). § 95(2): attempt is punishable. § 95(3): one to ten years in especially serious cases, e.g. endangering the health of a large number of people. § 95(4): negligence up to one year or a fine."
 
 de-amg-96:
   type: law
@@ -92,10 +121,10 @@ de-amg-96:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__96.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "Up to one year's imprisonment or a fine, e.g. Nr. 4 (manufacturing or importing without a licence under § 13 or § 72), Nr. 5 (placing an unauthorised Fertigarzneimittel on the market contrary to § 21), Nr. 18e (bringing falsified medicines into Germany)."
+  note: "Up to one year's imprisonment or a fine, e.g. Nr. 3 (misleading presentation, § 8(1) Nr. 2), Nr. 4 (making or importing without a licence under § 13 or § 72), Nr. 5 (placing a Fertigarzneimittel on the market contrary to § 21(1)), Nr. 18e (bringing a falsified medicine into Germany contrary to § 73(1b))."
 
 de-amg-97:
   type: law
@@ -104,12 +133,12 @@ de-amg-97:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/amg_1976/__97.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "§ 97(2) Nr. 8: bringing medicines into Germany contrary to § 73(1) is an administrative offence (Ordnungswidrigkeit); § 97(3): fine up to EUR 25,000."
+  note: "§ 97(2) Nr. 8: bringing medicines into Germany contrary to § 73(1), on purpose or by negligence, is an administrative offence (Ordnungswidrigkeit). § 97(3): fine up to EUR 25,000."
 
-# ---------------------------------------------------------------- Germany: advertising
+# ---------------------------------------------------------------- Germany: advertising (HWG)
 
 de-hwg-3a:
   type: law
@@ -118,10 +147,22 @@ de-hwg-3a:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/heilmwerbg/__3a.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "'Unzulässig ist eine Werbung für Arzneimittel, die der Pflicht zur Zulassung unterliegen und die nicht nach den arzneimittelrechtlichen Vorschriften zugelassen sind'; also applies to uses or forms not covered by an authorisation."
+  note: "'Unzulässig ist eine Werbung für Arzneimittel, die der Pflicht zur Zulassung unterliegen und die nicht nach den arzneimittelrechtlichen Vorschriften zugelassen sind oder als zugelassen gelten.' Also applies to uses or forms not covered by the authorisation. HWG last amended by Art. 5 of the law of 26 June 2026 (BGBl. 2026 I Nr. 195), per the full-citation line on 22 October 2026."
+
+de-hwg-10:
+  type: law
+  authors: "Bundesministerium der Justiz"
+  title: "Heilmittelwerbegesetz (HWG), § 10"
+  container: "gesetze-im-internet.de"
+  year: 2026
+  url: https://www.gesetze-im-internet.de/heilmwerbg/__10.html
+  accessed: 2026-10-22
+  lang: de
+  verified: url
+  note: "§ 10(1): prescription-only medicines may be advertised only to doctors, dentists, vets, pharmacists and people lawfully trading in them."
 
 de-hwg-15:
   type: law
@@ -130,36 +171,50 @@ de-hwg-15:
   container: "gesetze-im-internet.de"
   year: 2026
   url: https://www.gesetze-im-internet.de/heilmwerbg/__15.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "§ 15(1) Nr. 1: advertising contrary to § 3a is an administrative offence; § 15(3): fine up to EUR 50,000."
+  note: "§ 15(1) Nr. 1: advertising contrary to § 3a, on purpose or by negligence, is an administrative offence; § 15(3): fine up to EUR 50,000 for offences under § 15(1)."
 
-# ---------------------------------------------------------------- Germany: Anti-Doping-Gesetz and quantities
+# ---------------------------------------------------------------- Germany: Anti-Doping-Gesetz (AntiDopG)
+# The AntiDopG was last amended by Art. 1 of the regulation of 10 March 2023 (BGBl. 2023 I Nr. 67), per the
+# "Stand" line on 22 October 2026. § 2 and the Anlage are in tb-500.yaml (de-antidopg-2, de-antidopg-anlage).
 
 de-antidopg-3:
   type: law
   authors: "Bundesministerium der Justiz"
   title: "Anti-Doping-Gesetz (AntiDopG), § 3 Selbstdoping"
   container: "gesetze-im-internet.de"
-  year: 2026
+  year: 2023
   url: https://www.gesetze-im-internet.de/antidopg/__3.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "Self-doping ban: using a doping substance without medical indication with the intention of gaining an advantage in a competition of organised sport; § 3(3) defines such a competition; § 3(4) bans acquiring or possessing for that purpose."
+  note: "§ 3(1): ban on using a doping substance listed in Annex I of the UNESCO convention (not only banned in certain sports), without medical indication, intending to gain an advantage in a competition of organised sport. § 3(3): defines a competition of organised sport (organised or recognised by a sports organisation, with binding rules). § 3(4): ban on acquiring or possessing such a substance for that purpose."
 
 de-antidopg-4:
   type: law
   authors: "Bundesministerium der Justiz"
   title: "Anti-Doping-Gesetz (AntiDopG), § 4 Strafvorschriften"
   container: "gesetze-im-internet.de"
-  year: 2026
+  year: 2023
   url: https://www.gesetze-im-internet.de/antidopg/__4.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "§ 4(1): up to three years or a fine (incl. Nr. 3: acquiring, possessing or bringing in a 'nicht geringe Menge' contrary to § 2(3)); § 4(2): up to two years for § 3(4); § 4(4): one to ten years e.g. for supply to a person under 18 or acting commercially or as a gang; § 4(6): negligence up to one year; § 4(7): self-doping offences apply only to elite athletes in a testing pool or those with substantial income from sport; § 4(8): no penalty under § 4(2) for voluntarily giving up the substance before use."
+  note: "§ 4(1): up to three years or a fine for, among others, trading or supplying (§ 2(1)), using on another person (§ 2(2)), and acquiring, possessing or bringing in a 'nicht geringe Menge' (§ 2(3)), and for self-doping (§ 3(1), (2)). § 4(2): up to two years for acquiring or possessing for self-doping (§ 3(4)). § 4(3): attempt punishable in § 4(1) cases. § 4(4): one to ten years, e.g. supply to a person under 18, or acting commercially or as a gang. § 4(6): negligence in § 4(1) Nr. 1–3 cases up to one year. § 4(7): self-doping offences (§ 4(1) Nr. 4, 5 and § 4(2)) apply only to elite athletes in a testing pool or people with substantial income from sport. § 4(8): no penalty under § 4(2) for someone who voluntarily gives up the substance before using it."
+
+de-antidopg-6:
+  type: law
+  authors: "Bundesministerium der Justiz"
+  title: "Anti-Doping-Gesetz (AntiDopG), § 6 Verordnungsermächtigungen"
+  container: "gesetze-im-internet.de"
+  year: 2015
+  url: https://www.gesetze-im-internet.de/antidopg/__6.html
+  accessed: 2026-10-22
+  lang: de
+  verified: url
+  note: "§ 6(1): the Federal Ministry of Health, by regulation with the consent of the Bundesrat and after hearing experts, sets the 'nicht geringe Menge' of the substances in the Anlage and may add further substances to the Anlage (or remove them)."
 
 de-dmmv-2023:
   type: law
@@ -168,34 +223,46 @@ de-dmmv-2023:
   container: "gesetze-im-internet.de (BGBl. 2023 I Nr. 67, S. 5)"
   year: 2023
   url: https://www.gesetze-im-internet.de/dmmv_2023/BJNR0430B0023.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "In force since 16 March 2023. The Anlage sets a 'nicht geringe Menge' for each listed substance or group, including growth-hormone fragments (e.g. AOD-9604), GHRH and analogues (e.g. tesamorelin, CJC-1295), GH secretagogues (e.g. ipamorelin), GHRPs (e.g. hexarelin) and thymosin-beta-4 and its derivatives (e.g. TB-500). The amounts themselves are deliberately not reproduced on the site; they are recorded in research/legal-b.md for the legal reviewer."
+  note: "In force since 16 March 2023; replaces the DmMV 2020. The Anlage sets a 'nicht geringe Menge' (stated for the free compound) for every substance or group in the AntiDopG Anlage, including growth-hormone fragments (examples AOD-9604, hGH fragment 176-191), GHRH and analogues (examples sermorelin, somatorelin, tesamorelin, mod-GRF, CJC-1295), GH secretagogues (example ipamorelin), GHRPs (example hexarelin) and thymosin-beta-4 and its derivatives (example TB-500). The site prints none of the amounts (no amounts of any kind, CONTENT-GUIDE §1); the legal reviewer can read them in the Anlage, sections II.2.3 to II.3. The amounts are stated for the free compound."
+
+de-bgbl-2025-ii-312:
+  type: law
+  authors: "Bundeskanzleramt"
+  title: "Bekanntmachung der Neufassung der Anlage I zu dem Internationalen Übereinkommen vom 19. Oktober 2005 gegen Doping im Sport / des Anhangs zu dem Übereinkommen vom 16. November 1989 gegen Doping, vom 18. Dezember 2025"
+  container: "Bundesgesetzblatt 2025 Teil II Nr. 312 (23 December 2025)"
+  year: 2025
+  url: https://www.recht.bund.de/bgbl/2/2025/312/VO.html
+  accessed: 2026-10-22
+  lang: de
+  verified: url
+  note: "Publishes the WADA Prohibited List 2026 as the new Annex I of the UNESCO convention, in force 1 January 2026, with an official German translation. S0 ('Nicht zugelassene Stoffe') names BPC-157 as an example. States that it follows the announcement of 13 December 2024 (BGBl. 2024 II Nr. 503). This Annex I is the list that AntiDopG § 2(1), (2) and § 3 refer to. Read in the PDF (regelungstext.pdf) linked from this page."
 
 # ---------------------------------------------------------------- Germany: BfArM
 
 bfarm-risiken-melden:
   type: regulator
   authors: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)"
-  title: "Risiken melden (reporting suspected side effects; joint BfArM/PEI portal nebenwirkungen.bund.de)"
+  title: "Nebenwirkungen und weitere Arzneimittelrisiken melden"
   year: 2026
   url: https://www.bfarm.de/DE/Arzneimittel/Pharmakovigilanz/Risiken-melden/_node.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "The joint online portal www.nebenwirkungen.bund.de of BfArM and the Paul-Ehrlich-Institut is for health professionals and for patients; patients are asked to report together with a doctor where possible. Page also notes a portal outage 7–9 October 2026 and asks people who reported then to report again."
+  note: "A joint web portal of BfArM and the Paul-Ehrlich-Institut (www.nebenwirkungen.bund.de) takes reports of suspected side effects; a paper form can be sent instead. Reports by health professionals and by patients ('Patientinnen und Patienten') complete the safety profile of medicines. The page also reports a portal fault from 7 to 9 October 2026 and asks people who reported online then to report again. (Corrected 22 October 2026: an earlier note said patients are asked to report together with a doctor; the page does not say that.)"
 
 bfarm-arzneimittelfaelschungen:
   type: regulator
   authors: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)"
-  title: "Arzneimittelfälschungen (falsified medicines: responsibilities and safe online purchase)"
+  title: "Arzneimittelfälschungen"
   year: 2026
   url: https://www.bfarm.de/DE/Arzneimittel/Arzneimittelinformationen/Rapid-Alert-System/Arzneimittelfaelschungen/_node.html
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: de
   verified: url
-  note: "BfArM deals with falsifications in the legal supply chain; supervision of the medicines trade is a task of the Länder authorities; police, customs and public prosecutors pursue crimes. BfArM keeps the German register of legal mail-order pharmacies, which must show the EU common logo (harmonised end of June 2015)."
+  note: "BfArM deals only with falsifications in the legal supply chain and informs the public about them; supervising the trade in medicines, seizing and testing products is the task of the Länder authorities; police, customs and public prosecutors investigate and prosecute crimes. BfArM keeps the German register of mail-order pharmacies; registered pharmacies must show the EU safety logo (harmonised at the end of June 2015). Distinguishes the legal supply chain from illegal sources 'wie z.B. über nicht autorisierte Internethändler'."
 
 krug-2014-black-market-germany:
   type: article
@@ -208,9 +275,10 @@ krug-2014-black-market-germany:
   doi: 10.1007/s00228-014-1743-5
   pmid: "25168622"
   verified: pubmed
-  note: "Cologne anti-doping laboratory analysed 337 black-market products (2010–2013); 12.8% contained peptide hormones and growth factors; findings included thymosin beta-4; the authors note several substances of 'fake/non-approved nature'."
+  note: "The Cologne anti-doping laboratory analysed 337 black-market products (2010–2013) in cooperation with German customs; 67 active ingredients, 49 classed as doping agents by WADA; of the findings, 12.8% 'accounted for' peptide hormones and growth factors (mostly hGH and GHRPs; the abstract does not state the base of the percentages, so the site says 'of what it found', not 'of products'); findings included thymosin beta-4; 'Several substances are of fake/non-approved nature'."
 
 # ---------------------------------------------------------------- United Kingdom: Human Medicines Regulations 2012
+# Read on legislation.gov.uk ("latest available (revised)") on 22 October 2026.
 
 uk-hmr-2012-reg-2:
   type: law
@@ -219,9 +287,20 @@ uk-hmr-2012-reg-2:
   container: "legislation.gov.uk"
   year: 2012
   url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/2
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "'Medicinal product' means any substance presented as having properties of preventing or treating disease, or any substance that may be used by or administered to human beings to restore, correct or modify a physiological function by a pharmacological, immunological or metabolic action, or to make a diagnosis."
+  note: "'Medicinal product' means (a) any substance presented as having properties of preventing or treating disease in human beings, or (b) any substance that may be used by or administered to human beings with a view to restoring, correcting or modifying a physiological function by a pharmacological, immunological or metabolic action, or making a medical diagnosis."
+
+uk-hmr-2012-reg-17:
+  type: law
+  authors: "UK Parliament"
+  title: "The Human Medicines Regulations 2012 (SI 2012/1916), regulation 17: Manufacturing of medicinal products"
+  container: "legislation.gov.uk"
+  year: 2012
+  url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/17
+  accessed: 2026-10-22
+  verified: url
+  note: "Reg. 17(1): a manufacturer's licence is needed to manufacture, assemble or import a medicinal product into Great Britain from a country other than Northern Ireland or an approved country for import. Reg. 17(6): 'Paragraph (1) does not apply to a person who imports a medicinal product for administration to himself or herself or to any other person who is a member of that person's household.'"
 
 uk-hmr-2012-reg-47:
   type: law
@@ -230,9 +309,9 @@ uk-hmr-2012-reg-47:
   container: "legislation.gov.uk"
   year: 2012
   url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/47
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Breach of regulation 46 is an offence: on indictment, a fine, imprisonment up to two years, or both."
+  note: "Breach of regulation 46 is an offence: on summary conviction a fine up to the statutory maximum; on indictment a fine, imprisonment up to two years, or both."
 
 uk-hmr-2012-reg-167:
   type: law
@@ -241,9 +320,9 @@ uk-hmr-2012-reg-167:
   container: "legislation.gov.uk"
   year: 2012
   url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/167
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "The 'specials' exemption: an unlicensed product supplied in response to an unsolicited order, made to the specification of a doctor or other listed prescriber, for a patient under their direct care, with no advertisement, and made or imported by a licence holder."
+  note: "The 'specials' exemption from regulation 46: supplied in response to an unsolicited order, made to the specification of a doctor or other listed prescriber, for a patient under their direct care, to meet special needs; no advertisement (condition B); made or imported by a licence holder (conditions E–G)."
 
 uk-hmr-2012-reg-214:
   type: law
@@ -252,9 +331,9 @@ uk-hmr-2012-reg-214:
   container: "legislation.gov.uk"
   year: 2012
   url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/214
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "A prescription only medicine may be sold or supplied only under a prescription from an appropriate practitioner; parenteral administration to others only by or on the directions of an appropriate practitioner."
+  note: "Reg. 214(1): a prescription only medicine may be sold or supplied only in accordance with a prescription from an appropriate practitioner. Reg. 214(2): a person may not parenterally administer (otherwise than to himself or herself) a prescription only medicine unless an appropriate practitioner or acting on their directions."
 
 uk-hmr-2012-reg-255:
   type: law
@@ -263,9 +342,9 @@ uk-hmr-2012-reg-255:
   container: "legislation.gov.uk"
   year: 2012
   url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/255
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Breach of regulation 214, and possession of a prescription only medicine with intent to supply it without a prescription, are offences: on indictment up to two years' imprisonment, a fine, or both."
+  note: "Breach of regulation 214(1) or (2), and possessing a prescription only medicine with intent to supply it other than on prescription (255(4)), are offences: on indictment up to two years' imprisonment, a fine, or both (255(5))."
 
 uk-hmr-2012-reg-279:
   type: law
@@ -274,9 +353,9 @@ uk-hmr-2012-reg-279:
   container: "legislation.gov.uk"
   year: 2012
   url: https://www.legislation.gov.uk/uksi/2012/1916/regulation/279
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "A person may not publish an advertisement for a medicinal product in Great Britain (or Northern Ireland) unless a UK marketing authorisation, certificate of registration or traditional herbal registration is in force for it."
+  note: "A person may not publish an advertisement for a medicinal product in Great Britain (or Northern Ireland, or the whole UK) unless a UK marketing authorisation, certificate of registration or traditional herbal registration (or a temporary authorisation under regulation 174) is in force for it."
 
 # ---------------------------------------------------------------- United Kingdom: controlled drugs
 
@@ -287,55 +366,22 @@ uk-mda-1971-sch-2:
   container: "legislation.gov.uk"
   year: 1971
   url: https://www.legislation.gov.uk/ukpga/1971/38/schedule/2
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Class C para 1(e) names chorionic gonadotrophin (HCG), clenbuterol, non-human chorionic gonadotrophin, somatotropin, somatrem and somatropin (inserted 1 September 1996 by SI 1996/1300). No compound covered by this site is named (searched for BPC-157, TB-500, thymosin, CJC-1295, ipamorelin, tesamorelin, sermorelin, hexarelin, AOD-9604, melanotan, bremelanotide, semaglutide, tirzepatide)."
+  note: "Part III para 1(e) lists chorionic gonadotrophin (HCG), clenbuterol, non-human chorionic gonadotrophin, somatotropin, somatrem, somatropin, zeranol and zilpaterol (para 1(b)-(e) added from 1 September 1996 by SI 1996/1300; zeranol and zilpaterol inserted from 23 December 2009 by SI 2009/3209). (Corrected by the fact-checker on 22 October 2026: the earlier note and the UK page omitted zilpaterol.) Searched on 22 October 2026 for every compound on this site (BPC-157, TB-500, thymosin, KPV, CJC-1295, ipamorelin, tesamorelin, sermorelin, hexarelin, AOD-9604, melanotan, bremelanotide, MOTS-c, epitalon, semax, selank, GHK, elamipretide, semaglutide, tirzepatide, retatrutide) and for 'peptide': none is named."
 
-uk-mdr-2001-reg-4:
-  type: law
-  authors: "UK Parliament"
-  title: "The Misuse of Drugs Regulations 2001 (SI 2001/3998), regulation 4: Exceptions for drugs in Schedules 4 and 5 and poppy-straw"
-  container: "legislation.gov.uk"
-  year: 2001
-  url: https://www.legislation.gov.uk/uksi/2001/3998/regulation/4
-  accessed: 2026-10-20
-  verified: url
-  note: "For Schedule 4 Part II drugs, possession is not an offence (reg 4(3)), and import or export is excluded from the offences only when 'carried out in person for administration to that person' (reg 4(2), wording substituted 23 April 2012). Applies in England, Wales and Scotland."
-
-uk-mdr-2001-sch-4-pt-2:
-  type: law
-  authors: "UK Parliament"
-  title: "The Misuse of Drugs Regulations 2001 (SI 2001/3998), Schedule 4 Part II"
-  container: "legislation.gov.uk"
-  year: 2001
-  url: https://www.legislation.gov.uk/uksi/2001/3998/schedule/4/part/II
-  accessed: 2026-10-20
-  verified: url
-  note: "Lists anabolic steroids and chorionic gonadotrophin, non-human chorionic gonadotrophin, somatotropin, somatrem and somatropin."
-
-govuk-travelling-controlled-drugs:
-  type: regulator
-  authors: "Home Office"
-  title: "Travelling with medicine containing controlled drugs"
-  container: "GOV.UK"
-  year: 2023
-  url: https://www.gov.uk/guidance/controlled-drugs-personal-licences
-  accessed: 2026-10-20
-  verified: url
-  note: "Last updated 11 April 2023. For medicines that do not contain a controlled drug, travellers are told to 'check the regulations for importing with the MHRA'. Unlicensed medicines can still be prescribed by a UK clinician and supplied as 'specials'."
+# ---------------------------------------------------------------- United Kingdom: MHRA
 
 mhra-specials-guidance:
   type: regulator
   authors: "Medicines and Healthcare products Regulatory Agency"
   title: "Supply unlicensed medicinal products (specials)"
   container: "GOV.UK"
-  year: 2026
+  year: 2025
   url: https://www.gov.uk/government/publications/supply-unlicensed-medicinal-products-specials/supply-unlicensed-medicinal-products-specials
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Specials are made or imported for an individual patient on a prescriber's order; regulation 167 allows supply when no licensed medicine meets the patient's clinical needs; importers need a specials or wholesale licence and must notify the MHRA before import."
-
-# ---------------------------------------------------------------- United Kingdom: MHRA enforcement and reporting
+  note: "First published 6 May 2014, last updated 29 January 2025 (GOV.UK content API; corrected by the fact-checker on 22 October 2026, the earlier note gave 29 January 2025 as the publication date). Specials are made or imported for an individual patient after an order from a doctor, dentist or other listed prescriber; regulation 167 allows supply when no licensed medicine can meet the patient's needs; the needs 'must be clinical in nature and are determined by the prescriber'; unlicensed medicines 'may not have been assessed by the MHRA'; importers need a specials or wholesale licence and must notify the MHRA before import."
 
 mhra-2026-10-counterfeit-pens:
   type: regulator
@@ -344,9 +390,9 @@ mhra-2026-10-counterfeit-pens:
   container: "GOV.UK"
   year: 2026
   url: https://www.gov.uk/government/news/counterfeit-weight-loss-pens-worth-2-million-seized-by-mhra-and-west-mids-police
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Published 15 October 2026: over 12,000 fake retatrutide and tirzepatide pens seized on 14 October in Birmingham; 'Retatrutide has not been authorised for use in the UK'; lists earlier raids in October 2025, February 2026 and May 2026."
+  note: "Press release, 15 October 2026: on 14 October over 12,000 fake retatrutide and tirzepatide pens seized in Birmingham, with packaging for about 30,000 more; 'Retatrutide has not been authorised for use in the UK. Products being sold as retatrutide outside legitimate clinical trials are being supplied illegally'; lists earlier operations in October 2025 (5,000 pens), February 2026 (about 2,000 doses) and May 2026 (about 12,000 doses); asks people to report side effects to the Yellow Card scheme."
 
 mhra-2026-07-no-summer-shortcut:
   type: regulator
@@ -355,9 +401,9 @@ mhra-2026-07-no-summer-shortcut:
   container: "GOV.UK"
   year: 2026
   url: https://www.gov.uk/government/news/no-summer-shortcut-for-safe-weight-loss
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Published 24 July 2026: prescription weight-loss medicines are being advertised illegally on social media; retatrutide 'has not been authorised for use in the UK, meaning anyone selling this product is doing so illegally'; check that a pharmacy is registered with the General Pharmaceutical Council."
+  note: "Press release, 24 July 2026: prescription weight-loss medicines are being advertised illegally on social media; retatrutide 'has not been authorised for use in the UK, meaning anyone selling this product is doing so illegally'; check that a pharmacy is registered with the General Pharmaceutical Council."
 
 mhra-2026-05-largest-seizure:
   type: regulator
@@ -366,9 +412,9 @@ mhra-2026-05-largest-seizure:
   container: "GOV.UK"
   year: 2026
   url: https://www.gov.uk/government/news/two-arrested-during-the-mhras-largest-ever-seizure-of-unlicensed-weight-loss-medicines
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Published 29 May 2026: arrests on suspicion of offences under the Human Medicines Regulations 2012; the site was believed to make and distribute unlicensed retatrutide and tirzepatide 'as well as peptide products'."
+  note: "Press release, 29 May 2026: raid on 28 May near Northampton, about 12,000 doses recovered; two men arrested on suspicion of offences under the Human Medicines Regulations 2012; the property is believed to have been used to make, assemble and distribute unlicensed retatrutide and tirzepatide 'as well as peptide products'."
 
 mhra-2026-01-seizures-2025:
   type: regulator
@@ -377,19 +423,19 @@ mhra-2026-01-seizures-2025:
   container: "GOV.UK"
   year: 2026
   url: https://www.gov.uk/government/news/mhra-seizes-illegal-medicines-worth-almost-45m-in-2025-disrupting-major-criminal-networks
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Published 26 January 2026: nearly 20 million doses seized in 2025 including 5,680 GLP-1 pens; more than 1,500 websites and social media accounts disrupted; unauthorised medicines have not been assessed for safety, effectiveness or quality."
+  note: "Press release, 26 January 2026: almost 20 million doses seized in 2025 (17 million in 2024), including 5,680 GLP-1 pens; more than 1,500 websites and social media accounts disrupted and more than 1,200 posts removed; an unauthorised medicine 'will not have been assessed by the MHRA for its safety, effectiveness or the quality and hygiene of its manufacturing'."
 
 mhra-yellow-card:
   type: web
   authors: "Medicines and Healthcare products Regulatory Agency"
-  title: "Yellow Card: report a side effect or problem with a medicine or medical device"
+  title: "Yellow Card: making medicines and medical devices safer"
   year: 2026
   url: https://yellowcard.mhra.gov.uk/
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Anyone can report; the scheme is run by the MHRA; for health worries contact a doctor, pharmacist or NHS 111."
+  note: "'Anyone can report an issue with a medicine' to the Yellow Card scheme, which is run by the MHRA; for worries about your health, speak to a doctor or pharmacist or call NHS 111; the MHRA cannot give medical advice."
 
 # ---------------------------------------------------------------- United Kingdom: anti-doping
 
@@ -399,9 +445,9 @@ ukad-athlete-responsibilities:
   title: "Athletes – Rights and Responsibilities"
   year: 2026
   url: https://www.ukad.org.uk/athletes/athletes-rights-and-responsibilities
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Explains strict liability: athletes are 'solely responsible for any banned substance you use, attempt to use, or is found in your system, regardless of how it got there or whether there was any intention to cheat'."
+  note: "'Strict liability means that you are solely responsible for any banned substance you use, attempt to use, or is found in your system, regardless of how it got there or whether there was any intention to cheat.'"
 
 ukad-2027-list-summary:
   type: web
@@ -409,22 +455,24 @@ ukad-2027-list-summary:
   title: "2027 Prohibited List: Summary of Changes"
   year: 2026
   url: https://www.ukad.org.uk/news/2027-prohibited-list-summary-changes
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "WADA published the 2027 List on 21 September 2026, in effect 1 January 2027; S0 wording updated for peptides; 'not all experimental peptides prohibited under Section 0 are specifically listed'; questions to substance@ukad.org.uk."
+  note: "WADA published the 2027 List on 21 September 2026; it comes into effect on 1 January 2027. S0 wording updated 'to clarify that peptides under clinical development are prohibited if they also fulfil the World Anti-Doping Code criteria'; 'not all experimental peptides prohibited under Section 0 are specifically listed'; athletes in doubt should contact substance@ukad.org.uk."
 
 # ---------------------------------------------------------------- United States: statute and regulation
+# The United States Code was read on the Cornell Legal Information Institute (law.cornell.edu, allowlisted);
+# the 20 October check found uscode.house.gov in a temporary format that did not return the sections.
 
 usc-21-321:
   type: law
   authors: "Legal Information Institute, Cornell Law School (text of the United States Code)"
-  title: "21 U.S. Code § 321 – Definitions (FD&C Act § 201), including (g)(1) 'drug'"
+  title: "21 U.S. Code § 321 – Definitions (FD&C Act § 201)"
   container: "United States Code"
   year: 2026
   url: https://www.law.cornell.edu/uscode/text/21/321
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "A drug includes 'articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease' and 'articles (other than food) intended to affect the structure or any function of the body'. uscode.house.gov was in a temporary format on 20 October 2026 and did not return the section, so the Cornell LII copy (allowlisted) was used."
+  note: "§ 321(g)(1): 'drug' includes '(B) articles intended for use in the diagnosis, cure, mitigation, treatment, or prevention of disease in man or other animals; and (C) articles (other than food) intended to affect the structure or any function of the body'. § 321(p): a 'new drug' is a drug not generally recognized, among qualified experts, as safe and effective for use under the conditions in its labelling."
 
 usc-21-355:
   type: law
@@ -433,9 +481,9 @@ usc-21-355:
   container: "United States Code"
   year: 2026
   url: https://www.law.cornell.edu/uscode/text/21/355
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "§ 355(a): 'No person shall introduce or deliver for introduction into interstate commerce any new drug, unless an approval of an application ... is effective with respect to such drug.'"
+  note: "§ 355(a): 'No person shall introduce or deliver for introduction into interstate commerce any new drug, unless an approval of an application filed pursuant to subsection (b) or (j) is effective with respect to such drug.'"
 
 usc-21-353a:
   type: law
@@ -444,9 +492,20 @@ usc-21-353a:
   container: "United States Code"
   year: 2026
   url: https://www.law.cornell.edu/uscode/text/21/353a
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Conditions under which compounded drugs are exempt from the approval, labelling and CGMP requirements, including the rule on which bulk drug substances may be used."
+  note: "§ 353a(a): sections 351(a)(2)(B), 352(f)(1) and 355 do not apply to a drug compounded for an identified individual patient on a valid prescription, if the conditions of the section are met. § 353a(b)(1)(A)(i): bulk drug substances must have a USP/NF monograph, be a component of an FDA-approved drug, or (if neither) 'appear on a list developed by the Secretary through regulations' (the 503A bulks list). § 353a(b)(1)(D) and (b)(2): limits on compounding drugs that are 'essentially a copy of a commercially available drug product'."
+
+usc-21-353b:
+  type: law
+  authors: "Legal Information Institute, Cornell Law School (text of the United States Code)"
+  title: "21 U.S. Code § 353b – Outsourcing facilities (FD&C Act § 503B)"
+  container: "United States Code"
+  year: 2026
+  url: https://www.law.cornell.edu/uscode/text/21/353b
+  accessed: 2026-10-22
+  verified: url
+  note: "§ 353b(a)(2): an outsourcing facility may compound from bulk drug substances only if the substance appears on a list established by the Secretary 'identifying bulk drug substances for which there is a clinical need', or the drug appears on the drug shortage list at the time of compounding, distribution and dispensing."
 
 usc-21-381:
   type: law
@@ -455,20 +514,31 @@ usc-21-381:
   container: "United States Code"
   year: 2026
   url: https://www.law.cornell.edu/uscode/text/21/381
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "§ 381(a): an imported article that appears to be adulterated, misbranded or in violation of section 355 'shall be refused admission'."
+  note: "§ 381(a): an imported article that appears to be adulterated, misbranded or in violation of section 355 'shall be refused admission'; a counterfeit drug shall be refused admission; FDA may destroy a refused drug valued at USD 2,500 or less ('or such higher amount as the Secretary of the Treasury may set by regulation') without the opportunity for export, after notice and an opportunity to appear."
+
+usc-21-333:
+  type: law
+  authors: "Legal Information Institute, Cornell Law School (text of the United States Code)"
+  title: "21 U.S. Code § 333 – Penalties (FD&C Act § 303)"
+  container: "United States Code"
+  year: 2026
+  url: https://www.law.cornell.edu/uscode/text/21/333
+  accessed: 2026-10-22
+  verified: url
+  note: "§ 333(a)(1): a person who violates section 331 (prohibited acts, which include introducing an unapproved new drug into interstate commerce, § 331(d)) 'shall be imprisoned for not more than one year or fined ..., or both'; § 333(a)(2): up to three years after a prior conviction or with intent to defraud or mislead. Fine amounts are not reproduced on the site. (Fact-checker, 22 October 2026: removed an unverified clause saying later federal law changed the fine amounts, which the writer's report said had already been removed. § 331(d), checked on law.cornell.edu: the introduction into interstate commerce of any article in violation of section 355.)"
 
 ecfr-21-216-23:
   type: law
   authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
-  title: "21 CFR 216.23 – Bulk drug substances that can be used to compound drug products in accordance with section 503A"
+  title: "21 CFR 216.23 – Bulk drug substances that can be used to compound drug products in accordance with section 503A of the Federal Food, Drug, and Cosmetic Act"
   container: "eCFR"
-  year: 2026
+  year: 2019
   url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-216/subpart-B/section-216.23
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Text as of 1 October 2026 (eCFR versioner API): the list in (a) has six substances (Brilliant Blue G, cantharidin, diphenylcyclopropenone, N-acetyl-D-glucosamine, squaric acid dibutyl ester, thymol iodide), none a peptide. (d): 'there are inadequate data to demonstrate the safety or efficacy of any drug product compounded using any of the drug substances listed'; representing such a drug as FDA approved makes it misbranded."
+  note: "Read through the eCFR versioner API (text as of 15 October 2026; the version list shows no change since 21 March 2019; source 84 FR 4710, 19 February 2019). (a) lists six substances (Brilliant Blue G, cantharidin, diphenylcyclopropenone, N-acetyl-D-glucosamine, squaric acid dibutyl ester, thymol iodide), none a peptide; (b) four substances not to be included; (c) the four evaluation criteria; (d) 'there are inadequate data to demonstrate the safety or efficacy of any drug product compounded using any of the drug substances listed'; representing such a drug as FDA approved makes it misbranded."
 
 fr-2026-08552-503b-glp1:
   type: regulator
@@ -477,9 +547,20 @@ fr-2026-08552-503b-glp1:
   container: "Federal Register"
   year: 2026
   url: https://www.federalregister.gov/documents/2026/05/01/2026-08552/list-of-bulk-drug-substances-for-which-there-is-a-clinical-need-under-section-503b-of-the-federal
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Published 1 May 2026, docket FDA-2018-N-3240: FDA proposes not to include semaglutide, tirzepatide and liraglutide on the 503B bulks list; comments due 30 June 2026 (Federal Register API field comments_close_on)."
+  note: "Notice published 1 May 2026, docket FDA-2018-N-3240 (read through the federalregister.gov documents API): FDA 'proposes not to include on the 503B Bulks List: semaglutide, tirzepatide, and liraglutide'; comments originally to 30 June 2026 (extended to 30 July 2026 by FR Doc. 2026-12937). No final determination found in the Federal Register by 22 October 2026 (see federalregister-fda-search-2026-10-22)."
+
+federalregister-fda-search-2026-10-22:
+  type: dataset
+  authors: "Office of the Federal Register"
+  title: "Federal Register document search, 22 October 2026: FDA documents since 24 July 2026 on compounding, '503A', '503B' and the Pharmacy Compounding Advisory Committee"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/search?conditions%5Bagencies%5D%5B%5D=food-and-drug-administration&conditions%5Bterm%5D=compounding&conditions%5Bpublication_date%5D%5Bgte%5D=07%2F24%2F2026
+  accessed: 2026-10-22
+  verified: url
+  note: "Re-run through the federalregister.gov documents API on 22 October 2026 (third legal-b run): FDA documents published from 24 July 2026 containing the exact phrases 'compounding' (15 results), '503A' (3), '503B' (6), 'bulk drug substances' (2), 'Pharmacy Compounding Advisory Committee' (7, all advisory-committee renewal or nomination notices) and 'peptide' (2, guidance notices). None is a proposed or final rule on the 503A bulks list, a final 503B decision on semaglutide, tirzepatide or liraglutide, or a meeting notice for the Pharmacy Compounding Advisory Committee meeting announced for before the end of February 2027. Updates the bpc-157 group's search of 20 October 2026 (federalregister-503a-search-2026-10-20)."
 
 # ---------------------------------------------------------------- United States: FDA pages
 
@@ -489,9 +570,9 @@ fda-pcac-2027-early-announcement:
   title: "Meeting of the Pharmacy Compounding Advisory Committee (early announcement: meeting before the end of February 2027)"
   year: 2026
   url: https://www.fda.gov/advisory-committees/pharmacy-compounding-advisory-committee/meeting-pharmacy-compounding-advisory-committee
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Content current as of 15 April 2026. 'FDA will host an advisory committee meeting before the end of February 2027' on cathelicidin (LL-37), GHK-Cu, dihexa acetate, melanotan II and pegylated mechano growth factor (PEG-MGF). Time, place and Federal Register notice not yet published."
+  note: "Content current as of 15 April 2026 (unchanged on 22 October 2026). 'FDA will host an advisory committee meeting before the end of February 2027' on cathelicidin (LL-37), GHK-Cu, dihexa acetate, melanotan II and pegylated mechano growth factor (PEG-MGF); time and place to be scheduled; a Federal Register notice and docket are still to come. The '2027 Meeting Materials' page lists only this early announcement."
 
 fda-pcac-2026-semax-briefing:
   type: regulator
@@ -499,9 +580,9 @@ fda-pcac-2026-semax-briefing:
   title: "FDA Briefing Document for Semax-Related Bulk Drug Substances (Semax (free base) and Semax acetate), Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
   year: 2026
   url: https://www.fda.gov/media/193348/download
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "States that 'Semax is a registered drug in Russia and is available as 0.1% and 1% nasal drops' and that injectable and intranasal products are widely marketed in the US through health and wellness clinics."
+  note: "'Semax is a registered drug in Russia and is available as 0.1% and 1% nasal drops'; injectable and intranasal products are widely marketed in the US through health and wellness clinics, concierge services and online retailers."
 
 fda-personal-importation:
   type: regulator
@@ -509,9 +590,9 @@ fda-personal-importation:
   title: "Personal Importation"
   year: 2025
   url: https://www.fda.gov/industry/import-basics/personal-importation
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Content current as of 18 August 2025. 'In most circumstances, it is illegal for individuals to import drugs or devices into the U.S. for personal use'; lists the situations in which FDA staff 'may consider a more permissive decision' (serious condition without domestic treatment, no promotion to US residents, no unreasonable risk, written statement of personal use, generally no more than three months' supply, a US-licensed doctor or continuation of foreign treatment) and when FDA refuses a personal importation. Refers to Regulatory Procedures Manual chapter 9-2."
+  note: "Content current as of 18 August 2025. 'In most circumstances, it is illegal for individuals to import drugs or devices into the U.S. for personal use'; FDA staff 'may consider a more permissive decision' when the product is not for a serious condition and has no known significant health risk, or is for a serious condition without effective domestic treatment, is not promoted to US residents, does not represent an unreasonable risk, the consumer affirms personal use in writing, the quantity is generally not more than a three-month supply, and a US-licensed doctor is named or the treatment began abroad. FDA would refuse a personal importation if the product is on an import alert, appears to be for commercial distribution, appears to present a serious risk to health, or appears to be health fraud. Refers to Regulatory Procedures Manual chapter 9-2."
 
 fda-warning-letters-index:
   type: regulator
@@ -519,9 +600,9 @@ fda-warning-letters-index:
   title: "Warning Letters (searchable database)"
   year: 2026
   url: https://www.fda.gov/inspections-compliance-enforcement-and-criminal-investigations/compliance-actions-and-activities/warning-letters
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Letters read on 20 October 2026 include MARCS-CMS 695607 (10 December 2024), 721806 (31 March 2026), 729447 (17 June 2026) and 735067 (24 August 2026), each to an online seller of peptides labelled 'research use only'. In them FDA states that such disclaimers do not prevent the products being drugs when the seller's website shows human use, that the products are unapproved new drugs under section 505(a), and (735067) that bacteriostatic water sold for reconstitution is itself a drug. Sellers are deliberately not named on this site."
+  note: "Individual letters read in full by legal-b on 22 October 2026: MARCS-CMS 721806 (31 March 2026; retatrutide, tirzepatide and bacteriostatic water) and 735067 (24 August 2026; semaglutide, tirzepatide, retatrutide, SS-31 (elamipretide), tesamorelin, PT-141 (bremelanotide) and bacteriostatic water), each to an online seller. Earlier letters 695607 (10 December 2024) and 729447 (17 June 2026) were read by legal-a; law-firm summaries (read for checking only, not cited) count four or five letters dated 24 August 2026. The two letters read state that, despite 'Research Use Only' and 'not intended for human consumption' statements, evidence from the seller's website establishes that the products are drugs for human use (21 U.S.C. 321(g)(1); intended use as defined in 21 CFR 201.128); that they are new drugs, not generally recognised as safe and effective, which may not be introduced into interstate commerce without an approved application (section 505(a)); that bacteriostatic water sold alongside peptides for reconstitution is itself a drug; that injectable products bypass some of the body's key defences against toxins and microorganisms (735067); and that failure to address the matter may lead to seizure and injunction. The letters name the sellers and their web addresses, so the site cites this index rather than the letters. Fact-checker, 22 October 2026: both letters fetched again from fda.gov (HTTP 200; 735067 'Content current as of 09/01/2026') and the statements above confirmed in their text (735067 puts the 'research use only' point in footnote 1). The index page itself does not contain these statements; it is cited as the place where the letters are published (editor decision pending, research/legal-b.md)."
 
 fda-medwatch:
   type: regulator
@@ -529,9 +610,9 @@ fda-medwatch:
   title: "MedWatch: The FDA Safety Information and Adverse Event Reporting Program"
   year: 2026
   url: https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "MedWatch receives reports from health professionals, patients and consumers."
+  note: "Content current as of 21 October 2026. MedWatch is FDA's medical product safety reporting program 'for health professionals, patients and consumers'."
 
 # ---------------------------------------------------------------- World Anti-Doping Code and standards
 
@@ -541,19 +622,29 @@ wada-code-2021:
   title: "World Anti-Doping Code 2021"
   year: 2021
   url: https://www.wada-ama.org/sites/default/files/resources/files/2021_wada_code.pdf
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "In force until 31 December 2026. Art. 2.1.1 (presence; 'it is not necessary that intent, Fault, Negligence or knowing Use ... be demonstrated', referred to by CAS as strict liability); Art. 10.2.1 (four years for non-Specified Substances unless not intentional); Art. 10.6.1.2 and definition of Contaminated Product ('a Prohibited Substance that is not disclosed on the product label or in information available in a reasonable Internet search'); comment: reduction 'rarely applied' unless a high level of caution; definition of Recreational Athlete."
+  note: "In force until 31 December 2026. Art. 2.1.1: 'It is the Athletes' personal duty to ensure that no Prohibited Substance enters their bodies ... it is not necessary that intent, Fault, Negligence or knowing Use on the Athlete's part be demonstrated'; comment: referred to in CAS decisions as 'Strict Liability'. Art. 10.2.1: four years for a non-Specified Substance unless the athlete shows it was not intentional; for a Specified Substance, four years only if the anti-doping organisation shows it was intentional, otherwise two years (10.2.2). Art. 10.6.1.2: Contaminated Products, reduction only with No Significant Fault; comment: 'rarely applied ... unless the Athlete has exercised a high level of caution'. Definition: Contaminated Product = 'A product that contains a Prohibited Substance that is not disclosed on the product label or in information available in a reasonable Internet search.' Definition of Recreational Athlete (set by each national anti-doping organisation)."
 
 wada-code-2027:
   type: regulator
   authors: "World Anti-Doping Agency"
-  title: "World Anti-Doping Code 2027 (final, June 2026)"
+  title: "World Anti-Doping Code 2027 (version 1.0)"
   year: 2026
-  url: https://www.wada-ama.org/sites/default/files/2026-07/2027_world_anti-doping_code_code_june_final.pdf
-  accessed: 2026-10-20
+  url: https://www.wada-ama.org/sites/default/files/2026-10/2027_world_anti-doping_code_code_october_final.pdf
+  accessed: 2026-10-22
   verified: url
-  note: "Approved 5 December 2025 at the World Conference on Doping in Sport in Busan; in force 1 January 2027 (WADA 2027 Code and International Standards page). Art. 2.1.1 keeps the same strict-liability wording."
+  note: "URL corrected on 22 October 2026 (second run): the June 2026 PDF this entry first pointed to returned 404; WADA's 2027 Code and International Standards page (wada-2027-code-standards-page) links this October 2026 file, fetched again (HTTP 200) on 22 October 2026. 'The revised 2027 World Anti-Doping Code is effective as of 1 January 2027.' Art. 2.1.1 keeps the strict-liability wording. Art. 10.2.1: four years for a non-Specified Substance, reduced to two only where the athlete shows how the substance entered their system and that it was not intentional (10.2.1.1), or three where the context was unrelated to sport performance (10.2.1.2). Art. 10.2.2: two years for a Specified Substance, four if the anti-doping organisation shows intent (three if unrelated to sport performance). Art. 10.6.1.2 (Contaminated Source): a reprimand to two years only where the athlete shows both No Significant Fault or Negligence and that the substance came from a Contaminated Source (defined as including a medication or supplement with a Prohibited Substance not disclosed on its label or in information found by a reasonable search); comment: the reduction 'has rarely been applied in nutritional supplement cases unless the Athlete has exercised a high level of caution'. Comment to Art. 10.5: No Fault or Negligence does not apply to 'a positive test resulting from a mislabeled or contaminated vitamin or nutritional supplement'. Art. 10.6.1.3: Recreational Athletes who show No Significant Fault: from a reprimand to two years. Definition of Recreational Athlete: set by each national anti-doping organisation, excluding anyone who, in the same sport and in the previous five years, was an international- or national-level athlete, took part professionally, competed in an international or national event, or was in a testing pool."
+
+wada-2027-code-standards-page:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "2027 Code and International Standards"
+  year: 2026
+  url: https://www.wada-ama.org/en/what-we-do/world-anti-doping-code/2027-code-and-international-standards
+  accessed: 2026-10-22
+  verified: url
+  note: "'The 2027 World Anti-Doping Code (Code) and International Standards (Standards) were approved on 5 December by the Agency's Foundation Board and Executive Committee respectively, at WADA's sixth World Conference on Doping in Sport in Busan, Republic of Korea. The 2027 Code and Standards ... will come into force on 1 January 2027.' The page belongs to the 2025 World Conference, so the approval date is 5 December 2025 (also stated in the 2027 ISTUE). Links the final 2027 Code PDF (wada-code-2027) and the 2027 ISTUE PDF (wada-istue-2027)."
 
 wada-istue-2023:
   type: regulator
@@ -561,9 +652,9 @@ wada-istue-2023:
   title: "International Standard for Therapeutic Use Exemptions (ISTUE) 2023"
   year: 2022
   url: https://www.wada-ama.org/sites/default/files/2022-09/international_standard_for_therapeutic_use_exemptions_istue_2023.pdf
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "In force until 31 December 2026. Art. 4.2: a TUE may be granted 'if (and only if)' (a) the substance is needed to treat a diagnosed medical condition supported by relevant clinical evidence; (b) no additional enhancement beyond a return to normal health; (c) it is 'an indicated treatment for the medical condition, and there is no reasonable permitted Therapeutic alternative'; (d) the need is not a consequence of prior prohibited use. The ISTUE does not mention S0 by name."
+  note: "In force until 31 December 2026. Art. 4.2: a TUE may be granted 'if (and only if)' (a) the substance is needed to treat a diagnosed medical condition supported by relevant clinical evidence; (b) it will not enhance performance beyond a return to normal health; (c) it is 'an indicated treatment for the medical condition, and there is no reasonable permitted Therapeutic alternative'; (d) the need is not a consequence of prior prohibited use. Comment: the decision does not consider 'whether its Use is legal in all jurisdictions'. The ISTUE does not mention S0 by name."
 
 wada-istue-2027:
   type: regulator
@@ -571,9 +662,9 @@ wada-istue-2027:
   title: "International Standard for Therapeutic Use Exemptions (ISTUE) 2027"
   year: 2025
   url: https://www.wada-ama.org/sites/default/files/2025-12/2027_international_standard_for_therapeutic_use_exemptions_istue.pdf
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "In force 1 January 2027. Art. 4.2 keeps the four criteria (re-ordered: diagnosed condition; indicated treatment with no reasonable permitted alternative; no additional enhancement; not caused by prior prohibited use); comment: a TUE decision does not consider whether use 'is legal in all jurisdictions'."
+  note: "Linked from WADA's 2027 Code and International Standards page. 'This revised version was approved by the WADA Executive Committee on 5 December 2025 and is effective as of 1 January 2027.' Art. 4.2 keeps four criteria ('if (and only if)' each is met), re-ordered: (a) a diagnosed medical condition supported by relevant clinical evidence; (b) an indicated treatment with no reasonable permitted therapeutic alternative (comment: based on factors such as evidence-based guidelines); (c) no additional performance enhancement; (d) not a consequence of prior prohibited use. Comment: a TUE decision does not consider whether use 'is legal in all jurisdictions'."
 
 wada-2027-list-explanatory-note:
   type: regulator
@@ -581,22 +672,22 @@ wada-2027-list-explanatory-note:
   title: "Summary of Major Modifications and Explanatory Notes, 2027 Prohibited List"
   year: 2026
   url: https://www.wada-ama.org/sites/default/files/2026-09/2027_list_explanatory_note_en_final_17_august_2026_1.pdf
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "S0: 'Many peptides, not approved for human use by regulatory authorities, fulfill the criteria ... and fall under the S0 ... class, or other classes (such as S2 or S4). Even if a peptide is not specifically named on the List, utmost caution should be taken ... for clarity, peptides are now named as examples in this section.' Also lists S4 and S5 example additions and Monitoring Program removals."
+  note: "S0: 'Many peptides, not approved for human use by regulatory authorities, fulfill the criteria of the World Anti-Doping Code for inclusion on the Prohibited List and fall under the S0 (Non-Approved Substances) class, or other classes (such as S2 or S4). Even if a peptide is not specifically named on the List, utmost caution should be taken as it may still be prohibited and may be harmful to health. In this regard, for clarity, peptides are now named as examples in this section.' Other changes: S4 examples (imlunestrant, seladelpar, SLU-PP-332, SLU-PP-915), S5 examples (eplerenone, finerenone), S8 and S9 clarifications; codeine, dermorphin, hydrocodone and out-of-competition fentanyl and tramadol removed from the Monitoring Program."
 
 # ---------------------------------------------------------------- Netherlands: Dopingautoriteit
 
 dopingautoriteit-controles-belgie:
   type: web
   authors: "Dopingautoriteit"
-  title: "Controles in België (who is tested in the Netherlands and Belgium)"
+  title: "Controles in België"
   year: 2026
   url: https://www.dopingautoriteit.nl/dopingcontroles/controles-in-belgie
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: nl
   verified: url
-  note: "'Elk lid van een sportbond kan in principe gecontroleerd worden op doping. In Nederland wordt er echter het meest gecontroleerd op het hoogste niveau, hoewel steekproefsgewijs ook controles op lager niveau plaatsvinden.' In Belgium far more testing at lower levels, including unannounced tests in fitness centres; refusing a test usually leads to a two- or four-year ban that also applies in the Netherlands."
+  note: "'Elk lid van een sportbond kan in principe gecontroleerd worden op doping. In Nederland wordt er echter het meest gecontroleerd op het hoogste niveau, hoewel steekproefsgewijs ook controles op lager niveau plaatsvinden.' Belgium tests far more at lower levels, 'zelfs onverwachte dopingcontroles in fitnesscentra'; refusing a test usually brings a two-year and possibly four-year ban that also applies in the Netherlands."
 
 dopingautoriteit-eigen-kracht:
   type: web
@@ -604,7 +695,7 @@ dopingautoriteit-eigen-kracht:
   title: "Eigen Kracht (programme for the fitness sector)"
   year: 2026
   url: https://www.dopingautoriteit.nl/programmas/eigenkracht
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: nl
   verified: url
   note: "'Een groot verschil met topsport is dat in de fitness in Nederland niet of nauwelijks dopingcontroles plaatsvinden.'"
@@ -612,24 +703,24 @@ dopingautoriteit-eigen-kracht:
 dopingautoriteit-positieve-test:
   type: web
   authors: "Dopingautoriteit"
-  title: "Positieve dopingtest (what happens after a possible violation)"
+  title: "Positieve dopingtest"
   year: 2026
   url: https://www.dopingautoriteit.nl/dopingcontroles/positief
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: nl
   verified: url
-  note: "First violation: sanction from a warning to four years' suspension depending on substance and degree of fault; B-sample costs; the federation's disciplinary committee decides; possible supplement contamination should be reported at once and the product kept."
+  note: "First violation: from a warning to four years' suspension, depending among other things on the substance and the degree of fault; repeated violations can mean a lifetime ban; a suspended athlete may not take part in competitions, training or activities of the federation, nor coach; sanctions are adopted by all other federations. If contaminated supplements may be the cause, report it to the Dopingautoriteit at once and keep the supplements."
 
 dopingautoriteit-2027-list-news:
   type: web
   authors: "Dopingautoriteit"
-  title: "WADA publiceert Dopinglijst 2027 (28 September 2026)"
+  title: "WADA publiceert Dopinglijst 2027"
   year: 2026
   url: https://www.dopingautoriteit.nl/nieuws/2026-09-28_wada-publiceert-dopinglijst-2027
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   lang: nl
   verified: url
-  note: "The 2027 List takes effect on 1 January 2027; changes are mainly clarifications and new examples; the Dutch translation will be available from 1 January 2027 in the Dopingwaaier app."
+  note: "News, 28 September 2026: the 2027 List takes effect on 1 January 2027; changes are mainly clarifications and a few new examples; the full Dutch translation will be on the Dopingautoriteit website and in the Dopingwaaier app from 1 January 2027; athletes who may be tested are advised to (re)check medicines and supplements; questions to dopingvragen@dopingautoriteit.nl."
 
 # ---------------------------------------------------------------- product analyses (contamination and mislabelling)
 
@@ -644,20 +735,7 @@ weber-2017-swiss-border:
   doi: 10.1080/10826084.2016.1263665
   pmid: "28156209"
   verified: pubmed
-  note: "1,190 seized products; 146 (12%) labelled as peptide hormones or growth factors; non-approved substances detected and fewer than 20% of products contained the claimed substance in the claimed amount."
-
-reichel-2019-follistatin:
-  type: article
-  authors: "Reichel C, Gmeiner G, Thevis M"
-  title: "Detection of black market follistatin 344"
-  container: "Drug Testing and Analysis"
-  year: 2019
-  volume: "11"
-  pages: "1675-1697"
-  doi: 10.1002/dta.2741
-  pmid: "31758732"
-  verified: pubmed
-  note: "Only 9 of 17 black-market products sold as follistatin contained follistatin; some of the others contained other growth-promoting peptides (e.g. MGF, GHRP-2)."
+  note: "1,190 products seized by Swiss customs; for 146 (12%) the label suggested peptide hormones or growth factors; 'nonapproved substances were detected and less than 20% of the products contained the claimed substance in the respective amount'."
 
 # ---------------------------------------------------------------- European Union: pharmaceutical reform
 
@@ -667,9 +745,9 @@ ema-pharma-reform-page:
   title: "Reform of the EU pharmaceutical legislation"
   year: 2026
   url: https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: url
-  note: "Political agreement between Parliament and Council on 11 December 2025; adopted acts 'expected to enter into force in 2026', followed by a transition period until 2028 in which member states update national law."
+  note: "Political agreement between Parliament and Council on 11 December 2025; 'The adopted acts of the new pharmaceutical legislation are expected to enter into force in 2026'; the following two years, until 2028, are a transition period in which all member states update their national laws."
 
 ep-oeil-2023-0132-cod:
   type: registry
@@ -677,9 +755,9 @@ ep-oeil-2023-0132-cod:
   title: "Procedure file 2023/0132(COD): Medicinal products for human use (Directive, repealing Directive 2001/83/EC)"
   year: 2026
   url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0132(COD)
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: registry
-  note: "Status 'Awaiting Parliament 2nd reading'. Key events: committee approval of the agreed text 18 March 2026; Council position published 1 October 2026 (07106/2/2026); committee referral for 2nd reading announced 8 October 2026; forecast: indicative plenary sitting date 23 November 2026."
+  note: "Status 'Awaiting Parliament 2nd reading'. Key events: approval in committee of the agreed text 18 March 2026; Council position published 1 October 2026 (07106/2/2026); committee referral for the second reading announced 8 October 2026; committee draft report 12 October 2026. Forecast: 23 November 2026, which OEIL labels 'Indicative plenary sitting date, 1st reading'."
 
 ep-oeil-2023-0131-cod:
   type: registry
@@ -687,6 +765,6 @@ ep-oeil-2023-0131-cod:
   title: "Procedure file 2023/0131(COD): Union procedures for the authorisation and supervision of medicinal products for human use and rules governing the European Medicines Agency (Regulation)"
   year: 2026
   url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2023/0131(COD)
-  accessed: 2026-10-20
+  accessed: 2026-10-22
   verified: registry
-  note: "Status 'Awaiting Parliament 2nd reading'; Council position published 1 October 2026 (07105/2/2026); indicative plenary sitting date 23 November 2026."
+  note: "Status 'Awaiting Parliament 2nd reading'; Council position published 1 October 2026 (07105/2/2026); committee referral for the second reading announced 8 October 2026; forecast plenary 23 November 2026."

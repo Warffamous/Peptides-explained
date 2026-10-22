@@ -1,0 +1,515 @@
+{
+  "amino-acid": {
+    "term": "amino acid",
+    "aliases": ["amino acids"],
+    "definition": "A small molecule that is a building block of peptides and proteins. There are 20 standard kinds; each has an amino end, an acid end and its own side chain.",
+    "category": "chemistry",
+    "see_also": ["peptide", "peptide-bond", "protein"]
+  },
+  "peptide": {
+    "term": "peptide",
+    "aliases": ["peptides"],
+    "definition": "A short chain of amino acids, typically 2 to about 50, joined by peptide bonds. Many hormones and some medicines are peptides.",
+    "category": "chemistry",
+    "see_also": ["amino-acid", "polypeptide", "protein"],
+    "autolink": false
+  },
+  "polypeptide": {
+    "term": "polypeptide",
+    "aliases": ["polypeptides"],
+    "definition": "A longer chain of amino acids. One or more polypeptides fold together to make a protein.",
+    "category": "chemistry",
+    "see_also": ["peptide", "protein"]
+  },
+  "protein": {
+    "term": "protein",
+    "aliases": ["proteins"],
+    "definition": "A long chain of amino acids, or several chains, folded into a fixed shape. Where a peptide ends and a protein begins is a convention, not a natural line.",
+    "category": "biology",
+    "see_also": ["peptide", "polypeptide"],
+    "autolink": false
+  },
+  "peptide-bond": {
+    "term": "peptide bond",
+    "aliases": ["peptide bonds", "amide bond", "amide bonds"],
+    "definition": "The chemical link between two amino acids in a chain. Digestive and other enzymes break it by adding water (hydrolysis).",
+    "category": "chemistry",
+    "see_also": ["amino-acid", "hydrolysis", "protease"]
+  },
+  "condensation-reaction": {
+    "term": "condensation",
+    "aliases": ["condensation reaction"],
+    "definition": "A chemical reaction that joins two molecules and gives off a small molecule, usually water. Joining amino acids into a chain is a condensation.",
+    "category": "chemistry",
+    "see_also": ["peptide-bond", "hydrolysis"]
+  },
+  "hydrolysis": {
+    "term": "hydrolysis",
+    "aliases": ["hydrolysed", "hydrolyse", "hydrolyzed"],
+    "definition": "Breaking a chemical bond by adding water. Digestion breaks protein and peptides this way.",
+    "category": "chemistry",
+    "see_also": ["peptide-bond", "protease"]
+  },
+  "n-terminus": {
+    "term": "N-terminus",
+    "aliases": ["N-termini", "amino end"],
+    "definition": "The start of a peptide chain, where a free amino group sits unless it has been changed. Sequences are written from here.",
+    "category": "chemistry",
+    "see_also": ["c-terminus"]
+  },
+  "c-terminus": {
+    "term": "C-terminus",
+    "aliases": ["C-termini", "acid end"],
+    "definition": "The end of a peptide chain, where a free acid group sits unless it has been changed.",
+    "category": "chemistry",
+    "see_also": ["n-terminus", "c-terminal-amide"]
+  },
+  "primary-structure": {
+    "term": "primary structure",
+    "aliases": [],
+    "definition": "The order of the amino acids in a peptide or protein chain: its sequence.",
+    "category": "chemistry",
+    "see_also": ["secondary-structure", "tertiary-structure"]
+  },
+  "secondary-structure": {
+    "term": "secondary structure",
+    "aliases": ["helix", "alpha-helix", "beta-sheet"],
+    "definition": "Local twists or pleats in a peptide chain, such as a spiral (helix) or a flat sheet, held mainly by hydrogen bonds.",
+    "category": "chemistry",
+    "see_also": ["primary-structure", "tertiary-structure", "hydrogen-bond"]
+  },
+  "tertiary-structure": {
+    "term": "tertiary structure",
+    "aliases": [],
+    "definition": "The overall three-dimensional fold of a whole chain, held by contacts between its side chains and sometimes by sulfur bridges.",
+    "category": "chemistry",
+    "see_also": ["secondary-structure", "quaternary-structure", "disulfide-bond"]
+  },
+  "quaternary-structure": {
+    "term": "quaternary structure",
+    "aliases": [],
+    "definition": "Two or more chains fitted together into one working unit.",
+    "category": "chemistry",
+    "see_also": ["tertiary-structure"]
+  },
+  "hydrogen-bond": {
+    "term": "hydrogen bond",
+    "aliases": ["hydrogen bonds"],
+    "definition": "A weak attraction between a hydrogen atom and a nearby oxygen or nitrogen atom. Many of them together hold a peptide chain in a twist or fold.",
+    "category": "chemistry",
+    "see_also": ["secondary-structure"]
+  },
+  "disulfide-bond": {
+    "term": "disulfide bond",
+    "aliases": ["disulfide bonds", "disulphide bond", "disulphide bonds", "sulfur bridge", "sulfur bridges", "disulfide-linked"],
+    "definition": "A strong link between two sulfur atoms, usually from two cysteine amino acids. It can close a chain into a ring or tie two chains together.",
+    "category": "chemistry",
+    "see_also": ["cyclic-peptide", "tertiary-structure"]
+  },
+  "dalton": {
+    "term": "dalton",
+    "aliases": ["daltons", "kilodalton", "kilodaltons"],
+    "definition": "The unit for the mass of a molecule. One dalton is roughly the mass of one hydrogen atom.",
+    "category": "chemistry",
+    "see_also": []
+  },
+  "d-amino-acid": {
+    "term": "D-amino acid",
+    "aliases": ["D-amino acids", "D-form", "L-form", "mirror-image amino acid", "mirror-image amino acids"],
+    "definition": "The mirror-image form of an amino acid. The body builds its proteins from the other form (L); enzymes that fit L-chains often cannot cut at a D-amino acid.",
+    "category": "chemistry",
+    "see_also": ["racemisation", "protease"]
+  },
+  "racemisation": {
+    "term": "racemisation",
+    "aliases": ["epimerisation", "racemization", "epimerization"],
+    "definition": "An amino acid flipping into its mirror-image form during manufacture. It creates an impurity that looks almost the same as the wanted peptide.",
+    "category": "chemistry",
+    "see_also": ["d-amino-acid", "impurity"]
+  },
+  "cyclic-peptide": {
+    "term": "cyclic peptide",
+    "aliases": ["cyclic peptides", "ring-shaped peptide", "ring-shaped peptides", "cyclisation", "cyclization"],
+    "definition": "A peptide whose chain is closed into a ring. Rings have no loose ends for some enzymes and a more rigid shape, so they often last longer.",
+    "category": "chemistry",
+    "see_also": ["disulfide-bond"]
+  },
+  "pegylation": {
+    "term": "PEGylation",
+    "aliases": ["pegylation", "polyethylene glycol", "PEG chains"],
+    "definition": "Attaching chains of polyethylene glycol (PEG) to a medicine. It makes the molecule bigger, so the kidneys filter it less, and shields it from enzymes.",
+    "category": "pharmacology",
+    "see_also": ["glomerulus", "protease"]
+  },
+  "fc-fusion": {
+    "term": "Fc fusion",
+    "aliases": ["Fc fragment", "Fc fusion protein", "antibody part"],
+    "definition": "Joining a medicine to a piece of an antibody (the Fc part). The bigger molecule is filtered less by the kidneys and lasts longer.",
+    "category": "pharmacology",
+    "see_also": ["pegylation"]
+  },
+  "solid-phase-peptide-synthesis": {
+    "term": "solid-phase peptide synthesis",
+    "aliases": ["solid-phase synthesis", "SPPS"],
+    "definition": "The usual chemical way to make peptides: the chain is built on tiny resin beads, one amino acid at a time, with washing between steps.",
+    "category": "chemistry",
+    "see_also": ["deletion-sequence", "protecting-group"]
+  },
+  "protecting-group": {
+    "term": "protecting group",
+    "aliases": ["protecting groups", "protected amino acids"],
+    "definition": "A temporary chemical cap that stops part of an amino acid reacting at the wrong moment during synthesis. It is removed later.",
+    "category": "chemistry",
+    "see_also": ["solid-phase-peptide-synthesis"]
+  },
+  "receptor": {
+    "term": "receptor",
+    "aliases": ["receptors"],
+    "definition": "A protein on or in a cell that a hormone or medicine fits into, like a key in a lock. When it is switched on, the cell responds.",
+    "category": "biology",
+    "see_also": ["g-protein-coupled-receptor", "agonist", "antagonist"]
+  },
+  "g-protein-coupled-receptor": {
+    "term": "G-protein-coupled receptor",
+    "aliases": ["G-protein-coupled receptors", "G protein-coupled receptor", "G protein-coupled receptors", "GPCR", "GPCRs"],
+    "definition": "A large family of receptors that sit in the cell's outer wall and pass a signal inside through a G protein. Many peptide hormones act on them.",
+    "category": "biology",
+    "see_also": ["receptor", "g-protein", "second-messenger"]
+  },
+  "g-protein": {
+    "term": "G protein",
+    "aliases": ["G proteins"],
+    "definition": "A switch protein just inside the cell wall. A switched-on receptor activates it, and it passes the signal to an enzyme.",
+    "category": "biology",
+    "see_also": ["g-protein-coupled-receptor", "gs-protein"]
+  },
+  "second-messenger": {
+    "term": "second messenger",
+    "aliases": ["second messengers"],
+    "definition": "A small molecule made inside a cell when a receptor on the surface is switched on. It carries the message further into the cell. cAMP is one.",
+    "category": "biology",
+    "see_also": ["camp", "g-protein-coupled-receptor"]
+  },
+  "adenylate-cyclase": {
+    "term": "adenylate cyclase",
+    "aliases": ["adenylyl cyclase"],
+    "definition": "The enzyme that makes the messenger cAMP inside a cell when a G protein switches it on.",
+    "category": "biology",
+    "see_also": ["camp", "g-protein"]
+  },
+  "kinase": {
+    "term": "kinase",
+    "aliases": ["kinases", "PKA", "protein kinase A"],
+    "definition": "An enzyme that switches other proteins on or off by attaching a phosphate group to them. PKA is a kinase that cAMP switches on.",
+    "category": "biology",
+    "see_also": ["camp", "second-messenger"]
+  },
+  "affinity": {
+    "term": "affinity",
+    "aliases": ["binding affinity"],
+    "definition": "How tightly a molecule grips its receptor. High affinity does not by itself mean a strong effect.",
+    "category": "pharmacology",
+    "see_also": ["intrinsic-efficacy", "potency"]
+  },
+  "intrinsic-efficacy": {
+    "term": "intrinsic efficacy",
+    "aliases": [],
+    "definition": "How strongly a molecule switches a receptor on once it is bound. Agonists have it; antagonists do not.",
+    "category": "pharmacology",
+    "see_also": ["affinity", "partial-agonist", "antagonist"]
+  },
+  "potency": {
+    "term": "potency",
+    "aliases": ["potent"],
+    "definition": "How much of a drug is needed for a given effect. A potent drug works at a small amount.",
+    "category": "pharmacology",
+    "see_also": ["affinity", "intrinsic-efficacy"]
+  },
+  "full-agonist": {
+    "term": "full agonist",
+    "aliases": ["full agonists"],
+    "definition": "A molecule that switches a receptor on as fully as the cell allows.",
+    "category": "pharmacology",
+    "see_also": ["agonist", "partial-agonist"]
+  },
+  "partial-agonist": {
+    "term": "partial agonist",
+    "aliases": ["partial agonists", "partial agonism"],
+    "definition": "A molecule that switches a receptor on only part of the way, even when it fills every receptor. It can weaken the effect of a stronger agonist.",
+    "category": "pharmacology",
+    "see_also": ["full-agonist", "antagonist"]
+  },
+  "antagonist": {
+    "term": "antagonist",
+    "aliases": ["antagonists", "receptor antagonist", "receptor antagonists"],
+    "definition": "A molecule that binds a receptor without switching it on, so it blocks the body's own signal.",
+    "category": "pharmacology",
+    "see_also": ["agonist", "inverse-agonist"]
+  },
+  "inverse-agonist": {
+    "term": "inverse agonist",
+    "aliases": ["inverse agonists", "inverse agonism"],
+    "definition": "A molecule that turns down a receptor that is active on its own, the opposite of an agonist.",
+    "category": "pharmacology",
+    "see_also": ["antagonist", "agonist"]
+  },
+  "selectivity": {
+    "term": "selectivity",
+    "aliases": ["nonselectively", "nonselective"],
+    "definition": "A drug's preference for one target over others. It is never absolute: at higher amounts a drug acts on more targets.",
+    "category": "pharmacology",
+    "see_also": ["off-target-effect"]
+  },
+  "off-target-effect": {
+    "term": "off-target effect",
+    "aliases": ["off-target effects", "off-target"],
+    "definition": "An effect caused by a drug acting on something other than its intended target.",
+    "category": "pharmacology",
+    "see_also": ["selectivity"]
+  },
+  "drug-tolerance": {
+    "term": "tolerance (to a drug)",
+    "aliases": ["drug tolerance", "tolerance effect"],
+    "definition": "A weaker response to a drug after repeated or long use, for example because cells have fewer working receptors.",
+    "category": "pharmacology",
+    "see_also": ["receptor-desensitisation", "receptor-internalisation"]
+  },
+  "negative-feedback": {
+    "term": "negative feedback",
+    "aliases": ["negative feedback loop", "negative feedback loops", "feedback loop", "feedback loops"],
+    "definition": "A control loop in which a result slows its own source, like a thermostat. Many hormone systems are controlled this way.",
+    "category": "biology",
+    "see_also": ["hypothalamus", "pituitary-gland"]
+  },
+  "hypothalamus": {
+    "term": "hypothalamus",
+    "aliases": [],
+    "definition": "A small area at the base of the brain that controls many hormones, mostly by giving orders to the pituitary gland.",
+    "category": "biology",
+    "see_also": ["pituitary-gland", "negative-feedback"]
+  },
+  "pituitary-gland": {
+    "term": "pituitary gland",
+    "aliases": ["pituitary"],
+    "definition": "A pea-sized gland under the brain that releases hormones, such as growth hormone, LH and FSH, which control other glands.",
+    "category": "biology",
+    "see_also": ["hypothalamus"]
+  },
+  "growth-hormone": {
+    "term": "growth hormone",
+    "aliases": ["GH"],
+    "definition": "A hormone from the pituitary gland that drives growth and affects metabolism, partly by raising IGF-1. It is released in pulses.",
+    "category": "biology",
+    "see_also": ["igf-1", "ghrh", "somatostatin"]
+  },
+  "somatostatin": {
+    "term": "somatostatin",
+    "aliases": [],
+    "definition": "A natural peptide hormone that acts as a brake on the release of growth hormone and other hormones. It lasts only minutes in the blood.",
+    "category": "biology",
+    "see_also": ["growth-hormone", "negative-feedback"]
+  },
+  "gnrh": {
+    "term": "GnRH",
+    "aliases": ["gonadotropin-releasing hormone"],
+    "definition": "A peptide hormone from the brain, released in pulses, that tells the pituitary to release LH and FSH, which keep the sex hormones going.",
+    "category": "biology",
+    "see_also": ["lh-and-fsh", "pituitary-gland"]
+  },
+  "lh-and-fsh": {
+    "term": "LH and FSH",
+    "aliases": ["LH", "FSH", "luteinising hormone", "follicle-stimulating hormone"],
+    "definition": "Two hormones from the pituitary gland that make the testes and ovaries produce sex hormones and sperm or eggs.",
+    "category": "biology",
+    "see_also": ["gnrh"]
+  },
+  "castrate-level": {
+    "term": "castrate level",
+    "aliases": ["castrate levels", "castrate concentrations"],
+    "definition": "A testosterone level as low as after removal of the testes. Some prostate cancer treatments aim for it on purpose.",
+    "category": "biology",
+    "see_also": ["gnrh"]
+  },
+  "melanocyte": {
+    "term": "melanocyte",
+    "aliases": ["melanocytes", "pigment cells", "pigment cell"],
+    "definition": "A skin cell that makes the dark pigment melanin.",
+    "category": "biology",
+    "see_also": ["melanocortin-receptor"]
+  },
+  "pharmacokinetics": {
+    "term": "pharmacokinetics",
+    "aliases": ["pharmacokinetic", "PK"],
+    "definition": "What the body does to a medicine: how it is absorbed, spread, broken down and removed, and how fast.",
+    "category": "pharmacology",
+    "see_also": ["adme", "half-life", "bioavailability"]
+  },
+  "adme": {
+    "term": "ADME",
+    "aliases": [],
+    "definition": "Short for absorption, distribution, metabolism and excretion: the four things the body does to a medicine.",
+    "category": "pharmacology",
+    "see_also": ["pharmacokinetics"]
+  },
+  "bioavailability": {
+    "term": "bioavailability",
+    "aliases": ["absolute bioavailability", "oral bioavailability", "bioavailable"],
+    "definition": "The share of a dose that reaches the bloodstream unchanged, compared with an injection straight into a vein.",
+    "category": "pharmacology",
+    "see_also": ["first-pass-metabolism", "pharmacokinetics"]
+  },
+  "clearance": {
+    "term": "clearance",
+    "aliases": ["drug clearance", "renal clearance"],
+    "definition": "How quickly the body removes a medicine, measured as the volume of plasma (the liquid part of the blood) cleared of it per unit of time, for example per hour.",
+    "category": "pharmacology",
+    "see_also": ["half-life", "glomerulus"]
+  },
+  "volume-of-distribution": {
+    "term": "volume of distribution",
+    "aliases": [],
+    "definition": "A measure of how far a medicine spreads from the blood into the tissues. It is a calculated number, not a real space in the body.",
+    "category": "pharmacology",
+    "see_also": ["pharmacokinetics"]
+  },
+  "steady-state": {
+    "term": "steady state",
+    "aliases": ["steady-state"],
+    "definition": "The level a medicine settles at with regular use, when the amount removed between doses equals the amount given. It takes about four to five half-lives to get close.",
+    "category": "pharmacology",
+    "see_also": ["half-life"]
+  },
+  "first-pass-metabolism": {
+    "term": "first-pass metabolism",
+    "aliases": ["first-pass effect", "first pass metabolism"],
+    "definition": "Breakdown of a swallowed medicine in the gut wall or liver before it reaches the rest of the body.",
+    "category": "pharmacology",
+    "see_also": ["bioavailability"]
+  },
+  "protease": {
+    "term": "protease",
+    "aliases": ["proteases", "peptidase", "peptidases", "proteolytic enzymes"],
+    "definition": "An enzyme that cuts the bonds between amino acids. Proteases work in the gut, the blood and most tissues.",
+    "category": "biology",
+    "see_also": ["peptide-bond", "pepsin", "trypsin"]
+  },
+  "neutral-endopeptidase": {
+    "term": "neutral endopeptidase",
+    "aliases": ["NEP"],
+    "definition": "An enzyme that cuts peptides. It is one of the enzymes that break down semaglutide.",
+    "category": "biology",
+    "see_also": ["protease"]
+  },
+  "glomerulus": {
+    "term": "glomerulus",
+    "aliases": ["glomerular filtration", "kidney filter", "glomeruli"],
+    "definition": "The tiny filter in the kidney that strains waste out of the blood. It lets small molecules, including most peptides, through and holds back large proteins such as albumin.",
+    "category": "biology",
+    "see_also": ["clearance", "albumin-binding"]
+  },
+  "lymph": {
+    "term": "lymph",
+    "aliases": ["lymphatics", "lymphatic system", "lymph vessels"],
+    "definition": "Clear fluid that drains from tissues through its own vessels back into the blood. Large molecules injected under the skin travel partly this way.",
+    "category": "biology",
+    "see_also": ["subcutaneous"]
+  },
+  "intravenous": {
+    "term": "intravenous",
+    "aliases": ["intravenously", "into a vein"],
+    "definition": "Given straight into a vein. The whole dose reaches the blood at once.",
+    "category": "pharmacology",
+    "see_also": ["bioavailability"]
+  },
+  "pepsin": {
+    "term": "pepsin",
+    "aliases": [],
+    "definition": "The main protein-cutting enzyme of the stomach. It works in strong acid and stops working when the acid is neutralised.",
+    "category": "biology",
+    "see_also": ["protease", "trypsin"]
+  },
+  "trypsin": {
+    "term": "trypsin",
+    "aliases": ["chymotrypsin", "elastase", "carboxypeptidase", "carboxypeptidases"],
+    "definition": "One of several protein-cutting enzymes that the pancreas releases into the small intestine to digest food protein.",
+    "category": "biology",
+    "see_also": ["pepsin", "protease"]
+  },
+  "brush-border": {
+    "term": "brush border",
+    "aliases": ["brush-border enzymes"],
+    "definition": "The surface of the cells lining the small intestine, covered with tiny projections and enzymes that finish digesting protein into amino acids.",
+    "category": "biology",
+    "see_also": ["tight-junction"]
+  },
+  "tight-junction": {
+    "term": "tight junction",
+    "aliases": ["tight junctions"],
+    "definition": "A seal between neighbouring cells of a lining, such as the gut wall. It keeps large molecules from slipping between the cells.",
+    "category": "biology",
+    "see_also": ["brush-border"]
+  },
+  "hydrophilic": {
+    "term": "hydrophilic",
+    "aliases": ["water-loving"],
+    "definition": "Attracted to water. Water-loving molecules dissolve well in blood but pass poorly through the oily walls of cells.",
+    "category": "chemistry",
+    "see_also": ["cell-membrane"]
+  },
+  "cell-membrane": {
+    "term": "cell membrane",
+    "aliases": ["cell membranes"],
+    "definition": "The thin, oily outer wall of a cell. Small, fat-loving molecules pass through it; large, water-loving ones mostly do not.",
+    "category": "biology",
+    "see_also": ["hydrophilic", "receptor"]
+  },
+  "small-molecule": {
+    "term": "small-molecule drug",
+    "aliases": ["small molecule", "small molecules", "small-molecule"],
+    "definition": "A medicine made of a small chemical rather than a chain of amino acids. Most pills are small molecules.",
+    "category": "pharmacology",
+    "see_also": ["peptide", "dalton"]
+  },
+  "rule-of-five": {
+    "term": "rule of five",
+    "aliases": ["rule of 5"],
+    "definition": "A rule of thumb from drug chemistry: a swallowed drug is less likely to be absorbed well if, among other things, it weighs more than 500 daltons.",
+    "category": "pharmacology",
+    "see_also": ["dalton", "bioavailability"]
+  },
+  "permeation-enhancer": {
+    "term": "absorption enhancer",
+    "aliases": ["absorption enhancers", "permeation enhancer", "permeation enhancers", "helper substance"],
+    "definition": "An added substance that helps a medicine pass through a lining, such as the gut wall. SNAC in semaglutide tablets is one.",
+    "category": "pharmacology",
+    "see_also": ["snac", "bioavailability"]
+  },
+  "sublingual": {
+    "term": "sublingual",
+    "aliases": ["under the tongue"],
+    "definition": "Taken by letting it dissolve under the tongue, so that it is absorbed through the lining of the mouth.",
+    "category": "pharmacology",
+    "see_also": ["intranasal"]
+  },
+  "intranasal": {
+    "term": "intranasal",
+    "aliases": ["nasal spray", "nasal sprays", "nasal drops"],
+    "definition": "Given into the nose, as a spray or drops, to be absorbed through the lining of the nose.",
+    "category": "pharmacology",
+    "see_also": ["sublingual"]
+  },
+  "cyp3a4": {
+    "term": "CYP3A4",
+    "aliases": [],
+    "definition": "A liver enzyme that breaks down many medicines. Other drugs that block or speed it up can change how much of a medicine stays in the body.",
+    "category": "pharmacology",
+    "see_also": ["first-pass-metabolism"]
+  },
+  "boxed-warning": {
+    "term": "boxed warning",
+    "aliases": ["black box warning"],
+    "definition": "The strongest warning on a US medicine label, printed in a box at the top.",
+    "category": "regulation",
+    "see_also": []
+  }
+}

@@ -1,0 +1,97 @@
+# The regulatory tracker rendered by <ChangeTracker /> on /legal/whats-changing/ (schema: trackerItemSchema in
+# src/schemas/index.ts). Words in src/i18n/<locale>/tracker.json, keyed by id.
+#
+# Written by group legal-b on 22 October 2026; every item was checked against its sources on that day.
+# `updated` is the date of the last verified development in the item (not the date we checked: that is
+# 22 October 2026 for all items, and the page says so). `next_milestone` only where an official source gives a
+# date. `compounds` lists only compounds that have a page on this site; other substances are named in the text.
+# Statements reported in the press but not published by the regulator are not tracked until an official
+# document appears (research/legal-b.md, "Tracker").
+
+- id: us-pcac-2026-peptide-vote
+  jurisdiction: US
+  status: advisory-vote
+  updated: 2026-07-24
+  compounds: [bpc-157, kpv, tb-500]
+  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, nl-geneesmiddelenwet, federalregister-fda-search-2026-10-22]
+
+- id: us-pcac-2027-meeting
+  jurisdiction: US
+  status: watching
+  updated: 2026-04-15
+  next_milestone: 2027-02-28
+  compounds: []
+  sources: [fda-pcac-2027-early-announcement, fda-503a-categories-2026-05]
+
+- id: us-503a-interim-categories
+  jurisdiction: US
+  status: in-force
+  updated: 2026-05-14
+  compounds: [bpc-157, kpv, tb-500]
+  sources: [fda-503a-bulks-page, fda-category-2-safety-risks, fda-503a-categories-2026-05]
+
+- id: us-503b-glp1-exclusion
+  jurisdiction: US
+  status: proposed
+  updated: 2026-07-30
+  compounds: [semaglutide, tirzepatide]
+  sources: [fda-2026-503b-glp1-exclusion-proposal, fr-2026-08552-503b-glp1, fr-2026-12937-503b-comment-extension, fda-glp1-compounding-policy, federalregister-fda-search-2026-10-22]
+
+- id: us-ruo-warning-letters
+  jurisdiction: US
+  status: watching
+  updated: 2026-08-24
+  compounds: [semaglutide, tirzepatide, retatrutide]
+  sources: [fda-warning-letters-index, fda-unapproved-glp1-concerns]
+
+- id: eu-pharma-reform
+  jurisdiction: EU
+  status: rulemaking
+  updated: 2026-10-12
+  next_milestone: 2026-11-23
+  compounds: []
+  sources: [ep-oeil-2023-0132-cod, ep-oeil-2023-0131-cod, ema-pharma-reform-page]
+
+- id: wada-2027-prohibited-list
+  jurisdiction: WADA
+  status: adopted
+  updated: 2026-09-21
+  next_milestone: 2027-01-01
+  compounds: [bpc-157, tb-500, retatrutide]
+  sources: [wada-2027-list-en, wada-2027-list-explanatory-note, ukad-2027-list-summary, dopingautoriteit-2027-list-news]
+
+- id: wada-2027-code
+  jurisdiction: WADA
+  status: adopted
+  updated: 2025-12-05
+  next_milestone: 2027-01-01
+  compounds: []
+  sources: [wada-2027-code-standards-page, wada-code-2027, wada-istue-2027]
+
+- id: wada-glp1-monitoring
+  jurisdiction: WADA
+  status: watching
+  updated: 2026-09-21
+  compounds: [semaglutide, tirzepatide]
+  sources: [wada-2027-monitoring-program, wada-2026-monitoring-program]
+
+- id: uk-mhra-weight-loss-raids
+  jurisdiction: UK
+  status: watching
+  updated: 2026-10-15
+  compounds: [retatrutide, tirzepatide]
+  sources: [mhra-2026-10-counterfeit-pens, mhra-2026-05-largest-seizure, mhra-2026-01-seizures-2025]
+
+- id: de-doping-list-gazette
+  jurisdiction: DE
+  status: watching
+  updated: 2025-12-23
+  compounds: [tb-500, bpc-157]
+  sources: [de-bgbl-2025-ii-312, de-antidopg-2, de-antidopg-anlage, de-antidopg-6]
+
+- id: nl-igj-online-sellers
+  jurisdiction: NL
+  status: watching
+  updated: 2025-10-30
+  compounds: []
+  sources: [igj-2025-online-nepapotheken, igj-toezicht-online-medicijnen]

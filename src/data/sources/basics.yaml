@@ -1,0 +1,596 @@
+# Sources for the Basics section (group basics): what a peptide is, how signalling works,
+# pharmacokinetics, and why peptides are not pills. Every entry was looked up on the date given:
+# scholarly metadata copied from the PubMed record (or Europe PMC full text), regulator and label
+# pages fetched and read for the point cited. Notes say what each source is cited for.
+
+# ------------------------------------------------------------------ what a peptide is
+
+nhgri-glossary-peptide:
+  type: web
+  authors: "National Human Genome Research Institute (NIH)"
+  title: "Peptide — Talking Glossary of Genomic and Genetic Terms"
+  year: 2026
+  url: https://www.genome.gov/genetics-glossary/Peptide
+  accessed: 2026-10-22
+  verified: url
+  note: "Definition: a peptide is a short chain of amino acids (typically 2 to 50) linked by peptide bonds; a longer chain (51 or more) is a polypeptide; proteins are made from one or more polypeptides. Page last updated 22 October 2026. The page does NOT mention the number of amino acids or genes; those points are cited to nhgri-glossary-amino-acids (fact-check, 22 October 2026)."
+
+nhgri-glossary-amino-acids:
+  type: web
+  authors: "National Human Genome Research Institute (NIH)"
+  title: "Amino Acids — Talking Glossary of Genomic and Genetic Terms"
+  year: 2026
+  url: https://www.genome.gov/genetics-glossary/Amino-Acids
+  accessed: 2026-10-22
+  verified: url
+  note: "Added by the fact-check (22 October 2026), page fetched and read. Definition: an amino acid is the building block for proteins; 'There are 20 different amino acids'; a protein consists of one or more chains of amino acids (polypeptides) 'whose sequence is encoded in a gene'. Page last updated 22 October 2026."
+
+zhu-2021-oral-delivery:
+  type: review
+  authors: "Zhu Q, Chen Z, Paul PK, Lu Y, Wu W, Qi J"
+  title: "Oral delivery of proteins and peptides: Challenges, status quo and future perspectives"
+  container: "Acta Pharmaceutica Sinica B"
+  year: 2021
+  volume: "11"
+  pages: "2416-2448"
+  doi: 10.1016/j.apsb.2021.04.001
+  pmid: "34522593"
+  pmcid: PMC8424290
+  verified: pubmed
+  note: "Full text read (Europe PMC). Cited for: 2–50 amino acids usually called peptides, longer chains proteins, with 'controversy' (insulin, 51 amino acids, called either; some count peptides up to 9000 Da); pepsin most active at pH 2–3 and inactive above pH 5; pH-induced unfolding in gastric fluid; pancreatic trypsin, chymotrypsin, carboxypeptidase and elastase; brush-border aminopeptidases and dipeptidases cut proteins to di- and tripeptides and amino acids; no insulin detected after 30 min in simulated gastric fluid (in vitro); tight junctions make the intestinal epithelium a gatekeeper to large molecules; poor permeability from large size and high hydrophilicity; a section on 'tremendous inter-individual variability' as a barrier; cyclosporin A is a cyclic peptide of MW 1202. The review gives no cleavage sites for trypsin or chymotrypsin. ERROR IN THE REVIEW, not used: it says Sandimmune (1990) was the first oral cyclosporin formulation approved by the FDA; Drugs@FDA shows the oral solution approved on 14 November 1983 and the capsules on 2 March 1990 (see fda-drugsatfda-sandimmune-oral)."
+
+fda-drugsatfda-sandimmune-oral:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 050574 (Sandimmune cyclosporine oral solution)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=050574
+  accessed: 2026-10-22
+  verified: url
+  note: "Added by the fact-check (22 October 2026), page fetched and read: Sandimmune (cyclosporine) 100 mg/mL solution, oral; original approval 14 November 1983 (ORIG-1). openFDA lists the Sandimmune oral capsules (NDA 050625) as first approved on 2 March 1990."
+
+wang-2022-therapeutic-peptides:
+  type: review
+  authors: "Wang L, Wang N, Zhang W, Cheng X, Yan Z, Shao G, Wang X, Wang R, Fu C"
+  title: "Therapeutic peptides: current applications and future directions"
+  container: "Signal Transduction and Targeted Therapy"
+  year: 2022
+  volume: "7"
+  pages: "48"
+  doi: 10.1038/s41392-022-00904-4
+  pmid: "35165272"
+  pmcid: PMC8844085
+  verified: pubmed
+  note: "Full text read (Europe PMC). Cited for: therapeutic peptides usually 500–5000 Da; insulin described as a peptide of 51 amino acids; amide bonds easily hydrolysed by enzymes, so short half-life without protection; solid-phase peptide synthesis (Merrifield 1963) and its impurities from incomplete or side reactions; synthesis of peptides under 50 residues routine, longer ones challenging; recombinant crude product carries biological contaminants (enzymes, DNA and RNA fragments, unrelated proteins); recombinant DNA used for long peptides with several disulfide bonds (insulin, growth hormone); D-amino acids extend plasma half-life but peptides so modified 'rarely exhibit effective biological activity'; cyclisation increases proteolytic stability and cell permeability and stabilises secondary structure; fatty-acid chains (liraglutide, semaglutide, insulin degludec) and albumin or immunoglobulin fusion (albiglutide, dulaglutide) push molecules above the glomerular filtration cut-off; PEGylation reduces kidney filtration and shields from proteases; GLP-1 receptors in pancreatic beta cells, nervous system, heart and vessels, kidneys, lungs and gut lining; exenatide 'optimized from Gila monster venom'; therapeutic peptides show less immunogenicity than biologics (therapeutic proteins and antibodies)."
+
+ecfr-21-600-3-protein:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 600.3 – Definitions, paragraph (h)(6): 'protein'"
+  container: "eCFR"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-F/part-600/subpart-A/section-600.3
+  accessed: 2026-10-22
+  verified: url
+  note: "Text retrieved through the eCFR versioner API (the web page itself redirects automated requests). Re-checked by the fact-check for the version of 1 October 2026 (section last amended 24 March 2020): 'A protein is any alpha amino acid polymer with a specific, defined sequence that is greater than 40 amino acids in size'; when two or more chains are associated as in nature, the size is the total number of amino acids in those chains."
+
+fda-2020-insulin-transition:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA works to ensure smooth regulatory transition of insulin and other biological products"
+  year: 2020
+  url: https://www.fda.gov/news-events/press-announcements/fda-works-ensure-smooth-regulatory-transition-insulin-and-other-biological-products
+  accessed: 2026-10-22
+  verified: url
+  note: "Press announcement of 20 February 2020: insulin products move from approved drug applications to deemed biologics licences on 23 March 2020; 'protein' means any alpha amino acid polymer with a specific, defined sequence greater than 40 amino acids."
+
+nobel-1958-sanger-speech:
+  type: web
+  authors: "Tiselius A (Nobel Committee for Chemistry, Royal Swedish Academy of Sciences)"
+  title: "The Nobel Prize in Chemistry 1958: Presentation speech"
+  container: "NobelPrize.org"
+  year: 1958
+  url: https://www.nobelprize.org/prizes/chemistry/1958/ceremony-speech/
+  accessed: 2026-10-22
+  verified: url
+  note: "Cited only for: the speech calls insulin 'a protein' and describes Sanger's work on how its 51 amino acids are linked, in two different chains. (Its chain lengths, '31 resp. 20', are the 1958 wording and are not used.)"
+
+nobel-1984-merrifield-press:
+  type: web
+  authors: "The Royal Swedish Academy of Sciences"
+  title: "The Nobel Prize in Chemistry 1984: Press release"
+  container: "NobelPrize.org"
+  year: 1984
+  url: https://www.nobelprize.org/prizes/chemistry/1984/press-release/
+  accessed: 2026-10-22
+  verified: url
+  note: "Press release of 17 October 1984 (Merrifield, chemical synthesis on a solid matrix). Cited for: amino acids carry an acid (carboxylic) group and a basic (amino) group, and the amino group of one reacting with the acid group of another makes a dipeptide; many hormones are peptides with fewer residues than proteins; the first amino acid is attached to a solid polymer and by-products are washed away after each step; with a 90% yield per step, 100 steps give an overall yield of 0.003%, with 99.5% per step about 61%."
+
+johnson-1983-recombinant-insulin:
+  type: article
+  authors: "Johnson IS"
+  title: "Human insulin from recombinant DNA technology"
+  container: "Science"
+  year: 1983
+  volume: "219"
+  pages: "632-637"
+  doi: 10.1126/science.6337396
+  pmid: "6337396"
+  verified: pubmed
+  note: "Abstract: human insulin made by recombinant DNA technology was the first commercial health-care product derived from this technology."
+
+pubchem-insulin-human:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 118984375, Insulin Human"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/118984375
+  accessed: 2026-10-22
+  verified: registry
+  note: "Molecular formula C257H383N65O77S6 and molecular weight 5808, retrieved via PUG REST (name 'insulin human')."
+
+lupron-depot-label:
+  type: label
+  authors: "U.S. National Library of Medicine (DailyMed)"
+  title: "LUPRON DEPOT (leuprolide acetate for depot suspension): prescribing information"
+  container: "DailyMed"
+  year: 2026
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=cbc8f94e-7330-4465-05ad-16d64493a5dd
+  accessed: 2026-10-22
+  verified: url
+  note: "Revised 3/2026 (page updated 15 March 2026). Section 11: leuprolide acetate is a synthetic nonapeptide analogue of GnRH; its chemical name includes a D-leucine and an N-ethyl-L-prolinamide end. Section 12.1–12.2: in humans an initial rise in LH, FSH and sex steroids, then with continuous administration LH and FSH fall and testosterone falls to castrate levels within two to four weeks."
+
+garcia-2015-amanita:
+  type: review
+  authors: "Garcia J, Costa VM, Carvalho A, Baptista P, de Pinho PG, de Lourdes Bastos M, Carvalho F"
+  title: "Amanita phalloides poisoning: Mechanisms of toxicity and treatment"
+  container: "Food and Chemical Toxicology"
+  year: 2015
+  volume: "86"
+  pages: "41-55"
+  doi: 10.1016/j.fct.2015.09.008
+  pmid: "26375431"
+  verified: pubmed
+  note: "Abstract: the death cap is involved in most fatal mushroom poisonings worldwide; amatoxins, especially alpha-amanitin, are mainly responsible; alpha-amanitin inhibits RNA polymerase II; the liver is the main target."
+
+le-dare-2021-amanitins:
+  type: review
+  authors: "Le Daré B, Ferron PJ, Gicquel T"
+  title: "Toxic Effects of Amanitins: Repurposing Toxicities toward New Therapeutics"
+  container: "Toxins"
+  year: 2021
+  volume: "13"
+  pages: "417"
+  doi: 10.3390/toxins13060417
+  pmid: "34208167"
+  pmcid: PMC8230822
+  verified: pubmed
+  note: "Full text read (Europe PMC). Amanitins are toxic bicyclic octapeptides of about 900 g/mol; resistant to heat, cold, enzymes and acid degradation and not metabolised; liver failure within about three days of ingestion."
+
+lipinski-2001-rule-of-5:
+  type: review
+  authors: "Lipinski CA, Lombardo F, Dominy BW, Feeney PJ"
+  title: "Experimental and computational approaches to estimate solubility and permeability in drug discovery and development settings"
+  container: "Advanced Drug Delivery Reviews"
+  year: 2001
+  volume: "46"
+  pages: "3-26"
+  doi: 10.1016/s0169-409x(00)00129-0
+  pmid: "11259830"
+  verified: pubmed
+  note: "Abstract: the 'rule of 5' predicts that poor absorption or permeation is more likely when, among other criteria, the molecular weight is greater than 500. Authors at Pfizer."
+
+haraldsson-2008-glomerular-barrier:
+  type: review
+  authors: "Haraldsson B, Nyström J, Deen WM"
+  title: "Properties of the glomerular barrier and mechanisms of proteinuria"
+  container: "Physiological Reviews"
+  year: 2008
+  volume: "88"
+  pages: "451-487"
+  doi: 10.1152/physrev.00055.2006
+  pmid: "18391170"
+  verified: pubmed
+  note: "Abstract: the glomerular barrier is highly size and charge selective; only small amounts of albumin are filtered."
+
+werle-2006-half-life:
+  type: review
+  authors: "Werle M, Bernkop-Schnürch A"
+  title: "Strategies to improve plasma half life time of peptide and protein drugs"
+  container: "Amino Acids"
+  year: 2006
+  volume: "30"
+  pages: "351-367"
+  doi: 10.1007/s00726-005-0289-3
+  pmid: "16622600"
+  verified: pubmed
+  note: "Abstract: short plasma half-lives are commonly due to fast renal clearance and enzymatic degradation in the circulation; by shortening somatostatin and replacing L- with D-amino acids, the plasma half-life of octreotide was 1.5 hours against a few minutes for somatostatin; modification of N- and C-termini and PEGylation as strategies. First author at ThioMatrix GmbH."
+
+bauer-1982-octreotide:
+  type: article
+  authors: "Bauer W, Briner U, Doepfner W, Haller R, Huguenin R, Marbach P, Petcher TJ, Pless J"
+  title: "SMS 201-995: a very potent and selective octapeptide analogue of somatostatin with prolonged action"
+  container: "Life Sciences"
+  year: 1982
+  volume: "31"
+  pages: "1133-1140"
+  doi: 10.1016/0024-3205(82)90087-x
+  pmid: "6128648"
+  verified: pubmed
+  note: "Abstract: the analogue H-(D)Phe-Cys-Phe-(D)Trp-Lys-Thr-Cys-Thr(ol) (later named octreotide; MeSH heading 'Octreotide') is highly resistant to degradation by pure enzymes and tissue homogenates and is much longer acting than somatostatin in rats and rhesus monkeys. The PubMed record gives no affiliations and the abstract gives no animal numbers."
+
+pubchem-octreotide:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 448601, Octreotide"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/448601
+  accessed: 2026-10-22
+  verified: registry
+  note: "Added by the fact-check (22 October 2026), retrieved via PUG REST: formula C49H66N10O10S2, molecular weight 1019.2; the IUPAC name ('…1,2-dithia-5,8,11,14,17-pentazacycloicosane…') shows the ring closed by a sulfur–sulfur (disulfide) bond."
+
+muttenthaler-2021-peptide-trends:
+  type: review
+  authors: "Muttenthaler M, King GF, Adams DJ, Alewood PF"
+  title: "Trends in peptide drug discovery"
+  container: "Nature Reviews Drug Discovery"
+  year: 2021
+  volume: "20"
+  pages: "309-325"
+  doi: 10.1038/s41573-020-00135-8
+  pmid: "33536635"
+  verified: pubmed
+  note: "Abstract: since insulin almost a century ago, more than 80 peptide drugs have reached the market; many derive from human hormones or from nature (for example venoms)."
+
+# ------------------------------------------------------------------ how signalling works
+
+hauser-2017-gpcr-drugs:
+  type: review
+  authors: "Hauser AS, Attwood MM, Rask-Andersen M, Schiöth HB, Gloriam DE"
+  title: "Trends in GPCR drug discovery: new agents, targets and indications"
+  container: "Nature Reviews Drug Discovery"
+  year: 2017
+  volume: "16"
+  pages: "829-842"
+  doi: 10.1038/nrd.2017.178
+  pmid: "29075003"
+  pmcid: PMC6882681
+  verified: pubmed
+  note: "Abstract: 475 drugs, about 34% of all drugs approved by the US FDA, act at 108 G protein-coupled receptors."
+
+davenport-2020-peptide-gpcr:
+  type: review
+  authors: "Davenport AP, Scully CCG, de Graaf C, Brown AJH, Maguire JJ"
+  title: "Advances in therapeutic peptides targeting G protein-coupled receptors"
+  container: "Nature Reviews Drug Discovery"
+  year: 2020
+  volume: "19"
+  pages: "389-413"
+  doi: 10.1038/s41573-020-0062-z
+  pmid: "32494050"
+  verified: pubmed
+  note: "Abstract: many endogenous peptides activate GPCRs; nearly 50 GPCR peptide drugs have been approved; most existing peptide therapeutics are agonists made by modifying the natural peptide sequence; half-life-extending modifications have been revolutionary. Three of five authors at Sosei Heptares."
+
+santiago-2021-core-concepts:
+  type: article
+  authors: "Santiago M, Davis EA, Hinton T, Angelo TA, Shield A, Babey AM, et al."
+  title: "Defining and unpacking the core concepts of pharmacology education"
+  container: "Pharmacology Research & Perspectives"
+  year: 2021
+  volume: "9"
+  pages: "e00894"
+  doi: 10.1002/prp2.894
+  pmid: "34817122"
+  pmcid: PMC8611774
+  verified: pubmed
+  note: "Full text read (Europe PMC). Consensus definitions by pharmacology educators in Australia and New Zealand: absorption, distribution (including plasma-protein binding), metabolism (including hydrolysis), excretion and elimination; clearance; steady state when elimination equals administration; elimination half-life; bioavailability; first-pass metabolism; affinity; efficacy; full and partial agonists; antagonists (zero efficacy); inverse agonists; selectivity is concentration dependent and 'decreases with increasing drug concentration'; potency; tolerance with up- or down-regulation of targets."
+
+berg-2018-inverse-agonism:
+  type: review
+  authors: "Berg KA, Clarke WP"
+  title: "Making Sense of Pharmacology: Inverse Agonism and Functional Selectivity"
+  container: "International Journal of Neuropsychopharmacology"
+  year: 2018
+  volume: "21"
+  pages: "962-977"
+  doi: 10.1093/ijnp/pyy071
+  pmid: "30085126"
+  pmcid: PMC6165953
+  verified: pubmed
+  note: "Full text read (Europe PMC). Affinity is a drug's ability to bind a receptor; intrinsic efficacy is its ability to change receptor activity; agonists have both, antagonists have affinity but zero efficacy; a full agonist gives the maximal response a system can give, a partial agonist a submaximal one; a maximal response may need only part of the receptors to be occupied."
+
+paramonov-2015-camp:
+  type: review
+  authors: "Paramonov VM, Mamaeva V, Sahlgren C, Rivero-Müller A"
+  title: "Genetically-encoded tools for cAMP probing and modulation in living systems"
+  container: "Frontiers in Pharmacology"
+  year: 2015
+  volume: "6"
+  pages: "196"
+  doi: 10.3389/fphar.2015.00196
+  pmid: "26441653"
+  pmcid: PMC4569861
+  verified: pubmed
+  note: "Abstract and full text: cAMP is one of the principal second messengers downstream of GPCRs; amplification of the signal on its way from the membrane to the nucleus is a well-known phenomenon, and PKA amplifies the incoming cAMP signal."
+
+rajagopal-2018-gpcr-desensitisation:
+  type: review
+  authors: "Rajagopal S, Shenoy SK"
+  title: "GPCR desensitization: Acute and prolonged phases"
+  container: "Cellular Signalling"
+  year: 2018
+  volume: "41"
+  pages: "9-16"
+  doi: 10.1016/j.cellsig.2017.01.024
+  pmid: "28137506"
+  pmcid: PMC5533627
+  verified: pubmed
+  note: "Abstract: desensitisation is a decrease in response to repeated or continuous stimulation; short-term over minutes (beta-arrestins block G-protein coupling), longer-term over hours to days (receptor internalisation, lysosomal degradation, less receptor mRNA); overstimulation can cause cellular toxicity or uncontrolled growth. Published online January 2017."
+
+desousa-2025-gh-feedback:
+  type: review
+  authors: "de Sousa LMM, Vicente VAN, Donato J"
+  title: "Negative Feedback Loops and Hormonal Factors that Regulate GH Secretion"
+  container: "Endocrinology"
+  year: 2025
+  volume: "166"
+  pages: "bqaf139"
+  doi: 10.1210/endocr/bqaf139
+  pmid: "40908533"
+  verified: pubmed
+  note: "Abstract: GH is made in the anterior pituitary and secreted in pulses, mainly controlled by hypothalamic factors; GH release is regulated by multiple negative feedback mechanisms that detect circulating GH or IGF-1, at both pituitary and hypothalamic levels."
+
+veldhuis-2001-gh-pulsatility:
+  type: review
+  authors: "Veldhuis JD, Anderson SM, Shah N, Bray M, Vick T, Gentili A, et al."
+  title: "Neurophysiological regulation and target-tissue impact of the pulsatile mode of growth hormone secretion in the human"
+  container: "Growth Hormone & IGF Research"
+  year: 2001
+  volume: "11 Suppl A"
+  pages: "S25-S37"
+  doi: 10.1016/s1096-6374(01)80005-8
+  pmid: "11527085"
+  verified: pubmed
+  note: "Abstract: GH pulses are driven by GHRH and GHRP and restrained by somatostatin; a GH burst feeds back on the brain to activate somatostatin and subdue GHRH; IGF-I gives slower negative feedback; GH signals in target tissues through STAT 5b."
+
+renehan-2004-igf1-cancer:
+  type: meta-analysis
+  authors: "Renehan AG, Zwahlen M, Minder C, O'Dwyer ST, Shalet SM, Egger M"
+  title: "Insulin-like growth factor (IGF)-I, IGF binding protein-3, and cancer risk: systematic review and meta-regression analysis"
+  container: "The Lancet"
+  year: 2004
+  volume: "363"
+  pages: "1346-1353"
+  doi: 10.1016/S0140-6736(04)16044-3
+  pmid: "15110491"
+  verified: pubmed
+  note: "21 case-control studies (26 datasets; 3609 cases, 7137 controls): higher IGF-I associated with more prostate cancer (OR 1.49, 75th vs 25th percentile) and premenopausal breast cancer (OR 1.65); associations modest and varying by site; observational."
+
+# ------------------------------------------------------------------ pharmacokinetics
+
+ema-epar-trulicity:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Trulicity (dulaglutide): EPAR — product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/trulicity
+  accessed: 2026-10-22
+  verified: url
+  note: "SmPC 5.1 read: dulaglutide is two disulfide-linked chains, each a GLP-1 analogue joined to a modified human IgG4 Fc fragment; native GLP-1 has a half-life of 1.5–2 minutes (DPP-4 and renal clearance); dulaglutide resists DPP-4, its large size slows absorption and reduces renal clearance, half-life 4.7 days, suitable for once-weekly injection; engineered to reduce immunogenic potential. First authorised 21 November 2014."
+
+ema-epar-victoza:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Victoza (liraglutide): EPAR — product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/victoza
+  accessed: 2026-10-22
+  verified: url
+  note: "SmPC 5.1–5.2 read: protracted action from self-association (slow absorption), albumin binding and higher stability against DPP-4 and NEP; subcutaneous absolute bioavailability about 55%; elimination half-life about 13 hours; suitable for once-daily use. First authorised 30 June 2009."
+
+ema-epar-byetta:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Byetta (exenatide): EPAR — product information (authorisation withdrawn)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/byetta
+  accessed: 2026-10-22
+  verified: url
+  note: "EPAR page: authorised 20 November 2006; marketing authorisation withdrawn on 1 January 2026 at the holder's request for commercial reasons. Product information (5.2) read: in nonclinical studies exenatide is mainly eliminated by glomerular filtration followed by proteolytic degradation; mean terminal half-life 2.4 hours."
+
+supersaxo-1990-lymphatic:
+  type: article
+  authors: "Supersaxo A, Hein WR, Steffen H"
+  title: "Effect of molecular weight on the lymphatic absorption of water-soluble compounds following subcutaneous administration"
+  container: "Pharmaceutical Research"
+  year: 1990
+  volume: "7"
+  pages: "167-169"
+  doi: 10.1023/a:1015880819328
+  pmid: "2137911"
+  verified: pubmed
+  note: "In sheep (n = 3 per compound), the share absorbed through lymph rose with molecular weight; molecules above 16,000 were absorbed mainly by the lymphatics. Authors at F. Hoffmann-La Roche."
+
+harris-2003-pegylation:
+  type: review
+  authors: "Harris JM, Chess RB"
+  title: "Effect of pegylation on pharmaceuticals"
+  container: "Nature Reviews Drug Discovery"
+  year: 2003
+  volume: "2"
+  pages: "214-221"
+  doi: 10.1038/nrd1033
+  pmid: "12612647"
+  verified: pubmed
+  note: "Abstract: protein and peptide drugs are degraded by proteolytic enzymes, rapidly cleared by the kidneys and have short half-lives; attaching polyethylene glycol increases molecular mass and shields from proteases. First author at Nektar Therapeutics (a PEGylation company)."
+
+jette-2005-cjc1295-albumin:
+  type: article
+  authors: "Jetté L, Léger R, Thibaudeau K, Benquet C, Robitaille M, Pellerin I, et al."
+  title: "Human growth hormone-releasing factor (hGRF)1-29-albumin bioconjugates activate the GRF receptor on the anterior pituitary in rats: identification of CJC-1295 as a long-lasting GRF analog"
+  container: "Endocrinology"
+  year: 2005
+  volume: "146"
+  pages: "3052-3058"
+  doi: 10.1210/en.2004-1286
+  pmid: "15817669"
+  verified: pubmed
+  note: "Developer study (ConjuChem). A reactive maleimide group added to a GRF(1-29) analogue bonds to the free thiol (Cys34) of serum albumin after injection; in rats a CJC-1295-reactive band on albumin appeared 15 minutes after injection (Western blot of one rat's plasma), and CJC-1295 was present in plasma beyond 72 hours. The abstract gives no animal numbers."
+
+di-2015-peptide-adme:
+  type: review
+  authors: "Di L"
+  title: "Strategic approaches to optimizing peptide ADME properties"
+  container: "The AAPS Journal"
+  year: 2015
+  volume: "17"
+  pages: "134-143"
+  doi: 10.1208/s12248-014-9687-3
+  pmid: "25366889"
+  pmcid: PMC4287298
+  verified: pubmed
+  note: "Abstract: natural peptides typically have poor ADME properties, with rapid clearance, short half-life, low permeability and sometimes low solubility; strategies reduce proteolysis and renal clearance and prolong half-life. Author at Pfizer."
+
+# ------------------------------------------------------------------ why not a pill
+
+drucker-2020-oral-peptides:
+  type: review
+  authors: "Drucker DJ"
+  title: "Advances in oral peptide therapeutics"
+  container: "Nature Reviews Drug Discovery"
+  year: 2020
+  volume: "19"
+  pages: "277-289"
+  doi: 10.1038/s41573-019-0053-0
+  pmid: "31848464"
+  verified: pubmed
+  note: "Abstract: protein and peptide therapeutics require parenteral administration; oral delivery faces substantial barriers from the structure and function of the gastrointestinal tract; strategies include permeation enhancers and enzyme inhibitors; oral formulations of insulin, calcitonin, parathyroid hormone and vasopressin reached trials; oral semaglutide approved for type 2 diabetes."
+
+brayden-2020-oral-peptides:
+  type: review
+  authors: "Brayden DJ, Hill TA, Fairlie DP, Maher S, Mrsny RJ"
+  title: "Systemic delivery of peptides by the oral route: Formulation and medicinal chemistry approaches"
+  container: "Advanced Drug Delivery Reviews"
+  year: 2020
+  volume: "157"
+  pages: "2-36"
+  doi: 10.1016/j.addr.2020.05.007
+  pmid: "32479930"
+  verified: pubmed
+  note: "Abstract: oral formulations of semaglutide, octreotide and salmon calcitonin completed phase III; formulations based on permeation enhancers give low and variable oral bioavailability of about 1%; low membrane permeability, metabolism and high clearance continue to hamper oral peptides; smaller hydrophobic macrocyclic peptides may be more orally available than linear ones."
+
+kawai-2020-orforglipron-structure:
+  type: article
+  authors: "Kawai T, Sun B, Yoshino H, Feng D, Suzuki Y, Fukazawa M, et al."
+  title: "Structural basis for GLP-1 receptor activation by LY3502970, an orally active nonpeptide agonist"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2020
+  volume: "117"
+  pages: "29959-29967"
+  doi: 10.1073/pnas.2014879117
+  pmid: "33177239"
+  pmcid: PMC7703558
+  verified: pubmed
+  note: "Chugai and Eli Lilly authors with ConfometRx. LY3502970 (orforglipron; see pubchem-orforglipron) is a nonpeptide partial agonist at the GLP-1 receptor, biased towards G-protein activation, with a pharmacokinetic profile favourable for oral use; glucose lowering in humanised mice and effects in monkeys after oral dosing."
+
+pubchem-orforglipron:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 137319706, Orforglipron"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/137319706
+  accessed: 2026-10-22
+  verified: registry
+  note: "Synonyms include LY3502970 and OWL833; formula C48H48F2N10O5; molecular weight 883.0 (PUG REST)."
+
+wharton-2023-orforglipron-phase2:
+  type: trial
+  authors: "Wharton S, Blevins T, Connery L, Rosenstock J, Raha S, Liu R, et al."
+  title: "Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity"
+  container: "The New England Journal of Medicine"
+  year: 2023
+  volume: "389"
+  pages: "877-888"
+  doi: 10.1056/NEJMoa2302392
+  pmid: "37351564"
+  verified: pubmed
+  note: "Phase 2, randomised, double-blind, placebo-controlled trial in 272 adults with obesity or overweight without diabetes, 36 weeks; funded by Eli Lilly. Mean weight change at week 36 from -9.4% to -14.7% across dose groups against -2.3% with placebo; gastrointestinal events led 10–17% to stop."
+
+fda-2026-foundayo-approval:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Approves First New Molecular Entity Under National Priority Voucher Program"
+  year: 2026
+  url: https://www.fda.gov/news-events/press-announcements/fda-approves-first-new-molecular-entity-under-national-priority-voucher-program
+  accessed: 2026-10-22
+  verified: url
+  note: "Press announcement of 1 April 2026: Foundayo (orforglipron), a once-daily oral GLP-1 receptor partial agonist tablet, approved for chronic weight management in adults; it does not need to be taken on an empty stomach; boxed warning for thyroid C-cell tumours."
+
+fda-label-foundayo:
+  type: label
+  authors: "U.S. Food and Drug Administration / Eli Lilly and Company"
+  title: "FOUNDAYO (orforglipron) tablets, for oral use — prescribing information (revised 07/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/220934s003lbl.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Indication: weight reduction and maintenance in adults with obesity or overweight with a weight-related condition (not type 2 diabetes in this label; openFDA shows no later approval than the labelling supplement of 4 August 2026). Taken once daily with or without food; geometric mean absolute bioavailability 77% after a single low dose (section 12.3); no clinically relevant food effect; elimination half-life about 29–49 hours; metabolised mainly by the liver enzyme CYP3A4; steady state after about 1 week; not pharmacologically active in rats or mice; boxed warning on thyroid C-cell tumours."
+
+ema-2026-foundayo-chmp:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "New oral GLP-1 medicine for weight management and type 2 diabetes"
+  year: 2026
+  url: https://www.ema.europa.eu/en/news/new-oral-glp-1-medicine-weight-management-type-2-diabetes
+  accessed: 2026-10-22
+  verified: url
+  note: "News published 16 October 2026 (after the CHMP meeting of 12–15 October): the CHMP recommended granting an EU marketing authorisation for Foundayo (orforglipron), described as 'a small, non-peptide molecule', for weight management and type 2 diabetes in adults; taken with or without food; based on two weight-management studies in 4,740 adults and four diabetes studies in 3,765 adults; the opinion goes to the European Commission for a decision. Not yet authorised in the EU on the access date. The opinion itself was adopted on 15 October 2026 (see ema-epar-foundayo-opinion)."
+
+ema-epar-foundayo-opinion:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Foundayo (orforglipron): opinion page (EMEA/H/C/006632)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/foundayo
+  accessed: 2026-10-22
+  verified: url
+  note: "Added by the fact-check (22 October 2026), page fetched and read: status 'Opinion' (not 'Authorised'); 'On 15 October 2026, the Committee for Medicinal Products for Human Use (CHMP) adopted a positive opinion'; opinion adopted 15/10/2026, opinion status positive; applicant Eli Lilly Nederland B.V.; the page says it will be updated once the European Commission grants the authorisation."
+
+fda-label-desmopressin-tablets:
+  type: label
+  authors: "U.S. Food and Drug Administration (Drugs@FDA)"
+  title: "Desmopressin Acetate Tablets — prescribing information (revised 10/2019)"
+  year: 2019
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/021795s006lbl.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Highlights: 'Initial U.S. Approval: 1978' (for desmopressin acetate). Section 11: desmopressin acetate is a synthetic vasopressin analogue (molecular weight 1183.34). Section 12.3: the bioavailability of the oral tablets is about 5% of the intranasal formulation and about 0.16% of the intravenous formulation; terminal half-life after IV dosing 2.8 hours. The PDF notes that it may not be the latest approved label."
+
+wettschureck-2005-g-proteins:
+  type: review
+  authors: "Wettschureck N, Offermanns S"
+  title: "Mammalian G proteins and their cell type specific functions"
+  container: "Physiological Reviews"
+  year: 2005
+  volume: "85"
+  pages: "1159-1204"
+  doi: 10.1152/physrev.00003.2005
+  pmid: "16183910"
+  verified: pubmed
+  note: "Abstract: heterotrimeric G proteins couple a huge variety of receptors to channels, enzymes and other effectors; G-protein signalling is employed by virtually all cells in mammals, in hormone release and action, cell growth and many other functions."
+
+belchetz-1978-gnrh-pulses:
+  type: article
+  authors: "Belchetz PE, Plant TM, Nakai Y, Keogh EJ, Knobil E"
+  title: "Hypophysial responses to continuous and intermittent delivery of hypopthalamic gonadotropin-releasing hormone"
+  container: "Science"
+  year: 1978
+  volume: "202"
+  pages: "631-633"
+  doi: 10.1126/science.100883
+  pmid: "100883"
+  verified: pubmed
+  note: "In rhesus monkeys with hypothalamic lesions (number not given in the abstract), a constant infusion of GnRH (a synthetic decapeptide) failed to restore gonadotropin secretion, while hourly pulses, the physiological frequency, restored it; switching from pulses to continuous infusion 'can result in a desensitization or down regulation' of gonadotropin release. The effect depended on the pattern of delivery, not the amount."

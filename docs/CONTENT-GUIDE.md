@@ -77,7 +77,8 @@ of the following (verify each element against fda.gov before first use and cite 
 3. The vote is **advisory and non-binding**, and went **against FDA staff's own recommendation**.
 4. Legal compounding remains prohibited until the FDA formally adopts the recommendation and
    completes rulemaking.
-5. **None of these is an approved medicine.** A 503A listing, if it ever happens, would allow
+5. **None of these is an approved medicine in the EU, the UK or the US** (Semax is registered as a
+   medicine in Russia, as the FDA's own briefing notes; say so where Semax is discussed). A 503A listing, if it ever happens, would allow
    pharmacy compounding on prescription in the US. It is not a marketing authorisation, says
    nothing about efficacy, and changes nothing in the EU or the Netherlands.
 
