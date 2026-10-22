@@ -1,0 +1,522 @@
+# Ipamorelin — sources registered by the ipamorelin group (22 October 2026).
+# Every scholarly entry was looked up in PubMed (metadata copied from the record); every regulator,
+# registry and law entry was fetched on the accessed date and says what it is cited for. See
+# research/ipamorelin.md for the verification log. Shared ids (FDA category 2 page, 503A categories,
+# WADA lists, EU/NL/DE/BE/UK law, EMA data, GH-axis reviews) are reused, not re-registered here.
+
+# ---------------------------------------------------------------- identity and chemistry
+
+pubchem-ipamorelin:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 9831659, Ipamorelin"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/9831659
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST, 22 October 2026: molecular formula C38H49N9O5, molecular weight 711.9, exact mass 711.3857, isomeric SMILES copied into the data file. Synonyms include 'Ipamorelin [INN]', 'IPAMORELIN [WHO-DD]', 'Aib-His-D-2-Nal-D-Phe-Lys-NH2', '2-Methylalanyl-L-histidyl-3-(2-naphthyl)-D-alanyl-D-phenylalanyl-L-lysinamide', NNC 26-0161, CAS 170851-70-4, UNII Y9M3S784Z6, ipamorelin acetate."
+
+chembl-ipamorelin:
+  type: dataset
+  authors: "EMBL-EBI"
+  title: "ChEMBL compound report card: CHEMBL58547 (IPAMORELIN)"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL58547
+  accessed: 2026-10-22
+  verified: url
+  note: "Checked through the ChEMBL API on 22 October 2026: max phase 2, no first approval date, synonyms NNC 26-0161; HELM notation PEPTIDE1{[Aib].H.[dNal].[dF].K.[am]} (Aib, His, D-2-naphthylalanine, D-Phe, Lys, C-terminal amide); USAN stem -relin (-morelin), growth hormone-release stimulating peptides; no curated mechanism of action."
+
+who-2014-inn-biological-review:
+  type: report
+  authors: "World Health Organization, INN Programme"
+  title: "International Nonproprietary Names (INN) for biological and biotechnological substances (a review), WHO/EMP/RHT/TSN/2014.1"
+  container: "World Health Organization"
+  year: 2014
+  url: https://www.who.int/docs/default-source/international-nonproprietary-names-(inn)/biorev2014.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Section 4.25, pituitary hormone-release stimulating peptides, common stem -relin; growth hormone release-stimulating peptides: -morelin, listing 'ipamorelin (78)'; 'The numbers in parentheses indicate the Proposed list number.' The www.who.int address redirects to the same PDF on cdn.who.int."
+
+# ---------------------------------------------------------------- discovery and preclinical pharmacology (Novo Nordisk)
+
+raun-1998-ipamorelin:
+  type: article
+  authors: "Raun K, Hansen BS, Johansen NL, Thøgersen H, Madsen K, Ankersen M, Andersen PH"
+  title: "Ipamorelin, the first selective growth hormone secretagogue"
+  container: "European Journal of Endocrinology"
+  year: 1998
+  volume: "139"
+  pages: "552-561"
+  doi: 10.1530/eje.0.1390552
+  pmid: "9849822"
+  verified: pubmed
+  note: "Novo Nordisk (Måløv). Pentapeptide Aib-His-D-2-Nal-D-Phe-Lys-NH2. Rat pituitary cells: EC50 1.3 nmol/l, Emax 85% versus GHRP-6; acts via a GHRP-like receptor (antagonist profiling). Anaesthetised rats and conscious swine: GH release comparable to GHRP-6. Swine: no change in FSH, LH, PRL or TSH with any secretagogue; GHRP-6 and GHRP-2 raised ACTH and cortisol, ipamorelin did not, 'even at doses more than 200-fold higher than the ED50 for GH release'."
+
+johansen-1998-ipamorelin-pk:
+  type: article
+  authors: "Johansen PB, Hansen KT, Andersen JV, Johansen NL"
+  title: "Pharmacokinetic evaluation of ipamorelin and other peptidyl growth hormone secretagogues with emphasis on nasal absorption"
+  container: "Xenobiotica"
+  year: 1998
+  volume: "28"
+  pages: "1083-1092"
+  doi: 10.1080/004982598238976
+  pmid: "9879640"
+  verified: pubmed
+  note: "Male rats, Novo Nordisk. After intravenous bolus, ipamorelin's plasma clearance was 5-fold lower than GHRP-6's; mainly excreted in urine; 60-80% of the dose recovered from bile and urine as intact peptide; nasal bioavailability about 20%. FDA's 2024 evaluation cites this study for a rat half-life of about 27 minutes."
+
+johansen-1999-ipamorelin-bone:
+  type: article
+  authors: "Johansen PB, Nowak J, Skjaerbaek C, Flyvbjerg A, Andreassen TT, Wilken M, Orskov H"
+  title: "Ipamorelin, a new growth-hormone-releasing peptide, induces longitudinal bone growth in rats"
+  container: "Growth Hormone & IGF Research"
+  year: 1999
+  volume: "9"
+  pages: "106-113"
+  doi: 10.1054/ghir.1999.9998
+  pmid: "10373343"
+  verified: pubmed
+  note: "Adult female rats, subcutaneous injections three times daily for 15 days at four dose levels: dose-dependent increase in longitudinal bone growth (42 to 52 µm/day) and body weight gain; no change in total IGF-I, IGFBPs or bone turnover markers; GH response to an ipamorelin challenge marginally reduced after treatment (P<0.03); pituitary GH content unchanged. First author at Novo Nordisk; co-authors from Aarhus."
+
+malmlof-1999-ipamorelin-igf1:
+  type: article
+  authors: "Malmlöf K, Johansen PB, Haahr PM, Wilken M, Oxlund H"
+  title: "Methylprednisolone does not inhibit the release of growth hormone after intravenous injection of a novel growth hormone secretagogue in rats"
+  container: "Growth Hormone & IGF Research"
+  year: 1999
+  volume: "9"
+  pages: "445-450"
+  doi: 10.1054/ghir.1999.0128
+  pmid: "10629165"
+  verified: pubmed
+  note: "Novo Nordisk. Rats on the steroid methylprednisolone: the acute GH response to ipamorelin was unchanged; repeated intravenous ipamorelin for 10 days reduced post-surgical weight loss and 'In parallel with this IGF-I levels increased'."
+
+svensson-2000-ipamorelin-bone:
+  type: article
+  authors: "Svensson J, Lall S, Dickson SL, Bengtsson BA, Rømer J, Ahnfelt-Rønne I, Ohlsson C, Jansson JO"
+  title: "The GH secretagogues ipamorelin and GH-releasing peptide-6 increase bone mineral content in adult female rats"
+  container: "The Journal of Endocrinology"
+  year: 2000
+  volume: "165"
+  pages: "569-577"
+  doi: 10.1677/joe.0.1650569
+  pmid: "10828840"
+  verified: pubmed
+  note: "13-week-old female rats, continuous subcutaneous infusion by osmotic minipump for 12 weeks (ipamorelin n=7, GHRP-6 n=8, GH n=7, vehicle): all treatments increased body weight and bone mineral content; corrected for body weight, total bone mineral content was unaffected; bones grew larger rather than denser. Göteborg and Cambridge authors with a Novo Nordisk co-author (Ahnfelt-Rønne I, whose Novo Nordisk affiliation is on PMID 11322495)."
+
+andersen-2001-ipamorelin-glucocorticoid:
+  type: article
+  authors: "Andersen NB, Malmlöf K, Johansen PB, Andreassen TT, Ørtoft G, Oxlund H"
+  title: "The growth hormone secretagogue ipamorelin counteracts glucocorticoid-induced decrease in bone formation of adult rats"
+  container: "Growth Hormone & IGF Research"
+  year: 2001
+  volume: "11"
+  pages: "266-272"
+  doi: 10.1054/ghir.2001.0239
+  pmid: "11735244"
+  verified: pubmed
+  note: "8-month-old female rats, 3 months of subcutaneous injections: with the steroid methylprednisolone plus ipamorelin, maximum calf-muscle tetanic tension rose and periosteal bone formation rate was four-fold higher than with the steroid alone. Aarhus with Novo Nordisk co-authors."
+
+lall-2001-ghs-adiposity:
+  type: article
+  authors: "Lall S, Tung LY, Ohlsson C, Jansson JO, Dickson SL"
+  title: "Growth hormone (GH)-independent stimulation of adiposity by GH secretagogues"
+  container: "Biochemical and Biophysical Research Communications"
+  year: 2001
+  volume: "280"
+  pages: "132-138"
+  doi: 10.1006/bbrc.2000.4065
+  pmid: "11162489"
+  verified: pubmed
+  note: "Cambridge and Göteborg. Mice: twice-daily subcutaneous ipamorelin gave a small (15%) body-weight increase by 2 weeks in GH-deficient and GH-intact mice, and raised fat-pad weights relative to body weight in both; ipamorelin or GHRP-6 increased relative body fat (DEXA) in GH-intact mice; GH secretagogues, but not GH, increased serum leptin and food intake. 'GHSs increase body fat by GH-independent mechanisms that may include increased feeding.'"
+
+adeghate-2004-ipamorelin-insulin:
+  type: article
+  authors: "Adeghate E, Ponery AS"
+  title: "Mechanism of ipamorelin-evoked insulin release from the pancreas of normal and diabetic rats"
+  container: "Neuro Endocrinology Letters"
+  year: 2004
+  volume: "25"
+  pages: "403-406"
+  pmid: "15665799"
+  verified: pubmed
+  note: "United Arab Emirates University. Pancreatic tissue fragments from normal and streptozotocin-diabetic rats, incubated with ipamorelin (10^-12 to 10^-6 M): significant increases in insulin secretion, inhibited by diltiazem, yohimbine or propranolol. No DOI in the PubMed record."
+
+# ---------------------------------------------------------------- the gut programme (Helsinn)
+
+venkova-2009-ipamorelin-ileus:
+  type: article
+  authors: "Venkova K, Mann W, Nelson R, Greenwood-Van Meerveld B"
+  title: "Efficacy of ipamorelin, a novel ghrelin mimetic, in a rodent model of postoperative ileus"
+  container: "The Journal of Pharmacology and Experimental Therapeutics"
+  year: 2009
+  volume: "329"
+  pages: "1110-1116"
+  doi: 10.1124/jpet.108.149211
+  pmid: "19289567"
+  verified: pubmed
+  note: "University of Oklahoma. Rats after laparotomy and bowel manipulation: a single intravenous dose shortened the time to first bowel movement but did not change 48-h faecal output, food intake or weight gain; repeated dosing over 2 days increased cumulative faecal output, food intake and body weight gain. Funding statement not accessible (PubMed: Research Support, Non-U.S. Gov't)."
+
+greenwood-2012-ipamorelin-gastric:
+  type: article
+  authors: "Greenwood-Van Meerveld B, Tyler K, Mohammadi E, Pietra C"
+  title: "Efficacy of ipamorelin, a ghrelin mimetic, on gastric dysmotility in a rodent model of postoperative ileus"
+  container: "Journal of Experimental Pharmacology"
+  year: 2012
+  volume: "4"
+  pages: "149-155"
+  doi: 10.2147/JEP.S35396
+  pmid: "27186127"
+  pmcid: PMC4863553
+  verified: pubmed
+  note: "University of Oklahoma with a Helsinn Healthcare co-author; full text (PMC): the ipamorelin free base 'was provided by Helsinn Healthcare' and needed glacial acetic acid to dissolve because its solubility 'is very low'. Rats after abdominal surgery: 78% ± 5% of a test meal remained in the stomach with vehicle versus 52% ± 11% with intravenous ipamorelin (non-surgical controls 44% ± 6%); in isolated stomach muscle, ipamorelin and ghrelin restored contractions to acetylcholine and nerve stimulation."
+
+# ---------------------------------------------------------------- studies in people
+
+gobburu-1999-ipamorelin-pkpd:
+  type: trial
+  authors: "Gobburu JV, Agersø H, Jusko WJ, Ynddal L"
+  title: "Pharmacokinetic-pharmacodynamic modeling of ipamorelin, a growth hormone releasing peptide, in human volunteers"
+  container: "Pharmaceutical Research"
+  year: 1999
+  volume: "16"
+  pages: "1412-1416"
+  doi: 10.1023/a:1018955126402
+  pmid: "10496658"
+  verified: pubmed
+  note: "Healthy men, dose escalation over five 15-minute intravenous infusion rates, eight men at each level (FDA 2024: 48 enrolled; 6 active and 2 placebo per group). Dose-proportional PK; terminal half-life 2 hours; clearance 0.078 L/h/kg; volume of distribution 0.22 L/kg; a single episode of GH release peaking at 0.67 h and declining to negligible levels; 'Ipamorelin induces the release of GH at all dose levels'. The FDA 2024 briefing instead says the lowest-dose group and the placebo groups were left out of the PK/PD analysis 'due to negligible GH levels', and that GH was very low at all doses by 6 hours. PubMed publication types: Clinical Trial; Randomized Controlled Trial. SUNY Buffalo with Novo Nordisk pharmacokinetics co-authors (publisher page)."
+
+beck-2014-ipamorelin-ileus:
+  type: trial
+  authors: "Beck DE, Sweeney WB, McCarter MD; Ipamorelin 201 Study Group"
+  title: "Prospective, randomized, controlled, proof-of-concept study of the Ghrelin mimetic ipamorelin for the management of postoperative ileus in bowel resection patients"
+  container: "International Journal of Colorectal Disease"
+  year: 2014
+  volume: "29"
+  pages: "1527-1534"
+  doi: 10.1007/s00384-014-2030-8
+  pmid: "25331030"
+  verified: pubmed
+  note: "Phase 2, multicentre, double-blind, placebo-controlled (NCT00672074). 117 adults enrolled for bowel resection, 114 in the safety and modified intention-to-treat populations; intravenous infusions twice daily from postoperative day 1 to day 7 or discharge. Any treatment-emergent adverse event 87.5% ipamorelin vs 94.8% placebo; median time to first tolerated meal 25.3 vs 32.6 h (p = 0.15); 'no significant differences ... in the key and secondary efficacy analyses'. Publisher page: 'This study was supported by Helsinn Therapeutics (US), Inc.'"
+
+semenistaya-2015-ghrp-nasal:
+  type: article
+  authors: "Semenistaya E, Zvereva I, Thomas A, Thevis M, Krotov G, Rodchenkov G"
+  title: "Determination of growth hormone releasing peptides metabolites in human urine after nasal administration of GHRP-1, GHRP-2, GHRP-6, Hexarelin, and Ipamorelin"
+  container: "Drug Testing and Analysis"
+  year: 2015
+  volume: "7"
+  pages: "919-925"
+  doi: 10.1002/dta.1787
+  pmid: "25869809"
+  verified: pubmed
+  note: "Moscow anti-doping centre with Cologne. 'Each compound was administrated to one volunteer' by nasal administration (the abstract does not name the device); urine collected for 2 days. Ipamorelin was 'metabolized intensively'; ipamorelin (1-4) free acid was detected 'after complete withdrawal of parent substances'."
+
+# ---------------------------------------------------------------- products seized or sold outside the legal supply chain
+
+gajda-2019-glycine-ghs:
+  type: article
+  authors: "Gajda PM, Holm NB, Hoej LJ, Rasmussen BS, Dalsgaard PW, Reitzel LA, Linnet K"
+  title: "Glycine-modified growth hormone secretagogues identified in seized doping material"
+  container: "Drug Testing and Analysis"
+  year: 2019
+  volume: "11"
+  pages: "350-354"
+  doi: 10.1002/dta.2489
+  pmid: "30136411"
+  verified: pubmed
+  note: "University of Copenhagen forensic chemistry. Unknown preparations seized by Danish customs were identified by LC-HRMS as analogues of GHRP-2, GHRP-6, ipamorelin and modified GRF 1-29, each with an extra glycine added at the N-terminus. PubMed epub date 11 September 2018; journal issue 2019 (volume 11, issue 2)."
+
+krug-2018-black-market-gh:
+  type: article
+  authors: "Krug O, Thomas A, Malerød-Fjeld H, Dehnes Y, Laussmann T, Feldmann I, Sickmann A, Thevis M"
+  title: "Analysis of new growth promoting black market products"
+  container: "Growth Hormone & IGF Research"
+  year: 2018
+  volume: "41"
+  pages: "1-6"
+  doi: 10.1016/j.ghir.2018.05.001
+  pmid: "29864719"
+  verified: pubmed
+  note: "Cologne and Oslo anti-doping laboratories with German customs science centre. Black-market products contained a modified GH (an extra alanine) and three GHRP analogues with an extra N-terminal glycine, including Gly-Ipamorelin, confirmed by custom synthesis."
+
+# ---------------------------------------------------------------- the ghrelin system (context for the mechanism and the risks)
+
+howard-1996-ghs-receptor:
+  type: article
+  authors: "Howard AD, Feighner SD, Cully DF, Arena JP, Liberator PA, Rosenblum CI, et al."
+  title: "A receptor in pituitary and hypothalamus that functions in growth hormone release"
+  container: "Science"
+  year: 1996
+  volume: "273"
+  pages: "974-977"
+  doi: 10.1126/science.273.5277.974
+  pmid: "8688086"
+  verified: pubmed
+  note: "Merck. Cloned the G-protein-coupled receptor of the pituitary and hypothalamus (swine and human) that is the target of synthetic growth hormone secretagogues, which 'stimulate and amplify pulsatile growth hormone (GH) release'."
+
+kojima-1999-ghrelin:
+  type: article
+  authors: "Kojima M, Hosoda H, Date Y, Nakazato M, Matsuo H, Kangawa K"
+  title: "Ghrelin is a growth-hormone-releasing acylated peptide from stomach"
+  container: "Nature"
+  year: 1999
+  volume: "402"
+  pages: "656-660"
+  doi: 10.1038/45230
+  pmid: "10604470"
+  verified: pubmed
+  note: "Purified from rat stomach the natural ligand of the GHS receptor: a 28-amino-acid peptide with an n-octanoyl group on serine 3, essential for activity; human ghrelin differs from rat ghrelin in two amino acids."
+
+takaya-2000-ghrelin-humans:
+  type: article
+  authors: "Takaya K, Ariyasu H, Kanamoto N, Iwakura H, Yoshimoto A, Harada M, et al."
+  title: "Ghrelin strongly stimulates growth hormone release in humans"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2000
+  volume: "85"
+  pages: "4908-4911"
+  doi: 10.1210/jcem.85.12.7167
+  pmid: "11134161"
+  verified: pubmed
+  note: "Four healthy men, intravenous ghrelin at three doses: dose-dependent GH release; ACTH, cortisol and prolactin also rose; LH, FSH and TSH did not change."
+
+wren-2001-ghrelin-appetite:
+  type: trial
+  authors: "Wren AM, Seal LJ, Cohen MA, Brynes AE, Frost GS, Murphy KG, et al."
+  title: "Ghrelin enhances appetite and increases food intake in humans"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2001
+  volume: "86"
+  pages: "5992"
+  doi: 10.1210/jcem.86.12.8111
+  pmid: "11739476"
+  verified: pubmed
+  note: "Randomised, double-blind, crossover study in nine healthy volunteers: intravenous ghrelin increased energy eaten from a free-choice buffet by 28 ± 3.9% (p<0.001) compared with saline, with higher appetite scores; no effect on gastric emptying."
+
+broglio-2001-ghrelin-glucose:
+  type: trial
+  authors: "Broglio F, Arvat E, Benso A, Gottero C, Muccioli G, Papotti M, et al."
+  title: "Ghrelin, a natural GH secretagogue produced by the stomach, induces hyperglycemia and reduces insulin secretion in humans"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2001
+  volume: "86"
+  pages: "5083-5086"
+  doi: 10.1210/jcem.86.10.8098
+  pmid: "11600590"
+  verified: pubmed
+  note: "11 healthy young volunteers: ghrelin raised glucose promptly and lowered insulin; hexarelin, a synthetic GH secretagogue, released GH but did not change glucose or insulin; acute administration only."
+
+muller-2015-ghrelin-review:
+  type: review
+  authors: "Müller TD, Nogueiras R, Andermann ML, Andrews ZB, Anker SD, Argente J, et al."
+  title: "Ghrelin"
+  container: "Molecular Metabolism"
+  year: 2015
+  volume: "4"
+  pages: "437-460"
+  doi: 10.1016/j.molmet.2015.03.005
+  pmid: "26042199"
+  pmcid: PMC4443295
+  verified: pubmed
+  note: "Consensus review: ghrelin discovered in 1999 as the endogenous ligand of the GH secretagogue receptor, with central and peripheral actions including gut motility and gastric acid secretion, reward-seeking behaviour, sleep/wake rhythm and glucose metabolism."
+
+# ---------------------------------------------------------------- other ghrelin-receptor agonists in people (class evidence, not ipamorelin)
+
+nass-2008-mk677-older-adults:
+  type: trial
+  authors: "Nass R, Pezzoli SS, Oliveri MC, Patrie JT, Harrell FE, Clasey JL, et al."
+  title: "Effects of an oral ghrelin mimetic on body composition and clinical outcomes in healthy older adults: a randomized trial"
+  container: "Annals of Internal Medicine"
+  year: 2008
+  volume: "149"
+  pages: "601-611"
+  doi: 10.7326/0003-4819-149-9-200811040-00003
+  pmid: "18981485"
+  pmcid: PMC2757071
+  verified: pubmed
+  note: "65 healthy adults aged 60-81, 2-year double-blind randomised placebo-controlled trial of the oral ghrelin mimetic MK-677 (ibutamoren): GH and IGF-I rose to young-adult levels; fat-free mass +1.1 kg vs -0.5 kg; weight +2.7 vs +0.8 kg; fasting glucose +0.3 mmol/L and insulin sensitivity decreased; cortisol rose 47 nmol/L; most frequent side effects increased appetite, transient mild lower-leg oedema and muscle pain; no change in strength or function."
+
+adunsky-2011-mk677-hip-fracture:
+  type: trial
+  authors: "Adunsky A, Chandler J, Heyden N, Lutkiewicz J, Scott BB, Berd Y, Liu N, Papanicolaou DA"
+  title: "MK-0677 (ibutamoren mesylate) for the treatment of patients recovering from hip fracture: a multicenter, randomized, placebo-controlled phase IIb study"
+  container: "Archives of Gerontology and Geriatrics"
+  year: 2011
+  volume: "53"
+  pages: "183-189"
+  doi: 10.1016/j.archger.2010.10.004
+  pmid: "21067829"
+  verified: pubmed
+  note: "123 older hip-fracture patients randomised to MK-0677 (62) or placebo (61): IGF-1 rose but most function measures did not improve; 'Trial was terminated early due to a safety signal of congestive heart failure in a limited number of patients.' PubMed publication date 9 November 2010 (online); journal volume 53, 2011."
+
+ema-epar-ghryvelin:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Ghryvelin (previously Macimorelin Aeterna Zentaris): EPAR – medicine overview"
+  year: 2024
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/ghryvelin
+  accessed: 2026-10-22
+  verified: url
+  note: "Macimorelin, 'a medicine used to test the ability of the body to produce growth hormone', for diagnosing adult growth hormone deficiency, taken once; EU marketing authorisation 11 January 2019 (also in the EMA medicines JSON, 22 October 2026: status Authorised)."
+
+ema-epar-adlumiz:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Adlumiz (anamorelin): refusal of marketing authorisation"
+  year: 2017
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/adlumiz
+  accessed: 2026-10-22
+  verified: url
+  note: "Anamorelin 'attaches to and activates ... a ghrelin receptor', intended for cancer cachexia in non-small cell lung cancer. The CHMP found 'a marginal effect of Adlumiz on lean body mass', 'no proven effect on hand grip strength or patients' quality of life', and that safety data 'had not been recorded adequately'; refusal confirmed on re-examination 14 September 2017; refusal 16 November 2017."
+
+# ---------------------------------------------------------------- regulators: United States
+
+fda-pcac-2024-10-meeting:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "October 29, 2024: Meeting of the Pharmacy Compounding Advisory Committee"
+  year: 2024
+  url: https://www.fda.gov/advisory-committees/advisory-committee-calendar/october-29-2024-meeting-pharmacy-compounding-advisory-committee-10292024
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 7 February 2025. Agenda: ipamorelin-related bulk drug substances (ipamorelin acetate and ipamorelin free base) considered for the 503A Bulks List, uses evaluated 'GHD and postoperative ileus'; 'Advisory committees make non-binding recommendations to the FDA'. Lists the briefing documents, presentations, questions, minutes and transcripts."
+
+fda-pcac-2024-ipamorelin-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Evaluation of Ipamorelin-related Bulk Drug Substances (Ipamorelin (free base) and Ipamorelin acetate) for Inclusion on the 503A Bulk Drug Substances List (briefing document 4, Pharmacy Compounding Advisory Committee, 29 October 2024)"
+  year: 2024
+  url: https://www.fda.gov/media/182088/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Memo dated 19 August 2024; read in full (pdftotext). Free base and acetate are distinct substances; UNII Y9M3S784Z6, CAS 170851-70-4, C38H49N9O5, 711.9 g/mol; free base 'slightly soluble in water at 0.0032 mg/mL'; no USP monograph, not a component of an FDA-approved drug; certificates of analysis gave purity only, no impurities, aggregates or bacterial endotoxins. Effectiveness: no data for GHD; one POI trial (Beck 2014) negative; development 'reportedly discontinued'. Safety: no acute, repeat-dose, genotoxicity, reproductive or carcinogenicity studies; Gobburu 1999: 48 healthy men, '6 ... per group' active and 2 placebo; Beck 2014 (n = 56 ipamorelin, 58 placebo): hypokalaemia 12.5% vs 3.4%, insomnia 10.7% vs 5.2%, hyperglycaemia at discharge 14.3% vs 8.6%, SAEs 17.9% vs 15.5%, two deaths in the ipamorelin group after anastomotic leaks, 'unclear whether the deaths ... were related to ipamorelin'; FAERS to 30 September 2023: two non-serious reports; class risks of GH/IGF-1 from rhGH labels; possible reward/reinforcing effects and effects on reproduction (ghrelin data); immunogenicity concern for injected peptides. Recommendation: not to add either form."
+
+fda-pcac-2024-presentations-pm:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA PM Presentations, Pharmacy Compounding Advisory Committee meeting, 29 October 2024"
+  year: 2024
+  url: https://www.fda.gov/media/183017/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Ipamorelin slides: nominated by Wells Pharmacy Network (acetate) and LDT Health Solutions (free base); 'Nominators withdrew nominations' on 19 September 2024; FDA presented both forms anyway. Also the FDA immunogenicity talk on compounded peptides."
+
+fda-pcac-2024-minutes:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Final Summary Minutes of the Pharmacy Compounding Advisory Committee Meeting, October 29, 2024"
+  year: 2024
+  url: https://www.fda.gov/media/185412/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Question 3 (vote on both forms as a group): Yes 12, No 1, so separate votes were taken. 3b ipamorelin (free base): Yes 0, No 12, Abstain 1; 3c ipamorelin acetate: Yes 0, No 12, Abstain 1. Members voting no 'agreed that there was a lack of information supporting safety and efficacy' for GHD and postoperative ileus; one noted that frequent prescribing 'does not necessarily mean the drug is safe and effective'."
+
+fda-503b-categories-2025-03:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Bulk Drug Substances Nominated for Use in Compounding Under Section 503B of the Federal Food, Drug, and Cosmetic Act (categories 1–3), updated 21 March 2025"
+  year: 2025
+  url: https://www.fda.gov/media/94164/download
+  accessed: 2026-10-22
+  verified: url
+  note: "503B Category 2, 'Bulk Drug Substances that Raise Significant Safety Risks', lists Ipamorelin Acetate (with GHRP-2, GHRP-6 and ibutamoren mesylate). Linked from the FDA 503B bulk drug substances page (content current as of 7 January 2025)."
+
+federalregister-ipamorelin-search-2026-10-22:
+  type: dataset
+  authors: "Office of the Federal Register"
+  title: "Federal Register document search for 'ipamorelin', 22 October 2026: no proposed or final rule"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=ipamorelin
+  accessed: 2026-10-22
+  verified: url
+  note: "Run through the federalregister.gov documents API: 4 results — the FDA notice of the October 2024 PCAC meeting (2024-21241, 18 September 2024), two HISA horse-racing anti-doping notices (2022, 2023) and a 1999 tariff notice. None is a proposed or final rule on the 503A bulks list."
+
+# ---------------------------------------------------------------- trial registry
+
+ctgov-nct00672074:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT00672074 — A Phase II, Double-Blind, Placebo-Controlled, Multiple-Dose Study to Evaluate the Safety and Efficacy of Ipamorelin Compared to Placebo for the Management of Post-Operative Ileus in Patients"
+  year: 2009
+  url: https://clinicaltrials.gov/study/NCT00672074
+  accessed: 2026-10-22
+  verified: registry
+  note: "Sponsor Helsinn Therapeutics (U.S.), Inc; completed; enrolment 117; April 2008 to December 2009; 19 US sites; no results posted on the registry (published as Beck 2014)."
+
+ctgov-nct01280344:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT01280344 — Phase II Double-Blind Placebo-Controlled Dose Finding Study to Evaluate Safety/Efficacy of Ipamorelin Compared to Placebo for Recovery of Gastrointestinal Function in Patients Following Small or Large Bowel Resection w/Primary Anastomosis"
+  year: 2014
+  url: https://clinicaltrials.gov/study/NCT01280344
+  accessed: 2026-10-22
+  verified: registry
+  note: "Sponsor Helsinn Therapeutics (U.S.), Inc; completed; actual enrolment 320; randomised, quadruple-masked, three intravenous ipamorelin arms and placebo; start April 2011, primary completion June 2013, completion May 2014; 45 US sites; last update April 2017; has_results false. We found no publication in PubMed (22 October 2026)."
+
+ctgov-nct07717866:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07717866 — Trifecta Research Study: an observational study evaluating ibogaine-magnesium, 5-MeO-DMT, magnetic e-resonance therapy and physiological supplementation in Special Operations Forces combat veterans"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07717866
+  accessed: 2026-10-22
+  verified: registry
+  note: "Observational, active not recruiting, enrolment 52, sponsor Axial Therapeutic Research. 'Physiological Supplementation' is a programme of supplements 'such as' synthetic testosterone, anastrozole, gonadorelin, vitamins and amino acids, fish oil and ipamorelin, given before the other interventions. No results posted."
+
+ctgov-ipamorelin-search-2026-10-22:
+  type: dataset
+  authors: "ClinicalTrials.gov"
+  title: "ClinicalTrials.gov search, intervention 'ipamorelin', 22 October 2026"
+  year: 2026
+  url: https://clinicaltrials.gov/search?intr=ipamorelin
+  accessed: 2026-10-22
+  verified: registry
+  note: "3 records: NCT00672074 and NCT01280344 (Helsinn phase 2 trials after bowel surgery, both completed) and NCT07717866 (an observational veterans' study in which ipamorelin is one of several supplements). No recruiting or planned trial of ipamorelin."
+
+# ---------------------------------------------------------------- anti-doping
+
+wada-2015-list-en:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "The 2015 Prohibited List, International Standard (in effect 1 January 2015)"
+  year: 2014
+  url: https://www.wada-ama.org/sites/default/files/resources/files/wada-2015-prohibited-list-en.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "S2.5: 'Growth Hormone (GH) and its releasing factors including ... Growth Hormone Secretagogues (GHS), e.g. ghrelin and ghrelin mimetics, e.g. anamorelin and ipamorelin'. The 2014 List (WADA-Revised-2014-Prohibited-List-EN.PDF, checked the same day) prohibited 'Growth Hormone (GH) and its releasing factors' without naming ipamorelin."
+
+wada-2015-list-modifications:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "2015 Prohibited List: Summary of Major Modifications and Explanatory Notes"
+  year: 2014
+  url: https://www.wada-ama.org/sites/default/files/resources/files/wada-2015-prohibited-list-summary-of-modifications-en.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "S2: 'all the substances named as examples in this revised section of the 2015 Prohibited List were already considered prohibited under previous Prohibited Lists, as applicable.'"
+
+# ---------------------------------------------------------------- patient information (warning signs)
+
+nhs-high-blood-sugar:
+  type: web
+  authors: "NHS"
+  title: "High blood sugar (hyperglycaemia)"
+  year: 2026
+  url: https://www.nhs.uk/conditions/high-blood-sugar-hyperglycaemia/
+  accessed: 2026-10-22
+  verified: url
+  note: "Page last reviewed 17 March 2026. Symptoms usually come on gradually: feeling very thirsty, peeing a lot, feeling weak or tired, blurred vision, losing weight. Urgent help with nausea, vomiting or stomach pain, fast breathing or racing heartbeat, drowsiness, fruity-smelling breath or confusion."
+
+nhs-oedema:
+  type: web
+  authors: "NHS"
+  title: "Oedema (swelling)"
+  year: 2026
+  url: https://www.nhs.uk/conditions/oedema/
+  accessed: 2026-10-22
+  verified: url
+  note: "Page last reviewed 26 February 2026. Oedema is a build-up of fluid, usually in the ankles, feet or legs. Urgent help for swelling in one leg with no known cause; emergency help for swelling with shortness of breath, chest tightness or pain, coughing up blood or noticeable palpitations."

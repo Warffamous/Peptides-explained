@@ -1,0 +1,212 @@
+# Ipamorelin — locale-independent facts. Every value below is sourced; see research/ipamorelin.md.
+slug: ipamorelin
+tier: 1
+status: complete
+# experimental, not investigational. Ipamorelin did have a formal clinical programme: a phase 1
+# PK/PD study (1999) and two phase 2 trials after bowel surgery run by Helsinn (NCT00672074,
+# published as Beck 2014 with a negative result; NCT01280344, 320 patients, completed 2014, never
+# published). The FDA reports that development was discontinued, and ClinicalTrials.gov lists no
+# running or planned trial (22 October 2026). "investigational" would render "It is still being
+# tested in trials", which is false. The vocabulary has no value for "development stopped"; see
+# contract_issues in the group summary. Revisit if a new trial is registered.
+category: experimental
+class: gh-axis
+body_systems: [endocrine, gastrointestinal, metabolic]
+names:
+  common: Ipamorelin
+  inn: ipamorelin
+  other: [NNC 26-0161, ipamorelin acetate, Aib-His-D-2Nal-D-Phe-Lys-NH2]
+  brands: []
+identifiers:
+  pubchem_cid: 9831659
+  chembl: CHEMBL58547
+  cas: 170851-70-4            # free base (FDA 2024 briefing; PubChem). The acetate is a different substance to the FDA.
+  unii: Y9M3S784Z6            # free base (FDA 2024 briefing)
+molecular:
+  formula: C38H49N9O5         # free base
+  mass_da: 711.9
+  smiles: "CC(C)(C(=O)N[C@@H](CC1=CN=CN1)C(=O)N[C@H](CC2=CC3=CC=CC=C3C=C2)C(=O)N[C@H](CC4=CC=CC=C4)C(=O)N[C@@H](CCCCN)C(=O)N)N"
+  smiles_source: pubchem-ipamorelin
+sequence:
+  display: "Aib-His-D-2Nal-D-Phe-Lys-NH2"
+  residues: [Aib, His, D-2Nal, D-Phe, Lys]
+  n_terminus: H
+  c_terminus: NH2
+  modifications:
+    - { position: 1, label: "Aib (2-aminoisobutyric acid), a non-coded amino acid" }
+    - { position: 3, label: "D-2Nal: D-3-(2-naphthyl)alanine, a non-coded, mirror-image amino acid" }
+    - { position: 4, label: "D-Phe: mirror-image (D-form) phenylalanine" }
+    - { position: 5, label: "Lys: C-terminal amide" }
+  bridges: []
+  source: pubchem-ipamorelin
+evidence:
+  human_clinical: phase-2
+  preclinical_volume: moderate
+  independence: few-groups
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json, chembl-ipamorelin] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, chembl-ipamorelin] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, chembl-ipamorelin] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, chembl-ipamorelin] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-ipamorelin-briefing, fda-pcac-2024-minutes, fda-category-2-safety-risks, fda-503b-categories-2025-03, federalregister-ipamorelin-search-2026-10-22] }
+  # Named as an example since the 2015 List; WADA states the named examples were already prohibited
+  # under earlier lists ('GH and its releasing factors'), so no 'since' date is given.
+  - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2015-list-en, wada-2015-list-modifications] }
+studies:
+  # --- discovery and pharmacology: the originating group (Novo Nordisk, Måløv)
+  # Rat pituitary cells (in vitro), anaesthetised rats and conscious pigs: mixed species. All authors
+  # Novo Nordisk; no funding statement in the abstract, so industry by affiliation.
+  - id: raun-1998-selectivity
+    source: raun-1998-ipamorelin
+    year: 1998
+    species: mixed
+    n: null
+    design: animal
+    funding: industry
+    group: originating
+    blinded: null
+    controlled: true
+  - id: johansen-1998-rat-pk
+    source: johansen-1998-ipamorelin-pk
+    year: 1998
+    species: rat
+    n: null
+    design: pk
+    funding: industry
+    group: originating
+    blinded: null
+    controlled: false
+  # Novo Nordisk first author with Aarhus co-authors; PubMed: Research Support, Non-U.S. Gov't.
+  - id: johansen-1999-bone-growth
+    source: johansen-1999-ipamorelin-bone
+    year: 1999
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Göteborg and Cambridge with a Novo Nordisk co-author (Ahnfelt-Rønne I; Novo Nordisk affiliation on PMID 11322495), so mixed.
+  - id: svensson-2000-bone-mineral
+    source: svensson-2000-ipamorelin-bone
+    year: 2000
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: mixed
+    blinded: null
+    controlled: true
+  # --- independent academic groups
+  - id: lall-2001-body-fat
+    source: lall-2001-ghs-adiposity
+    year: 2001
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Pancreas fragments from rats, incubated in a dish: in-vitro.
+  - id: adeghate-2004-insulin
+    source: adeghate-2004-ipamorelin-insulin
+    year: 2004
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # --- the gut programme (University of Oklahoma; compound from Helsinn, the later developer).
+  # 'independent' is relative to the originating group (Novo Nordisk), not to commercial interest.
+  - id: venkova-2009-ileus-rats
+    source: venkova-2009-ipamorelin-ileus
+    year: 2009
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Helsinn supplied the compound and a Helsinn employee is a co-author (PMC full text): mixed funding.
+  - id: greenwood-2012-gastric-emptying
+    source: greenwood-2012-ipamorelin-gastric
+    year: 2012
+    species: rat
+    n: null
+    design: animal
+    funding: mixed
+    group: independent
+    blinded: null
+    controlled: true
+  # --- humans
+  # Abstract: eight healthy men at each of five dose levels; FDA 2024 briefing: five groups of 6 on
+  # ipamorelin + 2 on placebo (= 40), but "Forty-eight subjects were enrolled". n = 40 studied per the
+  # described design; the 48 is flagged for the medical reviewer (research/ipamorelin.md). SUNY Buffalo
+  # with Novo Nordisk pharmacokinetics co-authors, so group mixed; no funding statement seen (paywalled).
+  # PubMed publication types: Clinical Trial; Randomized Controlled Trial (fact-check 22 October 2026).
+  - id: gobburu-1999-healthy-men
+    source: gobburu-1999-ipamorelin-pkpd
+    year: 1999
+    species: human
+    n: 40
+    design: phase-1
+    funding: undisclosed
+    group: mixed
+    blinded: null
+    controlled: true
+  # n = 114 randomised and treated (safety and modified intention-to-treat); 117 enrolled.
+  - id: beck-2014-ileus-trial
+    source: beck-2014-ipamorelin-ileus
+    year: 2014
+    species: human
+    n: 114
+    design: phase-2
+    funding: industry
+    group: independent
+    blinded: true
+    controlled: true
+  # Completed 2014, 320 enrolled, no results posted or published (registry only). Listed so the
+  # table shows the unpublished trial; it does not count towards the human_clinical grade.
+  - id: nct01280344-unpublished
+    source: ctgov-nct01280344
+    year: 2014
+    species: human
+    n: 320
+    design: phase-2
+    funding: industry
+    group: independent
+    blinded: true
+    controlled: true
+  # Anti-doping excretion study: one volunteer per peptide, nasal spray, urine for 2 days.
+  - id: semenistaya-2015-urine
+    source: semenistaya-2015-ghrp-nasal
+    year: 2015
+    species: human
+    n: 1
+    design: pk
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  # --- products: forensic analysis of seized material (Danish customs)
+  - id: gajda-2019-seized-powders
+    source: gajda-2019-glycine-ghs
+    year: 2019
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: [cjc-1295, tesamorelin]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

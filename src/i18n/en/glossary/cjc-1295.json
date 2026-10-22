@@ -1,0 +1,65 @@
+{
+  "drug-affinity-complex": {
+    "term": "drug affinity complex",
+    "aliases": ["DAC", "with DAC", "Drug Affinity Complex"],
+    "definition": "A chemical hook added to a peptide so that it bonds to albumin, a protein in the blood. It was designed to keep the peptide in the blood for days.",
+    "category": "chemistry",
+    "see_also": ["maleimide", "albumin-binding", "half-life"]
+  },
+  "maleimide": {
+    "term": "maleimide",
+    "aliases": ["maleimide group", "maleimido group", "maleimidopropionic acid"],
+    "definition": "A small, reactive ring of atoms. It forms a lasting bond with a sulfur group on proteins such as albumin.",
+    "category": "chemistry",
+    "see_also": ["covalent-bond", "drug-affinity-complex"]
+  },
+  "covalent-bond": {
+    "term": "covalent bond",
+    "aliases": ["covalent bonds", "covalently", "covalent"],
+    "definition": "A strong chemical bond in which two atoms share electrons. Unlike loose binding, it does not simply let go again.",
+    "category": "chemistry",
+    "see_also": ["maleimide"]
+  },
+  "mod-grf": {
+    "term": "Mod GRF (1-29)",
+    "aliases": ["Mod GRF", "mod-GRF", "modified GRF (1-29)", "modified GRF 1-29", "CJC-1295 without DAC", "CJC-1295 no DAC"],
+    "definition": "A lab-made peptide of 29 amino acids, based on the first part of the hormone GHRH. It is the CJC-1295 chain without the drug affinity complex, and no study in people has been published.",
+    "category": "chemistry",
+    "see_also": ["drug-affinity-complex", "ghrh"]
+  },
+  "trough-level": {
+    "term": "trough level",
+    "aliases": ["trough levels", "trough", "troughs", "low points between pulses"],
+    "definition": "The lowest level of a hormone or medicine in the blood, between its peaks.",
+    "category": "pharmacology",
+    "see_also": ["pulsatile-secretion"]
+  },
+  "hyperplasia": {
+    "term": "hyperplasia",
+    "aliases": ["somatotroph hyperplasia", "pituitary hyperplasia"],
+    "definition": "Growth of a tissue because its cells multiply. It is not cancer, but it can make an organ larger than normal.",
+    "category": "biology",
+    "see_also": ["somatotroph", "pituitary-gland"]
+  },
+  "comet-assay": {
+    "term": "comet assay",
+    "aliases": ["comet test"],
+    "definition": "A lab test for broken DNA in single cells. Under the microscope, damaged DNA trails behind the cell like the tail of a comet.",
+    "category": "biology",
+    "see_also": ["genotoxicity"]
+  },
+  "flushing": {
+    "term": "flushing",
+    "aliases": ["vasodilatory reaction", "vasodilatory reactions", "systemic vasodilatory reaction"],
+    "definition": "Sudden redness and warmth of the face, neck or chest, because small blood vessels in the skin widen. It can come with a short drop in blood pressure.",
+    "category": "safety",
+    "see_also": ["hypotension"]
+  },
+  "trifluoroacetate-salt": {
+    "term": "trifluoroacetate salt",
+    "aliases": ["TFA salt", "TFA", "trifluoroacetate"],
+    "definition": "A salt form of a peptide made with trifluoroacetic acid, often left over from lab synthesis. It is a different substance from the free base or the acetate salt.",
+    "category": "chemistry",
+    "see_also": ["free-base-and-salt"]
+  }
+}

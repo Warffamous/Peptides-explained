@@ -1,0 +1,292 @@
+# Sources for the CJC-1295 compound page (group cjc-1295), written 22 October 2026.
+# Every scholarly entry was checked against its PubMed record (NCBI E-utilities esummary, 22 October
+# 2026): authors, title, journal, year, volume, pages, DOI, PMID and PMCID copied from the record.
+# Every regulator, registry, database and law URL was fetched on 22 October 2026 and contains what it
+# is cited for (see research/cjc-1295.md, "Verification log").
+# Shared ids reused, not re-registered here: teichman-2006-cjc1295, medlineplus-igf1 (safety-b.yaml);
+# jette-2005-cjc1295-albumin, veldhuis-2001-gh-pulsatility, desousa-2025-gh-feedback,
+# renehan-2004-igf1-cancer (basics.yaml); dailymed-egrifta-sv-label (safety-a.yaml);
+# gajda-2019-glycine-ghs, wada-2015-list-en, wada-2015-list-modifications, nhs-oedema,
+# nhs-high-blood-sugar (ipamorelin.yaml); ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46,
+# wada-2026-list-en, wada-2027-list-en, fda-category-2-safety-risks, fda-503a-categories-2026-05,
+# fda-503a-bulks-page, fda-pcac-2026-briefing-intro (bpc-157.yaml); de-antidopg-anlage, de-antidopg-2
+# (tb-500.yaml); de-dmmv-2023, uk-mda-1971-sch-2, usc-21-353a (legal-b.yaml); nl-gmw-art-40-handelsvergunning
+# (guides.yaml); ema-medicines-search, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet,
+# be-medicines-law-1964, lareb-home (shared.yaml).
+
+# ---------------------------------------------------------------- identity, chemistry, databases
+
+pubchem-cjc-1295:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 91971820 (CJC-1295)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/91971820
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST, 22 October 2026: molecular formula C165H269N47O46, molecular weight 3647.2, isomeric SMILES (copied to the data file). Synonyms: CJC 1295, CJC-1295, CJC1295, 'GRF 1-29 (CJC1295)', CAS 446262-90-4, UNII-62RC32V9N7, and the systematic name L-tyrosyl-D-alanyl-L-alpha-aspartyl-...-L-arginyl-N6-[3-(2,5-dihydro-2,5-dioxo-1H-pyrrol-1-yl)-1-oxopropyl]-L-lysinamide. Read from the SMILES: Tyr1, D-Ala2, Gln8, Ala15, Leu27, Arg29, then Lys30 carrying the maleimidopropionyl group on its side-chain nitrogen, C-terminal amide."
+
+pubchem-cjc-1295-without-dac:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 56841945 (tetrasubstituted GRF(1-29) amide, the peptide sold as 'CJC-1295 without DAC')"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/56841945
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST, 22 October 2026: C152H252N44O42, molecular weight 3367.9; systematic synonym L-tyrosyl-D-alanyl-L-alpha-aspartyl-L-alanyl-L-isoleucyl-L-phenylalanyl-L-threonyl-L-glutaminyl-L-seryl-L-tyrosyl-L-arginyl-L-lysyl-L-valyl-L-leucyl-L-alanyl-L-glutaminyl-L-leucyl-L-seryl-L-alanyl-L-arginyl-L-lysyl-L-leucyl-L-leucyl-L-glutaminyl-L-alpha-aspartyl-L-isoleucyl-L-leucyl-L-seryl-L-argininamide (29 residues, no maleimide). The depositor-supplied synonyms of this one record contradict each other: 'CJC 1295 with DAC', 'DAC:GRF acetate', 'CJC-1295-no DAC acetate' and 'CJC-1295 trifluoroacetate'. A second record with the same formula and no stereochemistry (CID 91976842) lists both 'CJC1295 Without DAC' and 'CJC1295 With DAC'. Cited for the sequence and as an example of the naming confusion."
+
+gsrs-cjc-1295:
+  type: dataset
+  authors: "U.S. Food and Drug Administration / NCATS"
+  title: "Global Substance Registration System: CJC-1295 (UNII 62RC32V9N7)"
+  container: "GSRS"
+  year: 2026
+  url: https://gsrs.ncats.nih.gov/ginas/app/api/v1/substances(62RC32V9N7)?view=full
+  accessed: 2026-10-22
+  verified: registry
+  note: "Protein record, one 30-residue subunit YaDAIFTQSYRKVLAQLSARKLLQDILSRK (lower-case a = D-alanine); structural modification at residue 30 (lysine): N-(5,6-diamino-6-oxohexyl)-2,5-dihydro-2,5-dioxo-1H-pyrrole-1-propanamide, that is the maleimidopropionyl lysinamide. Names: CJC-1295, CJC1295 and the systematic name ending in N6-[3-(2,5-dihydro-2,5-dioxo-1H-pyrrol-1-yl)-1-oxopropyl]-L-lysinamide. Codes: CAS 446262-90-4, PubChem 91971820, RxCUI 1805005. The FDA briefing of November 2024 notes that this UNII record's name and structure were inconsistent for the free base; on 22 October 2026 the structure shown is the DAC version."
+
+# ---------------------------------------------------------------- developer studies (ConjuChem and collaborators)
+
+alba-2006-cjc1295-ghrh-knockout:
+  type: article
+  authors: "Alba M, Fintini D, Sagazio A, Lawrence B, Castaigne JP, Frohman LA, Salvatori R"
+  title: "Once-daily administration of CJC-1295, a long-acting growth hormone-releasing hormone (GHRH) analog, normalizes growth in the GHRH knockout mouse"
+  container: "American Journal of Physiology. Endocrinology and Metabolism"
+  year: 2006
+  volume: "291"
+  pages: "E1290-E1294"
+  doi: 10.1152/ajpendo.00201.2006
+  pmid: "16822960"
+  verified: pubmed
+  note: "Johns Hopkins with two ConjuChem authors (Lawrence B, Castaigne JP) and Frohman LA. One-week-old GHRH-knockout mice treated for 5 weeks every 24, 48 or 72 hours; daily treatment gave normal body weight and length; increased pituitary GH mRNA and somatotroph proliferation. The abstract gives no animal numbers. Funding not stated in the PubMed record."
+
+ionescu-2006-cjc1295-pulsatility:
+  type: trial
+  authors: "Ionescu M, Frohman LA"
+  title: "Pulsatile secretion of growth hormone (GH) persists during continuous stimulation by CJC-1295, a long-acting GH-releasing hormone analog"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2006
+  volume: "91"
+  pages: "4792-4797"
+  doi: 10.1210/jc.2006-1702
+  pmid: "17018654"
+  verified: pubmed
+  note: "University of Illinois at Chicago. Healthy men aged 20-40; overnight GH sampling every 20 minutes before and one week after a single injection (the FDA briefing gives 12 men, 4 and 8 at two doses). Pulse frequency and size unchanged; trough GH up 7.5-fold (P < 0.0001), mean GH up 46%, IGF-1 up 45%; no difference between the two doses. PubMed publication types: Clinical Trial; Research Support, N.I.H., Extramural; Research Support, Non-U.S. Gov't. The drug came from ConjuChem (stated in Sackmann-Sala 2009, which used samples from these men)."
+
+sackmann-sala-2009-cjc1295-proteome:
+  type: article
+  authors: "Sackmann-Sala L, Ding J, Frohman LA, Kopchick JJ"
+  title: "Activation of the GH/IGF-1 axis by CJC-1295, a long-acting GHRH analog, results in serum protein profile changes in normal adult subjects"
+  container: "Growth Hormone & IGF Research"
+  year: 2009
+  volume: "19"
+  pages: "471-477"
+  doi: 10.1016/j.ghir.2009.03.001
+  pmid: "19386527"
+  pmcid: PMC2787983
+  verified: pubmed
+  note: "Sera from 11 healthy young men before and one week after a single injection of CJC-1295 (ConjuChem Inc., Montreal), sampled as in Ionescu 2006; five serum protein spots changed (two down, three up). Full text (PMC): supported in part by the State of Ohio, WADA, Ohio University and ConjuChem Inc.; one author also NIH-funded. Adverse events not reported."
+
+# ---------------------------------------------------------------- independent laboratory studies
+
+gautam-2009-m3-cjc1295:
+  type: article
+  authors: "Gautam D, Jeon J, Starost MF, Han SJ, Hamdan FF, Cui Y, Parlow AF, Gavrilova O, Szalayova I, Mezey E, Wess J"
+  title: "Neuronal M3 muscarinic acetylcholine receptors are essential for somatotroph proliferation and normal somatic growth"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2009
+  volume: "106"
+  pages: "6398-6403"
+  doi: 10.1073/pnas.0900977106
+  pmid: "19332789"
+  pmcid: PMC2662962
+  verified: pubmed
+  note: "NIH intramural (NIDDK, NIDCR). Dwarf mice lacking brain M3 receptors given CJC-1295 under the skin daily for 8 weeks from age 1 week (n = 5-8 per group): normal growth, pituitary size, serum GH and IGF-1 restored; CJC-1295 also raised body weight in control mice. Full text: 'CJC-1295 was a gift from ConjuChem (Montreal)'; no ConjuChem authors; authors declare no conflict of interest."
+
+ben-shlomo-2020-cjc1295-pituitary:
+  type: article
+  authors: "Ben-Shlomo A, Deng N, Ding E, Yamamoto M, Mamelak A, Chesnokova V, Labadzhyan A, Melmed S"
+  title: "DNA damage and growth hormone hypersecretion in pituitary somatotroph adenomas"
+  container: "The Journal of Clinical Investigation"
+  year: 2020
+  volume: "130"
+  pages: "5738-5755"
+  doi: 10.1172/JCI138540
+  pmid: "32673291"
+  pmcid: PMC7598090
+  verified: pubmed
+  note: "Cedars-Sinai. Full text (PMC): CJC-1295 'synthesized by ANASpec on the basis of the published molecular structure' (the DAC version, t1/2 8 days cited). In primary mouse pituitary cultures it raised cAMP and GH, and CJC-1295 alone (and more so with rolipram) raised DNA-damage markers (comet assay, gammaH2AX). In vivo: 4-month-old male mice given PBS (n = 15) or CJC-1295 (n = 16) under the skin three times a week for 8 weeks: pituitaries 47% heavier (P <= 0.001; weighed in 9 PBS and 10 CJC-1295 mice), serum IGF-1 higher (P <= 0.05; 15 vs 16), serum GH not different, body weight and length similar, more pituitary DNA damage (comet assay in 3 + 3 mice, scored by a blinded observer; gammaH2AX by Western blot in 5 + 8). Re-read in PMC by the fact-checker on 22 October 2026. 'No side effects were observed.' Results text: 'GH is the dominant facilitator of liver IGF1 production', and IGF-1 'has a longer circulating half-life and a more stable secretory pattern than does GH'. Funding: NIH grant DK113998 and the Doris Factor Molecular Endocrinology Laboratory; no conflicts declared."
+
+# ---------------------------------------------------------------- product analyses and detection
+
+henninge-2010-cjc1295-seized:
+  type: article
+  authors: "Henninge J, Pepaj M, Hullstein I, Hemmersbach P"
+  title: "Identification of CJC-1295, a growth-hormone-releasing peptide, in an unknown pharmaceutical preparation"
+  container: "Drug Testing and Analysis"
+  year: 2010
+  volume: "2"
+  pages: "647-650"
+  doi: 10.1002/dta.233
+  pmid: "21204297"
+  verified: pubmed
+  note: "Norwegian Doping Control Laboratory, Oslo University Hospital. A preparation seized by Norwegian police and customs in 2009 contained 'a 29 amino acid peptide with a C-terminal amide function' consistent with a peptide 'currently marketed under the name CJC-1295', that is the version without the DAC lysine. The FDA briefing (2024) gives its formula C152H252N44O42 and calls it the first reference in the literature to CJC-1295 without DAC. Only the abstract was read."
+
+memdouh-2021-ghrh-analog-detection:
+  type: article
+  authors: "Memdouh S, Gavrilović I, Ng K, Cowan D, Abbate V"
+  title: "Advances in the detection of growth hormone releasing hormone synthetic analogs"
+  container: "Drug Testing and Analysis"
+  year: 2021
+  volume: "13"
+  pages: "1871-1887"
+  doi: 10.1002/dta.3183
+  pmid: "34665524"
+  verified: pubmed
+  note: "King's College London. In vitro metabolism and urine detection of 'sermorelin, tesamorelin, CJC-1295, and CJC-1295 with drug affinity complex': the abstract uses 'CJC-1295' for the version without DAC. Cited as an example of the two naming conventions in the scientific literature."
+
+timms-2019-cjc1295-equine:
+  type: article
+  authors: "Timms M, Ganio K, Forbes G, Bailey S, Steel R"
+  title: "An immuno polymerase chain reaction screen for the detection of CJC-1295 and other growth-hormone-releasing hormone analogs in equine plasma"
+  container: "Drug Testing and Analysis"
+  year: 2019
+  volume: "11"
+  pages: "804-812"
+  doi: 10.1002/dta.2554
+  pmid: "30489688"
+  verified: pubmed
+  note: "Racing Analytical Services and University of Melbourne. Abstract: CJC-1295 is 'a 30 amino acid peptide-based drug' with 'a reactive maleimidopropionic acid group that covalently links the peptide to free thiols on the surface of plasma proteins'; once conjugated it remains active far longer and becomes 'a macromolecular protein with an undefined molecular weight'. Cited for the chemistry of the bond (to plasma proteins with free thiols, not only albumin)."
+
+# ---------------------------------------------------------------- growth hormone biology and the risks of excess
+
+mayo-2000-ghrh-receptor:
+  type: review
+  authors: "Mayo KE, Miller T, DeAlmeida V, Godfrey P, Zheng J, Cunha SR"
+  title: "Regulation of the pituitary somatotroph cell by GHRH and its receptor"
+  container: "Recent Progress in Hormone Research"
+  year: 2000
+  volume: "55"
+  pages: "237-266"
+  pmid: "11036940"
+  verified: pubmed
+  note: "Abstract: GHRH acts on pituitary somatotroph cells to stimulate their proliferation and their GH production and secretion, through a G protein-coupled receptor expressed mainly in the pituitary; the receptor 'signals predominantly through cAMP-dependent pathways'; transgenic mice overexpressing GHRH show somatotroph hyperplasia. No DOI in PubMed."
+
+mayo-1988-ghrf-transgenic-hyperplasia:
+  type: article
+  authors: "Mayo KE, Hammer RE, Swanson LW, Brinster RL, Rosenfeld MG, Evans RM"
+  title: "Dramatic pituitary hyperplasia in transgenic mice expressing a human growth hormone-releasing factor gene"
+  container: "Molecular Endocrinology"
+  year: 1988
+  volume: "2"
+  pages: "606-612"
+  doi: 10.1210/mend-2-7-606
+  pmid: "3137455"
+  verified: pubmed
+  note: "Mice making human GRF (GHRH) chronically grew abnormally large through GH hypersecretion and developed 'enormous pituitary glands', largely from selective proliferation (hyperplasia) of the GH-producing somatotrophs."
+
+thorner-1982-ghrf-tumour-acromegaly:
+  type: article
+  authors: "Thorner MO, Perryman RL, Cronin MJ, Rogol AD, Draznin M, Johanson A, Vale W, Horvath E, Kovacs K"
+  title: "Somatotroph hyperplasia. Successful treatment of acromegaly by removal of a pancreatic islet tumor secreting a growth hormone-releasing factor"
+  container: "The Journal of Clinical Investigation"
+  year: 1982
+  volume: "70"
+  pages: "965-977"
+  doi: 10.1172/jci110708
+  pmid: "6290540"
+  pmcid: PMC370309
+  verified: pubmed
+  note: "Case report: a 21-year-old woman with acromegaly had somatotroph hyperplasia, not an adenoma, caused by a pancreatic tumour secreting a GH-releasing factor; after the tumour was removed, serum GH fell from 70 to 3 ng/ml within 2 hours and somatomedin C (IGF-1) became normal by 6 weeks. Human evidence that chronic GHRH excess enlarges the pituitary and causes acromegaly."
+
+moller-2009-gh-metabolism:
+  type: review
+  authors: "Møller N, Jørgensen JO"
+  title: "Effects of growth hormone on glucose, lipid, and protein metabolism in human subjects"
+  container: "Endocrine Reviews"
+  year: 2009
+  volume: "30"
+  pages: "152-177"
+  doi: 10.1210/er.2008-0027
+  pmid: "19240267"
+  verified: pubmed
+  note: "Abstract (PubMed, 22 October 2026): the most prominent metabolic effect of GH is a marked increase in lipolysis and free fatty acid levels; GH 'antagonizes the hepatic and peripheral effects of insulin on glucose metabolism via mechanisms involving the concomitant increase in FFA flux and uptake'; patients with acromegaly are consistently insulin resistant and become more sensitive after treatment."
+
+nhs-carpal-tunnel-syndrome:
+  type: web
+  authors: "NHS"
+  title: "Carpal tunnel syndrome"
+  year: 2024
+  url: https://www.nhs.uk/conditions/carpal-tunnel-syndrome/
+  accessed: 2026-10-22
+  verified: url
+  note: "Page last reviewed 17 April 2024. 'Carpal tunnel syndrome (CTS) is pressure on a nerve in your wrist. It causes tingling, numbness and pain in your hand and fingers.' Symptoms include numb hands, pins and needles and a weak thumb, usually worse at night."
+
+# ---------------------------------------------------------------- regulators: United States
+
+fda-pcac-2024-cjc1295-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for CJC-1295-Related Bulk Drug Substances (CJC-1295 (free base), CJC-1295 acetate, CJC-1295 with drug affinity complex (DAC) (free base), CJC-1295 DAC acetate and CJC-1295 DAC trifluoroacetate), Pharmacy Compounding Advisory Committee meeting, 4 December 2024"
+  year: 2024
+  url: https://www.fda.gov/media/183819/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Evaluation memo dated 15 November 2024, read in full (pdftotext). Two active moieties and five substances, 'at least nine different names'; inconsistent naming 'represents a safety risk for patients as they may be dosed with a different BDS than the physician ordered'. CJC-1295 (free base) = the 29-residue Tyr-D-Ala-...-Arg-NH2 (C152H252N44O42, 3367.95 g/mol); CJC-1295 DAC = the same with an MPA-Lys unit at the C terminus (C165H269N47O46). Both withdrawn nominations were inconsistent; CoAs found gave purity only, no aggregates or endotoxin. Pharmacology studies found only for the DAC version; none, and no PK, toxicity or human data, for the free base. Albumin-bound CJC-1295 DAC 90.3% intact after DPP-IV, GHRH(1-29) none; FDA notes the substitutions (D-Ala2, Gln8, Leu27) may also add stability and that direct evidence that DAC extends the half-life is lacking; DAC 'could also favor the interaction ... with thiol groups in cysteine residues of proteins other than albumin'. Developer toxicology known only from abstracts: injection-site haemorrhage, inflammation and necrosis in rats and dogs; 5-16% lower red-cell values; higher cholesterol; vomiting in dogs; a rat developmental study without malformations; a 6-month monkey immunotoxicity abstract judged vague. Ben-Shlomo 2020 genotoxic signals in mouse pituitary. No carcinogenicity studies; GHRH-transgenic mice develop pituitary hyperplasia and tumours. 'ConjuChem Biotechnology withdrew CJC-1295 DAC from clinical trials in 2006 after the death of a subject involved in a phase 2 trial'; from 'anecdotal reports' (aidsmap, NATAP): 192 enrolled; two hours after an 11th weekly dose one subject had chest discomfort, an ECG confirmed acute myocardial infarction and he died about an hour later; the attending physician's 'most likely explanation' was asymptomatic coronary artery disease with plaque rupture; data never published. Human studies: 63 healthy adults in three studies (87% men; 73% one injection). Teichman study 1: adverse events in 33 of 35 on CJC-1295 vs 2 of 7 on placebo; injection-site reactions about 70%; transient urticarial rashes almost 30%; headache 63% vs 14%; diarrhoea 43% (active only); systemic vasodilatory reactions (flushing, warmth, transient hypotension) 30% (active only); IGF-1 above the age- and sex-adjusted range only at the highest single dose. Study 2: 24 subjects (one placebo per group of six); flushing 40-100%; one subject transient involuntary leg contractions and loss of coordination; two transient dizziness and hypotension; half-life 5.4-9.2 days. Ionescu 2006: 12 men; dose-dependent increase in heart rate; IGF-1 above normal in none. Antibodies: 'no significant antibody formation' per the authors, assay not described; 86% homology with endogenous GHRH raises cross-reactivity concern. FAERS to 10 June 2024: two reports, none assessable. Risks in all rhGH labels: neoplasm, glucose intolerance and diabetes, intracranial hypertension, fluid retention, hypoadrenalism, hypothyroidism, pancreatitis, and in children slipped capital femoral epiphysis and scoliosis. No approved product containing any form in Australia, Belgium, Canada, Denmark, France, Germany, Ireland, Italy, Japan, Norway, Spain or the UK, none authorised by EMA, not in the European or Japanese pharmacopoeias. Marketed online for research use as powders and as blends with ipamorelin, GHRP-2, GHRP-6, hexarelin, tesamorelin and fragment 176-191, mostly without saying which form. No effectiveness data for growth hormone deficiency. Proposal: none of the five on the 503A list."
+
+fda-pcac-2024-12-minutes:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Final Summary Minutes of the Pharmacy Compounding Advisory Committee Meeting, December 4, 2024"
+  year: 2025
+  url: https://www.fda.gov/media/185642/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Minutes approved on 21 February 2025. Use evaluated for the five CJC-1295-related substances: growth hormone deficiency. Question 1 (single vote for the group): Yes 12, No 1, so separate votes were taken. CJC-1295 (free base): Yes 0, No 13, Abstain 0 ('The Committee unanimously agreed that CJC-1295 (free base) should not be included on the 503A Bulks List. One member commented on the lack of evidence for effectiveness'); CJC-1295 acetate: Yes 1, No 12; CJC-1295 DAC (free base): Yes 0, No 13; CJC-1295 DAC acetate: Yes 0, No 13; CJC-1295 DAC trifluoroacetate: Yes 0, No 13."
+
+fda-pcac-2024-12-meeting:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "December 4, 2024: Meeting of the Pharmacy Compounding Advisory Committee (updated meeting time and public participation information)"
+  year: 2025
+  url: https://www.fda.gov/advisory-committees/advisory-committee-calendar/updated-meeting-time-and-public-participation-information-december-4-2024-meeting-pharmacy
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 28 February 2025. Lists the briefing documents (introduction; CJC-1295-, AOD-9604- and thymosin alpha-1-related substances), presentations, final questions, agenda, roster, transcripts and minutes of the 4 December 2024 meeting. The introduction (media/183583) states that both CJC-1295 nominations were withdrawn and that FDA elected to proceed with the presentation."
+
+federalregister-cjc1295-search-2026-10-22:
+  type: dataset
+  authors: "Office of the Federal Register"
+  title: "Federal Register document search for 'CJC-1295', 22 October 2026: no proposed or final rule"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=%22CJC-1295%22
+  accessed: 2026-10-22
+  verified: url
+  note: "Run through the federalregister.gov documents API: 1 result, the FDA notice of the 4 December 2024 PCAC meeting (2024-24828, 25 October 2024). A search for 'CJC' limited to FDA documents gives the same single notice. No proposed or final rule on CJC-1295."
+
+# ---------------------------------------------------------------- trial registries
+
+ctgov-nct00267527:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT00267527: A multicenter, randomized, placebo-controlled, double-blind, phase 2 study to evaluate the efficacy and safety of CJC 1295 administered for 12 weeks in HIV infected patients with HIV associated visceral obesity"
+  year: 2006
+  url: https://clinicaltrials.gov/study/NCT00267527
+  accessed: 2026-10-22
+  verified: registry
+  note: "Read through API v2 on 22 October 2026. Sponsor ConjuChem (industry); study ID GH100-013; start December 2005; status Terminated; completion September 2006; last update 12 October 2006; enrolment 120 (type not stated); randomised, double-masked, parallel; low dose, high dose or placebo for 12 weeks plus 6 weeks of follow-up; adults 18-65 with BMI over 24 and under 30, no diabetes. No reason for stopping is given ('whyStopped' absent) and no results are posted. It is the only ClinicalTrials.gov record for CJC-1295 (search of 22 October 2026)."
+
+euctr-2005-003797-25:
+  type: registry
+  authors: "EU Clinical Trials Register"
+  title: "EudraCT 2005-003797-25: A multicenter, randomized, placebo-controlled, double-blind phase 2 study to evaluate the efficacy and safety of CJC-1295 (Germany)"
+  year: 2005
+  url: https://www.clinicaltrialsregister.eu/ctr-search/trial/2005-003797-25/DE
+  accessed: 2026-10-22
+  verified: registry
+  note: "Sponsor ConjuChem, Inc.; member state Germany (BfArM); first entered 7 September 2005; product CJC-1295, active substance 'CJC-1295 TFA salt', powder for solution for injection, subcutaneous use; trial status 'Prematurely Ended'; no reason given. The German arm of the trial registered as NCT00267527."

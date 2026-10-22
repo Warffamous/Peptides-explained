@@ -1,0 +1,194 @@
+# CJC-1295: locale-independent facts. Every value below is sourced; see research/cjc-1295.md.
+#
+# Which molecule this page grades. "CJC-1295" was the developer's (ConjuChem, Montreal) name for the
+# tetrasubstituted GHRH(1-29) with an extra C-terminal lysine carrying a maleimidopropionyl group
+# (the "drug affinity complex", DAC). That is the molecule in PubChem CID 91971820, in the GSRS record
+# (UNII 62RC32V9N7), in every human study and in the WADA List. The 29-residue peptide without the
+# DAC lysine (sold as "CJC-1295 without DAC", "Mod GRF (1-29)", and called "CJC-1295 (free base)" by
+# the FDA in 2024) is a different active moiety with no published pharmacology, PK or human data
+# (fda-pcac-2024-cjc1295-briefing). It is described in the prose, not graded here, and deliberately
+# not listed in names.other.
+slug: cjc-1295
+tier: 1
+status: complete
+# experimental, not investigational: the only clinical programme (ConjuChem, phase 1 2004-2005,
+# phase 2 2005-2006) was stopped in 2006 and nothing has been registered since (ClinicalTrials.gov,
+# 22 October 2026: one record, NCT00267527, terminated). Same reasoning as bpc-157.
+category: experimental
+class: gh-axis
+body_systems: [endocrine, metabolic]
+names:
+  common: CJC-1295
+  full: "CJC-1295 with drug affinity complex (DAC)"
+  other: [CJC-1295 DAC, "DAC:GRF", CJC1295]
+  brands: []
+identifiers:
+  pubchem_cid: 91971820
+  cas: 446262-90-4
+  unii: 62RC32V9N7
+molecular:
+  formula: C165H269N47O46
+  mass_da: 3647.2           # PubChem computed; the FDA briefing gives 3647.95 g/mol
+  smiles: "CC[C@H](C)[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CO)C(=O)N[C@@H](CC2=CC=C(C=C2)O)C(=O)N[C@@H](CCCNC(=N)N)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CO)C(=O)N[C@@H](C)C(=O)N[C@@H](CCCNC(=N)N)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@@H]([C@@H](C)CC)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=N)N)C(=O)N[C@@H](CCCCNC(=O)CCN3C(=O)C=CC3=O)C(=O)N)NC(=O)[C@H](C)NC(=O)[C@H](CC(=O)O)NC(=O)[C@@H](C)NC(=O)[C@H](CC4=CC=C(C=C4)O)N"
+  smiles_source: pubchem-cjc-1295
+# 30 residues: human GHRH(1-29) with four substitutions (positions 2, 8, 15, 27) plus Lys30 carrying
+# the DAC. Native residues at those positions (L-Ala, L-Asn, Gly, L-Met) from the FDA briefing.
+sequence:
+  display: "Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-Lys*-NH2 (*maleimidopropionyl on Lys30: the DAC)"
+  residues: [Tyr, D-Ala, Asp, Ala, Ile, Phe, Thr, Gln, Ser, Tyr, Arg, Lys, Val, Leu, Ala, Gln, Leu, Ser, Ala, Arg, Lys, Leu, Leu, Gln, Asp, Ile, Leu, Ser, Arg, Lys]
+  n_terminus: H
+  c_terminus: NH2
+  modifications:
+    - { position: 2, label: "D-Ala: replaces L-Ala of human GHRH; D-alanine at this position resists cleavage by DPP-4" }
+    - { position: 8, label: "Gln: replaces Asn of human GHRH, to avoid asparagine rearrangement or conversion to aspartic acid" }
+    - { position: 15, label: "Ala: replaces Gly of human GHRH" }
+    - { position: 27, label: "Leu: replaces Met of human GHRH, to prevent methionine oxidation" }
+    - { position: 30, label: "Lys (added): its side-chain nitrogen carries a 3-maleimidopropionyl group, the drug affinity complex (DAC), which bonds covalently to a free thiol on albumin (Cys34) and other plasma proteins" }
+  bridges: []
+  source: gsrs-cjc-1295
+evidence:
+  human_clinical: phase-1
+  preclinical_volume: minimal
+  independence: single-group-dominant
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json, fda-pcac-2024-cjc1295-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, fda-pcac-2024-cjc1295-briefing, de-antidopg-anlage, euctr-2005-003797-25] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2024-cjc1295-briefing] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, fda-pcac-2024-cjc1295-briefing] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-cjc1295-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, fda-503a-categories-2026-05, federalregister-cjc1295-search-2026-10-22] }
+  # Named as an example under GH releasing factors since the 2015 List; WADA said the named examples
+  # were already prohibited under earlier Lists, so the start date of the prohibition is not given.
+  - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2015-list-en, wada-2015-list-modifications] }
+studies:
+  # --- developer (ConjuChem, Montreal) and its academic collaborator (L. A. Frohman, Chicago)
+  - id: jette-2005-albumin
+    source: jette-2005-cjc1295-albumin
+    year: 2005
+    species: mixed           # rat pituitary cells in culture, and live rats
+    n: null
+    design: animal
+    funding: industry
+    group: originating
+    blinded: null
+    controlled: true
+  # Toxicology known only from four conference abstracts (Iordanova 2004, 2005, 2006; Wen 2005), as
+  # summarised by the FDA; rats, dogs and cynomolgus monkeys. The abstracts themselves could not be read.
+  - id: developer-toxicology-abstracts
+    source: fda-pcac-2024-cjc1295-briefing
+    year: 2004
+    species: mixed
+    n: null
+    design: animal
+    funding: industry
+    group: originating
+    blinded: null
+    controlled: true
+  - id: alba-2006-knockout-mice
+    source: alba-2006-cjc1295-ghrh-knockout
+    year: 2006
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Two randomised, placebo-controlled, double-blind, ascending-dose trials. n = 66 from the FDA's
+  # summary of the full paper (study 1: 35 CJC-1295 + 7 placebo; study 2: 24, one placebo per group of six).
+  - id: teichman-2006-healthy-adults
+    source: teichman-2006-cjc1295
+    year: 2006
+    species: human
+    n: 66
+    design: phase-1
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  # Academic study (Chicago) with drug from the developer; Frohman co-authored the developer's
+  # trials, so mixed. Before-and-after design in the same men, no placebo.
+  - id: ionescu-2006-pulsatility
+    source: ionescu-2006-cjc1295-pulsatility
+    year: 2006
+    species: human
+    n: 12
+    design: open-label
+    funding: mixed
+    group: mixed
+    blinded: false
+    controlled: false
+  # The developer's only trial in patients. Terminated in 2006; never published. n not reliably
+  # known: the registry says 120 (planned or actual not stated); online reports cited by the FDA say 192.
+  - id: conjuchem-2006-hiv-phase-2
+    source: ctgov-nct00267527
+    year: 2006
+    species: human
+    n: null
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: sackmann-sala-2009-serum-proteins
+    source: sackmann-sala-2009-cjc1295-proteome
+    year: 2009
+    species: human
+    n: 11
+    design: open-label
+    funding: mixed
+    group: mixed
+    blinded: false
+    controlled: false
+  # --- independent laboratories
+  # NIH intramural; CJC-1295 was a gift from the developer, no developer authors.
+  - id: gautam-2009-dwarf-mice
+    source: gautam-2009-m3-cjc1295
+    year: 2009
+    species: mouse
+    n: null
+    design: animal
+    funding: government
+    group: independent
+    blinded: null
+    controlled: true
+  # NIH grant plus an institutional laboratory fund, so mixed. Peptide made to order by a contract
+  # supplier. n = 31 mice (15 PBS, 16 CJC-1295); pituitaries weighed in 9 + 10, comet assay in 3 + 3.
+  # blinded: null (fact-check, 22 October 2026): only the comet-assay scoring was done by a blinded
+  # observer; blinding of treatment, pituitary weights and IGF-1 is not reported.
+  - id: ben-shlomo-2020-pituitary
+    source: ben-shlomo-2020-cjc1295-pituitary
+    year: 2020
+    species: mouse
+    n: 31
+    design: animal
+    funding: mixed
+    group: independent
+    blinded: null
+    controlled: true
+  # --- what products contain (forensic and anti-doping laboratories)
+  - id: henninge-2010-seized-vial
+    source: henninge-2010-cjc1295-seized
+    year: 2010
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: null
+  - id: gajda-2019-seized-powders
+    source: gajda-2019-glycine-ghs
+    year: 2019
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: [tesamorelin, ipamorelin]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

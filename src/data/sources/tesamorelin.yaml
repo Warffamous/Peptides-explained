@@ -1,0 +1,436 @@
+# Sources for compounds/tesamorelin (group: tesamorelin). Every scholarly entry was looked up in PubMed
+# on 22 October 2026 and its metadata copied from the record; every regulator, label and registry URL was
+# fetched on the accessed date. What each source is cited for is in its note and in research/tesamorelin.md.
+#
+# Reused from other groups (not re-registered here): fda-drugsatfda-egrifta (history.yaml),
+# dailymed-egrifta-sv-label (safety-a.yaml), ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46,
+# wada-2026-list-en, wada-2027-list-en (bpc-157.yaml), ecfr-21-600-3-protein, renehan-2004-igf1-cancer,
+# veldhuis-2001-gh-pulsatility, desousa-2025-gh-feedback (basics.yaml), de-amg-73, uk-hmr-2012-reg-167,
+# mhra-specials-guidance, fda-warning-letters-index (legal-b.yaml), de-antidopg-anlage (tb-500.yaml),
+# nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring (guides.yaml), nl-regeling-gnw-art-3-17,
+# be-medicines-law-1964-art-6quater (legal-a.yaml), be-medicines-law-1964, cbg-geneesmiddeleninformatiebank,
+# fda-pcac-2026-07-meeting, lareb-home (shared.yaml).
+
+# ---------------------------------------------------------------- the molecule
+
+pubchem-tesamorelin:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 16137828, Tesamorelin"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/16137828
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through PUG REST on 22 October 2026: molecular formula C221H366N72O67S, molecular weight 5136; isomeric SMILES starts with the trans-3-hexenoyl group (CC/C=C/CC(=O)N) on tyrosine and ends in a C-terminal leucine amide. Synonyms include TH9507, CAS 218949-48-5, UNII MQG94M5EEO, ATC H01AC06, Egrifta and '(3E)-hex-3-enoylsomatoliberin'."
+
+chembl-tesamorelin:
+  type: dataset
+  authors: "European Bioinformatics Institute (EMBL-EBI)"
+  title: "ChEMBL compound report card: CHEMBL1237026 (tesamorelin)"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL1237026/
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through the ChEMBL API on 22 October 2026: molecule type protein, max phase 4, first approval 2010, ATC H01AC06, research codes TH9507 and TH-9507, description '(3E)-hex-3-enoylsomatoliberin (human GHRH)'. The stored sequence is written from the C-terminus (LRARAGREQNSEGQQRSMIDQLLKRASLQGLVKRYSNTFIADAY); read from the N-terminus it is identical to human GHRH(1-44) as published by Guillemin et al. 1982."
+
+guillemin-1982-ghrh-tumour:
+  type: article
+  authors: "Guillemin R, Brazeau P, Böhlen P, Esch F, Ling N, Wehrenberg WB"
+  title: "Growth hormone-releasing factor from a human pancreatic tumor that caused acromegaly"
+  container: "Science"
+  year: 1982
+  volume: "218"
+  pages: "585-587"
+  doi: 10.1126/science.6812220
+  pmid: "6812220"
+  verified: pubmed
+  note: "Abstract: a 44-amino-acid peptide with growth-hormone-releasing activity isolated from a human pancreatic tumour that had caused acromegaly; full sequence given, ending in a C-terminal amide (Leu-NH2); the synthetic copy is fully active in vitro and in vivo. Cited for: where human GHRH(1-44) was first found and its sequence."
+
+# ---------------------------------------------------------------- cells and animals
+
+ferdinandi-2007-th9507-nonclinical:
+  type: article
+  authors: "Ferdinandi ES, Brazeau P, High K, Procter B, Fennell S, Dubreuil P"
+  title: "Non-clinical pharmacology and safety evaluation of TH9507, a human growth hormone-releasing factor analogue"
+  container: "Basic & Clinical Pharmacology & Toxicology"
+  year: 2007
+  volume: "100"
+  pages: "49-58"
+  doi: 10.1111/j.1742-7843.2007.00008.x
+  pmid: "17214611"
+  verified: pubmed
+  note: "First author at Theratechnologies (the developer). Abstract: hGRF(1-44)NH2 with a trans-3-hexenoyl group on Tyr1 resisted dipeptidyl aminopeptidase-IV; degradation slower than natural hGRF in rat, dog and human plasma in vitro; GH and IGF-1 rose in pigs, rats and dogs with daily injections; subchronic toxicity up to 4 months in rats and dogs: more weight gain, and in dogs reversible liver and kidney findings, anaemia, clinical-chemistry and organ-weight changes attributed to sustained supraphysiological GH and/or IGF-1; elimination half-life in dogs 21-45 min."
+
+jansen-2004-th9507-dog:
+  type: article
+  authors: "Jansen M, Darby I, Abribat T, Dubreuil P, Ferdinandi ES, Hardy JG"
+  title: "Pulmonary delivery of TH9507, a growth hormone releasing factor analogue, in the dog"
+  container: "International Journal of Pharmaceutics"
+  year: 2004
+  volume: "276"
+  pages: "75-81"
+  doi: 10.1016/j.ijpharm.2004.02.012
+  pmid: "15113616"
+  verified: pubmed
+  note: "Abstract: TH9507 'is being developed for the treatment of age-associated conditions resulting from diminished growth hormone (GH) secretion'; in beagle dogs, inhaled bioavailability 41% relative to subcutaneous, absolute about 13%; terminal half-life 39 min (intratracheal) and 26 min (subcutaneous). Number of dogs not stated in the abstract."
+
+chege-2024-tesamorelin-rats:
+  type: article
+  authors: "Chege BM, Mwangi PW, Githinji CG, Bukachi F"
+  title: "Dietary regimens appear to possess significant effects on the development of combined antiretroviral therapy (cART)-associated metabolic syndrome"
+  container: "PLoS One"
+  year: 2024
+  volume: "19"
+  pages: "e0298752"
+  doi: 10.1371/journal.pone.0298752
+  pmid: "38416754"
+  pmcid: PMC10901320
+  verified: pubmed
+  note: "University of Nairobi and Dedan Kimathi University, Kenya; no link to the developer. 120 weanling Sprague Dawley rats randomised to three diets (standard chow, normal-protein high-calorie, low-protein high-calorie; 40 each) for 15 weeks, then four treatment subgroups per diet (n = 10 each) for 9 weeks; on both high-calorie diets, the rises in fasting glucose, glucose tolerance, lipids, liver weight, liver triglycerides, adiposity and insulin seen with the integrase-inhibitor regimen alone were not seen when tesamorelin was given with it ('reversed by co-administration with tesamorelin'). Full text (PMC10901320, fact-checked 22 October 2026): 'The author(s) received no specific funding for this work'; 'no competing interests'."
+
+# ---------------------------------------------------------------- people: mechanism and pharmacology
+
+stanley-2011-tesamorelin-gh-pulsatility:
+  type: article
+  authors: "Stanley TL, Chen CY, Branch KL, Makimura H, Grinspoon SK"
+  title: "Effects of a growth hormone-releasing hormone analog on endogenous GH pulsatility and insulin sensitivity in healthy men"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2011
+  volume: "96"
+  pages: "150-158"
+  doi: 10.1210/jc.2010-1587
+  pmid: "20943777"
+  pmcid: PMC3038486
+  verified: pubmed
+  note: "Massachusetts General Hospital; NIH-funded (NCT00850564, collaborator NIDDK). 13 men, 2 weeks of daily tesamorelin, no control group: mean overnight GH +0.5 µg/L, GH peak area and basal secretion up, IGF-I +181 µg/L; fasting glucose and insulin-stimulated glucose uptake (clamp) unchanged. Full text (PMC3038486): 'The study drug (tesamorelin) was donated by Theratechnologies, Inc.'; S. Grinspoon 'has served as a consultant for Theratechnologies'."
+
+# ---------------------------------------------------------------- people: HIV-associated lipodystrophy (the approval trials)
+
+falutz-2007-nejm-tesamorelin:
+  type: trial
+  authors: "Falutz J, Allas S, Blot K, Potvin D, Kotler D, Somero M, et al."
+  title: "Metabolic effects of a growth hormone-releasing factor in patients with HIV"
+  container: "The New England Journal of Medicine"
+  year: 2007
+  volume: "357"
+  pages: "2359-2370"
+  doi: 10.1056/NEJMoa072375
+  pmid: "18057338"
+  verified: pubmed
+  note: "Study 1 of the US label (NCT00123253; sponsor Theratechnologies). 412 patients with HIV (86% men) and abdominal fat accumulation, randomised to daily tesamorelin or placebo for 26 weeks: visceral adipose tissue on CT -15.2% vs +5.0%; triglycerides -50 vs +9 mg/dL; total:HDL cholesterol -0.31 vs +0.21; IGF-I +81.0% vs -5.0%; adverse events did not differ significantly, but more patients on tesamorelin withdrew because of an adverse event; no significant differences in glycaemic measures."
+
+falutz-2008-tesamorelin-extension:
+  type: trial
+  authors: "Falutz J, Allas S, Mamputu JC, Potvin D, Kotler D, Somero M, et al."
+  title: "Long-term safety and effects of tesamorelin, a growth hormone-releasing factor analogue, in HIV patients with abdominal fat accumulation"
+  container: "AIDS"
+  year: 2008
+  volume: "22"
+  pages: "1719-1728"
+  doi: 10.1097/QAD.0b013e32830a5058
+  pmid: "18690162"
+  verified: pubmed
+  note: "26-week extension of Study 1: at week 26 tesamorelin patients re-randomised to continue (n = 154) or switch to placebo (n = 50); placebo patients switched to tesamorelin (n = 111). VAT change sustained at -18% over 52 weeks with continued use; triglycerides -51 mg/dL; 'Upon discontinuation of tesamorelin, VAT reaccumulated'; changes in glucose not clinically significant."
+
+falutz-2010-tesamorelin-jaids:
+  type: trial
+  authors: "Falutz J, Potvin D, Mamputu JC, Assaad H, Zoltowska M, Michaud SE, et al."
+  title: "Effects of tesamorelin, a growth hormone-releasing factor, in HIV-infected patients with abdominal fat accumulation: a randomized placebo-controlled trial with a safety extension"
+  container: "Journal of Acquired Immune Deficiency Syndromes"
+  year: 2010
+  volume: "53"
+  pages: "311-322"
+  doi: 10.1097/QAI.0b013e3181cbdaff
+  pmid: "20101189"
+  verified: pubmed
+  note: "Study 2 of the US label (NCT00435136, extension NCT00608023). 404 patients, 2:1 to tesamorelin or placebo for 6 months, then re-randomised for 6 months, all blinded: VAT -10.9% (-21 cm2) vs -0.6% at 6 months; about -18% after 12 months of continued use; initial improvements 'rapidly lost' in those switched to placebo; IGF-I up; no change in glucose parameters; belly-appearance distress improved."
+
+falutz-2010-tesamorelin-pooled:
+  type: meta-analysis
+  authors: "Falutz J, Mamputu JC, Potvin D, Moyle G, Soulban G, Loughrey H, et al."
+  title: "Effects of tesamorelin (TH9507), a growth hormone-releasing factor analog, in human immunodeficiency virus-infected patients with excess abdominal fat: a pooled analysis of two multicenter, double-blind placebo-controlled phase 3 trials with safety extension data"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2010
+  volume: "95"
+  pages: "4291-4304"
+  doi: 10.1210/jc.2010-0490
+  pmid: "20554713"
+  verified: pubmed
+  note: "806 patients randomised 2:1 (543 tesamorelin, 263 placebo): VAT -24 vs +2 cm2 at week 26 (treatment effect -15.4%); abdominal subcutaneous fat not significantly changed; triglycerides treatment effect -12.3%; IGF-I +108 vs -7 ng/mL; at week 52 in those who continued, VAT -17.5%; no clinically meaningful differences in glucose parameters."
+
+# ---------------------------------------------------------------- people: liver, obesity, diabetes, the brain
+
+stanley-2014-tesamorelin-liver-fat:
+  type: trial
+  authors: "Stanley TL, Feldpausch MN, Oh J, Branch KL, Lee H, Torriani M, Grinspoon SK"
+  title: "Effect of tesamorelin on visceral fat and liver fat in HIV-infected patients with abdominal fat accumulation: a randomized clinical trial"
+  container: "JAMA"
+  year: 2014
+  volume: "312"
+  pages: "380-389"
+  doi: 10.1001/jama.2014.8334
+  pmid: "25038357"
+  pmcid: PMC4363137
+  verified: pubmed
+  note: "Massachusetts General Hospital, NIH-funded (NCT01263717). 50 patients randomised to tesamorelin (28) or placebo (22), double-blind, 6 months: VAT treatment effect -42 cm2; liver fat median change -2.0% vs +0.9% lipid-to-water (net -2.9%); fasting glucose rose more with tesamorelin at 2 weeks (treatment effect +7 mg/dL) but not significantly over 6 months. Authors call it a preliminary study. 48 of the 50 received study drug. Full text (PMC4363137): 'Study drug was provided by Theratechnologies, Inc.'; the company had no role in design or conduct and reviewed the manuscript before submission."
+
+stanley-2019-tesamorelin-nafld:
+  type: trial
+  authors: "Stanley TL, Fourman LT, Feldpausch MN, Purdy J, Zheng I, Pan CS, et al."
+  title: "Effects of tesamorelin on non-alcoholic fatty liver disease in HIV: a randomised, double-blind, multicentre trial"
+  container: "The Lancet HIV"
+  year: 2019
+  volume: "6"
+  pages: "e821-e830"
+  doi: 10.1016/S2352-3018(19)30338-8
+  pmid: "31611038"
+  pmcid: PMC6981288
+  verified: pubmed
+  note: "NCT02196831; MGH and NIH; funded by NIH/NIAID; Theratechnologies supplied the drug at reduced cost and, per contract, received serious-adverse-event reports, with no other role; S. K. Grinspoon 'has served as a member of the Scientific Advisory Board and as a consultant to Theratechnologies' (full text, re-read by the fact-checker 22 October 2026). 61 people with HIV and liver fat >= 5%, 12 months: liver fat -4.1% absolute (-37% relative) vs placebo; 35% vs 4% reached liver fat < 5%; fibrosis progressed in 2 (10.5%) vs 9 (37.5%) (P = 0.04) but existing fibrosis did not improve; NAS score not significantly changed; glucose and HbA1c not different overall, but two people on tesamorelin were withdrawn for hyperglycaemia; more injection-site complaints."
+
+makimura-2012-tesamorelin-obesity:
+  type: trial
+  authors: "Makimura H, Feldpausch MN, Rope AM, Hemphill LC, Torriani M, Lee H, Grinspoon SK"
+  title: "Metabolic effects of a growth hormone-releasing factor in obese subjects with reduced growth hormone secretion: a randomized controlled trial"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2012
+  volume: "97"
+  pages: "4769-4779"
+  doi: 10.1210/jc.2012-2794
+  pmid: "23015655"
+  pmcid: PMC3513535
+  verified: pubmed
+  note: "MGH, NIH-funded (NCT00675506, collaborator NHLBI). 60 abdominally obese adults without HIV with reduced GH secretion, tesamorelin or placebo for 12 months, double-blind: VAT treatment effect -35 cm2; carotid intima-media thickness -0.04 mm; triglycerides -37 mg/dL; CRP down; IGF-I +92 µg/L; no change in subcutaneous fat, fasting or 2-h glucose or HbA1c; no difference in adverse events. Full text (PMC3513535): 'Partial research funding and study drug was provided by Theratechnologies, Inc.'; S.K.G. has served as a consultant to Theratechnologies; age 18-55; 58 of the 60 started treatment."
+
+clemmons-2017-tesamorelin-type-2-diabetes:
+  type: trial
+  authors: "Clemmons DR, Miller S, Mamputu JC"
+  title: "Safety and metabolic effects of tesamorelin, a growth hormone-releasing factor analogue, in patients with type 2 diabetes: a randomized, placebo-controlled trial"
+  container: "PLoS One"
+  year: 2017
+  volume: "12"
+  pages: "e0179538"
+  doi: 10.1371/journal.pone.0179538
+  pmid: "28617838"
+  pmcid: PMC5472315
+  verified: pubmed
+  note: "One author at Theratechnologies (NCT01264497, sponsor Theratechnologies). Full text (PMC5472315): patients 'recruited at 5 sites in the US between February and November 2002'; 'Theratechnologies Inc. sponsored the study'; D. R. Clemmons received consultancy fees from Theratechnologies at the time. 53 adults with type 2 diabetes, placebo or two tesamorelin doses for 12 weeks: no significant differences in relative insulin response, fasting glucose, HbA1c or diabetes control; total and non-HDL cholesterol fell in one tesamorelin group; no one stopped because of loss of diabetes control."
+
+baker-2012-ghrh-cognition:
+  type: trial
+  authors: "Baker LD, Barsness SM, Borson S, Merriam GR, Friedman SD, Craft S, Vitiello MV"
+  title: "Effects of growth hormone-releasing hormone on cognitive function in adults with mild cognitive impairment and healthy older adults: results of a controlled trial"
+  container: "Archives of Neurology"
+  year: 2012
+  volume: "69"
+  pages: "1420-1429"
+  doi: 10.1001/archneurol.2012.1970
+  pmid: "22869065"
+  pmcid: PMC3764914
+  verified: pubmed
+  note: "University of Washington; NCT00257712 (collaborator NIA). 152 adults aged 55-87 (66 with mild cognitive impairment), tesamorelin or placebo every night for 20 weeks, double-blind: favourable effect on a cognitive composite (intention-to-treat P = .03), mainly executive function; IGF-1 +117% (within the physiological range), body fat -7.4%; fasting insulin +35% in those with MCI; adverse events, mild, in 68% on tesamorelin vs 36% on placebo. The abstract states GHRH, GH and IGF-1 levels decrease with advancing age. Full text (PMC3764914): funded by the National Institute on Aging and the US Department of Veterans Affairs; Theratechnologies supplied tesamorelin and placebo 'at no cost to the study'; the authors note 'medium to large effect sizes' for executive function and verbal memory in completers, while 'improvement on the individual tests was small (~0.25 SDs)'."
+
+ellis-2025-tesamorelin-cognition:
+  type: trial
+  authors: "Ellis RJ, Vaida F, Hu K, Dube M, Henry B, Chow F, et al."
+  title: "Effects of tesamorelin on neurocognitive impairment in persons with HIV and abdominal obesity"
+  container: "The Journal of Infectious Diseases"
+  year: 2025
+  volume: "231"
+  pages: "1230-1238"
+  doi: 10.1093/infdis/jiaf012
+  pmid: "39813152"
+  verified: pubmed
+  note: "University of California San Diego (NCT02572323; outcome assessors masked). 73 people with HIV, abdominal obesity and cognitive impairment, randomised 3:2 to tesamorelin or standard care, open-label, 6 months: no significant between-group difference in cognition (P = .673); waist circumference fell more (median difference -2.7 cm); IGF-1 rose. The authors note insufficient power and no placebo arm."
+
+stewart-2026-ghrh-cognition-pilot:
+  type: trial
+  authors: "Stewart CE, French KP, Wright TJ, Wilhoit K, Randolph KM, Danesi CP, et al."
+  title: "The effect of growth hormone-releasing hormone on cognition and brain connectivity in adults with cognition ranging from normal to mild cognitive impairment"
+  container: "eNeurologicalSci"
+  year: 2026
+  volume: "44"
+  pages: "100616"
+  doi: 10.1016/j.ensci.2026.100616
+  pmid: "42382101"
+  pmcid: PMC13316082
+  verified: pubmed
+  note: "University of Texas Medical Branch (NCT02553603); supported by the UTMB Institute for Translational Sciences (NIH Clinical and Translational Science Award UL1TR001439) and the Moody Endowment, with tesamorelin donated by Theratechnologies (full text, re-read by the fact-checker 22 October 2026). 27 enrolled, 22 analysed (12 placebo, 10 tesamorelin). Double-blind, placebo-controlled pilot in 22 adults, 10 weeks of a low dose of tesamorelin: no significant changes in the study measures; machine-learning analyses suggested possible differences in brain areas. IGF-1 did not change at this dose."
+
+merriam-2003-ghrh-aging:
+  type: review
+  authors: "Merriam GR, Schwartz RS, Vitiello MV"
+  title: "Growth hormone-releasing hormone and growth hormone secretagogues in normal aging"
+  container: "Endocrine"
+  year: 2003
+  volume: "22"
+  pages: "41-48"
+  doi: 10.1385/ENDO:22:1:41
+  pmid: "14610297"
+  verified: pubmed
+  note: "VA Puget Sound and University of Washington (the group that later ran the tesamorelin cognition trial). Abstract: GH secretion declines with ageing; all published GHRH and GHS studies in normal ageing were small and focused on intermediate endpoints; GHRH raised IGF-I to young-adult ranges, increased lean mass and reduced fat, did not consistently improve physical function, did not improve sleep, and improved certain cognitive tests; 'These results, while encouraging, do not yet support the routine use of GHRH or GHS in normal aging.' Not specific to tesamorelin."
+
+badran-2026-tesamorelin-meta-analysis:
+  type: meta-analysis
+  authors: "Badran AS, Helal A, Shata KS, Ayesh H"
+  title: "Body composition, hepatic fat, metabolic, and safety outcomes of Tesamorelin, a GHRH analogue, in HIV-associated lipodystrophy: A meta-analysis of randomized controlled trials"
+  container: "Obesity Research & Clinical Practice"
+  year: 2026
+  volume: "20"
+  pages: "2-12"
+  doi: 10.1016/j.orcp.2026.01.002
+  pmid: "41545261"
+  verified: pubmed
+  note: "Five RCTs (searched to July 2025): VAT MD -27.71 cm2, trunk fat -1.18 kg, hepatic fat -4.28%, waist -1.61 cm, lean body mass +1.42 kg; no significant change in subcutaneous fat or BMI; adverse events included arthralgia, myalgia, paraesthesia and injection-site reactions."
+
+memdouh-2021-ghrh-doping-detection:
+  type: article
+  authors: "Memdouh S, Gavrilović I, Ng K, Cowan D, Abbate V"
+  title: "Advances in the detection of growth hormone releasing hormone synthetic analogs"
+  container: "Drug Testing and Analysis"
+  year: 2021
+  volume: "13"
+  pages: "1871-1887"
+  doi: 10.1002/dta.3183
+  pmid: "34665524"
+  verified: pubmed
+  note: "King's College London Drug Control Centre. GHRH and its analogues are prohibited by WADA; in vitro metabolism of sermorelin, tesamorelin, CJC-1295 and CJC-1295 with DAC studied in fortified urine; LC-MS/MS method with limits of detection generally 1 ng/mL or less. Cited for: anti-doping laboratories can detect tesamorelin."
+
+# ---------------------------------------------------------------- United States: labels, letters, reviews, registry
+
+dailymed-egrifta-wr-label:
+  type: label
+  authors: "U.S. Food and Drug Administration / DailyMed (National Library of Medicine)"
+  title: "EGRIFTA WR (tesamorelin) for injection: prescribing information, patient information and instructions for use"
+  year: 2026
+  url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=839334d3-8c1d-4c26-9036-2ab524a6ea75
+  accessed: 2026-10-22
+  verified: url
+  note: "Label effective 29 July 2026 per openFDA (BLA022505, set id 839334d3-8c1d-4c26-9036-2ab524a6ea75), read in full on 22 October 2026. Indication: reduction of excess abdominal fat in HIV-infected adults with lipodystrophy; long-term cardiovascular safety not established; not for weight loss (weight-neutral). Contraindications: disrupted hypothalamic-pituitary axis, active malignancy, hypersensitivity, pregnancy. Warnings: neoplasms, IGF-1 (47% > 2 SDS and 36% > 3 SDS at 26 weeks), fluid retention, glucose intolerance (HbA1c >= 6.5% in 5% vs 1%; HR 3.3), hypersensitivity (4%), injection-site reactions (25% vs 14%), critical illness. Mean elimination half-life 11 minutes after the WR formulation; volume of distribution 4.8 L/kg. Immunogenicity: anti-tesamorelin IgG in 50% at 26 weeks; neutralising antibodies in 10% (tesamorelin) and 5% (human GHRH) at week 52. Rats: hydrocephaly in offspring at about 2-4 times clinical exposure; no lifetime rodent carcinogenicity studies. Storage at room temperature in the original box to protect from light. The safety of the WR formulation rests on the trials of the original 1 mg/vial formulation."
+
+fda-label-egrifta-sv-2024:
+  type: label
+  authors: "U.S. Food and Drug Administration"
+  title: "EGRIFTA SV (tesamorelin) for injection: prescribing information (revised February 2024), BLA 022505/S-018"
+  year: 2024
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/022505s018lbl.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Label PDF on Drugs@FDA for supplement S-018 (27 February 2024), revised 02/2024, 'Initial U.S. Approval: 2010'. Used as the official label link for Egrifta SV; the current DailyMed version (July 2026) is dailymed-egrifta-sv-label."
+
+fda-label-egrifta-wr-2025:
+  type: label
+  authors: "U.S. Food and Drug Administration"
+  title: "EGRIFTA WR (tesamorelin) for injection: prescribing information (revised March 2025), BLA 022505/S-020"
+  year: 2025
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Label PDF on Drugs@FDA for supplement S-020 (25 March 2025), revised 3/2025. Used as the official label link for Egrifta WR."
+
+fda-2025-egrifta-wr-approval-letter:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, BLA 022505/S-020 (Egrifta WR)"
+  year: 2025
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/022505Orig1s020ltr.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Approval on 25 March 2025 (Drugs@FDA action date) of a supplemental BLA under section 351(a) of the PHS Act for Egrifta WR: 'a new formulation, new multiple-dose product presentation, and new drug product manufacturing site'."
+
+fda-2019-egrifta-sv-name-letter:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, NDA 022505/S-012 and S-013 (Egrifta and Egrifta SV)"
+  year: 2019
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/022505Orig1s012,%20s013ltr.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Approved 5 July 2019 (Drugs@FDA action date): S-012 changes the proprietary name from Egrifta to Egrifta SV for the 2 mg/vial presentation; S-013 aligns the 1 mg/vial labelling."
+
+fda-2010-egrifta-approval-letter:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "NDA approval letter, NDA 022505 (Egrifta, tesamorelin for injection)"
+  year: 2010
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2010/022505s000ltr.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Approval of the 1 mg/vial product for reduction of excess abdominal fat in HIV-infected patients with lipodystrophy (NDA received 29 May 2009). Postmarketing requirements under 505(o): the FDA found spontaneous reports insufficient to identify serious risks of 'microbial contamination possibly resulting in soft tissue infections which can occur during product reconstitution', malignancies or diabetic retinopathy related to elevated IGF-1, and glucose intolerance/diabetes and hypersensitivity; it required (1708-1) a single-vial 2 mg product, (1708-2) a long-term observational safety study 'of at least 10 years duration' (completion December 2024, final report August 2025), and (1708-3) a randomised placebo-controlled trial of at least three years on diabetic retinopathy progression, with long-term glucose and blinded MACE adjudication (completion May 2016)."
+
+fda-2010-egrifta-summary-review:
+  type: regulator
+  authors: "Parks MH (U.S. Food and Drug Administration, Center for Drug Evaluation and Research)"
+  title: "Division Director Summary Review, NDA 22-505 (Egrifta, tesamorelin acetate)"
+  year: 2010
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/nda/2010/022505Orig1s000SumR.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Dated 5 November 2010. The FDA did not require evidence of cardiovascular risk reduction; the VAT reductions 'were not accompanied by robust or consistent changes' in body-image or lipid measures; the drug showed 'similar side-effects (albeit attenuated)' to growth hormone (fluid retention, glucose impairment/diabetes risk, IGF-1 increases). At the Endocrinologic and Metabolic Drugs Advisory Committee on 27 May 2010 all 16 voting members voted yes on benefit-risk; several cited patient testimonials and the lack of an approved therapy. 'Data are absent on the long-term clinical benefits of Egrifta on CV risk reduction, compliance to HAART and the long-term risks of elevated IGF-1 levels.'"
+
+fda-2020-notice-compounders-biologics:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Notice to Compounders: Changes that affect compounding as of March 23, 2020"
+  year: 2020
+  url: https://www.fda.gov/drugs/human-drug-compounding/notice-compounders-changes-affect-compounding-march-23-2020
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 5 March 2020. On 23 March 2020 biological products approved under the FD&C Act transition to licences under the PHS Act; 'beginning on March 23, these transitioning biological products will not be eligible for the exemptions for compounded drugs under sections 503A and 503B'. Combined with Drugs@FDA ('This Former NDA Was Deemed To Be a BLA on March 23, 2020' for BLA 022505)."
+
+ctgov-nct01591902:
+  type: registry
+  authors: "Theratechnologies"
+  title: "Diabetic Retinopathy in HIV Subjects Treated With EGRIFTA® (NCT01591902)"
+  container: "ClinicalTrials.gov"
+  year: 2018
+  url: https://clinicaltrials.gov/study/NCT01591902
+  accessed: 2026-10-22
+  verified: registry
+  note: "The FDA-required randomised, placebo-controlled trial (3 years) of diabetic retinopathy in people with HIV, abdominal fat and type 2 diabetes. Status: terminated; 129 enrolled; started June 2012, primary completion May 2018; no results posted; no reason for stopping given in the record (last update September 2018). The record states that Egrifta 'has not been studied for longer than 1 year in human subjects'."
+
+ctgov-nct01579695:
+  type: registry
+  authors: "Theratechnologies"
+  title: "Long-term Observational Study in HIV Subjects Exposed to EGRIFTA® (NCT01579695)"
+  container: "ClinicalTrials.gov"
+  year: 2018
+  url: https://clinicaltrials.gov/study/NCT01579695
+  accessed: 2026-10-22
+  verified: registry
+  note: "The FDA-required 10-year prospective cohort safety study (primary outcome: time to malignancy; secondary: diabetes, retinopathy, hypersensitivity, liver and kidney function, MACE). Status: terminated; 391 enrolled; started February 2013, primary completion May 2018; no results posted; no reason for stopping given in the record."
+
+ctgov-nct06554717:
+  type: registry
+  authors: "Massachusetts General Hospital"
+  title: "Tesamorelin as an Adjunct to Exercise for Improving Physical Function in HIV (NCT06554717)"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT06554717
+  accessed: 2026-10-22
+  verified: registry
+  note: "Phase 2, randomised, placebo-controlled trial of tesamorelin plus exercise in 100 people with HIV (estimated); recruiting; started 10 July 2025, primary completion expected 16 June 2028 (record updated May 2026)."
+
+# ---------------------------------------------------------------- Europe and the United Kingdom
+
+ema-egrifta-withdrawal:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Egrifta: withdrawal of the marketing authorisation application (EMEA/H/C/002427), with questions and answers (EMA/CHMP/475021/2012)"
+  year: 2012
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/egrifta
+  accessed: 2026-10-22
+  verified: url
+  note: "On 21 June 2012 the applicant, Ferrer Internacional S.A., withdrew its application for Egrifta (tesamorelin) for excess abdominal fat in HIV patients with lipodystrophy, after the CHMP's last round of questions. The CHMP's provisional opinion was that it could not have been approved: difficulty telling lipodystrophy fat from obesity fat in practice; the proposed 130 cm2 cut-off insufficiently supported; the reduction in abdominal fat 'has not been shown to be clinically meaningful in terms of actual health benefits'; trial patients not representative of European HIV patients (lower BMI, less abdominal fat); IGF-1 increase in a considerable number of patients a 'major safety concern' (possible cancer risk and worsening of diabetic eye disease); 'no long-term safety data'. Two main studies with 816 patients. EMA medicines data: status 'Application withdrawn', first published 18 July 2012."
+
+mhra-products-search-tesamorelin:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products: search results for 'tesamorelin' and 'egrifta'"
+  year: 2026
+  url: https://products.mhra.gov.uk/search/?search=tesamorelin&page=1
+  accessed: 2026-10-22
+  verified: url
+  note: "Searched in a browser on 22 October 2026 (the page loads its results with JavaScript): 'There are no search results for tesamorelin' and 'There are no search results for egrifta'. The database lists products with a UK marketing authorisation (PL, PLGB or PLNI numbers)."

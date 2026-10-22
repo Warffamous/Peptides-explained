@@ -877,3 +877,53 @@ handshake-drawing:
   focal: 55% 45%
   # Caption: industry-sponsored studies more often report favourable results (Lundh 2017, Cochrane).
   sources: [lundh-2017-industry-sponsorship]
+anterior-pituitary-histology:
+  file: anterior-pituitary-histology.jpg
+  kind: photo
+  origin: cc0
+  license: CC0-1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+  # Commons author field trimmed to the author's name (the rest was his standard consent note: a
+  # microscope slide with no identifiable features). Hero for compounds/ipamorelin (group ipamorelin).
+  author: "Mikael Häggström, M.D."
+  title: Histology of pars distalis of the anterior pituitary with chromophobes, basophils, and acidophils
+  source_url: https://commons.wikimedia.org/wiki/File:Histology_of_pars_distalis_of_the_anterior_pituitary_with_chromophobes,_basophils,_and_acidophils.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  # Caption: growth hormone is made in the front part of the pituitary gland (de Sousa 2025).
+  sources: [desousa-2025-gh-feedback]
+human-serum-albumin:
+  file: human-serum-albumin.jpg
+  # A computer rendering of a crystal structure (PDB 1E7H), so an illustration, not a photo.
+  # Hero for compounds/cjc-1295 (group cjc-1295): the drug-affinity-complex version is built to bond
+  # to albumin. The orange chains in the model are fatty acids, not CJC-1295. No text in the image.
+  kind: illustration
+  origin: cc-by-sa
+  license: CC-BY-SA-4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  author: "Deposition authors: Bhattacharya, A.A., Gruene, T., Curry, S.; visualization author: User:Astrojan"
+  title: 1e7h
+  source_url: https://commons.wikimedia.org/wiki/File:1e7h.jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 48% 50%
+  # Caption: CJC-1295 with DAC bonds to albumin (Jetté 2005) and its half-life in people was
+  # 5.8-8.1 days (Teichman 2006).
+  sources: [jette-2005-cjc1295-albumin, teichman-2006-cjc1295]
+adipose-tissue-micrograph:
+  file: adipose-tissue-micrograph.jpg
+  kind: photo
+  origin: cc0
+  license: CC0-1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+  author: Berkshire Community College Bioscience Image Library
+  credit: Berkshire Community College Bioscience Image Library
+  title: Connective Tissue Adipose (41066513194)
+  source_url: https://commons.wikimedia.org/wiki/File:Connective_Tissue_Adipose_(41066513194).jpg
+  retrieved: 2026-10-22
+  people: false
+  focal: 50% 50%
+  # Hero of compounds/tesamorelin. Caption: visceral fat fell on tesamorelin and grew back after switching
+  # to placebo (Falutz 2007; US label, extension phases).
+  sources: [falutz-2007-nejm-tesamorelin, dailymed-egrifta-sv-label]
