@@ -47,7 +47,7 @@ insulin-glp1-hypo:
 glp1-class-hypo:
   duration: 25 # five scenes of 5 s, as insulin-glp1-hypo
   mirror: true # the same glucose-over-time charts (the artwork of insulin-glp1-hypo, reused): the time axis may mirror in RTL
-  pages: [compounds/tirzepatide, safety/before-you-consider]
+  pages: [compounds/tirzepatide, safety/before-you-consider, safety/monitoring]
   sources:
     - ema-epar-mounjaro # SmPC 4.2 ("a reduction in the dose of sulphonylurea or insulin may be considered to reduce the risk of hypoglycaemia"), 4.4 (increased risk with an insulin secretagogue or insulin; lowered by reducing their dose), 4.8 (10-14% with a sulphonylurea, 14-19% with basal insulin; monotherapy up to 0.04 events per patient-year), 5.1 (insulin and glucagon effects glucose dependent); package leaflet signs (sweating, confusion, hunger). Product information PDF re-read 2026-10-21.
     - ema-epar-ozempic # SmPC 4.2 ("a reduction in the dose of sulfonylurea or insulin should be considered"), 4.4, 5.1 (glucose dependent). Product information PDF re-read 2026-10-21.

@@ -1,0 +1,245 @@
+# Sources for the entry pages (group guides): start-here, talking-to-your-doctor and compounds/index.
+# Every entry was looked up on the accessed date (PubMed record, or the official page fetched with
+# curl and read) and its note says what we cite it for. Shared ids (shared.yaml) and ids from other
+# groups are reused, not re-registered here.
+
+# ---------------------------------------------------------------- research
+
+wong-2019-clinical-trial-success:
+  type: article
+  authors: "Wong CH, Siah KW, Lo AW"
+  title: "Estimation of clinical trial success rates and related parameters"
+  container: "Biostatistics"
+  year: 2019
+  volume: "20"
+  pages: "273-286"
+  doi: 10.1093/biostatistics/kxx069
+  pmid: "29394327"
+  pmcid: PMC6409418
+  verified: pubmed
+  note: "MIT (Computer Science and AI Laboratory; Sloan School). Metadata from the PubMed record; numbers from the PMC full text (read 22 October 2026). 406,038 trial entries for 21,143 compounds, 1 January 2000 to 31 October 2015 (Informa Trialtrove and Pharmaprojects). Section 4.1 and Tables 1-2: 13.8% of industry drug development programmes (one drug for one indication; 41,040 paths) went from phase 1 to approval. Cited for: most medicines that start testing in people are never approved."
+
+# ---------------------------------------------------------------- Dutch law (wetten.overheid.nl)
+
+nl-gmw-art-1-geneesmiddel:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 1, eerste lid, onder b (definitie van geneesmiddel)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#HoofdstukI_Artikel1
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "A medicine is a substance intended to be given for, or presented as suitable for, (1) curing or preventing disease, defect, wound or pain in people, (2) making a medical diagnosis, or (3) restoring, improving or otherwise changing body functions through a pharmacological, immunological or metabolic effect."
+
+nl-gmw-art-40-handelsvergunning:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 40 (verbod op geneesmiddelen zonder handelsvergunning, en de uitzonderingen)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk4_Paragraaf1_Artikel40
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: no medicine may be placed on the market without an EU or CBG marketing authorisation. Lid 2: a medicine without one may not be held in stock, offered for sale, sold, supplied, handed over, imported, exported or otherwise brought into or out of the Netherlands. Lid 3 exceptions include: small-scale preparation in a pharmacy (a), medicines for research (b), a time-limited IGJ exemption under art. 5 of Directive 2001/83 (c; the named-patient route), and compassionate use under art. 83 of Regulation 726/2004 when a marketing application has been filed or trials are running (f). Re-read 22 October 2026 by the fact-checker: (a) covers medicines prepared 'op kleine schaal' by or for a pharmacist or dispensing GP in their own pharmacy and handed over there; (b) 'geneesmiddelen voor onderzoek' are investigational medicinal products as defined in art. 1(1)(e) (by reference to the EU Clinical Trials Regulation)."
+
+nl-gmw-art-61-prescription:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 61 (wie UR-geneesmiddelen mag afleveren; geen aflevering zonder recept)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk6_Artikel61
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: only pharmacists working in a pharmacy, licensed dispensing GPs and designated persons may offer, sell or hand over prescription-only (UR) medicines. Lid 9: a pharmacist may not hand over a UR medicine without a prescription, except in an emergency when misuse can be ruled out."
+
+nl-gmw-art-67-internet-prescribing:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 67 (geen recepten via internet voor onbekende patiënten)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk6_Artikel67
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "No one may prescribe medicines via the internet to people the prescriber has never met in person, does not know, or whose medication history is not available to the prescriber."
+
+nl-gmw-art-68-off-label:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 68 (voorschrijven buiten de geregistreerde indicaties)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk6_Artikel68
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1, re-read 22 October 2026 by the fact-checker: 'alleen geoorloofd wanneer daarover binnen de beroepsgroep protocollen of standaarden zijn ontwikkeld. Als de protocollen en standaarden nog in ontwikkeling zijn, is overleg tussen de behandelend arts en apotheker noodzakelijk.' So consultation with the pharmacist is the rule only while protocols are still being developed; it is not a free alternative to them."
+
+nl-wgbo-art-448-information:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikel 448 (WGBO: de arts licht de patiënt in)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel448
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "The care provider informs the patient clearly and in time, guided by what the patient reasonably needs to know about: the nature and purpose of the proposed examination or treatment; the expected consequences and risks of it and of not treating; other possible examinations and treatments, also by other care providers; the state of their health. The provider invites the patient to ask questions and on request gives the information in writing or electronically."
+
+nl-wgbo-art-450-consent:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikel 450 (WGBO: toestemming van de patiënt)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel450
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: the patient's consent is required for every act under the treatment agreement. Lid 2: for patients aged 12 to 15 the consent of the parents or guardian is also needed, with exceptions."
+
+nl-wgbo-art-452-patient-information:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikel 452 (WGBO: de patiënt geeft de nodige inlichtingen)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel452
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "The patient gives the care provider, to the best of their knowledge, the information and cooperation the provider reasonably needs to carry out the agreement."
+
+nl-wet-big-art-35-36:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Wet op de beroepen in de individuele gezondheidszorg (Wet BIG), artikelen 35 en 36 (voorbehouden handelingen)"
+  container: "wetten.overheid.nl (BWBR0006251), version in force from 5 July 2025"
+  year: 1993
+  url: https://wetten.overheid.nl/BWBR0006251/2025-07-05/#HoofdstukIV_Artikel35
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Fetched 22 October 2026 (current version, 'Geldend van 05-07-2025 t/m heden'). Art. 36 lid 5: 'Tot het geven van injekties zijn bevoegd' doctors, and within their field dentists, midwives, physician assistants, designated categories of specialist nurses and clinical technologists. Art. 35 lid 1: others may not perform these reserved acts professionally ('beroepsmatig'), outside an emergency, unless on the instructions of an authorised person, while reasonably competent and following any directions given. Cited for: giving injections as part of one's work is a reserved act."
+
+nl-wgbo-art-453-good-care:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikel 453 (WGBO: zorg van een goed hulpverlener)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel453
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "The care provider must act with the care of a good care provider, in line with the professional standard and quality standards that apply to them."
+
+nl-wgbo-art-454-456-records:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikelen 454-456 (WGBO: het medisch dossier, eigen verklaring, inzage en afschrift)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel454
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Art. 454: the provider keeps a medical file with the health data needed for good care; on request adds a statement from the patient; keeps the file for 20 years. Art. 455: destroys data on the patient's written request, with exceptions. Art. 456: gives the patient access to and a copy of the file on request."
+
+nl-wgbo-art-457-confidentiality:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikel 457 (WGBO: geheimhouding)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel457
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "The provider gives no information about the patient, and no access to or copy of the file, to anyone other than the patient without the patient's consent, unless a law requires it. Not counted as 'others': people directly involved in carrying out the treatment, and the provider's stand-in, as far as needed for their work."
+
+# ---------------------------------------------------------------- Dutch regulator and professional pages
+
+igj-online-medicijnen:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Online medicijnen"
+  year: 2026
+  url: https://www.igj.nl/onderwerpen/medicijnen/online-medicijnen
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Published 8 September 2023, modified 23 March 2026 (page metadata). The IGJ advises against ordering medicines online: there is no check as there is via a doctor or pharmacist; a medicine can contain too much, too little or no active substance; contamination can damage organs; you can be defrauded. The IGJ inspects online sellers of medicines. Many medicines need a prescription, which only pharmacists or dispensing GPs may fill."
+
+cbg-compassionate-use-criteria:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Compassionate use programma"
+  year: 2026
+  url: https://www.cbg-meb.nl/onderwerpen/handelsvergunning-voor-aanvraag-handelsvergunning/hv-compassionate-use-programma
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Fetched and read 22 October 2026 by the fact-checker. In 'schrijnende gevallen' a medicine without a marketing authorisation can be made available to a group of patients with a serious disease for which no authorised medicine exists. Three criteria: (1) for a group (cohort) with a chronic, seriously debilitating or life-threatening disease; (2) the disease cannot be treated satisfactorily with an authorised medicine; (3) a marketing-authorisation application has been filed, or clinical trials to support one are still running. Only a manufacturer can apply to the CBG. Cited for: who a compassionate-use programme is for."
+
+igj-leveren-op-artsenverklaring:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Leveren op artsenverklaring"
+  year: 2026
+  url: https://www.igj.nl/zorgsectoren/geneesmiddelen/beschikbaarheid-van-geneesmiddelen/leveren-op-artsenverklaring
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Published 27 December 2024, modified 6 February 2026. The named-patient route under Geneesmiddelenwet art. 40(3)(c): the prescribing doctor signs a declaration that the patient cannot, for medical reasons, be treated with medicines authorised in the Netherlands, that the doctor takes responsibility for the treatment and its risk, that the medicine has not been assessed for efficacy, safety and quality, and that the patient has been told this. A pharmacy, wholesaler, manufacturer or dispensing GP then applies to the IGJ for an exemption (ontheffing); the IGJ decides within 8 weeks (about 4 on average) and may refuse."
+
+knmg-beroepsgeheim-doorbreken:
+  type: web
+  authors: "KNMG (Royal Dutch Medical Association)"
+  title: "Medisch beroepsgeheim: wanneer doorbreken"
+  year: 2026
+  url: https://www.knmg.nl/actueel/dossiers/beroepsgeheim/medisch-beroepsgeheim/wanneer-doorbreken
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "The page shows no date (year = year accessed); the dossier's companion page was updated 26 January 2024. Professional secrecy has two parts: a duty to keep silent about everything learned about a patient at work, and a right to stay silent towards police and justice (verschoningsrecht). It may be broken only in defined situations: with the patient's consent; with presumed consent (for example a referral letter); a legal duty (for example reporting certain infectious diseases to the GGD); a legal right (for example a reasonable suspicion of child abuse or domestic violence); a conflict of duties, when keeping silent would cause serious harm to someone else (the page's examples include a patient who threatens to harm someone, and a drunk patient about to drive); or a weighty interest of another person (zwaarwegend belang, for example information about descent or serious hereditary disease). Fact-checker, 22 October 2026: the page lists five grounds, not four, so the site's B1 lists of exceptions say 'include', not 'are'."
+
+knmg-2024-second-opinion:
+  type: web
+  authors: "KNMG Artseninfolijn"
+  title: "Heeft mijn patiënt recht op een verwijzing voor een second opinion?"
+  year: 2024
+  url: https://www.knmg.nl/ik-ben-arts/praktijkdilemmas-1/praktijkdilemma/heeft-mijn-patient-recht-op-een-verwijzing-voor-een-second-opinion
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Dated 1 October 2024. A patient who doubts a diagnosis or treatment has the right to ask for a second opinion: a second, independent doctor in the same field assesses it. A doctor must in principle honour a referral request (KNMG code of conduct, core rule 3: respect the patient's autonomy, invite shared decision-making, enable an informed decision) and may refuse only for weighty reasons. Most insurers reimburse a second opinion only with a referral."
+
+thuisarts-naar-de-huisarts:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap, NHG)"
+  title: "Ik ga naar de huisarts: wat kan ik van tevoren doen en verwachten?"
+  year: 2024
+  url: https://www.thuisarts.nl/bezoek-aan-huisarts/ik-ga-naar-huisarts-wat-kan-ik-van-tevoren-doen-en-verwachten
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Last changed 19 April 2024. You can see your GP when you have thought of a way to treat yourself but are not sure it is right, and for problems caused by alcohol or drugs. Write down your questions; write down all medicines, from the doctor, the pharmacy or bought yourself, and bring the list; you can bring someone; ask for a longer (20-minute) appointment if you have a lot to discuss. The three good questions (what are my options; what are their pros and cons; what do they mean in my situation). GPs are used to talking about difficult subjects; all doctors in the Netherlands have professional secrecy. Tell the GP what you have already thought of yourself. You do not have to decide straight away."
+
+dopingautoriteit-2025-harm-reduction-chair:
+  type: web
+  authors: "Dopingautoriteit (Doping Authority Netherlands)"
+  title: "Pim de Ronde benoemd tot hoogleraar doping en gezondheid aan VU Amsterdam"
+  year: 2025
+  url: https://www.dopingautoriteit.nl/nieuws/2025-07-04_pim-de-ronde-benoemd-tot-hoogleraar-doping-en-gezondheid-aan-vu-amsterdam
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "4 July 2025 (re-read 22 October 2026). In 2010 Pim de Ronde founded the first Dutch 'anabolenpoli', an outpatient clinic for people with health problems after using anabolic steroids, with the Dopingautoriteit in an advisory role. The Dopingautoriteit supports medical research to improve the care of users and keep health damage to a minimum, and, in consultation with the Ministry of Health (VWS), works on a programme of value-free ('waardevrije') information on doping use in strength and combat sports organised outside the sports federations ('anders-georganiseerde kracht- en vechtsporten'): evidence-based information on the health effects of performance- and appearance-enhancing substances for athletes, trainers and care professionals. Its chair: 'Het liefst zien we helemaal geen dopinggebruik', but for those who choose to use anyway such prevention is indispensable ('onmisbaar'). About anabolic steroids and doping in general, not peptides specifically."

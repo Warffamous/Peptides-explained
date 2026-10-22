@@ -1,0 +1,561 @@
+# Sources for the legal pages for the Netherlands, the EU and Belgium, the research-use-only page and the
+# legal-routes guide (/legal, /legal/nl, /legal/eu, /legal/be, /legal/research-use-only, /legal-routes).
+# Every law and regulator page below was fetched and read on 22 October 2026 and says what it is cited for
+# (see research/legal-a.md, "Verification log"). Scholarly entries were looked up in PubMed.
+#
+# Sources already registered elsewhere are reused by id and not repeated here: nl-geneesmiddelenwet,
+# eu-directive-2001-83, ema-medicines-search, cbg-geneesmiddeleninformatiebank, lareb-home, be-medicines-law-1964
+# (shared.yaml); nl-gmw-art-1-geneesmiddel, nl-gmw-art-40-handelsvergunning, nl-gmw-art-61-prescription,
+# nl-gmw-art-67-internet-prescribing, nl-gmw-art-68-off-label, igj-online-medicijnen, igj-leveren-op-artsenverklaring,
+# cbg-compassionate-use-criteria, nl-wgbo-art-448-information, nl-wgbo-art-453-good-care (guides.yaml; the fact-checker
+# removed this file's duplicate of the CBG compassionate-use page on 22 October 2026 and points to the guides id); lareb-bijwerkingen-melden (safety-a.yaml); ema-pharma-reform-page, ep-oeil-2023-0132-cod,
+# ep-oeil-2023-0131-cod, fda-warning-letters-index, dopingautoriteit-controles-belgie (legal-b.yaml);
+# cbg-compassionate-use-list, ctgov-nct06383390, ctgov-nct07165028, piatkowski-2026-retatrutide-product-testing
+# (retatrutide.yaml); belcourt-2025-research-purposes, ema-epar-mounjaro (tirzepatide.yaml); ema-epar-wegovy
+# (semaglutide.yaml); ctgov-nct07437547 (bpc-157.yaml).
+#
+# EU legal texts and CJEU judgments: EUR-Lex refuses automated requests, so the text of each act and judgment was
+# read through the Publications Office's CELLAR resolver for the same CELEX number (publications.europa.eu/resource/
+# celex/<CELEX>), which returns the same document. The url below is the EUR-Lex page a reader can open.
+#
+# FAMHP (Belgium): every famhp.be page answers automated requests with a CAPTCHA, which we did not try to solve.
+# The three FAMHP pages below were read in the Internet Archive's most recent complete snapshot (dates in the
+# notes); the url is the FAMHP page itself.
+
+# ---------------------------------------------------------------- Netherlands: Geneesmiddelenwet (version in force from 9 September 2025)
+
+nl-gnw-art-1-reclame:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 1, eerste lid, onder hh, xx en ijij (invoeren, reclame, publieksreclame)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#HoofdstukI_Artikel1
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Art. 1(1)(hh): 'invoeren' is bringing medicines into the Netherlands from a third country (outside the EU/EEA). Art. 1(1)(xx): 'reclame' is 'elke vorm van beïnvloeding met het kennelijke doel het voorschrijven, ter hand stellen of gebruiken van een geneesmiddel te bevorderen'. Art. 1(1)(ijij): 'publieksreclame' is advertising that is evidently also aimed at people other than health professionals."
+
+nl-gnw-art-18-licence:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 18 (vergunning voor bereiden, invoeren en groothandel)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk3_Paragraaf1_Artikel18
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: without a licence from the Minister it is forbidden to prepare (make), import, hold in stock, offer for sale, supply or export medicines, or to run a wholesale business; and forbidden to run a wholesale business in medicines that have no marketing authorisation. Lid 5: small-scale preparation in a pharmacy by or for a pharmacist (or dispensing GP) is exempt. Lid 6(a): the licence rule does not apply to importing or bringing in medicines 'die kennelijk zijn bestemd voor eigen gebruik door de persoon die de desbetreffende geneesmiddelen vervoert' (clearly for the own use of the person carrying them)."
+
+nl-gnw-art-67a-distance-selling:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 67a (verkoop op afstand)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk6_Artikel67a
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: without prejudice to arts. 61, 62 and 67, it is forbidden to offer for sale, sell or hand over medicines at a distance other than under the ministerial rules that implement Directive 2001/83."
+
+nl-gnw-art-84-85-advertising:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikelen 84 en 85 (reclame; publieksreclame)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk9_Paragraaf1_Artikel84
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Art. 84(1): 'Reclame voor dan wel gunstbetoon met betrekking tot een geneesmiddel waarvoor geen handelsvergunning is verleend, is verboden.' Art. 84(3)-(4): advertising that does not promote rational use, or that is misleading, is forbidden. Art. 85: public advertising is forbidden for medicines that may only be supplied on prescription (a), and for non-prescription medicines containing Opium Act list I or II substances (b)."
+
+nl-gnw-art-100-supervision:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 100 (toezicht: IGJ en NVWA)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk11_Artikel100
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: officials of the Inspectie gezondheidszorg en jeugd and of the Nederlandse Voedsel- en Warenautoriteit supervise compliance with the Act (apart from chapter 2 and tasks given only to the CBG)."
+
+nl-gnw-art-101-fines:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 101 (bestuurlijke boete)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk11_Artikel101
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: the Minister can impose an administrative fine of at most the amount of the sixth category of art. 23(4) of the Criminal Code for breaches of, among others, arts. 18(1), 40(1), (2), (4) and (7), 61, 67, 67a, 68, 84 and 85. Lid 2-4: conduct that is not an economic offence becomes a criminal offence after two fines for the same conduct within 24 months."
+
+nl-gnw-art-115-seizure:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 115 (inbeslagname en bevelen)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#Hoofdstuk11_Artikel115
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lid 1: to prevent harm to public health, IGJ and NVWA officials may at any time seize medicines, active substances and substances clearly meant for making medicines, and order a stop to their preparation, supply, trade, import, export or handing over, or their withdrawal from the market."
+
+nl-wed-art-1-2-6:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Wet op de economische delicten, artikelen 1, 2 en 6"
+  container: "wetten.overheid.nl (BWBR0002063), version in force from 22 September 2026"
+  year: 1950
+  url: https://wetten.overheid.nl/BWBR0002063/2026-09-22/#TiteldeelI_Artikel1
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Art. 1 under 1°: breaches of Geneesmiddelenwet arts. 18(1), 28(1), 34, 37(3), 38(1), 39(1), 40(1) and (2), 61(1), 62(1) and (3), 67 and 67a(1) are economic offences. Art. 2(1): they are crimes (misdrijven) when committed intentionally, otherwise minor offences (overtredingen). Art. 6(1): a crime of this kind is punishable by up to six years in prison, community service or a fine of the fifth category; a minor offence by up to one year's detention, community service or a fine of the fourth category. Art. 6(1), last sentence (re-read by the fact-checker 22 October 2026): if the goods involved are worth more than a quarter of the maximum fine, a fine of the next higher category can be imposed."
+
+rijksoverheid-fine-categories-2026:
+  type: regulator
+  authors: "Rijksoverheid (Dutch central government)"
+  title: "Hoe hoog zijn de boetes in Nederland?"
+  year: 2026
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/straffen-en-maatregelen/hoe-hoog-zijn-de-boetes-in-nederland
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Maximum fines since 1 January 2026: 4th category EUR 27,500; 5th category EUR 110,000; 6th category EUR 1,100,000 (before: 25,750; 103,000; 1,030,000). Matches the editorial note on art. 23(4) of the Wetboek van Strafrecht on wetten.overheid.nl (version in force from 1 July 2026)."
+
+nl-regeling-gnw-art-3-17:
+  type: law
+  authors: "Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Regeling Geneesmiddelenwet, artikelen 3.17, 3.17a en 3.18 (ontheffing op artsenverklaring; vrijstelling bij tekort; gebruik in schrijnende gevallen)"
+  container: "wetten.overheid.nl (BWBR0022160), version in force from 1 January 2026"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0022160/2026-01-01/#Hoofdstuk3_Paragraaf5_Artikel3.17
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Art. 3.17(1): the IGJ can grant a manufacturer, wholesaler or dispensing pharmacy an exemption under Gnw art. 40(3)(c) for a medicine without marketing authorisation if (a) the doctor considers it necessary that a patient in their practice is treated with it, (b) no adequate medicinal alternative is on the market or otherwise available in the Netherlands, (c) the doctor has asked in writing on the IGJ's model form, (d) that request has been sent to the IGJ, (e) the IGJ has set the quantity and period, and (f) the supplier keeps records of quantity, doctor, number of patients and side effects. Art. 3.17a: a temporary general exemption during shortages, only for medicines authorised in another EU state, the UK or an MRA country. Art. 3.18: a compassionate-use programme needs CBG approval, on request of the party making the medicine available."
+
+# ---------------------------------------------------------------- Netherlands: regulators and official pages
+
+igj-toezicht-online-medicijnen:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Toezicht op online medicijnen"
+  year: 2023
+  url: https://www.igj.nl/onderwerpen/medicijnen/online-medicijnen/toezicht-op-online-medicijnen
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Published 8 September 2023 (page metadata). The IGJ inspects online sellers of medicines; if a website offers illegal medicines or advertises them it can act, for example with a warning or a fine. When a seller's website targets Dutch consumers, Dutch law including the Geneesmiddelenwet applies. Focus on prescription-only and unregistered medicines, because the risk of harm is greatest. The IGJ supervises the EU logo: a first breach brings a warning, a repeat breach can bring an administrative fine."
+
+igj-2025-online-nepapotheken:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Inspectie maakt zich zorgen over toename van online-nepapotheken"
+  year: 2025
+  url: https://www.igj.nl/actueel/nieuws/2025/10/30/inspectie-maakt-zich-zorgen-over-toename-van-online-nepapotheken
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "News, 30 October 2025. Reports to the IGJ about webshops selling prescription medicines without a prescription: 114 in 2024, and 187 from January to early October 2025. The IGJ investigated 150 of these sites; almost all sold prescription medicines (ADHD medicines, opiates, painkillers, sleeping pills) without asking for a prescription. Dozens of sites removed, often hosted abroad; one report to the Public Prosecution Service. Not about peptides specifically."
+
+igj-2025-shield-seizures:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Operatie SHIELD: IGJ en Douane nemen 60.000 pillen in beslag"
+  year: 2025
+  url: https://www.igj.nl/actueel/nieuws/2025/02/28/operatie-shield-igj-en-douane-nemen-60.000-pillen-in-beslag
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "News, 28 February 2025. In October 2024 Customs and the IGJ checked extra on postal parcels from abroad (operation SHIELD V, coordinated by Europol): 329 shipments intercepted, with 60,000 pills, ampoules, tubes and sprays; more than 80 of the 329 parcels held over 100 pills, most held smaller amounts; everything was seized and destroyed. Erection medicines most common; also antibiotics and substances on the doping list."
+
+igj-illegale-handel:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Illegale handel in geneesmiddelen"
+  year: 2025
+  url: https://www.igj.nl/zorgsectoren/geneesmiddelen/illegale-geneesmiddelen
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Page metadata: published 18 March 2025, modified 11 November 2025 (fact-checker, 22 October 2026). The IGJ acts against illegal supply and trade in medicines, using reports from citizens and businesses, data analysis and finds by Customs or the police. Customs looks at import and export, the NVWA at veterinary medicines, and the Public Prosecution Service tackles illegal trade under criminal law."
+
+igj-qa-zonder-handelsvergunning:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Vragen over afleveren geneesmiddelen zonder handelsvergunning"
+  year: 2026
+  url: https://www.igj.nl/documenten/vraag-en-antwoord/vragen-over-afleveren-geneesmiddelen-zonder-handelsvergunning
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Page metadata: issued 11 August 2026, modified 20 August 2026 (the date 22-03-2022 on the page belongs to a form, not to the page; corrected by the fact-checker, 22 October 2026). Only a manufacturer, wholesaler, (hospital) pharmacist or dispensing GP established in the Netherlands may apply; applications by intermediaries or consultancies are not accepted. The doctor's declaration must be signed by a BIG-registered doctor, carries a patient code (no name), is valid for 1 year, and lists the treatments tried or considered and why Dutch-authorised medicines cannot be used; non-medical reasons (money, adherence, convenience, another form or strength) are not accepted. Documents needed: the SmPC or leaflet from the country of origin, or, if the medicine has no authorisation there, the Investigator's Brochure (IB) or IMPD; a valid GMP certificate when the medicine comes from outside the EEA, MRA countries and the UK, or comes from there without an authorisation. The route is 'bedoeld voor individuele behandeling in uiterste gevallen'; the IGJ is 'terughoudend' and the route is 'uitdrukkelijk niet bedoeld om de verplichting van de handelsvergunning te omzeilen'. The exemption is usually per patient and valid 1 year; the supplier must record side effects and report them to Lareb."
+
+igj-2026-off-label-standpunt:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Standpunt IGJ over off-label voorschrijven (geactualiseerd februari 2026, aangepast mei 2026)"
+  year: 2026
+  url: https://www.igj.nl/documenten/2026/02/03/standpunt-igj-off-label-voorschrijven
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Published 3 February 2026, amended 8 May 2026. Starting point: medicines are prescribed on-label; off-label prescribing is allowed only under the conditions of Gnw art. 68, as clarified by Council of State and disciplinary rulings. Four situations: a professional standard or protocol allows it (possible, following the standard); a standard advises against it (not allowed); a standard is in development (doctor and pharmacist must consult; restraint advised; due-care requirements apply); no standard and none in development (off-label prescribing 'in principe niet mogelijk'). Due-care requirements include weighing benefit and side effects on current science, checking the up-to-date medication history, a heavier duty to inform with explicit consent recorded in the file, and extra monitoring for side effects. Fact-checker, 22 October 2026: the linked PDF ('Geactualiseerd standpunt IGJ off-label voorschrijven, mei 2026') was read; it says 'De patiënt dient extra gemonitord te worden op bijwerkingen' (unexpected or worsening side effects reported to Lareb), and that in the no-standard situation an exception is possible only 'in uitzonderlijke individuele situaties': one patient with no medicinal alternative, the need documented in the file, only after consultation with the pharmacist, with the due-care requirements, and never where a standard advises against it."
+
+igj-eigen-bereidingen-apotheek:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Eigen bereidingen apotheek"
+  year: 2025
+  url: https://www.igj.nl/zorgsectoren/geneesmiddelen/beschikbaarheid-van-geneesmiddelen/eigen-bereidingen-apotheek
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Page dated 8 July 2025 (metadata). Pharmacies may make a medicine themselves on a small scale for an individual patient (pharmacy or magistral preparation); these must meet legal quality requirements, supervised by the IGJ. Raw materials must meet the European Pharmacopoeia (or, if absent there, the pharmacopoeia of a member state, the US or Japan, if current and officially in use). 'Een grondstof die niet in een in gebruik zijnde farmacopee staat, kan daarom niet zomaar worden gebruikt.' No independent registration authority is involved, so the pharmacist must judge the raw material's drug master file; preparation is not a good choice when there is not enough certainty about origin, raw-material quality, process and final checks."
+
+rijksoverheid-online-aanbieder-controleren:
+  type: regulator
+  authors: "Rijksoverheid (Ministerie van Volksgezondheid, Welzijn en Sport)"
+  title: "Hoe controleer ik of een online aanbieder van medicijnen betrouwbaar is?"
+  year: 2025
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/geneesmiddelen/controleren-betrouwbaarheid-online-aanbieder-van-medicijnen
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Page metadata: published 7 April 2016, modified 30 September 2025. Online sellers of medicines must show the European logo; it is genuine if clicking it leads to the government's list of registered sellers, which also shows which medicines each may sell. Only (online) pharmacies may sell prescription medicines, always against a prescription; sellers that sell prescription medicines without one are not reliable. Prescription medicines may not be advertised."
+
+dopingautoriteit-doping-en-de-wet:
+  type: web
+  authors: "Dopingautoriteit (Doping Authority Netherlands)"
+  title: "Doping en de wet"
+  year: 2026
+  url: https://www.dopingautoriteit.nl/juridisch/doping-en-de-wet
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "No date on the page (year = year accessed). The Wet uitvoering antidopingbeleid (in force 1 January 2019) is the legal basis for the Dopingautoriteit; the National Doping Regulations (NDR) in the rules of the sports federations govern anti-doping in practice; the government makes no doping rules itself. 'Je kunt in Nederland niet strafrechtelijk vervolgd worden voor een positieve test of het gebruik van doping.' 'De Nederlandse overheid gedoogt het bezit van doping voor eigen gebruik, maar heeft de handel in dopingmiddelen verboden.' Many doping substances are medicines, so the Geneesmiddelenwet applies; trade in doping substances has been punishable under the Wet op de economische delicten since 1999."
+
+ccmo-achtergrond-meedoen:
+  type: regulator
+  authors: "Centrale Commissie Mensgebonden Onderzoek (CCMO)"
+  title: "Achtergrondinformatie over meedoen aan onderzoek"
+  year: 2026
+  url: https://www.ccmo.nl/onderzoeksdeelnemers/achtergrondinformatie-over-meedoen-aan-onderzoek
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Modified July 2026 (metadata). Taking part is always voluntary; participants can be patients or healthy volunteers. Phase descriptions; healthy volunteers usually in phase 1; phase 1 and 2 studies usually bring the patient no improvement. Studies under the WMO are reviewed by a medical ethics committee (METC). Patients usually get only travel costs; they do not pay for the study medicine. To find a study: ask your GP or specialist, patient organisations, or search the register Onderzoekmetmensen.nl; the CCMO does not match participants with researchers. Serious problems can be reported to the IGJ."
+
+ccmo-ivo-meedoen:
+  type: regulator
+  authors: "Centrale Commissie Mensgebonden Onderzoek (CCMO)"
+  title: "Algemene informatie over meedoen aan onderzoek (IVO)"
+  year: 2026
+  url: https://www.ccmo.nl/onderzoeksdeelnemers/algemene-informatie-over-meedoen-aan-onderzoek-ivo
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Modified May 2026 (metadata). Plain-language information that forms part of the consent form: research needs approval from a medical ethics committee (METC) first; you take part only if you want to; you get written information (the IVO letter) and time to decide; you sign a consent form; there is often a screening first; 'Stoppen mag altijd. Je hoeft niet te zeggen waarom' (but talk to the researcher, because some medicines must be reduced step by step); researchers must take out insurance for harm caused by the research, with limits (harm must be reported within four years; harm you were told about in advance is usually not covered)."
+
+ctgov-nl-be-peptide-search-2026-10-22:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2 searches: trials of BPC-157 and other peptides on this site with a site in the Netherlands or Belgium"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=BPC-157&query.locn=Netherlands&countTotal=true
+  accessed: 2026-10-22
+  verified: registry
+  note: "Run on 22 October 2026, once with query.locn=Netherlands and once with query.locn=Belgium. BPC-157 (and BPC 157): 0 trials in either country. Thymosin beta 4: 0. One query for TB-500, thymosin, tesamorelin, ipamorelin, CJC-1295, Semax, Selank, epitalon, KPV, MOTS-c, melanotan and bremelanotide: 0 in the Netherlands; 1 in Belgium (NCT00608023, a tesamorelin extension study in HIV-associated lipodystrophy, completed in October 2008). Retatrutide: 2 in each country (NCT06383390, active not recruiting; NCT07165028, recruiting). Re-run by the fact-checker on 22 October 2026, one query per name, adding GHK-Cu, AOD-9604, hexarelin, thymalfasin and elamipretide (SS-31): all 0 in both countries except elamipretide, which had 3 trials with a Dutch site (NCT02914665 and NCT02788747, phase 2 in heart failure, completed 2017; NCT05162768, phase 3 in primary mitochondrial disease, completed December 2024) and 1 with a Belgian site (NCT02914665). None of these is running."
+
+# ---------------------------------------------------------------- EU law (texts read via the CELEX number; see header)
+
+eu-regulation-726-2004:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Regulation (EC) No 726/2004 laying down Union procedures for the authorisation and supervision of medicinal products for human use and establishing a European Medicines Agency (consolidated text of 28 January 2022)"
+  container: "Official Journal of the European Union, L 136"
+  year: 2004
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02004R0726-20220128
+  accessed: 2026-10-22
+  verified: url
+  note: "Art. 3(1) and Annex I: medicines made by biotechnology (recombinant DNA and similar), advanced-therapy medicines, medicines with a new active substance for AIDS, cancer, neurodegenerative disorders, diabetes, auto-immune diseases and viral diseases, and orphan medicines may only be placed on the EU market with an authorisation granted by the Union. Art. 3(2): other medicines may use the Union route if they contain a new active substance or are a significant innovation. Art. 83: Member States may make a medicine in those categories available for compassionate use to a group of patients with a chronically or seriously debilitating or life-threatening disease who cannot be treated satisfactorily with an authorised medicine; the medicine must be the subject of an EU marketing application or be undergoing clinical trials. Art. 84: Member States set the penalties."
+
+eu-regulation-536-2014:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Regulation (EU) No 536/2014 on clinical trials on medicinal products for human use"
+  container: "Official Journal of the European Union, L 158"
+  year: 2014
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0536
+  accessed: 2026-10-22
+  verified: url
+  note: "Art. 28(1): a trial may run only if, among other things, the expected benefits justify the risks, participants have been informed and have given informed consent, the trial is designed to involve as little pain, discomfort and risk as possible, a qualified doctor is responsible for medical care, and no undue influence, including financial, is used. Art. 28(3): a participant may withdraw at any time, without any resulting detriment and without having to give a reason. Art. 29: consent is written, dated and signed after an interview, with adequate time to decide; the information must be understandable to a layperson."
+
+eu-directive-2011-62:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Directive 2011/62/EU amending Directive 2001/83/EC as regards the prevention of the entry into the legal supply chain of falsified medicinal products"
+  container: "Official Journal of the European Union, L 174"
+  year: 2011
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0062
+  accessed: 2026-10-22
+  verified: url
+  note: "Art. 2(1)-(2): Member States apply the measures from 2 January 2013; the online-sale rules of Directive 2001/83 art. 85c (including the common logo) at the latest from 1 year after the implementing acts on the logo were published; the safety features from 3 years after the delegated act on them was published."
+
+eu-regulation-699-2014:
+  type: law
+  authors: "European Commission"
+  title: "Commission Implementing Regulation (EU) No 699/2014 of 24 June 2014 on the design of the common logo to identify persons offering medicinal products for sale at a distance to the public and the technical, electronic and cryptographic requirements for verification of its authenticity"
+  container: "Official Journal of the European Union, L 184, 25 June 2014"
+  year: 2014
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32014R0699
+  accessed: 2026-10-22
+  verified: url
+  note: "Adopted under Directive 2001/83 art. 85c(3); published in the Official Journal on 25 June 2014. With Directive 2011/62 art. 2(2)(c) this means the logo applied in every Member State by mid-2015 at the latest."
+
+eu-regulation-2016-161:
+  type: law
+  authors: "European Commission"
+  title: "Commission Delegated Regulation (EU) 2016/161 supplementing Directive 2001/83/EC by laying down detailed rules for the safety features appearing on the packaging of medicinal products for human use"
+  container: "Official Journal of the European Union, L 32"
+  year: 2016
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0161
+  accessed: 2026-10-22
+  verified: url
+  note: "Art. 50: 'It shall apply from 9 February 2019.' Sets the rules for the unique identifier and anti-tampering device that Directive 2001/83 art. 54a requires on prescription medicines. Art. 50, third paragraph, and recital 44 (re-read by the fact-checker, 22 October 2026): Belgium, Greece and Italy, which already had their own pack-verification systems, could defer and had to apply the rules 'at the latest from 9 February 2025'."
+
+ema-clinical-trials-regulation:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Clinical Trials Regulation"
+  year: 2026
+  url: https://www.ema.europa.eu/en/human-regulatory-overview/research-development/clinical-trials-human-medicines/clinical-trials-regulation
+  accessed: 2026-10-22
+  verified: url
+  note: "The Clinical Trials Regulation entered into application on 31 January 2022 and repealed Directive 2001/20/EC. Sponsors submit one application through the Clinical Trials Information System (CTIS); new applications in CTIS from 31 January 2023; from 31 January 2025 trials approved under the old Directive that are still running must comply with the Regulation and be recorded in CTIS. CTIS went live on 31 January 2022 with a public, searchable Clinical Trials website."
+
+eudralex-volume-4-gmp:
+  type: regulator
+  authors: "European Commission, Directorate-General for Health and Food Safety"
+  title: "EudraLex – Volume 4 – Good Manufacturing Practice (GMP) guidelines"
+  year: 2026
+  url: https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en
+  accessed: 2026-10-22
+  verified: url
+  note: "Lists the binding GMP principles for medicines for human use (Commission Directive (EU) 2017/1572) and the GMP guidelines, including Annex 1 'Manufacture of Sterile Medicinal Products' (fully applicable since 25 August 2024)."
+
+# ---------------------------------------------------------------- CJEU judgments (texts read via the CELEX number; see header)
+
+cjeu-1983-van-bennekom:
+  type: law
+  authors: "Court of Justice of the European Communities (Fifth Chamber)"
+  title: "Judgment of 30 November 1983, Criminal proceedings against Leendert van Bennekom, Case 227/82"
+  container: "EUR-Lex (CELEX 61982CJ0227)"
+  year: 1983
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:61982CJ0227
+  accessed: 2026-10-22
+  verified: url
+  note: "Reference from the Arrondissementsrechtbank Amsterdam (vitamin preparations). Para. 17: the 'presentation' criterion covers products that are not effective or not as effective as consumers would expect, so 'presentation' must be broadly construed. Para. 18: a product is presented for treating or preventing disease not only when expressly indicated or recommended as such, 'possibly by means of labels, leaflets or oral representation', but whenever an averagely well-informed consumer gains the impression, which may result from implication if it is definite, that it should have such an effect. Para. 19: the external form (tablet, pill, capsule) can be strong evidence of the seller's intention, but not the sole or conclusive evidence. Para. 22: a product with such properties that is not presented as such falls in principle under the second (functional) definition."
+
+cjeu-2009-hecht-pharma:
+  type: law
+  authors: "Court of Justice of the European Communities (First Chamber)"
+  title: "Judgment of 15 January 2009, Hecht-Pharma GmbH v Staatliches Gewerbeaufsichtsamt Lüneburg, Case C-140/07"
+  container: "EUR-Lex (CELEX 62007CJ0140)"
+  year: 2009
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62007CJ0140
+  accessed: 2026-10-22
+  verified: url
+  note: "Operative part 1 (para. 29): the doubt rule of Directive 2001/83 art. 2(2) does not apply to a product whose status as a medicine by function has not been scientifically established. Operative part 2: the manner of use, extent of distribution, familiarity to consumers and risks of use remain relevant. Operative part 3 (paras. 41, 45): a product is not a medicine by function if, given its composition and content of active substances and if used as intended, it is incapable of appreciably restoring, correcting or modifying physiological functions by a pharmacological, immunological or metabolic action."
+
+cjeu-2014-d-and-g:
+  type: law
+  authors: "Court of Justice of the European Union (Fourth Chamber)"
+  title: "Judgment of 10 July 2014, Criminal proceedings against Markus D. and G., Joined Cases C-358/13 and C-181/14"
+  container: "EUR-Lex (CELEX 62013CJ0358)"
+  year: 2014
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62013CJ0358
+  accessed: 2026-10-22
+  verified: url
+  note: "Herbal mixtures with synthetic cannabinoids. Para. 42: whether a product is a medicine is decided case by case by national authorities under the courts' supervision, taking account of all its characteristics, in particular its composition, its pharmacological, immunological or metabolic properties as far as these can be established in the present state of scientific knowledge, the manner of use, extent of distribution, familiarity to consumers and the risks of use. Paras. 33-38 and ruling: the functional definition of art. 1(2)(b) covers substances capable of a beneficial effect on human health; it does not cover substances that merely modify physiological functions without any beneficial effect, consumed solely to induce intoxication and harmful as such."
+
+cjeu-2009-damgaard:
+  type: law
+  authors: "Court of Justice of the European Communities (Second Chamber)"
+  title: "Judgment of 2 April 2009, Criminal proceedings against Frede Damgaard, Case C-421/07"
+  container: "EUR-Lex (CELEX 62007CJ0421)"
+  year: 2009
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62007CJ0421
+  accessed: 2026-10-22
+  verified: url
+  note: "Paras. 10-12: Hyben Total (rosehip powder) had been refused a Danish marketing authorisation in 1999; Mr Damgaard had earlier prepared its information material; in 2003 he wrote on his website that it relieved pain from gout or arthrosis and was on sale in Sweden and Norway, and was prosecuted in Denmark for advertising. He argued that he was not employed by the maker and had no interest in it or its sales, and he received no payment from the maker for the information (corrected by the fact-checker, 22 October 2026: the court did not find that he had 'no link' with the maker; the ruling is framed as 'even though the third party ... is acting on his own initiative and completely independently'). Ruling: dissemination by a third party of information about a medicine, including its therapeutic or prophylactic properties, may be advertising under Directive 2001/83 art. 86 even if the third party acts on his own initiative and completely independently of the maker and seller; the national court decides whether it was designed to promote prescription, supply, sale or consumption. Paras. 20-24: the definition emphasises the purpose of the message; it need not be commercial; the author's relationship with the company is one factor, weighed with the nature of the activity and the content of the message."
+
+cjeu-2012-commission-v-poland:
+  type: law
+  authors: "Court of Justice of the European Union (Third Chamber)"
+  title: "Judgment of 29 March 2012, European Commission v Republic of Poland, Case C-185/10"
+  container: "EUR-Lex (CELEX 62010CJ0185)"
+  year: 2012
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62010CJ0185
+  accessed: 2026-10-22
+  verified: url
+  note: "On Directive 2001/83 art. 5(1). Para. 31: exceptions are interpreted strictly. Para. 32 (citing C-143/06 Ludwigs-Apotheke): importing non-approved medicines must remain exceptional to preserve the marketing authorisation procedure. Para. 34: 'special needs' covers only individual situations justified by medical considerations. Para. 35: a 'bona fide unsolicited order' means the doctor prescribed after actually examining the patient, on purely therapeutic grounds. Para. 36: only where no authorised equivalent is on the national market or it is unavailable. Para. 38: financial considerations cannot in themselves establish special needs."
+
+cjeu-2015-abcur:
+  type: law
+  authors: "Court of Justice of the European Union (Third Chamber)"
+  title: "Judgment of 16 July 2015, Abcur AB v Apoteket Farmaci AB and Apoteket AB, Joined Cases C-544/13 and C-545/13"
+  container: "EUR-Lex (CELEX 62013CJ0544)"
+  year: 2015
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62013CJ0544
+  accessed: 2026-10-22
+  verified: url
+  note: "Ruling 1: prescription medicines without marketing authorisation that are prepared industrially fall within Directive 2001/83. They are covered by the magistral-formula exception (art. 3(1)) only if prepared under a medical prescription issued before preparation, specifically for a previously identified patient; by the officinal-formula exception (art. 3(2)) only if delivered directly to the patients supplied by the pharmacy that prepared them."
+
+# ---------------------------------------------------------------- Belgium
+
+be-medicines-law-1964-art-1:
+  type: law
+  authors: "Belgische Staat / État belge"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 1, § 1, 1) (definitie van geneesmiddel)"
+  container: "ejustice.just.fgov.be (Justel; text updated to 4 June 2026)"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "A medicine is any substance presented as having therapeutic or prophylactic properties for human diseases, or any substance that can be used in or given to people to restore, improve or modify physiological functions by a pharmacological, immunological or metabolic effect, or to make a medical diagnosis."
+
+be-medicines-law-1964-art-6quater:
+  type: law
+  authors: "Belgische Staat / État belge"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 6quater (uitzonderingen op de VHB-plicht)"
+  container: "ejustice.just.fgov.be (Justel; text updated to 4 June 2026)"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "§ 1: medicines without a Belgian authorisation may be made available to patients (1°) for special needs, when the patient cannot be adequately treated with medicines authorised and available in Belgium, on a bona fide order at a prescriber's initiative, under conditions set by the King; (2°) for compassionate use, for a group of patients with a chronic, seriously debilitating or life-threatening disease, when an EU marketing application has been filed or trials are ongoing; (3°) in medical need programmes, for an authorised medicine in an indication not yet authorised or not yet marketed; (4°) by import by a person authorised to supply medicines to the public, of a medicine authorised or registered in its country of origin, on a prescription and a prescriber's declaration that the patient cannot be adequately treated with a medicine on the Belgian market. § 3: no authorisation is needed for magistral preparations (made in a pharmacy on a prescription for a particular patient), officinal preparations, and investigational medicines under the law of 7 May 2017 on clinical trials."
+
+be-medicines-law-1964-art-9:
+  type: law
+  authors: "Belgische Staat / État belge"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 9 (reclame)"
+  container: "ejustice.just.fgov.be (Justel; text updated to 4 June 2026)"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "§ 1: any advertising for a medicine without a marketing authorisation is forbidden; advertising to the public is forbidden for medicines supplied only on prescription. 'Reclame voor geneesmiddelen' covers all forms of canvassing, market research or inducement intended to promote prescription, supply, sale or consumption of medicines; not covered are the leaflet and labelling, answers to a specific question, factual announcements without product claims, and information on health or disease with no reference, even indirect, to a medicine."
+
+be-medicines-law-1964-art-12quater:
+  type: law
+  authors: "Belgische Staat / État belge"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 12quater (geneesmiddelen voor eigen gebruik uit een andere lidstaat)"
+  container: "ejustice.just.fgov.be (Justel; text updated to 4 June 2026)"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Everyone has the right to bring, or to have sent, from another Member State a reasonable quantity of medicines lawfully obtained in that Member State, for own use (inserted by the law of 17 July 2015, in force 27 August 2015)."
+
+be-medicines-law-1964-art-16:
+  type: law
+  authors: "Belgische Staat / État belge"
+  title: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik, artikel 16 (straffen)"
+  container: "ejustice.just.fgov.be (Justel; text updated to 4 June 2026)"
+  year: 1964
+  url: https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "§ 1, 2°: a fine for whoever buys, possesses, sells, offers, supplies, distributes, imports or exports spoiled, expired, falsified or counterfeit medicines, or medicines not in conformity with the law or its implementing decrees. § 3: prison of one month to one year and/or a fine, among others for breaching art. 6 § 1 (marketing authorisation), 6quater, 9 (advertising) and 12quater. The amounts in the text are subject to the separate law on criminal-fine surcharges (opdecimes), which was amended with effect from 1 September 2026; the site does not quote amounts."
+
+famhp-postal-seizure-qa:
+  type: regulator
+  authors: "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS)"
+  title: "Questions and answers on seizure of postal packages due to illegal importation of medicinal products or importation of non-compliant medical devices"
+  year: 2024
+  url: https://www.famhp.be/en/human_use/medicines/medicines/proper_use_of_medicines/questions_and_answers_on_seizure_of_postal
+  accessed: 2026-10-22
+  verified: url
+  note: "Page 'Last updated on 23/07/2024'. Read in the Internet Archive snapshot of 8 May 2026 (the live site serves a CAPTCHA to automated requests; the 17 October 2026 snapshot captured only that CAPTCHA). First seizure: a warning only, case closed. A second violation: an out-of-court settlement of at least EUR 400 is proposed; in exceptional cases the file goes to the public prosecutor. Antibiotics: zero tolerance, a fine is possible from the first offence. Under Belgian law a product is a medicine if it contains a pharmacologically active substance or is presented as a medicine; being sold elsewhere as a supplement or cosmetic is 'not a valid argument'. Only medicines licensed in another country may be imported for a patient, always through a Belgian pharmacist with a doctor's prescription and physician's statement; 'you can never import medicinal products yourself'. Shipment of medicines from outside the EEA to Belgium is never permitted; within the EU only if the medicine is authorised in a Member State and lawfully obtained in the legal supply chain."
+
+famhp-adverse-reaction-qa:
+  type: regulator
+  authors: "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS)"
+  title: "Questions and answers regarding reporting adverse reactions"
+  year: 2023
+  url: https://www.famhp.be/en/human_use/medicines/medicines/pharmacovigilance/questions_and_answers_regarding_reporting_adverse
+  accessed: 2026-10-22
+  verified: url
+  note: "Page 'Last updated on 13/11/2023'. Read in the Internet Archive snapshot of 18 June 2026 (CAPTCHA on the live site, see famhp-postal-seizure-qa). Any suspected adverse reaction can be reported at www.famhp.be/en/side_effect; anyone who experiences one can report it, as can family or friends and health professionals; required fields are the person, a description, the suspected medicine and the course of the reaction; reports are assessed and entered into international pharmacovigilance databases under the GDPR."
+
+famhp-compassionate-use-medical-need:
+  type: regulator
+  authors: "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS)"
+  title: "Compassionate use – Medical need"
+  year: 2026
+  url: https://www.famhp.be/en/human_use/medicines/medicines/research_development/compassionate_use_medical_need
+  accessed: 2026-10-22
+  verified: url
+  note: "Page 'Last updated on 17/09/2026'. Read in the Internet Archive snapshot of 20 September 2026 (CAPTCHA on the live site). Compassionate-use and medical-need programmes follow the Royal Decree of 25 April 2014 amending the Royal Decree of 14 December 2006 (in force 1 July 2014); the company submits the file; the page lists the approved programmes, mostly cancer, rare and serious diseases. None of the peptides on this site appears in the list (checked against the snapshot text)."
+
+be-flemish-antidoping-decree-2012:
+  type: law
+  authors: "Vlaamse Gemeenschap"
+  title: "Decreet van 25 mei 2012 betreffende de preventie en bestrijding van doping in de sport"
+  container: "Belgisch Staatsblad, 12 July 2012, p. 38313 (original text, as published by NADO Vlaanderen)"
+  year: 2012
+  url: https://www.dopinglijn.be/fileadmin/media/regelgeving/20120525_antidopingdecreet.pdf
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Art. 1: the decree regulates a community matter. Art. 2, 6° and 9°: a sporting activity includes recreational, competitive or demonstration sport in an organised context, and a 'sporter' is anyone who practises one, 'ongeacht het niveau'. Title 6 has separate disciplinary chapters for elite athletes (through their sports federation) and for non-elite athletes. Original 2012 text; amended since (2014 and later)."
+
+dopinglijn-regelgeving:
+  type: web
+  authors: "NADO Vlaanderen (Dopinglijn)"
+  title: "Regelgeving"
+  year: 2026
+  url: https://www.dopinglijn.be/dopinglijn/regelgeving/
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Lists the Flemish anti-doping rules, including the decree of 9 March 2012 approving the cooperation agreement between the Flemish Community, the French Community, the German-speaking Community and the Common Community Commission (Brussels) on doping prevention and control in sport. The page's news items stop in 2018, so its list may be incomplete."
+
+# ---------------------------------------------------------------- United States (research-use-only labels)
+
+ecfr-21-201-128:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 201.128 – Meaning of 'intended uses'"
+  container: "eCFR"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-D/section-201.128
+  accessed: 2026-10-22
+  verified: url
+  note: "Text as of 1 October 2026 (eCFR versioner API; as amended 86 FR 41401, 2 August 2021): intended uses refer to 'the objective intent of the persons legally responsible for the labeling of an article'; intent may be shown by their expressions, the design or composition of the article, or the circumstances of its distribution, for example labelling claims, advertising, or oral or written statements, and by circumstances in which the article is, with their knowledge, offered or used for a purpose for which it is neither labelled nor advertised."
+
+ecfr-21-809-10:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 809.10 – Labeling for in vitro diagnostic products"
+  container: "eCFR"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-H/part-809/subpart-B/section-809.10
+  accessed: 2026-10-22
+  verified: url
+  note: "Text as of 1 October 2026 (eCFR versioner API). (c)(2)(i): for an in vitro diagnostic product 'in the laboratory research phase of development, and not represented as an effective in vitro diagnostic product', all labelling bears the statement 'For Research Use Only. Not for use in diagnostic procedures.' This is where the 'research use only' wording comes from in US rules: lab test products, not medicines."

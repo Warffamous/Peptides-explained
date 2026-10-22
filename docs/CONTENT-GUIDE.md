@@ -99,8 +99,11 @@ informed and the use safer. Harm reduction is the core, not an afterthought.
 - **No lecturing, no scare words, no repeated "don't do it".** State risks plainly, once, with the
   reason. A doctor is presented as an ally for monitoring and help, not as a gatekeeper.
 - **The legal line stays** (§1): no amounts, schedules, protocols, "start low", reconstitution
-  maths, stacks or cycles, and no help finding or judging sellers. That line is what keeps
-  practical safety information legal (Geneesmiddelenwet art. 84–85).
+  maths, stacks or cycles, and no help finding or choosing a seller. Warning signs of a dangerous
+  product, practice or actor are allowed (the brief asks for them) when they are negative-only,
+  sourced to regulators, and the page says plainly that no sign proves a product is good. Never
+  a list of positive signs, a 'how to find a reliable source' or anything that ranks sellers.
+  That line is what keeps practical safety information legal (Geneesmiddelenwet art. 84–85).
 
 ## 2. Voice
 

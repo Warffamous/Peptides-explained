@@ -636,7 +636,8 @@ const mediaStats = validateMedia({
 checkExplainers({ err, warn, hasSource: (id) => sources.has(id), hasPerson: (id) => people.has(id), localeCodes, sourceLocale });
 
 // ------------------------------------------------------------------ report
-const filt = (xs: Issue[]) => (only ? xs.filter((x) => x.file.includes(only)) : xs);
+// Paths use backslashes on Windows; compare with forward slashes so `--only legal/nl` works everywhere.
+const filt = (xs: Issue[]) => (only ? xs.filter((x) => x.file.split(String.fromCharCode(92)).join("/").includes(only.split(String.fromCharCode(92)).join("/"))) : xs);
 const E = filt(errors);
 const W = filt(warnings);
 const group = (xs: Issue[]) => {

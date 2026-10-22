@@ -26,3 +26,24 @@ safety/before-you-consider: stethoscope-grey
 safety/sterile-technique: bacillus-cereus-plates
 safety/injection-safety: staph-aureus-usda-sem
 safety/sharps-disposal: sharps-bin-yellow
+# Safety (group safety-b): a mass spectrometer at the FDA (the kind of test that shows what is really in a
+# sample), a blood sample in a lab analyser (monitoring), and the entrance of a Dutch huisartsenpost (where
+# to go when something goes wrong). No needles, vials or products.
+safety/product-risk: mass-spectrometer-fda
+safety/monitoring: blood-sample-analyser
+safety/if-something-goes-wrong: huisartsenpost-oss
+# Entry pages (group guides): a signpost at a crossroads (a decision point), a closed consulting-room door
+# (the conversation with a doctor), and amino-acid crystals (the building blocks of every compound listed).
+start-here: signpost-crossroads
+talking-to-your-doctor: consulting-room-door
+compounds: amino-acid-crystals
+# Legal pages (group legal-a): law books on a library shelf (the section), the Ridderzaal in The Hague (Dutch
+# law), the Belgian federal parliament (Belgian law), the EMA building in Amsterdam (EU law), a lab plate being
+# filled with a multichannel pipette (what "research use" really means) and a pharmacy mortar (legal routes,
+# including pharmacy preparation). No products, vials, needles or people.
+legal: law-library-shelf
+legal/nl: ridderzaal-binnenhof
+legal/be: belgian-federal-parliament
+legal/eu: ema-building-amsterdam
+legal/research-use-only: lab-96-well-plate
+legal-routes: pharmacy-mortar

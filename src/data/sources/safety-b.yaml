@@ -1,0 +1,402 @@
+# Sources for the safety pages product risk, monitoring and if something goes wrong. Group: safety-b.
+# Scholarly metadata was copied from the PubMed record (get_article_metadata), never from memory.
+# Every web page below was fetched on 22 October 2026 and says what it is cited for (see note).
+# Sources registered by other groups are reused by id and not repeated here (for example
+# piatkowski-2026-retatrutide-product-testing, krug-2014-black-market-germany, weber-2017-swiss-border,
+# fda-pcac-2026-bpc157-briefing, fda-unapproved-glp1-concerns, bfarm-ozempic-falsification, knmg-beroepsgeheim).
+
+# ------------------------------------------------------------------ analytical studies of products bought online or seized
+
+ashraf-2024-online-semaglutide:
+  type: article
+  authors: "Ashraf AR, Mackey TK, Vida RG, Kulcsár G, Schmidt J, Balázs O, Domián BM, Li J, Csákó I, Fittler A"
+  title: "Multifactor Quality and Safety Analysis of Semaglutide Products Sold by Online Sellers Without a Prescription: Market Surveillance, Content Analysis, and Product Purchase Evaluation Study"
+  container: "Journal of Medical Internet Research"
+  year: 2024
+  volume: "26"
+  pages: "e65440"
+  doi: 10.2196/65440
+  pmid: "39509151"
+  pmcid: PMC11582493
+  verified: pubmed
+  note: "University of Pécs (Hungary) with UC San Diego; PubMed tags 'Research Support, Non-U.S. Gov't'; one author is affiliated with S-3 Research (a company). Read in PMC full text (22 October 2026): test purchases from 6 illegal online pharmacies; 3 vials of freeze-dried semaglutide arrived, the 3 Ozempic pens never did (non-delivery scams). Sellers' documents claimed purity of at least 99%; LC-MS showed one semaglutide peak (no peptide-like impurities) but semaglutide made up only 14.37%, 8.97% and 7.7% of the powder; the semaglutide amount exceeded the label by 28.56% to 38.69%; no living microorganisms; endotoxin reported in all three samples (abstract), but the results text gives 8.9511 EU/mg for one sample and only '<2.8658' and '<2.1645' EU/mg for the other two, so the page says the paper is unclear about those two (fact-check 22 October 2026). Table 4: 'measured purity' is the measured semaglutide mass divided by the total powder mass (e.g. 3.86 mg of 50.1 mg = 7.70%), so 'of the powder' is the paper's own measure. The paper names the sellers; this site does not."
+
+ashraf-2024-semaglutide-test-buys:
+  type: article
+  authors: "Ashraf AR, Mackey TK, Schmidt J, Kulcsár G, Vida RG, Li J, Fittler A"
+  title: "Safety and Risk Assessment of No-Prescription Online Semaglutide Purchases"
+  container: "JAMA Network Open"
+  year: 2024
+  volume: "7"
+  pages: "e2428280"
+  doi: 10.1001/jamanetworkopen.2024.28280
+  pmid: "39093567"
+  pmcid: PMC11297364
+  verified: pubmed
+  note: "Research letter on the same test purchases, read in PMC full text: of 6 products ordered only 3 arrived; 3 sellers of Ozempic pens ran non-delivery scams asking for extra payments (US $650-1,200) to 'clear customs'; one sample had elevated endotoxin (8.95 EU/mg), no viable microorganisms; semaglutide purity 7%-14% against an advertised 99%; content 29%-39% above the label."
+
+janvier-2018-falsified-peptides-belgium:
+  type: article
+  authors: "Janvier S, Cheyns K, Canfyn M, Goscinny S, De Spiegeleer B, Vanhee C, Deconinck E"
+  title: "Impurity profiling of the most frequently encountered falsified polypeptide drugs on the Belgian market"
+  container: "Talanta"
+  year: 2018
+  volume: "188"
+  pages: "795-807"
+  doi: 10.1016/j.talanta.2018.06.023
+  pmid: "30029448"
+  verified: pubmed
+  note: "Belgian Scientific Institute of Public Health (WIV-ISP, now Sciensano) with Ghent University. Abstract: the ten most frequently encountered falsified peptide drugs on the Belgian market, bought from three suspected illegal internet pharmacies; high variation in the amount of drug per unit; low purity (5%-75% for cysteine-containing peptides); the toxic class 1 elemental impurities arsenic and lead: one sample contaminated with lead, multiple samples at concentrations up to ten times the ICH toxicity limit for parenteral drugs; the arsenic was all in the more toxic inorganic form. Only the abstract was read."
+
+janvier-2018-bacillus-cereus:
+  type: article
+  authors: "Janvier S, Wattijn E, Botteldoorn N, De Spiegeleer B, Deconinck E, Vanhee C"
+  title: "Are injectable illegal polypeptide drugs safe? Case report demonstrating the presence of haemolytic Bacillus cereus in 2 illegal peptide drugs"
+  container: "Drug Testing and Analysis"
+  year: 2018
+  volume: "10"
+  pages: "791-795"
+  doi: 10.1002/dta.2304
+  pmid: "28941153"
+  verified: pubmed
+  note: "Letter (e-published 1 December 2017; volume 10, 2018) from the Belgian Scientific Institute of Public Health. PubMed has no abstract; cited only for what its title states: haemolytic Bacillus cereus bacteria were found in two illegal injectable peptide drugs."
+
+vanhee-2017-egf-not-igf1:
+  type: article
+  authors: "Vanhee C, Janvier S, Moens G, Goscinny S, Courselle P, Deconinck E"
+  title: "Identification of epidermal growth factor (EGF), in an unknown pharmaceutical preparation suspected to contain insulin like growth factor 1 (IGF-1)"
+  container: "Drug Testing and Analysis"
+  year: 2017
+  volume: "9"
+  pages: "831-837"
+  doi: 10.1002/dta.2029
+  pmid: "27390261"
+  verified: pubmed
+  note: "Letter (e-published 8 July 2016; volume 9, 2017), Belgian Scientific Institute of Public Health. No abstract in PubMed; cited only for what its title states: a preparation suspected to contain IGF-1 contained a different growth factor (EGF)."
+
+deconinck-2021-geon-research-peptides:
+  type: article
+  authors: "Deconinck E, Vanhee C, Keizers P, Guinot P, Mihailova A, Syversen PV, et al."
+  title: "The occurrence of non-anatomical therapeutic chemical-international nonproprietary name molecules in suspected illegal or illegally traded health products in Europe: A retrospective and prospective study"
+  container: "Drug Testing and Analysis"
+  year: 2021
+  volume: "13"
+  pages: "833-840"
+  doi: 10.1002/dta.3001
+  pmid: "33453144"
+  verified: pubmed
+  note: "Study of the European network of Official Medicines Control Laboratories (GEON, coordinated by the EDQM, Council of Europe). Abstract: 1,104 cases from 16 countries, January 2017 to end of September 2019; 83% from the illegal market; 11% of samples contained research peptides, the second most reported category."
+
+choules-2020-nmr-mannitol:
+  type: article
+  authors: "Choules MP, Bisson J, Simmler C, McAlpine JB, Giancaspro G, Bzhelyansky A, Niemitz M, Pauli GF"
+  title: "NMR reveals an undeclared constituent in custom synthetic peptides"
+  container: "Journal of Pharmaceutical and Biomedical Analysis"
+  year: 2020
+  volume: "178"
+  pages: "112915"
+  doi: 10.1016/j.jpba.2019.112915
+  pmid: "31671336"
+  pmcid: PMC6913887
+  verified: pubmed
+  note: "University of Illinois with the US Pharmacopeia (e-published 10 October 2019). Abstract: LC-based quality control 'can be particularly blind to certain impurities'; NMR found substantial amounts of mannitol (20% and 43% by weight) as an undeclared constituent in two custom synthetic peptides bought commercially; the adulterant is UV-transparent."
+
+dhondt-2014-peptide-impurities:
+  type: review
+  authors: "D'Hondt M, Bracke N, Taevernier L, Gevaert B, Verbeke F, Wynendaele E, De Spiegeleer B"
+  title: "Related impurities in peptide medicines"
+  container: "Journal of Pharmaceutical and Biomedical Analysis"
+  year: 2014
+  volume: "101"
+  pages: "2-30"
+  doi: 10.1016/j.jpba.2014.06.012
+  pmid: "25044089"
+  verified: pubmed
+  note: "Ghent University (DruQuaR). Abstract: most peptides are made by solid-phase synthesis; deletion and insertion of amino acids from inefficient deprotection or excess reagent; racemisation; protection adducts; oxidation; dimers and oligomers; unwanted counter-ions such as trifluoroacetate; contamination by other unrelated peptides 'pointing out the lack of appropriate GMP'; degradation (beta-elimination, diketopiperazine, pyroglutamate, succinimide)."
+
+schneier-2020-endotoxin-review:
+  type: review
+  authors: "Schneier M, Razdan S, Miller AM, Briceno ME, Barua S"
+  title: "Current technologies to endotoxin detection and removal for biopharmaceutical purification"
+  container: "Biotechnology and Bioengineering"
+  year: 2020
+  volume: "117"
+  pages: "2588-2609"
+  doi: 10.1002/bit.27362
+  pmid: "32333387"
+  verified: pubmed
+  note: "Abstract: endotoxins are the major contributors to the fever (pyrogenic) response caused by contaminated pharmaceutical products; endotoxins (lipopolysaccharides) sit in the outer membrane of Gram-negative bacteria and are released when the bacterium dies; contamination can come from water, raw materials, equipment and containers."
+
+# ------------------------------------------------------------------ falsified GLP-1 products and insulin
+
+stammers-2026-insulin-falsified-semaglutide:
+  type: article
+  authors: "Stammers J, Hofste Op Bruinink D, Karel PGA, van der Hoeven CJ, Schol-Gelok S, Stam-Slob MC"
+  title: "Insulin intoxications caused by falsified semaglutide"
+  container: "Nederlands Tijdschrift voor Geneeskunde"
+  year: 2026
+  volume: "170"
+  pages: "D9116"
+  pmid: "42390457"
+  lang: nl
+  verified: pubmed
+  note: "Dutch-language case report (Albert Schweitzer ziekenhuis, Dordrecht; Deventer Ziekenhuis); the title is the English title as indexed in PubMed; D9116 is the journal's article number. English abstract: two patients without diabetes or obesity injected semaglutide obtained without a prescription; both came to hospital in a coma with severe hypoglycaemia, low potassium and low body temperature, caused by synthetic insulin; up to two days of continuous glucose infusion were needed; timely notification to the national regulator is essential."
+
+antonacci-2026-falsified-semaglutide-coma:
+  type: article
+  authors: "Antonacci G, Bortignon E, Bolognesi M, Piano SS, Cadore A, Camuffo L, Venturini F, Faoro S, Favretto D, Romano A, Mengato D"
+  title: "Hypoglycaemic coma induced by a falsified semaglutide product: a case report"
+  container: "European Journal of Hospital Pharmacy"
+  year: 2026
+  volume: "33"
+  pages: "486-489"
+  doi: 10.1136/ejhpharm-2025-004656
+  pmid: "41125326"
+  verified: pubmed
+  note: "Padua University Hospital. Abstract: a 31-year-old woman was admitted in a hypoglycaemic coma after injecting 'semaglutide (Ozempic)' bought from a website; toxicological analysis showed the vial contained insulin instead of semaglutide; reported to the Italian Medicines Agency (AIFA)."
+
+zinzi-2026-counterfeit-semaglutide-eudravigilance:
+  type: article
+  authors: "Zinzi A, Gaio M, Ruggiero R, Mascolo A, Riemma MA, Cipriani M, Laino LV, Berrino L, Rossi F, Capuano A"
+  title: "Unmasking counterfeit semaglutide: analysis of real-world safety data from EudraVigilance"
+  container: "Frontiers in Pharmacology"
+  year: 2026
+  volume: "17"
+  pages: "1805842"
+  doi: 10.3389/fphar.2026.1805842
+  pmid: "42137313"
+  pmcid: PMC13168152
+  verified: pubmed
+  note: "Campania pharmacovigilance centre / University of Campania. Abstract: 234 reports about potential counterfeit semaglutide in EudraVigilance, 1 January 2018 to 31 December 2025; 89.3% of suspected reactions serious; most frequent vomiting, nausea and hypoglycaemia; hypoglycaemia reported disproportionately more often than with non-counterfeit semaglutide."
+
+lambson-2023-semaglutide-administration-errors:
+  type: article
+  authors: "Lambson JE, Flegal SC, Johnson AR"
+  title: "Administration errors of compounded semaglutide reported to a poison control center-Case series"
+  container: "Journal of the American Pharmacists Association"
+  year: 2023
+  volume: "63"
+  pages: "1643-1645"
+  doi: 10.1016/j.japh.2023.06.017
+  pmid: "37392810"
+  verified: pubmed
+  note: "Case series of 3 people reported to a US regional poison control centre: two gave themselves 10-fold dosing errors; nausea, vomiting and abdominal pain lasting days; one was treated with an anti-sickness medicine and intravenous fluids; one received a vial with syringes without counselling; one dosed in millilitres and units rather than milligrams. Vials lack the safety features of prefilled pens."
+
+# ------------------------------------------------------------------ regulators and standards
+
+ema-2025-synthetic-peptides-guideline:
+  type: regulator
+  authors: "European Medicines Agency, CHMP and CVMP"
+  title: "Guideline on the Development and Manufacture of Synthetic Peptides (EMA/CHMP/CVMP/QWP/367182/2025)"
+  container: "European Medicines Agency"
+  year: 2025
+  url: https://www.ema.europa.eu/en/documents/scientific-guideline/guideline-development-manufacture-synthetic-peptides_en.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Dated 4 December 2025, adopted by CHMP 21 November 2025, coming into effect 1 June 2026. PDF read (22 October 2026). Section 4.3.2: peptide-related impurities from starting materials, synthesis (stereoisomers; deletion sequences 'with one or several amino acids missing'; truncated and insertion sequences; side reactions at cleavage) and degradation (oxidation, hydrolysis, deamidation and others); aggregates; non-peptide impurities (reagents, residual solvents, elemental impurities). Section 4.4.1: an active-substance specification may include appearance, identification, purity with individual impurities, high-molecular-weight impurities, assay/content, counter-ion identity and content, residual TFA, water, residual solvents, elemental impurities, bacterial endotoxins and microbiological purity. Identification: 'at least two orthogonal methods' recommended; analytical methods must allow for 'the risk of co-eluting impurities'; mass spectrometry determines the molecular mass and confirms the sequence; Ph. Eur. reporting threshold 0.1% for impurities. Most peptide products are for injection; terminal sterilisation is the method of choice."
+
+nist-nvlap:
+  type: web
+  authors: "National Institute of Standards and Technology (NIST)"
+  title: "National Voluntary Laboratory Accreditation Program (NVLAP)"
+  year: 2026
+  url: https://www.nist.gov/nvlap
+  accessed: 2026-10-22
+  verified: url
+  note: "NVLAP 'provides third-party accreditation to testing and calibration laboratories'; accredited laboratories are 'assessed against the management and technical requirements published in the International Standard, ISO/IEC 17025:2017'; the page links to a directory of accredited laboratories. Cited only to explain what ISO/IEC 17025 accreditation is."
+
+fda-considering-online-pharmacy:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "BeSafeRx: Considering an Online Pharmacy?"
+  year: 2020
+  url: https://www.fda.gov/drugs/besaferx-your-source-online-pharmacy-information/considering-online-pharmacy
+  accessed: 2026-10-22
+  verified: url
+  note: "Content current as of 21 September 2020. Warning signs of an unsafe online pharmacy: does not require a doctor's prescription; not licensed; no licensed pharmacist to answer questions; sends medicine that looks different; packaging broken, damaged, in a foreign language, without or past its expiry date; deep discounts or prices that seem too good to be true; charges for products never ordered or received; no clear protection of personal and financial information."
+
+igj-2025-illegal-online-medicines:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ) en College ter Beoordeling van Geneesmiddelen (CBG)"
+  title: "IGJ en CBG waarschuwen voor illegaal online aanbod van medicijnen"
+  year: 2025
+  url: https://www.igj.nl/actueel/nieuws/2025/09/03/igj-en-cbg-waarschuwen-voor-illegaal-online-aanbod-medicijnen
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "3 September 2025. Illegal online offers of medicines are increasing, especially for obesity and type 2 diabetes; it is unknown whether such products are genuine and safe; sellers often give no information on origin or quality; the dose of active substance can be too high, too low or missing; unexpected side effects or dangerous interactions; 'Dat kan levensgevaarlijk zijn.' Report doubtful websites to the inspectorate's Landelijk Meldpunt Zorg. No seller is named."
+
+igj-2026-10-stolen-medicines:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "IGJ waarschuwt Europese autoriteiten voor gestolen medicijnen"
+  year: 2026
+  url: https://www.igj.nl/actueel/nieuws/2026/10/20/igj-waarschuwt-europese-autoriteiten-voor-gestolen-medicijnen
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "20 October 2026. A batch of medicines, mainly insulin pens, was recently stolen from a Dutch wholesaler; the products may be offered for sale illegally online and 'mogelijk ook worden gepresenteerd als obesitasmedicatie'; using them 'kan levensgevaarlijk zijn'; do not use medication bought online, contact your doctor or pharmacy. No seller is named; the page body does not name the manufacturer."
+
+vic-health-2026-retatrutide-liver:
+  type: regulator
+  authors: "Department of Health, Victoria (Australia), Chief Health Officer"
+  title: "Toxicity linked to unapproved peptide product labelled Retatrutide (health alert)"
+  year: 2026
+  url: https://www.health.vic.gov.au/health-alerts/toxicity-linked-to-unapproved-peptide-retatrutide
+  accessed: 2026-10-22
+  verified: url
+  note: "Issued and updated 19 June 2026. Six cases of acute liver injury in Victoria since January 2026 after use of an unapproved peptide product labelled as retatrutide, possibly associated with a contaminant (testing ongoing); symptoms: tiredness, jaundice, abdominal pain, dark urine, abnormal bruising, itchy skin; people who continue to use it should see their GP about liver function tests; clinicians should ask about peptide use and record the product name, ingredients, dose and place of purchase. Product names on the page are not repeated on this site."
+
+# ------------------------------------------------------------------ blood tests (what each measures)
+
+medlineplus-egfr:
+  type: web
+  authors: "MedlinePlus, U.S. National Library of Medicine"
+  title: "Glomerular Filtration Rate (GFR) Test"
+  year: 2026
+  url: https://medlineplus.gov/lab-tests/glomerular-filtration-rate-gfr-test/
+  accessed: 2026-10-22
+  verified: url
+  note: "Last updated 30 September 2026. eGFR checks how well the kidneys work; it is calculated mainly from creatinine, a waste product from muscle, together with age, sex, weight and height; body size and activity, foods such as meat and certain medicines can affect the result."
+
+medlineplus-liver-function-tests:
+  type: web
+  authors: "MedlinePlus, U.S. National Library of Medicine"
+  title: "Liver Function Tests"
+  year: 2023
+  url: https://medlineplus.gov/lab-tests/liver-function-tests/
+  accessed: 2026-10-22
+  verified: url
+  note: "Last updated 5 December 2023. ALT, AST, ALP and GGT are enzymes mainly made in the liver; albumin is a protein made in the liver; bilirubin is a waste product from old red blood cells; abnormal results do not always mean a liver problem and usually need further tests to find the cause."
+
+medlineplus-cbc:
+  type: web
+  authors: "MedlinePlus, U.S. National Library of Medicine"
+  title: "Complete Blood Count (CBC)"
+  year: 2024
+  url: https://medlineplus.gov/lab-tests/complete-blood-count-cbc/
+  accessed: 2026-10-22
+  verified: url
+  note: "Last updated 15 October 2024. Measures red blood cells, white blood cells (which fight infections), platelets (clotting), haemoglobin and haematocrit; helps find infections, anaemia, immune system disorders and blood diseases."
+
+medlineplus-hba1c:
+  type: web
+  authors: "MedlinePlus, U.S. National Library of Medicine"
+  title: "Hemoglobin A1C (HbA1c) Test"
+  year: 2025
+  url: https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/
+  accessed: 2026-10-22
+  verified: url
+  note: "Last updated 20 May 2025. Shows the average blood glucose over the past two to three months; anaemia and other blood disorders, kidney failure and liver disease can make it unreliable."
+
+medlineplus-igf1:
+  type: web
+  authors: "MedlinePlus, U.S. National Library of Medicine"
+  title: "IGF-1 (Insulin-Like Growth Factor-1) Test"
+  year: 2024
+  url: https://medlineplus.gov/lab-tests/igf-1-insulin-like-growth-factor-1-test/
+  accessed: 2026-10-22
+  verified: url
+  note: "Last updated 24 September 2024. IGF-1 manages the effects of growth hormone; growth hormone levels change during the day, IGF-1 levels are more stable, so measuring IGF-1 is a dependable way to track growth hormone; IGF-1 changes with age."
+
+medlineplus-cholesterol:
+  type: web
+  authors: "MedlinePlus, U.S. National Library of Medicine"
+  title: "Cholesterol Levels"
+  year: 2024
+  url: https://medlineplus.gov/lab-tests/cholesterol-levels/
+  accessed: 2026-10-22
+  verified: url
+  note: "Last updated 15 October 2024. Measures LDL and HDL cholesterol, total cholesterol and triglycerides; gives important information about the risk of developing heart disease."
+
+teichman-2006-cjc1295:
+  type: trial
+  authors: "Teichman SL, Neale A, Lawrence B, Gagnon C, Castaigne JP, Frohman LA"
+  title: "Prolonged stimulation of growth hormone (GH) and insulin-like growth factor I secretion by CJC-1295, a long-acting analog of GH-releasing hormone, in healthy adults"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 2006
+  volume: "91"
+  pages: "799-805"
+  doi: 10.1210/jc.2005-1536
+  pmid: "16352683"
+  verified: pubmed
+  note: "Two randomised, placebo-controlled, double-blind, ascending-dose trials (28 and 49 days) in healthy adults aged 21-61; the abstract does not give the number of participants (the publisher's article page, checked 22 October 2026, gives none either); three authors from the developer (ConjuChem, Montreal), per the author list on the publisher's page, two from WinPharm Associates and one from the University of Illinois. After one injection, mean IGF-1 rose 1.5- to 3-fold for 9-11 days; after several doses IGF-1 stayed above baseline for up to 28 days; no serious adverse reactions reported."
+
+habbema-2017-melanotan-review:
+  type: review
+  authors: "Habbema L, Halk AB, Neumann M, Bergman W"
+  title: "Risks of unregulated use of alpha-melanocyte-stimulating hormone analogues: a review"
+  container: "International Journal of Dermatology"
+  year: 2017
+  volume: "56"
+  pages: "975-980"
+  doi: 10.1111/ijd.13585
+  pmid: "28266027"
+  verified: pubmed
+  note: "Dutch dermatologists (Leiden, Rotterdam, Bussum). Abstract: growing numbers of case reports link melanotan I and II to changes in existing moles and new (dysplastic) moles; four case reports describe melanomas from existing moles during or shortly after use; conclusive evidence linking these is lacking."
+
+thuisarts-gezondheidstest:
+  type: web
+  authors: "Nederlands Huisartsen Genootschap (Thuisarts.nl)"
+  title: "Ik wil misschien laten onderzoeken of ik wel gezond ben"
+  year: 2025
+  url: https://www.thuisarts.nl/gezondheids-test/ik-wil-misschien-laten-onderzoeken-of-ik-wel-gezond-ben
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Last changed 27 March 2025. Tests you buy yourself: you usually pay yourself; you often have to work out what the result means yourself; a result can be bad without disease, or good with disease; many tests you can buy have not been well studied; your GP can often reassure you."
+
+zin-huisarts-zvw:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Huisarts (Zvw)"
+  year: 2026
+  url: https://www.zorginstituutnederland.nl/verzekerde-zorg/h/huisarts-zvw
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "GP care itself does not count towards the compulsory deductible (eigen risico); the deductible does apply to 'de testen die de huisarts buiten de praktijk laat uitvoeren, zoals bloedonderzoek'."
+
+# ------------------------------------------------------------------ getting help and reporting
+
+nhs-poisoning:
+  type: web
+  authors: "NHS"
+  title: "Poisoning"
+  year: 2025
+  url: https://www.nhs.uk/conditions/poisoning/
+  accessed: 2026-10-22
+  verified: url
+  note: "Page last reviewed 12 June 2025. Bring any medicines you take; take some of the substance or its packaging to show doctors at the hospital, if possible; do not drive yourself; call NHS 111 if you are not sure whether something is harmful."
+
+nvic-umcutrecht:
+  type: web
+  authors: "Nationaal Vergiftigingen Informatie Centrum (NVIC), UMC Utrecht"
+  title: "Nationaal Vergiftigingen Informatie Centrum"
+  year: 2026
+  url: https://nvic.umcutrecht.nl/
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "The NVIC 'informeert artsen, apothekers en andere professionele hulpverleners' about poisonings; members of the public who suspect a poisoning should contact their GP, or the huisartsenpost outside office hours ('Neem dan contact op met uw huisarts (of buiten kantooruren met de huisartsenpost)'); the doctor can reach the NVIC day and night."
+
+lareb-2021-illegal-medicines:
+  type: web
+  authors: "Bijwerkingencentrum Lareb"
+  title: "Risico's illegale geneesmiddelen (Medicijnjournaal december 2021)"
+  year: 2021
+  url: https://www.lareb.nl/nl/news/rrisico-s-illegale-geneesmiddelen-medicijnjournaal-december-2021/
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "27 December 2021. Many people order illegal medicines online, sometimes without knowing they are illegal; the products may be contaminated or contain toxic substances; 'Zowel zorgverleners als gebruikers van illegale geneesmiddelen kunnen bij Bijwerkingencentrum Lareb terecht' to report side effects."
+
+gesund-bund-notfallnummern:
+  type: regulator
+  authors: "Bundesministerium für Gesundheit (gesund.bund.de)"
+  title: "Numbers to call in the event of an emergency"
+  year: 2022
+  url: https://gesund.bund.de/en/notfallnummern
+  accessed: 2026-10-22
+  verified: url
+  note: "As at 8 June 2022. 116 117 helps people with urgent medical problems outside practice hours that are not life-threatening, at night, at weekends and on public holidays; poison control centres are run by the federal states, give emergency advice by phone on human poisoning and can be reached 24 hours a day."
