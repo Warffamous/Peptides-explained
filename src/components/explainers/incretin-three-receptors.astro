@@ -1,0 +1,131 @@
+---
+/**
+ * Explainer "incretin-three-receptors": retatrutide, one molecule that turns on the GLP-1, GIP and
+ * glucagon receptors. It is not an approved medicine; its word on the drawing says so. Backdrop: the
+ * same text-free AI art as incretin-two-receptors (registry art: incretin-receptors-art, art_dark:
+ * incretin-receptors-art-dark); see that file for the measured organ positions in this 480 × 480 canvas
+ * (brain 151–322 × 20–171, liver 11–180 × 185–308, vessel 182–309 × 229–260, stomach 325–469 × 151–308,
+ * pancreas 74–282 × 348–433, fat block 315–447 × 349–428). Anatomy: never mirrored.
+ *   1 (k0) one molecule, three receptors (the key, top left; long-dashed frame)       in-vitro
+ *   2 (k1) GLP-1 and GIP: pancreas (insulin), base of the brain (less hunger)          human, animal
+ *          (the brain ring is long-dashed: where in the brain these drugs act comes from rodent
+ *          work; a solid line leads from it to 'Less hunger', which is measured in people, as in
+ *          glp1-action)
+ *   3 (k2) glucagon: the liver (less liver fat, partly through weight loss)            human
+ *   4 (k3) more energy used: in mice (long-dashed ring on the fat block)               animal
+ *   5 (k4) large weight loss in trials; glucagon's share not known (amber ring)        human, hypothesis
+ * Organ names sit on their organs; effect words in the free bands next to their rings; the trial
+ * result in the free top-right corner; the open question right under the key, next to its amber ring on
+ * the glucagon cup (clarity rule 8c). To make room for it at 360 px the key is compact (label rows 25
+ * units apart, the side cup smaller) and the liver ring sits a little lower (its top cuts the very top
+ * of the liver). No lines from the vessel: the rings carry the evidence level (solid = people, long
+ * dashes = mice or cells, short amber dashes = hypothesis).
+ * The extra energy use is a whole-body measure in mice; it is drawn on the fat block, the body's store.
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, link, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string; backdrop?: { width: number; height: number } }
+const { levels: L, labels, locale, backdrop } = Astro.props;
+const W = 480;
+const H = 480;
+if (!backdrop) throw new Error('explainer incretin-three-receptors: the overlay needs its picture (art: in src/data/explainers.yaml)');
+if (Math.abs(backdrop.width / backdrop.height - W / H) > 0.01) {
+  throw new Error(`explainer incretin-three-receptors: the picture is ${backdrop.width}×${backdrop.height}, but the overlay is drawn on a ${W}×${H} canvas`);
+}
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer incretin-three-receptors: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+const hole = (x: number, y: number, w: number, h: number, r = 8) =>
+  `M${x + r} ${y}H${x + w - r}A${r} ${r} 0 0 1 ${x + w} ${y + r}V${y + h - r}A${r} ${r} 0 0 1 ${x + w - r} ${y + h}H${x + r}A${r} ${r} 0 0 1 ${x} ${y + h - r}V${y + r}A${r} ${r} 0 0 1 ${x + r} ${y}Z`;
+const veil = (...holes: string[]) => `M-4-4H${W + 4}V${H + 4}H-4Z${holes.join('')}`;
+// The key: a compact vertical capsule (x 16–30, y 71–119) with a receptor cup on each end and a smaller
+// one on its side, in a frame (y 56–136). Its three words (ROWS) are 25 units apart, so at 360 px (where a
+// line of words is about 26 units high) they just stack; the open question of scene 5 hangs under the frame.
+const X = 23;
+const TOP = 71;
+const BOT = 119;
+const MID = 95;
+const ROWS = [71, 96, 121];
+const cupTop = `M${X - 12} ${TOP + 9}V${TOP + 7}A12 12 0 0 1 ${X + 12} ${TOP + 7}V${TOP + 9}`;
+const cupSide = `M${X + 1} ${MID - 8}H${X + 7}A8 8 0 0 1 ${X + 7} ${MID + 8}H${X + 1}`;
+const cupBot = `M${X - 12} ${BOT - 9}V${BOT - 7}A12 12 0 0 0 ${X + 12} ${BOT - 7}V${BOT - 9}`;
+// A ring on the picture: a halo in the page colour under the ring, on the same timing.
+const ring = (k: number, lag: number, shape: Record<string, number>, level?: Level) => [
+  { class: 'xp-ring xp-halo xp-in', 'data-level': level, style: at(k, lag), ...shape },
+  { class: 'xp-ring xp-in', 'data-level': level, style: at(k, lag), ...shape },
+];
+// A causal link on the picture, with its halo.
+const line = (level: Level, k: number, d: string, lag = 0) => [
+  { ...link(level, k, lag), class: 'xp-link xp-halo xp-in', d },
+  { ...link(level, k, lag), d },
+];
+const P = { w: W, h: H, locale };
+---
+<svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+  <!-- one veil per scene (only while it plays): vessel; pancreas + brain base; liver; fat; all -->
+  <path class="xp-veil" d={veil(hole(178, 224, 136, 42))} style="--k:0" />
+  <path class="xp-veil" d={veil(hole(64, 338, 230, 104), hole(208, 106, 78, 70))} style="--k:1" />
+  <path class="xp-veil" d={veil(hole(2, 178, 196, 142))} style="--k:2" />
+  <path class="xp-veil" d={veil(hole(300, 336, 162, 106))} style="--k:3" />
+  <path class="xp-veil" d={veil()} style="--k:4;--span:2" />
+
+  <!-- 1: the key (one molecule, three receptor cups; long dashes: shown in cells) and the molecules in the blood -->
+  <g class="xp-focus" style="--k:0">
+    {ring(0, 0.2, { x: 4, y: 56, width: 142, height: 80, rx: 10 }, L[0][0]).map((a) => <rect {...a} />)}
+  </g>
+  <rect class="xp-drug" x={X - 7} y={TOP} width="14" height={BOT - TOP} rx="7" />
+  <g class="xp-pulse" style="--k:1"><path class="xp-cup" d={cupTop} /></g>
+  <g class="xp-pulse" style="--k:1"><path class="xp-cup" d={cupSide} /></g>
+  <g class="xp-pulse" style="--k:2"><g class="xp-pulse" style="--k:3"><path class="xp-cup" d={cupBot} /></g></g>
+  <g class="xp-focus" style="--k:0">
+    {[210, 236].map((x, i) => (
+      <g transform={`translate(${x} 245)`}>
+        <rect class="xp-drug xp-in xp-flow" x="-10" y="-4.5" width="20" height="9" rx="4.5" style={at(0, 0.3 + 0.3 * i, '--dx:-50px')} />
+      </g>
+    ))}
+  </g>
+
+  <!-- 2: GLP-1 and GIP receptors: the pancreas (people) and the base of the brain (long dashes: where in the
+       brain comes from rodents) → 'Less hunger' (solid line: measured in people) -->
+  <g class="xp-focus" style="--k:1">
+    {ring(1, 0.2, { cx: 178, cy: 390, rx: 112, ry: 50 }).map((a) => <ellipse {...a} />)}
+    {ring(1, 0.7, { cx: 246, cy: 141, rx: 30, ry: 26 }, L[1][1] ?? L[1][0]).map((a) => <ellipse {...a} />)}
+    {line(L[1][0], 1, 'M246 169V185', 0.8).map((a) => <path {...a} />)}
+  </g>
+
+  <!-- 3: glucagon receptor: the liver (people) -->
+  <g class="xp-focus" style="--k:2">
+    {ring(2, 0.3, { cx: 96, cy: 250, rx: 92, ry: 59 }).map((a) => <ellipse {...a} />)}
+  </g>
+
+  <!-- 4: more energy used, shown in mice (long dashes), drawn on the fat block -->
+  <g class="xp-focus" style="--k:3">
+    {ring(3, 0.3, { cx: 381, cy: 389, rx: 80, ry: 51 }, L[3][0]).map((a) => <ellipse {...a} />)}
+  </g>
+
+  <!-- 5: how much the glucagon part adds: a hypothesis (short dashes, amber) around the glucagon cup -->
+  <g class="xp-focus" style="--k:4;--span:2">
+    <ellipse {...link(L[4][1] ?? L[4][0], 4, 0.8)} class="xp-link xp-halo xp-in" cx={X} cy={BOT + 3} rx="17" ry="11" />
+    <ellipse {...link(L[4][1] ?? L[4][0], 4, 0.8)} cx={X} cy={BOT + 3} rx="17" ry="11" />
+  </g>
+</svg>
+<Overlay text={label('drug')} x={8} y={2} {...P} />
+<Overlay text={label('glp1')} x={42} y={ROWS[0]} valign="middle" {...P} />
+<Overlay text={label('gip')} x={44} y={ROWS[1]} valign="middle" {...P} />
+<Overlay text={label('gcg')} x={42} y={ROWS[2]} valign="middle" {...P} />
+<Overlay text={label('blood')} x={280} y={245} align="center" valign="middle" focus={0} {...P} />
+<Overlay text={label('brain')} x={236} y={66} align="center" valign="middle" focus={1} {...P} />
+<Overlay text={label('hunger')} x={248} y={188} align="center" max={32} tone="note" k={1} lag={0.8} focus={1} {...P} />
+<Overlay text={label('pancreas')} x={190} y={380} align="center" valign="middle" focus={1} {...P} />
+{/* hangs just above the pancreas ring, so it reads as the pancreas's word, not the blood vessel's */}
+<Overlay text={label('insulin')} x={178} y={337} align="center" valign="bottom" max={48} tone="note" k={1} lag={0.3} focus={1} {...P} />
+<Overlay text={label('liver')} x={96} y={216} align="center" valign="middle" focus={2} {...P} />
+<Overlay text={label('liverfat')} x={92} y={254} align="center" valign="middle" max={38} tone="note" k={2} lag={0.5} focus={2} {...P} />
+<Overlay text={label('fat')} x={381} y={400} align="center" valign="middle" focus={3} {...P} />
+<Overlay text={label('energy')} x={476} y={444} align="end" max={66} tone="note" k={3} lag={0.5} focus={3} {...P} />
+{/* the stomach has no part in this story: faded for the whole run (its scene, 6, would start after the end) */}
+<Overlay text={label('stomach')} x={418} y={226} align="center" valign="middle" focus={5} {...P} />
+<Overlay text={label('result')} x={330} y={8} max={32} tone="note" k={4} lag={0.2} focus={4} span={2} {...P} />
+{/* right under the key, next to its amber ring on the glucagon cup (rule 8c), not in the far corner */}
+<Overlay text={label('unknown')} x={8} y={138} max={44} tone="note" k={4} lag={0.9} focus={4} span={2} {...P} />

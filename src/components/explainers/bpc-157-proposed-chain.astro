@@ -1,0 +1,127 @@
+---
+/**
+ * Explainer "bpc-157-proposed-chain": the chain of effects proposed for BPC-157, from the molecule
+ * to people, in two small panels that sit side by side on a wide screen and stack on a phone
+ * (docs/EXPLAINERS.md §3.3a), so the drawing stays about one screen tall:
+ *   left   "The unknown start, then cells in a dish": steps 1-3
+ *   right  "In rats, then in people": steps 4-6
+ * Each panel is a ladder: drawings on the left (spine x 60), every word on the right (x 128 on),
+ * so no word sits on a line. The line into each rung carries that step's evidence level (amber
+ * short dashes = hypothesis, cyan long dashes = cells or animals); the left panel's last line
+ * runs off its bottom edge and the right panel's first line comes in at its top: one chain.
+ * The chain ends in a broken amber line before the person. A schematic, kept LTR (mirror: false).
+ *   1 (k0) BPC-157 beside an empty, dashed receptor outline with "?": no target identified  hypothesis
+ *   2 (k1) vessel cells in a dish: more VEGFR2 and nitric-oxide signals                    in-vitro
+ *   3 (k2) tendon cells in a dish crawl further and survive stress                         in-vitro
+ *   4 (k3) injured rat tissue: more small vessels                                          animal
+ *   5 (k4) the cut rat tendon closes faster; another lab: no clear strength gain           animal
+ *   6 (k5) the line breaks before the person: not shown in people                          hypothesis
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, link, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string }
+const { levels: L, labels, locale } = Astro.props;
+const W = 320;
+const H = 330;
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer bpc-157-proposed-chain: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+const f = (k: number, span = 1) => ({ class: 'xp-focus', style: `--k:${k};--span:${span}` });
+const P = { w: W, h: H, locale };
+const T = { x: 128, valign: 'middle' as const, max: 58, tone: 'note' as const };
+const beads = [80, 87, 94, 101, 108];
+const lining = [24, 42, 60, 78, 96];
+const cells = [[38, 240, -8], [72, 251, -4], [44, 262, -10]];
+const vessels = ['M8 67C26 67 38 59 54 55', 'M8 67C28 69 42 77 60 81', 'M32 64C48 66 62 69 82 67', 'M54 55C64 53 74 57 86 55'];
+---
+<div class="xp-panels">
+  <div class="xp-panel">
+    <p class="xp-panel__title xp-focus" style="--k:0;--span:3"><bdi>{label('title-a')}</bdi></p>
+    <div class="xp-panel__art">
+      <svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+        <!-- 1: BPC-157 next to an empty receptor outline on the cell surface: no target is known -->
+        <g {...f(0)}>
+          <g class="xp-in xp-move" style={at(0, 0, '--dx:14px')}>
+            <path class="xp-tail" d="M80 18H108" />
+            {beads.map((x) => <circle class="xp-drug" cx={x} cy="18" r="3.4" />)}
+          </g>
+          <path {...link(L[0][0], 0, 0.3)} d="M76 19C68 19 62 24 60 32" />
+          <rect class="xp-organ xp-in" x="8" y="70" width="104" height="8" rx="4" style={at(0)} />
+          <path class="xp-link xp-in" data-level={L[0][0]} d="M48 70V42Q48 36 54 36H66Q72 36 72 42V70" style={at(0, 0.3)} />
+        </g>
+        <!-- 2: vessel cells in a dish: the line comes from the unknown start; growth signals rise -->
+        <g {...f(1)}>
+          <path {...link(L[1][0], 1, 0.1)} d="M60 82V136" />
+          <g class="xp-in" style={at(1)}>
+            <rect class="xp-vessel" x="8" y="140" width="104" height="28" rx="14" />
+            {lining.map((x) => <><ellipse class="xp-cell" cx={x} cy="145.5" rx="6.5" ry="2.4" /><ellipse class="xp-cell" cx={x} cy="162.5" rx="6.5" ry="2.4" /></>)}
+          </g>
+          {[[28, 128], [94, 128], [82, 116]].map(([x, y], i) => (
+            <g transform={`translate(${x} ${y})`}><circle class="xp-ins xp-in xp-move" r="3.4" style={at(1, 0.6 + 0.3 * i, '--dy:10px')} /></g>
+          ))}
+        </g>
+        <!-- 3: tendon cells in a dish crawl further (and survive stress) -->
+        <g {...f(2)}>
+          <path {...link(L[2][0], 2, 0.1)} d="M60 172V226" />
+          <g class="xp-in xp-move" style={at(2, 0.3, '--dx:-16px')}>
+            {cells.map(([x, y, r]) => (
+              <g transform={`translate(${x} ${y}) rotate(${r})`}><ellipse class="xp-cell" rx="18" ry="5" /><ellipse class="xp-detail" rx="3.2" ry="2" /></g>
+            ))}
+          </g>
+          <path class="xp-detail xp-in" d="M8 238H14M42 249H50M12 260H18" style={at(2, 1)} />
+          <path class="xp-arrow xp-in" d="M94 251H112M107 246.5L112 251L107 255.5" style={at(2, 1)} />
+        </g>
+        <!-- 4 starts here: the chain runs on into the next panel -->
+        <g {...f(3)}><path {...link(L[3][0], 3, 0.1)} d="M60 276V330" /></g>
+      </svg>
+      <Overlay text={label('bpc')} x={128} y={18} valign="middle" max={58} focus={0} {...P} />
+      <Overlay text={label('q')} x={60} y={54} align="center" valign="middle" max={10} tone="note" k={0} lag={0.4} focus={0} {...P} />
+      <Overlay text={label('receptor')} {...T} y={56} k={0} lag={0.6} focus={0} {...P} />
+      <Overlay text={label('vessel')} {...T} y={154} k={1} lag={0.5} focus={1} {...P} />
+      <Overlay text={label('tcells')} {...T} y={251} k={2} lag={0.5} focus={2} {...P} />
+    </div>
+  </div>
+  <div class="xp-panel">
+    <p class="xp-panel__title xp-focus" style="--k:3;--span:3"><bdi>{label('title-b')}</bdi></p>
+    <div class="xp-panel__art">
+      <svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+        <!-- 4: injured rat tissue grows more small vessels -->
+        <g {...f(3)}>
+          <path {...link(L[3][0], 3, 0.1)} d="M60 0V44" />
+          <g class="xp-in" style={at(3)}>
+            <rect class="xp-organ" x="8" y="46" width="104" height="42" rx="10" />
+            <path class="xp-detail" d="M96 46L90 56L98 67L90 78L96 88" />
+          </g>
+          {vessels.map((d, i) => <path class="xp-vessel xp-open xp-in" d={d} style={at(3, 0.5 + 0.3 * i, 'stroke-width:2.6')} />)}
+        </g>
+        <!-- 5: the cut rat tendon closes: healed faster (another lab: no clear gain in strength) -->
+        <g {...f(4)}>
+          <path {...link(L[4][0], 4, 0.1)} d="M60 92V138" />
+          <g class="xp-in" style={at(4)}>
+            <rect class="xp-organ" x="8" y="142" width="50" height="20" rx="6" />
+            <path class="xp-detail" d="M14 148H52M14 156H52" />
+          </g>
+          <g class="xp-in xp-move" style={at(4, 0.4, '--dx:16px')}>
+            <rect class="xp-organ" x="62" y="142" width="50" height="20" rx="6" />
+            <path class="xp-detail" d="M68 148H106M68 156H106" />
+          </g>
+        </g>
+        <!-- 6: the chain breaks before people (amber, a visible gap and break marks) -->
+        <g {...f(5, 2)}>
+          <path {...link(L[5][0], 5, 0.1)} d="M60 168V206" />
+          <path {...link(L[5][0], 5, 0.1)} d="M60 224V256" />
+          <path class="xp-link xp-in" data-level={L[5][0]} d="M51 212L69 205M51 221L69 214" style={at(5, 0.4, 'stroke-dasharray:none')} />
+          <g class="xp-in" style={at(5, 0.2)}>
+            <circle class="xp-organ" cx="60" cy="270" r="11" />
+            <path class="xp-organ" d="M36 318C36 296 47 285 60 285C73 285 84 296 84 318Z" />
+          </g>
+        </g>
+      </svg>
+      <Overlay text={label('vessels')} {...T} y={67} k={3} lag={0.5} focus={3} {...P} />
+      <Overlay text={label('healed')} {...T} valign="bottom" y={152} k={4} lag={0.5} focus={4} {...P} />
+      <Overlay text={label('other')} x={128} y={158} max={58} tone="zone" k={4} lag={1.4} focus={4} {...P} />
+      <Overlay text={label('not-shown')} {...T} y={290} k={5} lag={0.5} focus={5} span={2} {...P} />
+    </div>
+  </div>
+</div>

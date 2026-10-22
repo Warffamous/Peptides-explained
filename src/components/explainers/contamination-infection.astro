@@ -1,0 +1,130 @@
+---
+/**
+ * Explainer "contamination-infection": how a needle can carry germs under the skin, and how the
+ * infection can grow and spread. Backdrop: text-free AI art (registry art: contamination-infection-art,
+ * art_dark: contamination-infection-art-dark): a side-view cut through healthy skin. Measured on the
+ * picture, in this 600 × 400 canvas: skin surface y 114, dermis 127–180, the fat layer 180–317 with a
+ * lymph vessel (219–234) and a blood vessel (262–287), fascia 317–327, muscle below; empty band above
+ * the skin (y 0–112). The picture shows healthy tissue only. This overlay draws everything that
+ * happens: germs, the needle's path (a line, never a needle in skin), the abscess, the redness, the red
+ * lines and the germs in the blood, plus every word (docs/EXPLAINERS.md §3.6, rule 8). Anatomy: never
+ * mirrored.
+ *   1 (k0) germs on the skin and on a vial's rubber top                 human
+ *   2 (k1) the needle carries them into the fat layer                   human
+ *   3 (k2) they multiply: abscess (ring) or spreading redness           human
+ *   4 (k3) along the lymph vessel; red lines on the skin above it       human
+ *   5 (k4) into the blood: sepsis. "Get help now"                       human
+ * The lymph vessel's valves in the picture point to the viewer's left, so germs travel left in it (and
+ * in the blood vessel). The alert colour is used only by the warning icon of "Get help now"; the
+ * redness and the red lines are the coral residue hue, because they show what the skin looks like.
+ * Words sit in the empty band, in the left margin of each layer, and right of the infection site.
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, link, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string; backdrop?: { width: number; height: number } }
+const { levels: L, labels, locale, backdrop } = Astro.props;
+const W = 600;
+const H = 400;
+if (!backdrop) throw new Error('explainer contamination-infection: the overlay needs its picture (art: in src/data/explainers.yaml)');
+if (Math.abs(backdrop.width / backdrop.height - W / H) > 0.01) {
+  throw new Error(`explainer contamination-infection: the picture is ${backdrop.width}×${backdrop.height}, but the overlay is drawn on a ${W}×${H} canvas`);
+}
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer contamination-infection: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+// A line on the picture: a halo in the page colour under the line itself, on the same timing.
+const line = (level: Level, k: number, d: string, lag = 0) => [
+  { ...link(level, k, lag), class: 'xp-link xp-halo xp-in', d },
+  { ...link(level, k, lag), d },
+];
+const hole = (x: number, y: number, w: number, h: number, r = 6) =>
+  `M${x + r} ${y}H${x + w - r}A${r} ${r} 0 0 1 ${x + w} ${y + r}V${y + h - r}A${r} ${r} 0 0 1 ${x + w - r} ${y + h}H${x + r}A${r} ${r} 0 0 1 ${x} ${y + h - r}V${y + r}A${r} ${r} 0 0 1 ${x + r} ${y}Z`;
+const veil = (...holes: string[]) => `M-4-4H${W + 4}V${H + 4}H-4Z${holes.join('')}`;
+// The infection site: where the needle's path ends, in the upper fat layer.
+const SX = 280;
+const SY = 199;
+const NEEDLE = `M334 8L${SX + 2} ${SY - 3}`;
+// Germs carried along the path (final positions on the line) and the cluster that grows at the site.
+const carried = [[290, 170], [287, 181], [284, 190]];
+const cluster = [[268, 196], [278, 191], [289, 194], [272, 205], [284, 206], [295, 201], [280, 199]];
+const P = { w: W, h: H, locale };
+---
+<svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+  <!-- one veil per scene (only while it plays): entry spot; needle path; site; lymph + red lines; blood -->
+  <path class="xp-veil" d={veil(hole(14, 6, 78, 46), hole(268, 90, 76, 36))} style="--k:0" />
+  <path class="xp-veil" d={veil(hole(262, 0, 88, 216))} style="--k:1" />
+  <path class="xp-veil" d={veil(hole(200, 116, 166, 104))} style="--k:2" />
+  <path class="xp-veil" d={veil(hole(100, 106, 194, 24), hole(180, 208, 114, 34))} style="--k:3" />
+  <path class="xp-veil" d={veil(hole(184, 204, 130, 92))} style="--k:4;--span:2" />
+
+  <!-- 1: germs on the rubber top of a vial (an abstract block, no vial) and on the skin at the entry spot -->
+  <g class="xp-focus" style="--k:0;--span:2">
+    <rect class="xp-plate" x="24" y="27" width="52" height="15" rx="5" />
+    {[[37, 21], [51, 20], [65, 22]].map(([x, y], i) => (
+      <circle class="xp-germ xp-in" cx={x} cy={y} r="5" style={at(0, 0.2 + 0.2 * i)} />
+    ))}
+    {[[289, 111], [304, 110], [320, 112]].map(([x, y], i) => (
+      <circle class="xp-germ xp-in" cx={x} cy={y} r="5" style={at(0, 0.5 + 0.2 * i)} />
+    ))}
+  </g>
+
+  <!-- 2: the needle's path (a line), and germs carried down it into the fat layer -->
+  <g class="xp-focus" style="--k:1">
+    {line(L[1][0], 1, NEEDLE).map((a) => <path {...a} />)}
+    {carried.map(([x, y], i) => (
+      <g transform={`translate(${x} ${y})`}>
+        <circle class="xp-germ xp-in xp-move" r="5" style={at(1, 0.9 + 0.35 * i, `--dx:${304 - x}px;--dy:${110 - y}px`)} />
+      </g>
+    ))}
+  </g>
+
+  <!-- 3: spreading redness in the skin above; the germs multiply and are walled off (abscess) -->
+  <g class="xp-focus" style="--k:2">
+    <g class="xp-in" style={at(2, 1)}><ellipse class="xp-halo" cx={SX + 2} cy="150" rx="74" ry="27" /><ellipse class="xp-redness" cx={SX + 2} cy="150" rx="74" ry="27" /></g>
+    <ellipse class="xp-pus xp-in" cx={SX} cy={SY} rx="26" ry="15" style={at(2, 0.2)} />
+    <ellipse class="xp-ring xp-halo xp-in" cx={SX} cy={SY} rx="26" ry="15" style={at(2, 0.2)} />
+    <ellipse class="xp-ring xp-in" cx={SX} cy={SY} rx="26" ry="15" style={at(2, 0.2)} />
+    {cluster.map(([x, y], i) => (
+      <g transform={`translate(${x} ${y})`}>
+        <circle class="xp-germ xp-in xp-move" r="4" style={at(2, 0.4 + 0.18 * i, `--dx:${SX - x}px;--dy:${SY - y}px`)} />
+      </g>
+    ))}
+  </g>
+
+  <!-- 4: along the lymph vessel to the left; red lines on the skin above it -->
+  <g class="xp-focus" style="--k:3">
+    <path class="xp-curve xp-halo xp-redline xp-in" d={`M${SX} 119H112`} pathLength="1" style={at(3, 0.5)} />
+    <path class="xp-curve xp-redline xp-in" d={`M${SX} 119H112`} pathLength="1" style={at(3, 0.5)} />
+    {line(L[3][0], 3, `M${SX - 2} 214V226H190`).map((a) => <path {...a} />)}
+    {[256, 232, 208].map((x, i) => (
+      <g transform={`translate(${x} 226.5)`}>
+        <circle class="xp-germ xp-in xp-flow" r="5" style={at(3, 0.3 + 0.25 * i, '--dx:60px')} />
+      </g>
+    ))}
+  </g>
+
+  <!-- 5: into the blood (straight from the infected tissue) and carried away in it -->
+  <g class="xp-focus" style="--k:4;--span:2">
+    {line(L[4][0], 4, `M${SX + 14} 212L302 266Q302 274 292 274H192`).map((a) => <path {...a} />)}
+    {[284, 258, 232, 206].map((x, i) => (
+      <g transform={`translate(${x} 274.5)`}>
+        <circle class="xp-germ xp-in xp-flow" r="5" style={at(4, 0.5 + 0.22 * i, '--dx:60px')} />
+      </g>
+    ))}
+  </g>
+</svg>
+<Overlay text={label('vial')} x={88} y={34} valign="middle" focus={0} {...P} />
+<Overlay text={label('germs')} x={332} y={104} valign="bottom" focus={0} span={2} {...P} />
+<Overlay text={label('needle')} x={346} y={26} valign="middle" k={1} lag={0.2} focus={1} {...P} />
+<Overlay text={label('redlines')} x={196} y={104} align="center" valign="bottom" tone="note" k={3} lag={0.4} focus={3} {...P} />
+<Overlay text={label('skin')} x={8} y={150} valign="middle" focus={0} span={2} {...P} />
+<Overlay text={label('redness')} x={364} y={150} valign="middle" max={42} tone="note" k={2} lag={0.9} focus={2} {...P} />
+<Overlay text={label('fat')} x={8} y={189} valign="middle" focus={1} span={2} {...P} />
+<Overlay text={label('abscess')} x={314} y={200} valign="middle" max={36} tone="note" k={2} lag={0.3} focus={2} {...P} />
+<Overlay text={label('lymph')} x={8} y={230} valign="middle" focus={3} {...P} />
+<Overlay text={label('blood')} x={8} y={274} valign="middle" focus={4} span={2} {...P} />
+<Overlay text={label('sepsis')} x={316} y={300} valign="middle" max={36} tone="note" k={4} lag={0.3} focus={4} span={2} {...P} />
+{/* the muscle has no part in the story: faded for the whole run (its scene, 5, would start after the end) */}
+<Overlay text={label('muscle')} x={8} y={364} valign="middle" focus={5} {...P} />
+<Overlay text={label('help')} x={594} y={364} align="end" valign="middle" max={44} tone="note" icon="warn" k={4} lag={0.8} focus={4} span={2} {...P} />

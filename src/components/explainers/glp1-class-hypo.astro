@@ -1,0 +1,18 @@
+---
+/**
+ * Explainer "glp1-class-hypo": the medicine-neutral copy of insulin-glp1-hypo, for pages about the
+ * whole GLP-1 class (tirzepatide, retatrutide, the safety pages). Same two panels, same marks and
+ * timing; only the words differ, and they live in explainers.json under this id: a GLP-1-type
+ * medicine (semaglutide or tirzepatide as examples, in the title), and the dose advice addressed to
+ * the prescriber, about the insulin or sulfonylurea dose (Mounjaro SmPC 4.2/4.4, Ozempic SmPC 4.2).
+ * The drawing is reused, not copied, so a fix to the chart reaches both explainers.
+ */
+import Hypo from './insulin-glp1-hypo.astro';
+import type { Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string }
+const KEYS = ['alone', 'combo', 'sugar', 'time', 'high', 'range', 'low', 'alone-line', 'usual', 'smaller', 'treat'];
+for (const k of KEYS) {
+  if (!Astro.props.labels[k]) throw new Error(`explainer glp1-class-hypo: missing label "${k}" in explainers.json`);
+}
+---
+<Hypo {...Astro.props} />

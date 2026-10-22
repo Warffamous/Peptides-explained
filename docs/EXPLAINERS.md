@@ -285,7 +285,7 @@ glp1-action:
 2. **Verify** every fact against a primary source (PubMed tools, the EMA/FDA label, a guideline). Reuse
    registered source ids; add new ones to `src/data/sources/explainers.yaml` with metadata copied from
    the record and a `note` saying what you cite them for.
-3. **Register** it in `src/data/explainers.yaml`: `duration` (10–15), `steps` with `levels`, `sources`, `mirror`, `pages`, `review: { status: pending }`.
+3. **Register** it in `src/data/explainers.yaml`: `duration` (5 s per scene, up to 30 s: 25 for five scenes; owner, 21 October 2026), `steps` with `levels`, `sources`, `mirror`, `pages`, `review: { status: pending }`.
 4. **Write the captions** in `src/i18n/en/explainers.json`: `title`, one caption per step (B1, ≤ 18
    words, reading ease ≥ 60), `summary`, the still's `caption`, `labels`.
 5. **Draw** `src/components/explainers/<id>.astro`: a `viewBox` SVG with `width`/`height` set (no
@@ -322,6 +322,22 @@ A medical reviewer signs off with `review: { status: ok, by: <person id>, on: <d
 
 Each needs the same verification as any page. Levels are a first estimate to check against sources.
 
+**Built** (registered in `src/data/explainers.yaml`; all still `review: pending` for the medical reviewer):
+
+| Explainer | Pages | Built |
+|---|---|---|
+| `glp1-action` | `compounds/semaglutide` | 20 October 2026 |
+| `insulin-glp1-hypo` | `compounds/semaglutide` | 20 October 2026 |
+| `glp1-class-hypo` | `compounds/tirzepatide`, `safety/before-you-consider` | 21 October 2026 |
+| `bpc-157-proposed-chain` | `compounds/bpc-157` | 21 October 2026 |
+| `angiogenesis-double-edge` (backlog item below) | `compounds/bpc-157`, `compounds/tb-500` | 21 October 2026 |
+| `kpv-pept1-nfkb` | `compounds/kpv` | 21 October 2026 |
+| `contamination-infection` (backlog item below) | `safety/sterile-technique`, `safety/injection-safety` | 21 October 2026 |
+| `incretin-two-receptors` and `incretin-three-receptors` (backlog item `incretin-multi-agonism`, split in two) | `compounds/tirzepatide`; `compounds/retatrutide` | 21 October 2026 |
+
+Not built yet: `why-not-a-pill`, `receptor-signalling`, `half-life-steady-state`, `gh-axis-feedback`,
+`melanocortin-receptors`.
+
 **why-not-a-pill** — `basics/why-not-a-pill`, `start-here`. Anatomy, no mirror.
 1. A peptide is swallowed and reaches the stomach (human).
 2. Stomach acid and pepsin start cutting its chain (human).
@@ -352,7 +368,7 @@ Each needs the same verification as any page. Levels are a first estimate to che
 5. A GHRH analogue (tesamorelin, CJC-1295) pushes step 1; a ghrelin-receptor agonist (ipamorelin) pushes the pituitary directly (human for tesamorelin; human-limited/phase 1–2 for the others).
 6. Sustained pushing raises IGF-1; long-term effects outside trials are unknown (hypothesis for long-term harms).
 
-**incretin-multi-agonism** — `compounds/tirzepatide`, `compounds/retatrutide`. Anatomy, no mirror.
+**incretin-multi-agonism** — **Built** 21 October 2026, split in two: `incretin-two-receptors` (tirzepatide) and `incretin-three-receptors` (retatrutide). The outline below is kept as the plan it was built from. `compounds/tirzepatide`, `compounds/retatrutide`. Anatomy, no mirror.
 1. One molecule binds more than one receptor (in-vitro).
 2. GLP-1 receptor: insulin, glucagon, stomach, appetite, as in `glp1-action` (human).
 3. GIP receptor: more insulin when glucose is high; effects on fat tissue and the brain (human for insulin; animal for fat/brain).
@@ -366,14 +382,14 @@ Each needs the same verification as any page. Levels are a first estimate to che
 4. MC4R in the brain: sexual arousal (bremelanotide, authorised in the US), less appetite (human).
 5. The same receptors raise blood pressure briefly and cause nausea and flushing (human).
 
-**contamination-infection** — `safety/sterile-technique`, `safety/product-risk`. Skin cross-section, no mirror; the sepsis signs may use the alert red (stop-now content).
+**contamination-infection** — **Built** 21 October 2026, placed on `safety/sterile-technique` and `safety/injection-safety`. The outline below is kept as the plan it was built from. Planned for `safety/sterile-technique`, `safety/product-risk`. Skin cross-section, no mirror; the sepsis signs may use the alert red (stop-now content).
 1. Bacteria are in a non-sterile vial, on the skin or on the needle (human).
 2. The needle carries them under the skin (human).
 3. In the tissue they multiply; the body walls them off: an abscess forms (human).
 4. Bacteria can spread into the blood: sepsis (human).
 5. Warning signs: spreading redness, heat, swelling, pus, fever, feeling very ill → get help now (human).
 
-**angiogenesis-double-edge** — `compounds/bpc-157`, `compounds/tb-500`. Hypothesis-level throughout; mostly dashed (amber). Place only after the BPC-157 rewrite is finished.
+**angiogenesis-double-edge** — **Built** 21 October 2026, placed on `compounds/bpc-157` and `compounds/tb-500`. The outline below is kept as the plan it was built from. Hypothesis-level throughout; mostly dashed (amber). Place only after the BPC-157 rewrite is finished.
 1. In rat and cell studies the peptide increased growth-factor signalling (VEGF pathway) (animal / in-vitro).
 2. New small blood vessels grew into injured tissue in rats (animal).
 3. Injured tendon or gut healed faster in those rat models (animal).

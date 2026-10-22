@@ -75,6 +75,19 @@
 .xp-art .xp-warn-dot { fill: var(--ground); }
 .xp-art .xp-sugar { fill: var(--res-nonstandard); }
 .xp-art .xp-arrow--up { stroke: var(--res-polar); }
+/* contamination-infection: germs, the redness of the skin and the red lines (the coral residue hue: what
+   the skin looks like, not the alert colour), the pus of an abscess; incretin explainers: receptor cups */
+.xp-art .xp-germ { fill: var(--res-hydrophobic); stroke: var(--xp-ground); stroke-width: 1.5; }
+.xp-art .xp-redness { fill: color-mix(in oklch, var(--res-negative) 30%, transparent); stroke: var(--res-negative); stroke-width: 2; }
+.xp-art .xp-curve.xp-redline { stroke: var(--res-negative); stroke-width: 5; }
+.xp-art .xp-halo.xp-halo.xp-redline { stroke: var(--xp-ground); stroke-width: 9; }
+.xp-art .xp-pus { fill: var(--surface); fill-opacity: 0.85; }
+/* the tissue picture keeps its colours in the dark scheme, so pus stays pale on it (not a dark hole) */
+:root[data-scheme='dark'] .xp-art .xp-pus { fill: var(--text); fill-opacity: 0.72; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme='light']) .xp-art .xp-pus { fill: var(--text); fill-opacity: 0.72; }
+}
+.xp-art .xp-cup { fill: none; stroke: var(--res-aromatic); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
 
 /* overlays: neutral pins (colour is reserved for evidence) */
 .xp-pin { border-radius: var(--radius-pill); background: var(--text); color: var(--ground); font-family: var(--font-mono); box-shadow: 0 0 0 3px var(--ground); }

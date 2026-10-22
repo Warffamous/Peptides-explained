@@ -1,0 +1,50 @@
+# Atlas plate: what may be wrong with a vial bought online. Text in src/i18n/<locale>/infographics.json;
+# see docs/MEDIA-GUIDE.md §6. x/y are percentages of the unmirrored artwork (src/data/media.yaml:
+# online-vial-risks-art, 720x960: the 1024x1024 generation cropped by the site to x 152-872, y 24-984,
+# a 3:4 frame with the vial centred). The art is a drawn, textbook-style line figure of a plain vial
+# (redrawn 21 October 2026; the earlier near-photographic render looked too much like a seller's
+# product shot). The dark-scheme version (online-vial-risks-art-dark) is an edit of the same picture,
+# cropped identically: in both files the glass body runs from x 208 to 511 px, the stopper top is at
+# y 139 px, the base at about y 818 px, and the powder cake spans about x 223-498 px and y 676-792 px
+# (top surface 676-711, front face 711-792), so the markers fit both.
+#
+# Where the markers sit (measured on the files, 21 October 2026): 1 on the upper glass body, the bare
+# front where a label would be (the picture has none); 4 and 5 in the clear space inside the vial
+# (things nobody can see); 2, 3 and 6 in one row on the front face of the white powder cake (the
+# peptide itself: how much, what else, clumps).
+#
+# Levels. Nothing on this plate is an effect measured in people. in-vitro here means "shown at the lab
+# bench": by laboratory analysis of products bought online or by the laboratory certificates the FDA
+# reviewed (drawn cyan, demonstrated). Marker 6 is a hypothesis for these peptides: the FDA describes
+# clumping as a risk factor for immune reactions to protein and peptide medicines in general, but no
+# study has tested it for BPC-157, KPV or TB-500 (drawn amber).
+#
+# Sources per marker (the schema keeps sources per plate; the key's details name the source in words):
+#   1 identity    fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing ("multiple salts, and derivatives,
+#                 including different active moieties, sold commercially under the same common name"),
+#                 fda-pcac-2026-kpv-briefing (the same warning, "for similarly situated products"; the KPV
+#                 certificate named one form in its title and another in its formula),
+#                 delcourt-2023-misbranded (TB500/TB1000 contents "not systematically consistent" with their description)
+#   2 amount      piatkowski-2026-retatrutide-product-testing (3 products: 51.3%, 165.0% and 190.0% of the label),
+#                 fda-pcac-2026-tb500-briefing (certificates: assay "not tested" / not provided)
+#   3 impurities  fda-pcac-2026-bpc157-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-tb500-briefing
+#                 ("Likely impurities": truncations, incomplete coupling, side reactions, residual solvents,
+#                 coupling reagents, scavengers; certificates mostly report purity only)
+#   4 endotoxin   fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing (BET critical for injections;
+#                 no endotoxin result on the certificates). The KPV briefing never mentions endotoxin.
+#   5 germs       fda-pcac-2026-bpc157-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-tb500-briefing
+#                 (no bioburden / microbiological test results on the certificates)
+#   6 clumps      fda-pcac-2026-bpc157-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-tb500-briefing
+#                 (aggregation "a risk factor in immunogenicity"; consequences from no symptoms to
+#                 life-threatening; no study of immunogenicity or aggregation identified)
+# piatkowski-2026 did not test sterility or endotoxin, so it is not attached to markers 4 and 5.
+art: online-vial-risks-art
+art_dark: online-vial-risks-art-dark
+markers:
+  - { key: identity, x: 50, y: 42.3, level: in-vitro }
+  - { key: amount, x: 37.9, y: 77.2, level: in-vitro }
+  - { key: impurities, x: 50, y: 77.2, level: in-vitro }
+  - { key: endotoxin, x: 40, y: 57.9, level: in-vitro }
+  - { key: germs, x: 60, y: 57.9, level: in-vitro }
+  - { key: clumps, x: 62.1, y: 77.2, level: hypothesis }
+sources: [fda-pcac-2026-bpc157-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-tb500-briefing, piatkowski-2026-retatrutide-product-testing, delcourt-2023-misbranded]

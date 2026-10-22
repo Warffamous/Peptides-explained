@@ -1,0 +1,125 @@
+---
+/**
+ * Explainer "kpv-pept1-nfkb": the route proposed for KPV, from the hormone it is part of to the gap
+ * before people, in two small panels that sit side by side on a wide screen and stack on a phone
+ * (docs/EXPLAINERS.md §3.3a), so the drawing stays about one screen tall:
+ *   left   "KPV, and what it does in cells in a dish": the hormone alpha-MSH as 13 beads with its
+ *          last three (KPV) in the drug colour; a gut-lining or immune cell with the PepT1 doorway
+ *          in its surface, the nucleus, the NF-κB switch held outside the nucleus by a stop bar,
+ *          and four inflammation signals of which three fade (fewer)
+ *   right  "Then mice, and people": a mouse (recovered faster) and a person behind a broken amber
+ *          line (never tested); the line from the cell comes in at the panel's top
+ * Every mark has its word (labels in explainers.json); lines carry the step's evidence level.
+ * A schematic cell, kept LTR (mirror: false).
+ *   1 (k0) KPV is the last three building blocks of alpha-MSH                  in-vitro
+ *   2 (k1) PepT1 carries it into the cell; inflamed gut has more PepT1          in-vitro / animal
+ *   3 (k2) it keeps NF-κB out of the nucleus                                   in-vitro
+ *   4 (k3) fewer inflammation signals                                          in-vitro
+ *   5 (k4) mice with an inflamed gut recovered faster                          animal
+ *   6 (k5) never tested in people                                              hypothesis
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, link, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string }
+const { levels: L, labels, locale } = Astro.props;
+const W = 320;
+const H = 330;
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer kpv-pept1-nfkb: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+const f = (k: number, span = 1) => ({ class: 'xp-focus', style: `--k:${k};--span:${span}` });
+const P = { w: W, h: H, locale };
+const chain = Array.from({ length: 13 }, (_, i) => 14 + 9.2 * i); // alpha-MSH: 13 building blocks
+// A PepT1 doorway: two short bars standing across the cell surface (y 84), a gap between them.
+const door = (x: number) => [x - 9, x + 3].map((bx) => ({ x: bx, y: 73, width: 6, height: 22, rx: 3 }));
+const signals = [[262, 188], [286, 206], [264, 226], [288, 244]];
+---
+<div class="xp-panels">
+  <div class="xp-panel">
+    <p class="xp-panel__title xp-focus" style="--k:0;--span:4"><bdi>{label('title-a')}</bdi></p>
+    <div class="xp-panel__art">
+      <svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+        <!-- the cell (the stage for steps 2-4) -->
+        <g {...f(1, 3)}>
+          <rect class="xp-cell" x="8" y="84" width="304" height="238" rx="20" />
+          <circle class="xp-organ" cx="74" cy="196" r="40" />
+        </g>
+        <!-- 1: the hormone alpha-MSH; its last three building blocks are KPV -->
+        <g {...f(0)}>
+          <g class="xp-in" style={at(0)}>
+            <path class="xp-detail" d="M14 34H124.4" />
+            {chain.map((x) => <circle class="xp-cell" cx={x} cy="34" r="3.8" />)}
+          </g>
+          {chain.slice(10).map((x, i) => <circle class="xp-drug xp-in" cx={x} cy="34" r="4.2" style={at(0, 0.5 + 0.15 * i)} />)}
+        </g>
+        <!-- 2: PepT1 carries KPV into the cell; inflamed gut has more doorways -->
+        <g {...f(1)}>
+          <path {...link(L[1][0], 1, 0.1)} d="M115 42V68" />
+          {door(115).map((r) => <rect class="xp-ins xp-in" {...r} style={at(1)} />)}
+          <g class="xp-in xp-move" style={at(1, 0.7, '--dy:-30px')}>
+            <path class="xp-tail" d="M105 110H125" />
+            {[105, 115, 125].map((x) => <circle class="xp-drug" cx={x} cy="110" r="4.4" />)}
+          </g>
+          {[50, 230].map((x) => door(x).map((r) => <rect class="xp-ins xp-in" {...r} style={at(1, 1.3)} />))}
+        </g>
+        <!-- 3: inside, KPV keeps the NF-κB switch out of the nucleus (a stop bar) -->
+        <g {...f(2)}>
+          <path {...link(L[2][0], 2, 0.1)} d="M114 118C116 140 124 158 128 174" />
+          <g class="xp-in xp-move" style={at(2, 0.4, '--dx:-24px')}>
+            <ellipse class="xp-gcg" cx="172" cy="196" rx="10" ry="7" /><ellipse class="xp-gcg" cx="190" cy="196" rx="10" ry="7" />
+          </g>
+          <path class="xp-arrow xp-in" d="M160 196H130M128 178V214" style={at(2, 0.9)} />
+        </g>
+        <!-- 4: fewer inflammation signals: four appear, three fade to ghosts -->
+        <g {...f(3)}>
+          <g class="xp-in" style={at(3)}>
+            {signals.map(([x, y], i) => (i === 0
+              ? <circle class="xp-sugar" cx={x} cy={y} r="5.5" />
+              : <g class="xp-ghost" style={at(3, 0.9 + 0.3 * i)}><circle class="xp-sugar" cx={x} cy={y} r="5.5" /></g>))}
+          </g>
+        </g>
+        <!-- 5 starts here: the chain runs on into the next panel -->
+        <g {...f(4)}><path {...link(L[4][0], 4, 0.1)} d="M70 322V330" /></g>
+      </svg>
+      <Overlay text={label('hormone')} x={8} y={2} max={60} focus={0} {...P} />
+      <Overlay text={label('kpv')} x={138} y={34} valign="middle" max={50} tone="note" k={0} lag={0.6} focus={0} {...P} />
+      <Overlay text={label('pept1')} x={138} y={70} valign="bottom" max={50} tone="note" k={1} lag={0.4} focus={1} {...P} />
+      <Overlay text={label('more')} x={304} y={100} align="end" max={40} tone="note" k={1} lag={1.4} focus={1} {...P} />
+      <Overlay text={label('nucleus')} x={74} y={196} align="center" valign="middle" max={24} focus={2} {...P} />
+      <Overlay text={label('nfkb')} x={180} y={212} align="center" max={36} tone="note" k={2} lag={0.6} focus={2} {...P} />
+      <Overlay text={label('signals')} x={304} y={262} align="end" max={48} tone="note" k={3} lag={0.5} focus={3} {...P} />
+      <Overlay text={label('cell')} x={18} y={314} valign="bottom" max={40} tone="zone" focus={1} span={3} {...P} />
+    </div>
+  </div>
+  <div class="xp-panel">
+    <p class="xp-panel__title xp-focus" style="--k:4;--span:2"><bdi>{label('title-b')}</bdi></p>
+    <div class="xp-panel__art">
+      <svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+        <!-- 5: mice with an inflamed gut recovered faster -->
+        <g {...f(4)}>
+          <path {...link(L[4][0], 4, 0.1)} d="M70 0V66" />
+          <g class="xp-in xp-move" style={at(4, 0.3, '--dx:-16px')}>
+            <path class="xp-organ xp-open" d="M44 100C24 104 16 114 8 108" />
+            <ellipse class="xp-organ" cx="74" cy="90" rx="32" ry="17" />
+            <circle class="xp-organ" cx="108" cy="81" r="12" />
+            <circle class="xp-organ" cx="102" cy="68" r="6" />
+            <circle class="xp-detail" cx="113" cy="78" r="1.5" />
+          </g>
+        </g>
+        <!-- 6: the line breaks before people (amber, a visible gap and break marks) -->
+        <g {...f(5, 2)}>
+          <path {...link(L[5][0], 5, 0.1)} d="M70 116V172" />
+          <path {...link(L[5][0], 5, 0.1)} d="M70 192V244" />
+          <path class="xp-link xp-in" data-level={L[5][0]} d="M61 179L79 172M61 188L79 181" style={at(5, 0.4, 'stroke-dasharray:none')} />
+          <g class="xp-in" style={at(5, 0.2)}>
+            <circle class="xp-organ" cx="70" cy="258" r="11" />
+            <path class="xp-organ" d="M46 306C46 284 57 273 70 273C83 273 94 284 94 306Z" />
+          </g>
+        </g>
+      </svg>
+      <Overlay text={label('mice')} x={140} y={90} valign="middle" max={56} tone="note" k={4} lag={0.5} focus={4} {...P} />
+      <Overlay text={label('people')} x={140} y={276} valign="middle" max={56} tone="note" k={5} lag={0.5} focus={5} span={2} {...P} />
+    </div>
+  </div>
+</div>

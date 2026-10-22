@@ -29,7 +29,7 @@ glp1-action:
 insulin-glp1-hypo:
   duration: 25 # five scenes of 5 s: one message each (owner, 21 Oct 2026)
   mirror: true # glucose-over-time charts: the time axis may run right-to-left in RTL
-  pages: [compounds/semaglutide, safety/before-you-consider]
+  pages: [compounds/semaglutide] # safety/before-you-consider shows the medicine-neutral glp1-class-hypo since 21 Oct 2026
   sources:
     - ema-epar-ozempic # SmPC 4.2 (with a sulfonylurea or insulin "a reduction in the dose … should be considered"), 4.4, 4.8 (no severe hypoglycaemia on monotherapy), 5.1 (glucose-dependent); package leaflet warning signs
     - sola-2015-sulfonylureas # sulfonylurea insulin release is independent of glucose levels
@@ -43,3 +43,181 @@ insulin-glp1-hypo:
   review:
     status: pending
     note: "Redrawn 2026-10-20 as two labelled charts (semaglutide alone / with insulin or a sulfonylurea), one message per scene. Interaction and dose advice from Ozempic SmPC 4.2/4.4/4.8 (advice to prescribers, no amounts; re-read 2026-10-20); warning signs from the Ozempic package leaflet and ADA; treatment and when to call emergency services from ADA Standards of Care 2026, section 6. First-reader test 2026-10-20: the dose labels now name the medicine (\"Usual / Smaller insulin or tablet dose\") so they cannot be read as a semaglutide dose change (SmPC 4.2: reduce the sulfonylurea or insulin dose)."
+
+glp1-class-hypo:
+  duration: 25 # five scenes of 5 s, as insulin-glp1-hypo
+  mirror: true # the same glucose-over-time charts (the artwork of insulin-glp1-hypo, reused): the time axis may mirror in RTL
+  pages: [compounds/tirzepatide, safety/before-you-consider]
+  sources:
+    - ema-epar-mounjaro # SmPC 4.2 ("a reduction in the dose of sulphonylurea or insulin may be considered to reduce the risk of hypoglycaemia"), 4.4 (increased risk with an insulin secretagogue or insulin; lowered by reducing their dose), 4.8 (10-14% with a sulphonylurea, 14-19% with basal insulin; monotherapy up to 0.04 events per patient-year), 5.1 (insulin and glucagon effects glucose dependent); package leaflet signs (sweating, confusion, hunger). Product information PDF re-read 2026-10-21.
+    - ema-epar-ozempic # SmPC 4.2 ("a reduction in the dose of sulfonylurea or insulin should be considered"), 4.4, 5.1 (glucose dependent). Product information PDF re-read 2026-10-21.
+    - sola-2015-sulfonylureas # sulfonylurea insulin release is independent of glucose levels
+    - ada-2026-hypoglycaemia # symptoms (shakiness, sweating, confusion); glucose for the conscious person; emergency help if the person cannot take carbohydrate
+  steps:
+    - levels: [human] # glucose-dependent action; little hypoglycaemia on its own (Mounjaro SmPC 4.8, 5.1; Ozempic SmPC 5.1)
+    - levels: [human] # insulin, and sulfonylurea-driven insulin release, act regardless of glucose (Sola 2015)
+    - levels: [human] # increased risk of hypoglycaemia in combination (SmPC 4.4, 4.8)
+    - levels: [human] # the prescriber may reduce the insulin or sulfonylurea dose (SmPC 4.2, 4.4): advice to prescribers, no amounts
+    - levels: [human] # signs (package leaflet; ADA), sugar if the person can swallow, local emergency number if not (ADA 2026, section 6)
+  review:
+    status: pending
+    note: "Medicine-neutral copy of insulin-glp1-hypo (2026-10-21) for pages about the GLP-1 class. The drawing is the same component (src/components/explainers/glp1-class-hypo.astro renders insulin-glp1-hypo.astro with this explainer's words), so the charts, marks and timing are identical and already reader-tested. Changed: the words only. The panels and captions say 'a GLP-1-type medicine'; semaglutide and tirzepatide are named once, as examples, in the title and summary (in step 1 they pushed reading ease below 60). Dose advice is addressed to the prescriber and names whose dose: 'the prescriber may lower the insulin or tablet dose'. Step 5 says 'call your local emergency number' (never a number, CONTENT-GUIDE section 1). Checked against the Mounjaro and Ozempic EU product information PDFs (fetched 2026-10-21): SmPC 4.2 dose-reduction wording ('may be considered' / 'should be considered'), 4.4, 4.8 frequencies, 5.1 glucose-dependent insulin secretion and glucagon lowering. Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. The five scene messages are those of insulin-glp1-hypo, with 'a GLP-1-type medicine' in place of semaglutide; the longer panel titles wrap to two lines and still share a row. Placed on safety/before-you-consider (replacing insulin-glp1-hypo) and in a 'Low blood sugar, with a short animation' fold on compounds/tirzepatide, as on the semaglutide page."
+
+bpc-157-proposed-chain:
+  duration: 30 # six scenes of 5 s
+  mirror: false # a schematic whose words sit beside their drawings: kept LTR
+  pages: [compounds/bpc-157]
+  sources:
+    - fda-pcac-2026-bpc157-briefing # molecular targets 'have not been identified'
+    - zhang-2026-fbxo22 # the one proposed partner (FBXO22), one laboratory, cells, not repeated
+    - hsieh-2017-vegfr2 # VEGFR2 up and activated in human endothelial cells (Chang Gung, Taiwan); more vessels in ischaemic rat muscle
+    - hsieh-2020-src-cav1-enos # nitric-oxide pathway in rat aorta, same laboratory
+    - yildirim-2026-mammary-artery # pieces of human internal mammary artery in an organ bath relaxed, mostly through the lining and nitric oxide (Ankara)
+    - chang-2011-tendon-fibroblasts # rat tendon fibroblasts: FAK and paxillin, migration, survival under oxidative stress; no faster proliferation
+    - brcic-2009-angiogenesis # more vessels in healing rat muscle and tendon (Zagreb)
+    - staresinic-2003-achilles # faster healing of the cut rat Achilles tendon (Zagreb)
+    - bicer-2026-achilles # the one independent tendon test: load to failure not significantly better (n = 4 per group per test)
+    - poolton-2026-human-sr # human evidence: no controlled trial published in full
+  steps:
+    - levels: [hypothesis] # no target established; FBXO22 proposed by one laboratory in cells
+    - levels: [in-vitro] # VEGFR2 / nitric-oxide signals in vessel cells and artery pieces, in a dish
+    - levels: [in-vitro] # tendon cells migrate and survive stress, do not divide faster
+    - levels: [animal] # more small vessels in injured rat tissue
+    - levels: [animal] # faster healing in rats; the independent test found no significant strength gain
+    - levels: [hypothesis] # in people: not shown
+  review:
+    status: pending
+    note: "Drawn 2026-10-21 (builder B) from the writer's outline for the mechanism section and the page's own proposed chain (Compare table and 'Step by step'), with the sources the page cites for each step. Two panels (side by side on a wide screen, stacked on a phone, so the drawing and its caption fit one screen): 'The unknown start, then cells in a dish' (steps 1-3) and 'Then rats, and people' (steps 4-6). Each panel is a ladder with the drawings on the left and every word on the right; the line into each rung carries that step's evidence level, and the left panel's last line runs on into the right panel's first. The chain ends in a broken amber line before the person ('Not shown in people'). Checked on a scratch page 2026-10-21: light and dark at 360 and 1280 px, pseudo-RTL (stays LTR), a still 2.5 s into every scene (one strong part each, its word visible) and the final still. The '?' is an overlay word on an empty, dashed receptor outline (no text in the SVG). For the reviewer: the steps are drawn one after another, as the proposed chain is described; the vessel and tendon findings come from different cell types and laboratories, and no study measured the early steps and healing in the same animals (the page's 'three weak links'). Carried by the captions only: 'mostly in one lab' (2), 'did not divide faster' (3), 'mostly one Zagreb group' (4). Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. Per scene: 1 'BPC-157's receptor is unknown'; 2 'in a dish, vessel cells: more VEGFR2, nitric oxide'; 3 'tendon cells move more, survive stress'; 4 'injured rat tissue: more small vessels'; 5 'rat tendon healed faster; another lab: no clear strength gain'; 6 'not shown in people'. No change needed. At 360 px the stacked drawing (about 660 px) plus caption is close to a phone screen's height; the engine scrolls it into view on Play. Placed as the mechanism figure of compounds/bpc-157; the Compare table of the same chain moved into a fold (it keeps the labs, the human artery result and the collagen measure)."
+
+angiogenesis-double-edge:
+  duration: 25 # five scenes of 5 s
+  mirror: false # two side-by-side tissue pictures, not a time axis
+  pages: [compounds/bpc-157, compounds/tb-500]
+  sources:
+    - hsieh-2017-vegfr2 # BPC-157: VEGFR2 signalling up in human endothelial cells; more vessel growth in ischaemic rat muscle
+    - freeman-2011-atp-synthase # thymosin beta-4: human endothelial cells migrate more (ATP synthase, P2X4 signalling)
+    - brcic-2009-angiogenesis # BPC-157: more vessels in healing rat muscle and tendon
+    - malinda-1999-wound-healing # thymosin beta-4: rat wounds closed faster, with more new vessels
+    - staresinic-2003-achilles # BPC-157: cut rat Achilles tendon healed faster (Zagreb)
+    - hanahan-2011-hallmarks # inducing angiogenesis is a hallmark of cancer
+    - carmeliet-2011-angiogenesis # tumours recruit vessels through VEGF / VEGFR2; blocking it slows some cancers
+    - fda-pcac-2026-bpc157-briefing # no carcinogenicity studies of BPC-157
+    - fda-pcac-2026-tb500-briefing # no carcinogenicity study of TB-500; no human data
+  steps:
+    - levels: [in-vitro, animal] # signals in cells (Hsieh 2017, Freeman 2011) and rats (Hsieh 2017)
+    - levels: [animal] # new vessels in injured rat tissue (Brcic 2009, Hsieh 2017, Malinda 1999)
+    - levels: [animal] # faster healing in those rat models (Staresinic 2003, Malinda 1999)
+    - levels: [human] # tumour angiogenesis: established cancer biology (Hanahan 2011, Carmeliet 2011)
+    - levels: [hypothesis] # whether these peptides could feed a hidden tumour in people: untested (FDA 2026 briefings)
+  review:
+    status: pending
+    note: "Drawn 2026-10-21 (builder B) for the risk sections of BPC-157 and TB-500, from the pages' own 'Why an effect on cancer is theorised' reasoning and its sources. Two panels with one motif (a blood vessel below, small vessels sprouting up into the tissue): left 'A wound, in rats' (signals, sprouts, the wound fills in), right 'A hidden tumour' (a tumour also calls in vessels and grows; the peptide and its signals beside it, ringed in amber: never tested). It never says the peptides cause cancer: the peptide's part in the right panel is drawn and worded as an untested question. For the reviewer: for TB-500 the cell and rat vessel findings come from the whole protein, thymosin beta-4, not from TB-500 itself (the TB-500 page says so); the captions name 'the protein TB-500 comes from'. The tumour panel's established biology (step 4) is drawn without a line of its own; the level badge carries it. Checked on a scratch page 2026-10-21: light and dark at 360 and 1280 px, pseudo-RTL (stays LTR), a still 2.5 s into every scene and the final still. Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. Per scene: 1 'the peptide raises growth signals'; 2 'new small vessels grow'; 3 'the wound heals faster'; 4 'a tumour needs new vessels too'; 5 'could the peptide feed it? never tested in people'. Fixed: step 1 read as a garden-path sentence ('the protein TB-500 comes from raised signals'); now 'In cells and rats, BPC-157 raised signals for new vessels. So did thymosin beta-4, which TB-500 comes from.' (18 words, reading ease 66). Placed at the top of the 'Why an effect on cancer is theorised' fold on compounds/bpc-157 and compounds/tb-500."
+
+kpv-pept1-nfkb:
+  duration: 30 # six scenes of 5 s
+  mirror: false # a schematic cell whose words sit beside their parts: kept LTR
+  pages: [compounds/kpv]
+  sources:
+    - cody-1984-c-terminal-tripeptide # Lys-Pro-Val is the C-terminal tripeptide (residues 11-13) of alpha-MSH
+    - fda-pcac-2026-kpv-briefing # no studies of KPV in humans; target unknown; NF-kappaB and PepT1 proposed
+    - dalmasso-2008-pept1 # PepT1 carries KPV into gut epithelial and T cells; NF-kappaB down; oral KPV reduced mouse colitis (Merlin group)
+    - mandrika-2001-nfkb-no # macrophages: NF-kappaB kept out of the nucleus, less nitric oxide (independent group)
+    - land-2012-bronchial # airway cells: KPV blocks nuclear import of p65; fewer inflammatory signals
+    - kannengiesser-2008-colitis # mouse colitis: less damage, faster recovery (Münster group)
+    - viennois-2016-cac # PepT1-knockout mice: KPV no longer clearly reduced colitis-associated tumours (Merlin group)
+  steps:
+    - levels: [in-vitro] # KPV = alpha-MSH 11-13, studied in cells (Cody 1984; FDA 2026)
+    - levels: [in-vitro, animal] # PepT1 uptake in cells; PepT1 rises in inflamed gut (Dalmasso 2008)
+    - levels: [in-vitro] # NF-kappaB kept out of the nucleus (Mandrika 2001, Land 2012, Dalmasso 2008)
+    - levels: [in-vitro] # fewer inflammatory signals (Mandrika 2001, Land 2012, Dalmasso 2008)
+    - levels: [animal] # mouse colitis recovered faster; without PepT1, no clear tumour reduction (Kannengiesser 2008, Dalmasso 2008, Viennois 2016)
+    - levels: [hypothesis] # in people: never tested (FDA 2026)
+  review:
+    status: pending
+    note: "Drawn 2026-10-21 (builder B) from the writer's outline for the mechanism section and the page's own chain, worded as the page reads after its fact-check: in mice without PepT1, KPV 'no longer clearly' reduced bowel tumours (a non-significant trend remained), so KPV acts at least in part through PepT1. Two panels (side by side on a wide screen, stacked on a phone): 'KPV, and what it does in cells in a dish' shows the hormone alpha-MSH as 13 beads with the last three (KPV) coloured, then a schematic cell with the PepT1 doorway in its surface (more doorways appear for 'inflamed gut'), the NF-kappaB switch held outside the nucleus by a stop bar, and four inflammation signals of which three fade (fewer); 'Then mice, and people' shows a mouse and, behind a broken amber line, a person. Checked on a scratch page 2026-10-21: light and dark at 360 and 1280 px, pseudo-RTL (stays LTR), a still 2.5 s into every scene and the final still. For the reviewer: the cell is drawn as one generic gut-lining or immune cell; the NF-kappaB findings come from several cell types (gut, T cells, macrophages, airway cells). The PepT1-knockout result is carried by the caption only. Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. Per scene: 1 'KPV is the last three links of the hormone alpha-MSH'; 2 'PepT1 doorways carry it into the cell; more of them in an inflamed gut'; 3 'NF-kB is kept out of the nucleus'; 4 'fewer inflammation signals' (one strong dot and three faded ones: readable, but subtle); 5 'mice with an inflamed gut recovered faster'; 6 'never tested in people'. For the reviewer: step 2's second level is 'animal', but PepT1's rise in inflamed human colon comes from human biopsies (Viennois 2016 abstract), so it is drawn conservatively. Placed as the mechanism figure of compounds/kpv; the Compare table moved into a fold (it keeps the melanocortin-1 binding result and the rabbit cornea study)."
+
+contamination-infection:
+  duration: 25 # five scenes of 5 s
+  mirror: false # a skin cross-section: anatomy never mirrors
+  # Picture under the overlay: text-free AI art of healthy skin, fat and muscle (no needle, no germs, no wound).
+  art: contamination-infection-art
+  art_dark: contamination-infection-art-dark
+  pages: [safety/sterile-technique, safety/injection-safety]
+  sources:
+    - who-2010-injection-toolkit # wipe the vial's rubber top, never touch it again; a new sterile needle every time; contaminated equipment carries infection
+    - cdc-2024-preventing-unsafe-injection # contaminated vials and reused needles: outbreaks of bacterial infections; preservatives do not fully protect
+    - cdc-2024-safe-injection-practices # aseptic technique; sterile single-use needles and syringes
+    - smith-2013-fungal-methylprednisolone # germs already inside unopened vials (summary: "or the liquid")
+    - nhs-skin-abscess # abscess: a painful lump of pus, usually from bacteria entering the skin
+    - nhs-cellulitis # cellulitis: hot, swollen, spreading redness; untreated it can spread to the blood
+    - medlineplus-lymphangitis # red streaks along the lymph vessels from the infected area; bacteria can reach the blood
+    - nhs-sepsis # skin infections can lead to sepsis; emergency signs (fast breathing, confusion, blotchy skin)
+  steps:
+    - levels: [human] # germs on the skin and on the vial's rubber top (WHO 2010; CDC 2024)
+    - levels: [human] # the needle carries them under the skin (WHO 2010; CDC 2024)
+    - levels: [human] # abscess or cellulitis (NHS skin abscess; NHS cellulitis)
+    - levels: [human] # spread along a lymph vessel, seen as red lines (MedlinePlus lymphangitis)
+    - levels: [human] # germs in the blood: sepsis; warning signs, get help now (NHS sepsis; NHS cellulitis)
+  review:
+    status: pending
+    note: "Drawn 2026-10-21 (builder A) from the 'How germs get under the skin' diagram of safety/sterile-technique and the 'What is normal, and what is not' table of safety/injection-safety, with their sources. Picture: text-free AI art of healthy skin (contamination-infection-art, light, and -dark; both ai.review pending): skin surface, dermis, the fat layer under the skin with one lymph vessel and one blood vessel, muscle below. The overlay draws everything that happens: germs (small dots) on the skin and on a vial's rubber top (an abstract grey block, no vial body, no label); the needle only as its path (a line, never a needle in skin); germs multiplying in the fat layer, walled off by a ring (abscess) under a band of spreading redness (cellulitis); germs gliding along the lymph vessel with red lines drawn on the skin above it; germs gliding in the blood vessel, 'Germs in the blood: sepsis' and 'Get help now'. The alert colour is used only for the warning icon of 'Get help now' (stop-now content); the redness and the red lines are drawn in the coral residue hue (they show what the skin looks like). The valves of the lymph vessel in the picture point to the viewer's left, so germs travel to the left along it, and in the blood vessel too. For the reviewer: the abscess is drawn in the fat layer under the needle tip; a real abscess may also form higher in the skin. Germs reach the blood both through the lymph and directly from the infected tissue; the drawing shows the direct route (a short line from the abscess to the blood vessel). Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. Per scene the reader takes: 1 'germs sit on the vial top and on the skin'; 2 'the needle carries them into the fat'; 3 'they grow: a pocket of pus, and redness spreads'; 4 'they travel along a lymph vessel; red lines show on the skin'; 5 'in the blood they cause sepsis: get help now'. The final still tells the whole chain. Fixed: in dark the 'Redness spreads' ellipse nearly vanished on the pink skin and the pus was a dark hole (now a halo, a stronger fill and pale pus); 'Fat layer' and 'Lymph vessel' almost touched at 360 px (moved apart). Placed on safety/sterile-technique (main flow; the earlier contamination-to-infection list moved into a fold, because it names hands, tables, liquid, heat, swelling and 'can kill', which the step list does not) and safety/injection-safety (in a fold, since that section already has its table)."
+
+incretin-two-receptors:
+  duration: 25 # five scenes of 5 s
+  mirror: false # anatomy: never mirrored
+  # One text-free AI picture for two explainers (this one and incretin-three-receptors): separate specimens of the
+  # brain, liver, a short blood vessel, stomach, pancreas and a block of fat under the skin.
+  art: incretin-receptors-art
+  art_dark: incretin-receptors-art-dark
+  pages: [compounds/tirzepatide]
+  sources:
+    - coskun-2018-ly3298176 # cell assays: binds the GIP receptor like GIP, the GLP-1 receptor about 5 times more weakly; the first human study could not separate the two receptors
+    - willard-2020-imbalanced-biased # imbalanced and biased dual agonist (cells, mouse islets)
+    - ema-epar-mounjaro # SmPC 5.1: glucose-dependent insulin, lower glucagon, delay in gastric emptying that diminishes over time
+    - heise-2022-islet-function # 117 adults with type 2 diabetes: more insulin secretion, lower glucagon after meals
+    - heise-2023-appetite # same trial: less appetite and energy intake
+    - gabery-2020-semaglutide-brain # rodents: the brain areas a GLP-1 receptor drug (semaglutide) reaches to lower weight; the dashed brain ring (where in the brain) rests on such rodent work, as in glp1-action
+    - nauck-1993-gip-type2 # GIP raises insulin in people (weaker in type 2 diabetes)
+    - samms-2021-gipr-insulin-sensitivity # obese mice: GIP receptor, more glucose uptake into fat
+    - zhang-2021-cns-gipr # mice: GIP lowers food intake through brain GIP receptors
+    - frias-2021-surpass-2 # 1,879 adults with type 2 diabetes vs semaglutide 1 mg: HbA1c and weight fell more (open-label)
+    - aronne-2025-surmount-5 # 751 adults with obesity vs semaglutide: weight fell more (open-label)
+    - holst-2020-gip-coagonists # agonists and blockers of the GIP receptor both lower weight in animals: GIP's role is not settled
+  steps:
+    - levels: [in-vitro] # one molecule, two receptors (Coskun 2018; Willard 2020)
+    - levels: [human, animal] # GLP-1 receptor: insulin, glucagon, stomach at first, less hunger, all in people (Mounjaro SmPC 5.1; Heise 2022, 2023); where in the brain: rodents (Gabery 2020), the dashed brain ring
+    - levels: [human, animal] # GIP receptor: insulin in people (Nauck 1993); fat and brain effects in mice (Samms 2021; Zhang 2021)
+    - levels: [human] # head-to-head trials against semaglutide (SURPASS-2; SURMOUNT-5)
+    - levels: [hypothesis] # how much the GIP part adds in people: not separated in any study we found (Coskun 2018; Holst 2020)
+  review:
+    status: pending
+    note: "Drawn 2026-10-21 (builder A) from the content writer's outline for the tirzepatide mechanism section (EXPLAINERS.md backlog 'incretin-multi-agonism', split in two) and the page's own receptor table and fold, with the sources the page cites. Picture: incretin-receptors-art (light) and -dark, shared with incretin-three-receptors (both ai.review pending). The overlay: a key in the top-left corner (the molecule as a capsule with two receptor cups, 'GLP-1' and 'GIP', inside a long-dashed frame: shown in cells); molecules gliding in the blood vessel; rings on the pancreas, the stomach exit and the base of the brain (solid: people), a long-dashed ring on the fat block ('In mice'); the head-to-head result and the open question as words in the top-right corner, with a short-dashed amber ring on the GIP cup. Simplifications for the reviewer: the brain ring marks the base of the brain and the brainstem only roughly (the appetite areas lie deep inside); the GIP effects in the brain are named in the caption only (the drawing shows the fat block); 'less glucagon' and HbA1c are in the captions, not on the drawing. Organs are separate specimens, not in their body positions. Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. Per scene: 1 'one molecule with two parts, GLP-1 and GIP, in the blood'; 2 'pancreas: more insulin; brain: less hunger; stomach: slower at first'; 3 'GIP: insulin too, and fat tissue in mice'; 4 'more weight loss than semaglutide'; 5 'GIP's share is not known'. Fixed: 'More insulin when sugar is high' sat under the blood vessel and read as the blood's word; it now hangs on top of the pancreas ring (two lines). Step 4 caption reworded so HbA1c is tied to the diabetes trial (SURPASS-2) only: 'In two trials, people lost more weight on tirzepatide than semaglutide. In diabetes, blood sugar fell more too.' Open for the reviewer: the brain ring is solid (less hunger measured in people) while glp1-action draws its brain ring dashed (where in the brain rests on rodents); 'GIP's share: not known' sits top right, far from its amber ring on the GIP cup (they are the only strong marks in scene 5). Placed as the mechanism figure of compounds/tirzepatide; the receptor table moved into a fold. Fixed 22 October 2026 (both points above): the brain ring is now long-dashed, as in glp1-action, because where in the brain these drugs act rests on rodent work (Gabery 2020, added to the sources), and a short solid line leads from it to 'Less hunger', which was measured in people (Heise 2023); step 2 now lists both levels (people, animals) and the summary says which brain areas take part comes mainly from animal studies. 'GIP's share: not known' now hangs right under the key, next to its amber ring on the GIP cup (rule 8c); the key moved up 4 units to make room. Checked after pressing Play (a still 2.5 s into every scene) and at the final still, light and dark, 360 and 1280 px."
+
+incretin-three-receptors:
+  duration: 25 # five scenes of 5 s
+  mirror: false # anatomy: never mirrored
+  art: incretin-receptors-art # the same picture as incretin-two-receptors
+  art_dark: incretin-receptors-art-dark
+  pages: [compounds/retatrutide]
+  sources:
+    - li-2024-retatrutide-structure # cryo-EM: bound to the GLP-1, GIP and glucagon receptors
+    - coskun-2022-ly3437943-discovery # cells: activity at all three receptors; obese mice: extra energy expenditure through the glucagon receptor
+    - ema-epar-mounjaro # what the GLP-1 and GIP receptors do (glucose-dependent insulin), as on the retatrutide page
+    - kanu-2025-retatrutide-appetite # phase 2, 275 adults with type 2 diabetes: less hunger
+    - gabery-2020-semaglutide-brain # rodents: the brain areas a GLP-1 receptor drug (semaglutide) reaches to lower weight; the dashed brain ring (where in the brain) rests on such rodent work, as in glp1-action
+    - rosenstock-2023-retatrutide-t2d-phase-2 # phase 2, 281 adults with type 2 diabetes: HbA1c fell
+    - sanyal-2024-retatrutide-masld # liver-fat substudy, 98 adults: liver fat fell, most in those who lost most weight
+    - ctgov-nct06313528 # human energy-expenditure study completed August 2025; no results posted
+    - jastreboff-2026-triumph-1 # TRIUMPH-1, 2,339 adults with obesity, 80 weeks: large weight loss
+    - chen-2026-glp1-network-meta-analysis # indirect comparison with tirzepatide: overlapping ranges, glucagon's share not known
+    - ema-2026-10-under-evaluation # not under EU evaluation on 5 October 2026
+    - fda-unapproved-glp1-concerns # not FDA-approved; products sold as 'research' retatrutide
+  steps:
+    - levels: [in-vitro] # one molecule, three receptors (Li 2024; Coskun 2022)
+    - levels: [human, animal] # GLP-1 and GIP receptors: insulin (receptor action, Mounjaro SmPC 5.1); less hunger and lower HbA1c with retatrutide (Kanu 2025; Rosenstock 2023); where in the brain: rodents (Gabery 2020), the dashed brain ring
+    - levels: [human] # glucagon receptor, liver: liver fat fell, partly with weight loss (Sanyal 2024)
+    - levels: [animal] # extra energy use in obese mice (Coskun 2022); no published human result (NCT06313528)
+    - levels: [human, hypothesis] # large weight loss in people (TRIUMPH-1); the share due to glucagon is not known (Chen 2026); not approved (EMA, FDA)
+  review:
+    status: pending
+    note: "Drawn 2026-10-21 (builder A) from the content writer's outline for the retatrutide mechanism section (EXPLAINERS.md backlog 'incretin-multi-agonism', split in two) and the page's own receptor table and folds, with the sources the page cites. Same picture as incretin-two-receptors (incretin-receptors-art, light, and -dark; both ai.review pending). The overlay: a key in the top-left corner (the molecule as a capsule with three receptor cups, 'GLP-1', 'GIP' and 'Glucagon', inside a long-dashed frame: shown in cells; the molecule's word says 'not approved'); molecules gliding in the blood vessel; solid rings on the pancreas, the base of the brain and the liver; a long-dashed ring on the fat block for the extra energy use shown in mice; the trial result and the open question as words in the top-right corner, with a short-dashed amber ring on the glucagon cup. Nothing on the drawing or in the captions suggests the drug is available or approved. Simplifications for the reviewer: the extra energy use is a whole-body measure in mice, drawn on the fat block (the body's energy store); the brain ring marks the base of the brain only roughly; the stomach plays no part here and is dimmed during the run. Integrator reader test, 21 October 2026 (still pending for the medical reviewer): final still and a still 2.5 s into every scene, light and dark, 360 and 1280 px, on the placed page; keyboard Play/Pause/Continue/Replay, reduced motion, no JavaScript and pseudo-RTL checked; no layout shift, no overflow at 360 px, overlay words 14 px or more. Per scene: 1 'one molecule, three parts, in the blood; not approved'; 2 'pancreas: more insulin; brain: less hunger'; 3 'liver: less liver fat'; 4 'more energy used, in mice'; 5 'large weight loss; glucagon's share not known'. Fixed: as in incretin-two-receptors, 'More insulin when sugar is high' now hangs on the pancreas ring. Nothing on the drawing or in the captions presents it as available or approved. Placed as the mechanism figure of compounds/retatrutide; the receptor table moved into a fold. Fixed 22 October 2026, as in incretin-two-receptors: the brain ring is now long-dashed (where in the brain rests on rodent work, Gabery 2020, added to the sources) with a short solid line to 'Less hunger' (measured in people, Kanu 2025); step 2 lists both levels (people, animals) and the summary says which brain areas take part comes mainly from animal studies. The open question had the same problem as in the two-receptor version (top right, far from its amber ring on the glucagon cup): it now hangs right under the key, reworded to 'Glucagon's share: not known' (two lines, as the step caption says it). To fit it at 360 px the key is compact (rows 25 units apart, a smaller side cup, an elliptical amber ring) and the liver ring sits 3 units lower; its top now cuts the very top of the liver. Checked after pressing Play (a still 2.5 s into every scene) and at the final still, light and dark, 360 and 1280 px."

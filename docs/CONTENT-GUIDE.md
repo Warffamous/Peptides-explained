@@ -83,6 +83,25 @@ of the following (verify each element against fda.gov before first use and cite 
 
 ---
 
+## 1a. The purpose: inform, do not discourage (owner, 22 October 2026)
+
+The site exists to inform people as well as possible, including people who have already decided to
+use something. It does not try to talk anyone out of a decision; it makes the decision better
+informed and the use safer. Harm reduction is the core, not an afterthought.
+
+- **Never assume where a product came from.** Write "if your product did not come from a pharmacy"
+  or "a product bought outside the legal supply chain", not "if you bought it on the grey market".
+  Never imply the reader is doing something shameful.
+- **Give practical, sourced safety information** for people who already have a product: what to
+  check on the vial and label, what a certificate of analysis does and does not show, storage,
+  sterile preparation, clean injecting, which checks and blood tests matter and why, warning signs
+  and when to stop. Use the shared `<ProductCheck />` checklist where it fits (§9).
+- **No lecturing, no scare words, no repeated "don't do it".** State risks plainly, once, with the
+  reason. A doctor is presented as an ally for monitoring and help, not as a gatekeeper.
+- **The legal line stays** (§1): no amounts, schedules, protocols, "start low", reconstitution
+  maths, stacks or cycles, and no help finding or judging sellers. That line is what keeps
+  practical safety information legal (Geneesmiddelenwet art. 84–85).
+
 ## 2. Voice
 
 - **First principles, cause and effect.** Explain the mechanism that makes a thing true, then the

@@ -1,0 +1,114 @@
+---
+/**
+ * Explainer "angiogenesis-double-edge": why the vessel growth that may help a wound heal is also
+ * the reason for a cancer worry. Two small panels with the same motif (a blood vessel at the
+ * bottom, new small vessels sprouting up into the tissue above):
+ *   left   "A wound, in rats": the peptide in the blood raises growth signals, vessels sprout into
+ *          the wound, the wound fills in (cells and rats: long cyan dashes)
+ *   right  "A hidden tumour": a tumour also calls in new vessels and grows (established biology);
+ *          the same peptide and signals beside it, ringed in amber short dashes: never tested
+ * Every mark has its word (labels in explainers.json). It never says the peptides cause cancer:
+ * the right panel's peptide part is drawn as a hypothesis only. Not a time axis: no mirror in RTL.
+ *   1 (k0) left:  peptide → more vessel-growth signals            in-vitro / animal
+ *   2 (k1) left:  new small vessels grow into the wound           animal
+ *   3 (k2) left:  the wound heals faster                          animal
+ *   4 (k3) right: tumours need new vessels too (and grow)         human (established biology)
+ *   5 (k4) right: could the peptide feed it? never tested         hypothesis
+ */
+import Overlay from './parts/Overlay.astro';
+import { at, link, type Level } from './parts/timeline';
+interface Props { uid: string; levels: Level[][]; labels: Record<string, string>; locale: string }
+const { levels: L, labels, locale } = Astro.props;
+const W = 320;
+const H = 310;
+const label = (key: string) => {
+  if (!labels[key]) throw new Error(`explainer angiogenesis-double-edge: missing label "${key}" in explainers.json`);
+  return labels[key];
+};
+const f = (k: number, span = 1) => ({ class: 'xp-focus', style: `--k:${k};--span:${span}` });
+const P = { w: W, h: H, locale };
+// The shared motif: three sprouts from the vessel (y 236) up into the tissue (bottom at y 112).
+const SPROUTS = ['M140 238C138 200 150 150 152 112', 'M166 238C170 196 162 152 166 112', 'M192 238C194 200 182 150 180 112', 'M146 186C134 176 126 164 122 150', 'M188 176C200 168 206 156 208 144'];
+const sprout = (d: string, k: number, i: number) => ({ class: 'xp-vessel xp-open xp-in', d, pathLength: 1, style: at(k, 0.3 + 0.25 * i, `stroke-width:${i < 3 ? 4.5 : 3};--xp-in:xp-draw;--xp-ease:ease-out`) });
+const beads = [28, 36, 44, 52, 60];
+const dots = [[140, 229], [166, 229], [192, 229]];
+const panels = [
+  { title: 'wound-title', k: 0, span: 3 },
+  { title: 'tumour-title', k: 3, span: 2 },
+];
+---
+<div class="xp-panels">
+  {panels.map((p, i) => {
+    const a = i === 0; // left: the wound; right: the tumour
+    const kp = a ? 0 : 4; // when the peptide and its signals appear in this panel
+    return (
+      <div class="xp-panel">
+        <p class="xp-panel__title xp-focus" style={`--k:${p.k};--span:${p.span}`}><bdi>{label(p.title)}</bdi></p>
+        <div class="xp-panel__art">
+          <svg class="xp-art" viewBox={`0 0 ${W} ${H}`} width={W} height={H} focusable="false">
+            {/* the tissue (with a wound, or with a tumour in it) and the blood vessel below */}
+            <g {...f(p.k, p.span)}>
+              {a
+                ? <path class="xp-organ" d="M12 40H140L156 98H176L192 40H308V112H12Z" />
+                : <rect class="xp-organ" x="12" y="40" width="296" height="72" rx="4" />}
+              <rect class="xp-vessel" x="12" y="236" width="296" height="26" rx="13" />
+            </g>
+            {/* the peptide rides in the blood and raises vessel-growth signals at the sprouting points */}
+            <g {...f(kp, a ? 1 : 2)}>
+              <g class="xp-in xp-move" style={at(kp, 0, '--dx:-24px')}>
+                <path class="xp-tail" d="M28 249H60" />
+                {beads.map((x) => <circle class="xp-drug" cx={x} cy="249" r="3.8" />)}
+              </g>
+              <path {...link(L[kp][0], kp, 0.3)} d="M66 246C92 240 112 232 132 230" />
+              {dots.map(([x, y], j) => (
+                <g transform={`translate(${x} ${y})`}><circle class="xp-ins xp-in xp-move" r="3.4" style={at(kp, 0.6 + 0.25 * j, '--dy:8px')} /></g>
+              ))}
+            </g>
+            {a ? (
+              <>
+                {/* 2: new small vessels grow up into the wound */}
+                <g {...f(1)}>{SPROUTS.map((d, j) => <path {...sprout(d, 1, j)} />)}</g>
+                {/* 3: the wound fills in with new tissue: healed faster */}
+                <g {...f(2)}><path class="xp-zone xp-in" d="M141 42L156.5 96H175.5L191 42Z" style={at(2, 0.3)} /></g>
+              </>
+            ) : (
+              <>
+                {/* 4: a tumour calls in new vessels too, and grows */}
+                <g {...f(3, 2)}>
+                  {SPROUTS.map((d, j) => <path {...sprout(d, 3, j)} />)}
+                  <g class="xp-in" style={at(3)}>
+                    <g class="xp-shrink" style={at(3, 1.6, '--s:1.18')}>
+                      {[[166, 76, 15], [148, 66, 11], [184, 66, 11], [150, 88, 10], [182, 88, 10], [166, 56, 9], [166, 96, 9]].map(([x, y, r]) => (
+                        <circle class="xp-alb" cx={x} cy={y} r={r} />
+                      ))}
+                    </g>
+                  </g>
+                </g>
+                {/* 5: whether the peptide could feed it: never tested (amber ring = hypothesis) */}
+                <g {...f(4, 2)}>
+                  <ellipse class="xp-link xp-in" data-level={L[4][0]} cx="166" cy="132" rx="46" ry="90" style={at(4, 0.6)} />
+                </g>
+              </>
+            )}
+          </svg>
+          <Overlay text={label('vessel')} x={306} y={268} align="end" max={50} tone="zone" focus={p.k} span={p.span} {...P} />
+          <Overlay text={label('peptide')} x={14} y={268} max={52} tone="note" k={kp} lag={0.2} focus={kp} span={a ? 1 : 2} {...P} />
+          <Overlay text={label('signals')} x={310} y={226} align="end" valign="bottom" max={34} tone="note" k={kp} lag={0.5} focus={kp} span={a ? 1 : 2} {...P} />
+          {a ? (
+            <>
+              <Overlay text={label('wound')} x={166} y={36} align="center" valign="bottom" max={40} focus={0} span={3} {...P} />
+              <Overlay text={label('sprouts')} x={14} y={170} valign="middle" max={34} tone="note" k={1} lag={0.4} focus={1} {...P} />
+              <Overlay text={label('healed')} icon="check" x={204} y={76} valign="middle" max={34} tone="note" k={2} lag={0.5} focus={2} {...P} />
+            </>
+          ) : (
+            <>
+              <Overlay text={label('tumour')} x={166} y={36} align="center" valign="bottom" max={60} k={3} lag={0.2} focus={3} span={2} {...P} />
+              <Overlay text={label('need')} x={14} y={170} valign="middle" max={34} tone="note" k={3} lag={0.4} focus={3} {...P} />
+              <Overlay text={label('untested')} x={222} y={118} max={30} tone="note" k={4} lag={0.5} focus={4} span={2} {...P} />
+            </>
+          )}
+        </div>
+      </div>
+    );
+  })}
+</div>
