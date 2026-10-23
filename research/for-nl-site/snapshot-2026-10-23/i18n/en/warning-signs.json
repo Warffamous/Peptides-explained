@@ -1,0 +1,182 @@
+{
+  "general": [
+    {
+      "id": "sepsis-signs",
+      "sign": "Confusion or slurred speech, very fast breathing, or pale, blue or blotchy skin, often with fever or shivering",
+      "why": "These can be signs of sepsis: the body's reaction to an infection has started to damage its own organs.",
+      "action": "emergency"
+    },
+    {
+      "id": "fainting-serious",
+      "sign": "Fainting and not waking up within a minute, or fainting with chest pain, a racing heart or a fit",
+      "why": "This can be a dangerous heart rhythm or a severe allergic reaction.",
+      "action": "emergency"
+    },
+    {
+      "id": "fever-after-injection",
+      "sign": "Fever, shivering or feeling very ill in the days after an injection",
+      "why": "Germs from the needle, the skin or the product may have reached your blood. If you also have a fast heartbeat or fast breathing, call your local emergency number.",
+      "action": "urgent"
+    },
+    {
+      "id": "fainted-recovered",
+      "sign": "You fainted, but woke up quickly and now feel well",
+      "why": "Fainting is often harmless, but a doctor should check the cause.",
+      "action": "stop"
+    },
+    {
+      "id": "changing-mole",
+      "sign": "A new mole, or a mole that changes size, shape or colour, itches or bleeds",
+      "why": "A changing mole can be skin cancer, and tanning peptides such as melanotan II have been linked to new and changing moles in case reports.",
+      "action": "stop"
+    }
+  ],
+  "injection": [
+    {
+      "id": "black-skin-severe-pain",
+      "sign": "Pain at the injection spot that is much worse than it looks, or dark, purple or grey patches or blisters there",
+      "why": "This can be a rare, fast-spreading infection of the deep layers under the skin (necrotising fasciitis).",
+      "action": "emergency"
+    },
+    {
+      "id": "spreading-redness",
+      "sign": "Redness, heat, swelling or pain around the injection spot that keeps growing or getting worse",
+      "why": "This can be a skin infection (cellulitis), which needs antibiotics before it spreads.",
+      "action": "urgent"
+    },
+    {
+      "id": "red-streaks",
+      "sign": "Red lines that run from the injection spot towards the armpit or groin",
+      "why": "The infection may be spreading along the lymph vessels, and from there into the blood. If you also have a fever with a fast heartbeat or fast breathing, call your local emergency number.",
+      "action": "urgent"
+    },
+    {
+      "id": "pus-lump",
+      "sign": "A painful, warm lump that fills with pus",
+      "why": "This is probably an abscess: it often needs draining by a doctor, so do not squeeze it.",
+      "action": "urgent"
+    },
+    {
+      "id": "used-needle-stick",
+      "sign": "You were pricked by a needle that someone else had used",
+      "why": "Blood on a used needle can pass on HIV and hepatitis B or C, and preventive treatment works best within hours.",
+      "action": "urgent"
+    },
+    {
+      "id": "lump-not-going",
+      "sign": "A lump at an injection spot that does not go away, or keeps growing",
+      "why": "A doctor should check whether it is an abscess, a reaction to the product or something else.",
+      "action": "stop"
+    }
+  ],
+  "allergic": [
+    {
+      "id": "anaphylaxis",
+      "sign": "Swelling of the lips, tongue or throat, trouble breathing or swallowing, wheezing, a hoarse voice, or feeling faint, soon after an injection",
+      "why": "This can be a severe allergic reaction (anaphylaxis), which is life-threatening and gets worse very quickly.",
+      "action": "emergency"
+    },
+    {
+      "id": "hives-swelling",
+      "sign": "An itchy, raised rash, or puffy eyes or lips, while breathing stays normal",
+      "why": "Your body may be reacting to the product, and using it again can bring the reaction back.",
+      "action": "stop"
+    }
+  ],
+  "cardiovascular": [
+    {
+      "id": "chest-pain",
+      "sign": "Pain, pressure or tightness in the chest, or pain that spreads to the arm, neck, jaw or back",
+      "why": "This can be a heart attack, which needs treatment in hospital straight away.",
+      "action": "emergency"
+    },
+    {
+      "id": "severe-breathlessness",
+      "sign": "Sudden, severe shortness of breath: gasping, or not able to finish a sentence",
+      "why": "This can be a serious problem with the heart, the lungs or an allergic reaction.",
+      "action": "emergency"
+    },
+    {
+      "id": "palpitations-severe",
+      "sign": "A racing, pounding or irregular heartbeat that does not settle, or that comes with chest pain, breathlessness or fainting",
+      "why": "This can be a dangerous heart rhythm.",
+      "action": "emergency"
+    },
+    {
+      "id": "very-high-blood-pressure",
+      "sign": "A sudden, severe headache with blurred vision, chest pain, confusion or vomiting",
+      "why": "Blood pressure may be dangerously high, which can damage the brain, heart, kidneys and eyes.",
+      "action": "emergency"
+    },
+    {
+      "id": "priapism",
+      "sign": "An erection that lasts more than 3 hours, or a painful erection that will not go down",
+      "why": "Blood trapped in the penis can damage it for good if it is not treated quickly.",
+      "action": "emergency"
+    },
+    {
+      "id": "palpitations-recurring",
+      "sign": "Palpitations that keep coming back, even if they pass and you then feel well",
+      "why": "A doctor can check whether your heart rhythm is normal.",
+      "action": "stop"
+    }
+  ],
+  "metabolic": [
+    {
+      "id": "very-low-blood-sugar",
+      "sign": "Shaking, sweating or sudden hunger that turns into confusion or drowsiness",
+      "why": "Very low blood sugar can cause a fit or loss of consciousness; take something sugary if you can still swallow safely.",
+      "action": "emergency"
+    },
+    {
+      "id": "pancreatitis",
+      "sign": "Severe, constant pain in the upper belly that spreads to the back, often with vomiting",
+      "why": "This can be an inflamed pancreas (pancreatitis), a known risk of GLP-1 medicines such as semaglutide and tirzepatide.",
+      "action": "emergency"
+    },
+    {
+      "id": "cannot-keep-fluids-down",
+      "sign": "Vomiting so often that you cannot keep fluids down, or passing very little urine",
+      "why": "Losing too much fluid can damage the kidneys.",
+      "action": "urgent"
+    },
+    {
+      "id": "yellow-skin-eyes",
+      "sign": "Yellow skin, or yellow whites of the eyes",
+      "why": "This can be a sign of a liver problem, gallstones or an inflamed pancreas.",
+      "action": "urgent"
+    },
+    {
+      "id": "dark-urine-muscle-pain",
+      "sign": "Dark, red or cola-coloured urine together with muscle pain, tenderness or weakness",
+      "why": "Damaged muscle can release a protein that harms the kidneys (rhabdomyolysis).",
+      "action": "urgent"
+    }
+  ],
+  "neurological": [
+    {
+      "id": "stroke-signs",
+      "sign": "Sudden weakness or numbness on one side, a drooping face, or slurred or confused speech",
+      "why": "These are signs of a stroke, which needs treatment in hospital straight away, even if the signs pass.",
+      "action": "emergency"
+    },
+    {
+      "id": "sudden-severe-headache",
+      "sign": "A headache that starts suddenly and is extremely painful, or a headache with a stiff neck, confusion or a fit",
+      "why": "This can be a stroke or another emergency in the brain.",
+      "action": "emergency"
+    },
+    {
+      "id": "sudden-vision-loss",
+      "sign": "Sudden loss of sight in one or both eyes",
+      "why": "This can be a stroke or damage to the nerve of the eye, and sight can be lost for good.",
+      "action": "emergency"
+    },
+    {
+      "id": "seizure",
+      "sign": "A fit (seizure): jerking movements, or suddenly not responding",
+      "why": "A fit can be caused by very low blood sugar or a problem in the brain, and needs checks straight away.",
+      "action": "emergency"
+    }
+  ]
+}

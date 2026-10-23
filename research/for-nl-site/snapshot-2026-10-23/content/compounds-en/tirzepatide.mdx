@@ -1,0 +1,572 @@
+---
+slug: tirzepatide
+title: "Tirzepatide"
+description: "Tirzepatide (Mounjaro) is an authorised medicine acting on two gut-hormone receptors. How it works, what the trials show, its risks, and why online vials differ."
+summary:
+  - "Tirzepatide is an approved EU medicine called Mounjaro. It treats type 2 diabetes and helps manage weight."
+  - "It copies two gut hormones, GIP and GLP-1. It lowers high blood sugar and makes you less hungry."
+  - "Large trials show lower blood sugar and big weight loss. Much of the weight returns after stopping."
+  - "Many people feel sick or get diarrhoea at first. Rarer risks are gallstones and an inflamed pancreas."
+  - "Online 'research' tirzepatide is not the approved medicine. Nobody checks what is in it, or how much."
+lede: "A weekly injection on prescription for type 2 diabetes and weight. Online “research” vials are not the same."
+glance:
+  main_risk: "Feeling sick is common at first. Pancreas and gallbladder problems are rarer."
+  # "Stop and get help" strip, condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">) and the EU product information (Mounjaro SmPC 4.4 and 4.8 and
+  # the package leaflet: pancreatitis, hypoglycaemia with insulin or a sulfonylurea, anaphylaxis and
+  # angioedema; the leaflet's own words: pain "in the stomach and back which does not go away"; low
+  # sugar signs include drowsiness, confusion and sweating; "rapid swelling of the lips, tongue and/or
+  # throat", "breathing problems"). The other two stop items (dehydration; infection after a product from outside a
+  # pharmacy) have no fitting pictogram or are not the label's main stop signs; they stay in the full list.
+  stop_signs:
+    - icon: sign-belly-pain
+      text: "Severe belly pain, often spreading to your back"
+      sources: [ema-epar-mounjaro]
+    - icon: sign-low-sugar
+      text: "Sweaty, confused or drowsy (low blood sugar)"
+      sources: [ema-epar-mounjaro]
+    - icon: sign-allergic
+      text: "Swollen lips or throat, or trouble breathing"
+      sources: [ema-epar-mounjaro]
+  # Fact sheet beside the title: label facts from the EU product information (SmPC 4.2, 5.1, 5.2), never a dose.
+  facts:
+    - label: "How it is taken"
+      value: "Injection under the skin"
+      sources: [ema-epar-mounjaro]
+    - label: "How often"
+      value: "Once a week"
+      sources: [ema-epar-mounjaro]
+    - label: "How long it lasts"
+      value: "Half-life about five days"
+      sources: [ema-epar-mounjaro]
+    - label: "What it acts on"
+      value: "Two receptors: GIP and GLP-1"
+      sources: [ema-epar-mounjaro, coskun-2018-ly3298176]
+grade_rationale:
+  human_clinical: "Authorised in the EU since 15 September 2022 (Mounjaro, type 2 diabetes; weight management added in December 2023) and in the US since 13 May 2022. The authorisations rest on the SURPASS and SURMOUNT phase 3 programmes and a completed cardiovascular outcome trial in 13,299 people."
+  preclinical_volume: "Well over 50 primary cell and animal studies: a PubMed search on 20 October 2026 found 147 non-review records mentioning tirzepatide together with mice, rats or rodents in the title or abstract. The animal work matters now mainly for the debate about what the GIP half of the molecule does, and for the rat thyroid tumour finding."
+  independence: "Every pivotal trial was paid for and largely run by Eli Lilly: a crude PubMed count on 20 October 2026 found only 13 of 134 randomised-trial records with no Lilly-affiliated author. The core effects (lower glucose and body weight) have been reproduced in independent health-record studies, and 134 of the 147 animal records have no Lilly-affiliated author, so independent replication is broad but rests mostly on observational and laboratory work."
+  safety: "Characterised in 14 completed phase 3 studies in which more than 15,000 adults received tirzepatide, a four-year outcome trial in 13,299 people, and post-marketing surveillance since 2022. Still open: use beyond about four years, stopping and restarting, effects on muscle in older people, pregnancy, and the human relevance of the rat thyroid tumours."
+mechanism:
+  - kind: binding
+    level: human
+    title: "Built on GIP, engineered to last about five days"
+    detail: "Tirzepatide is a 39-amino-acid peptide based on the sequence of GIP, a gut hormone. A C20 fatty diacid on lysine 20 lets it bind to albumin in the blood (99% bound). Bound to albumin it is cleared slowly: its half-life in people is about five days, which is why it is injected once a week."
+  - kind: binding
+    level: in-vitro
+    title: "Switches on two receptors, unevenly"
+    detail: "In cell assays tirzepatide binds the GIP receptor about as strongly as natural GIP, and the GLP-1 receptor about five times more weakly than natural GLP-1. It barely acts on the related glucagon receptor. Estimates of receptor occupancy at clinical doses favour the GIP receptor. These numbers come from cells, not from human tissue."
+  - kind: signal
+    level: in-vitro
+    title: "cAMP rises; the GLP-1 receptor signal is biased"
+    detail: "Both receptors switch on the Gs protein, so cAMP rises inside the cell. At the GLP-1 receptor, tirzepatide favours cAMP over recruiting beta-arrestin and pulls fewer receptors into the cell than GLP-1 does. Work in isolated mouse islets suggests this bias may help insulin release. Shown in cell lines and mouse islets only."
+  - kind: cellular
+    level: human
+    title: "More insulin and less glucagon when glucose is high; better insulin sensitivity"
+    detail: "In a 28-week randomised trial in 117 people with type 2 diabetes, tirzepatide improved insulin secretion and insulin sensitivity more than semaglutide at a diabetes dose, and lowered glucagon after meals. Because cAMP amplifies insulin release that glucose has started, its own risk of low blood sugar is low."
+  - kind: tissue
+    level: animal
+    title: "What the GIP half adds: shown only in animals"
+    detail: "In mice, GIP receptor activation improved insulin sensitivity through fat tissue, added weight loss through GIP receptors in the brain, and reduced nausea caused by GLP-1 drugs in shrews. But long exposure to a GIP agonist also switched off GIP receptors on fat cells, and GIP-blocking antibodies cause weight loss too. Which effect dominates in people is not known."
+  - kind: tissue
+    level: human
+    title: "Less hunger, less food, slower stomach at first"
+    detail: "In the same 117-person trial, tirzepatide reduced appetite and energy intake, by about as much as semaglutide. It slows stomach emptying, an effect the EU label says fades over time. The early slowing is one proposed cause of the nausea, and the reason tablets and anaesthesia need thought."
+  - kind: effect
+    level: human
+    title: "Lower HbA1c and weight; heart outcomes no worse than dulaglutide"
+    detail: "In phase 3 trials the combined result is lower HbA1c and weight loss of about 15 to 21% on average over 72 weeks in people with obesity. In 13,299 people with type 2 diabetes and heart disease, major cardiovascular events were not more frequent than with dulaglutide. How much of the benefit needs GIP rather than GLP-1 alone is not settled."
+studies:
+  willard-2020-receptor-pharmacology:
+    finding: "In cell lines, tirzepatide acted like natural GIP at the GIP receptor but favoured cAMP over beta-arrestin at the GLP-1 receptor and caused less receptor internalisation. Estimated receptor occupancy at clinical doses favoured the GIP receptor."
+    limitation: "Cells and isolated mouse islets; occupancy is a calculation, not a measurement in people; mostly company scientists."
+  samms-2021-insulin-sensitivity-mice:
+    finding: "In obese mice lacking the GLP-1 receptor, so without GLP-1-driven weight loss, tirzepatide still improved insulin sensitivity by increasing glucose uptake into fat tissue."
+    limitation: "Mice only; all authors were company employees; does not show the same mechanism in people."
+  killion-2018-gipr-antibody:
+    finding: "Antibodies that block the GIP receptor protected obese mice against weight gain and caused weight loss in obese monkeys, more so when combined with a GLP-1 drug."
+    limitation: "Did not test tirzepatide; a competitor's programme; animals only. Shows that blocking, not only activating, the GIP receptor can lower weight."
+  killion-2020-desensitisation:
+    finding: "Long-term exposure to a GIP receptor agonist switched off GIP receptor activity in mouse fat cells, so in these cells the agonist acted like a blocker."
+    limitation: "Did not test tirzepatide; mice and cultured cells; a competitor's programme."
+  zhang-2021-brain-gipr:
+    finding: "In mice, a long-acting GIP lowered food intake and weight through GIP receptors in the brain. The extra weight loss of a GIP/GLP-1 co-agonist over GLP-1 alone disappeared in mice without brain GIP receptors. Yet mice lacking brain GIP receptors were also protected from diet-induced weight gain."
+    limitation: "Did not test tirzepatide itself (the co-agonist was a different molecule); mice only; brain circuits in people not studied."
+  borner-2021-nausea-models:
+    finding: "In mice, rats and musk shrews, activating the GIP receptor reduced vomiting and nausea-like behaviour caused by a GLP-1 drug, while food intake and weight still fell."
+    limitation: "Animal models of nausea; partly funded by the manufacturer; tirzepatide trials still report much nausea."
+  coskun-2018-discovery:
+    finding: "Describes the molecule, its receptor binding and its effects in mice. In a phase 1 study (142 people given tirzepatide, dulaglutide or placebo, as single doses or for 4 weeks), the half-life was about 5 days, glucose and weight fell, and side effects were mainly in the stomach and gut."
+    limitation: "Single doses or four weeks; small groups; healthy volunteers plus 53 people with type 2 diabetes; developer's own study."
+  frias-2018-phase-2:
+    finding: "In 318 people with type 2 diabetes over 26 weeks, HbA1c fell by up to 1.94 percentage points versus 0.06 with placebo and 1.21 with dulaglutide; weight fell by up to 11.3 kg."
+    limitation: "Phase 2, 26 weeks; stomach and gut side effects rose steeply with dose (up to 66%)."
+  heise-2022-islet-clamp:
+    finding: "In 117 people with type 2 diabetes over 28 weeks, tirzepatide improved a combined measure of insulin secretion and sensitivity more than placebo and more than semaglutide at a diabetes dose, and lowered glucagon."
+    limitation: "Mechanistic trial with a lower semaglutide dose than the weight-loss product; manufacturer-funded and partly run by company staff."
+  surpass-1:
+    finding: "In 478 adults with type 2 diabetes on diet and exercise alone, HbA1c fell by 1.87 to 2.07 percentage points over 40 weeks versus a rise of 0.04 with placebo, without clinically significant low blood sugar."
+    limitation: "40 weeks; early disease and low baseline risk; manufacturer-run."
+  surpass-2:
+    finding: "In 1,879 adults with type 2 diabetes on metformin, HbA1c fell by 2.01 to 2.30 percentage points with tirzepatide versus 1.86 with semaglutide over 40 weeks; weight differences were 1.9 to 5.5 kg."
+    limitation: "Open-label; semaglutide was used at a lower dose than those later authorised; manufacturer-run."
+  surpass-4:
+    finding: "In 2,002 adults with type 2 diabetes and high cardiovascular risk, HbA1c fell more than with insulin glargine at 52 weeks, with less low blood sugar (6 to 9% versus 19%). Major cardiovascular events were not increased (HR 0.74, 95% CI 0.51–1.08)."
+    limitation: "Open-label; too few events to judge heart benefit; manufacturer-run."
+  surpass-peds:
+    finding: "In 99 children and adolescents aged 10 to 17 with type 2 diabetes, HbA1c fell by 2.23 percentage points versus a rise of 0.05 with placebo at 30 weeks."
+    limitation: "Small; 30 weeks blinded plus an open-label extension; the EU label reports more vomiting, belly pain and low blood sugar than in adults when added to metformin alone."
+  surpass-cvot:
+    finding: "In 13,299 people with type 2 diabetes and atherosclerotic disease followed for a median of about four years, heart attack, stroke or cardiovascular death occurred in 12.2% with tirzepatide and 13.1% with dulaglutide (HR 0.92, 95.3% CI 0.83–1.01): not worse, and not shown to be better."
+    limitation: "No placebo group; benefit against no treatment is inferred from dulaglutide's own earlier trial; manufacturer-run."
+  surmount-1:
+    finding: "In 2,539 adults with obesity or overweight without diabetes, mean weight fell 15.0%, 19.5% and 20.9% at the three doses versus 3.1% with placebo over 72 weeks."
+    limitation: "Weight is a surrogate for health outcomes; 72 weeks; stomach and gut side effects may have partly unblinded participants; manufacturer-run."
+  surmount-1-prediabetes:
+    finding: "In the 1,032 SURMOUNT-1 participants with prediabetes treated for 176 weeks, type 2 diabetes was diagnosed in 1.3% with tirzepatide and 13.3% with placebo; 17 weeks after stopping, 2.4% versus 13.7%."
+    limitation: "A subgroup of one trial; weight loss itself prevents diabetes, so this does not separate drug from weight; manufacturer-run."
+  surmount-4:
+    finding: "After 36 weeks of open-label tirzepatide (mean loss 20.9%), 670 adults were randomised: those who continued lost a further 5.5% over 52 weeks, while those switched to placebo regained 14.0%."
+    limitation: "Only people who tolerated the drug were randomised; manufacturer-run."
+  surmount-maintain:
+    finding: "After 60 weeks of tirzepatide, 378 adults were randomised to continue, to a lower dose, or to placebo. At week 112 weight was 21.9%, 16.6% and 9.9% below the starting weight."
+    limitation: "US only; rescue treatment was allowed after week 84, which complicates comparison; manufacturer-run."
+  surmount-osa:
+    finding: "In two trials (469 adults with obesity and moderate to severe sleep apnoea), breathing interruptions fell by 20.0 and 23.8 more events per hour with tirzepatide than with placebo over 52 weeks."
+    limitation: "People with type 2 diabetes were excluded; in trial 2 the breathing machine was stopped a week before measurement; manufacturer-run."
+  summit:
+    finding: "In 731 adults with obesity and heart failure with preserved ejection fraction, cardiovascular death or worsening heart failure occurred in 9.9% with tirzepatide and 15.3% with placebo (HR 0.62); symptom scores improved."
+    limitation: "Few events; the benefit came from heart-failure events, not deaths (8 versus 5 cardiovascular deaths); the EMA was unsure the effect is more than weight loss."
+  surmount-5:
+    finding: "In 751 adults with obesity without diabetes, weight fell 20.2% with tirzepatide and 13.7% with semaglutide over 72 weeks, each at the highest dose tolerated."
+    limitation: "Open-label, so behaviour and reporting could be influenced; run and paid for by the maker of one of the two drugs."
+  rodriguez-2024-cohort:
+    finding: "In US health records of 18,386 matched adults with overweight or obesity, those starting tirzepatide lost more weight than those starting semaglutide (difference 6.9 percentage points at 12 months); stomach and gut side effects were similar."
+    limitation: "Observational; diabetes formulations used on or off label; more than half stopped treatment early; cannot rule out confounding."
+  mccall-2026-compounded-reports:
+    finding: "Of 81,078 US adverse-event reports for GLP-1 medicines (2018–2024), 707 involved compounded products. These had higher reporting odds for preparation errors, contamination and hospitalisation than branded products."
+    limitation: "Voluntary reports cannot give rates or prove cause; liraglutide, semaglutide and tirzepatide were pooled."
+regulatory_notes:
+  EU: "Authorised (centralised): Mounjaro 15 Sep 2022; weight management added 11 Dec 2023; children 10+ with type 2 diabetes 22 Jan 2026. Prescription only."
+  NL: "Authorised via the EU. Reimbursed only for type 2 diabetes under Bijlage 2 conditions; not reimbursed for weight management, assessment under way."
+  DE: "Authorised via the EU. Statutory insurance excludes medicines used mainly for weight loss (§ 34 SGB V)."
+  BE: "Authorised via the EU; prescription only. Belgian reimbursement rules not verified here."
+  UK: "Licensed (Mounjaro) for diabetes and weight management; prescription only. Falsified Mounjaro KwikPens found in 2026."
+  US: "FDA-approved: Mounjaro 13 May 2022; Zepbound 8 Nov 2023; sleep apnoea (Zepbound) 20 Dec 2024; children (Mounjaro) 19 Dec 2025; cardiovascular events (Mounjaro) 27 Aug 2026. Shortage resolved 19 Dec 2024."
+  WADA: "Not on the 2026 or 2027 Prohibited List. On the Monitoring Program since 2026 (in and out of competition)."
+indications:
+  mounjaro: "Type 2 diabetes that is not well controlled, alongside diet and exercise, in adults and in children from 10 years. Weight management in adults with a BMI of 30 or more, or 27 to 30 with a weight-related condition."
+  mounjaro-us: "Type 2 diabetes in adults and children from 10 years, alongside diet and exercise. Lowering the risk of heart attack, stroke and cardiovascular death in adults with type 2 diabetes at high risk."
+  zepbound: "Weight reduction and keeping weight off in adults with obesity, or overweight with a weight-related condition. Moderate to severe obstructive sleep apnoea in adults with obesity."
+---
+<Section id="what-it-is">
+
+<Lead question="What is tirzepatide?">A medicine on prescription that copies two gut hormones. Online vials with this name are a different product.</Lead>
+
+<Compare title="A pharmacy medicine and an online vial with the same name are not the same thing." detail="What is known about each, from the regulators’ assessments and warnings.">
+
+| | Authorised (Mounjaro, Zepbound) | Outside the legal supply chain ("research" vials, fake pens) |
+|---|---|---|
+| Contents known? | <Verdict is="yes" /> Assessed by the regulator<Cite id="ema-epar-mounjaro" /> | <Verdict is="no" /> You do not know what is in it; fake pens have been seized<Cite id="cbg-glp1-position,mhra-2026-10-counterfeit-pens" /> |
+| Amount per dose known? | <Verdict is="yes" /> Fixed by the pen or single-dose vial<Cite id="ema-epar-mounjaro" /> | <Verdict is="no" /> Depends on your own measuring; the FDA has had reports of measuring errors<Cite id="fda-unapproved-glp1-concerns" /> |
+| Made sterile? | <Verdict is="yes" /> Made by a manufacturer named in the authorisation, which releases each batch<Cite id="ema-epar-mounjaro" /> | <Verdict is="unknown" /> For fake pens found in the UK, sterility could not be assured<Cite id="mhra-2026-falsified-mounjaro" /> |
+| Risk information? | <Verdict is="yes" /> Official label, updated<Cite id="ema-epar-mounjaro" /> | <Verdict is="no" /> None: how to use it, and what it does to your health, is unclear<Cite id="cbg-glp1-position" /> |
+| Medical follow-up? | <Verdict is="yes" /> Prescriber and pharmacist<Cite id="cbg-glp1-position" /> | <Verdict is="no" /> None |
+
+</Compare>
+
+<Callout type="note" title="Why this page looks different">
+Most compounds on this site are experimental. Tirzepatide is an authorised medicine with large trials behind it. It is here because vials sold online as "research tirzepatide" use its name, and because grouping it with experimental peptides misleads in both directions.
+</Callout>
+
+<InDetail title="The authorised products and their approval dates">
+
+Tirzepatide is a prescription medicine made by Eli Lilly. In the EU it has been authorised as Mounjaro since 15 September 2022 for type 2 diabetes in adults; weight management in adults was added on 11 December 2023, and type 2 diabetes from age 10 on 22 January 2026.<Cite id="ema-epar-mounjaro,ema-mounjaro-procedural-steps-archive,ema-mounjaro-procedural-steps" /> In the US the same molecule is marketed as Mounjaro for diabetes (approved 13 May 2022) and as Zepbound for weight management (approved 8 November 2023; sleep apnoea added on 20 December 2024).<Cite id="fda-drugsatfda-mounjaro,fda-drugsatfda-zepbound" />
+
+<AuthorisedProducts />
+
+</InDetail>
+
+<InDetail title="The molecule, and where it came from">
+
+### What the molecule is
+
+Tirzepatide is a chain of 39 amino acids. The US label describes it as based on the sequence of GIP (glucose-dependent insulinotropic polypeptide), a hormone released by the upper small intestine after a meal.<Cite id="fda-label-mounjaro,coskun-2018-ly3298176" /> The chain starts <Seq>Tyr-Aib-Glu-Gly-Thr-Phe</Seq>. Three changes stand out:<Cite id="fda-label-mounjaro,coskun-2018-ly3298176,pubchem-tirzepatide" />
+
+- **Positions 2 and 13:** Aib (2-aminoisobutyric acid), an amino acid that the body does not use to build proteins.
+- **Position 20:** a lysine carrying two short spacers, a glutamic-acid linker and a 20-carbon fatty diacid. This tail binds to albumin in the blood.
+- **The end of the chain** is an amide rather than an acid.
+
+Semaglutide also carries Aib in the second position of its chain. Its developers designed it to be fully stable against breakdown, and its EU label says it resists the enzyme DPP-4.<Cite id="lau-2015-semaglutide-discovery,ema-epar-wegovy" /> The tirzepatide labels do not state the purpose of its two Aib residues.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> The formula is C225H348N48O68 and the molecular mass <Q>4813.53 Da</Q>.<Cite id="fda-label-mounjaro" /> Its development code was LY3298176.<Cite id="chembl-tirzepatide" />
+
+### Where it came from
+
+The gut releases two "incretin" hormones after a meal, GIP and GLP-1; both make the pancreas release more insulin.<Cite id="holst-2020-gip-coagonists" /> In 1993 a study of 9 people with type 2 diabetes and 9 matched controls found that <Claim level="human-limited">GIP's maximum insulin effect was 54% lower in diabetes, while GLP-1 kept most of its effect</Claim>.<Cite id="nauck-1993-gip-type2" /> Lilly's chemists later built GLP-1 activity into a GIP-based chain, citing evidence that the response to GIP largely returns once glucose is brought down. The result is a "dual agonist": one molecule that switches on two receptors.<Cite id="coskun-2018-ly3298176,willard-2020-imbalanced-biased" />
+
+</InDetail>
+
+<InDetail title="Pens, vials and why “tirzepatide” is not one thing">
+
+In the EU, Mounjaro comes as single-dose pens, single-dose vials of ready-made solution, and multi-dose KwikPens.<Cite id="ema-epar-mounjaro" /> The evidence on this page belongs to these products: a known substance and amount, sterile, with an updated label. A powder in a vial sold online as "research tirzepatide" has none of these guarantees; the UK regulator states that GLP-1 powders in vials are not authorised.<Cite id="mhra-glp1-what-you-need-to-know" />
+
+The comparison at the top of this section sets out the differences row by row.
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="What does it do in the body?">It acts on two gut-hormone receptors. That raises insulin when blood sugar is high, and lowers hunger.</Lead>
+
+Tirzepatide switches on two gut-hormone receptors for days at a time. Most of its effects, wanted and unwanted, follow from where those receptors are found.<Cite id="ema-epar-mounjaro" />
+
+The figure shows first how tirzepatide works in a single cell, then what happens in each organ, and how well each effect is shown.
+
+<OrganCards id="tirzepatide" />
+
+<InDetail title="The two receptors in one table: where they are found and what they do">
+
+<Diagram id="tirzepatide-two-receptors" caption="One molecule, two receptors. What each one does, and how well it is shown in people.">
+
+| Receptor | Where it is found | What switching it on does | How well this is shown |
+|---|---|---|---|
+| GLP-1 receptor | Pancreas, brain, gut, heart, blood vessels, immune cells, kidney | More insulin and less glucagon when glucose is high; slower stomach emptying; less hunger | In people (the same receptor as semaglutide) |
+| GIP receptor | Pancreas, brain, gut, heart, blood vessels, immune cells, kidney, and also fat tissue | More insulin when glucose is high; effects on fat storage and on appetite | Insulin effect in people; fat and brain effects in animals and cells |
+| Both together | | Larger falls in HbA1c and weight than GLP-1 drugs in head-to-head trials | In people for the result; the share due to GIP is not known |
+
+</Diagram>
+
+In two open-label trials against semaglutide, weight fell more with tirzepatide: in 1,879 adults with type 2 diabetes (SURPASS-2) and in 751 adults with obesity (SURMOUNT-5). HbA1c fell more too, in the diabetes trial.<Cite id="frias-2021-surpass-2,aronne-2025-surmount-5" /> How much the GIP part adds is not known: we found no study in people that tests it.<Cite id="coskun-2018-ly3298176,holst-2020-gip-coagonists" />
+
+In the wall of the stomach and gut, GLP-1 receptors sit on muscle and nerve cells. <Claim level="animal">In animal studies, the slower stomach also ran through nerves to the brain</Claim>.<Cite id="muller-2019-glp1-review" />
+
+</InDetail>
+
+<InDetail title="Step by step: the chain of effects and its evidence">
+
+<Mechanism />
+
+### What each step rests on
+
+**Staying in the blood.** The EU label gives an elimination half-life of about five days, 99% albumin binding and 80% absorption from the injection site, measured in people.<Cite id="ema-epar-mounjaro" /> The chain is mechanical: the fatty-acid tail binds albumin, and the EU label says this prolongs the half-life. Albumin is too large for the kidneys to filter, and tirzepatide is removed mainly by being broken down. So the drug is cleared slowly, and side effects do not end the day it is stopped.<Cite id="ema-epar-mounjaro,coskun-2018-ly3298176" />
+
+**Two receptors, unevenly.** <Claim level="in-vitro">In cell assays, tirzepatide bound the GIP receptor as strongly as natural GIP, and the GLP-1 receptor about five times more weakly than natural GLP-1</Claim>.<Cite id="coskun-2018-ly3298176,ema-epar-mounjaro" /> <Claim level="in-vitro">At the GLP-1 receptor it favoured cAMP signalling over recruiting β-arrestin, and caused less receptor internalisation than GLP-1</Claim>. <Claim level="animal">Experiments in isolated mouse islets suggest that this bias may help insulin release</Claim>. The authors, mostly company scientists, propose their receptor-occupancy estimates mainly for generating hypotheses.<Cite id="willard-2020-imbalanced-biased" />
+
+**Insulin, glucagon and sensitivity in people.** <Claim level="human-controlled">In a 28-week, double-blind, randomised trial in 117 people with type 2 diabetes, tirzepatide improved insulin secretion and insulin sensitivity more than placebo and more than semaglutide at <Q>1 mg</Q>, and lowered glucagon after meals</Claim>.<Cite id="heise-2022-islet-function" /> Because cAMP amplifies an insulin release that glucose has already started, tirzepatide on its own rarely causes low blood sugar (see the risks section).<Cite id="ema-epar-mounjaro" />
+
+**Appetite and the stomach.** <Claim level="human-controlled">In the same trial, tirzepatide and semaglutide reduced appetite and energy intake at a test lunch by similar amounts, yet tirzepatide reduced weight and fat mass more</Claim>; the lunch did not explain the difference.<Cite id="heise-2023-appetite" /> The EU label says the delay in stomach emptying diminishes over time.<Cite id="ema-epar-mounjaro" />
+
+</InDetail>
+
+<InDetail title="The open question: what does the GIP half do?">
+
+Here the evidence is weakest. The results point in two directions, and most of them come from animals:
+
+- **GIP agonism helps.** <Claim level="animal">In obese mice without GLP-1 receptors, tirzepatide still improved insulin sensitivity, through more glucose uptake into fat tissue</Claim>.<Cite id="samms-2021-gipr-insulin-sensitivity" /> <Claim level="animal">In mice, a GIP agonist lowered food intake through GIP receptors in the brain, and the extra weight loss of a GIP/GLP-1 co-agonist disappeared in mice lacking those brain receptors</Claim>.<Cite id="zhang-2021-cns-gipr" /> <Claim level="animal">In mice, rats and musk shrews, GIP receptor activation reduced nausea and vomiting caused by a GLP-1 drug</Claim>.<Cite id="borner-2021-gipr-emesis" />
+- **GIP blocking also helps.** <Claim level="animal">Antibodies that block the GIP receptor protected obese mice against weight gain and caused weight loss in obese monkeys</Claim>.<Cite id="killion-2018-gipr-antagonist" /> <Claim level="animal">Long exposure to a GIP agonist switched off GIP receptor activity in mouse fat cells, so the agonist ended up acting like a blocker</Claim>.<Cite id="killion-2020-gipr-desensitisation" /> In people, a different medicine that combines a GLP-1 agonist with a GIP-blocking antibody was tested in a phase 2 trial in 465 adults with obesity: <Claim level="human-controlled">mean weight fell 12.3% to 16.2% over 52 weeks, versus 2.5% with placebo</Claim>.<Cite id="jastreboff-2025-maridebart" />
+
+<Callout type="uncertain" title="Agonist or functional blocker?">
+That both switching on and blocking the GIP receptor lower weight is a puzzle. One proposed explanation is that a long-acting agonist eventually desensitises the receptor, so the net effect resembles blocking ("functional antagonism").<Cite id="holst-2020-gip-coagonists,killion-2020-gipr-desensitisation" /> <Claim level="hypothesis">Whether tirzepatide works in people partly as a functional GIP blocker, as a true GIP activator, or mainly through its GLP-1 action is not settled</Claim>. We found no study in people that separates the two receptors' contributions; the first human study of tirzepatide says its design could not do so.<Cite id="coskun-2018-ly3298176" />
+</Callout>
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Does it work?">Yes, for blood sugar and weight, in large trials. Much of the lost weight returns after stopping.</Lead>
+
+<KeyNumber title="Weight fell by about 15 to 21% on average" value="15.0–20.9%" label="average weight lost in 72 weeks, depending on the dose, against 3.1% with placebo" who="SURMOUNT-1: 2,539 adults with obesity or overweight, without diabetes" source="jastreboff-2022-surmount-1" level="established" />
+
+<KeyNumber title="Long-term blood sugar (HbA1c) fell by about 2 points" value="1.87–2.07" label="percentage points lower HbA1c in 40 weeks, against a small rise with placebo" who="SURPASS-1: 478 adults with type 2 diabetes on diet and exercise alone" source="rosenstock-2021-surpass-1" level="established" />
+
+<KeyNumber title="Heart attacks, strokes and heart deaths: not more often than with an older medicine" value="12.2 in 100" label="had one in about four years, against 13.1 in 100 with dulaglutide" who="SURPASS-CVOT: 13,299 people with type 2 diabetes and atherosclerotic heart or blood-vessel disease" source="nicholls-2025-surpass-cvot,ema-epar-mounjaro" level="human-controlled" />
+
+<KeyNumber title="Much of the lost weight came back after stopping" value="14.0%" label="weight gain in 52 weeks after switching to placebo; those who stayed on it lost 5.5% more" who="SURMOUNT-4: 670 adults with obesity or overweight, without diabetes, who had first lost 20.9% on average in 36 weeks" source="aronne-2024-surmount-4" level="human-controlled" />
+
+Every pivotal trial here was funded by Eli Lilly, with many company authors. A crude PubMed count on 20 October 2026 found 134 randomised-trial records on tirzepatide, of which only 13 had no Lilly-affiliated author.<Cite id="pubmed-tirzepatide-rct-count-2026-10-20" /> That does not make the results false, but the questions, comparators and doses were mostly the manufacturer's choice. Independent evidence comes mainly from health-record studies and other groups' laboratory work.<Cite id="rodriguez-2024-tirzepatide-semaglutide-cohort,killion-2018-gipr-antagonist,zhang-2021-cns-gipr" />
+
+<InDetail title="Every key study in one table">
+
+<StudyTable />
+
+Below is what the key studies tested, in whom, and what they could not show. The cell and animal studies explain the mechanism; they do not show that the medicine works in people.
+
+</InDetail>
+
+<InDetail title="Type 2 diabetes, and the heart trial">
+
+### Type 2 diabetes
+
+<Claim level="established">Tirzepatide lowers HbA1c in type 2 diabetes</Claim>. In SURPASS-1, a double-blind phase 3 trial in 478 adults on diet and exercise alone, HbA1c fell by 1.87 to 2.07 percentage points over 40 weeks versus a rise of 0.04 with placebo, without clinically significant low blood sugar.<Cite id="rosenstock-2021-surpass-1" /> In the earlier phase 2 trial (318 people), stomach and gut side effects rose with dose, from 23.1% to 66.0%.<Cite id="frias-2018-tirzepatide-phase2" />
+
+SURPASS-2 compared tirzepatide with semaglutide <Q>1 mg</Q> in 1,879 adults on metformin over 40 weeks. <Claim level="human-controlled">HbA1c fell by 2.01 to 2.30 percentage points with tirzepatide and 1.86 with semaglutide; weight differences were 1.9 to 5.5 kg</Claim>.<Cite id="frias-2021-surpass-2" /> The trial was open-label, and semaglutide was used at a lower dose than those later authorised. Against insulin glargine (SURPASS-4, 2,002 adults at high cardiovascular risk), HbA1c fell more and low blood sugar was less frequent (6–9% versus 19%).<Cite id="delprato-2021-surpass-4" /> In 99 young people aged 10 to 17 (SURPASS-PEDS), HbA1c fell by 2.23 percentage points over 30 weeks.<Cite id="hannon-2025-surpass-peds" />
+
+### The heart: SURPASS-CVOT
+
+SURPASS-CVOT randomised 13,299 people with type 2 diabetes and atherosclerotic disease to tirzepatide or dulaglutide, an older GLP-1 medicine that had itself reduced cardiovascular events in an earlier trial. Over a median of about four years, <Claim level="human-controlled">heart attack, stroke or cardiovascular death occurred in 12.2% with tirzepatide and 13.1% with dulaglutide (HR 0.92, 95.3% CI 0.83–1.01)</Claim>. That met the test for "not worse"; it did not show "better".<Cite id="nicholls-2025-surpass-cvot" /> All-cause death was 8.5% versus 10.1% in the US label, a result not controlled for multiple testing.<Cite id="fda-label-mounjaro" />
+
+The regulators went further than the trial's own conclusion. The EMA accepted that Mounjaro reduces serious cardiovascular events in this group, and the FDA added an indication to reduce this risk.<Cite id="ema-2026-mounjaro-cvot-outcome,fda-drugsatfda-mounjaro" /> That conclusion leans on dulaglutide's earlier benefit. Without a placebo group, the size of the benefit against no treatment is an inference, not a measurement.
+
+</InDetail>
+
+<InDetail title="Weight management, stopping, and the comparison with semaglutide">
+
+### Weight management, and what happens after stopping
+
+SURMOUNT-1 randomised 2,539 adults with obesity or overweight, without diabetes. <Claim level="established">Mean weight fell 15.0%, 19.5% and 20.9% at the three doses versus 3.1% with placebo over 72 weeks</Claim>; 4.3% to 7.1% stopped because of side effects, versus 2.6% on placebo.<Cite id="jastreboff-2022-surmount-1" /> Among the 1,032 participants with prediabetes, treated for 176 weeks, type 2 diabetes was diagnosed in 1.3% versus 13.3%.<Cite id="jastreboff-2025-surmount-1-prediabetes" /> Weight loss itself lowers diabetes risk, so this does not show an effect beyond weight.
+
+<Claim level="human-controlled">Much of the weight returns when treatment stops</Claim>. In SURMOUNT-4, 670 adults who had lost a mean 20.9% over 36 weeks were randomised: those who continued lost a further 5.5%, those switched to placebo regained 14.0% over 52 weeks.<Cite id="aronne-2024-surmount-4" /> In SURMOUNT-MAINTAIN, 378 adults were randomised after 60 weeks to continue, to a lower dose (<Q>5 mg</Q>) or to placebo; at week 112 their weight was 21.9%, 16.6% and 9.9% below the starting weight.<Cite id="horn-2026-surmount-maintain" />
+
+### Head to head with semaglutide
+
+SURMOUNT-5 randomised 751 adults with obesity but no diabetes to the highest tolerated dose of tirzepatide or of semaglutide for 72 weeks. Mean weight fell 20.2% with tirzepatide and 13.7% with semaglutide; waist size fell 18.4 cm and 13.0 cm.<Cite id="aronne-2025-surmount-5" /> The trial was open-label and run by the maker of one of the two drugs. An independent US health-record study of 18,386 matched adults pointed the same way (6.9 percentage points more weight loss at 12 months), but cannot rule out confounding.<Cite id="rodriguez-2024-tirzepatide-semaglutide-cohort" /> Neither shows which drug suits a given person.
+
+</InDetail>
+
+<InDetail title="Sleep apnoea, heart failure and the liver">
+
+In two SURMOUNT-OSA trials (469 adults with obesity and moderate to severe sleep apnoea), <Claim level="human-controlled">breathing interruptions per hour fell by 20.0 and 23.8 events more than with placebo over 52 weeks</Claim>.<Cite id="malhotra-2024-surmount-osa,ema-2024-mounjaro-osa-outcome" /> In SUMMIT, 731 adults with obesity and heart failure with preserved ejection fraction (HFpEF), <Claim level="human-controlled">cardiovascular death or worsening heart failure occurred in 9.9% versus 15.3% (HR 0.62)</Claim>, driven by heart-failure events; cardiovascular deaths were few and not lower (8 versus 5 in the paper; the EU label gives 10 versus 5).<Cite id="packer-2025-summit,ema-epar-mounjaro" /> The EMA was not sure this is more than an effect of weight loss.<Cite id="ema-2026-mounjaro-hfpef-outcome" /> In a phase 2 trial in 190 people with the liver disease MASH and moderate or severe scarring, <Claim level="human-controlled">MASH resolved without worse scarring in 44% to 62% with tirzepatide versus 10% with placebo at 52 weeks</Claim>; the authors call for larger and longer trials.<Cite id="loomba-2024-synergy-nash" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="What is still not known?">What many years of use do, how to stop well, and effects on muscle, the thyroid and pregnancy.</Lead>
+
+<TimeStrip title="The longest trial followed people for about four years. What longer use does is not known." detail="Years of use covered by the evidence, counted from the start of treatment." min={0} max={10} step={2} axis="Years of use" source="nicholls-2025-surpass-cvot,ema-epar-mounjaro,jastreboff-2025-surmount-1-prediabetes" rows={[
+  { label: "Heart outcome trial (SURPASS-CVOT)", spans: [{ from: 0, to: 4, text: "a median of about four years" }] },
+  { label: "Weight trial, people with prediabetes (SURMOUNT-1)", spans: [{ from: 0, to: 3.38, text: "176 weeks" }] },
+  { label: "Longer use", spans: [{ from: 4, to: 10, text: "not covered by the trials", unknown: true }] },
+]} />
+
+<InDetail title="All seven open questions, with their sources">
+
+- **Use beyond about four years.** The longest trial, SURPASS-CVOT, followed people for a median of about four years.<Cite id="nicholls-2025-surpass-cvot" />
+- **How to stop.** In the trials, switching to placebo led to substantial weight regain. A lower dose kept part of the loss in one trial. No trial has yet shown a way to stop entirely and keep the benefit.<Cite id="aronne-2024-surmount-4,horn-2026-surmount-maintain" />
+- **What GIP adds in people.** Animal studies point both ways; we found no human study that separates the two receptors.<Cite id="killion-2020-gipr-desensitisation,samms-2021-gipr-insulin-sensitivity" />
+- **Thyroid tumours.** Tirzepatide caused thyroid C-cell tumours in rats; the EU label calls the human relevance unknown.<Cite id="ema-epar-mounjaro" />
+- **Muscle and function.** The EU label reports that fat mass fell more than lean mass in a body-composition substudy; whether lean-mass loss matters for strength and falls in older people is open.<Cite id="ema-epar-mounjaro,neeland-2024-lean-mass" />
+- **Pregnancy.** Animal studies showed foetal harm at doses toxic to the mother; human data are very limited.<Cite id="ema-epar-mounjaro" />
+- **Anti-drug antibodies.** Between about half and two-thirds of treated people develop them across the trials. No effect on efficacy was found, but allergic and injection-site reactions were more frequent in people who had them. What this means over many years is not known.<Cite id="ema-epar-mounjaro,fda-label-mounjaro" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is it legal?">Yes, on prescription, in the EU, UK and US. Dutch basic insurance pays only for some diabetes use.</Lead>
+
+<TimeStrip title="In the EU it has been an approved medicine since 2022. Use for weight came in 2023." detail="Each bar runs from the authorisation to the day we checked." min={2021} max={2027} step={2} axis="Year" source="ema-epar-mounjaro,ema-mounjaro-procedural-steps-archive,ema-mounjaro-procedural-steps,fda-drugsatfda-mounjaro,fda-drugsatfda-zepbound" checked="2026-10-20" rows={[
+  { label: "EU, Mounjaro: type 2 diabetes in adults", spans: [{ from: "2022-09-15", to: "2026-10-20", text: "since 15 September 2022" }] },
+  { label: "EU, Mounjaro: weight management in adults", spans: [{ from: "2023-12-11", to: "2026-10-20", text: "since 11 December 2023" }] },
+  { label: "EU, Mounjaro: type 2 diabetes from age 10", spans: [{ from: "2026-01-22", to: "2026-10-20", text: "since 22 January 2026" }] },
+  { label: "US, Mounjaro: type 2 diabetes", spans: [{ from: "2022-05-13", to: "2026-10-20", text: "since 13 May 2022" }] },
+  { label: "US, Zepbound: weight management", spans: [{ from: "2023-11-08", to: "2026-10-20", text: "since 8 November 2023" }] },
+]} />
+
+<InDetail title="Status in each country and in sport">
+
+<RegulatoryTable />
+
+Statuses were checked on 20 October 2026.
+
+### Sport (WADA)
+
+Tirzepatide is not named on the 2026 Prohibited List or on the 2027 List that takes effect on 1 January 2027. The S0 class for non-approved substances does not apply to an approved medicine.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-prohibited-list" /> It was added to the WADA Monitoring Program in 2026 and stays on it in 2027, in and out of competition: laboratories look for it to detect misuse patterns, but it is not banned.<Cite id="wada-2025-monitoring-program,wada-2026-monitoring-program,wada-2027-monitoring-program" />
+
+</InDetail>
+
+<InDetail title="The European Union and the Netherlands">
+
+### European Union
+
+Mounjaro is authorised through the centralised procedure, valid in every member state; the marketing authorisation holder is Eli Lilly Nederland B.V.<Cite id="ema-epar-mounjaro" /> The EMA assessed three further uses and in each case added the trial data to the label without a separate indication, because the use was already covered: sleep apnoea (December 2024), HFpEF (January 2026) and cardiovascular risk reduction (June 2026).<Cite id="ema-2024-mounjaro-osa-outcome,ema-2026-mounjaro-hfpef-outcome,ema-2026-mounjaro-cvot-outcome" /> Mounjaro is under additional monitoring, so that new safety information is picked up quickly.<Cite id="ema-epar-mounjaro" />
+
+### Netherlands
+
+The EU authorisation applies directly; tirzepatide is prescription-only. Reimbursement is narrow:
+
+- **Type 2 diabetes:** reimbursed only under the conditions of Bijlage 2 of the Regeling zorgverzekering, for adults. One route is a BMI of 30 or more when metformin plus a sulfonylurea, or metformin plus basal insulin, is not enough. The other is very high cardiovascular risk, added to an SGLT2 inhibitor and metformin.<Cite id="fk-regeling-zorgverzekering-bijlage-2-tirzepatide" />
+- **Weight management:** not reimbursed. The Zorginstituut is assessing it in steps, first for people with a BMI of 30 or more with related disease, or a BMI of 35 or more. The first scientific discussion was on 5 October 2026; consultation is expected in early November 2026.<Cite id="zin-tirzepatide-obesity-assessment" />
+
+Dutch GP guidelines, as summarised in the Farmacotherapeutisch Kompas, advise against tirzepatide for type 2 diabetes without very high cardiovascular risk, because there is little experience with it and the costs are very high. The GP guideline on obesity also advises against it in primary care. In hospital care, the same summary says obesity medicines can be considered earlier, but it names liraglutide, naltrexone/bupropion and semaglutide, not tirzepatide. The same summary notes that the Dutch multidisciplinary obesity guideline (2023) was written before tirzepatide was on the market, and that guidance in other countries leaves more room to prescribe it.<Cite id="fk-tirzepatide" /> This gap has costs and reasons. An authorised weight medicine with strong trial results exists, but people who cannot pay do not get it, while the CBG warns against buying these medicines online without a prescription.<Cite id="cbg-glp1-position" /> Equally, the costs are real. When it assessed semaglutide (Wegovy) in 2024, the Zorginstituut estimated that 4.1 million people in the Netherlands met the EU weight criteria, which are the same as Mounjaro's. Costs could in theory reach €10 billion a year; its practical estimate was €1.3 billion a year. That is why it now assesses new obesity medicines first for the people with the most health problems, still an estimated group of more than 1 million.<Cite id="zin-2025-obesity-staged-approach,zin-tirzepatide-obesity-assessment" />
+
+</InDetail>
+
+<InDetail title="Germany, Belgium, the United Kingdom and the United States">
+
+### Germany
+
+Authorised through the EU procedure.<Cite id="ema-epar-mounjaro" /> German law excludes from statutory health insurance medicines used mainly for weight loss, appetite control or weight regulation (§ 34 SGB V).<Cite id="de-sgb5-34" />
+
+### Belgium
+
+Authorised through the EU procedure; Belgian law requires a marketing authorisation, national or European, before a medicine is placed on the market.<Cite id="ema-epar-mounjaro,be-medicines-law-1964" /> We could not verify Belgian reimbursement rules on an official source on 20 October 2026.
+
+### United Kingdom
+
+The MHRA lists Mounjaro as licensed for diabetes and for weight management, prescription only.<Cite id="mhra-glp1-what-you-need-to-know" /> In February 2026 it warned that falsified Mounjaro KwikPens labelled <Q>15 mg</Q> had been supplied through one UK online pharmacy.<Cite id="mhra-2026-falsified-mounjaro" /> In October 2026 it reported seizing more than 12,000 fake retatrutide and tirzepatide pens in one raid.<Cite id="mhra-2026-10-counterfeit-pens" />
+
+### United States
+
+The approval dates are in the table above.<Cite id="fda-drugsatfda-mounjaro,fda-drugsatfda-zepbound" /> The US labels carry a boxed warning about rat thyroid C-cell tumours and contraindicate use with a personal or family history of medullary thyroid carcinoma or MEN 2; the EU label lists only hypersensitivity.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> In February 2026 the Zepbound label removed its warning on suicidal behaviour and ideation.<Cite id="fda-label-zepbound" />
+
+Tirzepatide injection was on the FDA shortage list from 2022, which let pharmacies compound copies. The FDA declared the shortage resolved on 2 October 2024 and, after re-evaluation, on 19 December 2024; the grace period ended for pharmacies after a court ruling on 5 March 2025, and for outsourcing facilities on 19 March 2025.<Cite id="fda-glp1-compounding-policy" /> On 30 April 2026 the FDA proposed to keep tirzepatide off the list of bulk substances that outsourcing facilities may compound from, finding no clinical need; no final decision had been published by 20 October 2026.<Cite id="fda-2026-503b-glp1-exclusion-proposal,fr-2026-12937-503b-comment-extension" /> Tirzepatide was not among the peptides the FDA's compounding advisory committee considered in July 2026.<Cite id="fda-pcac-2026-07-meeting" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="What are the risks?">Many people feel sick at first. Gallbladder and pancreas problems are rarer.</Lead>
+
+<KeyNumber title="Stomach and gut problems were common" value="55.6–60.8%" label="had stomach or gut problems. With placebo it was 30.3%" who="A placebo-controlled weight trial in adults without type 2 diabetes; the range covers its three doses (EU product information)" source="ema-epar-mounjaro" level="human-controlled" />
+
+<KeyNumber title="One in four to one in three felt sick" value="24.6–33.3%" label="had nausea. With placebo it was 9.5%" who="The same weight trial (EU product information)" source="ema-epar-mounjaro" level="human-controlled" />
+
+<KeyNumber title="Few stopped because of it" value="1.9–4.4%" label="stopped for good because of stomach or gut problems, against 0.5% with placebo" who="The same weight trial (EU product information)" source="ema-epar-mounjaro" level="human-controlled" />
+
+Unless stated otherwise, risks and frequencies come from the EU product information.<Cite id="ema-epar-mounjaro" />
+
+Tirzepatide's insulin effect depends on glucose, but insulin and sulfonylureas act regardless of glucose.<Cite id="ema-epar-mounjaro,sola-2015-sulfonylureas" /> In the diabetes trials, clinically significant low blood sugar occurred in 10–14% when tirzepatide was added to a sulfonylurea and 14–19% when added to basal insulin. The label says the risk can be lowered by reducing the dose of those medicines.<Cite id="ema-epar-mounjaro" />
+
+<InDetail title="Low blood sugar, with a short animation">
+
+The short animation shows how the combination can push blood sugar too low, and what to do about it.
+
+<Explainer id="glp1-class-hypo" />
+
+</InDetail>
+
+<InDetail title="Stomach and gut: the details">
+
+In the placebo-controlled weight trial in people without diabetes, stomach and gut problems occurred in 55.6% to 60.8% with tirzepatide versus 30.3% with placebo; nausea in 24.6% to 33.3% versus 9.5%. Most were mild or moderate and came while the dose was being raised; 1.9% to 4.4% stopped permanently because of them.<Cite id="ema-epar-mounjaro" /> Two mechanisms are proposed: the stomach empties more slowly, and <Claim level="animal">in animals, GLP-1 drugs act on hindbrain areas that also process nausea signals</Claim>.<Cite id="ema-epar-mounjaro,borner-2021-gipr-emesis" /> Vomiting and diarrhoea can cause dehydration, which can lead to acute kidney failure; older people are more at risk.<Cite id="ema-epar-mounjaro" /> The US label also lists reports after approval of ileus (the bowel stops moving), blockage of the bowel and severe constipation.<Cite id="fda-label-mounjaro" />
+
+</InDetail>
+
+<InDetail title="Gallbladder and pancreas">
+
+Gallstones and inflammation of the gallbladder are uncommon side effects (up to 1 in 100). Inflammation of the gallbladder occurred in 0.6% versus 0.2% in the pooled weight trials; in the HFpEF trial, acute gallbladder disease occurred in 4.4% versus 2.7%. In the weight trials, the label notes, acute gallbladder events were more common in people who lost more weight.<Cite id="ema-epar-mounjaro" /> Across 76 trials of GLP-1 medicines (103,371 people), gallbladder and bile-duct disease was more frequent, more so in weight-loss trials, at higher doses and with longer use.<Cite id="he-2022-gallbladder" />
+
+Acute pancreatitis is an uncommon side effect (up to 1 in 100). Tirzepatide should be stopped if pancreatitis is suspected and not restarted if it is confirmed.<Cite id="ema-epar-mounjaro" /> The US label lists reports after approval of haemorrhagic and necrotising pancreatitis, sometimes fatal.<Cite id="fda-label-mounjaro" /> In the trials, the pancreatic enzymes amylase and lipase rose by about 23% to 42% on average. Raised enzymes alone, without symptoms, do not predict pancreatitis. The EU label does not propose a mechanism for the pancreatitis cases.<Cite id="ema-epar-mounjaro" />
+
+</InDetail>
+
+<InDetail title="Thyroid tumours in rats, and why they may not carry over">
+
+In a two-year study, tirzepatide caused thyroid C-cell tumours in rats at all doses tested, at exposures up to about the human one; a six-month study in a mouse strain found none. The EU label calls the human relevance unknown, and lists raised blood calcitonin as common in some trial groups.<Cite id="ema-epar-mounjaro,fda-label-mounjaro" /> <Claim level="animal">Rodent C-cells carry GLP-1 receptors, and GLP-1 agonists stimulated calcitonin release and C-cell growth in rats; human and monkey C-cells had few receptors</Claim>. That study tested liraglutide, not tirzepatide.<Cite id="knudsen-2010-thyroid-c-cells" />
+
+</InDetail>
+
+<InDetail title="Anaesthesia, the contraceptive pill and other tablets">
+
+Slower stomach emptying means food may still be in the stomach during general anaesthesia or deep sedation, and could be breathed into the lungs. Tell the doctor about tirzepatide before any procedure.<Cite id="ema-epar-mounjaro,ema-prac-2024-07-aspiration" />
+
+The same slowing reduces the absorption of some tablets, most at the start of treatment. A single dose lowered peak levels of a combined contraceptive pill by 55% to 66%. Here the regulators differ. The EU label considers this not clinically relevant and requires no change.<Cite id="ema-epar-mounjaro" /> The US labels and the UK regulator advise switching to a non-oral method, or adding a barrier method such as condoms, for four weeks after starting and after each dose increase.<Cite id="fda-label-mounjaro,mhra-glp1-what-you-need-to-know" /> For tablets where small changes matter, such as warfarin or digoxin, the label advises monitoring.<Cite id="ema-epar-mounjaro" />
+
+</InDetail>
+
+<InDetail title="Muscle, eyes, mood, pregnancy and other effects">
+
+### Muscle and eyes
+
+Weight loss on tirzepatide is mostly fat: in a body-composition substudy, fat mass fell more than lean mass.<Cite id="ema-epar-mounjaro" /> <Claim level="human-limited">Across GLP-1-based medicines, lean mass has made up from about 15% to 40–60% of the weight lost</Claim>; lean mass also includes organs and water, and the source is a narrative review.<Cite id="neeland-2024-lean-mass" /> In people with diabetic retinopathy, a fast fall in glucose can temporarily worsen it; the label asks for close monitoring.<Cite id="ema-epar-mounjaro" />
+
+### Mood, pregnancy and other effects
+
+Mounjaro was not part of the EMA's 2024 review of suicidal thoughts with GLP-1 medicines, which found no causal link for the medicines it reviewed.<Cite id="ema-prac-2024-04-suicidal-thoughts" /> The UK regulator, after its own safety review of GLP-1 medicines, concluded that the data do not support a causal link with depression or suicidal thoughts.<Cite id="mhra-glp1-what-you-need-to-know" /> If your mood changes on any medicine, tell your doctor.
+
+In rats tirzepatide caused foetal malformations and growth reduction at doses toxic to the mother. The label does not recommend it in pregnancy, recommends contraception, and says to stop at least a month before a planned pregnancy.<Cite id="ema-epar-mounjaro" />
+
+The label also lists a rise in heart rate (average increases of 2 to 6 beats per minute across trials), hair loss, dizziness, low blood pressure, tiredness, injection-site reactions, and rare allergic reactions including anaphylaxis and angioedema.<Cite id="ema-epar-mounjaro" /> Reports of lithium poisoning have been made when GIP/GLP-1 medicines were started or increased in people taking lithium.<Cite id="fk-tirzepatide" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="How do I use it safely?">The pharmacy medicine has the fewest unknowns. Check any other product first, and know when to get help.</Lead>
+
+The authorised medicine is Mounjaro (Zepbound in the US) from a pharmacy, on prescription. A regulator assessed what is in it, the pen or single-dose vial fixes the amount, and the maker releases each batch.<Cite id="ema-epar-mounjaro" /> This section gives no doses: your prescriber decides the dose. Tell your doctor about other medicines you use.
+
+The checks below are for any other product, such as an online "research" vial or a pen of unknown origin.
+
+<ProductCheck extra="A pen can be fake too. Fake Mounjaro pens carried the real batch number of another strength. So a batch number alone proves little. Is the pen damaged, does it look different, or does the dose knob come off? Then do not use it." extraSources="mhra-2026-falsified-mounjaro,mhra-2026-10-counterfeit-pens" />
+
+### When to stop and get help
+
+<Callout type="stop" title="Get medical help now" id="stop-now">
+- **Severe, constant pain in the upper belly**, often spreading to the back, with or without vomiting: possible pancreatitis. Stop tirzepatide and get urgent care.
+- **Vomiting so much you cannot keep fluids down, or passing very little urine:** risk of dehydration and kidney injury. Get same-day care.
+- **Shaking, sweating, confusion or drowsiness**, especially if you also use insulin or a sulfonylurea: possible low blood sugar. Take something sugary if you can swallow safely; call your local emergency number if the person becomes drowsy or confused.
+- **Swelling of the lips, tongue or throat, or difficulty breathing:** possible allergic reaction. Call your local emergency number.
+- **Spreading redness, heat or pus at the injection site, or fever, after using a product from outside a pharmacy:** possible infection. Get urgent care.
+</Callout>
+
+<Cite id="ema-epar-mounjaro,ada-2026-hypoglycaemia,mhra-2026-falsified-mounjaro" />
+
+<WarningSigns only="general,injection,allergic,metabolic" />
+
+<InDetail title="The legal route, and why an online vial is different">
+
+For an authorised medicine, the legal route has the fewest unknowns.
+
+### The legal route in the Netherlands
+
+Tirzepatide needs a prescription from a doctor and comes from a pharmacy. For type 2 diabetes it may be reimbursed under strict conditions. For weight management, as of 20 October 2026, basic health insurance does not pay.<Cite id="fk-regeling-zorgverzekering-bijlage-2-tirzepatide,zin-tirzepatide-obesity-assessment" /> Dutch guidelines put lifestyle treatment first, such as a combined lifestyle programme (GLI).<Cite id="fk-tirzepatide" /> A prescriber can check whether the medicine suits you. They can look for interactions with your other medicines and follow you up. Without a prescriber, none of that happens.<Cite id="belcourt-2025-research-purposes" /> See [talking to your doctor](/en/talking-to-your-doctor/).
+
+### Why an online "research" vial is a different product
+
+The FDA has warned companies that sold tirzepatide falsely labelled "for research purposes" or "not for human consumption". It says these products are of unknown quality and may be harmful.<Cite id="fda-unapproved-glp1-concerns" /> The CBG's summary: you do not know what is in it, how to use it, or what it will do to your health.<Cite id="cbg-glp1-position" /> See [product risk](/en/safety/product-risk/).
+
+By 31 May 2026 the FDA had received more than 730 adverse-event reports for compounded tirzepatide in the US. It says such reports are likely to be incomplete. It also reported products with fake pharmacy labels. Some reports came from people prescribed doses higher, more frequent or raised faster than the approved label allows.<Cite id="fda-unapproved-glp1-concerns" /> In US reports, compounded GLP-1 products were linked more often with preparation errors and contamination than branded ones.<Cite id="mccall-2026-compounded-faers" /> Multi-dose vials add risk: the FDA advises a new sterile needle and syringe every time, and discarding a vial 28 days after first use.<Cite id="fda-unapproved-glp1-concerns" /> See [sterile technique](/en/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Fake pens, and how to check yours">
+
+In the UK, falsified Mounjaro KwikPens labelled <Q>15 mg</Q> carried the batch number of a genuine <Q>7.5 mg</Q> pen and had faulty dose knobs. Their sterility could not be assured, so infection or allergic reactions were possible.<Cite id="mhra-2026-falsified-mounjaro" /> In October 2026 the UK regulator seized more than 12,000 fake retatrutide and tirzepatide pens.<Cite id="mhra-2026-10-counterfeit-pens" />
+
+<Checklist>
+
+- Mounjaro is prescription-only, from a pharmacy. In the UK, fake pens were also supplied through one online pharmacy, so check every pen.
+- Check the strength and batch number on the pen against the pack and the package leaflet.
+- Do not use a pen that looks different, is damaged, or does not work properly. Ask a pharmacist.
+- Report side effects to Lareb.
+
+</Checklist>
+
+<Cite id="mhra-glp1-what-you-need-to-know,mhra-2026-falsified-mounjaro,lareb-home" />
+
+If a pen did not come from a pharmacy, the checks at the top of this section apply to it too.
+
+</InDetail>
+
+<InDetail title="Who should not use it, interactions, and useful checks">
+
+### Who should not use it, and interactions
+
+- **Pregnancy, trying to conceive:** animal studies showed harm to the unborn baby. Stop at least one month before a planned pregnancy.<Cite id="ema-epar-mounjaro" />
+- **The contraceptive pill:** absorption may drop at the start and after each dose increase. Ask your prescriber about extra protection. The UK and US regulators advise adding a barrier method, such as condoms, for four weeks each time, or switching to a method that is not a pill.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-mounjaro" />
+- **Personal or family history of medullary thyroid carcinoma, or MEN 2:** contraindicated in the US because of the rat finding; not a formal EU contraindication, so discuss it.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" />
+- **Previous pancreatitis or severe gastroparesis:** not studied; use with caution, because tirzepatide is linked to pancreatitis and slows the stomach.<Cite id="ema-epar-mounjaro" />
+- **Insulin or sulfonylureas (such as gliclazide):** higher risk of low blood sugar.<Cite id="ema-epar-mounjaro" /> **Other GLP-1 medicines:** the US label says that using them together with tirzepatide is not recommended.<Cite id="fda-label-zepbound" />
+- **Warfarin, digoxin, lithium:** absorption or blood levels can change, mostly at the start and after a dose increase. Extra checks (such as INR or drug levels) are advised.<Cite id="ema-epar-mounjaro,fk-tirzepatide" />
+
+### Checks that make sense, and why
+
+- **Blood glucose**, if you also use insulin or a sulfonylurea, because the combination can push sugar too low.<Cite id="ema-epar-mounjaro" />
+- **Kidney function** after prolonged vomiting or diarrhoea, because dehydration can harm the kidneys.<Cite id="ema-epar-mounjaro" />
+- **Eyes**, if you have diabetic retinopathy, because a fast fall in glucose can worsen it for a while.<Cite id="ema-epar-mounjaro" />
+
+</InDetail>
+
+</Section>

@@ -1,0 +1,567 @@
+---
+slug: pt-141
+title: "PT-141 (bremelanotide)"
+description: "PT-141 is bremelanotide: a US medicine (Vyleesi) for low sexual desire in women, not approved in the EU. What it does, what trials show, its risks and status."
+summary:
+  - "PT-141 is bremelanotide. In the US it is a prescription medicine called Vyleesi."
+  - "It treats low sexual desire in women before menopause. It is not approved in the EU or UK."
+  - "In trials, desire rose a little more than with placebo. Satisfying sex did not happen more often."
+  - "It raises blood pressure for some hours. Many people feel sick. It can darken patches of skin."
+  - "Sprays and vials sold as PT-141 are not the US medicine. No regulator checked what is in them."
+lede: "A US medicine for low desire in women. Not approved in the EU. It briefly raises blood pressure."
+glance:
+  main_risk: "Blood pressure rises for hours; many feel sick; skin can darken."
+  # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section,
+  # <Callout id="stop-now">): the US label (contraindicated with uncontrolled hypertension or heart disease;
+  # transient blood pressure rise), NHS emergency advice on chest pain, sudden severe headache and priapism,
+  # and MedlinePlus on the signs of dangerously high blood pressure (blurred vision, confusion, chest pain).
+  stop_signs:
+    - icon: sign-heart
+      text: "Chest pain, pressure or tightness"
+      sources: [dailymed-vyleesi-label, nhs-chest-pain]
+    - icon: sign-vision
+      text: "A sudden bad headache, or blurred vision"
+      sources: [nhs-headaches, medlineplus-malignant-hypertension, dailymed-vyleesi-label]
+    - icon: sign-clock
+      text: "An erection lasting more than 3 hours"
+      sources: [nhs-priapism, rosen-2004-subcutaneous-pt141-men]
+  # Fact sheet beside the title: label facts from the US prescribing information, never a dose.
+  facts:
+    - label: "How it is taken"
+      value: "Injection under the skin with a single-use pen"
+      sources: [dailymed-vyleesi-label]
+    - label: "When it is used"
+      value: "As needed, before expected sex"
+      sources: [dailymed-vyleesi-label]
+    - label: "Time in the blood"
+      value: "Half-life about 2.7 hours"
+      sources: [dailymed-vyleesi-label]
+    - label: "Approved for"
+      value: "Low sexual desire in premenopausal women, in the US"
+      sources: [dailymed-vyleesi-label, ema-medicines-json]
+grade_rationale:
+  human_clinical: "Authorised in the US since 21 June 2019 (Vyleesi), on the basis of two identical randomised, double-blind phase 3 trials in 1,267 premenopausal women with acquired, generalised HSDD. Not authorised in the EU or the UK; the EMA's published lists show no application, refusal or withdrawal."
+  preclinical_volume: "Minimal. A PubMed search on 22 October 2026 found 122 records naming bremelanotide or PT-141, but only about nine primary animal or laboratory studies: the developer's rat and monkey work, the female-rat studies, a hamster study, a receptor structure, cancer cells, dog absorption studies and a rabbit tissue study. The regulatory toxicology is known only from the FDA review and label. Melanotan II, which differs only at one end, has a larger animal literature that is not counted here."
+  independence: "Few groups. Every trial used for approval, and the earlier dose-finding trial, was run and paid for by the developer (Palatin) or its licensee (AMAG). Independent groups contributed a receptor structure, an animal study that found no reward effect, a brain-scan trial co-funded by AMAG, a critical reanalysis of the phase 3 data, and the only large trial in men, which now carries an expression of concern."
+  safety: "Partial. About 3,500 people took part in 43 completed studies, and 1,247 women were in the 24-week placebo-controlled trials, followed by an open extension of up to 52 weeks. But use was mostly two or three times a month, women with heart disease or uncontrolled high blood pressure were excluded, no post-marketing safety study has been published, and the required pregnancy studies run until 2030."
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Fits several melanocortin receptors"
+    detail: "Bremelanotide is a ring-shaped, lab-made analogue of alpha-MSH, a hormone the body makes itself. The US label says it switches on several melanocortin receptors without much selectivity, most potently MC1R and then MC4R. A cryo-electron microscopy study showed it bound to the human MC4 receptor."
+  - kind: cellular
+    level: animal
+    title: "Switches on nerve cells in sex-related brain areas (rats)"
+    detail: "In rats, injections switched on nerve cells in the hypothalamus. Infused into one small area, the medial preoptic area, it made female rats seek out males more. The researchers proposed that it works there by releasing dopamine. A later, independent hamster study found no sign that it acts on the brain's reward circuit."
+  - kind: tissue
+    level: human
+    title: "Changes how the brain responds to erotic images"
+    detail: "In a crossover trial in 31 women with HSDD, brain scans after one injection showed changed activity in response to erotic videos. The authors link these areas to self-consciousness and sexual imagery. How these changes lead to more desire has not been shown."
+  - kind: effect
+    level: human
+    title: "Desire rises a little, distress falls a little"
+    detail: "In two phase 3 trials, desire scores rose 0.35 points more than with placebo on a 1.2-6 scale, and distress fell 0.33 points more on a 0-4 scale. The number of satisfying sexual events did not change. The US label states that the mechanism by which it improves HSDD is unknown."
+  - kind: effect
+    level: human
+    title: "The same receptor family raises blood pressure"
+    detail: "MC4 receptors in the brain help drive the sympathetic nervous system. After each dose, blood pressure rose for a few hours, by up to 6 mmHg (top number) and 3 mmHg (bottom number) according to the US label, while the heart rate fell. In one study, people born with a faulty MC4 receptor had less high blood pressure."
+  - kind: tissue
+    level: human
+    title: "MC1R on pigment cells darkens skin"
+    detail: "MC1R sits on pigment cells. Dark patches on the face, gums or breasts appeared in 1% of women in the phase 3 trials, and in 38% after eight days of daily use."
+  - kind: effect
+    level: human
+    title: "In men: erections, even without sexual stimulation"
+    detail: "In early studies in men, it caused erections, in healthy men even without erotic images. It was never approved for men; the nasal spray programme for erectile dysfunction was dropped."
+studies:
+  zhang-2021-structure:
+    finding: "Cryo-electron microscopy showed the human MC4 receptor bound to its G protein and to bremelanotide, alpha-MSH, afamelanotide or a small molecule. The peptides bind in the same way."
+    limitation: "A structure in the laboratory: it shows how the drug binds, not what it does in a body."
+  molinoff-2003-animals:
+    finding: "Given to rats and monkeys, PT-141 caused erections. In rats it switched on nerve cells in the hypothalamus, in an area connected to the penis."
+    limitation: "A short summary by the developer's staff; the number of animals is not given in the abstract."
+  pfaus-2004-female-rats:
+    finding: "Female rats given PT-141 sought out males more (solicitation), without other changes in sexual behaviour, general activity or sexual reward."
+    limitation: "Rats; number of animals and funding not in the abstract; two authors worked for the developer. Seeking out a male is not the same as human desire."
+  borland-2025-hamsters:
+    finding: "In female Syrian hamsters, bremelanotide did not change melanocortin receptor levels in the brain's reward circuit and did not make sex more rewarding."
+    limitation: "Hamsters; number of animals not in the abstract. It tests one possible mechanism and found nothing; it does not test desire itself."
+  diamond-2004-men-nasal:
+    finding: "In healthy men and in men with mild to moderate erection problems, a nasal spray caused more erections than placebo at the higher doses, starting after about 30 minutes. Flushing and nausea were the main side effects."
+    limitation: "Early, small studies by the developer; numbers not in the abstract; erections measured in a clinic, not real-life sex."
+  rosen-2004-men-injected:
+    finding: "Injected under the skin, it caused erections in healthy men even without erotic images, and in men who did not respond well to Viagra when they watched erotic videos."
+    limitation: "Small early studies with developer co-authors; numbers not in the abstract; not followed by approval for men."
+  diamond-2005-with-sildenafil:
+    finding: "In 19 men with erection problems, a low dose of nasal PT-141 together with sildenafil gave stronger erections in the clinic than sildenafil alone. No new side effects were reported."
+    limitation: "One session per treatment, 19 men, run by the developer; says nothing about safety with regular use."
+  diamond-2006-women:
+    finding: "In 18 women with sexual arousal disorder, more reported moderate or high desire after one nasal dose than after placebo. Blood flow in the vagina during erotic videos did not change."
+    limitation: "Tiny, one dose each, run by the developer, and the nasal form was later dropped."
+  safarinejad-2008-men:
+    finding: "In 342 men whose erection problems had not responded to sildenafil, 33.5% on nasal bremelanotide against 8.5% on placebo had a good result. Side effects were more common on bremelanotide."
+    limitation: "The journal published an expression of concern about this paper in 2023, and the same author's bremelanotide trial in women was retracted. Treat these results with great caution."
+  clayton-2016-phase-2b:
+    finding: "In 397 premenopausal women with low desire, arousal problems or both, satisfying sexual events rose by 0.7 a month on the two higher doses, against 0.2 on placebo, over 12 weeks. Questionnaire scores improved too. Blood pressure rose a little for about 4 hours."
+    limitation: "Paid for by the developer; 12 weeks; the gain in satisfying events was not repeated in the phase 3 trials."
+  clayton-2017-alcohol:
+    finding: "In 24 healthy men and women, alcohol did not change bremelanotide levels, and adding bremelanotide to alcohol did not make drops in blood pressure on standing more common."
+    limitation: "Single nasal doses in a clinic; small; developer co-authors."
+  reconnect-2019:
+    finding: "In 1,267 premenopausal women with acquired, generalised HSDD, 24 weeks of as-needed injections raised desire scores slightly more than placebo (0.35 points on a 1.2-6 scale) and lowered distress (0.33 points on a 0-4 scale). Satisfying sexual events did not increase."
+    limitation: "Paid for by the developer; mostly white women from the US; 42-44% stopped early on bremelanotide against 16-28% on placebo; questionnaire outcomes only."
+  reconnect-extension-2019:
+    finding: "Of 684 women who continued in an open extension for up to 52 weeks, 272 finished it. Desire and distress scores stayed better than at the start, and no new safety signals were reported."
+    limitation: "No placebo; only women who finished the first phase could join; about 6 in 10 dropped out, mostly because of side effects or withdrawn consent."
+  spielmans-2021-reanalysis:
+    finding: "An independent reanalysis of the phase 3 data, from the FDA application, found similar average results, but showed that stopping because of side effects was far more common on bremelanotide, and that many planned outcomes were not reported in the main paper."
+    limitation: "A reanalysis of the same two trials, not new data; the trial authors dispute it."
+  thurston-2022-brain-scans:
+    finding: "In 31 women with HSDD, more reported increased desire in the 24 hours after one injection than after placebo. Brain scans showed changed responses to erotic videos."
+    limitation: "Small; one injection each; part-funded by the licensee, which also supplied the drug; a broader questionnaire on arousal and desire showed no difference; brain-scan changes are not a health outcome."
+  spana-2022-weight:
+    finding: "In two short phase 1 trials in women with obesity (58 and 27 women), repeated daily injections cut food intake in both. In the larger trial, intake fell by about 400 kcal a day and weight by about 1.3 kg more than with placebo over 16 days."
+    limitation: "Very short, paid for by the developer. In the larger trial, blood pressure changed about as much on placebo. Six women in the smaller trial were withdrawn under blood-pressure rules, two of them shortly after a bremelanotide dose. Not an approved use."
+  mestria-2021-seized-products:
+    finding: "Forensic laboratories in Italy identified bremelanotide and melanotan II in eight unknown samples that police had seized along with steroids and other drugs meant for bodybuilders."
+    limitation: "Eight samples; identity only, not amount, purity or sterility."
+regulatory_notes:
+  EU: "Not authorised. The EMA's list of medicines, which also includes refused and withdrawn applications, has no bremelanotide entry."
+  NL: "Not authorised. Only possible through a named-patient exemption (artsenverklaring), which the IGJ decides on and can refuse."
+  DE: "Not authorised. AMG § 73(3) lets a pharmacy import a medicine authorised abroad for one person, on prescription, in narrow cases."
+  BE: "Not authorised. Art. 6quater of the 1964 Medicines Act allows narrow named-patient imports on prescription."
+  UK: "Not licensed: the MHRA product database lists no bremelanotide or Vyleesi product."
+  US: "FDA-approved since 21 June 2019 (Vyleesi) for acquired, generalised HSDD in premenopausal women. Not for men or after menopause."
+  WADA: "Unclear: not named on the 2026 or 2027 List. As an FDA-approved medicine it falls outside S0, but other classes may apply. No ruling found."
+indications:
+  vyleesi: "Acquired, generalised low sexual desire (HSDD) that causes marked distress, in women before menopause, when another condition, a medicine or relationship problems do not explain it. Not for men, after menopause, or to enhance sexual performance."
+---
+<Section id="what-it-is">
+
+<Lead question="What is PT-141?">A lab-made peptide. In the US, it is a medicine for low sexual desire in women.</Lead>
+
+<Compare title="Vyleesi from a US pharmacy and a spray or vial sold as PT-141 are not the same thing." detail="What is known about each, from regulators’ documents and published analyses, checked on 22 October 2026.">
+
+| | Vyleesi (US prescription medicine) | A spray or vial sold as "PT-141" outside the legal supply chain |
+|---|---|---|
+| Checked by a regulator? | <Verdict is="yes" /> Approved by the FDA since 2019; its label is kept up to date<Cite id="fda-drugsatfda-vyleesi,dailymed-vyleesi-label" /> | <Verdict is="no" /> In August 2026 the FDA warned several online sellers that products including PT-141 are unapproved new drugs<Cite id="fda-warning-letters-index" /> |
+| Approved in the EU or the UK? | <Verdict is="no" /> No EU or UK product exists<Cite id="ema-medicines-json,mhra-products-search-bremelanotide" /> | <Verdict is="no" /> No regulator has assessed it<Cite id="fda-warning-letters-index" /> |
+| Amount per use known? | <Verdict is="yes" /> A single-use pen with a fixed amount<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> Depends on the product and on your own measuring; even the developer’s own nasal spray was absorbed very unevenly<Cite id="white-2017-bremelanotide-abpm" /> |
+| Contents known? | <Verdict is="yes" /> A sterile, clear liquid of known content<Cite id="dailymed-vyleesi-label" /> | <Verdict is="unknown" /> Not checked by a regulator; unknown samples seized by police in Italy were bremelanotide or its relative melanotan II<Cite id="mestria-2021-seized-melanotan-bremelanotide" /> |
+| Official risk information? | <Verdict is="yes" /> A label with warnings and a patient leaflet<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> None |
+
+</Compare>
+
+PT-141 is the developer's code name for bremelanotide.<Cite id="pubchem-bremelanotide,molinoff-2003-pt141" /> It is a real medicine with real trials, for one narrow use: low sexual desire that distresses women who have not yet gone through the menopause.<Cite id="dailymed-vyleesi-label" /> It is on this site because sprays and vials sold online, outside the legal supply chain, carry the same name.<Cite id="fda-warning-letters-index,mestria-2021-seized-melanotan-bremelanotide" />
+
+<InDetail title="The authorised product, and why this page looks different">
+
+The FDA approved Vyleesi on 21 June 2019.<Cite id="fda-drugsatfda-vyleesi" /> The applicant then was AMAG Pharmaceuticals, which had licensed North American rights from the developer, Palatin Technologies; Drugs@FDA now lists Cosette as the company.<Cite id="fda-2019-vyleesi-approval-letter,dhillon-2019-bremelanotide-first-approval,fda-drugsatfda-vyleesi" /> The application was not sent to an FDA advisory committee.<Cite id="fda-2019-vyleesi-approval-letter" /> At the time, one other medicine (flibanserin, Addyi) was approved in the US for the same condition.<Cite id="fda-2019-vyleesi-multidiscipline-review,mintzes-2021-hsdd-regulatory-precedent" />
+
+<AuthorisedProducts />
+
+The label limits the approved use. It covers only acquired, generalised hypoactive sexual desire disorder (HSDD) in premenopausal women: low desire that began after a time of normal desire, happens in every situation and with every partner, causes marked distress, and is not explained by another illness, a medicine or problems in the relationship. It is not for women after the menopause, not for men, and "not indicated to enhance sexual performance".<Cite id="dailymed-vyleesi-label" />
+
+<Callout type="note" title="Why this page looks different">
+Most compounds on this site are experimental. Bremelanotide is authorised in the United States, but not in the EU, the UK or the Netherlands. That makes it an unusual case: a real medicine with known short-term risks for one use in the US, and an unauthorised product in Europe.
+</Callout>
+
+</InDetail>
+
+<InDetail title="The molecule, and its close relative melanotan II">
+
+Bremelanotide is a chain of seven building blocks, six of which are closed into a ring: <Seq>Ac-Nle-cyclo[Asp-His-D-Phe-Arg-Trp-Lys]-OH</Seq>.<Cite id="dailymed-vyleesi-label,pubchem-bremelanotide" /> The ring is a lactam bridge between the side chains of aspartic acid and lysine. The chain starts with norleucine carrying an acetyl group, contains the mirror-image form of phenylalanine (D-Phe), and ends in a free acid. Its formula is C50H68N14O10 and its mass <Q>1025.2 Da</Q>; the medicine contains it as an acetate salt.<Cite id="dailymed-vyleesi-label,pubchem-bremelanotide,chembl-bremelanotide" />
+
+It is a lab-made analogue of alpha-MSH, a hormone the body makes itself.<Cite id="dhillon-2019-bremelanotide-first-approval" /> After an injection under the skin, nearly all of it reaches the blood, and its half-life is about 2.7 hours.<Cite id="dailymed-vyleesi-label" />
+
+### Melanotan II: one atom group apart
+
+Melanotan II, a tanning peptide sold online, has exactly the same ring and chain. The only difference is the end: melanotan II ends in an amide (–NH2), bremelanotide in a free acid (–OH).<Cite id="pubchem-bremelanotide,pubchem-melanotan-ii" /> Researchers describe PT-141 as "the carboxylate derivative" of melanotan II.<Cite id="king-2007-melanocortin-erection" /> The two act on the same receptor family, so findings about one are often relevant to the other. But the trials and the approval described on this page are for bremelanotide only. See [melanotan II](/en/compounds/melanotan-ii/).
+
+</InDetail>
+
+<InDetail title="From a nasal spray for men to an injection for women">
+
+Bremelanotide was first developed as a nasal spray for erectile dysfunction in men. In early studies it caused erections in men, also in men who had not responded well to Viagra.<Cite id="diamond-2004-intranasal-pt141-men,rosen-2004-subcutaneous-pt141-men" /> The first studies in women also used the nasal spray.<Cite id="diamond-2006-bremelanotide-women,fda-2019-vyleesi-multidiscipline-review" />
+
+The spray was then dropped. The FDA's reviewers wrote that the developer moved to injections "due to variable systemic exposure via the intranasal route".<Cite id="fda-2019-vyleesi-multidiscipline-review" /> The developer's own researchers explain why that mattered: some people absorbed much more than others, which could expose them to more side effects, including higher blood pressure.<Cite id="white-2017-bremelanotide-abpm" /> After the FDA raised concerns about blood pressure in the nasal-spray studies, the later trials monitored blood pressure closely.<Cite id="clayton-2016-bremelanotide-phase-2b" /> The FDA development file for erectile dysfunction in men (an investigational new drug application for the nasal spray) was withdrawn in 2017.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="What does it do in the body?">It switches on receptors in the brain and the skin. How this raises desire is not known.</Lead>
+
+<Diagram id="pt-141-receptors" caption="The drug switches on two main receptors. Each one has its own effects.">
+
+| Receptor | Where it sits | What happens | Where it was shown |
+|---|---|---|---|
+| MC4R | Nerve cells in the brain, including the hypothalamus | Desire scores rise a little; appetite falls; erections in men | Trials in people; brain areas in rats |
+| MC4R | Brain circuits that control the sympathetic nervous system | Blood pressure rises for some hours; heart rate falls | Trials in people |
+| MC1R | Pigment cells in skin and gums | Dark patches can appear, more with daily use | Trials in people |
+| Link from receptor to desire | Not known | The label says the mechanism is unknown | Not shown |
+
+</Diagram>
+
+<Cite id="dailymed-vyleesi-label,zhang-2021-mc4r-structures,pfaus-2007-bremelanotide-preclinical,greenfield-2009-mc4r-blood-pressure,spana-2022-bremelanotide-weight,rosen-2004-subcutaneous-pt141-men" />
+
+Bremelanotide is thought to act mainly in the brain: in women, it did not change blood flow in the vagina during erotic videos. Its receptors there also help control appetite and blood pressure.<Cite id="dailymed-vyleesi-label,pfaus-2007-bremelanotide-preclinical,diamond-2006-bremelanotide-women" /> This may explain why the wanted effect comes with side effects such as feeling sick, a rise in blood pressure and less hunger.<Cite id="dailymed-vyleesi-label,greenfield-2009-mc4r-blood-pressure,spana-2022-bremelanotide-weight" />
+
+<InDetail title="Step by step: the chain of effects and its evidence">
+
+<Mechanism />
+
+### What each step rests on
+
+**The receptors.** The US label states that bremelanotide "nonselectively activates several receptor subtypes", in this order of potency: MC1R, MC4R, MC3R, MC5R, MC2R; at the doses used, MC1R and MC4R matter most.<Cite id="dailymed-vyleesi-label" /> <Claim level="in-vitro">Cryo-electron microscopy has shown bremelanotide bound to the human MC4 receptor and its G protein, in the same way as the body's own alpha-MSH</Claim>.<Cite id="zhang-2021-mc4r-structures" />
+
+**The brain, in animals.** <Claim level="animal">In rats, injections switched on nerve cells in the hypothalamus, in an area connected to the penis</Claim>.<Cite id="molinoff-2003-pt141" /> <Claim level="animal">Female rats given PT-141 sought out males more, without changes in other sexual behaviour, general activity or sexual reward</Claim>.<Cite id="pfaus-2004-female-rat-solicitation" /> The same researchers found the effect when it was infused into the medial preoptic area of the hypothalamus, but not another nearby area, and proposed that it works by releasing dopamine there.<Cite id="pfaus-2007-bremelanotide-preclinical" /> <Claim level="hypothesis">The dopamine idea comes from rat studies and has not been tested in people</Claim>.<Cite id="pfaus-2007-bremelanotide-preclinical" /> <Claim level="animal">An independent study in female hamsters found no sign that bremelanotide acts on the brain's reward circuit, and it did not make sex more rewarding</Claim>.<Cite id="borland-2025-hamster-bremelanotide" />
+
+**The brain, in people.** <Claim level="human-controlled">In 31 women with HSDD, one injection changed brain responses to erotic videos on functional MRI, and more women reported increased desire over the next 24 hours than after placebo</Claim>. The study was led by Imperial College London and co-funded by the licensee.<Cite id="thurston-2022-mc4r-fmri" /> It shows where something changes, not how that change produces desire.
+
+**Desire.** The effect on desire is measured in people (see the evidence section). But the US label is plain: "The mechanism by which VYLEESI improves HSDD in women is unknown."<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Why blood pressure rises, and why appetite falls">
+
+MC4 receptors in the brain also steer the sympathetic nervous system, the part that narrows blood vessels and raises blood pressure. <Claim level="human-controlled">People born with a faulty MC4 receptor had less high blood pressure than equally overweight people (24% against 53%), and a different MC4R-activating drug raised blood pressure in a trial in 28 overweight or obese volunteers</Claim>.<Cite id="greenfield-2009-mc4r-blood-pressure" /> The FDA's reviewers used this human evidence to explain the rise seen with bremelanotide.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+The same receptor family helps control appetite. <Claim level="human-controlled">In two short phase 1 trials in women with obesity, repeated daily injections cut food intake; in the larger trial (58 women), intake fell by about 400 kcal a day and weight by about 1.3 kg more than with placebo over 16 days</Claim>.<Cite id="spana-2022-bremelanotide-weight" /> This is not an approved use. It may help explain why less hunger and feeling sick are common.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Does it work?">A little, in women who still have periods. They did not have satisfying sex more often.</Lead>
+
+<KeyNumber title="Desire scores rose a little more than with placebo" value="+0.35" label="points more on a desire score that runs from 1.2 to 6, after 24 weeks" who="RECONNECT: 1,202 premenopausal women with HSDD in two phase 3 trials" source="kingsberg-2019-reconnect" level="established" />
+
+<KeyNumber title="Women did not have satisfying sex more often" value="0.0" label="average change in the two trials; on placebo it was −0.1 and 0.0" who="RECONNECT: the two phase 3 trials, about 600 women in each" source="dailymed-vyleesi-label" level="established" />
+
+<KeyNumber title="More women said it helped them" value="58 in 100" label="said the medicine helped them, against 36 in 100 on placebo" who="RECONNECT study 301: premenopausal women with HSDD; the developer's responder analysis" source="kingsberg-2019-reconnect" level="human-controlled" />
+
+The gains were statistically clear but small, and they are averages. In the trials, many more women stopped bremelanotide than placebo.<Cite id="kingsberg-2019-reconnect,dailymed-vyleesi-label" /> It is not approved for men or for women after the menopause, and the phase 3 trials included only women before the menopause.<Cite id="dailymed-vyleesi-label,kingsberg-2019-reconnect" />
+
+<InDetail title="Every study in one table">
+
+<StudyTable />
+
+The table lists every published primary study in people that we found, plus the main animal and laboratory work and one analysis of seized products. Later analyses of the same trials are not listed again; two of them are cited in the text.<Cite id="white-2017-bremelanotide-abpm,clayton-2022-bremelanotide-safety" /> One trial in women is left out because it was retracted: the journal could no longer verify its methods or results.<Cite id="safarinejad-2008-retracted-women-study" />
+
+</InDetail>
+
+<InDetail title="The two phase 3 trials, in numbers">
+
+The approval rests on two identical, randomised, double-blind, placebo-controlled trials called RECONNECT, paid for by the developer and its licensee. They included 1,267 premenopausal women with acquired, generalised HSDD; 96.6% were from US sites and 85.6% were white, with an average age of 39. Women injected bremelanotide or placebo as needed, before sex, for 24 weeks.<Cite id="kingsberg-2019-reconnect" /> Most used it two or three times a month.<Cite id="dailymed-vyleesi-label" />
+
+The two main outcomes were questionnaires:
+
+- **Desire.** The desire part of the Female Sexual Function Index (two questions, scored 1.2 to 6). <Claim level="established">Desire rose 0.30 and 0.42 points more than with placebo in the two trials (0.35 combined)</Claim>.<Cite id="kingsberg-2019-reconnect" /> From a starting median of 1.8, the median improvement was 0.6 against 0 on placebo.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+- **Distress.** Item 13 of the FSDS-DAO, how often low desire bothered the woman (0 never, 4 always). <Claim level="established">Distress fell 0.37 and 0.29 points more than with placebo (0.33 combined)</Claim>.<Cite id="kingsberg-2019-reconnect" />
+
+The key secondary outcome, the number of satisfying sexual events, did not change: on average 0.0 on bremelanotide, against −0.1 and 0.0 on placebo.<Cite id="dailymed-vyleesi-label,kingsberg-2019-reconnect" /> Before the trials, the developer's sample-size simulations had expected a desire difference of about 1.0 points; the result was about a third of that.<Cite id="kingsberg-2019-reconnect" />
+
+More women stopped bremelanotide early: 40% against 13% in one trial and 39% against 25% in the other.<Cite id="dailymed-vyleesi-label" /> In total, 18% stopped because of side effects, against 2% on placebo.<Cite id="dailymed-vyleesi-label" />
+
+### After 24 weeks
+
+Of 856 women who finished the trials, 684 continued in an open extension of up to 52 weeks without placebo, and 272 finished it. Scores stayed better than at the start. The authors themselves name the main weakness: only women who had completed the first 24 weeks could take part, so women who had stopped, often because of side effects, were left out.<Cite id="simon-2019-reconnect-extension" />
+
+</InDetail>
+
+<InDetail title="How big is the effect? Two readings of the same trials">
+
+The trial authors report effect sizes of 0.39 for desire and 0.27 for distress, compared with placebo, which are small to moderate by the usual rule of thumb (0.2 small, 0.5 medium). They point out that flibanserin had similar effect sizes, and that in an anchor-based responder analysis 58% of women on bremelanotide against 36% on placebo reported a meaningful benefit from the study medicine. In a later, exploratory analysis (post hoc), the share of sexual encounters that women rated satisfying rose more on bremelanotide (25.0% against 9.8%), even though the number of satisfying events did not.<Cite id="kingsberg-2019-reconnect" />
+
+Independent researchers read the same results more critically. A reanalysis of the FDA application data found similar averages, but stressed that stopping because of side effects was far more common on bremelanotide (odds ratio 11.98), that women on placebo were more likely to complete the trial and enter the extension, and that most planned outcomes were not reported in the main paper.<Cite id="spielmans-2021-reconnect-reanalysis" /> The trial authors reject that reanalysis.<Cite id="kingsberg-2021-reply-spielmans" /> A review in a drug bulletin argued that, in the trials, bremelanotide led to no additional satisfying sexual experiences, and questioned whether the approval rested on precedent rather than clinical benefit.<Cite id="mintzes-2021-hsdd-regulatory-precedent" />
+
+Both readings agree on the numbers. They differ on whether a small rise in a desire score, without more satisfying sex, is worth the side effects. That is a judgement each woman can make with her doctor, knowing the numbers.
+
+</InDetail>
+
+<InDetail title="Smaller trials in women">
+
+- **The first study.** <Claim level="human-controlled">In 18 women with sexual arousal disorder, more reported moderate or high desire after one nasal dose than after placebo</Claim>; blood flow in the vagina during erotic videos did not change.<Cite id="diamond-2006-bremelanotide-women" />
+- **The dose-finding trial.** <Claim level="human-controlled">In 397 premenopausal women over 12 weeks, satisfying sexual events rose by 0.7 a month on the two higher doses, against 0.2 on placebo</Claim>, with better questionnaire scores. That gain in satisfying events was not repeated in the larger phase 3 trials.<Cite id="clayton-2016-bremelanotide-phase-2b,dailymed-vyleesi-label" />
+- **Brain scans.** In 31 women, desire went up more often in the 24 hours after one injection than after placebo.<Cite id="thurston-2022-mc4r-fmri" />
+
+</InDetail>
+
+<InDetail title="Men: erections, but no approval">
+
+Bremelanotide was first tested in men. <Claim level="human-controlled">As a nasal spray, it caused more erections than placebo in healthy men and in men with mild to moderate erectile dysfunction</Claim>.<Cite id="diamond-2004-intranasal-pt141-men" /> <Claim level="human-limited">Injected under the skin, it caused erections in healthy men without any erotic images, and in men who had not responded well to Viagra</Claim>.<Cite id="rosen-2004-subcutaneous-pt141-men" /> In 19 men, a low nasal dose together with sildenafil gave stronger erections in the clinic than sildenafil alone.<Cite id="diamond-2005-pt141-sildenafil" />
+
+The only large trial in men, in 342 men who had not responded to sildenafil, reported good results in 33.5% against 8.5% on placebo.<Cite id="safarinejad-2008-bremelanotide-men" /> In 2023 the journal published an expression of concern about it, and a bremelanotide trial in women by the same author has been retracted.<Cite id="safarinejad-2023-expression-of-concern,safarinejad-2008-retracted-women-study" /> No trial of bremelanotide for erection problems is registered today.<Cite id="ctgov-bremelanotide-search-2026-10-22" /> The US label states it is not for men.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Who paid for the evidence">
+
+Every trial used for approval, and the earlier dose-finding work in women, was designed, run and paid for by the developer, Palatin, or its licensee, AMAG; several authors were company employees or consultants.<Cite id="kingsberg-2019-reconnect,clayton-2016-bremelanotide-phase-2b,simon-2019-reconnect-extension" /> That is normal for an approved medicine and does not make the numbers false, but the outcomes chosen and the way they were reported were the developer's.
+
+Independent work exists but is thin: a receptor structure from Chinese universities, a hamster study from the University of Minnesota that found no reward effect, a brain-scan trial led by Imperial College London (co-funded by AMAG), and a critical reanalysis.<Cite id="zhang-2021-mc4r-structures,borland-2025-hamster-bremelanotide,thurston-2022-mc4r-fmri,spielmans-2021-reconnect-reanalysis" /> The only independent trial in men is under an expression of concern.<Cite id="safarinejad-2023-expression-of-concern" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="What is still not known?">How it works, what years of use do, and its effects in pregnancy, after menopause and in men.</Lead>
+
+<TimeStrip title="Trials with a placebo lasted 24 weeks. What years of use do is not known." detail="Use covered by the evidence, counted from the start of treatment." min={0} max={6} step={1} axis="Years of use" source="kingsberg-2019-reconnect,simon-2019-reconnect-extension" rows={[
+  { label: "Placebo-controlled trials (phase 3)", spans: [{ from: 0, to: 0.46, text: "24 weeks" }] },
+  { label: "Open extension, no placebo", spans: [{ from: 0.46, to: 1.46, text: "up to 52 more weeks; about 4 in 10 finished" }] },
+  { label: "Longer use", spans: [{ from: 1.5, to: 6, text: "not studied", unknown: true }] },
+]} />
+
+<InDetail title="All open questions, with their sources">
+
+As of 22 October 2026, these are specifically unknown:
+
+- **How it works.** The label states that the mechanism in HSDD is unknown.<Cite id="dailymed-vyleesi-label" />
+- **Long-term use.** The longest placebo-controlled use was 24 weeks; the open extension had no placebo and lost most participants.<Cite id="kingsberg-2019-reconnect,simon-2019-reconnect-extension" />
+- **Pregnancy.** Animal studies found harm to the unborn at the doses tested, and too few women became pregnant in the trials to judge the risk. The FDA required a pregnancy registry and a second pregnancy study, due to finish in May 2030.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-approval-letter" />
+- **Breastfeeding.** It is not known whether it passes into breast milk. The FDA required a breast-milk study; a study in 10 breastfeeding women finished in November 2025, and no results were posted by 22 October 2026.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-approval-letter,ctgov-bremelanotide-search-2026-10-22" />
+- **Women after the menopause.** Not approved for them: the FDA found its safety in this group not established, exposure varied more, and their background heart risk is higher.<Cite id="fda-2019-vyleesi-multidiscipline-review,dailymed-vyleesi-label" />
+- **Men.** No trial for approval; the one large trial is under an expression of concern.<Cite id="dailymed-vyleesi-label,safarinejad-2023-expression-of-concern" />
+- **Moles and melanoma.** The FDA's reviewers saw no sign of more atypical moles, but wrote that the trials were too short to be sure.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+- **Dark patches.** Whether they fade: the FDA documented fading in about half of cases during follow-up.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+- **Unpublished trials.** A phase 3 trial in 193 women in South Korea finished in 2023. An obesity trial combined with tirzepatide is listed as active but no longer recruiting. Neither has posted results on ClinicalTrials.gov.<Cite id="ctgov-bremelanotide-search-2026-10-22" />
+- **What products sold online contain.** One forensic analysis identified bremelanotide in seized samples, but we found no published study that measured the amount, purity or sterility of products sold as PT-141.<Cite id="mestria-2021-seized-melanotan-bremelanotide" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is it legal?">Approved in the US. Not approved in the EU, UK or Netherlands. Unclear in sport.</Lead>
+
+<Compare title="A prescription medicine in the US, but not in the EU, the UK or the Netherlands." detail="Status checked on 22 October 2026.">
+
+| | Netherlands and the EU | United States |
+|---|---|---|
+| Approved as a medicine? | <Verdict is="no" /> The EMA's records and the Dutch database list no product<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="yes" /> Since 21 June 2019, for HSDD in premenopausal women<Cite id="fda-drugsatfda-vyleesi,dailymed-vyleesi-label" /> |
+| Can a doctor prescribe it? | <Verdict is="no" /> Not normally. A doctor can sign a named-patient statement; a pharmacy then asks the IGJ, which can refuse<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> | <Verdict is="yes" /> On prescription, for the approved use<Cite id="dailymed-vyleesi-label" /> |
+| Legal to sell a "research" product? | <Verdict is="no" /> Supplying a medicine without authorisation is forbidden<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> The FDA calls such products unapproved new drugs<Cite id="fda-warning-letters-index" /> |
+| Banned in sport? | <Verdict is="unknown" /> Not named on the 2026 or 2027 List, and no anti-doping body has ruled<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note" /> | <Verdict is="unknown" /> The same worldwide rules<Cite id="wada-2026-list-en,wada-2027-list-en" /> |
+
+</Compare>
+
+<InDetail title="Status in each country, and in sport">
+
+<RegulatoryTable />
+
+All statuses were checked on 22 October 2026.
+
+### Sport (WADA)
+
+Bremelanotide is not named on the 2026 Prohibited List or on the 2027 List, which takes effect on 1 January 2027, and it is not on the 2026 or 2027 Monitoring Program.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2026-monitoring-program,wada-2027-monitoring-program" /> Section S0 bans substances that no government health authority has approved for human use; because the FDA has approved bremelanotide, S0 does not cover it.<Cite id="wada-2027-list-en" /> But WADA says an unnamed peptide may also fall under other classes, and we found no statement by WADA or a national anti-doping organisation about bremelanotide, so its status is unclear: check with yours before competing.<Cite id="wada-2027-list-explanatory-note" /> Athletes are responsible for whatever is in their body, so a product that is not what its label says can still lead to a positive test.<Cite id="wada-code-2027" /> Unknown samples seized in Italy were bremelanotide or its close relative melanotan II, which by our reading is banned at all times under S0.<Cite id="mestria-2021-seized-melanotan-bremelanotide,wada-2027-list-en" /> See [sport and doping](/en/legal/sport-and-doping/) and [melanotan II](/en/compounds/melanotan-ii/).
+
+</InDetail>
+
+<InDetail title="The EU, the Netherlands, Germany, Belgium and the United Kingdom">
+
+### European Union
+
+The EMA's list of medicines, which also includes refused and withdrawn applications, has no entry for bremelanotide or Vyleesi.<Cite id="ema-medicines-json" /> Its October 2026 list of applications under evaluation does not name it either.<Cite id="ema-under-evaluation-2026-10" /> So, as far as the EMA has published, no company has applied for an EU authorisation.
+
+### Netherlands
+
+The CBG medicines database lists no bremelanotide or Vyleesi product.<Cite id="cbg-geneesmiddeleninformatiebank" /> A medicine without a marketing authorisation may not be sold, supplied or imported, with narrow exceptions.<Cite id="nl-gmw-art-40-handelsvergunning" /> One exception is the named-patient route (artsenverklaring). The doctor signs a statement that the patient cannot be treated with medicines authorised in the Netherlands, for medical reasons, and takes responsibility. A pharmacy or wholesaler then asks the Health and Youth Care Inspectorate (IGJ) for an exemption. The IGJ decides within eight weeks and can refuse.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" />
+
+### Germany
+
+Finished medicines need a German or EU authorisation (AMG § 21); bremelanotide has neither.<Cite id="de-amg-21,ema-medicines-json" /> A pharmacy may import a small amount of a medicine authorised in its country of origin for an individual person, if no identical medicine is available in Germany; from outside the EU or the EEA this needs a prescription (AMG § 73(3)).<Cite id="de-amg-73" />
+
+### Belgium
+
+A medicine may be placed on the market only with a Belgian or EU authorisation.<Cite id="be-medicines-law-1964" /> The law allows narrow exceptions, including import by a pharmacist, on prescription, of a medicine authorised in its country of origin when the patient cannot be treated adequately with a medicine on the Belgian market.<Cite id="be-medicines-law-1964-art-6quater" />
+
+### United Kingdom
+
+The MHRA's product database lists no bremelanotide or Vyleesi product.<Cite id="mhra-products-search-bremelanotide" /> Selling or supplying an unauthorised medicine is prohibited.<Cite id="uk-hmr-2012-reg-46" /> An unlicensed medicine can be supplied as a "special" for an individual patient, on the order of a prescriber, to meet needs no licensed medicine can meet.<Cite id="uk-hmr-2012-reg-167,mhra-specials-guidance" />
+
+</InDetail>
+
+<InDetail title="The United States">
+
+The FDA approved Vyleesi on 21 June 2019, without an advisory committee.<Cite id="fda-drugsatfda-vyleesi,fda-2019-vyleesi-approval-letter" /> During the review, the FDA asked for a dedicated blood-pressure study with round-the-clock monitoring, and the review deadline moved back by three months.<Cite id="fda-2019-vyleesi-multidiscipline-review,fda-2019-vyleesi-approval-letter" /> At approval, the FDA required three more studies: a pregnancy registry, a pregnancy study using insurance claims (both due in 2030), and a breast-milk study. It also asked for regular reports on liver injury for three years.<Cite id="fda-2019-vyleesi-approval-letter" />
+
+On 24 August 2026 the FDA sent warning letters to several online sellers whose products included PT-141 (bremelanotide). The letters state that these products are unapproved new drugs, even when they are labelled "research use only".<Cite id="fda-warning-letters-index" />
+
+Bremelanotide was not among the seven peptides that the FDA's Pharmacy Compounding Advisory Committee discussed on 23–24 July 2026; that meeting is covered on the [BPC-157 page](/en/compounds/bpc-157/).<Cite id="fda-pcac-2026-07-meeting" /> Its relative melanotan II is on the list for the committee's next meeting, planned before the end of February 2027 (see [melanotan II](/en/compounds/melanotan-ii/)).<Cite id="fda-pcac-2027-early-announcement" />
+
+</InDetail>
+
+<InDetail title="Two sides of the regulatory gap">
+
+The gap has a cost. A woman in the Netherlands with the same diagnosis cannot get bremelanotide on a normal prescription, and some may turn to products that no regulator has checked; whether that happens, and how often, has not been measured. The other side is also real: the benefit is small, side effects made many women stop, and no application to weigh that balance appears in the EMA's published lists.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,kingsberg-2019-reconnect,dailymed-vyleesi-label" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="What are the risks?">Many people feel sick. Blood pressure rises for some hours after each dose. Skin can darken.</Lead>
+
+<IconArray title="Feeling sick, flushing and headache were much more common than with placebo." detail="People in 100 with each problem in the two 24-week phase 3 trials (627 women on bremelanotide, 620 on placebo), from the US label." a="Bremelanotide" b="Placebo" source="dailymed-vyleesi-label" level="human-controlled" rows={[
+  { label: "Feeling sick (nausea)", a: 40.0, b: 1.3 },
+  { label: "Flushing", a: 20.3, b: 0.3 },
+  { label: "Reaction at the injection spot", a: 13.2, b: 8.4 },
+  { label: "Headache", a: 11.3, b: 1.9 },
+]} />
+
+Unless stated otherwise, the risks on this page come from the US label, based on the trials in premenopausal women who used it a few times a month. Women with heart disease or uncontrolled high blood pressure were not included.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-multidiscipline-review" /> Using it more often, or in other people, may change the risks.
+
+<InDetail title="Blood pressure and heart rate">
+
+After each dose, blood pressure goes up and the heart rate goes down for a while. The label reports rises of up to 6 mmHg in the top (systolic) number and 3 mmHg in the bottom (diastolic) number, peaking 2 to 4 hours after the dose. The heart rate fell by up to 5 beats a minute. Both were usually back to normal within 12 hours. With one dose a day, 24 hours apart, for up to 16 days, the rises did not build up from day to day.<Cite id="dailymed-vyleesi-label" /> <Claim level="human-controlled">In 397 women monitored for 24 hours, the rise was largest in the first 4 hours (about 3 mmHg)</Claim>.<Cite id="white-2017-bremelanotide-abpm" />
+
+Why it matters: an average of a few mmHg sounds small, but averages hide people whose rise is larger. In the dose-finding trial, the top number stayed above 170 mmHg for more than 15 minutes five times after bremelanotide, and never after placebo. About 7 in 100 women were withdrawn because of blood-pressure readings, about as often on placebo as on bremelanotide.<Cite id="white-2017-bremelanotide-abpm" /> The label therefore forbids it for people with uncontrolled high blood pressure or known heart or blood-vessel disease, does not recommend it for people at high heart risk, and asks doctors to check heart risk and blood pressure before and during use.<Cite id="dailymed-vyleesi-label" /> For the approved use, in women who are generally at low heart risk, the FDA's reviewers did not expect these short rises to raise the risk of heart disease noticeably.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+Doses taken close together may add up. The label limits use to one dose in 24 hours, partly for this reason; in the trials, 3.9% of women sometimes took doses less than 12 hours apart.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-multidiscipline-review" /> After the FDA raised this question, a study in people on blood-pressure medicines suggested a similar rise; the FDA called its results not conclusive.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+</InDetail>
+
+<InDetail title="Feeling sick, flushing and headache">
+
+**Nausea** affected 40% of women on bremelanotide against 1% on placebo. It usually started within an hour and lasted about two hours. It was most common after the first dose (21%) and much less common after later doses (about 3%). 13% used an anti-sickness medicine and 8% stopped because of it.<Cite id="dailymed-vyleesi-label" /> Taking ondansetron (an anti-sickness medicine) beforehand did not help, in a study of 228 healthy women.<Cite id="dailymed-vyleesi-label" />
+
+**Flushing** (a warm, red face) affected 20% (under 1% on placebo), and **headache** 11% (2% on placebo). One headache was severe enough for a hospital stay.<Cite id="dailymed-vyleesi-label" /> Serious adverse reactions overall were reported in 1.1% against 0.5% on placebo.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Dark patches on the skin and gums">
+
+MC1R on pigment cells makes them produce more pigment.<Cite id="dailymed-vyleesi-label" /> <Claim level="established">Dark patches (focal hyperpigmentation) on the face, gums (gingiva) or breasts appeared in 1% of women in the phase 3 trials, and in none on placebo</Claim>. <Claim level="human-limited">In a separate study, 38% developed dark patches after eight days of daily use, and another 14% after eight more days</Claim>. People with darker skin were more likely to get them, and fading after stopping was not confirmed in everyone.<Cite id="dailymed-vyleesi-label" /> The FDA documented fading in about half of the cases during follow-up.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+The label warns that dark patches become more likely with daily use; this is one reason it advises against more than 8 doses a month.<Cite id="dailymed-vyleesi-label" /> With melanotan II, a close relative used for tanning, case reports describe new or changing moles, and a few describe melanoma; whether these peptides cause melanoma has not been shown.<Cite id="habbema-2017-melanotan-review,cardones-2009-eruptive-nevi" />
+
+</InDetail>
+
+<InDetail title="Liver, pregnancy and other risks">
+
+- **Liver.** One woman in the open extension developed acute hepatitis after 10 doses over a year, with liver enzymes more than 40 times the upper limit of normal; her liver tests returned to normal four months after stopping. No other cause was found, so a role of bremelanotide could not be ruled out. There was no wider sign of liver harm in the trials.<Cite id="dailymed-vyleesi-label" />
+- **Pregnancy.** <Claim level="animal">In pregnant dogs, more embryos were lost at all doses tested, the lowest at about 16 times the human exposure; in mice, offspring developed more slowly</Claim>. No dose without harm was found in the animals. The label advises effective contraception and stopping if pregnancy is suspected. Of 7 pregnancies in the trials, five ended in full-term births, one in a miscarriage, and one was lost to follow-up.<Cite id="dailymed-vyleesi-label" />
+- **Kidneys and liver disease.** Levels were about twice as high in severe kidney disease and 1.7 times as high in moderate liver disease; the label advises caution in severe kidney or liver disease, because side effects such as nausea may be stronger.<Cite id="dailymed-vyleesi-label" />
+- **Cancer and genes.** Two-year studies in rats and mice found no increase in tumours, and laboratory tests for damage to genes were negative. In rats, though, exposure was only about the same as in people.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Interactions">
+
+- **Naltrexone by mouth** (for alcohol or opioid dependence). Bremelanotide may lower naltrexone levels a lot, so the treatment could fail. The label says to avoid the combination.<Cite id="dailymed-vyleesi-label" />
+- **Other tablets.** Bremelanotide may slow the stomach and so delay or reduce the uptake of other medicines taken by mouth. The label advises avoiding it with medicines that must reach a certain level in the blood to work, such as antibiotics, and notes slower uptake of indomethacin, a painkiller.<Cite id="dailymed-vyleesi-label,clayton-2022-bremelanotide-safety" />
+- **Alcohol.** In 24 healthy adults, alcohol did not change bremelanotide levels, and drops in blood pressure on standing were about as common with the combination as with alcohol alone; headache was more common than with bremelanotide alone, but about as common as with alcohol alone.<Cite id="clayton-2017-bremelanotide-alcohol,dailymed-vyleesi-label" />
+- **Erection medicines (PDE5 inhibitors such as sildenafil).** Studied together only in 19 men, for one session each.<Cite id="diamond-2005-pt141-sildenafil" /> Regular combined use has not been studied.
+
+</InDetail>
+
+<InDetail title="Risks for men using it outside the label">
+
+Some readers will be men with a product sold as PT-141. Bremelanotide is not approved for men and has never been tested in them for more than short periods.<Cite id="dailymed-vyleesi-label,diamond-2004-intranasal-pt141-men,rosen-2004-subcutaneous-pt141-men" /> Three risks follow from what is known:
+
+1. **Erections that will not stop (priapism).** <Claim level="human-limited">It can cause erections without sexual stimulation</Claim>.<Cite id="rosen-2004-subcutaneous-pt141-men" /> <Claim level="hypothesis">Combined with an erection medicine, or at a high amount, an erection could last too long</Claim>. We found no published case after bremelanotide, but there are published cases after melanotan II, its close relative; one man needed surgery.<Cite id="dreyer-2019-melanotan-priapism,mallory-2021-melanotan-priapism" /> Priapism can damage the penis for good if it is not treated quickly. Go to an emergency department for an erection lasting more than 3 hours.<Cite id="nhs-priapism" />
+2. **Blood pressure.** The label forbids use in people with heart disease or uncontrolled high blood pressure.<Cite id="dailymed-vyleesi-label" /> The early nasal-spray studies suggested that blood pressure rose in men as well as in women. We found no published report on blood pressure in men with repeated use.<Cite id="white-2017-bremelanotide-abpm,fda-2019-vyleesi-multidiscipline-review" /> A different MC4R-activating drug, given daily for a week to 28 overweight or obese volunteers, raised blood pressure by about 9/7 mmHg at the highest amount they tolerated.<Cite id="greenfield-2009-mc4r-blood-pressure" />
+3. **The product itself.** A nasal spray gives an unpredictable amount: the developer dropped its own spray because absorption varied so much.<Cite id="white-2017-bremelanotide-abpm,fda-2019-vyleesi-multidiscipline-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="How can someone lower the risk?">Know your blood pressure, check the product, know when to stop. The legal route has the fewest unknowns.</Lead>
+
+The authorised medicine is Vyleesi, on prescription, in the United States. In the Netherlands it can only be supplied through the narrow named-patient route.<Cite id="dailymed-vyleesi-label,igj-leveren-op-artsenverklaring" /> This section gives no doses: a prescriber decides the dose. A doctor can also check your blood pressure and heart risk, which matter most with this medicine (see [talking to your doctor](/en/talking-to-your-doctor/)).
+
+The checks below are for any other product, such as a nasal spray or vial sold as "PT-141".
+
+<ProductCheck extra="Vyleesi is a single-use pen with a clear liquid inside. A powder vial or a nasal spray is not packed like Vyleesi. The pack alone does not prove a product is real." extraSources="dailymed-vyleesi-label" />
+
+### When to stop and get help
+
+<Callout type="stop" title="Stop and get help" id="stop-now">
+- **Chest pain, pressure or tightness, or pain that spreads to the arm, neck, jaw or back:** possible heart attack. Call your local emergency number.
+- **A sudden, severe headache, blurred vision, confusion, or weakness on one side of the body:** possible dangerously high blood pressure or a stroke. Call your local emergency number.
+- **An erection that lasts more than 3 hours, or a painful erection that will not go down:** priapism. Go to an emergency department now.
+- **Swelling of the face, lips or throat, or trouble breathing:** possible severe allergic reaction. Call your local emergency number.
+- **Yellow skin or eyes, or very dark urine:** possible liver problem. Stop and see a doctor the same day.
+- **New dark patches on the face, gums or breasts:** stop, and tell a doctor.
+</Callout>
+
+<Cite id="nhs-chest-pain,nhs-stroke-symptoms,nhs-headaches,medlineplus-malignant-hypertension,nhs-priapism,nhs-anaphylaxis,nhs-jaundice,dailymed-vyleesi-label" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,neurological" />
+
+<InDetail title="Blood pressure: the check that matters most">
+
+High blood pressure usually causes no symptoms, so the only way to know is to measure it. It counts as high at 140/90 or more at a clinic, or 135/85 or more at home. A pharmacy or GP practice can check it.<Cite id="nhs-high-blood-pressure" />
+
+Why it matters here: bremelanotide raises blood pressure for some hours after each dose.<Cite id="dailymed-vyleesi-label" /> If your blood pressure is already high, or you have heart disease, that rise lands on top of it; that is why the label forbids use in those groups.<Cite id="dailymed-vyleesi-label" /> Knowing your normal reading, and having it checked by a doctor before and during use, is what the label asks of prescribers too.<Cite id="dailymed-vyleesi-label" /> See [monitoring](/en/safety/monitoring/).
+
+</InDetail>
+
+<InDetail title="The legal route, and why a 'research' product is different">
+
+### The legal route
+
+In the US, Vyleesi is a prescription medicine from a pharmacy, for one approved use.<Cite id="dailymed-vyleesi-label" /> In the Netherlands it is not authorised. A doctor who thinks a patient needs it, and that no authorised medicine will do, can sign a named-patient statement (artsenverklaring). A pharmacy then asks the IGJ for an exemption, which can be refused.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> Germany and Belgium have similar narrow routes for medicines authorised abroad.<Cite id="de-amg-73,be-medicines-law-1964-art-6quater" /> See [legal routes](/en/legal-routes/).
+
+### Why a "research" product is a different product
+
+The evidence on this page belongs to Vyleesi: a known substance, made under licence, in a pen that gives a fixed amount, with a label that is kept up to date.<Cite id="dailymed-vyleesi-label" /> A spray or vial sold online as "PT-141" shares the name but none of those guarantees. The FDA has told sellers that such products are unapproved new drugs, whatever the "research use only" label says.<Cite id="fda-warning-letters-index" /> In Italy, police seized unknown samples that turned out to be bremelanotide or its close relative melanotan II. Forensic laboratories identified them with high-resolution mass spectrometry, a specialised test.<Cite id="mestria-2021-seized-melanotan-bremelanotide" /> See [product risk](/en/safety/product-risk/).
+
+A nasal spray adds one more unknown: how much reaches the blood. The developer dropped its own spray because absorption varied widely between people.<Cite id="white-2017-bremelanotide-abpm,fda-2019-vyleesi-multidiscipline-review" /> A powder vial needs mixing before injection, which is a moment when germs can get in; see [sterile technique](/en/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="What may be wrong with a vial from outside a pharmacy">
+
+The plate shows six things that may be wrong with a vial from outside a pharmacy, from what is in it to what was never tested.
+
+<Infographic id="online-vial-risks" />
+
+</InDetail>
+
+<InDetail title="Who should not use it, and checks that make sense">
+
+### Who should not use it, and why
+
+- **People with uncontrolled high blood pressure or known heart or blood-vessel disease**, because it raises blood pressure after every dose. The label forbids it for them.<Cite id="dailymed-vyleesi-label" />
+- **People at high risk of heart disease**, for the same reason; the label does not recommend it.<Cite id="dailymed-vyleesi-label" />
+- **Anyone pregnant or trying to conceive**, because of the animal findings; the label advises effective contraception.<Cite id="dailymed-vyleesi-label" />
+- **Anyone taking naltrexone by mouth for alcohol or opioid dependence**, because bremelanotide can make that treatment fail.<Cite id="dailymed-vyleesi-label" />
+- **Athletes**: it is not banned by name, but whether another section of the List covers it is unclear, and a product that is not what its label says can still cause a positive test.<Cite id="wada-2027-list-en,wada-2027-list-explanatory-note,wada-code-2027" />
+
+### Checks that make sense, and why
+
+A doctor can help you choose which of these fit you:
+
+<Checklist>
+
+- **Blood pressure, before starting and from time to time during use**, because it rises after every dose and the label asks for it.
+- **Your heart risk**, because the label excludes people at high risk of heart disease.
+- **A pregnancy test if you could be pregnant**, because of the animal findings.
+- **Your skin and gums**, for new dark patches, because they may not fade.
+- **Liver tests if you get yellow skin or eyes**, because of the one case of hepatitis.
+
+</Checklist>
+
+<Cite id="dailymed-vyleesi-label,nhs-high-blood-pressure" />
+
+### Report side effects
+
+In the Netherlands you can report a side effect to Lareb, the national centre for side effects.<Cite id="lareb-home" />
+
+</InDetail>
+
+</Section>

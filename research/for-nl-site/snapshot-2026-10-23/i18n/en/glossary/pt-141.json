@@ -1,0 +1,226 @@
+{
+  "hsdd": {
+    "term": "hypoactive sexual desire disorder",
+    "aliases": ["HSDD", "hypoactive sexual desire disorders", "low sexual desire disorder"],
+    "definition": "A diagnosis for low or absent sexual desire that causes marked distress or problems in a relationship. It only applies when another illness, a medicine or problems in the relationship do not explain it.",
+    "category": "biology",
+    "see_also": ["fsfi", "fsds-dao"]
+  },
+  "female-sexual-arousal-disorder": {
+    "term": "female sexual arousal disorder",
+    "aliases": ["FSAD"],
+    "definition": "An older diagnosis for women whose body does not become sexually aroused, or stays aroused too briefly, which causes distress. Newer manuals merge it with low desire.",
+    "category": "biology",
+    "see_also": ["hsdd"]
+  },
+  "mc4r": {
+    "term": "MC4 receptor",
+    "aliases": ["MC4R", "melanocortin-4 receptor", "melanocortin 4 receptor", "MC4 receptors"],
+    "definition": "A receptor for melanocortin hormones, found mainly on nerve cells in the brain. It helps control appetite and is linked to sexual function and blood pressure.",
+    "category": "biology",
+    "see_also": ["melanocortin-receptor", "alpha-msh", "hypothalamus"]
+  },
+  "medial-preoptic-area": {
+    "term": "medial preoptic area",
+    "aliases": ["mPOA"],
+    "definition": "A small region at the front of the hypothalamus in the brain. In animals it is important for sexual behaviour.",
+    "category": "biology",
+    "see_also": ["hypothalamus", "dopamine"]
+  },
+  "dopamine": {
+    "term": "dopamine",
+    "aliases": ["dopaminergic"],
+    "definition": "A chemical messenger between nerve cells. It plays a part in motivation, reward and movement.",
+    "category": "biology",
+    "see_also": ["medial-preoptic-area"]
+  },
+  "sympathetic-nervous-system": {
+    "term": "sympathetic nervous system",
+    "aliases": ["sympathetic nerves", "sympathetic activity"],
+    "definition": "The part of the nervous system that prepares the body for action. It can narrow blood vessels and raise blood pressure.",
+    "category": "biology",
+    "see_also": ["hypertension"]
+  },
+  "hyperpigmentation": {
+    "term": "hyperpigmentation",
+    "aliases": ["focal hyperpigmentation", "pigmentation changes", "pigmentary changes"],
+    "definition": "Patches of skin or gums that turn darker than the area around them, because pigment cells make more pigment there.",
+    "category": "safety",
+    "see_also": ["melanocyte", "melanocortin-receptor"]
+  },
+  "gingiva": {
+    "term": "gingiva",
+    "aliases": [],
+    "definition": "The medical word for the gums: the pink tissue around the teeth.",
+    "category": "biology",
+    "see_also": []
+  },
+  "hypertension": {
+    "term": "hypertension",
+    "aliases": ["high blood pressure", "uncontrolled hypertension"],
+    "definition": "Blood pressure that is too high most of the time. It usually causes no symptoms, but over years it raises the risk of heart attack and stroke.",
+    "category": "safety",
+    "see_also": ["systolic-blood-pressure", "cardiovascular-disease"]
+  },
+  "systolic-blood-pressure": {
+    "term": "systolic blood pressure",
+    "aliases": ["systolic", "diastolic blood pressure", "diastolic", "mmHg"],
+    "definition": "Blood pressure has two numbers. The top (systolic) number is the pressure when the heart pumps; the bottom (diastolic) number is the pressure between beats. Both are measured in mmHg.",
+    "category": "safety",
+    "see_also": ["hypertension", "ambulatory-blood-pressure-monitoring"]
+  },
+  "ambulatory-blood-pressure-monitoring": {
+    "term": "ambulatory blood pressure monitoring",
+    "aliases": ["ABPM", "ambulatory blood pressure", "24-hour blood pressure"],
+    "definition": "Blood pressure measured automatically by a cuff worn during normal life, often every 15 to 30 minutes for a day or more.",
+    "category": "evidence",
+    "see_also": ["systolic-blood-pressure"]
+  },
+  "cardiovascular-disease": {
+    "term": "cardiovascular disease",
+    "aliases": ["heart disease", "heart and blood vessel disease"],
+    "definition": "Disease of the heart or blood vessels, such as a past heart attack, angina, heart failure or a stroke.",
+    "category": "safety",
+    "see_also": ["hypertension"]
+  },
+  "autoinjector": {
+    "term": "autoinjector",
+    "aliases": ["autoinjector pen", "autoinjectors"],
+    "definition": "A pen with a fixed, pre-filled amount of medicine and a hidden needle. Pressed against the skin, it injects the dose by itself.",
+    "category": "pharmacology",
+    "see_also": ["subcutaneous"]
+  },
+  "fsfi": {
+    "term": "Female Sexual Function Index",
+    "aliases": ["FSFI", "FSFI desire domain", "desire domain"],
+    "definition": "A questionnaire that women fill in about their sex life over the past four weeks. Its desire part has two questions and gives a score from 1.2 to 6.",
+    "category": "evidence",
+    "see_also": ["fsds-dao", "hsdd"]
+  },
+  "fsds-dao": {
+    "term": "Female Sexual Distress Scale–Desire/Arousal/Orgasm",
+    "aliases": ["FSDS-DAO", "FSDS-DAO item 13"],
+    "definition": "A questionnaire about how much distress a woman feels about her sexual desire, arousal and orgasm. Item 13 asks how often low desire bothered her, from 0 (never) to 4 (always).",
+    "category": "evidence",
+    "see_also": ["fsfi", "hsdd"]
+  },
+  "satisfying-sexual-event": {
+    "term": "satisfying sexual event",
+    "aliases": ["satisfying sexual events", "SSE", "SSEs"],
+    "definition": "In sexual-health trials, a sexual encounter that the participant herself rated as satisfying, counted in a diary.",
+    "category": "evidence",
+    "see_also": ["fsfi"]
+  },
+  "responder-analysis": {
+    "term": "responder analysis",
+    "aliases": ["responder analyses", "anchor-based responder analysis"],
+    "definition": "A way of reporting a trial by counting how many people improved by at least an amount judged to matter, instead of only the average change.",
+    "category": "evidence",
+    "see_also": ["effect-size"]
+  },
+  "crossover-trial": {
+    "term": "crossover trial",
+    "aliases": ["crossover design", "crossover study", "randomised crossover"],
+    "definition": "A trial in which each person receives both the treatment and the comparison (often a placebo), one after the other in random order, so they act as their own control.",
+    "category": "evidence",
+    "see_also": ["placebo"]
+  },
+  "functional-mri": {
+    "term": "functional MRI",
+    "aliases": ["fMRI", "functional magnetic resonance imaging"],
+    "definition": "A brain scan that shows which brain areas become more or less active during a task, by tracking changes in blood flow.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "expression-of-concern": {
+    "term": "expression of concern",
+    "aliases": ["Expression of Concern"],
+    "definition": "A notice by a journal that it has serious doubts about a published paper, for example about its data, while it looks into it. It is a warning, not yet a retraction.",
+    "category": "evidence",
+    "see_also": ["retraction"]
+  },
+  "retraction": {
+    "term": "retraction",
+    "aliases": ["retracted", "retracted paper"],
+    "definition": "The formal withdrawal of a published paper by the journal, because its results can no longer be trusted.",
+    "category": "evidence",
+    "see_also": ["expression-of-concern"]
+  },
+  "pde5-inhibitor": {
+    "term": "PDE5 inhibitor",
+    "aliases": ["PDE5 inhibitors", "phosphodiesterase type 5 inhibitor", "phosphodiesterase-5 inhibitor"],
+    "definition": "A group of medicines for erection problems, such as sildenafil (Viagra). They help blood flow into the penis during sexual arousal.",
+    "category": "pharmacology",
+    "see_also": ["erectile-dysfunction"]
+  },
+  "erectile-dysfunction": {
+    "term": "erectile dysfunction",
+    "aliases": ["erection problems"],
+    "definition": "When a man often cannot get or keep an erection firm enough for sex.",
+    "category": "biology",
+    "see_also": ["pde5-inhibitor", "priapism"]
+  },
+  "naltrexone": {
+    "term": "naltrexone",
+    "aliases": [],
+    "definition": "A medicine that blocks opioid receptors. Taken by mouth, it helps people stay off alcohol or opioids.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "antiemetic": {
+    "term": "antiemetic",
+    "aliases": ["antiemetics", "anti-emetic", "anti-sickness medicine", "anti-nausea medicine"],
+    "definition": "A medicine that prevents or eases feeling sick and vomiting.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "acute-hepatitis": {
+    "term": "acute hepatitis",
+    "aliases": [],
+    "definition": "Inflammation of the liver that starts suddenly. Signs can include yellow skin or eyes, dark urine and feeling very unwell.",
+    "category": "safety",
+    "see_also": ["jaundice"]
+  },
+  "premenopausal": {
+    "term": "premenopausal",
+    "aliases": ["before the menopause"],
+    "definition": "Before the menopause: a woman who still has periods.",
+    "category": "biology",
+    "see_also": []
+  },
+  "pregnancy-registry": {
+    "term": "pregnancy registry",
+    "aliases": ["pregnancy exposure registry"],
+    "definition": "A study that collects information on women who used a medicine while pregnant, and on their babies, to find out whether the medicine causes harm.",
+    "category": "regulation",
+    "see_also": ["postmarketing-requirement"]
+  },
+  "postmarketing-requirement": {
+    "term": "postmarketing requirement",
+    "aliases": ["postmarketing requirements", "post-marketing requirement", "post-marketing requirements"],
+    "definition": "A study that a regulator orders a company to carry out after a medicine is approved, to answer safety questions that were still open.",
+    "category": "regulation",
+    "see_also": ["post-marketing-surveillance"]
+  },
+  "norleucine": {
+    "term": "norleucine",
+    "aliases": ["Nle"],
+    "definition": "A building block similar to the amino acid leucine, but with a straight side chain. Human proteins do not use it; chemists add it to make peptides more stable.",
+    "category": "chemistry",
+    "see_also": ["amino-acid"]
+  },
+  "odds-ratio": {
+    "term": "odds ratio",
+    "aliases": ["odds ratios"],
+    "definition": "A number that compares the chance of something happening in two groups. An odds ratio of 1 means no difference; above 1 means it happened more often in the first group.",
+    "category": "evidence",
+    "see_also": ["effect-size"]
+  },
+  "lactam-bridge": {
+    "term": "lactam bridge",
+    "aliases": ["lactam ring", "lactam bond"],
+    "definition": "A chemical link that joins two side chains of the same peptide, closing it into a ring.",
+    "category": "chemistry",
+    "see_also": ["cyclic-peptide"]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "lipodystrophy": {
+    "term": "lipodystrophy",
+    "aliases": ["HIV-associated lipodystrophy", "lipodystrophies"],
+    "definition": "A change in where the body stores fat. In some people on HIV treatment, fat is lost in some places and builds up in the belly.",
+    "category": "biology",
+    "see_also": ["visceral-fat", "hiv"]
+  },
+  "visceral-fat": {
+    "term": "visceral fat",
+    "aliases": ["visceral adipose tissue", "VAT", "deep belly fat", "abdominal visceral fat"],
+    "definition": "Fat stored deep inside the belly, around the organs. It is different from the fat just under the skin.",
+    "category": "biology",
+    "see_also": ["lipodystrophy", "lipolysis"]
+  },
+  "lipolysis": {
+    "term": "lipolysis",
+    "aliases": ["fat breakdown", "breakdown of stored fat"],
+    "definition": "The breakdown of stored fat into fatty acids that the body can use for energy.",
+    "category": "biology",
+    "see_also": ["visceral-fat", "growth-hormone"]
+  },
+  "acromegaly": {
+    "term": "acromegaly",
+    "aliases": [],
+    "definition": "A disease caused by too much growth hormone in adults. Hands, feet and the face slowly grow larger, and diabetes and heart problems become more common.",
+    "category": "biology",
+    "see_also": ["growth-hormone", "igf-1"]
+  },
+  "carpal-tunnel-syndrome": {
+    "term": "carpal tunnel syndrome",
+    "aliases": ["carpal tunnel"],
+    "definition": "Numbness, tingling or pain in the hand and fingers when a nerve at the wrist is squeezed, for example by swollen tissue.",
+    "category": "biology",
+    "see_also": ["arthralgia", "paraesthesia"]
+  },
+  "arthralgia": {
+    "term": "arthralgia",
+    "aliases": ["joint pain", "joint pains"],
+    "definition": "Pain in one or more joints, without visible damage to the joint.",
+    "category": "biology",
+    "see_also": ["myalgia"]
+  },
+  "myalgia": {
+    "term": "myalgia",
+    "aliases": ["muscle pain", "muscle pains", "muscle aches"],
+    "definition": "Pain or aching in the muscles.",
+    "category": "biology",
+    "see_also": ["arthralgia"]
+  },
+  "paraesthesia": {
+    "term": "paraesthesia",
+    "aliases": ["paresthesia", "paraesthesias", "pins and needles"],
+    "definition": "Tingling, pricking or numbness of the skin, like pins and needles, without an obvious cause.",
+    "category": "biology",
+    "see_also": ["carpal-tunnel-syndrome"]
+  },
+  "liver-fibrosis": {
+    "term": "liver fibrosis",
+    "aliases": ["liver scarring", "fibrosis of the liver"],
+    "definition": "Scar tissue that builds up in the liver after long-lasting damage, for example from too much fat. Severe scarring is called cirrhosis.",
+    "category": "biology",
+    "see_also": ["masld", "biopsy"]
+  },
+  "standard-deviation-score": {
+    "term": "standard deviation score",
+    "aliases": ["SDS", "SD score", "standard deviation scores"],
+    "definition": "A way to say how far a lab value is from the average for people of the same age and sex. A score above 2 is unusually high; above 3 is very high.",
+    "category": "evidence",
+    "see_also": ["igf-1"]
+  },
+  "biological-product": {
+    "term": "biological product",
+    "aliases": ["biological products", "biological medicine", "biologic", "biologics"],
+    "definition": "In US law, a medicine such as a protein, vaccine or blood product. Any chain of more than 40 amino acids counts as a protein, so some large peptides are regulated as biological products.",
+    "category": "regulation",
+    "see_also": ["biologics-license-application", "protein"]
+  },
+  "hypersensitivity-reaction": {
+    "term": "hypersensitivity reaction",
+    "aliases": ["hypersensitivity reactions", "hypersensitivity"],
+    "definition": "An allergic-type reaction of the immune system to a medicine. It ranges from a rash or hives to, rarely, swelling of the throat and trouble breathing.",
+    "category": "safety",
+    "see_also": ["anaphylaxis", "anti-drug-antibodies"]
+  },
+  "neutralising-antibodies": {
+    "term": "neutralising antibodies",
+    "aliases": ["neutralizing antibodies", "neutralising antibody", "blocking antibodies"],
+    "definition": "Antibodies that stop a medicine from working, not only stick to it.",
+    "category": "biology",
+    "see_also": ["anti-drug-antibodies", "immunogenicity"]
+  },
+  "hydrocephaly": {
+    "term": "hydrocephaly",
+    "aliases": ["hydrocephalus", "fluid on the brain"],
+    "definition": "A build-up of fluid inside the spaces of the brain. In unborn animals or babies it can harm how the brain develops.",
+    "category": "biology",
+    "see_also": []
+  },
+  "hiv": {
+    "term": "HIV",
+    "aliases": ["human immunodeficiency virus"],
+    "definition": "A virus that weakens the immune system. HIV medicines keep it under control, so people with HIV can live long lives.",
+    "category": "biology",
+    "see_also": ["antiretroviral-therapy", "lipodystrophy"]
+  },
+  "antiretroviral-therapy": {
+    "term": "antiretroviral therapy",
+    "aliases": ["antiretroviral treatment", "antiretroviral drugs", "HIV medicines", "HIV treatment"],
+    "definition": "A combination of medicines that keeps HIV under control. Some older HIV medicines changed where the body stores fat.",
+    "category": "pharmacology",
+    "see_also": ["hiv", "lipodystrophy"]
+  },
+  "ct-scan": {
+    "term": "CT scan",
+    "aliases": ["CT scans", "computed tomography"],
+    "definition": "A scan that uses X-rays and a computer to make pictures of slices through the body. It can measure how much fat lies around the organs.",
+    "category": "evidence",
+    "see_also": ["visceral-fat"]
+  },
+  "biopsy": {
+    "term": "biopsy",
+    "aliases": ["biopsies", "liver biopsy", "liver biopsies"],
+    "definition": "Taking a tiny piece of tissue, for example with a needle from the liver, to look at it under a microscope.",
+    "category": "evidence",
+    "see_also": ["liver-fibrosis"]
+  },
+  "cytochrome-p450": {
+    "term": "cytochrome P450",
+    "aliases": ["CYP450", "cytochrome P450 enzymes"],
+    "definition": "A family of enzymes, mostly in the liver, that break down many medicines. Anything that changes them can make other medicines stronger or weaker.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "chmp": {
+    "term": "CHMP",
+    "aliases": ["Committee for Medicinal Products for Human Use"],
+    "definition": "The European Medicines Agency's expert committee that assesses applications for human medicines and advises whether the EU should authorise them.",
+    "category": "regulation",
+    "see_also": ["ema", "marketing-authorisation"]
+  }
+}

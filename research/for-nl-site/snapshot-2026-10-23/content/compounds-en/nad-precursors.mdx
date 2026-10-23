@@ -1,0 +1,255 @@
+---
+slug: nad-precursors
+title: "NAD+ precursors (NR, NMN, NAD+)"
+description: "NR, NMN and NAD+ are vitamin B3 compounds, not peptides, but are sold beside them. What they are, what trials show, their legal status in the EU and US, and the risks."
+summary:
+  - "These are not peptides. NR and NMN are forms of vitamin B3 that the body turns into NAD+."
+  - "NR and NMN are sold as pills. NAD+ is also given as drips and injections."
+  - "In the EU, NR may be sold in food supplements. NMN may not, yet."
+  - "Pills raise NAD+ in blood. A large trial in Parkinson's disease found no benefit."
+  - "Drips and injections add the risks of any injection. Their benefit is unproven."
+lede: "Vitamin B3 compounds sold beside peptides. They are not peptides, and their rules and risks are different."
+glance:
+  main_risk: "Drips and shots can carry germs. Long-term effects are unknown."
+  # "Tested in people?" override (CONTENT-GUIDE §5.2): the derived words for human_clinical: phase-3 ("Yes. Large
+  # trials in many people have been published") read as a positive result. There is one large trial, NOPARK (410
+  # people with early Parkinson disease, NR for 52 weeks), and it found no benefit; the other trials (45 human RCT
+  # records on PubMed for NR or NMN) are smaller, and NAD+ drips have only a few small studies.
+  tested:
+    short: "Yes"
+    text: "Many trials, mostly of pills. The biggest one, in 410 people with Parkinson's, found no benefit."
+    sources: [pubmed-nr-nmn-count-2026-10-23, brakedal-2026-nopark, godic-2026-iv-longevity-review]
+  # "Allowed in sport?" override: the derived "Unclear" words leave out the one rule that certainly applies to drips,
+  # WADA M2.2 (more than 100 mL in 12 hours is prohibited whatever it contains), which this page explains.
+  sport:
+    short: "Unclear"
+    text: "Not named on the anti-doping list. Drips over 100 mL in 12 hours are banned."
+    sources: [wada-2026-list-en, wada-2027-list-en, usada-iv-infusions]
+  # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section): the NHS pages on
+  # cellulitis, sepsis and anaphylaxis, and the review of IV 'longevity' drips that names procedural risks.
+  stop_signs:
+    - icon: sign-infection
+      text: "Hot, red, swollen skin where the needle went"
+      sources: [nhs-cellulitis]
+    - icon: sign-fever
+      text: "Fever or chills after a drip or injection"
+      sources: [nhs-sepsis, godic-2026-iv-longevity-review]
+    - icon: sign-allergic
+      text: "Swollen face or throat, or trouble breathing"
+      sources: [nhs-anaphylaxis]
+  facts:
+    - label: "What they are"
+      value: "Vitamin B3 compounds, not peptides"
+      sources: [pubchem-nad, efsa-2019-nr-novel-food]
+    - label: "How they are sold"
+      value: "Capsules; NAD+ also as drips or injections"
+      sources: [efsa-2019-nr-novel-food, godic-2026-iv-longevity-review, fda-503a-categories-2026-05]
+    - label: "EU food status"
+      value: "NR allowed in supplements; NMN not yet"
+      sources: [eu-regulation-2020-16-nr, eu-union-list-novel-foods-2026-08-10]
+    - label: "Largest trial"
+      value: "410 people with Parkinson's: no benefit"
+      sources: [brakedal-2026-nopark]
+grade_rationale:
+  human_clinical: "Phase 3. NOPARK, a randomised, placebo-controlled trial of nicotinamide riboside in 410 people with early Parkinson disease, was published in October 2026, and dozens of smaller randomised trials of NR and NMN exist. For NAD+ drips the evidence is a handful of small studies."
+  preclinical_volume: "Extensive. On 23 October 2026 PubMed held 2,036 non-review records on nicotinamide riboside or NMN, 1,091 of them mentioning rats or mice."
+  independence: "Broadly replicated. Human trials come from many independent university groups in Europe, North America and Asia; some use product supplied by makers, and some authors hold patents."
+  safety: "Partial. Oral NR and NMN were well tolerated in trials of weeks to a year, and EFSA judged both safe as supplements for adults within set limits. Long-term use, high intakes and drips are much less studied."
+mechanism:
+  - kind: cellular
+    level: human
+    title: "Pills raise NAD+ in the blood"
+    detail: "In a crossover trial in healthy middle-aged and older adults (30 randomised, 24 finished), six weeks of NR raised NAD+ and related molecules in blood cells compared with placebo."
+  - kind: cellular
+    level: animal
+    title: "NAD+ helps cells make energy and repair themselves"
+    detail: "NAD+ is a helper molecule for energy-making and some repair enzymes. In rodents, ageing and obesity lower how much NAD+ the body makes; that is the idea behind the precursors."
+  - kind: effect
+    level: human
+    title: "Better health in people: mostly not shown"
+    detail: "One small NMN trial improved muscle insulin sensitivity; other trials did not improve insulin sensitivity, and the largest trial, in Parkinson disease, found no benefit."
+studies:
+  martens-2018-older-adults:
+    finding: "In 30 healthy middle-aged and older adults (24 completed), six weeks of NR was well tolerated and raised NAD+ metabolism in blood cells; effects on blood pressure were only hinted at."
+    limitation: "Small and short; blood measures, not health outcomes. The NR maker supplied the pills and part of the funding."
+  dollerup-2018-obese-men:
+    finding: "In 40 men with obesity and insulin resistance, 12 weeks of NR did not improve insulin sensitivity, blood sugar control, energy use or body composition; no serious side effects due to NR."
+    limitation: "Men only; 12 weeks; a high intake."
+  yoshino-2021-prediabetic-women:
+    finding: "In 25 women with prediabetes after menopause, 10 weeks of NMN raised the muscles' response to insulin compared with placebo."
+    limitation: "Small; one sex and one age group; some authors hold NMN patents or receive licence fees."
+  nadpark-2022:
+    finding: "In 30 people newly diagnosed with Parkinson disease, 30 days of NR raised NAD in the brain and was linked to a mild clinical improvement."
+    limitation: "A small, short phase 1 trial; the larger trial that followed did not confirm a benefit."
+  nopark-2026:
+    finding: "In 410 people with early Parkinson disease, a year of NR did not help: the rating score worsened slightly more than with placebo (2.72 points), and non-motor symptoms worsened more; serious adverse events were 8.3% against 14.1% on placebo."
+    limitation: "One disease; the difference was below what the trial counted as clinically important. The maker supplied NR and placebo."
+  grant-2019-iv-nad:
+    finding: "In 11 healthy men, NAD+ given by drip over 6 hours disappeared from the blood almost at once for the first 2 hours; no adverse events were seen."
+    limitation: "Tiny; one drip; co-funded by a company whose director runs a clinic that gives NAD+ drips."
+  yu-2026-iv-nad-heart-failure:
+    finding: "In 180 adults with heart failure after heart attacks, 7 days of NAD+ drips on top of standard care gave a slightly higher pumping strength at one month (45.4% against 42.4%)."
+    limitation: "One centre; blinding not stated; the 6-month outcome difference was not significant."
+  nakazzi-2026-pancreatic-cancer:
+    finding: "In pancreatic cancer cells and mice, NMN and nicotinamide helped cancer cells resist chemotherapy and supported tumour growth."
+    limitation: "Cells and mice only; shows a possible risk for people with active cancer, not a proven one."
+regulatory_notes:
+  EU: "No medicine. NR chloride is an authorised novel food for supplements (2020). NMN had a positive EFSA opinion in May 2026 but no EU authorisation yet."
+  NL: "No medicine in the CBG database. EU novel-food rules apply; an injection is not a food under EU law."
+  US: "Not an FDA-approved drug. NMN is not excluded from dietary supplements (FDA, 2025). NAD+ is under FDA evaluation for pharmacy compounding."
+  WADA: "Unclear: none is named on the List. Separately, IV drips over 100 mL in 12 hours are banned whatever they contain."
+---
+<Section id="what-it-is">
+
+<Lead question="What are NAD+ precursors?">Forms of vitamin B3 that the body turns into NAD+. They are not peptides.</Lead>
+
+<Compare title="Three close relatives, each with its own legal place in the EU." detail="What each is and how it is treated in the EU, checked on 23 October 2026.">
+
+| | NR (nicotinamide riboside) | NMN (nicotinamide mononucleotide) | NAD+ itself |
+|---|---|---|---|
+| Allowed in EU food supplements? | <Verdict is="yes" /> Authorised as a novel food since 2020.<Cite id="eu-regulation-2020-16-nr" /> | <Verdict is="no" /> EFSA judged it safe for adults in 2026, but it is not yet authorised.<Cite id="efsa-2026-nmn-novel-food,eu-union-list-novel-foods-2026-08-10" /> | <Verdict is="unknown" /> Not on the EU list of authorised novel foods; we found no EU decision on it.<Cite id="eu-union-list-novel-foods-2026-08-10" /> |
+| An approved medicine in the EU? | <Verdict is="no" /> No.<Cite id="ema-medicines-json" /> | <Verdict is="no" /> No.<Cite id="ema-medicines-json" /> | <Verdict is="no" /> No.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> |
+| Tested in people? | <Verdict is="yes" /> Many trials, including one large one.<Cite id="brakedal-2026-nopark,pubmed-nr-nmn-count-2026-10-23" /> | <Verdict is="yes" /> Small trials.<Cite id="yoshino-2021-nmn-prediabetic-women" /> | <Verdict is="yes" /> A few small studies of drips.<Cite id="grant-2019-iv-nad-pilot,yu-2026-iv-nad-heart-failure" /> |
+
+</Compare>
+
+They are on this site because they are sold beside peptides: in the US, NAD+ was put forward for pharmacy compounding and sits on the same FDA list as GHK-Cu, and clinics offer NAD+ drips as "longevity" treatments.<Cite id="fda-503a-categories-2026-05,godic-2026-iv-longevity-review" />
+
+<InDetail title="Why the category confusion matters">
+
+A peptide is a chain of amino acids. NR is a vitamin B3 ring joined to a sugar, NMN is NR with a phosphate group, and NAD+ joins NMN to a second unit that carries adenine; none contains an amino acid.<Cite id="pubchem-nad" />
+
+The category decides which checks a product has had. In the EU, NR as a food supplement was assessed by EFSA for swallowing, within limits, for adults.<Cite id="efsa-2019-nr-novel-food,eu-regulation-2020-16-nr" /> Under EU law, food is something meant to be swallowed, so a product meant for injection or a drip is not a food.<Cite id="eu-regulation-178-2002-food-law" /> A supplement assessment therefore says nothing about whether an injection is sterile or safe. In sport, a drip of more than 100 mL in 12 hours is banned even if its contents are allowed.<Cite id="wada-2026-list-en,usada-iv-infusions" />
+
+</InDetail>
+
+<InDetail title="The molecules">
+
+NAD+ (nadide) is C21H27N7O14P2, mass <Q>663.4 g/mol</Q>; nicotinamide riboside is C11H15N2O5+, <Q>255.25 g/mol</Q>; NMN is C11H15N2O8P, <Q>334.22 g/mol</Q>.<Cite id="pubchem-nad" /> EFSA calls NR and NMN sources of nicotinamide, a form of niacin (vitamin B3).<Cite id="efsa-2019-nr-novel-food,efsa-2026-nmn-novel-food" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="How do they work?">The body turns them into NAD+, a helper for energy and repair. Pills raise NAD+ in blood.</Lead>
+
+<Mechanism />
+
+<InDetail title="What each step rests on">
+
+The rise in blood NAD+ is shown in people.<Cite id="martens-2018-nr-older-adults" /> The idea that more NAD+ means healthier ageing comes from rodents, in which obesity and ageing lower NAD+ production.<Cite id="yoshino-2021-nmn-prediabetic-women" /> NAD+ given by drip is removed from the blood very quickly, and which tissues take it up was not measured.<Cite id="grant-2019-iv-nad-pilot" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Do they work?">They raise NAD+ in blood. Clear health benefits have not been shown.</Lead>
+
+<KeyNumber title="In the largest trial, people did slightly worse than on placebo" value="+2.72 points" label="worse on a Parkinson's score after a year than on placebo; a small gap" who="NOPARK: 410 people with early Parkinson disease, NR by mouth for 52 weeks" source="brakedal-2026-nopark" level="human-controlled" />
+
+<KeyNumber title="The body's use of insulin did not get better" value="40" label="men with obesity took NR or placebo for 12 weeks" who="Dollerup 2018: randomised, double-blind trial" source="dollerup-2018-nr-obese-men" level="human-controlled" />
+
+<KeyNumber title="Muscles used insulin better in one small trial" value="25" label="women with prediabetes took NMN or placebo for 10 weeks" who="Yoshino 2021: randomised, double-blind trial" source="yoshino-2021-nmn-prediabetic-women" level="human-controlled" />
+
+A small early trial in Parkinson's disease looked promising; the large trial that followed did not confirm it.<Cite id="brakedal-2022-nadpark,brakedal-2026-nopark" />
+
+<InDetail title="Every study in one table">
+
+<StudyTable />
+
+For NAD+ drips, a 2026 review found mostly small series, few placebo-controlled trials, and conflicting results, and called the drips experimental.<Cite id="godic-2026-iv-longevity-review" /> One single-centre trial in 180 people with heart failure reported slightly better pumping after a week of drips; it needs repeating.<Cite id="yu-2026-iv-nad-heart-failure" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Are they legal?">NR pills are legal EU supplements. NMN is not yet, and no NAD+ injection is an approved medicine.</Lead>
+
+<Compare title="Food rules apply to pills. Neither the EU nor the US has approved any as a medicine." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 23 October 2026.">
+
+| | Netherlands and the EU | United States |
+|---|---|---|
+| Approved as a medicine? | <Verdict is="no" /> None.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> None.<Cite id="openfda-drugsfda-search-stubs-b-2026-10-23" /> |
+| NR allowed in foods or supplements? | <Verdict is="yes" /> In food supplements, since 2020.<Cite id="eu-regulation-2020-16-nr" /> | <Verdict is="yes" /> The FDA had no questions about its use in foods (2016).<Cite id="fda-grn-635-nicotinamide-riboside" /> |
+| NMN allowed in supplements? | <Verdict is="no" /> Not yet authorised.<Cite id="eu-union-list-novel-foods-2026-08-10" /> | <Verdict is="yes" /> The FDA said in 2025 that it is not excluded from supplements; a new-ingredient notice is still needed.<Cite id="fda-2025-nmn-petition-response" /> |
+| Drips allowed in sport? | <Verdict is="no" /> Not over 100 mL in 12 hours.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule.<Cite id="usada-iv-infusions" /> |
+
+</Compare>
+
+<InDetail title="Status in each country, and in sport">
+
+<RegulatoryTable />
+
+All statuses were checked on 23 October 2026. In the EU, only novel foods on the EU list may be sold.<Cite id="eu-regulation-2020-16-nr" /> EFSA gave a positive opinion on NMN in May 2026, but EFSA only advises; the Commission had not added NMN to the list by its 10 August 2026 version, and we found no later act.<Cite id="efsa-2026-nmn-novel-food,eu-union-list-novel-foods-2026-08-10" /> NMN also has an EU orphan designation as a possible medicine for sickle cell disease.<Cite id="ema-orphan-designations-json" />
+
+In the US, the FDA had said in October 2022 that NMN could not be a supplement, because it had been studied as a drug. On 29 September 2025 it reversed this: NMN was sold as a supplement from 2017, before the drug studies. It remains a new dietary ingredient that needs notification before sale.<Cite id="fda-2025-nmn-petition-response" /> NAD+ is in category 1 for pharmacy compounding: while the FDA evaluates it, the agency does not intend to act against pharmacies that compound it under set conditions.<Cite id="fda-503a-categories-2026-05,fda-503a-bulks-page" />
+
+In sport, none of the three is named on the 2026 or 2027 List. Drips or injections of more than 100 mL in 12 hours are banned unless received in hospital care or with an exemption.<Cite id="wada-2026-list-en,wada-2027-list-en,usada-iv-infusions" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="What are the risks?">Pills seem well tolerated in short trials. Drips and injections add infection and other risks.</Lead>
+
+<Compare title="Pills caused few problems in short trials. Some long-term questions are open." detail="What trials, EFSA and animal studies show, as of 23 October 2026.">
+
+| Possible harm | Shown in people? |
+|---|---|
+| Serious side effects from pills in trials | <Verdict is="no" /> Not more common than on placebo in the largest trial.<Cite id="brakedal-2026-nopark" /> |
+| Harm from high intakes over years | <Verdict is="unknown" /> EFSA noted possible ways high intakes could harm, and said the safe upper limit may need a new review.<Cite id="efsa-2021-nr-extension" /> |
+| Helping an existing cancer grow | <Verdict is="unknown" /> Seen in mice and cancer cells.<Cite id="maric-2023-nr-metastasis-mice,nakazzi-2026-b3-pancreatic-cancer" /> |
+| Infection or reactions from drips and injections | <Verdict is="unknown" /> Procedural risks; not studied for NAD+.<Cite id="godic-2026-iv-longevity-review,nhs-cellulitis" /> |
+
+</Compare>
+
+<InDetail title="Why these risks are theorised">
+
+Cancer cells also need NAD+. In mice with a breast cancer, NR led to more cancer spread to the brain; in pancreatic cancer cells and mice, NMN helped tumours resist chemotherapy.<Cite id="maric-2023-nr-metastasis-mice,nakazzi-2026-b3-pancreatic-cancer" /> These are animal findings, not proof in people. EFSA's safety conclusion for NMN does not cover pregnant or breastfeeding women; for NR, EFSA accepted only a lower intake for them. A 90-day rat study of NMN showed effects on reproductive organs.<Cite id="efsa-2019-nr-novel-food,efsa-2026-nmn-novel-food" /> In Parkinson disease, a year of NR was slightly worse than placebo.<Cite id="brakedal-2026-nopark" /> See [product risk](/en/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="How can someone lower the risk?">Know which kind of product you have. Treat injections like any injection, and know when to stop.</Lead>
+
+<ProductCheck extra="Check whether it is meant to be swallowed or injected. In the EU, food law covers only what is swallowed." extraSources="eu-regulation-178-2002-food-law" />
+
+### When to stop and get help
+
+<Callout type="stop" title="Stop and get help if" id="stop-now">
+- the skin where a needle or drip went in becomes hot, red, swollen or painful (possible infection);
+- you get a fever or chills, or feel very ill, after a drip or injection;
+- you get hives, swelling of the face or throat, or difficulty breathing (an allergic reaction).
+
+If it is severe, call your local emergency number.
+</Callout>
+
+<Cite id="nhs-cellulitis,nhs-sepsis,nhs-anaphylaxis,godic-2026-iv-longevity-review" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Checks that make sense, and who should be careful">
+
+A doctor can help you decide what fits you (see [talking to your doctor](/en/talking-to-your-doctor/)):
+
+- **Cancer treatment**: tell your cancer team, because in mice and cancer cells these compounds helped tumours.<Cite id="nakazzi-2026-b3-pancreatic-cancer,maric-2023-nr-metastasis-mice" />
+- **Pregnancy or breastfeeding**: EFSA's safety conclusion for NMN does not cover you, and for NR it accepted only a lower intake.<Cite id="efsa-2026-nmn-novel-food,efsa-2019-nr-novel-food" />
+- **Parkinson's disease**: in the largest trial, NR did slightly worse than placebo.<Cite id="brakedal-2026-nopark" />
+- **Sport**: a drip of more than 100 mL in 12 hours breaks anti-doping rules.<Cite id="wada-2026-list-en,usada-iv-infusions" />
+
+For injections, see [sterile technique](/en/safety/sterile-technique/).
+
+</InDetail>
+
+</Section>

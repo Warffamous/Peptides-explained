@@ -1,0 +1,70 @@
+{
+  "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the summary box's reading time and the technical-details block. Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. Keep every answer to one plain line (B1, everyday words, no jargon).",
+  "glance": {
+    "title": "At a glance",
+    "checked": "Status checked on {date}. The details and sources are further down this page.",
+    "approved": {
+      "question": "Is it an approved medicine?",
+      "authorised": { "short": "Yes", "text": "Approved in the EU. Only with a doctor’s prescription." },
+      "authorised-elsewhere": { "short": "Not in the EU", "text": "Approved only in some countries outside the EU." },
+      "authorised-nationally": { "short": "In some countries", "text": "Approved in {countries} for some uses. Not approved for the whole EU, or in the US." },
+      "investigational": { "short": "No", "text": "Not approved. It is still being tested in trials." },
+      "experimental": { "short": "No", "text": "Not approved as a medicine in the EU, the UK or the US." },
+      "not-a-peptide-authorised": { "short": "Yes", "text": "It is not a peptide, but it is an approved medicine in the EU." },
+      "not-a-peptide-authorised-elsewhere": { "short": "Not in the EU", "text": "It is not a peptide. It is approved only in some countries outside the EU." },
+      "not-a-peptide-not-authorised": { "short": "No", "text": "It is not a peptide, and it is not an approved medicine in the EU." }
+    },
+    "tested": {
+      "question": "Has it been tested in people?",
+      "none": { "short": "No", "text": "No studies in people have been published." },
+      "case-reports": { "short": "Very little", "text": "Only reports about a few patients, not proper trials." },
+      "phase-1": { "short": "A little", "text": "Only small safety studies in people." },
+      "phase-2": { "short": "Some", "text": "Small trials in patients. No large trials published yet." },
+      "phase-3": { "short": "Yes", "text": "Large trials in many people have been published." },
+      "authorised": { "short": "Yes", "text": "Large trials in many people, checked by regulators." }
+    },
+    "sport": {
+      "question": "Is it allowed in sport?",
+      "prohibited": {
+        "short": "No",
+        "at-all-times": "Banned in sport at all times.",
+        "in-competition": "Banned in sport during competitions.",
+        "unscoped": "Banned in sport."
+      },
+      "not-listed": { "short": "Not banned", "text": "It is not on the anti-doping list." },
+      "unclear": { "short": "Unclear", "text": "Not named on the anti-doping list. Ask your anti-doping organisation before using it in sport." },
+      "unknown": { "short": "See below", "text": "Check the sport row in the status table." },
+      "code": "Anti-doping list (WADA), section {section}"
+    },
+    "risk": {
+      "question": "What is the biggest risk?",
+      "more": "More about the risks",
+      "fallback": "Warning signs: when to stop and get help"
+    }
+  },
+  "summary": {
+    "readingTime": {
+      "one": "Reading the whole page takes about {minutes} minute.",
+      "other": "Reading the whole page takes about {minutes} minutes."
+    },
+    "readingTimeSplit": "About {short} minutes for the short version; {full} with every detail open."
+  },
+  "technical": {
+    "title": "Technical details",
+    "fold": "The molecule: amino-acid sequence and technical details"
+  },
+  "stop": {
+    "title": "Stop and get help if you notice",
+    "more": "All warning signs, further down this page",
+    "page": "Warning signs for any peptide"
+  },
+  "facts": {
+    "title": "Fact sheet",
+    "class": "Class",
+    "status": "Status in the EU",
+    "statusSince": "{status} since {year}",
+    "statusNational": "Not EU-wide, only nationally",
+    "tested": "Tested in people",
+    "note": "Label facts, not dosing advice. Sources are in the sections below."
+  }
+}

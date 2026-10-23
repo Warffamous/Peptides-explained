@@ -1,0 +1,256 @@
+---
+title: "How to read a study: what a result can and cannot tell you"
+nav_title: "How to read a study"
+description: "From cell dishes to large trials: what each kind of study can answer, and the questions to ask of any abstract or headline before you trust it."
+summary:
+  - "Each kind of study answers its own question. Only fair trials in people show what works in people."
+  - "A fair trial compares groups chosen by chance, and nobody knows who got what."
+  - "A result in a few rats can easily be chance. It says little about people."
+  - "Ask how big the change was, not just whether it was 'significant'."
+  - "A '20% lower risk' can mean 15 fewer people in every 1,000. Ask for the real numbers."
+section: evidence
+order: 1
+template: reference
+reading_level: B2
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review
+related:
+  - evidence/the-translation-gap
+  - evidence/evidence-grading
+  - evidence/conflicts-of-interest
+  - history/the-croatian-lab
+further_reading:
+  - ioannidis-2005-false-findings
+---
+
+This page explains how to judge a study from first principles: what each kind of study can show, what makes a test fair, and how to read the numbers. It ends with a checklist for any abstract or headline.
+
+## Which kind of study answers which question
+
+<Lead question="Are all studies equal?">No. Each kind of study can answer some questions and not others.</Lead>
+
+<Diagram id="study-designs-ladder" caption="Each kind of study answers a different question. Only trials in people show what happens in people.">
+
+| Kind of study | What it can show | What it cannot show |
+|---|---|---|
+| Cells in a dish (in vitro) | That a molecule can switch something on or off in a cell | What happens in a whole body, or at amounts a body would reach |
+| Animal study | Effects in a living animal, often with an injury made in the laboratory | That the same happens in people (see [the translation gap](/en/evidence/the-translation-gap/)) |
+| Case report or case series | That something happened to one or a few people, which can raise a question | That the treatment caused it, or how often it happens |
+| Observational study | A link between a treatment and an outcome in many people in daily life | Cause and effect: other differences between the groups can explain the link |
+| Randomised controlled trial | Whether the treatment itself causes a difference, in the kind of people studied | Rare or long-term effects beyond the trial's size and length |
+| Systematic review and meta-analysis | What all the studies on one question show together | Anything better than the studies it includes |
+
+</Diagram>
+
+<Cite id="murad-2016-evidence-pyramid,guyatt-2008-grade" />
+
+Claims about peptides such as BPC-157, TB-500 and KPV rest mostly on the first two rows: cell and animal studies, and for some only a handful of them.<Cite id="fda-pcac-2026-bpc157-briefing,fda-pcac-2026-tb500-briefing,fda-pcac-2026-kpv-briefing" /> That is a real start, but it is the bottom of the ladder. The higher rows exist because the lower ones often mislead, as the hormone example below shows.
+
+<InDetail title="Why trials and reviews sit higher">
+
+In a randomised trial, chance decides who gets the treatment, so the groups tend to be alike, even in things nobody measured (the larger the trial, the more reliably). In an observational study, the groups may differ in health, income or habits, and those differences can create a link of their own (<Term id="confounding">confounding</Term>). The GRADE approach therefore starts randomised trials as high-quality evidence and observational studies as low-quality, then adjusts each for how well it was done.<Cite id="guyatt-2008-grade" /> Systematic reviews sit at the top of the classic pyramid, but they are better seen as a lens on the studies below them: a review of weak studies is still weak evidence.<Cite id="murad-2016-evidence-pyramid" />
+
+</InDetail>
+
+<InDetail title="When many observational studies were wrong: hormone therapy and the heart">
+
+<KeyNumber title="Fifteen of sixteen studies that watched women found less heart disease with oestrogen" value="15 of 16" label="of these studies found less heart disease in women who took oestrogen" counted="16 prospective studies in a 1991 overview of the epidemiological evidence (Stampfer and Colditz); relative risk 0.56 across all the study types in the overview" source="stampfer-1991-oestrogen-heart" level="human-limited" />
+
+<KeyNumber title="A big trial found more heart disease with the hormones, not less" value="1.29" label="risk of heart disease with oestrogen plus progestin compared with placebo. Above 1 means more risk." who="Women's Health Initiative: 16,608 healthy women aged 50 to 79 after the menopause, with a womb, given oestrogen plus progestin or placebo, about 5 years" source="rossouw-2002-whi" level="human-controlled" />
+
+The 1991 overview judged the protective effect "unlikely to be explained by confounding factors".<Cite id="stampfer-1991-oestrogen-heart" /> The randomised trial then found more heart disease with oestrogen plus progestin (hazard ratio 1.29, nominal 95% confidence interval 1.02 to 1.63), and its investigators advised against the combination for preventing heart disease.<Cite id="rossouw-2002-whi" /> The two bodies of evidence did not test exactly the same thing: most of the earlier studies were of oestrogen alone, and the trial tested oestrogen plus progestin. But the observational studies could not rule out that the women who chose hormones differed from those who did not. The trial could.
+
+</InDetail>
+
+## What makes a test fair
+
+<Lead question="What makes a test fair?">A comparison group, chance deciding who gets what, nobody knowing who got what, and a plan published first.</Lead>
+
+<KeyNumber title="Weak trials made treatments look better" value="41%" label="bigger effects (as odds ratios) when trials did not keep secret who would get what next" counted="250 controlled trials from 33 meta-analyses in pregnancy and childbirth (Schulz 1995)" source="schulz-1995-empirical-bias" />
+
+<KeyNumber title="Most trials changed a main outcome between plan and paper" value="62%" label="of trials had at least one main outcome changed, added or left out" counted="102 trials approved by two Danish ethics committees in 1994–1995, protocols compared with 122 papers (Chan 2004)" source="chan-2004-outcome-reporting" />
+
+Each protection closes one way of fooling ourselves. A control group shows what would have happened anyway. Chance (randomisation) tends to make the groups alike, even in things nobody measured. Blinding stops expectations from colouring what is reported. A plan published in advance stops anyone picking whichever outcome looks good afterwards.
+
+<InDetail title="The four protections in detail">
+
+**A control group.** Without one, natural recovery, or symptoms easing from their worst point (<Term id="regression-to-the-mean">regression to the mean</Term>), can look like an effect. A <Term id="placebo">placebo</Term> also captures the effect of expecting to get better.
+
+**Randomisation, kept hidden.** Researchers who choose the groups may, without meaning to, give the treatment to those likely to do well. Randomisation prevents that only if the next assignment stays hidden (<Term id="allocation-concealment">allocation concealment</Term>): in 250 trials, effects were exaggerated by 41% when it was inadequate and by 30% when it was unclear.<Cite id="schulz-1995-empirical-bias" />
+
+**Blinding.** People who know what they got may report, or score, results more kindly. Trials that were not double-blind exaggerated effects by 17%.<Cite id="schulz-1995-empirical-bias" />
+
+**A plan published first.** Since 2005 the journals of the International Committee of Medical Journal Editors have required trials to be registered in a public registry, at or before the start of enrolment, before they will consider them for publication.<Cite id="de-angelis-2004-trial-registration" /> When 102 trials were compared with their protocols, 62% had changed, added or dropped a main outcome.<Cite id="chan-2004-outcome-reporting" />
+
+Animal studies rarely report these protections. In most systematic reviews of animal research, fewer than half of the studies reported randomisation, and 0 to 3% a sample size worked out in advance.<Cite id="van-der-worp-2010-animal-models" /> In 2,671 animal studies of drugs collected for systematic reviews, 25% reported randomisation and under 1% a sample size calculation.<Cite id="macleod-2015-risk-of-bias" />
+
+</InDetail>
+
+## Why the number of subjects matters
+
+<Lead question="Why does it matter how many were studied?">In a small study, chance alone can produce a big effect. Large studies are harder to fool.</Lead>
+
+<Diagram id="eight-rats-to-people" caption="From eight rats to a claim about people. Each step needs its own evidence.">
+
+| Step | The question to ask | Why it matters |
+|---|---|---|
+| 1. Chance | Could a few unusual animals explain the difference? | With 8 animals per group, they easily can |
+| 2. Bias | Were the animals assigned by chance and scored blind? | Without both, positive results become more likely |
+| 3. Publication | Would a study that found nothing have been published? | Often not, so the published record leans positive |
+| 4. Repetition | Has another laboratory found the same? | One lab's methods can make the same mistake every time |
+| 5. Species | Does the target work the same way in people? | Receptors, immune systems and drug handling differ |
+| 6. Model | Is the injury made in the lab like the human condition? | A fresh cut in a young rat is not an old sports injury |
+| 7. Product | Is the substance being used the one that was studied? | A product from outside the legal supply chain may hold a different amount |
+
+</Diagram>
+
+<Cite id="button-2013-power-failure,bebarta-2003-randomisation-blinding,sena-2010-publication-bias,errington-2021-replicability,van-der-worp-2010-animal-models,ashraf-2024-online-semaglutide" />
+
+Imagine 8 treated rats heal faster than 8 untreated rats. Three things could explain it: the treatment, chance or bias. With so few animals, chance and bias are hard to rule out. Even if the effect is real, it is real in rats with an injury made in a laboratory. Each step from there to people needs its own evidence.
+
+<InDetail title="The arithmetic of small studies">
+
+A study's <Term id="statistical-power">statistical power</Term> is its chance of detecting an effect that really exists. Small studies miss real effects; and when they do find one, it is less likely to be real and tends to look too large, because only lucky results clear the bar for "significant".<Cite id="button-2013-power-failure,ioannidis-2005-false-findings" /> Chance is big in small groups: toss a fair coin 8 times and you get 6 or more heads in about 1 of every 7 tries (37 of 256 possible sequences).
+
+<KeyNumber title="When mouse studies of ALS were repeated well, the effects vanished" value="0 of 8" label="drugs that had helped mice with ALS still helped when tested again in large, careful studies" counted="8 compounds from published mouse studies, retested by the ALS Therapy Development Institute in SOD1(G93A) mice with a study design based on its analysis of 5,429 mice (Scott 2008)" source="scott-2008-als-mouse" level="animal" />
+
+At least 50 publications had described drugs that lengthened the lives of mice with ALS, a fatal nerve disease, yet besides riluzole none had worked in patients. Retested in properly sized studies, none of 8 gave a survival benefit, riluzole included.<Cite id="scott-2008-als-mouse" /> Check too what *n* counts: in one 2026 tendon study of BPC-157, each group's 8 rats were split, so each test used 4 tendons per group.<Cite id="bicer-2026-achilles" />
+
+</InDetail>
+
+## Measurements that stand in for outcomes
+
+<Lead question="Does a better test result mean a healthier patient?">Not always. A measurement can improve while the patient does worse.</Lead>
+
+<KeyNumber title="Drugs that calmed irregular heartbeats caused more deaths" value="43 vs 16" label="deaths from heart rhythm problems with the drugs and with placebo, in about 10 months" who="CAST: 1,498 people after a heart attack whose extra heartbeats the drugs could suppress, randomised to encainide or flecainide, or placebo" source="echt-1991-cast" level="human-controlled" />
+
+A <Term id="surrogate-endpoint">surrogate endpoint</Term> is a stand-in: a blood value, a scan, a laboratory score. It is quicker to measure than what really matters, such as heart attacks or walking again. In the CAST trial the drugs did what the surrogate promised, fewer extra heartbeats, but more people died.<Cite id="echt-1991-cast" /> Animal studies of peptides usually measure stand-ins, such as tendon breaking strength or a tissue score.<Cite id="bicer-2026-achilles" />
+
+<InDetail title="Surrogates and outcomes that matter">
+
+Extra heartbeats after a heart attack are linked with sudden death, which is why the CAST drugs were expected to help; the reason for the excess deaths remained unknown.<Cite id="echt-1991-cast" /> A treatment can improve a surrogate without improving, or while worsening, the outcome it is meant to predict.<Cite id="fleming-1996-surrogate-endpoints" /> A claim built on a surrogate is a prediction, not a result.
+
+| Stand-in that was measured | Outcome that matters |
+|---|---|
+| Tendon breaking strength in rats | Return to sport, pain and function in people |
+| A tissue score under the microscope | Healing you can feel and use |
+| A hormone level in the blood | Feeling or functioning better, without harm |
+| Weight or blood sugar | Fewer heart attacks, strokes or deaths |
+
+Outcome trials close this gap for some medicines: the SELECT trial of semaglutide counted heart attacks, strokes and heart deaths, not only weight (see the worked example below).<Cite id="lincoff-2023-select" />
+
+</InDetail>
+
+## How big, not just "significant"
+
+<Lead question="What does 'statistically significant' mean?">Only that the result would be surprising if the treatment did nothing. It says nothing about size.</Lead>
+
+<Diagram id="what-a-p-value-says" caption="A p-value answers one narrow question. Most of the questions that matter, it does not answer.">
+
+| Question | Does the p-value answer it? |
+|---|---|
+| Would this result be unusual if the treatment had no effect at all? | Yes, if the study's methods and assumptions hold. That is all it measures |
+| How big is the effect? | No. Look at the effect size and its confidence interval |
+| Is the effect big enough to matter to a patient? | No |
+| How likely is it that the finding is true? | No |
+| Was the study fair? | No. A biased study can produce a tiny p-value |
+| Does "not significant" mean "no effect"? | No. It can mean the study was too small to tell |
+
+</Diagram>
+
+<Cite id="greenland-2016-p-values" />
+
+A tiny effect in a huge study can be "significant". A large effect in a small study can miss the cut. So look for the effect size with its confidence interval, the range of values that fit the data. In SELECT, the hazard ratio was 0.80, with an interval from 0.72 to 0.90.<Cite id="lincoff-2023-select" />
+
+<InDetail title="Common misreadings, and how results get spun">
+
+Choosing which analyses to show because of the p-values they produce can give small p-values even when the treatment does nothing.<Cite id="greenland-2016-p-values" /> That is why the main outcome should be named in advance. And a trial whose main result is not significant may still be presented as positive: in 72 such trials, the conclusions of 42 abstracts (58%) contained <Term id="spin">spin</Term>.<Cite id="boutron-2010-spin" />
+
+</InDetail>
+
+## Relative and absolute risk: a worked example
+
+<Lead question="What does '20% lower risk' really mean?">It depends on how common the problem was. Always ask: how many in 100, or in 1,000?</Lead>
+
+<KeyNumber title="As a relative risk: about 20% fewer" value="20%" label="lower risk of a heart attack, stroke or heart death than with placebo (hazard ratio 0.80)" who="SELECT: 17,604 adults aged 45 or over with heart or blood-vessel disease and overweight or obesity, without diabetes, about 3 years" source="lincoff-2023-select" level="human-controlled" />
+
+<KeyNumber title="As counts: 15 fewer people in every 1,000" value="65 vs 80" label="In 1,000 people, 65 had one of these events with semaglutide and 80 with placebo" who="SELECT: 17,604 adults aged 45 or over with heart or blood-vessel disease and overweight or obesity, without diabetes, about 3 years" source="lincoff-2023-select" level="human-controlled" />
+
+In SELECT, 8.0 in 100 people on placebo and 6.5 in 100 on semaglutide had a heart attack, a stroke or a heart death in about three years.<Cite id="lincoff-2023-select" /> As a relative risk, that is about 20% fewer. As an absolute difference, it is 1.5 in 100: 15 fewer people in every 1,000. Both are true. The relative number sounds bigger; the absolute one tells you how many people it changes things for.<Cite id="gigerenzer-2007-health-statistics" />
+
+<InDetail title="Working it through, step by step">
+
+SELECT followed its participants for a mean of 39.8 months. It was a double-blind, placebo-controlled trial paid for by the manufacturer.<Cite id="lincoff-2023-select" /> We use it because it is large and well reported, not to recommend anything.
+
+1. **Without treatment:** on placebo, 701 of 8,801 people had one of these events, about 80 in 1,000.
+2. **With treatment:** on semaglutide, 569 of 8,803 did, about 65 in 1,000.
+3. **Absolute difference:** 80 minus 65, about 15 in 1,000 (1.5 percentage points).
+4. **Relative difference:** 15 out of 80, close to the 20% reported. (The hazard ratio of 0.80 also accounts for when events happened.)
+5. **Number needed to treat:** 1,000 divided by 15, roughly 67 people treated for about three years for one to avoid an event. This is our arithmetic, and it applies only to people like those in the trial.
+6. **A rarer problem:** if 8 in 1,000 would have had the event, 20% fewer means about 1.6 fewer in 1,000.
+
+Risk researchers recommend absolute risks and counts of people (<Term id="natural-frequency">natural frequencies</Term>). Their standard example: a 25% reduction in breast-cancer deaths from mammography screening means 1 fewer death in 1,000 women.<Cite id="gigerenzer-2007-health-statistics" /> The same goes for harms: "doubles the risk" of something affecting 1 in 10,000 means 1 extra case per 10,000.
+
+</InDetail>
+
+## Preprints, peer review and press releases
+
+<Lead question="Is a published paper always checked and right?">Peer review helps, but reviewers miss many errors. Preprints and press releases are checked even less.</Lead>
+
+<Compare title="No kind of publication is free of errors. Press releases are the least checked." detail="What each kind of publication can and cannot promise, from studies of preprints, peer review and press releases.">
+
+| | Preprint | Journal article | Press release or news story |
+|---|---|---|---|
+| Read by outside experts first? | <Verdict is="no" /> Posted before peer review<Cite id="brierley-2022-preprints" /> | <Verdict is="yes" /> Peer reviewed, but test reviewers found on average only about 3 of 9 planted major errors<Cite id="schroter-2008-peer-review-errors" /> | <Verdict is="no" /> Written by press offices and journalists<Cite id="sumner-2014-press-releases" /> |
+| Full methods you can check? | <Verdict is="yes" /> Usually the whole paper<Cite id="brierley-2022-preprints" /> | <Verdict is="yes" /> Methods and results are published | <Verdict is="no" /> A short summary<Cite id="sumner-2014-press-releases" /> |
+| Can the main claim be overstated? | <Verdict is="yes" /> No outside check yet | <Verdict is="yes" /> Spin in the conclusions of 58% of abstracts with a non-significant main result<Cite id="boutron-2010-spin" /> | <Verdict is="yes" /> 36% of university press releases on animal or cell studies stretched the results to people<Cite id="sumner-2014-press-releases" /> |
+
+</Compare>
+
+A <Term id="preprint">preprint</Term> is a paper posted before peer review. Peer review is a check by other scientists before a journal publishes. It catches some problems, not all. Press releases and news stories are summaries, and they are where much exaggeration starts. Read the abstract and, if you can, the methods.
+
+<InDetail title="What studies of preprints, peer review and press releases found">
+
+**Preprints.** Among preprints posted between September 2019 and April 2020 and published in a journal by 30 April 2020, the conclusions of 7.2% of non-COVID-19 and 17.2% of COVID-19 abstracts changed, mostly not in substance; preprints never published were not studied.<Cite id="brierley-2022-preprints" />
+
+**Peer review.** 607 BMJ reviewers received test papers with nine planted major errors each. On the first paper they found on average 2.58 of the nine, and about 3 on the later ones.<Cite id="schroter-2008-peer-review-errors" />
+
+**Press releases.** Of 462 university health press releases, those about studies in animals, cells or computer models stretched the results to people 36% of the time; when they did, 86% of the news stories did too, against 10% otherwise.<Cite id="sumner-2014-press-releases" /> Spin in press releases about trials went with spin in the paper's own abstract.<Cite id="yavchitz-2012-spin-press" />
+
+</InDetail>
+
+## A checklist for any abstract or headline
+
+<Lead question="What should I ask before I trust a claim?">Ten questions. If an abstract cannot answer most of them, treat the claim as unproven.</Lead>
+
+<Checklist>
+
+- **In whom?** Cells, animals or people? Which people: how old, how ill?
+- **How many?** What is n in each group, and how many were actually measured?
+- **Compared with what?** Was there a control group, chosen by chance?
+- **Who knew?** Were participants and the people measuring results blinded?
+- **Planned or picked?** Was the main outcome registered before the study began?
+- **What was measured?** An outcome that matters, or a stand-in such as a blood value?
+- **How big?** What was the effect size and its confidence interval, not just "significant"?
+- **Out of how many?** In absolute numbers: how many in 100 or in 1,000?
+- **Repeated?** Has an independent group found the same?
+- **Who paid?** Look for the funding and conflict-of-interest statements (see [conflicts of interest](/en/evidence/conflicts-of-interest/)).
+
+</Checklist>
+
+<Cite id="guyatt-2008-grade,schulz-1995-empirical-bias,chan-2004-outcome-reporting,greenland-2016-p-values,gigerenzer-2007-health-statistics" />
+
+Headlines often skip the first question. A story that says a peptide "heals tendons" may be about rats, and the exaggeration may have started in the press release.<Cite id="sumner-2014-press-releases" />
+
+<InDetail title="The checklist used on a real study">
+
+A 2026 study of BPC-157 and Achilles tendons was the first test of this claim in living animals by a group outside Zagreb.<Cite id="bicer-2026-achilles" />
+
+- **In whom, how many?** Rats with cut and surgically repaired tendons: 32 in four groups of 8, with 4 tendons per group in each test.
+- **Compared with what, and who knew?** Rats with the same injury and no treatment; the pathologist was blinded and specimens were coded.
+- **What was measured, and how big?** Breaking strength and tissue scores, both stand-ins. <Claim level="animal">Strength and overall tissue scores were higher with BPC-157 but not statistically significantly; one collagen measure was significantly higher</Claim>.
+- **Repeated, and who paid?** It was itself the first independent test, in a related model; the authors declared no financial support.
+
+So: a blinded, small, independent animal study, too small to rule a modest effect in or out, and not evidence of an effect in people. See the [BPC-157 page](/en/compounds/bpc-157/).
+
+</InDetail>

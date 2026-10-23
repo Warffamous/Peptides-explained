@@ -1,0 +1,45 @@
+{
+  "half-life": {
+    "term": "half-life",
+    "aliases": [
+      "half-lives",
+      "elimination half-life"
+    ],
+    "definition": "The time it takes for the amount of a drug in the blood to fall by half.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "placebo": {
+    "term": "placebo",
+    "aliases": [
+      "placebos",
+      "dummy treatment",
+      "placebo-controlled"
+    ],
+    "definition": "A dummy treatment that looks like the real one but contains no active drug. Comparing the two shows how much of an effect comes from the drug itself.",
+    "category": "evidence",
+    "see_also": [
+      "regression-to-the-mean"
+    ]
+  },
+  "regression-to-the-mean": {
+    "term": "regression to the mean",
+    "aliases": [],
+    "definition": "When something is measured at an unusually bad moment, the next measurement is likely to be closer to normal, even without treatment. People often seek treatment when symptoms are at their worst, so they tend to improve afterwards anyway.",
+    "category": "evidence",
+    "see_also": [
+      "placebo"
+    ]
+  },
+  "confidence-interval": {
+    "term": "confidence interval",
+    "aliases": [
+      "confidence intervals",
+      "95% confidence interval",
+      "95% CI"
+    ],
+    "definition": "The range of values that are reasonably compatible with a study's data. If the range for a difference between two groups includes zero, the study cannot rule out that there is no difference.",
+    "category": "evidence",
+    "see_also": []
+  }
+}

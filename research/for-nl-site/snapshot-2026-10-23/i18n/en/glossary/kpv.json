@@ -1,0 +1,100 @@
+{
+  "alpha-msh": {
+    "term": "alpha-MSH",
+    "aliases": ["α-MSH", "alpha-melanocyte-stimulating hormone", "alpha-melanocyte stimulating hormone", "melanocyte-stimulating hormone"],
+    "definition": "A small natural hormone made in the body from a larger protein. It controls skin and hair colour and also calms inflammation. KPV is its last three building blocks.",
+    "category": "biology",
+    "see_also": ["proopiomelanocortin", "melanocortin-receptor"]
+  },
+  "proopiomelanocortin": {
+    "term": "proopiomelanocortin",
+    "aliases": ["POMC"],
+    "definition": "A large protein the body cuts into several smaller hormones, including alpha-MSH and a stress hormone called ACTH.",
+    "category": "biology",
+    "see_also": ["alpha-msh"]
+  },
+  "tripeptide": {
+    "term": "tripeptide",
+    "aliases": ["tripeptides"],
+    "definition": "A peptide made of exactly three amino acids joined in a chain. KPV is a tripeptide: lysine, proline and valine.",
+    "category": "chemistry",
+    "see_also": []
+  },
+  "melanocortin-receptor": {
+    "term": "melanocortin receptor",
+    "aliases": ["melanocortin receptors", "MC1R", "melanocortin-1 receptor", "melanocortin receptor 1", "MC receptors"],
+    "definition": "A set of receptors on cells that alpha-MSH switches on. One of them, in skin cells, controls pigment. KPV does not appear to bind these receptors.",
+    "category": "biology",
+    "see_also": ["alpha-msh"]
+  },
+  "nf-kb": {
+    "term": "NF-κB",
+    "aliases": ["NF-kB", "NF-kappaB", "nuclear factor kappa B", "nuclear factor-κB"],
+    "definition": "A control switch inside cells that turns on many inflammation genes. When it moves into the cell's nucleus, the cell makes more inflammatory signals.",
+    "category": "biology",
+    "see_also": ["cytokine"]
+  },
+  "cytokine": {
+    "term": "cytokine",
+    "aliases": ["cytokines", "pro-inflammatory cytokine", "pro-inflammatory cytokines", "proinflammatory cytokines"],
+    "definition": "A small signalling protein that immune cells release to start or spread inflammation. Examples are TNF-α and interleukin-1β.",
+    "category": "biology",
+    "see_also": ["nf-kb"]
+  },
+  "pept1": {
+    "term": "PepT1",
+    "aliases": ["PEPT1", "peptide transporter 1", "SLC15A1", "di/tripeptide transporter"],
+    "definition": "A doorway protein on the surface of gut and some immune cells that carries small peptides of two or three amino acids into the cell. It is scarce in a healthy colon but increases when the colon is inflamed.",
+    "category": "biology",
+    "see_also": ["tripeptide"]
+  },
+  "myeloperoxidase": {
+    "term": "myeloperoxidase",
+    "aliases": ["MPO"],
+    "definition": "An enzyme carried by neutrophils, a type of white blood cell. Measuring it in tissue is a common way to estimate how many of these inflammatory cells are present.",
+    "category": "biology",
+    "see_also": ["cytokine"]
+  },
+  "inflammatory-bowel-disease": {
+    "term": "inflammatory bowel disease",
+    "aliases": ["IBD", "Crohn's disease", "Crohn disease"],
+    "definition": "A group of long-term diseases, mainly ulcerative colitis and Crohn's disease, in which the gut becomes inflamed. They need medical treatment.",
+    "category": "biology",
+    "see_also": ["dss-colitis"]
+  },
+  "dss-colitis": {
+    "term": "DSS colitis",
+    "aliases": ["dextran sodium sulfate colitis", "DSS-induced colitis", "TNBS colitis", "chemically induced colitis"],
+    "definition": "A way of giving mice or rats a bowel inflammation on purpose, usually by putting a chemical (such as dextran sodium sulfate) in their drinking water, so that treatments can be tested.",
+    "category": "evidence",
+    "see_also": ["inflammatory-bowel-disease"]
+  },
+  "pharmacophore": {
+    "term": "pharmacophore",
+    "aliases": ["message sequence"],
+    "definition": "The part of a molecule that is responsible for its main action. In alpha-MSH, a different part controls pigment from the part that calms inflammation.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "stratum-corneum": {
+    "term": "stratum corneum",
+    "aliases": [],
+    "definition": "The thin, tough outer layer of the skin. It is a barrier that keeps most large or water-loving molecules, including peptides, from passing into the body.",
+    "category": "biology",
+    "see_also": []
+  },
+  "in-vitro": {
+    "term": "in vitro",
+    "aliases": ["in-vitro"],
+    "definition": "An experiment done outside a living body, for example in cells grown in a dish. Latin for \"in glass\".",
+    "category": "evidence",
+    "see_also": ["in-vivo"]
+  },
+  "in-vivo": {
+    "term": "in vivo",
+    "aliases": ["in-vivo"],
+    "definition": "An experiment done in a living body, such as a mouse or a person. Latin for \"in the living\".",
+    "category": "evidence",
+    "see_also": ["in-vitro"]
+  }
+}

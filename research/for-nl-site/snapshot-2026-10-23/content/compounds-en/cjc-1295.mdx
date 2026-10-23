@@ -1,0 +1,577 @@
+---
+slug: cjc-1295
+title: "CJC-1295"
+description: "CJC-1295 is an unapproved lab-made peptide that raises growth hormone. The two versions sold under the name, the evidence, the risks and the law."
+summary:
+  - "CJC-1295 is a lab-made peptide. It makes the body release more growth hormone for days."
+  - "It is not an approved medicine in Europe, the UK or the US. It is banned in sport."
+  - "Two different peptides are sold as CJC-1295. Only the version 'with DAC' was ever tested in people."
+  - "Only three small studies in healthy adults were published. Most people had just one injection."
+  - "More growth hormone can cause swelling, joint pain and higher blood sugar. Long-term effects are unknown."
+lede: "A lab-made peptide that raises growth hormone for days. Not approved; two versions share one name."
+glance:
+  main_risk: "No one knows what long use does. Vials may hold another version."
+  # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section,
+  # <Callout id="stop-now">): heart rate rose and flushing with low blood pressure occurred in the
+  # human studies, and a participant in the stopped trial had a heart attack (FDA briefing, 2024);
+  # hives at the injection site occurred and hypersensitivity is labelled for tesamorelin, an approved
+  # GHRH analogue (Egrifta label); injection-site inflammation and tissue damage in animals and no
+  # endotoxin tests on certificates (FDA briefing).
+  stop_signs:
+    - icon: sign-heart
+      text: "Chest pain, or a racing heart"
+      sources: [fda-pcac-2024-cjc1295-briefing]
+    - icon: sign-allergic
+      text: "Hives, swollen face or throat, hard to breathe"
+      sources: [fda-pcac-2024-cjc1295-briefing, dailymed-egrifta-sv-label]
+    - icon: sign-infection
+      text: "Hot, red, swollen injection site, or fever"
+      sources: [fda-pcac-2024-cjc1295-briefing, cdc-2024-safe-injection-practices]
+  # Fact sheet beside the title: study facts, never a dose.
+  facts:
+    - label: "How it was given"
+      value: "Injection under the skin in every human study"
+      sources: [teichman-2006-cjc1295, ionescu-2006-cjc1295-pulsatility]
+    - label: "How long it lasts"
+      value: "Half-life about 6 to 8 days (with DAC)"
+      sources: [teichman-2006-cjc1295]
+    - label: "Without DAC"
+      value: "A different peptide; no published study in people"
+      sources: [fda-pcac-2024-cjc1295-briefing]
+    - label: "Human studies"
+      value: "Three small studies in healthy adults, 2006 to 2009"
+      sources: [fda-pcac-2024-cjc1295-briefing, teichman-2006-cjc1295, ionescu-2006-cjc1295-pulsatility, sackmann-sala-2009-cjc1295-proteome]
+grade_rationale:
+  human_clinical: "Phase 1. The highest published human evidence is two small randomised, placebo-controlled trials in 66 healthy adults (2006), plus two small studies without a comparison group in 12 and 11 healthy men, partly the same men. The developer's phase 2 trial in people with HIV was stopped in 2006 and never published, so under our rubric it does not count."
+  preclinical_volume: "Minimal. By our count on 22 October 2026, four full papers report what CJC-1295 does in cells or animals (two from the developer's network, two from independent laboratories that used it as a tool), and three more describe how it is broken down. The developer's toxicology exists only as four conference abstracts; even counting them, the total is about 11, at the very bottom of the next band."
+  independence: "Single group dominant. Every human study comes from the developer (ConjuChem) or its academic collaborator in Chicago, who co-authored the developer's trials; so do two of the four animal and cell papers. That is five of seven pharmacology and human studies. Two independent laboratories (NIH, 2009; Cedars-Sinai, 2020) confirmed in mice that it acts on the growth hormone system (more growth hormone or IGF-1), but no independent group has studied it in people."
+  safety: "Partial. The FDA counted 63 healthy adults in published studies, 46 of whom had a single injection, followed for weeks; no serious adverse reactions were reported. The one longer trial in patients was stopped in 2006 (the FDA reports, after a participant died) and its safety data were never published. There are no long-term, cancer or pregnancy data in people, and the animal toxicology exists only as abstracts."
+mechanism:
+  - kind: binding
+    level: animal
+    title: "A chemical hook bonds it to albumin"
+    detail: "The extra lysine at the end carries a maleimide group, the drug affinity complex (DAC). In rats, CJC-1295 was found bonded to the blood protein albumin within 15 minutes and stayed in the blood beyond 72 hours. Its half-life of 5.8 to 8.1 days in people fits this bond, but the bond itself was shown in rats."
+  - kind: binding
+    level: in-vitro
+    title: "It switches on the GHRH receptor in the pituitary"
+    detail: "Even when bonded to albumin, CJC-1295 made rat pituitary cells in a dish release growth hormone. The GHRH receptor sits on somatotrophs, the cells in the front of the pituitary gland that make growth hormone."
+  - kind: signal
+    level: in-vitro
+    title: "cAMP rises inside the cell"
+    detail: "The GHRH receptor works mainly through the messenger cAMP. In mouse pituitary cells, CJC-1295 raised cAMP and the release of growth hormone."
+  - kind: cellular
+    level: human
+    title: "More growth hormone, still in pulses"
+    detail: "In 12 healthy men, one injection did not change the size or number of growth hormone pulses, but the low points between pulses rose 7.5-fold and average growth hormone rose by 46%."
+  - kind: tissue
+    level: human
+    title: "The liver makes more IGF-1"
+    detail: "Growth hormone tells the liver to make IGF-1. In healthy adults, IGF-1 rose 1.5- to 3-fold for 9 to 11 days after one injection, and stayed above baseline for up to 28 days after several."
+  - kind: tissue
+    level: animal
+    title: "The pituitary itself can grow"
+    detail: "GHRH also makes growth hormone cells multiply. In mice, CJC-1295 increased the number of these cells and made the pituitary heavier; in one study it also raised markers of DNA damage there."
+  - kind: effect
+    level: hypothesis
+    title: "Effects on muscle, fat, healing or ageing: not shown"
+    detail: "No published study measured any health outcome in people. The only trial in patients, on belly fat in people with HIV, was stopped in 2006 and never reported."
+studies:
+  jette-2005-albumin:
+    finding: "Bonded to albumin, CJC-1295 still made rat pituitary cells release growth hormone and resisted the enzyme DPP-4. In rats it released 4 times as much growth hormone over 2 hours as GHRH(1-29). It was still in the blood after 72 hours, and in one rat it was seen bound to albumin from 15 minutes to beyond 24 hours."
+    limitation: "The developer's own study; animal numbers not stated in the abstract; the albumin bond was shown in the blood of one rat. It does not separate the effect of the hook from that of the four amino-acid changes."
+  developer-toxicology-abstracts:
+    finding: "In rats and dogs given repeated injections for up to 14 days: bleeding, inflammation and some tissue death at the injection site, slightly fewer red blood cells and higher cholesterol; dogs also vomited. A rat pregnancy study found no malformations; a 6-month monkey study reported no immune effects."
+    limitation: "Known only from four conference abstracts by the developer, as summarised by the FDA; the form of the peptide is not stated, and the FDA called the monkey data vague. No study of cancer risk exists."
+  alba-2006-knockout-mice:
+    finding: "Mice born without their own GHRH grew to normal weight and length with daily CJC-1295 for 5 weeks; injections every 2 or 3 days helped less. Their pituitaries made more growth hormone RNA and had more growth hormone cells."
+    limitation: "A model of deficiency, not of healthy adults; animal numbers not given in the abstract; two developer employees were co-authors."
+  teichman-2006-healthy-adults:
+    finding: "In healthy adults aged 21–61, one injection raised growth hormone 2- to 10-fold for 6 days or more and IGF-1 1.5- to 3-fold for 9–11 days, depending on the dose. Half-life was 5.8–8.1 days. After repeated injections IGF-1 stayed above baseline for up to 28 days. No serious adverse reactions were reported."
+    limitation: "Small and short (28 and 49 days), in healthy volunteers, run by the developer. It measured hormone levels, not health. Side effects were common, and only 11 people in total had placebo."
+  ionescu-2006-pulsatility:
+    finding: "One week after one injection, growth hormone still came in pulses of unchanged size and number, but the low points between pulses were 7.5 times higher; average growth hormone rose 46% and IGF-1 45%."
+    limitation: "12 healthy men aged 20–40, one night of sampling before and one after, no placebo group. Heart rate rose with the dose. Drug from the developer; the senior author co-wrote the developer's trials."
+  conjuchem-2006-hiv-phase-2:
+    finding: "Planned as a 12-week randomised, placebo-controlled trial in adults with HIV and extra fat around the organs. It was stopped in 2006; the FDA, citing online reports, says a participant had a heart attack and died."
+    limitation: "No results were ever published or posted, and the registry gives no reason for stopping. What it found, good or bad, is unknown."
+  sackmann-sala-2009-serum-proteins:
+    finding: "In blood from 11 of the same young men, five blood proteins changed a week after one injection; the authors propose them as markers of growth hormone action."
+    limitation: "A search for markers, not a test of benefit or harm; no placebo; partly funded by the developer and WADA; side effects not reported."
+  gautam-2009-dwarf-mice:
+    finding: "Daily CJC-1295 for 8 weeks restored normal growth, pituitary size, growth hormone and IGF-1 in young dwarf mice lacking a receptor in the brain; it also made young normal mice heavier."
+    limitation: "CJC-1295 was a lab tool to test a question about the brain; 5–8 mice per group; the peptide was a gift from the developer."
+  ben-shlomo-2020-pituitary:
+    finding: "In mouse pituitary cells it raised cAMP and growth hormone. In adult mice treated for 8 weeks (16 on CJC-1295, 15 on salt water), the pituitary was 47% heavier, IGF-1 was higher, and markers of DNA damage in the pituitary rose."
+    limitation: "Mice, not people. Pituitaries were weighed in 10 treated and 9 control mice, and the comet test of DNA damage used 3 and 3. It shows a possible route to harm, not that tumours form."
+  henninge-2010-seized-vial:
+    finding: "An unknown product seized by Norwegian police and customs in 2009 contained a 29-amino-acid peptide matching one then sold as CJC-1295: the version without the DAC lysine."
+    limitation: "One product; identity only, with no test of purity, amount or sterility."
+  gajda-2019-seized-powders:
+    finding: "Powders seized by Danish customs contained growth-hormone-releasing peptides with an extra glycine added at the start of the chain, among them a modified GRF(1-29)."
+    limitation: "A few forensic cases. It shows that products can hold variants no study has tested, not how often this happens."
+regulatory_notes:
+  EU: "No authorised product and no record in EMA's medicines data (checked 22 October 2026)."
+  NL: "Not authorised; no product in the CBG database. Supplying an unauthorised medicine is prohibited (Geneesmiddelenwet art. 40)."
+  DE: "Not authorised (AMG § 21). The Anti-Doping Act names CJC-1295 and mod-GRF. The 2005 phase 2 trial had a German arm, which ended early."
+  BE: "Not authorised; the 1964 Medicines Act requires a national or EU licence, and none exists."
+  UK: "Not authorised; supplying an unauthorised medicinal product is prohibited by the Human Medicines Regulations 2012."
+  US: "Not FDA-approved. In December 2024 FDA advisers voted 0–13 against letting pharmacies compound it (one salt form 1–12)."
+  WADA: "Prohibited at all times under S2 (growth hormone releasing factors); named since the 2015 List and in the 2027 List."
+---
+<Section id="what-it-is">
+
+<Lead question="What is CJC-1295?">A lab-made copy of part of a brain hormone. A chemical hook makes it last for days.</Lead>
+
+<Compare title="Two different peptides are sold as CJC-1295. Only one was ever tested in people." detail="The original CJC-1295 'with DAC' and the peptide sold as 'CJC-1295 without DAC' or 'Mod GRF (1-29)', checked on 22 October 2026.">
+
+| | CJC-1295 with DAC (the original) | "CJC-1295 without DAC" (Mod GRF 1-29) |
+|---|---|---|
+| The same 29-amino-acid core? | <Verdict is="yes" /> Part of human GHRH with four changes<Cite id="fda-pcac-2024-cjc1295-briefing,gsrs-cjc-1295" /> | <Verdict is="yes" /> The same core, ending there<Cite id="fda-pcac-2024-cjc1295-briefing,pubchem-cjc-1295-without-dac" /> |
+| An extra lysine with a chemical hook (DAC)? | <Verdict is="yes" /> Yes, at the end of the chain<Cite id="gsrs-cjc-1295,jette-2005-cjc1295-albumin" /> | <Verdict is="no" /> No hook<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Bonds to albumin in the blood? | <Verdict is="yes" /> Shown in rats<Cite id="jette-2005-cjc1295-albumin" /> | <Verdict is="no" /> It lacks the hook that forms the bond<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| How long it lasts in people measured? | <Verdict is="yes" /> Half-life 5.8–8.1 days<Cite id="teichman-2006-cjc1295" /> | <Verdict is="unknown" /> No published measurement<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Tested in people? | <Verdict is="yes" /> Three small studies in healthy adults<Cite id="fda-pcac-2024-cjc1295-briefing" /> | <Verdict is="no" /> No published study<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Approved as a medicine? | <Verdict is="no" /> Not in the EU, the UK or the US<Cite id="fda-pcac-2024-cjc1295-briefing,ema-medicines-json" /> | <Verdict is="no" /> Not in the EU, the UK or the US<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+
+</Compare>
+
+The developer, ConjuChem in Montreal, used the name CJC-1295 for the version with DAC.<Cite id="jette-2005-cjc1295-albumin,fda-pcac-2024-cjc1295-briefing" /> Today the same name is also used for the version without it, even by the FDA, which calls the confusion "a safety risk for patients".<Cite id="fda-pcac-2024-cjc1295-briefing" /> This page grades the version with DAC, because all the studies in people used it.
+
+<InDetail title="The molecule, piece by piece">
+
+Growth hormone releasing hormone (GHRH) is a hormone of 44 amino acids made in the hypothalamus, at the base of the brain. Its first 29 amino acids are enough for full activity.<Cite id="fda-pcac-2024-cjc1295-briefing" /> CJC-1295 starts from those 29 and changes four of them:<Cite id="fda-pcac-2024-cjc1295-briefing,jette-2005-cjc1295-albumin" />
+
+- **Position 2:** alanine becomes its mirror image, D-alanine. Chains with D-alanine here resist DPP-4, the main blood enzyme that cuts and switches off GHRH.
+- **Position 8:** asparagine becomes glutamine, to stop the chain from rearranging or turning into aspartic acid.
+- **Position 15:** glycine becomes alanine.
+- **Position 27:** methionine becomes leucine, to prevent damage by oxidation.
+
+The version with DAC then adds a 30th amino acid, a lysine. Its side chain carries a maleimide group, a small reactive ring.<Cite id="gsrs-cjc-1295,pubchem-cjc-1295" /> After injection this ring forms a permanent chemical bond (a covalent bond) with a free sulfur group on the blood protein albumin, at a spot called cysteine 34.<Cite id="jette-2005-cjc1295-albumin" /> It can also bond to other blood proteins that carry a free sulfur group.<Cite id="timms-2019-cjc1295-equine,fda-pcac-2024-cjc1295-briefing" />
+
+The full sequence is <Seq>Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-Lys</Seq>, with an amide at the end and the maleimide on the last lysine. Its formula is C165H269N47O46 and its mass <Q>3647.2 Da</Q>. Without the extra lysine the formula is C152H252N44O42 and the mass <Q>3367.9 Da</Q>.<Cite id="pubchem-cjc-1295,pubchem-cjc-1295-without-dac,fda-pcac-2024-cjc1295-briefing" />
+
+The developer made the version with DAC by solid-phase synthesis, adding one amino acid at a time to a chain held on resin beads; the FDA found no information on how the version without DAC is made. This kind of synthesis can leave shortened or wrongly built chains, solvents and other leftovers.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Who made it, and why development stopped">
+
+ConjuChem ran a research programme to make GHRH last longer, because natural GHRH works for only a short time.<Cite id="teichman-2006-cjc1295,ionescu-2006-cjc1295-pulsatility" /> In 2005 it described three versions with a maleimide hook and picked CJC-1295 as the most promising.<Cite id="jette-2005-cjc1295-albumin,fda-pcac-2024-cjc1295-briefing" /> Studies in healthy adults followed in 2006.<Cite id="teichman-2006-cjc1295,ionescu-2006-cjc1295-pulsatility" />
+
+In December 2005 the company started a phase 2 trial in adults with HIV, with sites that included Germany; both trial registries list it as ended early, without a reason or results.<Cite id="ctgov-nct00267527,euctr-2005-003797-25" /> According to the FDA's 2024 review, ConjuChem withdrew CJC-1295 from clinical trials in 2006 after a participant in that trial died (see the risk profile below).<Cite id="fda-pcac-2024-cjc1295-briefing" /> No later trial has been registered.<Cite id="ctgov-nct00267527" />
+
+The version without DAC first appears in the scientific literature in a 2010 report. In 2009 Norwegian police and customs seized an unknown product, and a doping laboratory found a 29-amino-acid peptide in it that matched one then sold as CJC-1295.<Cite id="henninge-2010-cjc1295-seized,fda-pcac-2024-cjc1295-briefing" /> The FDA calls this the first mention of CJC-1295 without DAC in the scientific literature.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Why the name is a problem">
+
+The FDA found "at least nine different names" for five different CJC-1295 substances: two active molecules (with and without DAC), each sold as a free base or as a salt (acetate or trifluoroacetate, TFA).<Cite id="fda-pcac-2024-cjc1295-briefing" /> The confusion runs through every layer:
+
+- **Requests to the FDA.** Two groups asked for CJC-1295 to be allowed in pharmacy compounding. One request named the acetate salt, gave the chemistry of the free peptide without DAC and cited studies of the version with DAC. The other gave a chemical name that matched no form of CJC-1295.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Databases.** The FDA noted that the official substance record mixed up the names and structures of the two versions.<Cite id="fda-pcac-2024-cjc1295-briefing" /> In PubChem, one record of the version without DAC carries the names "CJC 1295 with DAC" and "CJC-1295-no DAC acetate" at the same time.<Cite id="pubchem-cjc-1295-without-dac" />
+- **Science.** Some anti-doping researchers write "CJC-1295" for the version without DAC and "CJC-1295 with drug affinity complex" for the original.<Cite id="memdouh-2021-ghrh-analog-detection" />
+- **Products.** Both versions are sold online for "research use", alone and in blends with ipamorelin, GHRP-2, GHRP-6, hexarelin or tesamorelin. The listings the FDA reviewed did not say which salt they contained, and some blends did not say which version.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Powders seized in Denmark held versions of these peptides with an extra amino acid, whose effects are unknown.<Cite id="gajda-2019-glycine-ghs" />
+
+This matters because the two are different molecules, and the evidence belongs to only one of them. The FDA warns that what is known about how the version with DAC acts "cannot be extrapolated" to the version without it.<Cite id="fda-pcac-2024-cjc1295-briefing" /> See [product risk](/en/safety/product-risk/) and [what "research use only" means](/en/legal/research-use-only/).
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="How does it work?">It makes the pituitary gland release more growth hormone. The liver then makes more IGF-1.</Lead>
+
+<Diagram id="cjc-1295-gh-axis" caption="CJC-1295 acts where GHRH acts: on the growth hormone cells of the pituitary.">
+
+| Step | Where | What happens | Shown in |
+|---|---|---|---|
+| 1 | Hypothalamus (base of the brain) | Releases GHRH in bursts | People |
+| 2 | Blood | CJC-1295 with DAC bonds to albumin and stays for days | Rats (bond); people (long half-life) |
+| 3 | Pituitary gland | CJC-1295 switches on the GHRH receptor on growth hormone cells, as GHRH does | Cells in a dish |
+| 4 | Pituitary gland | Growth hormone comes out in pulses; the low points between pulses rise | People |
+| 5 | Liver | Makes more IGF-1, which stays high for days | People |
+| 6 | Brain and pituitary | Growth hormone and IGF-1 normally brake the system (negative feedback, partly through somatostatin) | People (natural hormones) |
+| 7 | Muscle, fat, bone, healing | Any effect on health | Not shown |
+
+</Diagram>
+
+<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback,jette-2005-cjc1295-albumin,teichman-2006-cjc1295,ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" />
+
+In healthy adults, one injection kept growth hormone higher for 6 days or more and IGF-1 higher for 9 to 11 days.<Cite id="teichman-2006-cjc1295" /> Growth hormone still came in pulses, but the low points between pulses rose sharply.<Cite id="ionescu-2006-cjc1295-pulsatility" /> Whether this helps or harms health has not been tested.
+
+<InDetail title="Step by step: the chain and what each step rests on">
+
+<Mechanism />
+
+### Staying in the blood
+
+<Claim level="animal">In rats, CJC-1295 appeared bonded to albumin in the blood within 15 minutes and was still there after 24 hours</Claim>; the peptide was found in the blood beyond 72 hours, whereas GHRH(1-29) given the same way was found for only about an hour.<Cite id="jette-2005-cjc1295-albumin,fda-pcac-2024-cjc1295-briefing" /> <Claim level="human-controlled">In healthy adults its half-life was 5.8 to 8.1 days</Claim>.<Cite id="teichman-2006-cjc1295" /> The idea behind the hook: the kidneys' filter lets through only small amounts of albumin, so a small peptide tied to it is not filtered out quickly.<Cite id="haraldsson-2008-glomerular-barrier,jette-2005-cjc1295-albumin" /> But the FDA points out that nobody has compared the versions with and without DAC directly, and that the four amino-acid changes may also slow breakdown. How much of the long life is due to the hook is therefore not shown.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+### The receptor and the signal
+
+GHRH acts on somatotrophs, the cells in the front of the pituitary gland that make growth hormone. Its receptor works mainly through the messenger cAMP, and GHRH also makes these cells multiply.<Cite id="mayo-2000-ghrh-receptor" /> <Claim level="in-vitro">Bonded to albumin, CJC-1295 still made rat pituitary cells in a dish release growth hormone</Claim>.<Cite id="jette-2005-cjc1295-albumin" /> <Claim level="in-vitro">In mouse pituitary cells it raised cAMP and growth hormone release</Claim>, in an independent laboratory.<Cite id="ben-shlomo-2020-cjc1295-pituitary" />
+
+### Growth hormone and IGF-1 in people
+
+<Claim level="human-limited">In 12 healthy men aged 20 to 40, one injection left the size and number of growth hormone pulses unchanged, but the low points between pulses rose 7.5-fold. Average growth hormone rose by 46% and IGF-1 by 45%</Claim>.<Cite id="ionescu-2006-cjc1295-pulsatility" /> Growth hormone levels change through the day, so IGF-1, which the liver makes mainly in response to growth hormone and which stays steadier, is the usual way to track the effect.<Cite id="medlineplus-igf1,ben-shlomo-2020-cjc1295-pituitary" />
+
+### What the chain does not show
+
+The chain stops at hormone levels. No study followed it on to muscle, fat, bone, healing or sleep in people.<Cite id="fda-pcac-2024-cjc1295-briefing" /> The FDA also notes that the maleimide hook could bond to proteins other than albumin; whether that has any effect is unknown.<Cite id="fda-pcac-2024-cjc1295-briefing" /> For the version without DAC, the FDA found no study at all of what it does in cells, animals or people.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Why the body normally limits growth hormone">
+
+Natural growth hormone comes in bursts. GHRH from the hypothalamus drives each burst, and somatostatin, another hormone from the brain, holds it back. A burst of growth hormone then feeds back on the brain: it switches on somatostatin and damps GHRH. IGF-1 adds a slower brake.<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback" />
+
+A long-acting GHRH analogue pushes on one part of this loop all the time. In the Chicago study the pulses were kept, which suggests that over that week the brakes still worked.<Cite id="ionescu-2006-cjc1295-pulsatility" /> <Claim level="hypothesis">But a drug that stays in the blood for about a week keeps pushing whatever the IGF-1 level</Claim>, and nobody has studied what months of this do to the loop, or to the pituitary itself.<Cite id="teichman-2006-cjc1295,fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Does it work?">It raises growth hormone and IGF-1 in healthy adults. No study tested any health benefit.</Lead>
+
+<KeyNumber title="IGF-1 rose for more than a week after one injection" value="1.5–3×" label="rise in IGF-1, lasting 9 to 11 days after one injection" who="Teichman 2006: two small placebo-controlled trials in healthy adults aged 21–61" source="teichman-2006-cjc1295" level="human-controlled" />
+
+<KeyNumber title="Growth hormone kept its pulses, with higher low points" value="7.5×" label="more growth hormone between bursts, one week after a single dose" who="Ionescu 2006: 12 healthy men aged 20–40, no comparison group" source="ionescu-2006-cjc1295-pulsatility" level="human-limited" />
+
+<KeyNumber title="Very few people have had it in a study" value="63" unit="people" label="had it in published studies. All were healthy; 46 had only one injection." who="FDA count, 2024: three studies, 2006–2009; 87 in 100 were men" source="fda-pcac-2024-cjc1295-briefing" level="human-limited" />
+
+These are effects on hormone levels, not on health. No published study measured muscle, fat, strength, healing, sleep or ageing in people.<Cite id="fda-pcac-2024-cjc1295-briefing" /> The FDA found no data on effectiveness for any form of CJC-1295 in growth hormone deficiency, the use it reviewed.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+<InDetail title="Every study in one table">
+
+<StudyTable />
+
+The table includes two forensic analyses of seized products, because what a vial contains is part of the evidence a reader needs.<Cite id="henninge-2010-cjc1295-seized,gajda-2019-glycine-ghs" />
+
+</InDetail>
+
+<InDetail title="Studies in people, one by one">
+
+### The developer's trials in healthy adults (2006)
+
+Teichman and colleagues ran two randomised, placebo-controlled, double-blind trials with rising doses in healthy adults aged 21 to 61, lasting 28 and 49 days.<Cite id="teichman-2006-cjc1295" /> The FDA's summary gives 42 people in the first (35 on CJC-1295, 7 on placebo) and 24 in the second (20 and 4).<Cite id="fda-pcac-2024-cjc1295-briefing" /> <Claim level="human-controlled">After one injection, growth hormone rose 2- to 10-fold for 6 days or more and IGF-1 rose 1.5- to 3-fold for 9 to 11 days, more at higher doses; after two or three injections IGF-1 stayed above baseline for up to 28 days</Claim>.<Cite id="teichman-2006-cjc1295" /> IGF-1 went above the normal range for age and sex only at the highest single dose tested.<Cite id="fda-pcac-2024-cjc1295-briefing" /> The authors called it "safe and relatively well tolerated" and its effects cumulative.<Cite id="teichman-2006-cjc1295" /> Side effects were common, though (see the risk profile below).
+
+### The Chicago studies (2006 and 2009)
+
+Ionescu and Frohman sampled blood every 20 minutes through one night in 12 healthy men, before and one week after a single injection.<Cite id="ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" /> Growth hormone pulses kept their size and frequency while the low points rose; IGF-1 rose by 45% and stayed within the normal range in every man.<Cite id="ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" /> This mattered for the developer's case. Its researchers argued that a long-acting GHRH would give the body a more natural pattern of growth hormone than a daily injection of growth hormone itself.<Cite id="fda-pcac-2024-cjc1295-briefing,ionescu-2006-cjc1295-pulsatility" /> A later analysis of blood from 11 of these men found five blood proteins that changed, proposed as markers of growth hormone action.<Cite id="sackmann-sala-2009-cjc1295-proteome" />
+
+### The trial in patients that was never published
+
+The developer's phase 2 trial in people with HIV was the only test in patients. It was stopped in 2006, and no results were ever posted or published.<Cite id="ctgov-nct00267527,euctr-2005-003797-25,fda-pcac-2024-cjc1295-briefing" /> So whether CJC-1295 reduced fat around the organs, the trial's aim, is unknown.
+
+### Why these studies cannot show benefit
+
+All the published studies were in healthy people, short, and measured hormones. The FDA judged that, without studies in people with growth hormone deficiency and without measures such as body composition or growth, they "do not support effectiveness".<Cite id="fda-pcac-2024-cjc1295-briefing" /> A raised IGF-1 is a surrogate endpoint: a change in a blood test that may or may not lead to a change in health.
+
+</InDetail>
+
+<InDetail title="Cell and animal studies">
+
+The developer's 2005 paper is the foundation: <Claim level="in-vitro">bonded to albumin, CJC-1295 resisted DPP-4 and still released growth hormone from rat pituitary cells</Claim>, and <Claim level="animal">in rats it raised growth hormone 4-fold over 2 hours compared with GHRH(1-29)</Claim>.<Cite id="jette-2005-cjc1295-albumin" />
+
+In mice born without GHRH, which grow poorly, <Claim level="animal">daily CJC-1295 for 5 weeks gave normal body weight and length and increased the number of growth hormone cells in the pituitary</Claim>; injections every 2 or 3 days worked less well. Two developer employees were co-authors.<Cite id="alba-2006-cjc1295-ghrh-knockout" />
+
+Two independent laboratories later used CJC-1295 as a tool. At the NIH, <Claim level="animal">8 weeks of daily CJC-1295 restored normal growth, pituitary size, growth hormone and IGF-1 in dwarf mice lacking a receptor in the brain</Claim>; the peptide was a gift from the developer.<Cite id="gautam-2009-m3-cjc1295" /> At Cedars-Sinai, a laboratory studying pituitary tumours treated 16 adult mice with CJC-1295 for 8 weeks and 15 with salt water. <Claim level="animal">The treated mice had pituitaries 47% heavier (weighed in 10 and 9 mice), higher IGF-1 and more markers of DNA damage in the pituitary</Claim>.<Cite id="ben-shlomo-2020-cjc1295-pituitary" /> That finding is discussed under the risk profile.
+
+</InDetail>
+
+<InDetail title="Who paid for the evidence">
+
+ConjuChem ran its own trials in people and co-wrote two of the four animal and cell papers. Its academic collaborator, Lawrence Frohman, co-wrote those trials and the Chicago studies, which used the developer's drug; the 2009 analysis was partly funded by the developer.<Cite id="teichman-2006-cjc1295,alba-2006-cjc1295-ghrh-knockout,sackmann-sala-2009-cjc1295-proteome" /> That does not make the results wrong: the NIH and Cedars-Sinai mouse studies, with no developer authors, also found more growth hormone or IGF-1.<Cite id="gautam-2009-m3-cjc1295,ben-shlomo-2020-cjc1295-pituitary" /> But the questions asked were the developer's, and the one study that could have shown benefit or harm in patients was never published.
+
+</InDetail>
+
+<InDetail title="What is genuinely promising, and what the gap costs">
+
+The idea behind CJC-1295 was reasonable. <Claim level="hypothesis">A medicine that raises the body's own growth hormone, while keeping its natural pulses and the body's brakes, could be gentler than injecting growth hormone itself</Claim>; that was the developer's case, and it was never tested.<Cite id="fda-pcac-2024-cjc1295-briefing" /> A related approved medicine shows that this route can work for a specific use: tesamorelin, another GHRH analogue, is authorised in the US to reduce excess belly fat in adults with HIV.<Cite id="dailymed-egrifta-sv-label" /> The early hormone data for CJC-1295 were consistent and confirmed in independent mice.<Cite id="teichman-2006-cjc1295,gautam-2009-m3-cjc1295" />
+
+The gap has a real cost. Development stopped in 2006, the one patient trial was never published, and nobody has tested the version without DAC at all.<Cite id="ctgov-nct00267527,fda-pcac-2024-cjc1295-briefing" /> Twenty years later, people who use CJC-1295 have hormone data from a few dozen healthy volunteers, mostly after one injection, and no answer to the questions that matter to them.
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="What is still not known?">What longer use does, how the version without DAC behaves, and what a vial really holds.</Lead>
+
+<TimeStrip title="The human studies lasted seven weeks at most. Longer use has never been studied." detail="Weeks of use or follow-up covered by the evidence. The 12-week patient trial was stopped and never reported." min={0} max={26} step={4} axis="Weeks" source="teichman-2006-cjc1295,ctgov-nct00267527,fda-pcac-2024-cjc1295-briefing" checked="2026-10-22" rows={[
+  { label: "Longest published human study (healthy adults)", spans: [{ from: 0, to: 7, text: "49 days; a few injections at most" }] },
+  { label: "Developer's trial in people with HIV", spans: [{ from: 0, to: 12, text: "planned 12 weeks; no results", unknown: true }] },
+  { label: "Longest general toxicity tests (rats, dogs)", spans: [{ from: 0, to: 2, text: "14 days; abstracts only" }] },
+  { label: "Longer use in people", spans: [{ from: 7, to: 26, text: "never studied", unknown: true }] },
+]} />
+
+<InDetail title="All open questions, with their sources">
+
+As of 22 October 2026, these are specifically unknown:
+
+- **Any benefit in people.** No published study measured a health outcome, and the one trial in patients was never reported.<Cite id="fda-pcac-2024-cjc1295-briefing,ctgov-nct00267527" />
+- **The version without DAC.** No published study of what it does in cells, animals or people, or of how long it lasts.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Repeated use.** Three in four people in the published studies had one injection; nobody was followed for longer than seven weeks.<Cite id="fda-pcac-2024-cjc1295-briefing,teichman-2006-cjc1295" />
+- **Cancer and the pituitary.** No carcinogenicity study exists, and no published study has examined the pituitary gland in people who used CJC-1295.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **The 2006 death.** Whether CJC-1295 played any part cannot be judged, because no data from the trial were published.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Antibodies.** The developer reported no "significant" antibodies, without describing the test; the FDA notes that antibodies could also react with the body's own GHRH.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Pregnancy, children and older people.** No human data.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Interactions** with any medicine, and with the other peptides it is often blended with.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **What products contain.** We found no published survey of the content, purity or sterility of products sold as CJC-1295.
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is it legal?">It is not an approved medicine in Europe, the UK or the US. It is banned in sport.</Lead>
+
+<Compare title="It is not approved where we checked. US experts also voted against it." detail="Status in the Netherlands and the EU, the US and sport, checked on 22 October 2026.">
+
+| | Netherlands and the EU | United States |
+|---|---|---|
+| Approved as a medicine? | <Verdict is="no" /> No EU or Dutch authorisation; EMA and CBG data hold no record of it.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Not FDA-approved.<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Legal to sell or supply as a medicine? | <Verdict is="no" /> Dutch law forbids supplying a medicine without a marketing authorisation, with narrow exceptions.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Pharmacies may not compound with it unless the FDA adds it to a list by a rule; no such rule exists.<Cite id="fda-pcac-2024-cjc1295-briefing,fda-503a-bulks-page,federalregister-cjc1295-search-2026-10-22" /> |
+| Backed by expert advisers? | <Verdict is="unknown" /> No EU or Dutch body has assessed it.<Cite id="ema-medicines-json" /> | <Verdict is="no" /> In December 2024, FDA advisers voted against pharmacy use for every form: 0–13, or 1–12 for one salt.<Cite id="fda-pcac-2024-12-minutes" /> |
+| Allowed in sport? | <Verdict is="no" /> Banned at all times under section S2.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule applies.<Cite id="wada-2026-list-en" /> |
+
+</Compare>
+
+<InDetail title="Status in each country, and in sport">
+
+<RegulatoryTable />
+
+All statuses were checked on 22 October 2026.
+
+### Sport (WADA)
+
+CJC-1295 is named on the World Anti-Doping Agency's Prohibited List under S2.2.4, "growth hormone releasing factors", as an example of GHRH analogues. It is prohibited at all times, in and out of competition, and S2 substances are non-Specified Substances.<Cite id="wada-2026-list-en" /> The 2027 List, in force from 1 January 2027, keeps the same entry.<Cite id="wada-2027-list-en" /> CJC-1295 has been named since the 2015 List; WADA said then that the named examples were already prohibited under earlier Lists.<Cite id="wada-2015-list-en,wada-2015-list-modifications" /> S2 also covers "other substances with similar chemical structure or similar biological effect(s)", so the version without DAC is prohibited too.<Cite id="wada-2026-list-en" /> See [sport and doping](/en/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="The European Union, the Netherlands, Germany, Belgium and the United Kingdom">
+
+### European Union
+
+No CJC-1295 product has an EU marketing authorisation, and EMA's medicines data, which include refused and withdrawn applications, hold no record of it. Tesamorelin, the related GHRH analogue approved in the US, appears there only as an application withdrawn in 2012.<Cite id="ema-medicines-json" /> The FDA found no approved product containing any form of CJC-1295 in Belgium, Germany, the UK or the other countries it checked, and none in the European Pharmacopoeia.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+### Netherlands
+
+The CBG database lists no CJC-1295 product.<Cite id="cbg-geneesmiddeleninformatiebank" /> A product presented as treating or preventing disease, or meant to change body functions through a drug effect, is a medicine under the Geneesmiddelenwet, and selling, supplying or importing a medicine without a marketing authorisation is prohibited, with narrow exceptions.<Cite id="nl-geneesmiddelenwet,nl-gmw-art-40-handelsvergunning" />
+
+### Germany
+
+Finished medicines need a national licence or an EU authorisation (AMG § 21); CJC-1295 has neither.<Cite id="de-amg-21,ema-medicines-json" /> The Anti-Doping Act lists GHRH and its analogues, naming CJC-1295 and mod-GRF, among the substances that may not be acquired, possessed or brought into Germany in more than a small amount for doping in sport.<Cite id="de-antidopg-anlage,de-antidopg-2,de-dmmv-2023" /> The developer's phase 2 trial had a German arm, which the EU register lists as ended early.<Cite id="euctr-2005-003797-25" />
+
+### Belgium
+
+A medicine may be placed on the market only with a national or EU marketing authorisation (Medicines Act of 25 March 1964, art. 6 § 1). CJC-1295 has neither.<Cite id="be-medicines-law-1964,ema-medicines-json,fda-pcac-2024-cjc1295-briefing" />
+
+### United Kingdom
+
+Selling or supplying an unauthorised medicinal product is prohibited (Human Medicines Regulations 2012, regulation 46), and no CJC-1295 product is authorised.<Cite id="uk-hmr-2012-reg-46,fda-pcac-2024-cjc1295-briefing" /> It is not a controlled drug under the Misuse of Drugs Act.<Cite id="uk-mda-1971-sch-2" />
+
+<Callout type="legal" title="US decisions do not apply here">
+Nothing the FDA or its advisers decide changes the legal position in the Netherlands or anywhere else in the EU.
+</Callout>
+
+</InDetail>
+
+<InDetail title="The United States: the December 2024 advisory vote">
+
+CJC-1295 is not FDA-approved, has no US Pharmacopeia monograph and is part of no approved medicine, so a US pharmacy could compound with it only if the FDA added it to the 503A bulks list by rulemaking.<Cite id="fda-pcac-2024-cjc1295-briefing,usc-21-353a,fda-503a-bulks-page" />
+
+Two groups had nominated it for that list and then withdrew; the FDA evaluated all five CJC-1295 substances anyway, for growth hormone deficiency, and proposed not to list any of them.<Cite id="fda-pcac-2024-12-meeting,fda-pcac-2024-cjc1295-briefing" /> It gave four reasons: the substances are not well characterised, partly because of the naming confusion; little is known about their use in compounding; animal studies raise safety concerns; and there are no effectiveness data, while approved treatments for growth hormone deficiency exist.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+On 4 December 2024 the FDA's Pharmacy Compounding Advisory Committee agreed. It voted 0–13 against listing CJC-1295 (free base), 1–12 against its acetate salt, and 0–13 against each of the three DAC forms. One member pointed to the lack of evidence of effectiveness.<Cite id="fda-pcac-2024-12-minutes" /> The committee only advises; the FDA makes the final decision after hearing it, and here the advice matched the FDA's own proposal.<Cite id="fda-pcac-2024-cjc1295-briefing" /> By 22 October 2026 the Federal Register held no rule on CJC-1295.<Cite id="federalregister-cjc1295-search-2026-10-22" />
+
+The FDA's safety-risk page lists CJC-1295 among substances previously in category 2 whose nominations were withdrawn. It names immune reactions, impurities, and "serious adverse events ... including increased heart rate and systemic vasodilatory reaction".<Cite id="fda-category-2-safety-risks" /> The FDA's own 2024 review, by contrast, noted that the published studies reported no serious adverse events.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+CJC-1295 was not among the seven peptides that the same committee considered on 23–24 July 2026.<Cite id="fda-pcac-2026-briefing-intro" /> That meeting is explained on the [BPC-157 page](/en/compounds/bpc-157/). See also [US law](/en/legal/us/).
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="What are the risks?">Injection-site reactions, flushing and headache were common. The risks of longer use are unknown.</Lead>
+
+| What people reported (first developer trial, one injection) | CJC-1295 (35 people) | Placebo (7 people) |
+|---|---|---|
+| Any side effect | 33 of 35 | 2 of 7 |
+| Reaction at the injection site (redness, hardness, pain, itching) | about 70 in 100 | rare |
+| Headache | 63 in 100 | 14 in 100 (1 person) |
+| Diarrhoea | 43 in 100 | none |
+| Flushing, warmth or a short drop in blood pressure | 30 in 100 | none |
+
+<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+No serious side effects were reported in these short studies of healthy adults.<Cite id="teichman-2006-cjc1295" /> But most people had one injection, and the only longer trial, in patients, was stopped and never published.<Cite id="fda-pcac-2024-cjc1295-briefing,ctgov-nct00267527" /> What months of raised growth hormone might do is known only from growth hormone itself and from a related approved medicine (see below).
+
+<InDetail title="Side effects in the studies, in detail">
+
+All figures below are from the FDA's 2024 summary of the published studies.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+- **Injection site.** Redness, hardness, pain or itching in about 70 in 100 people after one injection, worse and longer-lasting at higher doses, and in everyone who had repeated injections. Short-lived hives at the injection site in almost 30 in 100.
+- **Flushing and blood pressure.** Flushing, warmth and a short drop in blood pressure in 30 in 100 after one injection. With repeated injections, flushing came within 30 minutes and passed within 1 to 2 hours, in 40 to 100 in 100 depending on the dose. Two people had dizziness and low blood pressure after their first injection.
+- **Heart rate.** Heart rate rose with the dose in the Chicago study.<Cite id="ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" />
+- **Gut and head.** Headache in 63 in 100 (14 in 100 on placebo); loose stools or diarrhoea, more at higher doses; nausea or stomach pain in 20 in 100 with repeated injections.
+- **Nerves and muscles.** One person had brief involuntary leg-muscle contractions and some loss of coordination after a second injection.
+
+The authors found no consistent changes in blood or urine tests, glucose, liver tests or heart tracings.<Cite id="fda-pcac-2024-cjc1295-briefing" /> The FDA says some of these effects need further study, for example in people at risk of falls or with heart disease. The studies included only healthy adults.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="The 2006 trial that was stopped">
+
+The developer's phase 2 trial in people with HIV was registered in December 2005 and listed as terminated in 2006, without a reason.<Cite id="ctgov-nct00267527" /> The FDA's 2024 review recounts, from what it calls anecdotal reports on the internet, that 192 people had enrolled. Two hours after his 11th weekly injection, one participant had chest discomfort; a heart tracing (ECG) showed an acute heart attack, and he died about an hour later. The attending doctor's most likely explanation was undiagnosed narrowing of the heart arteries with a sudden blockage. The trial was stopped and its data were never published.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+One death in a trial does not show that a drug caused it. Here the attending doctor's most likely explanation was heart disease that had not been found before. But no one outside the company has seen the trial's data, so whether CJC-1295 played any part cannot be settled. CJC-1295 raised heart rate and caused flushing with low blood pressure in healthy volunteers, and its effects in people with heart disease were never studied.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Too much growth hormone: what it does, and why">
+
+CJC-1295 has never been studied for long enough to show the effects of months of raised growth hormone. Tesamorelin, an approved medicine that also copies GHRH, has been studied for 26 to 52 weeks, and its label lists the risks below.<Cite id="dailymed-egrifta-sv-label" /> The FDA found nothing to suggest that CJC-1295 would avoid the risks listed for growth hormone medicines.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+<IconArray title="Tesamorelin works the same way. On it, more people had swelling and high blood sugar." detail="People in 100 with each problem in the first 26 weeks: 543 adults with HIV on tesamorelin, 263 on placebo. Tesamorelin is not CJC-1295." a="Tesamorelin" b="Placebo" source="dailymed-egrifta-sv-label" level="human-controlled" rows={[
+  { label: "Swelling from fluid (oedema)", a: 6, b: 2 },
+  { label: "Muscle pain", a: 6, b: 2 },
+  { label: "Joint pain", a: 13, b: 11 },
+  { label: "Long-term blood sugar in the diabetes range", a: 5, b: 1 },
+]} />
+
+- **Fluid retention.** Raised growth hormone makes the body hold on to fluid. The tissues swell and feel tight, which can show as swollen ankles or hands, painful joints and carpal tunnel syndrome. The tesamorelin label says these effects pass, or go away when treatment stops.<Cite id="dailymed-egrifta-sv-label" /> In carpal tunnel syndrome, pressure on a nerve in the wrist makes the hand and fingers tingle, go numb or hurt.<Cite id="nhs-carpal-tunnel-syndrome" />
+- **Higher blood sugar.** Growth hormone releases fat from fat stores, and the extra fatty acids in the blood make muscle and liver respond less to insulin (insulin resistance). Blood sugar then rises.<Cite id="moller-2009-gh-metabolism" /> On tesamorelin, long-term blood sugar (HbA1c) reached the diabetes range in 5% of patients against 1% on placebo.<Cite id="dailymed-egrifta-sv-label" />
+- **IGF-1 above the normal range.** After 26 weeks of tesamorelin, 47% of patients had IGF-1 levels more than two standard deviations above normal; the label says the effects of long-term raised IGF-1 are unknown.<Cite id="dailymed-egrifta-sv-label" /> In the short CJC-1295 studies, IGF-1 went above the normal range only at the highest single dose tested.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Other risks in growth hormone labels.** All US growth hormone labels warn about tumours, glucose intolerance and diabetes, raised pressure inside the skull, fluid retention, effects on the adrenal and thyroid glands, and pancreatitis.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Why a cancer risk is theorised">
+
+The worry rests on established biology plus a few animal findings with CJC-1295:
+
+1. **Growth hormone and IGF-1 are growth signals.** The tesamorelin label calls IGF-1 "a growth factor" and growth hormone "a known growth factor", and rules out its use in people with active cancer.<Cite id="dailymed-egrifta-sv-label" /> In observational studies, people with higher IGF-1 levels had somewhat more prostate and premenopausal breast cancer; the links were modest and varied by cancer type.<Cite id="renehan-2004-igf1-cancer" />
+2. **Too much GHRH makes the pituitary grow.** In a young woman whose pancreatic tumour released GHRH, the pituitary's growth hormone cells multiplied and she developed acromegaly; removing the tumour brought her hormones back to normal.<Cite id="thorner-1982-ghrf-tumour-acromegaly" /> Mice engineered to make human GHRH grew "enormous pituitary glands".<Cite id="mayo-1988-ghrf-transgenic-hyperplasia" /> The FDA cites these mice as the reason long-term cancer studies of CJC-1295 would be needed.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+3. **CJC-1295 did this in mice.** <Claim level="animal">After 8 weeks of CJC-1295, mouse pituitaries were 47% heavier than in mice given salt water (weighed in 10 and 9 mice), with more signs of DNA damage</Claim>. The authors link the constant cAMP signal to DNA damage in pituitary tumour cells.<Cite id="ben-shlomo-2020-cjc1295-pituitary" /> <Claim level="animal">In mice born without GHRH, CJC-1295 made growth hormone cells multiply</Claim>.<Cite id="alba-2006-cjc1295-ghrh-knockout" />
+
+So the concern is that months of CJC-1295 could enlarge the pituitary, or help an existing, perhaps undiagnosed, tumour grow. There are honest limits to it. The mouse study was short and small, DNA damage is not cancer, and we found no reported case of a tumour after CJC-1295. But no one has looked: there are no carcinogenicity studies and no long-term follow-up of people.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="What the animal tests showed">
+
+The developer's toxicology is known only from conference abstracts, as summarised by the FDA.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+- **Injection site.** Bleeding, inflammation and some tissue death at the injection site in rats and dogs given repeated injections for up to 14 days; in dogs also pain, redness, swelling and thickened skin.
+- **Blood.** About 5 to 16% fewer red blood cells; higher cholesterol in both species.
+- **Behaviour.** Less food intake and activity in rats; vomiting and less activity in dogs.
+- **Pregnancy.** In one rat study, mothers ate more and gained more weight and the fetuses were slightly heavier; no malformations were seen.
+- **Immune system.** A 6-month monkey study reported no immune effects; the FDA called its data vague.
+
+The FDA concluded that these studies "may pose safety risks" for the DAC versions, and that no toxicity data exist at all for the version without DAC.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Risks from the product itself">
+
+- **The wrong version.** A vial labelled "CJC-1295" may hold the version with DAC, the version without it, a blend, or a variant whose effects are unknown.<Cite id="fda-pcac-2024-cjc1295-briefing,henninge-2010-cjc1295-seized,gajda-2019-glycine-ghs" /> The two versions are different molecules, and the FDA says what is known about how one acts cannot be applied to the other.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Impurities and clumps.** Certificates of analysis that the FDA reviewed reported purity, but not specific impurities, clumps of peptide (aggregates) or bacterial endotoxin, which matter most for anything injected.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Salt forms.** The developer's own early study used a trifluoroacetate (TFA) salt, and the FDA notes that TFA is known to be toxic and can make peptides more likely to trigger the immune system. The listings the FDA reviewed did not say which salt they sold.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Immune reactions.** Injected peptides can trigger antibodies, from harmless ones to severe reactions. CJC-1295 is 86% identical to the body's own GHRH, so antibodies against it could also act against your own hormone.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+See [product risk](/en/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="How can someone lower the risk?">Check the vial and its label, get key blood tests with a doctor, and know when to stop.</Lead>
+
+<ProductCheck extra="Check which version the label names. 'With DAC' and 'without DAC' (Mod GRF 1-29) are different substances. A label that only says CJC-1295 does not tell you which." extraSources="fda-pcac-2024-cjc1295-briefing,henninge-2010-cjc1295-seized" />
+
+### Talk to a doctor first
+
+A doctor can check for the conditions where extra growth hormone matters most: cancer, diabetes or prediabetes, heart disease and pregnancy. A doctor can also measure IGF-1 and blood sugar before and during use. IGF-1 is the usual way to see how hard the growth hormone system is being pushed.<Cite id="dailymed-egrifta-sv-label,medlineplus-igf1" /> See [talking to your doctor](/en/talking-to-your-doctor/) and [monitoring](/en/safety/monitoring/).
+
+<Callout type="stop" title="Stop and get help if" id="stop-now">
+- **You have chest pain or pressure, or a racing or pounding heart that does not settle.** Call your local emergency number.
+- **Your face, lips or throat swell, you get hives all over, or you find it hard to breathe.** This may be a severe allergic reaction. Call your local emergency number.
+- **You faint, or feel very dizzy with flushing after an injection.** Your blood pressure may have dropped. Get medical help the same day.
+- **The injection site becomes hot, red, swollen and painful, or you get a fever.** This may be an infection. Get medical help the same day.
+- **You get a severe headache that does not go away, with vomiting or blurred vision.** Get medical help now.
+</Callout>
+
+<Cite id="fda-pcac-2024-cjc1295-briefing,dailymed-egrifta-sv-label" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,neurological" />
+
+<InDetail title="Checks that make sense, and why">
+
+A doctor can help you choose which of these fit you:
+
+<Checklist>
+
+- **IGF-1**, before you start and during use, because it shows how much the growth hormone system is being pushed. Growth hormone itself changes too fast to measure in one blood test. The tesamorelin label asks for regular IGF-1 checks.<Cite id="medlineplus-igf1,dailymed-egrifta-sv-label" />
+- **Fasting blood sugar or HbA1c**, because growth hormone makes the body respond less to insulin.<Cite id="moller-2009-gh-metabolism,dailymed-egrifta-sv-label" />
+- **Blood pressure and heart rate**, because heart rate rose and blood pressure briefly dropped in the studies.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Cancer screening that is due for your age, and any lump or unexplained symptom checked first**, because IGF-1 and growth hormone are growth signals.<Cite id="dailymed-egrifta-sv-label,renehan-2004-igf1-cancer" />
+- **Telling the doctor exactly what you use**, including blends, so that test results are read correctly.
+
+</Checklist>
+
+</InDetail>
+
+<InDetail title="When to stop and see a doctor (not an emergency)">
+
+- **Swollen ankles, feet or hands**, or a feeling of tightness in the skin: fluid retention.<Cite id="dailymed-egrifta-sv-label,nhs-oedema" />
+- **Tingling or numbness in the fingers, or new joint or muscle pain**: possible carpal tunnel syndrome or other effects of fluid retention.<Cite id="dailymed-egrifta-sv-label" />
+- **Feeling very thirsty, peeing a lot, or feeling unusually tired**: possible high blood sugar.<Cite id="nhs-high-blood-sugar" />
+- **Hives or itching at the injection site that keep coming back**: a possible immune reaction.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **A new lump anywhere.**<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+<InDetail title="Who should not use it, and who needs a doctor first">
+
+These groups should not use it:
+
+- **Anyone with cancer now.** Growth hormone and IGF-1 are growth signals. The approved GHRH analogue tesamorelin must not be used with active cancer.<Cite id="dailymed-egrifta-sv-label" />
+- **Anyone pregnant, breastfeeding or trying to conceive.** There are no human data, and only one rat study of CJC-1295 in pregnancy, known from an abstract.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Tesamorelin must not be used in pregnancy. In rats, tesamorelin caused fluid on the brain in the offspring.<Cite id="dailymed-egrifta-sv-label" />
+- **Children and teenagers**, who are still growing. There are no data.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Athletes who can be tested**, because it is prohibited at all times.<Cite id="wada-2026-list-en" />
+
+These groups face extra risk and need a doctor's advice first:
+
+- **People who have had cancer.** The tesamorelin label asks for careful thought before use after past cancer.<Cite id="dailymed-egrifta-sv-label" />
+- **People with diabetes or prediabetes**, because blood sugar can rise.<Cite id="moller-2009-gh-metabolism,dailymed-egrifta-sv-label" />
+- **People with heart disease.** Heart rate rose and blood pressure dropped in healthy volunteers, and effects on the heart were never studied.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Possible interactions (none has been studied)">
+
+- **Diabetes medicines.** If blood sugar rises, the dose of these medicines may need to change; the tesamorelin label says so.<Cite id="dailymed-egrifta-sv-label" />
+- **Steroid replacement for underactive adrenal glands.** The tesamorelin label says the dose may need to go up.<Cite id="dailymed-egrifta-sv-label" />
+- **Medicines broken down by liver enzymes** (such as steroids, sex hormones, some epilepsy medicines and ciclosporin). Growth hormone may change how fast the liver clears them.<Cite id="dailymed-egrifta-sv-label" />
+- **Blends and other products that raise growth hormone**, such as ipamorelin or GHRP blends. They may add to the same effects. If something goes wrong, no one can tell which part caused it.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Clean injecting and reporting side effects">
+
+Needles and syringes are sterile single-use items, and infections have spread when this was not respected.<Cite id="cdc-2024-safe-injection-practices" /> Use a new sterile needle and syringe every time, and see [sterile technique](/en/safety/sterile-technique/) and [injection safety](/en/safety/injection-safety/). In the Netherlands, side effects of any product can be reported to Lareb.<Cite id="lareb-home" /> If something goes wrong, see [what to do if something goes wrong](/en/safety/if-something-goes-wrong/).
+
+</InDetail>
+
+</Section>

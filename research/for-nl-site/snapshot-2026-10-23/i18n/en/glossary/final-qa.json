@@ -1,0 +1,513 @@
+{
+  "median": {
+    "term": "median",
+    "aliases": ["medians"],
+    "definition": "The middle value when all results are put in order from low to high. Half of the results are above it and half below, so a few extreme results do not pull it up or down.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "efficacy": {
+    "term": "efficacy",
+    "aliases": [],
+    "definition": "How well a medicine does what it is meant to do, as shown in trials. In receptor science it can also mean how strongly a molecule switches its receptor on.",
+    "category": "evidence",
+    "see_also": ["intrinsic-efficacy", "randomised-controlled-trial"]
+  },
+  "toxicity-study": {
+    "term": "toxicity study",
+    "aliases": ["toxicity studies", "toxicity test", "toxicity tests"],
+    "definition": "A test, usually in animals, that looks for harm from a substance, for example to the liver, the kidneys or the blood. Such tests are done before a new medicine is first given to people.",
+    "category": "evidence",
+    "see_also": ["genotoxicity"]
+  },
+  "pivotal-trial": {
+    "term": "pivotal trial",
+    "aliases": ["pivotal trials"],
+    "definition": "A large trial that a company runs to show a regulator that its medicine works and is safe enough. The decision to approve a medicine rests mainly on these trials.",
+    "category": "evidence",
+    "see_also": ["randomised-controlled-trial"]
+  },
+  "pilot-study": {
+    "term": "pilot study",
+    "aliases": ["pilot studies", "pilot trial", "pilot trials", "pilot phase 1"],
+    "definition": "A small first study that tests whether a larger study can be done. It is too small to show whether a treatment works.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "multicentre-trial": {
+    "term": "multicentre trial",
+    "aliases": ["multicentre trials", "multicentre", "multicenter trial", "multicenter"],
+    "definition": "A trial run at several hospitals or clinics at the same time, all following the same plan.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "evaluator-blinded": {
+    "term": "evaluator-blinded",
+    "aliases": ["evaluator blinded", "assessor-blinded", "assessor blinded"],
+    "definition": "A trial in which the people who judge the results do not know who got which treatment. The patients and the staff who give the treatment may know.",
+    "category": "evidence",
+    "see_also": ["blinding"]
+  },
+  "comparator": {
+    "term": "comparator",
+    "aliases": ["comparators"],
+    "definition": "What a new treatment is compared with in a trial: a dummy treatment (placebo), another medicine or no treatment. The choice can make a new medicine look better or worse.",
+    "category": "evidence",
+    "see_also": ["placebo"]
+  },
+  "saline": {
+    "term": "saline",
+    "aliases": ["saline solution"],
+    "definition": "Sterile salt water with the same amount of salt as body fluids. Trials often inject it as a dummy treatment.",
+    "category": "pharmacology",
+    "see_also": ["placebo"]
+  },
+  "pubmed": {
+    "term": "PubMed",
+    "aliases": [],
+    "definition": "A free search engine for medical research papers, run by the US National Library of Medicine. It lists most studies in medicine and biology.",
+    "category": "evidence",
+    "see_also": ["embase"]
+  },
+  "embase": {
+    "term": "Embase",
+    "aliases": [],
+    "definition": "A large database of published medical and drug research. Reviewers search it together with PubMed so that they miss fewer studies.",
+    "category": "evidence",
+    "see_also": ["pubmed"]
+  },
+  "clinicaltrials-gov": {
+    "term": "ClinicalTrials.gov",
+    "aliases": [],
+    "definition": "A public list of clinical trials, run by the US National Library of Medicine. Trials from many countries post their plan there before they start, and some post their results.",
+    "category": "evidence",
+    "see_also": ["pre-registration", "ctis"]
+  },
+  "pancreas": {
+    "term": "pancreas",
+    "aliases": [],
+    "definition": "An organ behind the stomach. It makes insulin and other hormones that control blood sugar, and juices that help digest food.",
+    "category": "biology",
+    "see_also": ["insulin", "acute-pancreatitis"]
+  },
+  "insulin": {
+    "term": "insulin",
+    "aliases": [],
+    "definition": "A hormone made by the pancreas. It helps sugar move from the blood into cells, so the blood sugar level falls. People with diabetes may need it as a medicine.",
+    "category": "biology",
+    "see_also": ["pancreas", "glucose", "hypoglycaemia"]
+  },
+  "hormone": {
+    "term": "hormone",
+    "aliases": ["hormones"],
+    "definition": "A messenger substance that a gland releases into the blood. It travels to other organs and changes how they work. Insulin and growth hormone are examples.",
+    "category": "biology",
+    "see_also": ["insulin", "growth-hormone"]
+  },
+  "inflammation": {
+    "term": "inflammation",
+    "aliases": ["inflamed", "inflammatory"],
+    "definition": "The body's response to injury or infection. The area becomes red, warm, swollen and painful while the body fights germs or repairs damage.",
+    "category": "biology",
+    "see_also": ["immune-system"]
+  },
+  "immune-system": {
+    "term": "immune system",
+    "aliases": ["immune response", "immune responses", "immune reaction", "immune reactions", "immune cells"],
+    "definition": "The body's defence against germs and other things it sees as foreign. It includes white blood cells and antibodies.",
+    "category": "biology",
+    "see_also": ["antibody", "t-cell", "weakened-immune-system"]
+  },
+  "antibody": {
+    "term": "antibody",
+    "aliases": ["antibodies"],
+    "definition": "A protein that the immune system makes to recognise something foreign, such as a germ or a drug, and mark it for removal.",
+    "category": "biology",
+    "see_also": ["immune-system", "anti-drug-antibodies"]
+  },
+  "tissue": {
+    "term": "tissue",
+    "aliases": ["tissues"],
+    "definition": "A group of similar cells that do one job together in the body, such as muscle, skin, fat or tendon.",
+    "category": "biology",
+    "see_also": []
+  },
+  "tumour": {
+    "term": "tumour",
+    "aliases": ["tumours", "tumor", "tumors"],
+    "definition": "A lump of cells that keep dividing when they should not. A tumour can be harmless (benign) or a cancer that can spread (malignant).",
+    "category": "biology",
+    "see_also": []
+  },
+  "glucose": {
+    "term": "glucose",
+    "aliases": ["blood glucose"],
+    "definition": "The main sugar in the blood. Cells use it for energy, and insulin helps keep its level in a healthy range.",
+    "category": "biology",
+    "see_also": ["insulin", "hypoglycaemia", "hyperglycaemia"]
+  },
+  "fasting-glucose": {
+    "term": "fasting glucose",
+    "aliases": ["fasting blood glucose", "fasting blood sugar"],
+    "definition": "The level of sugar in your blood after you have eaten nothing, and drunk nothing but water, for at least 8 hours. It is usually measured in the morning.",
+    "category": "biology",
+    "see_also": ["glucose", "hba1c"]
+  },
+  "cholesterol": {
+    "term": "cholesterol",
+    "aliases": [],
+    "definition": "A fatty substance carried in the blood. Too much of some kinds raises the risk of heart attacks and strokes.",
+    "category": "biology",
+    "see_also": []
+  },
+  "plasma": {
+    "term": "plasma",
+    "aliases": ["blood plasma"],
+    "definition": "The liquid part of blood, without the blood cells. It carries food substances, hormones and medicines around the body.",
+    "category": "biology",
+    "see_also": []
+  },
+  "spleen": {
+    "term": "spleen",
+    "aliases": [],
+    "definition": "An organ on the left side of the belly, under the ribs. It filters the blood and helps the body fight infections.",
+    "category": "biology",
+    "see_also": ["immune-system"]
+  },
+  "hippocampus": {
+    "term": "hippocampus",
+    "aliases": [],
+    "definition": "A part of the brain that is important for memory and learning.",
+    "category": "biology",
+    "see_also": []
+  },
+  "histamine": {
+    "term": "histamine",
+    "aliases": [],
+    "definition": "A chemical that some immune cells, such as mast cells, release. It causes itching, redness and swelling, for example in an allergic reaction.",
+    "category": "biology",
+    "see_also": ["mast-cell"]
+  },
+  "autoimmune-disease": {
+    "term": "autoimmune disease",
+    "aliases": ["autoimmune diseases", "autoimmune"],
+    "definition": "An illness in which the immune system attacks the body's own tissues. Type 1 diabetes is one example.",
+    "category": "biology",
+    "see_also": ["immune-system"]
+  },
+  "folate": {
+    "term": "folate",
+    "aliases": ["folate cycle", "folic acid"],
+    "definition": "A B vitamin (vitamin B9). Cells need it to make the building blocks of DNA.",
+    "category": "biology",
+    "see_also": []
+  },
+  "gallbladder": {
+    "term": "gallbladder",
+    "aliases": ["gall bladder"],
+    "definition": "A small pouch under the liver. It stores bile, a juice that helps the body digest fat.",
+    "category": "biology",
+    "see_also": ["cholelithiasis"]
+  },
+  "menopause": {
+    "term": "menopause",
+    "aliases": ["postmenopausal", "menopausal"],
+    "definition": "The time in a woman's life, usually between about 45 and 55, when her periods stop for good.",
+    "category": "biology",
+    "see_also": ["premenopausal"]
+  },
+  "nausea": {
+    "term": "nausea",
+    "aliases": ["nauseous"],
+    "definition": "Feeling sick, as if you might vomit. It is a common side effect of many medicines.",
+    "category": "safety",
+    "see_also": ["antiemetic"]
+  },
+  "diarrhoea": {
+    "term": "diarrhoea",
+    "aliases": ["diarrhea"],
+    "definition": "Loose or watery poo, more often than usual. It can make you lose a lot of water.",
+    "category": "safety",
+    "see_also": ["dehydration"]
+  },
+  "constipation": {
+    "term": "constipation",
+    "aliases": ["constipated"],
+    "definition": "Pooing less often than usual, or finding it hard to poo.",
+    "category": "safety",
+    "see_also": []
+  },
+  "dehydration": {
+    "term": "dehydration",
+    "aliases": ["dehydrated"],
+    "definition": "When the body loses more water than it takes in. Signs are thirst, dark urine, passing little urine, dizziness and tiredness.",
+    "category": "safety",
+    "see_also": ["diarrhoea"]
+  },
+  "eczema": {
+    "term": "eczema",
+    "aliases": [],
+    "definition": "A skin condition that makes patches of skin dry, red, itchy and sometimes cracked.",
+    "category": "biology",
+    "see_also": []
+  },
+  "ulcer": {
+    "term": "ulcer",
+    "aliases": ["ulcers", "leg ulcer", "leg ulcers", "foot ulcer", "foot ulcers"],
+    "definition": "An open sore on the skin, or on the inside lining of an organ such as the stomach, that heals slowly.",
+    "category": "biology",
+    "see_also": []
+  },
+  "migraine": {
+    "term": "migraine",
+    "aliases": ["migraines"],
+    "definition": "A strong headache that keeps coming back, often on one side of the head. Many people also feel sick or find light hard to bear.",
+    "category": "biology",
+    "see_also": []
+  },
+  "osteoporosis": {
+    "term": "osteoporosis",
+    "aliases": [],
+    "definition": "A condition in which bones become thin and weak, so they break more easily.",
+    "category": "biology",
+    "see_also": []
+  },
+  "insomnia": {
+    "term": "insomnia",
+    "aliases": [],
+    "definition": "Trouble falling asleep or staying asleep, so that you feel tired during the day.",
+    "category": "biology",
+    "see_also": []
+  },
+  "narcolepsy": {
+    "term": "narcolepsy",
+    "aliases": [],
+    "definition": "A long-term brain condition that makes people very sleepy during the day. They may fall asleep suddenly, at any time.",
+    "category": "biology",
+    "see_also": []
+  },
+  "opioid": {
+    "term": "opioid",
+    "aliases": ["opioids"],
+    "definition": "A substance that acts on the opioid receptors in the brain and body, which damp down pain. Morphine and heroin are opioids, and the body makes its own, such as enkephalins.",
+    "category": "pharmacology",
+    "see_also": ["enkephalin"]
+  },
+  "stimulant": {
+    "term": "stimulant",
+    "aliases": ["stimulants"],
+    "definition": "A drug that speeds up the brain and body, so you feel more awake and alert. Caffeine and amphetamine are stimulants.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "corticosteroid": {
+    "term": "corticosteroid",
+    "aliases": ["corticosteroids", "steroid injection", "steroid injections", "steroid replacement"],
+    "definition": "A medicine that copies cortisol, a stress hormone the body makes. It calms inflammation and the immune system. People often call it a steroid, but it is not the muscle-building kind.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-steroids", "inflammation"]
+  },
+  "anabolic-agent": {
+    "term": "anabolic agent",
+    "aliases": ["anabolic agents"],
+    "definition": "A substance that builds muscle, such as testosterone, related steroids and some other drugs. The anti-doping list bans them at all times, in its section S1.",
+    "category": "sport",
+    "see_also": ["anabolic-steroids", "prohibited-list"]
+  },
+  "toxin": {
+    "term": "toxin",
+    "aliases": ["toxins", "bacterial toxin", "bacterial toxins"],
+    "definition": "A poison made by a living thing, such as bacteria. Some bacterial toxins stay in a product even after the germs themselves have been killed.",
+    "category": "safety",
+    "see_also": ["endotoxin"]
+  },
+  "vial": {
+    "term": "vial",
+    "aliases": ["vials"],
+    "definition": "A small glass bottle closed with a rubber stopper. A needle is pushed through the stopper to draw up the liquid.",
+    "category": "safety",
+    "see_also": ["vial-stopper", "single-dose-vial", "multi-dose-vial"]
+  },
+  "legal-supply-chain": {
+    "term": "legal supply chain",
+    "aliases": [],
+    "definition": "The official route a medicine takes from its maker to a pharmacy or hospital. Every firm on the way needs a licence, and regulators check them.",
+    "category": "regulation",
+    "see_also": ["falsified-medicine"]
+  },
+  "on-label": {
+    "term": "on-label",
+    "aliases": [],
+    "definition": "Using a medicine for the illness, the people and in the way that its approval covers. These are written on its official label.",
+    "category": "regulation",
+    "see_also": ["off-label"]
+  },
+  "abstention": {
+    "term": "abstention",
+    "aliases": ["abstentions", "abstained"],
+    "definition": "When a member of a committee takes part in a vote but chooses not to vote for or against.",
+    "category": "regulation",
+    "see_also": ["pcac"]
+  },
+  "docket": {
+    "term": "docket",
+    "aliases": ["dockets", "public docket"],
+    "definition": "A public online file where a US agency posts the papers for a decision. Anyone can read them and send in comments.",
+    "category": "regulation",
+    "see_also": ["federal-register"]
+  },
+  "plenary-vote": {
+    "term": "plenary vote",
+    "aliases": ["plenary", "plenary date"],
+    "definition": "A vote by all members of the European Parliament together. It comes after a committee has worked on the text.",
+    "category": "law",
+    "see_also": []
+  },
+  "annex": {
+    "term": "annex",
+    "aliases": ["annexes"],
+    "definition": "An extra part at the end of a law, often a list. It is part of the law and has the same force as the rest of it.",
+    "category": "law",
+    "see_also": []
+  },
+  "flemish-decree": {
+    "term": "Flemish decree",
+    "aliases": ["Flemish anti-doping decree"],
+    "definition": "A law passed by the Flemish Parliament, for the Dutch-speaking part of Belgium. In Flanders it has the same force as a national law.",
+    "category": "law",
+    "see_also": []
+  },
+  "self-doping": {
+    "term": "self-doping",
+    "aliases": [],
+    "definition": "Using a banned substance or method on your own body to do better in sport. Some countries also punish it as a crime, not only through the sport rules.",
+    "category": "sport",
+    "see_also": ["prohibited-list"]
+  },
+  "world-anti-doping-code": {
+    "term": "World Anti-Doping Code",
+    "aliases": ["WADA Code", "Anti-Doping Code"],
+    "definition": "The rulebook that WADA and sport bodies around the world follow. It sets how athletes are tested, what counts as a doping offence and which bans follow.",
+    "category": "sport",
+    "see_also": ["wada", "prohibited-list", "strict-liability"]
+  },
+  "melanocortin": {
+    "term": "melanocortin",
+    "aliases": ["melanocortins", "melanocortin peptide", "melanocortin peptides"],
+    "definition": "A family of hormones that affect skin colour, hunger and sex drive through melanocortin receptors. Melanotan II and PT-141 are lab-made versions.",
+    "category": "biology",
+    "see_also": ["melanocortin-receptor", "alpha-msh", "proopiomelanocortin"]
+  },
+  "hcg": {
+    "term": "human chorionic gonadotrophin",
+    "aliases": ["HCG", "chorionic gonadotrophin", "human chorionic gonadotropin", "chorionic gonadotropin"],
+    "definition": "A hormone that the placenta makes in pregnancy. As a medicine it is used in fertility treatment; in men it makes the body produce more testosterone.",
+    "category": "biology",
+    "see_also": ["hormone"]
+  },
+  "somatropin": {
+    "term": "somatropin",
+    "aliases": ["somatotropin", "somatrem"],
+    "definition": "Growth hormone made in a lab, used as a prescription medicine when the body makes too little. Somatotropin is the body's own hormone; somatrem was an older lab-made version.",
+    "category": "pharmacology",
+    "see_also": ["growth-hormone"]
+  },
+  "clenbuterol": {
+    "term": "clenbuterol",
+    "aliases": [],
+    "definition": "A medicine that opens the airways. Some countries use it for asthma, and vets use it in horses. It is misused to lose fat and build muscle, and it is banned in sport.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-agent"]
+  },
+  "zeranol": {
+    "term": "zeranol",
+    "aliases": [],
+    "definition": "A substance that acts like the hormone oestrogen. Some countries outside the EU give it to cattle to make them grow faster; the EU does not allow this.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-agent"]
+  },
+  "zilpaterol": {
+    "term": "zilpaterol",
+    "aliases": [],
+    "definition": "A substance added to cattle feed in some countries, so that the animals put on more lean meat before slaughter. The EU does not allow it.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-agent"]
+  },
+  "ll-37": {
+    "term": "LL-37",
+    "aliases": [],
+    "definition": "A small protein that the body makes in the skin, the gut and white blood cells. It helps to kill germs.",
+    "category": "biology",
+    "see_also": ["peptide"]
+  },
+  "dihexa": {
+    "term": "dihexa",
+    "aliases": [],
+    "definition": "A lab-made molecule built from a piece of the hormone angiotensin IV. It has been studied in animals for memory.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "mechano-growth-factor": {
+    "term": "mechano growth factor",
+    "aliases": ["MGF", "PEG-MGF", "pegylated mechano growth factor"],
+    "definition": "A form of IGF-1 that muscle makes after strain or injury. PEG-MGF is a lab-made version with PEG chains attached, so that it stays longer in the body.",
+    "category": "biology",
+    "see_also": ["igf-1", "pegylation"]
+  },
+  "emideltide": {
+    "term": "emideltide",
+    "aliases": ["DSIP", "delta sleep-inducing peptide"],
+    "definition": "A lab-made copy of a small peptide first described in 1977 as delta sleep-inducing peptide (DSIP). It is not approved as a medicine in the EU, the UK or the US.",
+    "category": "pharmacology",
+    "see_also": ["pcac"]
+  },
+  "nhs": {
+    "term": "NHS",
+    "aliases": ["National Health Service"],
+    "definition": "The National Health Service, the public health service of the United Kingdom. Its website gives advice for patients.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "rivm": {
+    "term": "RIVM",
+    "aliases": ["National Institute for Public Health and the Environment", "Rijksinstituut voor Volksgezondheid en Milieu"],
+    "definition": "The Dutch national institute for public health and the environment. This government institute gives advice on infections, hygiene and vaccines.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "thuisarts": {
+    "term": "Thuisarts",
+    "aliases": ["Thuisarts.nl"],
+    "definition": "A Dutch website with health advice for patients, written by the Dutch College of General Practitioners (NHG).",
+    "category": "safety",
+    "see_also": ["nhg", "huisarts"]
+  },
+  "cdc": {
+    "term": "CDC",
+    "aliases": ["Centers for Disease Control and Prevention", "US Centers for Disease Control and Prevention"],
+    "definition": "The US national public health agency (Centers for Disease Control and Prevention). It gives advice on how to prevent infections, for example with safe injections.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "medlineplus": {
+    "term": "MedlinePlus",
+    "aliases": [],
+    "definition": "A US health website for patients, run by the National Library of Medicine.",
+    "category": "safety",
+    "see_also": ["pubmed"]
+  },
+  "world-health-organization": {
+    "term": "World Health Organization",
+    "aliases": ["World Health Organisation"],
+    "definition": "The United Nations agency for health. Health services around the world use its guidance, for example on safe injections.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "precursor": {
+    "term": "precursor",
+    "aliases": ["precursors"],
+    "definition": "A substance that the body turns into another substance. NAD+ precursors are forms of vitamin B3 that cells turn into NAD+.",
+    "category": "biology",
+    "see_also": ["nad-plus", "niacin"]
+  }
+}

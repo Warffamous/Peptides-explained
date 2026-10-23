@@ -1,0 +1,134 @@
+{
+  "title": "Evidence profile",
+  "subtitle": "Four separate questions. Not a score.",
+  "why": "We never add these up. A compound can have a large animal literature from one laboratory and no human data at all — that is a specific situation, and a single number would hide it.",
+  "rubricLink": "How we grade evidence",
+  "whyFold": "Why these grades: the reason for each step",
+  "axisOf": "{value} — step {step} of {max}",
+  "axes": {
+    "human_clinical": {
+      "name": "Human clinical evidence",
+      "question": "How far has it been tested in people?",
+      "values": {
+        "none": "None published",
+        "case-reports": "Case reports only",
+        "phase-1": "Phase I (safety, small)",
+        "phase-2": "Phase II (dose and early effect)",
+        "phase-3": "Phase III (large controlled trials)",
+        "authorised": "Authorised by a regulator"
+      },
+      "explain": {
+        "none": "No published study in humans.",
+        "case-reports": "Only individual cases or small uncontrolled series. These can raise questions; they cannot answer them.",
+        "phase-1": "Small studies, usually in healthy volunteers, mainly about safety and how the body handles the compound.",
+        "phase-2": "Studies in patients to find doses and look for early signs of effect, usually with a control group.",
+        "phase-3": "Large randomised controlled trials designed to test whether it works and how often harm occurs.",
+        "authorised": "A medicines regulator has reviewed the full data and authorised it for specific uses."
+      }
+    },
+    "preclinical_volume": {
+      "name": "Preclinical volume",
+      "question": "How much laboratory and animal research exists?",
+      "values": {
+        "minimal": "Minimal",
+        "moderate": "Moderate",
+        "extensive": "Extensive"
+      },
+      "explain": {
+        "minimal": "Fewer than about 10 published primary studies in cells or animals.",
+        "moderate": "Roughly 10 to 50 published primary studies.",
+        "extensive": "More than about 50 published primary studies."
+      }
+    },
+    "independence": {
+      "name": "Source independence",
+      "question": "How many independent groups produced it?",
+      "values": {
+        "single-group-dominant": "One group dominates",
+        "few-groups": "A few groups",
+        "broadly-replicated": "Broadly replicated"
+      },
+      "explain": {
+        "single-group-dominant": "Most primary studies come from one research group. Their errors, if any, are repeated rather than caught.",
+        "few-groups": "Two to four groups produced most of the work.",
+        "broadly-replicated": "Many independent groups, and key findings have been reproduced."
+      }
+    },
+    "safety": {
+      "name": "Safety characterisation",
+      "question": "How well do we know the harms in humans?",
+      "values": {
+        "uncharacterised": "Uncharacterised",
+        "partial": "Partial",
+        "well-characterised": "Well characterised"
+      },
+      "explain": {
+        "uncharacterised": "No systematic human safety data. Absence of reported harm is not evidence of safety.",
+        "partial": "Some human exposure data, short-term or small. Rare and long-term harms are unknown.",
+        "well-characterised": "Large trials plus ongoing post-marketing surveillance. Rare harms are still being learned."
+      }
+    }
+  },
+  "claim": {
+    "label": "Evidence",
+    "levels": {
+      "hypothesis": {
+        "short": "Hypothesis",
+        "long": "Proposed, not demonstrated in any experiment"
+      },
+      "in-vitro": {
+        "short": "Cells",
+        "long": "Shown in cells or tissue in the laboratory"
+      },
+      "animal": {
+        "short": "Animals",
+        "long": "Shown in animal studies"
+      },
+      "human-limited": {
+        "short": "Humans, limited",
+        "long": "Seen in humans in case reports or small uncontrolled studies"
+      },
+      "human-controlled": {
+        "short": "Human trials",
+        "long": "Shown in controlled human trials"
+      },
+      "established": {
+        "short": "Established",
+        "long": "Established in large trials and authorised use"
+      }
+    }
+  },
+  "mechanismLevels": {
+    "hypothesis": {
+      "short": "Hypothesised",
+      "long": "Proposed; not demonstrated"
+    },
+    "in-vitro": {
+      "short": "In cells",
+      "long": "Demonstrated in cells or tissue in the laboratory"
+    },
+    "animal": {
+      "short": "In animals",
+      "long": "Demonstrated in animals"
+    },
+    "human": {
+      "short": "In humans",
+      "long": "Demonstrated in humans"
+    }
+  },
+  "mechanismKinds": {
+    "binding": "Binding",
+    "signal": "Signal inside the cell",
+    "cellular": "Cell response",
+    "tissue": "Tissue response",
+    "effect": "Effect on the body"
+  },
+  "matrix": {
+    "caption": "Evidence profiles of all compounds on this site",
+    "compound": "Compound",
+    "sortBy": "Sort by",
+    "sortName": "Name",
+    "note": "Sorting arranges compounds by one axis at a time. It does not rank them: the axes are deliberately not combined."
+  },
+  "stepOf": "step {step} of {max}"
+}

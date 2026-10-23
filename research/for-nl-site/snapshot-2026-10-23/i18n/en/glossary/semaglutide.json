@@ -1,0 +1,198 @@
+{
+  "glp-1": {
+    "term": "GLP-1",
+    "aliases": ["glucagon-like peptide-1", "glucagon-like peptide 1", "GLP-1 (7-37)"],
+    "definition": "A short hormone made in the gut after a meal. It tells the pancreas to release insulin when blood sugar is high, and it helps you feel full.",
+    "category": "biology",
+    "see_also": ["incretin", "glp-1-receptor-agonist"]
+  },
+  "incretin": {
+    "term": "incretin",
+    "aliases": ["incretins", "incretin hormone", "incretin effect"],
+    "definition": "A gut hormone that boosts insulin release after you eat. GLP-1 and GIP are the two main incretins in people.",
+    "category": "biology",
+    "see_also": ["glp-1"]
+  },
+  "glp-1-receptor-agonist": {
+    "term": "GLP-1 receptor agonist",
+    "aliases": ["GLP-1 receptor agonists", "GLP-1 RA", "GLP-1 RAs", "GLP-1 agonist", "GLP-1 agonists"],
+    "definition": "A medicine that switches on the same receptor as the body's own GLP-1, but lasts much longer. Semaglutide, liraglutide and dulaglutide are examples.",
+    "category": "pharmacology",
+    "see_also": ["glp-1"]
+  },
+  "dpp-4": {
+    "term": "DPP-4",
+    "aliases": ["dipeptidyl peptidase-4", "dipeptidyl peptidase 4", "DPP-IV"],
+    "definition": "An enzyme in the blood and gut wall that cuts the first two building blocks off GLP-1. This switches natural GLP-1 off within a couple of minutes.",
+    "category": "biology",
+    "see_also": ["glp-1", "aib"]
+  },
+  "aib": {
+    "term": "Aib",
+    "aliases": ["2-aminoisobutyric acid", "α-aminoisobutyric acid", "alpha-aminoisobutyric acid"],
+    "definition": "An amino acid that is not used in normal human proteins. Putting it at position 8 of semaglutide protects the peptide from being cut by the enzyme DPP-4.",
+    "category": "chemistry",
+    "see_also": ["dpp-4"]
+  },
+  "fatty-acid-acylation": {
+    "term": "fatty-acid side chain",
+    "aliases": ["acylation", "acylated", "fatty diacid", "C18 fatty diacid", "lipidation"],
+    "definition": "A fat-like chain chemically attached to a peptide drug. It makes the drug stick loosely to albumin in the blood, so the kidneys remove it much more slowly.",
+    "category": "chemistry",
+    "see_also": ["albumin-binding"]
+  },
+  "albumin-binding": {
+    "term": "albumin binding",
+    "aliases": ["albumin", "serum albumin", "plasma albumin", "bound to albumin"],
+    "definition": "Albumin is the most common protein in blood. A drug that sticks to it stays in the blood longer, because the albumin–drug pair is too big to be filtered out by the kidneys.",
+    "category": "pharmacology",
+    "see_also": ["fatty-acid-acylation"]
+  },
+  "camp": {
+    "term": "cAMP",
+    "aliases": ["cyclic AMP", "cyclic adenosine monophosphate"],
+    "definition": "A small messenger molecule inside cells. When some receptors are switched on, cAMP levels rise and pass the signal on to the cell's machinery.",
+    "category": "biology",
+    "see_also": []
+  },
+  "glucagon": {
+    "term": "glucagon",
+    "aliases": [],
+    "definition": "A hormone from the pancreas that tells the liver to release sugar into the blood. It works in the opposite direction to insulin.",
+    "category": "biology",
+    "see_also": ["glp-1"]
+  },
+  "gastric-emptying": {
+    "term": "gastric emptying",
+    "aliases": ["stomach emptying", "delayed gastric emptying"],
+    "definition": "How fast food leaves the stomach and moves into the gut. Slower emptying means food, and some tablets, stay in the stomach longer.",
+    "category": "biology",
+    "see_also": []
+  },
+  "hba1c": {
+    "term": "HbA1c",
+    "aliases": ["glycated haemoglobin", "glycated hemoglobin", "A1c"],
+    "definition": "A blood test that shows your average blood sugar over the last two to three months. Diabetes trials use it to measure how well a treatment works.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "mace": {
+    "term": "MACE",
+    "aliases": ["major adverse cardiovascular events", "major adverse cardiovascular event"],
+    "definition": "A combined trial outcome that usually counts death from heart or blood-vessel disease, non-fatal heart attack and non-fatal stroke.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "cardiovascular-outcomes-trial": {
+    "term": "cardiovascular outcomes trial",
+    "aliases": ["cardiovascular outcomes trials", "CVOT", "outcomes trial"],
+    "definition": "A large, long trial that counts real events such as heart attacks, strokes and deaths, instead of only measuring blood sugar or weight.",
+    "category": "evidence",
+    "see_also": ["mace"]
+  },
+  "naion": {
+    "term": "NAION",
+    "aliases": ["non-arteritic anterior ischaemic optic neuropathy", "non-arteritic anterior ischemic optic neuropathy"],
+    "definition": "A rare eye condition in which blood flow to the front of the optic nerve drops. It usually causes sudden, painless loss of vision in one eye, which may not recover.",
+    "category": "safety",
+    "see_also": []
+  },
+  "medullary-thyroid-carcinoma": {
+    "term": "medullary thyroid carcinoma",
+    "aliases": ["MTC", "medullary thyroid cancer"],
+    "definition": "A rare type of thyroid cancer that starts in the C-cells of the thyroid gland, the cells that make the hormone calcitonin.",
+    "category": "safety",
+    "see_also": ["thyroid-c-cells", "men2"]
+  },
+  "thyroid-c-cells": {
+    "term": "thyroid C-cells",
+    "aliases": ["C-cells", "C-cell", "parafollicular cells", "calcitonin"],
+    "definition": "A small group of cells in the thyroid gland that make the hormone calcitonin. In rats and mice they carry many GLP-1 receptors; in people they carry few.",
+    "category": "biology",
+    "see_also": ["medullary-thyroid-carcinoma"]
+  },
+  "men2": {
+    "term": "MEN 2",
+    "aliases": ["MEN2", "multiple endocrine neoplasia type 2", "Multiple Endocrine Neoplasia syndrome type 2"],
+    "definition": "An inherited condition that gives a very high risk of medullary thyroid carcinoma and some other hormone-gland tumours.",
+    "category": "safety",
+    "see_also": ["medullary-thyroid-carcinoma"]
+  },
+  "diabetic-retinopathy": {
+    "term": "diabetic retinopathy",
+    "aliases": ["retinopathy", "diabetic eye disease"],
+    "definition": "Damage to the small blood vessels at the back of the eye caused by years of high blood sugar. It can lead to bleeding in the eye and loss of sight.",
+    "category": "safety",
+    "see_also": ["hba1c"]
+  },
+  "acute-pancreatitis": {
+    "term": "acute pancreatitis",
+    "aliases": ["pancreatitis"],
+    "definition": "Sudden inflammation of the pancreas. It typically causes severe, constant pain in the upper belly that can spread to the back, often with vomiting. It needs urgent medical care.",
+    "category": "safety",
+    "see_also": []
+  },
+  "cholelithiasis": {
+    "term": "gallstones",
+    "aliases": ["gallstone", "cholelithiasis", "gallbladder disease", "cholecystitis"],
+    "definition": "Hard lumps that form in the gallbladder. They are more common during fast weight loss and can block the bile duct or inflame the gallbladder (cholecystitis).",
+    "category": "safety",
+    "see_also": []
+  },
+  "pulmonary-aspiration": {
+    "term": "pulmonary aspiration",
+    "aliases": ["aspiration", "aspiration pneumonia"],
+    "definition": "When stomach contents flow back up and into the lungs. It is a known risk during general anaesthesia or deep sedation if the stomach is not empty.",
+    "category": "safety",
+    "see_also": ["gastric-emptying"]
+  },
+  "lean-mass": {
+    "term": "lean mass",
+    "aliases": ["lean body mass", "fat-free mass"],
+    "definition": "Everything in the body that is not fat: muscle, but also organs, bone and water. A fall in lean mass is not the same as an equal fall in muscle.",
+    "category": "biology",
+    "see_also": []
+  },
+  "sulfonylurea": {
+    "term": "sulfonylurea",
+    "aliases": ["sulfonylureas", "sulphonylurea", "sulphonylureas", "gliclazide"],
+    "definition": "An older group of diabetes tablets that make the pancreas release insulin even when blood sugar is normal. This is why they can cause low blood sugar.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "egfr-kidney": {
+    "term": "eGFR",
+    "aliases": ["estimated glomerular filtration rate"],
+    "definition": "A number, calculated from a blood test, that shows how well the kidneys filter the blood. A lower eGFR means weaker kidney function.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "mash": {
+    "term": "MASH",
+    "aliases": ["metabolic dysfunction-associated steatohepatitis", "NASH", "non-alcoholic steatohepatitis"],
+    "definition": "A liver disease in which fat builds up in the liver and causes inflammation and scarring. It is linked to obesity and type 2 diabetes.",
+    "category": "biology",
+    "see_also": []
+  },
+  "snac": {
+    "term": "SNAC",
+    "aliases": ["salcaprozate sodium", "sodium N-[8-(2-hydroxybenzoyl)amino]caprylate"],
+    "definition": "An ingredient in semaglutide tablets that helps a small part of the peptide pass through the stomach wall. Without it, almost none would be absorbed.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "gvs": {
+    "term": "GVS",
+    "aliases": ["geneesmiddelenvergoedingssysteem", "Bijlage 2", "medicines reimbursement system"],
+    "definition": "The Dutch system that decides which prescription medicines the basic health insurance pays for. Medicines on its 'Bijlage 2' list are only paid for under set conditions.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "wada-monitoring-program": {
+    "term": "WADA Monitoring Program",
+    "aliases": ["Monitoring Program", "monitoring programme"],
+    "definition": "A list of substances that are not banned in sport but that the World Anti-Doping Agency tests for, to see whether athletes misuse them.",
+    "category": "sport",
+    "see_also": []
+  }
+}

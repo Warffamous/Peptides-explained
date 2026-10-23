@@ -1,0 +1,247 @@
+---
+slug: ss-31
+title: "SS-31 (elamipretide)"
+description: "SS-31 (elamipretide) is a US medicine for Barth syndrome, approved on limited evidence; not in the EU. What it is, what trials show, its risks, why online vials differ."
+summary:
+  - "SS-31 is a lab-made chain of four amino acids. Its medicine name is elamipretide."
+  - "Since 2025 it is a US prescription medicine for Barth syndrome, a rare muscle and heart disease."
+  - "The approval is conditional. It rests on 12 patients, and a new trial must confirm the benefit."
+  - "In bigger trials for other diseases it did not help. It is not approved in the EU."
+  - "A vial sold online as 'SS-31' is not the approved medicine. No regulator has checked it."
+lede: "A US medicine for one rare muscle disease. Online vials sold as SS-31 are a different product."
+glance:
+  main_risk: "Sore, red skin where you inject. Some had serious allergic reactions."
+  # "Tested in people?" override (CONTENT-GUIDE §5.2): the derived words for human_clinical: authorised ("Yes.
+  # Large trials in many people, checked by regulators") overstate this case. The FDA's accelerated approval rests on
+  # TAZPOWER, 12 patients, whose randomised part met neither primary endpoint; the larger trials in other diseases
+  # (EMBRACE STEMI 300, MMPOWER-3 218, PROGRESS-HF 71) found no benefit. "Some" and a grey ring, as for phase 2.
+  tested:
+    short: "Some"
+    text: "Approved on a 12-patient trial that missed its main goals. Bigger trials in other diseases found no benefit."
+    tone: partial
+    sources: [reid-thompson-2021-tazpower, fda-2025-forzinity-approval, gibson-2016-embrace-stemi, karaa-2023-mmpower-3, butler-2020-progress-hf]
+  # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section): the US label
+  # (section 5.2, serious hypersensitivity) and the NHS pages for infection and sepsis after injecting.
+  stop_signs:
+    - icon: sign-allergic
+      text: "Swollen face or throat, or trouble breathing"
+      sources: [fda-label-forzinity-2025, nhs-anaphylaxis]
+    - icon: sign-infection
+      text: "Hot, red, swollen or painful injection site"
+      sources: [nhs-cellulitis]
+    - icon: sign-fever
+      text: "Fever or chills after you inject it"
+      sources: [nhs-sepsis]
+  # Label facts from the US prescribing information; never a dose.
+  facts:
+    - label: "How it is taken"
+      value: "Injection under the skin, once a day"
+      sources: [fda-label-forzinity-2025]
+    - label: "Approved for"
+      value: "Barth syndrome, in the US, since 2025"
+      sources: [fda-drugsatfda-forzinity, fda-label-forzinity-2025]
+    - label: "Type of approval"
+      value: "Accelerated: the benefit still has to be confirmed"
+      sources: [fda-2025-forzinity-approval-letter]
+    - label: "Most common side effect"
+      value: "Redness, pain or itching where it is injected"
+      sources: [fda-label-forzinity-2025]
+grade_rationale:
+  human_clinical: "Authorised under our rubric: the FDA approved it as Forzinity in September 2025. The approval rests on a 12-patient crossover trial that missed both main goals and on open-label follow-up of 8 to 10 of those patients; a phase 3 trial in 218 adults with another mitochondrial disease found no benefit."
+  preclinical_volume: "Extensive. On 23 October 2026 PubMed held 258 non-review records on elamipretide or SS-31 that mention rats or mice."
+  independence: "Broadly replicated in animals: only 32 of those 258 records include the originating Szeto group. In people it is different: every clinical trial we found was funded by the developer, Stealth BioTherapeutics."
+  safety: "Partial. A few hundred people received it in trials lasting weeks to months, and 3 patients with Barth syndrome for 192 weeks. No cancer studies in animals had been done at approval (the FDA has required them), and experience after approval is short."
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Enters cells and gathers in mitochondria"
+    detail: "In cell studies by the inventors, the peptide crossed cell membranes and became about 1000 times more concentrated in the inner membrane of mitochondria than outside."
+  - kind: cellular
+    level: animal
+    title: "Binds cardiolipin in the inner membrane"
+    detail: "It binds cardiolipin, a fat molecule that the energy-making machinery needs. In rats whose kidneys had lost blood flow, it protected mitochondria and kidney function (originating group). The US label calls it a cardiolipin binder."
+  - kind: effect
+    level: human
+    title: "Stronger leg muscles in Barth syndrome: not yet confirmed"
+    detail: "Knee strength rose only in the open-label part of the Barth syndrome trial, without a comparison group; the randomised part showed no difference. Trials in heart attack, heart failure and mitochondrial myopathy found no benefit."
+studies:
+  zhao-2004-discovery:
+    finding: "Peptides of this design entered cells, gathered about 1000-fold in the inner mitochondrial membrane, reduced damaging oxygen molecules and cell death in cultured cells, and improved contraction of an isolated heart after blood flow returned."
+    limitation: "Cells, isolated mitochondria and isolated hearts from the inventors' laboratory; no living patient."
+  birk-2013-cardiolipin:
+    finding: "SS-31 bound cardiolipin and protected mitochondria and kidney function in rats after the kidneys' blood flow was stopped and restarted."
+    limitation: "Rat model from the originating group; a short, acute injury, not a chronic disease."
+  embrace-stemi-2016:
+    finding: "In people with a first heart attack treated with a stent, a one-hour drip did not make the heart damage smaller and did not improve any scan, ECG or clinical result."
+    limitation: "One short drip in hospital; enrolment of 300 is from the trial registry; developer-funded."
+  progress-hf-2020:
+    finding: "In 71 people with weak heart pumping, 4 weeks of daily injections were well tolerated but did not improve the size or pumping of the heart compared with placebo."
+    limitation: "Short and small; heart failure is not the approved use."
+  tazpower-2021:
+    finding: "In 12 males with Barth syndrome, 12 weeks on elamipretide and 12 weeks on placebo in random order: neither main goal (walking distance, tiredness score) improved."
+    limitation: "Very small; short; developer-funded and co-analysed. This is the only randomised evidence for the approved use."
+  tazpower-extension-2024:
+    finding: "Of 10 patients who continued on open-label elamipretide, 8 reached week 168. Walking distance and knee strength improved compared with the start of the extension; skin reactions where injected were the most common side effect."
+    limitation: "No comparison group, so improvement from growing up, practice or natural ups and downs cannot be ruled out; developer-funded."
+  mmpower-3-2023:
+    finding: "In 218 adults with primary mitochondrial myopathy, 24 weeks of daily injections did not improve walking distance (difference −3.2 m) or tiredness compared with placebo; it was mostly well tolerated."
+    limitation: "A different disease from Barth syndrome; developer-funded."
+regulatory_notes:
+  EU: "Not authorised. EU orphan designations only (2021, 2022); no application under evaluation in October 2026."
+  NL: "Not authorised. Supplying a medicine without a marketing authorisation is prohibited, with narrow exceptions."
+  US: "FDA accelerated approval as Forzinity on 19 September 2025, for Barth syndrome (30 kg or more). A confirmatory trial is required."
+  WADA: "Unclear: not named on the 2026 or 2027 List. As an FDA-approved medicine it falls outside S0, but other classes may apply. No ruling found."
+indications:
+  forzinity: "To improve muscle strength in adults and children with Barth syndrome who weigh at least 30 kg. Accelerated approval: continued approval may depend on a confirmatory trial."
+---
+<Section id="what-it-is">
+
+<Lead question="What is SS-31?">A tiny lab-made peptide aimed at mitochondria. In the US it is a medicine for one rare disease.</Lead>
+
+<Compare title="The US medicine and an online 'SS-31' vial share a name, not a guarantee." detail="What is known about each, from the FDA label and FDA enforcement letters, checked on 23 October 2026.">
+
+| | Forzinity (elamipretide), US prescription medicine | Vial sold online as "SS-31" |
+|---|---|---|
+| Checked by a regulator? | <Verdict is="yes" /> Approved by the FDA in 2025, under accelerated approval.<Cite id="fda-drugsatfda-forzinity" /> | <Verdict is="no" /> The FDA has warned sellers offering SS-31 "for research" that these are unapproved drugs.<Cite id="fda-warning-letters-index" /> |
+| Contents and strength stated and checked? | <Verdict is="yes" /> The label states what each vial contains.<Cite id="fda-label-forzinity-2025" /> | <Verdict is="unknown" /> No regulator has checked it.<Cite id="fda-warning-letters-index" /> |
+| Made sterile? | <Verdict is="yes" /> A sterile liquid with a preservative.<Cite id="fda-label-forzinity-2025" /> | <Verdict is="unknown" /> Not known. |
+| Approved for any use in the EU? | <Verdict is="no" /> No EU authorisation.<Cite id="ema-medicines-json" /> | <Verdict is="no" /> No. |
+
+</Compare>
+
+SS stands for Szeto-Schiller, after the two researchers who designed this family of peptides.<Cite id="pubchem-elamipretide,zhao-2004-ss31-mitochondria" /> Barth syndrome is a rare inherited disease, mostly of boys and men, that can weaken the heart and muscles.<Cite id="fda-2025-forzinity-approval,reid-thompson-2021-tazpower" />
+
+<InDetail title="The molecule, and how it was approved">
+
+<AuthorisedProducts />
+
+SS-31 is <Seq>D-Arg-Dmt-Lys-Phe-NH2</Seq>: four building blocks, two of them changed in the lab. The first is the mirror-image form of arginine; the second, Dmt, is tyrosine with two extra methyl groups. The formula of the free peptide is C32H49N9O5, mass <Q>639.8 g/mol</Q>.<Cite id="fda-label-forzinity-2025,pubchem-elamipretide" /> The design alternates ring-shaped and positively charged building blocks, which lets it slip into cells.<Cite id="zhao-2004-ss31-mitochondria" />
+
+The developer, Stealth BioTherapeutics, applied to the FDA in January 2024. On 10 October 2024 an FDA advisory committee voted 10 to 6 that it is effective for Barth syndrome, while noting "significant uncertainty".<Cite id="fda-crdac-2024-10-elamipretide-minutes" /> The FDA did not approve it at first: on 15 May 2025 it sent a letter that did not approve it. The company replied in full in August, and the FDA granted accelerated approval on 19 September 2025.<Cite id="fda-2025-forzinity-approval-letter" /> Accelerated approval is based on a measure "reasonably likely to predict" benefit, here the strength of the muscle that straightens the knee, not on proof that patients feel or function better.<Cite id="fda-2025-forzinity-approval" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="How does it work?">It sticks to cardiolipin, a fat in the inner wall of mitochondria. How this helps patients is unclear.</Lead>
+
+<Mechanism />
+
+<InDetail title="What each step rests on">
+
+The first two steps come from cell, isolated-organ and rat studies, mostly by the inventors.<Cite id="zhao-2004-ss31-mitochondria,birk-2013-ss31-cardiolipin" /> In Barth syndrome, a faulty gene changes cardiolipin itself, which is why this disease was a logical target.<Cite id="reid-thompson-2021-tazpower" /> That a molecule binds the right fat does not show that patients get stronger: the trials below are the test of that.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Does it work?">The proof is weak and comes from a few patients. Bigger trials in other diseases showed no benefit.</Lead>
+
+<KeyNumber title="In the only randomised part, the main goals were not met" value="0 of 2" label="main goals improved after 12 weeks on the drug against 12 weeks on placebo" who="TAZPOWER part 1: 12 males with Barth syndrome, crossover trial" source="reid-thompson-2021-tazpower" level="human-controlled" />
+
+<KeyNumber title="Knee strength rose later, with no comparison group" value="+63 N" label="median rise in knee strength by week 168, from 124 N at the start" who="TAZPOWER open-label extension: 8 patients with Barth syndrome" source="fda-label-forzinity-2025" level="human-limited" />
+
+<KeyNumber title="In another muscle disease it did not help" value="−3.2 m" label="difference from placebo in distance walked in six minutes, after 24 weeks" who="MMPOWER-3: 218 adults with primary mitochondrial myopathy" source="karaa-2023-mmpower-3" level="human-controlled" />
+
+The FDA used its accelerated route, meant for serious diseases without good treatment, and accepted a measure that may predict benefit. A new randomised trial in 48 patients started in 2026.<Cite id="fda-2025-forzinity-approval,ctgov-nct07531251" />
+
+<InDetail title="Every study in one table">
+
+<StudyTable />
+
+Trials in other conditions were negative: one hour of the drug during a stent procedure for a heart attack did not reduce heart damage, and 4 weeks in 71 people with heart failure did not improve the heart's pumping.<Cite id="gibson-2016-embrace-stemi,butler-2020-progress-hf" /> A phase 3 trial in dry age-related macular degeneration, an eye disease, is still running.<Cite id="ctgov-nct06373731" />
+
+</InDetail>
+
+<InDetail title="Who paid for the evidence">
+
+Every clinical trial we found was funded by Stealth BioTherapeutics; in the Barth syndrome trial the company helped design it and analyse the data.<Cite id="reid-thompson-2021-tazpower,karaa-2023-mmpower-3,pubmed-elamipretide-count-2026-10-23" /> The animal research is broader: most of it comes from groups other than the inventors.<Cite id="pubmed-elamipretide-count-2026-10-23" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is it legal?">A prescription medicine in the US since 2025. Not approved in the EU or the Netherlands.</Lead>
+
+<TimeStrip title="The FDA said not yet in May 2025, then yes in September. Proof of benefit is still due." detail="The US approval of Forzinity, from application to the required confirmatory trial." min={2024} max={2030} step={1} axis="Year" source="fda-2025-forzinity-approval-letter,fda-drugsatfda-forzinity,ctgov-nct07531251" checked="2026-10-23" rows={[
+  { label: "FDA review until the first answer (not approved yet)", spans: [{ from: "2024-01-29", to: "2025-05-15", text: "29 January 2024 to 15 May 2025" }] },
+  { label: "Approved, under accelerated approval", spans: [{ from: "2025-09-19", to: "2026-10-23", text: "since 19 September 2025" }] },
+  { label: "Confirmatory trial (48 patients)", spans: [{ from: "2026-07-02", to: "2026-10-23", text: "recruiting since July 2026" }, { from: "2026-10-23", to: "2029-09-30", text: "the outcome; main results planned for late 2029", unknown: true }] },
+]} />
+
+<InDetail title="Status in each country, and in sport">
+
+<RegulatoryTable />
+
+Statuses were checked on 23 October 2026. In the EU, elamipretide has orphan designations for Barth syndrome (2021) and a mitochondrial DNA disease (2022). That status supports development; it is not permission to sell.<Cite id="ema-orphan-elamipretide-eu-3-21-2430" /> No EU application was under evaluation in October 2026.<Cite id="ema-under-evaluation-2026-10" /> The Dutch medicines database lists no product, and Dutch law forbids supplying a medicine without a marketing authorisation, with narrow exceptions.<Cite id="cbg-geneesmiddeleninformatiebank,nl-gmw-art-40-handelsvergunning" />
+
+In sport, elamipretide is not named on the 2026 or 2027 Prohibited List or the Monitoring Program. The S0 class covers only substances that no government health authority has approved, and the FDA has now approved it. But WADA says an unnamed peptide may also fall under other classes, and no anti-doping body has ruled on elamipretide. Athletes should ask their anti-doping organisation.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,wada-2026-monitoring-program,wada-2027-monitoring-program" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="What are the risks?">Red, sore skin where it is injected is very common. Some people had a bad allergic reaction.</Lead>
+
+<IconArray title="In the Barth syndrome trial, skin reactions where it was injected were very common." detail="Out of 12 patients who each had 12 weeks on the drug and 12 weeks on placebo, shown as people in 100. Very small numbers." a="Elamipretide" b="Placebo" source="fda-label-forzinity-2025" level="human-controlled" rows={[
+  { label: "Redness where injected", a: 100, b: 25 },
+  { label: "Pain where injected", a: 75, b: 42 },
+  { label: "Hard skin where injected", a: 67, b: 17 },
+  { label: "Itching where injected", a: 67, b: 17 },
+]} />
+
+<InDetail title="What the US label warns about">
+
+- **Allergic reactions.** Serious reactions needing emergency treatment have been reported, with rash, bumps, eczema-like skin or cough, from minutes to months after starting. After a serious reaction it must not be used again.<Cite id="fda-label-forzinity-2025" />
+- **White blood cells.** Eosinophils, white cells involved in allergy, often rose, peaking around 90 days, without symptoms.<Cite id="fda-label-forzinity-2025" />
+- **Kidneys.** The body clears the drug through the urine, so blood levels are higher when the kidneys work poorly. The label lowers the dose for severe kidney disease.<Cite id="fda-label-forzinity-2025" />
+- **Newborn babies.** The preservative, benzyl alcohol, can harm newborns; the medicine is not approved for them.<Cite id="fda-label-forzinity-2025" />
+- **Unknowns.** No cancer studies in animals had been done when it was approved; the FDA requires them now.<Cite id="fda-label-forzinity-2025,fda-2025-forzinity-approval-letter" /> There are no data in pregnancy, and the longest use in the trials was 192 weeks, in 3 patients.<Cite id="fda-label-forzinity-2025" />
+
+A product bought as a research chemical adds risks the label does not cover: unknown content, strength and sterility.<Cite id="fda-warning-letters-index" /> See [product risk](/en/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="How can someone lower the risk?">The US medicine has the fewest unknowns. Check any other product first, and know when to stop.</Lead>
+
+<ProductCheck extra="A vial sold as 'SS-31' for research is not the US medicine. The FDA has warned sellers of such vials." extraSources="fda-warning-letters-index,fda-label-forzinity-2025" />
+
+### When to stop and get help
+
+<Callout type="stop" title="Stop and get help if" id="stop-now">
+- you get hives, swelling of the face or throat, or difficulty breathing (a serious allergic reaction);
+- the injection site becomes hot, red, swollen or painful (possible infection);
+- you get a fever or chills, or feel very ill, after an injection.
+
+If it is severe, call your local emergency number.
+</Callout>
+
+<Cite id="fda-label-forzinity-2025,nhs-anaphylaxis,nhs-cellulitis,nhs-sepsis" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Checks that make sense, and who should be careful">
+
+A doctor can help you decide which checks fit you (see [talking to your doctor](/en/talking-to-your-doctor/)):
+
+- **Kidney function**, because the drug leaves the body through the kidneys.<Cite id="fda-label-forzinity-2025" />
+- **A blood count**, because eosinophils often rose on treatment.<Cite id="fda-label-forzinity-2025" />
+- **Any rash that spreads or does not settle**, because allergic reactions can start months later.<Cite id="fda-label-forzinity-2025" />
+
+There are no data in pregnancy or breastfeeding.<Cite id="fda-label-forzinity-2025" /> For injecting, see [sterile technique](/en/safety/sterile-technique/).
+
+</InDetail>
+
+</Section>
