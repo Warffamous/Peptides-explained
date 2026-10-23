@@ -4,9 +4,11 @@
  * version, for readers who need the essentials in seconds. Three answers are derived from the
  * data file, so every compound with the same facts gets the same words in every locale:
  *
- *   approved  <- category (not-a-peptide: from the EU/other regulatory rows; never assumed)
+ *   approved  <- category (not-a-peptide: from the EU/other regulatory rows; never assumed;
+ *                authorised-nationally: names the countries listed in national_authorisations)
  *   tested    <- evidence.human_clinical
- *   sport     <- the WADA regulatory row (status, scope, section); anything else says "see below"
+ *   sport     <- the WADA regulatory row (status, scope, section; unclear: not named, ask your
+ *                anti-doping organisation); anything else says "see below"
  *   risk      <- glance.main_risk in the page frontmatter; without it, a link to the warning signs
  *
  * One semantic <dl>. Meaning is carried by words first; the pictogram repeats it (Isotype), and
@@ -14,9 +16,10 @@
  * only echoes it. The alert red is never used here: it is reserved for stop-now content.
  */
 import Pictogram from '../ui/Pictogram.astro';
-import { t } from '../../lib/i18n';
+import { isFallback, t } from '../../lib/i18n';
+import { SOURCE_LOCALE } from '../../lib/config';
 import { routeUrl } from '../../lib/urls';
-import { formatDate, isoDate } from '../../lib/format';
+import { formatCountryList, formatDate, isoDate } from '../../lib/format';
 import { HUMAN_CLINICAL } from '../../schemas/vocab';
 import type { CompoundData } from '../../schemas';
 
@@ -36,6 +39,7 @@ const APPROVED_TONE: Record<string, { tone: Tone; frac: number }> = {
   authorised: { tone: 'yes', frac: 1 },
   'not-a-peptide-authorised': { tone: 'yes', frac: 1 },
   'authorised-elsewhere': { tone: 'partial', frac: 0.67 },
+  'authorised-nationally': { tone: 'partial', frac: 0.5 },
   'not-a-peptide-authorised-elsewhere': { tone: 'partial', frac: 0.67 },
   investigational: { tone: 'no', frac: 0.33 },
   experimental: { tone: 'no', frac: 0 },
@@ -53,17 +57,22 @@ const sport: Sport = wada?.status === 'prohibited'
   ? { icon: 'reg-prohibited', short: t(L, k('sport.prohibited.short')), text: t(L, k(`sport.prohibited.${wada.wada_scope ?? 'unscoped'}`)), section: wada.wada_section }
   : wada?.status === 'not-listed'
     ? { icon: 'reg-not-listed', short: t(L, k('sport.not-listed.short')), text: t(L, k('sport.not-listed.text')) }
-    : { icon: 'callout-uncertain', short: t(L, k('sport.unknown.short')), text: t(L, k('sport.unknown.text')), link: '#regulatory' };
+    : wada?.status === 'unclear'
+      ? { icon: 'callout-uncertain', short: t(L, k('sport.unclear.short')), text: t(L, k('sport.unclear.text')), link: '#regulatory' }
+      : { icon: 'callout-uncertain', short: t(L, k('sport.unknown.short')), text: t(L, k('sport.unknown.text')), link: '#regulatory' };
 
 // The regulatory rows these answers rest on were last confirmed on this date.
-const checked = data.regulatory.filter((r) => r.jurisdiction === 'EU' || r.jurisdiction === 'WADA').map((r) => r.as_of).sort((a, b) => +b - +a)[0] ?? data.last_reviewed;
+const checked = [...data.regulatory.filter((r) => r.jurisdiction === 'EU' || r.jurisdiction === 'WADA'), ...data.national_authorisations].map((r) => r.as_of).sort((a, b) => +b - +a)[0] ?? data.last_reviewed;
+// authorised-nationally: the countries named in the tile, in the language of the sentence they sit
+// in (a preview locale without its own string shows the English sentence, so English names).
+const countries = formatCountryList(isFallback(L, k(`approved.${approvedKey}.text`)) ? SOURCE_LOCALE : L, data.national_authorisations.map((n) => n.country));
 
 const tiles = [
   {
     id: 'approved',
     icon: `status-${data.category}`,
     short: t(L, k(`approved.${approvedKey}.short`)),
-    text: t(L, k(`approved.${approvedKey}.text`)),
+    text: t(L, k(`approved.${approvedKey}.text`), { countries }),
     ...APPROVED_TONE[approvedKey],
   },
   {

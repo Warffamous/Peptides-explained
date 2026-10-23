@@ -13,8 +13,12 @@ type Fact = { label: string; value: string };
 interface Props { locale: string; data: CompoundData; facts: Fact[] }
 const { locale: L, data, facts } = Astro.props;
 const eu = data.regulatory.find((r) => r.jurisdiction === 'EU');
+// An EU row that is 'authorised' for an authorised-nationally compound means a national
+// authorisation in a member state (e.g. Italy), never an EU-wide one: say so.
 const status = eu
-  ? eu.since && eu.status === 'authorised'
+  ? data.category === 'authorised-nationally' && eu.status === 'authorised'
+    ? t(L, 'beginner.facts.statusNational')
+    : eu.since && eu.status === 'authorised'
     ? t(L, 'beginner.facts.statusSince', { status: t(L, `vocab.regStatus.${eu.status}`), year: eu.since.getUTCFullYear() })
     : t(L, `vocab.regStatus.${eu.status}`)
   : null;

@@ -41,6 +41,9 @@
 .compound-badge[data-category='authorised'] .compound-badge__icon { color: inherit; }
 .compound-badge[data-category='authorised-elsewhere'] { color: var(--cyan-text); border: 1.5px solid var(--cyan); }
 .compound-badge[data-category='authorised-elsewhere'] .compound-badge__icon { color: var(--cyan); }
+/* Authorised only by some countries' own regulators: a solid grey line, as the "partly" ring on the glance tile. */
+.compound-badge[data-category='authorised-nationally'] { color: var(--text); border: 1.5px solid var(--text-3); }
+.compound-badge[data-category='authorised-nationally'] .compound-badge__icon { color: var(--text-2); }
 
 .compound-facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: var(--space-3); margin-block-start: var(--space-5); }
 .compound-facts > div { padding: var(--space-3); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
@@ -351,7 +354,7 @@ a.term:hover { color: var(--link); }
 .status-badge { display: inline-flex; align-items: center; gap: 0.35em; padding: 0.1rem 0.55rem; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--line); font-size: var(--s--2); font-weight: 600; white-space: nowrap; color: var(--text); }
 .status-badge[data-status='authorised'], .status-badge[data-status='in-force'], .status-badge[data-status='adopted'] { background: var(--cyan-soft); border-color: transparent; color: var(--cyan-text); }
 .status-badge[data-status='prohibited'] { background: var(--surface); border-color: var(--line-strong); color: var(--text); }
-.status-badge:is([data-status='not-authorised'], [data-status='refused'], [data-status='withdrawn'], [data-status='under-review'], [data-status='investigational'], [data-status='advisory-vote'], [data-status='rulemaking'], [data-status='consultation'], [data-status='proposed'], [data-status='stalled'], [data-status='watching']) { background: var(--surface); border: 1px dashed var(--text-3); color: var(--text-2); }
+.status-badge:is([data-status='not-authorised'], [data-status='unclear'], [data-status='refused'], [data-status='withdrawn'], [data-status='under-review'], [data-status='investigational'], [data-status='advisory-vote'], [data-status='rulemaking'], [data-status='consultation'], [data-status='proposed'], [data-status='stalled'], [data-status='watching']) { background: var(--surface); border: 1px dashed var(--text-3); color: var(--text-2); }
 @container doc (max-width: 56rem) {
   .study-table__table, .reg-table__table { min-inline-size: 0; }
   .study-table__table thead, .reg-table__table thead { display: none; }

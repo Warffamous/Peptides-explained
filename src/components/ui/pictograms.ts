@@ -142,6 +142,8 @@ export const PICTOGRAMS: Record<string, string> = {
   'class-non-peptide': hexagon() + hexagon(`transform="translate(12 12) scale(0.5)" ${CUT}`),
   'status-authorised': shield() + check(),
   'status-authorised-elsewhere': `${shield()}${check()}<circle cx="39" cy="39" r="8"/><path ${CUT_STROKE(2)} d="M31 39 h16 M39 31 c-3 3 -3 13 0 16 c3 -3 3 -13 0 -16"/>`,
+  /* Authorised, but only by some countries' own regulators: the shield-with-check with a map pin. */
+  'status-authorised-nationally': `${shield()}${check()}<circle cx="39" cy="39" r="8"/><path ${CUT} d="M39 32.5 a4.5 4.5 0 0 1 4.5 4.5 c0 3.2 -4.5 8.5 -4.5 8.5 s-4.5 -5.3 -4.5 -8.5 a4.5 4.5 0 0 1 4.5 -4.5 z"/><circle cx="39" cy="37" r="1.6"/>`,
   'status-investigational': clipboard(),
   'status-experimental': flask(),
   'status-not-a-peptide': hexagon() + hexagon(`transform="translate(12 12) scale(0.5)" ${CUT}`),

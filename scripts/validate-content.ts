@@ -165,6 +165,12 @@ for (const file of walk('src/data/compounds', ['.yaml', '.yml'])) {
   if (c.sequence) requireSource(file, c.sequence.source, 'sequence.source');
   if (c.molecular.smiles_source) requireSource(file, c.molecular.smiles_source, 'molecular.smiles_source');
   for (const reg of c.regulatory) reg.sources.forEach((s) => requireSource(file, s, `regulatory ${reg.jurisdiction}`));
+  // authorised-nationally: every country named in the "approved?" tile is a real region code with sources.
+  const regionNames = new Intl.DisplayNames(['en'], { type: 'region', fallback: 'none' });
+  for (const n of c.national_authorisations) {
+    if (!regionNames.of(n.country)) err(file, `national_authorisations: "${n.country}" is not an ISO 3166-1 region code`);
+    n.sources.forEach((s) => requireSource(file, s, `national_authorisations ${n.country}`));
+  }
   for (const st of c.studies) requireSource(file, st.source, `study ${st.id}`);
   for (const p of c.authorised_products) {
     requireSource(file, p.label_source, `authorised_products ${p.id}`);

@@ -44,6 +44,12 @@ export const MECHANISM_LEVELS = ['hypothesis', 'in-vitro', 'animal', 'human'] as
 export const COMPOUND_CATEGORIES = [
   'authorised', // has EU marketing authorisation
   'authorised-elsewhere', // authorised outside the EU (e.g. FDA) but not in the EU
+  /**
+   * Authorised only by some countries' own regulators (one EU member state may be among them), with
+   * no EU-wide, US or UK authorisation and so no label on an allowlisted host. The countries are
+   * listed, with sources, in national_authorisations (e.g. thymosin alpha-1: Italy, India, Hong Kong).
+   */
+  'authorised-nationally',
   'investigational', // in formal clinical development (registered trials), no authorisation
   'experimental', // little or no formal human development
   'not-a-peptide', // included because it is sold alongside peptides
@@ -89,6 +95,11 @@ export const REGULATORY_STATUSES = [
   'investigational', // only available within registered clinical trials
   'prohibited', // WADA: on the Prohibited List
   'not-listed', // WADA: not on the list (rare; state carefully)
+  /**
+   * WADA only: not named on the Prohibited List, and whether a catch-all section (S0, S2 …) covers
+   * it is unclear, with no ruling from an anti-doping body. Never a guess at "allowed".
+   */
+  'unclear',
 ] as const;
 
 export const WADA_SECTIONS = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'M1', 'M2', 'M3', 'P1'] as const;

@@ -143,6 +143,13 @@ All downloads went to the session scratchpad; nothing but the hero image was sav
 - **Priapism threshold.** The shared warning list (`warning-signs.json`, cardiovascular/priapism) says "more than 3
   hours"; the NHS page cited here says "more than 3 to 4 hours"; Mallory uses the 4-hour definition. The stop list
   on this page follows the NHS wording. Safety editor may want to align the shared list.
+  **Resolved 23 October 2026 (site-wide consistency fix):** every page now uses the stricter "more than 3 hours",
+  as `warning-signs.json` does: this page's stop strip, risks fold and stop-now list, and the PT-141 risks section
+  (which had said "the NHS says … more than 3 to 4 hours"). The NHS page (re-fetched 23 October 2026, last reviewed
+  5 December 2023) says to call 999 or go to A&E for "an erection that lasts more than 3 to 4 hours"; "more than
+  3 hours" is the conservative end of that range, so `nhs-priapism` still supports it. The pages no longer attribute a
+  number to the NHS, so nothing misquotes it. (The NHS gives 1 hour for a painful erection in sickle cell disease;
+  no page here addresses that group.)
 - **PCAC framing.** Melanotan II was not in the July 2026 review, so the page does not report that vote (it links to
   the US law page instead) and states the general points for the 2027 meeting. If the editor prefers the full
   canonical five-point block on every page that mentions the July meeting, it can be copied from bpc-157.mdx.
@@ -162,7 +169,7 @@ All downloads went to the session scratchpad; nothing but the hero image was sav
    and Dutch). If the reviewer knows a Dutch warning, it should be added to the NL row.
 4. **NCT07437560**: the record looks like a template ("example" wording) and is a near-copy of the BPC-157 record
    NCT07437547 cited on the BPC-157 page. The BPC-157 group may want to re-check how much weight that record gets.
-5. **Stop-now list**: priapism wording vs the shared list (§4). The PRES sign ("sudden severe headache, a fit or
+5. **Stop-now list**: priapism wording vs the shared list (§4; aligned on "more than 3 hours", 23 October 2026). The PRES sign ("sudden severe headache, a fit or
    blurred sight") is condensed from Fugate 2015 and the NHS headaches page, not from the Kaski letter, whose
    symptoms could not be read.
 6. **Interactions** (PDE5 inhibitors, stimulants, oral naltrexone) are theoretical or borrowed from the

@@ -43,9 +43,10 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-category-2-safety-risks, openfda-drugsfda-search-2026-10-22] }
-  # Same as Semax: not named, registered in Russia, so S0 may not apply; 'not-authorised' keeps the
-  # At-a-glance tile on 'See below' (research/stubs-a.md, contract issues).
-  - { jurisdiction: WADA, status: not-authorised, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, deigin-2022-russian-peptides] }
+  # unclear, as for Semax: not named on the 2026 or 2027 List, registered in Russia, so S0 may not
+  # apply; the 2027 explanatory note says unnamed peptides may still fall under S0, S2 or S4. No ruling
+  # found (research/stubs-a.md).
+  - { jurisdiction: WADA, status: unclear, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, deigin-2022-russian-peptides] }
 studies:
   # Originating network (Institute of Molecular Genetics; Zakusov Institute; Mental Health Research
   # Centre, all Moscow). Allocation and blinding not described in the abstracts.

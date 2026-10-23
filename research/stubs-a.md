@@ -279,5 +279,33 @@ to planned routes; no `#` headings.
 - Selank `preclinical_volume: moderate` sits on the boundary (52 to 53 cell or animal records by our count).
 - Panikratova 2020 (52 healthy people, placebo, brain connectivity after Semax or Selank) is not on either page; a
   reviewer may want it in the Semax and Selank evidence folds.
+
+## 7. Contract fixes (23 October 2026)
+
+- **Thymosin alpha-1 category.** New category `authorised-nationally` (authorised only by some countries' own
+  regulators, possibly including one EU member state; no EU-wide, US or UK authorisation and no allowlisted label).
+  The data file lists the countries in `national_authorisations` with sources, and the At-a-glance tile is built from
+  them: "In some countries. Approved in Italy, India and Hong Kong for some uses. Not approved for the whole EU, or in
+  the US." Each country re-checked in the FDA 2024 briefing (media/183820, re-downloaded and read with pdftotext on
+  23 October 2026): Italy ("as an adjuvant to the influenza vaccine in immunocompromised subjects", AIFA), India
+  (chronic hepatitis B, CDSCO), Hong Kong ("also approved", Drug Office), each accessed by the FDA in June 2024; Italy
+  also from the EMA orphan page. Indonesia ("registered", BPOM) is in the same briefing but not on the page, so it is
+  left out of both. The badge reads "Authorised in some countries", the compounds index lists it with the approved
+  medicines (whose pages say where), and the fact sheet's EU row says "Not EU-wide, only nationally" instead of a
+  bare "Authorised".
+- **UK not named in the tile.** The MHRA products search (products.mhra.gov.uk, 23 October 2026) gave no results
+  for "thymalfasin", but 3 results for "zadaxin" and 1 for "thymosin" (control: "semaglutide", 261). The results are
+  shown only after accepting a disclaimer, which was not done, so what they are is unknown. The UK status is
+  therefore unverified: there is no UK regulatory row, and the tile does not say "not approved in the UK". Worth a
+  look by the editor (the hits may be other products whose leaflets mention the word).
+- **WADA "unclear".** New regulatory status `unclear` (WADA row only): not named on the List, catch-all section
+  unclear, no ruling. Semax, Selank and thymosin alpha-1 use it (was `not-authorised`). The table now reads "Unclear
+  (not named)" and the tile "Unclear. Not named on the anti-doping list. Ask your anti-doping organisation before
+  using it in sport." Sources and notes unchanged; they leave it unclear (2026 and 2027 Lists: not named; 2027
+  explanatory note: unnamed peptides may still fall under S0, S2 or S4; no ruling found).
+- **Still open:** Semax and Selank are registered in Russia and would fit `authorised-nationally` (country RU), but
+  their `human_clinical` grade is phase-2 by the editor's call (§3.3) and the category requires `authorised`. They
+  stay `experimental`; the compounds index label for that group no longer says "not authorised anywhere" (now "not
+  authorised in the EU, the UK or the US").
 - The summaries of the three PCAC pages say advisers "backed" pharmacy compounding, as the BPC-157 page does; the outcome
   is "as reported from the public meeting" and is qualified that way in the body. Revisit when the minutes appear.

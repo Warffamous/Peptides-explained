@@ -50,6 +50,7 @@ const citations: string[] = [...(rpf.citations ?? [])];
 const add = (id?: string) => { if (id && !citations.includes(id)) citations.push(id); };
 data.studies.forEach((s) => add(s.source));
 data.regulatory.forEach((r) => r.sources.forEach(add));
+data.national_authorisations.forEach((n) => n.sources.forEach(add));
 add(data.sequence?.source);
 add(data.molecular.smiles_source);
 data.authorised_products.forEach((p) => add(p.label_source));
@@ -82,6 +83,7 @@ const trail = [
 const badgeKey = {
   authorised: 'compound.authorised.badge',
   'authorised-elsewhere': 'compound.authorised.badgeElsewhere',
+  'authorised-nationally': 'compound.authorised.badgeNational',
   investigational: 'compound.investigationalBadge',
   experimental: 'compound.experimentalBadge',
   'not-a-peptide': 'compound.notPeptideBadge',

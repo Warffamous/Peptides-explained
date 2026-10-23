@@ -219,7 +219,7 @@ Two files per compound: locale-independent **data** and localised **prose**.
 slug: bpc-157
 tier: 1                       # 1 = full page in v1, 2 = stub until v1.1
 status: complete              # complete | stub
-category: experimental        # authorised | authorised-elsewhere | investigational | experimental | not-a-peptide
+category: experimental        # authorised | authorised-elsewhere | authorised-nationally | investigational | experimental | not-a-peptide (§5.4)
 class: tissue-repair          # incretin|gh-axis|melanocortin|tissue-repair|immunomodulatory|mitochondrial|neuroactive|dermal|metabolic|longevity-claimed|non-peptide
 body_systems: [musculoskeletal, gastrointestinal]
 names:
@@ -250,6 +250,11 @@ evidence:                     # REQUIRED — the four axes, see §7
 regulatory:                   # REQUIRED: at least EU, NL, US, WADA. Add DE, BE, UK where known.
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search] }
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2026-list] }
+  # status: authorised | not-authorised | refused | withdrawn | under-review | investigational, and for WADA
+  # also prohibited | not-listed | unclear. Use unclear (WADA row only) when the substance is not named on the
+  # List and the sources leave open whether a catch-all section (S0, S2 …) covers it, with no ruling from an
+  # anti-doping body: e.g. Semax and Selank (registered in Russia, so S0 may not apply). Never not-authorised
+  # as a stand-in, and never not-listed unless the sources say it is allowed.
 studies:                      # structured, locale-independent. ≥3 for complete Tier 1 pages.
   - id: chang-2011-tendon     # kebab-case, unique within the compound
     source: chang-2011        # source id
@@ -262,6 +267,7 @@ studies:                      # structured, locale-independent. ≥3 for complet
     blinded: null             # true|false|null (not reported)
     controlled: true
 authorised_products: []       # REQUIRED for authorised / authorised-elsewhere, see §5.4
+national_authorisations: []   # REQUIRED for authorised-nationally only: [{ country: IT, as_of: 2026-10-22, sources: [...] }], see §5.4
 related: [tb-500]
 last_reviewed: 2026-10-20
 reviewed_by: pending-medical-review
@@ -363,9 +369,9 @@ the same facts gets the same words, in every language:
 
 | Tile | Comes from | Example answers |
 |---|---|---|
-| Is it an approved medicine? | `category` (for `not-a-peptide`: the EU and other regulatory rows) | "Yes. Approved in the EU. Only with a doctor's prescription." · "No. Not approved as a medicine anywhere." |
+| Is it an approved medicine? | `category` (for `not-a-peptide`: the EU and other regulatory rows; for `authorised-nationally`: also `national_authorisations`) | "Yes. Approved in the EU. Only with a doctor's prescription." · "In some countries. Approved in Italy, India and Hong Kong for some uses. Not approved for the whole EU, or in the US." · "No. Not approved as a medicine in the EU, the UK or the US." |
 | Has it been tested in people? | `evidence.human_clinical` | none → "No" · case-reports → "Very little" · phase-1 → "A little" · phase-2 → "Some" · phase-3 / authorised → "Yes, large trials" |
-| Is it allowed in sport? | the `WADA` regulatory row | prohibited → "No. Banned in sport at all times" + the section (S0, S2 …) · not-listed → "Not banned" · anything else → "see the status table" (never a guess) |
+| Is it allowed in sport? | the `WADA` regulatory row | prohibited → "No. Banned in sport at all times" + the section (S0, S2 …) · not-listed → "Not banned" · unclear → "Unclear. Not named on the anti-doping list. Ask your anti-doping organisation before using it in sport." · anything else → "see the status table" (never a guess) |
 | What is the biggest risk? | `glance.main_risk` in the MDX frontmatter | without it, the tile links to the warning-signs page |
 
 So keep the data honest and the tiles stay honest. Change the words only in
@@ -391,7 +397,7 @@ the page's own sources support one (§9). Close with `<WarningSigns />`.
 Content **not** allowed: amounts, frequencies, durations, "start low", reconstitution volumes,
 sourcing advice, cycling, stacking.
 
-### 5.4 Authorised medicines (semaglutide, tirzepatide; tesamorelin and bremelanotide outside the EU)
+### 5.4 Authorised medicines (semaglutide, tirzepatide; tesamorelin and bremelanotide outside the EU; thymosin alpha-1 nationally)
 
 These get a visibly different treatment. This is a core editorial contribution of the site.
 
@@ -415,6 +421,34 @@ authorised_products:
 - The harm-reduction section for authorised medicines focuses on: the legal prescription route,
   why grey-market "research" versions are a different (unauthorised) product, counterfeit pens,
   and label-based safety (contraindications, interactions, warning signs).
+
+**Authorised only by some countries' own regulators** (thymosin alpha-1: Italy, India, Hong Kong).
+Use `category: authorised-nationally` when a national regulator has granted a marketing
+authorisation (one EU member state may be among them) but there is no EU-wide, US or UK
+authorisation, so no label on an allowlisted host to link. `authorised` would wrongly say "Approved
+in the EU"; `investigational` means "no authorisation"; `authorised-elsewhere` needs an EU, US or UK
+label (see above). List each country in the data file, with its own sources, as far as an official
+source supports it:
+
+```yaml
+national_authorisations:      # ISO 3166-1 alpha-2 codes; names are rendered per locale ("Italy", "Italië")
+  - { country: IT, as_of: 2026-10-22, sources: [ema-orphan-thymalfasin-eu-3-02-110, fda-pcac-2024-thymosin-alpha-1-briefing] }
+  - { country: IN, as_of: 2026-10-22, sources: [fda-pcac-2024-thymosin-alpha-1-briefing] }
+```
+
+- The *At a glance* tile then reads "In some countries. Approved in Italy, India and Hong Kong for
+  some uses. Not approved for the whole EU, or in the US." (words in `beginner.json`, countries from
+  the data). Name only countries a regulator or regulator-cited database confirms; a maker's list of
+  approvals that nobody verified stays in the prose, attributed, and never goes into the tile.
+- The badge says "Authorised in some countries" (solid grey outline: partly); the compounds index
+  lists it with the approved medicines, whose pages say where; if its EU row is `authorised` (a
+  national authorisation in a member state, explained in `regulatory_notes.EU`), the fact sheet's
+  "Status in the EU" says "Not EU-wide, only nationally" instead of a bare "Authorised".
+- The validator requires at least one country, `human_clinical: authorised`, no US or UK row with
+  status `authorised` and no `authorised_products` (those make it `authorised-elsewhere`), and real
+  region codes with registered sources. `national_authorisations` is rejected on any other category.
+- The prose is written as for an unapproved compound (harm-reduction section, no `<AuthorisedProducts />`),
+  and says where it is approved, for what, and that the approval does not apply in the Netherlands.
 
 ---
 

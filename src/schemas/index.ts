@@ -167,6 +167,14 @@ export const compoundDataSchema = z
     regulatory: z.array(regulatoryEntrySchema).min(1),
     studies: z.array(studySchema).default([]),
     authorised_products: z.array(authorisedProductSchema).default([]),
+    /**
+     * category authorised-nationally only: the countries whose own medicines regulator has
+     * authorised it, as far as the sources show (ISO 3166-1 alpha-2 codes, e.g. IT, IN, HK). They
+     * fill the "approved?" tile ("Approved in Italy, India and Hong Kong for some uses …").
+     */
+    national_authorisations: z
+      .array(z.object({ country: z.string().regex(/^[A-Z]{2}$/, 'ISO 3166-1 alpha-2 code, e.g. IT'), as_of: isoDate, sources: z.array(kebab).min(1) }))
+      .default([]),
     related: z.array(kebab).default([]),
     /** REQUIRED. Date of last substantive review. */
     last_reviewed: isoDate,
@@ -183,6 +191,28 @@ export const compoundDataSchema = z
     }
     if (c.category === 'authorised' && c.evidence.human_clinical !== 'authorised') {
       ctx.addIssue({ code: 'custom', path: ['evidence', 'human_clinical'], message: 'EU-authorised compounds have human_clinical: authorised' });
+    }
+    if (c.category === 'authorised-nationally') {
+      if (c.national_authorisations.length === 0) {
+        ctx.addIssue({ code: 'custom', path: ['national_authorisations'], message: 'authorised-nationally compounds list at least one country, with sources' });
+      }
+      if (c.evidence.human_clinical !== 'authorised') {
+        ctx.addIssue({ code: 'custom', path: ['evidence', 'human_clinical'], message: 'authorised-nationally compounds have human_clinical: authorised (a regulator has granted a marketing authorisation)' });
+      }
+      // The tile says "Not approved for the whole EU or in the US": a US or UK approval makes it authorised-elsewhere.
+      if (c.regulatory.some((r) => (r.jurisdiction === 'US' || r.jurisdiction === 'UK') && r.status === 'authorised') || c.authorised_products.length > 0) {
+        ctx.addIssue({ code: 'custom', path: ['category'], message: 'authorised in the US or UK, or with an authorised product label: use authorised-elsewhere (or authorised for the EU)' });
+      }
+    } else if (c.national_authorisations.length > 0) {
+      ctx.addIssue({ code: 'custom', path: ['national_authorisations'], message: 'national_authorisations is only used with category authorised-nationally' });
+    }
+    for (const r of c.regulatory) {
+      if (r.status === 'unclear' && r.jurisdiction !== 'WADA') {
+        ctx.addIssue({ code: 'custom', path: ['regulatory'], message: `status unclear is for the WADA row only (${r.jurisdiction})` });
+      }
+      if (r.status === 'unclear' && r.wada_scope) {
+        ctx.addIssue({ code: 'custom', path: ['regulatory'], message: 'an unclear WADA status has no wada_scope (nothing is prohibited yet)' });
+      }
     }
     if (c.status === 'complete' && c.tier === 1 && c.studies.length < 3) {
       ctx.addIssue({ code: 'custom', path: ['studies'], message: 'complete Tier 1 pages need at least 3 structured studies' });
@@ -222,7 +252,8 @@ export const compoundPageSchema = z.object({
   summary: summarySchema,
   /**
    * The "At a glance" strip above the summary. Three of its four tiles are derived from the data
-   * file (category, evidence.human_clinical, the WADA row); only the risk tile needs words.
+   * file (category and national_authorisations, evidence.human_clinical, the WADA row); only the
+   * risk tile needs words.
    */
   glance: z
     .object({

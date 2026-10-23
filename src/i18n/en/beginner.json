@@ -7,6 +7,7 @@
       "question": "Is it an approved medicine?",
       "authorised": { "short": "Yes", "text": "Approved in the EU. Only with a doctor’s prescription." },
       "authorised-elsewhere": { "short": "Not in the EU", "text": "Approved only in some countries outside the EU." },
+      "authorised-nationally": { "short": "In some countries", "text": "Approved in {countries} for some uses. Not approved for the whole EU, or in the US." },
       "investigational": { "short": "No", "text": "Not approved. It is still being tested in trials." },
       "experimental": { "short": "No", "text": "Not approved as a medicine in the EU, the UK or the US." },
       "not-a-peptide-authorised": { "short": "Yes", "text": "It is not a peptide, but it is an approved medicine in the EU." },
@@ -31,6 +32,7 @@
         "unscoped": "Banned in sport."
       },
       "not-listed": { "short": "Not banned", "text": "It is not on the anti-doping list." },
+      "unclear": { "short": "Unclear", "text": "Not named on the anti-doping list. Ask your anti-doping organisation before using it in sport." },
       "unknown": { "short": "See below", "text": "Check the sport row in the status table." },
       "code": "Anti-doping list (WADA), section {section}"
     },
@@ -61,6 +63,7 @@
     "class": "Class",
     "status": "Status in the EU",
     "statusSince": "{status} since {year}",
+    "statusNational": "Not EU-wide, only nationally",
     "tested": "Tested in people",
     "note": "Label facts, not dosing advice. Sources are in the sections below."
   }
