@@ -244,6 +244,16 @@ const translationMetaSchema = z
 
 // ---------------------------------------------------------------- compound page (localised MDX)
 
+/**
+ * A sourced override of a derived At a glance answer: short (at most 4 words) and text (at most 18
+ * words, the B1 limit of the beginner layer), with the registered sources it condenses.
+ */
+const glanceOverride = z.object({
+  short: nonEmpty.refine((s) => maxWords(s, 4), { message: 'at most 4 words' }),
+  text: nonEmpty.refine((s) => maxWords(s, 18), { message: 'at most 18 words' }),
+  sources: z.array(kebab).min(1),
+});
+
 export const compoundPageSchema = z.object({
   slug: kebab,
   title: nonEmpty,
@@ -253,10 +263,22 @@ export const compoundPageSchema = z.object({
   /**
    * The "At a glance" strip above the summary. Three of its four tiles are derived from the data
    * file (category and national_authorisations, evidence.human_clinical, the WADA row); only the
-   * risk tile needs words.
+   * risk tile needs words. The derived "tested" and "sport" answers may be overridden, with sources,
+   * where the generic words would mislead for this compound (CONTENT-GUIDE §5.2).
    */
   glance: z
     .object({
+      /**
+       * Override of the "tested in people?" answer (otherwise derived from evidence.human_clinical):
+       * only where the generic words would mislead, e.g. an authorisation that rests on a trial that
+       * missed its goals. short = the answer (also the fact sheet's "Tested in people"), text = one
+       * plain line, both condensed from this page's own sources; tone = the ring (default: derived).
+       */
+      tested: glanceOverride
+        .extend({ tone: z.enum(['yes', 'partial', 'no']).optional() })
+        .optional(),
+      /** Override of the "allowed in sport?" words (otherwise derived from the WADA row); same rules. */
+      sport: glanceOverride.optional(),
       /**
        * "Biggest risk" tile: at most 12 words, B1, condensed from this page's own risk section
        * (no claim that is not made there). Without it the tile links to the warning-signs page.

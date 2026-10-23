@@ -15,7 +15,10 @@
   "inDetail": {
     "label": "In detail",
     "minutes": "{n} min",
-    "minutesLong": "about {n} minutes to read"
+    "minutesLong": {
+      "one": "about {n} minute to read",
+      "other": "about {n} minutes to read"
+    }
   },
   "tools": {
     "text": "Each section starts with the short answer. The rest is folded under “In detail”.",

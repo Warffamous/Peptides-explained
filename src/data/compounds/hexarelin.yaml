@@ -23,11 +23,11 @@ molecular:
   mass_da: 887.0
   smiles: "CC1=C(C2=CC=CC=C2N1)C[C@H](C(=O)N[C@@H](C)C(=O)N[C@@H](CC3=CNC4=CC=CC=C43)C(=O)N[C@H](CC5=CC=CC=C5)C(=O)N[C@@H](CCCCN)C(=O)N)NC(=O)[C@H](CC6=CN=CN6)N"
   smiles_source: pubchem-hexarelin
-# Position 2 is 2-methyl-D-tryptophan. The residue vocabulary (src/schemas/vocab.ts) has no code for it, so it is
-# entered as D-Trp with the methyl group described in a modification (flagged in research/stubs-b.md).
+# Position 2 is 2-methyl-D-tryptophan: residue code D-2MeTrp (NONSTANDARD_RESIDUES in src/schemas/vocab.ts; the
+# PubChem SMILES has the methyl on carbon 2 of the indole ring, CC1=C(...)C2=CC=CC=C2N1, and D at that position).
 sequence:
   display: "His-D-2-Me-Trp-Ala-Trp-D-Phe-Lys-NH2"
-  residues: [His, D-Trp, Ala, Trp, D-Phe, Lys]
+  residues: [His, D-2MeTrp, Ala, Trp, D-Phe, Lys]
   n_terminus: H
   c_terminus: NH2
   modifications:

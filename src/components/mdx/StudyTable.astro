@@ -11,10 +11,21 @@ import { formatNumber } from '../../lib/format';
 const c = ctxCompound(Astro, 'StudyTable');
 const L = c.locale;
 const studies = [...c.data.studies].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
-const count = (pred: (s: (typeof studies)[number]) => boolean) => studies.filter(pred).length;
-const human = count((s) => s.species === 'human');
-const animal = count((s) => !['human', 'in-vitro', 'in-silico', 'mixed', 'not-applicable'].includes(s.species));
-const invitro = count((s) => s.species === 'in-vitro');
+// species "mixed" is several species in one paper: for an animal experiment (rats and mice, say) or a
+// cell study that still counts as animals or cells; only a mixed paper of another design (animal and
+// human work together) stays under "other". Counting every "mixed" as other hid 13 animal studies.
+type Study = (typeof studies)[number];
+const kind = (s: Study): 'human' | 'animal' | 'invitro' | 'other' => {
+  if (s.species === 'human') return 'human';
+  if (s.species === 'in-vitro') return 'invitro';
+  if (s.species === 'mixed') return s.design === 'animal' ? 'animal' : s.design === 'in-vitro' ? 'invitro' : 'other';
+  if (s.species === 'in-silico' || s.species === 'not-applicable') return 'other';
+  return 'animal';
+};
+const count = (k: ReturnType<typeof kind>) => studies.filter((s) => kind(s) === k).length;
+const human = count('human');
+const animal = count('animal');
+const invitro = count('invitro');
 const other = studies.length - human - animal - invitro;
 ---
 <div class="study-table" data-count={studies.length}>

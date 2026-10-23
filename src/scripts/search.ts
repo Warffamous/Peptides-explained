@@ -31,7 +31,9 @@ if (form) {
       const engine = await load();
       const res = await engine.debouncedSearch(q);
       if (!res) return;
-      const data = await Promise.all(res.results.slice(0, 20).map((r) => r.data()));
+      // Every result is listed: the status line announces the full count, so the list must match it
+      // (a locale has fewer than a hundred pages, and each fragment is a few kilobytes).
+      const data = await Promise.all(res.results.map((r) => r.data()));
       list.replaceChildren(
         ...data.map((d) => {
           const li = document.createElement('li');

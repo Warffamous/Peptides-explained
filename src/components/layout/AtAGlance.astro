@@ -11,20 +11,29 @@
  *                anti-doping organisation); anything else says "see below"
  *   risk      <- glance.main_risk in the page frontmatter; without it, a link to the warning signs
  *
+ * Where the generic "tested" or "sport" words would mislead for one compound (an authorisation
+ * resting on a trial that missed its goals; a large trial that found no benefit), the page may
+ * override them with glance.tested / glance.sport: { short, text, sources } (tested also takes a
+ * tone). The pictogram, the section code and the link still come from the data; the override's
+ * words carry their own citation numbers, because they are page-specific claims.
+ *
  * One semantic <dl>. Meaning is carried by words first; the pictogram repeats it (Isotype), and
  * the ring around it (data-tone: cyan for yes, a solid grey ring for partly, a dashed one for no)
  * only echoes it. The alert red is never used here: it is reserved for stop-now content.
  */
 import Pictogram from '../ui/Pictogram.astro';
+import CiteMarks from '../ui/CiteMarks.astro';
 import { isFallback, t } from '../../lib/i18n';
 import { SOURCE_LOCALE } from '../../lib/config';
 import { routeUrl } from '../../lib/urls';
 import { formatCountryList, formatDate, isoDate } from '../../lib/format';
 import { HUMAN_CLINICAL } from '../../schemas/vocab';
-import type { CompoundData } from '../../schemas';
+import type { CompoundData, CompoundPage } from '../../schemas';
 
-interface Props { locale: string; data: CompoundData; mainRisk?: string; hasRisksSection?: boolean }
-const { locale: L, data, mainRisk, hasRisksSection = true } = Astro.props;
+type Glance = CompoundPage['glance'];
+interface Props { locale: string; data: CompoundData; glance: Glance; citeIndex: Map<string, number>; hasRisksSection?: boolean }
+const { locale: L, data, glance, citeIndex, hasRisksSection = true } = Astro.props;
+const mainRisk = glance.main_risk;
 const k = (key: string) => `beginner.glance.${key}`;
 type Tone = 'yes' | 'partial' | 'no';
 
@@ -52,14 +61,16 @@ const TESTED_TONE: Record<string, Tone> = { none: 'no', 'case-reports': 'partial
 
 // 3. Is it allowed in sport? Only what the WADA row says; anything else points to the table.
 const wada = data.regulatory.find((r) => r.jurisdiction === 'WADA');
-type Sport = { icon: string; short: string; text: string; section?: string; link?: string };
-const sport: Sport = wada?.status === 'prohibited'
+type Sport = { icon: string; short: string; text: string; section?: string; link?: string; sources?: string[] };
+const derivedSport: Sport = wada?.status === 'prohibited'
   ? { icon: 'reg-prohibited', short: t(L, k('sport.prohibited.short')), text: t(L, k(`sport.prohibited.${wada.wada_scope ?? 'unscoped'}`)), section: wada.wada_section }
   : wada?.status === 'not-listed'
     ? { icon: 'reg-not-listed', short: t(L, k('sport.not-listed.short')), text: t(L, k('sport.not-listed.text')) }
     : wada?.status === 'unclear'
       ? { icon: 'callout-uncertain', short: t(L, k('sport.unclear.short')), text: t(L, k('sport.unclear.text')), link: '#regulatory' }
       : { icon: 'callout-uncertain', short: t(L, k('sport.unknown.short')), text: t(L, k('sport.unknown.text')), link: '#regulatory' };
+// A sourced override replaces the words only; the pictogram, section code and link stay derived.
+const sport: Sport = glance.sport ? { ...derivedSport, short: glance.sport.short, text: glance.sport.text, sources: glance.sport.sources } : derivedSport;
 
 // The regulatory rows these answers rest on were last confirmed on this date.
 const checked = [...data.regulatory.filter((r) => r.jurisdiction === 'EU' || r.jurisdiction === 'WADA'), ...data.national_authorisations].map((r) => r.as_of).sort((a, b) => +b - +a)[0] ?? data.last_reviewed;
@@ -78,12 +89,13 @@ const tiles = [
   {
     id: 'tested',
     icon: `tested-${hc}`,
-    short: t(L, k(`tested.${hc}.short`)),
-    text: t(L, k(`tested.${hc}.text`)),
-    tone: TESTED_TONE[hc],
+    short: glance.tested?.short ?? t(L, k(`tested.${hc}.short`)),
+    text: glance.tested?.text ?? t(L, k(`tested.${hc}.text`)),
+    tone: glance.tested?.tone ?? TESTED_TONE[hc],
     frac: HUMAN_CLINICAL.indexOf(hc) / (HUMAN_CLINICAL.length - 1),
+    sources: glance.tested?.sources,
   },
-];
+] as { id: string; icon: string; short: string; text: string; tone: Tone; frac: number; sources?: string[] }[];
 // Strings with a value that must stay bidi-isolated (a section code, a date) are split around it.
 const MARK = '\u0000';
 const [codeBefore, codeAfter] = t(L, k('sport.code'), { section: MARK }).split(MARK);
@@ -99,7 +111,7 @@ const [checkedBefore, checkedAfter] = t(L, k('checked'), { date: MARK }).split(M
           <span class="at-a-glance__icon"><Pictogram name={tile.icon} /></span>
           <span class="at-a-glance__body">
             <strong class="at-a-glance__short">{tile.short}<span class="visually-hidden">.</span></strong>
-            <span class="at-a-glance__text">{tile.text}</span>
+            <span class="at-a-glance__text">{tile.text}{tile.sources && <CiteMarks locale={L} ids={tile.sources} index={citeIndex} />}</span>
           </span>
         </dd>
       </div>
@@ -110,7 +122,7 @@ const [checkedBefore, checkedAfter] = t(L, k('checked'), { date: MARK }).split(M
         <span class="at-a-glance__icon"><Pictogram name={sport.icon} /></span>
         <span class="at-a-glance__body">
           <strong class="at-a-glance__short">{sport.short}<span class="visually-hidden">.</span></strong>
-          <span class="at-a-glance__text">{sport.text}</span>
+          <span class="at-a-glance__text">{sport.text}{sport.sources && <CiteMarks locale={L} ids={sport.sources} index={citeIndex} />}</span>
           {sport.section && <span class="at-a-glance__code">{codeBefore}<bdi class="qty">{sport.section}</bdi>{codeAfter}</span>}
           {sport.link && <a class="at-a-glance__more" href={sport.link}>{t(L, 'compound.sections.regulatory')}</a>}
         </span>

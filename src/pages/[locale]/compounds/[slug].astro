@@ -54,7 +54,10 @@ data.national_authorisations.forEach((n) => n.sources.forEach(add));
 add(data.sequence?.source);
 add(data.molecular.smiles_source);
 data.authorised_products.forEach((p) => add(p.label_source));
-// The stop strip and the fact sheet are rendered outside the MDX: their sources join the list too.
+// The stop strip, the fact sheet and any sourced At a glance override are rendered outside the
+// MDX: their sources join the list too.
+page.glance.tested?.sources.forEach(add);
+page.glance.sport?.sources.forEach(add);
 page.glance.stop_signs?.forEach((s) => s.sources.forEach(add));
 page.glance.facts.forEach((f) => f.sources.forEach(add));
 const citeIndex = new Map(citations.map((id, i) => [id, i + 1]));
@@ -121,6 +124,8 @@ const pageWords =
     ...page.summary,
     page.lede ?? '',
     page.glance.main_risk ?? '',
+    page.glance.tested?.text ?? '',
+    page.glance.sport?.text ?? '',
     ...Object.values(page.grade_rationale),
     ...page.mechanism.flatMap((m) => [m.title, m.detail]),
     ...Object.values(page.studies).flatMap((s) => [s.finding, s.limitation]),
@@ -144,6 +149,8 @@ const shortWords = hasFolds
       ...page.summary,
       page.lede ?? '',
       page.glance.main_risk ?? '',
+      page.glance.tested?.text ?? '',
+      page.glance.sport?.text ?? '',
       ...(page.glance.stop_signs ?? []).map((s) => s.text),
       ...page.glance.facts.flatMap((f) => [f.label, f.value]),
     ].join(' '))
@@ -189,10 +196,10 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
     {data.status === 'stub' && <p class="notice notice--stub"><strong>{t(locale, 'common.stub.label')}.</strong> {t(locale, 'common.stub.notice')}</p>}
   </Fragment>
   <Fragment slot="glance">
-    <AtAGlance locale={locale} data={data} mainRisk={page.glance.main_risk} hasRisksSection={sectionsPresent.includes('risks')} />
+    <AtAGlance locale={locale} data={data} glance={page.glance} citeIndex={citeIndex} hasRisksSection={sectionsPresent.includes('risks')} />
     {page.glance.stop_signs && <StopStrip locale={locale} signs={page.glance.stop_signs} citeIndex={citeIndex} />}
   </Fragment>
-  <FactSheet slot="facts" locale={locale} data={data} facts={page.glance.facts} />
+  <FactSheet slot="facts" locale={locale} data={data} facts={page.glance.facts} testedShort={page.glance.tested?.short} />
   {hasFolds && <ReadingTools slot="tools" locale={locale} />}
   <div class="compound-glance">
     <EvidenceGrade compound={slug} foldWhy={hasFolds} />

@@ -253,8 +253,9 @@ regulatory:                   # REQUIRED: at least EU, NL, US, WADA. Add DE, BE,
   # status: authorised | not-authorised | refused | withdrawn | under-review | investigational, and for WADA
   # also prohibited | not-listed | unclear. Use unclear (WADA row only) when the substance is not named on the
   # List and the sources leave open whether a catch-all section (S0, S2 …) covers it, with no ruling from an
-  # anti-doping body: e.g. Semax and Selank (registered in Russia, so S0 may not apply). Never not-authorised
-  # as a stand-in, and never not-listed unless the sources say it is allowed.
+  # anti-doping body: e.g. Semax and Selank (registered in Russia, so S0 may not apply), or SS-31 and PT-141
+  # (FDA-approved, so outside S0, but WADA says unnamed peptides may fall under other classes). Never
+  # not-authorised as a stand-in, and never not-listed unless the sources say it is allowed.
 studies:                      # structured, locale-independent. ≥3 for complete Tier 1 pages.
   - id: chang-2011-tendon     # kebab-case, unique within the compound
     source: chang-2011        # source id
@@ -287,6 +288,10 @@ summary:                       # "The 30-second version". 3–5 items, ≤18 wor
 lede: "…"                      # optional: one sentence under the title (22–24 px), ≤25 words, B1 (§9.1)
 glance:
   main_risk: "…"               # "Biggest risk" tile: ≤12 words, B1, condensed from YOUR risks section (§5.2 rules)
+  tested:                      # optional, rare: sourced override of the derived "tested in people?" answer (§5.2)
+    { short: "Some", text: "…", tone: partial, sources: [reid-thompson-2021-tazpower] }
+  sport:                       # optional, rare: the same for the "allowed in sport?" words (no tone)
+    { short: "Unclear", text: "…", sources: [wada-2026-list-en] }
   stop_signs:                  # optional: the "Stop and get help" strip after At a glance (§9.1). Exactly 3.
     - { icon: sign-belly-pain, text: "Severe belly pain, often spreading to your back", sources: [ema-epar-wegovy] }
   facts:                       # optional: up to 4 label/value rows for the fact sheet beside the title (§9.1)
@@ -370,12 +375,47 @@ the same facts gets the same words, in every language:
 | Tile | Comes from | Example answers |
 |---|---|---|
 | Is it an approved medicine? | `category` (for `not-a-peptide`: the EU and other regulatory rows; for `authorised-nationally`: also `national_authorisations`) | "Yes. Approved in the EU. Only with a doctor's prescription." · "In some countries. Approved in Italy, India and Hong Kong for some uses. Not approved for the whole EU, or in the US." · "No. Not approved as a medicine in the EU, the UK or the US." |
-| Has it been tested in people? | `evidence.human_clinical` | none → "No" · case-reports → "Very little" · phase-1 → "A little" · phase-2 → "Some" · phase-3 / authorised → "Yes, large trials" |
-| Is it allowed in sport? | the `WADA` regulatory row | prohibited → "No. Banned in sport at all times" + the section (S0, S2 …) · not-listed → "Not banned" · unclear → "Unclear. Not named on the anti-doping list. Ask your anti-doping organisation before using it in sport." · anything else → "see the status table" (never a guess) |
+| Has it been tested in people? | `evidence.human_clinical` (or a sourced `glance.tested`, below) | none → "No" · case-reports → "Very little" · phase-1 → "A little" · phase-2 → "Some" · phase-3 / authorised → "Yes, large trials" |
+| Is it allowed in sport? | the `WADA` regulatory row (words: or a sourced `glance.sport`, below) | prohibited → "No. Banned in sport at all times" + the section (S0, S2 …) · not-listed → "Not banned" · unclear → "Unclear. Not named on the anti-doping list. Ask your anti-doping organisation before using it in sport." · anything else → "see the status table" (never a guess) |
 | What is the biggest risk? | `glance.main_risk` in the MDX frontmatter | without it, the tile links to the warning-signs page |
 
 So keep the data honest and the tiles stay honest. Change the words only in
-`src/i18n/<locale>/beginner.json`, never per page.
+`src/i18n/<locale>/beginner.json`, never per page, with one exception below.
+
+**A sourced override, when the generic words would mislead** (`glance.tested`, `glance.sport`). The
+derived words fit most compounds, but not every one: SS-31 is `authorised` (FDA accelerated approval), yet
+the approval rests on a 12-patient trial that missed both main goals, so "Large trials in many people,
+checked by regulators" overstates it; NAD+ precursors are `phase-3`, but their one large trial found no
+benefit, so "Large trials in many people have been published" reads as a positive result. Then, and only
+then, the page may replace the words:
+
+```yaml
+glance:
+  tested:
+    short: "Some"                      # the answer, at most 4 words; also the fact sheet's "Tested in people"
+    text: "Approved on a 12-patient trial that missed its main goals. Bigger trials in other diseases found no benefit."
+    tone: partial                      # optional: yes | partial | no, the ring; default: derived from the data
+    sources: [reid-thompson-2021-tazpower, fda-2025-forzinity-approval, karaa-2023-mmpower-3]
+  sport:                               # same shape, without tone
+    short: "Unclear"
+    text: "Not named on the anti-doping list. Drips over 100 mL in 12 hours are banned."
+    sources: [wada-2026-list-en, usada-iv-infusions]
+```
+
+- **Fix the data first.** An override is never a way around a wrong grade or status: if the words are
+  wrong because `human_clinical` or the WADA row is wrong, change the data. The override is for a fact the
+  categories cannot express (what the trials found, a rule outside the substance list).
+- `short` at most 4 words and `text` at most 18 (the schema fails above), B1, reading ease 60 or more in
+  English (the validator warns). Same tone as the derived answers: plain, no alarm words, no advice.
+- **No new claim.** Condense what the page already says and cites: every source must be registered and
+  cited elsewhere on the page or in its data file (the validator fails otherwise). Keep the qualifiers
+  ("in other diseases", "in 410 people with Parkinson's disease").
+- Only the words change. The pictogram, the WADA section code, the "status checked" date and the link to
+  the status table still come from the data. The override carries its own citation numbers, because it is
+  a page-specific claim; its sources join the page's source list.
+- Choose `tone` to match the words: the ring echoes the answer ("Some" with a grey ring, not a cyan "yes").
+- Translators translate the override with the page; it is per locale, like `main_risk`.
+- Write a comment above it saying why the derived words would mislead (see `ss-31.mdx`, `nad-precursors.mdx`).
 
 `glance.main_risk` rules: **at most 12 words** (the schema fails above 12), B1, condensed from this
 page's own `risks` section with no new claim, the most important risk for most readers. Prefer the
@@ -543,7 +583,7 @@ required props, plain-language titles, labels and answers, and that every `sourc
 
 - `lede`: one sentence under the title: what it is and the one thing to know. At most 25 words.
 - `glance.stop_signs`: exactly three signs, each at most 8 words, B1, each with a pictogram (`sign-belly-pain`, `sign-low-sugar`, `sign-allergic`, `sign-vision`; the word always carries the meaning) and its `sources`. Condense them from this page's own stop-now list and the label; no new advice. The strip adds the locale's emergency line (English: "If it is severe, call your local emergency number."; Dutch: "Is het ernstig? Bel 112."; see §1), a link to the full stop-now list (give the stop callout `id="stop-now"`; the validator checks it) and to the warning-signs page. It is rendered directly after At a glance and is never folded.
-- `glance.facts`: up to four label/value rows for the fact sheet beside the title (label ≤ 4 words, value ≤ 10 words, sources required): how it is taken, how often, how long it lasts. Class, status in the EU and testing in people come from the data file. Label facts only, never a dose.
+- `glance.facts`: up to four label/value rows for the fact sheet beside the title (label ≤ 4 words, value ≤ 10 words, sources required): how it is taken, how often, how long it lasts. Class, status in the EU and testing in people come from the data file (testing in people: or the page's `glance.tested`, §5.2). Label facts only, never a dose.
 
 With at least one fold on the page, the summary box says how long the short version takes and how
 long everything takes, and the source list is folded too (its numbers still link both ways).
@@ -600,6 +640,17 @@ the claim.
 
 Add every technical term you use that a B1 reader would not know. The first plain-text use on
 each page is auto-linked. Check other glossary files first; do not duplicate ids.
+
+Auto-linking matches the term and every alias **case-insensitively, on whole words**, after the page
+text has been given typographic quotes. So:
+
+- Write an apostrophe in a term or alias as `’` ("Crohn’s disease"): a straight `'` never matches the
+  rendered text, so that alias never links.
+- Never use an alias that is an everyday word in another sense: "WHO" would link every "who", a bare
+  "pilot" would also catch "a pilot programme", and a bare "steroids" for corticosteroids would also
+  catch a later "steroids" that means anabolic steroids. Prefer the longer phrase ("pilot study",
+  "steroid injections").
+- One spelling per id: the same alias in two entries links to whichever loads last.
 
 ## 13. Reviews, dates, translation
 

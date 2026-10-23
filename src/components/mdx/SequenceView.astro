@@ -17,6 +17,20 @@ const { visual = true } = Astro.props;
 const data = await getCompoundData(slug);
 const seq = data.sequence;
 const residues = seq ? parseResidues(seq.residues) : [];
+// Some display strings already write an end group ("Ac-…", "…-NH2", "(trans-3-hexenoyl)-…"): add the
+// n_terminus / c_terminus labels only when the display does not show them, so nothing prints twice.
+// A trailing footnote "(*…)" and a " · Cu(II)" style suffix are kept after the C-terminus.
+const norm = (x: string) => x.toLowerCase().replace(/[^a-z0-9]/g, '');
+const disp = seq ? seq.display.trim() : '';
+const seqNote = (disp.match(/\s*\(\*[^)]*\)\s*$/) ?? [''])[0];
+const core = disp.slice(0, disp.length - seqNote.length).trim();
+const dot = core.indexOf(' · ');
+const seqMain = dot >= 0 ? core.slice(0, dot) : core;
+const seqSuffix = dot >= 0 ? core.slice(dot) : '';
+const firstSeg = seqMain.split('-')[0] ?? '';
+const lastSeg = seqMain.split('-').pop() ?? '';
+const showN = !!seq && !(norm(firstSeg) === norm(seq.n_terminus) || (seq.n_terminus.length >= 3 && norm(seqMain.slice(0, 30)).includes(norm(seq.n_terminus))));
+const showC = !!seq && norm(lastSeg) !== norm(seq.c_terminus);
 ---
 {seq && (
   <figure class="sequence" aria-labelledby={`seq-${slug}-title`}>
@@ -29,7 +43,7 @@ const residues = seq ? parseResidues(seq.residues) : [];
         <div class="sequence__visual sequence__visual--beads"><SequenceBeads residues={residues} seq={seq} slug={slug} locale={L} /></div>
       </>
     )}
-    <p class="sequence__text"><bdi class="seq" dir="ltr" translate="no"><span class="sequence__term">{seq.n_terminus}–</span>{seq.display}<span class="sequence__term">–{seq.c_terminus}</span></bdi></p>
+    <p class="sequence__text"><bdi class="seq" dir="ltr" translate="no">{showN && <span class="sequence__term">{seq.n_terminus}–</span>}{seqMain}{showC && <span class="sequence__term">–{seq.c_terminus}</span>}{seqSuffix}{seqNote}</bdi></p>
     <p class="sequence__read">{t(L, 'compound.sequence.readAs')}</p>
     {(seq.modifications.length > 0 || seq.bridges.length > 0 || residues.some((r) => r.d || r.cls === 'nonstandard')) && (
       <dl class="sequence__notes">

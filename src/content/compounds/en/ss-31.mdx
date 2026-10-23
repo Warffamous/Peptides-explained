@@ -11,6 +11,15 @@ summary:
 lede: "A US medicine for one rare muscle disease. Online vials sold as SS-31 are a different product."
 glance:
   main_risk: "Sore, red skin where you inject. Some had serious allergic reactions."
+  # "Tested in people?" override (CONTENT-GUIDE §5.2): the derived words for human_clinical: authorised ("Yes.
+  # Large trials in many people, checked by regulators") overstate this case. The FDA's accelerated approval rests on
+  # TAZPOWER, 12 patients, whose randomised part met neither primary endpoint; the larger trials in other diseases
+  # (EMBRACE STEMI 300, MMPOWER-3 218, PROGRESS-HF 71) found no benefit. "Some" and a grey ring, as for phase 2.
+  tested:
+    short: "Some"
+    text: "Approved on a 12-patient trial that missed its main goals. Bigger trials in other diseases found no benefit."
+    tone: partial
+    sources: [reid-thompson-2021-tazpower, fda-2025-forzinity-approval, gibson-2016-embrace-stemi, karaa-2023-mmpower-3, butler-2020-progress-hf]
   # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section): the US label
   # (section 5.2, serious hypersensitivity) and the NHS pages for infection and sepsis after injecting.
   stop_signs:

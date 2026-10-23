@@ -21,8 +21,10 @@ interface Props {
   fallback?: boolean;
   /** Id of an element the first paint waits for (BaseHead). */
   renderAfter?: string;
+  /** The 404 page (BaseHead: own title, no canonical). */
+  notFound?: boolean;
 }
-const { locale, title, description, routeKey, alternates, noindex, jsonld, terms = [], pageClass, ogType, fallback = false, renderAfter } = Astro.props;
+const { locale, title, description, routeKey, alternates, noindex, jsonld, terms = [], pageClass, ogType, fallback = false, renderAfter, notFound = false } = Astro.props;
 Astro.locals.locale = locale;
 const loc = getLocale(locale);
 const dir = PSEUDO_RTL ? 'rtl' : loc.dir;
@@ -31,7 +33,7 @@ const source = getLocale(SOURCE_LOCALE);
 <!doctype html>
 <html lang={loc.bcp47} dir={dir} data-pseudo={PSEUDO_RTL ? 'rtl' : undefined}>
   <head>
-    <BaseHead {locale} {title} {description} {routeKey} {alternates} {noindex} {jsonld} {ogType} {renderAfter} />
+    <BaseHead {locale} {title} {description} {routeKey} {alternates} {noindex} {jsonld} {ogType} {renderAfter} {notFound} />
   </head>
   <body class:list={['page', pageClass]}>
     <a class="skip-link" href="#main">{t(locale, 'common.skipToContent')}</a>

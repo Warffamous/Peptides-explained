@@ -183,8 +183,8 @@ export function checkOrganCards(ctx: Ctx): number {
       // Every source must be on the page's source list, so each mark on a card has a number.
       const cited = new Set<string>();
       for (const c of body.matchAll(CITE_RE)) c[1].split(',').map((s) => s.trim()).forEach((s) => cited.add(s));
-      const glance = (fm.glance ?? {}) as { stop_signs?: { sources?: string[] }[]; facts?: { sources?: string[] }[] };
-      [...(glance.stop_signs ?? []), ...(glance.facts ?? [])].forEach((g) => (g.sources ?? []).forEach((s) => cited.add(s)));
+      const glance = (fm.glance ?? {}) as { stop_signs?: { sources?: string[] }[]; facts?: { sources?: string[] }[]; tested?: { sources?: string[] }; sport?: { sources?: string[] } };
+      [...(glance.stop_signs ?? []), ...(glance.facts ?? []), ...(glance.tested ? [glance.tested] : []), ...(glance.sport ? [glance.sport] : [])].forEach((g) => (g.sources ?? []).forEach((s) => cited.add(s)));
       if (relp[0] === 'compounds') {
         const dataFile = path.join(ROOT, `src/data/compounds/${relp[relp.length - 1].replace(/\.mdx$/, '')}.yaml`);
         const cd = (fs.existsSync(dataFile) ? readYaml(dataFile) : null) as {

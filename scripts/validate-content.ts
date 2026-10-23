@@ -385,6 +385,24 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
   else if (cd.status === 'complete' && cd.tier === 1) {
     warn(file, 'glance.main_risk is missing: the "biggest risk" tile falls back to a link to the warning signs. Add at most 12 plain words condensed from this page\'s own risk section.');
   }
+  // Sourced overrides of the derived "tested" and "sport" answers (CONTENT-GUIDE §5.2): plain words,
+  // registered sources, and no new claim: every source is one the page already cites for the same fact.
+  const pageCited = new Set<string>();
+  for (const m of body.matchAll(CITE_RE)) m[1].split(',').map((s) => s.trim()).forEach((s) => pageCited.add(s));
+  cd.studies.forEach((s) => pageCited.add(s.source));
+  cd.regulatory.forEach((reg) => reg.sources.forEach((s) => pageCited.add(s)));
+  cd.national_authorisations.forEach((n) => n.sources.forEach((s) => pageCited.add(s)));
+  cd.authorised_products.forEach((p) => pageCited.add(p.label_source));
+  if (cd.sequence) pageCited.add(cd.sequence.source);
+  for (const key of ['tested', 'sport'] as const) {
+    const o = r.data.glance[key];
+    if (!o) continue;
+    // short (at most 4 words, schema) is an answer like "Some" or "Unclear": reading ease means nothing there.
+    checkPlain(file, `glance.${key}.text`, o.text, locale, names);
+    o.sources.forEach((id) => requireSource(file, id, `glance.${key}`));
+    const uncited = o.sources.filter((id) => sources.has(id) && !pageCited.has(id));
+    if (uncited.length) err(file, `glance.${key} cites ${uncited.join(', ')}, which the page does not cite anywhere else: the tile condenses this page, so cite it where the page makes the same claim`);
+  }
 
   // sections in fixed order
   const sections = [...body.matchAll(SECTION_RE)].map((m) => m[1]);

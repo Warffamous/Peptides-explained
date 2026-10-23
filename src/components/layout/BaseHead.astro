@@ -16,11 +16,13 @@ interface Props {
   ogType?: 'website' | 'article';
   /** Id of an element the first paint waits for (<link rel="expect" blocking="render">). */
   renderAfter?: string;
+  /** The 404 page: its own title, and no canonical or og:url (it has no address of its own). */
+  notFound?: boolean;
 }
-const { locale, title, description, routeKey, alternates, noindex = false, jsonld = [], ogType = 'article', renderAfter } = Astro.props;
+const { locale, title, description, routeKey, alternates, noindex = false, jsonld = [], ogType = 'article', renderAfter, notFound = false } = Astro.props;
 const loc = getLocale(locale);
 const brand = t(locale, 'common.brand');
-const fullTitle = routeKey === '' ? `${brand} — ${t(locale, 'common.tagline')}` : `${title} · ${brand}`;
+const fullTitle = routeKey === '' && !notFound ? `${brand} — ${t(locale, 'common.tagline')}` : `${title} · ${brand}`;
 const canonical = canonicalUrl(locale, routeKey);
 const robots = noindex || loc.status !== 'published' ? 'noindex, follow' : 'index, follow';
 
@@ -43,14 +45,14 @@ const boot = `(function(d,w){d.documentElement.classList.add('js');try{var h=d.d
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <meta name="robots" content={robots} />
-<link rel="canonical" href={canonical} />
+{!notFound && <link rel="canonical" href={canonical} />}
 {alternates.map((l) => <link rel="alternate" hreflang={getLocale(l).hreflang} href={canonicalUrl(l, routeKey)} />)}
 {alternates.includes(DEFAULT_LOCALE) && <link rel="alternate" hreflang="x-default" href={canonicalUrl(DEFAULT_LOCALE, routeKey)} />}
 <meta name="color-scheme" content="light dark" />
 <meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={canonical} />
+{!notFound && <meta property="og:url" content={canonical} />}
 <meta property="og:site_name" content={brand} />
 <meta property="og:locale" content={loc.bcp47.replace('-', '_')} />
 <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />

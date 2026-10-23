@@ -10,8 +10,9 @@
 import { t } from '../../lib/i18n';
 import type { CompoundData } from '../../schemas';
 type Fact = { label: string; value: string };
-interface Props { locale: string; data: CompoundData; facts: Fact[] }
-const { locale: L, data, facts } = Astro.props;
+/** testedShort: the page's sourced glance.tested override, so the fact sheet says what the At a glance tile says. */
+interface Props { locale: string; data: CompoundData; facts: Fact[]; testedShort?: string }
+const { locale: L, data, facts, testedShort } = Astro.props;
 const eu = data.regulatory.find((r) => r.jurisdiction === 'EU');
 // An EU row that is 'authorised' for an authorised-nationally compound means a national
 // authorisation in a member state (e.g. Italy), never an EU-wide one: say so.
@@ -27,7 +28,7 @@ const rows: Fact[] = [
   ...facts,
   ...(status ? [{ label: t(L, 'beginner.facts.status'), value: status }] : []),
   // The short answer only ("Yes", "A little", "No"): the sentence is in the At a glance tile.
-  { label: t(L, 'beginner.facts.tested'), value: t(L, `beginner.glance.tested.${data.evidence.human_clinical}.short`) },
+  { label: t(L, 'beginner.facts.tested'), value: testedShort ?? t(L, `beginner.glance.tested.${data.evidence.human_clinical}.short`) },
 ];
 ---
 <section class="fact-sheet" aria-labelledby="fact-sheet-title">

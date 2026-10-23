@@ -11,6 +11,20 @@ summary:
 lede: "Vitamin B3 compounds sold beside peptides. They are not peptides, and their rules and risks are different."
 glance:
   main_risk: "Drips and shots can carry germs. Long-term effects are unknown."
+  # "Tested in people?" override (CONTENT-GUIDE §5.2): the derived words for human_clinical: phase-3 ("Yes. Large
+  # trials in many people have been published") read as a positive result. There is one large trial, NOPARK (410
+  # people with early Parkinson disease, NR for 52 weeks), and it found no benefit; the other trials (45 human RCT
+  # records on PubMed for NR or NMN) are smaller, and NAD+ drips have only a few small studies.
+  tested:
+    short: "Yes"
+    text: "Many trials, mostly of pills. The biggest one, in 410 people with Parkinson's, found no benefit."
+    sources: [pubmed-nr-nmn-count-2026-10-23, brakedal-2026-nopark, godic-2026-iv-longevity-review]
+  # "Allowed in sport?" override: the derived "Unclear" words leave out the one rule that certainly applies to drips,
+  # WADA M2.2 (more than 100 mL in 12 hours is prohibited whatever it contains), which this page explains.
+  sport:
+    short: "Unclear"
+    text: "Not named on the anti-doping list. Drips over 100 mL in 12 hours are banned."
+    sources: [wada-2026-list-en, wada-2027-list-en, usada-iv-infusions]
   # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section): the NHS pages on
   # cellulitis, sepsis and anaphylaxis, and the review of IV 'longevity' drips that names procedural risks.
   stop_signs:

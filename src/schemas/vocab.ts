@@ -222,4 +222,5 @@ export const NONSTANDARD_RESIDUES = [
   'Sar', // sarcosine
   'Dab', // 2,4-diaminobutyric acid
   'Dmt', // 2',6'-dimethyltyrosine (SS-31)
+  '2MeTrp', // 2-methyltryptophan, methyl on the indole ring (hexarelin as D-2MeTrp)
 ] as const;

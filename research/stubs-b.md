@@ -184,7 +184,7 @@ hexarelin 537 / 946; SS-31 559 / 1,221; NAD+ precursors 639 / 1,268.
    page. CAS discrepancy (221231-10-3 vs 386264-39-7) noted by the FDA.
 10. **Hexarelin residue code**: 2-methyl-D-tryptophan has no code in `NONSTANDARD_RESIDUES` (vocab.ts is not this
     group's file), so position 2 is entered as `D-Trp` with a modification label. Suggest adding a code (e.g. `2MeTrp`)
-    to vocab.ts.
+    to vocab.ts. *Resolved 23 October 2026: `2MeTrp` added; hexarelin's residues read `D-2MeTrp` (see §7.6).*
 11. **GHK-Cu molecular block left empty**: PubChem gives a charged formula (C14H23CuN6O4+) that the page template's
     formula renderer rejects; formula and masses are given in the page text instead.
 12. **Bishop 1992** does not name the tripeptide in its abstract; the page says "a copper-tripeptide cream" and notes this.
@@ -360,10 +360,16 @@ signal, the IV NAD+ heart-failure trial and the FDA's reasons for accelerated ap
 
 ### 7.6 Still open (for the editor and reviewers)
 
-1. PT-141 uses `not-listed` on the same reasoning that was changed to `unclear` for SS-31 here; the two should match.
-2. The generic "tested in people: Yes, large trials … checked by regulators" tile for `human_clinical: authorised`
-   overstates SS-31's evidence (a 12-patient crossover that missed both primary endpoints). The page says so; the tile
-   wording is a `beginner.json` decision.
-3. Hexarelin position 2 (2-methyl-D-tryptophan) still has no residue code in `vocab.ts`.
+1. *Resolved 23 October 2026.* PT-141 used `not-listed` on the same reasoning that was changed to `unclear` for
+   SS-31 here; its WADA row is now `unclear` too (research/pt-141.md §9).
+2. *Resolved 23 October 2026.* The generic "tested in people" tile for `human_clinical: authorised` overstated SS-31's
+   evidence (a 12-patient crossover that missed both primary endpoints). A sourced page override, `glance.tested`
+   (CONTENT-GUIDE §5.2), now reads "Some. Approved on a 12-patient trial that missed its main goals. Bigger trials in
+   other diseases found no benefit." (grey ring). NAD+ precursors had the same problem with `phase-3` ("Large
+   trials in many people have been published" for one negative trial): "Yes. Many trials, mostly of pills. The
+   biggest one, in 410 people with Parkinson's, found no benefit." Its sport tile adds the M2.2 drip rule
+   (`glance.sport`).
+3. *Resolved 23 October 2026.* Hexarelin position 2 (2-methyl-D-tryptophan) has the residue code `2MeTrp` in
+   `vocab.ts`; the data file reads `D-2MeTrp` instead of `D-Trp`.
 4. Dollerup 2018 funding and the Mulder 1994 / Maquart 1993 author affiliations need the full texts.
 5. The MHRA (UK) status of elamipretide was not checked; the pages no longer say "US only".

@@ -119,7 +119,8 @@
 /* A <Cite> on its own line: "Sources 3, 46, 7" under the block it cites, in small secondary ink. */
 .cite-line { margin-block: calc(-1 * var(--space-2)) var(--space-5); font-size: var(--s--1); line-height: 1.5; color: var(--text-2); }
 .cite-line .cite__marks { font-size: inherit; vertical-align: baseline; line-height: inherit; margin-inline-start: 0; }
-.cite-line .cite__link { padding-inline: 0.1em; }
+/* In the "Sources 3, 46, 7" line the numbers sit in running text: underlined, so colour is not the only cue (WCAG 1.4.1). */
+.cite-line .cite__link { padding-inline: 0.1em; text-decoration: underline; text-underline-offset: 0.15em; }
 /* Inline claim tags: the one place pills stay. Glyph + word, 14px or more. */
 /* Restrained: a hairline tag with the word in secondary ink; only the small glyph carries the
    evidence colour (cyan = demonstrated, its line style says where). A hypothesis keeps its word in
@@ -418,8 +419,10 @@ a.term:hover { color: var(--link); }
 .checklist { margin-block: 0 var(--space-6); padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
 .checklist__title { font-weight: 600; margin-block-end: var(--space-2); }
 .checklist ul { list-style: none; padding: 0; margin: 0; }
-.checklist li { display: grid; grid-template-columns: 1.8rem minmax(0, 1fr); margin-block: var(--space-2); }
-.checklist li::before { content: ''; inline-size: 1.05rem; block-size: 1.05rem; margin-block-start: 0.25em; border-radius: 4px; border: 2px solid var(--line-strong); }
+/* Not a grid: an item's text, links, <strong> and citation marks would each become a grid item, and the
+   sentence broke into a 1.8 rem column a few letters wide (the stop-now checklist on /safety/warning-signs). */
+.checklist li { position: relative; padding-inline-start: 1.8rem; margin-block: var(--space-2); }
+.checklist li::before { content: ''; position: absolute; inset-inline-start: 0; inset-block-start: 0.25em; inline-size: 1.05rem; block-size: 1.05rem; border-radius: 4px; border: 2px solid var(--line-strong); }
 .faq { margin-block: 0 var(--space-6); display: grid; gap: var(--space-3); }
 .faq__item { padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
 .faq__q { font-size: var(--s-0); font-weight: 600; margin-block-end: var(--space-2); }
@@ -457,7 +460,9 @@ a.term:hover { color: var(--link); }
 .compound-card__stub { padding-inline: 0.5rem; border-radius: var(--radius-sm); border: 1px dashed var(--text-3); }
 .compound-card__desc { color: var(--text-2); font-size: var(--s--1); }
 .evidence-mini { display: grid; gap: 0.45rem; margin-block-start: var(--space-2); font-size: var(--s--2); }
-.evidence-mini__axis { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 var(--space-2); }
+/* fit-content(55%): with an auto value column a long grade ("Phase III (large controlled trials)") took the
+   whole card and squeezed the axis name into a column one syllable wide (compounds index, 1280 px). */
+.evidence-mini__axis { display: grid; grid-template-columns: minmax(0, 1fr) fit-content(55%); gap: 0 var(--space-2); }
 .evidence-mini__axis dt { color: var(--text-2); }
 .evidence-mini__axis dd { color: var(--text); font-weight: 600; text-align: end; }
 .evidence-mini__axis::after { content: ''; grid-column: 1 / -1; block-size: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--cyan) calc(8% + 92% * var(--frac)), var(--line) 0); }
@@ -492,7 +497,9 @@ a.term:hover { color: var(--link); }
 .timeline__count { margin-inline-start: auto; color: var(--text-2); font-size: var(--s--1); }
 .timeline__decades ul { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-end: var(--space-5); }
 .timeline__decades a { display: inline-block; padding: 0.2rem 0.7rem; border-radius: var(--radius-sm); background: var(--surface-2); color: var(--text-2); text-decoration: none; font-family: var(--font-mono); font-size: var(--s--2); }
-.timeline__list { position: relative; display: grid; gap: var(--space-4); padding-inline-start: var(--space-6); }
+/* .timeline doubles the class weight: the reset's ol[role="list"] { padding: 0 } would otherwise remove the
+   rail's gutter, so the line ran behind the cards and the dots sat outside them (off-screen on phones). */
+.timeline .timeline__list { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-4); padding-inline-start: var(--space-6); }
 .timeline__list::before { content: ''; position: absolute; inset-inline-start: 0.6rem; inset-block: 0; inline-size: 2px; background: var(--line); }
 .timeline__event { position: relative; padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); scroll-margin-block-start: 2rem; }
 .timeline__event::before { content: ''; position: absolute; inset-inline-start: calc(-1 * var(--space-6) + 0.25rem); inset-block-start: 1.4rem; inline-size: 0.9rem; block-size: 0.9rem; border-radius: 50%; background: var(--ground); border: 2px solid var(--line-strong); }
@@ -503,6 +510,7 @@ a.term:hover { color: var(--link); }
 .timeline__text { color: var(--text-2); font-size: var(--s--1); }
 .timeline__meta { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); margin-block-start: var(--space-2); font-size: var(--s--2); }
 .timeline__compound { padding-inline: 0.5rem; border-radius: var(--radius-sm); background: var(--surface-2); text-decoration: none; }
+.timeline__sources { display: inline-flex; flex-wrap: wrap; gap: var(--space-1) var(--space-3); }
 .timeline__sources a { color: var(--text-2); }
 
 /* ------------------------------------------------------------------ corrections, tracker, jurisdiction, news */
@@ -545,7 +553,8 @@ a.term:hover { color: var(--link); }
 .glossary-index__letters a { display: inline-grid; place-items: center; min-inline-size: 2.4rem; min-block-size: 2.4rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--text); text-decoration: none; font-weight: 600; }
 .glossary-index__letters a:hover { border-color: var(--line-strong); }
 .glossary-index__letter { font-size: var(--s-3); font-weight: 600; color: var(--text); margin-block: var(--space-7) var(--space-3); }
-.glossary-index__list { display: grid; gap: var(--space-3); }
+/* minmax(0, 1fr): a lone auto column grows to the longest word in any entry and overflowed at 320 px. */
+.glossary-index__list { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
 .glossary-index__entry { padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); scroll-margin-block-start: 2rem; }
 .glossary-index__entry:target { border-color: var(--focus); box-shadow: inset 0 0 0 1px var(--focus); }
 .glossary-index__term { font-weight: 600; font-size: var(--s-0); }
@@ -555,11 +564,11 @@ a.term:hover { color: var(--link); }
 .source-list { margin-block-start: var(--space-8); }
 .source-list__title { font-size: var(--s-3); font-weight: 600; letter-spacing: -0.03em; margin-block-end: var(--space-3); }
 .source-list__intro { color: var(--text-2); font-size: var(--s--1); margin-block-end: var(--space-5); }
-.source-list__items { padding-inline-start: 2.2em; display: grid; gap: var(--space-3); font-size: var(--s--1); color: var(--text-2); }
+.source-list__items { padding-inline-start: 2.2em; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); font-size: var(--s--1); color: var(--text-2); }
 .source-list__item { scroll-margin-block-start: 2rem; padding-inline-start: 0.3em; }
 .source-list__item::marker { font-family: var(--font-mono); color: var(--text-3); }
 .source-list__item:target { color: var(--text); background: var(--surface-2); border-radius: var(--radius-sm); outline: 6px solid var(--surface-2); }
-.source-list__back { margin-inline-start: 0.4em; text-decoration: none; }
+.source-list__back { margin-inline-start: 0.4em; text-decoration: underline; text-underline-offset: 0.15em; }
 .source-list__subtitle { font-size: var(--s-1); font-weight: 600; margin-block: var(--space-6) var(--space-3); }
 .ref__title { font-style: normal; color: var(--text); }
 .ref__container { font-style: italic; }
@@ -569,7 +578,7 @@ a.term:hover { color: var(--link); }
 .sources-index__count { color: var(--text-2); margin-block-end: var(--space-4); }
 .sources-index__type { font-size: var(--s-2); font-weight: 600; letter-spacing: -0.025em; margin-block: var(--space-7) var(--space-3); }
 .sources-index__n { font-family: var(--font-mono); color: var(--text-2); font-size: var(--s--1); font-weight: 400; }
-.sources-index__list { list-style: none; padding: 0; display: grid; gap: var(--space-2); font-size: var(--s--1); color: var(--text-2); }
+.sources-index__list { list-style: none; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-2); font-size: var(--s--1); color: var(--text-2); }
 .sources-index__list li { padding: var(--space-3) var(--space-4); border-radius: var(--radius-sm); background: var(--surface); }
 .search { margin-block-end: var(--space-7); }
 .search__label { display: block; font-size: var(--s-1); font-weight: 600; margin-block-end: var(--space-3); }

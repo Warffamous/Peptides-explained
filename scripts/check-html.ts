@@ -61,9 +61,10 @@ for (const file of files) {
   }
   // landmarks
   if (!root.querySelector('main')) errors.push(`${where}: no <main>`);
-  if (!file.endsWith(`${path.sep}index.html`) || !where.match(/^dist[^/]*\/index\.html$/)) {
-    if (!root.querySelector('header') && !where.endsWith('dist/index.html')) warnings.push(`${where}: no <header> landmark`);
-  }
+  // The root language chooser (<dist>/index.html) is a bare <main> by design. Compared relative to the
+  // dist folder, so it also matches on Windows and for a dist with another name.
+  const isRootChooser = path.relative(dist, file) === 'index.html';
+  if (!isRootChooser && !root.querySelector('header')) warnings.push(`${where}: no <header> landmark`);
   // ids and references
   const ids = new Map<string, number>();
   for (const el of root.querySelectorAll('[id]')) ids.set(el.id, (ids.get(el.id) ?? 0) + 1);
