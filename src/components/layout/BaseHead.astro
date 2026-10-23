@@ -47,8 +47,9 @@ const preloadFont = loc.script === 'arabic' ? 'noto-sans-arabic-arabic-wght-norm
 // toggle, explainer Pause/Replay) must still be laid out from the first paint and shown.
 // A design choice saved by earlier preview builds ('pe-theme') is removed, and ?theme= is ignored.
 // No stored statistics choice (cookie pe-stats): html[data-consent="ask"] shows the consent banner from the
-// first paint (ConsentBanner.astro).
-const boot = `(function(d,w){d.documentElement.classList.add('js');try{if(!/(?:^|; )pe-stats=(?:yes|no)(?:;|$)/.test(d.cookie))d.documentElement.dataset.consent='ask'}catch(e){}try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
+// first paint (ConsentBanner.astro). Without pe-stats=yes, a statistics cookie left over from an earlier
+// "Allow" (session-id, set by the host's script) is deleted on every page.
+const boot = `(function(d,w){d.documentElement.classList.add('js');try{var k=d.cookie;if(!/(?:^|; )pe-stats=(?:yes|no)(?:;|$)/.test(k))d.documentElement.dataset.consent='ask';if(!/(?:^|; )pe-stats=yes(?:;|$)/.test(k)&&/(?:^|; )session-id=/.test(k))d.cookie='session-id=; Path=/; Max-Age=0'+(w.location.protocol==='https:'?'; Secure':'')}catch(e){}try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
   `ls.removeItem('pe-theme');var s=ls.getItem('pe-scheme');if(s==='dark'||s==='light')h.dataset.scheme=s;` +
   `var p=q.get('pseudo');if(p==='rtl')ss.setItem('pe-pseudo','rtl');else if(p==='off')ss.removeItem('pe-pseudo');` +
   `if(ss.getItem('pe-pseudo')==='rtl'){h.dir='rtl';h.dataset.pseudo='rtl'}}catch(e){}})(document,window)`;
@@ -58,6 +59,9 @@ const boot = `(function(d,w){d.documentElement.classList.add('js');try{if(!/(?:^
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <meta name="robots" content={robots} />
+{/* Search words are in the search page's address (?q=): send no Referer from it, so opening a result or
+    loading the search index does not pass them on. */}
+{routeKey === 'search' && <meta name="referrer" content="no-referrer" />}
 {!notFound && <link rel="canonical" href={canonical} />}
 {alternates.map((l) => <link rel="alternate" hreflang={getLocale(l).hreflang} href={canonicalUrl(l, routeKey)} />)}
 {alternates.includes(DEFAULT_LOCALE) && <link rel="alternate" hreflang="x-default" href={canonicalUrl(DEFAULT_LOCALE, routeKey)} />}

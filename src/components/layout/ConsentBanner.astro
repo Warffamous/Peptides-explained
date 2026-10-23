@@ -3,8 +3,9 @@
  * Asks before the host's visit statistics run. The host (Lovable) adds its statistics scripts to every
  * page it serves; the Lovable app's src/server.ts blocks them with a Content-Security-Policy unless the
  * cookie pe-stats=yes is present. This banner only records the reader's choice in that cookie (six
- * months) and removes the statistics cookie on "Don't allow"; "Cookie settings" in the footer opens it
- * again. Both buttons look the same, so refusing is as easy as allowing.
+ * months) and removes the statistics cookie on "Don't allow" (reloading the page when the statistics were
+ * already running on it); "Cookie settings" in the footer opens it again. Both buttons look the same, so
+ * refusing is as easy as allowing.
  *
  * Needs JavaScript: without it the statistics scripts cannot run either, so there is nothing to ask.
  * The inline head script (BaseHead) sets html[data-consent="ask"] before first paint when no choice is
@@ -32,10 +33,15 @@ const { locale } = Astro.props;
   const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
   const SIX_MONTHS = 60 * 60 * 24 * 182;
   const secure = location.protocol === 'https:' ? '; Secure' : '';
+  // Was this page served with the statistics allowed? Then the host's scripts are running on it.
+  const statsRunning = /(?:^|;\s*)pe-stats=yes(?:;|$)/.test(document.cookie);
   const choose = (choice: string) => {
     document.cookie = `pe-stats=${choice}; Path=/; Max-Age=${SIX_MONTHS}; SameSite=Lax${secure}`;
     // The statistics cookie the host's script set while it was allowed: gone at once, not after 30 minutes.
     if (choice === 'no') document.cookie = `session-id=; Path=/; Max-Age=0${secure}`;
+    // They would keep running (and set their cookie again) until the reader leaves the page: reload it,
+    // and the server sends it back with the blocking rule.
+    if (choice === 'no' && statsRunning) return location.reload();
     delete root.dataset.consent;
   };
   banner?.querySelectorAll<HTMLButtonElement>('[data-consent-choice]').forEach((b) => {
