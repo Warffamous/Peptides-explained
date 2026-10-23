@@ -10,5 +10,8 @@
 # routes: route keys affected ("compounds/bpc-157"); "*" = the whole site.
 # Never invent an entry. Every substantive entry says what was wrong, what it says now, and the source.
 
-# The log starts on the day the site goes public: add the publication entry (kind: publication) then.
-[]
+- id: v1-publication
+  date: 2026-10-23
+  kind: publication
+  routes: ["*"]
+  locales: [en]

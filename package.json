@@ -21,6 +21,7 @@
     "news": "tsx scripts/fetch-news.ts",
     "media:commons": "tsx scripts/media/fetch-commons.ts",
     "media:generate": "tsx scripts/media/generate-image.ts",
+    "media:share-card": "tsx scripts/media/make-share-card.ts",
     "preview": "astro preview"
   },
   "dependencies": {

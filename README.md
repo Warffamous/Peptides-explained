@@ -226,7 +226,7 @@ Every compound gets **four separate grades**, stored once in its data file (`evi
 the same way in every language. They are **never added up, averaged or turned into one score**:
 one number would hide the shape of the evidence, such as many rat studies from one laboratory and
 almost nothing in people. The full rubric, with examples and its limits, is the page
-[How we grade evidence](https://peptides-explained.pages.dev/en/evidence/evidence-grading/)
+[How we grade evidence](https://peptidesexplained.net/en/evidence/evidence-grading/)
 (`/en/evidence/evidence-grading/`); the rules are also in CONTENT-GUIDE §7.
 
 | Axis (`evidence.`) | Values | Assigned by |
@@ -279,7 +279,7 @@ The full rules are in `docs/MEDIA-GUIDE.md`. In short:
 
 **No page has been reviewed by a named doctor or lawyer yet.** Pages carry
 `reviewed_by: pending-medical-review` (legal pages: `pending-legal-review`; the about pages:
-`editorial-board`), and the site shows an honest "review pending" notice near the title. It never
+`editorial-board`), and the site says so in one quiet sentence at the foot of each page. It never
 pretends a review happened: schema.org `reviewedBy` is emitted only for an active, named person.
 
 To add a named reviewer:
@@ -301,10 +301,22 @@ To add a named reviewer:
 - **Static output.** `npm run build` writes a plain static site to `dist/` (directory URLs with a
   trailing slash, a search index under `dist/pagefind/`). No server, no cookies, no third-party
   requests. Any static host works.
-- **Cloudflare Pages** (the current URL, `config/site.json`): build command `npm run build`, output
-  directory `dist`, Node 22 (`NODE_VERSION=22`). `public/_headers` sets long caches for the hashed
-  stylesheet, `/_astro/` and fonts; HTML revalidates on every visit, so a deploy shows at once.
-  **Netlify** reads the same `_headers` file: the same build command and publish directory.
+- **Live site: https://peptidesexplained.net, hosted on Lovable** (project "Peptides Explained",
+  https://lovable.dev/projects/fca61506-c115-439a-852a-25c6ed61689a; its GitHub repository is
+  `Warffamous/peptides-explained-d9a34a3a`, private). Lovable runs its own TanStack Start app, so this
+  site is not built there: the pre-built pages go into that repository's `public/`, and its
+  `src/server.ts` serves folder addresses (`/en/`) from their `index.html`, redirects `/en` to `/en/`
+  and answers unknown addresses with our `404.html`. To publish an update:
+  1. `npm run validate`, then `PUBLISHED_ONLY=1 npx astro build --outDir dist-live && npx pagefind
+     --site dist-live --silent` (bash; `npm run build:live` does the same where `VAR=1 cmd` works),
+     then delete `dist-live/_headers`. `PUBLISHED_ONLY=1` leaves out locales still in `preview`, so a
+     language goes live only when its status is `published`.
+  2. Run `check:html` and `check:commerce` on `dist-live` (`npx tsx scripts/check-html.ts dist-live`).
+  3. Replace the Lovable repository's `public/` with the contents of `dist-live/`, commit, push to
+     `main`, then publish in Lovable (or with the Lovable connector's deploy).
+  The host sets its own security cookie (`__cf_bm`, Cloudflare bot protection) and ignores `_headers`.
+- **Any other static host** works with `dist/` as it is (`public/_headers` sets long caches for the
+  hashed stylesheet, `/_astro/` and fonts on Cloudflare Pages and Netlify).
 - **The canonical domain** (canonical links, hreflang, sitemaps, robots, the commerce check's own
   host) comes from `siteUrl` in `config/site.json`. Change it there when the site moves; the
   `SITE_URL` environment variable only changes Astro's own `site` setting.
