@@ -40,14 +40,21 @@ export const MECHANISM_KINDS = ['binding', 'signal', 'cellular', 'tissue', 'effe
 /** Mechanism steps use a subset of claim levels: how well the link INTO this step is established. */
 export const MECHANISM_LEVELS = ['hypothesis', 'in-vitro', 'animal', 'human'] as const;
 
-/** Overall regulatory/epistemic category. Not a score — a category of situation. */
+/**
+ * Overall regulatory/epistemic category. Not a score — a category of situation. It says nothing
+ * about any one country: where a medicine is approved comes from its regulatory rows, and each
+ * locale answers "approved?" for its own jurisdictions (src/lib/jurisdictions.ts, approvalFor).
+ */
 export const COMPOUND_CATEGORIES = [
-  'authorised', // has EU marketing authorisation
-  'authorised-elsewhere', // authorised outside the EU (e.g. FDA) but not in the EU
   /**
-   * Authorised only by some countries' own regulators (one EU member state may be among them), with
-   * no EU-wide, US or UK authorisation and so no label on an allowlisted host. The countries are
-   * listed, with sources, in national_authorisations (e.g. thymosin alpha-1: Italy, India, Hong Kong).
+   * An official product label exists from at least one regulator the site tracks (JURISDICTIONS):
+   * at least one authorised or discontinued row, and the products in authorised_products.
+   */
+  'authorised',
+  /**
+   * Authorised only by countries outside every tracked set (their own national regulators), so
+   * with no row authorised anywhere and no label on an allowlisted host. The countries are listed,
+   * with sources, in national_authorisations (e.g. thymosin alpha-1: Italy, India, Hong Kong).
    */
   'authorised-nationally',
   'investigational', // in formal clinical development (registered trials), no authorisation
@@ -83,11 +90,25 @@ export const BODY_SYSTEMS = [
   'cellular',
 ] as const;
 
-export const JURISDICTIONS = ['EU', 'NL', 'DE', 'BE', 'UK', 'US', 'WADA'] as const;
+/**
+ * Every jurisdiction the data may describe. Which ones a reader sees, and in which order, comes from
+ * the locale (config/locales.json: jurisdictions.full and .notes), never from this array; WADA is
+ * shown in every locale.
+ */
+export const JURISDICTIONS = ['EU', 'NL', 'DE', 'BE', 'UK', 'US', 'CA', 'AU', 'IE', 'NZ', 'WADA'] as const;
 export type Jurisdiction = (typeof JURISDICTIONS)[number];
+
+/** Jurisdictions an authorised product (authorised_products) can be authorised in: the regulators whose labels we link. */
+export const PRODUCT_JURISDICTIONS = ['US', 'UK', 'CA', 'AU', 'EU', 'NL', 'DE', 'BE'] as const;
 
 export const REGULATORY_STATUSES = [
   'authorised', // marketing authorisation / FDA approval exists for at least one product
+  /**
+   * Authorised and marketed, then the holder stopped and the authorisation was cancelled for
+   * non-safety reasons (e.g. tesamorelin in Canada: approved 2014, cancelled 2022). The row gives
+   * authorised_since (the approval) and since (the cancellation).
+   */
+  'discontinued',
   'not-authorised', // no authorisation; nothing submitted or decided
   'refused', // an application was refused
   'withdrawn', // authorisation or application withdrawn
@@ -101,6 +122,11 @@ export const REGULATORY_STATUSES = [
    */
   'unclear',
 ] as const;
+/** Statuses that only the WADA row may have, and the only ones it may have. */
+export const WADA_STATUSES = ['prohibited', 'not-listed', 'unclear'] as const;
+
+/** Kinds of help service on a jurisdiction's contacts card (src/data/jurisdictions.yaml, help). */
+export const HELP_KINDS = ['urgent-advice', 'poisons', 'drugs-advice', 'mental-health'] as const;
 
 export const WADA_SECTIONS = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'M1', 'M2', 'M3', 'P1'] as const;
 

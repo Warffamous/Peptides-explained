@@ -201,7 +201,7 @@ lab-mouse:
 
 | Where | How |
 |---|---|
-| Page hero (every page) | `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster` (route key, no locale; `""` is the landing page). DocLayout renders it after the beginner layer and the review line on phones and tablets, and beside the title block from 64 rem (§7). |
+| Page hero (every page) | `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster` (route key, no locale; `""` is the landing page). A photo that belongs to one locale is mapped per locale: `safety/warning-signs: { nl: ambulance-den-haag }` (only the Dutch page has it), or `{ default: id, nl: id }` to swap it there; the validator checks each locale key and id. DocLayout renders it after the beginner layer and the review line on phones and tablets, and beside the title block from 64 rem (§7). |
 | In the text | `<Photo id="lab-mouse" />` |
 | Labelled plate | `<Infographic id="glp1-body-map" />` (§6) |
 | Under an animated explainer | `art` / `art_dark` in `src/data/explainers.yaml` (EXPLAINERS.md §3.6) |

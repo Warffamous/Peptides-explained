@@ -6,7 +6,8 @@ import { COMPOUND_SECTIONS } from '../../schemas/vocab';
 interface Props { id: (typeof COMPOUND_SECTIONS)[number] }
 const { id } = Astro.props;
 const c = ctxCompound(Astro, 'Section');
-const authorised = c.data.category === 'authorised' || c.data.category === 'authorised-elsewhere';
+// An official label exists from a regulator the site tracks: "How it works", "Using it safely and legally".
+const authorised = c.data.category === 'authorised';
 const titleKey = authorised && (id === 'mechanism' || id === 'harm-reduction') ? `${id}Authorised` : id;
 const n = COMPOUND_SECTIONS.indexOf(id) + 2; // section 1 is the 30-second version
 ---

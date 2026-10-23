@@ -4,8 +4,13 @@
  * version, for readers who need the essentials in seconds. Three answers are derived from the
  * data file, so every compound with the same facts gets the same words in every locale:
  *
- *   approved  <- category (not-a-peptide: from the EU/other regulatory rows; never assumed;
- *                authorised-nationally: names the countries listed in national_authorisations)
+ *   approved  <- the regulatory rows of the locale's own jurisdictions (approvalFor in
+ *                src/lib/jurisdictions.ts, words in src/lib/approval.ts): approved, no longer sold,
+ *                not approved; a jurisdiction without a row is left out, never "not approved".
+ *                Nothing approved there: category authorised-nationally names the countries in
+ *                national_authorisations; another tracked jurisdiction is never named ("other
+ *                countries"). not-a-peptide adds "It is not a peptide." The pictogram, ring and
+ *                share of the ring follow the answer (all, some, former, elsewhere, trials, none).
  *   tested    <- evidence.human_clinical
  *   sport     <- the WADA regulatory row (status, scope, section; unclear: not named, ask your
  *                anti-doping organisation); anything else says "see below"
@@ -23,37 +28,21 @@
  */
 import Pictogram from '../ui/Pictogram.astro';
 import CiteMarks from '../ui/CiteMarks.astro';
-import { isFallback, t } from '../../lib/i18n';
-import { SOURCE_LOCALE } from '../../lib/config';
+import { t } from '../../lib/i18n';
+import { getLocale } from '../../lib/config';
 import { routeUrl } from '../../lib/urls';
-import { formatCountryList, formatDate, isoDate } from '../../lib/format';
+import { formatDate, isoDate } from '../../lib/format';
+import { visibleRows, type Approval } from '../../lib/jurisdictions';
+import { approvalIcon, approvalShort, approvalText, approvalTone, type Tone } from '../../lib/approval';
 import { HUMAN_CLINICAL } from '../../schemas/vocab';
 import type { CompoundData, CompoundPage } from '../../schemas';
 
 type Glance = CompoundPage['glance'];
-interface Props { locale: string; data: CompoundData; glance: Glance; citeIndex: Map<string, number>; hasRisksSection?: boolean }
-const { locale: L, data, glance, citeIndex, hasRisksSection = true } = Astro.props;
+/** approval: approvalFor(data, contentLocale), computed once by the page (the badge says the same). */
+interface Props { locale: string; data: CompoundData; approval: Approval; contentLocale: string; glance: Glance; citeIndex: Map<string, number>; hasRisksSection?: boolean }
+const { locale: L, data, approval, contentLocale, glance, citeIndex, hasRisksSection = true } = Astro.props;
 const mainRisk = glance.main_risk;
 const k = (key: string) => `beginner.glance.${key}`;
-type Tone = 'yes' | 'partial' | 'no';
-
-// 1. Is it an approved medicine?
-const isAuthorised = (j: string) => data.regulatory.some((r) => r.jurisdiction === j && r.status === 'authorised');
-const NON_EU = ['US', 'UK'];
-let approvedKey: string = data.category;
-if (data.category === 'not-a-peptide') {
-  approvedKey = isAuthorised('EU') ? 'not-a-peptide-authorised' : NON_EU.some(isAuthorised) ? 'not-a-peptide-authorised-elsewhere' : 'not-a-peptide-not-authorised';
-}
-const APPROVED_TONE: Record<string, { tone: Tone; frac: number }> = {
-  authorised: { tone: 'yes', frac: 1 },
-  'not-a-peptide-authorised': { tone: 'yes', frac: 1 },
-  'authorised-elsewhere': { tone: 'partial', frac: 0.67 },
-  'authorised-nationally': { tone: 'partial', frac: 0.5 },
-  'not-a-peptide-authorised-elsewhere': { tone: 'partial', frac: 0.67 },
-  investigational: { tone: 'no', frac: 0.33 },
-  experimental: { tone: 'no', frac: 0 },
-  'not-a-peptide-not-authorised': { tone: 'no', frac: 0 },
-};
 
 // 2. Has it been tested in people?
 const hc = data.evidence.human_clinical;
@@ -72,19 +61,17 @@ const derivedSport: Sport = wada?.status === 'prohibited'
 // A sourced override replaces the words only; the pictogram, section code and link stay derived.
 const sport: Sport = glance.sport ? { ...derivedSport, short: glance.sport.short, text: glance.sport.text, sources: glance.sport.sources } : derivedSport;
 
-// The regulatory rows these answers rest on were last confirmed on this date.
-const checked = [...data.regulatory.filter((r) => r.jurisdiction === 'EU' || r.jurisdiction === 'WADA'), ...data.national_authorisations].map((r) => r.as_of).sort((a, b) => +b - +a)[0] ?? data.last_reviewed;
-// authorised-nationally: the countries named in the tile, in the language of the sentence they sit
-// in (a preview locale without its own string shows the English sentence, so English names).
-const countries = formatCountryList(isFallback(L, k(`approved.${approvedKey}.text`)) ? SOURCE_LOCALE : L, data.national_authorisations.map((n) => n.country));
+// The rows these answers rest on (the locale's own and WADA) and the national authorisations were
+// last confirmed on this date.
+const checked = [...visibleRows(data, getLocale(contentLocale)), ...data.national_authorisations].map((r) => r.as_of).sort((a, b) => +b - +a)[0] ?? data.last_reviewed;
 
 const tiles = [
   {
     id: 'approved',
-    icon: `status-${data.category}`,
-    short: t(L, k(`approved.${approvedKey}.short`)),
-    text: t(L, k(`approved.${approvedKey}.text`), { countries }),
-    ...APPROVED_TONE[approvedKey],
+    icon: approvalIcon(approval),
+    short: approvalShort(L, approval),
+    text: approvalText(L, approval),
+    ...approvalTone(approval),
   },
   {
     id: 'tested',

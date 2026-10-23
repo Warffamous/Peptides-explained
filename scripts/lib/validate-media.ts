@@ -99,11 +99,17 @@ export function validateMedia(ctx: Ctx): { images: number; infographics: number;
     const r = heroesFileSchema.safeParse(readYaml(heroesFile) ?? {});
     zodIssues(heroesFile, r);
     if (r.success) {
-      for (const [route, id] of Object.entries(r.data)) {
-        requireMedia(heroesFile, id, `hero for "${route}"`);
-        if (media.get(id)?.kind === 'infographic-art') err(heroesFile, `hero for "${route}": "${id}" is infographic art; heroes are photos or illustrations`);
+      for (const [route, value] of Object.entries(r.data)) {
         if (!ctx.routeExists(route)) warn(heroesFile, `hero for "${route}": no such page (yet)`);
-        use(id, `hero ${route || '(landing)'}`);
+        // One id for every locale, or one per locale ({ default?: id, <locale>: id }): each checked on its own.
+        const perLocale = typeof value === 'string' ? [['', value] as const] : Object.entries(value);
+        for (const [loc, id] of perLocale) {
+          const where = `hero for "${route}"${loc ? ` (${loc})` : ''}`;
+          if (loc && loc !== 'default' && !ctx.localeCodes.includes(loc)) err(heroesFile, `${where}: "${loc}" is not a locale in config/locales.json (use a locale code or default)`);
+          requireMedia(heroesFile, id, where);
+          if (media.get(id)?.kind === 'infographic-art') err(heroesFile, `${where}: "${id}" is infographic art; heroes are photos or illustrations`);
+          use(id, `hero ${route || '(landing)'}${loc ? ` (${loc})` : ''}`);
+        }
       }
     }
   }

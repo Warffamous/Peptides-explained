@@ -1,4 +1,5 @@
 {
+  "$comment": "Labels for the controlled vocabularies (src/schemas/vocab.ts). Jurisdictions have three forms: jurisdiction (table rows, cards), jurisdictionInSentence (inside a sentence and in lists, with the article where English uses one: 'Approved in the US, the UK, Canada and Australia.'; src/lib/approval.ts joins them with the locale's own and / or) and jurisdictionShort (the fact sheet's Approved in row: 'US since 2010; Canada 2014–2022').",
   "species": {
     "human": "Humans", "rat": "Rats", "mouse": "Mice", "rabbit": "Rabbits", "dog": "Dogs", "pig": "Pigs",
     "sheep": "Sheep", "horse": "Horses", "primate": "Monkeys", "zebrafish": "Zebrafish", "other-animal": "Other animals",
@@ -19,17 +20,25 @@
     "originating": "Originating group", "independent": "Independent group", "mixed": "Mixed", "not-applicable": "—"
   },
   "regStatus": {
-    "authorised": "Authorised", "not-authorised": "Not authorised", "refused": "Authorisation refused",
+    "authorised": "Authorised", "discontinued": "Approved, no longer sold", "not-authorised": "Not authorised", "refused": "Authorisation refused",
     "withdrawn": "Withdrawn", "under-review": "Under review", "investigational": "Clinical trials only",
     "prohibited": "Prohibited in sport", "not-listed": "Not on the Prohibited List", "unclear": "Unclear (not named)"
   },
   "wadaScope": { "at-all-times": "at all times", "in-competition": "in competition" },
   "jurisdiction": {
     "EU": "European Union", "NL": "Netherlands", "DE": "Germany", "BE": "Belgium", "UK": "United Kingdom",
-    "US": "United States", "WADA": "Sport (WADA)"
+    "US": "United States", "CA": "Canada", "AU": "Australia", "IE": "Ireland", "NZ": "New Zealand", "WADA": "Sport (WADA)"
+  },
+  "jurisdictionInSentence": {
+    "US": "the US", "UK": "the UK", "CA": "Canada", "AU": "Australia", "IE": "Ireland", "NZ": "New Zealand",
+    "EU": "the EU", "NL": "the Netherlands", "DE": "Germany", "BE": "Belgium"
+  },
+  "jurisdictionShort": {
+    "US": "US", "UK": "UK", "CA": "Canada", "AU": "Australia", "IE": "Ireland", "NZ": "New Zealand",
+    "EU": "EU", "NL": "Netherlands", "DE": "Germany", "BE": "Belgium"
   },
   "category": {
-    "authorised": "Authorised medicine (EU)", "authorised-elsewhere": "Authorised outside the EU",
+    "authorised": "Authorised medicine",
     "authorised-nationally": "Authorised in some countries", "investigational": "In clinical development", "experimental": "Experimental", "not-a-peptide": "Not a peptide"
   },
   "class": {

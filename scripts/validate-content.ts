@@ -27,9 +27,11 @@ import {
   newsFileSchema,
   jurisdictionsFileSchema,
   warningSignsFileSchema,
+  localeFileSchema,
   type CompoundData,
 } from '../src/schemas/index.ts';
 import * as V from '../src/schemas/vocab.ts';
+import { STRICT_PAGE_JURISDICTIONS, EU_MEMBER_STATES, cardCodes, visibleCodes } from '../src/lib/jurisdictions.ts';
 import { ALLOWED_COMPONENTS, COMPOUND_ONLY_COMPONENTS, SOURCED_FIGURES } from '../src/schemas/components.ts';
 import { wordCount, fleschReadingEase } from '../src/lib/readability.ts';
 import {
@@ -39,7 +41,6 @@ import {
   readYaml,
   readJson,
   readMdx,
-  loadLocales,
   loadAllowlist,
   hostAllowed,
   loadCommerceTokens,
@@ -49,6 +50,21 @@ import { validateMedia } from './lib/validate-media.ts';
 import { checkExplainers } from './lib/explainers.ts';
 import { checkProductCheck } from './lib/product-check.ts';
 import { checkOrganCards } from './lib/organ-cards.ts';
+
+/**
+ * Rows each locale shows (config/locales.json, jurisdictions.full; owner's decision, 23 October 2026).
+ * A compound needs a regulatory row for every full jurisdiction of every PUBLISHED locale (today US,
+ * UK, CA and AU), and every authorised or discontinued row a locale shows needs a product of that
+ * jurisdiction; every jurisdiction a locale lists needs a contacts entry in src/data/jurisdictions.yaml
+ * (until it has one, its <JurisdictionCard> is left out of the page).
+ * While STRICT_LOCALE_ROWS is false these are warnings: the CA and AU rows (and 9 UK rows), products
+ * and contacts come from the refocus research (research/refocus/). Set it to true when that is merged.
+ * Preview locales' sets only ever warn; the WADA row is always required (an error, in the schema).
+ * The page-level checks (regulatory_notes, page jurisdiction, <JurisdictionCard> of another
+ * jurisdiction) follow STRICT_PAGE_JURISDICTIONS in src/lib/jurisdictions.ts, which the content
+ * rewrite turns on.
+ */
+const STRICT_LOCALE_ROWS = false;
 
 const args = process.argv.slice(2);
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
@@ -65,9 +81,24 @@ function zodIssues(file: string, result: { success: boolean; error?: { issues: {
   for (const i of result.error!.issues) err(file, `${i.path.join('.') || '(root)'}: ${i.message}`);
 }
 
-const { locales, sourceLocale } = loadLocales();
+// ------------------------------------------------------------------ locales (config/locales.json, localeFileSchema)
+const localeFile = path.join(ROOT, 'config/locales.json');
+const localeResult = localeFileSchema.safeParse(readJson(localeFile));
+if (!localeResult.success) {
+  // Everything below depends on the locales: report the registry's problems and stop.
+  console.log(`\n\x1b[31merror\x1b[0m ${rel(localeFile)}`);
+  for (const i of localeResult.error.issues) console.log(`  - ${i.path.join('.') || '(root)'}: ${i.message}`);
+  process.exit(1);
+}
+const { locales, sourceLocale } = localeResult.data;
 const localeCodes = locales.map((l) => l.code);
 const publishedLocales = locales.filter((l) => l.status === 'published').map((l) => l.code);
+const localeByCode = new Map(locales.map((l) => [l.code, l]));
+/** Report per locale status: published locales' checks follow `strictFlag`; others only warn. */
+const byStatus = (code: string, strictFlag: boolean) => (localeByCode.get(code)?.status === 'published' && strictFlag ? err : warn);
+/** Jurisdictions with a contacts entry (src/data/jurisdictions.yaml, read raw here; its schema is checked further down). */
+const contactsRaw = readYaml(path.join(ROOT, 'src/data/jurisdictions.yaml'));
+const contactCodes = new Set(Array.isArray(contactsRaw) ? contactsRaw.map((c: { code?: string }) => c?.code) : []);
 const allow = loadAllowlist();
 const commerce = loadCommerceTokens();
 const commerceRe = commerceRegex(commerce.tokens);
@@ -164,7 +195,10 @@ for (const file of walk('src/data/compounds', ['.yaml', '.yml'])) {
   compoundData.set(c.slug, c);
   if (c.sequence) requireSource(file, c.sequence.source, 'sequence.source');
   if (c.molecular.smiles_source) requireSource(file, c.molecular.smiles_source, 'molecular.smiles_source');
-  for (const reg of c.regulatory) reg.sources.forEach((s) => requireSource(file, s, `regulatory ${reg.jurisdiction}`));
+  for (const reg of c.regulatory) {
+    reg.sources.forEach((s) => requireSource(file, s, `regulatory ${reg.jurisdiction}`));
+    reg.schedule?.sources.forEach((s) => requireSource(file, s, `regulatory ${reg.jurisdiction} schedule`));
+  }
   // authorised-nationally: every country named in the "approved?" tile is a real region code with sources.
   const regionNames = new Intl.DisplayNames(['en'], { type: 'region', fallback: 'none' });
   for (const n of c.national_authorisations) {
@@ -184,6 +218,37 @@ for (const file of walk('src/data/compounds', ['.yaml', '.yml'])) {
 }
 for (const c of compoundData.values()) {
   for (const rel of c.related) if (!compoundData.has(rel)) err(path.join(ROOT, `src/data/compounds/${c.slug}.yaml`), `related: unknown compound "${rel}"`);
+}
+
+// ------------------------------------------------------------------ rows each locale shows (STRICT_LOCALE_ROWS)
+// The full jurisdictions of the built locales, in locale order, with the locales that show each.
+const rowLocales = new Map<V.Jurisdiction, string[]>();
+for (const l of locales.filter((x) => x.status !== 'planned')) {
+  for (const j of l.jurisdictions.full) rowLocales.set(j, [...(rowLocales.get(j) ?? []), l.code]);
+}
+const shownByPublished = (j: V.Jurisdiction) => (rowLocales.get(j) ?? []).some((l) => publishedLocales.includes(l));
+// An EU (central) authorisation is the product for its member states' rows too.
+const productCovers = (product: V.Jurisdiction, row: V.Jurisdiction) => product === row || (product === 'EU' && EU_MEMBER_STATES.includes(row));
+for (const c of compoundData.values()) {
+  const file = path.join(ROOT, `src/data/compounds/${c.slug}.yaml`);
+  const have = new Set(c.regulatory.map((r) => r.jurisdiction));
+  const missing = [...rowLocales.keys()].filter((j) => !have.has(j));
+  const missingPublished = missing.filter(shownByPublished);
+  const missingPreview = missing.filter((j) => !shownByPublished(j));
+  if (missingPublished.length) {
+    (STRICT_LOCALE_ROWS ? err : warn)(file, `no regulatory row for ${missingPublished.join(', ')} (shown on ${[...new Set(missingPublished.flatMap((j) => rowLocales.get(j)!))].join(', ')}): until it is added, the page treats it as unknown and leaves it out of the approval answer`);
+  }
+  if (missingPreview.length) {
+    warn(file, `no regulatory row for ${missingPreview.join(', ')} (shown on preview locale ${[...new Set(missingPreview.flatMap((j) => rowLocales.get(j)!))].join(', ')})`);
+  }
+  for (const r of c.regulatory) {
+    if ((r.status !== 'authorised' && r.status !== 'discontinued') || !rowLocales.has(r.jurisdiction)) continue;
+    if (c.authorised_products.some((p) => productCovers(p.jurisdiction, r.jurisdiction))) continue;
+    (shownByPublished(r.jurisdiction) && STRICT_LOCALE_ROWS ? err : warn)(
+      file,
+      `the ${r.jurisdiction} row is ${r.status} and shown on ${rowLocales.get(r.jurisdiction)!.join(', ')}, but authorised_products has no ${r.jurisdiction} product (with its official label)`,
+    );
+  }
 }
 
 // ------------------------------------------------------------------ glossary
@@ -317,6 +382,27 @@ function checkBody(file: string, body: string, locale: string, kind: 'page' | 'c
   // figure captions (diagrams, explainers, infographics, photos): the beginner reads them first
   for (const m of body.matchAll(CAPTION_RE)) checkPlain(file, `<${m[1]}> caption`, m[3], locale);
   checkVisuals(file, body, locale);
+  // Contact cards: only the locale's own jurisdictions (full + notes). <JurisdictionCard> leaves any
+  // other card out of the page until STRICT_PAGE_JURISDICTIONS, then fails the build. A card of the
+  // locale's own whose jurisdiction has no contacts entry yet is left out too (STRICT_LOCALE_ROWS).
+  const own = cardCodes(localeByCode.get(locale)!, 'all') as string[];
+  const foreign: string[] = [];
+  const noEntry: string[] = [];
+  for (const m of body.matchAll(/<JurisdictionCard\s+code=["']([^"']+)["']/g)) {
+    if (!(V.JURISDICTIONS as readonly string[]).includes(m[1])) err(file, `<JurisdictionCard code="${m[1]}">: not a jurisdiction (${V.JURISDICTIONS.join(', ')})`);
+    else if (!own.includes(m[1])) foreign.push(m[1]);
+    else if (!contactCodes.has(m[1])) noEntry.push(m[1]);
+  }
+  if (foreign.length) {
+    byStatus(locale, STRICT_PAGE_JURISDICTIONS)(file, `<JurisdictionCard> for ${[...new Set(foreign)].join(', ')}: not one of the ${locale} locale's jurisdictions (${own.join(', ')}), so the card is left out of the page; the content rewrite removes it`);
+  }
+  if (noEntry.length) {
+    byStatus(locale, STRICT_LOCALE_ROWS)(file, `<JurisdictionCard> for ${[...new Set(noEntry)].join(', ')}: no entry in src/data/jurisdictions.yaml yet, so the card is left out of the page`);
+  }
+  for (const tag of openTags(body, 'JurisdictionCards')) {
+    const which = attr(tag, 'which');
+    if (which && !['full', 'notes', 'all'].includes(which)) err(file, `<JurisdictionCards which="${which}">: use full, notes or all`);
+  }
   // links
   const links: { text: string; href: string }[] = [];
   for (const m of body.matchAll(MD_LINK_RE)) links.push({ text: m[1], href: m[2] });
@@ -426,12 +512,18 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
     if (!sectionBody('evidence').includes('<StudyTable')) err(file, '<Section id="evidence"> must contain <StudyTable />');
   }
   if (!sectionBody('regulatory').includes('<RegulatoryTable')) err(file, '<Section id="regulatory"> must contain <RegulatoryTable />');
-  if ((cd.category === 'authorised' || cd.category === 'authorised-elsewhere') && !body.includes('<AuthorisedProducts')) {
+  if (cd.category === 'authorised' && !body.includes('<AuthorisedProducts')) {
     err(file, 'authorised compounds must include <AuthorisedProducts /> (prescription route + official label links)');
   }
   // localised study text covers the data
   for (const st of cd.studies) if (!r.data.studies[st.id]) err(file, `studies: missing localised finding/limitation for study "${st.id}"`);
   for (const id of Object.keys(r.data.studies)) if (!cd.studies.find((s) => s.id === id)) err(file, `studies: "${id}" is not a study in the data file`);
+  // Notes for rows this locale does not show (its full jurisdictions and WADA) are never rendered.
+  const shown = visibleCodes(localeByCode.get(locale)!);
+  const unshown = Object.keys(r.data.regulatory_notes).filter((j) => !(shown as string[]).includes(j));
+  if (unshown.length) {
+    byStatus(locale, STRICT_PAGE_JURISDICTIONS)(file, `regulatory_notes for ${unshown.join(', ')}: ${locale} shows only ${shown.join(', ')} (config/locales.json), so these notes are not rendered; the content rewrite removes them`);
+  }
   for (const p of cd.authorised_products) if (!r.data.indications[p.id]) err(file, `indications: missing localised indication for product "${p.id}"`);
   if (cd.status === 'complete' && r.data.mechanism.length < 3) err(file, 'complete pages need a mechanism chain of at least 3 steps');
   checkBody(file, body, locale, 'compound');
@@ -477,6 +569,10 @@ for (const file of walk('src/content/pages', ['.mdx'])) {
   pageRoutes.get(locale)!.add(route);
   pageFiles.push({ file, locale, route, data: r.data, body });
   checkSummary(file, r.data.summary, locale);
+  const pageOwn = cardCodes(localeByCode.get(locale)!, 'all') as string[];
+  if (r.data.jurisdiction && !pageOwn.includes(r.data.jurisdiction)) {
+    byStatus(locale, STRICT_PAGE_JURISDICTIONS)(file, `jurisdiction: ${r.data.jurisdiction} is not one of the ${locale} locale's jurisdictions (${pageOwn.join(', ')}); the content rewrite removes or rewrites this page`);
+  }
   requirePerson(file, r.data.reviewed_by, 'reviewed_by');
   if (r.data.opinion) requirePerson(file, r.data.opinion.signed_by, 'opinion.signed_by');
   r.data.further_reading.forEach((s) => requireSource(file, s, 'further_reading'));
@@ -511,12 +607,24 @@ timeline?.forEach((e) => {
   e.sources.forEach((s) => requireSource(path.join(ROOT, 'src/data/timeline.yaml'), s, `timeline ${e.id}`));
   e.compounds.forEach((c) => compoundData.has(c) || err(path.join(ROOT, 'src/data/timeline.yaml'), `timeline ${e.id}: unknown compound ${c}`));
 });
-const tracker = checkDataFile('src/data/tracker.yaml', trackerFileSchema as never) as { id: string; sources: string[] }[] | null;
-tracker?.forEach((e) => e.sources.forEach((s) => requireSource(path.join(ROOT, 'src/data/tracker.yaml'), s, `tracker ${e.id}`)));
+const tracker = checkDataFile('src/data/tracker.yaml', trackerFileSchema as never) as { id: string; sources: string[]; local_sources: Record<string, string[]> }[] | null;
+tracker?.forEach((e) => [...e.sources, ...Object.values(e.local_sources).flat()].forEach((s) => requireSource(path.join(ROOT, 'src/data/tracker.yaml'), s, `tracker ${e.id}`)));
 const corrections = checkDataFile('src/data/corrections.yaml', correctionsFileSchema as never) as { id: string }[] | null;
 checkDataFile('src/data/feeds.yaml', feedsFileSchema as never);
 checkDataFile('src/data/news.json', newsFileSchema as never);
-checkDataFile('src/data/jurisdictions.yaml', jurisdictionsFileSchema as never);
+const jurisdictionsFile = path.join(ROOT, 'src/data/jurisdictions.yaml');
+const contacts = checkDataFile('src/data/jurisdictions.yaml', jurisdictionsFileSchema as never) as { code: string }[] | null;
+if (contacts) {
+  // Every jurisdiction a locale lists (full and notes) has a contacts entry (STRICT_LOCALE_ROWS: the
+  // CA, AU, IE and NZ entries come from the refocus research).
+  const codes = contacts.map((c) => c.code);
+  if (new Set(codes).size !== codes.length) err(jurisdictionsFile, 'a jurisdiction has two entries');
+  const listedBy = new Map<string, string[]>();
+  for (const l of locales) for (const j of cardCodes(l, 'all')) if (!codes.includes(j)) listedBy.set(j, [...(listedBy.get(j) ?? []), l.code]);
+  for (const [j, locs] of listedBy) {
+    (locs.some((l) => publishedLocales.includes(l)) && STRICT_LOCALE_ROWS ? err : warn)(jurisdictionsFile, `no entry for ${j}, which locale ${locs.join(', ')} lists in config/locales.json (contacts card, help services)`);
+  }
+}
 for (const loc of localeCodes) checkDataFile(`src/i18n/${loc}/warning-signs.json`, warningSignsFileSchema as never);
 
 for (const loc of localeCodes) {
@@ -586,7 +694,8 @@ for (const w of waivers) {
 /**
  * The English site is read in many countries, so it never prints 112 as a phone number (owner's
  * decision, 20 October 2026): it says "call your local emergency number" (common.emergency.* in
- * components). Dutch pages say 112. A "112" that is a phone number is one with a calling word near
+ * components). Dutch pages say 112. The rule applies to every locale with printsEmergencyNumbers:
+ * false in config/locales.json (today English). A "112" that is a phone number is one with a calling word near
  * it (call, phone, dial, emergency, ambulance …), or any 112 in a safety string (a stop callout, a
  * stop sign, the warning signs, the emergency and notice strings). Other numbers are left alone:
  * "week 112", "volume 112", "JCI112855" and "1,112" do not match.
@@ -622,7 +731,7 @@ function walkStrings(node: unknown, at: string, out: [string, string][]) {
   else if (Array.isArray(node)) node.forEach((x, i) => walkStrings(x, `${at}.${i}`, out));
   else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) walkStrings(v, at ? `${at}.${k}` : k, out);
 }
-for (const loc of englishLocales) {
+for (const loc of locales.filter((l) => !l.printsEmergencyNumbers).map((l) => l.code)) {
   for (const file of [...walk(`src/content/compounds/${loc}`, ['.mdx', '.md']), ...walk(`src/content/pages/${loc}`, ['.mdx', '.md'])]) {
     const raw = fs.readFileSync(file, 'utf8');
     find112(file, raw);

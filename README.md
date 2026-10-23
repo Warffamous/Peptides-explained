@@ -159,8 +159,17 @@ it without touching components, layouts or scripts; every user-visible word live
    - `code` (two letters, e.g. `de`; it is the first part of every URL), `name` (in the language
      itself), `englishName`, `bcp47` (e.g. `de-DE`), `hreflang`, `dateLocale` (dates and numbers);
    - `dir`: `ltr` or `rtl` (Arabic: `rtl`); `script`: `latin` or `arabic` (this picks the font);
-   - `jurisdiction`: the country whose law and services most of these readers live under
-     (recorded for editors; Polish, Turkish and Arabic are planned for readers in the Netherlands);
+   - `jurisdictions`: `{ "full": [...], "notes": [...] }`, codes from `JURISDICTIONS` in
+     `src/schemas/vocab.ts` (never `WADA`, which every locale shows). `full` are the countries (or the
+     EU) these readers live under, in display order: only their regulatory rows, products, approval
+     answers ("Is it an approved medicine?"), contact cards, timeline and tracker items and regulator news
+     are shown. `notes` get a contact card only. Everything else stays in `src/data/` for the locale
+     that covers it. English: full US, UK, CA, AU; notes IE, NZ. Dutch: NL, EU, BE (Polish, Turkish and
+     Arabic are planned for readers in the Netherlands: NL, EU). Every code needs an entry in
+     `src/data/jurisdictions.yaml`, and every compound a row for each full code of a published locale
+     (the validator checks both; `STRICT_LOCALE_ROWS` in `scripts/validate-content.ts`);
+   - `printsEmergencyNumbers`: `false` if the locale's readers live in more than one country (it then
+     says "call your local emergency number" and never prints a number), `true` for one country;
    - `status`: start with `planned`.
 2. **Know the three statuses.**
    - `planned`: files are validated, nothing is built.
@@ -177,9 +186,11 @@ it without touching components, layouts or scripts; every user-visible word live
    `vocab.json` and `warning-signs.json` (the stop-now list, the most important safety text).
    Missing keys fall back to English while the locale is in preview.
 4. **Write the emergency strings for the locale** in `common.json` (`emergency.call`, `now`,
-   `ifSevere`, `jurisdiction`). Components never write a number themselves. English never prints
-   one ("call your local emergency number"); Dutch says "Bel 112". Print a number only when the
-   locale's readers live in one country, and agree it with the editor (CONTENT-GUIDE §1).
+   `ifSevere`, `jurisdiction`). Components never write a number themselves: `<JurisdictionCard>` fills
+   `{number}` in `emergency.jurisdiction` from `src/data/jurisdictions.yaml` only when the locale has
+   `printsEmergencyNumbers: true`. English never prints one ("call your local emergency number");
+   Dutch says "Bel 112". Print a number only when the locale's readers live in one country, and agree it
+   with the editor (CONTENT-GUIDE §1).
 5. **Translate the pages.** For each page, create the same path under the new locale:
    `src/content/pages/<code>/<route>.mdx` and `src/content/compounds/<code>/<slug>.mdx`. Keep the file
    name, the components, every `<Cite>` and every `<Claim level>`; translate the frontmatter text and
@@ -210,9 +221,10 @@ it without touching components, layouts or scripts; every user-visible word live
   (`scripts/sync-fonts.mjs`, `src/styles/design/fonts.css`). A Cyrillic, Greek or other script needs
   new font files, which is a code change.
 - **A new country needs a schema change.** Jurisdiction codes are fixed in `src/schemas/vocab.ts`
-  (`EU, NL, DE, BE, UK, US, WADA`). A legal page, a regulatory row or a contacts card
-  (`src/data/jurisdictions.yaml`) for another country needs a code added there, plus its name in
-  `vocab.json`.
+  (`EU, NL, DE, BE, UK, US, CA, AU, IE, NZ, WADA`). A legal page, a regulatory row or a contacts card
+  (`src/data/jurisdictions.yaml`) for another country needs a code added there, plus its three names in
+  `vocab.json` (`jurisdiction`, `jurisdictionInSentence`, `jurisdictionShort`); a product of that
+  country also needs it in `PRODUCT_JURISDICTIONS`.
 - **Locale codes with a region** (`pt-BR`) are not supported as URL codes: the glossary linker and
   the root page's language redirect expect a plain language code.
 - The descriptions of the news feeds (`src/data/feeds.yaml`, `why:`) are English data, shown with

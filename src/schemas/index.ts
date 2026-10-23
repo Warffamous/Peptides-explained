@@ -98,9 +98,16 @@ export const regulatoryEntrySchema = z.object({
   status: z.enum(V.REGULATORY_STATUSES),
   wada_section: z.enum(V.WADA_SECTIONS).optional(),
   wada_scope: z.enum(['at-all-times', 'in-competition']).optional(),
-  since: isoDate.optional(), // date the status took effect, when known
+  since: isoDate.optional(), // date the status took effect, when known (discontinued: the cancellation)
+  /** discontinued only (required there): the date it was first authorised. */
+  authorised_since: isoDate.optional(),
   as_of: isoDate, // date we last confirmed it
   sources: z.array(kebab).min(1),
+  /**
+   * A national schedule the medicine is in, where the regulator publishes one (e.g. the Australian
+   * Poisons Standard, code "S4": prescription only). note: the schedule's own short wording.
+   */
+  schedule: z.object({ code: nonEmpty, note: z.string().optional(), sources: z.array(kebab).min(1) }).optional(),
 });
 
 export const studySchema = z.object({
@@ -121,8 +128,10 @@ export const authorisedProductSchema = z.object({
   id: kebab,
   name: nonEmpty, // trade name
   holder: nonEmpty, // marketing-authorisation holder (factual identification only)
-  jurisdiction: z.enum(['EU', 'US', 'UK']),
+  jurisdiction: z.enum(V.PRODUCT_JURISDICTIONS),
   authorised: isoDate,
+  /** The date it stopped being sold (the holder stopped, or the authorisation was cancelled), if it has. */
+  marketed_until: isoDate.optional(),
   route: z.enum(['subcutaneous', 'oral', 'intranasal', 'intravenous', 'topical']),
   /** Official product information: EMA EPAR / CBG / FDA label. Never a seller. */
   label_url: z.string().url(),
@@ -183,46 +192,63 @@ export const compoundDataSchema = z
     edited_by: kebab.default('editorial-board'),
   })
   .superRefine((c, ctx) => {
-    if (c.category !== 'not-a-peptide' && !c.sequence) {
-      ctx.addIssue({ code: 'custom', path: ['sequence'], message: 'peptides need a sequence' });
-    }
-    if ((c.category === 'authorised' || c.category === 'authorised-elsewhere') && c.authorised_products.length === 0) {
-      ctx.addIssue({ code: 'custom', path: ['authorised_products'], message: 'authorised compounds must list at least one authorised product with its official label' });
-    }
-    if (c.category === 'authorised' && c.evidence.human_clinical !== 'authorised') {
-      ctx.addIssue({ code: 'custom', path: ['evidence', 'human_clinical'], message: 'EU-authorised compounds have human_clinical: authorised' });
+    const issue = (path: (string | number)[], message: string) => ctx.addIssue({ code: 'custom', path, message });
+    if (c.category !== 'not-a-peptide' && !c.sequence) issue(['sequence'], 'peptides need a sequence');
+    // A row (or product) that says a regulator authorised it: a label exists, now or in the past.
+    const labelled = (s: string) => s === 'authorised' || s === 'discontinued';
+    const authorisedRows = c.regulatory.filter((r) => r.jurisdiction !== 'WADA' && labelled(r.status));
+    if (c.category === 'authorised') {
+      if (c.authorised_products.length === 0) {
+        issue(['authorised_products'], 'authorised compounds must list at least one authorised product with its official label');
+      }
+      if (authorisedRows.length === 0) {
+        issue(['regulatory'], 'authorised compounds need at least one row (not WADA) with status authorised or discontinued');
+      }
+      if (c.evidence.human_clinical !== 'authorised') {
+        issue(['evidence', 'human_clinical'], 'authorised compounds have human_clinical: authorised');
+      }
+    } else if (c.category !== 'not-a-peptide' && (authorisedRows.length > 0 || c.authorised_products.length > 0)) {
+      // The approval answer is derived from the rows: a label anywhere the site tracks makes it authorised.
+      issue(['category'], `a row authorised or discontinued (${authorisedRows.map((r) => r.jurisdiction).join(', ') || 'none'}) or an authorised product makes the category authorised`);
     }
     if (c.category === 'authorised-nationally') {
       if (c.national_authorisations.length === 0) {
-        ctx.addIssue({ code: 'custom', path: ['national_authorisations'], message: 'authorised-nationally compounds list at least one country, with sources' });
+        issue(['national_authorisations'], 'authorised-nationally compounds list at least one country, with sources');
       }
       if (c.evidence.human_clinical !== 'authorised') {
-        ctx.addIssue({ code: 'custom', path: ['evidence', 'human_clinical'], message: 'authorised-nationally compounds have human_clinical: authorised (a regulator has granted a marketing authorisation)' });
-      }
-      // The tile says "Not approved for the whole EU or in the US": a US or UK approval makes it authorised-elsewhere.
-      if (c.regulatory.some((r) => (r.jurisdiction === 'US' || r.jurisdiction === 'UK') && r.status === 'authorised') || c.authorised_products.length > 0) {
-        ctx.addIssue({ code: 'custom', path: ['category'], message: 'authorised in the US or UK, or with an authorised product label: use authorised-elsewhere (or authorised for the EU)' });
+        issue(['evidence', 'human_clinical'], 'authorised-nationally compounds have human_clinical: authorised (a regulator has granted a marketing authorisation)');
       }
     } else if (c.national_authorisations.length > 0) {
-      ctx.addIssue({ code: 'custom', path: ['national_authorisations'], message: 'national_authorisations is only used with category authorised-nationally' });
+      issue(['national_authorisations'], 'national_authorisations is only used with category authorised-nationally');
     }
-    for (const r of c.regulatory) {
-      if (r.status === 'unclear' && r.jurisdiction !== 'WADA') {
-        ctx.addIssue({ code: 'custom', path: ['regulatory'], message: `status unclear is for the WADA row only (${r.jurisdiction})` });
+    const seen = new Set<string>();
+    c.regulatory.forEach((r, i) => {
+      if (seen.has(r.jurisdiction)) issue(['regulatory', i], `two rows for ${r.jurisdiction}`);
+      seen.add(r.jurisdiction);
+      const wadaOnly = (V.WADA_STATUSES as readonly string[]).includes(r.status);
+      if (wadaOnly && r.jurisdiction !== 'WADA') issue(['regulatory', i], `status ${r.status} is for the WADA row only (${r.jurisdiction})`);
+      if (!wadaOnly && r.jurisdiction === 'WADA') issue(['regulatory', i], `the WADA row is ${V.WADA_STATUSES.join(', ')} (not ${r.status})`);
+      if (r.status === 'unclear' && r.wada_scope) issue(['regulatory', i], 'an unclear WADA status has no wada_scope (nothing is prohibited yet)');
+      if (r.status === 'discontinued') {
+        if (!r.since || !r.authorised_since) issue(['regulatory', i], `discontinued (${r.jurisdiction}) needs authorised_since (the approval) and since (the cancellation)`);
+        else if (+r.authorised_since > +r.since) issue(['regulatory', i], `discontinued (${r.jurisdiction}): authorised_since is after since`);
+      } else if (r.authorised_since) {
+        issue(['regulatory', i], `authorised_since is only for discontinued rows (${r.jurisdiction}: put the date of the status in since)`);
       }
-      if (r.status === 'unclear' && r.wada_scope) {
-        ctx.addIssue({ code: 'custom', path: ['regulatory'], message: 'an unclear WADA status has no wada_scope (nothing is prohibited yet)' });
-      }
-    }
+    });
+    // Required rows: WADA always. The rows each locale shows are required by the validator, from
+    // config/locales.json (scripts/validate-content.ts, STRICT_LOCALE_ROWS).
+    if (!seen.has('WADA')) issue(['regulatory'], 'regulatory status missing for WADA');
+    c.authorised_products.forEach((p, i) => {
+      const row = c.regulatory.find((r) => r.jurisdiction === p.jurisdiction);
+      if (!row || !labelled(row.status)) issue(['authorised_products', i], `product ${p.id} (${p.jurisdiction}): the ${p.jurisdiction} row must be authorised or discontinued`);
+      if (p.marketed_until && +p.marketed_until < +p.authorised) issue(['authorised_products', i], `product ${p.id}: marketed_until is before authorised`);
+    });
     if (c.status === 'complete' && c.tier === 1 && c.studies.length < 3) {
-      ctx.addIssue({ code: 'custom', path: ['studies'], message: 'complete Tier 1 pages need at least 3 structured studies' });
-    }
-    const juris = new Set(c.regulatory.map((r) => r.jurisdiction));
-    for (const j of ['EU', 'NL', 'US', 'WADA'] as const) {
-      if (!juris.has(j)) ctx.addIssue({ code: 'custom', path: ['regulatory'], message: `regulatory status missing for ${j}` });
+      issue(['studies'], 'complete Tier 1 pages need at least 3 structured studies');
     }
     const ids = c.studies.map((s) => s.id);
-    if (new Set(ids).size !== ids.length) ctx.addIssue({ code: 'custom', path: ['studies'], message: 'duplicate study id' });
+    if (new Set(ids).size !== ids.length) issue(['studies'], 'duplicate study id');
   });
 export type CompoundData = z.infer<typeof compoundDataSchema>;
 
@@ -262,9 +288,9 @@ export const compoundPageSchema = z.object({
   summary: summarySchema,
   /**
    * The "At a glance" strip above the summary. Three of its four tiles are derived from the data
-   * file (category and national_authorisations, evidence.human_clinical, the WADA row); only the
-   * risk tile needs words. The derived "tested" and "sport" answers may be overridden, with sources,
-   * where the generic words would mislead for this compound (CONTENT-GUIDE §5.2).
+   * file (the locale's regulatory rows and national_authorisations, evidence.human_clinical, the
+   * WADA row); only the risk tile needs words. The derived "tested" and "sport" answers may be
+   * overridden, with sources, where the generic words would mislead for this compound (CONTENT-GUIDE §5.2).
    */
   glance: z
     .object({
@@ -304,7 +330,7 @@ export const compoundPageSchema = z.object({
         .optional(),
       /**
        * Compound-specific rows of the fact sheet beside the title (label/value, each value at most
-       * 10 words): how it is taken, how often, how long it lasts. Class, EU status and human testing
+       * 10 words): how it is taken, how often, how long it lasts. Class, "approved in" and human testing
        * are added from the data file. Facts only; label facts from the SmPC, never a dose.
        */
       facts: z
@@ -339,7 +365,10 @@ export const compoundPageSchema = z.object({
     .default([]),
   /** Localised text for each study in the data file, keyed by study id. */
   studies: z.record(kebab, z.object({ finding: nonEmpty, limitation: nonEmpty })).default({}),
-  /** Localised one-line notes per jurisdiction for the regulatory table. */
+  /**
+   * Localised one-line notes per jurisdiction for the regulatory table. Only the locale's own rows
+   * (jurisdictions.full) and WADA are shown; the validator warns about the others.
+   */
   regulatory_notes: z.record(z.enum(V.JURISDICTIONS), nonEmpty).default({}),
   /** Localised indication per authorised product id. */
   indications: z.record(kebab, nonEmpty).default({}),
@@ -409,6 +438,12 @@ export const timelineEventSchema = z.object({
   date: isoDate.optional(),
   category: z.enum(['discovery', 'chemistry', 'regulation', 'approval', 'market', 'sport', 'safety']),
   compounds: z.array(kebab).default([]),
+  /**
+   * Where the event happened (a Dutch law: [NL]; an FDA approval: [US]; both an FDA and an EU
+   * approval: [US, EU]). A locale shows it when one of them is its own; [] = global (science,
+   * history), shown everywhere.
+   */
+  jurisdictions: z.array(z.enum(V.JURISDICTIONS)).default([]),
   sources: z.array(kebab).min(1),
 });
 export const timelineFileSchema = z.array(timelineEventSchema);
@@ -422,6 +457,12 @@ export const trackerItemSchema = z.object({
   next_milestone: isoDate.optional(),
   compounds: z.array(kebab).default([]),
   sources: z.array(kebab).min(1),
+  /**
+   * Sources shown only in a locale that covers the jurisdiction (visibleSources in
+   * src/lib/jurisdictions.ts): a national body's notice on a WADA item, which every locale shows,
+   * e.g. { NL: [dopingautoriteit-2027-list-news] }. The words that cite it belong in that locale's text.
+   */
+  local_sources: z.record(z.enum(V.JURISDICTIONS), z.array(kebab).min(1)).default({}),
 });
 export const trackerFileSchema = z.array(trackerItemSchema);
 export const trackerTextSchema = z.record(kebab, z.object({ title: nonEmpty, summary: nonEmpty, next: z.string().optional() }));
@@ -446,6 +487,8 @@ export const feedSchema = z.object({
   homepage: z.string().url(),
   query: z.string().optional(), // PubMed query for kind: pubmed
   category: z.enum(['regulator', 'research', 'preprint', 'public-health', 'anti-doping']),
+  /** A national or EU regulator's feed: shown only in locales with this jurisdiction. Omitted = shown everywhere. */
+  jurisdiction: z.enum(V.JURISDICTIONS).optional(),
   peer_reviewed: z.boolean(),
   lang: z.string().default('en'),
   /** Keep only items matching at least one of these (case-insensitive). Empty = keep all. */
@@ -471,10 +514,14 @@ export const newsFileSchema = z.object({ generated: isoDate, items: z.array(news
 
 export const jurisdictionSchema = z.object({
   code: z.enum(V.JURISDICTIONS),
-  // The jurisdiction's emergency number, as data. Pages never print it directly: they use the
-  // locale's common.emergency.* strings (English: "your local emergency number"; Dutch: 112).
-  emergency: z.string(),
-  urgent_care: z.string().optional(), // e.g. "huisartsenpost" — localised label key in i18n
+  // The jurisdiction's emergency numbers, as data (e.g. ["000", "112"]). Pages never print them
+  // directly: they use the locale's common.emergency.* strings, and <JurisdictionCard> passes the
+  // numbers only to a locale with printsEmergencyNumbers (English: "your local emergency number").
+  emergency: z.array(z.string().regex(/^\d{2,4}$/, 'an emergency number is 2 to 4 digits')).min(1),
+  /** Help services for the public, shown on the card: label from pages.jurisdiction.help.<kind>. */
+  help: z
+    .array(z.object({ kind: z.enum(V.HELP_KINDS), name: nonEmpty, url: z.string().url() }))
+    .default([]),
   regulator: z.object({ name: nonEmpty, url: z.string().url() }).optional(),
   inspectorate: z.object({ name: nonEmpty, url: z.string().url() }).optional(),
   reporting: z.object({ name: nonEmpty, url: z.string().url() }).optional(), // adverse-event reporting for the public
@@ -482,6 +529,61 @@ export const jurisdictionSchema = z.object({
   medicines_law: z.object({ name: nonEmpty, url: z.string().url() }).optional(),
 });
 export const jurisdictionsFileSchema = z.array(jurisdictionSchema);
+
+// ---------------------------------------------------------------- locales (config/locales.json)
+
+/** A jurisdiction a locale covers. WADA is never listed: every locale shows the sport row. */
+const localeJurisdiction = z.enum(V.JURISDICTIONS).refine((j) => j !== 'WADA', { message: 'WADA is shown in every locale; do not list it' });
+
+export const localeSchema = z
+  .object({
+    code: z.string().regex(/^[a-z]{2,3}$/, 'a plain language code (en, nl, de): it is the first part of every URL'),
+    name: nonEmpty, // in the language itself
+    englishName: nonEmpty,
+    dir: z.enum(['ltr', 'rtl']),
+    status: z.enum(['published', 'preview', 'planned']),
+    bcp47: nonEmpty,
+    hreflang: nonEmpty,
+    dateLocale: nonEmpty, // dates, numbers and lists
+    /**
+     * full: the jurisdictions this locale covers in full, in display order (regulatory rows,
+     * products, the approval answers, contact cards). notes: short notes only (contact cards).
+     * Data for every other jurisdiction stays in src/data/ but is not shown in this locale.
+     */
+    jurisdictions: z.object({ full: z.array(localeJurisdiction), notes: z.array(localeJurisdiction) }),
+    /** false: the locale says "call your local emergency number" and never prints a number. */
+    printsEmergencyNumbers: z.boolean(),
+    script: z.enum(['latin', 'arabic']), // picks the font
+  })
+  .strict()
+  .superRefine((l, ctx) => {
+    const { full, notes } = l.jurisdictions;
+    if (full.length === 0 && l.status !== 'planned') {
+      ctx.addIssue({ code: 'custom', path: ['jurisdictions', 'full'], message: 'a built locale covers at least one jurisdiction in full' });
+    }
+    for (const [list, name] of [[full, 'full'], [notes, 'notes']] as const) {
+      if (new Set(list).size !== list.length) ctx.addIssue({ code: 'custom', path: ['jurisdictions', name], message: 'a jurisdiction is listed twice' });
+    }
+    const both = full.filter((j) => notes.includes(j));
+    if (both.length) ctx.addIssue({ code: 'custom', path: ['jurisdictions'], message: `in both full and notes: ${both.join(', ')}` });
+  });
+export type LocaleEntry = z.infer<typeof localeSchema>;
+
+export const localeFileSchema = z
+  .object({
+    $comment: z.string().optional(),
+    defaultLocale: nonEmpty,
+    sourceLocale: nonEmpty,
+    locales: z.array(localeSchema).min(1),
+  })
+  .strict()
+  .superRefine((f, ctx) => {
+    const codes = f.locales.map((l) => l.code);
+    if (new Set(codes).size !== codes.length) ctx.addIssue({ code: 'custom', path: ['locales'], message: 'duplicate locale code' });
+    for (const key of ['defaultLocale', 'sourceLocale'] as const) {
+      if (!codes.includes(f[key])) ctx.addIssue({ code: 'custom', path: [key], message: `"${f[key]}" is not a listed locale` });
+    }
+  });
 
 // ---------------------------------------------------------------- warning signs (localised JSON, single source of truth)
 

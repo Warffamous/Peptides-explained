@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import YAML from 'yaml';
 import matter from 'gray-matter';
+import { localeFileSchema, type LocaleEntry } from '../../src/schemas/index.ts';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -40,21 +41,15 @@ export function readMdx(file: string): { data: Record<string, unknown>; body: st
   return { data: parsed.data as Record<string, unknown>, body: parsed.content };
 }
 
-export type LocaleConfig = {
-  code: string;
-  name: string;
-  englishName: string;
-  dir: 'ltr' | 'rtl';
-  status: 'published' | 'preview' | 'planned';
-  bcp47: string;
-  hreflang: string;
-  dateLocale: string;
-  jurisdiction: string;
-  script: string;
-};
+/** One entry of config/locales.json (localeSchema in src/schemas/index.ts). */
+export type LocaleConfig = LocaleEntry;
 
+/** config/locales.json, parsed with the build's schema; a malformed file stops the script with the issues. */
 export function loadLocales(): { defaultLocale: string; sourceLocale: string; locales: LocaleConfig[] } {
-  return readJson(path.join(ROOT, 'config/locales.json')) as never;
+  const file = path.join(ROOT, 'config/locales.json');
+  const r = localeFileSchema.safeParse(readJson(file));
+  if (!r.success) throw new Error(`${rel(file)} is invalid:\n` + r.error.issues.map((i) => `  ${i.path.join('.') || '(root)'}: ${i.message}`).join('\n'));
+  return r.data;
 }
 
 export type Allowlist = { suffixes: { suffix: string }[]; hosts: { host: string }[] };

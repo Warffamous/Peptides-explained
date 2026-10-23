@@ -105,8 +105,18 @@ export const mediaEntrySchema = z
 export type MediaEntry = z.infer<typeof mediaEntrySchema>;
 export const mediaFileSchema = z.record(kebab, mediaEntrySchema);
 
-/** Route key ("" = landing, "compounds/semaglutide", "history/the-croatian-lab") -> media id. */
-export const heroesFileSchema = z.record(z.string().regex(/^(?:[a-z0-9-]+(?:\/[a-z0-9-]+)*)?$/, 'route key: path without locale or slashes at the ends'), kebab);
+/**
+ * Route key ("" = landing, "compounds/semaglutide", "history/the-croatian-lab") -> media id, the
+ * same in every locale; or per locale, { default?: id, <locale>: id } (e.g. { nl: ambulance-den-haag }:
+ * a Dutch photo only on the Dutch page, no photo elsewhere). Locale keys are checked by the validator.
+ */
+export const heroValueSchema = z.union([
+  kebab,
+  z
+    .record(z.string().regex(/^(?:default|[a-z]{2,3})$/, '"default" or a locale code'), kebab)
+    .refine((o) => Object.keys(o).length > 0, { message: 'name at least one locale (or default)' }),
+]);
+export const heroesFileSchema = z.record(z.string().regex(/^(?:[a-z0-9-]+(?:\/[a-z0-9-]+)*)?$/, 'route key: path without locale or slashes at the ends'), heroValueSchema);
 
 export const infographicSchema = z
   .object({

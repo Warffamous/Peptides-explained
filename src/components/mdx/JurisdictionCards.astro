@@ -1,0 +1,21 @@
+---
+/**
+ * <JurisdictionCards which="full|notes|all" /> — the contact cards of every jurisdiction the locale
+ * covers (config/locales.json: jurisdictions.full, .notes, or both, in the locale's order), so a
+ * page lists "who to contact" for its own readers without naming countries in the MDX. A
+ * jurisdiction without an entry in src/data/jurisdictions.yaml yet is left out (the validator warns).
+ */
+import JurisdictionCard from './JurisdictionCard.astro';
+import { ctxContentLocale } from '../../lib/ctx';
+import { JURISDICTIONS } from '../../lib/data';
+import { cardCodes } from '../../lib/jurisdictions';
+interface Props { which?: 'full' | 'notes' | 'all' }
+const { which = 'all' } = Astro.props;
+if (!['full', 'notes', 'all'].includes(which)) throw new Error(`<JurisdictionCards which="${which}"> — use full, notes or all`);
+const codes = cardCodes(ctxContentLocale(Astro), which).filter((c) => JURISDICTIONS.some((j) => j.code === c));
+---
+{codes.length > 0 && (
+  <div class="jurisdiction-cards" data-which={which}>
+    {codes.map((code) => <JurisdictionCard code={code} />)}
+  </div>
+)}

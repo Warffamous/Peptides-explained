@@ -1,25 +1,55 @@
 ---
 /**
- * Who to contact and where to report in a jurisdiction, from src/data/jurisdictions.yaml.
- * The emergency row is the locale's instruction (common.emergency.jurisdiction). English pages are
- * read in many countries, so the English string leaves the number out ("Call the local emergency
- * number"); the Dutch string is "Bel {number}" and prints the jurisdiction's own number.
+ * Who to contact and where to report in a jurisdiction, from src/data/jurisdictions.yaml: the
+ * emergency line, the help services (pages.jurisdiction.help.<kind>), the regulator, enforcement,
+ * side-effect reporting, anti-doping and the medicines law.
+ *
+ * Only the locale's own jurisdictions (config/locales.json, jurisdictions.full and .notes; for a
+ * preview fallback page, those of the text's locale). Any other code fails the build once
+ * STRICT_PAGE_JURISDICTIONS is true (src/lib/jurisdictions.ts); until the content rewrite removes the
+ * European cards from the English pages, such a card is left out (the validator warns). A card of
+ * the locale's own without an entry in jurisdictions.yaml yet (CA, AU, IE and NZ until the refocus
+ * research is merged) is left out as well, as <JurisdictionCards> does; the validator warns, and
+ * reports an error once STRICT_LOCALE_ROWS (scripts/validate-content.ts) is true.
+ *
+ * The emergency row is the locale's instruction (common.emergency.jurisdiction). The numbers are
+ * passed only to a locale with printsEmergencyNumbers: English pages are read in many countries, so
+ * the English string leaves the number out ("Call the local emergency number"); the Dutch string is
+ * "Bel {number}" and prints the jurisdiction's own numbers ("112", or "000 of 112").
  */
 import { t } from '../../lib/i18n';
-import { ctxLocale } from '../../lib/ctx';
+import { ctxLocale, ctxContentLocale } from '../../lib/ctx';
+import { getLocale } from '../../lib/config';
 import { JURISDICTIONS } from '../../lib/data';
+import { STRICT_PAGE_JURISDICTIONS, cardCodes } from '../../lib/jurisdictions';
 interface Props { code: string }
 const L = ctxLocale(Astro);
-const j = JURISDICTIONS.find((x) => x.code === Astro.props.code);
-if (!j) throw new Error(`<JurisdictionCard code="${Astro.props.code}"> — not in src/data/jurisdictions.yaml`);
-const rows = [
-  ['regulator', j.regulator], ['inspectorate', j.inspectorate], ['reporting', j.reporting], ['anti_doping', j.anti_doping], ['medicines_law', j.medicines_law],
-].filter(([, v]) => v) as [string, { name: string; url: string }][];
+const scope = ctxContentLocale(Astro);
+const own = (cardCodes(scope, 'all') as string[]).includes(Astro.props.code);
+if (!own && STRICT_PAGE_JURISDICTIONS) {
+  throw new Error(`<JurisdictionCard code="${Astro.props.code}"> — not one of the ${scope.code} locale's jurisdictions (config/locales.json: ${cardCodes(scope, 'all').join(', ')})`);
+}
+const j = own ? JURISDICTIONS.find((x) => x.code === Astro.props.code) : undefined;
+const loc = getLocale(L);
+const emergency = j && loc.printsEmergencyNumbers
+  ? t(L, 'common.emergency.jurisdiction', { number: new Intl.ListFormat(loc.dateLocale, { type: 'disjunction' }).format(j.emergency) })
+  : t(L, 'common.emergency.jurisdiction');
+if (!loc.printsEmergencyNumbers && /\{number\}|\d{3}/.test(emergency)) {
+  throw new Error(`[i18n] ${L} common.emergency.jurisdiction must not hold a number or {number}: the locale never prints emergency numbers`);
+}
+const rows = j
+  ? ([
+      ['regulator', j.regulator], ['inspectorate', j.inspectorate], ['reporting', j.reporting], ['anti_doping', j.anti_doping], ['medicines_law', j.medicines_law],
+    ].filter(([, v]) => v) as [string, { name: string; url: string }][])
+  : [];
 ---
-<aside class="jurisdiction-card" data-jurisdiction={j.code} aria-labelledby={`jc-${j.code}`}>
-  <h3 class="jurisdiction-card__title" id={`jc-${j.code}`}>{t(L, `vocab.jurisdiction.${j.code}`)}</h3>
-  <dl class="jurisdiction-card__list">
-    <div><dt>{t(L, 'pages.jurisdiction.emergency')}</dt><dd>{t(L, 'common.emergency.jurisdiction', { number: j.emergency })}</dd></div>
-    {rows.map(([k, v]) => <div><dt>{t(L, `pages.jurisdiction.${k}`)}</dt><dd><a href={v.url} rel="noopener" data-external>{v.name}</a></dd></div>)}
-  </dl>
-</aside>
+{j && (
+  <aside class="jurisdiction-card" data-jurisdiction={j.code} aria-labelledby={`jc-${j.code}`}>
+    <h3 class="jurisdiction-card__title" id={`jc-${j.code}`}>{t(L, `vocab.jurisdiction.${j.code}`)}</h3>
+    <dl class="jurisdiction-card__list">
+      <div><dt>{t(L, 'pages.jurisdiction.emergency')}</dt><dd>{emergency}</dd></div>
+      {j.help.map((h) => <div><dt>{t(L, `pages.jurisdiction.help.${h.kind}`)}</dt><dd><a href={h.url} rel="noopener" data-external>{h.name}</a></dd></div>)}
+      {rows.map(([k, v]) => <div><dt>{t(L, `pages.jurisdiction.${k}`)}</dt><dd><a href={v.url} rel="noopener" data-external>{v.name}</a></dd></div>)}
+    </dl>
+  </aside>
+)}

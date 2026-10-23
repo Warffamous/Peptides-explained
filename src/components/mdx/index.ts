@@ -22,6 +22,7 @@ import NewsList from './NewsList.astro';
 import GlossaryIndex from './GlossaryIndex.astro';
 import SourcesIndex from './SourcesIndex.astro';
 import JurisdictionCard from './JurisdictionCard.astro';
+import JurisdictionCards from './JurisdictionCards.astro';
 import Section from './Section.astro';
 import Mechanism from './Mechanism.astro';
 import StudyTable from './StudyTable.astro';
@@ -45,7 +46,7 @@ import OrganCards from './OrganCards.astro';
 export const mdxComponents = {
   Cite, Claim, Q, Seq, Term, Callout, Diagram, Checklist, Faq, FaqItem, EvidenceGrade, WarningSigns, PageList,
   CompoundIndex, Timeline, GradeRubric, GradeMatrix, CorrectionsLog, ChangeTracker, NewsList, GlossaryIndex,
-  SourcesIndex, JurisdictionCard, Section, Mechanism, StudyTable, RegulatoryTable, AuthorisedProducts, SequenceView,
+  SourcesIndex, JurisdictionCard, JurisdictionCards, Section, Mechanism, StudyTable, RegulatoryTable, AuthorisedProducts, SequenceView,
   Explainer,
   Photo, Infographic, MediaCredits,
   // "less text, more visuals" (CONTENT-GUIDE §9)

@@ -1,5 +1,11 @@
 # The history timeline (rendered by <Timeline /> on /history/timeline). Locale-independent facts only:
-# id, year, optional exact date, category, the compounds on this site it concerns, and the sources that support it.
+# id, year, optional exact date, category, the compounds on this site it concerns, where it happened (jurisdictions:
+# a Dutch law [NL], an EU directive or the EMA [EU], an FDA action [US], WADA [WADA]; [] = global science or history,
+# shown everywhere; a locale shows the rest only when one of them is its own, config/locales.json), and the sources
+# that support it. An event is one jurisdiction's action, so that its words never name a jurisdiction the locale does
+# not show: the FDA approval and the EU authorisation of a medicine are two events (<id> and <id>-eu or <id>-us; split
+# on 24 October 2026, research/for-nl-site/MANIFEST-data.md). Several tags only when one text fits them all (the European
+# falsified-Ozempic alerts).
 # Titles and text are in src/i18n/<locale>/timeline.json. Every date was checked on 22 October 2026 against the
 # source listed (Drugs@FDA ORIG-1 dates, EMA EPAR authorisation dates, the act itself for laws); see
 # research/history.md. An event without `date` is known to the year only. Re-checked by the independent fact-checker
@@ -12,89 +18,105 @@
 - id: insulin-first-treatment
   year: 1922
   category: discovery
+  jurisdictions: []
   sources: [banting-1922-pancreatic-extracts, fda-history-100-years-insulin]
 
 - id: nobel-1923-insulin
   year: 1923
   category: discovery
+  jurisdictions: []
   sources: [nobel-1923-medicine]
 
 - id: us-food-drug-cosmetic-act-1938
   year: 1938
   date: 1938-06-25
   category: regulation
+  jurisdictions: [US]
   sources: [us-fdc-act-1938, fda-history-milestones, fda-2006-promoting-safe-effective-drugs]
 
 - id: oxytocin-synthesis
   year: 1953
   category: chemistry
+  jurisdictions: []
   sources: [duvigneaud-1953-oxytocin, nobel-1955-chemistry]
 
 - id: insulin-structure
   year: 1955
   category: chemistry
+  jurisdictions: []
   sources: [ryle-1955-insulin-disulphide, nobel-1958-chemistry, nobel-1958-sanger-speech]
 
 - id: nl-wog-1958
   year: 1958
   date: 1958-07-28
   category: regulation
+  jurisdictions: [NL]
   sources: [nl-wog-1958]
 
 # ---------------------------------------------------------------- 1960s: thalidomide and the laws that followed
 - id: thalidomide-withdrawn
   year: 1961
   category: safety
+  jurisdictions: []
   sources: [vargesson-2015-thalidomide, kim-2011-thalidomide-review, fda-kelsey-history]
 
 - id: kefauver-harris-1962
   year: 1962
   date: 1962-10-10
   category: regulation
+  jurisdictions: [US]
   sources: [us-pl-87-781-drug-amendments-1962, fda-2006-promoting-safe-effective-drugs, fda-history-milestones]
 
 - id: solid-phase-synthesis
   year: 1963
   category: chemistry
+  jurisdictions: []
   sources: [merrifield-1963-solid-phase, nobel-1984-merrifield-press]
 
 - id: eu-directive-65-65
   year: 1965
   date: 1965-01-26
   category: regulation
+  jurisdictions: [EU]
   sources: [eu-directive-65-65, ec-legal-framework-medicines, ec-pharma-legislation-timeline]
 
 # ---------------------------------------------------------------- 1970s and 1980s: brain peptides and biotech
 - id: gnrh-sequence
   year: 1971
   category: discovery
+  jurisdictions: []
   sources: [matsuo-1971-lhrh, nobel-1977-medicine-press, lupron-depot-label]
 
 - id: somatostatin-discovery
   year: 1973
   category: discovery
+  jurisdictions: []
   sources: [brazeau-1973-somatostatin, nobel-1977-medicine-press]
 
 - id: nobel-1977-peptide-hormones
   year: 1977
   category: discovery
+  jurisdictions: []
   sources: [nobel-1977-medicine]
 
 - id: recombinant-human-insulin
   year: 1982
   date: 1982-10-28
   category: approval
+  jurisdictions: [US]
   sources: [fda-history-100-years-insulin, fda-drugsatfda-humulin-r, johnson-1983-recombinant-insulin]
 
 - id: leuprolide-approval
   year: 1985
   date: 1985-04-09
   category: approval
+  jurisdictions: [US]
   sources: [fda-drugsatfda-lupron, lupron-depot-label]
 
 - id: glp1-insulin-release
   year: 1987
   category: discovery
+  jurisdictions: []
   compounds: [semaglutide, tirzepatide]
   sources: [holst-1987-glp1, mojsov-1987-glp1, kreymann-1987-glp1]
 
@@ -102,23 +124,27 @@
   year: 1988
   date: 1988-10-21
   category: approval
+  jurisdictions: [US]
   sources: [fda-drugsatfda-sandostatin, bauer-1982-octreotide]
 
 # ---------------------------------------------------------------- 1990s: faster routes and a European agency
 - id: exendin-4-discovery
   year: 1992
   category: discovery
+  jurisdictions: []
   compounds: [semaglutide]
   sources: [eng-1992-exendin-4, dailymed-byetta-label]
 
 - id: us-accelerated-approval
   year: 1992
   category: regulation
+  jurisdictions: [US]
   sources: [fda-2006-promoting-safe-effective-drugs, junod-2008-fda-clinical-trials-history]
 
 - id: ema-founded
   year: 1995
   category: regulation
+  jurisdictions: [EU]
   sources: [ema-history, eu-regulation-2309-93]
 
 # ---------------------------------------------------------------- 2000s: one EU code, the first GLP-1 medicines
@@ -126,90 +152,146 @@
   year: 2001
   date: 2001-11-06
   category: regulation
+  jurisdictions: [EU]
   sources: [eu-directive-2001-83-original, eu-directive-2001-83]
 
 - id: exenatide-approval
   year: 2005
   date: 2005-04-28
   category: approval
+  jurisdictions: [US]
   compounds: [semaglutide]
-  sources: [fda-drugsatfda-byetta, dailymed-byetta-label, ema-epar-byetta]
+  sources: [fda-drugsatfda-byetta, dailymed-byetta-label]
 
 - id: eu-conditional-authorisation
   year: 2006
   category: regulation
+  jurisdictions: [EU]
   sources: [ema-conditional-marketing-authorisation]
+
+- id: exenatide-approval-eu
+  year: 2006
+  date: 2006-11-20
+  category: approval
+  jurisdictions: [EU]
+  compounds: [semaglutide]
+  sources: [ema-epar-byetta]
 
 - id: nl-geneesmiddelenwet-2007
   year: 2007
   date: 2007-07-01
   category: regulation
+  jurisdictions: [NL]
   sources: [nl-geneesmiddelenwet-2007-version, nl-geneesmiddelenwet]
 
 - id: liraglutide-approval
   year: 2009
   date: 2009-06-30
   category: approval
+  jurisdictions: [EU]
   compounds: [semaglutide]
-  sources: [ema-epar-victoza, fda-drugsatfda-victoza]
+  sources: [ema-epar-victoza]
+
+# The EMA product information is the evidence for how liraglutide works (CONTENT-GUIDE: European regulators as
+# scientific evidence), not for any status.
+- id: liraglutide-approval-us
+  year: 2010
+  date: 2010-01-25
+  category: approval
+  jurisdictions: [US]
+  compounds: [semaglutide]
+  sources: [fda-drugsatfda-victoza, ema-epar-victoza]
 
 - id: tesamorelin-approval
   year: 2010
   date: 2010-11-10
   category: approval
-  sources: [fda-drugsatfda-egrifta, dailymed-egrifta-sv-label, ema-medicines-json]
+  jurisdictions: [US]
+  sources: [fda-drugsatfda-egrifta, dailymed-egrifta-sv-label]
 
 # ---------------------------------------------------------------- 2010s: new routes, new medicines, new bans
 - id: afamelanotide-approval
   year: 2014
   date: 2014-12-22
   category: approval
-  sources: [ema-epar-scenesse, fda-drugsatfda-scenesse]
+  jurisdictions: [EU]
+  sources: [ema-epar-scenesse]
 
 - id: ema-prime-launched
   year: 2016
   date: 2016-03-07
   category: regulation
+  jurisdictions: [EU]
   sources: [ema-prime]
 
 - id: semaglutide-approval
   year: 2017
   date: 2017-12-05
   category: approval
+  jurisdictions: [US]
   compounds: [semaglutide]
-  sources: [fda-drugsatfda-ozempic, ema-epar-ozempic]
+  sources: [fda-drugsatfda-ozempic]
 
 - id: wada-tb500-s2
   year: 2018
   date: 2018-01-01
   category: sport
+  jurisdictions: [WADA]
   compounds: [tb-500]
   sources: [wada-2018-list-modifications]
+
+- id: semaglutide-approval-eu
+  year: 2018
+  date: 2018-02-08
+  category: approval
+  jurisdictions: [EU]
+  compounds: [semaglutide]
+  sources: [ema-epar-ozempic]
 
 - id: bremelanotide-approval
   year: 2019
   date: 2019-06-21
   category: approval
-  sources: [fda-drugsatfda-vyleesi, dailymed-vyleesi-label, ema-medicines-json]
+  jurisdictions: [US]
+  sources: [fda-drugsatfda-vyleesi, dailymed-vyleesi-label]
+
+# The EMA product information is the evidence for what the implant treats, not for any status.
+- id: afamelanotide-approval-us
+  year: 2019
+  date: 2019-10-08
+  category: approval
+  jurisdictions: [US]
+  sources: [fda-drugsatfda-scenesse, ema-epar-scenesse]
 
 # ---------------------------------------------------------------- 2020s: weight-loss medicines, shortages, fakes
 - id: wegovy-approval
   year: 2021
   date: 2021-06-04
   category: approval
+  jurisdictions: [US]
   compounds: [semaglutide]
-  sources: [fda-drugsatfda-wegovy, ema-epar-wegovy]
+  sources: [fda-drugsatfda-wegovy]
 
 - id: wada-bpc157-s0
   year: 2022
   date: 2022-01-01
   category: sport
+  jurisdictions: [WADA]
   compounds: [bpc-157]
   sources: [wada-2022-list-modifications, wada-2026-list-en]
+
+- id: wegovy-approval-eu
+  year: 2022
+  date: 2022-01-06
+  category: approval
+  jurisdictions: [EU]
+  compounds: [semaglutide]
+  sources: [ema-epar-wegovy]
 
 - id: glp1-shortages
   year: 2022
   category: market
+  jurisdictions: [US]
   compounds: [semaglutide, tirzepatide]
   sources: [fda-glp1-compounding-policy, fda-2024-compounded-semaglutide-dosing-errors]
 
@@ -217,13 +299,23 @@
   year: 2022
   date: 2022-05-13
   category: approval
+  jurisdictions: [US]
   compounds: [tirzepatide]
-  sources: [fda-drugsatfda-mounjaro, ema-epar-mounjaro]
+  sources: [fda-drugsatfda-mounjaro]
+
+- id: tirzepatide-approval-eu
+  year: 2022
+  date: 2022-09-15
+  category: approval
+  jurisdictions: [EU]
+  compounds: [tirzepatide]
+  sources: [ema-epar-mounjaro]
 
 - id: fda-category-2-peptides
   year: 2023
   date: 2023-09-29
   category: regulation
+  jurisdictions: [US]
   compounds: [bpc-157, tb-500, kpv]
   sources: [fda-category-2-safety-risks]
 
@@ -231,13 +323,23 @@
   year: 2023
   date: 2023-10-18
   category: safety
+  jurisdictions: [EU, NL, DE]
   compounds: [semaglutide]
   sources: [ema-2023-falsified-ozempic, igj-2023-falsified-ozempic, mhra-2023-fake-weight-loss-pens, bfarm-ozempic-falsification]
+
+- id: falsified-ozempic-uk
+  year: 2023
+  date: 2023-10-26
+  category: safety
+  jurisdictions: [UK]
+  compounds: [semaglutide]
+  sources: [mhra-2023-fake-weight-loss-pens]
 
 - id: zepbound-approval
   year: 2023
   date: 2023-11-08
   category: approval
+  jurisdictions: [US]
   compounds: [tirzepatide]
   sources: [fda-drugsatfda-zepbound]
 
@@ -245,12 +347,14 @@
   year: 2024
   date: 2024-06-20
   category: safety
+  jurisdictions: []
   compounds: [semaglutide]
   sources: [who-2024-falsified-semaglutide]
 
 - id: lasker-glp1
   year: 2024
   category: discovery
+  jurisdictions: []
   compounds: [semaglutide]
   sources: [friedman-2024-lasker-glp1, knudsen-2024-lasker-glp1-obesity]
 
@@ -258,6 +362,7 @@
   year: 2025
   date: 2025-02-21
   category: market
+  jurisdictions: [US]
   compounds: [semaglutide, tirzepatide]
   sources: [fda-glp1-compounding-policy]
 
@@ -265,6 +370,7 @@
   year: 2026
   date: 2026-01-26
   category: market
+  jurisdictions: [UK]
   compounds: [semaglutide, tirzepatide, retatrutide]
   sources: [mhra-2026-01-seizures-2025, mhra-2026-05-largest-seizure, belcourt-2025-research-purposes]
 
@@ -272,5 +378,6 @@
   year: 2026
   date: 2026-07-23
   category: regulation
+  jurisdictions: [US]
   compounds: [bpc-157, kpv, tb-500]
-  sources: [fda-pcac-2026-07-meeting, fda-pcac-2026-materials, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-semax-briefing, ema-medicines-search, usc-21-353a, nl-geneesmiddelenwet]
+  sources: [fda-pcac-2026-07-meeting, fda-pcac-2026-materials, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-semax-briefing, usc-21-353a]

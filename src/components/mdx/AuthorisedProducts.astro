@@ -1,46 +1,68 @@
 ---
-/** The visibly distinct treatment for authorised medicines: badge, legal route, official labels. */
+/**
+ * The visibly distinct treatment for authorised medicines: badge, legal route, official labels.
+ * Badge and explanation say where it is approved among the locale's own jurisdictions (the same
+ * answer as the badge under the title and the At a glance tile; src/lib/approval.ts), and the table
+ * lists only the products of those jurisdictions, with "No longer sold" where marketed_until is set.
+ */
 import { t } from '../../lib/i18n';
-import { ctxCompound } from '../../lib/ctx';
+import { ctxCompound, ctxContentLocale } from '../../lib/ctx';
 import { routeUrl } from '../../lib/urls';
 import { formatDate, isoDate } from '../../lib/format';
+import { approvalFor, visibleProducts } from '../../lib/jurisdictions';
+import { approvalBadge, approvalExplainExtra } from '../../lib/approval';
 import Icon from '../ui/Icon.astro';
 const c = ctxCompound(Astro, 'AuthorisedProducts');
 const L = c.locale;
-const eu = c.data.category === 'authorised';
-const regulators = [...new Set(c.data.authorised_products.map((p) => p.jurisdiction))].map((j) => t(L, `vocab.jurisdiction.${j}`)).join(', ');
+const scope = ctxContentLocale(Astro);
+const approval = approvalFor(c.data, scope);
+const products = visibleProducts(c.data, scope);
+const approvedNow = approval.key === 'all' || approval.key === 'some';
+const explain = [
+  t(L, approval.key === 'elsewhere' ? 'compound.authorised.explainElsewhere' : 'compound.authorised.explain'),
+  ...approvalExplainExtra(L, approval),
+].join(' ');
+// Where it is approved: prescription only. Where it is not (or no longer): the narrow special routes.
+const route = [
+  ...(approvedNow ? [t(L, 'compound.authorised.routeText')] : []),
+  ...(approval.key !== 'all' ? [t(L, 'compound.authorised.routeElsewhere')] : []),
+].join(' ');
 ---
-<aside class:list={['authorised', eu ? 'authorised--eu' : 'authorised--elsewhere']} aria-labelledby="authorised-title">
+<aside class:list={['authorised', approval.key === 'all' ? 'authorised--all' : 'authorised--partial']} data-approval={approval.key} aria-labelledby="authorised-title">
   <p class="authorised__badge" id="authorised-title">
     <Icon name="check" class="authorised__check" />
-    {t(L, eu ? 'compound.authorised.badge' : 'compound.authorised.badgeElsewhere')}
+    {approvalBadge(L, approval)}
   </p>
-  <p class="authorised__explain">{eu ? t(L, 'compound.authorised.explain') : t(L, 'compound.authorised.explainElsewhere', { regulators })}</p>
+  <p class="authorised__explain">{explain}</p>
   <div class="authorised__route">
     <h3 class="authorised__route-title">{t(L, 'compound.authorised.routeTitle')}</h3>
-    <p>{t(L, eu ? 'compound.authorised.routeText' : 'compound.authorised.routeElsewhere')} <a href={routeUrl(L, 'legal-routes')}>{t(L, 'compound.authorised.routeLink')}</a></p>
+    <p>{route} <a href={routeUrl(L, 'legal-routes')}>{t(L, 'compound.authorised.routeLink')}</a></p>
   </div>
-  <div class="table-scroll" tabindex="0" role="region" aria-labelledby="products-caption">
-    <table class="data-table authorised__products">
-      <caption id="products-caption" class="visually-hidden">{t(L, 'compound.names.brands')}</caption>
-      <thead><tr>
-        <th scope="col">{t(L, 'compound.authorised.product')}</th>
-        <th scope="col">{t(L, 'compound.authorised.indication')}</th>
-        <th scope="col">{t(L, 'compound.authorised.jurisdiction')}</th>
-        <th scope="col">{t(L, 'compound.authorised.since')}</th>
-        <th scope="col">{t(L, 'compound.authorised.label')}</th>
-      </tr></thead>
-      <tbody>
-        {c.data.authorised_products.map((p) => (
-          <tr>
-            <th scope="row"><span class="authorised__name">{p.name}</span><span class="authorised__holder">{p.holder}</span></th>
-            <td data-label={t(L, 'compound.authorised.indication')}>{c.page.indications[p.id]} <span class="authorised__route-type">· {t(L, `vocab.route.${p.route}`)}</span></td>
-            <td data-label={t(L, 'compound.authorised.jurisdiction')}>{t(L, `vocab.jurisdiction.${p.jurisdiction}`)}</td>
-            <td data-label={t(L, 'compound.authorised.since')}><time datetime={isoDate(p.authorised)}>{formatDate(L, p.authorised)}</time></td>
-            <td data-label={t(L, 'compound.authorised.label')}><a href={p.label_url} rel="noopener" data-external>{t(L, 'compound.authorised.labelLink', { jurisdiction: p.jurisdiction })}<Icon name="external" /><span class="visually-hidden"> ({t(L, 'common.external')})</span></a></td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
+  {products.length === 0 ? (
+    <p class="authorised__none">{t(L, 'compound.authorised.noProducts')}</p>
+  ) : (
+    <div class="table-scroll" tabindex="0" role="region" aria-labelledby="products-caption">
+      <table class="data-table authorised__products">
+        <caption id="products-caption" class="visually-hidden">{t(L, 'compound.names.brands')}</caption>
+        <thead><tr>
+          <th scope="col">{t(L, 'compound.authorised.product')}</th>
+          <th scope="col">{t(L, 'compound.authorised.indication')}</th>
+          <th scope="col">{t(L, 'compound.authorised.jurisdiction')}</th>
+          <th scope="col">{t(L, 'compound.authorised.since')}</th>
+          <th scope="col">{t(L, 'compound.authorised.label')}</th>
+        </tr></thead>
+        <tbody>
+          {products.map((p) => (
+            <tr data-marketed={p.marketed_until ? 'no' : undefined}>
+              <th scope="row"><span class="authorised__name">{p.name}</span><span class="authorised__holder">{p.holder}</span>{p.marketed_until && <span class="authorised__gone">{t(L, 'compound.authorised.noLongerSold')} (<time datetime={isoDate(p.marketed_until)}>{formatDate(L, p.marketed_until)}</time>)</span>}</th>
+              <td data-label={t(L, 'compound.authorised.indication')}>{c.page.indications[p.id]} <span class="authorised__route-type">· {t(L, `vocab.route.${p.route}`)}</span></td>
+              <td data-label={t(L, 'compound.authorised.jurisdiction')}>{t(L, `vocab.jurisdiction.${p.jurisdiction}`)}</td>
+              <td data-label={t(L, 'compound.authorised.since')}><time datetime={isoDate(p.authorised)}>{formatDate(L, p.authorised)}</time></td>
+              <td data-label={t(L, 'compound.authorised.label')}><a href={p.label_url} rel="noopener" data-external>{t(L, 'compound.authorised.labelLink', { jurisdiction: p.jurisdiction })}<Icon name="external" /><span class="visually-hidden"> ({t(L, 'common.external')})</span></a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
 </aside>

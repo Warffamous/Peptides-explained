@@ -17,8 +17,10 @@ import FactSheet from '../../../components/layout/FactSheet.astro';
 import ReadingTools from '../../../components/layout/ReadingTools.astro';
 import InDetail from '../../../components/mdx/InDetail.astro';
 import Pictogram from '../../../components/ui/Pictogram.astro';
-import { BUILT_LOCALES } from '../../../lib/config';
-import { compoundDataMap, resolveCompound, alternatesFor } from '../../../lib/content';
+import { BUILT_LOCALES, SOURCE_LOCALE, getLocale } from '../../../lib/config';
+import { compoundDataMap, resolveCompound, alternatesFor, compoundCitations } from '../../../lib/content';
+import { approvalFor } from '../../../lib/jurisdictions';
+import { approvalBadge, approvalIcon } from '../../../lib/approval';
 import { webPage } from '../../../lib/jsonld';
 import { t } from '../../../lib/i18n';
 import { propText as sharedPropText, explainerText as sharedExplainerText } from '../../../lib/reading';
@@ -43,28 +45,20 @@ const data = (await compoundDataMap()).get(slug)!;
 const { entry, fallback } = (await resolveCompound(locale, slug))!;
 const page = entry.data;
 const { Content, remarkPluginFrontmatter: rpf } = await render(entry);
+// The jurisdictions shown are those of the locale the text is in: on a preview fallback, English.
+const contentLocale = fallback ? SOURCE_LOCALE : locale;
 
-// Source list: inline citations first (in order of appearance), then the sources behind the
-// data tables (studies, regulatory rows, sequence, product labels) so every table row links to one.
-const citations: string[] = [...(rpf.citations ?? [])];
-const add = (id?: string) => { if (id && !citations.includes(id)) citations.push(id); };
-data.studies.forEach((s) => add(s.source));
-data.regulatory.forEach((r) => r.sources.forEach(add));
-data.national_authorisations.forEach((n) => n.sources.forEach(add));
-add(data.sequence?.source);
-add(data.molecular.smiles_source);
-data.authorised_products.forEach((p) => add(p.label_source));
-// The stop strip, the fact sheet and any sourced At a glance override are rendered outside the
-// MDX: their sources join the list too.
-page.glance.tested?.sources.forEach(add);
-page.glance.sport?.sources.forEach(add);
-page.glance.stop_signs?.forEach((s) => s.sources.forEach(add));
-page.glance.facts.forEach((f) => f.sources.forEach(add));
+// Source list: inline citations first (in order of appearance), then the sources behind the data
+// tables and the blocks rendered outside the MDX, for the rows and products this locale shows, so
+// every table row links to one (src/lib/content.ts, compoundCitations).
+const citations = compoundCitations(data, page, rpf.citations ?? [], entry.body ?? '', contentLocale);
 const citeIndex = new Map(citations.map((id, i) => [id, i + 1]));
-Astro.locals.compound = { slug, locale, data, page, citeIndex };
+Astro.locals.compound = { slug, locale, contentLocale, data, page, citeIndex };
+// "Is it an approved medicine?" for this locale's own jurisdictions: badge, tile, fact sheet.
+const approval = approvalFor(data, getLocale(contentLocale));
 
 const key = `compounds/${slug}`;
-const authorised = data.category === 'authorised' || data.category === 'authorised-elsewhere';
+const authorised = data.category === 'authorised';
 const sectionsPresent = (COMPOUND_SECTIONS as readonly string[]).filter((s) => entry.body?.includes(`<Section id="${s}">`));
 const sectionTitle = (s: string) => t(locale, `compound.sections.${authorised && (s === 'mechanism' || s === 'harm-reduction') ? `${s}Authorised` : s}`);
 // "Less text, more visuals": pages whose depth sits in "In detail" folds get the reading tools
@@ -83,14 +77,7 @@ const trail = [
   { key: 'compounds', label: t(locale, 'compound.index.title') },
   { key, label: data.names.common },
 ];
-const badgeKey = {
-  authorised: 'compound.authorised.badge',
-  'authorised-elsewhere': 'compound.authorised.badgeElsewhere',
-  'authorised-nationally': 'compound.authorised.badgeNational',
-  investigational: 'compound.investigationalBadge',
-  experimental: 'compound.experimentalBadge',
-  'not-a-peptide': 'compound.notPeptideBadge',
-}[data.category];
+// A Drug (prescription only) wherever an official label exists; the badge says where, for this locale.
 const about = authorised
   ? { '@type': 'Drug', name: data.names.common, ...(data.names.inn ? { nonProprietaryName: data.names.inn } : {}), ...(data.names.brands.length ? { alternateName: data.names.brands } : {}), prescriptionStatus: 'PrescriptionOnly' }
   : { '@type': 'ChemicalSubstance', name: data.names.common, ...(data.names.other.length ? { alternateName: data.names.other } : {}) };
@@ -187,19 +174,19 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
   docClass={`compound compound--${data.category} compound--${data.status}`}
 >
   <Fragment slot="header">
-    <p class="compound-badge" data-category={data.category}>
-      <span class="compound-badge__icon"><Pictogram name={`status-${data.category}`} /></span>
-      {t(locale, badgeKey)}
+    <p class="compound-badge" data-approval={approval.key} data-category={data.category}>
+      <span class="compound-badge__icon"><Pictogram name={approvalIcon(approval)} /></span>
+      {approvalBadge(locale, approval)}
     </p>
   </Fragment>
   <Fragment slot="lead">
     {data.status === 'stub' && <p class="notice notice--stub"><strong>{t(locale, 'common.stub.label')}.</strong> {t(locale, 'common.stub.notice')}</p>}
   </Fragment>
   <Fragment slot="glance">
-    <AtAGlance locale={locale} data={data} glance={page.glance} citeIndex={citeIndex} hasRisksSection={sectionsPresent.includes('risks')} />
+    <AtAGlance locale={locale} data={data} approval={approval} contentLocale={contentLocale} glance={page.glance} citeIndex={citeIndex} hasRisksSection={sectionsPresent.includes('risks')} />
     {page.glance.stop_signs && <StopStrip locale={locale} signs={page.glance.stop_signs} citeIndex={citeIndex} />}
   </Fragment>
-  <FactSheet slot="facts" locale={locale} data={data} facts={page.glance.facts} testedShort={page.glance.tested?.short} />
+  <FactSheet slot="facts" locale={locale} data={data} approval={approval} facts={page.glance.facts} testedShort={page.glance.tested?.short} />
   {hasFolds && <ReadingTools slot="tools" locale={locale} />}
   <div class="compound-glance">
     <EvidenceGrade compound={slug} foldWhy={hasFolds} />

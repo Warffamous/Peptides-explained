@@ -1,18 +1,29 @@
 {
-  "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the summary box's reading time and the technical-details block. Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. Keep every answer to one plain line (B1, everyday words, no jargon).",
+  "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the fact sheet, the summary box's reading time and the technical-details block. Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. The approved answer is built from the whole sentences in glance.approved (src/lib/approval.ts): {list} is the locale's own jurisdictions (vocab.jurisdictionInSentence, joined with and / or), never a jurisdiction the locale does not cover. Keep every answer to one plain line (B1, everyday words, no jargon); short answers at most 4 words.",
   "glance": {
     "title": "At a glance",
     "checked": "Status checked on {date}. The details and sources are further down this page.",
     "approved": {
       "question": "Is it an approved medicine?",
-      "authorised": { "short": "Yes", "text": "Approved in the EU. Only with a doctor’s prescription." },
-      "authorised-elsewhere": { "short": "Not in the EU", "text": "Approved only in some countries outside the EU." },
-      "authorised-nationally": { "short": "In some countries", "text": "Approved in {countries} for some uses. Not approved for the whole EU, or in the US." },
-      "investigational": { "short": "No", "text": "Not approved. It is still being tested in trials." },
-      "experimental": { "short": "No", "text": "Not approved as a medicine in the EU, the UK or the US." },
-      "not-a-peptide-authorised": { "short": "Yes", "text": "It is not a peptide, but it is an approved medicine in the EU." },
-      "not-a-peptide-authorised-elsewhere": { "short": "Not in the EU", "text": "It is not a peptide. It is approved only in some countries outside the EU." },
-      "not-a-peptide-not-authorised": { "short": "No", "text": "It is not a peptide, and it is not an approved medicine in the EU." }
+      "short": {
+        "all": "Yes",
+        "someOne": "Only in {jurisdiction}",
+        "someMany": "Yes, in some countries",
+        "former": "Not any more",
+        "elsewhere": "Only in other countries",
+        "trials": "No",
+        "none": "No"
+      },
+      "notPeptide": "It is not a peptide.",
+      "approvedIn": "Approved in {list}.",
+      "formerIn": "{list} approved it, but it is no longer sold there.",
+      "notApprovedIn": "Not approved in {list}.",
+      "prescription": "Only with a prescription.",
+      "nationally": "Approved in {countries} for some uses.",
+      "otherCountries": "Approved only in other countries.",
+      "trials": "Not approved. It is still being tested in trials.",
+      "none": "Not approved as a medicine in {list}.",
+      "unchecked": "Its approval status has not been checked yet."
     },
     "tested": {
       "question": "Has it been tested in people?",
@@ -61,9 +72,13 @@
   "facts": {
     "title": "Fact sheet",
     "class": "Class",
-    "status": "Status in the EU",
-    "statusSince": "{status} since {year}",
-    "statusNational": "Not EU-wide, only nationally",
+    "approvedIn": "Approved in",
+    "approvedSince": "{jurisdiction} since {year}",
+    "approvedFormer": "{jurisdiction} {from}–{to}",
+    "approvedJoin": "; ",
+    "approvedNot": "Not in {list}",
+    "approvedElsewhere": "Only in other countries",
+    "approvedUnchecked": "Not checked yet",
     "tested": "Tested in people",
     "note": "Label facts, not dosing advice. Sources are in the sections below."
   }

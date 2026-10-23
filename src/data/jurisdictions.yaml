@@ -4,40 +4,45 @@
 # Archive's recent snapshots (research/legal-a.md, verification log). Re-checked by the fact-checker on 2026-10-22:
 # every URL returned HTTP 200 except EUR-Lex, which answers scripts with 202 (the same CELEX text was read through
 # the Publications Office CELLAR resolver). Update the date in the corrections log when anything here changes.
-# emergency: the country's number, as data. It reaches a page only through the locale's
-# common.emergency.jurisdiction string: the English site never prints a number (owner's decision,
-# 20 October 2026: "call your local emergency service number"); the Dutch site says "Bel 112".
+# emergency: the country's numbers, as data (a list: ["000", "112"]). They reach a page only through the
+# locale's common.emergency.jurisdiction string, and only in a locale with printsEmergencyNumbers
+# (config/locales.json): the English site never prints a number (owner's decision, 20 October 2026: "call
+# your local emergency service number"); the Dutch site says "Bel 112".
+# help (optional): help services for the public, each { kind, name, url }, kind one of urgent-advice,
+# poisons, drugs-advice, mental-health (label: pages.jurisdiction.help.<kind>).
+# Every jurisdiction a locale lists (jurisdictions.full and .notes) needs an entry here: CA, AU, IE and NZ
+# are added from the refocus research (research/refocus/); until then the validator warns.
 - code: NL
-  emergency: "112"
+  emergency: ["112"]
   regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)", url: "https://www.cbg-meb.nl/" }
   inspectorate: { name: "Inspectie Gezondheidszorg en Jeugd (IGJ)", url: "https://www.igj.nl/onderwerpen/medicijnen/online-medicijnen" }
   reporting: { name: "Bijwerkingencentrum Lareb", url: "https://www.lareb.nl/pages/alles-over-bijwerkingen-melden" }
   anti_doping: { name: "Dopingautoriteit", url: "https://www.dopingautoriteit.nl/" }
   medicines_law: { name: "Geneesmiddelenwet", url: "https://wetten.overheid.nl/BWBR0021505/" }
 - code: DE
-  emergency: "112"
+  emergency: ["112"]
   regulator: { name: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)", url: "https://www.bfarm.de/" }
   reporting: { name: "BfArM — Risiken melden (Verdachtsfall einer Nebenwirkung)", url: "https://www.bfarm.de/DE/Arzneimittel/Pharmakovigilanz/Risiken-melden/_node.html" }
   anti_doping: { name: "Nationale Anti Doping Agentur (NADA)", url: "https://www.nada.de/" }
   medicines_law: { name: "Arzneimittelgesetz (AMG)", url: "https://www.gesetze-im-internet.de/amg_1976/" }
 - code: BE
-  emergency: "112"
+  emergency: ["112"]
   regulator: { name: "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS)", url: "https://www.famhp.be/en" }
   reporting: { name: "FAMHP — report a side effect", url: "https://www.famhp.be/en/side_effect" }
   medicines_law: { name: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik", url: "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet" }
 - code: UK
-  emergency: "999"
+  emergency: ["999"]
   regulator: { name: "Medicines and Healthcare products Regulatory Agency (MHRA)", url: "https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency" }
   reporting: { name: "Yellow Card scheme", url: "https://yellowcard.mhra.gov.uk/" }
   anti_doping: { name: "UK Anti-Doping (UKAD)", url: "https://www.ukad.org.uk/" }
   medicines_law: { name: "Human Medicines Regulations 2012", url: "https://www.legislation.gov.uk/uksi/2012/1916/contents" }
 - code: US
-  emergency: "911"
+  emergency: ["911"]
   regulator: { name: "U.S. Food and Drug Administration (FDA)", url: "https://www.fda.gov/" }
   reporting: { name: "FDA MedWatch", url: "https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program" }
   anti_doping: { name: "U.S. Anti-Doping Agency (USADA)", url: "https://www.usada.org/" }
   medicines_law: { name: "Federal Food, Drug, and Cosmetic Act (21 U.S.C. chapter 9)", url: "https://www.law.cornell.edu/uscode/text/21/chapter-9" }
 - code: EU
-  emergency: "112"
+  emergency: ["112"]
   regulator: { name: "European Medicines Agency (EMA)", url: "https://www.ema.europa.eu/en/homepage" }
   medicines_law: { name: "Directive 2001/83/EC (consolidated text of 1 January 2025)", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20250101" }

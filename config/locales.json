@@ -1,13 +1,13 @@
 {
-  "$comment": "Locale registry. Adding a locale is a configuration change: add an entry here, add src/i18n/<code>/*.json and src/content/**/<code>/*.mdx. status: planned = validated but not built; preview = built with English fallback, noindex, banner; published = must be complete, indexed, in hreflang.",
+  "$comment": "Locale registry (schema: localeFileSchema in src/schemas/index.ts). Adding a locale is a configuration change: add an entry here, add src/i18n/<code>/*.json and src/content/**/<code>/*.mdx. status: planned = validated but not built; preview = built with English fallback, noindex, banner; published = must be complete, indexed, in hreflang. jurisdictions: full = the countries (or EU) this locale covers in full, in display order (regulatory rows, products, approval answers, contact cards); notes = short notes only (contact cards); WADA is shown everywhere and never listed. Every other jurisdiction's data stays in src/data/ but is not shown in this locale. printsEmergencyNumbers: false = the locale says 'call your local emergency number' and never prints a number.",
   "defaultLocale": "en",
   "sourceLocale": "en",
   "locales": [
-    { "code": "en", "name": "English", "englishName": "English", "dir": "ltr", "status": "published", "bcp47": "en", "hreflang": "en", "dateLocale": "en-GB", "jurisdiction": "NL", "script": "latin" },
-    { "code": "nl", "name": "Nederlands", "englishName": "Dutch", "dir": "ltr", "status": "preview", "bcp47": "nl-NL", "hreflang": "nl", "dateLocale": "nl-NL", "jurisdiction": "NL", "script": "latin" },
-    { "code": "de", "name": "Deutsch", "englishName": "German", "dir": "ltr", "status": "planned", "bcp47": "de-DE", "hreflang": "de", "dateLocale": "de-DE", "jurisdiction": "DE", "script": "latin" },
-    { "code": "pl", "name": "Polski", "englishName": "Polish", "dir": "ltr", "status": "planned", "bcp47": "pl", "hreflang": "pl", "dateLocale": "pl-PL", "jurisdiction": "NL", "script": "latin" },
-    { "code": "tr", "name": "Türkçe", "englishName": "Turkish", "dir": "ltr", "status": "planned", "bcp47": "tr", "hreflang": "tr", "dateLocale": "tr-TR", "jurisdiction": "NL", "script": "latin" },
-    { "code": "ar", "name": "العربية", "englishName": "Arabic", "dir": "rtl", "status": "planned", "bcp47": "ar", "hreflang": "ar", "dateLocale": "ar", "jurisdiction": "NL", "script": "arabic" }
+    { "code": "en", "name": "English", "englishName": "English", "dir": "ltr", "status": "published", "bcp47": "en", "hreflang": "en", "dateLocale": "en-GB", "jurisdictions": { "full": ["US", "UK", "CA", "AU"], "notes": ["IE", "NZ"] }, "printsEmergencyNumbers": false, "script": "latin" },
+    { "code": "nl", "name": "Nederlands", "englishName": "Dutch", "dir": "ltr", "status": "preview", "bcp47": "nl-NL", "hreflang": "nl", "dateLocale": "nl-NL", "jurisdictions": { "full": ["NL", "EU", "BE"], "notes": [] }, "printsEmergencyNumbers": true, "script": "latin" },
+    { "code": "de", "name": "Deutsch", "englishName": "German", "dir": "ltr", "status": "planned", "bcp47": "de-DE", "hreflang": "de", "dateLocale": "de-DE", "jurisdictions": { "full": ["DE", "EU"], "notes": [] }, "printsEmergencyNumbers": true, "script": "latin" },
+    { "code": "pl", "name": "Polski", "englishName": "Polish", "dir": "ltr", "status": "planned", "bcp47": "pl", "hreflang": "pl", "dateLocale": "pl-PL", "jurisdictions": { "full": ["NL", "EU"], "notes": [] }, "printsEmergencyNumbers": true, "script": "latin" },
+    { "code": "tr", "name": "Türkçe", "englishName": "Turkish", "dir": "ltr", "status": "planned", "bcp47": "tr", "hreflang": "tr", "dateLocale": "tr-TR", "jurisdictions": { "full": ["NL", "EU"], "notes": [] }, "printsEmergencyNumbers": true, "script": "latin" },
+    { "code": "ar", "name": "العربية", "englishName": "Arabic", "dir": "rtl", "status": "planned", "bcp47": "ar", "hreflang": "ar", "dateLocale": "ar", "jurisdictions": { "full": ["NL", "EU"], "notes": [] }, "printsEmergencyNumbers": true, "script": "arabic" }
   ]
 }

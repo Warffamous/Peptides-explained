@@ -2,10 +2,12 @@
 /**
  * Headlines from vetted, non-commercial feeds (src/data/feeds.yaml -> scripts/fetch-news.ts ->
  * src/data/news.json). Every item links to its original source. Items are labelled by source
- * type and, heuristically, by study type — and the heuristic is disclosed.
+ * type and, heuristically, by study type — and the heuristic is disclosed. A national or EU
+ * regulator's feed (feeds.yaml jurisdiction) is shown only in the locales that cover it.
  */
 import { t } from '../../lib/i18n';
-import { ctxLocale } from '../../lib/ctx';
+import { ctxLocale, ctxContentLocale } from '../../lib/ctx';
+import { isVisible } from '../../lib/jurisdictions';
 import { NEWS, FEEDS } from '../../lib/data';
 import { formatDate, isoDate } from '../../lib/format';
 import { routeUrl } from '../../lib/urls';
@@ -13,8 +15,9 @@ import Icon from '../ui/Icon.astro';
 interface Props { limit?: number; compact?: boolean }
 const { limit = 60, compact = false } = Astro.props;
 const L = ctxLocale(Astro);
-const feeds = new Map(FEEDS.feeds.map((f) => [f.id, f]));
-const items = [...NEWS.items].sort((a, b) => +b.published - +a.published).slice(0, limit);
+const scope = ctxContentLocale(Astro);
+const feeds = new Map(FEEDS.feeds.filter((f) => isVisible(f.jurisdiction, scope)).map((f) => [f.id, f]));
+const items = NEWS.items.filter((i) => feeds.has(i.feed)).sort((a, b) => +b.published - +a.published).slice(0, limit);
 const cats = [...new Set(items.map((i) => feeds.get(i.feed)?.category).filter(Boolean))] as string[];
 ---
 <div class:list={['news', compact && 'news--compact']} data-news>

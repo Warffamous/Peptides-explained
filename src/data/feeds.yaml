@@ -2,6 +2,8 @@
 # config/link-allowlist.json (the fetcher drops anything else, and the commerce check backstops it).
 # A source is added only with a written reason ("why"). Items are collected by scripts/fetch-news.ts
 # (daily in CI) into src/data/news.json, then filtered to the keywords below.
+# jurisdiction (regulators only): a national or EU regulator's news is shown only in the locales that cover it
+# (config/locales.json); feeds without one (WADA, WHO, PubMed, Europe PMC) are shown everywhere.
 
 keywords:
   - peptide
@@ -53,6 +55,7 @@ feeds:
     url: https://www.ema.europa.eu/en/news.xml
     homepage: https://www.ema.europa.eu/en/news-events
     category: regulator
+    jurisdiction: EU
     peer_reviewed: false
     require_any: [use-keywords]
     max_items: 15
@@ -64,6 +67,7 @@ feeds:
     url: https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml
     homepage: https://www.fda.gov/news-events/fda-newsroom/press-announcements
     category: regulator
+    jurisdiction: US
     peer_reviewed: false
     require_any: [use-keywords]
     max_items: 15
@@ -75,6 +79,7 @@ feeds:
     url: https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml
     homepage: https://www.fda.gov/drugs
     category: regulator
+    jurisdiction: US
     peer_reviewed: false
     require_any: [use-keywords]
     max_items: 15

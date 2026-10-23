@@ -1,6 +1,7 @@
 ---
 /**
- * Page photo, chosen per route in src/data/heroes.yaml (pages without an entry render nothing).
+ * Page photo, chosen per route (and, where the entry names locales, per locale) in
+ * src/data/heroes.yaml (pages without an entry for their locale render nothing).
  * DocLayout puts it after the beginner layer in the DOM: on phones and tablets it follows the
  * summary, the fact sheet and the review line (the beginner layer starts on the first screen); from
  * 64rem it sits in the aside beside the title block (CSS order, base/structure.css; columns in
@@ -18,7 +19,7 @@ import MediaCredit from './MediaCredit.astro';
 import { heroFor, mediaText, buildPicture } from '../../lib/media';
 interface Props { locale: string; routeKey: string }
 const { locale, routeKey } = Astro.props;
-const m = heroFor(routeKey);
+const m = heroFor(routeKey, locale);
 const text = m ? mediaText(locale, m.id) : null;
 // The photo is small and slightly subdued: lower quality is invisible here and keeps the files
 // small (LCP on slow connections).

@@ -1,12 +1,18 @@
 ---
+/**
+ * The regulatory tracker: items of the locale's own jurisdictions and WADA (src/lib/jurisdictions.ts,
+ * isVisible), newest first, each with its sources and the local_sources of the locale's own (visibleSources).
+ */
 import { t, namespace } from '../../lib/i18n';
-import { ctxLocale } from '../../lib/ctx';
+import { ctxLocale, ctxContentLocale } from '../../lib/ctx';
+import { isVisible, visibleSources } from '../../lib/jurisdictions';
 import { TRACKER, getSource, shortAuthors } from '../../lib/data';
 import { formatDate, isoDate } from '../../lib/format';
 import { routeUrl } from '../../lib/urls';
 const L = ctxLocale(Astro);
 const text = namespace<Record<string, { title: string; summary: string; next?: string }>>(L, 'tracker');
-const items = [...TRACKER].sort((a, b) => +b.updated - +a.updated);
+const scope = ctxContentLocale(Astro);
+const items = TRACKER.filter((it) => isVisible(it.jurisdiction, scope)).sort((a, b) => +b.updated - +a.updated);
 ---
 <ul class="tracker" role="list">
   {items.map((it) => (
@@ -23,7 +29,7 @@ const items = [...TRACKER].sort((a, b) => +b.updated - +a.updated);
       </dl>
       <p class="tracker__links">
         {it.compounds.map((c) => <a href={routeUrl(L, `compounds/${c}`)}>{c}</a>)}
-        {it.sources.map((s) => { const src = getSource(s); return <a href={src.href} rel="noopener" data-external>{shortAuthors(src)} ({src.year})</a>; })}
+        {visibleSources(it, scope).map((s) => { const src = getSource(s); return <a href={src.href} rel="noopener" data-external>{shortAuthors(src)} ({src.year})</a>; })}
       </p>
     </li>
   ))}

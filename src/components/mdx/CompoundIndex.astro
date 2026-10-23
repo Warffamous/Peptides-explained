@@ -1,35 +1,60 @@
 ---
-/** Compound cards grouped by category — the authorised/investigational/experimental split is the point. */
-import { t } from '../../lib/i18n';
-import { ctxLocale } from '../../lib/ctx';
+/**
+ * Compound cards grouped by the locale's answer to "is it an approved medicine?" (approvalFor in
+ * src/lib/jurisdictions.ts) — the approved/investigational/experimental split is the point:
+ * approved (or once approved) in at least one of the locale's jurisdictions, approved only in other
+ * countries, in clinical development, experimental, and other (not a peptide, not approved here).
+ * Each card says where it is approved, in the fact sheet's words (src/lib/approval.ts).
+ */
+import { t, isFallback } from '../../lib/i18n';
+import { ctxLocale, ctxContentLocale } from '../../lib/ctx';
 import { compoundDataMap, resolveCompound } from '../../lib/content';
+import { approvalFor, approvedHere, type Approval } from '../../lib/jurisdictions';
+import { approvedInValue, jurisdictionList } from '../../lib/approval';
+import { SOURCE_LOCALE } from '../../lib/config';
+import type { Jurisdiction } from '../../schemas/vocab';
 import { routeUrl } from '../../lib/urls';
 import EvidenceMini from '../ui/EvidenceMini.astro';
 const L = ctxLocale(Astro);
+const scope = ctxContentLocale(Astro);
 const all = [...(await compoundDataMap()).values()];
-const GROUPS = [
-  // Approved only outside the EU, or only by some countries' own regulators: the page says where.
-  { id: 'authorised', cats: ['authorised', 'authorised-elsewhere', 'authorised-nationally'], label: 'compound.index.authorisedGroup' },
-  { id: 'investigational', cats: ['investigational'], label: 'compound.index.investigationalGroup' },
-  { id: 'experimental', cats: ['experimental'], label: 'compound.index.experimentalGroup' },
-  { id: 'other', cats: ['not-a-peptide'], label: 'compound.index.otherGroup' },
-];
+const groupOf = (a: Approval) => (approvedHere(a) ? 'approved' : !a.peptide ? 'other' : a.key === 'elsewhere' ? 'elsewhere' : a.key === 'trials' ? 'investigational' : 'experimental');
 const cards = [];
 for (const d of all) {
   const r = await resolveCompound(L, d.slug);
-  if (r) cards.push({ d, page: r.entry.data, fallback: r.fallback });
+  if (!r) continue;
+  const approval = approvalFor(d, scope);
+  cards.push({ d, page: r.entry.data, fallback: r.fallback, approval, group: groupOf(approval) });
 }
 cards.sort((a, b) => a.d.tier - b.d.tier || a.d.names.common.localeCompare(b.d.names.common));
+// The group titles name the locale's own jurisdictions (in the language of the title). "Not
+// approved in {list}" names only those for which every compound of the group has a row that says
+// so: a missing row is unknown, never "not approved" (src/lib/jurisdictions.ts).
+const full = scope.jurisdictions.full;
+const list = (key: string, codes: readonly Jurisdiction[], type: 'conjunction' | 'disjunction') => jurisdictionList(isFallback(L, key) ? SOURCE_LOCALE : L, codes, type);
+const notApprovedByAll = full.filter((j) => cards.filter((c) => c.group === 'experimental').every((c) => c.approval.notApproved.includes(j)));
+const GROUPS = [
+  { id: 'approved', label: t(L, 'compound.index.approvedGroup', { list: list('compound.index.approvedGroup', full, 'conjunction') }) },
+  { id: 'elsewhere', label: t(L, 'compound.index.elsewhereGroup') },
+  { id: 'investigational', label: t(L, 'compound.index.investigationalGroup') },
+  {
+    id: 'experimental',
+    label: notApprovedByAll.length
+      ? t(L, 'compound.index.experimentalGroup', { list: list('compound.index.experimentalGroup', notApprovedByAll, 'disjunction') })
+      : t(L, 'compound.index.experimentalGroupUnchecked'),
+  },
+  { id: 'other', label: t(L, 'compound.index.otherGroup') },
+];
 ---
 <div class="compound-index">
   {GROUPS.map((g) => {
-    const list = cards.filter((c) => g.cats.includes(c.d.category));
-    return list.length > 0 && (
+    const members = cards.filter((c) => c.group === g.id);
+    return members.length > 0 && (
       <section class="compound-index__group" data-group={g.id} aria-labelledby={`cg-${g.id}`}>
-        <h2 class="compound-index__title" id={`cg-${g.id}`}>{t(L, g.label)}</h2>
+        <h2 class="compound-index__title" id={`cg-${g.id}`}>{g.label}</h2>
         <ul class="compound-cards" role="list">
-          {list.map(({ d, page, fallback }) => (
-            <li class="compound-card" data-category={d.category} data-class={d.class} data-status={d.status}>
+          {members.map(({ d, page, fallback, approval }) => (
+            <li class="compound-card" data-category={d.category} data-approval={approval.key} data-class={d.class} data-status={d.status}>
               <a class="compound-card__link" href={routeUrl(L, `compounds/${d.slug}`)}>
                 <span class="compound-card__name">{d.names.common}</span>
               </a>
@@ -37,6 +62,7 @@ cards.sort((a, b) => a.d.tier - b.d.tier || a.d.names.common.localeCompare(b.d.n
                 <span class="compound-card__class">{t(L, `vocab.class.${d.class}`)}</span>
                 {d.status === 'stub' && <span class="compound-card__stub">{t(L, 'common.stub.label')}</span>}
               </p>
+              <p class="compound-card__approved"><span class="compound-card__approved-label">{t(L, 'compound.index.approvedIn')}:</span> {approvedInValue(L, d, approval)}</p>
               <p class="compound-card__desc" lang={fallback ? 'en' : undefined}>{page.summary[0]}</p>
               <EvidenceMini evidence={d.evidence} locale={L} />
             </li>

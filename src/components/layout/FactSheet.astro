@@ -6,27 +6,22 @@
  * with the same facts says the same; the rest are glance.facts in the compound frontmatter (how it
  * is taken, how often, how long it lasts: label facts, never a dose). It has no links, so moving it
  * on wide screens does not change the focus order.
+ *
+ * "Approved in" says what the At a glance tile says, from the same answer (src/lib/approval.ts):
+ * "US since 2010; Canada 2014–2022", or "Not in the US, the UK, Canada or Australia".
  */
 import { t } from '../../lib/i18n';
+import { approvedInValue } from '../../lib/approval';
+import type { Approval } from '../../lib/jurisdictions';
 import type { CompoundData } from '../../schemas';
 type Fact = { label: string; value: string };
 /** testedShort: the page's sourced glance.tested override, so the fact sheet says what the At a glance tile says. */
-interface Props { locale: string; data: CompoundData; facts: Fact[]; testedShort?: string }
-const { locale: L, data, facts, testedShort } = Astro.props;
-const eu = data.regulatory.find((r) => r.jurisdiction === 'EU');
-// An EU row that is 'authorised' for an authorised-nationally compound means a national
-// authorisation in a member state (e.g. Italy), never an EU-wide one: say so.
-const status = eu
-  ? data.category === 'authorised-nationally' && eu.status === 'authorised'
-    ? t(L, 'beginner.facts.statusNational')
-    : eu.since && eu.status === 'authorised'
-    ? t(L, 'beginner.facts.statusSince', { status: t(L, `vocab.regStatus.${eu.status}`), year: eu.since.getUTCFullYear() })
-    : t(L, `vocab.regStatus.${eu.status}`)
-  : null;
+interface Props { locale: string; data: CompoundData; approval: Approval; facts: Fact[]; testedShort?: string }
+const { locale: L, data, approval, facts, testedShort } = Astro.props;
 const rows: Fact[] = [
   { label: t(L, 'beginner.facts.class'), value: t(L, `vocab.class.${data.class}`) },
   ...facts,
-  ...(status ? [{ label: t(L, 'beginner.facts.status'), value: status }] : []),
+  { label: t(L, 'beginner.facts.approvedIn'), value: approvedInValue(L, data, approval) },
   // The short answer only ("Yes", "A little", "No"): the sentence is in the At a glance tile.
   { label: t(L, 'beginner.facts.tested'), value: testedShort ?? t(L, `beginner.glance.tested.${data.evidence.human_clinical}.short`) },
 ];

@@ -1,11 +1,23 @@
 ---
+/**
+ * The regulatory status table: one row per jurisdiction the locale shows (its own, in its order,
+ * then WADA; src/lib/jurisdictions.ts, visibleRows). Rows of other jurisdictions stay in the data
+ * for the locale that covers them. A discontinued row says when it was approved and since when it
+ * is no longer sold; a national schedule (e.g. the Australian Poisons Standard) is shown with its sources.
+ */
 import { t } from '../../lib/i18n';
-import { ctxCompound } from '../../lib/ctx';
+import { ctxCompound, ctxContentLocale } from '../../lib/ctx';
 import { formatDate, isoDate } from '../../lib/format';
-import { JURISDICTIONS } from '../../schemas/vocab';
+import { visibleRows } from '../../lib/jurisdictions';
+import CiteMarks from '../ui/CiteMarks.astro';
 const c = ctxCompound(Astro, 'RegulatoryTable');
 const L = c.locale;
-const rows = [...c.data.regulatory].sort((a, b) => JURISDICTIONS.indexOf(a.jurisdiction) - JURISDICTIONS.indexOf(b.jurisdiction));
+const rows = visibleRows(c.data, ctxContentLocale(Astro));
+// "Approved {from} · no longer sold since {to}": the two dates stay <time> elements (bidi-isolated).
+const MARK_FROM = '\u0000';
+const MARK_TO = '\u0001';
+const [discBefore, discRest] = t(L, 'compound.regulatoryTable.discontinued', { from: MARK_FROM, to: MARK_TO }).split(MARK_FROM);
+const [discMiddle, discAfter] = (discRest ?? '').split(MARK_TO);
 ---
 <div class="reg-table">
   <div class="table-scroll" tabindex="0" role="region" aria-labelledby="reg-caption">
@@ -27,7 +39,14 @@ const rows = [...c.data.regulatory].sort((a, b) => JURISDICTIONS.indexOf(a.juris
               <span class="status-badge" data-status={r.status}>
                 {t(L, `vocab.regStatus.${r.status}`)}{r.wada_section && <> · <bdi class="qty">{r.wada_section}</bdi></>}{r.wada_scope && <>, {t(L, `vocab.wadaScope.${r.wada_scope}`)}</>}
               </span>
-              {r.since && <span class="reg-table__since">{t(L, 'compound.regulatoryTable.since')} <time datetime={isoDate(r.since)}>{formatDate(L, r.since)}</time></span>}
+              {r.status === 'discontinued' && r.authorised_since && r.since ? (
+                <span class="reg-table__since">{discBefore}<time datetime={isoDate(r.authorised_since)}>{formatDate(L, r.authorised_since)}</time>{discMiddle}<time datetime={isoDate(r.since)}>{formatDate(L, r.since)}</time>{discAfter}</span>
+              ) : (
+                r.since && <span class="reg-table__since">{t(L, 'compound.regulatoryTable.since')} <time datetime={isoDate(r.since)}>{formatDate(L, r.since)}</time></span>
+              )}
+              {r.schedule && (
+                <span class="reg-table__schedule">{t(L, 'compound.regulatoryTable.schedule', { code: r.schedule.code })}{r.schedule.note && <> · {r.schedule.note}</>}<CiteMarks locale={L} ids={r.schedule.sources} index={c.citeIndex} /></span>
+              )}
             </td>
             <td data-label={t(L, 'compound.regulatoryTable.note')} class="reg-table__note">
               {c.page.regulatory_notes[r.jurisdiction]}

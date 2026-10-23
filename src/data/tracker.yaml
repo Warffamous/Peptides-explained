@@ -7,13 +7,16 @@
 # date. `compounds` lists only compounds that have a page on this site; other substances are named in the text.
 # Statements reported in the press but not published by the regulator are not tracked until an official
 # document appears (research/legal-b.md, "Tracker").
+# A locale shows the items of its own jurisdictions and WADA (config/locales.json). A national body's source on a
+# WADA item goes in `local_sources` under its jurisdiction, so it is shown only where that jurisdiction is; the
+# words that cite it belong in that locale's text (24 October 2026, research/for-nl-site/MANIFEST-data.md).
 
 - id: us-pcac-2026-peptide-vote
   jurisdiction: US
   status: advisory-vote
   updated: 2026-07-24
   compounds: [bpc-157, kpv, tb-500, mots-c, semax, epitalon]
-  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, ema-medicines-search, nl-geneesmiddelenwet, federalregister-fda-search-2026-10-22]
+  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, federalregister-fda-search-2026-10-22]
 
 - id: us-pcac-2027-meeting
   jurisdiction: US
@@ -58,7 +61,8 @@
   updated: 2026-09-21
   next_milestone: 2027-01-01
   compounds: [bpc-157, tb-500, retatrutide]
-  sources: [wada-2027-list-en, wada-2027-list-explanatory-note, ukad-2027-list-summary, dopingautoriteit-2027-list-news]
+  sources: [wada-2027-list-en, wada-2027-list-explanatory-note]
+  local_sources: { UK: [ukad-2027-list-summary], NL: [dopingautoriteit-2027-list-news] }
 
 - id: wada-2027-code
   jurisdiction: WADA

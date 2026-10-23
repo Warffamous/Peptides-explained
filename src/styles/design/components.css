@@ -33,17 +33,22 @@
 .doc-header__title { font-size: var(--s-4); line-height: 1.08; font-weight: 600; letter-spacing: -0.022em; text-wrap: balance; }
 .doc-header__byline { margin-block-start: var(--space-4); color: var(--text-2); }
 
-/* Status badge: glyph plus words, 1px border; only "Authorised medicine" is filled; dashed = not authorised. */
+/*
+ * Status badge: glyph plus words, 1px border; only an answer of "approved in all of this locale's
+ * jurisdictions" is filled; dashed = not authorised. data-approval is the locale's answer
+ * (src/lib/jurisdictions.ts, approvalFor); a non-peptide keeps the dashed line unless it is approved here.
+ */
 .compound-badge { display: inline-flex; align-items: center; gap: 0.5em; margin-block-start: var(--space-4); padding: 0.35rem 0.8rem; border-radius: var(--radius); font-size: var(--s--1); font-weight: 600; background: var(--surface); color: var(--text-2); border: 1px dashed var(--text-3); }
 .compound-badge__icon { display: inline-flex; line-height: 0; color: var(--text-3); }
 .compound-badge__icon .pictogram { inline-size: 1.35em; block-size: 1.35em; }
-.compound-badge[data-category='authorised'] { background: var(--cyan-text); color: var(--cyan-ink); border: 1px solid var(--cyan-text); }
-.compound-badge[data-category='authorised'] .compound-badge__icon { color: inherit; }
-.compound-badge[data-category='authorised-elsewhere'] { color: var(--cyan-text); border: 1.5px solid var(--cyan); }
-.compound-badge[data-category='authorised-elsewhere'] .compound-badge__icon { color: var(--cyan); }
-/* Authorised only by some countries' own regulators: a solid grey line, as the "partly" ring on the glance tile. */
-.compound-badge[data-category='authorised-nationally'] { color: var(--text); border: 1.5px solid var(--text-3); }
-.compound-badge[data-category='authorised-nationally'] .compound-badge__icon { color: var(--text-2); }
+.compound-badge[data-approval='all'] { background: var(--cyan-text); color: var(--cyan-ink); border: 1px solid var(--cyan-text); }
+.compound-badge[data-approval='all'] .compound-badge__icon { color: inherit; }
+/* Approved in some of the locale's jurisdictions, or approved once and no longer sold there. */
+.compound-badge:is([data-approval='some'], [data-approval='former']) { color: var(--cyan-text); border: 1.5px solid var(--cyan); }
+.compound-badge:is([data-approval='some'], [data-approval='former']) .compound-badge__icon { color: var(--cyan); }
+/* Approved only in other countries: a solid grey line, as the "partly" ring on the glance tile. */
+.compound-badge[data-approval='elsewhere']:not([data-category='not-a-peptide']) { color: var(--text); border: 1.5px solid var(--text-3); }
+.compound-badge[data-approval='elsewhere']:not([data-category='not-a-peptide']) .compound-badge__icon { color: var(--text-2); }
 
 .compound-facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: var(--space-3); margin-block-start: var(--space-5); }
 .compound-facts > div { padding: var(--space-3); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
@@ -348,11 +353,13 @@ a.term:hover { color: var(--link); }
 .study-table__found { min-inline-size: 16rem; }
 .study-table__limits { min-inline-size: 13rem; color: var(--text-2); }
 .reg-table__table { min-inline-size: 40rem; }
-.reg-table__since { display: block; font-size: var(--s--2); color: var(--text-2); }
+.reg-table__since, .reg-table__schedule { display: block; font-size: var(--s--2); color: var(--text-2); }
 .reg-table__note { color: var(--text-2); }
 .status-badge { display: inline-flex; align-items: center; gap: 0.35em; padding: 0.1rem 0.55rem; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--line); font-size: var(--s--2); font-weight: 600; white-space: nowrap; color: var(--text); }
 .status-badge[data-status='authorised'], .status-badge[data-status='in-force'], .status-badge[data-status='adopted'] { background: var(--cyan-soft); border-color: transparent; color: var(--cyan-text); }
 .status-badge[data-status='prohibited'] { background: var(--surface); border-color: var(--line-strong); color: var(--text); }
+/* Approved once, no longer sold: a solid grey line, as the "partly" ring on the glance tile. */
+.status-badge[data-status='discontinued'] { background: var(--surface); border: 1px solid var(--text-3); color: var(--text); }
 .status-badge:is([data-status='not-authorised'], [data-status='unclear'], [data-status='refused'], [data-status='withdrawn'], [data-status='under-review'], [data-status='investigational'], [data-status='advisory-vote'], [data-status='rulemaking'], [data-status='consultation'], [data-status='proposed'], [data-status='stalled'], [data-status='watching']) { background: var(--surface); border: 1px dashed var(--text-3); color: var(--text-2); }
 @container doc (max-width: 56rem) {
   .study-table__table, .reg-table__table { min-inline-size: 0; }
@@ -366,7 +373,8 @@ a.term:hover { color: var(--link); }
 /* ------------------------------------------------------------------ authorised */
 .authorised { grid-column: wide; margin-block: 0 var(--space-7); padding: var(--space-5) var(--space-6); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); border-inline-start: 4px solid var(--cyan); }
 .authorised__badge { display: inline-flex; align-items: center; gap: 0.5em; padding: 0.3rem 0.8rem; border-radius: var(--radius); background: var(--cyan-text); color: var(--cyan-ink); font-weight: 700; font-size: var(--s--1); }
-.authorised--elsewhere .authorised__badge { background: none; color: var(--cyan-text); box-shadow: inset 0 0 0 1.5px var(--cyan); }
+/* Approved in only some of the locale's jurisdictions, or only elsewhere: an outline, not the filled badge. */
+.authorised--partial .authorised__badge { background: none; color: var(--cyan-text); box-shadow: inset 0 0 0 1.5px var(--cyan); }
 .authorised__check { inline-size: 1.1em; block-size: 1.1em; }
 .authorised__explain { margin-block: var(--space-4); max-inline-size: var(--measure); color: var(--text); }
 .authorised__route { padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface-2); margin-block-end: var(--space-5); }
@@ -375,6 +383,9 @@ a.term:hover { color: var(--link); }
 .authorised__products { min-inline-size: 36rem; }
 .authorised__name { display: block; font-weight: 600; }
 .authorised__holder, .authorised__route-type { display: block; font-size: var(--s--2); color: var(--text-2); font-weight: 400; }
+/* No longer sold: words first, a dashed outline (not available, as everywhere on the site). */
+.authorised__gone { display: inline-block; margin-block-start: var(--space-1); padding-inline: 0.5rem; border-radius: var(--radius-sm); border: 1px dashed var(--text-3); font-size: var(--s--2); font-weight: 600; color: var(--text-2); }
+.authorised__none { color: var(--text-2); font-size: var(--s--1); max-inline-size: var(--measure); }
 .authorised .icon--external { inline-size: 0.9em; block-size: 0.9em; vertical-align: -0.1em; margin-inline-start: 0.25em; }
 /* The block now sits in an "In detail" fold in the reading column. When it is narrower than the
    five-column table needs, each product becomes a card (as the study table does on a phone)
@@ -457,6 +468,9 @@ a.term:hover { color: var(--link); }
 .compound-card__meta { display: flex; flex-wrap: wrap; gap: var(--space-2); font-size: var(--s--2); color: var(--text-2); }
 .compound-card__stub { padding-inline: 0.5rem; border-radius: var(--radius-sm); border: 1px dashed var(--text-3); }
 .compound-card__desc { color: var(--text-2); font-size: var(--s--1); }
+/* Where it is approved (the fact sheet's words): a plain line, the label in secondary ink. */
+.compound-card__approved { font-size: var(--s--1); color: var(--text); }
+.compound-card__approved-label { color: var(--text-2); }
 .evidence-mini { display: grid; gap: 0.45rem; margin-block-start: var(--space-2); font-size: var(--s--2); }
 /* fit-content(55%): with an auto value column a long grade ("Phase III (large controlled trials)") took the
    whole card and squeezed the axis name into a column one syllable wide (compounds index, 1280 px). */

@@ -1,0 +1,109 @@
+{
+  "$comment": "English UI strings changed or removed by the English refocus (23 October 2026, spec research/refocus-spec/data-model.md), copied here before the change: source material for the Dutch site. One object per file in src/i18n/en/, keyed by the dotted path of the old key, with its old value (objects kept whole). The full old files are also in snapshot-2026-10-23/i18n/en/ and in git tag nl-source-2026-10-23.",
+  "vocab.json": {
+    "category.authorised": "Authorised medicine (EU)",
+    "category.authorised-elsewhere": "Authorised outside the EU"
+  },
+  "beginner.json": {
+    "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the summary box's reading time and the technical-details block. Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. Keep every answer to one plain line (B1, everyday words, no jargon).",
+    "glance.approved": {
+      "question": "Is it an approved medicine?",
+      "authorised": {
+        "short": "Yes",
+        "text": "Approved in the EU. Only with a doctor’s prescription."
+      },
+      "authorised-elsewhere": {
+        "short": "Not in the EU",
+        "text": "Approved only in some countries outside the EU."
+      },
+      "authorised-nationally": {
+        "short": "In some countries",
+        "text": "Approved in {countries} for some uses. Not approved for the whole EU, or in the US."
+      },
+      "investigational": {
+        "short": "No",
+        "text": "Not approved. It is still being tested in trials."
+      },
+      "experimental": {
+        "short": "No",
+        "text": "Not approved as a medicine in the EU, the UK or the US."
+      },
+      "not-a-peptide-authorised": {
+        "short": "Yes",
+        "text": "It is not a peptide, but it is an approved medicine in the EU."
+      },
+      "not-a-peptide-authorised-elsewhere": {
+        "short": "Not in the EU",
+        "text": "It is not a peptide. It is approved only in some countries outside the EU."
+      },
+      "not-a-peptide-not-authorised": {
+        "short": "No",
+        "text": "It is not a peptide, and it is not an approved medicine in the EU."
+      }
+    },
+    "facts.status": "Status in the EU",
+    "facts.statusSince": "{status} since {year}",
+    "facts.statusNational": "Not EU-wide, only nationally"
+  },
+  "compound.json": {
+    "authorised.badgeElsewhere": "Authorised outside the EU",
+    "authorised.badgeNational": "Authorised in some countries",
+    "authorised.explainElsewhere": "Authorised by {regulators} for specific uses, but not authorised in the EU. In the Netherlands it can only be obtained through narrow legal routes.",
+    "authorised.routeText": "In the Netherlands this medicine is prescription-only. A doctor decides whether it suits you and at what dose; a pharmacy supplies the authorised product.",
+    "authorised.routeElsewhere": "A doctor can in some cases request a medicine authorised elsewhere for a named patient (artsenverklaring). This route is narrow.",
+    "index.authorisedGroup": "Authorised medicines",
+    "index.experimentalGroup": "Experimental — not authorised in the EU, the UK or the US"
+  },
+  "timeline.json": {
+    "$comment": "Changed on 24 October 2026: events that named the EU, the EMA, the Netherlands or Germany next to a jurisdiction English shows. An FDA approval and the EU authorisation are now two events (<id> and <id>-eu or <id>-us, src/data/timeline.yaml); the European falsified-Ozempic alerts no longer carry the UK tag (the UK part is falsified-ozempic-uk). New ids are not listed here.",
+    "exenatide-approval": {
+      "title": "Exenatide, a GLP-1 receptor medicine, is approved",
+      "text": "On 28 April 2005 the FDA approved Byetta (exenatide), a synthetic peptide first identified in Gila monster venom. The EU authorised it on 20 November 2006; that authorisation was withdrawn at the company's request on 1 January 2026."
+    },
+    "liraglutide-approval": {
+      "title": "Liraglutide: a once-daily GLP-1 medicine",
+      "text": "The EU authorised Victoza (liraglutide) on 30 June 2009 and the FDA approved it on 25 January 2010. It binds to albumin in the blood and resists breakdown, so one injection a day is enough."
+    },
+    "tesamorelin-approval": {
+      "title": "Tesamorelin is approved in the US",
+      "text": "On 10 November 2010 the FDA approved Egrifta (tesamorelin), an analogue of growth-hormone-releasing factor, to reduce excess belly fat in adults with HIV and lipodystrophy. An EU application was withdrawn in 2012, and it is not authorised in the EU."
+    },
+    "afamelanotide-approval": {
+      "title": "Afamelanotide: authorised under exceptional circumstances",
+      "text": "On 22 December 2014 the EU authorised Scenesse (afamelanotide), an implant for a rare disease that makes light painful, under 'exceptional circumstances' because full data could not be collected. The FDA approved it on 8 October 2019."
+    },
+    "semaglutide-approval": {
+      "title": "Semaglutide is approved",
+      "text": "The FDA approved Ozempic (semaglutide) for type 2 diabetes on 5 December 2017, and the EU authorised it on 8 February 2018."
+    },
+    "bremelanotide-approval": {
+      "title": "Bremelanotide is approved in the US",
+      "text": "On 21 June 2019 the FDA approved Vyleesi (bremelanotide), a melanocortin-receptor agonist, for low sexual desire in some premenopausal women. The EMA lists no application for it, and it is not authorised in the EU."
+    },
+    "wegovy-approval": {
+      "title": "Semaglutide for weight management",
+      "text": "The FDA approved Wegovy (semaglutide) for weight management on 4 June 2021, and the EU authorised it on 6 January 2022."
+    },
+    "tirzepatide-approval": {
+      "title": "Tirzepatide is approved",
+      "text": "The FDA approved Mounjaro (tirzepatide) for type 2 diabetes on 13 May 2022, and the EU authorised it on 15 September 2022. It acts on two hormone receptors, for GLP-1 and GIP."
+    },
+    "fda-pcac-2026-vote": {
+      "title": "FDA advisers vote on seven peptides",
+      "text": "On 23 July 2026 the FDA's Pharmacy Compounding Advisory Committee voted 8–6, with one abstention, to recommend BPC-157 for the 503A list of substances US pharmacies may compound on prescription; of the seven peptides it considered, it recommended six (BPC-157, KPV, TB-500, MOTS-c, Semax and epitalon, but not emideltide, also called DSIP), as reported from the public meeting. The vote is advisory and non-binding and went against FDA staff's own recommendation, so legal compounding stays prohibited until the FDA formally adopts it and completes rulemaking. None of these peptides is an approved medicine in the EU, the UK or the US (Semax is registered as a medicine in Russia), and a listing would not be a marketing authorisation, would say nothing about whether they work, and would change nothing in the EU or the Netherlands."
+    }
+  },
+  "tracker.json": {
+    "$comment": "Changed on 24 October 2026: EU and Dutch sentences in items English shows. The Dutch Doping Authority source of wada-2027-prohibited-list is now in local_sources (NL), src/data/tracker.yaml.",
+    "us-pcac-2026-peptide-vote": {
+      "title": "US advisers back six peptides for pharmacy compounding",
+      "summary": "On 23 July 2026 the FDA's Pharmacy Compounding Advisory Committee voted 8 to 6, with one abstention, to recommend BPC-157 for the 503A list of ingredients pharmacies may use. Over two days it considered seven peptides and recommended six: BPC-157, KPV, TB-500, MOTS-c, Semax and epitalon, but not emideltide. These results are as reported from the public meeting; the FDA has posted no minutes. The vote is advice only, and went against FDA staff's own proposal. Compounding with these peptides stays prohibited until the FDA adopts the advice and completes rulemaking. None of them is an approved medicine in the EU, the UK or the US (Semax is registered as a medicine in Russia). A listing would let US pharmacies compound them on prescription. It would not be an approval and says nothing about whether they work. Nothing changes in the EU or the Netherlands.",
+      "next": "The FDA decides whether to propose a rule, which would then be open for public comment. No date has been set. On 22 October 2026 the Federal Register held no proposed rule."
+    },
+    "wada-2027-prohibited-list": {
+      "title": "The 2027 Prohibited List names peptides in section S0",
+      "summary": "WADA published the 2027 Prohibited List on 21 September 2026. It takes effect on 1 January 2027. Section S0 now names 'peptides' among its examples, next to BPC-157. WADA says a peptide that the list does not name may still be prohibited. The Dutch Doping Authority will publish its Dutch translation from 1 January 2027.",
+      "next": "The 2027 list takes effect"
+    }
+  }
+}

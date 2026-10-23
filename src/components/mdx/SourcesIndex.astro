@@ -1,11 +1,18 @@
 ---
+/**
+ * Every source this locale's pages use (src/lib/content.ts, usedSourceIds), grouped by type. Sources
+ * of what the locale does not show (another jurisdiction's rows, timeline and tracker items) stay in
+ * the registry for the locale that shows them.
+ */
 import { t } from '../../lib/i18n';
 import { ctxLocale } from '../../lib/ctx';
 import { SOURCES } from '../../lib/data';
+import { usedSourceIds } from '../../lib/content';
 import SourceRef from '../ui/SourceRef.astro';
 const L = ctxLocale(Astro);
+const used = await usedSourceIds(L);
 const ORDER = ['law', 'regulator', 'label', 'guideline', 'trial', 'meta-analysis', 'review', 'article', 'preprint', 'registry', 'report', 'dataset', 'book', 'chapter', 'web'];
-const all = [...SOURCES.values()];
+const all = [...SOURCES.values()].filter((s) => used.has(s.id));
 const byType = ORDER.map((ty) => ({ ty, list: all.filter((s) => s.type === ty).sort((a, b) => (a.authors ?? '').localeCompare(b.authors ?? '') || a.year - b.year) })).filter((g) => g.list.length);
 ---
 <div class="sources-index">

@@ -31,6 +31,8 @@ export const BLOCK_COMPONENTS = [
   'GlossaryIndex',
   'SourcesIndex',
   'JurisdictionCard',
+  // the contact cards of the locale's own jurisdictions (which="full|notes|all", config/locales.json)
+  'JurisdictionCards',
   'Explainer',
   // media pipeline (docs/MEDIA-GUIDE.md)
   'Photo',

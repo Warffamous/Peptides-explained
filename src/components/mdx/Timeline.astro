@@ -1,16 +1,19 @@
 ---
 /**
  * The interactive history timeline. Complete as an ordered list without JavaScript; with it,
- * readers can filter by category. Event text is localised (src/i18n/<locale>/timeline.json).
+ * readers can filter by category. Event text is localised (src/i18n/<locale>/timeline.json). Only
+ * global events and those of the locale's own jurisdictions are shown (event jurisdictions; isVisible).
  */
 import { t, namespace } from '../../lib/i18n';
-import { ctxLocale } from '../../lib/ctx';
+import { ctxLocale, ctxContentLocale } from '../../lib/ctx';
+import { isVisible } from '../../lib/jurisdictions';
 import { TIMELINE, getSource, shortAuthors } from '../../lib/data';
 import { formatDate, isoDate } from '../../lib/format';
 import { routeUrl } from '../../lib/urls';
 const L = ctxLocale(Astro);
 const text = namespace<Record<string, { title: string; text: string }>>(L, 'timeline');
-const events = [...TIMELINE].sort((a, b) => a.year - b.year || (a.date && b.date ? +a.date - +b.date : 0));
+const scope = ctxContentLocale(Astro);
+const events = TIMELINE.filter((e) => isVisible(e.jurisdictions, scope)).sort((a, b) => a.year - b.year || (a.date && b.date ? +a.date - +b.date : 0));
 const cats = [...new Set(events.map((e) => e.category))];
 const decades = [...new Set(events.map((e) => Math.floor(e.year / 10) * 10))];
 ---

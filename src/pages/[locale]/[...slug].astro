@@ -33,6 +33,8 @@ const { key } = Astro.props as { key: string };
 Astro.locals.locale = locale;
 const resolved = (await resolvePage(locale, key))!;
 const { entry, fallback } = resolved;
+// Jurisdiction-bound blocks (cards, timeline, tracker, news) follow the locale of the text.
+Astro.locals.contentLocale = fallback ? SOURCE_LOCALE : locale;
 const d = entry.data;
 const { Content, headings, remarkPluginFrontmatter: rpf } = await render(entry);
 

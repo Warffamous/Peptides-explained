@@ -61,9 +61,13 @@ export function getInfographic(id: string): Infographic {
   return g;
 }
 
-/** The hero for a route key ("" = landing), or null when the page has none. */
-export function heroFor(routeKey: string): Media | null {
-  const id = HEROES[routeKey.replace(/^\/+|\/+$/g, '')];
+/**
+ * The hero for a route key ("" = landing) in a locale, or null when the page has none there. A
+ * per-locale entry uses the locale's own id, else its default; without either the page has no hero.
+ */
+export function heroFor(routeKey: string, locale: string): Media | null {
+  const v = HEROES[routeKey.replace(/^\/+|\/+$/g, '')];
+  const id = typeof v === 'string' ? v : v ? (v[locale] ?? v.default) : undefined;
   return id ? getMedia(id) : null;
 }
 

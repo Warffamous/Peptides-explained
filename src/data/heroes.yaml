@@ -4,6 +4,9 @@
 # in src/i18n/<locale>/media.json. See docs/MEDIA-GUIDE.md §4.
 # Every compound page needs one (content guide §5: title and badge -> page photo -> At a glance).
 # An image used as a page's hero should not also appear in that page's body.
+# Per locale: { nl: id } shows the photo only on the Dutch page, { default: id, nl: id } swaps it there.
+# English refocus (23 October 2026): the Dutch and European photos are mapped for nl (the Reichstag for
+# de) and are not shown on English; those English pages get a photo of their own in the content rewrite.
 # Landing page: insulin crystals under a microscope (NASA, public domain). A peptide medicine as a
 # physical substance, with no product, vial, pen or needle in view.
 "": insulin-crystals
@@ -33,7 +36,7 @@ compounds/melanotan-ii: dysplastic-nevus-micrograph
 # Safety (group safety-a): clean hands, an ambulance (112), a doctor's stethoscope, bacteria on lab dishes,
 # a skin bacterium under the microscope, and a sharps container. No needles, vials or skin punctures.
 safety: cdc-hand-washing
-safety/warning-signs: ambulance-den-haag
+safety/warning-signs: { nl: ambulance-den-haag }
 safety/before-you-consider: stethoscope-grey
 safety/sterile-technique: bacillus-cereus-plates
 safety/injection-safety: staph-aureus-usda-sem
@@ -43,7 +46,7 @@ safety/sharps-disposal: sharps-bin-yellow
 # to go when something goes wrong). No needles, vials or products.
 safety/product-risk: mass-spectrometer-fda
 safety/monitoring: blood-sample-analyser
-safety/if-something-goes-wrong: huisartsenpost-oss
+safety/if-something-goes-wrong: { nl: huisartsenpost-oss }
 # Entry pages (group guides): a signpost at a crossroads (a decision point), a closed consulting-room door
 # (the conversation with a doctor), and amino-acid crystals (the building blocks of every compound listed).
 start-here: signpost-crossroads
@@ -54,20 +57,20 @@ compounds: amino-acid-crystals
 # filled with a multichannel pipette (what "research use" really means) and a pharmacy mortar (legal routes,
 # including pharmacy preparation). No products, vials, needles or people.
 legal: law-library-shelf
-legal/nl: ridderzaal-binnenhof
-legal/be: belgian-federal-parliament
-legal/eu: ema-building-amsterdam
+legal/nl: { nl: ridderzaal-binnenhof }
+legal/be: { nl: belgian-federal-parliament }
+legal/eu: { nl: ema-building-amsterdam }
 legal/research-use-only: lab-96-well-plate
 legal-routes: pharmacy-mortar
 # Legal pages (group legal-b): the Reichstag in Berlin (German law), the Palace of Westminster (UK law), an FDA
 # laboratory building at White Oak (US law), the start lanes of an athletics track (sport and doping) and national
 # flags in front of the European Parliament in Strasbourg (what's changing: rules still being decided).
 # No products, vials, needles or identifiable people.
-legal/de: reichstag-berlin-west
+legal/de: { de: reichstag-berlin-west }
 legal/uk: palace-of-westminster-dusk
 legal/us: fda-white-oak-building
 legal/sport-and-doping: athletics-track-lanes
-legal/whats-changing: flags-european-parliament-strasbourg
+legal/whats-changing: { nl: flags-european-parliament-strasbourg }
 # Basics (group basics): a computer model of a protein (the section), a ball-and-stick molecule model (what a
 # peptide is), cells under a fluorescence microscope (signalling happens in cells), an hourglass (half-life) and
 # the stomach lining under a microscope (why peptides are not swallowed). No products, vials, needles or people.
@@ -93,7 +96,7 @@ about: nlm-main-reading-room
 about/editorial-policy: book-and-magnifier
 about/funding: pharmacy-balance
 about/corrections: errata-1793
-the-case-for-reform: tweede-kamer-plenary-hall
+the-case-for-reform: { nl: tweede-kamer-plenary-hall }
 # Evidence (group evidence): a wooden ladder (the evidence ladder), a coin toss (chance in small studies), a hooded
 # laboratory rat (the translation gap), three rulers with different scales (four grades, never one score) and a
 # drawn handshake (who paid). No products, vials, needles or identifiable people.
