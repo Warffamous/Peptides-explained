@@ -1,0 +1,138 @@
+# SS-31 (elamipretide): locale-independent facts. Every value below is sourced; see research/stubs-b.md.
+slug: ss-31
+tier: 2
+status: stub
+# authorised-elsewhere: FDA accelerated approval of Forzinity (elamipretide) on 19 September 2025 for Barth
+# syndrome in patients weighing at least 30 kg (NDA 215244). No EU, UK or Dutch authorisation; EU orphan
+# designations only (EU/3/21/2430, EU/3/22/2614); no application in the October 2026 CHMP list.
+category: authorised-elsewhere
+class: mitochondrial
+body_systems: [musculoskeletal, cardiovascular, cellular]
+names:
+  common: SS-31
+  full: "Elamipretide (D-Arg-Dmt-Lys-Phe-NH2)"
+  inn: elamipretide
+  other: [MTP-131, Bendavia, elamipretide hydrochloride, Szeto-Schiller peptide 31]
+  brands: [Forzinity]
+identifiers:
+  pubchem_cid: 11764719
+  cas: 736992-21-5
+  unii: 87GWG91S09
+molecular:
+  formula: C32H49N9O5
+  mass_da: 639.8          # free base (PubChem); the label gives the hydrochloride salt, C32H49N9O5·3HCl, 749.2
+  smiles: "CC1=CC(=CC(=C1C[C@@H](C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)N)NC(=O)[C@@H](CCCN=C(N)N)N)C)O"
+  smiles_source: pubchem-elamipretide
+sequence:
+  display: "D-Arg-Dmt-Lys-Phe-NH2"
+  residues: [D-Arg, Dmt, Lys, Phe]
+  n_terminus: H
+  c_terminus: NH2
+  modifications:
+    - { position: 1, label: "D-Arg: the mirror-image form of arginine" }
+    - { position: 2, label: "Dmt: 2′,6′-dimethyltyrosine, a tyrosine with two extra methyl groups" }
+  bridges: []
+  source: fda-label-forzinity-2025
+evidence:
+  # A regulator has granted a marketing authorisation (FDA, 2025), so 'authorised' on the rubric, although the
+  # approval rests on a 12-patient trial whose primary endpoints failed and on open-label follow-up.
+  human_clinical: authorised
+  preclinical_volume: extensive
+  # 258 non-review records mentioning rats or mice, 32 with the originating Szeto group as authors (PubMed, re-run
+  # 23 October 2026); every clinical trial funded by Stealth.
+  independence: broadly-replicated
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-orphan-elamipretide-eu-3-21-2430] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  - { jurisdiction: US, status: authorised, since: 2025-09-19, as_of: 2026-10-23, sources: [fda-drugsatfda-forzinity, fda-2025-forzinity-approval-letter, fda-label-forzinity-2025] }
+  # unclear (CONTENT-GUIDE §5.1: 'never not-listed unless the sources say it is allowed'). Not named on the 2026 or
+  # 2027 Prohibited List or Monitoring Program (PDFs searched 23 October 2026). S0 covers only substances with no
+  # current approval by any government health authority, and elamipretide is FDA-approved, so S0 no longer applies;
+  # but the 2027 explanatory note says unnamed peptides may fall under other classes (S2, S4), and no anti-doping
+  # body has ruled. Same situation as thymosin alpha-1. (Fact-checker, 23 October 2026: was 'not-listed'.)
+  - { jurisdiction: WADA, status: unclear, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, wada-2026-monitoring-program, wada-2027-monitoring-program] }
+studies:
+  # "originating" = Hazel Szeto's group (Weill Cornell) and Stealth BioTherapeutics, the developer and sponsor.
+  - id: zhao-2004-discovery
+    source: zhao-2004-ss31-mitochondria
+    year: 2004
+    species: mixed
+    n: null
+    design: in-vitro
+    funding: government
+    group: originating
+    blinded: null
+    controlled: true
+  - id: birk-2013-cardiolipin
+    source: birk-2013-ss31-cardiolipin
+    year: 2013
+    species: mixed
+    n: null
+    design: animal
+    funding: government   # NIH grants per the PubMed/Europe PMC grant list
+    group: originating
+    blinded: null
+    controlled: true
+  - id: embrace-stemi-2016
+    source: gibson-2016-embrace-stemi
+    year: 2016
+    species: human
+    n: 300
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: progress-hf-2020
+    source: butler-2020-progress-hf
+    year: 2020
+    species: human
+    n: 71
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: tazpower-2021
+    source: reid-thompson-2021-tazpower
+    year: 2021
+    species: human
+    n: 12
+    design: rct
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: tazpower-extension-2024
+    source: thompson-2024-tazpower-extension
+    year: 2024
+    species: human
+    n: 10
+    design: open-label
+    funding: industry
+    group: originating
+    blinded: false
+    controlled: false
+  - id: mmpower-3-2023
+    source: karaa-2023-mmpower-3
+    year: 2023
+    species: human
+    n: 218
+    design: phase-3
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+authorised_products:
+  - id: forzinity
+    name: Forzinity
+    holder: Stealth BioTherapeutics Inc.
+    jurisdiction: US
+    authorised: 2025-09-19     # NDA 215244, accelerated approval; confirmatory trial required
+    route: subcutaneous
+    label_url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215244s000lbl.pdf
+    label_source: fda-label-forzinity-2025
+related: [mots-c]
+last_reviewed: 2026-10-23
+reviewed_by: pending-medical-review

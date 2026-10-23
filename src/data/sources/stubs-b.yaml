@@ -1,0 +1,975 @@
+# Sources for the Tier 2 stub pages of group stubs-b: GHK-Cu, AOD-9604, hexarelin, SS-31 (elamipretide)
+# and NAD+ precursors. Written 23 October 2026. Every scholarly entry was copied from the NCBI E-utilities
+# esummary/efetch record (or, where PubMed has none, from the Crossref record and the DOI landing page);
+# every regulator, law and registry entry was fetched on the accessed date and its note says what it is
+# cited for. Shared ids from other groups are reused, not re-registered (see research/stubs-b.md).
+
+# ---------------------------------------------------------------- GHK-Cu
+
+pubchem-ghk-cu:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 71587328, Prezatide copper (GHK-Cu, copper tripeptide-1)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/71587328
+  accessed: 2026-10-23
+  verified: url
+  note: "Read through PUG REST on 23 October 2026. Synonyms include Prezatide copper, Copper tripeptide-1 [INCI], GHK copper, GHK-Cu; CAS 89030-95-5; UNII 6BJQ43T1I9; one copper ion with Gly-His-Lys (formula given as C14H23CuN6O4+, 402.92 g/mol). The free tripeptide Gly-His-Lys is CID 73587 (C14H24N6O4, 340.38 g/mol; CAS 49557-75-7, synonym 'Prezatide'); a 2:1 bis complex is CID 9831891."
+
+pickart-1973-ghk-serum:
+  type: article
+  authors: "Pickart L, Thaler MM"
+  title: "Tripeptide in human serum which prolongs survival of normal liver cells and stimulates growth in neoplastic liver"
+  container: "Nature: New Biology"
+  year: 1973
+  volume: "243"
+  pages: "85-87"
+  pmid: "4349963"
+  verified: pubmed
+  note: "The first report of the growth-modulating tripeptide from human serum, tested on liver cells in culture. PubMed record has no abstract and no DOI."
+
+schlesinger-1977-ghk-sequence:
+  type: article
+  authors: "Schlesinger DH, Pickart L, Thaler MM"
+  title: "Growth-modulating serum tripeptide is glycyl-histidyl-lysine"
+  container: "Experientia"
+  year: 1977
+  volume: "33"
+  pages: "324-325"
+  doi: 10.1007/BF02002806
+  pmid: "858356"
+  verified: pubmed
+  note: "Identifies the serum factor as the tripeptide Gly-His-Lys."
+
+pickart-1980-ghk-copper:
+  type: article
+  authors: "Pickart L, Freedman JH, Loker WJ, Peisach J, Perkins CM, Stenkamp RE, Weinstein B"
+  title: "Growth-modulating plasma tripeptide may function by facilitating copper uptake into cells"
+  container: "Nature"
+  year: 1980
+  volume: "288"
+  pages: "715-717"
+  doi: 10.1038/288715a0
+  pmid: "7453802"
+  verified: pubmed
+  note: "During isolation the tripeptide co-purified with about equimolar copper; it readily forms complexes with copper(II) and increased copper uptake into cultured hepatoma cells; effects in culture ranged 'from the stimulation of growth and differentiation to outright toxicity'."
+
+maquart-1988-ghk-collagen:
+  type: article
+  authors: "Maquart FX, Pickart L, Laurent M, Gillery P, Monboisse JC, Borel JP"
+  title: "Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+"
+  container: "FEBS Letters"
+  year: 1988
+  volume: "238"
+  pages: "343-346"
+  doi: 10.1016/0014-5793(88)80509-x
+  pmid: "3169264"
+  verified: pubmed
+  note: "GHK-Cu increased collagen production by fibroblasts in culture, independent of cell number; a GHK triplet occurs in the alpha-2(I) chain of type I collagen."
+
+maquart-1993-ghk-rat-wounds:
+  type: article
+  authors: "Maquart FX, Bellon G, Chaqour B, Wegrowski J, Patt LM, Trachy RE, Monboisse JC, Chastang F, Birembaut P, Gillery P, et al."
+  title: "In vivo stimulation of connective tissue accumulation by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+ in rat experimental wounds"
+  container: "The Journal of Clinical Investigation"
+  year: 1993
+  volume: "92"
+  pages: "2368-2376"
+  doi: 10.1172/JCI116842
+  pmid: "8227353"
+  pmcid: PMC288419
+  verified: pubmed
+  note: "Rats with stainless-steel wound chambers implanted under the skin of the back, injected with saline or GHK-Cu: concentration-dependent increases in dry weight, DNA, protein, collagen and glycosaminoglycans in the chamber; a control tripeptide had no effect. Reims group (CNRS); Patt LM is also an author of the Mulder 1994 GHK-Cu gel trial."
+
+mulder-1994-ghk-diabetic-ulcers:
+  type: article
+  authors: "Mulder GD, Patt LM, Sanders L, Rosenstock J, Altman MI, Hanley ME, Duncan GW"
+  title: "Enhanced healing of ulcers in patients with diabetes by topical treatment with glycyl-l-histidyl-l-lysine copper"
+  container: "Wound Repair and Regeneration"
+  year: 1994
+  volume: "2"
+  pages: "259-269"
+  doi: 10.1046/j.1524-475X.1994.20406.x
+  pmid: "17147644"
+  verified: pubmed
+  note: "Multicentre, randomised, evaluator-blinded, vehicle (placebo)-controlled trial of a GHK-Cu gel ('lamin Gel' in the abstract) on diabetic neuropathic foot ulcers, with standard wound care in both groups. Median closure of plantar ulcers 98.5% vs 60.8% (p < 0.05); infections 7% vs 34% when started right after debridement. The abstract does not give the number of patients or the funder."
+
+bishop-1992-venous-ulcers-copper-cream:
+  type: article
+  authors: "Bishop JB, Phillips LG, Mustoe TA, VanderZee AJ, Wiersema L, Roach DE, Heggers JP, Hill DP Jr, Taylor EL, Robson MC"
+  title: "A prospective randomized evaluator-blinded trial of two potential wound healing agents for the treatment of venous stasis ulcers"
+  container: "Journal of Vascular Surgery"
+  year: 1992
+  volume: "16"
+  pages: "251-257"
+  doi: 10.1067/mva.1992.37086
+  pmid: "1495150"
+  verified: pubmed
+  note: "86 evaluable patients with venous leg ulcers: silver sulfadiazine cream reduced ulcer size more than a 'biologically active tripeptide copper complex' cream or an inert vehicle; the copper-tripeptide cream did no better than the vehicle. The abstract does not name the tripeptide."
+
+miller-2006-ghk-laser-resurfacing:
+  type: article
+  authors: "Miller TR, Wagner JD, Baack BR, Eisbach KJ"
+  title: "Effects of topical copper tripeptide complex on CO2 laser-resurfaced skin"
+  container: "Archives of Facial Plastic Surgery"
+  year: 2006
+  volume: "8"
+  pages: "252-259"
+  doi: 10.1001/archfaci.8.4.252
+  pmid: "16847171"
+  verified: pubmed
+  note: "Randomised trial of skin care with or without GHK-Cu after CO2 laser resurfacing around the mouth; 13 patients completed. Blinded evaluators and computer analysis found no difference in redness, wrinkles or overall skin quality; patient-rated skin quality was better with GHK-Cu (P = .04)."
+
+hostynek-2011-copper-tripeptide-skin:
+  type: article
+  authors: "Hostynek JJ, Dreher F, Maibach HI"
+  title: "Human skin penetration of a copper tripeptide in vitro as a function of skin layer"
+  container: "Inflammation Research"
+  year: 2011
+  volume: "60"
+  pages: "79-86"
+  doi: 10.1007/s00011-010-0238-9
+  pmid: "20721598"
+  pmcid: PMC3016279
+  verified: pubmed
+  note: "Isolated human skin in diffusion cells: copper applied as the GHK copper complex passed through dermatomed skin over 48 hours, and part stayed in the skin as a depot. Lab study on donated skin, not a living person."
+
+li-2016-copper-compounds-skin-irritation:
+  type: article
+  authors: "Li H, Toh PZ, Tan JY, Zin MT, Lee CY, Li B, Leolukman M, Bao H, Kang L"
+  title: "Selected Biomarkers Revealed Potential Skin Toxicity Caused by Certain Copper Compounds"
+  container: "Scientific Reports"
+  year: 2016
+  volume: "6"
+  pages: "37664"
+  doi: 10.1038/srep37664
+  pmid: "27892491"
+  pmcid: PMC5124859
+  verified: pubmed
+  note: "Keratinocytes in culture: GHK-Cu was not cytotoxic and did not change skin-irritation markers at the concentrations tested, unlike copper chloride and copper acetate. Cell study only."
+
+ogorek-2025-ghk-cu-skin-permeation:
+  type: review
+  authors: "Ogórek K, Nowak K, Wadych E, Ruzik L, Timerbaev AR, Matczuk M"
+  title: "Are We Ready to Measure Skin Permeation of Modern Antiaging GHK-Cu Tripeptide Encapsulated in Liposomes?"
+  container: "Molecules"
+  year: 2025
+  volume: "30"
+  pages: "136"
+  doi: 10.3390/molecules30010136
+  pmid: "39795193"
+  pmcid: PMC11721469
+  verified: pubmed
+  note: "Independent review (Warsaw University of Technology funding): GHK-Cu is fairly water-loving and has 'limited permeation' through the stratum corneum; how much reaches deeper skin layers has received little study."
+
+cosing-copper-tripeptide-1:
+  type: regulator
+  authors: "European Commission, DG Internal Market, Industry, Entrepreneurship and SMEs"
+  title: "CosIng – Cosmetic ingredient database: COPPER TRIPEPTIDE-1 (substance ID 55687)"
+  year: 2026
+  url: https://ec.europa.eu/growth/tools-databases/cosing/details/55687
+  accessed: 2026-10-23
+  verified: url
+  note: "Page fetched (HTTP 200); entry read through the Commission's CosIng search API on 23 October 2026: INCI name COPPER TRIPEPTIDE-1, 'Copper Tripeptide-1 is a copper complex of Tripeptide-1', function SKIN CONDITIONING, no annex entry and no cosmetic restriction listed."
+
+eu-regulation-1223-2009-cosmetics:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Regulation (EC) No 1223/2009 on cosmetic products, Article 2 (definitions)"
+  container: "Official Journal of the European Union, L 342"
+  year: 2009
+  url: https://eur-lex.europa.eu/eli/reg/2009/1223/oj
+  accessed: 2026-10-23
+  verified: url
+  note: "Text read through the Publications Office CELLAR resolver for CELEX 32009R1223 (EUR-Lex returns an empty page to scripts). Art. 2(1)(a): a cosmetic product is placed in contact with the external parts of the body (skin, hair, nails, lips, external genitals) or teeth and mouth lining, mainly to clean, perfume, change appearance, protect, keep in good condition or correct body odour. Art. 2(2): 'a substance or mixture intended to be ingested, inhaled, injected or implanted into the human body shall not be considered to be a cosmetic product'."
+
+fda-510k-k953853-iamin:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "510(k) Premarket Notification database: K953853, Iamin Gel Wound Dressing (ProCyte Corp.)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K953853
+  accessed: 2026-10-23
+  verified: url
+  note: "Device classification 'Dressing, Wound And Burn, Hydrogel W/Drug And/Or Biologic', product code MGQ; received 16 August 1995, decision 5 February 1996, 'substantially equivalent for some indications'. Applicant: Procyte Corp., Kirkland, WA. The record does not list ingredients; the Mulder 1994 abstract calls its GHK-Cu gel 'lamin Gel' and does not name a maker, so the page reports both names without asserting they are the same product. A device clearance is not a drug approval. Re-fetched by the fact-checker on 23 October 2026."
+
+ctgov-nct07437586:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "NCT07437586: Topical GHK-Cu gel to accelerate re-epithelialisation of standardised acute skin wounds in healthy adults (phase 2, randomised, double-blind, vehicle-controlled, split-wound)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07437586
+  accessed: 2026-10-23
+  verified: registry
+  note: "Status recruiting on 23 October 2026; sponsor Hudson Biotech; planned enrolment 60; start 2 February 2026, primary completion 14 February 2027. A topical gel on punch-biopsy wounds; no injected use."
+
+pubmed-ghk-cu-count-2026-10-23:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for GHK-Cu, 23 October 2026"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=%28GHK-Cu%5Btiab%5D+OR+%22glycyl-L-histidyl-L-lysine%22%5Btiab%5D+OR+%22copper+tripeptide%22%5Btiab%5D%29
+  accessed: 2026-10-23
+  verified: url
+  note: "Query: GHK-Cu, glycyl-histidyl-lysine, glycyl-L-histidyl-L-lysine, copper tripeptide, tripeptide-copper, prezatide, GHK copper or Cu-GHK in title/abstract. 189 records; 171 not reviews; 64 of those mention rats, mice, rabbits, pigs or dogs; 6 have Pickart L and 6 Maquart FX as an author; 4 are tagged as clinical or randomised trials (two in rabbits, one laser-resurfacing trial, one venous-ulcer trial). Counts are approximate (PubMed tagging is imperfect)."
+
+# ---------------------------------------------------------------- AOD-9604
+
+fda-pcac-2024-aod9604-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document: Evaluation of AOD-9604-Related Bulk Drug Substances (AOD-9604 (free base) and AOD-9604 acetate) for Inclusion on the 503A Bulk Drug Substances List, Pharmacy Compounding Advisory Committee, 4 December 2024"
+  year: 2024
+  url: https://www.fda.gov/media/183584/download
+  accessed: 2026-10-23
+  verified: url
+  note: "Memo dated 5 November 2024, read in full (pdftotext). 'a hexadecapeptide that is a synthetic fragment of human growth hormone (hGH) (15 amino acids: 177-191) with an additional tyrosine at the N-terminal end' (one later sentence says C-terminal, which contradicts its own sequence table; the chemical name given starts L-tyrosyl-L-leucyl...); disulfide bond between Cys 7 and Cys 14; C78H123N23O23S2, 1,815.09 g/mol; UNII 7UP768IP4M, CAS 221231-10-3 (CAS 386264-39-7 also seen); developed and patented by Metabolic Pharmaceuticals in the late 1990s; not a component of an FDA-approved drug; not physically and chemically well characterised (no public impurity, aggregate, microbial or endotoxin tests); no USP/NF, European, Chinese, Indian or Japanese pharmacopoeia monograph and none found in national medicine registries or at EMA; Australia added AOD-9604 to its poisons standard as a performance and image enhancing drug. Effectiveness: Wilding 2004 (23 and 16 people, IV and oral, no significant weight loss vs placebo; 36 men one week); Herd 2005 abstract (300 people, 12 weeks, small differences); OPTIONS (536 enrolled, 502 randomised, BMI 30-45, oral, 24 weeks, dietitian-supervised diet and exercise): no significant difference in the primary endpoint (weight loss at 12 weeks); 21 February 2007 company announcement that results 'do not support the commercial viability of the drug as a treatment for obesity. Development of the drug for this condition is terminated'; 'It does not appear that this study was published'. No human data for injection or skin routes; no human PK. Nonclinical: rodent lipolysis studies; molecular target 'remain[s] unknown'; does not bind GH receptors in Ba/F3 cells; pig PK half-life about 3 minutes IV; rapid breakdown in rat blood in vitro; 26-week rat study dose-dependent osteocalcin changes; 9-month monkey study minimal-slight periportal hepatocyte vacuolation; genotoxicity equivocal. Human safety (Stier 2013, six company trials): IV - headache, fatigue, dizziness; one severe 'feeling of chest tightness' possibly related; euphoria 5 vs 0; oral - headache, diarrhoea, flatulence; in the 12-week 300-person trial serious adverse events included basal cell carcinoma, squamous cell carcinoma, breast cancer and malignant melanoma, judged unrelated by the investigator, FDA: 'information is insufficient'. FAERS search to 7 January 2024 and CAERS search: no reports. Immunogenicity concern for injections. Recommendation: not to list either form."
+
+fda-gras-inventory-search-2026-10-23:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "GRAS Notice Inventory searches, 23 October 2026: AOD-9604, 9604, nicotinamide mononucleotide, nicotinamide riboside, copper"
+  container: "FDA Human Foods Program"
+  year: 2026
+  url: https://www.hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=GRASNotices&type=basic&search=9604
+  accessed: 2026-10-23
+  verified: url
+  note: "Searches for '9604' and 'mononucleotide' returned no notices; 'AOD' returned only GRN 1198 (inositol, the letters occur elsewhere in the record); 'riboside' returned GRN 635 (nicotinamide riboside chloride, 'FDA has no questions', 3 August 2016). Fact-checker, 23 October 2026: the full inventory download (cfc/XMLService.cfm?method=downloadxls, 'Last updated 10/21/2026') contains no '9604', no 'mononucleotide', no 'adenine dinucleotide' and no GHK or tripeptide entry; its only 'AOD' hit is GRN 1198 (inositol) and its copper entries are a packaging antimicrobial (GRN 1147) and one other non-GHK entry. The inventory lists notices submitted to the FDA; it does not cover 'self-affirmed' GRAS claims that were never notified."
+
+pubchem-aod-9604:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 71300630, AOD-9604"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/71300630
+  accessed: 2026-10-23
+  verified: url
+  note: "C78H123N23O23S2, 1815.1 g/mol; isomeric SMILES begins with tyrosine and ends with glycyl-phenylalanine, with a Cys-Cys ring. Synonyms include 'Tyr-somatostatin (177-191)', which is wrong: AOD-9604 is based on somatotropin (growth hormone), not somatostatin."
+
+ng-2000-aod9604-rats:
+  type: article
+  authors: "Ng FM, Sun J, Sharma L, Libinaka R, Jiang WJ, Gianello R"
+  title: "Metabolic studies of a synthetic lipolytic domain (AOD9604) of human growth hormone"
+  container: "Hormone Research"
+  year: 2000
+  volume: "53"
+  pages: "274-278"
+  doi: 10.1159/000053183
+  pmid: "11146367"
+  verified: pubmed
+  note: "Obese Zucker rats given AOD-9604 by mouth daily for 19 days gained less than half as much weight as controls (abstract; the FDA briefing says 21 days, so the page follows the abstract); unlike hGH it did not impair insulin sensitivity (euglycaemic clamp). Originating Monash group. Fact-checked against the PubMed abstract on 23 October 2026."
+
+heffernan-2001-aod9604-mice:
+  type: article
+  authors: "Heffernan M, Summers RJ, Thorburn A, Ogru E, Gianello R, Jiang WJ, Ng FM"
+  title: "The effects of human GH and its lipolytic fragment (AOD9604) on lipid metabolism following chronic treatment in obese mice and beta(3)-AR knock-out mice"
+  container: "Endocrinology"
+  year: 2001
+  volume: "142"
+  pages: "5182-5189"
+  doi: 10.1210/endo.142.12.8522
+  pmid: "11713213"
+  verified: pubmed
+  note: "Obese mice treated for 14 days by injection into the belly cavity lost body weight and fat; beta-3 adrenergic receptor knockout mice did not; the authors conclude the effect is not mediated directly through that receptor."
+
+kwon-2015-aod9604-rabbit-oa:
+  type: article
+  authors: "Kwon DR, Park GY"
+  title: "Effect of Intra-articular Injection of AOD9604 with or without Hyaluronic Acid in Rabbit Osteoarthritis Model"
+  container: "Annals of Clinical and Laboratory Science"
+  year: 2015
+  volume: "45"
+  pages: "426-432"
+  pmid: "26275694"
+  verified: pubmed
+  note: "32 rabbits with induced knee osteoarthritis randomised to joint injections; independent Korean group. Animal study only."
+
+stier-2013-aod9604-safety:
+  type: article
+  authors: "Stier H, Vos E, Kenley D"
+  title: "Safety and Tolerability of the Hexadecapeptide AOD9604 in Humans"
+  container: "Journal of Endocrinology and Metabolism"
+  year: 2013
+  volume: "3"
+  pages: "7-15"
+  doi: 10.4021/jem157w
+  verified: doi
+  note: "Not indexed in PubMed; metadata from Crossref and the DOI landing page (jofem.org; the DOI resolves there, re-checked 23 October 2026; citation meta: Heike Stier (analyze and realize ag, Berlin), Evert Vos and David Kenley (Metabolic Pharmaceuticals Pty Ltd), vol 3, issue 1-2, pp 7-15, published 23 April 2013). Summary of safety data from six randomised, double-blind, placebo-controlled trials of AOD-9604 (IV and oral); reports no effect on IGF-1 or glucose tolerance and no anti-AOD-9604 antibodies in the patients tested. The FDA notes the authors were employees or consultants of Metabolic Pharmaceuticals, which funded the trials; efficacy results are not reported."
+
+cox-2015-aod9604-detection:
+  type: article
+  authors: "Cox HD, Smeal SJ, Hughes CM, Cox JE, Eichner D"
+  title: "Detection and in vitro metabolism of AOD9604"
+  container: "Drug Testing and Analysis"
+  year: 2015
+  volume: "7"
+  pages: "31-38"
+  doi: 10.1002/dta.1715
+  pmid: "25208511"
+  verified: pubmed
+  note: "Anti-doping laboratory method to detect AOD-9604 and its breakdown products; quoted by the FDA for its finding that AOD-9604 'did not show a clinically meaningful weight loss outcome across the trial population' and that it has been found in confiscated vials in the USA."
+
+vanhee-2014-aod9604-seized:
+  type: article
+  authors: "Vanhee C, Moens G, Deconinck E, De Beer JO"
+  title: "Identification and characterization of peptide drugs in unknown pharmaceutical preparations seized by the Belgian authorities: case report on AOD9604"
+  container: "Drug Testing and Analysis"
+  year: 2014
+  volume: "6"
+  pages: "964-968"
+  doi: 10.1002/dta.1687
+  pmid: "24976118"
+  verified: pubmed
+  note: "Belgian public-health laboratory (Scientific Institute of Public Health) identified AOD-9604 in unknown preparations seized by the Belgian authorities."
+
+pubmed-aod-9604-count-2026-10-23:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed search for AOD-9604, 23 October 2026"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=AOD9604+OR+AOD-9604
+  accessed: 2026-10-23
+  verified: url
+  note: "Query 'AOD9604 OR AOD-9604 OR (hGH 177-191) OR (Tyr-hGH)': 34 records. Primary animal or cell studies of AOD-9604 itself: fewer than 10 (Ng FM's Monash group and Metabolic Pharmaceuticals for all but one; Kwon and Park 2015 the exception). The rest are reviews, older studies of hGH 177-191, and anti-doping detection papers. No published efficacy trial in people."
+
+# ---------------------------------------------------------------- hexarelin
+
+pubchem-hexarelin:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 6918297, Hexarelin (examorelin)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/6918297
+  accessed: 2026-10-23
+  verified: url
+  note: "C47H58N12O6, 887.0 g/mol; His-D-2-methyl-Trp-Ala-Trp-D-Phe-Lys-NH2 (IUPAC name and SMILES confirm 2-methyl-D-tryptophan at position 2, D-phenylalanine at position 5 and a C-terminal amide); synonyms Examorelin [INN], EP-23905, MF-6003; CAS 140703-51-1; UNII 09QF37C617; CHEMBL108335."
+
+ghigo-1994-hexarelin-routes:
+  type: article
+  authors: "Ghigo E, Arvat E, Gianotti L, Imbimbo BP, Lenaerts V, Deghenghi R, Camanni F"
+  title: "Growth hormone-releasing activity of hexarelin, a new synthetic hexapeptide, after intravenous, subcutaneous, intranasal, and oral administration in man"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 1994
+  volume: "78"
+  pages: "693-698"
+  doi: 10.1210/jcem.78.3.8126144
+  pmid: "8126144"
+  verified: pubmed
+  note: "12 healthy young volunteers, University of Turin: hexarelin released growth hormone by all four routes, more than GHRH; biological bioavailability about 77% under the skin, about 5% in the nose and 0.3% by mouth."
+
+laron-1995-hexarelin-children:
+  type: article
+  authors: "Laron Z, Frenkel J, Deghenghi R, Anin S, Klinger B, Silbergeld A"
+  title: "Intranasal administration of the GHRP hexarelin accelerates growth in short children"
+  container: "Clinical Endocrinology"
+  year: 1995
+  volume: "43"
+  pages: "631-635"
+  doi: 10.1111/j.1365-2265.1995.tb02929.x
+  pmid: "8548949"
+  verified: pubmed
+  note: "8 prepubertal short children, nasal hexarelin for up to 8 months, no control group: IGF-1 rose and growth velocity rose from 5.3 to 8.3 cm/year; 'seemingly without undesirable side-effects'. Tel Aviv University with a co-author (Deghenghi) linked to the developer."
+
+rahim-1998-hexarelin-long-term:
+  type: article
+  authors: "Rahim A, O'Neill PA, Shalet SM"
+  title: "Growth hormone status during long-term hexarelin therapy"
+  container: "The Journal of Clinical Endocrinology and Metabolism"
+  year: 1998
+  volume: "83"
+  pages: "1644-1649"
+  doi: 10.1210/jcem.83.5.4812
+  pmid: "9589671"
+  verified: pubmed
+  note: "16 weeks of twice-daily injections under the skin: the GH response to a test injection fell (AUC 19.1 at week 0 to 10.5 at week 16) and recovered 4 weeks after stopping (19.4); IGF-1, IGFBP-3, body composition and bone density did not change significantly; 'partial and reversible attenuation'. The number of participants (12 healthy elderly people) is given in the companion report rahim-1998-hexarelin-desensitisation."
+
+rahim-1998-hexarelin-desensitisation:
+  type: article
+  authors: "Rahim A, Shalet SM"
+  title: "Does desensitization to hexarelin occur?"
+  container: "Growth Hormone & IGF Research"
+  year: 1998
+  volume: "8 Suppl B"
+  pages: "141-143"
+  doi: 10.1016/s1096-6374(98)80039-7
+  pmid: "10990150"
+  verified: pubmed
+  note: "Same 16-week study: 12 healthy elderly individuals; the GH response fell at weeks 4 and 16 and returned 4 weeks after stopping."
+
+rahim-1999-hexarelin-adrenal:
+  type: article
+  authors: "Rahim A, O'Neill PA, Shalet SM"
+  title: "The effect of chronic hexarelin administration on the pituitary-adrenal axis and prolactin"
+  container: "Clinical Endocrinology"
+  year: 1999
+  volume: "50"
+  pages: "77-84"
+  doi: 10.1046/j.1365-2265.1999.00609.x
+  pmid: "10341859"
+  verified: pubmed
+  note: "Acute GHRP injections raise ACTH, cortisol and prolactin; after 16 weeks of hexarelin the cortisol response to an injection was lower, recovering 4 weeks after stopping; no change in 24-hour urinary cortisol or prolactin response."
+
+bisi-1999-hexarelin-heart:
+  type: article
+  authors: "Bisi G, Podio V, Valetto MR, Broglio F, Bertuccio G, Del Rio G, Arvat E, Boghen MF, Deghenghi R, Muccioli G, Ong H, Ghigo E"
+  title: "Acute cardiovascular and hormonal effects of GH and hexarelin, a synthetic GH-releasing peptide, in humans"
+  container: "Journal of Endocrinological Investigation"
+  year: 1999
+  volume: "22"
+  pages: "266-272"
+  doi: 10.1007/BF03343555
+  pmid: "10342360"
+  verified: pubmed
+  note: "7 male volunteers: an IV dose of hexarelin raised left ventricular ejection fraction (70.7% vs 64.0%) for up to 60 minutes, while recombinant GH giving similar GH levels did not; hexarelin also raised cortisol; blood pressure and heart rate unchanged."
+
+imazio-2002-hexarelin-cardiomyopathy:
+  type: article
+  authors: "Imazio M, Bobbio M, Broglio F, Benso A, Podio V, Valetto MR, Bisi G, Ghigo E, Trevi GP"
+  title: "GH-independent cardiotropic activities of hexarelin in patients with severe left ventricular dysfunction due to dilated and ischemic cardiomyopathy"
+  container: "European Journal of Heart Failure"
+  year: 2002
+  volume: "4"
+  pages: "185-191"
+  doi: 10.1016/s1388-9842(01)00223-9
+  pmid: "11959048"
+  verified: pubmed
+  note: "13 patients with severe heart failure (8 dilated, 5 ischaemic cardiomyopathy), single IV dose: ejection fraction rose in the ischaemic group (peak 26.2% from 22.6%) but not in the dilated group; GH rose similarly in both."
+
+bodart-2002-hexarelin-cd36:
+  type: article
+  authors: "Bodart V, Febbraio M, Demers A, McNicoll N, Pohankova P, Perreault A, Sejlitz T, Escher E, Silverstein RL, Lamontagne D, Ong H"
+  title: "CD36 mediates the cardiovascular action of growth hormone-releasing peptides in the heart"
+  container: "Circulation Research"
+  year: 2002
+  volume: "90"
+  pages: "844-849"
+  doi: 10.1161/01.res.0000016164.02525.b4
+  pmid: "11988484"
+  verified: pubmed
+  note: "In rat heart membranes a hexarelin-binding protein was identified as CD36; in perfused hearts hexarelin raised coronary perfusion pressure (narrowing of the heart's arteries) dose-dependently, an effect absent in hearts of CD36-null mice and CD36-deficient rats; the authors suggest CD36 may mediate coronary vasospasm. Funding: NIH (NHLBI) grants per the PubMed/Europe PMC grant list."
+
+tivesten-2000-hexarelin-rat-mi:
+  type: article
+  authors: "Tivesten A, Bollano E, Caidahl K, Kujacic V, Sun XY, Hedner T, Hjalmarson A, Bengtsson BA, Isgaard J"
+  title: "The growth hormone secretagogue hexarelin improves cardiac function in rats after experimental myocardial infarction"
+  container: "Endocrinology"
+  year: 2000
+  volume: "141"
+  pages: "60-66"
+  doi: 10.1210/endo.141.1.7249
+  pmid: "10614623"
+  verified: pubmed
+  note: "Rats 4 weeks after a tied-off coronary artery, treated for 2 weeks: the higher hexarelin dose increased stroke volume and cardiac output and lowered peripheral resistance, similar to growth hormone; mechanism unclear. Gothenburg group, independent of Turin."
+
+mao-2014-hexarelin-cardiovascular-review:
+  type: review
+  authors: "Mao Y, Tokudome T, Kishimoto I"
+  title: "The cardiovascular action of hexarelin"
+  container: "Journal of Geriatric Cardiology"
+  year: 2014
+  volume: "11"
+  pages: "253-258"
+  doi: 10.11909/j.issn.1671-5411.2014.03.007
+  pmid: "25278975"
+  pmcid: PMC4178518
+  verified: pubmed
+  note: "Narrative review: hexarelin binds and activates the growth hormone secretagogue (ghrelin) receptor like ghrelin; CD36 has been shown to be a cardiac receptor for hexarelin that mediates its cardioprotective effects in animal studies; hexarelin is chemically more stable than ghrelin."
+
+pubmed-hexarelin-count-2026-10-23:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for hexarelin, 23 October 2026"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=hexarelin+OR+examorelin
+  accessed: 2026-10-23
+  verified: url
+  note: "'hexarelin OR examorelin': 316 records, 279 not reviews; 137 of those mention rats, mice, dogs or pigs; 158 are indexed as human studies. 111 of the 279 have Ghigo E, Arvat E, Broglio F, Muccioli G or Deghenghi R (Turin group and developer) as an author; 41 Locatelli V or Torsello A (Milan); 16 Ong H or Marleau S (Montreal). ClinicalTrials.gov lists no trial of hexarelin (searched the same day)."
+
+# ---------------------------------------------------------------- SS-31 / elamipretide
+
+fda-2025-forzinity-approval:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Grants Accelerated Approval to First Treatment for Barth Syndrome (press release, 19 September 2025)"
+  year: 2025
+  url: https://www.fda.gov/news-events/press-announcements/fda-grants-accelerated-approval-first-treatment-barth-syndrome
+  accessed: 2026-10-23
+  verified: url
+  note: "Forzinity (elamipretide) injection, accelerated approval for Barth syndrome in patients weighing at least 30 kg; based on improved strength of the muscle that straightens the knee, considered reasonably likely to predict benefit; FDA requires a post-approval randomised, double-blind, placebo-controlled trial; most common side effects mild-to-moderate injection site reactions; 'Serious reactions to Forzinity have also been reported'; rare pediatric disease priority review voucher to Stealth BioTherapeutics. Content current as of 19 September 2025."
+
+fda-2025-forzinity-approval-letter:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "NDA 215244 Accelerated Approval letter: Forzinity (elamipretide) injection, Stealth BioTherapeutics Inc."
+  year: 2025
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2025/215244Orig1s000ltr.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "NDA dated and received 29 January 2024; the amendment of 15 August 2025 was a complete response to FDA's action letter of 15 May 2025; approved under accelerated approval (section 506(c), 21 CFR 314.510); postmarketing requirement 4802-1: a randomised, double-blind, placebo-controlled trial in patients 5 years and older with Barth syndrome to verify clinical benefit; FDA may withdraw approval if the trial fails to verify benefit."
+
+fda-drugsatfda-forzinity:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 215244, Forzinity (elamipretide hydrochloride) injection"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=215244
+  accessed: 2026-10-23
+  verified: url
+  note: "Original approval 19 September 2025 (type 1 new molecular entity, priority review, orphan); prescription; single product, subcutaneous solution (280 mg/3.5 mL, a single-patient-use vial that holds several doses, per the label). openFDA (re-queried 23 October 2026) lists only the original submission."
+
+fda-label-forzinity-2025:
+  type: label
+  authors: "U.S. Food and Drug Administration; Stealth BioTherapeutics Inc."
+  title: "FORZINITY (elamipretide) injection, for subcutaneous use: Prescribing Information (revised 9/2025)"
+  year: 2025
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/215244s000lbl.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "Read in full. Indication: improve muscle strength in adult and paediatric patients with Barth syndrome weighing at least 30 kg; accelerated approval based on knee extensor strength. Contraindication: serious hypersensitivity. Warnings: benzyl alcohol toxicity in neonates (not approved in neonates); hypersensitivity, including serious reactions needing emergency treatment, skin (rash, papules, eczema-like) and respiratory (cough) symptoms, 'within minutes to months'. Trial: 12 males aged 12-35 in a 12-week crossover (TAZPOWER); injection-site reactions 12/12 vs 8/12 on placebo (erythema 100% vs 25%, induration 67% vs 17%, itching 67% vs 17%, pain 75% vs 42%); eosinophil counts rose frequently, peaking around day 90, without symptoms. Section 14: elamipretide 'was not superior to placebo' on the primary endpoints (6-minute walk, fatigue score); knee strength did not rise in the randomised part but rose in the open-label extension (median +63 N at week 168 in 8 patients, from a median baseline of 124 N). Section 11: D-Arg-2,6-dimethyl-Tyr-Lys-Phe-NH2; elamipretide hydrochloride C32H49N9O5·3HCl, 749.2. Section 12: localises to the inner mitochondrial membrane (cardiolipin binder); excreted in urine; exposure higher in kidney impairment; no CYP inhibition. Carcinogenicity studies not done. Storage refrigerated; discard opened vials after 8 days. DailyMed SPL version 10 (12 December 2025) has the same text in the sections checked."
+
+fda-crdac-2024-10-elamipretide-minutes:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Final Summary Minutes of the Cardiovascular and Renal Drugs Advisory Committee Meeting, 10 October 2024 (NDA 215244, elamipretide, Barth syndrome)"
+  year: 2025
+  url: https://www.fda.gov/media/187179/download
+  accessed: 2026-10-23
+  verified: url
+  note: "Minutes approved 9 March 2025. Vote on 'do you conclude that elamipretide is effective for the treatment of Barth syndrome?': Yes 10, No 6, Abstain 0. 'Yes' reasons included regulatory flexibility for a rare disease and patient testimony; members also noted 'significant uncertainty'. 'No' reasons: the randomised placebo-controlled part did not show an effect and the open-label and externally controlled studies were not adequate."
+
+reid-thompson-2021-tazpower:
+  type: trial
+  authors: "Reid Thompson W, Hornby B, Manuel R, Bradley E, Laux J, Carr J, Vernon HJ"
+  title: "A phase 2/3 randomized clinical trial followed by an open-label extension to evaluate the effectiveness of elamipretide in Barth syndrome, a genetic disorder of mitochondrial cardiolipin metabolism"
+  container: "Genetics in Medicine"
+  year: 2021
+  volume: "23"
+  pages: "471-478"
+  doi: 10.1038/s41436-020-01006-8
+  pmid: "33077895"
+  pmcid: PMC7935714
+  verified: pubmed
+  note: "TAZPOWER. Part 1: 12 subjects, randomised, double-blind, placebo-controlled crossover, 12 weeks each arm; neither primary endpoint (6-minute walk, BTHS symptom score) met. Part 2: 10 continued open-label, 8 reached 36 weeks, with improvements in walk distance and symptoms. Funded by Stealth BioTherapeutics, which designed the trial with Johns Hopkins and took part in analysis; one author employed by Stealth (full text)."
+
+thompson-2024-tazpower-extension:
+  type: trial
+  authors: "Thompson WR, Manuel R, Abbruscato A, Carr J, Campbell J, Hornby B, Vaz FM, Vernon HJ"
+  title: "Long-term efficacy and safety of elamipretide in patients with Barth syndrome: 168-week open-label extension results of TAZPOWER"
+  container: "Genetics in Medicine"
+  year: 2024
+  volume: "26"
+  pages: "101138"
+  doi: 10.1016/j.gim.2024.101138
+  pmid: "38602181"
+  verified: pubmed
+  note: "10 patients entered the open-label extension, 8 reached week 168; injection-site reactions were the most common adverse events; 6-minute walk improved from extension baseline (cumulative 96.1 m at week 168). No control group."
+
+karaa-2023-mmpower-3:
+  type: trial
+  authors: "Karaa A, Bertini E, Carelli V, Cohen BH, Enns GM, Falk MJ, et al."
+  title: "Efficacy and Safety of Elamipretide in Individuals With Primary Mitochondrial Myopathy: The MMPOWER-3 Randomized Clinical Trial"
+  container: "Neurology"
+  year: 2023
+  volume: "101"
+  pages: "e238-e252"
+  doi: 10.1212/WNL.0000000000207402
+  pmid: "37268435"
+  pmcid: PMC10382259
+  verified: pubmed
+  note: "Phase 3, 218 adults with primary mitochondrial myopathy randomised 1:1, 24 weeks: no difference in 6-minute walk (-3.2 m, 95% CI -18.7 to 12.3) or fatigue score; mostly mild to moderate adverse events. Funded by Stealth BioTherapeutics (full text)."
+
+gibson-2016-embrace-stemi:
+  type: trial
+  authors: "Gibson CM, Giugliano RP, Kloner RA, Bode C, Tendera M, Jánosi A, et al."
+  title: "EMBRACE STEMI study: a Phase 2a trial to evaluate the safety, tolerability, and efficacy of intravenous MTP-131 on reperfusion injury in patients undergoing primary percutaneous coronary intervention"
+  container: "European Heart Journal"
+  year: 2016
+  volume: "37"
+  pages: "1296-1303"
+  doi: 10.1093/eurheartj/ehv597
+  pmid: "26586786"
+  verified: pubmed
+  note: "Randomised, double-blind phase 2a trial of a 1-hour IV infusion of MTP-131 (elamipretide) in people with a first anterior heart attack undergoing stenting: no reduction in infarct size (CK-MB AUC) and no improvement in MRI, angiographic, ECG or clinical outcomes; safe and well tolerated. Enrolment (300) from the registry record ctgov-nct01572909."
+
+ctgov-nct01572909:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "NCT01572909: EMBRACE STEMI, phase 2a trial of intravenous MTP-131 (elamipretide) on reperfusion injury"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT01572909
+  accessed: 2026-10-23
+  verified: registry
+  note: "Completed; sponsor Stealth BioTherapeutics; enrolment 300; sites in the US, Germany, Hungary and Poland; April 2012 to February 2015; results posted."
+
+butler-2020-progress-hf:
+  type: trial
+  authors: "Butler J, Khan MS, Anker SD, Fonarow GC, Kim RJ, Nodari S, et al."
+  title: "Effects of Elamipretide on Left Ventricular Function in Patients With Heart Failure With Reduced Ejection Fraction: The PROGRESS-HF Phase 2 Trial"
+  container: "Journal of Cardiac Failure"
+  year: 2020
+  volume: "26"
+  pages: "429-437"
+  doi: 10.1016/j.cardfail.2020.02.001
+  pmid: "32068002"
+  verified: pubmed
+  note: "71 patients with heart failure (LVEF 40% or less), randomised, double-blind: well tolerated, but no improvement in left ventricular end-systolic volume at 4 weeks versus placebo. A Stealth employee is a co-author."
+
+zhao-2004-ss31-mitochondria:
+  type: article
+  authors: "Zhao K, Zhao GM, Wu D, Soong Y, Birk AV, Schiller PW, Szeto HH"
+  title: "Cell-permeable peptide antioxidants targeted to inner mitochondrial membrane inhibit mitochondrial swelling, oxidative cell death, and reperfusion injury"
+  container: "The Journal of Biological Chemistry"
+  year: 2004
+  volume: "279"
+  pages: "34682-34690"
+  doi: 10.1074/jbc.M402999200
+  pmid: "15178689"
+  verified: pubmed
+  note: "Szeto-Schiller peptides with alternating aromatic and basic residues and dimethyltyrosine are cell-permeable and concentrate about 1000-fold in the inner mitochondrial membrane; they reduced reactive oxygen species and cell death in cultured cells and isolated mitochondria and improved contraction in an isolated heart after reperfusion. Funding: NIH (NIDA) grants per the PubMed/Europe PMC grant list."
+
+birk-2013-ss31-cardiolipin:
+  type: article
+  authors: "Birk AV, Liu S, Soong Y, Mills W, Singh P, Warren JD, Seshan SV, Pardee JD, Szeto HH"
+  title: "The mitochondrial-targeted compound SS-31 re-energizes ischemic mitochondria by interacting with cardiolipin"
+  container: "Journal of the American Society of Nephrology"
+  year: 2013
+  volume: "24"
+  pages: "1250-1261"
+  doi: 10.1681/ASN.2012121216
+  pmid: "23813215"
+  pmcid: PMC3736700
+  verified: pubmed
+  note: "SS-31 binds cardiolipin in the inner mitochondrial membrane and protected mitochondria and kidney function after ischaemia in rats; originating group (Szeto, Weill Cornell). Funding: NIH grants (NHLBI, NIA) per the PubMed/Europe PMC grant list."
+
+ema-orphan-elamipretide-eu-3-21-2430:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "EU/3/21/2430 – orphan designation for treatment of Barth syndrome (elamipretide)"
+  year: 2024
+  url: https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu-3-21-2430
+  accessed: 2026-10-23
+  verified: url
+  note: "Designated 20 May 2021; sponsor Atnahs Pharma Netherlands B.V. since April 2024 (transferred from Scendea (NL) B.V.). An orphan designation is not a marketing authorisation. The EMA orphan JSON (timestamp 23 October 2026) also lists EU/3/22/2614 (elamipretide, myopathic mitochondrial DNA depletion syndrome, 16 May 2022). The EMA medicines JSON (2,754 records, same day) has no elamipretide product, and the October 2026 CHMP under-evaluation list has no elamipretide application."
+
+ctgov-nct07531251:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "NCT07531251: Phase 3b/4 randomised, double-blind, placebo-controlled trial of daily subcutaneous elamipretide in genetically confirmed Barth syndrome"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07531251
+  accessed: 2026-10-23
+  verified: registry
+  note: "Recruiting on 23 October 2026; sponsor Stealth BioTherapeutics; planned enrolment 48; start 2 July 2026; primary completion 30 September 2029. Matches the FDA's postmarketing requirement for a confirmatory trial."
+
+ctgov-nct06373731:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "NCT06373731: ReNEW, phase 3 double-masked placebo-controlled trial of subcutaneous elamipretide in dry age-related macular degeneration"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT06373731
+  accessed: 2026-10-23
+  verified: registry
+  note: "Active, not recruiting on 23 October 2026; sponsor Stealth BioTherapeutics; enrolment 313; started 30 May 2024; primary completion planned August 2027."
+
+pubchem-elamipretide:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 11764719, Elamipretide (SS-31)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/11764719
+  accessed: 2026-10-23
+  verified: url
+  note: "C32H49N9O5, 639.8 g/mol (free base); D-Arg-Dmt-Lys-Phe-NH2; synonyms elamipretide [USAN:INN], SS-31, MTP-131, Bendavia, Szeto-Schiller peptide; CAS 736992-21-5; UNII 87GWG91S09."
+
+pubmed-elamipretide-count-2026-10-23:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for elamipretide / SS-31, 23 October 2026"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=elamipretide+OR+SS-31%5Btiab%5D+OR+MTP-131+OR+Bendavia
+  accessed: 2026-10-23
+  verified: url
+  note: "'(elamipretide OR SS-31[tiab] OR MTP-131 OR Bendavia OR szeto-schiller) NOT review[pt]': 449 records; 38 with Szeto HH as an author. Adding 'AND (rats OR mice)': 258 records, 32 with Szeto HH (re-run by the fact-checker on 23 October 2026; the first draft's 253/31 could not be reproduced). 'SS-31' may catch a few unrelated records. Every clinical trial found was sponsored or funded by Stealth BioTherapeutics."
+
+# ---------------------------------------------------------------- NAD+ precursors
+
+pubchem-nad:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summaries: CID 5892 (NAD+, nadide), CID 439924 (nicotinamide riboside), CID 14180 (nicotinamide mononucleotide)"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/5892
+  accessed: 2026-10-23
+  verified: url
+  note: "NAD+ C21H27N7O14P2, 663.4 g/mol (two nucleotides joined through their phosphate groups; synonyms nadide, coenzyme I, beta-NAD); nicotinamide riboside C11H15N2O5+, 255.25 (a nicotinamide ring on a ribose sugar; synonym Niagen); NMN C11H15N2O8P, 334.22 (nicotinamide riboside with one phosphate; synonym beta-NMN). None contains an amino acid or a peptide bond."
+
+efsa-2019-nr-novel-food:
+  type: regulator
+  authors: "EFSA Panel on Nutrition, Novel Foods and Food Allergens (NDA), Turck D, Castenmiller J, de Henauw S, et al."
+  title: "Safety of nicotinamide riboside chloride as a novel food pursuant to Regulation (EU) 2015/2283 and bioavailability of nicotinamide from this source, in the context of Directive 2002/46/EC"
+  container: "EFSA Journal"
+  year: 2019
+  volume: "17"
+  pages: "e05775"
+  doi: 10.2903/j.efsa.2019.5775
+  pmid: "32626405"
+  pmcid: PMC7009190
+  verified: pubmed
+  note: "Synthetic nicotinamide riboside chloride for food supplements for healthy adults: safe under the proposed conditions for adults excluding pregnant and lactating women (with a lower maximum for them), a bioavailable source of nicotinamide, a form of niacin; animal and human data show it adds to the body's nicotinamide pool. The site prints no intake amounts."
+
+efsa-2021-nr-extension:
+  type: regulator
+  authors: "EFSA Panel on Nutrition, Novel Foods and Food Allergens (NDA), Turck D, Bohn T, Castenmiller J, et al."
+  title: "Extension of use of nicotinamide riboside chloride as a novel food pursuant to Regulation (EU) 2015/2283"
+  container: "EFSA Journal"
+  year: 2021
+  volume: "19"
+  pages: "e06843"
+  doi: 10.2903/j.efsa.2021.6843
+  pmid: "34804232"
+  pmcid: PMC8586847
+  verified: pubmed
+  note: "Safety not established for use in meal replacements and drink mixes for the general population (no upper level for nicotinamide in infants); the Panel 'notes experimental data which indicate several pathways by which intakes of nicotinamide (or its precursors), at levels that are substantially higher than the physiological requirement, might cause adverse effects' and that 'a re-evaluation of the UL for nicotinamide may be warranted'."
+
+efsa-2026-nmn-novel-food:
+  type: regulator
+  authors: "EFSA Panel on Nutrition, Novel Foods and Food Allergens (NDA), Turck D, Bohn T, Cámara M, et al."
+  title: "Safety of beta-nicotinamide mononucleotide (β-NMN) pursuant the regulation (EU) 2015/2283 and the bioavailability of nicotinamide from this source in the context of Directive 2002/46/EC"
+  container: "EFSA Journal"
+  year: 2026
+  volume: "24"
+  pages: "e10007"
+  doi: 10.2903/j.efsa.2026.10007
+  pmid: "42125559"
+  pmcid: PMC13158811
+  verified: pubmed
+  note: "Chemically synthesised beta-NMN for food supplements as a source of niacin: safe under the proposed conditions for adults, excluding pregnant and lactating women; a 90-day rat study showed effects on reproductive organs (the NOAEL gave a margin of exposure of 93, judged sufficient); no genotoxicity concern; the one human study raised no safety concerns. An EFSA opinion is advice; authorisation needs a Commission implementing regulation."
+
+eu-regulation-2020-16-nr:
+  type: law
+  authors: "European Commission"
+  title: "Commission Implementing Regulation (EU) 2020/16 of 10 January 2020 authorising the placing on the market of nicotinamide riboside chloride as a novel food under Regulation (EU) 2015/2283 and amending Implementing Regulation (EU) 2017/2470"
+  container: "Official Journal of the European Union, L 7, 13.1.2020, p. 6"
+  year: 2020
+  url: https://eur-lex.europa.eu/eli/reg_impl/2020/16/oj
+  accessed: 2026-10-23
+  verified: url
+  note: "Read through the CELLAR resolver (CELEX 32020R0016). Recital 1: 'only novel foods authorised and included in the Union list may be placed on the market within the Union'. Application by ChromaDex Inc. (10 May 2018) for use as a source of niacin in food supplements; based on the EFSA opinion of 4 July 2019. Later acts amend its conditions of use (2022/1160) and allow it in further foods (2021/418, 2023/439, 2023/1065)."
+
+eu-union-list-novel-foods-2026-08-10:
+  type: law
+  authors: "European Commission"
+  title: "Commission Implementing Regulation (EU) 2017/2470 establishing the Union list of novel foods, consolidated text of 10 August 2026"
+  container: "EUR-Lex, CELEX 02017R2470-20260810"
+  year: 2026
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02017R2470-20260810
+  accessed: 2026-10-23
+  verified: url
+  note: "Read through the CELLAR resolver: 'Nicotinamide riboside chloride' appears; 'mononucleotide' does not. A search of the Publications Office legal-act titles (SPARQL, 23 October 2026) found acts on nicotinamide riboside chloride (2020/16, 2021/418, 2022/1160, 2023/439, 2023/1065) and none on nicotinamide mononucleotide; the most recent novel-food acts indexed were from July 2026."
+
+eu-regulation-178-2002-food-law:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Regulation (EC) No 178/2002 laying down the general principles and requirements of food law, Article 2 (definition of food)"
+  container: "Official Journal of the European Communities, L 31"
+  year: 2002
+  url: https://eur-lex.europa.eu/eli/reg/2002/178/oj
+  accessed: 2026-10-23
+  verified: url
+  note: "Read through the CELLAR resolver (CELEX 32002R0178, original text). Art. 2: 'food' means any substance or product 'intended to be, or reasonably expected to be ingested by humans'; food does not include medicinal products or cosmetics."
+
+fda-2025-nmn-petition-response:
+  type: regulator
+  authors: "U.S. Food and Drug Administration, Human Foods Program"
+  title: "Response to citizen petition FDA-2023-P-0872 (Natural Products Association and Alliance for Natural Health USA) on the regulatory status of beta-nicotinamide mononucleotide (NMN): petition granted in part and denied in part"
+  container: "Regulations.gov, document FDA-2023-P-0872-2754"
+  year: 2025
+  url: https://www.regulations.gov/document/FDA-2023-P-0872-2754
+  accessed: 2026-10-23
+  verified: url
+  note: "Letter signed by Donald Prater, digitally dated 29 September 2025 (the letterhead date reads 'September 29, 2029', a typo). 'we now conclude that NMN is not excluded from the dietary supplement definition under section 201(ff)(3)(B)' because FDA is aware of evidence that NMN was marketed as a dietary supplement in the US 'as early as 2017', before it was authorised for investigation as a new drug (MIB-626, same chemical structure). Footnote 44: FDA disagrees that NMN 'should be categorically treated as a dietary supplement'; it remains a new dietary ingredient subject to premarket notification. Regulations.gov lists later FDA 'reinstatement' letters for individual NMN NDI notifications (December 2025, February 2026)."
+
+fda-grn-635-nicotinamide-riboside:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "GRAS Notice Inventory: GRN No. 635, nicotinamide riboside chloride (ChromaDex, Inc.)"
+  year: 2016
+  url: https://www.hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=GRASNotices&id=635
+  accessed: 2026-10-23
+  verified: url
+  note: "Intended use: source of vitamin B3 in certain beverages, bars and powders (food use); filed 29 March 2016; closed 3 August 2016 with 'FDA has no questions'. A 'no questions' letter is not an FDA safety approval of supplements or injections."
+
+usada-iv-infusions:
+  type: web
+  authors: "U.S. Anti-Doping Agency"
+  title: "IV Infusions: Explanatory Note"
+  year: 2026
+  url: https://www.usada.org/spirit-of-sport/substances/iv-infusion/
+  accessed: 2026-10-23
+  verified: url
+  note: "IV injections or infusions of more than 100 mL within 12 hours are prohibited in and out of competition 'even if the substance being injected or infused is permitted (e.g., saline, vitamins...)', including at boutique or concierge IV clinics; a Therapeutic Use Exemption may be needed."
+
+pubmed-nr-nmn-count-2026-10-23:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for nicotinamide riboside and nicotinamide mononucleotide, 23 October 2026"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=%22nicotinamide+riboside%22%5Btiab%5D+OR+%22nicotinamide+mononucleotide%22%5Btiab%5D
+  accessed: 2026-10-23
+  verified: url
+  note: "'nicotinamide riboside' or 'nicotinamide mononucleotide' in title/abstract: 2,297 records; 2,036 not reviews; 1,091 of those mention rats or mice; 45 are indexed as randomised controlled trials in humans. The human trials come from many university groups in Europe, North America and Asia."
+
+martens-2018-nr-older-adults:
+  type: trial
+  authors: "Martens CR, Denman BA, Mazzo MR, Armstrong ML, Reisdorph N, McQueen MB, Chonchol M, Seals DR"
+  title: "Chronic nicotinamide riboside supplementation is well-tolerated and elevates NAD(+) in healthy middle-aged and older adults"
+  container: "Nature Communications"
+  year: 2018
+  volume: "9"
+  pages: "1286"
+  doi: 10.1038/s41467-018-03421-7
+  pmid: "29599478"
+  pmcid: PMC5876407
+  verified: pubmed
+  note: "Randomised, double-blind, placebo-controlled crossover, 2 x 6 weeks: 30 healthy middle-aged and older adults randomised, 24 completed; NR was well tolerated and raised NAD+ metabolism in blood cells; effects on blood pressure and arterial stiffness only hinted at. Funding (full text): NIH grants, plus study pills and partial funding from ChromaDex, the NR maker; authors declare no competing interests. Two participants dropped out citing side effects (full text)."
+
+dollerup-2018-nr-obese-men:
+  type: trial
+  authors: "Dollerup OL, Christensen B, Svart M, Schmidt MS, Sulek K, Ringgaard S, et al."
+  title: "A randomized placebo-controlled clinical trial of nicotinamide riboside in obese men: safety, insulin-sensitivity, and lipid-mobilizing effects"
+  container: "The American Journal of Clinical Nutrition"
+  year: 2018
+  volume: "108"
+  pages: "343-353"
+  doi: 10.1093/ajcn/nqy132
+  pmid: "29992272"
+  verified: pubmed
+  note: "Investigator-initiated, randomised, double-blind, placebo-controlled: 40 sedentary men with obesity, aged 40-70, 12 weeks; insulin sensitivity, glucose metabolism, energy expenditure and body composition did not improve; no serious adverse events due to NR and safety blood tests normal."
+
+yoshino-2021-nmn-prediabetic-women:
+  type: trial
+  authors: "Yoshino M, Yoshino J, Kayser BD, Patti GJ, Franczyk MP, Mills KF, et al."
+  title: "Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women"
+  container: "Science"
+  year: 2021
+  volume: "372"
+  pages: "1224-1229"
+  doi: 10.1126/science.abe9985
+  pmid: "33888596"
+  pmcid: PMC8550608
+  verified: pubmed
+  note: "10-week randomised, double-blind, placebo-controlled trial: 25 postmenopausal women with prediabetes and overweight or obesity (13 NMN, 12 placebo); muscle insulin sensitivity and insulin signalling rose with NMN. One author receives patent-licensing fees from NMN companies; another is an inventor on an NMN patent application."
+
+brakedal-2022-nadpark:
+  type: trial
+  authors: "Brakedal B, Dölle C, Riemer F, Ma Y, Nido GS, Skeie GO, et al."
+  title: "The NADPARK study: A randomized phase I trial of nicotinamide riboside supplementation in Parkinson's disease"
+  container: "Cell Metabolism"
+  year: 2022
+  volume: "34"
+  pages: "396-407.e6"
+  doi: 10.1016/j.cmet.2022.02.001
+  pmid: "35235774"
+  verified: pubmed
+  note: "30 newly diagnosed, untreated people with Parkinson's disease received NR or placebo for 30 days; NR raised brain NAD levels and was associated with mild clinical improvement (phase 1, small, short)."
+
+brakedal-2026-nopark:
+  type: trial
+  authors: "Brakedal B, Skeie GO, Derad C, Alstadhaug KB, Anundskås I, Berven H, et al."
+  title: "Nicotinamide Riboside for Patients With Early-Stage Parkinson Disease: The NOPARK Randomized Clinical Trial"
+  container: "JAMA"
+  year: 2026
+  doi: 10.1001/jama.2026.18828
+  pmid: "42848371"
+  pmcid: PMC13650695
+  verified: pubmed
+  note: "Published online 8 October 2026. Randomised, double-blind, placebo-controlled phase 3 at 11 Norwegian centres: 410 people with early Parkinson disease randomised, 393 in the primary analysis, 52 weeks. MDS-UPDRS total score rose 2.45 points with NR and fell 0.27 with placebo (adjusted difference 2.72, 95% CI 0.47-4.98, P = .02, favouring placebo; the trial's own thresholds for a clinically important worsening and improvement were 5.2 and 6.7 points); non-motor symptoms worsened more with NR (difference 4.22, P = .009); serious adverse events 8.3% (17 of 205) with NR vs 14.1% (29 of 205) with placebo. Funded by the Research Council of Norway and other public bodies; ChromaDex supplied NR and placebo and had no role in design or analysis; two authors hold patents on NR for Parkinson disease licensed to Niagen Bioscience."
+
+grant-2019-iv-nad-pilot:
+  type: article
+  authors: "Grant R, Berg J, Mestayer R, Braidy N, Bennett J, Broom S, Watson J"
+  title: "A Pilot Study Investigating Changes in the Human Plasma and Urine NAD+ Metabolome During a 6 Hour Intravenous Infusion of NAD"
+  container: "Frontiers in Aging Neuroscience"
+  year: 2019
+  volume: "11"
+  pages: "257"
+  doi: 10.3389/fnagi.2019.00257
+  pmid: "31572171"
+  pmcid: PMC6751327
+  verified: pubmed
+  note: "11 healthy men aged 30-55 (8 NAD+ IV, 3 saline), one 6-hour infusion: NAD+ was rapidly and completely removed from plasma for at least the first 2 hours; no adverse events during the infusion. Randomised 8 to NAD+ and 3 to saline (full text). Funded jointly by NAD+ Research Inc. and the Australasian Research Institute; one author is a director of NAD+ Research Inc. and medical director of the wellness centre where the study ran, which uses IV NAD as a therapy; NAD+ supplied free by a pharmacy, Archway Apothecary (full text)."
+
+yu-2026-iv-nad-heart-failure:
+  type: trial
+  authors: "Yu X, Xu J, Cao J, Xu Q, Chen H, Yu D, Yao X, Chen K, Ma L"
+  title: "Effect of Nicotinamide Adenine Dinucleotide on Heart Failure Caused by Ischemic Cardiomyopathy: A Randomized, Placebo-Controlled Trial"
+  container: "American Journal of Cardiovascular Drugs"
+  year: 2026
+  volume: "26"
+  pages: "97-106"
+  doi: 10.1007/s40256-025-00764-7
+  pmid: "40954388"
+  pmcid: PMC12779688
+  verified: pubmed
+  note: "Single-centre (Hefei, China), randomised, placebo-controlled: 180 adults with heart failure after ischaemic cardiomyopathy (LVEF 45% or less), IV NAD+ or placebo for 7 days on top of standard treatment; LVEF at 1 month 45.44% vs 42.44% (p = 0.024); 6-month major events 14.6% vs 24.7% (p = 0.089, not significant). Blinding not stated in the abstract; authors declare no conflicts."
+
+godic-2026-iv-longevity-review:
+  type: review
+  authors: "Godic A, Townsend J"
+  title: "Intravenous longevity therapy: a critical review of evidence, mechanisms, and clinical utility"
+  container: "Acta Dermatovenerologica Alpina, Pannonica et Adriatica"
+  year: 2026
+  volume: "35"
+  pages: "39-43"
+  pmid: "41915584"
+  verified: pubmed
+  note: "Narrative review of IV vitamins, glutathione, NAD+ and similar 'longevity' drips: evidence comes mainly from small series in disease or aesthetic settings; placebo-controlled trials are 'scarce and underpowered' or conflicting; pharmacokinetic limitations and 'procedural risks'; should be regarded as experimental."
+
+maric-2023-nr-metastasis-mice:
+  type: article
+  authors: "Maric T, Bazhin A, Khodakivskyi P, Mikhaylov G, Solodnikova E, Yevtodiyenko A, et al."
+  title: "A bioluminescent-based probe for in vivo non-invasive monitoring of nicotinamide riboside uptake reveals a link between metastasis and NAD(+) metabolism"
+  container: "Biosensors and Bioelectronics"
+  year: 2023
+  volume: "220"
+  pages: "114826"
+  doi: 10.1016/j.bios.2022.114826
+  pmid: "36371959"
+  verified: pubmed
+  note: "In a mouse model of triple-negative breast cancer, NR supplementation 'results in a significant increase in cancer prevalence and metastases ... to the brain'. Animal study."
+
+nakazzi-2026-b3-pancreatic-cancer:
+  type: article
+  authors: "Nakazzi F, Zarei M, Lopes M, Graor HJ, Beegan WC, Gu E, et al."
+  title: "Vitamin B3 derivatives support pancreatic cancer cell survival and chemotherapy resistance"
+  container: "Cancer Letters"
+  year: 2026
+  volume: "645"
+  pages: "218334"
+  doi: 10.1016/j.canlet.2026.218334
+  pmid: "41724424"
+  verified: pubmed
+  note: "Pancreatic cancer cells and mice: NMN most strongly protected cancer cells against three chemotherapy drugs in the dish; in mice, nicotinamide and NMN conferred resistance to standard chemotherapy and supported cancer growth. Cell and animal study."
+
+# ---------------------------------------------------------------- shared checks for this group
+
+openfda-drugsfda-search-stubs-b-2026-10-23:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "openFDA Drugs@FDA queries, 23 October 2026: prezatide, GHK, copper tripeptide, AOD-9604, AOD9604, hexarelin, examorelin, nicotinamide riboside, nicotinamide mononucleotide, nadide, nicotinamide adenine dinucleotide, elamipretide"
+  container: "openFDA"
+  year: 2026
+  url: https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:%22hexarelin%22
+  accessed: 2026-10-23
+  verified: url
+  note: "Each name searched as generic name, brand name and active ingredient: 'No matches found' for all except elamipretide (NDA 215244, Forzinity). Control query semaglutide returned results. openFDA data are not validated for clinical decisions; cited only for the absence of an FDA-approved product, alongside FDA documents."

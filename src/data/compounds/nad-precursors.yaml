@@ -1,0 +1,136 @@
+# NAD+ precursors (nicotinamide riboside, nicotinamide mononucleotide, NAD+ itself): locale-independent facts.
+# Not peptides: no amino acids, no peptide bonds. On this site because they are sold and promoted alongside
+# peptides (for example nominated for US pharmacy compounding next to GHK-Cu; offered in IV "longevity" drips).
+# Every value below is sourced; see research/stubs-b.md.
+slug: nad-precursors
+tier: 2
+status: stub
+category: not-a-peptide
+class: non-peptide
+body_systems: [metabolic, cellular, nervous]
+names:
+  common: NAD+ precursors
+  full: "Nicotinamide riboside (NR), nicotinamide mononucleotide (NMN) and NAD+ (nicotinamide adenine dinucleotide)"
+  other: [NR, NMN, NAD+, NAD, nicotinamide riboside chloride, beta-NMN, nadide]
+  brands: []
+# Three different molecules; identifiers and formulas are given per molecule in the page text and in the
+# source pubchem-nad (CID 5892 NAD+, 439924 NR, 14180 NMN).
+identifiers: {}
+molecular: {}
+sequence: null
+evidence:
+  # NOPARK (JAMA, October 2026): randomised, placebo-controlled phase 3, 410 people with early Parkinson
+  # disease, oral NR for 52 weeks - no benefit, slightly worse than placebo. Highest published human evidence.
+  human_clinical: phase-3
+  preclinical_volume: extensive
+  # Many independent academic groups in Europe, the US and Asia; some trials use product supplied by makers.
+  independence: broadly-replicated
+  # Oral NR and NMN: short trials (weeks to one year) and EFSA safety assessments; IV NAD+: tiny studies.
+  safety: partial
+regulatory:
+  # Status as a MEDICINE (the vocabulary's sense). As food: NR chloride is an authorised novel food in the EU
+  # (Implementing Regulation 2020/16); NMN is not on the Union list (consolidated 10 August 2026) despite a
+  # positive EFSA opinion (May 2026).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, eu-regulation-2020-16-nr, efsa-2026-nmn-novel-food, eu-union-list-novel-foods-2026-08-10] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  # Not an FDA-approved drug. NMN: not excluded from the dietary-supplement definition (FDA, 29 September 2025);
+  # NR chloride: GRAS notice 635 for food use; NAD+: 503A category 1 (pharmacy compounding tolerated under the
+  # interim policy while FDA evaluates).
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23, fda-2025-nmn-petition-response, fda-grn-635-nicotinamide-riboside, fda-503a-categories-2026-05] }
+  # unclear (CONTENT-GUIDE §5.1): none of the three is named on the 2026 or 2027 List or Monitoring Program, and
+  # whether S0 could reach them is untested, with no anti-doping ruling. Separately, IV infusions or injections of more
+  # than 100 mL in 12 hours are prohibited under M2.2 whatever is in them (explained on the page).
+  # (Fact-checker, 23 October 2026: was 'not-authorised', which the guide forbids as a stand-in.)
+  - { jurisdiction: WADA, status: unclear, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en, usada-iv-infusions] }
+studies:
+  # Group: "originating" would be the supplement makers; trials run by academic groups are "independent", and
+  # "mixed" where authors hold patents or the maker funded or supplied the product.
+  # NIH grants plus partial funding and the study pills from ChromaDex, the NR maker (full text): mixed / mixed.
+  - id: martens-2018-older-adults
+    source: martens-2018-nr-older-adults
+    year: 2018
+    species: human
+    n: 30
+    design: rct
+    funding: mixed
+    group: mixed
+    blinded: true
+    controlled: true
+  - id: dollerup-2018-obese-men
+    source: dollerup-2018-nr-obese-men
+    year: 2018
+    species: human
+    n: 40
+    design: rct
+    funding: undisclosed
+    group: independent
+    blinded: true
+    controlled: true
+  - id: yoshino-2021-prediabetic-women
+    source: yoshino-2021-nmn-prediabetic-women
+    year: 2021
+    species: human
+    n: 25
+    design: rct
+    funding: government
+    group: mixed
+    blinded: true
+    controlled: true
+  # Two authors filed a patent application on NR in Parkinson disease (PubMed COI statement): group mixed.
+  - id: nadpark-2022
+    source: brakedal-2022-nadpark
+    year: 2022
+    species: human
+    n: 30
+    design: phase-1
+    funding: undisclosed
+    group: mixed
+    blinded: true
+    controlled: true
+  # Funded by Norwegian public bodies and a foundation; ChromaDex only supplied NR and placebo (full text), and two
+  # authors hold licensed NR patents: funding government, group mixed.
+  - id: nopark-2026
+    source: brakedal-2026-nopark
+    year: 2026
+    species: human
+    n: 410
+    design: phase-3
+    funding: government
+    group: mixed
+    blinded: true
+    controlled: true
+  # Funded jointly by NAD+ Research Inc. and the Australasian Research Institute (full text): mixed.
+  - id: grant-2019-iv-nad
+    source: grant-2019-iv-nad-pilot
+    year: 2019
+    species: human
+    n: 11
+    design: pk
+    funding: mixed
+    group: mixed
+    blinded: null
+    controlled: true
+  - id: yu-2026-iv-nad-heart-failure
+    source: yu-2026-iv-nad-heart-failure
+    year: 2026
+    species: human
+    n: 180
+    design: rct
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  - id: nakazzi-2026-pancreatic-cancer
+    source: nakazzi-2026-b3-pancreatic-cancer
+    year: 2026
+    species: mixed
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+authorised_products: []
+related: [mots-c, ss-31, ghk-cu]
+last_reviewed: 2026-10-23
+reviewed_by: pending-medical-review

@@ -1,0 +1,127 @@
+# AOD-9604: locale-independent facts. Every value below is sourced; see research/stubs-b.md.
+slug: aod-9604
+tier: 2
+status: stub
+# experimental: developed by Metabolic Pharmaceuticals (Australia) as an anti-obesity drug; development for
+# obesity was terminated in February 2007 after a failed trial (FDA briefing, 2024). Not a component of any
+# FDA-approved drug; no EMA, CBG or national-register authorisation found. Same category as ipamorelin
+# (development stopped).
+category: experimental
+class: metabolic
+body_systems: [metabolic]
+names:
+  common: AOD-9604
+  full: Tyr-hGH(177-191), a modified fragment of human growth hormone
+  # "hGH fragment 176-191" was removed by the fact-checker: WADA and the German AntiDopG list it as a separate
+  # fragment ("AOD-9604 and hGH 176-191"), so it is not another name for AOD-9604.
+  other: [AOD9604, "Advanced Obesity Drug 9604"]
+  brands: []
+identifiers:
+  pubchem_cid: 71300630
+  cas: 221231-10-3
+  unii: 7UP768IP4M
+molecular:
+  formula: C78H123N23O23S2
+  mass_da: 1815.1
+  smiles: "CC[C@H](C)[C@@H](C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(=O)N)C(=O)N[C@H]1CSSC[C@H](NC(=O)[C@@H](NC(=O)CNC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@@H](NC1=O)CCCNC(=N)N)CO)C(C)C)CCC(=O)O)CO)C(=O)NCC(=O)N[C@@H](CC2=CC=CC=C2)C(=O)O)NC(=O)[C@H](CCCNC(=N)N)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CC3=CC=C(C=C3)O)N"
+  smiles_source: pubchem-aod-9604
+# The FDA briefing gives the chemical name L-tyrosyl-L-leucyl-L-arginyl-L-isoleucyl-L-valyl-L-glutaminyl-
+# L-cysteinyl-L-arginyl-L-seryl-L-valyl-L-alpha-glutamyl-glycyl-L-seryl-L-cysteinyl-glycyl-L-phenylalanine
+# (7->14)-disulfide: hGH residues 177-191 with an extra tyrosine at the start. PubChem's SMILES agrees.
+# (The briefing once writes "C-terminal" for the added tyrosine; its own chemical name and its introduction
+# say N-terminal.)
+sequence:
+  display: "Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe"
+  residues: [Tyr, Leu, Arg, Ile, Val, Gln, Cys, Arg, Ser, Val, Glu, Gly, Ser, Cys, Gly, Phe]
+  n_terminus: H
+  c_terminus: OH
+  modifications:
+    - { position: 1, label: "Tyrosine added in front of growth hormone's last 15 building blocks (177-191)" }
+  bridges:
+    - { from: 7, to: 14, kind: disulfide }
+  source: fda-pcac-2024-aod9604-briefing
+evidence:
+  # Six company-funded randomised, placebo-controlled trials (IV and oral), the largest 502 people for 24 weeks;
+  # only a safety summary was published (Stier 2013). Graded phase-2 on the rubric.
+  human_clinical: phase-2
+  # Fewer than 10 primary animal or cell studies of AOD-9604 itself (PubMed, 23 October 2026).
+  preclinical_volume: minimal
+  # Nearly all from Ng FM's Monash group and the developer; one independent rabbit study.
+  independence: single-group-dominant
+  # Short trials in about 900 people, reported only as a company summary without numbers per group.
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search, fda-pcac-2024-aod9604-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [fda-pcac-2024-aod9604-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, openfda-drugsfda-search-stubs-b-2026-10-23] }
+  # Named in S2.2.3 ("growth hormone fragments, e.g. AOD-9604 and hGH 176-191") in the 2026 and 2027 Lists.
+  - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en] }
+studies:
+  # "originating" = Ng FM's group at Monash University and Metabolic Pharmaceuticals, the developer.
+  - id: ng-2000-obese-rats
+    source: ng-2000-aod9604-rats
+    year: 2000
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: heffernan-2001-obese-mice
+    source: heffernan-2001-aod9604-mice
+    year: 2001
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: kwon-2015-rabbit-knees
+    source: kwon-2015-aod9604-rabbit-oa
+    year: 2015
+    species: rabbit
+    n: 32
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Summary of six randomised, double-blind, placebo-controlled trials; no per-trial numbers in the paper's
+  # abstract, so n is left empty (the FDA lists 15, 23, 17, 36, 300 and 502 participants).
+  - id: stier-2013-six-trials
+    source: stier-2013-aod9604-safety
+    year: 2013
+    species: human
+    n: null
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  # OPTIONS: described by the FDA from the company's stock-exchange filing; never published in a journal.
+  - id: options-2007-obesity-trial
+    source: fda-pcac-2024-aod9604-briefing
+    year: 2007
+    species: human
+    n: 502
+    design: phase-2
+    funding: industry
+    group: originating
+    blinded: true
+    controlled: true
+  - id: vanhee-2014-seized-products
+    source: vanhee-2014-aod9604-seized
+    year: 2014
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: government
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: [cjc-1295, ipamorelin, tesamorelin]
+last_reviewed: 2026-10-23
+reviewed_by: pending-medical-review

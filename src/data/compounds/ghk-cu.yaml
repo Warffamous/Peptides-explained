@@ -1,0 +1,129 @@
+# GHK-Cu: locale-independent facts. Every value below is sourced; see research/stubs-b.md.
+slug: ghk-cu
+tier: 2
+status: stub
+# experimental: no medicine containing GHK-Cu is authorised by EMA, the CBG or the FDA (searched 23 October
+# 2026). It is a permitted cosmetic ingredient in the EU (CosIng: COPPER TRIPEPTIDE-1), which is a different
+# legal category: an injected product cannot be a cosmetic (Regulation 1223/2009, art. 2(2)). A GHK-Cu wound
+# gel was cleared in the US in 1996 as a medical device (510(k) K953853), not approved as a drug.
+category: experimental
+class: dermal
+body_systems: [skin]
+names:
+  common: GHK-Cu
+  full: Glycyl-L-histidyl-L-lysine copper(II) complex
+  other: [copper peptide, copper tripeptide-1, prezatide copper, GHK copper]
+  brands: []
+identifiers:
+  pubchem_cid: 71587328
+  cas: 89030-95-5
+  unii: 6BJQ43T1I9
+# PubChem gives the 1:1 copper complex as C14H23CuN6O4+ (402.92 g/mol). The site's formula renderer accepts
+# only neutral formulas, so formula, mass and SMILES are left out here and given in the page text instead.
+molecular: {}
+sequence:
+  display: "Gly-His-Lys · Cu(II)"
+  residues: [Gly, His, Lys]
+  n_terminus: H
+  c_terminus: OH
+  modifications:
+    - { position: 2, label: "The histidine helps hold one copper(II) ion" }
+  bridges: []
+  source: pubchem-ghk-cu
+evidence:
+  # Small controlled trials of creams and gels on skin and ulcers (Mulder 1994, Bishop 1992, Miller 2006).
+  # No published study of injected GHK-Cu in people.
+  human_clinical: phase-2
+  # 171 non-review PubMed records on GHK-Cu; 64 mention animals; well over 50 primary cell and animal studies.
+  preclinical_volume: extensive
+  # Pickart (discoverer) and Maquart (Reims) are authors on 6 records each; the rest come from many groups.
+  independence: broadly-replicated
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search, cosing-copper-tripeptide-1, eu-regulation-1223-2009-cosmetics] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23, fda-503a-categories-2026-05, fda-category-2-safety-risks, fda-pcac-2027-early-announcement] }
+  # unclear (CONTENT-GUIDE §5.1): not named on the 2026 or 2027 List. S0 bans substances with no current approval by
+  # any government health authority for human therapeutic use, and the 2027 explanatory note says unnamed peptides
+  # may fall under S0, S2 or S4. No medicine approval was found, but a GHK-Cu wound gel was cleared as a medical
+  # device in the US (1996) and GHK-Cu is a permitted cosmetic ingredient; no anti-doping body has ruled.
+  # (Fact-checker, 23 October 2026: was 'not-authorised', which the guide forbids as a stand-in.)
+  - { jurisdiction: WADA, status: unclear, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, fda-510k-k953853-iamin] }
+studies:
+  # "originating" = Loren Pickart, who discovered GHK, and work he co-authored.
+  - id: pickart-1973-discovery
+    source: pickart-1973-ghk-serum
+    year: 1973
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: null
+  - id: maquart-1988-collagen
+    source: maquart-1988-ghk-collagen
+    year: 1988
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: mixed
+    blinded: null
+    controlled: true
+  - id: maquart-1993-rat-wounds
+    source: maquart-1993-ghk-rat-wounds
+    year: 1993
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Evaluator-blinded, vehicle-controlled; the abstract gives no patient number and no funder. Co-author Patt LM is
+  # also on Maquart 1993; affiliations could not be checked (no full text), so 'independent' is provisional.
+  - id: mulder-1994-diabetic-ulcers
+    source: mulder-1994-ghk-diabetic-ulcers
+    year: 1994
+    species: human
+    n: null
+    design: rct
+    funding: undisclosed
+    group: independent
+    blinded: true
+    controlled: true
+  - id: bishop-1992-venous-ulcers
+    source: bishop-1992-venous-ulcers-copper-cream
+    year: 1992
+    species: human
+    n: 86
+    design: rct
+    funding: undisclosed
+    group: independent
+    blinded: true
+    controlled: true
+  - id: miller-2006-laser-skin
+    source: miller-2006-ghk-laser-resurfacing
+    year: 2006
+    species: human
+    n: 13
+    design: rct
+    funding: undisclosed
+    group: independent
+    blinded: true
+    controlled: true
+  - id: hostynek-2011-skin-penetration
+    source: hostynek-2011-copper-tripeptide-skin
+    year: 2011
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: []
+last_reviewed: 2026-10-23
+reviewed_by: pending-medical-review

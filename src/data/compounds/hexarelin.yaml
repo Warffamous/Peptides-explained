@@ -1,0 +1,122 @@
+# Hexarelin (INN examorelin): locale-independent facts. Every value below is sourced; see research/stubs-b.md.
+slug: hexarelin
+tier: 2
+status: stub
+# experimental: studied in people in the 1990s and early 2000s, mostly by university groups; no product was
+# ever authorised (EMA, CBG and openFDA searched 23 October 2026); no registered trial on ClinicalTrials.gov.
+category: experimental
+class: gh-axis
+body_systems: [endocrine, cardiovascular]
+names:
+  common: Hexarelin
+  full: "His-D-2-methyl-Trp-Ala-Trp-D-Phe-Lys-NH2"
+  inn: examorelin
+  other: [EP-23905, MF-6003]
+  brands: []
+identifiers:
+  pubchem_cid: 6918297
+  chembl: CHEMBL108335
+  cas: 140703-51-1
+  unii: 09QF37C617
+molecular:
+  formula: C47H58N12O6
+  mass_da: 887.0
+  smiles: "CC1=C(C2=CC=CC=C2N1)C[C@H](C(=O)N[C@@H](C)C(=O)N[C@@H](CC3=CNC4=CC=CC=C43)C(=O)N[C@H](CC5=CC=CC=C5)C(=O)N[C@@H](CCCCN)C(=O)N)NC(=O)[C@H](CC6=CN=CN6)N"
+  smiles_source: pubchem-hexarelin
+# Position 2 is 2-methyl-D-tryptophan. The residue vocabulary (src/schemas/vocab.ts) has no code for it, so it is
+# entered as D-Trp with the methyl group described in a modification (flagged in research/stubs-b.md).
+sequence:
+  display: "His-D-2-Me-Trp-Ala-Trp-D-Phe-Lys-NH2"
+  residues: [His, D-Trp, Ala, Trp, D-Phe, Lys]
+  n_terminus: H
+  c_terminus: NH2
+  modifications:
+    - { position: 2, label: "2-methyl-D-tryptophan: a mirror-image tryptophan with an extra methyl group on its ring" }
+    - { position: 5, label: "D-Phe: the mirror-image form of phenylalanine" }
+  bridges: []
+  source: pubchem-hexarelin
+evidence:
+  # Small studies in patients: short children treated for up to 8 months (8), healthy elderly people for 16
+  # weeks (12), single doses in heart-failure patients (13). No large trial.
+  human_clinical: phase-2
+  # 279 non-review records; 137 mention rats, mice, dogs or pigs.
+  preclinical_volume: extensive
+  # Turin and partners about 40% of records (111 of 279); Milan 41 and Montreal 16 more, so the three groups about 60%.
+  independence: few-groups
+  # Short, small studies; no systematic long-term safety data.
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23] }
+  # Named in S2.2.4 ("GH-releasing peptides (GHRPs) [e.g. alexamorelin, examorelin (hexarelin) ...]").
+  - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en] }
+studies:
+  # "originating" = the Turin group (Ghigo, Arvat, Broglio and co-workers), which published most human work,
+  # with co-authors linked to the developer (Deghenghi).
+  - id: ghigo-1994-four-routes
+    source: ghigo-1994-hexarelin-routes
+    year: 1994
+    species: human
+    n: 12
+    design: phase-1
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: laron-1995-short-children
+    source: laron-1995-hexarelin-children
+    year: 1995
+    species: human
+    n: 8
+    design: open-label
+    funding: undisclosed
+    group: mixed
+    blinded: false
+    controlled: false
+  - id: rahim-1998-sixteen-weeks
+    source: rahim-1998-hexarelin-long-term
+    year: 1998
+    species: human
+    n: 12
+    design: open-label
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: false
+  # Acute comparison of IV hexarelin and IV growth hormone in 7 volunteers; the abstract does not say the order was
+  # randomised, so 'phase-1' (healthy-volunteer pharmacology), not 'rct' (fact-checker, 23 October 2026).
+  - id: bisi-1999-heart-healthy-men
+    source: bisi-1999-hexarelin-heart
+    year: 1999
+    species: human
+    n: 7
+    design: phase-1
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: imazio-2002-heart-failure
+    source: imazio-2002-hexarelin-cardiomyopathy
+    year: 2002
+    species: human
+    n: 13
+    design: open-label
+    funding: undisclosed
+    group: originating
+    blinded: false
+    controlled: false
+  - id: bodart-2002-cd36
+    source: bodart-2002-hexarelin-cd36
+    year: 2002
+    species: mixed
+    n: null
+    design: animal
+    funding: government   # NIH (NHLBI) grants per the PubMed/Europe PMC grant list
+    group: independent
+    blinded: null
+    controlled: true
+authorised_products: []
+related: [ipamorelin, cjc-1295, tesamorelin]
+last_reviewed: 2026-10-23
+reviewed_by: pending-medical-review
