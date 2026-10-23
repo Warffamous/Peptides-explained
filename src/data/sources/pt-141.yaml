@@ -1,0 +1,500 @@
+# Sources for compounds/pt-141 (group: pt-141). Every scholarly entry was looked up in PubMed on
+# 22 October 2026 and its metadata copied from the record (year = year of the journal issue); every
+# regulator, label, registry and database URL was fetched on the accessed date. What each source is
+# cited for is in its note and in research/pt-141.md.
+#
+# Reused from other groups (not re-registered here): fda-drugsatfda-vyleesi (history.yaml),
+# dailymed-vyleesi-label, nhs-priapism, nhs-anaphylaxis, nhs-chest-pain, nhs-stroke-symptoms,
+# nhs-headaches, nhs-jaundice, nhs-moles, dreyer-2019-melanotan-priapism,
+# nelson-2012-melanotan-rhabdomyolysis, cardones-2009-eruptive-nevi (safety-a.yaml),
+# habbema-2017-melanotan-review (safety-b.yaml), ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46,
+# wada-2026-list-en, wada-2027-list-en (bpc-157.yaml), wada-2026-monitoring-program (semaglutide.yaml),
+# wada-2027-monitoring-program (tirzepatide.yaml), de-amg-73, uk-hmr-2012-reg-167, mhra-specials-guidance,
+# fda-warning-letters-index, fda-pcac-2027-early-announcement, wada-code-2027 (legal-b.yaml),
+# nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring (guides.yaml),
+# nl-regeling-gnw-art-3-17, be-medicines-law-1964-art-6quater (legal-a.yaml), be-medicines-law-1964,
+# cbg-geneesmiddeleninformatiebank, ema-medicines-search, fda-pcac-2026-07-meeting, lareb-home (shared.yaml),
+# medlineplus-malignant-hypertension (safety-a.yaml; added by the fact-checker for the stop-now signs),
+# mallory-2021-melanotan-priapism (melanotan-ii.yaml; added by the second fact-check, 23 October 2026).
+
+# ---------------------------------------------------------------- the molecule
+
+pubchem-bremelanotide:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 9941379, Bremelanotide"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/9941379
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through PUG REST on 22 October 2026: molecular formula C50H68N14O10, molecular weight 1025.2; isomeric SMILES with an N-acetyl norleucine start, a ring closed between the aspartic-acid side chain and the lysine side chain, and a free carboxylic acid (C(=O)O) at the end. Synonyms include PT-141, PT 141, CAS 189691-06-3, UNII 6Y24O4F92S, 'Bremelanotide [USAN:INN]', Vyleesi and '…L-lysine-(2->7)-lactam'. Cited for: formula, mass, structure, identifiers."
+
+pubchem-melanotan-ii:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 92432, Melanotan II"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/92432
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through PUG REST on 22 October 2026: molecular formula C50H69N15O9, molecular weight 1024.2; the isomeric SMILES is identical to bremelanotide's (CID 9941379) except at the end, which is an amide (C(=O)N) instead of a free acid (C(=O)O). Cited for: melanotan II differs from bremelanotide only at its end."
+
+chembl-bremelanotide:
+  type: dataset
+  authors: "European Bioinformatics Institute (EMBL-EBI)"
+  title: "ChEMBL compound report card: CHEMBL2070241 (bremelanotide)"
+  container: "ChEMBL"
+  year: 2026
+  url: https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL2070241/
+  accessed: 2026-10-22
+  verified: url
+  note: "Read through the ChEMBL API on 22 October 2026: molecule type protein, max phase 4, first approval 2019, parenteral, ATC G02CX05, USAN stem '-melanotide' (melanocortin receptor agonists), USAN year 2005; mw (free base) 1025.18; salt form bremelanotide acetate CHEMBL4297533 (synonym Vyleesi). Cited for: identifiers and drug class."
+
+king-2007-melanocortin-erection:
+  type: review
+  authors: "King SH, Mayorov AV, Balse-Srinivasan P, Hruby VJ, Vanderah TW, Wessells H"
+  title: "Melanocortin receptors, melanotropic peptides and penile erection"
+  container: "Current Topics in Medicinal Chemistry"
+  year: 2007
+  volume: "7"
+  pages: "1098-1106"
+  pmid: "17584130"
+  pmcid: PMC2694735
+  verified: pubmed
+  note: "PubMed record has no DOI. Abstract: central MC3 and MC4 receptors may initiate or facilitate erection; MC4R is 'emerging as the principle effector'; 'The non-specific \"superpotent\" MC agonist, PT-141, which is the carboxylate derivative of MT-II, has reached phase II human trials.' University of Arizona and University of Washington authors. Cited for: PT-141 is the carboxylic-acid form of melanotan II."
+
+dhillon-2019-bremelanotide-first-approval:
+  type: review
+  authors: "Dhillon S, Keam SJ"
+  title: "Bremelanotide: First Approval"
+  container: "Drugs"
+  year: 2019
+  volume: "79"
+  pages: "1599-1606"
+  doi: 10.1007/s40265-019-01187-w
+  pmid: "31429064"
+  verified: pubmed
+  note: "Abstract: approved in the USA for premenopausal women with acquired, generalised HSDD; self-administered, on-demand subcutaneous therapy; 'Initially developed by Palatin Technologies who sponsored the Phase 3 clinical trials, bremelanotide was subsequently out-licensed to AMAG Pharmaceuticals Inc. for exclusive North American rights'; a synthetic analogue of alpha-MSH with high affinity for MC4R. Cited for: who developed and licensed it."
+
+# ---------------------------------------------------------------- US regulator documents
+
+fda-label-vyleesi-2020:
+  type: label
+  authors: "U.S. Food and Drug Administration"
+  title: "VYLEESI (bremelanotide injection), for subcutaneous use: prescribing information, revised 10/2020 (NDA 210557, supplement 2)"
+  container: "Drugs@FDA"
+  year: 2020
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/210557s002lbl.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Downloaded 22 October 2026 (the latest label PDF on Drugs@FDA; the current SPL on DailyMed, dailymed-vyleesi-label, has the same clinical text with Cosette Pharmaceuticals as holder). Indication and limitations of use (not for postmenopausal women or men; 'not indicated to enhance sexual performance'); contraindication: uncontrolled hypertension or known cardiovascular disease; 5.1 blood pressure up to 6/3 mmHg, peak 2-4 h, heart rate down up to 5 bpm, usually back to baseline within 12 h; 5.2 focal hyperpigmentation 1% (phase 3) and 38% after 8 daily doses, 14% more after 8 further days, resolution not confirmed in all; 5.3 nausea 40%, anti-emetic in 13%, 8% stopped; Table 1 adverse reactions; 18% vs 2% stopped for adverse reactions; one case of acute hepatitis; 7.1 slowed gastric emptying, 7.2 oral naltrexone exposure decreased; 8.1 dog and mouse developmental findings, 7 pregnancies in trials; 12.1 order of potency MC1R, MC4R, MC3R, MC5R, MC2R and 'The mechanism by which VYLEESI improves HSDD in women is unknown'; 12.3 half-life about 2.7 h, Tmax about 1 h, bioavailability about 100%; 14 Tables 2-4 (FSFI desire, FSDS-DAO Q13, satisfying sexual events) and discontinuation 40% vs 13% and 39% vs 25%; 16 single-dose prefilled autoinjector, clear solution."
+
+fda-2019-vyleesi-approval-letter:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "NDA 210557 approval letter to AMAG Pharmaceuticals (Vyleesi, bremelanotide), 21 June 2019"
+  container: "Drugs@FDA"
+  year: 2019
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2019/210557Orig1s000ltr.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "NDA submitted 23 March 2018 under section 505(b); not referred to an advisory committee; postmarketing requirements under 505(o): 3635-1 pregnancy registry and 3635-2 claims-data pregnancy study (completion May 2030, final reports December 2030); 3635-3 lactation trial (completion May 2025, final report December 2025); quarterly reports on liver injury for three years. Cited for: the approval route and what the FDA still required after approval."
+
+fda-2019-vyleesi-multidiscipline-review:
+  type: regulator
+  authors: "U.S. Food and Drug Administration, Center for Drug Evaluation and Research"
+  title: "NDA 210557 Multi-Discipline Review (Vyleesi, bremelanotide)"
+  container: "Drugs@FDA"
+  year: 2019
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/nda/2019/210557Orig1s000MultidisciplineR.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Downloaded and read (pdftotext) 22 October 2026. Benefit-risk summary: median desire-score improvement 0.6 vs 0 on placebo from a baseline median of 1.8 (scale 1.2-6.0), median distress improvement 1 vs 0 from a baseline of 3 (scale 0-4); 'the mechanism by which BMT improves the symptoms of HSDD is unknown'; transient BP rise about 3 mmHg, heart rate down about 2 bpm; 3.9% used consecutive doses less than 12 h apart; hyperpigmentation 1% in phase 3, 'Reversibility was documented in one-half of cases during the period of follow-up', 'There does not appear to be an increased risk in developing nevi that are atypical or undergo malignant transformation, although the duration and extent of exposure in the phase 3 trials limits definitive conclusions'; postmenopausal women had more variable exposure and higher background cardiovascular risk. Pharmacology/toxicology review: earlier development for erectile dysfunction in men by nasal spray (IND 61706, withdrawn in 2017); first studies in women were intranasal, but 'due to variable systemic exposure via the intranasal route' the programme moved to subcutaneous injection; the clinical team and the cardio-renal division flagged BP increases of about 4 mmHg and asked for an ambulatory BP study; MC4R activation drives sympathetic activation and BP in humans (citing Greenfield 2009). Interdisciplinary ABPM review: effects transient, not increasing between days 8 and 16, gone the day after stopping; a drug-interaction study with five antihypertensives was 'not conclusive' but suggested similar BP increases in people on them. Re-read 23 October 2026 (second fact-check): 'The goal date was extended to June 23, 2019 based on the need for an ambulatory blood pressure monitoring (ABPM) study preapproval'; 'These transient blood pressure increases with up to 8 doses per month are not expected to appreciably increase the risk of cardiovascular disease in the indicated population, which is generally at low cardiovascular risk'; pharmacology review: 'Prior clinical experience in males with BMT also indicates that a hypertensive response to MC4R activation is the more likely response (Rosen et al., 2004)'; 'IND 61706 was withdrawn in 2017' (OCR text); Addyi 'the only FDA-approved medication for HSDD' at the time."
+
+# ---------------------------------------------------------------- cells and animals
+
+zhang-2021-mc4r-structures:
+  type: article
+  authors: "Zhang H, Chen LN, Yang D, Mao C, Shen Q, Feng W, Shen DD, Dai A, Xie S, Zhou Y, Qin J, Sun JP, Scharf DH, Hou T, Zhou T, Wang MW, Zhang Y"
+  title: "Structural insights into ligand recognition and activation of the melanocortin-4 receptor"
+  container: "Cell Research"
+  year: 2021
+  volume: "31"
+  pages: "1163-1175"
+  doi: 10.1038/s41422-021-00552-3
+  pmid: "34433901"
+  pmcid: PMC8563965
+  verified: pubmed
+  note: "Cryo-electron microscopy structures of full-length human MC4R bound to the Gs protein and to alpha-MSH, afamelanotide, bremelanotide or the small molecule THIQ; peptide agonists share a conserved binding mode. Zhejiang University and Chinese academic institutes; independent of the developer. Cited for: bremelanotide binds and activates MC4R (structure in vitro)."
+
+molinoff-2003-pt141:
+  type: article
+  authors: "Molinoff PB, Shadiack AM, Earle D, Diamond LE, Quon CY"
+  title: "PT-141: a melanocortin agonist for the treatment of sexual dysfunction"
+  container: "Annals of the New York Academy of Sciences"
+  year: 2003
+  volume: "994"
+  pages: "96-102"
+  doi: 10.1111/j.1749-6632.2003.tb03167.x
+  pmid: "12851303"
+  verified: pubmed
+  note: "All authors at Palatin Technologies. PT-141 is an agonist at melanocortin receptors including MC3R and MC4R; given to rats and non-human primates it caused penile erections; in rats it raised c-Fos (a marker of activated neurons) in the hypothalamus, in a region that also takes up a tracer virus injected into the penis; in men it raised erectile activity in a dose-dependent way. Animal numbers not given in the abstract. Cited for: early animal work and the hypothalamus link."
+
+pfaus-2004-female-rat-solicitation:
+  type: article
+  authors: "Pfaus JG, Shadiack A, Van Soest T, Tse M, Molinoff P"
+  title: "Selective facilitation of sexual solicitation in the female rat by a melanocortin receptor agonist"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 2004
+  volume: "101"
+  pages: "10201-10204"
+  doi: 10.1073/pnas.0400491101
+  pmid: "15226502"
+  pmcid: PMC454387
+  verified: pubmed
+  note: "Concordia University (Montreal) with two Palatin co-authors. In female rats, PT-141 selectively increased solicitation (behaviour by which females seek out a male) without changing lordosis, pacing or other sexual behaviours, without general motor activation and without changing sexual reward. Number of rats and funding not in the abstract; the full text was not retrievable. Cited for: the animal basis of the 'desire' hypothesis."
+
+pfaus-2007-bremelanotide-preclinical:
+  type: article
+  authors: "Pfaus J, Giuliano F, Gelez H"
+  title: "Bremelanotide: an overview of preclinical CNS effects on female sexual function"
+  container: "The Journal of Sexual Medicine"
+  year: 2007
+  volume: "4 Suppl 4"
+  pages: "269-279"
+  doi: 10.1111/j.1743-6109.2007.00610.x
+  pmid: "17958619"
+  verified: pubmed
+  note: "Overview of the rat work: bremelanotide increased solicitations after injection under the skin and after infusion into the brain ventricles or the medial preoptic area (mPOA), but not the ventromedial hypothalamus; it activated the mPOA and other hypothalamic and limbic regions 'and may work by activating dopamine terminals in the mPOA' (microdialysis). Cited for: where in the rat brain it seems to act, and the dopamine hypothesis."
+
+borland-2025-hamster-bremelanotide:
+  type: article
+  authors: "Borland JM, Kohut-Jackson AL, Peyla AC, Hall MA, Mermelstein PG, Meisel RL"
+  title: "Female Syrian hamster analyses of bremelanotide, a US FDA approved drug for the treatment of female hypoactive sexual desire disorder"
+  container: "Neuropharmacology"
+  year: 2025
+  volume: "267"
+  pages: "110299"
+  doi: 10.1016/j.neuropharm.2025.110299
+  pmid: "39793696"
+  pmcid: PMC12880176
+  verified: pubmed
+  note: "University of Minnesota, NIH-funded, independent of the developer. Most MC3R and MC4R mRNA in the ventral tegmental area sits in dopamine neurons; bremelanotide at a low or high dose did not change melanocortin receptor expression in the mesolimbic dopamine system and did not enhance sexual reward (conditioned place preference); the authors conclude it 'does not act on the VTA-NAc reward circuit'. Number of animals not in the abstract. Cited for: an independent animal test that did not find a reward effect; 'very little is known about its neurobiological mechanism'."
+
+# ---------------------------------------------------------------- studies in people: men
+
+diamond-2004-intranasal-pt141-men:
+  type: trial
+  authors: "Diamond LE, Earle DC, Rosen RC, Willett MS, Molinoff PB"
+  title: "Double-blind, placebo-controlled evaluation of the safety, pharmacokinetic properties and pharmacodynamic effects of intranasal PT-141, a melanocortin receptor agonist, in healthy males and patients with mild-to-moderate erectile dysfunction"
+  container: "International Journal of Impotence Research"
+  year: 2004
+  volume: "16"
+  pages: "51-59"
+  doi: 10.1038/sj.ijir.3901139
+  pmid: "14963471"
+  verified: pubmed
+  note: "Palatin authors (Rosen academic). Nasal spray in healthy men and in Viagra-responsive men with erectile dysfunction; erections measured by a ring device (RigiScan) were significantly greater than with placebo at the higher doses, first erection after about 30 minutes; half-life 1.85-2.09 h; flushing and nausea the most common adverse events; no maximum tolerated dose found. Numbers of men not in the abstract. Cited for: early human studies in men by nasal spray."
+
+rosen-2004-subcutaneous-pt141-men:
+  type: trial
+  authors: "Rosen RC, Diamond LE, Earle DC, Shadiack AM, Molinoff PB"
+  title: "Evaluation of the safety, pharmacokinetics and pharmacodynamic effects of subcutaneously administered PT-141, a melanocortin receptor agonist, in healthy male subjects and in patients with an inadequate response to Viagra"
+  container: "International Journal of Impotence Research"
+  year: 2004
+  volume: "16"
+  pages: "135-142"
+  doi: 10.1038/sj.ijir.3901200
+  pmid: "14999221"
+  verified: pubmed
+  note: "Palatin co-authors. Injected under the skin: in healthy men a significant erectile response without any sexual stimulation (no erotic video) at the higher doses; in men with an inadequate response to Viagra, a significant response with visual sexual stimulation in a crossover design against placebo. Numbers not in the abstract. Cited for: it can cause erections on its own in men; studied in men who did not respond well to Viagra."
+
+diamond-2005-pt141-sildenafil:
+  type: trial
+  authors: "Diamond LE, Earle DC, Garcia WD, Spana C"
+  title: "Co-administration of low doses of intranasal PT-141, a melanocortin receptor agonist, and sildenafil to men with erectile dysfunction results in an enhanced erectile response"
+  container: "Urology"
+  year: 2005
+  volume: "65"
+  pages: "755-759"
+  doi: 10.1016/j.urology.2004.10.060
+  pmid: "15833522"
+  verified: pubmed
+  note: "Palatin authors. 19 men with erectile dysfunction who responded to Viagra or Levitra; randomised crossover of sildenafil plus nasal PT-141, sildenafil plus placebo spray, and double placebo; erections over 6 hours were greater with the combination than with sildenafil alone; no new or more frequent adverse events reported. Cited for: the combination with a PDE5 inhibitor was studied only briefly and in few men."
+
+safarinejad-2008-bremelanotide-men:
+  type: trial
+  authors: "Safarinejad MR, Hosseini SY"
+  title: "Salvage of sildenafil failures with bremelanotide: a randomized, double-blind, placebo controlled study"
+  container: "The Journal of Urology"
+  year: 2008
+  volume: "179"
+  pages: "1066-1071"
+  doi: 10.1016/j.juro.2007.10.063
+  pmid: "18206919"
+  verified: pubmed
+  note: "Tehran; independent of the developer. 342 married men with erectile dysfunction who had not responded to sildenafil, randomised to nasal bremelanotide or placebo for at least 16 attempts at home; 'positive clinical results' in 33.5% vs 8.5%; more drug-related adverse effects with bremelanotide. The journal published an Expression of Concern in 2023 (safarinejad-2023-expression-of-concern), and the same author's bremelanotide study in women was retracted (safarinejad-2008-retracted-women-study). Cited for: the only large trial in men, with that caveat."
+
+safarinejad-2023-expression-of-concern:
+  type: article
+  authors: "Safarinejad MR, Hosseini SY"
+  title: "Expression of Concern: Salvage of Sildenafil Failures With Bremelanotide: A Randomized, Double-Blind, Placebo Controlled Study"
+  container: "The Journal of Urology"
+  year: 2023
+  doi: 10.1097/JU.0000000000003117
+  pmid: "36626345"
+  verified: pubmed
+  note: "PubMed record (publication type 'Expression of Concern', 10 January 2023) attached to the 2008 trial in men. Cited for: the journal has flagged concerns about that trial."
+
+safarinejad-2008-retracted-women-study:
+  type: article
+  authors: "Safarinejad MR"
+  title: "RETRACTED: Evaluation of the safety and efficacy of bremelanotide, a melanocortin receptor agonist, in female subjects with arousal disorder: a double-blind placebo-controlled, fixed dose, randomized study"
+  container: "The Journal of Sexual Medicine"
+  year: 2008
+  volume: "5"
+  pages: "887-897"
+  doi: 10.1111/j.1743-6109.2007.00698.x
+  pmid: "18179455"
+  verified: pubmed
+  note: "Retracted at the request of the Editor-in-Chief after a re-review of all the author's papers in the journal raised 'multiple concerning questions about the methodology, results, and statistical interpretation'; the author did not provide his original data. Cited only to say that this study is not used on the page."
+
+# ---------------------------------------------------------------- studies in people: women
+
+diamond-2006-bremelanotide-women:
+  type: trial
+  authors: "Diamond LE, Earle DC, Heiman JR, Rosen RC, Perelman MA, Harning R"
+  title: "An effect on the subjective sexual response in premenopausal women with sexual arousal disorder by bremelanotide (PT-141), a melanocortin receptor agonist"
+  container: "The Journal of Sexual Medicine"
+  year: 2006
+  volume: "3"
+  pages: "628-638"
+  doi: 10.1111/j.1743-6109.2006.00268.x
+  pmid: "16839319"
+  verified: pubmed
+  note: "Palatin first authors. 18 premenopausal women with female sexual arousal disorder, single nasal dose or placebo in a double-blind crossover; more women reported moderate or high desire after bremelanotide (P = 0.0114); vaginal blood flow while watching erotic videos did not change significantly. Cited for: the first study in women."
+
+clayton-2016-bremelanotide-phase-2b:
+  type: trial
+  authors: "Clayton AH, Althof SE, Kingsberg S, DeRogatis LR, Kroll R, Goldstein I, Kaminetsky J, Spana C, Lucas J, Jordan R, Portman DJ"
+  title: "Bremelanotide for female sexual dysfunctions in premenopausal women: a randomized, placebo-controlled dose-finding trial"
+  container: "Women's Health (London, England)"
+  year: 2016
+  volume: "12"
+  pages: "325-337"
+  doi: 10.2217/whe-2016-0018
+  pmid: "27181790"
+  pmcid: PMC5384512
+  verified: pubmed
+  note: "Funded by Palatin (stated). Phase 2b, NCT01382719: 397 premenopausal women randomised to placebo or one of three doses under the skin, as desired, for 12 weeks; efficacy population 327. Pooled two higher doses vs placebo: +0.7 vs +0.2 satisfying sexual events a month, +3.6 vs +1.9 FSFI total, -11.1 vs -6.8 FSDS-DAO total. Full text: 'Intensive BP monitoring was included to address US FDA concerns expressed after earlier studies of an intranasal BMT formulation'. Cited for: the dose-finding trial and the reason for intensive BP monitoring."
+
+white-2017-bremelanotide-abpm:
+  type: article
+  authors: "White WB, Myers MG, Jordan R, Lucas J"
+  title: "Usefulness of ambulatory blood pressure monitoring to assess the melanocortin receptor agonist bremelanotide"
+  container: "Journal of Hypertension"
+  year: 2017
+  volume: "35"
+  pages: "761-768"
+  doi: 10.1097/HJH.0000000000001221
+  pmid: "27977473"
+  pmcid: PMC5338879
+  verified: pubmed
+  note: "The 24-hour blood-pressure results of the same phase 2b trial (397 women with normal or controlled blood pressure); supported by Palatin. Abstract: at the highest dose, placebo-subtracted ambulatory systolic BP rose 3.1 and 3.2 mmHg in the 0-4 h interval after each of two doses 24 h apart (similar rises in diastolic BP; peak increases typically lasted less than 15 min); 26 participants were withdrawn for prespecified BP rises, in similar proportions in all four groups including placebo. Full text: placebo-subtracted heart rate fell (range of means -4.8 to -6.6 bpm) in the first 8 hours; five SBP elevations above 170 mmHg lasting more than 15 min after bremelanotide, none after placebo. (Fact-check 22 October 2026: an earlier version of this note misread the two systolic values as systolic and diastolic.) Full text: the drug 'was initially developed for intranasal administration; however, this route was associated with a wide variability in bioavailability', potentially exposing some patients to higher levels and 'a heightened risk of autonomic or other adverse effects including elevations in blood pressure'; women with uncontrolled hypertension were excluded. Cited for: blood-pressure effect, and why the nasal route was dropped."
+
+clayton-2017-bremelanotide-alcohol:
+  type: trial
+  authors: "Clayton AH, Lucas J, DeRogatis LR, Jordan R"
+  title: "Phase I Randomized Placebo-controlled, Double-blind Study of the Safety and Tolerability of Bremelanotide Coadministered With Ethanol in Healthy Male and Female Participants"
+  container: "Clinical Therapeutics"
+  year: 2017
+  volume: "39"
+  pages: "514-526.e14"
+  doi: 10.1016/j.clinthera.2017.01.018
+  pmid: "28189361"
+  verified: pubmed
+  note: "Palatin co-authors. 24 healthy adults (12 men, 12 women), three-way crossover of nasal bremelanotide or placebo with or without alcohol; no pharmacokinetic interaction; no significant drop in blood pressure on standing. Cited for: alcohol."
+
+kingsberg-2019-reconnect:
+  type: trial
+  authors: "Kingsberg SA, Clayton AH, Portman D, Williams LA, Krop J, Jordan R, Lucas J, Simon JA"
+  title: "Bremelanotide for the Treatment of Hypoactive Sexual Desire Disorder: Two Randomized Phase 3 Trials"
+  container: "Obstetrics and Gynecology"
+  year: 2019
+  volume: "134"
+  pages: "899-908"
+  doi: 10.1097/AOG.0000000000003500
+  pmid: "31599840"
+  pmcid: PMC6819021
+  verified: pubmed
+  note: "RECONNECT, studies 301 (NCT02333071) and 302 (NCT02338960); sponsored by Palatin, funding Palatin and AMAG. 1,267 premenopausal women randomised, 1,247 safety and 1,202 efficacy population; 85.6% white, 96.6% from US sites, mean age 39; 24 weeks as needed under the skin. Placebo-subtracted change in FSFI desire domain 0.30 and 0.42 (integrated 0.35); FSDS-DAO item 13 -0.37 and -0.29 (integrated -0.33); effect sizes 0.39 (desire) and 0.27 (distress). Satisfying sexual events: no difference (key secondary endpoint). Anchor responders (General Assessment Questionnaire q3) 58.3% and 58.2% vs 36.1% and 35.4%. Withdrawal 41.9% vs 16.0% and 43.8% vs 28.4%. Sample size simulations had predicted a desire difference of 1.0. Cited for: the approval trials."
+
+simon-2019-reconnect-extension:
+  type: trial
+  authors: "Simon JA, Kingsberg SA, Portman D, Williams LA, Krop J, Jordan R, Lucas J, Clayton AH"
+  title: "Long-Term Safety and Efficacy of Bremelanotide for Hypoactive Sexual Desire Disorder"
+  container: "Obstetrics and Gynecology"
+  year: 2019
+  volume: "134"
+  pages: "909-917"
+  doi: 10.1097/AOG.0000000000003514
+  pmid: "31599847"
+  pmcid: PMC6819023
+  verified: pubmed
+  note: "52-week open-label extension of RECONNECT, funded by Palatin and AMAG: 684 of 856 eligible women entered, 272 (about 40%) completed; adverse events were the main reason for stopping (21.2%), then withdrawn consent (18.3%); nausea 40.4%, flushing 20.6%, headache 12.0%; no new safety signals reported; the authors name selection bias as 'the most notable limitation' (only women who completed the core phase without serious adverse events could enter). The full text describes the acute hepatitis case differently from the label (stopped after the 20th injection; transaminases more than 20 times normal; about two times normal at 6 months); the page follows the label. Cited for: longer use, and how many stopped."
+
+clayton-2022-bremelanotide-safety:
+  type: article
+  authors: "Clayton AH, Kingsberg SA, Portman D, Sadiq A, Krop J, Jordan R, Lucas J, Simon JA"
+  title: "Safety Profile of Bremelanotide Across the Clinical Development Program"
+  container: "Journal of Women's Health"
+  year: 2022
+  volume: "31"
+  pages: "171-182"
+  doi: 10.1089/jwh.2021.0191
+  pmid: "35147466"
+  verified: pubmed
+  note: "Developer and licensee authors. About 3,500 people in 43 completed studies; use for up to 18 months in phase 3; hyperpigmentation rare with labelled use but in more than a third after up to 16 consecutive daily doses; small transient BP increases; interactions mostly not clinically significant except lower indomethacin and naltrexone levels; 70% of the bremelanotide group vs 87% of the placebo group went on to the open-label phase. Cited for: the size of the safety database."
+
+spana-2022-bremelanotide-weight:
+  type: trial
+  authors: "Spana C, Jordan R, Fischkoff S"
+  title: "Effect of bremelanotide on body weight of obese women: Data from two phase 1 randomized controlled trials"
+  container: "Diabetes, Obesity & Metabolism"
+  year: 2022
+  volume: "24"
+  pages: "1084-1093"
+  doi: 10.1111/dom.14672
+  pmid: "35170192"
+  pmcid: PMC9314948
+  verified: pubmed
+  note: "Palatin authors and funding. Two single-centre, double-blind, placebo-controlled phase 1 trials in premenopausal women with obesity (Study A 58 women for 16 days, Study B 27 women in a 3-period crossover): body weight fell by 1.3 kg more than placebo in Study A and calorie intake by about 400 kcal a day; in Study B six women were withdrawn under blood-pressure criteria, of whom (full text) only two met the criteria shortly after a bremelanotide dose, the others having just received placebo. Cited for: MC4R activation also reduces appetite in people."
+
+thurston-2022-mc4r-fmri:
+  type: trial
+  authors: "Thurston L, Hunjan T, Mills EG, Wall MB, Ertl N, Phylactou M, Muzi B, Patel B, Alexander EC, Suladze S, Modi M, Eng PC, Bassett PA, Abbara A, Goldmeier D, Comninos AN, Dhillo WS"
+  title: "Melanocortin 4 receptor agonism enhances sexual brain processing in women with hypoactive sexual desire disorder"
+  container: "The Journal of Clinical Investigation"
+  year: 2022
+  volume: "132"
+  doi: 10.1172/JCI152341
+  pmid: "36189794"
+  pmcid: PMC9525110
+  verified: pubmed
+  note: "Imperial College London, investigator-sponsored (NCT04179734), funded by AMAG, the MRC and NIHR; the drug was bremelanotide from AMAG. Randomised, double-blind, placebo-controlled crossover in 31 premenopausal heterosexual women with HSDD (40 randomised): more reported increased desire in the 24 hours after bremelanotide than after placebo (P = 0.007); on fMRI, changed activity in the cerebellum, supplementary motor area and secondary somatosensory cortex in response to erotic videos; more nausea and fullness, less food eaten; small rises in LH, FSH and testosterone. Cited for: the only study of what it does in the human brain."
+
+# ---------------------------------------------------------------- independent reanalysis and critique
+
+spielmans-2021-reconnect-reanalysis:
+  type: meta-analysis
+  authors: "Spielmans GI"
+  title: "Re-Analyzing Phase III Bremelanotide Trials for \"Hypoactive Sexual Desire Disorder\" in Women"
+  container: "Journal of Sex Research"
+  year: 2021
+  volume: "58"
+  pages: "1085-1105"
+  doi: 10.1080/00224499.2021.1885601
+  pmid: "33678061"
+  verified: pubmed
+  note: "Independent reanalysis (Metropolitan State University) based on the FDA application data: results similar to the published report, but 72.72% of protocol-listed outcomes not reported; stopping because of adverse events much more common on bremelanotide (OR 11.98, 95% CI 3.74-38.37; number needed to harm 6); completing the trial and entering the extension less likely (OR 0.30); the author concludes the drug 'is generally not useful'. Cited for: the independent critique."
+
+kingsberg-2021-reply-spielmans:
+  type: article
+  authors: "Kingsberg SA, Clayton AH, Portman D, Krop J, Jordan R, Lucas J, Simon JA"
+  title: "Failure of a Meta-analysis: A Commentary on Glen Spielmans's \"Re-Analyzing Phase III Bremelanotide Trials for 'Hypoactive Sexual Desire Disorder in Women'\""
+  container: "Journal of Sex Research"
+  year: 2021
+  volume: "58"
+  pages: "1106-1107"
+  doi: 10.1080/00224499.2021.1902926
+  pmid: "33835907"
+  verified: pubmed
+  note: "Reply by the trial authors (including Palatin employees) disputing the reanalysis; no abstract. Cited for: the trial authors contest the critique."
+
+mintzes-2021-hsdd-regulatory-precedent:
+  type: review
+  authors: "Mintzes B, Tiefer L, Cosgrove L"
+  title: "Bremelanotide and flibanserin for low sexual desire in women: the fallacy of regulatory precedent"
+  container: "Drug and Therapeutics Bulletin"
+  year: 2021
+  volume: "59"
+  pages: "185-188"
+  doi: 10.1136/dtb.2021.000020
+  pmid: "34642243"
+  verified: pubmed
+  note: "Independent critique: in trials flibanserin led to about one additional satisfying sexual experience every two months, 'bremelanotide to none'; shifts in primary outcomes and a contested indication; argues approval rested on the flibanserin precedent. Cited for: the critical view of the evidence."
+
+# ---------------------------------------------------------------- blood pressure mechanism
+
+greenfield-2009-mc4r-blood-pressure:
+  type: article
+  authors: "Greenfield JR, Miller JW, Keogh JM, Henning E, Satterwhite JH, Cameron GS, Astruc B, Mayer JP, Brage S, See TC, Lomas DJ, O'Rahilly S, Farooqi IS"
+  title: "Modulation of blood pressure by central melanocortinergic pathways"
+  container: "The New England Journal of Medicine"
+  year: 2009
+  volume: "360"
+  pages: "44-52"
+  doi: 10.1056/NEJMoa0803085
+  pmid: "19092146"
+  verified: pubmed
+  note: "People with a loss-of-function mutation in MC4R had less hypertension than equally overweight controls (24% vs 53%), lower blood pressure, lower heart-rate rises and lower urinary noradrenaline; a different MC4R agonist given for 7 days to 28 overweight or obese volunteers raised systolic BP by 9.3 and diastolic by 6.6 mmHg at the maximum tolerated dose. Cited for: why an MC4R agonist raises blood pressure (the sympathetic nervous system), shown in people."
+
+# ---------------------------------------------------------------- products outside the legal supply chain
+
+mestria-2021-seized-melanotan-bremelanotide:
+  type: article
+  authors: "Mestria S, Odoardi S, Frison G, Strano Rossi S"
+  title: "LC-HRMS characterization of the skin pigmentation and sexual enhancers melanotan II and bremelanotide sold on the black market of performance and image enhancing drugs"
+  container: "Drug Testing and Analysis"
+  year: 2021
+  volume: "13"
+  pages: "876-882"
+  doi: 10.1002/dta.2986
+  pmid: "33245851"
+  verified: pubmed
+  note: "Forensic toxicology laboratories in Rome and Venice; eight unknown samples confiscated by police together with anabolic steroids and other drugs intended for bodybuilders were identified by mass spectrometry as melanotan II or bremelanotide, 'not legally marketed'. Cited for: bremelanotide circulates outside the legal supply chain, next to its close relative."
+
+# ---------------------------------------------------------------- registries, databases, other regulators
+
+ctgov-bremelanotide-search-2026-10-22:
+  type: registry
+  authors: "U.S. National Library of Medicine"
+  title: "ClinicalTrials.gov: studies with the intervention bremelanotide or PT-141 (search run 22 October 2026)"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/search?intr=bremelanotide
+  accessed: 2026-10-22
+  verified: registry
+  note: "10 records: NCT00425256 (phase 2, female sexual arousal disorder, 2006-2007, Palatin; no results posted), NCT01382719 (phase 2b, published as clayton-2016), NCT02333071 and NCT02338960 (RECONNECT), NCT03973047 (phase 1, ondansetron and nausea, 228 women, AMAG; reported in the label), NCT04179734 (Imperial College fMRI, published as thurston-2022), NCT04943068 (phase 3 bridging trial in South Korea, Kwang Dong, 193 women, completed 16 May 2023, no results posted), NCT05709444 (phase 2 in diabetic kidney disease, 16 people, completed 26 April 2024, no results posted), NCT06565611 (phase 2 with tirzepatide for obesity, 108 people planned, active not recruiting, no results posted), NCT06867835 (breast-milk study, 10 women, completed 15 November 2025, no results posted). Fact-check 23 October 2026 (API v2 re-run, same 10 records): no registered trial of bremelanotide for erection problems or other sexual problems in men, but NCT05709444 and NCT06565611 accept both sexes (eligibility 'ALL'), so the earlier wording 'no registered trial in men' was wrong. Cited for: registered trials, their status and posted results."
+
+ema-under-evaluation-2026-10:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Applications for new human medicines under evaluation by the CHMP: October 2026"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/report/applications-new-human-medicines-under-evaluation-october-2026_en.xlsx
+  accessed: 2026-10-22
+  verified: url
+  note: "Linked from the EMA page 'Medicines for human use under evaluation'. Excel list downloaded and searched by the fact-checker on 22 October 2026: it gives the INN and a summary of the indication for every initial marketing-authorisation application that has been validated and whose evaluation has started; entries leave the list after a CHMP opinion or a withdrawal. No entry names bremelanotide, and no indication mentions sexual desire or sexual function. Cited for: no EU application for bremelanotide is under evaluation."
+
+mhra-products-search-bremelanotide:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products: search results for 'bremelanotide' and 'vyleesi'"
+  year: 2026
+  url: https://products.mhra.gov.uk/search/?search=bremelanotide&page=1
+  accessed: 2026-10-22
+  verified: url
+  note: "Searched in a browser on 22 October 2026 (the page loads its results with JavaScript): 'There are no search results for bremelanotide' and 'There are no search results for vyleesi'. Control search 'afamelanotide' returned 2 results, so the search worked. The database lists products with a UK marketing authorisation (PL, PLGB or PLNI numbers)."
+
+nhs-high-blood-pressure:
+  type: web
+  authors: "NHS (England)"
+  title: "High blood pressure (hypertension)"
+  year: 2024
+  url: https://www.nhs.uk/conditions/high-blood-pressure/
+  accessed: 2026-10-22
+  verified: url
+  note: "Page last reviewed 19 July 2024. High blood pressure is 140/90 or higher when checked by a healthcare professional, or 135/85 or higher at home; it 'does not usually cause any symptoms', so testing is the only way to know; checks are available at a pharmacy or GP surgery, and a home monitor may be used. Cited for: why to know your blood pressure, and the thresholds."

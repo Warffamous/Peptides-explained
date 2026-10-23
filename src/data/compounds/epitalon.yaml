@@ -1,0 +1,133 @@
+# Epitalon — locale-independent facts. Every value below is sourced; see research/stubs-a.md.
+slug: epitalon
+tier: 2
+status: stub
+# experimental: no formal development programme outside the originating institute; a US orphan
+# designation (retinitis pigmentosa, 2010) was withdrawn in 2016; not in the list of peptide medicines
+# registered in Russia (Deigin 2022, Table 1); FDA found no approved product in the ten countries it
+# checked or in the EU.
+category: experimental
+class: longevity-claimed
+body_systems: [endocrine, cellular]
+names:
+  common: Epitalon
+  full: Ala-Glu-Asp-Gly tetrapeptide
+  other: [Epithalon, Epithalone, AEDG peptide]
+  brands: []
+identifiers:
+  pubchem_cid: 219042
+  cas: 307297-39-8
+  unii: O65P17785G
+molecular:
+  formula: C14H22N4O9
+  mass_da: 390.35
+  smiles: "C[C@@H](C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](CC(=O)O)C(=O)NCC(=O)O)N"
+  smiles_source: pubchem-epitalon
+sequence:
+  display: "Ala-Glu-Asp-Gly"
+  residues: [Ala, Glu, Asp, Gly]
+  n_terminus: H
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: fda-pcac-2026-epitalon-briefing
+evidence:
+  # Judgement call (research/stubs-a.md): the highest published human evidence is one small randomised,
+  # placebo-controlled study in 40 women (Ivko 2020, in Russian), so phase-2 under the rubric.
+  human_clinical: phase-2
+  preclinical_volume: extensive
+  independence: single-group-dominant
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json, fda-pcac-2026-epitalon-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, fda-pcac-2026-epitalon-briefing] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, fda-pcac-2026-epitalon-briefing] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-epitalon-briefing] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-epitalon-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  # Not named on the List; S0 covers substances with no approval by any government health authority.
+  # Same reasoning as KPV (research/stubs-a.md, WADA).
+  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, fda-pcac-2026-epitalon-briefing] }
+studies:
+  # Originating group (Khavinson, St Petersburg Institute of Bioregulation and Gerontology).
+  - id: khavinson-2003-telomerase
+    source: khavinson-2003-epitalon-telomerase
+    year: 2003
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: anisimov-2003-mice
+    source: anisimov-2003-epitalon-shr-mice
+    year: 2003
+    species: mouse
+    n: 108
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Sochi primate institute with Khavinson as co-author, so originating.
+  - id: goncharova-2001-monkeys
+    source: goncharova-2001-epitalon-monkeys
+    year: 2001
+    species: primate
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Rats and patients in one paper; patient numbers and control not stated in the abstract.
+  - id: khavinson-2002-retina
+    source: khavinson-2002-epitalon-retinitis
+    year: 2002
+    species: mixed
+    n: null
+    design: case-series
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: null
+  # Design from the FDA briefing: 75 women measured; the 40 with low values were randomised to spray
+  # (20) or placebo (20); the other 35 were a reference group outside the trial, so n counts the 40
+  # in the randomised comparison (fact-check 23 Oct 2026). Blinding not specified.
+  - id: ivko-2020-night-shift
+    source: ivko-2020-aedg-circadian
+    year: 2020
+    species: human
+    n: 40
+    design: rct
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Independent group, Brunel University London; self-funded students and departmental funds.
+  - id: al-dulaimi-2025-telomeres
+    source: al-dulaimi-2025-epitalon-telomeres
+    year: 2025
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: academic
+    group: independent
+    blinded: null
+    controlled: true
+  # Belgian public-health laboratory: identification in two illegal preparations.
+  - id: vanhee-2015-illegal-products
+    source: vanhee-2015-epitalon-illegal
+    year: 2015
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: government
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: []
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

@@ -1,0 +1,700 @@
+# Sources for the Tier 2 stub pages of group stubs-a: MOTS-c, epitalon, Semax, Selank and
+# thymosin alpha-1. Every entry was looked up on the accessed date (PubMed records via the NCBI
+# E-utilities; regulator, registry and law pages fetched with curl). Metadata copied from the
+# record, never from memory. What each source is cited for is in its note and in research/stubs-a.md.
+#
+# Reused from other groups (not re-registered here): fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice,
+# ema-medicines-search, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, be-medicines-law-1964
+# (shared.yaml); fda-pcac-2026-briefing-intro, fda-pcac-2026-questions, fda-pcac-2026-presentations-day1,
+# fda-503a-bulks-page, fda-category-2-safety-risks, ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46,
+# wada-2026-list-en, wada-2027-list-en (bpc-157.yaml); fda-pcac-2026-semax-briefing,
+# wada-2027-list-explanatory-note, federalregister-fda-search-2026-10-22 (legal-b.yaml);
+# fda-pcac-2026-tb500-briefing (tb-500.yaml); fda-pcac-2024-12-minutes, fda-pcac-2024-12-meeting
+# (cjc-1295.yaml); nhs-cellulitis, nhs-sepsis, nhs-anaphylaxis, nhs-low-blood-sugar (safety-a.yaml).
+
+# ---------------------------------------------------------------- United States: FDA advisory committee documents
+
+fda-pcac-2026-mots-c-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for MOTS-c-Related Bulk Drug Substances (MOTS-c (free base) and MOTS-c acetate), Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193347/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Evaluation dated 11 May 2026, read in full (pdftotext). Sequence H-Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg-OH, C101H152N28O22S2, 2174.6 g/mol; 'first discovered by Lee et al. in 2015'; not well characterised (naming, impurities, aggregates, endotoxin, bioburden); immunogenicity risk by injection cannot be ruled out; EMA lists no authorised product; no monograph in the European or Japanese pharmacopoeia; nonclinical work 'limited to in-vitro and in-vivo rodent models', no dose-response assessments, molecular target(s) unknown; no in-vivo PK, acute, repeat-dose, genotoxicity, reproductive or carcinogenicity studies; in human blood in a dish MOTS-c was quickly cut into shorter peptides (Knoop 2019); lifespan data from Reynolds 2021 (median 912 vs 970 days); FAERS searched to 9 March 2025, no reports; 'did not identify ... any clinical studies or human exposure data for MOTS-c via any route'; uses reviewed: obesity and osteoporosis; MOTS-c listed as prohibited in Global DRO (2024 WADA List)."
+
+fda-pcac-2026-epitalon-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for Epitalon-Related Bulk Drug Substances (Epitalon (free base) and Epitalon acetate), Pharmacy Compounding Advisory Committee meeting, 23–24 July 2026"
+  year: 2026
+  url: https://www.fda.gov/media/193345/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Evaluation dated 12 May 2026, read in full (pdftotext). Synthetic tetrapeptide Ala-Glu-Asp-Gly, C14H22N4O9, 390.35 g/mol; first synthesised in the late 1980s under Prof. Vladimir Khavinson, St Petersburg; 'may be identified as the putative active component of a bovine pineal gland extract known as epithalamin'; 'Most pharmacological studies of epitalon have been conducted and published by Dr. Khavinson's research group in Russia'; three human studies found (two sublingual in night-shift workers: Khavinson 2021, Ivko 2021; one parabulbar injection in retinitis pigmentosa: Khavinson 2002b); Ivko: randomised, placebo-controlled, 75 women aged 40–50 (40 randomised), 20 days, outcome urinary 6-sulfatoxymelatonin, blinding not specified, no sleep outcomes, no safety data; US orphan designation for retinitis pigmentosa 2 September 2010, withdrawn/revoked 6 January 2016; no approved products in Canada, Australia, UK, Belgium, Ireland, France, Norway, Germany, Spain, Italy, none authorised by EMA; old monkeys: evening melatonin up more than 4-fold (Goncharova 2001); rat pineal glands in a dish: no increase in melatonin release (Djeridane 2003); no acute, repeat-dose or reproductive toxicity studies; genotoxicity and tumour studies all from one group, fixed dose, female mice only, exposure at most about 5.5 months; 'epitalon has the potential to be carcinogenic' because telomerase activation and long telomeres are associated with cancer risk; no 2-year carcinogenicity study; no PK data in humans; FAERS to 8 December 2025 and HFCS to 5 December 2025: no reports; immunogenicity concern for injection; use reviewed: insomnia."
+
+fda-pcac-2024-thymosin-alpha-1-briefing:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "FDA Briefing Document for Thymosin Alpha-1 Related Bulk Drug Substances (Thymosin alpha-1 (free base) and Thymosin alpha-1 acetate), Pharmacy Compounding Advisory Committee meeting, 4 December 2024"
+  year: 2024
+  url: https://www.fda.gov/media/183820/download
+  accessed: 2026-10-22
+  verified: url
+  note: "Evaluation dated 15 November 2024, read in the relevant sections (pdftotext; re-read by the fact-checker 23 October 2026). N-terminally acetylated 28-amino-acid peptide (Ac-Ser-Asp-Ala-Ala-Val-Asp-Thr-Ser-Ser-Glu-Ile-Thr-Thr-Lys-Asp-Leu-Lys-Glu-Lys-Lys-Glu-Val-Val-Glu-Glu-Ala-Glu-Asn-OH), C129H215N33O55, 3108.3 g/mol, first isolated from calf thymus fraction 5 in 1977, made by solid-phase synthesis as thymalfasin; four US orphan designations; EMA orphan designation for hepatocellular carcinoma; according to SciClone's 2014 annual report approved in countries of the Asia-Pacific region, Latin America, Eastern Europe and the Middle East, mainly for hepatitis B and as a vaccine adjuvant ('FDA is unable to independently verify these claims of approval'); 'approved in Italy as an adjuvant to the influenza vaccine in immunocompromised subjects' (AIFA database, accessed June 2024), also India and Hong Kong (official databases cited), registered in Indonesia; Italian label: not in children, contraindicated in pregnancy and lactation, caution in atopic or allergic people, case-by-case in autoimmune disease, caution with other immunomodulators, occasional modest transient injection-site pain; Indonesian label: transient ALT flares, contraindicated in deliberately immunosuppressed patients such as transplant recipients; immunomodulatory action via TLRs on dendritic cells; a company book chapter reports over 4,400 trial subjects and over 17 million doses post-marketing; in most studies well tolerated, local injection-site reactions most common; insufficient evidence of effectiveness for hepatitis B and the other reviewed uses; not in AASLD, EASL or WHO hepatitis B guidelines or sepsis guidelines."
+
+# ---------------------------------------------------------------- United States: company filings (official host; company statements)
+
+sec-cohbar-2021-cb4211-topline:
+  type: report
+  authors: "CohBar, Inc."
+  title: "Press release dated August 10, 2021: topline results from the Phase 1a/1b study of CB4211 (Exhibit 99.2 to Form 8-K)"
+  container: "U.S. Securities and Exchange Commission, EDGAR"
+  year: 2021
+  url: https://www.sec.gov/Archives/edgar/data/1522602/000121390021041377/ea145151ex99-2_cohbar.htm
+  accessed: 2026-10-22
+  verified: url
+  note: "A company press release, not peer-reviewed; cited only for what the company reported. 'CB4211 is a novel and improved analog of MOTS-c'. Phase 1a 65 healthy adults; phase 1b 23 obese people with NAFLD randomised, 20 completed (11 CB4211, 9 placebo; the slides give the disposition), daily injections for four weeks; fasting glucose -6% vs 0%; liver fat fell in both groups (-5.03% vs -4.88% absolute); ALT, AST and fasting glucose fell more than with placebo; a 'trend' to lower body weight, no figures; no serious adverse events; injection-site reactions the only adverse events in more than 10%."
+
+sec-cohbar-2021-cb4211-slides:
+  type: report
+  authors: "CohBar, Inc."
+  title: "Q2 Investor Presentation, August 2021 (Exhibit 99.3 to Form 8-K)"
+  container: "U.S. Securities and Exchange Commission, EDGAR"
+  year: 2021
+  url: https://www.sec.gov/Archives/edgar/data/1522602/000121390021041377/ea145151ex99-3_cohbar.htm
+  accessed: 2026-10-22
+  verified: url
+  note: "Company slides, not peer-reviewed. Phase 1a: 'Persistent local deposition of drug at injection site led to interruption of study to modify formulation'; phase 1b: 23 randomised, 20 completed; phase 1a/1b safety slide: 'Injection site reactions: CB4211 (79%) vs Placebo (33%)'; pharmacokinetics 'Data pending'; liver fat also fell on placebo, 'possibly the result of confinement for 4 weeks on a controlled diet'."
+
+sec-cohbar-2023-s4:
+  type: report
+  authors: "CohBar, Inc."
+  title: "Form S-4 Registration Statement, filed 3 July 2023"
+  container: "U.S. Securities and Exchange Commission, EDGAR"
+  year: 2023
+  url: https://www.sec.gov/Archives/edgar/data/1522602/000121390023053725/fs42023_cohbar.htm
+  accessed: 2026-10-22
+  verified: url
+  note: "Company filing: 'we do not believe that the formulation of CB4211 used in the Phase 1b stage of the trial is suitable for further development. Efforts to develop an improved formulation have not been successful to date'; the Phase 1a/1b trial 'involved ... small patient populations'."
+
+sec-cohbar-2023-11-8k:
+  type: report
+  authors: "CohBar, Inc."
+  title: "Form 8-K Current Report, filed 1 November 2023 (termination of merger agreement; intention to liquidate and dissolve)"
+  container: "U.S. Securities and Exchange Commission, EDGAR"
+  year: 2023
+  url: https://www.sec.gov/Archives/edgar/data/1522602/000121390023081954/ea187569-8k_cohbar.htm
+  accessed: 2026-10-22
+  verified: url
+  note: "Item 1.02: the merger agreement with Morphogenesis was terminated effective 1 November 2023; CohBar announced its intention to commence liquidating and dissolving itself. A later 8-K (27 November 2023) reported Nasdaq's delisting determination."
+
+# ---------------------------------------------------------------- Europe
+
+ema-orphan-thymalfasin-eu-3-02-110:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "EU/3/02/110 – orphan designation for treatment of hepatocellular carcinoma (thymalfasin)"
+  year: 2003
+  url: https://www.ema.europa.eu/en/medicines/human/orphan-designations/eu-3-02-110
+  accessed: 2026-10-22
+  verified: url
+  note: "Orphan designation granted by the European Commission on 30 July 2002 to SciClone Pharmaceuticals Italy S.r.l. for thymalfasin in hepatocellular carcinoma. 'In the European Union thymalfasin is authorised in Italy, where it is used to enhance the immune response stimulated by the influenza virus vaccine.' That sentence comes from the designation summary (first published 8 January 2003), so it describes the situation then; that the Italian authorisation still stands rests on the FDA's 2024 briefing (AIFA database accessed June 2024) and on the AIFA check described in research/stubs-a.md. EMA's orphan-designation JSON (downloaded 22 October 2026, 3,310 records) lists the designation as positive, last updated 8 January 2003. An orphan designation is not a marketing authorisation. EMA's medicines JSON (2,754 records, 22 October 2026) has no record for thymalfasin, thymosin, MOTS-c, epitalon, Semax or Selank."
+
+# ---------------------------------------------------------------- Anti-doping
+
+wada-2025-list-en:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "World Anti-Doping Code International Standard: Prohibited List 2025"
+  year: 2024
+  url: https://www.wada-ama.org/sites/default/files/2024-09/2025list_en_final_clean_12_september_2024.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "S4.4.1 names 'mitochondrial open reading frame of the 12S rRNA-c (MOTS-c)' as an example of an AMPK activator. The 2024 List (2024list_en_final_22_september_2023.pdf, checked the same day) does not name MOTS-c."
+
+wada-2025-list-explanatory-note:
+  type: regulator
+  authors: "World Anti-Doping Agency"
+  title: "Summary of Major Modifications and Explanatory Notes, 2025 Prohibited List"
+  year: 2024
+  url: https://www.wada-ama.org/sites/default/files/2024-09/2025_list_explanatory_note_en_final_11_september_2024.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "S4: 'Mitochondrial open reading frame of the 12S rRNA-c (MOTS-c) was added as an example of an AMP-activated protein kinase activator.'"
+
+# ---------------------------------------------------------------- Registries and database searches
+
+ctgov-nct03998514:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT03998514 — A Phase 1a/1b Study of Safety, Tolerability, and Pharmacokinetics of CB4211 in Healthy Non-obese Subjects and Subjects With Nonalcoholic Fatty Liver Disease"
+  year: 2019
+  url: https://clinicaltrials.gov/study/NCT03998514
+  accessed: 2026-10-22
+  verified: registry
+  note: "Sponsor CohBar, Inc.; randomised, double-blind, placebo-controlled; completed 19 April 2021; enrolment 88; four US sites; no results posted (checked via the ClinicalTrials.gov API, 22 October 2026)."
+
+ctgov-nct07505745:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07505745 — A Phase 2a, Randomized, Double-blind, Placebo-controlled Study to Evaluate the Efficacy, Safety, and Pharmacodynamics of MOTS-c (a Mitochondrial-Derived Peptide) in Adults With Prediabetes and Overweight/Obesity (MOTS-MET)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07505745
+  accessed: 2026-10-22
+  verified: registry
+  note: "Recruiting; start 2 February 2026; 120 adults with prediabetes and overweight or obesity, 1:1 to MOTS-c or placebo by injection under the skin for 12 weeks; primary outcomes an insulin-sensitivity index and adverse events; anti-drug antibodies a secondary outcome; one site in Shenzhen, China; company sponsor; primary completion estimated 14 February 2027."
+
+ctgov-thymalfasin-search-2026-10-22:
+  type: dataset
+  authors: "ClinicalTrials.gov"
+  title: "ClinicalTrials.gov search, 22 October 2026: thymalfasin or thymosin alpha 1, recruiting, not yet recruiting or active"
+  year: 2026
+  url: https://clinicaltrials.gov/search?intr=thymalfasin
+  accessed: 2026-10-22
+  verified: registry
+  note: "Run through the ClinicalTrials.gov API v2: 19 studies with status recruiting, not yet recruiting or active (20 on a re-run on 23 October 2026 that also included 'enrolling by invitation'), nearly all in China and mostly in cancer (for example a phase 3 trial in 2,500 people after colorectal cancer surgery, NCT05086614), plus sepsis, vaccine-response and fertility studies. The same search for MOTS-c, epitalon, Semax and Selank found one relevant interventional study (NCT07505745, MOTS-c)."
+
+openfda-drugsfda-search-2026-10-22:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "openFDA Drugs@FDA queries, 22 October 2026: selank, semax, epitalon, MOTS-c, thymalfasin, thymosin"
+  container: "openFDA"
+  year: 2026
+  url: https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:%22selank%22
+  accessed: 2026-10-22
+  verified: url
+  note: "Each name searched as generic name, brand name and active ingredient: 'No matches found' for all six (control query for semaglutide returned results). openFDA carries the disclaimer that its data are not validated for clinical decisions; cited only for the absence of an FDA-approved product, alongside the FDA documents."
+
+pubmed-mots-c-count-2026-10-22:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for MOTS-c, 22 October 2026 (record counts by type and authorship)"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=MOTS-c%5Btiab%5D
+  accessed: 2026-10-22
+  verified: url
+  note: "NCBI E-utilities counts (re-run by the fact-checker 23 October 2026): 260 records for MOTS-c or 'mitochondrial open reading frame of the 12S rRNA' in title/abstract; 193 after removing reviews, comments, letters, editorials and errata; of these, 89 are indexed under the MeSH terms mice or rats and 105 mention mice or rats anywhere; 27 list an author named exactly 'Lee C' or 'Cohen P' (the originating USC group), an overcount because 'Lee C' is a common name. The five records tagged as clinical or randomised trials all measure the body's own MOTS-c; none gives MOTS-c to people."
+
+pubmed-epitalon-count-2026-10-22:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for epitalon (epithalon, Ala-Glu-Asp-Gly, AEDG), 22 October 2026 (record counts by authorship)"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=epitalon%5Btiab%5D+OR+epithalon%5Btiab%5D+OR+%22Ala-Glu-Asp-Gly%22%5Btiab%5D+OR+AEDG%5Btiab%5D
+  accessed: 2026-10-23
+  verified: url
+  note: "NCBI E-utilities counts for epitalon, epithalon, Ala-Glu-Asp-Gly or AEDG in title/abstract: 164 records; 146 after removing reviews, comments, letters, editorials and errata. Fact-check 23 October 2026, counted from the author lists of all 146 records: 100 (68%) have Khavinson, Anisimov or Linkova as author (101 if Kvetnoi and Trofimova are added). The figure of 109 given in an earlier draft could not be reproduced and was corrected. Of the 45 to 46 other records, about 8 are unrelated (the abbreviation AEDG in engineering, botany and other papers), so the group's share of relevant records is about 72%; most other records come from Russian or Georgian institutes that work on the same peptide 'bioregulators' (for example Kuznik, Kozina, Vinogradova, Lezhava); records by groups outside that network include Al-Dulaimi 2025 (London), Yue 2022 (China, mouse eggs), Ullah 2025 (cow eggs) and Vanhee 2015 (Belgian public-health laboratory)."
+
+pubmed-semax-selank-count-2026-10-22:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for Semax and Selank, 22 October 2026 (record counts by authorship and affiliation)"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=semax%5Btiab%5D
+  accessed: 2026-10-22
+  verified: url
+  note: "NCBI E-utilities counts (re-run 23 October 2026: Semax 209 records in title/abstract, 197 non-review; 114 to 117 core-group records depending on transliteration; Selank 65 non-review, 38 to 42 core-group, 52 to 53 cell or animal records; the Selank patient studies are Zozulia 2008 (62), Medvedev 2014 (60) and Medvedev 2015 (70), none with a placebo; a 2020 brain-scan study in 52 healthy people, Panikratova et al., did use a placebo). Writer's search, 22 October 2026: Semax 215 records, 197 after removing reviews, comments, letters, editorials and errata; 114 of these list authors from the developers' core (Myasoedov, Dolotov, Levitskaya, Grivennikov, Limborska, Dergunova, Ashmarin, Kamensky or Andreeva; Institute of Molecular Genetics and Moscow State University); the first-author affiliations of the other 83, checked one by one, are almost all Moscow institutes, with a few studies of copper binding from Catania (Italy), single studies from China, Indonesia and Taiwan, a few unrelated hits, and one Belgian analysis of seized products. Selank: 65 records after the same exclusions; 38 list Myasoedov, Andreeva, Seredenin, Zozulya, Kost, Limborska, Dergunova, Kolomin or Volkova; all primary studies except the Belgian analysis come from Russian institutes; about 50 are cell or animal studies."
+
+pubmed-thymosin-alpha-1-count-2026-10-22:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches for thymosin alpha 1 (thymalfasin), 22 October 2026 (record counts)"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=thymalfasin%5Btiab%5D+OR+%22thymosin+alpha+1%22%5Btiab%5D+OR+%22thymosin+alpha1%22%5Btiab%5D+OR+%22thymosin+alpha-1%22%5Btiab%5D+OR+%22thymosin+%CE%B11%22%5Btiab%5D+OR+zadaxin%5Btiab%5D
+  accessed: 2026-10-23
+  verified: url
+  note: "NCBI E-utilities counts (re-run by the fact-checker 23 October 2026) for thymalfasin, 'thymosin alpha 1', 'thymosin alpha1', 'thymosin alpha-1', 'thymosin α1' or Zadaxin in title/abstract: 890 records (887 on 22 October); 64 tagged as randomised controlled trials; 261 non-review records indexed under the MeSH terms mice or rats; 159 (18%) have Goldstein AL, Garaci E or Romani L as author. The two-term search alone (thymalfasin or 'thymosin alpha 1') finds only about 620 records, so the URL gives the full search."
+
+# ---------------------------------------------------------------- Chemistry databases
+
+pubchem-mots-c:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 146675088, MOTS-c"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/146675088
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST: C101H152N28O22S2, molecular weight 2174.6, isomeric SMILES; synonyms include H-MRWQEMGYIFYPRKLR-OH, Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg, CAS 1627580-64-6, UNII A5CV6JFB78."
+
+pubchem-epitalon:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 219042, Epitalon"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/219042
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST: C14H22N4O9, molecular weight 390.35, isomeric SMILES; synonyms Epithalon, Ala-Glu-Asp-Gly, CAS 307297-39-8, UNII O65P17785G. PubChem also lists 'Epithalamin' as a synonym, which is wrong: epithalamin is a cattle pineal-gland extract (FDA epitalon briefing)."
+
+pubchem-semax:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 9811102, Semax"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/9811102
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST: C37H51N9O10S, molecular weight 813.9, isomeric SMILES; synonyms Met-Glu-His-Phe-Pro-Gly-Pro, 'ACTH (4-7), Pro-Gly-Pro-', CAS 80714-61-0, UNII I5FAL2585H."
+
+pubchem-selank:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 11765600, Selank"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/11765600
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST: C33H57N11O9, molecular weight 751.9, isomeric SMILES; synonyms Thr-Lys-Pro-Arg-Pro-Gly-Pro, TP-7, CAS 129954-34-3, UNII TS9JR8EP1G."
+
+pubchem-thymalfasin:
+  type: dataset
+  authors: "National Center for Biotechnology Information"
+  title: "PubChem Compound Summary for CID 16130571, Thymalfasin"
+  container: "PubChem"
+  year: 2026
+  url: https://pubchem.ncbi.nlm.nih.gov/compound/16130571
+  accessed: 2026-10-22
+  verified: url
+  note: "PUG REST: C129H215N33O55, molecular weight 3108.3, isomeric SMILES (N-acetyl serine at the start, asparagine at the end); synonyms Thymosin alpha 1, Zadaxin, thymalfasin [USAN:INN], CAS 62304-98-7, UNII W0B22ISQ1C."
+
+# ---------------------------------------------------------------- MOTS-c: studies
+
+lee-2015-mots-c:
+  type: article
+  authors: "Lee C, Zeng J, Drew BG, Sallam T, Martin-Montalvo A, Wan J, Kim SJ, Mehta H, Hevener AL, de Cabo R, Cohen P"
+  title: "The mitochondrial-derived peptide MOTS-c promotes metabolic homeostasis and reduces obesity and insulin resistance"
+  container: "Cell Metabolism"
+  year: 2015
+  volume: "21"
+  pages: "443-454"
+  doi: 10.1016/j.cmet.2015.02.009
+  pmid: "25738459"
+  pmcid: PMC4350682
+  verified: pubmed
+  note: "Discovery paper (USC). A short open reading frame in the mitochondrial 12S rRNA gene encodes a 16-amino-acid peptide; in cells it inhibits the folate cycle and de novo purine synthesis, AICAR accumulates and AMPK is activated; skeletal muscle appears to be the main target; in mice it prevented age-dependent and high-fat-diet-induced insulin resistance and diet-induced obesity (high-fat-diet experiment N=10 per group). Disclosure: P.C. is a stockholder of and consultant for, and C.L. a consultant for, CohBar, Inc. Funded by NIH grants and a Glenn Foundation award."
+
+reynolds-2021-mots-c-exercise:
+  type: article
+  authors: "Reynolds JC, Lai RW, Woodhead JST, Joly JH, Mitchell CJ, Cameron-Smith D, Lu R, Cohen P, Graham NA, Benayoun BA, Merry TL, Lee C"
+  title: "MOTS-c is an exercise-induced mitochondrial-encoded regulator of age-dependent physical decline and muscle homeostasis"
+  container: "Nature Communications"
+  year: 2021
+  volume: "12"
+  pages: "470"
+  doi: 10.1038/s41467-020-20790-0
+  pmid: "33473109"
+  pmcid: PMC7817689
+  verified: pubmed
+  note: "Mice: MOTS-c improved physical performance in young, middle-aged and old mice; treatment started late in life (23.5 months, three times a week) improved physical capacity and healthspan (FDA: median lifespan 912 vs 970 days). Humans: in 10 sedentary healthy young men, a cycling session raised the body's own MOTS-c in muscle and blood. Competing interests: P.C. and C.L. are consultants and shareholders of CohBar, Inc. Funding: AFAR, National Institute on Aging and university fellowships."
+
+lu-2019-mots-c-ovariectomy:
+  type: article
+  authors: "Lu H, Wei M, Zhai Y, Li Q, Ye Z, Wang L, Luo W, Chen J, Lu Z"
+  title: "MOTS-c peptide regulates adipose homeostasis to prevent ovariectomy-induced metabolic dysfunction"
+  container: "Journal of Molecular Medicine (Berlin)"
+  year: 2019
+  volume: "97"
+  pages: "473-485"
+  doi: 10.1007/s00109-018-01738-w
+  pmid: "30725119"
+  verified: pubmed
+  note: "Independent group (Air Force Medical University, Xi'an). In mice whose ovaries were removed, MOTS-c prevented weight gain and insulin resistance, increased brown-fat activation and reduced fat accumulation; an AMPK blocker weakened the effect. Animal numbers not in the abstract."
+
+knoop-2019-mots-c-detection:
+  type: article
+  authors: "Knoop A, Thomas A, Thevis M"
+  title: "Development of a mass spectrometry based detection method for the mitochondrion-derived peptide MOTS-c in plasma samples for doping control purposes"
+  container: "Rapid Communications in Mass Spectrometry"
+  year: 2019
+  volume: "33"
+  pages: "371-380"
+  doi: 10.1002/rcm.8337
+  pmid: "30394592"
+  verified: pubmed
+  note: "German Sport University Cologne anti-doping laboratory. A validated LC/MS test for MOTS-c in plasma (detection limit 100 pg/mL) including four metabolites made in vitro; the endogenous levels a commercial ELISA reported in 20 healthy people (45.9–218.5 ng/mL) 'could not be confirmed by LC/MS'. The FDA cites it for rapid breakdown of MOTS-c in human blood."
+
+# ---------------------------------------------------------------- Epitalon: studies
+
+khavinson-2003-epitalon-telomerase:
+  type: article
+  authors: "Khavinson VKh, Bondarev IE, Butyugov AA"
+  title: "Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells"
+  container: "Bulletin of Experimental Biology and Medicine"
+  year: 2003
+  volume: "135"
+  pages: "590-592"
+  doi: 10.1023/a:1025493705728
+  pmid: "12937682"
+  verified: pubmed
+  note: "St Petersburg Institute of Bioregulation and Gerontology. In telomerase-negative human fetal fibroblasts in culture, epitalon induced the catalytic subunit and activity of telomerase and telomere elongation. A three-page report."
+
+anisimov-2003-epitalon-shr-mice:
+  type: article
+  authors: "Anisimov VN, Khavinson VKh, Popovich IG, Zabezhinski MA, Alimova IN, Rosenfeld SV, Zavarzina NY, Semenchenko AV, Yashin AI"
+  title: "Effect of Epitalon on biomarkers of aging, life span and spontaneous tumor incidence in female Swiss-derived SHR mice"
+  container: "Biogerontology"
+  year: 2003
+  volume: "4"
+  pages: "193-202"
+  doi: 10.1023/a:1025114230714
+  pmid: "14501183"
+  verified: pubmed
+  note: "54 female mice per group, injected under the skin 5 days a month from 3 months of age until death. No effect on mean life span; last 10% of survivors lived 13.3% longer and maximum life span was 12.3% longer; total tumour incidence unchanged, leukaemia less frequent; chromosome aberrations in bone marrow 17.1% lower."
+
+goncharova-2001-epitalon-monkeys:
+  type: article
+  authors: "Goncharova ND, Khavinson BK, Lapin BA"
+  title: "Regulatory effect of Epithalon on production of melatonin and cortisol in old monkeys"
+  container: "Bulletin of Experimental Biology and Medicine"
+  year: 2001
+  volume: "131"
+  pages: "394-396"
+  doi: 10.1023/a:1017928925177
+  pmid: "11550036"
+  verified: pubmed
+  note: "Institute of Medical Primatology, Sochi, with Khavinson as co-author (spelled 'Khavinson BK' in PubMed). In old female rhesus monkeys, epitalon stimulated evening melatonin and normalised the daily cortisol rhythm (FDA: evening melatonin more than 4-fold higher; no dose-response; sleep not measured)."
+
+khavinson-2002-epitalon-retinitis:
+  type: article
+  authors: "Khavinson V, Razumovsky M, Trofimova S, Grigorian R, Razumovskaya A"
+  title: "Pineal-regulating tetrapeptide epitalon improves eye retina condition in retinitis pigmentosa"
+  container: "Neuro Endocrinology Letters"
+  year: 2002
+  volume: "23"
+  pages: "365-368"
+  pmid: "12195242"
+  verified: pubmed
+  note: "Campbell rats with inherited retinal degeneration and patients with degenerative retinal disease (number not in the abstract); 'a positive clinical effect in 90% of the cases'. The FDA describes injections next to the eye (parabulbar)."
+
+ivko-2020-aedg-circadian:
+  type: article
+  authors: "Ivko OM, Linkova NS, Ilina AR, Sharova AA, Ryzhak GA"
+  title: "AEDG peptide regulates human circadian rhythms genes expression during pineal gland accelerated aging"
+  container: "Advances in Gerontology (Uspekhi Gerontologii)"
+  year: 2020
+  volume: "33"
+  pages: "429-435"
+  pmid: "33280326"
+  lang: ru
+  verified: pubmed
+  note: "Russian-language paper from the St Petersburg Institute of Bioregulation and Gerontology; English abstract: the AEDG peptide raised urinary 6-sulfatoxymelatonin 1.7-fold in middle-aged people and changed clock-gene expression in blood cells. The FDA epitalon briefing (as 'Ivko et al. 2021') gives the design: randomised, placebo-controlled, 75 women aged 40–50 working night shifts, 40 with low values randomised to an under-the-tongue spray or placebo for 20 days (the FDA's safety section: 20 received the peptide); the other 35 with normal values were a reference group; blinding not specified; the authors report 'distinct positive dynamics of psycho-emotional and general physical condition' in 83% against 25% with placebo, with no details of how this was assessed; no sleep outcomes; no safety data reported."
+
+al-dulaimi-2025-epitalon-telomeres:
+  type: article
+  authors: "Al-Dulaimi S, Thomas R, Matta S, Roberts T"
+  title: "Epitalon increases telomere length in human cell lines through telomerase upregulation or ALT activity"
+  container: "Biogerontology"
+  year: 2025
+  volume: "26"
+  pages: "178"
+  doi: 10.1007/s10522-025-10315-x
+  pmid: "40908429"
+  pmcid: PMC12411320
+  verified: pubmed
+  note: "Independent group (Brunel University London). In normal human epithelial cells and fibroblasts epitalon lengthened telomeres in a dose-dependent way through hTERT and telomerase; in two breast cancer cell lines (21NT, BT474) telomeres also lengthened, through ALT (alternative lengthening of telomeres). Funding (full text): 'Self-funding PhD students, and funding from the department of biosciences'; no competing interests. A correction (Biogerontology 27:1, published online 15 November 2025, doi 10.1007/s10522-025-10326-8, PMID 41240216) replaced figures 2 and 3."
+
+vanhee-2015-epitalon-illegal:
+  type: article
+  authors: "Vanhee C, Moens G, Van Hoeck E, Deconinck E, De Beer JO"
+  title: "Identification of the small research tetra peptide Epitalon, assumed to be a potential treatment for cancer, old age and Retinitis Pigmentosa in two illegal pharmaceutical preparations"
+  container: "Drug Testing and Analysis"
+  year: 2015
+  volume: "7"
+  pages: "259-264"
+  doi: 10.1002/dta.1771
+  pmid: "25535022"
+  verified: pubmed
+  note: "Belgian Scientific Institute of Public Health (now Sciensano). Epitalon identified by LC-MS in two illegal pharmaceutical preparations. Letter, no abstract."
+
+# ---------------------------------------------------------------- Semax and Selank: studies and context
+
+deigin-2022-russian-peptides:
+  type: review
+  authors: "Deigin VI, Poluektova EA, Beniashvili AG, Kozin SA, Poluektov YM"
+  title: "Development of Peptide Biopharmaceuticals in Russia"
+  container: "Pharmaceutics"
+  year: 2022
+  volume: "14"
+  pages: "716"
+  doi: 10.3390/pharmaceutics14040716
+  pmid: "35456550"
+  pmcid: PMC9030433
+  verified: pubmed
+  note: "'14 products are registered in the Russian Federation (Table 1)'; Table 1 'Peptide drugs developed in Russia' lists Semax (nootropic drug) and Selank (anxiolytic); epitalon is not in the table. Semax was synthesised at the Institute of Molecular Genetics of the Russian Academy of Sciences under I. P. Ashmarin and N. F. Myasoedov. A review by authors working in the field; cited for registration and origin only."
+
+dolotov-2006-semax-binding:
+  type: article
+  authors: "Dolotov OV, Karpenko EA, Seredenina TS, Inozemtseva LS, Levitskaya NG, Zolotarev YA, Kamensky AA, Grivennikov IA, Engele J, Myasoedov NF"
+  title: "Semax, an analogue of adrenocorticotropin (4-10), binds specifically and increases levels of brain-derived neurotrophic factor protein in rat basal forebrain"
+  container: "Journal of Neurochemistry"
+  year: 2006
+  volume: "97 Suppl 1"
+  pages: "82-86"
+  doi: 10.1111/j.1471-4159.2006.03658.x
+  pmid: "16635254"
+  verified: pubmed
+  note: "Institute of Molecular Genetics, Moscow. Tritium-labelled Semax bound specifically and reversibly to rat basal-forebrain membranes (KD about 2.4 nM); intranasal Semax raised BDNF protein there within 3 hours. The receptor itself was not identified."
+
+dolotov-2006-semax-bdnf:
+  type: article
+  authors: "Dolotov OV, Karpenko EA, Inozemtseva LS, Seredenina TS, Levitskaya NG, Rozyczka J, Dubynina EV, Novosadova EV, Andreeva LA, Alfeeva LY, Kamensky AA, Grivennikov IA, Myasoedov NF, Engele J"
+  title: "Semax, an analog of ACTH(4-10) with cognitive effects, regulates BDNF and trkB expression in the rat hippocampus"
+  container: "Brain Research"
+  year: 2006
+  volume: "1117"
+  pages: "54-60"
+  doi: 10.1016/j.brainres.2006.07.108
+  pmid: "16996037"
+  verified: pubmed
+  note: "Originating group. One intranasal application raised BDNF protein in rat hippocampus up to 1.4-fold, with more trkB activation and more conditioned avoidance responses. Animal numbers not in the abstract."
+
+gusev-1997-semax-stroke:
+  type: article
+  authors: "Gusev EI, Skvortsova VI, Miasoedov NF, Nezavibat'ko VN, Zhuravleva EIu, Vanichkin AV"
+  title: "Effectiveness of semax in acute period of hemispheric ischemic stroke (a clinical and electrophysiological study)"
+  container: "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova"
+  year: 1997
+  volume: "97"
+  pages: "26-34"
+  pmid: "11517472"
+  lang: ru
+  verified: pubmed
+  note: "Russian-language paper; English abstract: 30 patients with acute ischaemic stroke given Semax with conventional therapy, compared with 80 patients with similar strokes on conventional therapy; 'some influence on the rate of restoration' of neurological functions. Randomisation and blinding not described in the abstract. One author (Myasoedov) is a developer of Semax."
+
+gusev-2018-semax-stroke:
+  type: article
+  authors: "Gusev EI, Martynov MY, Kostenko EV, Petrova LV, Bobyreva SN"
+  title: "The efficacy of semax in the treatment of patients at different stages of ischemic stroke"
+  container: "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova"
+  year: 2018
+  volume: "118"
+  pages: "61-68"
+  doi: 10.17116/jnevro20181183261-68
+  pmid: "29798983"
+  lang: ru
+  verified: pubmed
+  note: "Title as in PubMed except that PubMed's typing error 'tretament' is corrected. Russian-language paper; English abstract: 110 patients after ischaemic stroke, in early or late rehabilitation groups, each split into subgroups with and without Semax; Semax raised blood BDNF and was associated with faster improvement on the Barthel index. How patients were allocated and whether anyone was blinded is not stated in the abstract."
+
+koroleva-1996-semax-analgesia:
+  type: article
+  authors: "Koroleva MV, Meĭzerov EE, Nezavibat'ko VN, Kamenskiĭ AA, Dubynin VA, Iakovlev IuB"
+  title: "Study of the analgesic effect of the semax preparation"
+  container: "Biulleten' Eksperimental'noi Biologii i Meditsiny"
+  year: 1996
+  volume: "122"
+  pages: "527-529"
+  pmid: "8998343"
+  lang: ru
+  verified: pubmed
+  note: "Russian-language paper, no abstract in PubMed. Described in the FDA Semax briefing: one intranasal dose in 12 adults with migraine (headache stopped in 4) and 25 with facial nerve pain; no blinding, no control group; the authors concluded that Semax 'does not exhibit analgesic activity by itself' in typical trigeminal neuralgia."
+
+eremin-2004-semax-amphetamine:
+  type: article
+  authors: "Eremin KO, Saransaari P, Oja S, Raevskiĭ KS"
+  title: "Semax potentiates effects of D-amphetamine on the level of extracellular dopamine in the Sprague-Dawley rat striatum and on the locomotor activity of C57BL/6 mice"
+  container: "Eksperimental'naia i Klinicheskaia Farmakologiia"
+  year: 2004
+  volume: "67"
+  pages: "8-11"
+  pmid: "15188751"
+  lang: ru
+  verified: pubmed
+  note: "First author at the Zakusov Institute of Pharmacology, Moscow (the record gives no affiliation for the co-authors). In rats, Semax given 20 minutes before D-amphetamine gave a higher peak of dopamine in the striatum (microdialysis, n = 7 for baseline values); in mice, Semax given together with D-amphetamine raised locomotor activity to 261% against 182% with amphetamine alone. The FDA Semax briefing cites a 2005 paper by the same group (Eremin et al. 2005) for the same effect in mice and calls it 'concerning' because raised dopamine in the striatum is typical of drugs of abuse."
+
+vanhee-2020-nootropic-peptides:
+  type: article
+  authors: "Vanhee C, Francotte A, Janvier S, Deconinck E"
+  title: "The occurrence of putative cognitive enhancing research peptides in seized pharmaceutical preparations: An incentive for controlling agencies to prepare for future encounters of the kind"
+  container: "Drug Testing and Analysis"
+  year: 2020
+  volume: "12"
+  pages: "371-381"
+  doi: 10.1002/dta.2717
+  pmid: "31667971"
+  verified: pubmed
+  note: "Sciensano (Belgian public-health institute). Two unknown seized preparations (end of 2017 and 2018) contained Selank and Semax, 'which, to our knowledge, have not completed any clinical trials'; such peptides were freely available online as powder for injection or in nasal sprays; the authors developed an LC-MS/MS screening method for 10 such peptides."
+
+zozulia-2008-selank-gad:
+  type: article
+  authors: "Zozulia AA, Neznamov GG, Siuniakov TS, Kost NV, Gabaeva MV, Sokolov OIu, Serebriakova EV, Siranchieva OA, Andriushenko AV, Telesheva ES, Siuniakov SA, Smulevich AB, Miasoedov NF, Seredenin SB"
+  title: "Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia"
+  container: "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova"
+  year: 2008
+  volume: "108"
+  pages: "38-48"
+  pmid: "18454096"
+  lang: ru
+  verified: pubmed
+  note: "Russian-language paper; English abstract: 62 patients with generalised anxiety disorder or neurasthenia; Selank (30) compared with the benzodiazepine medazepam (32); similar anti-anxiety effects on Hamilton, Zung and CGI scales. Randomisation and blinding not described in the abstract; developers among the authors."
+
+medvedev-2014-selank-phenazepam:
+  type: article
+  authors: "Medvedev VE, Tereshchenko ON, Israelian AIu, Chobanu IK, Kost NV, Sokolov OIu, Miasoedov NF"
+  title: "A comparison of the anxiolytic effect and tolerability of selank and phenazepam in the treatment of anxiety disorders"
+  container: "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova"
+  year: 2014
+  volume: "114"
+  pages: "17-22"
+  pmid: "25176261"
+  lang: ru
+  verified: pubmed
+  note: "Russian-language paper; English abstract: comparative study in 60 patients with anxiety and somatoform disorders, Selank versus the benzodiazepine phenazepam; 'pronounced anxiolytic and mild nootropic effects of selank'. No numbers, randomisation or blinding in the abstract."
+
+medvedev-2015-selank-add-on:
+  type: article
+  authors: "Medvedev VE, Tereshchenko ON, Kost NV, Ter-Israelyan AY, Gushanskaya EV, Chobanu IK, Sokolov OY, Myasoedov NF"
+  title: "Optimization of the treatment of anxiety disorders with selank"
+  container: "Zhurnal Nevrologii i Psikhiatrii imeni S.S. Korsakova"
+  year: 2015
+  volume: "115"
+  pages: "33-40"
+  doi: 10.17116/jnevro20151156133-40
+  pmid: "26356395"
+  lang: ru
+  verified: pubmed
+  note: "Added by the fact-checker, 23 October 2026 (metadata from the PubMed record). Russian-language paper; English abstract: 70 patients with anxiety-phobic, hypochondriac and somatoform disorders; phenazepam alone (30) compared with Selank plus phenazepam (40); the authors report an earlier effect of phenazepam on the HDRS and fewer phenazepam side effects with the combination. No placebo; allocation and blinding not described in the abstract; Myasoedov (a developer) among the authors. The largest published patient study of Selank found."
+
+zozulya-2001-selank-enkephalinase:
+  type: article
+  authors: "Zozulya AA, Kost NV, Yu Sokolov O, Gabaeva MV, Grivennikov IA, Andreeva LN, Zolotarev YA, Ivanov SV, Andryushchenko AV, Myasoedov NF, Smulevich AB"
+  title: "The inhibitory effect of Selank on enkephalin-degrading enzymes as a possible mechanism of its anxiolytic activity"
+  container: "Bulletin of Experimental Biology and Medicine"
+  year: 2001
+  volume: "131"
+  pages: "315-317"
+  doi: 10.1023/a:1017979514274
+  pmid: "11550013"
+  verified: pubmed
+  note: "Patients with generalised anxiety had a shorter enkephalin half-life in blood; in plasma in vitro, Selank inhibited the breakdown of enkephalin in a dose-dependent way (IC50 15 µM)."
+
+inozemtseva-2008-selank-bdnf:
+  type: article
+  authors: "Inozemtseva LS, Karpenko EA, Dolotov OV, Levitskaya NG, Kamensky AA, Andreeva LA, Grivennikov IA"
+  title: "Intranasal administration of the peptide Selank regulates BDNF expression in the rat hippocampus in vivo"
+  container: "Doklady Biological Sciences"
+  year: 2008
+  volume: "421"
+  pages: "241-243"
+  doi: 10.1134/s0012496608040066
+  pmid: "18841804"
+  verified: pubmed
+  note: "Institute of Molecular Genetics, Moscow (originating group). Intranasal Selank changed BDNF expression in rat hippocampus. Short report, no abstract in PubMed; cited for the claim in its title only."
+
+fridkin-1989-tuftsin:
+  type: review
+  authors: "Fridkin M, Najjar VA"
+  title: "Tuftsin: its chemistry, biology, and clinical potential"
+  container: "Critical Reviews in Biochemistry and Molecular Biology"
+  year: 1989
+  volume: "24"
+  pages: "1-40"
+  doi: 10.3109/10409238909082550
+  pmid: "2667894"
+  verified: pubmed
+  note: "'Tuftsin is a tetrapeptide, Thr-Lys-Pro-Arg, which resides in the Fc-domain of the heavy chain of immunoglobulin G'; it is released by enzymatic processing and acts mainly on phagocytic cells. Cited for what tuftsin is."
+
+kolomin-2011-selank-spleen:
+  type: article
+  authors: "Kolomin T, Shadrina M, Andreeva L, Slominsky P, Limborska S, Myasoedov N"
+  title: "Expression of inflammation-related genes in mouse spleen under tuftsin analog Selank"
+  container: "Regulatory Peptides"
+  year: 2011
+  volume: "170"
+  pages: "18-23"
+  doi: 10.1016/j.regpep.2011.05.001
+  pmid: "21609736"
+  verified: pubmed
+  note: "Institute of Molecular Genetics (originating group). Describes Selank as a 'synthetic tuftsin analogue'; one injection into the belly cavity of mice changed the expression of 34 of 84 inflammation-related genes in the spleen."
+
+rogozinskaya-2017-selank-anticoagulant:
+  type: article
+  authors: "Rogozinskaya EY, Lyapina MG"
+  title: "Anticoagulant Effects of Arginine-Containing Peptides of the Glyproline Family (His-Phe-Arg-Trp-Pro-Gly-Pro and Thr-Lys-Pro-Arg-Pro-Gly-Pro) Revealed by Thromboelastography"
+  container: "Bulletin of Experimental Biology and Medicine"
+  year: 2017
+  volume: "164"
+  pages: "170-172"
+  doi: 10.1007/s10517-017-3950-4
+  pmid: "29181670"
+  verified: pubmed
+  note: "Moscow State University. In a lab clotting test (thromboelastography), Selank, Pro-Gly-Pro and a related heptapeptide shifted clotting towards slower clotting; Selank was the most potent. Species of the blood not given in the abstract."
+
+# ---------------------------------------------------------------- Thymosin alpha-1: studies
+
+wu-2025-tests-sepsis:
+  type: trial
+  authors: "Wu J, Pei F, Zhou L, Li W, Sun R, Li Y, Wang Z, He Z, Zhang X, Jin X, et al."
+  title: "The efficacy and safety of thymosin α1 for sepsis (TESTS): multicentre, double blinded, randomised, placebo controlled, phase 3 trial"
+  container: "BMJ"
+  year: 2025
+  volume: "388"
+  pages: "e082583"
+  doi: 10.1136/bmj-2024-082583
+  pmid: "39814420"
+  pmcid: PMC11780596
+  verified: pubmed
+  note: "22 centres in China, 2016–2020; 1,106 adults with sepsis randomised to thymosin alpha-1 or placebo under the skin every 12 hours for 7 days; 1,089 analysed; 28-day mortality 23.4% vs 24.1%. A correction (BMJ 2025;389:r1098, doi 10.1136/bmj.r1098, PMID 40447307) changed the hazard ratio to 0.97 (95% CI 0.76–1.24) from 0.99 (0.77–1.27) after nine lost participants were traced; the PubMed abstract still shows the old figure, the corrected full text (PMC11780596, read 23 October 2026) the new one. No secondary or safety outcome differed significantly; adverse events 66.4% vs 67.6%, serious adverse events 26.8% vs 29.3%; prespecified subgroups pointed both ways: under 60 years HR 1.67 (1.04–2.67), 60 and over 0.81 (0.61–1.09); diabetes 0.58 (0.35–0.99). Funded by Sun Yat-sen University, the Guangdong Clinical Research Center and SciClone Pharmaceuticals ('The funders were not involved in the trial's design, data collection, interpretation, or manuscript preparation'); several authors received grants or fees from SciClone."
+
+mutchnick-1999-thymosin-hbv:
+  type: trial
+  authors: "Mutchnick MG, Lindsay KL, Schiff ER, Cummings GD, Appelman HD, Peleman RR, Silva M, Roach KC, Simmons F, Milstein S, Gordon SC, Ehrinpreis MN"
+  title: "Thymosin alpha1 treatment of chronic hepatitis B: results of a phase III multicentre, randomized, double-blind and placebo-controlled study"
+  container: "Journal of Viral Hepatitis"
+  year: 1999
+  volume: "6"
+  pages: "397-403"
+  doi: 10.1046/j.1365-2893.1999.00181.x
+  pmid: "10607256"
+  verified: pubmed
+  note: "US multicentre trial, 97 patients with HBeAg-positive chronic hepatitis B, twice weekly for 6 months: complete response 14% vs 4% (P = 0.084); sustained loss of HBV DNA with negative HBeAg 25% vs 13% (P < 0.11); 'These results do not confirm observations of treatment efficacy reported in other clinical studies.' Funding not stated in the abstract."
+
+chien-1998-thymosin-hbv:
+  type: trial
+  authors: "Chien RN, Liaw YF, Chen TC, Yeh CT, Sheen IS"
+  title: "Efficacy of thymosin alpha1 in patients with chronic hepatitis B: a randomized, controlled trial"
+  container: "Hepatology"
+  year: 1998
+  volume: "27"
+  pages: "1383-1387"
+  doi: 10.1002/hep.510270527
+  pmid: "9581695"
+  verified: pubmed
+  note: "Chang Gung Memorial Hospital, Taiwan. 98 patients randomised to 26 or 52 weeks of thymosin alpha-1 or no treatment (no placebo); at 18 months, clearance of HBV DNA and HBeAg in 40.6% (26 weeks) and 26.5% (52 weeks) vs 9.4% untreated; similar rates at the end of therapy; histology assessed blind; no significant side effects."
+
+romani-2004-thymosin-dendritic:
+  type: article
+  authors: "Romani L, Bistoni F, Gaziano R, Bozza S, Montagnoli C, Perruccio K, Pitzurra L, Bellocchio S, Velardi A, Rasi G, Di Francesco P, Garaci E"
+  title: "Thymosin alpha 1 activates dendritic cells for antifungal Th1 resistance through toll-like receptor signaling"
+  container: "Blood"
+  year: 2004
+  volume: "103"
+  pages: "4232-4239"
+  doi: 10.1182/blood-2003-11-4036
+  pmid: "14982877"
+  verified: pubmed
+  note: "University of Perugia and Rome groups. In dendritic cells, thymosin alpha-1 induced maturation and IL-12 production through MyD88-dependent toll-like receptor signalling; in mice it activated Th1 antifungal immunity and protected transplanted mice from aspergillosis."
+
+gu-2025-thymosin-sepsis-meta:
+  type: meta-analysis
+  authors: "Gu B, Zhou Y, Nie Y, Wang L, Liang L, Liao Z, Wen J, Guan X, Chen M, Wu J, Pei F"
+  title: "Efficacy of thymosin α1 for sepsis: a systematic review and meta-analysis of randomized controlled trials"
+  container: "Frontiers in Cellular and Infection Microbiology"
+  year: 2025
+  volume: "15"
+  pages: "1673959"
+  doi: 10.3389/fcimb.2025.1673959
+  pmid: "40969554"
+  pmcid: PMC12440967
+  verified: pubmed
+  note: "By the TESTS investigators. 11 RCTs (967 vs 960 patients): pooled 28-day mortality OR 0.73 (0.59–0.90), but no benefit in high-quality (OR 0.82, 95% CI 0.65–1.03) or multicentre (OR 0.86, 0.68–1.08) trials; two large RCTs held 75% of the patients; possible benefit in subgroups with cancer (moderate credibility), diabetes or coronary heart disease (low credibility); trial sequential analysis: sample size still inadequate. Funding (full text): National Natural Science Foundation of China, Sun Yat-sen University, a Guangdong provincial enterprise joint foundation and the Guangdong Clinical Research Center for Critical Care Medicine; the authors declare no commercial or financial conflicts."

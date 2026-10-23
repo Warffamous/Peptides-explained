@@ -1,0 +1,114 @@
+# Melanotan II — locale-independent facts. Every value below is sourced; see research/melanotan-ii.md.
+slug: melanotan-ii
+tier: 1
+status: complete
+# experimental, not investigational: the University of Arizona trials ended in 2000 and development moved
+# to its free-acid form, bremelanotide (PT-141), now Vyleesi in the US. The one registered trial
+# (NCT07437560, vitiligo, China, 'recruiting') describes itself as an 'example' record and shares sponsor,
+# site and dates with a BPC-157 record; it is not treated as a development programme. Revisit if it
+# reports or a regulator receives an application.
+category: experimental
+class: melanocortin
+body_systems: [skin, sexual, nervous, cardiovascular]
+names:
+  common: Melanotan II
+  full: "Melanotan II (Ac-[Nle4, Asp5, D-Phe7, Lys10]-cyclo-alpha-MSH(4-10)-NH2, a cyclic lactam analogue of alpha-MSH)"
+  other: [MT-II, MTII, MT2, Melanotan-2]
+  brands: []
+identifiers:
+  pubchem_cid: 92432
+  chembl: CHEMBL430239
+  cas: 121062-08-6
+  unii: UPF5CJ93X7
+molecular:
+  formula: C50H69N15O9
+  mass_da: 1024.2
+  smiles: "CCCC[C@@H](C(=O)N[C@H]1CC(=O)NCCCC[C@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H](NC1=O)CC2=CN=CN2)CC3=CC=CC=C3)CCCN=C(N)N)CC4=CNC5=CC=CC=C54)C(=O)N)NC(=O)C"
+  smiles_source: pubchem-melanotan-ii
+# Sequence: PubChem synonym 'Ac-Nle-Cyclo[Asp-His-D-Phe-Arg-Trp-Lys]-NH2' and 'L-lysinamide, N-acetyl-L-norleucyl-
+# L-alpha-aspartyl-L-histidyl-D-phenylalanyl-L-arginyl-L-tryptophyl-, cyclic (2-7)-peptide'; ChEMBL HELM
+# PEPTIDE1{[ac].[Nle].D.H.[dF].R.W.K.[am]} with a side-chain bond between Asp and Lys; Dorr 1996 and Wessells 2003
+# give the same structure. The ring is a lactam between the side chains of Asp (2) and Lys (7). Bremelanotide
+# (PT-141) has the same SMILES with a free acid instead of the C-terminal amide (pt-141.yaml).
+sequence:
+  display: "Ac-Nle-cyclo[Asp-His-D-Phe-Arg-Trp-Lys]-NH2"
+  residues: [Nle, Asp, His, D-Phe, Arg, Trp, Lys]
+  n_terminus: Ac
+  c_terminus: NH2
+  modifications:
+    - { position: 1, label: "Nle (norleucine), a straight-chain building block not used in human proteins, carries an acetyl group at the start of the chain" }
+    - { position: 4, label: "D-Phe: the mirror-image form of phenylalanine" }
+  bridges:
+    - { from: 2, to: 7, kind: lactam }
+  source: pubchem-melanotan-ii
+evidence:
+  human_clinical: phase-2
+  preclinical_volume: extensive
+  independence: broadly-replicated
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, bfarm-2010-melanotan-warning, ema-medicines-json] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, fagg-melanotan-warning, ema-medicines-json] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, mhra-2024-foi-melanotan-ii] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-category-2-safety-risks, fda-503a-categories-2026-05, fda-pcac-2027-early-announcement, fr-2016-melanotan-debarment] }
+  # Not named on the 2026 or 2027 Prohibited List (PDFs searched for melanotan, melanocortin, bremelanotide and
+  # afamelanotide on 22 October 2026). S0 covers any pharmacological substance not addressed elsewhere on the List
+  # 'with no current approval by any governmental regulatory health authority for human therapeutic use'; melanotan II
+  # has none. WADA and UKAD state that not every prohibited experimental peptide is named. Same reading as KPV and
+  # retatrutide. No WADA or national anti-doping statement naming melanotan II was verified (Sport Integrity
+  # Australia's page timed out from here); open question for the legal reviewer.
+  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, ukad-2027-list-summary] }
+# Structured studies. "originating" = the University of Arizona group (Hruby, Hadley, Dorr, Levine, Wessells and
+# co-workers) that designed melanotan II and ran every published trial. Funding from the PubMed publication-type
+# tags (U.S. Gov't P.H.S. = government; with Non-U.S. Gov't support as well = mixed) or the authors' employer.
+# Every published human trial is listed (the 2000 IJIR paper pools the two crossover trials and is not a separate
+# study). Case reports: the main reported harms; more are discussed in the prose.
+studies:
+  # --- cells and isolated tissue
+  - { id: al-obeidi-1989-design, source: al-obeidi-1989-cyclic-lactam, year: 1989, species: in-vitro, n: null, design: in-vitro, funding: government, group: originating, blinded: null, controlled: true }
+  - { id: hruby-1995-receptors, source: hruby-1995-melanocortin-antagonists, year: 1995, species: in-vitro, n: null, design: in-vitro, funding: government, group: mixed, blinded: null, controlled: true }
+  # Haskell-Luevano 1996: Arizona with University of Michigan co-authors who supplied the cloned receptor (mixed,
+  # the same rule as Hruby 1995 with Cone).
+  - { id: haskell-luevano-1996-mc1r, source: haskell-luevano-1996-mc1r-dissociation, year: 1996, species: in-vitro, n: null, design: in-vitro, funding: mixed, group: mixed, blinded: null, controlled: true }
+  # --- animals
+  # Fan 1997: Vollum Institute (Cone lab) with Hruby as co-author who supplied the peptides, so mixed.
+  - { id: fan-1997-feeding, source: fan-1997-melanocortin-feeding, year: 1997, species: mouse, n: null, design: animal, funding: mixed, group: mixed, blinded: null, controlled: true }
+  - { id: wessells-2003-rat-erection, source: wessells-2003-mt2-spinal-erection, year: 2003, species: rat, n: null, design: animal, funding: mixed, group: originating, blinded: null, controlled: true }
+  - { id: trivedi-2003-appetite, source: trivedi-2003-mt2-anorectic-site, year: 2003, species: rat, n: null, design: animal, funding: industry, group: independent, blinded: null, controlled: true }
+  # Benoit 2003: PubMed lists no funding type.
+  - { id: benoit-2003-aversion, source: benoit-2003-mt2-taste-aversion, year: 2003, species: rat, n: null, design: animal, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  # Wu 2020 (added in the fact-check): mouse melanoma cells and mice with implanted melanoma, Taiwan. Full text
+  # (PMC7013727, checked 23 October 2026): funded by Taiwan's Ministry of Science and Technology and Kaohsiung
+  # Veterans General Hospital (government); tumour-bearing mice randomly divided into control and MTII groups,
+  # n = 6 each (12 mice); the MC1R antibody test was done in cells only.
+  - { id: wu-2020-melanoma-model, source: wu-2020-topical-mtii-melanoma, year: 2020, species: mouse, n: 12, design: animal, funding: government, group: independent, blinded: null, controlled: true }
+  # --- trials in people (all from the originating group)
+  # Dorr 1996: single-blind (volunteers), alternating saline days as control.
+  - { id: dorr-1996-phase-1, source: dorr-1996-mt2-phase-1, year: 1996, species: human, n: 3, design: phase-1, funding: government, group: originating, blinded: true, controlled: true }
+  # Wessells 1998 and 2000: double-blind, placebo-controlled crossover efficacy trials in patients (the stage
+  # usually called phase 2; the papers do not use the word). The 1998 abstract does not say the order was randomised.
+  - { id: wessells-1998-psychogenic-ed, source: wessells-1998-mt2-psychogenic-ed, year: 1998, species: human, n: 10, design: phase-2, funding: government, group: originating, blinded: true, controlled: true }
+  - { id: wessells-2000-organic-ed, source: wessells-2000-mt2-organic-ed, year: 2000, species: human, n: 10, design: phase-2, funding: mixed, group: originating, blinded: true, controlled: true }
+  # --- reported harms (independent clinicians); n null where the letter has no abstract to confirm the count
+  - { id: cousen-2009-naevi, source: cousen-2009-eruptive-naevi, year: 2009, species: human, n: null, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: nelson-2012-rhabdomyolysis, source: nelson-2012-melanotan-rhabdomyolysis, year: 2012, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: mang-2012-dermoscopy, source: mang-2012-dermoscopy-changes, year: 2012, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: kaski-2013-pres, source: kaski-2013-melanotan-pres, year: 2013, species: human, n: null, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: hjuler-2014-melanoma, source: hjuler-2014-melanotan-melanoma, year: 2014, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: peters-2020-renal-infarction, source: peters-2020-melanotan-renal-infarction, year: 2020, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: mallory-2021-priapism, source: mallory-2021-melanotan-priapism, year: 2021, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: eijmael-2022-netherlands, source: eijmael-2022-barbie-drug, year: 2022, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: yassin-alsabbagh-2025-oral-melanoma, source: yassin-alsabbagh-2025-oral-melanoma, year: 2025, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: vadner-2026-melanomas-in-situ, source: vadner-2026-five-melanomas, year: 2026, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  # Burian 2019: all eruptive-naevi reports, not only melanotan (179 patients, 41% immunosuppressants,
+  # chemotherapy or melanotan).
+  - { id: burian-2019-eruptive-naevi, source: burian-2019-eruptive-naevi-review, year: 2019, species: human, n: 179, design: systematic-review, funding: undisclosed, group: independent, blinded: null, controlled: false }
+  # --- what is in the products
+  - { id: breindahl-2015-products, source: breindahl-2015-melanotan-products, year: 2015, species: not-applicable, n: null, design: analytical, funding: undisclosed, group: independent, blinded: null, controlled: null }
+  - { id: deville-2024-belgian-sample, source: deville-2024-barbie-drug-identification, year: 2024, species: not-applicable, n: null, design: analytical, funding: undisclosed, group: independent, blinded: null, controlled: null }
+authorised_products: []
+related: [pt-141, kpv]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

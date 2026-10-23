@@ -1,0 +1,645 @@
+# Sources for compounds/melanotan-ii (group: melanotan-ii).
+# Every scholarly entry was looked up in PubMed on 22 October 2026 (PubMed MCP tool and NCBI
+# E-utilities); authors, title, journal, year (of the journal issue), volume, pages, DOI and PMID
+# were copied from the PubMed record. Where the record has no DOI, none is given. Every regulator,
+# law, registry and database URL was fetched on the accessed date and contains what it is cited for
+# (research/melanotan-ii.md, "Verification log").
+#
+# Reused from other groups, not re-registered here: pubchem-melanotan-ii, king-2007-melanocortin-erection,
+# mestria-2021-seized-melanotan-bremelanotide, greenfield-2009-mc4r-blood-pressure (pt-141.yaml); dailymed-vyleesi-label, dreyer-2019-melanotan-priapism,
+# nelson-2012-melanotan-rhabdomyolysis, cardones-2009-eruptive-nevi, nhs-priapism, nhs-moles, nhs-headaches
+# (safety-a.yaml); habbema-2017-melanotan-review (safety-b.yaml); ema-epar-scenesse, fda-drugsatfda-scenesse,
+# fda-drugsatfda-vyleesi (history.yaml); ema-medicines-json, de-amg-21, uk-hmr-2012-reg-46, wada-2026-list-en,
+# wada-2027-list-en, fda-category-2-safety-risks, fda-503a-categories-2026-05, fda-503a-bulks-page,
+# fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-pcac-2026-presentations-day1 (bpc-157.yaml);
+# fda-pcac-2027-early-announcement, wada-2027-list-explanatory-note, ukad-2027-list-summary, usc-21-353a
+# (legal-b.yaml); ema-medicines-search, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet,
+# be-medicines-law-1964, fda-pcac-2026-07-meeting, lareb-home (shared.yaml).
+
+# ---------------------------------------------------------------- design, receptors, origin
+
+al-obeidi-1989-cyclic-lactam:
+  type: article
+  authors: "Al-Obeidi F, Castrucci AM, Hadley ME, Hruby VJ"
+  title: "Potent and prolonged acting cyclic lactam analogues of alpha-melanotropin: design based on molecular dynamics"
+  container: "Journal of Medicinal Chemistry"
+  year: 1989
+  volume: "32"
+  pages: "2555-2561"
+  doi: 10.1021/jm00132a010
+  pmid: "2555512"
+  verified: pubmed
+  note: "University of Arizona. Seven cyclic lactam fragments of alpha-MSH tested in frog and lizard skin bioassays; Ac-[Nle4,Asp5,D-Phe7,Lys10]-alpha-MSH(4-10)-NH2 (melanotan II) was about 90 times as potent as alpha-MSH in the lizard assay; 23-membered rings gave prolonged activity. Cited for: origin and design of the molecule."
+
+hruby-1995-melanocortin-antagonists:
+  type: article
+  authors: "Hruby VJ, Lu D, Sharma SD, Castrucci AL, Kesterson RA, al-Obeidi FA, Hadley ME, Cone RD"
+  title: "Cyclic lactam alpha-melanotropin analogues of Ac-Nle4-cyclo[Asp5, D-Phe7,Lys10] alpha-melanocyte-stimulating hormone-(4-10)-NH2 with bulky aromatic amino acids at position 7 show high antagonist potency and selectivity at specific melanocortin receptors"
+  container: "Journal of Medicinal Chemistry"
+  year: 1995
+  volume: "38"
+  pages: "3454-3461"
+  doi: 10.1021/jm00018a005
+  pmid: "7658432"
+  verified: pubmed
+  note: "Abstract: MC1, MC3, MC4 and MC5 receptors 'all recognize' alpha-MSH and potent agonists such as Ac-Nle4-c[Asp5,D-Phe7,Lys10]alpha-MSH-(4-10)-NH2 (melanotan II); MC2R recognises mainly ACTH; replacing D-Phe7 with D-Nal(2') gave the antagonist SHU9119. Cited for: melanotan II acts on four melanocortin receptors, not one."
+
+haskell-luevano-1996-mc1r-dissociation:
+  type: article
+  authors: "Haskell-Luevano C, Miwa H, Dickinson C, Hadley ME, Hruby VJ, Yamada T, Gantz I"
+  title: "Characterizations of the unusual dissociation properties of melanotropin peptides from the melanocortin receptor, hMC1R"
+  container: "Journal of Medicinal Chemistry"
+  year: 1996
+  volume: "39"
+  pages: "432-435"
+  doi: 10.1021/jm950407s
+  pmid: "8558511"
+  verified: pubmed
+  note: "Cells carrying the human MC1 receptor: six hours after the peptide was washed away, 86% of melanotan II was still bound, against 65% of MT-I ([Nle4,DPhe7]alpha-MSH) and 25% of alpha-MSH; MT-II dissociated about four times more slowly than alpha-MSH. Cited for: long-lasting receptor binding; MT-I = [Nle4,D-Phe7]alpha-MSH."
+
+hadley-2005-discovery:
+  type: review
+  authors: "Hadley ME"
+  title: "Discovery that a melanocortin regulates sexual functions in male and female humans"
+  container: "Peptides"
+  year: 2005
+  volume: "26"
+  pages: "1687-1689"
+  doi: 10.1016/j.peptides.2005.01.023
+  pmid: "15996790"
+  verified: pubmed
+  note: "Commentary by one of the developers: the effects of melanotan II on sexual function 'were discovered accidentally while studying the effects of the peptide ... on human skin pigmentation (tanning)'. Cited for: how the sexual effects were found. Its claims about women are not backed by a published trial (none found in PubMed, 22 October 2026)."
+
+hadley-2006-melanocortin-therapeutics:
+  type: review
+  authors: "Hadley ME, Dorr RT"
+  title: "Melanocortin peptide therapeutics: historical milestones, clinical studies and commercialization"
+  container: "Peptides"
+  year: 2006
+  volume: "27"
+  pages: "921-930"
+  doi: 10.1016/j.peptides.2005.01.029
+  pmid: "16412534"
+  verified: pubmed
+  note: "University of Arizona developers' history: melanotan I (linear) and melanotan II (cyclic, truncated) were patented and tested clinically, MT-I for tanning and MT-II for erectile dysfunction; PT-141 (Palatin Technologies) is described as 'a new MTII analog'. Cited for: history and the relationship between the three molecules."
+
+# ---------------------------------------------------------------- pigment cells and the sun
+
+abdel-malek-1995-melanocyte-mitogenic:
+  type: article
+  authors: "Abdel-Malek Z, Swope VB, Suzuki I, Akcali C, Harriger MD, Boyce ST, Urabe K, Hearing VJ"
+  title: "Mitogenic and melanogenic stimulation of normal human melanocytes by melanotropic peptides"
+  container: "Proceedings of the National Academy of Sciences of the United States of America"
+  year: 1995
+  volume: "92"
+  pages: "1789-1793"
+  doi: 10.1073/pnas.92.5.1789
+  pmid: "7878059"
+  pmcid: PMC42605
+  verified: pubmed
+  note: "Human melanocytes in culture: alpha-MSH and ACTH increased cell number (50-270% above control after 8 days, depending on the cell strain) and tyrosinase activity (70-450%), and raised tyrosinase, TRP-1 and TRP-2 protein. Natural hormone, not melanotan II. Cited for: MC1R stimulation makes pigment cells both darker and more numerous in a dish."
+
+wolf-horrell-2016-mc1r:
+  type: review
+  authors: "Wolf Horrell EM, Boulanger MC, D'Orazio JA"
+  title: "Melanocortin 1 Receptor: Structure, Function, and Regulation"
+  container: "Frontiers in Genetics"
+  year: 2016
+  volume: "7"
+  pages: "95"
+  doi: 10.3389/fgene.2016.00095
+  pmid: "27303435"
+  pmcid: PMC4885833
+  verified: pubmed
+  note: "Abstract: MC1R is a Gs-coupled receptor on melanocytes; signalling through adenylyl cyclase and cAMP up-regulates melanin production and enhances nucleotide excision repair of UV damage; loss-of-function variants give a fair, UV-sensitive, melanoma-prone phenotype. Cited for: the MC1R-cAMP-melanin chain and its role in melanoma risk."
+
+kadekaro-2005-msh-dna-repair:
+  type: article
+  authors: "Kadekaro AL, Kavanagh R, Kanto H, Terzieva S, Hauser J, Kobayashi N, Schwemberger S, Cornelius J, Babcock G, Shertzer HG, Scott G, Abdel-Malek ZA"
+  title: "alpha-Melanocortin and endothelin-1 activate antiapoptotic pathways and reduce DNA damage in human melanocytes"
+  container: "Cancer Research"
+  year: 2005
+  volume: "65"
+  pages: "4292-4299"
+  doi: 10.1158/0008-5472.CAN-04-4535
+  pmid: "15899821"
+  verified: pubmed
+  note: "Cultured human melanocytes: alpha-MSH acting through MC1R reduced UV-induced cell death, DNA photoproducts and oxidative stress and enhanced repair of cyclobutane pyrimidine dimers. Cited for: the argument in the other direction (MC1R signalling can protect DNA)."
+
+wu-2020-topical-mtii-melanoma:
+  type: article
+  authors: "Wu JC, Tsai HE, Hsiao YH, Wu JS, Wu CS, Tai MH"
+  title: "Topical MTII Therapy Suppresses Melanoma Through PTEN Upregulation and Cyclooxygenase II Inhibition"
+  container: "International Journal of Molecular Sciences"
+  year: 2020
+  volume: "21"
+  pages: "681"
+  doi: 10.3390/ijms21020681
+  pmid: "31968661"
+  pmcid: PMC7013727
+  verified: pubmed
+  note: "Added in the fact-check (22 October 2026). Kaohsiung, Taiwan. Mouse B16-F10 melanoma cells in a dish and mice with established implanted melanoma: MTII did not change cell proliferation but reduced migration, invasion and colony formation, and MTII put on the skin 'significantly attenuated the tumor progression'. Full text (PMC7013727, read 23 October 2026): tumour-bearing mice were randomly divided into control and MTII groups (n = 6 each); the MC1R antibody-neutralisation experiments were done in B16-F10 cells only, not in mice; funded by Taiwan's Ministry of Science and Technology and Kaohsiung Veterans General Hospital. Cited for: the argument in the other direction (in a mouse model of an existing melanoma, MTII slowed it), which says nothing about whether it starts or speeds melanoma in human moles."
+
+ema-epar-imcivree:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Imcivree (setmelanotide): EPAR — medicine overview"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/imcivree
+  accessed: 2026-10-22
+  verified: url
+  note: "Added in the fact-check. 'The active substance in Imcivree, setmelanotide, attaches to and activates a receptor called melanocortin receptor 4'; used for obesity and hunger in acquired hypothalamic obesity, POMC, PCSK1 or LEPR deficiency and Bardet Biedl syndrome. Authorised 16 July 2021 (EMA medicines JSON). Cited for: setmelanotide is an authorised MC4 receptor agonist."
+
+barnetson-2006-afamelanotide-photoprotection:
+  type: article
+  authors: "Barnetson RS, Ooi TK, Zhuang L, Halliday GM, Reid CM, Walker PC, Humphrey SM, Kleinig MJ"
+  title: "[Nle4-D-Phe7]-alpha-melanocyte-stimulating hormone significantly increased pigmentation and decreased UV damage in fair-skinned Caucasian volunteers"
+  container: "The Journal of Investigative Dermatology"
+  year: 2006
+  volume: "126"
+  pages: "1869-1878"
+  doi: 10.1038/sj.jid.5700317
+  pmid: "16763547"
+  verified: pubmed
+  note: "Randomised controlled trial (PubMed publication type), 65 completers (MT-I, now afamelanotide, not melanotan II): melanin density rose in all treated subjects; in volunteers with a low minimal erythemal dose (people who burn easily), sunburn cells after 3 MED of UV fell by more than 50%; thymine dimers fell by 59% in the basal layer. Cited for: melanin made by an MC1R agonist can reduce UV damage, shown for a different molecule."
+
+young-2020-pigmentation-sunscreens:
+  type: article
+  authors: "Young AR"
+  title: "Comparison of Skin Photoprotection by Pigmentation and Sunscreens"
+  container: "Journal of Cosmetic Science"
+  year: 2020
+  volume: "71"
+  pages: "217-226"
+  pmid: "33022206"
+  verified: pubmed
+  note: "St John's Institute of Dermatology, King's College London. PubMed has no DOI and lists the author's name in garbled form ('Antony R Y'); the affiliation line gives the initials A.R.Y. Abstract: 'Tanning in those with light skin offers relatively modest photoprotection'; deeply pigmented skin offers a high level. Cited for: a tan on light skin protects only modestly."
+
+coelho-2015-uva-tan:
+  type: article
+  authors: "Coelho SG, Yin L, Smuda C, Mahns A, Kolbe L, Hearing VJ"
+  title: "Photobiological implications of melanin photoprotection after UVB-induced tanning of human skin but not UVA-induced tanning"
+  container: "Pigment Cell & Melanoma Research"
+  year: 2015
+  volume: "28"
+  pages: "210-216"
+  doi: 10.1111/pcmr.12331
+  pmid: "25417821"
+  pmcid: PMC4333058
+  verified: pubmed
+  note: "Full text (PMC): 12 volunteers (5 women, 7 men) given comparable tans on areas of the lower back with UVA, UVB or both over two weeks, then challenged with 1.5 MED of UVA+UVB one week later: 'The UVA-induced tans failed to even provide a minimal SPF of 1.5'; UVB-induced tans gave 'a very modest photoprotective benefit'. Cited for: how a tan is made matters; a tan is not the same as protection."
+
+boniol-2012-sunbed-melanoma:
+  type: meta-analysis
+  authors: "Boniol M, Autier P, Boyle P, Gandini S"
+  title: "Cutaneous melanoma attributable to sunbed use: systematic review and meta-analysis"
+  container: "BMJ"
+  year: 2012
+  volume: "345"
+  pages: "e4757"
+  doi: 10.1136/bmj.e4757
+  pmid: "22833605"
+  pmcid: PMC3404185
+  verified: pubmed
+  note: "27 observational studies: ever use of sunbeds, summary relative risk of melanoma 1.20 (95% CI 1.08-1.34); first use before age 35, 1.87 (1.41-2.48); risk rises with the number of sessions. Cited for: sunbeds raise melanoma risk on their own, which confounds every melanotan case report."
+
+# ---------------------------------------------------------------- brain, blood pressure
+
+fan-1997-melanocortin-feeding:
+  type: article
+  authors: "Fan W, Boston BA, Kesterson RA, Hruby VJ, Cone RD"
+  title: "Role of melanocortinergic neurons in feeding and the agouti obesity syndrome"
+  container: "Nature"
+  year: 1997
+  volume: "385"
+  pages: "165-168"
+  doi: 10.1038/385165a0
+  pmid: "8990120"
+  verified: pubmed
+  note: "Vollum Institute, Oregon (with the Arizona chemist who supplied the peptides). Melanotan II injected into the brain's ventricles inhibited feeding in four mouse models of overeating; the antagonist SHU9119 blocked this and increased feeding. Cited for: brain melanocortin receptors (MC3/MC4) curb eating."
+
+trivedi-2003-mt2-anorectic-site:
+  type: article
+  authors: "Trivedi P, Jiang M, Tamvakopoulos CC, Shen X, Yu H, Mock S, Fenyk-Melody J, Van der Ploeg LH, Guan XM"
+  title: "Exploring the site of anorectic action of peripherally administered synthetic melanocortin peptide MT-II in rats"
+  container: "Brain Research"
+  year: 2003
+  volume: "977"
+  pages: "221-230"
+  doi: 10.1016/s0006-8993(03)02683-0
+  pmid: "12834882"
+  verified: pubmed
+  note: "Merck Research Laboratories. Intravenous MT-II suppressed food intake in rats, but brain penetration was negligible: labelled MT-II reached only circumventricular organs outside the blood-brain barrier (subfornical organ, median eminence, area postrema, choroid plexus). Cited for: an independent animal replication, and where an injected dose acts."
+
+benoit-2003-mt2-taste-aversion:
+  type: article
+  authors: "Benoit SC, Sheldon RJ, Air EL, Messerschmidt P, Wilmer KA, Hodge KM, Jones MB, Eckstein DM, McOsker CC, Woods SC, Seeley RJ"
+  title: "Assessment of the aversive consequences of acute and chronic administration of the melanocortin agonist, MTII"
+  container: "International Journal of Obesity and Related Metabolic Disorders"
+  year: 2003
+  volume: "27"
+  pages: "550-556"
+  doi: 10.1038/sj.ijo.0802280
+  pmid: "12704398"
+  verified: pubmed
+  note: "University of Cincinnati. In rats, single and 7-day MTII produced a conditioned taste aversion, like lithium chloride, and the aversion was more resistant to extinction; 'The reduction in food intake caused by MTII is accompanied by aversive consequences regardless of route of administration.' Cited for: the animal counterpart of nausea."
+
+wessells-2003-mt2-spinal-erection:
+  type: article
+  authors: "Wessells H, Hruby VJ, Hackett J, Han G, Balse-Srinivasan P, Vanderah TW"
+  title: "Ac-Nle-c[Asp-His-DPhe-Arg-Trp-Lys]-NH2 induces penile erection via brain and spinal melanocortin receptors"
+  container: "Neuroscience"
+  year: 2003
+  volume: "118"
+  pages: "755-762"
+  doi: 10.1016/s0306-4522(02)00866-7
+  pmid: "12710982"
+  verified: pubmed
+  note: "Awake male rats: MT-II given into the brain, the spinal fluid or a vein caused erections in a dose-dependent way; SHU9119 blocked them; injected into the penis it did nothing. Cited for: erections start in the brain and lower spinal cord, not in the penis; the formula of melanotan II."
+
+fugate-2015-pres:
+  type: review
+  authors: "Fugate JE, Rabinstein AA"
+  title: "Posterior reversible encephalopathy syndrome: clinical and radiological manifestations, pathophysiology, and outstanding questions"
+  container: "The Lancet Neurology"
+  year: 2015
+  volume: "14"
+  pages: "914-925"
+  doi: 10.1016/S1474-4422(15)00111-8
+  pmid: "26184985"
+  verified: pubmed
+  note: "Mayo Clinic review: PRES should be considered with acute neurological symptoms in people with blood pressure fluctuations, among other settings; mild forms may cause only headache or a seizure; brain swelling usually resolves within days or weeks, but severe forms can cause bleeding and death. Cited for: what PRES is and how blood-pressure swings are linked to it."
+
+# ---------------------------------------------------------------- trials in people
+
+dorr-1996-mt2-phase-1:
+  type: trial
+  authors: "Dorr RT, Lines R, Levine N, Brooks C, Xiang L, Hruby VJ, Hadley ME"
+  title: "Evaluation of melanotan-II, a superpotent cyclic melanotropic peptide in a pilot phase-I clinical study"
+  container: "Life Sciences"
+  year: 1996
+  volume: "58"
+  pages: "1777-1784"
+  doi: 10.1016/0024-3205(96)00160-9
+  pmid: "8637402"
+  verified: pubmed
+  note: "Single-blind, alternating-day, saline-controlled pilot in 3 healthy men, injections under the skin on weekdays for two weeks: two of three had darker skin on the face, upper body and buttock one week after the last dose; mild nausea at most dose levels; somnolence and fatigue in one of two men at the highest dose; a stretching and yawning complex with spontaneous erections for 1-5 hours. Cited for: the first human data on tanning and side effects."
+
+wessells-1998-mt2-psychogenic-ed:
+  type: trial
+  authors: "Wessells H, Fuciarelli K, Hansen J, Hadley ME, Hruby VJ, Dorr R, Levine N"
+  title: "Synthetic melanotropic peptide initiates erections in men with psychogenic erectile dysfunction: double-blind, placebo controlled crossover study"
+  container: "The Journal of Urology"
+  year: 1998
+  volume: "160"
+  pages: "389-393"
+  pmid: "9679884"
+  verified: pubmed
+  note: "PubMed record has no DOI. Double-blind, placebo-controlled crossover in 10 men with erectile dysfunction of no known physical cause, RigiScan for 6 hours: erections in 8 of 10 with melanotan II; tip rigidity above 80% for a mean 38.0 minutes against 3.0 with placebo; nausea, stretching and yawning and less appetite more often than with placebo. Cited for: the first controlled trial."
+
+wessells-2000-mt2-organic-ed:
+  type: trial
+  authors: "Wessells H, Gralnek D, Dorr R, Hruby VJ, Hadley ME, Levine N"
+  title: "Effect of an alpha-melanocyte stimulating hormone analog on penile erection and sexual desire in men with organic erectile dysfunction"
+  container: "Urology"
+  year: 2000
+  volume: "56"
+  pages: "641-646"
+  doi: 10.1016/s0090-4295(00)00680-4
+  pmid: "11018622"
+  verified: pubmed
+  note: "Double-blind, placebo-controlled crossover in 10 men with erectile dysfunction and physical risk factors: erections after 12 of 19 melanotan II injections against 1 of 21 placebo doses; rigidity above 80% for 45.3 against 1.9 minutes; more sexual desire; severe nausea after 4 of 19 injections. Cited for: the second controlled trial."
+
+wessells-2000-mt2-review-20-men:
+  type: review
+  authors: "Wessells H, Levine N, Hadley ME, Dorr R, Hruby V"
+  title: "Melanocortin receptor agonists, penile erection, and sexual motivation: human studies with Melanotan II"
+  container: "International Journal of Impotence Research"
+  year: 2000
+  volume: "12 Suppl 4"
+  pages: "S74-S79"
+  doi: 10.1038/sj.ijir.3900582
+  pmid: "11035391"
+  verified: pubmed
+  note: "The investigators' pooled account of the two crossover trials (20 men): erections in 17 of 20 without sexual stimulation; more desire after 13 of 19 melanotan II doses against 4 of 21 placebo doses; nausea and yawning frequent, severe nausea in 12.9%. Cited for: the pooled numbers."
+
+ctgov-nct07437560:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "NCT07437560: A Randomized, Double-Blind, Placebo-Controlled Phase 2 Study of Melanotan II as an Adjunct to Narrowband UV-B Phototherapy in Adults With Stable Nonsegmental Vitiligo"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07437560
+  accessed: 2026-10-22
+  verified: registry
+  note: "Read through the ClinicalTrials.gov API on 22 October 2026: recruiting, 60 participants, one site in Shenzhen, China, start 2 February 2026, primary completion 14 February 2027, no results. The brief summary calls itself 'This example interventional study record' and the description 'This example trial'. Same sponsor, site, contact and dates as the BPC-157 record NCT07437547. Cited for: the only registered trial, and why we treat it with caution."
+
+# ---------------------------------------------------------------- case reports and reviews of harms
+
+cousen-2009-eruptive-naevi:
+  type: article
+  authors: "Cousen P, Colver G, Helbling I"
+  title: "Eruptive melanocytic naevi following melanotan injection"
+  container: "The British Journal of Dermatology"
+  year: 2009
+  volume: "161"
+  pages: "707-708"
+  doi: 10.1111/j.1365-2133.2009.09362.x
+  pmid: "19575725"
+  verified: pubmed
+  note: "Letter, case report; PubMed has no abstract (index terms: female, young adult, subcutaneous injections). Cited for: the title finding only."
+
+paurobally-2011-melanotan-melanoma:
+  type: article
+  authors: "Paurobally D, Jason F, Dezfoulian B, Nikkels AF"
+  title: "Melanotan-associated melanoma"
+  container: "The British Journal of Dermatology"
+  year: 2011
+  volume: "164"
+  pages: "1403-1405"
+  doi: 10.1111/j.1365-2133.2011.10273.x
+  pmid: "21564053"
+  verified: pubmed
+  note: "Letter, case report; PubMed has no abstract (index terms: female adult, melanoma, sunbathing, suntan). Cited for: the title finding only."
+
+ong-2012-melanoma-in-situ:
+  type: article
+  authors: "Ong S, Bowling J"
+  title: "Melanotan-associated melanoma in situ"
+  container: "The Australasian Journal of Dermatology"
+  year: 2012
+  volume: "53"
+  pages: "301-302"
+  doi: 10.1111/j.1440-0960.2012.00915.x
+  pmid: "22724573"
+  verified: pubmed
+  note: "Oxford, UK. Abstract: injectable melanotan is available online despite being unlicensed with an unproven safety record; 'We report a case of melanotan-associated melanoma in situ' (index terms: female, young adult). Cited for: a reported melanoma in situ."
+
+hjuler-2014-melanotan-melanoma:
+  type: article
+  authors: "Hjuler KF, Lorentzen HF"
+  title: "Melanoma associated with the use of melanotan-II"
+  container: "Dermatology"
+  year: 2014
+  volume: "228"
+  pages: "34-36"
+  doi: 10.1159/000356389
+  pmid: "24355990"
+  verified: pubmed
+  note: "Aarhus, Denmark. A 20-year-old woman with fair skin (Fitzpatrick type II) who self-injected melanotan II for 3-4 weeks to boost sunbed tanning had a melanoma on the buttock three months later. 'As the drug is unlicensed and incompletely tested, the extent and types of adverse effects are unknown.' Cited for: a melanoma case with sunbed use as a confounder."
+
+schulze-2014-naevi-24-hours:
+  type: article
+  authors: "Schulze F, Erdmann H, Hardkop LH, Anemüller W, Rose C, Zillikens D, Fischer TW"
+  title: "Eruptive naevi and darkening of pre-existing naevi 24 h after a single mono-dose injection of melanotan II"
+  container: "European Journal of Dermatology"
+  year: 2014
+  volume: "24"
+  pages: "107-109"
+  doi: 10.1684/ejd.2013.2227
+  pmid: "24334249"
+  verified: pubmed
+  note: "Lübeck, Germany. Letter; PubMed has no abstract (index terms: male, young adult). Cited for: the title finding only (new and darker moles within 24 hours of one injection)."
+
+mang-2012-dermoscopy-changes:
+  type: article
+  authors: "Mang R, Krahl D, Assmann T"
+  title: "[Dermoscopic changes in melanocytic nevi during use of melanotan II]"
+  container: "Der Hautarzt"
+  year: 2012
+  volume: "63"
+  pages: "880-884"
+  doi: 10.1007/s00105-012-2420-1
+  pmid: "23052015"
+  lang: de
+  verified: pubmed
+  note: "Wuppertal, Germany. A 24-year-old man injected melanotan II bought online; his moles were followed with sequential videodermoscopy before and during use; 'The observed dermoscopic changes made it difficult to differentiate a nevus from a melanoma.' Cited for: why skin checks get harder."
+
+vadner-2026-five-melanomas:
+  type: article
+  authors: "Vadner DJ, Smith S"
+  title: "Five primary melanomas in situ in a patient with recent tanning bed use, melanotan exposure, and anabolic hormone use"
+  container: "JAAD Case Reports"
+  year: 2026
+  volume: "73"
+  pages: "111-114"
+  doi: 10.1016/j.jdcr.2026.05.009
+  pmid: "42328529"
+  pmcid: PMC13279914
+  verified: pubmed
+  note: "Full text (Europe PMC; re-read 22 October 2026 in the fact-check): a 49-year-old man with fair skin, many moles and a grandmother with melanoma used sunbeds, melanotan II then melanotan I, and testosterone from an unregulated source; within about a week several existing moles 'turned black'; five biopsied lesions were melanoma in situ arising in severely dysplastic naevi. The authors write that causality cannot be established, that sunbed use is 'a major confounding variable', and that 'it is possible that these melanomas were preexisting and became clinically apparent due to pigmentary changes'. Cited for: the most recent case and its confounders. The doses in the report are not repeated on this site."
+
+yassin-alsabbagh-2025-oral-melanoma:
+  type: article
+  authors: "Yassin Alsabbagh A, Bhujel N, Singh RP"
+  title: "Melanotan II nasal spray: a possible risk factor for oral mucosal malignant melanoma?"
+  container: "International Journal of Oral and Maxillofacial Surgery"
+  year: 2025
+  volume: "54"
+  pages: "806-808"
+  doi: 10.1016/j.ijom.2025.03.014
+  pmid: "40210573"
+  verified: pubmed
+  note: "UK. A 22-year-old woman who had used a melanotan II nasal spray for tanning developed a mucosal malignant melanoma in the upper jaw, treated with surgery and immunotherapy. Cited for: a reported melanoma inside the mouth after a nasal spray."
+
+bonchev-2026-oral-pigmentation:
+  type: article
+  authors: "Bonchev A"
+  title: "Changes in Oral Mucosa Associated with Melanotan II Injections: A Case Report"
+  container: "Life (Basel)"
+  year: 2026
+  volume: "16"
+  pages: "265"
+  doi: 10.3390/life16020265
+  pmid: "41752902"
+  pmcid: PMC12942211
+  verified: pubmed
+  note: "Sofia, Bulgaria. Full text: a 42-year-old man (a smoker who also used sunbeds, with slight brown gum pigment noted two years earlier) injected melanotan II and developed darker and wider brown patches on the gums and new patches on the inner cheeks; one month after stopping the cheek patches had nearly gone; at three months the gum pigment persisted, fainter. Some existing moles darkened. The author notes smoking and sunbeds as confounders. Cited for: pigment in the mouth, and how slowly it fades."
+
+burian-2019-eruptive-naevi-review:
+  type: review
+  authors: "Burian EA, Jemec GBE"
+  title: "Eruptive Melanocytic Nevi: A Review"
+  container: "American Journal of Clinical Dermatology"
+  year: 2019
+  volume: "20"
+  pages: "669-682"
+  doi: 10.1007/s40257-019-00444-8
+  pmid: "31119650"
+  verified: pubmed
+  note: "Systematic search: 93 articles, 179 patients with eruptive naevi; suspected causes were skin and other diseases (50%), immunosuppressive drugs, chemotherapy or melanotan (41%) and other or unknown (9%); 16% had at least one dysplastic naevus; five melanomas; 'The nature of the data precluded assessment of risk of malignant transformation.' Cited for: how often eruptive moles are linked to melanotan and how little is known about cancer risk."
+
+kaski-2013-melanotan-pres:
+  type: article
+  authors: "Kaski D, Stafford N, Mehta A, Jenkins IH, Malhotra P"
+  title: "Melanotan and the posterior reversible encephalopathy syndrome"
+  container: "Annals of Internal Medicine"
+  year: 2013
+  volume: "158"
+  pages: "707-708"
+  doi: 10.7326/0003-4819-158-9-201305070-00020
+  pmid: "23648958"
+  verified: pubmed
+  note: "Letter, case report; PubMed has no abstract (index terms: female, young adult, subcutaneous injections, MRI). Cited for: the title finding only."
+
+devlin-2013-melanotan-priapism:
+  type: article
+  authors: "Devlin J, Pomerleau A, Foote J"
+  title: "Melanotan II overdose associated with priapism"
+  container: "Clinical Toxicology"
+  year: 2013
+  volume: "51"
+  pages: "383"
+  doi: 10.3109/15563650.2013.784775
+  pmid: "23537392"
+  verified: pubmed
+  note: "Letter commenting on Nelson 2012; PubMed has no abstract. Cited for: the title finding only."
+
+mallory-2021-melanotan-priapism:
+  type: article
+  authors: "Mallory CW, Lopategui DM, Cordon BH"
+  title: "Melanotan Tanning Injection: A Rare Cause of Priapism"
+  container: "Sexual Medicine"
+  year: 2021
+  volume: "9"
+  pages: "100298"
+  doi: 10.1016/j.esxm.2020.100298
+  pmid: "33460908"
+  pmcid: PMC7930850
+  verified: pubmed
+  note: "Miami. Full text: a 55-year-old man came to hospital after 30 hours of painful erection following a melanotan II injection; drainage and phenylephrine failed; surgery (penoscrotal decompression) was needed; at 15 weeks he had new erectile dysfunction with scarring of the erectile tissue. The authors note only two earlier reports. Cited for: priapism, its treatment and its lasting harm."
+
+peters-2020-melanotan-renal-infarction:
+  type: article
+  authors: "Peters B, Hadimeri H, Wahlberg R, Afghahi H"
+  title: "Melanotan II: a possible cause of renal infarction: review of the literature and case report"
+  container: "CEN Case Reports"
+  year: 2020
+  volume: "9"
+  pages: "159-161"
+  doi: 10.1007/s13730-020-00447-z
+  pmid: "31953620"
+  pmcid: PMC7148395
+  verified: pubmed
+  note: "Skövde, Sweden. A middle-aged man (index terms) with a renal infarction 'most likely attributed to Melanotan II'; the authors suggest a thrombotic effect or direct kidney toxicity. Cited for: kidney infarction as a reported harm."
+
+eijmael-2022-barbie-drug:
+  type: article
+  authors: "Eijmael MJPM, Janmaat CJ, Briët-Schipper EMN"
+  title: "[The risks of tanning with the Barbie drug]"
+  container: "Nederlands Tijdschrift voor Geneeskunde"
+  year: 2022
+  volume: "166"
+  pages: "D6578"
+  pmid: "35736369"
+  lang: nl
+  verified: pubmed
+  note: "Groene Hart Ziekenhuis, Gouda. Title as translated by PubMed; no DOI in the record. A 27-year-old man came to the emergency department two hours after injecting melanotan II with sympathomimetic symptoms; treated with lorazepam, potassium and intravenous fluids. Cited for: a Dutch case."
+
+gilhooley-2021-forum-study:
+  type: article
+  authors: "Gilhooley E, Daly S, McKenna D"
+  title: "Melanotan II User Experience: A Qualitative Study of Online Discussion Forums"
+  container: "Dermatology"
+  year: 2021
+  volume: "237"
+  pages: "995-999"
+  doi: 10.1159/000514492
+  pmid: "34464955"
+  verified: pubmed
+  note: "Sligo, Ireland. 623 posts by 205 people on UK and Irish forums, 2016-2017: motives (a tan before holidays and fitness competitions), misinformation, sunbed use, side effects. The authors warn of infection, contaminated products, polypharmacy and sunbed exposure. Cited for: users often combine it with sunbeds."
+
+# ---------------------------------------------------------------- what is in the products
+
+breindahl-2015-melanotan-products:
+  type: article
+  authors: "Breindahl T, Evans-Brown M, Hindersson P, McVeigh J, Bellis M, Stensballe A, Kimergård A"
+  title: "Identification and characterization by LC-UV-MS/MS of melanotan II skin-tanning products sold illegally on the Internet"
+  container: "Drug Testing and Analysis"
+  year: 2015
+  volume: "7"
+  pages: "164-172"
+  doi: 10.1002/dta.1655
+  pmid: "24771717"
+  verified: pubmed
+  note: "Denmark and UK. Vials sold as melanotan II by three online shops: all contained melanotan II, but the amount was 43-88% of what the label claimed; vials from two shops held 4.1-5.9% unknown impurities. Cited for: label content and purity."
+
+deville-2024-barbie-drug-identification:
+  type: article
+  authors: "Deville M, Charlier C"
+  title: "Barbie drug identification: Not a child's play"
+  container: "Journal of Forensic Sciences"
+  year: 2024
+  volume: "69"
+  pages: "2331-2338"
+  doi: 10.1111/1556-4029.15633
+  pmid: "39302005"
+  verified: pubmed
+  note: "University Hospital of Liège, Belgium. Powder in vials labelled 'Melanotan II', submitted to a toxicology laboratory: identity confirmed against a reference standard; purity 30%. Cited for: a Belgian sample far below its label."
+
+# ---------------------------------------------------------------- counts
+
+pubmed-melanotan-ii-count-2026-10-22:
+  type: dataset
+  authors: "National Library of Medicine"
+  title: "PubMed searches, 22 October 2026: (\"melanotan II\"[tiab] OR \"melanotan-II\"[tiab] OR \"melanotan 2\"[tiab]) NOT review[pt] — 189 records, 10 with an author from the University of Arizona group; adding the abbreviation MTII where the abstract also mentions melanocortins, MC3R, MC4R, alpha-MSH or melanotropins — 364 records, 45 with that group and about 350 that mention animals or cells; melanotan or MTII with toxicity, carcinogenicity, pregnancy or teratogenicity terms — 59 records, none a toxicity, cancer or pregnancy study of melanotan II"
+  container: "PubMed"
+  year: 2026
+  url: https://pubmed.ncbi.nlm.nih.gov/?term=%28%22melanotan+II%22%5Btiab%5D+OR+%22melanotan-II%22%5Btiab%5D+OR+%22melanotan+2%22%5Btiab%5D%29+NOT+review%5Bpt%5D
+  accessed: 2026-10-22
+  verified: url
+  note: "Arizona group = Hruby VJ, Hadley ME, Dorr RT, Wessells H, Haskell-Luevano C, Vanderah TW or Levine N as author. Counts made with NCBI E-utilities (esearch, rettype=count) and re-run independently in the fact-check on 22 October 2026 (189, 10, 364, 45 reproduced; 351 with an animals-or-cells filter, against the writer's 352, so the page says 'almost all'). MTII alone is not used, because it also matches metallothionein-II papers. Toxicity search: (melanotan terms OR MTII[tiab]) AND (toxicity OR toxicology OR carcinogenic* OR pregnancy OR gestation* OR teratogen* OR genotox*) [tiab], 59 records; the melanocortin ones are case reports, a product analysis and one mouse melanoma-treatment study (wu-2020-topical-mtii-melanoma). Method in research/melanotan-ii.md."
+
+# ---------------------------------------------------------------- regulators
+
+bfarm-2010-melanotan-warning:
+  type: regulator
+  authors: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM)"
+  title: "Bundesinstitut für Arzneimittel und Medizinprodukte (BfArM) warnt vor Anwendung melanotanhaltiger Produkte für kosmetische Zwecke (Pressemitteilung 14/10)"
+  year: 2010
+  url: https://www.bfarm.de/SharedDocs/Pressemitteilungen/DE/2010/pm14-2010.html
+  accessed: 2026-10-22
+  lang: de
+  verified: url
+  note: "Press release of 28 October 2010: products with melanotan I or II offered online are not authorised as medicines; their quality, safety and efficacy have not been adequately studied; known risks concern the heart and circulation, the digestive tract and unintended changes in skin colour; self-injecting an implant carries a risk of infection; afamelanotide (melanotan I) was then in clinical trials and available in a compassionate-use programme for EPP."
+
+fagg-melanotan-warning:
+  type: regulator
+  authors: "Federaal Agentschap voor Geneesmiddelen en Gezondheidsproducten (FAGG)"
+  title: "Nagemaakte en illegale geneesmiddelen: opgepast! (Melanotan)"
+  year: 2013
+  url: https://www.fagg-afmps.be/nl/news/news_melanotan
+  accessed: 2026-10-22
+  lang: nl
+  verified: url
+  note: "Page last updated 29 January 2013: melanotan (also offered as MT2) is an experimental product not authorised as a medicine, so its distribution is illegal; the agency cannot guarantee quality, safety or efficacy; in its most recent investigation insulin was found in medicines sold as melanotan, and misuse of insulin can cause a coma or death; analyses of illegal medicines found missing, too little or too much active substance and toxic substances. Fact-check, 22 October 2026: the live page returned only a bot-verification screen (not bypassed), so the text was confirmed on the Internet Archive copy of this URL dated 10 July 2026 (web.archive.org, used for checking only, not linked)."
+
+mhra-2024-foi-melanotan-ii:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency (MHRA)"
+  title: "FOI 24/274: Side effects reports of melanotan II products"
+  year: 2024
+  url: https://assets.publishing.service.gov.uk/media/669fbd3aa3c2a28abb50d55a/Final_Redaction_FOI_24_274.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Letter of 17 April 2024: products containing melanotan II 'are classified as medicines if they are injectable or pens'; a nasal spray only if sold with medicinal claims; advice to users is 'to stop using them immediately' and report side effects through the Yellow Card scheme; sale, supply and advertising of unauthorised medicines is not permitted; 16 UK suspected adverse-reaction reports between 1 January 2012 and 31 December 2022; the MHRA has removed melanotan products from the market for over 10 years."
+
+mhra-2021-foi-melanotan-ii:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency (MHRA)"
+  title: "FOI 21/1237: Number of reports received via the Yellow Card scheme for melanotan II products including nasal sprays and injections between 2011-2021"
+  year: 2021
+  url: https://assets.publishing.service.gov.uk/media/67bc97a898ea2db44fadddb1/FOI_21-1237_.pdf
+  accessed: 2026-10-22
+  verified: url
+  note: "Letter of 20 December 2021: whether a melanotan II product is a medicine is decided case by case, and 'injectable tanning products containing melanotan II are not automatically medicines'; 13 suspected adverse-reaction reports between 2011 and 2021. Cited for: the earlier, case-by-case position (superseded in wording by FOI 24/274)."
+
+fr-2016-melanotan-debarment:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Debarment Order (FR Doc. 2016-27244), 14 November 2016"
+  container: "Federal Register"
+  year: 2016
+  url: https://www.federalregister.gov/d/2016-27244
+  accessed: 2026-10-23
+  verified: url
+  note: "Text read through the Federal Register API (re-read 23 October 2026): the FDA permanently debarred a man convicted of federal felonies for a company that sold melanotan II, 'an unapproved new drug', online as an injectable tanning product, some of it made in and imported from China while advertised as US-made. The official title names the person; the title here is descriptive and the URL is the Federal Register's own short link (it redirects to the full document), so the site does not name a seller. It is the only Federal Register document that mentions melanotan."

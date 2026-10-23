@@ -1,0 +1,112 @@
+# MOTS-c — locale-independent facts. Every value below is sourced; see research/stubs-a.md.
+slug: mots-c
+tier: 2
+status: stub
+# experimental, not investigational: no published study has given MOTS-c itself to people. A company
+# analogue (CB4211) went through one phase 1a/1b study (2018–2021) whose results were only released by
+# the company, and that company dissolved in 2023. One phase 2a trial of MOTS-c itself is recruiting in
+# China (NCT07505745). Same logic as BPC-157: revisit if that trial reports.
+category: experimental
+class: mitochondrial
+body_systems: [metabolic, musculoskeletal, cellular]
+names:
+  common: MOTS-c
+  full: Mitochondrial open reading frame of the 12S rRNA-c
+  other: [MOTs-C]
+  brands: []
+identifiers:
+  pubchem_cid: 146675088
+  cas: 1627580-64-6
+  unii: A5CV6JFB78
+molecular:
+  formula: C101H152N28O22S2
+  mass_da: 2174.6
+  smiles: "CC[C@H](C)[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)N[C@@H](CC2=CC=C(C=C2)O)C(=O)N3CCC[C@H]3C(=O)N[C@@H](CCCNC(=N)N)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CCCNC(=N)N)C(=O)O)NC(=O)[C@H](CC4=CC=C(C=C4)O)NC(=O)CNC(=O)[C@H](CCSC)NC(=O)[C@H](CCC(=O)O)NC(=O)[C@H](CCC(=O)N)NC(=O)[C@H](CC5=CNC6=CC=CC=C65)NC(=O)[C@H](CCCNC(=N)N)NC(=O)[C@H](CCSC)N"
+  smiles_source: pubchem-mots-c
+sequence:
+  display: "Met-Arg-Trp-Gln-Glu-Met-Gly-Tyr-Ile-Phe-Tyr-Pro-Arg-Lys-Leu-Arg"
+  residues: [Met, Arg, Trp, Gln, Glu, Met, Gly, Tyr, Ile, Phe, Tyr, Pro, Arg, Lys, Leu, Arg]
+  n_terminus: H
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: fda-pcac-2026-mots-c-briefing
+evidence:
+  human_clinical: none
+  preclinical_volume: extensive
+  independence: broadly-replicated
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json, fda-pcac-2026-mots-c-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-mots-c-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  # Named in S4.4.1 (AMPK activators) since the 2025 List; WADA called it an added example, so no
+  # 'since' date is given for the prohibition itself (research/stubs-a.md).
+  - { jurisdiction: WADA, status: prohibited, wada_section: S4, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2025-list-explanatory-note, wada-2026-list-en, wada-2027-list-en] }
+studies:
+  # Originating group (Lee and Cohen, University of Southern California). Both authors disclosed
+  # consultancy and (Cohen) shareholding in CohBar, which developed the analogue CB4211; funding
+  # NIH and foundation grants, so mixed.
+  - id: lee-2015-discovery
+    source: lee-2015-mots-c
+    year: 2015
+    species: mixed
+    n: null
+    design: animal
+    funding: mixed
+    group: originating
+    blinded: null
+    controlled: true
+  # Mice plus 10 healthy young men whose own MOTS-c was measured during cycling (no MOTS-c given).
+  - id: reynolds-2021-exercise
+    source: reynolds-2021-mots-c-exercise
+    year: 2021
+    species: mixed
+    n: null
+    design: animal
+    funding: mixed
+    group: originating
+    blinded: null
+    controlled: true
+  # Independent group (Xi'an, China); 'Research Support, Non-U.S. Gov't' in PubMed, sponsor not
+  # identified from the abstract.
+  - id: lu-2019-ovariectomy
+    source: lu-2019-mots-c-ovariectomy
+    year: 2019
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Anti-doping laboratory, Cologne: test method plus breakdown in human blood in a dish; reference
+  # population of 20 healthy people for the ELISA comparison.
+  - id: knoop-2019-detection
+    source: knoop-2019-mots-c-detection
+    year: 2019
+    species: in-vitro
+    n: 20
+    design: analytical
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: false
+  # The company analogue CB4211 (not MOTS-c itself). Results released only by the company (press
+  # release and slides filed with the SEC); 65 healthy adults in phase 1a plus 23 randomised in phase
+  # 1b = 88, which matches the registry's enrolment (20 completed phase 1b; fact-check 23 Oct 2026).
+  # Coded mixed because the founders of the field consulted for the company.
+  - id: cohbar-2021-cb4211
+    source: sec-cohbar-2021-cb4211-topline
+    year: 2021
+    species: human
+    n: 88
+    design: phase-1
+    funding: industry
+    group: mixed
+    blinded: true
+    controlled: true
+authorised_products: []
+related: []
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

@@ -1,0 +1,123 @@
+# Semax — locale-independent facts. Every value below is sourced; see research/stubs-a.md.
+slug: semax
+tier: 2
+status: stub
+# experimental in the sense used on this site: not authorised in the EU, UK or US and in no formal
+# development programme there. It is registered as a medicine (nasal drops) in Russia (FDA Semax
+# briefing; Deigin 2022). Whether it is also registered in other countries was not checked, so the
+# pages say "registered in Russia", never "only in Russia" (fact-check 23 Oct 2026). The category vocabulary has no value for 'registered only in Russia';
+# research/stubs-a.md, contract issues.
+category: experimental
+class: neuroactive
+body_systems: [nervous]
+names:
+  common: Semax
+  full: "ACTH(4–7)-Pro-Gly-Pro"
+  other: [MEHFPGP, "ACTH(4-10) analogue"]
+  brands: []
+identifiers:
+  pubchem_cid: 9811102
+  cas: 80714-61-0
+  unii: I5FAL2585H
+molecular:
+  formula: C37H51N9O10S
+  mass_da: 813.9
+  smiles: "CSCC[C@@H](C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](CC1=CN=CN1)C(=O)N[C@@H](CC2=CC=CC=C2)C(=O)N3CCC[C@H]3C(=O)NCC(=O)N4CCC[C@H]4C(=O)O)N"
+  smiles_source: pubchem-semax
+sequence:
+  display: "Met-Glu-His-Phe-Pro-Gly-Pro"
+  residues: [Met, Glu, His, Phe, Pro, Gly, Pro]
+  n_terminus: H
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: fda-pcac-2026-semax-briefing
+evidence:
+  # Judgement call (research/stubs-a.md): registered in Russia, which the rubric would read as
+  # 'authorised', but the trials behind that registration are not published in a form outside
+  # reviewers can check (the FDA could not evaluate them). Graded by the published human evidence:
+  # small controlled studies in patients, in Russian.
+  human_clinical: phase-2
+  preclinical_volume: extensive
+  independence: few-groups
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-semax-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  # Not named on the List, and registered in Russia, so it is unclear whether S0 applies. The status
+  # vocabulary has no 'unclear' value: 'not-authorised' is used so that the At-a-glance tile says
+  # 'See below' instead of guessing 'banned' or 'not banned' (research/stubs-a.md, contract issues).
+  - { jurisdiction: WADA, status: not-authorised, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, fda-pcac-2026-semax-briefing] }
+studies:
+  # Originating group (Institute of Molecular Genetics, Russian Academy of Sciences).
+  - id: dolotov-2006-bdnf
+    source: dolotov-2006-semax-bdnf
+    year: 2006
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # 30 patients given Semax vs 80 comparable patients on standard care; allocation not described.
+  - id: gusev-1997-stroke
+    source: gusev-1997-semax-stroke
+    year: 1997
+    species: human
+    n: 110
+    design: open-label
+    funding: undisclosed
+    group: mixed
+    blinded: null
+    controlled: true
+  - id: gusev-2018-stroke
+    source: gusev-2018-semax-stroke
+    year: 2018
+    species: human
+    n: 110
+    design: open-label
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Described in the FDA briefing: 12 people with migraine and 25 with facial nerve pain, one dose,
+  # no control group; MSU co-authors (Kamensky), so mixed.
+  - id: koroleva-1996-pain
+    source: koroleva-1996-semax-analgesia
+    year: 1996
+    species: human
+    n: 37
+    design: case-series
+    funding: undisclosed
+    group: mixed
+    blinded: false
+    controlled: false
+  # First author at the Zakusov Institute, Moscow (co-author affiliations not in the record); no
+  # developer among the authors. Rats for dopamine, mice for activity; n not given in the abstract.
+  - id: eremin-2004-amphetamine
+    source: eremin-2004-semax-amphetamine
+    year: 2004
+    species: mixed
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Belgian public-health laboratory: Semax and Selank found in seized preparations.
+  - id: vanhee-2020-seized
+    source: vanhee-2020-nootropic-peptides
+    year: 2020
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: government
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: [selank]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

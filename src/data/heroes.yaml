@@ -24,6 +24,12 @@ compounds/cjc-1295: human-serum-albumin
 compounds/ipamorelin: anterior-pituitary-histology
 # Tesamorelin: its approved, tested effect is on deep belly fat; fat cells under the microscope (CC0 micrograph).
 compounds/tesamorelin: adipose-tissue-micrograph
+# PT-141 (bremelanotide): acts on melanocortin receptors in the brain; a preserved human brain cut down the
+# middle, from a university teaching collection (CC0). No vial, pen, needle or person.
+compounds/pt-141: human-brain-midsagittal-specimen
+# Melanotan II: its best-documented effect on the body is on pigment cells and moles; an abnormal (dysplastic)
+# mole under the microscope, stained tissue only (CC BY-SA 3.0, Nephron). No vial, needle, person or tanned body.
+compounds/melanotan-ii: dysplastic-nevus-micrograph
 # Safety (group safety-a): clean hands, an ambulance (112), a doctor's stethoscope, bacteria on lab dishes,
 # a skin bacterium under the microscope, and a sharps container. No needles, vials or skin punctures.
 safety: cdc-hand-washing
@@ -96,3 +102,12 @@ evidence/how-to-read-a-study: coin-toss
 evidence/the-translation-gap: hooded-lab-rat
 evidence/evidence-grading: three-measuring-scales
 evidence/conflicts-of-interest: handshake-drawing
+# Stub compounds (group stubs-a): mitochondria under the electron microscope (MOTS-c is made from mitochondrial
+# DNA), the pineal gland (epitalon was modelled on a pineal extract), a rat hippocampus (Semax's BDNF studies),
+# a macrophage (Selank is built on tuftsin, which stirs up such germ-eating cells) and a thymic corpuscle in the
+# thymus (where thymosin alpha-1 was first found). Micrographs only: no products, vials, needles or people.
+compounds/mots-c: mitochondria-lung-tem
+compounds/epitalon: pineal-gland-he
+compounds/semax: rat-hippocampus-nih
+compounds/selank: macrophage-sem-niaid
+compounds/thymosin-alpha-1: thymic-corpuscle

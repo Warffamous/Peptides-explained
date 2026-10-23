@@ -1,0 +1,92 @@
+slug: pt-141
+tier: 1
+status: complete
+category: authorised-elsewhere   # FDA-approved as Vyleesi (21 June 2019); no EU, UK or Dutch authorisation and no EU application on record
+class: melanocortin
+body_systems: [sexual, nervous, cardiovascular, skin]
+names:
+  common: PT-141
+  full: "Bremelanotide (N-acetyl-norleucyl-cyclo[aspartyl-histidyl-D-phenylalanyl-arginyl-tryptophyl-lysine], free acid)"
+  inn: bremelanotide
+  other: [PT 141, bremelanotide acetate]
+  brands: [Vyleesi]
+identifiers:
+  pubchem_cid: 9941379
+  chembl: CHEMBL2070241
+  cas: 189691-06-3
+  unii: 6Y24O4F92S
+molecular:
+  formula: C50H68N14O10
+  mass_da: 1025.2          # free base; US label section 11 and PubChem agree
+  smiles: "CCCC[C@@H](C(=O)N[C@H]1CC(=O)NCCCC[C@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H](NC1=O)CC2=CN=CN2)CC3=CC=CC=C3)CCCN=C(N)N)CC4=CNC5=CC=CC=C54)C(=O)O)NC(=O)C"
+  smiles_source: pubchem-bremelanotide
+# Sequence: US label section 11 gives "Ac-Nle-cyclo-(Asp-His-D-Phe-Arg-Trp-Lys-OH)": a cyclic heptapeptide with
+# an acetylated N-terminus and a free acid at the C-terminus. The ring is a lactam (amide) bond between the side
+# chain of Asp (position 2) and the side chain of Lys (position 7); PubChem names it "(2->7)-lactam". Checked three
+# ways on 22 October 2026: the label, the PubChem isomeric SMILES and the ChEMBL HELM notation. Melanotan II
+# (PubChem CID 92432) has the same SMILES except for a C-terminal amide (-NH2) instead of the free acid.
+sequence:
+  display: "Ac-Nle-cyclo[Asp-His-D-Phe-Arg-Trp-Lys]-OH"
+  residues: [Nle, Asp, His, D-Phe, Arg, Trp, Lys]
+  n_terminus: Ac
+  c_terminus: OH
+  modifications:
+    - { position: 1, label: "Nle (norleucine), a straight-chain building block not used in human proteins, carries an acetyl group at the start of the chain" }
+    - { position: 4, label: "D-Phe: the mirror-image form of phenylalanine" }
+  bridges:
+    - { from: 2, to: 7, kind: lactam }
+  source: fda-label-vyleesi-2020
+evidence:
+  human_clinical: authorised
+  preclinical_volume: minimal
+  independence: few-groups
+  safety: partial
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-medicines-search] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring] }
+  - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, de-amg-73] }
+  - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, be-medicines-law-1964-art-6quater] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [mhra-products-search-bremelanotide, uk-hmr-2012-reg-46] }
+  - { jurisdiction: US, status: authorised, since: 2019-06-21, as_of: 2026-10-22, sources: [fda-drugsatfda-vyleesi, fda-2019-vyleesi-approval-letter, dailymed-vyleesi-label] }
+  # Not named on the 2026 or 2027 Prohibited List or Monitoring Program (PDFs searched for bremelanotide, PT-141,
+  # melanocortin and melanotan on 22 October 2026). S0 covers only substances with no current approval by any
+  # government health authority; bremelanotide is FDA-approved, so S0 does not apply. No WADA or national
+  # anti-doping statement on bremelanotide was found (research/pt-141.md, open question for the legal reviewer).
+  - { jurisdiction: WADA, status: not-listed, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2026-monitoring-program, wada-2027-monitoring-program] }
+# Structured studies. "originating" = the developer, Palatin Technologies, and its licensee AMAG Pharmaceuticals
+# (authors employed by them or funding stated by them). Funding is "industry" where the paper states it or every
+# author worked for the developer; where developer and academic authors wrote it together and no funding statement
+# could be read, it is "undisclosed".
+# Every published human study we found is listed except later analyses of the same trials (White 2017 is the
+# blood-pressure report of the Clayton 2016 trial; Althof 2019, Koochaki 2021, Simon 2022 and Clayton 2022 are
+# further analyses of the phase 2b and phase 3 trials) and one retracted study (Safarinejad 2008, women).
+studies:
+  - { id: zhang-2021-structure, source: zhang-2021-mc4r-structures, year: 2021, species: in-vitro, n: null, design: in-vitro, funding: academic, group: independent, blinded: null, controlled: null }
+  - { id: molinoff-2003-animals, source: molinoff-2003-pt141, year: 2003, species: mixed, n: null, design: animal, funding: industry, group: originating, blinded: null, controlled: null }
+  - { id: pfaus-2004-female-rats, source: pfaus-2004-female-rat-solicitation, year: 2004, species: rat, n: null, design: animal, funding: undisclosed, group: mixed, blinded: null, controlled: true }
+  - { id: borland-2025-hamsters, source: borland-2025-hamster-bremelanotide, year: 2025, species: other-animal, n: null, design: animal, funding: government, group: independent, blinded: null, controlled: true }
+  - { id: diamond-2004-men-nasal, source: diamond-2004-intranasal-pt141-men, year: 2004, species: human, n: null, design: phase-1, funding: undisclosed, group: originating, blinded: true, controlled: true }
+  - { id: rosen-2004-men-injected, source: rosen-2004-subcutaneous-pt141-men, year: 2004, species: human, n: null, design: phase-1, funding: undisclosed, group: originating, blinded: null, controlled: true }
+  - { id: diamond-2005-with-sildenafil, source: diamond-2005-pt141-sildenafil, year: 2005, species: human, n: 19, design: rct, funding: industry, group: originating, blinded: null, controlled: true }
+  - { id: diamond-2006-women, source: diamond-2006-bremelanotide-women, year: 2006, species: human, n: 18, design: rct, funding: undisclosed, group: originating, blinded: true, controlled: true }
+  - { id: safarinejad-2008-men, source: safarinejad-2008-bremelanotide-men, year: 2008, species: human, n: 342, design: rct, funding: undisclosed, group: independent, blinded: true, controlled: true }
+  - { id: clayton-2016-phase-2b, source: clayton-2016-bremelanotide-phase-2b, year: 2016, species: human, n: 397, design: phase-2, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: clayton-2017-alcohol, source: clayton-2017-bremelanotide-alcohol, year: 2017, species: human, n: 24, design: phase-1, funding: undisclosed, group: originating, blinded: true, controlled: true }
+  - { id: reconnect-2019, source: kingsberg-2019-reconnect, year: 2019, species: human, n: 1267, design: phase-3, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: reconnect-extension-2019, source: simon-2019-reconnect-extension, year: 2019, species: human, n: 684, design: open-label, funding: industry, group: originating, blinded: false, controlled: false }
+  - { id: spielmans-2021-reanalysis, source: spielmans-2021-reconnect-reanalysis, year: 2021, species: human, n: null, design: meta-analysis, funding: undisclosed, group: independent, blinded: null, controlled: true }
+  - { id: thurston-2022-brain-scans, source: thurston-2022-mc4r-fmri, year: 2022, species: human, n: 31, design: rct, funding: mixed, group: mixed, blinded: true, controlled: true }
+  - { id: spana-2022-weight, source: spana-2022-bremelanotide-weight, year: 2022, species: human, n: 85, design: phase-1, funding: industry, group: originating, blinded: true, controlled: true }
+  - { id: mestria-2021-seized-products, source: mestria-2021-seized-melanotan-bremelanotide, year: 2021, species: not-applicable, n: null, design: analytical, funding: undisclosed, group: independent, blinded: null, controlled: null }
+authorised_products:
+  - id: vyleesi
+    name: Vyleesi
+    holder: Cosette Pharmaceuticals, Inc.
+    jurisdiction: US
+    authorised: 2019-06-21     # NDA 210557, ORIG-1 (applicant then AMAG Pharmaceuticals); Drugs@FDA lists Cosette as the company on 22 October 2026
+    route: subcutaneous
+    label_url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/210557s002lbl.pdf
+    label_source: fda-label-vyleesi-2020
+related: [melanotan-ii, tesamorelin]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

@@ -1,0 +1,140 @@
+# Selank — locale-independent facts. Every value below is sourced; see research/stubs-a.md.
+slug: selank
+tier: 2
+status: stub
+# experimental in the sense used on this site: not authorised in the EU, UK or US and in no formal
+# development programme there. Listed among peptide medicines registered in Russia (Deigin 2022,
+# Table 1: anxiolytic). Registration in other countries was not checked, so the pages say
+# "registered in Russia", never "only in Russia" (fact-check 23 Oct 2026). We could not check the Russian register itself (not on the allowlist, and its
+# search page did not return results to a script); research/stubs-a.md.
+category: experimental
+class: neuroactive
+body_systems: [nervous, immune]
+names:
+  common: Selank
+  full: Thr-Lys-Pro-Arg-Pro-Gly-Pro (tuftsin-Pro-Gly-Pro)
+  other: [TP-7, Selanc]
+  brands: []
+identifiers:
+  pubchem_cid: 11765600
+  cas: 129954-34-3
+  unii: TS9JR8EP1G
+molecular:
+  formula: C33H57N11O9
+  mass_da: 751.9
+  smiles: "C[C@H]([C@@H](C(=O)N[C@@H](CCCCN)C(=O)N1CCC[C@H]1C(=O)N[C@@H](CCCN=C(N)N)C(=O)N2CCC[C@H]2C(=O)NCC(=O)N3CCC[C@H]3C(=O)O)N)O"
+  smiles_source: pubchem-selank
+sequence:
+  display: "Thr-Lys-Pro-Arg-Pro-Gly-Pro"
+  residues: [Thr, Lys, Pro, Arg, Pro, Gly, Pro]
+  n_terminus: H
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: pubchem-selank
+evidence:
+  # Same judgement call as Semax (research/stubs-a.md): graded by the published human evidence,
+  # small controlled studies in patients in Russian, not by the Russian registration.
+  human_clinical: phase-2
+  preclinical_volume: moderate
+  independence: few-groups
+  safety: uncharacterised
+regulatory:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-category-2-safety-risks, openfda-drugsfda-search-2026-10-22] }
+  # Same as Semax: not named, registered in Russia, so S0 may not apply; 'not-authorised' keeps the
+  # At-a-glance tile on 'See below' (research/stubs-a.md, contract issues).
+  - { jurisdiction: WADA, status: not-authorised, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, deigin-2022-russian-peptides] }
+studies:
+  # Originating network (Institute of Molecular Genetics; Zakusov Institute; Mental Health Research
+  # Centre, all Moscow). Allocation and blinding not described in the abstracts.
+  - id: zozulia-2008-anxiety
+    source: zozulia-2008-selank-gad
+    year: 2008
+    species: human
+    n: 62
+    design: open-label
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: medvedev-2014-phenazepam
+    source: medvedev-2014-selank-phenazepam
+    year: 2014
+    species: human
+    n: 60
+    design: open-label
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Added by the fact-checker (23 Oct 2026): the largest published patient study found. Phenazepam
+  # alone (30) against Selank plus phenazepam (40); no placebo; Myasoedov among the authors.
+  - id: medvedev-2015-add-on
+    source: medvedev-2015-selank-add-on
+    year: 2015
+    species: human
+    n: 70
+    design: open-label
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Patients' plasma plus enzyme tests in the lab.
+  - id: zozulya-2001-enkephalinase
+    source: zozulya-2001-selank-enkephalinase
+    year: 2001
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  - id: inozemtseva-2008-bdnf
+    source: inozemtseva-2008-selank-bdnf
+    year: 2008
+    species: rat
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: null
+  # Mice; one injection; gene activity in the spleen.
+  - id: kolomin-2011-spleen
+    source: kolomin-2011-selank-spleen
+    year: 2011
+    species: mouse
+    n: null
+    design: animal
+    funding: undisclosed
+    group: originating
+    blinded: null
+    controlled: true
+  # Moscow State University laboratory without developer co-authors: lab clotting test.
+  - id: rogozinskaya-2017-clotting
+    source: rogozinskaya-2017-selank-anticoagulant
+    year: 2017
+    species: in-vitro
+    n: null
+    design: in-vitro
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  - id: vanhee-2020-seized
+    source: vanhee-2020-nootropic-peptides
+    year: 2020
+    species: not-applicable
+    n: null
+    design: analytical
+    funding: government
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: [semax]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review

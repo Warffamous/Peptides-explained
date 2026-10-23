@@ -1,0 +1,118 @@
+# Thymosin alpha-1 (thymalfasin) — locale-independent facts. Every value is sourced; see research/stubs-a.md.
+slug: thymosin-alpha-1
+tier: 2
+status: stub
+# investigational, with an explanation (research/stubs-a.md, contract issues). It IS authorised in some
+# countries: nationally in Italy (Zadaxin, since 1996: EMA orphan page, FDA 2024 briefing; AIFA's own
+# database checked 22 October 2026 but aifa.gov.it is not on the allowlist) and in countries in Asia,
+# Latin America, Eastern Europe and the Middle East (FDA 2024 briefing). It is not authorised centrally
+# in the EU, or in the Netherlands, the UK or the US. 'authorised' would put an EU-approval tile on a
+# page read in the Netherlands, and 'authorised-elsewhere' needs an official label from an allowlisted
+# regulator in the EU, US or UK, which does not exist. Many trials are still running (19 active or
+# recruiting on ClinicalTrials.gov, 22 October 2026), so 'investigational' is the closest category.
+category: investigational
+class: immunomodulatory
+body_systems: [immune]
+names:
+  common: Thymosin alpha-1
+  full: Thymosin alpha 1
+  inn: thymalfasin
+  other: [Thymalfasin, Tα1, Ta1]
+  brands: [Zadaxin]
+identifiers:
+  pubchem_cid: 16130571
+  cas: 62304-98-7
+  unii: W0B22ISQ1C
+molecular:
+  formula: C129H215N33O55
+  mass_da: 3108.3
+  smiles: "CC[C@H](C)[C@@H](C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@@H]([C@@H](C)O)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CC(=O)O)C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CCCCN)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](C)C(=O)N[C@@H](CCC(=O)O)C(=O)N[C@@H](CC(=O)N)C(=O)O)NC(=O)[C@H](CCC(=O)O)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@H]([C@@H](C)O)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](C(C)C)NC(=O)[C@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](CO)NC(=O)C"
+  smiles_source: pubchem-thymalfasin
+sequence:
+  display: "Ac-Ser-Asp-Ala-Ala-Val-Asp-Thr-Ser-Ser-Glu-Ile-Thr-Thr-Lys-Asp-Leu-Lys-Glu-Lys-Lys-Glu-Val-Val-Glu-Glu-Ala-Glu-Asn-OH"
+  residues: [Ser, Asp, Ala, Ala, Val, Asp, Thr, Ser, Ser, Glu, Ile, Thr, Thr, Lys, Asp, Leu, Lys, Glu, Lys, Lys, Glu, Val, Val, Glu, Glu, Ala, Glu, Asn]
+  n_terminus: Ac
+  c_terminus: OH
+  modifications: []
+  bridges: []
+  source: fda-pcac-2024-thymosin-alpha-1-briefing
+evidence:
+  # 'authorised' under the rubric: a regulator (Italy's, among others) has granted a marketing
+  # authorisation; the published record also includes large phase 3 trials (TESTS, 1,106 people).
+  human_clinical: authorised
+  preclinical_volume: extensive
+  independence: broadly-replicated
+  safety: partial
+regulatory:
+  # 'authorised' because thymalfasin is authorised in one EU member state (Italy); the note says it is
+  # national, with no EU-wide authorisation and none in the Netherlands. Not "Italy only": the maker
+  # reports approvals in "Eastern Europe", which the FDA could not verify, so other EU states are
+  # possible but unchecked (fact-check 23 Oct 2026).
+  - { jurisdiction: EU, status: authorised, as_of: 2026-10-22, sources: [ema-orphan-thymalfasin-eu-3-02-110, fda-pcac-2024-thymosin-alpha-1-briefing, ema-medicines-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-thymosin-alpha-1-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, openfda-drugsfda-search-2026-10-22] }
+  # Not named on the List and authorised in several countries, so S0 (no approval anywhere) does not
+  # obviously apply; no anti-doping body has said either way in a source we could find. 'not-authorised'
+  # keeps the At-a-glance tile on 'See below' (research/stubs-a.md, contract issues).
+  - { jurisdiction: WADA, status: not-authorised, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, fda-pcac-2024-thymosin-alpha-1-briefing] }
+studies:
+  # Academic investigators in China; funded by the university, a provincial research centre and the
+  # manufacturer (SciClone); several authors had grants or fees from SciClone.
+  - id: wu-2025-tests
+    source: wu-2025-tests-sepsis
+    year: 2025
+    species: human
+    n: 1106
+    design: phase-3
+    funding: mixed
+    group: independent
+    blinded: true
+    controlled: true
+  - id: mutchnick-1999-hepatitis-b
+    source: mutchnick-1999-thymosin-hbv
+    year: 1999
+    species: human
+    n: 97
+    design: phase-3
+    funding: undisclosed
+    group: independent
+    blinded: true
+    controlled: true
+  # Untreated control group, no placebo; histology read blind.
+  - id: chien-1998-hepatitis-b
+    source: chien-1998-thymosin-hbv
+    year: 1998
+    species: human
+    n: 98
+    design: rct
+    funding: undisclosed
+    group: independent
+    blinded: false
+    controlled: true
+  # Cells and mice (Perugia and Rome).
+  - id: romani-2004-dendritic-cells
+    source: romani-2004-thymosin-dendritic
+    year: 2004
+    species: mixed
+    n: null
+    design: animal
+    funding: undisclosed
+    group: independent
+    blinded: null
+    controlled: true
+  # Funding from the full text (fact-check 23 Oct 2026): National Natural Science Foundation of China,
+  # Sun Yat-sen University, a Guangdong provincial enterprise joint foundation, a provincial centre.
+  - id: gu-2025-sepsis-meta-analysis
+    source: gu-2025-thymosin-sepsis-meta
+    year: 2025
+    species: human
+    n: 1927
+    design: meta-analysis
+    funding: mixed
+    group: independent
+    blinded: null
+    controlled: null
+authorised_products: []
+related: [tb-500]
+last_reviewed: 2026-10-22
+reviewed_by: pending-medical-review
