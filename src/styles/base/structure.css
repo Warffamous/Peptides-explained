@@ -13,6 +13,12 @@ time { unicode-bidi: plaintext; }
 .banner--pseudo { display: none; }
 html[data-pseudo="rtl"] .banner--pseudo { display: block; }
 
+/* Consent banner (ConsentBanner.astro): only with JavaScript, and only while html[data-consent="ask"],
+   which the inline head script sets before first paint, so it never pushes the page down after load. */
+.consent { display: none; }
+:root.js[data-consent="ask"] .consent { display: block; }
+:root:not(.js) .site-footer__consent { display: none; }
+
 /* Hidden glossary definitions (read through aria-describedby). */
 .glossary-defs { display: none; }
 

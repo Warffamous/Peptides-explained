@@ -18,6 +18,18 @@ a:hover { text-decoration-thickness: 2px; }
 
 .banner { margin: 0; padding: var(--space-2) var(--pad); font-size: var(--s--1); background: var(--surface-2); color: var(--text-2); border-block-end: 1px solid var(--line); }
 
+/* Consent banner: calm, in the page flow (never over the text), two buttons that look the same. */
+.consent { padding: var(--space-4) var(--pad); background: var(--surface-2); border-block-end: 1px solid var(--line); }
+.consent__inner { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); }
+.consent__body { flex: 1 1 26rem; }
+.consent__title { margin: 0; font-size: var(--s-0); font-weight: 600; color: var(--text); }
+.consent__title:focus:not(:focus-visible) { outline: none; }
+.consent__text { margin: var(--space-1) 0 0; max-inline-size: var(--measure); font-size: var(--s--1); color: var(--text-2); }
+.consent__actions { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.consent__button { min-block-size: 2.75rem; min-inline-size: 7.5rem; padding: 0.4rem 1.1rem; font: inherit; font-weight: 600; color: var(--text); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); cursor: pointer; }
+.consent__button:hover { border-color: var(--link); }
+.site-footer__consent { padding: 0; font: inherit; color: var(--link); background: none; border: 0; text-decoration: underline; text-underline-offset: 0.15em; cursor: pointer; }
+
 /* ------------------------------------------------------------------ header */
 .site-header {
   position: relative;

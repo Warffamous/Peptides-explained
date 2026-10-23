@@ -1,0 +1,51 @@
+---
+/**
+ * Asks before the host's visit statistics run. The host (Lovable) adds its statistics scripts to every
+ * page it serves; the Lovable app's src/server.ts blocks them with a Content-Security-Policy unless the
+ * cookie pe-stats=yes is present. This banner only records the reader's choice in that cookie (six
+ * months) and removes the statistics cookie on "Don't allow"; "Cookie settings" in the footer opens it
+ * again. Both buttons look the same, so refusing is as easy as allowing.
+ *
+ * Needs JavaScript: without it the statistics scripts cannot run either, so there is nothing to ask.
+ * The inline head script (BaseHead) sets html[data-consent="ask"] before first paint when no choice is
+ * stored, so the banner is laid out from the start and nothing below it moves (base/structure.css).
+ */
+import { t } from '../../lib/i18n';
+import { routeUrl } from '../../lib/urls';
+interface Props { locale: string }
+const { locale } = Astro.props;
+---
+<section class="consent" aria-labelledby="consent-title" data-consent-banner>
+  <div class="consent__inner">
+    <div class="consent__body">
+      <h2 class="consent__title" id="consent-title" tabindex="-1">{t(locale, 'common.consent.title')}</h2>
+      <p class="consent__text">{t(locale, 'common.consent.text')} <a href={`${routeUrl(locale, 'about/funding')}#your-privacy`}>{t(locale, 'common.consent.more')}</a></p>
+    </div>
+    <div class="consent__actions">
+      <button type="button" class="consent__button" data-consent-choice="yes">{t(locale, 'common.consent.allow')}</button>
+      <button type="button" class="consent__button" data-consent-choice="no">{t(locale, 'common.consent.deny')}</button>
+    </div>
+  </div>
+</section>
+<script>
+  const root = document.documentElement;
+  const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
+  const SIX_MONTHS = 60 * 60 * 24 * 182;
+  const secure = location.protocol === 'https:' ? '; Secure' : '';
+  const choose = (choice: string) => {
+    document.cookie = `pe-stats=${choice}; Path=/; Max-Age=${SIX_MONTHS}; SameSite=Lax${secure}`;
+    // The statistics cookie the host's script set while it was allowed: gone at once, not after 30 minutes.
+    if (choice === 'no') document.cookie = `session-id=; Path=/; Max-Age=0${secure}`;
+    delete root.dataset.consent;
+  };
+  banner?.querySelectorAll<HTMLButtonElement>('[data-consent-choice]').forEach((b) => {
+    b.addEventListener('click', () => choose(b.dataset.consentChoice!));
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-consent-open]').forEach((b) => {
+    b.addEventListener('click', () => {
+      root.dataset.consent = 'ask';
+      window.scrollTo({ top: 0 });
+      banner?.querySelector<HTMLElement>('#consent-title')?.focus();
+    });
+  });
+</script>

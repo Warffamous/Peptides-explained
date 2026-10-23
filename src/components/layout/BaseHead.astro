@@ -46,7 +46,9 @@ const preloadFont = loc.script === 'arabic' ? 'noto-sans-arabic-arabic-wght-norm
 // first, outside the try: when storage is blocked (access throws) the JS-only controls (scheme
 // toggle, explainer Pause/Replay) must still be laid out from the first paint and shown.
 // A design choice saved by earlier preview builds ('pe-theme') is removed, and ?theme= is ignored.
-const boot = `(function(d,w){d.documentElement.classList.add('js');try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
+// No stored statistics choice (cookie pe-stats): html[data-consent="ask"] shows the consent banner from the
+// first paint (ConsentBanner.astro).
+const boot = `(function(d,w){d.documentElement.classList.add('js');try{if(!/(?:^|; )pe-stats=(?:yes|no)(?:;|$)/.test(d.cookie))d.documentElement.dataset.consent='ask'}catch(e){}try{var h=d.documentElement,q=new URLSearchParams(w.location.search),ls=w.localStorage,ss=w.sessionStorage;` +
   `ls.removeItem('pe-theme');var s=ls.getItem('pe-scheme');if(s==='dark'||s==='light')h.dataset.scheme=s;` +
   `var p=q.get('pseudo');if(p==='rtl')ss.setItem('pe-pseudo','rtl');else if(p==='off')ss.removeItem('pe-pseudo');` +
   `if(ss.getItem('pe-pseudo')==='rtl'){h.dir='rtl';h.dataset.pseudo='rtl'}}catch(e){}})(document,window)`;

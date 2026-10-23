@@ -46,7 +46,7 @@ const about = [
         </ul>
       </nav>
     </div>
-    <p class="site-footer__privacy">{t(locale, 'common.footer.privacy')}</p>
+    <p class="site-footer__privacy">{t(locale, 'common.footer.privacy')} <button type="button" class="site-footer__consent" data-consent-open>{t(locale, 'common.footer.cookieSettings')}</button></p>
     <p class="site-footer__notice">{t(locale, 'common.footer.notice', { date: formatDate(locale, CONTENT_AS_OF) })}</p>
   </div>
 </footer>
