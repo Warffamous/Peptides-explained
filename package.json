@@ -13,6 +13,7 @@
     "lint:css": "stylelint \"src/**/*.{css,astro}\"",
     "prebuild": "node scripts/sync-fonts.mjs && npm run validate && npm run lint:css",
     "build": "astro build && pagefind --site dist --silent",
+    "build:live": "PUBLISHED_ONLY=1 astro build --outDir dist-live && pagefind --site dist-live --silent",
     "build:rtl": "PSEUDO_RTL=1 astro build --outDir dist-rtl",
     "check:commerce": "tsx scripts/check-no-commerce.ts dist",
     "check:html": "tsx scripts/check-html.ts dist",

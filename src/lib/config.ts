@@ -8,7 +8,10 @@ export const SITE = site;
 /** Build-time pseudo-RTL (PSEUDO_RTL=1, npm run build:rtl): every page renders dir="rtl". */
 export const PSEUDO_RTL = __PSEUDO_RTL__;
 
-export const LOCALES = localeConfig.locales as Locale[];
+/** Build-time PUBLISHED_ONLY=1 (npm run build:live, the public copy): preview locales count as planned. */
+const PUBLISHED_ONLY = __PUBLISHED_ONLY__;
+
+export const LOCALES = (localeConfig.locales as Locale[]).map((l) => (PUBLISHED_ONLY && l.status === 'preview' ? { ...l, status: 'planned' as const } : l));
 export const DEFAULT_LOCALE = localeConfig.defaultLocale;
 export const SOURCE_LOCALE = localeConfig.sourceLocale;
 /** Locales that get routes. planned locales are validated but not built. */

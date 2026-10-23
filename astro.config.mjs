@@ -16,13 +16,15 @@ const localeCfg = JSON.parse(fs.readFileSync(new URL('./config/locales.json', im
 /**
  * Build variants:
  *   (default)     — the site, into dist/
+ *   PUBLISHED_ONLY=1 — leave out preview locales, as if planned (the public copy: npm run build:live)
  *   PSEUDO_RTL=1  — render every page dir="rtl" at build time (RTL acceptance screenshots;
  *                   npm run build:rtl writes it to dist-rtl/)
  */
 const PSEUDO_RTL = process.env.PSEUDO_RTL === '1';
+const PUBLISHED_ONLY = process.env.PUBLISHED_ONLY === '1';
 const SITE_URL = process.env.SITE_URL ?? site.siteUrl;
 
-const builtLocales = localeCfg.locales.filter((l) => l.status !== 'planned').map((l) => l.code);
+const builtLocales = localeCfg.locales.filter((l) => l.status === 'published' || (l.status === 'preview' && !PUBLISHED_ONLY)).map((l) => l.code);
 
 /**
  * Dev only: the stylesheet is an endpoint (src/pages/styles/site.css.ts). In a build it is a real
@@ -66,6 +68,7 @@ export default defineConfig({
     plugins: [devSiteCss()],
     define: {
       __PSEUDO_RTL__: JSON.stringify(PSEUDO_RTL),
+      __PUBLISHED_ONLY__: JSON.stringify(PUBLISHED_ONLY),
     },
     build: { assetsInlineLimit: 0 },
   },
