@@ -53,10 +53,8 @@
 .review-meta__item { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2em 0.4em; }
 .review-meta__item dt { color: var(--text-3); }
 .review-meta__item dt::after { content: ':'; }
-/* "Independent medical review pending": neutral, dashed, the clock glyph and the words. */
-.review-meta__pending { display: inline-flex; align-items: center; gap: 0.4em; padding: 0.05rem 0.5rem; border: 1px dashed var(--text-3); border-radius: var(--radius-sm); color: var(--text-2); }
-.review-meta__pending::before { content: ''; flex: none; inline-size: 1em; block-size: 1em; background: currentColor; mask: var(--glyph-pending) center / contain no-repeat; }
-.review-meta__notice { margin-block-start: var(--space-3); padding: var(--space-3) var(--space-4); border-radius: var(--radius); background: var(--surface-2); border: 1px dashed var(--text-3); color: var(--text-2); font-size: var(--s--1); }
+/* Foot of the page only: one quiet sentence while no named reviewer has signed the page off. */
+.review-meta__notice { margin-block-start: var(--space-2); color: var(--text-3); font-size: var(--s--2); line-height: 1.5; }
 
 /*
  * The review line near the top (DocLayout): directly under the summary on phones; from 64rem

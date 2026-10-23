@@ -174,5 +174,4 @@ const arts: Media[] = [...new Set(x.cards.map((c) => ORGAN_ART.organs[c.organ]?.
     {arts.map((m, i) => <>{i > 0 && <span aria-hidden="true"> · </span>}<MediaCredit locale={L} media={m} /></>)}{' '}
     <span class="oc-credit__note">{ui('artNote')}</span>
   </p>
-  {x.review.status === 'pending' && <p class="oc-review">{ui('reviewPending')}</p>}
 </figure>

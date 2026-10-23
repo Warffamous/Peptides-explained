@@ -31,7 +31,7 @@ type Ctx = {
 const DIR = 'src/data/organ-cards';
 const USE_RE = /<OrganCards\b([^>]*?)(\/?)>/g;
 const CITE_RE = /<Cite\s+id=["']([^"']+)["']/g;
-const UI_KEYS = ['kicker', 'notApproved', 'notApprovedShort', 'cardsTitle', 'closeUp', 'noReceptor', 'legend', 'pictures', 'artNote', 'reviewPending'];
+const UI_KEYS = ['kicker', 'notApproved', 'notApprovedShort', 'cardsTitle', 'closeUp', 'noReceptor', 'legend', 'pictures', 'artNote'];
 const UI_GROUPS: Record<string, string[]> = {
   cell: ['title', 'outside', 'surface', 'inside', 'camp', 'responds', 'stepsLabel', 'dockOne', 'dockMany', 'signalOne', 'signalMany', 'respond'],
   receptors: ['glp1', 'gip', 'glucagon'],

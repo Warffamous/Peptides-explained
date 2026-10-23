@@ -206,7 +206,6 @@ ul.oc-chips { display: flex; flex-wrap: wrap; gap: 0.2rem 0.75rem; margin: 0; pa
 .oc-credit { margin: var(--space-2) 0 0; font-size: var(--s--2); color: var(--text-2); }
 .oc-credit__label { font-weight: 600; }
 .oc-credit__note { display: block; }
-.oc-review { margin: var(--space-1) 0 0; font-size: var(--s--2); color: var(--text-2); }
 
 /* Windows high contrast: lines and frames keep their meaning through the line style. */
 @media (forced-colors: active) {

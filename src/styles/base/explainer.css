@@ -137,7 +137,7 @@
 .xp-step { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; border-inline-start: 3px solid transparent; }
 .xp-step__text, .xp-step__levels { margin: 0; }
 .xp-step__levels { display: flex; flex-wrap: wrap; gap: 0.3em; }
-.xp-summary, .xp-legend, .xp-sources, .xp-review { margin-block: var(--space-3, 0.75rem) 0; margin-inline: 0; }
+.xp-summary, .xp-legend, .xp-sources { margin-block: var(--space-3, 0.75rem) 0; margin-inline: 0; }
 .xp-credit { margin-block: var(--space-1, 0.25rem) 0; margin-inline: 0; } /* the picture's credit and note: set like the sources line (design/explainer.css) */
 .xp-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25em 0.9em; }
 .xp-key { display: inline-flex; align-items: center; gap: 0.4em; }

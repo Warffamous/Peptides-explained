@@ -17,10 +17,12 @@ const corrections = CORRECTIONS.filter((c) => c.kind !== 'publication' && c.rout
       <dt>{t(locale, 'common.review.lastReviewed')}</dt>
       <dd><time datetime={isoDate(lastReviewed)}>{formatDate(locale, lastReviewed)}</time></dd>
     </div>
-    <div class="review-meta__item">
-      <dt>{t(locale, 'common.review.reviewedBy')}</dt>
-      <dd class:list={[pending && 'review-meta__pending']}>{reviewer.name}{reviewer.credentials && <>, {reviewer.credentials}</>}</dd>
-    </div>
+    {!compact && !pending && (
+      <div class="review-meta__item">
+        <dt>{t(locale, 'common.review.reviewedBy')}</dt>
+        <dd>{reviewer.name}{reviewer.credentials && <>, {reviewer.credentials}</>}</dd>
+      </div>
+    )}
     {!compact && (
       <div class="review-meta__item">
         <dt>{t(locale, 'common.review.editedBy')}</dt>
