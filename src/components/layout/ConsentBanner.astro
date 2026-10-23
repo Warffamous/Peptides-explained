@@ -40,11 +40,27 @@ const { locale } = Astro.props;
   // tabs through a message, and a page brought back by Back or shown again when it checks the cookie.
   const statsRunning = allowed();
   const CHANNEL = 'pe-consent';
+  // One channel object per page: a BroadcastChannel never hears its own messages, so the page that posts
+  // the withdrawal does not reload a second time. Only pages with the statistics running listen.
+  const channel = statsRunning && 'BroadcastChannel' in window ? new BroadcastChannel(CHANNEL) : null;
+  // The host's scripts send a last batch as the page unloads. Before the reload, block every request they
+  // could make (a policy added now applies to later requests) and keep their unload handlers from running.
+  const silenceAndReload = () => {
+    const policy = document.createElement('meta');
+    policy.httpEquiv = 'Content-Security-Policy';
+    policy.content = "connect-src 'none'";
+    document.head.prepend(policy);
+    const stop = (e: Event) => e.stopImmediatePropagation();
+    for (const type of ['visibilitychange', 'pagehide', 'beforeunload', 'unload']) {
+      window.addEventListener(type, stop, { capture: true });
+    }
+    location.reload();
+  };
   const stopIfWithdrawn = () => {
-    if (!allowed()) location.reload();
+    if (!allowed()) silenceAndReload();
   };
   if (statsRunning) {
-    if ('BroadcastChannel' in window) new BroadcastChannel(CHANNEL).addEventListener('message', stopIfWithdrawn);
+    channel?.addEventListener('message', stopIfWithdrawn);
     window.addEventListener('pageshow', (e) => e.persisted && stopIfWithdrawn());
     document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && stopIfWithdrawn());
   }
@@ -53,12 +69,10 @@ const { locale } = Astro.props;
     if (choice === 'no') {
       // The statistics cookie the host's script set while it was allowed: gone at once, not after 30 minutes.
       document.cookie = `session-id=; Path=/; Max-Age=0${secure}`;
-      if ('BroadcastChannel' in window) {
-        const channel = new BroadcastChannel(CHANNEL);
-        channel.postMessage('no');
-        channel.close();
-      }
-      if (statsRunning) return location.reload();
+      const out = channel ?? ('BroadcastChannel' in window ? new BroadcastChannel(CHANNEL) : null);
+      out?.postMessage('no');
+      if (out !== channel) out?.close();
+      if (statsRunning) return silenceAndReload();
     }
     delete root.dataset.consent;
   };
