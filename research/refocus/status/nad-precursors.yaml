@@ -1,0 +1,127 @@
+slug: nad-precursors
+rows:
+  # EDITORIAL DECISION NEEDED (see notes, 'Which status'). Proposed in the sense the existing US and EU rows use:
+  # no product is authorised as a drug (no DIN, no NOC). Oral nicotinamide riboside is sold under a Health Canada
+  # natural health product licence (and NMN can be, under an NHP monograph); injectable NAD+ cannot be a natural
+  # health product and has no DIN.
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-lnhpd-nr-licence, ca-nhpid-nmn-monograph, ca-nhpr-schedule-2, ca-hc-recalls-search-status-d-2026-10-23] }
+  # Same sense: no registered (AUST R) medicine. Oral NR chloride and NMN are permitted active ingredients of listed
+  # (AUST L) medicines, which the TGA does not evaluate before listing; NAD+ itself is not a permitted ingredient and
+  # every ARTG entry containing it is for export only.
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-permissible-ingredients-determination-2026-3, au-tga-2025-04-nad-nmn-safety-alert, au-tga-2026-08-nad-nmn-representations-guidance] }
+  # No UK medicine licence for NR, NMN or NAD+. NR chloride is an authorised novel food in Great Britain; NMN and
+  # NAD+ are not on the GB novel-food register.
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-fsa-gb-novel-96-nr-chloride, uk-fsa-novel-food-register-search-status-d-2026-10-23] }
+schedule: {}
+products: []
+notes: |
+  WHICH STATUS (decision for the editor). The task defines 'authorised' as 'a marketing authorisation/approval exists
+  for at least one product'. Read literally, Canada and Australia qualify for oral nicotinamide riboside (NR), and
+  Australia also for oral NMN: a Health Canada natural health product (NHP) licence and an ARTG listing (AUST L) are
+  both legal permissions to sell. They are proposed as 'not-authorised' instead, for four reasons:
+  (1) consistency with the data file's US row (NR GRAS / NMN dietary supplement: not-authorised) and EU row (NR
+  authorised novel food: not-authorised), both of which mean 'not authorised as a medicine in the drug sense';
+  (2) the site's 'authorised' needs a product with an official label (CONTENT-GUIDE §5.4; the validator errors on an
+  authorised row with no authorised_products), and listed medicines and NHPs have no product information document on a
+  regulator site, only register records that name the brand and sponsor, which the seller rule forbids on the page;
+  (3) the TGA itself says listed medicines 'are not evaluated' before entry (the sponsor certifies), so 'approved in
+  Australia' would overstate it; (4) the products readers ask about (NAD+ drips and injections, NMN injections) are
+  unauthorised in all three countries, and an 'Approved in Canada and Australia' tile would mislead about them.
+  If the editor prefers the literal reading, the rows become CA authorised (oral NR, NHP licence) and AU authorised
+  (oral NR and NMN, listed medicines), and the page needs either a product per country (naming a brand) or a new
+  vocabulary value (for example 'listed' or 'supplement-licensed'). Either way the page_facts below must be on the page.
+
+  CANADA (Health Canada). The Health Canada databases (DPD, LNHPD, NOC, Clinical Trials) were down for maintenance
+  (HTTP 503) throughout this run; these facts come from the canada-legal run earlier on 23 October 2026 and from the
+  recalls site.
+  - Drug Product Database (canada-legal run): no product for nicotinamide riboside, nicotinamide mononucleotide,
+    nadide, 'nicotinamide adenine' or 'adenine dinucleotide' (active ingredient and brand, all statuses). So no NR, NMN
+    or NAD+ product has a DIN. [ca-dpd-search-canada-legal-2026-10-23]
+  - Prescription Drug List: no entry ('NAD' matches only unrelated words such as nadolol). Not in the CDSA.
+    [ca-pdl-human, ca-cdsa]
+  - Natural health products: an oral product containing nicotinamide riboside holds an active NHP product licence
+    (LNHPD licence 80142882, dated 23 July 2025, purposes include 'Source of Vitamin B3' and 'increases blood NAD+
+    levels'); Health Canada has published an NHP monograph for oral NMN for adults, dated 28 August 2024 (the PDF was
+    still on Health Canada's server on 23 October 2026), under which products can be licensed by attestation. CAVEAT
+    (canada-legal second run): the NHPID 'Listing of monographs' page does not list it, so whether it is current is
+    UNRESOLVED; no NR or NAD monograph was found.
+    Under the NHP Regulations a substance 'administered by puncturing the dermis' cannot be an NHP (Schedule 2 item 5),
+    so an injected or infused NAD+, NR or NMN product is a drug and needs a DIN. [ca-lnhpd-nr-licence,
+    ca-nhpid-nmn-monograph, ca-nhpr-definition, ca-nhpr-schedule-1, ca-nhpr-schedule-2]
+    UNRESOLVED: how many NR products are licensed, and whether any NMN product is licensed (the LNHPD could not be
+    searched: down on 23 October 2026; the canada-legal run noted its API has no name search). The NMN monograph's
+    existence is not proof that a licensed NMN product exists.
+  - Enforcement: RA-78029 (4 September 2025), a Type III health product recall of products sold by an Ontario
+    compounding laboratory 'without market authorization (DINs) in Canada', included an 'NAD+ IV Drip solution' and an
+    NAD+ 50 mg/mL solution; the 'think twice' advisory RA-81874 (9 April 2026) lists 'NAD+' among unauthorised injectable
+    drugs seized by Health Canada (in a list headed 'peptide drugs', although NAD+ is not a peptide).
+    [ca-hc-recalls-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides]
+
+  AUSTRALIA (TGA), 23 October 2026.
+  - Permissible Ingredients Determination (No. 3) 2026, in force from 16 October 2026: item 3494 nicotinamide riboside
+    chloride (active, oral only, daily cap, label warnings for under-12s and pregnancy/lactation above a set dose) and
+    item 3493 nicotinamide mononucleotide (active, oral only, adults only, not in pregnancy or lactation, use limited to
+    12 weeks, daily cap; until 10 December 2027 only with the applicant company's authorisation). No entry for NAD+
+    (nadide); only 'disodium NADH' as an excipient in topical products. [au-permissible-ingredients-determination-2026-3]
+  - The TGA's alert and guidance: NAD, NAD+ and NADH 'are currently not permitted ingredients' of listed medicines; NMN
+    has been permitted since 10 December 2025; no permitted indication refers to NAD or NMN, so claims like 'boosts NAD+'
+    are not allowed; products referring to NAD/NMN without an ARTG entry are 'likely breaching the law'.
+    [au-tga-2025-04-nad-nmn-safety-alert, au-tga-2026-08-nad-nmn-representations-guidance]
+  - ARTG: listed medicines (AUST L, licence category LI) containing NR chloride (for example ARTG 419551 from August 2023
+    and 450569 from June 2024) and NMN (for example ARTG 531441 and 532534, September and October 2026) are on the
+    register for sale in Australia; every one of the 13 ARTG entries containing nadide (NAD+) is 'Medicine Listed (Export
+    Only)', which 'must not be supplied for sale in Australia'. No registered (AUST R) medicine contains NR, NMN or NAD+
+    (none found). [au-artg-search-status-d-2026-10-23]
+    UNRESOLVED: the date nicotinamide riboside chloride was first permitted in listed medicines (its compositional
+    guideline is dated 28 February 2022; the earliest domestic NR listing seen is August 2023). Not needed for the page.
+  - Poisons Standard: nadide, NR and NMN are not scheduled; nicotinamide is expressly excluded from the nicotinic acid
+    entries. So no national prescription requirement applies to them; an injectable NAD+ product would still be an
+    unapproved therapeutic good unless an exemption applies (for example pharmacist compounding for a particular
+    person). [au-poisons-standard-2026-10, au-tg-regulations-1990-sch-5-item-1]
+    UNRESOLVED: no TGA statement specific to NAD+ infusions or injections given in clinics was found (site searches for
+    'NAD+ infusion', 'intravenous NAD', 'NAD+ injection', 'IV NAD': no result). Do not say on the page whether clinic
+    NAD+ drips in Australia are lawful.
+  - ANZCTR: 8 records for nicotinamide riboside, none for NMN (not reviewed one by one; trials do not change the status
+    of a listed ingredient). [au-anzctr-search-status-d-2026-10-23]
+
+  UNITED KINGDOM.
+  - MHRA Products: no results for "nicotinamide riboside", "nicotinamide mononucleotide", "nadide" or "nicotinamide
+    adenine dinucleotide"; the N index lists NICOTINAMIDE (vitamin B3) but no NR, NMN or NADIDE entry. No UK-licensed
+    medicine contains NR, NMN or NAD+. [mhra-products-search-status-d-2026-10-23]
+  - Food law: NR chloride is an authorised novel food in England, Scotland and Wales (NOVEL-96; EU authorisation of
+    20 February 2020 carried into GB law, status date 31 December 2020) for food supplements for adults; the GB register
+    (updated 31 March 2026) has no entry for NMN or NAD+ ('No results'), so neither is an authorised novel food in GB.
+    [uk-fsa-gb-novel-96-nr-chloride, uk-fsa-novel-food-register-search-status-d-2026-10-23]
+    Not established: whether the MHRA has classified NMN or NAD+ products as medicines (no borderline decision found on
+    GOV.UK). [uk-govuk-search-status-d-2026-10-23]
+  - Not controlled drugs: the Misuse of Drugs Act 1971 Schedule 2 text (legislation.gov.uk, re-read 23 October 2026)
+    contains no 'nucleotide', 'riboside' or 'NAD'; its only 'nicotin' matches are opioid derivatives (nicomorphine,
+    nicodicodine). [uk-mda-1971-sch-2]
+
+  IRELAND / NEW ZEALAND: not searched in this batch.
+page_facts: |
+  CANADA
+  - No NAD+, NR or NMN product is authorised as a drug in Canada (none has a drug identification number).
+    [ca-dpd-search-canada-legal-2026-10-23]
+  - Oral nicotinamide riboside can be sold as a licensed natural health product (under a product licence, not a drug
+    identification number), and in 2024 Health Canada published a licensing monograph for oral NMN for adults. Injected or infused products
+    cannot be natural health products. [ca-lnhpd-nr-licence, ca-nhpid-nmn-monograph, ca-nhpr-schedule-2]
+    (Editor: the NMN monograph's current status is unresolved; drop the NMN half of this sentence if it cannot be
+    confirmed.)
+  - In 2025 Health Canada recalled NAD+ intravenous drips and NAD+ injection solutions that a compounding laboratory had
+    sold without authorisation, and in April 2026 it listed NAD+ among unauthorised injectables it had seized.
+    [ca-hc-recalls-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides]
+  AUSTRALIA
+  - No NAD+, NR or NMN product is a registered prescription medicine in Australia. Oral NR (since at least 2023) and
+    oral NMN (since 10 December 2025) may be sold as 'listed' complementary medicines (AUST L), which the TGA does not
+    evaluate for effectiveness before listing, under limits on dose, duration and who may use them.
+    [au-artg-search-status-d-2026-10-23, au-permissible-ingredients-determination-2026-3, au-tga-2026-08-nad-nmn-representations-guidance]
+  - NAD+ itself is not a permitted ingredient of listed medicines; NAD+ products on the register are for export only and
+    may not be sold in Australia. Products that claim to contain or boost NAD+ without an AUST number may be illegal.
+    [au-tga-2025-04-nad-nmn-safety-alert, au-artg-search-status-d-2026-10-23]
+  - Listed medicines may not claim to raise NAD+ levels: no permitted indication mentions NAD or NMN.
+    [au-tga-2026-08-nad-nmn-representations-guidance]
+  UNITED KINGDOM
+  - No NAD+, NR or NMN medicine is licensed in the UK. Oral NR chloride is an authorised novel food in Great Britain
+    (food supplements for adults); NMN and NAD+ are not authorised novel foods there. [mhra-products-search-status-d-2026-10-23,
+    uk-fsa-gb-novel-96-nr-chloride, uk-fsa-novel-food-register-search-status-d-2026-10-23]

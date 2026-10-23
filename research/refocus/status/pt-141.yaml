@@ -1,0 +1,77 @@
+slug: pt-141
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-sur-search-status-c-2026-10-23, ctgov-search-status-c-2026-10-23] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-c-2026-10-23, au-tga-search-status-c-2026-10-23, au-anzctr-search-status-c-2026-10-23] }
+  # UK: the data file already has a UK row (not-authorised, 2026-10-22, mhra-products-search-bremelanotide). Re-checked
+  # on 23 October 2026 with the same result; no UK row proposed.
+# No schedule proposed: bremelanotide is not named in Australia's Poisons Standard (unscheduled) and not on Canada's
+# Prescription Drug List (see notes).
+schedule: {}
+# No authorised bremelanotide product exists in Canada, Australia or the UK; the US product (Vyleesi) is already in
+# the data file.
+products: []
+notes: |
+  Names searched: bremelanotide (INN), bremelanotide acetate, PT-141, PT 141, PT141, Vyleesi (US brand), and the
+  truncations 'bremelano', 'bremel'. The developer (Palatin) and the US licensees never filed outside the US as far as
+  any database shows.
+
+  CANADA (Health Canada), searched 23 October 2026.
+  - DPD API by active ingredient: bremelanotide, 'bremelano', 'bremel', 'PT-141': no product of any status (cancelled
+    and dormant products included); by brand 'VYLEESI': none. NOC database: ingredient BREMELANOTIDE, BREMEL and product
+    names VYLEESI, PT-141: 'No result found!'. New drug submissions under review and completed (current to
+    2026-09-30): no bremelanotide entry and none in the sexual-dysfunction area. So Health Canada has never received a
+    published submission for, or authorised, bremelanotide. [ca-dpd-search-status-c-2026-10-23,
+    ca-noc-search-status-c-2026-10-23, ca-hc-sur-search-status-c-2026-10-23]
+  - Trials: three completed developer trials had Canadian sites (ClinicalTrials.gov: NCT01382719, phase 2, 2011-2012;
+    NCT02333071 and NCT02338960, the two phase 3 trials behind the US approval, December 2014 / January 2015 to June
+    2017). None is open, and Health Canada's portal lists no bremelanotide trial. Not 'investigational'.
+    [ctgov-search-status-c-2026-10-23, ca-hc-ctdb-search-status-c-2026-10-23]
+  - Not on the Prescription Drug List; not in the CDSA. [ca-pdl-human, ca-cdsa]
+  - Enforcement: bremelanotide / PT-141 appears in two Health Canada seizure advisories (RA-77218, 1 April 2025,
+    'PT-141'; RA-77807, 1 August 2025, 'Bremelanotide'), each naming a seller, so cite the search record. It is not in
+    the April 2026 list of examples (RA-81874). [ca-hc-recalls-search-status-c-2026-10-23]
+
+  AUSTRALIA (TGA), searched 23 October 2026.
+  - ARTG: bremelanotide, vyleesi, '"PT 141"': 'There were no matching results' (bremelanotide and vyleesi repeated in
+    the second run); hyphenated 'PT-141' matches only unrelated devices. AusPAR 'bremelanotide': none (control
+    afamelanotide: 1). Prescription medicines under evaluation: none (control semaglutide: 1). TGA whole-site search
+    'bremelanotide': no result at all. [au-artg-search-status-c-2026-10-23, au-tga-search-status-c-2026-10-23]
+  - Trials: two academic University of Sydney studies (registered October 2015) gave single injections of PT-141 to
+    men to study social cognition: ACTRN12615001033538 (healthy men, completed, 61 participants, last data 2017) and
+    ACTRN12615001059550 (males with autism; still marked 'Recruiting' but last updated November 2017, 17 of 60
+    enrolled, planned end 2019). Neither makes bremelanotide 'investigational' today: one is finished and the other's
+    record is years out of date. UNRESOLVED: what happened to ACTRN12615001059550. ClinicalTrials.gov: no Australian
+    site. [au-anzctr-search-status-c-2026-10-23, anzctr-actrn12615001033538, anzctr-actrn12615001059550,
+    ctgov-search-status-c-2026-10-23]
+  - Poisons Standard (October 2026): bremelanotide / PT-141 is not named, and there is no group entry for melanocortin
+    agonists; it is therefore UNSCHEDULED (unlike melanotan II, which is Schedule 4). As an unapproved therapeutic good
+    it still may not be supplied or advertised. For the page: do not call it 'prescription-only' in Australia.
+    [au-poisons-standard-2026-10, au-tga-peptide-products-hub, au-tga-2026-08-peptide-seizure]
+  - No TGA safety alert or media release names bremelanotide or PT-141 (site search). [au-tga-search-status-c-2026-10-23]
+
+  UNITED KINGDOM (re-check; existing row stands): MHRA substance index letter B: no BREMELANOTIDE; exact-term
+  searches bremelanotide, bremelanotid*, vyleesi: 0 documents (control afamelanotide: 2); GOV.UK search
+  'bremelanotide': 0 results. One completed UK academic study (NCT04179734, Imperial College Healthcare NHS Trust,
+  October 2019 to October 2020: brain imaging in women with hypoactive sexual desire disorder) used it; no open UK
+  trial. [uk-mhra-substance-index-status-c-2026-10-23, mhra-products-search-bremelanotide,
+  uk-govuk-search-status-c-2026-10-23, ctgov-search-status-c-2026-10-23]
+
+  UNITED STATES: no new research; the US row and the Vyleesi product are unchanged. Existing enforcement fact: FDA
+  warning letters of 24 August 2026 to online sellers named PT-141 (bremelanotide) among unapproved new drugs
+  (research/pt-141.md; cite fda-warning-letters-index, which does not name the sellers).
+  Ireland and New Zealand: not searched here, except ClinicalTrials.gov: no trial in either.
+page_facts: |
+  CANADA
+  - Bremelanotide has never been authorised in Canada, and no application is listed, although Canadian sites took part
+    in the developer's phase 2 and phase 3 trials (2011-2017). [ca-dpd-search-status-c-2026-10-23,
+    ca-noc-search-status-c-2026-10-23, ca-hc-sur-search-status-c-2026-10-23, ctgov-search-status-c-2026-10-23]
+  - Health Canada has listed PT-141 / bremelanotide among unauthorised injectable peptides seized in 2025.
+    [ca-hc-recalls-search-status-c-2026-10-23]
+  AUSTRALIA
+  - Bremelanotide is not on the Australian Register of Therapeutic Goods, and no application has been published.
+    [au-artg-search-status-c-2026-10-23, au-tga-search-status-c-2026-10-23]
+  - Unlike melanotan II, bremelanotide is not listed in the Poisons Standard. [au-poisons-standard-2026-10]
+  - It was used in two University of Sydney research studies registered in 2015. [anzctr-actrn12615001033538, anzctr-actrn12615001059550]
+  UNITED KINGDOM
+  - Bremelanotide has no UK licence; it was used in one completed academic study in London (2019-2020).
+    [mhra-products-search-bremelanotide, uk-mhra-substance-index-status-c-2026-10-23, ctgov-search-status-c-2026-10-23]

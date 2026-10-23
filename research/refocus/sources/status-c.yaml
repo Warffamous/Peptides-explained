@@ -1,0 +1,576 @@
+# Sources for the refocus status batch c (bpc-157, tb-500, kpv, ghk-cu, melanotan-ii, pt-141): Canada, Australia,
+# and the United Kingdom (a new UK row only for GHK-Cu, the one compound in this batch without one; re-checks for the
+# others). Every entry was fetched, read or searched on 23 October 2026 (first run) and checked again in a second run
+# the same night; each note says what was read. Canadian laws and Health Canada advisories were read from
+# laws-lois.justice.gc.ca and recalls-rappels.canada.ca; Poisons Standard editions and the Therapeutic Goods
+# Regulations from the official HTML text on legislation.gov.au; TGA pages in a browser, or, where tga.gov.au refused
+# command-line requests, from the Internet Archive's copy of the same tga.gov.au URL (the note then gives the capture
+# date). The URL recorded is always the regulator's own.
+#
+# Reused, not re-registered here:
+# - from src/data/sources: uk-hmr-2012-reg-46 (bpc-157.yaml), uk-hmr-2012-reg-2 (legal-b.yaml),
+#   cosing-copper-tripeptide-1 and eu-regulation-1223-2009-cosmetics (stubs-b.yaml), fda-pcac-2026-bpc157-briefing,
+#   fda-pcac-2026-tb500-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2027-early-announcement,
+#   fda-warning-letters-index (legal-b.yaml), fr-2016-melanotan-debarment and mhra-2024-foi-melanotan-ii
+#   (melanotan-ii.yaml), mhra-products-search-bremelanotide (pt-141.yaml), fda-510k-k953853-iamin (stubs-b.yaml).
+# - from research/refocus/sources/canada.yaml (assignment canada-legal, same night): ca-fda-s2-definitions (Food and
+#   Drugs Act s. 2 on its own page), ca-sic-2025-04-bpc157-tb500-sanction and ca-sic-2026-04-peptides-reminder
+#   (Sport Integrity Canada), ca-hc-recalls-database (status-b; index of advisories that name a seller).
+#
+# SHARED IDS (same id, URL and title in another file; the entries below give the facts batch c relies on; when the
+# files are merged, keep one entry per id and join the notes):
+# - with status batch b (research/refocus/sources/status-b.yaml): au-poisons-standard-2026-10,
+#   au-customs-prohibited-imports-regs, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement,
+#   au-tga-2026-08-peptide-seizure, ca-hc-2026-04-think-twice-peptides, ca-pdl-human, ca-food-and-drug-regulations,
+#   ca-cdsa (the last two also in canada.yaml).
+# - with canada.yaml (which adopted this file's first-run ids): ca-food-and-drugs-act (canada.yaml keeps the general
+#   title; use it on merge), ca-hc-cosmetic-drug-interface-guidance, ca-hc-cosmetic-ingredient-hotlist,
+#   ca-hc-2026-05-ghk-cu-bpc-157-api-recall. canada.yaml also cites this file's ca-dpd-search-status-c-2026-10-23,
+#   ca-noc-search-status-c-2026-10-23 and ca-hc-ctdb-search-status-c-2026-10-23, so those ids must not change.
+#
+# Seller rule (CONTENT-GUIDE §1): regulator notices that name a seller, clinic, company or private person are
+# summarised by identification number inside a search-log entry (ca-hc-recalls-search-status-c-2026-10-23,
+# au-tga-search-status-c-2026-10-23) and not registered one by one. Commerce tokens: no URL below contains a token
+# from config/commerce-tokens.json; two TGA pages whose URLs do ('buying', 'suppliers') were deliberately not
+# registered. No phone number is recorded.
+
+# ================================================================ AUSTRALIA: scheduling (Poisons Standard)
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+au-poisons-standard-2026-10:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health, Disability and Ageing)"
+  title: "Therapeutic Goods (Poisons Standard - October 2026) Instrument 2026 (F2026L01327)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026L01327/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Dated 28 September 2026; 'The whole of this instrument' commences 1 October 2026 (section 2). Full official HTML text (epub document_1.html) read and searched on 23 October 2026. Schedule 4 ('Prescription only medicines and prescription animal remedies'; 'Note 2: Substances marked # are listed in Appendix D') contains '# BPC-157.', 'MELANOTAN II.' (no #), '# TB-500.', '# THYMOSIN BETA 4 (THYMOSIN β4).' and 'AFAMELANOTIDE.'; index: 'MELANOTAN II, cross reference: α-MELANOCYTE STIMULATING HORMONE' and 'AFAMELANOTIDE, cross reference: MELANOCYTE STIMULATING HORMONE, MELANOTAN I'. Appendix D clause 5, 'Poisons for which possession without authority is illegal' ('for example, possession other than in accordance with a legal prescription'), lists item 5 BPC-157, item 38 TB-500 and item 39 THYMOSIN BETA 4 (THYMOSIN β4); melanotan II is not in Appendix D. Section 64(4): a poison in that table 'must not be possessed by a person without authority under the law of the jurisdiction in which the possession occurs'. The TB-500 entry gives no sequence or CAS number, so the instrument does not say which molecule it means; full-length thymosin beta-4 has its own entry. Not named anywhere (text searched): bremelanotide, PT-141, KPV, Lys-Pro-Val, GHK, prezatide, tripeptide, copper peptide, melanocortin; there is no entry for alpha-MSH or its fragments as such (only the two cross-references above). Schedule 4 also has 'COPPER COMPOUNDS for human use except: (a) when separately specified in these Schedules; or (b) in preparations for human internal use containing 5 mg or less of copper per recommended daily dose; or (c) in other preparations containing 5% or less of copper compounds', and Schedule 6 a matching 'COPPER COMPOUNDS except' entry; 'internal use' is defined to include parenteral administration for a systemic effect. The instrument does not say whether a copper-peptide complex such as GHK-Cu is a 'copper compound' for these entries. Reader's guide: the schedules are decisions 'as recommendations to Australian States and Territories' and 'The scheduling of poisons is implemented through relevant State and Territory legislation.'"
+
+au-poisons-standard-2024-06:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health and Aged Care)"
+  title: "Therapeutic Goods (Poisons Standard - June 2024) Instrument 2024 (F2024L00589)"
+  container: "Federal Register of Legislation"
+  year: 2024
+  url: https://www.legislation.gov.au/F2024L00589/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Dated 28 May 2024, registered 30 May 2024; 'The whole of this instrument' commences 1 June 2024. Official HTML text searched on 23 October 2026. The first edition that names BPC-157: Schedule 4 '# BPC-157.', Appendix D clause 5 item 5 'BPC-157', and the index entry. The previous edition (au-poisons-standard-2024-02) does not name it. Implements the final decision in au-tga-2024-05-final-decisions-notice."
+
+au-poisons-standard-2024-02:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health and Aged Care)"
+  title: "Therapeutic Goods (Poisons Standard - February 2024) Instrument 2024 (F2024L00095)"
+  container: "Federal Register of Legislation"
+  year: 2024
+  url: https://www.legislation.gov.au/F2024L00095/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Dated 19 January 2024; commences 1 February 2024. Official HTML text searched on 23 October 2026: BPC-157 is not named (no 'BPC' anywhere), while '# TB-500.', THYMOSIN BETA 4 and MELANOTAN II are present. With au-poisons-standard-2024-06 this dates BPC-157's entry to the edition in force from 1 June 2024."
+
+au-poisons-standard-2016-06:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard June 2016 (SUSMP No. 12) (F2016L00849)"
+  container: "Federal Register of Legislation"
+  year: 2016
+  url: https://www.legislation.gov.au/F2016L00849/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Registered 30 May 2016; 'The Poisons Standard June 2016 commences on 1 June 2016.' Official HTML text searched on 23 October 2026. The first edition that names TB-500 and thymosin beta-4: Schedule 4 entries 'TB-500' and 'THYMOSIN BETA 4 (THYMOSIN β4)', and both in the Appendix D list 'Poisons for which possession without authority is illegal'. Neither is named in the March 2016 edition (au-poisons-standard-2016-03). Both are also present in the March 2018, June 2018, February 2024, June 2024 and October 2026 editions checked."
+
+au-poisons-standard-2016-03:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard March 2016 (F2016L00174)"
+  container: "Federal Register of Legislation"
+  year: 2016
+  url: https://www.legislation.gov.au/F2016L00174/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Registered 29 February 2016; commences 1 March 2016. Official HTML text searched on 23 October 2026: no entry for TB-500, thymosin or melanotan."
+
+au-poisons-standard-2018-06:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard June 2018 (SUSMP No. 21) (F2018L00625)"
+  container: "Federal Register of Legislation"
+  year: 2018
+  url: https://www.legislation.gov.au/F2018L00625/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Registered 17 May 2018; 'The Poisons Standard June 2018 commences on 1 June 2018.' Official HTML text searched on 23 October 2026. The first edition that names melanotan II: Schedule 4 entry 'MELANOTAN II.' and an index entry; it is not in Appendix D. Not named in the March 2018 edition (au-poisons-standard-2018-03); present in the February 2024, June 2024 and October 2026 editions checked. Implements the decision in au-tga-2018-02-melanotan-ii-interim-decision and au-tga-2018-04-scheduling-final-decisions."
+
+au-poisons-standard-2018-03:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard March 2018 (F2018L00168)"
+  container: "Federal Register of Legislation"
+  year: 2018
+  url: https://www.legislation.gov.au/F2018L00168/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Registered 28 February 2018; commences 1 March 2018. Official HTML text searched on 23 October 2026: melanotan II is not named (TB-500 and thymosin beta-4 are). With au-poisons-standard-2018-06 this dates melanotan II's Schedule 4 entry to the edition in force from 1 June 2018."
+
+au-tga-2018-02-melanotan-ii-interim-decision:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Scheduling delegates' interim decisions and invitation for further comment: ACCS/ACMS, November 2017: 1.7. Melanotan II"
+  container: "tga.gov.au"
+  year: 2018
+  url: https://www.tga.gov.au/book-page/17-melanotan-ii
+  accessed: 2026-10-23
+  verified: url
+  note: "Dated 5 February 2018; read on 23 October 2026 from the Internet Archive capture of 7 August 2022 of this tga.gov.au URL (the live page is no longer at that address). An applicant had asked for melanotan II to be put in Schedule 10 (substances whose supply and use are prohibited), citing its use as an injected 'lifestyle drug' for sunless tanning, appetite suppression and sexual stimulation and reported toxicity. The Advisory Committee on Medicines Scheduling instead recommended a new Schedule 4 entry, with effect from 1 June 2018, and the delegate's interim decision was Schedule 4. Reasons given include: 'There is no body of evidence demonstrating therapeutic benefits of melanotan II'; products of unknown quality with contamination and stability concerns (multi-dose vials); toxicity largely from case reports and regulators' reports, including renal dysfunction, rhabdomyolysis, changes in moles with one report of melanoma, posterior reversible encephalopathy syndrome and refractory priapism; dosing errors and infection risks; and supplier claims that it protects skin from sun damage. At the time melanotan II was not in any ARTG medicine. (The page also states a supposed dose; not for print.)"
+
+au-tga-2018-04-scheduling-final-decisions:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Final decisions amending, or not amending, the current Poisons Standard, April 2018"
+  container: "tga.gov.au"
+  year: 2018
+  url: https://www.tga.gov.au/resources/publication/scheduling-decisions-final/final-decisions-amending-or-not-amending-current-poisons-standard-april-2018
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 10 April 2018; read in a browser on 23 October 2026 and again from the Internet Archive capture of 18 May 2026. Final decisions for substances referred to the November 2017 meetings; the matters referred to the Advisory Committee on Medicines Scheduling (ACMS #22) include '1.7 Melanotan II'. The decision document it links (a PDF) was not available to us; the resulting entry is in au-poisons-standard-2018-06 and the reasons in au-tga-2018-02-melanotan-ii-interim-decision."
+
+au-tga-2024-05-scheduling-final-decisions:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Notice of final decision to amend (or not amend) the current Poisons Standard - ACMS #43, ACCS #37, Joint ACMS-ACCS #35"
+  container: "tga.gov.au"
+  year: 2024
+  url: https://www.tga.gov.au/resources/publication/scheduling-decisions-final/notice-final-decision-amend-or-not-amend-current-poisons-standard-acms-43-accs-37-joint-acms-accs-35
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 22 May 2024; read in a browser on 23 October 2026 and from the Internet Archive capture of 7 July 2026. Lists 'BPC-157' among the final decisions on matters referred to the Advisory Committee on Medicines Scheduling (ACMS #43, November 2023). The decision text is in the notice it links (au-tga-2024-05-final-decisions-notice)."
+
+au-tga-2024-05-final-decisions-notice:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Notice of final decisions to amend (or not amend) the current Poisons Standard (November 2023), PDF"
+  container: "tga.gov.au"
+  year: 2024
+  url: https://www.tga.gov.au/sites/default/files/2024-05/notice-final-decisions-amend-not-amend-current-poisons-standard-november-2023.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "Read on 23 October 2026 from the Internet Archive capture of 21 April 2025 of this tga.gov.au PDF (fetched with curl, text extracted). 'Final decision in relation to BPC-157' (page 10): the delegate proposed a new Schedule 4 entry and a new Appendix D clause 5 entry 'to prohibit possession without appropriate authorisation for BPC-157'; 'The proposal was in response to 48 referrals for importation of BPC-157 received by the TGA since 1 July 2022' and 'seeks to align the scheduling of BPC-157 with other performance- and image-enhancing substances. BPC-157 is not currently captured in the Poisons Standard.' The final decision confirms the interim decision (published 3 April 2024; 22 pre-meeting submissions and one supportive submission on the interim decision); 'Implementation date 1 June 2024'."
+
+# ================================================================ AUSTRALIA: import, supply and the TGA's statements
+
+au-tg-regulations-1990-sch-5-item-1:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, Schedule 5 item 1 (personal importation) (compilation no. 131, 5 October 2026)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Compilation no. 131, compilation date 5 October 2026, read from the official HTML text on 23 October 2026. Schedule 5 item 1 exempts from ARTG inclusion 'therapeutic goods that are imported for therapeutic use in the treatment of the importer or the importer's immediate family' where (a) they contain no substance whose import is prohibited under the Customs Act 1901; (c) for medicines, one importation is not more than 3 months' supply, not more than 15 months' supply in 12 months, and 'the medicine is in packaging that enables the medicine to be accurately identified'; and (d) 'in the case of goods that are subject to Schedule 4 or Schedule 8 to the current Poisons Standard - the goods are the subject of a written authority' issued by a medical practitioner (an overseas medical practitioner if carried by a passenger). So a Schedule 4 peptide (BPC-157, TB-500, thymosin beta-4, melanotan II) falls within the exemption only with a doctor's written authority. Item 6: medicines dispensed or extemporaneously compounded for a particular person are also exempt, except gene therapy, medicinal cannabis, GLP-1 receptor agonist analogues and nicotine pouches."
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+au-customs-prohibited-imports-regs:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Customs (Prohibited Imports) Regulations 1956, regulation 5G and Schedule 7A (compilation no. 147, 13 July 2026, F2026C00751)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B03651/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Compilation in force on 13 July 2026, read from the official HTML text on 23 October 2026 and searched in full (Schedules 1 to 13) for BPC, TB-500, thymosin, melanotan, bremelanotide, KPV, GHK, peptide and copper: none of the six compounds of this batch is named, and Schedule 7A (substances needing an import permit) lists anabolic or androgenic substances, erythropoietin, gonadotrophins, growth hormones and growth hormone releasing hormones, not these peptides. Their importation is controlled through the therapeutic goods rules (au-tg-regulations-1990-sch-5-item-1)."
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+au-tga-2026-04-peptide-responsibilities:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Understanding your responsibilities when importing, compounding and supplying unapproved peptide products (safety advisory)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/understanding-your-responsibilities-when-importing-compounding-and-supplying-unapproved-peptide-products
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 13 April 2026; read in a browser on 23 October 2026 and checked against the Internet Archive capture of 7 July 2026. 'Examples of unapproved peptide products include those containing BPC-157, GHK-Cu, TB-500, retatrutide and CJC-1295, often supplied in injectable form.' Adverse events and other concerns received by the TGA include severe allergic reactions requiring adrenaline and hospitalisation. Personal Importation Scheme: products 'identified only by codes, or those that do not clearly state the active ingredient, strength or dosage' cannot be assessed for lawful importation 'and will not be considered for release'; importers must meet all conditions, 'including having an appropriate medical authorisation or prescription when required'; 'research use only' disclaimers do not change a product's regulatory status; 'State and territory laws may impose additional controls on the sale, supply and possession of unapproved peptide products.'"
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+au-tga-2026-06-cmo-peptide-statement:
+  type: regulator
+  authors: "Therapeutic Goods Administration and the Australian Government Chief Medical Officer"
+  title: "Concerns regarding the public health risks associated with unapproved peptide products (joint statement)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/concerns-regarding-public-health-risks-associated-unapproved-peptide-products
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 19 June 2026; read in a browser on 23 October 2026 and checked against the Internet Archive capture of 4 October 2026. Serious adverse effects identified include liver damage, severe allergic reactions requiring hospitalisation, and inflammation; unapproved products not in the ARTG 'can include products containing BPC-157, GHK-Cu, TB-500, retatrutide and CJC-1295'; 'Unapproved peptide products have been added as a priority focus area for the TGA compliance.'"
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+au-tga-2026-08-peptide-seizure:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA flexes its muscle against illegal peptides and steroids (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/tga-flexes-its-muscle-against-illegal-peptides-and-steroids
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 17 August 2026; read in a browser on 23 October 2026 and checked against the Internet Archive capture of 11 October 2026. With NSW Police the TGA seized more than $120,000 of peptide and anabolic steroid products from two residential premises in New South Wales allegedly linked to a social media influencer (not named); 'The products include retatrutide, CJC-1295 and the Wolverine Stack (combination of BPC-157 and TB-500).' Unapproved peptides 'can cause serious health problems including liver damage, severe allergic reactions, inflammation'. 'It is unlawful to import, advertise, manufacture and supply unapproved peptide products in Australia.' (The stack name is a seller's marketing name; the site should say 'a combination product of BPC-157 and TB-500'.)"
+
+au-tga-2026-05-peptide-import-warning:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA warning on the risks of importing unapproved peptide products (safety advisory)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/tga-warning-risks-importing-unapproved-peptide-products
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 7 May 2026; read on 23 October 2026 from the Internet Archive capture of 25 July 2026 of this tga.gov.au URL. Products referred to the TGA by the Australian Border Force 'are often poorly labelled'; the TGA has identified imported products suspected to be peptides that are not in the ARTG, are supplied as powders or injectables in unmarked vials, or are marked only with codes or abbreviations or lack the name and concentration of the active ingredient. 'Importing unapproved peptide products under the Personal Importation Scheme is permitted only if the goods are clearly and accurately labelled to identify the therapeutic good'; such vials 'will not be released', and the TGA will notify the ABF 'to seize and destroy these products when they are intercepted at the border'. The text names no compound (example product images not read). (The page prints a TGA phone number; not for print.)"
+
+au-tga-peptide-products-hub:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Peptide products (explore by topic)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/explore-topic/peptide-products
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 23 September 2026; read in a browser on 23 October 2026 (both runs). 'While some peptide products are approved for use in Australia, many products promoted online are unapproved therapeutic goods and may be unlawful to import, supply or advertise.' 'Not all products containing peptides are regulated by us. How a peptide product is regulated depends on what it contains, how it is promoted and what it is intended to do'; a peptide product is a therapeutic good if, for example, it is promoted, supplied or generally used to prevent or treat disease or to 'influence, inhibit or modify a physiological process in the body'; 'Some peptide products may be regulated as cosmetics rather than a therapeutic good if their ingredients, claims, presentation and intended use are limited to cosmetic purposes.' Lists au-tga-2026-05-peptide-import-warning, au-tga-2026-08-melanotan-ii-safety-alert, au-tga-2026-08-peptide-seizure, a 14 September 2026 retatrutide alert, a 20 July 2026 media release and the 28 September 2026 Federal Court release summarised in au-tga-search-status-c-2026-10-23."
+
+au-tga-2025-01-melanotan-blog:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Don't risk using tanning products containing melanotan (blog)"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/news/blog/dont-risk-using-tanning-products-containing-melanotan
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 24 January 2025; read in a browser on 23 October 2026 and checked against the Internet Archive capture of 9 July 2026. Melanotan nasal sprays and injectable and ingestible tanning products 'are being illegally promoted and sold online'; 'the most common side effects include headache, nausea, vomiting, loss of appetite, and facial redness, the most concerning one is the risk of serious skin cancers. With melanotan-II, there have been reports of increased moles and freckles, kidney dysfunction and swelling of the brain.' 'Melanotan is not approved for sale or use as a tanning agent in Australia.' 'It is illegal to supply tanning products containing melanotan without a doctor's prescription', whatever the form (spray, tablet, injection, cream), and illegal to advertise melanotan to the Australian public, including promotion by social media influencers. A tan 'will not protect against UV exposure the way a suitable sunscreen will'."
+
+au-tga-2026-05-melanotan-ii-infringement-notices:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Individual issued 27 infringement notices for allegedly supplying Melanotan II (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/individual-issued-27-infringement-notices-allegedly-supplying-melanotan-ii
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 21 May 2026; read in a browser on 23 October 2026 and checked against the Internet Archive capture of 14 September 2026. The TGA issued 27 infringement notices totalling $101,412 to a NSW-based individual (not named) for the alleged unlawful supply of melanotan II to Australian consumers; paid in May 2026. 'In Australia, Melanotan II is classified as a prescription-only medicine but is not approved for sale or use as a tanning agent. There are currently no products containing Melanotan II on the Australian Register of Therapeutic Goods (ARTG) or approved for supply in Australia.'"
+
+au-tga-2026-08-melanotan-ii-safety-alert:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Melanotan II tanning peptide products found to be inconsistently dosed (safety advisory)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/melanotan-ii-tanning-peptide-products-found-be-inconsistently-dosed
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 17 August 2026; read in a browser on 23 October 2026 and checked against the Internet Archive capture of 11 October 2026. 'Melanotan II is a prescription-only medicine in Australia and is not approved for use as a tanning agent. There are currently no products containing Melanotan II included in the Australian Register of Therapeutic Goods (ARTG) or approved for supply in Australia.' TGA laboratory testing of five seized nasal spray bottles, all labelled with the same strength (30 mg), confirmed melanotan II and estimated contents of 22 mg to 54 mg per bottle (our arithmetic: about 73% to 180% of the label; the page gives the milligrams, not percentages); 'The inconsistent dosage across the bottles further increases the chance of adverse events'. The products were those supplied by the individual in au-tga-2026-05-melanotan-ii-infringement-notices. Consumers are told to stop using melanotan II tanning products and take remaining product to a pharmacy for disposal. (The page prints the product's brand name and a TGA phone number; neither is for print.)"
+
+au-artg-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG) searches, 23 October 2026: BPC-157, TB-500, thymosin beta-4, KPV, GHK-Cu, melanotan II, bremelanotide and synonyms"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=bremelanotide
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026. The ARTG search covers goods that 'can be supplied within Australia' and indexes product names and ingredient lists (control: 'histidine' returns products whose names do not contain it). 'There were no matching results' for: bremelanotide, vyleesi, \"PT 141\", melanotan, \"melanotan II\", bepecin, pentadecapeptide, \"BPC 157\", \"PL 14736\", \"PLD-116\", \"body protection compound\", timbetasin, \"Lys-Pro-Val\", prezatide, \"copper tripeptide\", \"copper peptide\", tripeptide. Searches that the engine splits into fragments returned only unrelated goods (first page checked each time): PT-141, \"PT-141\" and PT141 (79 devices), BPC-157, \"BPC-157\" and BPC157 (61 supplements and devices; the nearest, 'BPC Amino Acid Complex' ARTG 530014, is a listed amino-acid supplement whose ingredients are single amino acids, not BPC-157), \"TB-500\" and TB500 (11 devices and disinfectants), MTII (129), KPV (280), GHK (2,078 devices), thymosin (1: a tamoxifen tablet, ARTG 43527), Iamin (85, none a wound gel with GHK-Cu). Controls: afamelanotide returned SCENESSE afamelanotide 16 mg implant (ARTG 327947); semaglutide returned 35 products. Second run (same night) repeated bremelanotide, vyleesi, melanotan, prezatide, \"copper tripeptide\", \"Lys-Pro-Val\", \"BPC 157\", pentadecapeptide, timbetasin (all 'There were no matching results'), thymosin (the same single tamoxifen product) and the afamelanotide control (SCENESSE, 327947). No current ARTG entry contains any of the six compounds."
+
+au-tga-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "TGA website, AusPAR and prescription-medicines-under-evaluation searches, 23 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/search?keywords=melanotan
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026. Whole-site search: 'melanotan' 13 results (au-tga-2026-08-melanotan-ii-safety-alert, au-tga-2026-05-melanotan-ii-infringement-notices, au-tga-2025-01-melanotan-blog, the November 2017 scheduling consultation and decisions (au-tga-2018-02-melanotan-ii-interim-decision, au-tga-2018-04-scheduling-final-decisions), a 2019 infringement notice for advertising Schedule 4 substances, and older unrelated items); 'bremelanotide' no result; '\"BPC-157\" scheduling' 5 results (the November 2023 scheduling consultation and interim decisions, au-tga-2024-05-scheduling-final-decisions, au-tga-2026-04-peptide-responsibilities and the prescription-medicine advertising guidance); 'thymosin beta 4' 2 results (an unrelated 2020 infringement notice and the November 2015 scheduling consultation); 'BPC-157', 'TB-500', 'KPV' and 'GHK-Cu' return mostly unrelated ARTG and device records because the engine splits terms. Not registered separately because the title names a company: a media release of 28 September 2026 (linked from au-tga-peptide-products-hub) reports that the TGA has started Federal Court proceedings against a former company (now in liquidation) and its former directors for allegedly advertising prescription-only goods, including peptides 'such as BPC-157, CJC-1295 and GHRP-6', on its website and social media between 6 June 2024 and 14 July 2025, including claims about cancer, HIV/AIDS and mental illness. Not read: a 20 July 2026 media release on peptide promoters (its URL contains a commerce word), and the hub's pages for consumers and health practitioners (the browser could not open them in the second run). AusPAR 'bremelanotide': no result (control 'afamelanotide': 1). Prescription medicines under evaluation 'bremelanotide': no result (control 'semaglutide': 1). No application for any of the six compounds is public."
+
+au-anzctr-search-status-c-2026-10-23:
+  type: registry
+  authors: "Australian New Zealand Clinical Trials Registry"
+  title: "ANZCTR basic searches, 23 October 2026: bremelanotide, melanotan, BPC-157, TB-500, thymosin, KPV, GHK, copper peptide"
+  container: "ANZCTR"
+  year: 2026
+  url: https://www.anzctr.org.au/TrialSearch.aspx#&&searchTxt=bremelanotide&isBasic=True
+  accessed: 2026-10-23
+  verified: registry
+  note: "Searched in a browser on 23 October 2026 (the search also shows ClinicalTrials.gov records). 'bremelanotide': 2 records, both University of Sydney trials registered in October 2015 (anzctr-actrn12615001033538, completed; anzctr-actrn12615001059550, still shown as recruiting but last updated 17 November 2017). 'melanotan': 1 record, ACTRN12605000370606 (2005), which tests 'EPT 1647', the afamelanotide (melanotan I) implant, not melanotan II. 'BPC-157', 'TB-500', 'KPV', 'GHK': 0 records. 'thymosin': 11 records, none testing thymosin beta-4 or TB-500 (two dental bone-graft device studies and nine ClinicalTrials.gov oncology and hepatitis records). 'copper peptide': 1 record, a copper-64 imaging agent (NCT05613842), not GHK-Cu."
+
+anzctr-actrn12615001033538:
+  type: registry
+  authors: "University of Sydney (Brain and Mind Centre)"
+  title: "A Within-Subject Single Dose Trial on the Effects of Bremelanotide on Social Cognition (ACTRN12615001033538)"
+  container: "ANZCTR"
+  year: 2015
+  url: https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12615001033538
+  accessed: 2026-10-23
+  verified: registry
+  note: "Record read on 23 October 2026. Submitted 14 September 2015, registered 1 October 2015 (prospectively), last updated 31 March 2021; status Completed; 61 participants; last data collection 20 October 2017; recruitment in New South Wales. Randomised, placebo-controlled, within-subject crossover study in healthy men given single subcutaneous injections of PT-141 (bremelanotide) or placebo; outcomes on social cognition. An academic study, not a development programme. (The record gives the dose; not for print.)"
+
+anzctr-actrn12615001059550:
+  type: registry
+  authors: "University of Sydney (Brain and Mind Centre)"
+  title: "A Within-Subject Single Dose Trial on the Effects of Bremelanotide on Social Cognition and Behaviour (ACTRN12615001059550)"
+  container: "ANZCTR"
+  year: 2015
+  url: https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?ACTRN=12615001059550
+  accessed: 2026-10-23
+  verified: registry
+  note: "Record read on 23 October 2026. Submitted 14 July 2015, registered 12 October 2015 (prospectively), last updated 17 November 2017; recruitment in New South Wales. Status still 'Recruiting', but the record has not been updated since 2017: first participant enrolled 17 November 2015, accrual to date 17 of a target of 60, anticipated last enrolment 31 December 2018 and last data collection 30 September 2019. Placebo-controlled crossover study of single subcutaneous doses of PT-141 on social cognition in males with autism. UNRESOLVED: whether it finished; nothing suggests it is open today."
+
+au-aicis-inventory-search-ghk-cu-2026-10-23:
+  type: dataset
+  authors: "Australian Industrial Chemicals Introduction Scheme (AICIS)"
+  title: "Australian Inventory of Industrial Chemicals: public search for GHK-Cu (copper tripeptide-1) and GHK, 23 October 2026"
+  container: "AICIS"
+  year: 2026
+  url: https://services.industrialchemicals.gov.au/search-inventory/
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026 (first run; not repeated). '0 records found' for CAS 89030-95-5 (GHK-Cu, prezatide copper, INCI copper tripeptide-1), CAS 49557-75-7 (GHK, without copper), '*tripeptide*' and '*lysinato*'. '*histidyl*' returned one record, CR 41403, CAS 147732-56-7, 'L-Lysine, N-(1-oxohexadecyl)glycyl-L-histidyl-', other name 'Palmitoyl oligopeptide' (palmitoyl-GHK, a different cosmetic ingredient). Control: CAS 7758-98-7 returned copper sulfate (CR 11304). A chemical may be listed confidentially or introduced under another category (au-aicis-cant-find-chemical), so absence from the public search does not show whether GHK-Cu may lawfully be used in cosmetics in Australia."
+
+au-aicis-cant-find-chemical:
+  type: regulator
+  authors: "Australian Industrial Chemicals Introduction Scheme (AICIS)"
+  title: "I can't find my chemical on the Inventory"
+  container: "industrialchemicals.gov.au"
+  year: 2026
+  url: https://www.industrialchemicals.gov.au/chemical-information/i-cant-find-my-chemical-inventory
+  accessed: 2026-10-23
+  verified: url
+  note: "Read on 23 October 2026 (first run). The Inventory is a database of chemicals introduced for industrial use and 'rarely contains trade names, INCI names or product names', so searches should use the CAS number; some chemicals are listed confidentially and are not publicly searchable; if a chemical is not on the Inventory (and not confidentially listed) the introducer must work out its introduction category. Cited for: why a missing public listing is not proof that an ingredient is banned or unregistered."
+
+# ================================================================ CANADA
+
+# Same id and URL as canada.yaml (which keeps the general title 'Food and Drugs Act (R.S.C., 1985, c. F-27)'; use it
+# on merge); batch-c facts below.
+ca-food-and-drugs-act:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act (R.S.C., 1985, c. F-27)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/
+  accessed: 2026-10-23
+  verified: url
+  note: "Act current to 2026-09-30, last amended 2025-03-27; full text read on 23 October 2026 and section 2 re-read in the second run. Section 2: 'cosmetic includes any substance or mixture of substances manufactured, sold or represented for use in cleansing, improving or altering the complexion, skin, hair or teeth, and includes deodorants and perfumes'; 'drug includes any substance or mixture of substances manufactured, sold or represented for use in (a) the diagnosis, treatment, mitigation or prevention of a disease, disorder or abnormal physical state, or its symptoms, in human beings or animals, (b) restoring, correcting or modifying organic functions in human beings or animals'. Section 2 alone is also registered as ca-fda-s2-definitions (canada.yaml)."
+
+# Same id and URL as canada.yaml; batch-c facts below.
+ca-hc-cosmetic-drug-interface-guidance:
+  type: guideline
+  authors: "Health Canada"
+  title: "Guidance Document: Classification of Products at the Cosmetic-Drug Interface"
+  container: "Canada.ca"
+  year: 2008
+  url: https://www.canada.ca/en/health-canada/services/consumer-product-safety/reports-publications/industry-professionals/guidance-document-classification-products-cosmetic-drug-interface.html
+  accessed: 2026-10-23
+  verified: url
+  note: "2008 guidance (HC Pub. 4113), read in a browser on 23 October 2026 (first run; canada.yaml's second run re-read it). Section 3.3, Level of action: 'In order to be a cosmetic, the product must exhibit a lack of percutaneous absorption and should not have to be absorbed systemically to achieve the effect. Products that are administered through ingestion, inhalation, or by injection (intramuscular, subcutaneous, intravenous, etc), with the sole exception of tattoo ink, are not considered to be cosmetics.' Cited for: an injected GHK-Cu product cannot be a cosmetic in Canada; classification otherwise turns on the claims made (canada.yaml quotes sections 2.0 and 3.1)."
+
+# Same id and URL as canada.yaml; batch-c facts below.
+ca-hc-cosmetic-ingredient-hotlist:
+  type: regulator
+  authors: "Health Canada"
+  title: "Cosmetic Ingredient Hotlist: list of ingredients that are prohibited or restricted for use in cosmetic products"
+  container: "Canada.ca"
+  year: 2025
+  url: https://www.canada.ca/en/health-canada/services/consumer-product-safety/cosmetics/cosmetic-ingredient-hotlist-prohibited-restricted-ingredients/hotlist.html
+  accessed: 2026-10-23
+  verified: url
+  note: "2025 edition (page date 2025-08-13), read in a browser on 23 October 2026 (the full text of both tables was searched; controls such as hydroquinone, minoxidil and tretinoin were found). Second run: canada.ca did not answer command-line requests, so the Internet Archive capture of 16 October 2026 of this URL was searched instead: 0 matches for copper, cupr-, peptid-, GHK and melanotan; controls hydroquinone (4) and minoxidil (1). No entry for copper, copper tripeptide-1, GHK, peptides, melanotan or growth factors: GHK-Cu is neither prohibited nor restricted as a cosmetic ingredient in Canada. The Hotlist is not a positive list, so this does not show that any product is lawful."
+
+# Same id and URL as canada.yaml; batch-c facts below.
+ca-hc-2026-05-ghk-cu-bpc-157-api-recall:
+  type: regulator
+  authors: "Health Canada"
+  title: "GHK-Cu & BPC-157 powder: Unauthorized active pharmaceutical ingredients (health product recall RA-82047)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/alert-recall/ghk-cu-bpc-157-powder-unauthorized-active-pharmaceutical-ingredients
+  accessed: 2026-10-23
+  verified: url
+  note: "Health product recall published 7 May 2026 (recall date 5 May 2026), RA-82047, read in full on 23 October 2026 (it is also the first result of the second run's 'GHK' search). Recall class Type I; depth of recall 'Compounding and Community Pharmacies'; national distribution. Affected products: GHK-Cu powder and BPC-157 powder (5 g and 50 g packs, several lots), 'Market Authorization N/A'. Issue: 'Products sold are unauthorized active pharmaceutical ingredients (APIs).' EDITOR (seller rule): the title and URL name no company, but the page's 'Companies' field names the recalling firm (an ingredient supplier); decide whether to cite it directly or only through ca-hc-recalls-search-status-c-2026-10-23."
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+ca-food-and-drug-regulations:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations (C.R.C., c. 870), sections C.01.014, C.01.014.3, C.01.014.6 and C.08.002"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/FullText.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Current to 2026-09-30, last amended 2026-06-17; read on 23 October 2026. C.01.014(1): 'No manufacturer shall sell a drug in dosage form unless a drug identification number has been assigned for that drug and the assignment of the number has not been cancelled'. C.08.002(1): 'No person shall sell or advertise a new drug unless' a satisfactory new drug submission has been filed and a notice of compliance issued and not suspended. The regulations name none of the six compounds of this batch (text searched for melanotan, BPC-157, thymosin, bremelanotide, GHK and copper peptide)."
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+ca-pdl-human:
+  type: regulator
+  authors: "Health Canada"
+  title: "Prescription Drug List: list related to drugs for human use"
+  container: "Drug and Health Product Register"
+  year: 2026
+  url: https://hpr-rps.hres.ca/pdl-phu.php
+  accessed: 2026-10-23
+  verified: url
+  note: "Read on 23 October 2026 (both runs). Contains 'Afamelanotide or its salts', 'Setmelanotide or its salts' and 'Tesamorelin or its salts or derivatives'; no entry names BPC-157, TB-500, thymosin beta-4, KPV, GHK-Cu or another copper peptide, melanotan or bremelanotide, and there is no general entry for peptides or melanocortin agonists."
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+ca-cdsa:
+  type: law
+  authors: "Government of Canada"
+  title: "Controlled Drugs and Substances Act (S.C. 1996, c. 19), Schedules I to VI"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/c-38.8/FullText.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Act current to 2026-09-30, last amended 2026-07-18. Full text, including all schedules, searched on 23 October 2026 (both runs) for melanotan, BPC, thymosin, TB-500, bremelanotide, KPV, GHK and peptide: no match. None of the six compounds is a controlled substance in Canada."
+
+# Same id and URL as status-b.yaml; batch-c facts below.
+ca-hc-2026-04-think-twice-peptides:
+  type: regulator
+  authors: "Health Canada"
+  title: "Think twice before injecting peptides bought online: unauthorized products can seriously harm you (public advisory RA-81874)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/alert-recall/think-twice-injecting-peptides-bought-online-unauthorized-products-can-seriously-harm
+  accessed: 2026-10-23
+  verified: url
+  note: "Public advisory, original published date 2026-04-09 (RA-81874), read in full on 23 October 2026 (both runs). Its list of 'examples of unauthorized injectable peptide drugs seized by Health Canada' includes BPC-157, GHK-Cu, KPV, 'Melanotan I and II' and TB-500. 'In Canada, peptides are generally regulated as prescription drugs.' Unauthorized drug products are illegal in Canada and have not been assessed for safety, efficacy and quality; 'For Research Use Only - Not for Human Consumption' labelling 'does not make these products legal or exempt from regulatory requirements'; authorised prescription drugs carry an eight-digit DIN. Names no seller. (The page prints enquiry phone numbers; not for print.)"
+
+ca-hc-recalls-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Recalls and safety alerts database searches, 23 October 2026: melanotan, BPC-157, TB-500, bremelanotide, thymosin, KPV, GHK, peptide"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=peptide
+  accessed: 2026-10-23
+  verified: url
+  note: "Site search run on 23 October 2026 and repeated in the second run ('melanotan' 5 results, 'BPC-157' 6, 'TB-500' 6, 'bremelanotide' 1, 'thymosin' 3, 'KPV' 3, 'GHK' 5, 'peptide' 12); every peptide notice read in full. Besides ca-hc-2026-04-think-twice-peptides and ca-hc-2026-05-ghk-cu-bpc-157-api-recall, four public advisories about seizures of unauthorized injectable peptide drugs list compounds of this batch; each names a clinic, a shop or an online seller, so they are summarised here by number only (neutral links: recalls-rappels.canada.ca/en/node/<number>). RA-77218 (1 April 2025, node 77218), seized from a wellness clinic in Calgary: BPC-157, GHK-Cu, KPV, Melanotan-2, PT-141, TB-500, 'Thymosin-β4 (TB4 or TB-500)' and 'Frag 17-23 of Thymosin-β4'; 'most injectable peptides are regulated as prescription drugs in Canada'. RA-77807 (1 August 2025, node 77807), seized from and sold by an online seller: BPC-157, bremelanotide, GHK and GHK-Cu, Melanotan 1, Melanotan II, 'Thymosin-β4 (TB4 or TB-500)'; 'Injectable peptides are regulated as prescription drugs in Canada'. RA-81403 (24 December 2025, node 81403), sold online and seized from a fitness business: BPC-157, GHK-Cu (also GHK-Cu blends), KPV, Melanotan-2, TB-500. RA-81404 (24 December 2025, node 81404), seized from two shops in Maple Ridge, BC: BPC-157, melanotan, TB-500. Health Canada's lists thus use 'TB-500' both on its own and as another name for thymosin beta-4. Three other peptide advisories (RA-77275, 14 April 2025; RA-75741, 26 June 2024; RA-74731, 13 December 2023) name none of the six in the text read. The 'melanotan' search returns only these five notices: no older, melanotan-specific Health Canada warning is in the database (a web search found none either)."
+
+ca-dpd-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database API searches, 23 October 2026: bremelanotide, melanotan, BPC-157, thymosin beta-4 and TB-500, KPV, GHK-Cu and synonyms"
+  container: "Drug Product Database (DPD)"
+  year: 2026
+  url: https://health-products.canada.ca/api/drug/activeingredient/?lang=en&type=json&ingredientname=bremelanotide
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched by active ingredient through the DPD API (substring match; products of every status, including cancelled and dormant ones, are returned) on 23 October 2026. No product for: bremelanotide, 'bremelano', 'bremel', 'PT-141', melanotan, 'MT-II', 'BPC', pentadecapeptide, bepecin, 'PL 14736', thymosin, 'thymos', 'thymosin beta', timbetasin, 'timbeta', 'TB-500', KPV, 'lysyl-prolyl', prezatide, GHK, 'glycyl', 'copper tripeptide', 'copper peptide', tripeptide, 'alpha-MSH', 'melanocyte'. 'MELANO' returned only melanoma lysate, afamelanotide (SCENESSE, DIN 02569825, Approved 2026-07-09) and setmelanotide; 'PEPTIDE' only gonadorelin and two triethanolamine polypeptide condensates; 'COPPER' (728 rows) only copper salts, chelates and copper naphthenate, no copper peptide. By brand name 'VYLEESI': none. Controls: 'tesamorelin' returned the two Egrifta drug codes (90838 and 92311, both cancelled), 'afamel' returned Scenesse. Not searched: the codes PL-10 and PLD-116 (the API returned HTTP 503 later that evening, and in the second run the DPD, its API and the NOC database all redirected to a maintenance page)."
+
+ca-noc-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Notice of Compliance (NOC) database searches, 23 October 2026: batch c compounds"
+  container: "Notice of Compliance online query"
+  year: 2026
+  url: https://health-products.canada.ca/noc-ac/?lang=eng
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched on 23 October 2026 (all submission classes, types and product types; first run). Medicinal ingredient: 'No result found!' for BREMELANOTIDE, BREMEL, MELANOTAN, BPC, PENTADECAPEPTIDE, BEPECIN, THYMOSIN, TIMBETASIN, KPV, PREZATIDE, GHK, TRIPEPTIDE; product name: 'No result found!' for VYLEESI, TB-500, BPC-157, PT-141. 'MELANO' returned IMCIVREE (setmelanotide), SCENESSE (afamelanotide acetate, NOC 2026-07-09, DIN 02569825) and MELACINE (melanoma lysate, 1999); 'COPPER' returned 17 trace-element, multivitamin and veterinary products, none a copper peptide. Controls: TESAMORELIN returned EGRIFTA (NOC 2014-04-29 and 2015-03-27). Health Canada has never issued a notice of compliance for any of the six compounds."
+
+ca-hc-sur-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug and Health Product Submissions Under Review: new drug submissions under review and new drug submissions completed, searched 23 October 2026"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drug-health-product-review-approval/submissions-under-review/new-drug-submissions-under-review.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Both lists 'current as of: 2026-09-30', read in a browser on 23 October 2026 through the page's table data (89 submissions under review; 818 completed). No entry for bremelanotide, melanotan, BPC-157, thymosin, KPV, GHK or a copper peptide, and none in the sexual-dysfunction area. The completed list includes afamelanotide acetate (new active substance, notice of compliance 2026-07-09) and setmelanotide acetate (NOC 2023-05-05). These lists show the submissions Health Canada publishes (mainly new active substances), so they support, but are weaker than, the NOC and DPD results."
+
+ca-hc-ctdb-search-status-c-2026-10-23:
+  type: registry
+  authors: "Health Canada"
+  title: "Canadian Clinical Trial Search Portal searches, 23 October 2026: batch c compounds"
+  container: "clinical-trials-search.canada.ca"
+  year: 2026
+  url: https://clinical-trials-search.canada.ca/en/search?search_api_fulltext=bremelanotide
+  accessed: 2026-10-23
+  verified: registry
+  note: "Keyword searches in a browser on 23 October 2026 returned no trial for bremelanotide, PT-141, melanotan, BPC-157, thymosin, TB-500, KPV, GHK or 'copper peptide' (control 'semaglutide': 'Showing 1 - 10 of 76 trials'; a nonsense control gave the same empty page as the compounds). The portal lists trials Health Canada has authorised; the Clinical Trials Database API was unavailable (HTTP 503), so its downloadable tables were not checked."
+
+# ================================================================ TRIALS (ClinicalTrials.gov)
+
+ctgov-search-status-c-2026-10-23:
+  type: registry
+  authors: "U.S. National Library of Medicine"
+  title: "ClinicalTrials.gov API searches by country, 23 October 2026: batch c compounds in Canada, Australia, the United Kingdom, Ireland and New Zealand"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=bremelanotide&query.locn=Canada
+  accessed: 2026-10-23
+  verified: registry
+  note: "API v2 queries (intervention terms with query.locn) run on 23 October 2026 and repeated in the second run with the same results. 'bremelanotide OR PT-141 OR Vyleesi': Canada 3 records, all completed, sponsored by the developer (Palatin Technologies) with US and Canadian sites (NCT01382719, phase 2, June 2011 to September 2012; NCT02333071 and NCT02338960, the two phase 3 trials, December 2014 / January 2015 to June 2017); Australia 0; United Kingdom 1 (NCT04179734, Imperial College Healthcare NHS Trust, a brain-imaging study in women with hypoactive sexual desire disorder, completed, October 2019 to October 2020); Ireland 0; New Zealand 0. 'BPC-157 OR BPC157 OR bepecin OR \"PL 14736\" OR pentadecapeptide', 'TB-500 OR TB500 OR \"thymosin beta\" OR timbetasin OR RGN-259 OR RGN-137 OR RGN-352', 'KPV OR \"Lys-Pro-Val\"' and 'melanotan' (full text): 0 in each of the five countries ('MT-II' alone matches unrelated trials). The only registered BPC-157 trial found (NCT07437547, phase 2, recruiting) has sites in China only. GHK terms ('GHK OR GHK-Cu OR \"copper tripeptide\" OR \"copper peptide\" OR prezatide'): 1 record, in Canada, NCT07706361 (not yet recruiting), sponsored by a patch maker, which measures blood GHK and GHK-Cu after wearing a device patch; GHK-Cu is an outcome, not the intervention, so it is not a GHK-Cu trial."
+
+# ================================================================ UNITED KINGDOM
+
+uk-mhra-substance-index-status-c-2026-10-23:
+  type: dataset
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products substance index and product search, 23 October 2026: GHK-Cu (prezatide copper, copper tripeptide-1) and batch c re-checks"
+  container: "MHRA Products"
+  year: 2026
+  url: https://products.mhra.gov.uk/substance-index/?letter=C
+  accessed: 2026-10-23
+  verified: url
+  note: "MHRA Products lists medicines with a UK licence (PL, PLGB, PLNI) and searches the text of their SmPCs and leaflets. Substance index (all active substances of licensed products), read on 23 October 2026: the only copper entries are COPPER, COPPER (64CU) CHLORIDE, COPPER CHLORIDE, COPPER CHLORIDE DIHYDRATE, COPPER GLUCONATE, CUPRIC CHLORIDE and TETRAKIS COPPER TETRAFLUOROBORATE (a radiopharmaceutical kit ingredient); there is no PREZATIDE, GHK or glycyl-histidyl entry, no BREMELANOTIDE, no BPC entry (the only 'BPC' strings are old British Pharmaceutical Codex product names such as 'BPC 1959'), no THYMOSIN or TB-500 and no KPV or melanotan; control AFAMELANOTIDE (SCENESSE 16 mg implant) is present. Product search: the website's search box adds fuzzy matching to every word (one-letter differences are accepted), which is why 'GHK' and 'GHK-Cu' appear to return hundreds of unrelated matches there; the first run did not read those lists. In the second run the same search service was queried with exact terms (and prefixes) instead: 0 documents for bremelanotide, bremelanotid*, vyleesi, prezatide, prezatide*, 'copper tripeptide', GHK, GHK*, GHK-Cu, melanotan*, thymosin*, 'BPC 157', BPC157, 'TB 500', TB500 and KPV ('tripeptide*' matched 11 unrelated SmPCs, e.g. mifamurtide, argatroban); control afamelanotide: 2 documents (the SCENESSE SmPC and leaflet). No UK-licensed medicine contains, or mentions, GHK-Cu, and none contains any other compound of this batch."
+
+uk-govuk-search-status-c-2026-10-23:
+  type: dataset
+  authors: "UK Government (GOV.UK)"
+  title: "GOV.UK site search, 23 October 2026: GHK-Cu, copper peptide, BPC-157, melanotan, bremelanotide, peptides"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/search/all?keywords=melanotan
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched on 23 October 2026 through GOV.UK's search API (the same index as the site search). 'bremelanotide': 0 results. 'melanotan': 8 results, of which the relevant ones are uk-opss-2026-08-delivery-report, two 2021 MHRA FOI response lists, and two 2013 Public Health England items on drug use (the rest are registers of interests). 'GHK-Cu', 'copper peptide' and 'BPC-157' return only unrelated pages (the engine matches parts of the terms); 'peptides' returns GLP-1 safety items and an unrelated cosmetics recall. No MHRA or OPSS page names GHK-Cu, KPV, TB-500 or bremelanotide."
+
+uk-opss-2026-08-delivery-report:
+  type: report
+  authors: "Office for Product Safety and Standards (Department for Business and Trade)"
+  title: "OPSS Delivery Report 2025-2026"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/publications/opss-delivery-report-2025-2026/opss-delivery-report-2025-2026
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 5 August 2026; HTML report read on 23 October 2026. OPSS is the national regulator for cosmetic products in Great Britain. Cosmetics section: 'We undertook analysis of melanotan products to improve understanding of risks and support a consistent regulatory approach.' (Same paragraph: 325,496 cosmetic product notifications received in the year.) It does not say what was found or which law it applies, so cite it only for the fact that the GB cosmetics regulator has looked at melanotan products."
+
+uk-cosmetic-products-reg-gb-art-2:
+  type: law
+  authors: "UK Parliament (assimilated law)"
+  title: "Regulation (EC) No 1223/2009 on cosmetic products, Article 2 (definitions), as it applies in Great Britain"
+  container: "legislation.gov.uk"
+  year: 2026
+  url: https://www.legislation.gov.uk/eur/2009/1223/article/2
+  accessed: 2026-10-23
+  verified: url
+  note: "Read on 23 October 2026 (both runs; legislation.gov.uk publishes the UK version, as amended by the Product Safety and Metrology etc. (Amendment etc.) (EU Exit) Regulations 2019, SI 2019/696, Schedule 34). Article 2(1)(a): 'cosmetic product' means any substance or mixture intended to be placed in contact with the external parts of the human body (epidermis, hair system, nails, lips and external genital organs) or with the teeth and the mucous membranes of the oral cavity, with a view exclusively or mainly to cleaning them, perfuming them, changing their appearance, protecting them, keeping them in good condition or correcting body odours. Article 2(2): 'a substance or mixture intended to be ingested, inhaled, injected or implanted into the human body shall not be considered to be a cosmetic product.' In Northern Ireland the EU Regulation applies (eu-regulation-1223-2009-cosmetics), with the same wording."
+
+uk-cosmetic-products-reg-gb-annexes:
+  type: law
+  authors: "UK Parliament (assimilated law)"
+  title: "Regulation (EC) No 1223/2009 on cosmetic products, Annexes II to VI (prohibited, restricted and permitted substances), as they apply in Great Britain"
+  container: "legislation.gov.uk"
+  year: 2026
+  url: https://www.legislation.gov.uk/eur/2009/1223/annex/II
+  accessed: 2026-10-23
+  verified: url
+  note: "Annexes II (prohibited), III (restricted), IV (colorants), V (preservatives) and VI (UV filters) fetched from legislation.gov.uk and searched on 23 October 2026 (both runs) for copper, cupr-, tripeptide, GHK, prezatide and peptide: the copper entries are dyes, pigments and refinery substances in Annexes II and IV (e.g. copper phthalocyanines, CI 77400 copper); Annex III's only 'cupr-' matches are Cupressus (cypress) extracts and its only 'peptide' match concerns hydrolysed wheat protein; no annex names copper tripeptide-1, GHK or prezatide. So in Great Britain GHK-Cu is neither banned nor restricted as a cosmetic ingredient; as in the EU (cosing-copper-tripeptide-1) it may be used only within the general safety-assessment rules, and only in a product applied to the outside of the body (uk-cosmetic-products-reg-gb-art-2)."

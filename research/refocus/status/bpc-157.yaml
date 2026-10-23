@@ -1,0 +1,100 @@
+slug: bpc-157
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, fda-pcac-2026-bpc157-briefing] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, fda-pcac-2026-bpc157-briefing] }
+  # UK: the data file already has a UK row (not-authorised, 2026-10-20). Re-checked on 23 October 2026 with the same
+  # result; no UK row proposed. uk-mhra-substance-index-status-c-2026-10-23 is offered as an extra source for it (the
+  # current row cites no MHRA search).
+schedule:
+  AU: { code: "S4", note: "'# BPC-157' in Schedule 4 (prescription-only medicine) and in Appendix D clause 5 (possession without authority, such as a prescription, is illegal), from 1 June 2024.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2024-06, au-poisons-standard-2024-02, au-tga-2024-05-final-decisions-notice] }
+  # CA: no schedule proposed. BPC-157 is not on the Prescription Drug List and not in the CDSA (see notes).
+products: []
+notes: |
+  Names searched (from the data file and the FDA briefing): BPC-157, BPC 157, BPC157, PL 14736, PL-10, PLD-116,
+  bepecin, pentadecapeptide, 'body protection compound'. No INN, no brand.
+
+  CANADA (Health Canada), searched 23 October 2026.
+  - Drug Product Database API by active ingredient (substring, all statuses): 'BPC', pentadecapeptide, bepecin,
+    'PL 14736': no product of any status. Notice of Compliance database, ingredient 'BPC', 'PENTADECAPEPTIDE',
+    'BEPECIN' and product name 'BPC-157': 'No result found!'. Not searched: the codes PL-10 and PLD-116 (the DPD API
+    failed later that evening and was under maintenance during the second run); a code would not be an ingredient
+    name in the DPD anyway. [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23]
+  - Submissions under review (new drug submissions, current to 2026-09-30): none. [ca-hc-sur-search-status-c-2026-10-23]
+  - FDA's 2026 evaluation: a globalEDGE search did not find BPC-157 'as a component of an approved product in any
+    country'. [fda-pcac-2026-bpc157-briefing]
+  - Trials: Health Canada's trial portal and ClinicalTrials.gov list no BPC-157 trial with a Canadian site (the only
+    registered trial, NCT07437547, recruits in China). Not 'investigational'. [ca-hc-ctdb-search-status-c-2026-10-23,
+    ctgov-search-status-c-2026-10-23]
+  - Prescription Drug List: BPC-157 is NOT listed; not in the Controlled Drugs and Substances Act. Health Canada
+    nevertheless says peptides are 'generally regulated as prescription drugs' and that injectable peptides 'are
+    regulated as prescription drugs in Canada'. Selling it is illegal because it has no DIN and no notice of
+    compliance (Food and Drug Regulations C.01.014, C.08.002). UNRESOLVED (same as batch b): the legal basis of the
+    'prescription drug' statement for a peptide not on the PDL; the page can safely say 'unauthorised; illegal to
+    sell; Health Canada treats injectable peptides as prescription drugs' without calling it a listed prescription
+    drug. [ca-pdl-human, ca-cdsa, ca-food-and-drug-regulations, ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-search-status-c-2026-10-23]
+  - Enforcement: named in Health Canada's April 2026 advisory (RA-81874) and in four seizure advisories (RA-77218,
+    1 April 2025; RA-77807, 1 August 2025; RA-81403 and RA-81404, 24 December 2025; each names a seller, so cite the
+    search record). Recall RA-82047 (May 2026): bulk BPC-157 and GHK-Cu powder sold to compounding and community
+    pharmacies recalled as unauthorised active pharmaceutical ingredients (Type I). [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-search-status-c-2026-10-23, ca-hc-2026-05-ghk-cu-bpc-157-api-recall]
+  - Sport: Sport Integrity Canada (canada.yaml): April 2025 four-year sanction of a university athlete for BPC-157 and
+    TB-500; April 2026 reminder that BPC-157 is prohibited under S0. [ca-sic-2025-04-bpc157-tb500-sanction,
+    ca-sic-2026-04-peptides-reminder]
+
+  AUSTRALIA (TGA), searched 23 October 2026.
+  - ARTG: '"BPC 157"', pentadecapeptide, bepecin, '"PL 14736"', '"PLD-116"', '"body protection compound"': 'There were
+    no matching results' ('"BPC 157"' and pentadecapeptide repeated in the second run). Hyphenated forms are split by the engine and
+    return only unrelated goods; the nearest, 'BPC Amino Acid Complex' (ARTG 530014), is an amino-acid supplement
+    without BPC-157. [au-artg-search-status-c-2026-10-23]
+  - The TGA calls BPC-157 an 'unapproved peptide product' (not in the ARTG) in its April 2026 advisory and in the June
+    2026 statement with the Chief Medical Officer. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement]
+  - AusPAR and prescription-medicines-under-evaluation: nothing for BPC-157. ANZCTR and ClinicalTrials.gov: no trial
+    in Australia. Not 'investigational'. [au-tga-search-status-c-2026-10-23, au-anzctr-search-status-c-2026-10-23,
+    ctgov-search-status-c-2026-10-23]
+  - Poisons Standard (October 2026 edition, F2026L01327, in force from 1 October 2026): '# BPC-157.' in Schedule 4;
+    Appendix D clause 5 item 5 (possession without authority illegal). First in the June 2024 edition (in force
+    1 June 2024); absent from February 2024. The TGA's notice of final decision says the proposal 'was in response to
+    48 referrals for importation of BPC-157 received by the TGA since 1 July 2022' and 'seeks to align the scheduling
+    of BPC-157 with other performance- and image-enhancing substances'. This resolves the first run's UNRESOLVED
+    reasons item. Scheduling takes effect through state and territory law. [au-poisons-standard-2026-10,
+    au-poisons-standard-2024-06, au-poisons-standard-2024-02, au-tga-2024-05-scheduling-final-decisions,
+    au-tga-2024-05-final-decisions-notice]
+  - Import: as a Schedule 4 substance, BPC-157 falls within the personal-importation exemption only with a doctor's
+    written authority, and the TGA will not release vials labelled only with codes or without the active ingredient
+    and strength. Not named in the Customs (Prohibited Imports) Regulations. [au-tg-regulations-1990-sch-5-item-1,
+    au-tga-2026-04-peptide-responsibilities, au-tga-2026-05-peptide-import-warning, au-customs-prohibited-imports-regs]
+  - Enforcement: August 2026 seizure with NSW Police of products including a combination product of BPC-157 and
+    TB-500; Federal Court proceedings (started September 2026) against a former company and its directors over
+    advertising of peptides including BPC-157 (the release names them, so it is summarised in the search record).
+    [au-tga-2026-08-peptide-seizure, au-tga-search-status-c-2026-10-23]
+
+  UNITED KINGDOM (re-check; the existing row stands): MHRA Products substance index has no BPC entry (the 'BPC'
+  strings there are British Pharmaceutical Codex product names); exact-term searches '"BPC 157"' and 'BPC157': 0
+  documents. GOV.UK: no MHRA page about BPC-157. [uk-mhra-substance-index-status-c-2026-10-23, uk-govuk-search-status-c-2026-10-23]
+
+  UNITED STATES: no new research in this batch; the US row and its sources (FDA PCAC July 2026) are unchanged.
+
+  Ireland and New Zealand: not searched here (ireland-nz assignment), except ClinicalTrials.gov: no trial in either.
+page_facts: |
+  CANADA
+  - No product containing BPC-157 has ever been authorised in Canada (Drug Product Database and Notice of Compliance
+    database, 23 October 2026). [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23]
+  - Health Canada lists BPC-157 among unauthorised injectable peptides it has seized, and says peptides are generally
+    regulated as prescription drugs in Canada; selling unauthorised drugs is illegal. [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-search-status-c-2026-10-23]
+  - In May 2026 Health Canada recalled BPC-157 powder that had been sold to compounding and community pharmacies as an
+    unauthorised active pharmaceutical ingredient. [ca-hc-2026-05-ghk-cu-bpc-157-api-recall]
+  - A Canadian university athlete received a four-year anti-doping sanction in 2025 for using BPC-157 and TB-500.
+    [ca-sic-2025-04-bpc157-tb500-sanction]
+  AUSTRALIA
+  - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-c-2026-10-23]
+  - BPC-157 has been a prescription-only medicine (Schedule 4) since 1 June 2024, and possessing it without authority,
+    such as a prescription, is illegal (Appendix D, given effect by state and territory law). The TGA scheduled it
+    after 48 import referrals from July 2022. [au-poisons-standard-2026-10, au-poisons-standard-2024-06,
+    au-tga-2024-05-final-decisions-notice]
+  - The TGA names BPC-157 as an example of unapproved peptide products, a group for which it has received reports of
+    harms such as severe allergic reactions (the reports are not broken down by compound), and a combination product
+    of BPC-157 and TB-500 was among products seized in New South Wales in August 2026. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure]
+  UNITED KINGDOM
+  - No product containing BPC-157 has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23]

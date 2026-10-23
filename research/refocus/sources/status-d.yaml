@@ -1,0 +1,357 @@
+# Sources for the refocus status batch d (mots-c, epitalon, semax, selank, thymosin-alpha-1, aod-9604, ss-31,
+# nad-precursors): Canada, Australia and the United Kingdom (epitalon already has a UK row). Every entry below was
+# fetched, read or searched in the evening of 23 October 2026 (UTC; just after midnight on 24 October local time),
+# from this machine: tga.gov.au, ANZCTR, the MHRA products site, the FSA register and the Federal Court site in a
+# browser; legislation.gov.au, GOV.UK, ClinicalTrials.gov, openFDA, canada.ca recalls and fda.gov by direct download.
+#
+# HEALTH CANADA OUTAGE. All Health Canada databases on health-products.canada.ca (Drug Product Database, Licensed
+# Natural Health Products Database, Notice of Compliance, Clinical Trials Database; web pages and APIs) returned
+# HTTP 503 or redirected to a maintenance page ('This application is temporarily unavailable') every time they were
+# tried during this run (roughly 22:00 to 22:45 UTC on 23 October 2026). The Canadian rows therefore
+# rest on the searches that the canada-legal run made through the same databases earlier on 23 October 2026
+# (ca-dpd-search-canada-legal-2026-10-23, ca-pdl-human, ca-cdsa,
+# ca-lnhpd-nr-licence; research/refocus/sources/canada.yaml), which covered every INN in this batch, plus the
+# canada.ca recalls site and ClinicalTrials.gov, which were up. What could not be done is listed as UNRESOLVED in
+# the status files.
+#
+# Reused without re-registering (same ids, see the files named):
+#   src/data/sources: uk-hmr-2012-reg-46 (bpc-157.yaml), uk-mda-1971-sch-2 (legal-b.yaml), fda-pcac-2026-mots-c-briefing,
+#   fda-pcac-2026-epitalon-briefing, fda-pcac-2024-thymosin-alpha-1-briefing, ctgov-nct07505745, ctgov-nct03998514,
+#   openfda-drugsfda-search-2026-10-22 (stubs-a.yaml), fda-pcac-2026-semax-briefing, wada-2027-list-explanatory-note
+#   (legal-b.yaml), fda-pcac-2024-aod9604-briefing, stier-2013-aod9604-safety, fda-drugsatfda-forzinity,
+#   fda-2025-forzinity-approval, fda-2025-forzinity-approval-letter, fda-label-forzinity-2025 (stubs-b.yaml),
+#   wada-2026-list-en (bpc-157.yaml).
+#   research/refocus/sources/canada.yaml: ca-dpd-search-canada-legal-2026-10-23, ca-lnhpd-nr-licence,
+#   ca-nhpid-nmn-monograph, ca-nhpr-definition, ca-nhpr-schedule-1, ca-nhpr-schedule-2, ca-ctgov-canada-peptide-search-2026-10-23,
+#   ca-fdr-c08-001-new-drug, ca-fdr-c08-010-special-access; and the shared ids ca-pdl-human, ca-cdsa and
+#   ca-hc-recalls-database (also in status-b.yaml), whose canada.yaml notes now carry the canada-legal PDL, CDSA and
+#   recalls searches (the canada-legal second run folded its earlier ids ca-pdl-search-canada-legal-2026-10-23,
+#   ca-cdsa-search-canada-legal-2026-10-23 and ca-hc-recalls-peptide-search-2026-10-23 into them; this file and the
+#   batch-d status files use the new ids).
+#   research/refocus/sources/status-b.yaml: ca-hc-2026-04-think-twice-peptides, ca-food-and-drug-regulations,
+#   au-tga-2014-09-scheduling-consultation, au-tga-2026-04-peptide-responsibilities,
+#   au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure, au-customs-prohibited-imports-regs.
+#   research/refocus/sources/status-c.yaml: au-tg-regulations-1990-sch-5-item-1, au-tga-peptide-products-hub.
+#   research/refocus/sources/us-uk-routes.yaml: ctgov-nct04689360 (elamipretide expanded access).
+#
+# SHARED IDS. Three documents were also registered, with the same id and URL, by status batch b (and the first by
+# batch c): au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02. Two trial records
+# are already in src/data/sources/stubs-b.yaml with the same id and URL: ctgov-nct07531251 and ctgov-nct06373731 (their
+# existing notes do not give the site countries this batch relies on). Each was read again for this batch; the
+# entries below keep the id and URL and give the facts batch d relies on. When the files are merged, keep one entry
+# per id and join the notes (for the two trial records: append the site-country sentences to the stubs-b notes).
+#
+# CORRECTION TO ANOTHER BATCH (flagged, not edited): status-b.yaml, au-customs-prohibited-imports-regs, says the growth
+# hormone entry is 'Schedule 7A item 4'. In compilation F2026C00751 (read again for this batch) Schedule 7A lists
+# items 1A (anabolic or androgenic substances), 1 (erythropoietin), 2 (gonadotrophins), 3 ('Natural and manufactured
+# growth hormones, including somatropin, somatrem, somatomedins and insulin-like growth factors (not insulins) and growth
+# hormone releasing hormones (somatorelin and synthetic analogues)') and 4 (darbepoetin alfa). The growth hormone entry
+# is item 3, not item 4.
+#
+# Seller rule (CONTENT-GUIDE §1): several regulator records read for this batch name a seller, a clinic, a compounding
+# laboratory, a supplement company or a product brand (Health Canada advisories, ARTG entries, the GB novel-food
+# register, a TGA media release). As in batches b and c they are summarised by identification number inside a
+# search-log entry and are not registered one by one. Do not put product, company or clinic names on the page.
+
+# ================================================================ AUSTRALIA: Poisons Standard (shared ids)
+
+# Same id and URL as status-b.yaml and status-c.yaml; batch-d facts below.
+au-poisons-standard-2026-10:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health, Disability and Ageing)"
+  title: "Therapeutic Goods (Poisons Standard - October 2026) Instrument 2026 (F2026L01327)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026L01327/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Read for batch d from the official HTML text (asmade/2026-09-30, epub document_1.html, 706,779 characters after tags were removed) on 23 October 2026. Schedule 4 contains '# AOD-9604 (CAS No. 221231-10-3).'; Appendix D clause 5, 'Poisons for which possession without authority is illegal (for example, possession other than in accordance with a legal prescription)', lists it as item 3 'AOD-9604 (CAS No. 221231-10-3)'; the index gives 'AOD-9604 (CAS No. 221231-10-3) Schedule 4, Appendix D, clause 5'. Searched with no match anywhere in the instrument: MOTS, epitalon, epithalon, semax, selank, thymalfasin, elamipretide, SS-31, nadide, dinucleotide, mononucleotide, riboside, tetrapeptide. 'THYMOSIN' occurs only as '# THYMOSIN BETA 4 (THYMOSIN β4)' (Schedule 4 and Appendix D item 39); thymosin alpha-1 is not named. 'NICOTINAMIDE' occurs only as an exception inside the two human-use NICOTINIC ACID entries (Schedules 3 and 4: nicotinic acid 'except ... nicotinamide'; the third entry, Schedule 5, is for agricultural use) and in the index cross-reference, so nicotinamide, nicotinamide riboside, NMN and NAD+ are not scheduled. The CAS number given for AOD-9604 is the one the FDA lists for the free base (fda-pcac-2024-aod9604-briefing)."
+
+# Same id and URL as status-b.yaml; batch-d facts below.
+au-poisons-standard-2015-06:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard June 2015 (F2015L00749) and its Explanatory Statement"
+  container: "Federal Register of Legislation"
+  year: 2015
+  url: https://www.legislation.gov.au/F2015L00749/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Read for batch d from the official HTML text (asmade/2015-05-28, epub document_1.html) on 23 October 2026. Schedule 4 contains '# AOD-9604 (CAS No. 221231-10-3).' and the index reads 'AOD-9604 (CAS No. 221231-10-3) Schedule 4 Appendix D, Item 5' (Appendix D item 5 was then the list of poisons for which possession without authority is illegal). The instrument commenced on 1 June 2015 (status-b note). With au-poisons-standard-2015-02, which does not name it, this dates AOD-9604's Schedule 4 and Appendix D entries to the edition in force from 1 June 2015, following the September-October 2014 consultation that proposed 'new individual entries for ... AOD-9604 in Schedule 4 and Appendix D' (au-tga-2014-09-scheduling-consultation)."
+
+# Same id and URL as status-b.yaml; batch-d facts below.
+au-poisons-standard-2015-02:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard 2015 (F2015L00128)"
+  container: "Federal Register of Legislation"
+  year: 2015
+  url: https://www.legislation.gov.au/F2015L00128/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Read for batch d from the official HTML text (asmade/2015-02-10, epub document_1.html, 721,577 characters) on 23 October 2026: no occurrence of '9604' or 'AOD'. AOD-9604 was therefore not scheduled before the June 2015 edition."
+
+# ================================================================ AUSTRALIA: listed medicines (NAD+ precursors)
+
+au-permissible-ingredients-determination-2026-3:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health, Disability and Ageing)"
+  title: "Therapeutic Goods (Permissible Ingredients) Determination (No. 3) 2026 (F2026L01382)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026L01382/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Made 12 October 2026 under s 26BB(1) of the Therapeutic Goods Act 1989; commenced 16 October 2026 and replaced Determination (No. 2) 2026 (TGA news item 'Update to listed medicine ingredients in October 2026', 16 October 2026). It lists the ingredients that medicines listed in the ARTG (AUST L and AUST L(A)) may contain; 'A' means permitted as an active ingredient, 'E' as an excipient. Read from the official HTML text, volumes 1 to 6 (epub document_1 to document_6), on 23 October 2026. Volume 4: item 3493 'NICOTINAMIDE MONONUCLEOTIDE', A: until 10 December 2027 only in a medicine whose sponsor is the named applicant company or a sponsor it has authorised (TGA notified); oral route only; a maximum recommended daily dose and a maximum duration of use of 12 weeks; adults only and not in pregnant or lactating women. Item 3494 'NICOTINAMIDE RIBOSIDE CHLORIDE', A: oral routes only; a maximum daily dose; label warnings 'Not to be taken by children under 12 years old' and, above a set daily dose, 'Not recommended for use during pregnancy or lactation'. Items 3491 NICOTINAMIDE and 3495 NICOTINIC ACID are also permitted. No entry in any volume for nadide, NAD, NAD+ or 'nicotinamide adenine dinucleotide'; the only related entry is item 1930 'DISODIUM NADH', E, 'Only for use in topical medicines for dermal application'. So NR chloride and NMN (oral, with conditions) can be active ingredients of listed medicines; NAD+ itself cannot. The site gives no doses: the dose caps are not to be reproduced."
+
+au-tga-2025-04-nad-nmn-safety-alert:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "NAD, NAD+, NADH or NMN medicines sold in Australia (safety alert)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/nad-nad-nadh-or-nmn-medicines-sold-australia
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 7 April 2025, last updated 3 February 2026 ('This update reflects the inclusion of NMN in the Therapeutic Goods (Permissible Ingredients) Determination (No. 4) 2025 as of 10 December 2025'); read in a browser on 23 October 2026. For sponsors: 'NAD, NAD+, and NADH are currently not permitted ingredients' of listed medicines, and listed medicines that make claims about them through name, labelling or advertising 'are at risk of breaching the law'; NMN is permitted from 10 December 2025 under the conditions in the Determination. 'If you are advertising or supplying therapeutic goods that refer to NAD, NAD+, NADH, or NMN and these goods are not included in the ARTG nor exempted or otherwise authorised, you are likely breaching the law.' For consumers: listed medicines ('AUST L') 'can only make low-level health claims selected from a pre-approved list and can only use ingredients that the TGA has pre-assessed as safe and of low risk'; NAD, NAD+ and NADH 'are currently not approved for use as ingredients in listed medicines, while NMN can be used in listed medicines when in compliance with specific requirements'; products without an AUST number on the label 'may be unapproved goods or illegally supplied and could pose a risk to your health'."
+
+au-tga-2026-08-nad-nmn-representations-guidance:
+  type: guideline
+  authors: "Therapeutic Goods Administration"
+  title: "Making NAD, NAD+, NADH or NMN representations for listed medicines (guidance for sponsors)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/guidance/making-nad-nad-nadh-or-nmn-representations-listed-medicines
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 12 August 2026; read in a browser on 23 October 2026. Applies to medicines listed under s 26A of the Act, which 'are not evaluated by the Therapeutic Goods Administration (TGA) prior to entry on the ARTG. Instead, sponsors certify that their listed medicine meets requirements in relation to quality, safety and efficacy.' 'NAD, NAD+, and NADH are currently not permitted ingredients. NMN is a permitted ingredient, having been included in the Ingredients Determination on 10 December 2025.' Precursors such as nicotinamide, nicotinamide ascorbate, nicotinamide riboside chloride and nicotinic acid are also in the Determination. 'Currently, there are no permitted indications that reference NAD, NAD+, NADH, or NMN'; indications such as 'boost NAD+ levels' are not permitted. Unapproved goods referring to NAD/NMN that are not in the ARTG 'may be in breach of the Act'."
+
+au-artg-search-status-d-2026-10-23:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG) searches, 23 October 2026: AOD-9604, MOTS-c, epitalon, Semax, Selank, thymosin alpha-1, elamipretide and NAD+ precursors"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=elamipretide
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026 (the ARTG search indexes product names, sponsors and ingredient lists; hyphenated or coded terms are split into fragments). 'No matching results' for: epitalon, epithalon, epithalone, epithalamin, thymalfasin, zadaxin, \"thymosin alpha\", elamipretide, forzinity, bendavia, \"AOD 9604\", 9604, \"metabolic pharmaceuticals\", \"stealth biotherapeutics\", \"12S rRNA\", \"MEHFPGP\", \"tuftsin\". Unrelated fragment matches only (first page checked each time): \"AOD9604\" and \"AOD-9604\" (1,180: first aid kits, walking aids), MOTS-c and \"MOTS-c\" (14: wrist implants, wheelchairs), MOTS (985), semax (33: bone cements), selank and selanc (49: sealing devices; three 'Selancy' herbal supplements), thymosin (1: a tamoxifen tablet, ARTG 43527), MTP-131 (2: technetium kits), \"AEDG\" (126: dental wedges), \"TP-7\" (77), sciclone (1: a nasal irrigation device), calzada (1: an unrelated injection). Control: somatropin, 30 results. NAD+ precursors: \"nicotinamide riboside\" 82 results, \"nicotinamide mononucleotide\" 135, \"NMN\" 736, \"NAD+\" 148, nadide 13, \"nicotinamide adenine dinucleotide\" 1. Records opened (ARTG pages and the TGA public-summary PDFs): ARTG 450569 (ARTG date 3 June 2024) and 419551 (23 August 2023), sole ingredient nicotinamide riboside chloride, licence category LI, 'Medicine Listed', approval area 'Listed Medicines', with permitted indications and the label warnings set by the Determination; ARTG 532534 (19 October 2026), nicotinamide mononucleotide with theanine, LI, 'Medicine Listed'; ARTG 531441 (18 September 2026), NMN with NR chloride, LI; ARTG 528217 (26 June 2026), a product named 'NAD+' whose ingredients include nicotinamide riboside chloride but no nadide, LI. All 13 nadide results (ARTG 366430, 371660, 372512, 378148, 409090, 451685, 451945, 459386, 469505, 480825, 495365, 495386, 511845; ARTG dates May 2021 to September 2025) are licence category LIE; the public summary of 469505 reads 'Medicine Listed (Export Only)', approval area 'Export only Medicines', and 'This product must not be supplied for sale in Australia, including supply via duty free outlets.' So oral NR and NMN products are listed medicines that may be sold in Australia; every ARTG entry containing NAD+ itself is for export only. Product and sponsor names are deliberately not recorded here (seller rule). The public search may show only current entries."
+
+au-tga-search-status-d-2026-10-23:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "TGA website searches, 23 October 2026: AOD-9604, MOTS-c, epitalon, Semax, Selank, thymosin alpha, elamipretide, NAD+ and NMN"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/search?keywords=9604
+  accessed: 2026-10-23
+  verified: url
+  note: "Whole-site searches in a browser on 23 October 2026. '9604' and \"AOD 9604\": 1 result, the November 2014 scheduling consultation (au-tga-2014-09-scheduling-consultation); hyphenated AOD-9604 and AOD9604 are split into fragments (2,499 unrelated results). epitalon, thymalfasin, elamipretide, \"hGH 176-191\", \"growth hormone fragment\", \"Metabolic Pharmaceuticals\": no result. MOTS-c (23), semax (54), selank (104), \"SS-31\" (993): only unrelated fragment matches (first page checked). \"thymosin alpha\": 1 result, a media release titled 'SGC Products fined $63,000 for alleged unlawful advertising on \"Dr. Ageless\" website in relation to COVID-19' (it names a company); the page itself could not be opened (browser ERR_HTTP2_PROTOCOL_ERROR on three attempts, curl connection failure, web fetch timeout) while other tga.gov.au pages loaded, so its content was NOT read (UNRESOLVED). \"nicotinamide mononucleotide\" (150) and \"nicotinamide riboside\" (90): compositional guidelines for both ingredients ('permitted for use in listed medicines'; the NR chloride guideline last updated 28 February 2022), ARTG entries and sponsor cancellations; \"NAD+\" (331): au-tga-2025-04-nad-nmn-safety-alert, au-tga-2026-08-nad-nmn-representations-guidance, cancellations and one listed-medicine compliance report; \"NAD+ infusion\", \"intravenous NAD\", \"NAD+ injection\", \"IV NAD\": no result. No TGA page about AOD-9604 other than the 2014 consultation, and none naming MOTS-c, epitalon, Semax, Selank or elamipretide, was found. The February 2016 scheduling page cited by the FDA for AOD-9604 (scheduling delegate's interim decisions, ACCS/ACMS February 2016, item 2.7 performance and image enhancing drugs) also failed to load (same error) and was not read."
+
+au-tga-2026-06-peptide-compliance-priority:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA strengthens compliance focus on unapproved peptide products as part of evolving risk response (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/tga-strengthens-compliance-focus-unapproved-peptide-products-part-evolving-risk-response
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 10 June 2026, read in a browser on 23 October 2026. The TGA 'has expanded its priority focus areas to include unapproved peptide products, following increased detection of unlawful importation, supply and advertising'; such products are 'often marketed for performance enhancement or anti-ageing'; 'Many peptide products supplied in Australia are unapproved therapeutic goods, meaning they are not included on the Australian Register of Therapeutic Goods (ARTG) and have not been assessed by us for safety, quality, or effectiveness'; regulatory responses 'may include infringement notices, product seizures, import interventions and, where appropriate, civil or criminal penalties'. Names no individual peptide."
+
+au-anzctr-search-status-d-2026-10-23:
+  type: registry
+  authors: "Australian New Zealand Clinical Trials Registry"
+  title: "ANZCTR basic searches, 23 October 2026: AOD9604, MOTS-c, CB4211, epitalon, Semax, Selank, thymalfasin, thymosin alpha, Zadaxin, elamipretide, MTP-131, NR, NMN"
+  container: "ANZCTR"
+  year: 2026
+  url: https://www.anzctr.org.au/TrialSearch.aspx?searchTxt=AOD9604&isBasic=True
+  accessed: 2026-10-23
+  verified: registry
+  note: "Searched in a browser on 23 October 2026 ('Number of records found'). AOD9604: 1 (ACTRN12605000067673, the OPTIONS trial; anzctr-actrn12605000067673); AOD-9604: 0; \"Metabolic Pharmaceuticals\": 4, the OPTIONS trial plus three trials of a different drug (ACV1, ACTRN12605000408684, ACTRN12606000456550, ACTRN12607000201471). MOTS-c, CB4211, epitalon, epithalon, semax, selank, thymalfasin, \"thymosin alpha\", zadaxin: 0. elamipretide: 4, all ClinicalTrials.gov records mirrored by ANZCTR (NCT06373731, NCT05162768, NCT03048617 an observational natural-history study, and NCT05176951, a treprostinil study that mentions elamipretide); MTP-131: 2 (NCT06373731, NCT05162768). \"nicotinamide riboside\": 8 records; \"nicotinamide mononucleotide\": 0. Status-b's control: somatropin, 14 records."
+
+anzctr-actrn12605000067673:
+  type: registry
+  authors: "Australian New Zealand Clinical Trials Registry"
+  title: "ACTRN12605000067673: A Phase IIb, Randomised, Double-Blind, Placebo-Controlled Study To Assess The Efficacy, Safety And Tolerability Of 24 Weeks Treatment With Different Doses Of AOD9604 Tablets On Weight Loss In Obese Adults (the 'Options' study)"
+  container: "ANZCTR"
+  year: 2005
+  url: https://www.anzctr.org.au/Trial/Registration/TrialReview.aspx?id=97&isReview=true
+  accessed: 2026-10-23
+  verified: registry
+  note: "Read on 23 October 2026. Submitted 1 August 2005, registered 2 August 2005 (prospectively), last updated 14 September 2007; sponsor and funder Metabolic Pharmaceuticals Ltd (Australia), trial identifier METAOD006; oral AOD9604 tablets once a day for 24 weeks against placebo in obese adults aged 18 to 65 (BMI 30 to 45, large waist), otherwise healthy; primary outcomes weight loss at 12 weeks and safety over 24 weeks; randomised, blinded, phase 2; target sample size 360; recruitment status 'Completed'; 12 recruitment postcodes in New South Wales, the ACT, South Australia, Western Australia, Queensland and Victoria. No results are posted. The FDA (fda-pcac-2024-aod9604-briefing) gives 536 enrolled and 502 randomised and quotes the company's 21 February 2007 announcement that development for obesity was terminated. The registry record lists doses; the site does not reproduce them."
+
+# ================================================================ AUSTRALIA: AOD-9604 history (government sources)
+
+au-acc-2013-organised-crime-drugs-sport:
+  type: report
+  authors: "Australian Crime Commission"
+  title: "Organised Crime and Drugs in Sport: New Generation Performance and Image Enhancing Drugs and Organised Criminal Involvement in their use in Professional Sport"
+  container: "Australian Crime Commission (copy hosted by Medsafe, New Zealand)"
+  year: 2013
+  url: https://www.medsafe.govt.nz/consultations/acc-pieds.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "Published February 2013 ('Commonwealth of Australia 2013'), the public report of Project Aperio. Downloaded and read (pdftotext) on 23 October 2026 from the copy hosted on the New Zealand regulator's site; the Australian Criminal Intelligence Commission site (acic.gov.au) did not respond. On AOD-9604 the report says: it 'was identified in Project Aperio as being used by professional athletes'; 'AOD-9604 is not currently a WADA prohibited substance' and 'AOD9604 is not currently prohibited under category S2 of the WADA Prohibited List'; 'AOD-9604 is not approved for human use'; in the substance table, scheduling status (SUSMP) 'Unscheduled' and border status 'Schedule 7A Customs (Prohibited Imports) Regulations' (the ACC's 2013 view; the current Schedule 7A does not name AOD-9604: au-customs-prohibited-imports-regs); it repeats company statements that AOD-9604 was 'about to enter phase three clinical trials' and had effects on cartilage (cited to company stock-exchange announcements, spelt once 'Caldaza'). Cited for what the Australian government said in February 2013, not for the science."
+
+au-fca-2014-1019-essendon-v-asada:
+  type: law
+  authors: "Federal Court of Australia (Middleton J)"
+  title: "Essendon Football Club v Chief Executive Officer of the Australian Sports Anti-Doping Authority [2014] FCA 1019"
+  container: "Federal Court of Australia, Digital Law Library"
+  year: 2014
+  url: https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2014/2014fca1019
+  accessed: 2026-10-23
+  verified: url
+  note: "Judgment of 19 September 2014 (VID 327 and 328 of 2014), read in a browser on 23 October 2026. [1]: in early February 2013 ASADA's CEO and the AFL agreed a 'joint investigation' into Essendon's 2011-2012 supplements program. [83]: the ACC's Project Aperio report 'Organised Crime and Drugs in Sport' was published in February 2013. [175]-[176]: notes of a meeting between ASADA's CEO and AFL executives record 'WADA say AOD9604 is banned' (paragraph 175 dates the meeting '4 June 2014', but it sits in the 2013 chronology between May and late June 2013 events, so the year may be a slip in the judgment; do not quote the date). [191]: on 2 July 2013 ASADA and the AFL agreed the interim report would include 'ASADA's position on whether it intends to prosecute any cases on AOD9604'. [206]: ASADA's covering letter of 2 August 2013 to the AFL said: 'In relation to the issue of AOD-9604, ASADA will make a public statement about its proposed approach in all sports to the enforcement of possible anti-doping rule violations involving this substance that occurred prior to the World Anti-Doping Agency's media release of 22 April 2013.' The same letter says ASADA did not then have enough evidence that specific players had been given thymosin beta-4. The court dismissed Essendon's and Hird's challenge to the investigation. The judgment does not quote the WADA release itself or ASADA's later public statement."
+
+# ================================================================ CANADA
+
+ca-hc-recalls-search-status-d-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Recalls and safety alerts database: searches for NAD, nicotinamide, Semax, Selank, MOTS-c, epitalon, thymosin, AOD, SS-31 and elamipretide, 23 October 2026"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/search/site?search_api_fulltext=NAD
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched on 23 October 2026 (site full-text search; each advisory found was downloaded and its product list read). Records are summarised by number because their titles or texts name a seller, clinic, gym or laboratory. RA-77218 (published 1 April 2025, updated 2 April 2025): unauthorized injectable peptide drugs seized from a wellness clinic in Calgary; the list includes epitalon, 'Mots-C', Selank and 'Thymosin-α1 (TA1)'; 'most injectable peptides are regulated as prescription drugs in Canada'; 'Health Canada has not authorized any of the products seized'. RA-77807 (1 August 2025): 42 named injectable peptide drugs seized from and sold by an online seller, including AOD9604, epitalon, Selank, Semax, SS-31 and 'Thymosin alpha'; 'Injectable peptides are regulated as prescription drugs in Canada.' RA-78029 (4 September 2025): health product recall, Type III, depth 'Health Care Establishments', of products from an Ontario compounding laboratory sold 'without market authorization (DINs) in Canada', including an 'NAD+ IV Drip solution' and an NAD+ 50 mg/mL solution (with glutathione, vitamin and other drips). RA-81403 (24 December 2025): unauthorized health products seized at a Vancouver gym and sold online, including MOTS-C, SS-31, AOD-9604, Epithalon and Thymosin Alpha-1. RA-81874 (9 April 2026; ca-hc-2026-04-think-twice-peptides): 'think twice' advisory whose list of seized unauthorized injectable peptide drugs includes epitalon, MOTS-C, NAD+ and SS-31. 'elamipretide': no result. Other hits were unrelated (laboratory reagents, food recalls, a prenatal vitamin and a supplement company's metal-fibre recall). RA-77218, RA-77807, RA-81403 and RA-81874 were also read by the canada-legal and status-b runs (summarised in ca-hc-recalls-database); RA-78029 was not."
+
+# ================================================================ UNITED KINGDOM
+
+mhra-products-search-status-d-2026-10-23:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products: searches and substance index, 23 October 2026: MOTS-c, epitalon, Semax, Selank, thymalfasin, AOD-9604, elamipretide and NAD+ precursors"
+  url: https://products.mhra.gov.uk/search/?search=%22semax%22&page=1
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026 (the page loads its results with JavaScript; the result lists sit behind a disclaimer that was not accepted, so only the counts and the 'no results' messages were read; earlier in the evening the site's search service returned errors and was retried). The site's search is fuzzy (each word is matched with one-letter tolerance), so unquoted names return unrelated products: semax 333, zadaxin 3, nadide 10. Quoted (exact) searches: 'There are no search results for' \"semax\", \"selank\", \"MOTS-c\", \"thymosin alpha\", \"zadaxin\", \"AOD-9604\", \"SS-31\", \"MTP-131\", \"epithalon\", \"nadide\", \"nicotinamide riboside\", \"nicotinamide mononucleotide\" and \"nicotinamide adenine dinucleotide\"; unquoted selank, epitalon, thymalfasin, elamipretide, forzinity and AOD9604 also gave no results. Control: \"somatropin\" (quoted or not) 577 documents. Substance index read for letters A, B, E, M, N, S and T: no AOD-9604, ELAMIPRETIDE, EPITALON, MOTS-C, NADIDE, NICOTINAMIDE RIBOSIDE, NICOTINAMIDE MONONUCLEOTIDE, SELANK, SEMAX, THYMALFASIN or THYMOSIN entry (the index does list NICOTINAMIDE, 78 files, NICOTINIC ACID, SEMAGLUTIDE, SOMATROPIN and THYROTROPIN ALFA). The database lists products with a UK marketing authorisation (PL, PLGB, PLNI) or registration (THR, NR)."
+
+uk-govuk-search-status-d-2026-10-23:
+  type: dataset
+  authors: "UK Government (GOV.UK)"
+  title: "GOV.UK site search API, 23 October 2026: MOTS-c, Semax, Selank, epitalon, thymosin alpha, thymalfasin, Zadaxin, AOD-9604, elamipretide, Forzinity, nicotinamide riboside, NMN, NAD+"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/api/search.json?q=semax
+  accessed: 2026-10-23
+  verified: url
+  note: "Queried on 23 October 2026 and every relevant hit opened. semax: 1 result, the FSA guidance uk-fsa-2018-importing-food-supplements. AOD9604: 1 result, the Home Office FEWS annual report collection (uk-home-office-fews-2017-18). thymalfasin: 1 result, a Committee on Toxicity meeting page that does not name it (its minutes of 31 March 2026 mention 'injectable peptides' only as a possible emerging issue). nicotinamide riboside: a 2023 explanatory memorandum on an EU regulation allowing NR chloride as a niacin source in foods for special medical purposes (Northern Ireland) and a December 2025 Committee on Toxicity paper on supplement formulations. selank, epitalon, epithalon, zadaxin, elamipretide, forzinity: 0. 'MOTS-c', 'AOD-9604', 'thymosin alpha', 'NAD+' and 'NAD+ injection' returned only unrelated pages (MOT tests, planning, the NAD Group, defence). So no MHRA safety alert, enforcement notice, drug alert or guidance names any compound in this batch."
+
+uk-fsa-2018-importing-food-supplements:
+  type: guideline
+  authors: "Food Standards Agency"
+  title: "Importing food supplements and health foods"
+  container: "GOV.UK"
+  year: 2018
+  url: https://www.gov.uk/government/publications/importing-food-supplements-and-health-foods/importing-food-supplements-and-health-foods
+  accessed: 2026-10-23
+  verified: url
+  note: "FSA guidance, published 2 February 2018 (GOV.UK content API), read on 23 October 2026. Under 'Imports from certain countries', heading 'Semax in Russia': 'Semax is used in Russia as a nutritional food administered in nasal drops for the rehabilitation of patients suffering from Parkinson's Disease, Alzheimers Disease, strokes and other serious conditions. In the UK it is considered by MHRA to be a medicine rather than a food item. Semax may only be sold or supplied in GB/UK if a marketing Authorisation has previously been granted for them.' The only official UK statement on Semax found. (It calls Semax a 'nutritional food' in Russia; other sources describe it as a registered medicine there: fda-pcac-2026-semax-briefing.)"
+
+uk-home-office-fews-2017-18:
+  type: report
+  authors: "Home Office"
+  title: "Annual report on the Home Office forensic early warning system (FEWS), 2017 to 2018"
+  container: "GOV.UK"
+  year: 2023
+  url: https://www.gov.uk/government/publications/forensic-early-warning-system-fews-annual-report/annual-report-on-the-home-office-forensic-early-warning-system-fews-2017-to-2018
+  accessed: 2026-10-23
+  verified: url
+  note: "HTML report published on GOV.UK on 4 April 2023 (covers 2017 to 2018); read on 23 October 2026. Appendix A, Table 7, 'Other substances detected in samples from the Border Force collection', lists 'AOD9604', 1 occurrence, 'Not controlled' under the Misuse of Drugs Act (and 'Thymosin Beta 4', 1, not controlled). The FEWS reports for 2018-19 to 2021-22 do not name AOD-9604 or any other compound in this batch."
+
+uk-fsa-gb-novel-96-nr-chloride:
+  type: regulator
+  authors: "Food Standards Agency"
+  title: "Regulated food and feed products for Great Britain: novel food authorisation NOVEL-96, nicotinamide riboside chloride"
+  container: "data.food.gov.uk"
+  year: 2025
+  url: https://data.food.gov.uk/regulated-products/novel_authorisations/novel-96
+  accessed: 2026-10-23
+  verified: url
+  note: "Register entry read on 23 October 2026 (last updated 1 April 2025). Status 'Authorised', applies in England, Scotland and Wales, status change date 31 December 2020 (the end of the EU transition period; authorised in the EU on 20 February 2020 by Implementing Regulation (EU) 2020/16, now assimilated law in GB). A synthetic form of nicotinamide riboside (at least 90% NR chloride); permitted in food supplements for adults with a maximum daily amount (not reproduced); data protection for the original applicant ended 20 February 2025. So oral NR chloride is lawfully sold in Great Britain as a food supplement ingredient, not as a medicine."
+
+uk-fsa-novel-food-register-search-status-d-2026-10-23:
+  type: dataset
+  authors: "Food Standards Agency"
+  title: "GB novel food authorisations register: searches for nicotinamide, NMN and dinucleotide, 23 October 2026"
+  container: "data.food.gov.uk"
+  year: 2026
+  url: https://data.food.gov.uk/regulated-products/novel_authorisations?search=nicotinamide
+  accessed: 2026-10-23
+  verified: url
+  note: "Register 'Last updated: 31 March 2026'; searched in a browser on 23 October 2026. 'nicotinamide': 2 results, 1-methylnicotinamide chloride (NOVEL-3) and nicotinamide riboside chloride (NOVEL-96). 'NMN' and 'dinucleotide': 'No results were found matching your criteria'. So nicotinamide mononucleotide and NAD+ are not authorised novel foods in Great Britain (the register does not show pending applications)."
+
+# ================================================================ TRIALS (all countries)
+
+ctgov-search-status-d-2026-10-23:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "ClinicalTrials.gov API v2 term searches with site countries, 23 October 2026: MOTS-c, CB4211, epitalon, epithalon, Semax, Selank, thymalfasin, thymosin alpha 1, Zadaxin, AOD9604, AOD-9604, elamipretide, SS-31, Bendavia, MTP-131"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.term=elamipretide&pageSize=100
+  accessed: 2026-10-23
+  verified: registry
+  note: "Every record read for its location countries on 23 October 2026. MOTS-c: 9 records, only NCT07505745 gives MOTS-c (China, recruiting); the rest measure the body's own MOTS-c (Italy, Greece, US, Cyprus, Turkey). CB4211: NCT03998514 (US, completed). epitalon/epithalon: 1, NCT07888595 (US only, early phase 1, enrolling by invitation from 21 October 2026, a topical peptide serum arm among several 'geroprotective' agents). Semax: 0. Selank: 10 records, none about Selank (word matches in unrelated trials). thymalfasin / 'thymosin alpha 1' / 'thymosin alpha-1' / Zadaxin: 68 records each, none with a site in Canada, Australia, the UK, New Zealand or Ireland (nearly all China). AOD9604 and AOD-9604: 0. Elamipretide (21 records; SS-31, Bendavia and MTP-131 find subsets of the same records): with Canadian sites, NCT07531251 (recruiting) and NCT03323749 (MMPOWER-3, terminated 2020); with UK sites, NCT07531251 (recruiting), NCT06373731 (ReNEW, active, not recruiting), NCT05162768 (NuPOWER, completed 2024), NCT03323749, NCT02788747 and NCT02914665 (completed 2017); with Australian sites, NCT05162768 only (completed); New Zealand sites in NCT06373731 and NCT05162768. Expanded access record NCT04689360 lists no countries."
+
+# Same id and URL as src/data/sources/stubs-b.yaml (registered for the SS-31 page); batch-d facts (site countries) below.
+ctgov-nct07531251:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "NCT07531251: Phase 3b/4, Randomized, Double-Blind, Parallel-Group, Placebo-Controlled Trial to Evaluate the Efficacy and Safety of Daily Subcutaneous Injections of Elamipretide in Patients With Genetically Confirmed Barth Syndrome (4TAZPower)"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07531251
+  accessed: 2026-10-23
+  verified: registry
+  note: "Read through the API on 23 October 2026 (last update posted 17 September 2026). Sponsor Stealth BioTherapeutics; status recruiting; actual start 2 July 2026; estimated primary completion 30 September 2029; estimated enrolment 48; phase listed as 4. Sites with status recruiting include Calgary, Canada (a metabolic genetics clinic) and Bristol, United Kingdom (a children's hospital), plus US sites. This appears to be the randomised confirmatory trial the FDA required as a condition of Forzinity's accelerated approval (fda-2025-forzinity-approval-letter describes such a trial in patients 5 years and older); the registry record itself does not say so, so treat that link as unconfirmed."
+
+# Same id and URL as src/data/sources/stubs-b.yaml; batch-d facts (site countries) below.
+ctgov-nct06373731:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "NCT06373731: ReNEW, a Phase 3, Double-Masked, Placebo-Controlled Clinical Trial to Evaluate the Efficacy, Safety, and Pharmacokinetics of Subcutaneous Injections of Elamipretide in Subjects Who Have Dry Age-Related Macular Degeneration"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT06373731
+  accessed: 2026-10-23
+  verified: registry
+  note: "Read through the API on 23 October 2026 (last update posted 17 September 2026). Sponsor Stealth BioTherapeutics; phase 3; started 30 May 2024; status active, not recruiting; 313 enrolled; estimated primary completion August 2027. Sites in Czechia, Germany, Hungary, Italy, New Zealand (Christchurch, Wellington), Spain, the United Kingdom (Bristol, Leicester, London, Sunderland) and the US. No Canadian or Australian site."
+
+ctgov-nct05162768:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "NCT05162768: NuPower, Study to Evaluate Efficacy and Safety of Elamipretide in Subjects With Primary Mitochondrial Disease From Nuclear DNA Mutations"
+  container: "ClinicalTrials.gov"
+  year: 2024
+  url: https://clinicaltrials.gov/study/NCT05162768
+  accessed: 2026-10-23
+  verified: registry
+  note: "Read through the API on 23 October 2026. Sponsor Stealth BioTherapeutics; phase 3; started 29 April 2022; primary completion 30 September 2024; completed 4 December 2024; 102 enrolled; no results posted. Sites included Sydney and Parkdale (Victoria), Australia; Auckland, New Zealand; Cambridge, London and Newcastle, United Kingdom; and sites in seven other countries. The only elamipretide trial ever registered with an Australian site."
+
+ctgov-nct03323749:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "NCT03323749: MMPOWER-3, A Trial to Evaluate Safety and Efficacy of Elamipretide in Subjects With Primary Mitochondrial Myopathy Followed by an Open-Label Extension"
+  container: "ClinicalTrials.gov"
+  year: 2020
+  url: https://clinicaltrials.gov/study/NCT03323749
+  accessed: 2026-10-23
+  verified: registry
+  note: "Read through the API on 23 October 2026. Sponsor Stealth BioTherapeutics; phase 3; started 9 October 2017; terminated 10 February 2020, reason: 'Part1,double blind portion of the trial did not meet the primary end points'; 218 enrolled; results posted. Sites included Vancouver and Hamilton, Canada, and London and Newcastle upon Tyne, United Kingdom."
+
+# ================================================================ UNITED STATES (SS-31 re-check)
+
+openfda-drugsfda-elamipretide-2026-10-23:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "openFDA Drugs@FDA query for elamipretide, 23 October 2026"
+  container: "openFDA"
+  year: 2026
+  url: https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:%22elamipretide%22
+  accessed: 2026-10-23
+  verified: url
+  note: "Query run on 23 October 2026: one application, NDA215244, sponsor 'STEALTH BIOTHERAPS', brand FORZINITY, solution, subcutaneous, marketing status Prescription; one submission, ORIG 1, status AP (approved) on 20250919, priority review, 'Type 1 - New Molecular Entity'. No later supplement or withdrawal. Confirms the product name and approval date in the existing US row (fda-drugsatfda-forzinity); 'accelerated approval' rests on the approval letter (fda-2025-forzinity-approval-letter)."

@@ -1,0 +1,52 @@
+slug: semax
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-pdl-human, ca-hc-recalls-search-status-d-2026-10-23] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, au-poisons-standard-2026-10] }
+  # The FSA records that the MHRA considers Semax a medicine, so it may be sold in the UK only with a marketing
+  # authorisation, and none exists.
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-fsa-2018-importing-food-supplements, uk-hmr-2012-reg-46] }
+schedule: {}
+products: []
+notes: |
+  Names searched: Semax, MEHFPGP, 'ACTH(4-7)-Pro-Gly-Pro' / ACTH (where useful). Registered as a medicine in Russia
+  (data file); that registration does not apply in Canada, Australia or the UK.
+
+  CANADA (Health Canada). Health Canada's databases were down for maintenance (HTTP 503) throughout this run.
+  - DPD (canada-legal run, same day): no product for 'semax' (active ingredient and brand, all statuses). The brand
+    search for 'MEHFPGP' could not be completed (API 503): UNRESOLVED, covered by the name search.
+    [ca-dpd-search-canada-legal-2026-10-23]
+  - Prescription Drug List: no entry. Not in the CDSA. [ca-pdl-human,
+    ca-cdsa]
+  - Trials: ClinicalTrials.gov has no Semax record at all. [ctgov-search-status-d-2026-10-23]
+  - Health Canada named Semax in RA-77807 (1 August 2025: unauthorised injectable peptide drugs seized from and sold by
+    an online seller). [ca-hc-recalls-search-status-d-2026-10-23]
+
+  AUSTRALIA (TGA), 23 October 2026.
+  - ARTG: 'semax' returns only unrelated fragment matches (bone cements and other devices); '"MEHFPGP"' none.
+    [au-artg-search-status-d-2026-10-23]
+  - TGA website: no page names Semax (54 unrelated fragment matches). [au-tga-search-status-d-2026-10-23]
+  - Poisons Standard: not named (so not scheduled). [au-poisons-standard-2026-10]
+  - ANZCTR: 0 records. [au-anzctr-search-status-d-2026-10-23]
+
+  UNITED KINGDOM.
+  - MHRA Products, 23 October 2026: "semax" (exact) no results (the site's fuzzy search returns 333 unrelated
+    documents); the S index has no SEMAX entry. No UK licence. [mhra-products-search-status-d-2026-10-23]
+  - FSA guidance 'Importing food supplements and health foods' (2018): Semax 'is used in Russia as a nutritional food
+    administered in nasal drops ... In the UK it is considered by MHRA to be a medicine rather than a food item. Semax
+    may only be sold or supplied in GB/UK if a marketing Authorisation has previously been granted'. The only official UK
+    statement found on any compound in this batch. [uk-fsa-2018-importing-food-supplements]
+  - Not a controlled drug (Misuse of Drugs Act; legal-b searched semax). Not checked: whether Semax could fall under the
+    Psychoactive Substances Act 2016 (no official statement found; do not say either way). [uk-mda-1971-sch-2]
+
+  IRELAND / NEW ZEALAND: not searched.
+page_facts: |
+  - Semax is not approved in Canada, Australia or the UK: no product is on Canada's Drug Product Database, the
+    Australian Register of Therapeutic Goods or the MHRA's list of licensed medicines. [ca-dpd-search-canada-legal-2026-10-23,
+    au-artg-search-status-d-2026-10-23, mhra-products-search-status-d-2026-10-23]
+  - In the UK, the MHRA treats Semax as a medicine, not a food supplement, so it may only be sold with a UK marketing
+    authorisation, which does not exist. [uk-fsa-2018-importing-food-supplements, mhra-products-search-status-d-2026-10-23]
+  - Health Canada has listed Semax among unauthorised injectable peptides seized from an online seller (2025).
+    [ca-hc-recalls-search-status-d-2026-10-23]
+  - In Australia Semax is not named in the Poisons Standard, but it is not on the register, so importing, supplying or
+    advertising it as a therapeutic product is unlawful unless an exemption applies. [au-poisons-standard-2026-10,
+    au-tga-2026-04-peptide-responsibilities]

@@ -1,0 +1,733 @@
+# Sources for research/refocus/feeds-help-extras.md (assignment feeds-help-extras, English refocus, 23 October 2026).
+# Every page below was fetched and read on 23 October 2026 (evening, Central European time), unless the note says
+# otherwise. Where a site refused automated requests (HTTP 403, a bot check or a silent timeout), the page was read
+# from a recent Internet Archive capture, and the note gives the capture date. Those pages must be opened once in a
+# normal browser before publication.
+#
+# Reused, not re-registered here (see feeds-help-extras.md, section 0):
+# - src/data/sources: fda-medwatch, mhra-yellow-card (legal-b.yaml); nhs-poisoning (safety-b.yaml);
+#   fda-sharps-disposal-steps, fda-sharps-dos-donts, fda-sharps-containers, fda-sharps-no-container,
+#   govuk-clinical-waste-collection (safety-a.yaml); fda-history-milestones, us-pl-87-781-drug-amendments-1962,
+#   fda-kelsey-history (history.yaml, about.yaml); mhra-2026-10-counterfeit-pens, mhra-2026-05-largest-seizure,
+#   mhra-2026-01-seizures-2025 (legal-b.yaml); mhra-2025-retatrutide-seizure (retatrutide.yaml);
+#   mhra-2023-fake-weight-loss-pens (semaglutide.yaml); fda-warning-letters-index, fda-pcac-* (legal-b.yaml, shared.yaml).
+# - research/refocus/sources/us-uk-routes.yaml: nhs-111.
+# - research/refocus/sources/canada.yaml: ca-help-healthlink-bc, ca-help-alberta-health-link,
+#   ca-help-saskatchewan-healthline, ca-help-manitoba-health-links, ca-help-health811-ontario,
+#   ca-help-quebec-info-sante, ca-help-nb-tele-care, ca-help-ns-811, ca-help-pei-811, ca-help-nl-healthline,
+#   ca-help-yukon-811, ca-help-nwt-811, ca-infopoison-centres, ca-poison-*, ca-hc-medeffect-reporting,
+#   ca-hc-canada-vigilance, ca-hc-complaints, ca-hc-2026-04-think-twice-peptides (status-b.yaml),
+#   ca-hc-2026-05-ghk-bpc157-api-recall, ca-hc-2025-01-semaglutide-pyridoxine-recall, ca-hc-2026-01-glp1-advisory,
+#   ca-hc-2026-07-injunction-statement (DO NOT CITE DIRECTLY), ca-hc-recalls-peptide-search-2026-10-23.
+# - research/refocus/sources/ireland-nz.yaml: ie-hse-urgent-emergency-care, ie-hse-anabolic-steroids-reducing-harm,
+#   ie-npic-poisons, ie-hpra-report-side-effect, ie-hpra-reporting-as-patient, nz-healthnz-healthline,
+#   nz-national-poisons-centre, nz-medsafe-report-a-problem, nz-medsafe-adr-report-processing, nz-otago-nzphvc-carm,
+#   nz-medsafe-2026-05-peptide-advisory.
+# - research/refocus/sources/status-b.yaml and status-c.yaml: au-tga-2026-04-peptide-responsibilities,
+#   au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure, au-tga-peptide-products-hub,
+#   au-tga-2026-05-melanotan-ii-infringement-notices, au-tga-2026-08-melanotan-ii-safety-alert,
+#   au-tga-2024-05-scheduling-final-decisions.
+#
+# No telephone number is recorded in any note below (house rule: the English site prints no emergency or helpline
+# numbers). Service names that contain digits (NHS 111, 988 Lifeline, 9-8-8, 13 HEALTH, 1737) are names, not numbers
+# to print; whether they may be printed is the editor's decision (see feeds-help-extras.md, section 2.0).
+# Link allowlist: hosts not on config/link-allowlist.json are flagged "HOST NOT ALLOWLISTED" (list in the .md, section 7).
+
+# ================================================================ 1. NEWS FEEDS
+
+# ---------------------------------------------------------------- United Kingdom: MHRA on GOV.UK (Atom)
+
+uk-mhra-feed-news-atom:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency (GOV.UK)"
+  title: "News and communications from Medicines and Healthcare products Regulatory Agency (MHRA) (Atom feed)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/search/news-and-communications.atom?organisations%5B%5D=medicines-and-healthcare-products-regulatory-agency
+  accessed: 2026-10-23
+  verified: url
+  note: "Tested 23 October 2026 with curl and WebFetch: HTTP 200, application/atom+xml, well-formed Atom 1.0, 20 entries; newest entry 23 October 2026 16:42 (+01:00, an MHRA approval), oldest 22 September 2026; every entry links to www.gov.uk. Carries MHRA press releases and news stories, including enforcement releases (the 15 October 2026 counterfeit-pens seizure, mhra-2026-10-counterfeit-pens, was in it). Only 20 entries: a daily fetch is enough, a weekly fetch could miss items in a busy month."
+
+uk-mhra-feed-drug-safety-update-atom:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency (GOV.UK)"
+  title: "Drug Safety Update (Atom feed)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/drug-safety-update.atom
+  accessed: 2026-10-23
+  verified: url
+  note: "Tested 23 October 2026 with curl and WebFetch: HTTP 200, Atom 1.0, 50 entries; newest 20 October 2026 (IXCHIQ chikungunya vaccine), oldest 29 May 2024; links to www.gov.uk/drug-safety-update/... Six of the 50 entries concern GLP-1 medicines (pancreatitis, NAION, aspiration, misuse, falsified Mounjaro pens)."
+
+uk-mhra-feed-alerts-atom:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency (GOV.UK)"
+  title: "Alerts, recalls and safety information: medicines and medical devices (Atom feed)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/drug-device-alerts.atom
+  accessed: 2026-10-23
+  verified: url
+  note: "Tested 23 October 2026 with curl and WebFetch: HTTP 200, Atom 1.0, 50 entries; newest 19 October 2026 (Field Safety Notices 5 to 9 October 2026), oldest 23 June 2026; links to www.gov.uk/drug-device-alerts/... Mostly device field-safety notices and batch recalls; none of the 50 entries concerned peptides or GLP-1 medicines. Low yield for this site's keywords."
+
+uk-mhra-feed-organisation-atom:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency (GOV.UK)"
+  title: "Medicines and Healthcare products Regulatory Agency - Activity on GOV.UK (Atom feed)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency.atom
+  accessed: 2026-10-23
+  verified: url
+  note: "Tested 23 October 2026 with curl: HTTP 200, Atom 1.0, 20 entries covering only 15-23 October 2026, because it mixes every kind of MHRA publication (guidance, forms, statistics, news). Too noisy and too short a window for headlines; the news-and-communications feed is the better choice."
+
+# ---------------------------------------------------------------- Canada: Health Canada
+
+ca-gc-news-web-feeds-page:
+  type: web
+  authors: "Government of Canada"
+  title: "Web feeds (Government of Canada news)"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/news/web-feeds.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2026-09-22 (WebFetch). Lists the official departmental news feeds, including Health Canada: https://api.io.canada.ca/io-server/gc/news/en/v2?dept=departmentofhealth&sort=publishedDate&orderBy=desc&publishedDate%3E=2021-07-23&pick=50&format=atom&atomtitle=Health%20Canada, and the Public Health Agency of Canada feed with dept=publichealthagencyofcanada. HOST NOT ALLOWLISTED (www.canada.ca)."
+
+ca-hc-feed-news-atom:
+  type: regulator
+  authors: "Health Canada (Government of Canada news centre)"
+  title: "Health Canada news (Atom feed)"
+  container: "api.io.canada.ca"
+  year: 2026
+  url: https://api.io.canada.ca/io-server/gc/news/en/v2?dept=departmentofhealth&sort=publishedDate&orderBy=desc&publishedDate%3E=2021-07-23&pick=50&format=atom&atomtitle=Health%20Canada
+  accessed: 2026-10-23
+  verified: url
+  note: "Tested 23 October 2026 with curl and WebFetch (also with the start date 2020-09-04 used in an earlier test; same result): HTTP 200, application/xml, well-formed Atom, 50 entries (25 news releases, 14 media advisories, 6 backgrounders, 5 statements); newest 20 October 2026, oldest 29 May 2026; entry links go to www.canada.ca/en/health-canada/news/... The feed's own self link points to localhost (harmless). Contains the 29 July 2026 statement on the permanent injunction against an online peptide seller (the title names the seller: the fetcher's commerce check must keep it off the page or the item must be shown without the name) and the 29 June 2026 release on the first generic semaglutide. Does NOT contain the recalls-and-alerts database advisories (RA-81874 and others), which are published only on recalls-rappels.canada.ca. HOST NOT ALLOWLISTED (api.io.canada.ca, www.canada.ca)."
+
+ca-hc-recalls-rss-page:
+  type: web
+  authors: "Government of Canada"
+  title: "RSS feeds (Recalls, advisories and safety alerts)"
+  container: "recalls-rappels.canada.ca"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/rss-feeds
+  accessed: 2026-10-23
+  verified: url
+  note: "Date modified 2026-02-20. Lists 19 feeds, among them 'Health products' (https://recalls-rappels.canada.ca/en/feed/health-products-alerts-recalls), 'Medical devices' (.../feed/medical-devices-alerts-recalls), 'Consumer products', 'Cannabis' and food/allergen feeds. No description of what each feed contains. HOST NOT ALLOWLISTED (recalls-rappels.canada.ca)."
+
+ca-hc-feed-recalls-health-products-rss:
+  type: regulator
+  authors: "Health Canada"
+  title: "Health and safety recalls and alerts: Health product (RSS feed)"
+  container: "recalls-rappels.canada.ca"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/feed/health-products-alerts-recalls
+  accessed: 2026-10-23
+  verified: url
+  note: "Tested 23 October 2026 with curl (three times, with and without ?page= and ?items_per_page=) and WebFetch: HTTP 200, application/rss+xml, RSS 2.0, but ONLY 3 items, all medical-device recalls of 21 October 2026 (identical to the Medical devices feed apart from the channel description). The drug recall published the same day (NID 82831, Femyso) is missing from it, so the feed shows only the latest three health-product items, not a day's or a week's worth. pubDate is ISO 8601 without a time zone (2026-10-21T12:00:00), not RFC 822; JavaScript's Date parses it as local time. Not suitable as the only Canadian source for headlines: on a day with more than three health-product postings, items are lost even with a daily fetch. HOST NOT ALLOWLISTED."
+
+ca-hc-recalls-open-data:
+  type: dataset
+  authors: "Health Canada"
+  title: "Recalls and Safety Alerts (open data, JSON and CSV)"
+  container: "Open Government Portal (open.canada.ca), dataset d38de914-c94c-429b-8ab1-8776c31643e3"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json
+  accessed: 2026-10-23
+  verified: url
+  note: "Dataset record on open.canada.ca (CKAN API): title 'Recalls and Safety Alerts', publisher Health Canada, update frequency 'continual', resources in English and French, JSON and CSV. The English JSON (15.8 MB) was downloaded on 23 October 2026: 34,285 records with fields NID, Title, URL, Organization, Product, Issue, What you should do, Category, Recall class, Last updated, Archived; newest record dated 2026-10-22. It contains every peptide-related Health Canada advisory found by the canada-legal searches (for example NID 81874, 9 April 2026, 'Think twice before injecting peptides bought online'; NID 82047, 7 May 2026, GHK-Cu and BPC-157 powder). A complete, machine-readable alternative to the three-item RSS feed; it needs a JSON reader in scripts/fetch-news.ts (filter on Organization 'Drugs and health products' or 'Communications and Public Affairs Branch' and the site's keywords). HOST NOT ALLOWLISTED."
+
+# ---------------------------------------------------------------- Australia: TGA (RSS)
+
+au-tga-rss-feeds-page:
+  type: web
+  authors: "Therapeutic Goods Administration"
+  title: "RSS feeds"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/news/subscribe-updates/rss-feeds
+  accessed: 2026-10-23
+  verified: url
+  note: "tga.gov.au did not answer automated requests from this machine on 23 October 2026 (curl and WebFetch time out after the TCP connection; the canada-legal and status agents read TGA pages in a browser). Read from the Internet Archive capture of 3 October 2025. Lists the official feeds, all under https://tga.gov.au/feeds/: alert/safety-alerts.xml, alert/product-recalls.xml, alert/medicine-shortage-alerts.xml, alert.xml (all alerts), article/news.xml, article/media-releases.xml, article/notices.xml, article/compliance-undertakings.xml, article/safety-updates.xml, article/blog.xml, article.xml (all articles), consultation.xml, publication/scheduling-decisions-interim.xml, publication/scheduling-decisions-final.xml, publication/tga-laboratory-testing-reports.xml and others. www.tga.gov.au is on the link allowlist."
+
+au-tga-feed-safety-alerts-rss:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA - Safety alerts (RSS feed)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/feeds/alert/safety-alerts.xml
+  accessed: 2026-10-23
+  verified: url
+  note: "Live test on 23 October 2026 FAILED from this machine: curl (HTTP/1.1 and HTTP/2, IPv4) and WebFetch both timed out with no response, and the browser pane had no free tab. Structure checked on the Internet Archive capture of 14 June 2026: RSS 2.0, channel 'TGA - Safety alerts', 50 items, newest 4 June 2026 (unapproved ibutamoren capsules), oldest 28 March 2024, RFC 822 pubDate, links to www.tga.gov.au. 17 of the 50 items match the site's keywords, including 'TGA warning on the risks of importing unapproved peptide products' (7 May 2026) and 'Understanding your responsibilities when importing, compounding and supplying unapproved peptide products' (13 April 2026). UNRESOLVED: whether the live feed answers the GitHub Actions runner (the same block may apply); test from CI before adding it."
+
+au-tga-feed-media-releases-rss:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA - Media releases (RSS feed)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/feeds/article/media-releases.xml
+  accessed: 2026-10-23
+  verified: url
+  note: "Live test failed as for au-tga-feed-safety-alerts-rss. Internet Archive capture of 13 May 2026: RSS 2.0, 'TGA - Media releases', 50 items, newest 1 May 2026, oldest 17 December 2024, links to www.tga.gov.au. Peptide-relevant items include the joint ABF/TGA release of 17 April 2026 (au-tga-2026-04-abf-pied-peptide-seizure). Many items are about vapes; the keyword filter will drop them."
+
+au-tga-feed-news-rss:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA - News articles (RSS feed)"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/feeds/article/news.xml
+  accessed: 2026-10-23
+  verified: url
+  note: "Live test failed as for au-tga-feed-safety-alerts-rss. Newest Internet Archive capture 13 December 2025: RSS 2.0, 'TGA - News articles', 50 items, newest 4 December 2025, oldest 31 March 2025. Low yield; the all-alerts feed (https://www.tga.gov.au/feeds/alert.xml, capture of 14 May 2026) and the consultation feed (https://www.tga.gov.au/feeds/consultation.xml, capture of 15 June 2026) also exist."
+
+# ================================================================ 2. HELP SERVICES AND REPORTING
+
+# ---------------------------------------------------------------- United States
+
+us-medlineplus-when-to-use-er:
+  type: web
+  authors: "MedlinePlus (U.S. National Library of Medicine)"
+  title: "When to use the emergency room - adult"
+  container: "MedlinePlus Medical Encyclopedia"
+  year: 2026
+  url: https://medlineplus.gov/ency/patientinstructions/000593.htm
+  accessed: 2026-10-23
+  verified: url
+  note: "Review date 7/15/2026. Life-threatening or disabling problems (trouble breathing, chest pain, fainting, poisoning or overdose) need the emergency department; urgent care is for problems that are not life-threatening; if unsure, contact your provider, and 'Your provider or health insurance company may also offer a nurse telephone advice hotline.' Supports the statement that the United States has no single national nurse-advice line: the advice line, if any, comes from the reader's own provider or insurer."
+
+us-hrsa-poison-help:
+  type: regulator
+  authors: "Health Resources and Services Administration (U.S. Department of Health and Human Services)"
+  title: "Poison Help"
+  container: "poisonhelp.hrsa.gov"
+  year: 2026
+  url: https://poisonhelp.hrsa.gov/
+  accessed: 2026-10-23
+  verified: url
+  note: "The site answers automated requests with HTTP 403; read from the Internet Archive capture of 17 October 2026. HRSA's national Poison Help line: 'Poison Help is available 24/7 in over 100 languages.' No number recorded here."
+
+us-samhsa-national-helpline:
+  type: regulator
+  authors: "Substance Abuse and Mental Health Services Administration (SAMHSA)"
+  title: "National Helpline for Mental Health, Drug, Alcohol Issues"
+  container: "samhsa.gov"
+  year: 2023
+  url: https://www.samhsa.gov/find-help/helplines/national-helpline
+  accessed: 2026-10-23
+  verified: url
+  note: "The site answers automated requests with HTTP 403; read from the Internet Archive capture of 11 October 2026. Last updated 06/09/2023. 'SAMHSA's National Helpline is a free, confidential, 24/7, 365-day-a-year treatment referral and information service (in English and Spanish) for individuals and families facing mental and/or substance use disorders'; it refers callers to local treatment facilities, support groups and community organisations; a text service finds help by ZIP code; also points to the online treatment locator. No numbers recorded here."
+
+us-findtreatment-gov:
+  type: web
+  authors: "Substance Abuse and Mental Health Services Administration (SAMHSA)"
+  title: "FindTreatment.gov"
+  container: "findtreatment.gov"
+  year: 2026
+  url: https://findtreatment.gov/
+  accessed: 2026-10-23
+  verified: url
+  note: "HTTP 200. Page description: 'SAMHSA's confidential and anonymous resource for persons seeking treatment for mental and substance use disorders in United States and its territories.' The page is an app; the description is the only text in the HTML."
+
+us-988-lifeline-about:
+  type: web
+  authors: "988 Suicide & Crisis Lifeline (administered by Vibrant Emotional Health under a SAMHSA grant)"
+  title: "About 988"
+  container: "988lifeline.org"
+  year: 2026
+  url: https://988lifeline.org/about/
+  accessed: 2026-10-23
+  verified: url
+  note: "HTTP 200. 'The 988 Suicide & Crisis Lifeline provides free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a day, 7 days a week, across the United States and its territories'; a national network of over 200 local crisis centres; the National Suicide Prevention Lifeline launched on 1 January 2005 with a SAMHSA grant to Vibrant Emotional Health, which was awarded a five-year grant in FY22 to administer the 988 Lifeline; Spanish text and chat since July 2023; georouting of calls since 17 September 2024. The home page (988lifeline.org) says people can call, text or chat, and that it is for 'mental health struggles, emotional distress, alcohol or drug use concerns'. HOST NOT ALLOWLISTED (988lifeline.org)."
+
+us-samhsa-988:
+  type: regulator
+  authors: "Substance Abuse and Mental Health Services Administration (SAMHSA)"
+  title: "988 Suicide & Crisis Lifeline"
+  container: "samhsa.gov"
+  year: 2025
+  url: https://www.samhsa.gov/mental-health/988
+  accessed: 2026-10-23
+  verified: url
+  note: "HTTP 403 to automated requests; read from the Internet Archive capture of 16 October 2026. Last updated 09/26/2025. 'Providing 24/7, free and confidential support to people in suicidal crisis or emotional distress works.' Partners listed: FCC, Department of Veterans Affairs, Surgeon General, CDC, Indian Health Service. Supports naming the 988 Lifeline as the federal crisis line (the service name contains its number: editor's decision)."
+
+us-fda-reporting-serious-problems:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Reporting Serious Problems to FDA"
+  container: "fda.gov (MedWatch)"
+  year: 2025
+  url: https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program/reporting-serious-problems-fda
+  accessed: 2026-10-23
+  verified: url
+  note: "Content current as of 09/26/2025. Consumers are 'encouraged to take the reporting form to your doctor', but 'Your health care provider is NOT required to report to the FDA' and you 'may complete the Online Reporting Form yourself'; 'the FDA relies on the voluntary reporting of these events'; Form FDA 3500B is the consumer version of the form. Complements fda-medwatch."
+
+# ---------------------------------------------------------------- United Kingdom (UK-wide and England)
+
+uk-nhs-urgent-help-mental-health:
+  type: web
+  authors: "NHS (England)"
+  title: "Where to get urgent help for mental health"
+  container: "nhs.uk"
+  year: 2023
+  url: https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/
+  accessed: 2026-10-23
+  verified: url
+  note: "Page last reviewed 26 April 2023 (next review due 26 April 2026, overdue). 'Get help from 111 online or call 111 and select the mental health option'; '111 will tell you the right place to get help. You may be able to speak to a trained mental health professional over the phone'; the page also names Samaritans and Childline. Applies to England."
+
+uk-nhs-drug-addiction-help:
+  type: web
+  authors: "NHS (England)"
+  title: "Drug addiction: getting help"
+  container: "nhs.uk"
+  year: 2023
+  url: https://www.nhs.uk/live-well/addiction-support/drug-addiction-getting-help/
+  accessed: 2026-10-23
+  verified: url
+  note: "Page last reviewed 13 February 2023 (next review due 13 February 2026, overdue). 'A GP may be a good place to start'; you can approach your local drug treatment service yourself; 'Visit the Frank website to find support near you'; the Frank drugs helpline 'can talk you through all your options'; local drug services offer testing and treatment for hepatitis and HIV."
+
+uk-frank-contact:
+  type: web
+  authors: "FRANK (UK government drug information service)"
+  title: "Contact Frank Directly"
+  container: "talktofrank.com"
+  year: 2026
+  url: https://talktofrank.com/contact-frank
+  accessed: 2026-10-23
+  verified: url
+  note: "'Need some friendly, confidential advice?'; call FRANK '24 hours a day, 7 days a week'; text, email and online chat; interpreters in 120 languages; a textphone for people with hearing impairments. The page does not say which department runs FRANK (UNRESOLVED: no operator statement found on the pages read). HOST NOT ALLOWLISTED (talktofrank.com)."
+
+uk-samaritans-contact:
+  type: web
+  authors: "Samaritans"
+  title: "Contact Us"
+  container: "samaritans.org"
+  year: 2026
+  url: https://www.samaritans.org/how-we-can-help/contact-samaritan/
+  accessed: 2026-10-23
+  verified: url
+  note: "Registered charity. 'Whatever you're going through, you can call us any time, from any phone for FREE'; the line is free from landlines and mobiles; calls go to volunteers 'at one of more than 200 branches and locations across the UK and Ireland'; the UK email service has closed. Serves both the UK and Ireland (Ireland: samaritans.ie, see ie-hse-mental-health-urgent-help). HOST NOT ALLOWLISTED (www.samaritans.org)."
+
+uk-npis-members-of-public:
+  type: web
+  authors: "National Poisons Information Service (UK Health Security Agency commissioned)"
+  title: "Advice for Members of Public"
+  container: "npis.org"
+  year: 2026
+  url: https://www.npis.org/MOP1.html
+  accessed: 2026-10-23
+  verified: url
+  note: "NPIS home page: 'the UK Departments of Health approved, and UK Health Security Agency (HSA) commissioned, national service that provides expert advice on all aspects of acute and chronic poisoning'. Public page: 'The NPIS does not provide poisons information directly to members of the public'; for routine poisons advice contact your GP or NHS 111 (England) or NHS 24 (Scotland); in Northern Ireland your GP or pharmacist, or the GP out-of-hours service; in the Republic of Ireland the National Poisons Information Centre. Its Wales sentence ('NHS Direct (Wales)', named health board areas) is out of date: NHS 111 Wales now covers Wales (uk-wales-nhs-111). HOST NOT ALLOWLISTED (www.npis.org)."
+
+# ---------------------------------------------------------------- United Kingdom: Scotland
+
+uk-scot-suicide-prevention-support:
+  type: regulator
+  authors: "Scottish Government and COSLA"
+  title: "Creating Hope Together: Scotland's Suicide Prevention Action Plan 2026-2029 - Sources of Support"
+  container: "gov.scot"
+  year: 2026
+  url: https://www.gov.scot/publications/creating-hope-together-scotlands-suicide-prevention-action-plan-2026-2029/pages/3/
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 22 January 2026. Lists the '111 Mental Health Hub – a free, confidential, NHS service available 24 hours a day', 'for anyone in Scotland who needs urgent support for mental health concerns including thoughts of self-harm and suicide'; Breathing Space, 'free and confidential advice for those aged over 16 experiencing low mood, depression or anxiety', open evenings and weekends; Samaritans, 24 hours a day; Childline. Outside GP opening hours, 'telephone advice and support on healthcare is available from NHS 24 111'. HOST NOT ALLOWLISTED (www.gov.scot)."
+
+uk-scot-breathing-space:
+  type: web
+  authors: "NHS 24 (Breathing Space)"
+  title: "Breathing Space"
+  container: "breathingspace.scot"
+  year: 2026
+  url: https://www.breathingspace.scot/
+  accessed: 2026-10-23
+  verified: url
+  note: "Read from the Internet Archive capture of 29 September 2026 (the live site was not tested). 'A confidential phoneline for anyone in Scotland over the age of 16, feeling low, anxious or depressed'; webchat Monday to Thursday evenings and from Friday evening to Monday morning; the site calls it 'NHS 24's Breathing Space'. HOST NOT ALLOWLISTED."
+
+uk-scot-nhsinform-drug-support:
+  type: web
+  authors: "NHS inform (NHS 24, Scotland)"
+  title: "Support for people affected by drugs"
+  container: "nhsinform.scot"
+  year: 2026
+  url: https://www.nhsinform.scot/healthy-living/drugs-and-drug-use/support-for-people-affected-by-drugs/
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 7 October 2026. Your local pharmacy can advise on all medicines; your GP practice can give advice on substance use and refer to drug and mental health services; 'Find local alcohol and drug services on the Scottish service directory'. Scotland's drug-advice route is local services found through NHS inform, not a single national helpline (the former 'Know the Score' line now leads to a charity page; not used). HOST NOT ALLOWLISTED (www.nhsinform.scot)."
+
+uk-scot-nhsinform-injecting-advice:
+  type: web
+  authors: "NHS inform (NHS 24, Scotland)"
+  title: "Advice if you inject drugs"
+  container: "nhsinform.scot"
+  year: 2026
+  url: https://www.nhsinform.scot/healthy-living/drugs-and-drug-use/advice-if-you-inject-drugs/
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 20 October 2026. Injecting includes into a vein, a muscle or under the skin; 'dispose of equipment responsibly – it can be returned to an injecting equipment provider (IEP)'; sharing equipment spreads hepatitis C and HIV; use a new needle each time; 'If your GP practice is closed, phone 111'; dressings are free at pharmacies through the needle exchange service. Supports the Scotland row of the sharps table and NHS 24 111 as the out-of-hours route. HOST NOT ALLOWLISTED."
+
+# ---------------------------------------------------------------- United Kingdom: Wales
+
+uk-wales-nhs-111:
+  type: web
+  authors: "NHS 111 Wales"
+  title: "What to do out of hours"
+  container: "111.wales.nhs.uk"
+  year: 2026
+  url: https://111.wales.nhs.uk/OutOfHours.aspx
+  accessed: 2026-10-23
+  verified: url
+  note: "HTTP 200 (home page https://111.wales.nhs.uk/). 'If you feel unwell when your GP surgery is closed (evenings, weekends and bank holidays)' use the symptom checkers or a pharmacist; 'If you do need further support, call 111.' Wales's urgent-advice line is NHS 111 Wales. The pages declare a wrong canonical link (www.nhs.uk/live-well/); link the 111.wales.nhs.uk address. HOST NOT ALLOWLISTED (111.wales.nhs.uk; the allowlist has www.nhs.uk only)."
+
+uk-wales-2023-111-press-2:
+  type: regulator
+  authors: "Welsh Government"
+  title: "NHS '111 press 2' a big step forward for access to urgent mental health support"
+  container: "GOV.WALES"
+  year: 2023
+  url: https://www.gov.wales/nhs-111-press-2-big-step-forward-access-urgent-mental-health-support
+  accessed: 2026-10-23
+  verified: url
+  note: "First published 20 June 2023. A national line for urgent mental health support launched across Wales that day: 'The NHS 111 press option 2 for mental health is available 24 hours a day, 7 days a week for all ages', for people with an urgent mental health concern about themselves or someone they know; the Welsh Government gave health boards £6m. HOST NOT ALLOWLISTED (www.gov.wales)."
+
+uk-wales-dan-247:
+  type: web
+  authors: "DAN 24/7 (Wales Drug and Alcohol Helpline)"
+  title: "DAN 24/7 – Wales Drug and Alcohol Helpline"
+  container: "dan247.org.uk"
+  year: 2026
+  url: https://dan247.org.uk/
+  accessed: 2026-10-23
+  verified: url
+  note: "HTTP 200. 'Free Bilingual Drug and Alcohol Helpline' for Wales, open day and night; calls are free from UK landlines and mobiles and do not appear on itemised bills; confidential, 'you won't even need to give your real name'. The page does not say who funds it (UNRESOLVED: Welsh Government funding not confirmed from a primary page). HOST NOT ALLOWLISTED."
+
+# ---------------------------------------------------------------- United Kingdom: Northern Ireland
+
+uk-ni-gp-out-of-hours:
+  type: regulator
+  authors: "nidirect (Northern Ireland Executive)"
+  title: "GP out of hours service"
+  container: "nidirect.gov.uk"
+  year: 2026
+  url: https://www.nidirect.gov.uk/articles/gp-out-hours-service
+  accessed: 2026-10-23
+  verified: url
+  note: "'The GP out of hours service is for people who need urgent medical treatment but cannot wait until their doctor's practice opens'; you telephone the service first and a doctor or nurse assesses you; contact details by area. Northern Ireland has no NHS 111-style advice line for general health: its urgent route is the GP out-of-hours service (consistent with npis-members-of-public)."
+
+uk-ni-drug-alcohol-help:
+  type: regulator
+  authors: "nidirect (Northern Ireland Executive)"
+  title: "Getting help with drug or alcohol problems"
+  container: "nidirect.gov.uk"
+  year: 2026
+  url: https://www.nidirect.gov.uk/articles/getting-help-drug-or-alcohol-problems
+  accessed: 2026-10-23
+  verified: url
+  note: "You can refer yourself to services that accept self-referrals; there is support for family members; useful links: your local doctor (GP), community pharmacists and the 'Lifeline freephone helpline'. nidirect answered 403 to later requests the same evening; this page was read earlier that evening (HTTP 200)."
+
+uk-ni-signposts-help:
+  type: regulator
+  authors: "Department of Health (Northern Ireland)"
+  title: "Signposts to Help"
+  container: "health-ni.gov.uk"
+  year: 2026
+  url: https://www.health-ni.gov.uk/articles/signposts-help
+  accessed: 2026-10-23
+  verified: url
+  note: "'Lifeline is the Northern Ireland crisis response helpline service for people who are experiencing distress or despair'; 'Lifeline counsellors are available 24 hours a day, 7 days a week to listen and help in confidence'; Lifeline's website is www.lifelinehelpline.info (it serves a Cloudflare bot check to scripts; HOST NOT ALLOWLISTED). Also lists Samaritans (free) and Childline. No date on the page. The nidirect Lifeline page (www.nidirect.gov.uk/contacts/lifeline) refused automated requests on 23 October 2026."
+
+uk-ni-pha-harm-reduction-booklet:
+  type: regulator
+  authors: "Public Health Agency (Northern Ireland)"
+  title: "Harm reduction services for people who use drugs leaflet"
+  container: "publichealth.hscni.net"
+  year: 2025
+  url: https://www.publichealth.hscni.net/publications/harm-reduction-services-people-who-use-drugs-leaflet
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 1 December 2025, last reviewed 19 March 2026; the A5 booklet (PDF, https://www.publichealth.hscni.net/sites/default/files/2025-12/Harm%20Reduction%20Services%20A5%20Booklet.pdf) was downloaded with curl and read in full. The Needle and Syringe Exchange Service is 'free, confidential and anonymous'; 'Anyone who injects opioids, stimulants or performance and image enhancing drugs can use a needle and syringe exchange service'; it supplies sharps containers and 'also disposes of used equipment safely'; return used needles 'sealed within the bins provided'. HOST NOT ALLOWLISTED (publichealth.hscni.net)."
+
+uk-ni-street-cleaning-needles:
+  type: regulator
+  authors: "nidirect (Northern Ireland Executive)"
+  title: "Street cleaning"
+  container: "nidirect.gov.uk"
+  year: 2026
+  url: https://www.nidirect.gov.uk/articles/street-cleaning
+  accessed: 2026-10-23
+  verified: url
+  note: "The only nidirect result for 'sharps' (site search, 23 October 2026): 'If you find used drug equipment, you should report this to your local council to arrange for the removal and disposal of needles, syringes and any other drug related items'. About found needles, not home disposal. UNRESOLVED: no Northern Ireland government page on disposing of one's own sharps at home was found."
+
+# ---------------------------------------------------------------- Canada (federal; provincial lines: see canada.yaml)
+
+ca-phac-2023-988-launch:
+  type: regulator
+  authors: "Public Health Agency of Canada"
+  title: "Government of Canada launches three-digit suicide crisis helpline"
+  container: "Canada.ca"
+  year: 2023
+  url: https://www.canada.ca/en/public-health/news/2023/11/government-of-canada-launches-three-digit-suicide-crisis-helpline.html
+  accessed: 2026-10-23
+  verified: url
+  note: "News release, Toronto, 30 November 2023 (read through WebFetch; www.canada.ca timed out to curl later that evening). 9-8-8 'is now available to call or text, in English and French, 24 hours a day and seven days a week, across Canada'; the Government of Canada 'has provided $156 million over three years to the Centre for Addiction and Mental Health (CAMH)' to implement and operate the 9-8-8: Suicide Crisis Helpline. HOST NOT ALLOWLISTED."
+
+ca-phac-mental-health-get-help:
+  type: regulator
+  authors: "Public Health Agency of Canada"
+  title: "Get help with mental health"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/public-health/services/mental-health-services/mental-health-get-help.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Date modified 2026-01-14 (WebFetch). 9-8-8: Suicide Crisis Helpline: call or text; 'Support is available 24 hours a day, 7 days a week'; bilingual, trauma-informed and 'available to anyone in Canada'. Also lists Kids Help Phone (ages 5 to 29) and the Hope for Wellness Help Line for First Nations, Inuit and Métis Peoples. HOST NOT ALLOWLISTED."
+
+ca-988-helpline:
+  type: web
+  authors: "9-8-8: Suicide Crisis Helpline (Public Health Agency of Canada; delivered by CAMH and partners)"
+  title: "9-8-8: Suicide Crisis Helpline"
+  container: "988.ca"
+  year: 2026
+  url: https://988.ca/
+  accessed: 2026-10-23
+  verified: url
+  note: "HTTP 200. 'A safe space to talk, 24 hours a day, every day of the year'; call or text; the page credits the Public Health Agency of Canada and 'the Partners who deliver the service'. The service name contains its number: editor's decision whether to print it. HOST NOT ALLOWLISTED (988.ca)."
+
+ca-hc-get-help-substance-use:
+  type: regulator
+  authors: "Health Canada"
+  title: "Get help with problematic substance use"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/substance-use/get-help/get-help-problematic-substance-use.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Date modified 2026-10-16 (WebFetch). Lists Canada-wide services, including a free, confidential drug and alcohol help line with referrals ('Drug Rehab Services'), the National Overdose Response Service, peer-support programmes, and, for First Nations and Inuit, the Hope for Wellness Help Line (24/7) and the National Native Alcohol and Drug Abuse Program; provincial and territorial services are listed separately. Canada has no single government-run drug helpline; the federal page is a directory. HOST NOT ALLOWLISTED."
+
+ca-on-reg-298-12-sharps:
+  type: law
+  authors: "Government of Ontario"
+  title: "O. Reg. 298/12: Collection of Pharmaceuticals and Sharps - Responsibilities of Producers (Environmental Protection Act)"
+  container: "e-Laws (ontario.ca)"
+  year: 2026
+  url: https://www.ontario.ca/laws/regulation/120298
+  accessed: 2026-10-23
+  verified: url
+  note: "Consolidated text (consolidation period from 4 February 2026), downloaded as a Word file from e-Laws and read. A 'sharp' is a needle, lancet or similar instrument sold to consumers in Ontario, including an attached syringe (s. 1(1)). Producers must provide for the collection of sharps from consumers at collection locations, their disposal, and the collection of sharps containers (s. 3(1)); a sharp may be refused if it is not in a container designed for sharps (s. 3(2)); collection must be 'available free of charge to consumers' (s. 4(3)); collection sites must cover at least the lesser of 90% of retail outlets or 90% of accredited pharmacies (s. 4(1)). Supports: in Ontario, pharmacies and other collection sites take back sharps in a sharps container, free. HOST NOT ALLOWLISTED (www.ontario.ca)."
+
+ca-mb-safe-needle-disposal:
+  type: regulator
+  authors: "Manitoba Health (Public Health)"
+  title: "Safe Needle Disposal"
+  container: "gov.mb.ca"
+  year: 2026
+  url: https://www.gov.mb.ca/health/publichealth/docs/safe-needle-disposal.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "PDF downloaded with curl and read in full (undated). Harm-reduction programmes distribute sharps containers and accept used needles; 'Biomedical sharps waste containers are available at participating pharmacies of the Heath Products Stewards Association ... and are distributed at no cost to any member of the public requesting one'; do not recap, bend or break needles (except recapping your own when no container is available). HOST NOT ALLOWLISTED (www.gov.mb.ca)."
+
+ca-bccdc-sharps-disposal:
+  type: web
+  authors: "Toward the Heart (BC Centre for Disease Control harm reduction programme)"
+  title: "How to Safely Get Rid of Used Sharps"
+  container: "towardtheheart.com"
+  year: 2025
+  url: https://towardtheheart.com/resource/how-to-safely-get-rid-of-used-sharps/open
+  accessed: 2026-10-23
+  verified: url
+  note: "One-page PDF dated August 2025, downloaded and read. 'A sharps container is the safest option'; personal sharps containers are free from harm reduction sites; without one, use an empty hard plastic container such as a shampoo or bleach bottle and 'Take the container to a health unit, harm reduction site, or pharmacy for disposal'; do not recycle used containers and do not use pop bottles or cans. UNRESOLVED: the page does not name BCCDC in the text read (the operator is inferred from the programme name); confirm before citing BCCDC as author. HOST NOT ALLOWLISTED."
+
+# ---------------------------------------------------------------- Australia
+
+au-healthdirect-helpline:
+  type: web
+  authors: "Healthdirect Australia"
+  title: "How healthdirect can help you"
+  container: "healthdirect.gov.au"
+  year: 2026
+  url: https://www.healthdirect.gov.au/how-healthdirect-can-help-you
+  accessed: 2026-10-23
+  verified: url
+  note: "healthdirect 'provides free, trusted health information and advice, 24 hours a day, 7 days a week'; its helpline (known as NURSE-ON-CALL in Victoria) has registered nurses 24 hours a day who advise whether to see a GP, manage at home or go to an emergency department; after hours it says where to get help locally and may offer a GP call-back; interpreters through TIS National and the National Relay Service. HOST NOT ALLOWLISTED (www.healthdirect.gov.au)."
+
+au-qld-13health:
+  type: regulator
+  authors: "Queensland Government"
+  title: "13 HEALTH - Health advice over the phone"
+  container: "qld.gov.au"
+  year: 2020
+  url: https://www.qld.gov.au/health/contacts/advice/13health
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 7 January 2020. '13 HEALTH ... is a confidential phone service that provides health advice to Queenslanders. You can phone and talk to a registered nurse 24 hours a day, 7 days a week for the cost of a local call'; it is not a diagnostic service. Queensland's own nurse line (the name contains digits). HOST NOT ALLOWLISTED (www.qld.gov.au)."
+
+au-vic-nurse-on-call:
+  type: regulator
+  authors: "Department of Health, Victoria"
+  title: "Nurse-on-Call"
+  container: "health.vic.gov.au"
+  year: 2026
+  url: https://www.health.vic.gov.au/primary-care/nurse-on-call
+  accessed: 2026-10-23
+  verified: url
+  note: "Updated 9 July 2026. Nurse-on-Call 'puts you in contact with a registered nurse for caring, professional health advice around the clock'; free, from anywhere in Victoria, 24 hours a day. www.health.vic.gov.au is on the link allowlist."
+
+au-healthdirect-poisoning:
+  type: web
+  authors: "Healthdirect Australia"
+  title: "Poisoning"
+  container: "healthdirect.gov.au"
+  year: 2023
+  url: https://www.healthdirect.gov.au/healthy-living/toxins-and-poisoning/poisoning
+  accessed: 2026-10-23
+  verified: url
+  note: "Last reviewed November 2023. If there are no symptoms, call the Poisons Information Centre: 'You can call 24 hours a day from anywhere in Australia'; the NSW Poisons Information Centre gives telephone advice Australia-wide, 24 hours a day; the healthdirect helpline is an alternative. One national Poisons Information Centre line, answered by the state centres. HOST NOT ALLOWLISTED."
+
+au-health-aod-hotline:
+  type: regulator
+  authors: "Australian Government Department of Health, Disability and Ageing"
+  title: "National Alcohol and Other Drug Hotline"
+  container: "health.gov.au"
+  year: 2025
+  url: https://www.health.gov.au/contacts/national-alcohol-and-other-drug-hotline
+  accessed: 2026-10-23
+  verified: url
+  note: "www.health.gov.au timed out to curl and WebFetch on 23 October 2026; read from the Internet Archive capture of 4 October 2026. Date last updated 3 September 2025. 'This hotline provides free and confidential information and support for people who have concerns about their own, or someone else's alcohol and/or other drug use', 24 hours a day, 7 days a week; 'You will be directed to the relevant alcohol and drug support service for your state or territory.' HOST NOT ALLOWLISTED (www.health.gov.au)."
+
+au-healthdirect-mental-health-helplines:
+  type: web
+  authors: "Healthdirect Australia"
+  title: "Mental health helplines"
+  container: "healthdirect.gov.au"
+  year: 2025
+  url: https://www.healthdirect.gov.au/healthcare-and-services/mental-health/mental-health-helplines
+  accessed: 2026-10-23
+  verified: url
+  note: "Last reviewed November 2025. 'If you or someone you know is in crisis and needs help now' call the emergency number; Lifeline provides 24-hour crisis counselling and suicide prevention by phone, text or online chat; the Suicide Call Back Service gives 24/7 support for people feeling suicidal; 13YARN gives 24/7 free and confidential crisis support for Aboriginal and Torres Strait Islander people; Medicare Mental Health connects people to local services on weekdays. Lifeline Australia is a charity (lifeline.org.au, HOST NOT ALLOWLISTED)."
+
+au-tga-report-adverse-events-consumers:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Reporting adverse events for consumers"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem/reporting-adverse-events-consumers
+  accessed: 2026-10-23
+  verified: url
+  note: "tga.gov.au did not answer automated requests on 23 October 2026; read from the Internet Archive capture of 21 September 2026. Last updated 2 September 2026. Consumers can report a medicine or vaccine adverse event online through the Adverse Event Management System, or ask a GP, nurse practitioner, midwife or community pharmacist to help them report; separate online forms for device incidents and for medicine defects; other reports include counterfeit medicines and advertising that breaks the rules; the page's product-type links include 'Unapproved therapeutic goods'. The parent page 'Report an adverse event or safety problem' (https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem, capture of 12 October 2026) is the landing page to link."
+
+au-nsw-community-sharps:
+  type: regulator
+  authors: "NSW Health"
+  title: "Community sharps management"
+  container: "health.nsw.gov.au"
+  year: 2024
+  url: https://www.health.nsw.gov.au/community-sharps/Pages/default.aspx
+  accessed: 2026-10-23
+  verified: url
+  note: "Current as at 2 October 2024. Public sharps bins at some pharmacies, medical centres and council sites (public toilets, parks); at home, use an Australian-standard sharps container or 'any puncture-proof container with a screw top. For example, an empty laundry detergent bottle'; take a full container to a public sharps bin, or to a pharmacy, medical centre or hospital that can help; after a needlestick injury wash the wound and see a GP; councils share responsibility for community sharps. HOST NOT ALLOWLISTED (www.health.nsw.gov.au)."
+
+au-vic-needle-syringe-program:
+  type: regulator
+  authors: "Department of Health, Victoria"
+  title: "Needle and Syringe Program"
+  container: "health.vic.gov.au"
+  year: 2026
+  url: https://www.health.vic.gov.au/aod-treatment-services/needle-and-syringe-program
+  accessed: 2026-10-23
+  verified: url
+  note: "Updated 5 January 2026. Victoria's NSP (since 1987) runs through funded NSPs, community health services, hospital emergency departments, councils, drug treatment agencies, youth organisations and participating pharmacies; a state hotline gives information 'on the safe retrieval and disposal of needles and syringes, and contact details of NSP providers'; service types include a 'disposal hotline'. Allowlisted host."
+
+au-qld-needle-syringe-program:
+  type: regulator
+  authors: "Queensland Health"
+  title: "Queensland Needle and Syringe Program"
+  container: "health.qld.gov.au"
+  year: 2026
+  url: https://www.health.qld.gov.au/public-health/topics/mhaod/for-healthcare-providers/clinical-guidelines-policies-and-resources/cards-also-looking-for/programs-and-services/queensland-needle-and-syringe-program
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 24 June 2026 (URL from the page's og:url). NSPs provide sterile injecting equipment and facilitate 'the safe disposal of used injecting equipment'; ADIS (Queensland's alcohol and drug line) gives 24/7 free and confidential counselling and information, including 'where to dispose of them safely'; yellow disposal containers in several sizes. HOST NOT ALLOWLISTED (www.health.qld.gov.au)."
+
+# ---------------------------------------------------------------- Ireland (notes)
+
+ie-hse-drugs-alcohol-helpline:
+  type: regulator
+  authors: "Health Service Executive (HSE)"
+  title: "Drugs and Alcohol Helpline"
+  container: "hse.ie"
+  year: 2026
+  url: https://www2.hse.ie/services/habit-addiction/drugs-and-alcohol-helpline/
+  accessed: 2026-10-23
+  verified: url
+  note: "Page last reviewed 30/01/2026. 'Our Drugs and Alcohol Helpline is a free service for anyone with concerns about drugs or alcohol'; confidential, 'You do not have to give your name'; open weekdays during office hours (not 24/7); also by email. HOST NOT ALLOWLISTED (www2.hse.ie)."
+
+ie-hse-mental-health-urgent-help:
+  type: regulator
+  authors: "Health Service Executive (HSE)"
+  title: "Get urgent help for a mental health crisis"
+  container: "hse.ie"
+  year: 2025
+  url: https://www2.hse.ie/mental-health/services-support/get-urgent-help/
+  accessed: 2026-10-23
+  verified: url
+  note: "Page last reviewed 28/05/2025. In an emergency go to the nearest emergency department or call the emergency number; otherwise a GP or the GP out-of-hours service 'can offer support for anyone in crisis'; 'These free helplines are there to help 24 hours a day, every day': Samaritans (samaritans.ie), Childline, and Text About It, 'a free service you can contact 24 hours a day' by text for an anonymous chat with a trained volunteer (textaboutit.ie). HOST NOT ALLOWLISTED."
+
+ie-hse-pharmacy-needle-exchange:
+  type: regulator
+  authors: "Health Service Executive (HSE)"
+  title: "Pharmacy Needle Exchange"
+  container: "hse.ie"
+  year: 2026
+  url: https://www.hse.ie/eng/about/who/primarycare/socialinclusion/addiction/clinical-matters/pharmacy-needle-exchange/
+  accessed: 2026-10-23
+  verified: url
+  note: "Read from the Internet Archive capture of 13 January 2026. 'The Pharmacy Needle Exchange Programme is carried out in more than 100 pharmacies nationwide'; patients 'pick up sterile injecting equipment and return used items'; participating pharmacies show the international needle exchange logo; it operates in most towns and counties outside Dublin, Wicklow and Kildare (where HSE and voluntary services run exchanges). HOST NOT ALLOWLISTED (www.hse.ie)."
+
+ie-hse-2023-pq-sharps:
+  type: regulator
+  authors: "Health Service Executive, Clinical Design and Innovation (reply to a parliamentary question)"
+  title: "PQ 19573/23: facilities for the safe disposal of used needles by diabetes patients (reply of 9 May 2023)"
+  container: "hse.ie"
+  year: 2023
+  url: https://www.hse.ie/eng/about/personalpq/pq/2023-pq-responses/april-2023/pq-19573-23-sean-canney.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "The live URL now returns an HTML 'page not found'; the PDF was read from the Internet Archive capture of 8 October 2023. 'There is currently no National Sharps Standard that covers the safe disposal of used needles by diabetic patients'; some diabetes centres give out yellow sharps bins and take them back when full; 'some GPs, health centres and pharmacies will provide a service' for safe disposal. Supports: in Ireland, ask your pharmacy, GP or the service that supplied the needles; there is no single national take-back scheme. Do not link the dead URL; cite the archived copy."
+
+# ---------------------------------------------------------------- New Zealand (notes)
+
+nz-healthnz-mental-health-where-to-get-help:
+  type: regulator
+  authors: "Health New Zealand | Te Whatu Ora"
+  title: "Where to get help for mental health"
+  container: "healthnz.govt.nz"
+  year: 2026
+  url: https://www.healthnz.govt.nz/health-topics/mental-health/where-to-get-help
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 22 July 2026. In a crisis contact your local mental health crisis assessment team; Healthline gives 24/7 telephone advice; '1737 is staffed by a team of paid counsellors who can talk to you if you have mental health or addiction problems', call or text 24 hours a day, 7 days a week; the Alcohol Drug Helpline gives 'Advice, information and support about drinking or other drug use' by phone or text; also the Depression helpline and Youthline. HOST NOT ALLOWLISTED (www.healthnz.govt.nz)."
+
+nz-healthnz-national-telehealth-service:
+  type: regulator
+  authors: "Health New Zealand | Te Whatu Ora"
+  title: "National Telehealth Service"
+  container: "healthnz.govt.nz"
+  year: 2026
+  url: https://www.healthnz.govt.nz/about-us/what-we-do/programmes-and-initiatives/national-telehealth-service
+  accessed: 2026-10-23
+  verified: url
+  note: "The national telehealth service hosts Healthline, the National Poisons Centre line, immunisation advice, '1737 Need to Talk?' and others; jointly funded by Health New Zealand and other agencies; free of charge and available 24 hours; delivered by Whakarongorau Aotearoa under contract. The Alcohol Drug Helpline site (alcoholdrughelp.org.nz) is also run by Whakarongorau Aotearoa (its footer, 23 October 2026). HOST NOT ALLOWLISTED."
+
+nz-healthnz-safe-sharps-disposal:
+  type: regulator
+  authors: "Health New Zealand | Te Whatu Ora"
+  title: "Safe sharps disposal"
+  container: "healthnz.govt.nz"
+  year: 2026
+  url: https://www.healthnz.govt.nz/health-topics/tests-and-treatments/medicines/safe-sharps-disposal
+  accessed: 2026-10-23
+  verified: url
+  note: "Last updated 22 July 2026. 'Always place loose needles and other sharps into approved sharps containers. Never flush them down the toilet. Do not place them in household or public rubbish bins or recycling bins.' 'Take safely packaged used sharps to your local pharmacy for disposal'; pharmacies have different rules: they may accept a suitable household container or sell a yellow or purple sharps container; links the New Zealand Needle Exchange Programme. HOST NOT ALLOWLISTED."

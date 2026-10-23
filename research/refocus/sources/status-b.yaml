@@ -1,0 +1,399 @@
+# Sources for the refocus status batch b (tesamorelin, cjc-1295, ipamorelin, hexarelin): Canada, Australia, and
+# the United Kingdom for hexarelin. Every entry was fetched or searched on 23 October 2026 (Montreal/Canberra
+# databases read through their public APIs or in a browser; legislation read from the official PDF). A second pass
+# late on 23 October 2026 (UTC) re-checked the key facts, closed the Canadian brand-name gap through Health Canada's
+# official DPD data extract (the DPD API and web pages were down for maintenance), read the Egrifta discontinuation
+# report, and re-ran the MHRA searches for tesamorelin, hexarelin and examorelin (same results).
+#
+# Reused from src/data/sources (not re-registered here): ctgov-nct01579695, ctgov-nct00267527,
+# ctgov-ipamorelin-search-2026-10-22 (tesamorelin.yaml, cjc-1295.yaml, ipamorelin.yaml), mhra-products-search-tesamorelin,
+# ema-egrifta-withdrawal (tesamorelin.yaml), uk-hmr-2012-reg-46 (bpc-157.yaml), uk-mda-1971-sch-2, uk-hmr-2012-reg-167
+# (legal-b.yaml), fda-pcac-2024-cjc1295-briefing, pubchem-cjc-1295, pubchem-cjc-1295-without-dac (cjc-1295.yaml),
+# fda-pcac-2024-ipamorelin-briefing (ipamorelin.yaml), fda-warning-letters-index (legal-b.yaml), fda-drugsatfda-egrifta
+# (history.yaml). Reused from research/refocus/sources/ireland-nz.yaml: ie-hpra-licensing-procedures (the EU central
+# procedure gives one authorisation valid in every member state).
+#
+# Shared ids: status-c.yaml registers nine of the documents below under the same id and URL (ca-pdl-human,
+# ca-food-and-drug-regulations, ca-cdsa, ca-hc-2026-04-think-twice-peptides, au-poisons-standard-2026-10,
+# au-customs-prohibited-imports-regs, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement,
+# au-tga-2026-08-peptide-seizure). When the files are merged, keep one entry per id and join the notes. canada.yaml
+# reuses this file's Canadian ids and adds search records for the other peptides on the site.
+#
+# Link allowlist: these hosts are used below and are NOT on config/link-allowlist.json today (we did not edit config/):
+# health-products.canada.ca, dhpp.hpfb-dgpsa.ca, pdf.hres.ca (also the label_url of the proposed Canadian Egrifta
+# product, which the validator checks), hpr-rps.hres.ca, www.canada.ca, laws-lois.justice.gc.ca,
+# recalls-rappels.canada.ca, healthproductshortages.ca, www.legislation.gov.au, www.odc.gov.au, www.anzctr.org.au.
+# Already allowed: www.tga.gov.au, products.mhra.gov.uk and www.gov.uk (.gov.uk), www.legislation.gov.uk,
+# clinicaltrials.gov.
+#
+# Seller rule (CONTENT-GUIDE §1): several regulator notices read for this batch name a seller, a clinic or private
+# individuals. They are summarised by their identification number inside an index entry (ca-hc-recalls-database), as
+# legal-b did for FDA warning letters (fda-warning-letters-index), and are not registered one by one.
+
+# ================================================================ CANADA: tesamorelin (Egrifta)
+
+ca-noc-egrifta:
+  type: regulator
+  authors: "Health Canada"
+  title: "Notice of Compliance database: NOC 15555 (Egrifta, 29 April 2014) and NOC 16731 (Egrifta 1 mg/vial, 27 March 2015)"
+  container: "Notice of Compliance (NOC) database"
+  year: 2026
+  url: https://health-products.canada.ca/api/notice-of-compliance/noticeofcompliancemain/?lang=en&type=json&id=15555
+  accessed: 2026-10-23
+  verified: url
+  note: "Read through the NOC API on 23 October 2026 (endpoints noticeofcompliancemain, drugproduct, medicinalingredient, dosageform, route; id=15555 and id=16731). NOC 15555: date 2014-04-29, Theratechnologies Inc., New Drug Submission (NDS), submission class 'New Active Substance (NAS)', prescription pharmaceutical, therapeutic class 'Somatropin and somatropin agonists', brand EGRIFTA, DIN 02423677, tesamorelin 2.0 mg/vial, lyophilized powder for solution, subcutaneous. NOC 16731: date 2015-03-27, Supplement to a New Drug Submission (SNDS), reason 'NEW STRENGTH 1 MG/VIAL', brand EGRIFTA, DIN 02438712, tesamorelin 1.0 mg/vial, powder for solution, subcutaneous. Both NOC records remain in the database (noc_active_status 1); the NOC is a historical record of the decision, while the right to sell depends on a DIN that has not been cancelled (see ca-food-and-drug-regulations, C.01.014)."
+
+ca-sbd-egrifta:
+  type: report
+  authors: "Health Canada"
+  title: "Summary Basis of Decision for Egrifta (SBD00185; issued 11 July 2014), with Post-Authorization Activity Table (updated 24 July 2023)"
+  container: "Drug and Health Product Portal"
+  year: 2023
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD00185
+  accessed: 2026-10-23
+  verified: url
+  note: "Read in full on 23 October 2026 (the old hpr-rps.hres.ca link SBD00185 redirects here; later the same evening the portal intermittently returned HTTP 522). PAAT: 'DIN 02423677 cancelled (pre market) ... Discontinuation date: 2023-07-13. The manufacturer notified Health Canada that sale of the drug has been discontinued pre market. Health Canada cancelled the DIN(s) pursuant to section C.01.014.6(1)(a)'; 'DIN 02438712 cancelled (post market) ... Discontinuation date: 2022-09-30' (same wording, post market); 'Date of first sale: 2015-06-23' for DIN 02438712 (C.01.014.3); SNDS 177087 filed 2014-08-11, NOC 2015-03-27, to add a 1 mg/vial strength to the approved 2 mg/vial; NDS 131836 filed 2011-06-17, NOC 2014-04-29. The PAAT gives no reason for either discontinuation. Review history: a Notice of Non-Compliance (NON) and then a Notice of Non-Compliance-Withdrawal (NON/W, 1 March 2013) were issued, with major objections on benefit-risk, the indication and elevated IGF-1; the sponsor requested reconsideration (filed 1 May 2013); a Reconsideration Panel of external Canadian experts met on 23 August 2013 and concluded that the potential risks 'should not preclude market authorization'; reconsideration decision 31 October 2013; NOC 29 April 2014 under restricted conditions: stop treatment if IGF-1 SDS is above 2 after 26 weeks (the US label uses 3), only for patients who failed to reduce VAT with diet and exercise, not for weight loss, no shown benefit on antiretroviral adherence. Authorised indication: excess visceral adipose tissue (waist >= 95 cm men, >= 94 cm women, VAT > 130 cm2 on CT) in treatment-experienced adults with HIV and lipodystrophy (one sentence of the SBD says '>30 cm2', a typo; section 1 and the product monograph say 130). The SBD says the sponsor committed to share the two US post-marketing studies, describing the 10-year cohort as 'intended to monitor cardiovascular safety' (the registry gives malignancy as its primary outcome: ctgov-nct01579695)."
+
+ca-dpd-egrifta-din-02438712:
+  type: regulator
+  authors: "Health Canada"
+  title: "Drug Product Database: EGRIFTA (tesamorelin 1 mg/vial), DIN 02438712, drug code 92311"
+  container: "Drug Product Database (DPD)"
+  year: 2026
+  url: https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=92311
+  accessed: 2026-10-23
+  verified: url
+  note: "Product page and API (status, activeingredient, schedule, route, form endpoints, id=92311) read on 23 October 2026: 'Current status: Cancelled Post Market'; current status date 2022-09-30; original market date 2015-06-23; last lot P012329, expiry 2023-01-31; description 'Single-use vials, diluent and syringes'; Theratechnologies Inc., Montreal; kit, powder for solution; subcutaneous; schedule Prescription; ATC H01AC06; tesamorelin (tesamorelin acetate) 1 mg/vial; product monograph dated 2015-03-26; 'A Risk Management Plan (RMP) for this product was submitted.' DPD footnote: after a DIN is cancelled, wholesalers, pharmacists and others 'may still sell or distribute that drug after DIN cancellation if the expiry date of the drug lot has not passed ... so long as the DIN cancellation is not due to health and/or safety reasons'. The DPD does not state the reason for the cancellation."
+
+ca-dpd-egrifta-din-02423677:
+  type: regulator
+  authors: "Health Canada"
+  title: "Drug Product Database: EGRIFTA (tesamorelin 2 mg/vial), DIN 02423677, drug code 90838"
+  container: "Drug Product Database (DPD)"
+  year: 2026
+  url: https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=90838
+  accessed: 2026-10-23
+  verified: url
+  note: "Product page and API (id=90838) read on 23 October 2026: 'Current status: Cancelled Pre Market'; current status date 2023-07-13; no original market date (never marketed); description 'Single-dose vials, diluent & syringes'; packaging '30x2mg'; Theratechnologies Inc.; powder for solution, kit; subcutaneous; schedule Prescription; ATC H01AC06; tesamorelin (tesamorelin acetate) 2 mg/vial; product monograph dated 2015-03-26; RMP submitted."
+
+ca-pm-egrifta-2015:
+  type: label
+  authors: "Theratechnologies Inc. (approved by Health Canada)"
+  title: "EGRIFTA (tesamorelin for injection) Product Monograph, 1 mg and 2 mg per vial, date of revision 26 March 2015 (control no. 177087)"
+  container: "Drug Product Database"
+  year: 2015
+  url: https://pdf.hres.ca/dpd_pm/00029988.PDF
+  accessed: 2026-10-23
+  verified: url
+  note: "The product monograph linked from both Egrifta DPD records, downloaded and read (pdftotext) on 23 October 2026, 48 pages. Indication: 'treatment of excess visceral adipose tissue (VAT), as assessed by waist circumference >= 95 cm for males and >= 94 cm for females, and confirmed by a VAT level > 130 cm2 by CT scan, in treatment-experienced adult HIV-infected patients with lipodystrophy'; limitations of use: not for weight loss (weight neutral effect), only for patients who failed to reduce excess VAT with diet and exercise, long-term cardiovascular safety and benefit not studied, no data on improved antiretroviral adherence; contraindicated under 18 years; discontinue in patients with IGF-1 SDS greater than 2 after 26 weeks; in trials 47.4% had IGF-1 above 2 SDS and 35.6% above 3 SDS after 26 weeks. Official Canadian product information for the cancelled product; cited as label_url for the CA product."
+
+ca-dpd-search-status-b-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database API searches, 23 October 2026: tesamorelin, ipamorelin, hexarelin, examorelin, CJC-1295 and related names"
+  container: "Drug Product Database (DPD)"
+  year: 2026
+  url: https://health-products.canada.ca/api/drug/activeingredient/?lang=en&type=json&ingredientname=tesamorelin
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched by active ingredient (substring match; all statuses, including cancelled and dormant products, are returned) between 22:08 and 22:12 Eastern Time on 23 October 2026: 'tesamorelin' and 'tesamor' returned only drug codes 90838 and 92311 (Egrifta 2 mg and 1 mg); 'ipamorelin', 'examorelin', 'hexarelin', 'cjc', 'mod grf', 'ghrp', 'alexamorelin', 'pralmorelin', 'macimorelin', 'anamorelin', 'somatorelin', 'growth hormone releasing' and 'sermorelin' returned no product. By brand name: 'egrifta' returned the same two products; 'egrifta sv' and 'egrifta wr' none. Controls: 'semaglutide' returned products, and the substring 'dac' returned unrelated ingredients (dacarbazine, sulindac), showing that substring search works. Brand-name searches for 'hexarelin', 'ipamorelin', 'cjc', 'th9507' and 'nnc' were attempted later the same evening but the API returned HTTP 503 (service unavailable) for every query, including the control 'ozempic', so they were not completed. No authorised (or formerly authorised) product contains ipamorelin, hexarelin/examorelin or CJC-1295 in any form. Second pass, late on 23 October 2026 (UTC): the API still returned HTTP 503 and the DPD web pages redirected to a Health Canada maintenance page ('This application is temporarily unavailable'), so the brand-name searches were completed instead in Health Canada's own DPD data extract (ca-dpd-extract-search-status-b-2026-10-23), with the same result."
+
+ca-dpd-extract-search-status-b-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database data extract (approved, marketed, cancelled and dormant products; files dated 5 October 2026), searched for tesamorelin, ipamorelin, hexarelin, CJC-1295 and their codes"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database/what-data-extract-drug-product-database.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Health Canada's page (read in a browser late on 23 October 2026, page date 2026-10-15) says the extract files 'contain complete product information for all approved (filename_ap.zip), marketed (filename.zip), cancelled (filename_ia.zip) and dormant (filename_dr.zip) products' and lists every file as last updated 2026-10-05. The four allfiles archives were downloaded from canada.ca the same evening (58,137 product rows in the four drug tables) and the brand-name and ingredient tables were searched (case-insensitive substrings) for EGRIFTA, TESAMOR, TH9507, TH-9507, IPAMOR, 'NNC 26', NNC26, HEXAREL, EXAMOR, EP-23905, EP23905, MF-6003, MF6003, CJC, DAC:GRF, 'MOD GRF', 'GRF 1-29', GHRP, GHRH, SECRETAGOG, 'GROWTH HORMONE RELEAS', SERMOREL and SOMATOREL. Only two products match: drug code 90838, DIN 02423677, EGRIFTA, tesamorelin (tesamorelin acetate) 2 mg/vial, status history APPROVED 2014-04-08 and 2014-04-29, current status CANCELLED PRE MARKET 2023-07-13; drug code 92311, DIN 02438712, EGRIFTA, tesamorelin 1 mg/vial, APPROVED 2015-03-13 and 2015-03-27, MARKETED 2015-06-23, current status CANCELLED POST MARKET 2022-09-30, last lot P012329 expiring 2023-01-31; both Theratechnologies Inc. (Montreal), schedule Prescription, subcutaneous, ATC H01AC06. No brand 'Egrifta SV' or 'Egrifta WR', and nothing for any other term ('GRF' matched only MAALOX GRF antacid tablets). Controls: OZEMPIC 6 rows, semaglutide 61, somatropin 51, afamelanotide 1. Limitation: the extract has no product for sermorelin, although the NOC database records sermorelin NOCs (ca-noc-search-status-b-2026-10-23), so products cancelled long ago may be missing; for the four peptides here the NOC search closes that gap. Confirms ca-dpd-egrifta-din-02438712 and ca-dpd-egrifta-din-02423677 independently of the API."
+
+ca-dsc-egrifta-discontinuation-170025:
+  type: regulator
+  authors: "Theratechnologies Inc. (mandatory report posted on Drug Shortages Canada, the website designated under the Food and Drug Regulations)"
+  title: "Discontinuation report EGRIFTA (report ID 170025, DIN 02438712)"
+  container: "Drug Shortages Canada"
+  year: 2022
+  url: https://healthproductshortages.ca/discontinuance/170025
+  accessed: 2026-10-23
+  verified: url
+  note: "The report's original address, www.drugshortagescanada.ca/discontinuance/170025, now redirects (HTTP 301) to the URL above, which answered with a bot-verification screen (not bypassed). The text was therefore read on the Internet Archive copy of the original address captured on 30 September 2022 (web.archive.org, used for checking only, not linked). Report 170025, last updated 2022-09-22 (version 1 English and version 2 French, both 2022-09-22): DIN 02438712; brand EGRIFTA; 'Tesamorelin for injection'; THERATECHNOLOGIES INC; market status MARKETED; tesamorelin 1 mg; powder for solution, kit; subcutaneous; packaging '60 vials containing (each) 1 mg of tesamorelin'; ATC H01AC; 'Reason for discontinuation: Business reasons'; anticipated discontinuation date 2022-09-30; remaining supply date 2022-09-30; discontinuation status 'To be discontinued'; decision reversal 'No'; Tier 3 status 'No'; no company or Health Canada comment. Under C.01.014.91 of the Food and Drug Regulations the DIN holder must post a planned discontinuation, with its reason, on the designated website (ca-food-and-drug-regulations), so the stated reason is the company's own. Supports: Egrifta (1 mg) was discontinued in Canada on 30 September 2022 for business reasons."
+
+ca-noc-search-status-b-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Notice of Compliance database: medicinal-ingredient table searched for tesamorelin, ipamorelin, hexarelin, examorelin, CJC-1295, sermorelin and somatorelin, 23 October 2026"
+  container: "Notice of Compliance (NOC) database"
+  year: 2026
+  url: https://health-products.canada.ca/api/notice-of-compliance/medicinalingredient/?lang=en&type=json
+  accessed: 2026-10-23
+  verified: url
+  note: "The full medicinal-ingredient table (96,057 rows, every NOC since the database began) was downloaded on 23 October 2026 and searched for the substrings TESAMOR, IPAMOR, EXAMOR, HEXAREL, CJC, SERMOREL and SOMATOREL. Hits: tesamorelin in NOC 15555 (2 mg/vial) and 16731 (1 mg/vial) only; sermorelin acetate in NOC 2581 and 5248 (control: the GHRH(1-29) product once authorised in Canada). No NOC has ever been issued for a product containing ipamorelin, hexarelin/examorelin or CJC-1295."
+
+ca-hc-sur-search-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug and health product submissions under review (new drug submissions and supplemental submissions under review), searched 23 October 2026"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drug-health-product-review-approval/submissions-under-review/new-drug-submissions-under-review.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Both lists (new-drug-submissions-under-review and supplemental-submissions-under-review) fetched on 23 October 2026 and searched for tesamorelin, ipamorelin, hexarelin, examorelin and CJC: no match (control: semaglutide appears on both pages). These lists cover submissions Health Canada chooses to publish (new active substances and certain supplements); a new formulation of an already-reviewed substance such as tesamorelin might not appear, so the absence is weaker evidence than the NOC and DPD searches."
+
+ca-pdl-human:
+  type: regulator
+  authors: "Health Canada"
+  title: "Prescription Drug List: list related to drugs for human use"
+  container: "Drug and Health Product Register"
+  year: 2026
+  url: https://hpr-rps.hres.ca/pdl-phu.php
+  accessed: 2026-10-23
+  verified: url
+  note: "The list established by the Minister under section 29.1 of the Food and Drugs Act (the canada.ca list page links here). Read on 23 October 2026 (1,536 table rows; latest effective date on the list 2026-08-27, so current): 'Tesamorelin or its salts or derivatives', effective 2014-04-25; 'Sermorelin or its salts', effective 2013-12-19. No entry names ipamorelin, hexarelin, examorelin, CJC-1295, growth hormone secretagogues or growth hormone releasing peptides, and there is no general entry for peptides or injectables. The PDF version of the same list (canada.ca, prescription-drug-list-eng.pdf) gave the same result."
+
+ca-food-and-drug-regulations:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations (C.R.C., c. 870), sections C.01.014, C.01.014.3, C.01.014.6 and C.08.002"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/FullText.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Current to 2026-09-30, last amended 2026-06-17. C.01.014(1): 'No manufacturer shall sell a drug in dosage form unless a drug identification number has been assigned for that drug and the assignment of the number has not been cancelled under section C.01.014.6.' C.01.014.3: the manufacturer reports the date of first sale within 30 days. C.01.014.6(1)(a): the Minister shall cancel a DIN if the manufacturer advises that they discontinued the sale of the drug (the route recorded for both Egrifta DINs); C.01.014.6(2) separately lets the Minister cancel a DIN on compliance or safety grounds (not the route used for Egrifta). C.08.002(1): 'No person shall sell or advertise a new drug unless' a satisfactory new drug submission has been filed, a notice of compliance issued and not suspended. Also read (second pass): C.01.014.91(1): a DIN holder that decides to discontinue the sale of a drug 'shall post' on the designated website, in English and French, among other things '(j) the date on which the manufacturer will discontinue the sale of the drug; and (k) the reason for the discontinuation of sale' (12 months ahead, or within five days of a decision taking effect in 12 months or less); C.01.014.8(2): the designated website is the one 'maintained under contract with His Majesty in right of Canada' when the Government of Canada website links to it (Drug Shortages Canada, ca-dsc-egrifta-discontinuation-170025); C.01.014.7(1): the manufacturer reports the date it discontinued the sale within 30 days."
+
+ca-cdsa:
+  type: law
+  authors: "Government of Canada"
+  title: "Controlled Drugs and Substances Act (S.C. 1996, c. 19), Schedules I to VI"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/c-38.8/FullText.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Act current to 2026-09-30 and last amended on 2026-07-18. The full text, including all schedules, was searched on 23 October 2026 for tesamorelin, ipamorelin, hexarelin, examorelin, CJC, sermorelin, somatropin, 'growth hormone', 'secretagogue' and 'peptide': no match. None of the four peptides is a controlled substance in Canada; they are regulated as drugs under the Food and Drugs Act."
+
+ca-hc-ctdb-search-status-b-2026-10-23:
+  type: registry
+  authors: "Health Canada"
+  title: "Health Canada Clinical Trials Database: protocol and drug-product tables searched for tesamorelin, ipamorelin, hexarelin, CJC-1295 and their codes, 23 October 2026"
+  container: "Clinical Trials Database"
+  year: 2026
+  url: https://health-products.canada.ca/api/clinical-trial/protocol/?lang=en&type=json
+  accessed: 2026-10-23
+  verified: registry
+  note: "Both tables downloaded through the API on 23 October 2026 (9,749 protocols with no-objection-letter dates from 2013-04-02 to 2026-10-22; 9,808 drug-product rows) and searched for TESAMOR, TH9507, TH-9507, EGRIFTA, IPAMOR, 'NNC 26', HEXAREL, EXAMOR, EP-23905, MF-6003, CJC, DAC:GRF, GHRP and SECRETAGOG in drug names and protocol titles: no match. The database lists phase I-III trials in patients authorised by Health Canada since April 2013, so no trial of any of the four peptides has been authorised in Canada in that period."
+
+ca-hc-2026-04-think-twice-peptides:
+  type: regulator
+  authors: "Health Canada"
+  title: "Think twice before injecting peptides bought online: unauthorized products can seriously harm you (public advisory RA-81874)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/alert-recall/think-twice-injecting-peptides-bought-online-unauthorized-products-can-seriously-harm
+  accessed: 2026-10-23
+  verified: url
+  note: "Public advisory published 9 April 2026 (RA-81874). Lists 'examples of unauthorized injectable peptide drugs seized by Health Canada', including CJC-1295 and ipamorelin (also BPC-157, DSIP, epitalon, GHK-Cu, HCG, KPV, melanotan I and II, MOTS-c, NAD+, SS-31, TB-500, retatrutide). 'In Canada, peptides are generally regulated as prescription drugs.' Unauthorized drug products 'are illegal in Canada and have not been assessed for safety, efficacy, and quality'; 'For Research Use Only - Not for Human Consumption' labelling 'does not make these products legal or exempt from regulatory requirements'; Health Canada 'is working with the Canada Border Services Agency to stop unauthorized shipments from entering the country'; authorised prescription drugs carry an eight-digit DIN, checkable in the Drug Product Database. Names no seller."
+
+ca-hc-recalls-database:
+  type: regulator
+  authors: "Health Canada"
+  title: "Recalls and safety alerts (searchable database)"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched on 23 October 2026 for ipamorelin, hexarelin, cjc-1295, tesamorelin and egrifta. 'egrifta' returned no alert (no safety alert or recall about the authorised product). Advisories read in full (each names a seller, a clinic or shops, so the site cites this index, not the advisories): RA-77807 (1 August 2025), injectable peptide drugs seized from and sold by an online seller, list includes CJC-1295, hexarelin, ipamorelin (spelt 'Ipamoreline') and tesamorelin, and states 'Injectable peptides are regulated as prescription drugs in Canada' and that selling unauthorized drugs is illegal; RA-81403 (24 December 2025), products seized from a Vancouver business and sold online, list includes CJC-1295, 'CJC-1295 DAC', ipamorelin and tesamorelin; RA-77218 (1 April 2025, updated 2 April), injectable peptides seized from a wellness clinic in Calgary, list includes CJC-1295 and ipamorelin, 'most injectable peptides are regulated as prescription drugs in Canada'; RA-81404 (24 December 2025), products seized from two shops in Maple Ridge, BC, list includes ipamorelin, and some seized products bore falsified DINs. Other peptide advisories found (RA-77275, 14 April 2025; RA-74731, 13 December 2023; RA-75741, 26 June 2024, updated 19 July 2024) do not name any of the four compounds in the text read."
+
+# ================================================================ AUSTRALIA
+
+au-poisons-standard-2026-10:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health, Disability and Ageing)"
+  title: "Therapeutic Goods (Poisons Standard - October 2026) Instrument 2026 (F2026L01327)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026L01327/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Made 28 September 2026, registered 30 September 2026; the TGA's Poisons Standard page (last updated 1 October 2026) says it is the current edition. Read from the authorised PDF (677 pages) on 23 October 2026. Schedule 4 (prescription only medicines; 'Note 2: Substances marked # are listed in Appendix D') contains '# CJC-1295 (CAS No. 863288-34-0).', '# GROWTH HORMONE RELEASING HORMONES* (GHRHs).', '# GROWTH HORMONE RELEASING PEPTIDES (GHRPs).', '# GROWTH HORMONE RELEASING PEPTIDE-6 (GHRP-6).', '# GROWTH HORMONE SECRETAGOGUES* (GHSs).', '# HEXARELIN.', '# IPAMORELIN.', PRALMORELIN and SERMORELIN (no #). Appendix D clause 5, 'Poisons for which possession without authority is illegal' ('possession other than in accordance with a legal prescription'), lists item 7 CJC-1295 (CAS No. 863288-34-0), item 18 GHRHs 'including those separately specified in Schedule 4', item 19 GHRPs, item 21 growth hormone secretagogues, item 22 hexarelin and item 25 ipamorelin; section 64(4): such a poison 'must not be possessed by a person without authority under the law of the jurisdiction'. Tesamorelin and examorelin are not named anywhere in the instrument. The Reader's guide says an entry includes all salts and derivatives unless stated otherwise, and that group terms are kept 'to deal with any members of the group or class that may have escaped attention'. The CAS number given for CJC-1295, 863288-34-0, is the one PubChem assigns to the 29-residue peptide without DAC (pubchem-cjc-1295-without-dac) and that the FDA calls a 'deleted CAS' (fda-pcac-2024-cjc1295-briefing); the DAC form (CAS 446262-90-4) is not named by its own number. State and territory laws give these schedules effect."
+
+au-poisons-standard-2015-06:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard June 2015 (F2015L00749) and its Explanatory Statement"
+  container: "Federal Register of Legislation"
+  year: 2015
+  url: https://www.legislation.gov.au/F2015L00749/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Instrument and Explanatory Statement downloaded as PDF and read on 23 October 2026. ES: the instrument 'commences on 1 June 2015' and substitutes the Poisons Standard 2015 (registered 10 February 2015); it includes amendments made after advice from the March 2015 ACMS and the November 2014 joint ACMS/ACCS meeting, for which public comment was invited from 14 August to 11 September 2014 on, among others, AOD-9604, 'CJC-1295 (CAS No. 863288-34-0)', pralmorelin (GHRP-2), GHRP-6, 'Growth hormone releasing hormones *(GHRHs)', 'Growth hormone releasing peptide *(GHRPs)', 'Growth hormone secretagogues *(GHSs)', hexarelin and ipamorelin. The instrument's Schedule 4 contains '# CJC-1295', '# GROWTH HORMONE RELEASING HORMONES* (GHRHs)', the GHRP and GHS group entries, '# HEXARELIN' and '# IPAMORELIN', and its Appendix D possession list contains the same names. With au-poisons-standard-2015-02, this dates the scheduling to 1 June 2015."
+
+au-poisons-standard-2015-02:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health)"
+  title: "Poisons Standard 2015 (F2015L00128)"
+  container: "Federal Register of Legislation"
+  year: 2015
+  url: https://www.legislation.gov.au/F2015L00128/asmade/text
+  accessed: 2026-10-23
+  verified: url
+  note: "The edition registered 10 February 2015 and replaced on 1 June 2015. Its full text (PDF read on 23 October 2026) contains no entry for CJC-1295, ipamorelin, hexarelin, growth hormone releasing hormones, growth hormone releasing peptides or growth hormone secretagogues (SERMORELIN and '# SOMATROPIN' are present). Cited only to show that the peptide entries first appeared in the June 2015 edition."
+
+au-tga-2014-09-scheduling-consultation:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Consultation: Invitation for public comment - ACCS, ACMS and joint ACCS/ACMS meetings, November 2014"
+  container: "tga.gov.au"
+  year: 2014
+  url: https://www.tga.gov.au/news/consultations/consultation-invitation-public-comment-accs-acms-and-joint-accsacms-meetings-november-2014
+  accessed: 2026-10-23
+  verified: url
+  note: "Consultation 25 September to 23 October 2014, read in a browser on 23 October 2026. Item 'Performance and Image Enhancing Drugs': 'Proposal to include new entries for Growth Hormone Releasing Hormones and Analogues, Growth Hormone Secretagogues, Growth Hormone Releasing Peptides and Growth Hormone Variant, as well as new individual entries for CJC-1295, ipamorelin, GHRP-2, GHRP-6, hexarelin and AOD-9604 in Schedule 4 and Appendix D.' Shows why these peptides were scheduled (as performance and image enhancing drugs). The delegate's final-decision document (March 2015) could not be downloaded: tga.gov.au refused scripted downloads and serves PDFs only as file downloads."
+
+au-customs-prohibited-imports-regs:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Customs (Prohibited Imports) Regulations 1956, regulation 5G and Schedule 7A (compilation no. 147, 13 July 2026, F2026C00751)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B03651/latest/text
+  accessed: 2026-10-23
+  verified: url
+  note: "Compilation in force on 13 July 2026, registered 4 August 2026, read from the PDF on 23 October 2026. Regulation 5G(1): 'The importation into Australia of a substance mentioned in Schedule 7A is prohibited unless' the importer holds a written permission from the Secretary (Department of Health) and produces it to a Collector; 5G(2) exempts medicine prescribed for a ship or aircraft passenger's treatment, but 5G(3) removes that exemption for athletes and their support persons. Schedule 7A item 4: 'Natural and manufactured growth hormones, including somatropin, somatrem, somatomedins and insulin-like growth factors (not insulins) and growth hormone releasing hormones (somatorelin and synthetic analogues)'. Ipamorelin, hexarelin and CJC-1295 are not named; GH secretagogues and GHRPs are not listed. Tesamorelin (modified human GHRH 1-44) and CJC-1295 (modified GHRH 1-29) are, chemically, synthetic analogues of somatorelin; no official document applying item 4 to either by name was found."
+
+au-odc-growth-hormones-import-permit:
+  type: regulator
+  authors: "Office of Drug Control (Australian Government Department of Health, Disability and Ageing)"
+  title: "Growth hormones (natural and manufactured): controlled substance entry"
+  container: "odc.gov.au"
+  year: 2026
+  url: https://www.odc.gov.au/controlled-substances/list/growth-hormones-natural-and-manufactured
+  accessed: 2026-10-23
+  verified: url
+  note: "Read in a browser on 23 October 2026: covers 'somatropin, somatrem, somatomedins and insulin-like growth factors (not insulins) and growth hormone releasing hormones (somatorelin and synthetic analogues)'; application type 5G/5H; import licence required: no; import permit required: yes; export licence and permit required: no. A search of odc.gov.au for 'ipamorelin' returned no result."
+
+au-artg-search-status-b-2026-10-23:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG) searches, 23 October 2026: tesamorelin, Egrifta, Theratechnologies, ipamorelin, hexarelin, examorelin, CJC-1295 and development codes"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=tesamorelin
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026 (the ARTG search on tga.gov.au searches product name, ID and sponsor; ARTG product names include the active ingredient). 'There were no matching results' for: tesamorelin, egrifta, theratechnologies (sponsor), ipamorelin, CJC1295, \"CJC-1295\", hexarelin, examorelin, \"NNC 26-0161\". Control: 'somatropin' returned 30 results (e.g. Omnitrope and Scitropin A entries). The codes TH9507, \"EP-23905\" and \"MF-6003\" returned 633, 601 and 9 unrelated results (vitamin D3 products, hip prostheses, bone cement), because the search splits codes into fragments; the first page of each was checked and none was a peptide. The public search may show only current ARTG entries; a cancelled historical entry could not be ruled out this way, but no other TGA source mentions one. Second pass (late on 23 October 2026, UTC): the search page describes itself as a search of 'medicines, medical devices and biologicals that can be supplied within Australia', and 'rofecoxib' (Vioxx, withdrawn worldwide in 2004) returned 'There were no matching results', which confirms that cancelled entries are not shown. The TGA's ARTG Search Visualisation Tool (compliance.health.gov.au/artg) likewise calls the ARTG 'a register of therapeutic goods that can be lawfully supplied in Australia' and notes that goods not found 'may be suspended or cancelled' (its embedded search box could not be operated in the browser). So these searches show that no product is on the ARTG today; they cannot show that none ever was (see au-tga-search-status-b-2026-10-23 for the registration records)."
+
+au-tga-search-status-b-2026-10-23:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "AusPAR, prescription medicines under evaluation and TGA website searches, 23 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/prescription-medicines-under-evaluation?keywords=tesamorelin
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026. Australian Public Assessment Reports (AusPAR) 'tesamorelin': no matching results. Prescription medicines under evaluation 'tesamorelin': no matching results (control 'semaglutide': 1 result). Whole-site search: 'tesamorelin' no result; 'ipamorelin' 2 results (the November 2014 scheduling consultation and the advertising guidance for prescription medicines); 'hexarelin' 1 result (the 2014 consultation); 'CJC-1295' 6 results (the 2014 consultation, the advertising guidance and four 2026 peptide notices: au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure, and a 28 September 2026 media release on Federal Court proceedings against a former company and its directors, not registered because it names them). No application to register tesamorelin in Australia has been made public. Second pass (late on 23 October 2026, UTC): the Prescription medicines registrations database (https://www.tga.gov.au/resources/prescription-medicines-registrations, page updated 25 September 2026; new medicines, generics, biosimilars and extensions of indication) returned 'There were no matching results' for 'tesamorelin'; control 'semaglutide' returned 8 registrations, the earliest OZEMPIC on 15 August 2019. Registrations of new chemical entities before 2018 are on yearly TGA pages, which the whole-site search above (no 'tesamorelin' result at all) should also find. Together: the TGA's website records no Australian registration, evaluation, public assessment report or pending application for tesamorelin."
+
+au-tga-2026-04-peptide-responsibilities:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Understanding your responsibilities when importing, compounding and supplying unapproved peptide products (safety advisory)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/understanding-your-responsibilities-when-importing-compounding-and-supplying-unapproved-peptide-products
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 13 April 2026, read in full on 23 October 2026. 'Under the Therapeutic Goods Act 1989, peptide products are regulated as therapeutic goods in Australia'; 'Unapproved peptide products are goods which have not been included in the ARTG'; 'Examples of unapproved peptide products include those containing BPC-157, GHK-Cu, TB-500, retatrutide and CJC-1295, often supplied in injectable form.' Adverse events reported to the TGA include severe allergic reactions needing adrenaline and hospital care, systemic inflammatory response syndrome, and poor product quality. Compounding exemptions apply only when a good is dispensed or compounded for a particular person (or in a hospital); advertising prescription-only medicines to the public is prohibited. Personal Importation Scheme: products identified only by codes, or not stating active ingredient and strength, 'cannot be assessed for lawful importation ... and will not be considered for release'; an appropriate prescription is needed when required; 'research use only' disclaimers do not change a product's status, permit importation or remove obligations; 'State and territory laws may impose additional controls on the sale, supply and possession'."
+
+au-tga-2026-06-cmo-peptide-statement:
+  type: regulator
+  authors: "Therapeutic Goods Administration and the Australian Government Chief Medical Officer"
+  title: "Concerns regarding the public health risks associated with unapproved peptide products (joint statement)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/concerns-regarding-public-health-risks-associated-unapproved-peptide-products
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 19 June 2026. TGA reports and state and territory hospital data 'have identified serious adverse effects associated with the use of unapproved peptides', including liver damage, severe allergic reactions requiring hospitalisation, and inflammation; unapproved products 'can include products containing BPC-157, GHK-Cu, TB-500, retatrutide and CJC-1295'; many are supplied as powders or injections in poorly labelled or unmarked vials; unapproved peptide products 'have been added as a priority focus area for the TGA compliance'."
+
+au-tga-2026-08-peptide-seizure:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA flexes its muscle against illegal peptides and steroids (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/tga-flexes-its-muscle-against-illegal-peptides-and-steroids
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 17 August 2026. With NSW Police, the TGA seized more than $120,000 of peptide and anabolic steroid products from two residential premises (warrants executed 4 August 2026) allegedly linked to a social media influencer (not named) who imported, relabelled, advertised and sold them; 'The products include retatrutide, CJC-1295 and the Wolverine Stack (combination of BPC-157 and TB-500)'. 'It is unlawful to import, advertise, manufacture and supply unapproved peptide products in Australia.' Penalties under the Therapeutic Goods Act 1989 include civil penalties of up to $1.82 million per breach for individuals and $18.2 million for corporations, and up to 7 years' imprisonment."
+
+au-anzctr-search-status-b-2026-10-23:
+  type: registry
+  authors: "Australian New Zealand Clinical Trials Registry"
+  title: "ANZCTR basic searches, 23 October 2026: tesamorelin, Egrifta, ipamorelin, hexarelin, examorelin, CJC-1295"
+  container: "ANZCTR"
+  year: 2026
+  url: https://www.anzctr.org.au/TrialSearch.aspx?searchTxt=tesamorelin&isBasic=True
+  accessed: 2026-10-23
+  verified: registry
+  note: "Searched in a browser on 23 October 2026: 'Number of records found: 0' for tesamorelin, egrifta, ipamorelin, hexarelin, examorelin and CJC-1295. Control 'somatropin': 14 records. With ctgov-search-status-b-2026-10-23 (no record with an Australian site), no trial of any of the four peptides is registered in Australia or New Zealand."
+
+# ================================================================ UNITED KINGDOM
+
+mhra-products-search-hexarelin:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products: search results for 'hexarelin', 'examorelin', 'EP-23905' and 'MF-6003', and the substance index"
+  year: 2026
+  url: https://products.mhra.gov.uk/search/?search=hexarelin&page=1
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026 (the page loads results with JavaScript): 'There are no search results for hexarelin', '... for examorelin', '... for EP23905', '... for MF6003', '... for \"EP-23905\"' and '... for \"MF-6003\"'. Unquoted hyphenated codes return unrelated documents (29 and 16,070) because the search splits them into fragments. The substance index (letters E and H) lists no hexarelin or examorelin entry (it lists HEXAMINOLEVULINATE, HEXETIDINE, EXAMETAZIME). Control: 'somatropin' returned 577 documents and the S index lists SOMATROPIN. The database lists products with a UK marketing authorisation (PL, PLGB or PLNI numbers). Re-run late on 23 October 2026 (UTC): 'There are no search results for hexarelin' and '... for examorelin' (same for 'tesamorelin', see mhra-products-search-cjc-1295-ipamorelin)."
+
+uk-euwa-2018-s20-exit-day:
+  type: law
+  authors: "UK Parliament"
+  title: "European Union (Withdrawal) Act 2018, section 20 (interpretation: 'exit day')"
+  container: "legislation.gov.uk"
+  year: 2018
+  url: https://www.legislation.gov.uk/ukpga/2018/16/section/20
+  accessed: 2026-10-23
+  verified: url
+  note: "Read on 23 October 2026: '\"exit day\" means 31 January 2020 at 11.00 p.m.' (as amended). Cited only for the date the UK left the EU, so that a UK page can say that the 2012 EU application for Egrifta (ema-egrifta-withdrawal), made through the central procedure that gives one authorisation valid in every member state (ie-hpra-licensing-procedures), was made while the UK was a member."
+
+mhra-products-search-cjc-1295-ipamorelin:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products: search results for 'ipamorelin', 'NNC 26-0161', 'CJC-1295' and 'CJC1295', and the substance index"
+  year: 2026
+  url: https://products.mhra.gov.uk/search/?search=ipamorelin&page=1
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched in a browser on 23 October 2026: 'There are no search results for ipamorelin', '... for \"NNC 26-0161\"', '... for \"CJC-1295\"' and '... for CJC1295'. The substance index (letters C and I) has no CJC-1295 or ipamorelin entry. Same day, same method: 'tesamorelin', 'egrifta' and 'TH9507' also returned no results and the T index has no tesamorelin (re-check of mhra-products-search-tesamorelin). Control: 'somatropin' 577 documents. Offered as an additional source for the existing UK rows of cjc-1295 and ipamorelin, which currently cite no MHRA search. Re-run late on 23 October 2026 (UTC): 'There are no search results for tesamorelin' (page text also says products with a UK marketing authorisation carry a PL, PLGB or PLNI number)."
+
+uk-govuk-search-status-b-2026-10-23:
+  type: dataset
+  authors: "UK Government (GOV.UK)"
+  title: "GOV.UK site search API, 23 October 2026: ipamorelin, hexarelin, examorelin, tesamorelin, CJC-1295"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/api/search.json?q=ipamorelin
+  accessed: 2026-10-23
+  verified: url
+  note: "Queried on 23 October 2026: 'ipamorelin', 'hexarelin', 'examorelin' and 'tesamorelin' each returned total 0; 'cjc-1295' returned 147 unrelated pages (Civil Justice Council, tribunal decisions) and nothing about the peptide. So no MHRA (or other GOV.UK) news story, alert or guidance names any of the four peptides. Absence evidence only; MHRA seizure releases that mention 'peptide products' in general exist (e.g. mhra-2026-05-largest-seizure)."
+
+# ================================================================ TRIALS (all countries)
+
+ctgov-search-status-b-2026-10-23:
+  type: registry
+  authors: "ClinicalTrials.gov (U.S. National Library of Medicine)"
+  title: "ClinicalTrials.gov API v2 searches with site countries, 23 October 2026: tesamorelin, TH9507, Egrifta, CJC-1295, CJC 1295, CJC1295, DAC:GRF, ipamorelin, NNC 26-0161, hexarelin, examorelin, EP-23905, MF-6003"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.term=tesamorelin&pageSize=100
+  accessed: 2026-10-23
+  verified: registry
+  note: "Term searches with location countries read for every record on 23 October 2026. Tesamorelin/TH9507/Egrifta: 25 records; records with Canadian sites, all finished: NCT00123253 (phase 3, Canada and US, completed), NCT00608023 (extension, Belgium, Canada, France, Spain, United Kingdom, US, completed), NCT02012556 (PK/PD, Canada, completed); no record has an Australian site; recruiting records are NCT06554717 and NCT03150511 (US) and NCT07481734 (China). CJC-1295 (all spellings): one record, NCT00267527 (terminated 2006, no sites listed); 'DAC:GRF' none. Ipamorelin: 3 records, all US sites (NCT00672074, NCT01280344 completed; NCT07717866 observational, active not recruiting); 'NNC 26-0161' none. Hexarelin, examorelin, EP-23905, MF-6003: no records. So none of the four peptides is in a registered, open trial in Canada, Australia or the UK."

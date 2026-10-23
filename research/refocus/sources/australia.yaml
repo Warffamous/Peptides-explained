@@ -1,0 +1,716 @@
+# Sources for the page "Peptides and the law in Australia" (assignment australia-legal, refocus of the English site).
+# Read on 24 October 2026 (the workflow brief says 23 October; this run began just after midnight on 24 October, so
+# every entry read in this run carries accessed: 2026-10-24). See research/refocus/australia-legal.md, section 12
+# ("Verification log"), for how each site was read.
+#
+# How things were read:
+# - Commonwealth legislation: the official HTML text (epub document_N.html) of the latest compilation on
+#   legislation.gov.au, converted to plain text and searched; PDFs (the penalty unit instrument) with pdftotext.
+# - tga.gov.au, abf.gov.au, sportintegrity.gov.au, health.nsw.gov.au, healthdirect.gov.au, poisonsinfo.nsw.gov.au,
+#   health.gov.au: fetched with an ordinary browser user agent and read as text. The TGA site search page answered with
+#   a bot-verification page; it was NOT used and nothing was done to get round it (ARTG searches and media release
+#   pages answered normally).
+# - legislation.vic.gov.au and legislation.qld.gov.au: the authorised PDF (Vic) and the official HTML (Qld).
+# - legislation.nsw.gov.au and AustLII answered with a bot challenge (HTTP 403, "Just a moment"). Nothing was done to get
+#   round it. The NSW Acts were read from Internet Archive snapshots of the official NSW pages (dates in the notes);
+#   the NSW Health pages (official, current) were read directly. A legal reviewer must re-check the NSW text.
+#
+# REUSED, not re-registered here (same document already registered, ids kept):
+# - from src/data/sources: wada-2026-list-en, wada-2027-list-en (bpc-157.yaml); wada-code-2021, wada-code-2027
+#   (legal-b.yaml); vic-health-2026-retatrutide-liver (safety-b.yaml); piatkowski-2026-retatrutide-product-testing
+#   (retatrutide.yaml).
+# - from research/refocus/sources/status-b.yaml and status-c.yaml (parallel batches, read 23 October 2026; facts
+#   re-checked in this run where stated): au-poisons-standard-2024-06, au-poisons-standard-2024-02,
+#   au-poisons-standard-2016-06, au-poisons-standard-2016-03, au-poisons-standard-2018-06, au-poisons-standard-2018-03,
+#   au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2014-09-scheduling-consultation,
+#   au-tga-2018-04-scheduling-final-decisions, au-odc-growth-hormones-import-permit (re-read 24 October: same fields),
+#   au-tga-peptide-products-hub (re-read 24 October: last updated 23 September 2026, same text),
+#   au-tga-2026-04-peptide-responsibilities (re-read in full 24 October: same text),
+#   au-tga-2026-06-cmo-peptide-statement (re-read 24 October), au-tga-2026-08-peptide-seizure (re-read 24 October),
+#   au-tga-2025-01-melanotan-blog, au-tga-2026-05-melanotan-ii-infringement-notices (re-read 24 October),
+#   au-tga-2026-08-melanotan-ii-safety-alert, au-artg-search-status-b-2026-10-23, au-artg-search-status-c-2026-10-23,
+#   au-tga-search-status-b-2026-10-23, au-tga-search-status-c-2026-10-23, au-anzctr-search-status-b-2026-10-23,
+#   au-anzctr-search-status-c-2026-10-23, au-tga-2024-05-scheduling-final-decisions and
+#   au-tga-2024-05-final-decisions-notice (status-c; the reasons for scheduling BPC-157 were confirmed again in this run
+#   from the DOCX version of the same decision notice, downloaded directly from tga.gov.au on 24 October 2026:
+#   /sites/default/files/2024-05/notice-final-decisions-amend-not-amend-current-poisons-standard-november-2023.docx),
+#   au-tga-2026-05-peptide-import-warning (status-c; re-read directly on tga.gov.au on 24 October: same text).
+# - from research/refocus/sources/status-d.yaml: au-tga-2026-06-peptide-compliance-priority (re-read 24 October: same
+#   text), au-permissible-ingredients-determination-2026-3 (listed-medicine ingredients), au-fca-2014-1019-essendon-v-asada.
+# - from research/refocus/sources/extras.yaml (help and reporting data, read 23 October): au-healthdirect-helpline,
+#   au-healthdirect-poisoning (re-read 24 October: same text), au-health-aod-hotline (re-read directly on health.gov.au
+#   on 24 October: same text), au-tga-report-adverse-events-consumers (re-read 24 October: last updated 2 September
+#   2026; online reporting through the Adverse Event Management System, https://aems.tga.gov.au/),
+#   au-vic-needle-syringe-program, au-qld-needle-syringe-program, au-nsw-community-sharps.
+#
+# SHARED IDS RE-REGISTERED BELOW (same id and URL as status-b/status-c/status-d; this run read them again and adds
+# facts, and corrects one): au-poisons-standard-2026-10, au-customs-prohibited-imports-regs (CORRECTION, also flagged
+# by status-d: the growth hormone entry is Schedule 7A item 3, not item 4; item 4 is darbepoetin alfa),
+# au-tg-regulations-1990-sch-5-item-1 (adds the 8 September 2026 amendments and the Explanatory Statement). When the
+# files are merged, keep one entry per id and join the notes.
+#
+# Seller rule (CONTENT-GUIDE §1): TGA releases whose title or URL names a company (a 2026 Federal Court case, a 2019
+# Federal Court penalty) are summarised by date in au-tga-media-releases-peptide-log-2026-10-24 and not registered one
+# by one. Private individuals named in releases are not named here.
+#
+# Commerce tokens (config/commerce-tokens.json): every URL below was checked against the token list. One URL contains a
+# token and is flagged DO NOT LINK in its note: au-tga-2026-07-peptide-promoters-notice ('suppliers'). The TGA page on
+# the risks of peptide products online (URL contains 'buying') was read but deliberately not registered.
+#
+# Link allowlist: only www.tga.gov.au, www.sportintegrity.gov.au and www.health.vic.gov.au are on
+# config/link-allowlist.json today. The other hosts used here are listed in australia-legal.md, section 11, for the
+# editor (config/ was not edited).
+#
+# No telephone numbers are recorded in this file (the task did not ask for them).
+
+# ================================================================ Commonwealth: Therapeutic Goods Act 1989
+
+au-tg-act-s3-definitions:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, section 3 (definitions: therapeutic goods, therapeutic use, medicine, supply, advertise, sponsor) (Compilation No. 89, 5 September 2025)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Compilation No. 89 (compilation date 5 September 2025, includes Act No. 38, 2025), the latest on legislation.gov.au on 24 October 2026; read from the official HTML text (2 volumes). Section 3(1): 'therapeutic goods' means goods represented in any way to be, or likely to be taken to be, for therapeutic use (among other limbs); 'therapeutic use' includes '(a) preventing, diagnosing, curing or alleviating a disease, ailment, defect or injury in persons' and '(b) influencing, inhibiting or modifying a physiological process in persons'; 'medicine' means therapeutic goods (other than biologicals) represented to achieve, or likely to achieve, their principal intended action by pharmacological, chemical, immunological or metabolic means; 'supply' includes supply by sale, exchange, gift, lease, loan, by way of sample or advertisement, and by administration to a person; 'advertise' includes any statement, pictorial representation or design intended, directly or indirectly, to promote the use or supply of the goods, including on the label or package; 'sponsor' means a person who imports, exports or manufactures the goods (or arranges it), but not a person who does so on behalf of another person resident or carrying on business in Australia."
+
+au-tg-act-artg-registration-listing:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, sections 9A (the Australian Register of Therapeutic Goods), 25 (evaluation for registration) and 26A (listing of certain medicines) (Compilation No. 89)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Section 9A(1): the Secretary maintains the Australian Register of Therapeutic Goods 'for the purpose of compiling information in relation to, and providing for evaluation of, therapeutic goods for use in humans'; 9A(3): it has parts for registered goods, provisionally registered goods, listed goods, biologicals and medical devices. Section 25(1)(c): for registration the Secretary must evaluate 'whether the quality, safety and efficacy of the goods for the purposes for which they are to be used have been satisfactorily established' (plus presentation, standards, manufacturing, advertising compliance). Section 26A: a medicine is listed when the applicant certifies, among other things, that it is eligible for listing, safe for its purposes, and contains no ingredient not specified in a determination under s 26BB(1)(a) (permissible ingredients); s 26A(1A): the Secretary 'must list the medicine ... without inquiring into the correctness of the certificate'. So registered medicines are evaluated before supply; listed medicines are self-certified and limited to permitted ingredients."
+
+au-tg-act-s19-access-approvals:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, section 19 (approvals or authorities for certain uses: Special Access Scheme Category B, clinical trial approvals, Authorised Prescribers, Category C rules) (Compilation No. 89)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Section 19(1): the Secretary may grant an approval for the importation, exportation or supply of specified therapeutic goods that are not registered or listed '(a) for use in the treatment of another person; or (b) for use solely for experimental purposes in humans'; 19(1AA): an approval under (1)(a) may be granted only to a health practitioner (this is the Special Access Scheme Category B application pathway; (1)(b) is the clinical trial approval). Section 19(5): the Secretary may authorise a specified medical practitioner to supply specified unapproved goods to a class of recipients (the Authorised Prescriber scheme); 19(6)(aa): the practitioner generally needs ethics committee approval. Section 19(7A): the Minister may make rules authorising classes of health practitioners to supply specified goods in specified circumstances (the basis of SAS Category C); 19(7C): supply under those rules must be notified within 28 days."
+
+au-tg-act-s19b-19d-offences:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, sections 19B (criminal offences) and 19D (civil penalties) for importing, exporting, manufacturing or supplying goods not in the Register (Compilation No. 89)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Section 19B(1): offence to import, export, manufacture or supply in Australia therapeutic goods for use in humans unless they are registered or listed in relation to the person, exempt, exempt under s 18A, or covered by an approval or authority under s 19 or 19A, where use of the goods has resulted or is likely to result in harm or injury: 'Imprisonment for 5 years or 4,000 penalty units, or both'. 19B(4): the same without the harm element: 12 months or 1,000 penalty units, or both. 19B(4A)-(4B): a strict liability offence, 100 penalty units. 19B(5): it is a defence that the defendant was not the sponsor of the goods. 19B(7): if the Secretary so notifies the Comptroller-General of Customs, the Customs Act 1901 applies to an unlawful importation as if the goods were forfeited prohibited imports (s 229 of that Act). Section 19D(1): civil penalty for the same conduct, maximum 5,000 penalty units for an individual and 50,000 for a body corporate; 19D(2): exception if the person was not the sponsor. Section 18 lets the regulations exempt goods (see the Regulations entries). The Act regulates import, export, manufacture, supply and advertising; it creates no offence of simple personal possession (possession is a matter for state and territory law; see the state entries)."
+
+au-tg-act-advertising:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, Chapter 5 Part 5-1 (advertising): sections 42AA, 42BAA, 42DJ, 42DL and 42DLB (Compilation No. 89)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Section 42AA: Part 5-1 does not apply to advertisements directed exclusively to health practitioners and certain other professional or trade audiences. Section 42BAA: the Minister may make the Therapeutic Goods Advertising Code. Section 42DL(1)-(4): offences of advertising, or causing the advertising of, therapeutic goods where any of subsections (5) to (12) applies: 5 years or 4,000 penalty units if harm results or is likely; 12 months or 1,000 penalty units; and a strict liability offence of 100 penalty units. 42DL(10): an advertisement that 'refers to substances, or goods containing substances, included in Schedule 3, 4 or 8 to the current Poisons Standard but not in Appendix H', other than a reference authorised or required by an Australian government authority. 42DL(12): an advertisement that refers to therapeutic goods not entered in the Register and prescribed by the regulations (regulation 7). 42DL(5): prohibited representations without permission. 42DL(13)-(14): each day is a separate offence. Section 42DLB: civil penalty for the same advertisements (subsection (7) = the Schedule 3, 4 or 8 rule; (9) = unregistered prescribed goods), maximum 5,000 penalty units for an individual and 50,000 for a body corporate."
+
+au-tg-act-s42yk-infringement-notices:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, sections 42YK and 42YKA (infringement notices) (Compilation No. 89)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Section 42YK(1): if the Secretary reasonably believes a person has contravened a strict liability offence or a civil penalty provision, the Secretary may give the person an infringement notice, within 12 months of the alleged contravention (42YK(2)); one notice per contravention (42YK(3)). Section 42YKA(2): the amount for a single contravention is the lesser of one-fifth of the maximum court penalty and '12 penalty units where the person is an individual, or 60 penalty units where the person is a body corporate'. 42YKA(1): paying within 28 days avoids prosecution or civil proceedings for that contravention, and payment is not an admission of guilt. (With a penalty unit of $364 for conduct from 1 July 2026, 12 penalty units = $4,368; at the earlier $330, $3,960; at $313, $3,756, which matches the per-notice amounts in the TGA releases cited.)"
+
+au-tg-act-s52d-poisons-standard:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Act 1989, Part 6-3: sections 52A (current Poisons Standard) and 52D (Poisons Standard) (Compilation No. 89)"
+  container: "Federal Register of Legislation"
+  year: 2025
+  url: https://www.legislation.gov.au/C2004A03952/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Section 52D(2): the Secretary may amend the current Poisons Standard or prepare a document in substitution for it; 52D(4A): such an instrument is a legislative instrument not subject to disallowance. Section 52A: 'current Poisons Standard' is the document last prepared under s 52D(2)(b); the 'first Poisons Standard' was the Standard for the Uniform Scheduling of Drugs and Poisons published by the Australian Health Ministers' Advisory Council."
+
+au-crimes-penalty-unit-2026:
+  type: law
+  authors: "Commonwealth of Australia (Attorney-General)"
+  title: "Crimes (Amount of a Penalty Unit) Instrument 2026 (F2026N00424), with Crimes Act 1914 section 4AA"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026N00424/asmade/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Instrument dated 15 June 2026, registered 16 June 2026, commencing 1 July 2026, made under s 4AA(1A) of the Crimes Act 1914; read from the authorised PDF. Section 5: 'the amount of a penalty unit is $364'; note: it 'is the result of indexation under subsection 4AA(3)' and 'only applies to offences committed on or after 1 July 2026'. Crimes Act 1914 s 4AA(1) (Compilation No. 167, 27 August 2026, read from the official HTML at https://www.legislation.gov.au/C1914A00012/latest/text): 'penalty unit means the amount of $330 (subject to indexation under subsection (3))'; 4AA(3): indexation on 1 July 2026 and every third 1 July; 4AA(8): the increase applies only to offences committed on or after the indexation day. So 5,000 penalty units = $1.82 million and 50,000 = $18.2 million for conduct from 1 July 2026, matching the TGA's August and September 2026 releases."
+
+# ================================================================ Commonwealth: Therapeutic Goods Regulations 1990
+
+# Same id and URL as status-c.yaml; facts below re-read on 24 October 2026 and extended (8 September 2026 amendments).
+au-tg-regulations-1990-sch-5-item-1:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, Schedule 5 item 1 (personal importation) (compilation F2026C01012, 5 October 2026)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Compilation No. 131, compilation date 5 October 2026 (includes F2026L01167), read from the official HTML on 24 October 2026. Regulation 12(1): goods in Schedule 5 are exempt from Part 3-2 of the Act (the requirement to be in the Register). Schedule 5 item 1: 'therapeutic goods that are imported for therapeutic use in the treatment of the importer or the importer's immediate family' where (a) the goods contain no substance whose importation is prohibited under the Customs Act 1901; (b) they are not vaping goods or nicotine pouches; (c) for other medicines, one importation is not more than 3 months' supply at the manufacturer's maximum dose, the total over 12 months does not exceed 15 months' supply, and '(iii) the medicine is in packaging that enables the medicine to be accurately identified'; and (d) 'in the case of goods that are subject to Schedule 4 or Schedule 8 to the current Poisons Standard—the goods are the subject of a written authority issued by' a medical practitioner, or, if carried by the importer as a passenger on a ship or aeroplane, a medical practitioner or an overseas medical practitioner treating the importer or family. Item 1 sets no rule against injectable products as such. Regulation 2 (as amended): 'immediate family' covers spouse, de facto partner, child, parent, grandparent, grandchild or sibling, and those relatives of a spouse or de facto partner. The words 'therapeutic use', the packaging condition (c)(iii), the new (d) and the new definition of immediate family were made by the Therapeutic Goods Legislation Amendment (2026 Measures No. 1) Regulations 2026, Schedule 1 Part 1, commencing 8 September 2026 (see au-tg-amendment-2026-measures-1)."
+
+au-tg-regs-reg-7-advertising-prescribed-goods:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, regulation 7 (prescribed goods for the advertising offence and civil penalty) (Compilation No. 131, 5 October 2026)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Regulation 7 prescribes goods for ss 42DL(12) and 42DLB(9) of the Act (advertising goods not in the Register): (a) goods under a s 19 approval or authority (SAS, Authorised Prescriber), (c) goods used under the Category A exemption (reg 12A), (d) 'therapeutic goods specified in item 1 or 6 of Schedule 5' (personally imported and compounded goods), (e) goods in Schedule 5A, and '(i) therapeutic goods that are neither the subject of an exemption, approval or authority under the Act nor an exemption, approval or authority under regulations under the Act'. So advertising an unapproved peptide product to the public is an offence and a civil penalty contravention whether or not it is scheduled. The reference to item 6 (compounded medicines) was inserted, and former paragraph 7(j) repealed, by the 2026 Measures No. 1 Regulations from 8 September 2026."
+
+au-tg-regs-reg-12a-sas-category-a:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, regulation 12A (unapproved medicines in life-threatening cases: Special Access Scheme Category A) (Compilation No. 131)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Regulation 12A(1): for s 18(1) of the Act, all medicines are exempt from Part 3-2 except medicines in Schedule 9 or 10 of the Poisons Standard and nicotine pouches, subject to 12A(2): the medicine is given to a 'Category A patient' who (or whose guardian) has given informed consent, a statement in the approved form is completed by the medical practitioner, and the medicine is dispensed on the prescription of a medical practitioner 'in accordance with good medical practice'; 12A(3): the statement must be sent to the Secretary within 28 days. 12A(5): 'Category A patient means a person who is seriously ill with a condition from which death is reasonably likely to occur within a matter of months, or from which premature death is reasonably likely to occur in the absence of early treatment.'"
+
+au-tg-regs-reg-12b-authorised-prescriber:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, regulation 12B (Authorised Prescribers: prescribed class and ethics committee exceptions) (Compilation No. 131)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Regulation 12B(1): for s 19(6)(a), medical practitioners engaged in clinical practice in or outside a hospital are the prescribed class. 12B(1A): the ethics committee requirement does not apply to a practitioner outside a hospital who has shown no access to an ethics committee and has an endorsement from a relevant specialist college. 12B(1B): a table of specified medicines (active ingredient, dosage form, route and indication) that may be supplied without ethics committee approval (the 'established history of use' list). No peptide on this site is in that table (searched for each name, 24 October 2026). Regulation 12BB: the only circumstance in which a s 19(1)(a) approval or s 19(5) authority must not be given is nicotine pouches."
+
+au-tg-regs-sch-5-item-6-compounding:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, Schedule 5 items 6 and 6A (dispensed and extemporaneously compounded medicines; hospital compounding) (Compilation No. 131)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Schedule 5 item 6 exempts from the Register 'medicines that are dispensed, or extemporaneously compounded, for a particular person for therapeutic application to that person, other than the following: (a) medicines that are used for gene therapy; (b) medicines that are medicinal cannabis products; (c) medicines that contain glucagon-like peptide-1 (GLP-1) receptor agonist analogues; (d) nicotine pouches'. Item 6A: medicines compounded in a hospital by a hospital pharmacist in anticipation of need for the hospital's patients, if the hospital's drug and therapeutics committee considers it appropriate. Item 9: starting materials (ingredients for manufacture) are exempt except when prepackaged for supply for other therapeutic purposes or 'formulated as a dosage form'. Exclusion (c) was inserted by the 2024 Measures No. 2 Regulations from 1 October 2024 (au-tg-amendment-2024-measures-2-glp1); (d) from 2026."
+
+au-tg-regs-sch-8-manufacturing-exemptions:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, Schedule 8 (persons exempt from the manufacturing licence requirement in Part 3-3 of the Act) (Compilation No. 131)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Schedule 8 (regulation 18): item 1, medical practitioners, dentists and other registered health care workers, for 'the manufacture of a medicine by a medical practitioner or a dentist specifically for a patient under the medical practitioner's or dentist's care'; item 2, pharmacists, for the manufacture of goods that are not biologicals, produced in a pharmacy open to the public where the pharmacist practises (or a Friendly Society dispensary or private hospital), for supply (other than by wholesale) on or from those premises; item 3, pharmacists and others in public hospitals, for supply in hospitals in the same State or Territory."
+
+au-tg-regs-sch-5a-item-3-clinical-trials:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Regulations 1990, Schedule 5A item 3 (goods used in a clinical trial: the clinical trial notification exemption) (Compilation No. 131)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B00406/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Schedule 5A item 3 exempts, subject to conditions, 'Therapeutic goods to be used in a clinical trial solely for experimental purposes in humans' where the sponsor notifies the Secretary that it intends to sponsor a clinical trial using specified goods (the clinical trial notification route); the alternative is an approval under s 19(1)(b) of the Act. Regulations 12AB to 12AD set conditions (ICH Good Clinical Practice, an ethics-committee-approved protocol, the NHMRC National Statement)."
+
+au-tg-amendment-2024-measures-2-glp1:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Legislation Amendment (2024 Measures No. 2) Regulations 2024 (F2024L00686), Schedule 3, and its Explanatory Statement"
+  container: "Federal Register of Legislation"
+  year: 2024
+  url: https://www.legislation.gov.au/F2024L00686/asmade/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Registered 14 June 2024; Schedule 3 ('Amendments commencing 1 October 2024') replaces Schedule 5 item 6 of the TG Regulations so that the compounding exemption no longer covers 'medicines that contain glucagon-like peptide-1 (GLP-1) receptor agonist analogues'. The Explanatory Statement (read from the official HTML) says the TGA was aware of 'online weight loss clinics with integrated pharmacy services' offering compounded GLP-1 RA medicines 'on a commercial-like scale' to 'at least 20,000 patients'; that these are sterile injectable medicines with high-risk active substances; that the TGA had no oversight of imported raw ingredients and may not receive adverse event reports; and that commencement was delayed to 1 October 2024 to give patients time to discuss alternatives. Targeted consultation ran February to March 2024. UNRESOLVED: neither the instrument nor the ES names tirzepatide or retatrutide; whether 'GLP-1 receptor agonist analogues' covers dual and triple agonists is not stated."
+
+au-tg-amendment-2026-measures-1:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Therapeutic Goods Legislation Amendment (2026 Measures No. 1) Regulations 2026 (F2026L01167) and its Explanatory Statement"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026L01167/asmade/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Made 3 September 2026, registered 7 September 2026; Schedule 1 Part 1 commenced 8 September 2026. Items 8, 9 and 29 to 31 amend the personal importation exemption (Schedule 5 item 1): wider definition of immediate family, a new definition of overseas medical practitioner, 'imported for therapeutic use', a new requirement that the medicine be 'in packaging that enables the medicine to be accurately identified', and a new paragraph (d). The Explanatory Statement: previously, a passenger carrying a Schedule 4 or 8 good did not need a written authority from a medical practitioner; new (d) removes that exception, so passengers need a written authority from a medical practitioner or an overseas medical practitioner who treated them; unlabelled goods may be impossible to identify, so may contain unlawful or unsafe substances or be counterfeit; the TGA consulted health provider groups and the Australian Border Force. Items 10 and 12 amend regulation 7 'to ensure and clarify that the advertising of therapeutic goods that are compounded for individual patients and that are not included in the Register is prohibited under subsections 42DL(12) and 42DLB(9)', 'regardless of their scheduling status'."
+
+# ================================================================ Commonwealth: advertising code
+
+au-advertising-code-2021:
+  type: law
+  authors: "Commonwealth of Australia (Minister for Health)"
+  title: "Therapeutic Goods (Therapeutic Goods Advertising Code) Instrument 2021 (F2021L01661) (Compilation No. 1, 20 December 2022)"
+  container: "Federal Register of Legislation"
+  year: 2022
+  url: https://www.legislation.gov.au/F2021L01661/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Made under s 42BAA of the Act; the latest compilation on 24 October 2026 is No. 1 (20 December 2022). Section 2, objects: advertisements should promote safe and proper use, not mislead or create unrealistic expectations, support informed health care choices and not be inconsistent with public health campaigns. Section 9(1): an advertisement must not represent goods as 'safe, or without harm or side-effects', 'effective in all cases, or a guaranteed cure', or 'infallible, unfailing, magical or miraculous'. Section 24(4): no testimonial by a person engaged in the production, marketing or supply of the goods; the note says this 'includes influencers, direct sellers and other persons who have, or will receive, valuable consideration for making the testimonial'. The note to s 24(2) repeats that goods prescribed by regulation 7 and not in the Register 'must not be advertised to consumers'."
+
+# ================================================================ Commonwealth: Poisons Standard
+
+# Same id and URL as status-b.yaml and status-c.yaml; facts below read again on 24 October 2026.
+au-poisons-standard-2026-10:
+  type: law
+  authors: "Commonwealth of Australia (Department of Health, Disability and Ageing)"
+  title: "Therapeutic Goods (Poisons Standard - October 2026) Instrument 2026 (F2026L01327)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2026L01327/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Dated 28 September 2026 (made by a delegate under s 52D(2)(b) of the Act). Read again from the official HTML on 24 October 2026 (non-breaking hyphens normalised before searching). Reader's guide (not part of the instrument, s 5): the Schedules are 'recommendations to Australian States and Territories' and 'The scheduling of poisons is implemented through relevant State and Territory legislation'; Schedule 4 is 'Prescription only medicines'; inclusion in a Schedule does not 'indicate that the poison is available' or 'that it has been approved or is efficacious'. Section 7: a reference to a substance includes every salt, derivative, stereoisomer, recombinant form and any preparation containing it. Section 60(1): a Schedule 4 poison must not be supplied except by a medical practitioner, dentist or vet in lawful practice, or a pharmacist dispensing a legal prescription (or limited emergency supply). Section 64(4): a poison in the table in Appendix D clause 5 'must not be possessed by a person without authority under the law of the jurisdiction in which the possession occurs'. Appendix D clause 5 ('Poisons for which possession without authority is illegal', 'for example, possession other than in accordance with a legal prescription') lists, among others: item 3 AOD-9604 (CAS No. 221231-10-3), 5 BPC-157, 6 capromorelin, 7 CJC-1295 (CAS No. 863288-34-0), 16 follistatin, 18 growth hormone releasing hormones (GHRHs) 'including those separately specified in Schedule 4', 19 growth hormone releasing peptides (GHRPs) (same words), 20 GHRP-6, 21 growth hormone secretagogues (same words), 22 hexarelin, 23 ibutamoren, 24 insulin-like growth factors, 25 ipamorelin, 31 pralmorelin (GHRP-2), 33 SARMs, 36 somatropin, 38 TB-500, 39 thymosin beta 4. Schedule 4 entries marked # (in Appendix D): AOD-9604, BPC-157, CJC-1295, follistatin, the GHRH, GHRP and GHS group entries, GHRP-6, hexarelin, ipamorelin, pralmorelin, somatropin, TB-500, thymosin beta 4. Schedule 4 entries without #: afamelanotide, melanotan II, semaglutide, sermorelin, tirzepatide. Not named anywhere (searched 24 October 2026): bremelanotide, PT-141, retatrutide, tesamorelin, elamipretide, SS-31, thymalfasin, thymosin alpha, MOTS-c, epitalon/epithalon, Semax, Selank, KPV, GHK, nicotinamide riboside, nicotinamide mononucleotide."
+
+au-tga-poisons-standard-page:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "The Poisons Standard and scheduling of medicines and chemicals"
+  container: "tga.gov.au"
+  year: 2023
+  url: https://www.tga.gov.au/products/regulations-all-products/ingredients-and-scheduling-medicines-and-chemicals/scheduling-national-classification-system/poisons-standard-and-scheduling-medicines-and-chemicals
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 21 December 2023. 'Scheduling is a national classification system that controls how medicines and chemicals are made available'; 'The Schedules are published in the Poisons Standard and are given legal effect through state and territory legislation'; 'The Poisons Standard, or the Standard for the Uniform Scheduling of Medicines and Poisons (SUSMP), provides a uniform approach to control the availability and accessibility of substances'."
+
+# ================================================================ Commonwealth: customs and the border
+
+# Same id and URL as status-b.yaml and status-c.yaml; CORRECTION: the growth hormone entry is item 3, not item 4.
+au-customs-prohibited-imports-regs:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Customs (Prohibited Imports) Regulations 1956, regulation 5G and Schedule 7A (compilation no. 147, 13 July 2026, F2026C00751)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F1996B03651/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Compilation No. 147 (13 July 2026), read again from the official HTML on 24 October 2026. Regulation 5G(1): importing a substance in Schedule 7A is prohibited unless the importer holds a written permission from the Secretary (Department of Health) and produces it to a Collector; 5G(2): exception for a substance prescribed by a medical practitioner for a ship or aircraft passenger's own treatment, within the prescribed amount; 5G(3): that exception does not apply to athletes and their support persons (as defined in the Sport Integrity Australia Act 2020). Schedule 7A: item 1A anabolic or androgenic substances; 1 erythropoietin; 2 gonadotrophins; '3 Natural and manufactured growth hormones, including somatropin, somatrem, somatomedins and insulin-like growth factors (not insulins) and growth hormone releasing hormones (somatorelin and synthetic analogues)'; 4 darbepoetin alfa. CORRECTION to the status-b note: the growth hormone entry is item 3 (item 4 is darbepoetin alfa). No peptide on this site is named. GHRPs and growth hormone secretagogues (ipamorelin, hexarelin, GHRP-6) are not listed. Whether CJC-1295 and tesamorelin (modified GHRH fragments) are 'synthetic analogues' of somatorelin is our reading only: UNRESOLVED, no official document names them."
+
+au-customs-act-1901-s233baa:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Customs Act 1901, section 233BAA (special offence relating to tier 1 goods) (Compilation No. 194, 29 September 2026)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/C1901A00006/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Compilation No. 194 (29 September 2026), volume 3, read from the official HTML. Section 233BAA(1)-(2): the regulations may specify performance enhancing drugs, non-narcotic drugs and other goods whose importation is prohibited (absolutely or on condition) by the Customs (Prohibited Imports) Regulations as 'tier 1 goods'. 233BAA(4): offence to intentionally import goods, being reckless that they are tier 1 goods, where importation was prohibited absolutely or without an approval that had not been obtained: 'Imprisonment for 5 years or 1,000 penalty units, or both'; absolute liability applies to the prohibition element and strict liability to the absence of approval (4A)-(4B)."
+
+au-customs-regulation-2015-sch-7:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Customs Regulation 2015, section 130 and Schedule 7 Part 1 (tier 1 goods) (Compilation No. 38, 1 July 2026)"
+  container: "Federal Register of Legislation"
+  year: 2026
+  url: https://www.legislation.gov.au/F2015L00375/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Compilation No. 38 (1 July 2026), read from the official HTML. Section 130(1): Part 1 of Schedule 7 prescribes tier 1 goods for s 233BAA of the Customs Act. Schedule 7 Part 1 item 2 'Anabolic or androgenic substances', item 7 erythropoietin, item 12 gonadotrophins, and item 13 'Natural and manufactured growth hormones, including somatropin, somatrem, somatomedins and insulin-like growth factors (not insulins) and growth hormone releasing hormones (somatorelin and synthetic analogues)'. This matches the ABF and TGA charges of 'importing Tier 1 Goods (PIEDs)' in 2026 (au-tga-2026-04-vic-pied-arrests, au-abf-2026-08-pied-charges)."
+
+au-abf-2026-08-pied-charges:
+  type: regulator
+  authors: "Australian Border Force and Therapeutic Goods Administration"
+  title: "Two Victorians charged with further offences related to alleged importation of illicit performance and image enhancing drugs (joint media release)"
+  container: "abf.gov.au"
+  year: 2026
+  url: https://www.abf.gov.au/newsroom-subsite/Pages/Two-Victorians-charged-with-further-offences-related-to-alleged-importation-of-illicit-performance-and-image-enhancing-drug.aspx
+  accessed: 2026-10-24
+  verified: url
+  note: "Dated 12 August 2026, joint ABF and TGA release. Interception of 400 vials of suspected PIEDs in six consignments (May to June 2026); Customs Act search warrants executed on 6 August 2026 at a Melbourne address (44 more vials); a man and a woman 'each subsequently charged with six counts of importing Tier 1 Goods (PIEDs)' plus offences while on bail; part of an ABF-led investigation with the TGA and Victoria Police since August 2025, which has seized PIEDs, steroids 'and peptide products with an estimated street value in excess of $2 million'. The TGA head is quoted on the risks of PIEDs 'including illicit steroids and peptide products' made overseas and supplied outside the regulated framework. Persons are not named."
+
+au-tga-2026-04-vic-pied-arrests:
+  type: regulator
+  authors: "Therapeutic Goods Administration and Australian Border Force"
+  title: "Three Victorians arrested following seizure of over $2 million worth of steroids and peptides by the ABF and TGA (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/three-victorians-arrested-following-seizure-over-2-million-worth-steroids-and-peptides-abf-and-tga
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 17 April 2026. ABF investigation began in August 2025 after interception of 640 vials of PIEDs in air cargo; the TGA investigated 'the suspected unlawful supply, manufacture and advertising of unregistered therapeutic goods and prescription only medicines, including injectable peptide products'; on 26 March 2026 ABF and TGA officers executed Commonwealth warrants in Melbourne's west and seized over 10,000 vials and 600 tablets; three people charged with importing 'Tier 1 Goods (PIEDs)'. 'Peptide products are regulated as therapeutic goods in Australia.' Persons are not named."
+
+# ================================================================ Commonwealth: sport
+
+au-sia-act-2020:
+  type: law
+  authors: "Commonwealth of Australia"
+  title: "Sport Integrity Australia Act 2020 (formerly the Australian Sports Anti-Doping Authority Act 2006) (Compilation No. 18, 4 November 2021)"
+  container: "Federal Register of Legislation"
+  year: 2021
+  url: https://www.legislation.gov.au/C2006A00006/latest/text
+  accessed: 2026-10-24
+  verified: url
+  note: "Latest compilation on 24 October 2026 (No. 18, 4 November 2021). Section 20A: 'Sport Integrity Australia is established by this section.' Part 2 (s 9 onward): the National Anti-Doping (NAD) scheme. Section 4 defines 'athlete' and 'support person' (used by Customs (Prohibited Imports) Regulations reg 5G(3))."
+
+au-sia-peptides:
+  type: regulator
+  authors: "Sport Integrity Australia"
+  title: "Peptides (substance education)"
+  container: "sportintegrity.gov.au"
+  year: 2026
+  url: https://www.sportintegrity.gov.au/what-we-do/anti-doping/substance-education/peptides
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026 (the page cites TGA pages of 23 September 2026). 'Many unapproved peptides are prohibited in sport'; examples given: BPC-157, CJC-1295, ibutamoren (MK-677), ipamorelin, MOTS-c and thymosin beta-4 (TB-500). 'The possession and/or use of prohibited peptide products by athletes can result in an Anti-Doping Rule Violations (ADRV)'. A medicine made by a compounding pharmacy 'may not be approved by the TGA and would be considered an unregistered medicine'; 'A TUE is unlikely to be granted for an unregistered medicine'. Status on the WADA list can be checked on Global DRO (globaldro.com/AU); a prescribed approved peptide on the list (such as insulin) may get a Therapeutic Use Exemption."
+
+au-sia-2026-05-peptides-statement:
+  type: regulator
+  authors: "Sport Integrity Australia"
+  title: "Sport Integrity Australia warns athletes peptides pose serious anti-doping and health risks (media statement)"
+  container: "sportintegrity.gov.au"
+  year: 2026
+  url: https://www.sportintegrity.gov.au/news/media-statements/2026-05/sport-integrity-australia-warns-athletes-peptides-pose-serious-anti-doping-and-health-risks
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 13 May 2026. Many peptides are prohibited under the World Anti-Doping Code and use without a valid Therapeutic Use Exemption can lead to lengthy bans; 'Under Australia's strict-liability anti-doping rules, athletes are accountable for any prohibited substance in their system, no matter the source' (CEO Dr Sarah Benson PSM); risks of contamination and mislabelling (unintentional doping); SIA urges athletes to check substances with the Sport Integrity App, avoid products promoted as peptides or research chemicals, and check TUE eligibility; confidential reporting is available."
+
+# ================================================================ State and territory law
+
+au-nsw-ptg-act-1966:
+  type: law
+  authors: "New South Wales Government"
+  title: "Poisons and Therapeutic Goods Act 1966 (NSW), sections 4, 8, 10 and 16"
+  container: "NSW Legislation"
+  year: 2025
+  url: https://legislation.nsw.gov.au/view/html/inforce/current/act-1966-031
+  accessed: 2026-10-24
+  verified: url
+  note: "The official site answered with a bot challenge on 24 October 2026; read from the Internet Archive snapshot of the official whole-Act page dated 21 December 2025 (http://web.archive.org/web/20251221020629/https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-1966-031). Section 4: 'Restricted substance means any substance specified in Schedule Four of the Poisons List'; s 8: the Poisons List has nine Schedules and Schedule Four is 'Substances which in the public interest should be supplied only upon the written prescription of' a medical practitioner or other listed prescriber; amendments may adopt the current Poisons Standard. Section 10(3): 'A person who supplies a restricted substance otherwise than by wholesale is guilty of an offence' (15 penalty units or 6 months, or 20 penalty units or 2 years for prescribed kinds), with exceptions for practitioners and pharmacists (10(4)). Section 16(1): a person must not possess, or attempt to obtain, a 'prescribed restricted substance' (a restricted substance prescribed by the regulations, i.e. Appendix D of the NSW Regulation) unless an exception applies, including (b) possession 'on and in accordance with the prescription' of a medical practitioner or other prescriber, and (d1) carers; maximum penalty 20 penalty units or 2 years (anabolic or androgenic steroidal agents) or 20 penalty units or 6 months (other substances). The Act is replaced on 5 November 2026 (au-nsw-mptg-act-2022). A legal reviewer must check the live text."
+
+au-nsw-mptg-act-2022:
+  type: law
+  authors: "New South Wales Government"
+  title: "Medicines, Poisons and Therapeutic Goods Act 2022 (NSW), including Schedule amendments to the Drug Misuse and Trafficking Act 1985, sections 18B and 18C (commencing 5 November 2026)"
+  container: "NSW Legislation"
+  year: 2022
+  url: https://legislation.nsw.gov.au/view/html/inforce/current/act-2022-073
+  accessed: 2026-10-24
+  verified: url
+  note: "The official site answered with a bot challenge on 24 October 2026; read from the Internet Archive snapshot of the official whole-Act page dated 19 July 2025 (http://web.archive.org/web/20250719000208/https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2022-073), before commencement, so later amendments are not shown. NSW Health says the Act and the Medicines, Poisons and Therapeutic Goods Regulation 2026 replace the 1966 Act and its Regulation from 5 November 2026 (au-nsw-health-s4d-2026). As read: a 'Schedule 4D substance' is 'a prescribed substance that is in Schedule 4 of the NSW Poisons Schedules'. The Act inserts into the Drug Misuse and Trafficking Act 1985 a new s 18B: '(2) A person must not possess a prohibited scheduled substance. Maximum penalty—20 penalty units or imprisonment for 12 months, or both', with exceptions including '(g) a person to possess a prohibited scheduled substance that has been lawfully prescribed for, or supplied to, the person'; 'prohibited scheduled substance means a Schedule 4D, 8 or 9 substance'; s 18C deems possession above a prescribed quantity of a Schedule 4D substance to be for supply. The Note says NSW Schedule 4D substances 'may differ from' the national Appendix D. Part 2.7 offences include s 28 (unauthorised non-wholesale supply) and s 44 (administration or non-wholesale supply of unregistered or unlisted therapeutic goods). UNRESOLVED: text as in force on 5 November 2026 not confirmed (official site blocked)."
+
+au-nsw-health-s4d:
+  type: regulator
+  authors: "NSW Health (Pharmaceutical Services)"
+  title: "Schedule 4 Appendix D drugs - prescribed restricted substances"
+  container: "health.nsw.gov.au"
+  year: 2026
+  url: https://www.health.nsw.gov.au/pharmaceutical/Pages/sch4d.aspx
+  accessed: 2026-10-24
+  verified: url
+  note: "Current as at 9 July 2026. Appendix D of the Poisons and Therapeutic Goods Regulation 2008 lists Schedule 4 substances 'liable to abuse, misuse and diversion, warranting more stringent controls on possession and supply' (S4D). 'Possession of a S4D medicine is prohibited unless authorised'; 'A person for whom the S4D medicine has been lawfully prescribed or supplied, or their carer, may also be in possession'. NSW Appendix D 'is not the same as' the national Appendix D: 'NSW does not automatically adopt the National Appendix D'; 'To date, NSW has included all entries in section 5 of the National Appendix D'; 'NSW adopts the Schedules of the National Poisons Standard'. The list on this page includes AOD-9604, CJC-1295, follistatin, the GHRH, GHRP and GHS group entries, GHRP-6, hexarelin, ibutamoren, insulin-like growth factors, ipamorelin, pralmorelin, somatropin, TB-500 and thymosin beta 4. It does NOT include BPC-157 (searched for 'BPC'), melanotan II, capromorelin, lonapegsomatropin, somapacitan or somatrogon, although BPC-157 has been in national Appendix D clause 5 since 1 June 2024. UNRESOLVED: whether the NSW Regulation's Appendix D itself names BPC-157 (official legislation site blocked); the page's statement that NSW includes all national clause 5 entries conflicts with its own list."
+
+au-nsw-health-s4d-2026:
+  type: regulator
+  authors: "NSW Health (Pharmaceutical Services)"
+  title: "Schedule 4D medicines (requirements from 5 November 2026)"
+  container: "health.nsw.gov.au"
+  year: 2026
+  url: https://www.health.nsw.gov.au/pharmaceutical/Pages/medicine-laws-schedule-4d.aspx
+  accessed: 2026-10-24
+  verified: url
+  note: "Read 24 October 2026. 'From 5 November 2026, the Poisons and Therapeutic Goods Act and Regulation will be replaced by the' Medicines, Poisons and Therapeutic Goods Act 2022 and the Medicines, Poisons and Therapeutic Goods Regulation 2026. S4D medicines are 'Schedule 4 (prescription only) medicines with a potential for risk of abuse, misuse or diversion' that 'require stricter controls on possession and supply'; who may possess them: a person with a DMT authority, and 'A person to whom the medicine has been lawfully prescribed or supplied, or their carer'; an S4D prescription will be valid for 12 months (previously 6). The list of S4D substances under the 2026 Regulation includes AOD-9604, CJC-1295, follistatin, GHRH, GHRP, GHRP-6, GHS, hexarelin, ibutamoren, insulin-like growth factors, ipamorelin, pralmorelin, somatropin, TB-500 and thymosin beta 4; it does not include BPC-157 or melanotan II (searched). UNRESOLVED as for au-nsw-health-s4d."
+
+au-vic-dpcs-act-1981:
+  type: law
+  authors: "Victorian Government"
+  title: "Drugs, Poisons and Controlled Substances Act 1981 (Vic), sections 4(1) and 36B (Authorised Version No. 146, 30 September 2026)"
+  container: "Victorian Legislation"
+  year: 2026
+  url: https://www.legislation.vic.gov.au/in-force/acts/drugs-poisons-and-controlled-substances-act-1981/146
+  accessed: 2026-10-24
+  verified: url
+  note: "Authorised Version No. 146 incorporating amendments as at 30 September 2026, read from the authorised PDF (content.legislation.vic.gov.au/sites/default/files/2026-10/81-9719aa146-authorised.pdf). Section 4(1): 'Schedule 4 Poison means a substance in Schedule 4 of the Poisons Standard'; 'Poisons Standard means the current Poisons Standard within the meaning of the Therapeutic Goods Act 1989 of the Commonwealth'. Section 36B(2): 'A person shall not have in his possession a Schedule 8 poison, Schedule 9 poison or Schedule 4 poison unless he is authorized by or licensed under this Act or the regulations to do so. Penalty: 10 penalty units.' 36B(1): obtaining an S4 poison or a prescription by false representation is also an offence (10 penalty units). So in Victoria possession of any Schedule 4 substance without authority is an offence, whether or not it is in Appendix D. The patient's authority is in the Regulations (au-vic-dpcs-regs-2017)."
+
+au-vic-dpcs-regs-2017:
+  type: law
+  authors: "Victorian Government"
+  title: "Drugs, Poisons and Controlled Substances Regulations 2017 (Vic), regulation 7 (persons authorised to possess Schedule 4, 8 and 9 poisons) (Authorised Version No. 024, 14 October 2026)"
+  container: "Victorian Legislation"
+  year: 2026
+  url: https://www.legislation.vic.gov.au/in-force/statutory-rules/drugs-poisons-and-controlled-substances-regulations-2017/024
+  accessed: 2026-10-24
+  verified: url
+  note: "Authorised Version No. 024 incorporating amendments as at 14 October 2026, read from the authorised PDF. Regulation 7, table item 5: 'A person for whom a Schedule 4 poison is supplied ... by a registered medical practitioner, dentist, nurse practitioner, paramedic practitioner, authorised registered nurse, ... pharmacist or registered Aboriginal and Torres Strait Islander health practitioner in accordance with the Act and these Regulations' is authorised to possess 'That Schedule 4 poison to the extent and for the purpose for which it is supplied'."
+
+au-qld-medicines-poisons-act-2019:
+  type: law
+  authors: "Queensland Government"
+  title: "Medicines and Poisons Act 2019 (Qld), section 34 (offence to buy or possess S4 or S8 medicines) (reprint current from 23 September 2025)"
+  container: "Queensland Legislation"
+  year: 2025
+  url: https://www.legislation.qld.gov.au/view/html/inforce/current/act-2019-026
+  accessed: 2026-10-24
+  verified: url
+  note: "Current reprint (version from 23 September 2025), read from the official HTML on 24 October 2026. Section 34(1): 'A person must not buy or possess an S4 or S8 medicine or hazardous poison unless the person— (a) buys or possesses the medicine or poison in the authorised way; or (b) has a reasonable excuse. Maximum penalty—200 penalty units.' 34(2): this does not apply to a person to whom an S4 or S8 medicine is lawfully supplied for the person's own therapeutic treatment (or as agent for someone else, or for an animal). Section 35: offence to supply medicines unless authorised."
+
+# ================================================================ TGA: what the regulator says about peptides
+
+au-tga-how-we-regulate-peptides:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "How we regulate therapeutic peptide products"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/products/medicines/monitoring-and-compliance/how-we-regulate-therapeutic-peptide-products
+  accessed: 2026-10-24
+  verified: url
+  note: "Page modified 23 September 2026 (page metadata). Peptide products regulated as therapeutic goods 'must be included in the Australian Register of Therapeutic Goods (ARTG) before they can be imported, manufactured, supplied, exported or advertised', with limited exceptions; products not in the ARTG are 'unapproved'; 'research use only' or 'not for human use' disclaimers 'do not change whether a product is regulated as a therapeutic good'. Approved peptide-based medicines include insulin, GLP-1 receptor agonists such as semaglutide, oxytocin, desmopressin and octreotide; many are prescription-only and 'cannot generally be advertised to the public'. Unapproved products are sold as injectables, powders for injection, capsules, nasal sprays, creams and more. Individuals may import under the Personal Importation Scheme 'only if all conditions of the scheme are met'; 'We work with the Australian Border Force (ABF) to identify and stop unlawful imports'; goods 'may be seized and destroyed. You may lose the products and the money you paid.' Manufacturers need a licence. It is generally unlawful to advertise unapproved goods, and prescription-only medicines, to the public; influencers, affiliates and others 'may be held accountable'. Actions may include import interventions, seizures, infringement notices, civil and criminal penalties."
+
+au-tga-peptides-health-practitioners:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Peptide product information for health practitioners"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/explore-topic/peptide-products/peptide-product-information-health-practitioners
+  accessed: 2026-10-24
+  verified: url
+  note: "Page modified 23 September 2026. There are access pathways for prescribers to lawfully access unapproved goods, 'including some peptide products', where clinically appropriate; 'the responsibility for determining the quality and safety of the product rests with the practitioner'. Before applying, consider approved products, risks and benefits, obtain informed consent, comply with state, territory and Commonwealth laws. 'Applications should be supported by human studies that are relevant to the specific peptide, dosage form, route of administration and indication.' Compounded peptide products may be therapeutic goods subject to manufacturing, supply, prescribing and advertising controls."
+
+au-tga-2026-07-peptide-promoters-notice:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Unapproved peptide product promoters and suppliers are put on notice (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/unapproved-peptide-product-promoters-and-suppliers-are-put-notice
+  accessed: 2026-10-24
+  verified: url
+  note: "DO NOT LINK: the URL contains the commerce token 'suppliers' (config/commerce-tokens.json); cite by <Cite> only if the editor confirms the sources page does not render it as a link, otherwise use au-tga-how-we-regulate-peptides, which repeats the main points. Published 20 July 2026. Those doing the wrong thing 'may face warning letters, infringement notices, product seizures and forfeiture, civil penalties and, in serious cases, criminal prosecution'; the TGA head has written to social media and e-commerce platforms; 'The TGA is increasingly intercepting unlabelled vials at the border'; 'Manufacture includes any step in the manufacturing process, including applying a label to a blank vial, packaging for distribution, and storage'; product intercepted at the border and destroyed means financial loss."
+
+au-tga-2026-09-retatrutide-counterfeit:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "TGA tests counterfeit retatrutide product following serious adverse event report (safety alert)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/tga-tests-counterfeit-retatrutide-product-following-serious-adverse-event-report
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 14 September 2026. After a report of uncontrollable vomiting with a torn oesophagus needing hospital treatment, TGA testing of the product in its unmarked vial found 'undeclared semaglutide and no retatrutide', at about 8 times the level in semaglutide products in the ARTG. 'Retatrutide is currently undergoing clinical trials in humans and has not been approved by the TGA or any comparable international regulator. Any retatrutide product accessed outside of clinical trials could be a counterfeit product.' Penalties under the Act include civil penalties 'of up to $1.82 million per breach for individuals or $18.2 million per breach for corporations, and criminal penalties of up to 7 years imprisonment'. (Phone number on page not recorded.)"
+
+au-tga-2026-10-prescription-import-infringements:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "More than $126k in infringement notices for unlawful importation and advertising of prescription-only medicines (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/more-126k-infringement-notices-unlawful-importation-and-advertising-prescription-only-medicines
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 6 October 2026. 12 infringement notices totalling $126,720 to 2 companies and 5 individuals, paid July to September 2026. Relevant to personal importers: two Victorian individuals received 2 notices ($7,920) and 1 notice ($3,960) for 'Importation of Mounjaro pens', a NSW individual 1 notice ($3,960) for prescription-only erectile dysfunction medicines, a Victorian individual 1 notice for hyaluronic acid syringes; 'The products were not entered in the ARTG and did not have the required approval, authority or exemption to permit their advertising or importation.' The body of the release names two companies; cite only for the individual-importer facts and do not name them."
+
+au-tga-2026-09-personal-import-packaging:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "New packaging rules for personal imports (media release)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases/new-packaging-rules-personal-imports
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 8 September 2026. The Government changed the Personal Importation Scheme 'to help authorities identify imported therapeutic goods and reduce the risk of unidentified, mislabelled or counterfeit products entering Australia'; medicines 'should remain in their original packaging where possible, including any dispensing labels or product information'; the changes also clarify the types of goods covered, who counts as immediate family, and 'evidence requirements for people travelling to Australia with prescription-only medicines'. If an import does not meet the conditions 'the goods may be seized and individuals may lose both the goods and the money they paid'."
+
+au-tga-personal-importation-scheme:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Personal Importation Scheme"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/products/unapproved-therapeutic-goods/access-pathways/personal-importation-scheme
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 8 September 2026. Conditions: personal or immediate-family use only, 'they cannot be sold, supplied or given away to others'; 'If the medicine is prescription-only in Australia, you must hold a valid Australian prescription or written authority at the time of importation'; no more than 3 months' supply per import and 15 months in 12 months; original packaging or packaging that allows accurate identification ('if the labels are not intact, you will not receive the products'); the import must not include vaping products, 'contain a controlled substance' (link to the ODC list) or be prohibited under Customs or quarantine rules. A written authority must be from an Australian registered medical practitioner and contain listed details; eScripts are not accepted; a written authority obtained after the goods are held does not comply; counterfeit goods are prohibited in all cases. 'You may also face significant fines, or civil or criminal proceedings.' Worked example: a prescription-only medicine bought overseas without an Australian prescription is seized, 'No compensation is provided'."
+
+au-tga-sas-individual-patients:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Access to unapproved therapeutic goods for individual patients (Special Access Scheme)"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/business-services/special-access-scheme-and-authorised-prescriber-online-system/access-unapproved-therapeutic-goods-individual-patients-special-access-scheme
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 3 December 2025. Category A: seriously ill patients (medical practitioners only), access immediately, notify within 28 days. Category C: goods on the 'established history of use' list, for listed practitioner types, notify within 28 days. Category B: apply and wait for approval; give a brief clinical justification, including why goods in the ARTG may not be appropriate and the expected benefits versus risks; usually processed in 2 to 5 days by a TGA officer who is a medical practitioner or pharmacist. 'As the prescriber, it is your responsibility to source the unapproved therapeutic good'; 'TGA approval does not override any State or Territory requirements'; 'Sponsors are under no obligation to supply'; the prescriber must report adverse events or defects within 15 days. Category A cannot be used for Schedule 9 drugs of abuse where state law prohibits them."
+
+au-tga-authorised-prescriber:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Access to unapproved therapeutic goods for multiple patients (Authorised Prescriber)"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/business-services/special-access-scheme-and-authorised-prescriber-online-system/access-unapproved-therapeutic-goods-multiple-patients-authorised-prescriber
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 23 December 2025. A medical practitioner (general, specialist or limited registration) can become an Authorised Prescriber for a class of patients with the same condition; for goods not on the established history of use list, the 'standard pathway' needs approval from a human research ethics committee (HREC) or endorsement by a specialist college; the prescriber must report suspected adverse events and defects, and the number of patients treated every 6 months."
+
+au-tga-access-unapproved-goods-practitioners:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Access an unapproved therapeutic good (health practitioners)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/health-professional-information-and-resources/access-unapproved-therapeutic-good-health-practitioners
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 7 October 2026. Individual patients: Special Access Scheme; multiple patients: Authorised Prescriber. Only AHPRA-registered practitioners can apply; patients, sponsors and non-practitioners cannot. Before applying, consider ARTG-included treatments, the risks (unapproved goods have not been evaluated for quality, safety, efficacy), obtain informed consent, follow good medical practice and check state and territory requirements. 'You can refuse to prescribe if you believe there is insufficient clinical justification or evidence'; 'You are responsible for the use of an unapproved therapeutic good and all outcomes'. Goods with Schedule 9 or 10 substances, and nicotine pouches, cannot be accessed through these pathways."
+
+au-tga-compounded-medicines-guidance:
+  type: guideline
+  authors: "Therapeutic Goods Administration"
+  title: "Manufacturing, supplying and advertising compounded medicines lawfully (guidance)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/guidance/manufacturing-supplying-and-advertising-compounded-medicines-lawfully
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 14 May 2026, last updated 8 September 2026 ('Updated to clarify that compounded medicines cannot be advertised to the public'). 'We do not evaluate the safety, quality or efficacy of compounded medicines before they are supplied'. Under the Act 'manufacture' includes compounding; licence exemptions are in Schedule 8 of the Regulations (pharmacists in a pharmacy open to the public, supplying from those premises; doctors for their own patients). The extemporaneous compounding exemption (Schedule 5 item 6) means that for a prescription-only medicine 'the pharmacist has a prescription or order, and the patient has requested supply ... before the pharmacist ... compounds the medicine'; it does not apply to gene therapy, medicinal cannabis or GLP-1 receptor agonist analogues. 'In all other circumstances, compounding in anticipation of demand is prohibited' (only hospital pharmacists may compound in anticipation, under item 6A); batch preparation only after prescriptions for the whole batch. 'From 1 October 2024, pharmacists must not compound medicines containing GLP-1 receptor agonist analogues.' 'Advertising unapproved therapeutic goods to the public, including compounded medicines, is prohibited under subsections 42DL(12) and 42DLB(9)'; a compounding service may be advertised if no specific product is referred to. Compounded prescription medicines carry the same prescribing, dispensing and supply restrictions as other prescription medicines."
+
+au-tga-2024-03-south-yarra-pharmacy-warrant:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Search warrant executed on South Yarra pharmacy (media release)"
+  container: "tga.gov.au"
+  year: 2024
+  url: https://www.tga.gov.au/news/media-releases/search-warrant-executed-south-yarra-pharmacy
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 1 March 2024. TGA officers, with the Victorian Department of Health and the Victorian Pharmacy Authority, executed a search warrant on a Melbourne pharmacy (not named) as part of an investigation into 'the alleged unlawful manufacture, supply and export of therapeutic goods including prescription only medication'; seized items included 'semaglutide, peptides, and human growth hormones, which the TGA will allege have been unlawfully manufactured'. The TGA head: pharmacists 'are most likely breaking the law if they are manufacturing or supplying medicines prior to receiving a prescription, except in very limited circumstances'; 'the safety of compounded medicines are not assessed by the TGA'."
+
+au-tga-media-releases-peptide-log-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "TGA media releases on peptide advertising cases that name a company (log, read 24 October 2026)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/news/media-releases
+  accessed: 2026-10-24
+  verified: url
+  note: "Log of TGA releases read on 24 October 2026 whose title or URL names a company (seller rule: not registered one by one; persons not named here). (1) Release of 28 September 2026 (linked from the TGA peptide products hub, 'Latest articles'): the TGA has commenced Federal Court proceedings against a former company (now in liquidation; leave of the Court needed) and its two former directors, alleging it 'unlawfully advertised peptides, such as BPC-157, CJC-1295 and GHRP-6, on its website and social media pages' between 6 June 2024 and 14 July 2025, including for cancer, HIV/AIDS and mental illness, described as restricted or prohibited representations; the directors allegedly aided, abetted, counselled or procured it; the TGA seeks declarations and pecuniary penalties. The TGA head: the TGA 'will take legal action against all entities unlawfully operating in the peptide industry. This includes health practitioners, compounding pharmacies, social media influencers and telehealth clinics'. (2) Release of 23 July 2019: the Federal Court ordered a peptide clinic company to pay $10 million for advertising breaches, including 'advertising Schedule 4 substances on the website and on social media channels, advertisements using the word \"peptides\"', and restricted and prohibited representations (uses listed included anti-ageing, body building, tanning and weight loss). The originating application and concise statement for (1) are linked from the release and were not opened."
+
+au-tga-pieds-article:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Performance and image enhancing drugs (news article)"
+  container: "tga.gov.au"
+  year: 2019
+  url: https://www.tga.gov.au/news/news-articles/performance-and-image-enhancing-drugs
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 31 July 2019 (page modified 12 August 2026; it notes ASADA became Sport Integrity Australia on 1 July 2020). PIEDs include 'peptide hormones, growth factors, and related peptide drugs' and tanning agents 'such as melanotan-I and melanotan-II'. 'Most performance and image enhancing drugs are illegal to supply to Australian consumers who do not have a prescription'; 'for research purposes only' labels do not change that. 'Depending on the drug and the state in which you live, possession of a performance and image enhancing drug without a prescription may also be illegal. You could face a fine or prison sentence for possession.' Needle and syringe programs provide sterile injecting equipment; the page links each state's program (NSW, Vic, Qld, WA, SA, Tas, NT health department pages); PIEDs can be disposed of at a pharmacy."
+
+au-tga-advertising-determining-content:
+  type: guideline
+  authors: "Therapeutic Goods Administration"
+  title: "Determining if your content is advertising (guidance)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/guidance/determining-if-your-content-advertising
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 21 June 2022, last updated 7 April 2026. Whether content is advertising is assessed case by case and 'is determined not by the actual intentions of the person', but by whether the content 'on its face appears to be designed or calculated to promote the supply or use'; 'content that describes the features or benefits of a therapeutic good is not necessarily advertising if it is clear on its face that it was not designed or calculated to promote'. Example of non-promotional material: a peer-reviewed article presenting positive and negative findings and limitations, avoiding persuasive language, with no references to commercial availability. Promotional indicators include calls to action, favourable impressions of specific goods, superlatives, emphasising benefits while downplaying risks, price and point-of-sale information, and dissemination by a party with a financial interest. (For the editor: it explains why this site must stay non-promotional for Australian readers.)"
+
+# ================================================================ TGA: the ARTG
+
+au-tga-about-artg:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "About the Australian Register of Therapeutic Goods (ARTG)"
+  container: "tga.gov.au"
+  year: 2024
+  url: https://www.tga.gov.au/products/regulations-all-products/about-australian-register-therapeutic-goods-artg
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 28 November 2024. 'The ARTG is the public database of therapeutic goods that can be legally supplied in Australia.' It holds product name, formulation, sponsor and manufacturer details, and links Consumer Medicine Information and Product Information; access schemes for goods not in the ARTG (SAS, Authorised Prescriber, Personal Importation Scheme, clinical trials) 'cannot be used to facilitate the commercial supply of therapeutic goods'."
+
+au-tga-listed-medicines:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Listed medicines"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/products/medicines/listed-medicines
+  accessed: 2026-10-24
+  verified: url
+  note: "Read 24 October 2026. 'Listed medicines are low-risk, non-prescription products' such as vitamins, minerals, herbal substances and fish oil; they must be in the ARTG before supply; 'Listed medicines are not individually assessed by us before supply. They can only contain low-risk ingredients and only make low-level health claims'; the sponsor must 'self-certify' compliance."
+
+au-tga-prescription-medicines-overview:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Prescription medicines overview"
+  container: "tga.gov.au"
+  year: 2019
+  url: https://www.tga.gov.au/products/medicines/prescription-medicines/overview/prescription-medicines-overview
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 18 November 2019. A prescription medicine 'can only be made available to a patient on the written instruction of an authorised health professional'; 'All prescription medicines are registered medicines and can be identified by an AUST-R number on the label'; a company must provide 'comprehensive evidence of the medicine's quality, safety and efficacy', including clinical trials; standard evaluation can take up to 11 months; reasons a medicine is prescription-only include risk, route (for example if it is injected) and potential for misuse."
+
+au-artg-search-australia-legal-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG) searches, 24 October 2026: compounds not covered by status batches b and c, with controls"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=retatrutide
+  accessed: 2026-10-24
+  verified: url
+  note: "Searched on 24 October 2026 (ARTG search by keyword; results show current entries; the engine splits and fuzzy-matches terms, so the first page of every split result was checked). 'There were no matching results' for: retatrutide, elamipretide, forzinity, thymalfasin, zadaxin, 'thymosin alpha', epitalon, epithalon, sermorelin, tesamorelin, bremelanotide, melanotan. Split or fuzzy results with no peptide on the first page: LY3437943 (146, dental implants), MTP-131 (2, technetium medronate kits), AOD9604 and \"AOD-9604\" (1,180, unrelated supplements and devices), \"MOTS-c\" (14, wrist implants and wheelchairs), \"semax\" (33, bone cement), \"selank\" (49, sealing devices). Controls: semaglutide 35 results (Ozempic, Wegovy and Wegovy FlexTouch, and another semaglutide brand), tirzepatide 18 (Mounjaro vials and KwikPens), somatropin 30, afamelanotide 1 (SCENESSE implant, ARTG 327947). Nicotinamide riboside returned 82 and nicotinamide mononucleotide 135 results, including listed products containing those ingredients. Entry pages show a 'Licence category': a nicotinamide riboside product (ARTG 450569) shows 'LI' (listed) and a Mounjaro KwikPen (ARTG 439430) shows 'RE' (registered). Products and sponsors of listed supplements are not named on the site."
+
+# ================================================================ TGA: reporting
+
+au-tga-report-adverse-event:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Report an adverse event or safety problem"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 2 September 2026. Separate reporting routes for consumers, health professionals and industry; reports can be searched in the Database of Adverse Event Notifications (DAEN). The consumer page is registered as au-tga-report-adverse-events-consumers (extras.yaml; re-read 24 October 2026): report a medicine adverse event online through the Adverse Event Management System (https://aems.tga.gov.au/), or ask a doctor, nurse practitioner, midwife or pharmacist to help; 'If you're not sure which applies to you, choose the best option and we will check the report'."
+
+au-tga-report-breach:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Report a breach"
+  container: "tga.gov.au"
+  year: 2024
+  url: https://www.tga.gov.au/safety/report-problem/report-breach
+  accessed: 2026-10-24
+  verified: url
+  note: "Last updated 12 July 2024. For reporting counterfeit medicines and devices, suspicious or illegal activity and non-compliant advertising (not side effects); links the form 'Report a perceived breach or questionable practices' and the online portal 'Report non-compliant advertising' (updated 3 August 2026). The TGA peptide hub says useful reports include product names, ingredients, how the product was obtained, website or social media links and packaging images (au-tga-peptide-products-hub)."
+
+# ================================================================ Help services (names and URLs only; no numbers recorded)
+
+au-nsw-poisons-information-centre:
+  type: web
+  authors: "NSW Poisons Information Centre (Sydney Children's Hospitals Network, NSW Government)"
+  title: "NSW Poisons Information Centre"
+  container: "poisonsinfo.nsw.gov.au"
+  year: 2026
+  url: https://www.poisonsinfo.nsw.gov.au/
+  accessed: 2026-10-24
+  verified: url
+  note: "Home page read 24 October 2026: 'A NSW Government website'; 'Providing the latest poisons information to the public and professionals', available 24/7; advises calling for advice without waiting for symptoms if poisoning is suspected, and calling the emergency number for someone unconscious or not breathing. (Numbers not recorded; the English site says 'call your local emergency number'.)"

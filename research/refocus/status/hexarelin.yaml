@@ -1,0 +1,77 @@
+slug: hexarelin
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-recalls-database] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-b-2026-10-23, au-poisons-standard-2026-10] }
+  # The data file has no UK row today, so one is proposed.
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-hexarelin, uk-hmr-2012-reg-46] }
+schedule:
+  AU: { code: "S4", note: "'# HEXARELIN.' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), since 1 June 2015.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02] }
+products: []
+notes: |
+  Names searched (from the data file): hexarelin, examorelin (INN), EP-23905, MF-6003; no brand.
+
+  CANADA, searched 23 October 2026.
+  - DPD API by active ingredient 'hexarelin' and 'examorelin': no product of any status (controls worked). NOC
+    medicinal-ingredient table, substrings 'HEXAREL' and 'EXAMOR': no NOC ever. Submissions under review: none.
+    Brand-name searches through the API could not be finished (HTTP 503 later that evening), so the brand-name and
+    ingredient tables of Health Canada's DPD data extract (all approved, marketed, cancelled and dormant products,
+    files dated 5 October 2026) were searched instead for HEXAREL, EXAMOR, EP-23905, EP23905, MF-6003, MF6003, GHRP
+    and SECRETAGOG: no match. [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23,
+    ca-noc-search-status-b-2026-10-23, ca-hc-sur-search-2026-10-23]
+  - Trials: Health Canada Clinical Trials Database (since April 2013): no protocol with hexarelin, examorelin,
+    EP-23905 or MF-6003. ClinicalTrials.gov: no record under any of the four names. The 1990s-2000s human studies
+    (Turin, Milan, Montreal groups) predate both registries. Not 'investigational'.
+    [ca-hc-ctdb-search-status-b-2026-10-23, ctgov-search-status-b-2026-10-23]
+  - Prescription Drug List: hexarelin/examorelin NOT listed, no group entry for secretagogues. Health Canada says
+    injectable peptides 'are regulated as prescription drugs in Canada'. Sale is illegal without a DIN/NOC (Food and
+    Drug Regulations C.01.014, C.08.002). Not in the CDSA. UNRESOLVED as for ipamorelin; no CA schedule proposed.
+    [ca-pdl-human, ca-food-and-drug-regulations, ca-cdsa, ca-hc-recalls-database]
+  - Enforcement: hexarelin is listed in Health Canada advisory RA-77807 (1 August 2025) of injectable peptides seized
+    from and sold by an online seller (the advisory names the seller, so the index is cited). The general advisory
+    RA-81874 (9 April 2026) does not name hexarelin among its examples. [ca-hc-recalls-database,
+    ca-hc-2026-04-think-twice-peptides]
+
+  AUSTRALIA, searched 23 October 2026.
+  - ARTG: 'hexarelin' and 'examorelin': no matching results; '"EP-23905"' and '"MF-6003"' gave only unrelated
+    fragment matches (hip prostheses, bone cement), first pages checked. Control somatropin 30.
+    [au-artg-search-status-b-2026-10-23]
+  - ANZCTR: 0 records for hexarelin and examorelin. [au-anzctr-search-status-b-2026-10-23]
+  - Poisons Standard (October 2026): '# HEXARELIN.' in Schedule 4; Appendix D clause 5 item 22 (possession without
+    authority illegal). Listed under the name hexarelin, not the INN examorelin. First in the June 2015 edition
+    (commenced 1 June 2015), absent in February 2015; proposed in the November 2014 round as a performance and image
+    enhancing drug. [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02,
+    au-tga-2014-09-scheduling-consultation]
+  - Import: not in Customs (Prohibited Imports) Schedule 7A (growth hormones and GHRHs only). Personal Importation
+    Scheme conditions apply. [au-customs-prohibited-imports-regs, au-tga-2026-04-peptide-responsibilities]
+  - TGA notices: the whole-site search finds hexarelin only in the 2014 scheduling consultation; no TGA warning or
+    enforcement notice names it. [au-tga-search-status-b-2026-10-23]
+
+  UNITED KINGDOM (new row), searched 23 October 2026.
+  - MHRA Products: 'There are no search results' for hexarelin, examorelin, EP23905, MF6003, "EP-23905" and
+    "MF-6003" (unquoted hyphenated codes return unrelated fragment matches); substance index E and H: no hexarelin or
+    examorelin. Control somatropin: 577 documents. Re-run late on 23 October 2026 (UTC): 'There are no search results
+    for hexarelin' and '... for examorelin'. [mhra-products-search-hexarelin]
+  - Without a UK marketing authorisation a medicinal product may not be sold or supplied (Human Medicines
+    Regulations 2012, regulation 46). [uk-hmr-2012-reg-46]
+  - Not in the Misuse of Drugs Act 1971 Schedule 2 (somatropin, somatrem and somatotropin are Class C; hexarelin is
+    not listed; the legal/uk page already says so). GOV.UK search 'hexarelin' and 'examorelin': 0 results, so no MHRA
+    alert or news item names it. [uk-mda-1971-sch-2, uk-govuk-search-status-b-2026-10-23]
+  - Note: the EU and US rows in the data file are unaffected; the US row cites openfda-drugsfda-search-stubs-b-2026-10-23.
+
+  Ireland and New Zealand: not searched (outside this batch).
+page_facts: |
+  CANADA
+  - No product containing hexarelin (examorelin) has ever been authorised in Canada (Drug Product Database and Notice
+    of Compliance database, 23 October 2026). [ca-dpd-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23]
+  - Health Canada listed hexarelin among unauthorised injectable peptides seized from an online seller in August 2025.
+    [ca-hc-recalls-database]
+  AUSTRALIA
+  - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-b-2026-10-23]
+  - Hexarelin has been a prescription-only medicine (Schedule 4) since 1 June 2015, and possessing it without
+    authority, such as a prescription, is illegal (Appendix D, given effect by state and territory law).
+    [au-poisons-standard-2026-10, au-poisons-standard-2015-06]
+  UNITED KINGDOM
+  - No product containing hexarelin has a UK licence (MHRA products database, 23 October 2026), so selling or
+    supplying it as a medicine is unlawful outside the narrow rules for unlicensed medicines.
+    [mhra-products-search-hexarelin, uk-hmr-2012-reg-46, uk-hmr-2012-reg-167]
+  - It is not a controlled drug under the Misuse of Drugs Act. [uk-mda-1971-sch-2]

@@ -1,0 +1,1088 @@
+# Sources for the page "Peptides and the law in Canada" (assignment canada-legal, refocus of the English site).
+# Written on 23 October 2026 (first run, interrupted) and checked again by a second run late on 23 October 2026
+# Eastern Time (just after midnight, 24 October, on this machine's clock). The second run re-read every law page,
+# every Health Canada, CBSA, Sport Integrity Canada, regulator and help-service page it could reach, corrected what
+# was wrong, and marks in the note anything it could not re-read (see research/refocus/canada-legal.md, section 16,
+# "Verification log"). Health Canada's databases (Drug Product Database, Licensed Natural Health Products Database,
+# Notice of Compliance, Clinical Trials Database) were under maintenance during the re-check (construction.hres.ca),
+# so the database records below are the first run's and say so.
+#
+# Reused, not re-registered here:
+# - from src/data/sources: wada-2026-list-en, wada-2027-list-en (bpc-157.yaml), wada-code-2021, wada-code-2027
+#   (legal-b.yaml).
+# - from research/refocus/sources/status-b.yaml: ca-food-and-drug-regulations (C.01.014 DIN rule, C.08.002
+#   new-drug rule), ca-hc-2026-04-think-twice-peptides (advisory RA-81874, re-read in full), ca-noc-egrifta,
+#   ca-sbd-egrifta, ca-dpd-egrifta-din-02438712, ca-dpd-egrifta-din-02423677 (tesamorelin in Canada),
+#   ca-dpd-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-ctdb-search-status-b-2026-10-23.
+# - from research/refocus/sources/status-c.yaml: ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23,
+#   ca-hc-ctdb-search-status-c-2026-10-23 (bremelanotide, melanotan, BPC-157, TB-500, KPV, GHK-Cu).
+#
+# SHARED IDS (same convention as status-c.yaml): the entries below marked "Same id and URL as ..." describe a
+# document that status-b or status-c also registered. They keep that id and URL and give the facts this page relies
+# on. When the files are merged, keep one entry per id and join the notes. They are: ca-food-and-drugs-act
+# (status-c; keep the general title used here, because section 2 has its own entry ca-fda-s2-definitions),
+# ca-cdsa and ca-pdl-human (status-b and status-c), ca-hc-recalls-database (status-b), ca-hc-cosmetic-drug-interface-guidance,
+# ca-hc-cosmetic-ingredient-hotlist and ca-hc-2026-05-ghk-cu-bpc-157-api-recall (status-c). The first run had
+# registered the last three, and the CDSA, PDL and recalls searches, under ids of its own; the second run renamed
+# them so that no document has two ids.
+#
+# Seller rule (CONTENT-GUIDE §1): Health Canada advisories that name a seller, clinic, shop or brand in the title
+# or URL are not registered one by one. Their facts are summarised by identification number in the shared index
+# entry ca-hc-recalls-database (as fda-warning-letters-index does in legal-b). Entries flagged DO NOT CITE
+# DIRECTLY or EDITOR are here only so the facts have a source the editor can check.
+#
+# Link allowlist: no Canadian host is on config/link-allowlist.json yet. The hosts used below are listed in
+# research/refocus/canada-legal.md, section 15, for the editor to add (we did not edit config/).
+# Commerce tokens: no URL or title below contains a token from config/commerce-tokens.json (checked by script).
+# Advisory RA-81518's own URL and title contain the token "buying": the entry uses Health Canada's neutral node URL,
+# which redirects to it, and a paraphrased title. Health Canada's consumer pages on online purchases (their URLs
+# contain "buying") were deliberately not registered.
+# No telephone numbers are recorded anywhere in this file (the assignment did not ask for them).
+
+# ================================================================ Food and Drugs Act (R.S.C., 1985, c. F-27)
+
+# Same id and URL as status-c.yaml (which titles it after section 2); keep this general title on merge.
+ca-food-and-drugs-act:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act (R.S.C., 1985, c. F-27)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/
+  accessed: 2026-10-23
+  verified: url
+  note: "The full consolidated text (FullText.html, linked from this page), 'Act current to 2026-09-30 and last amended on 2025-03-27', read in full on 23 October 2026 and again by the second run. The main federal law on drugs, cosmetics, devices and food. Section-level entries below (ca-fda-s...) cite the provisions one by one. Amendments not in force (end of the text): none of them touches the provisions cited here except a repeal of s. 21.8(2), not yet in force (2023, c. 26, s. 502(2))."
+
+ca-fda-s2-definitions:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 2 (definitions: advertisement, cosmetic, drug, sell, therapeutic product)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-2.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Drug: 'includes any substance or mixture of substances manufactured, sold or represented for use in (a) the diagnosis, treatment, mitigation or prevention of a disease, disorder or abnormal physical state, or its symptoms, in human beings or animals, (b) restoring, correcting or modifying organic functions in human beings or animals, or (c) disinfection ...'. Sell: 'includes (a) offer for sale, expose for sale or have in possession for sale - or distribute to one or more persons, whether or not the distribution is made for consideration'. Advertisement: 'any representation by any means whatever for the purpose of promoting directly or indirectly the sale or disposal of any food, drug, cosmetic or device'. Cosmetic: for use in 'cleansing, improving or altering the complexion, skin, hair or teeth'. Therapeutic product: 'a drug or device or any combination of drugs and devices'."
+
+ca-fda-s3-advertising:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 3 (prohibited advertising and sale: Schedule A.1 diseases)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-3.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 3(1): 'No person shall advertise any food, drug, cosmetic or device to the general public as a treatment, preventative or cure for any of the diseases, disorders or abnormal physical states referred to in Schedule A.1.' s. 3(2): no person shall sell such a product if it is represented by label, or advertised by that person to the general public, as a treatment, preventative or cure for a Schedule A.1 condition. s. 3(3): advertising of contraceptives to the general public only as authorised by regulation. Last amended 2019, c. 29, s. 165."
+
+ca-fda-schedule-a1:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, Schedule A.1 (section 3)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/page-10.html#h-234755
+  accessed: 2026-10-23
+  verified: url
+  note: "The list of 29 conditions for section 3 (counted in the full text by the second run), including: acute alcoholism, acute anxiety state, acute psychotic conditions, addiction (except nicotine addiction), arteriosclerosis, asthma, cancer, congestive heart failure, dementia, depression, diabetes, hepatitis, hypertension, obesity, sexually transmitted diseases, thrombotic and embolic disorders, thyroid disease, ulcer of the gastro-intestinal tract. History line: 'R.S., 1985, c. F-27, Sch. A ... 2019, c. 29, s. 177': this list was Schedule A until 2019, when it was renumbered Schedule A.1. The present Schedule A (added by 2019, c. 29, s. 178) is a different thing: the product-classification schedule under s. 2.4, in four parts (food, drug, cosmetic, device), with no entries. Older texts that say 's. 3 and Schedule A' mean today's Schedule A.1."
+
+ca-fda-s8-prohibited-sales:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 8 (prohibited sales of drugs: unsanitary conditions, adulteration)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-8.html
+  accessed: 2026-10-23
+  verified: url
+  note: "'No person shall sell any drug that (a) was manufactured, prepared, preserved, packaged or stored under unsanitary conditions; or (b) is adulterated.' s. 2 defines unsanitary conditions as conditions that 'might contaminate with dirt or filth, or render injurious to health'. s. 11 (same Act) separately forbids manufacturing, preparing, preserving, packaging or storing any drug for sale under unsanitary conditions."
+
+ca-fda-s9-deception:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 9 (false, misleading or deceptive labelling, sale or advertising of drugs)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-9.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 9(1): 'No person shall label, package, treat, process, sell or advertise any drug in a manner that is false, misleading or deceptive or is likely to create an erroneous impression regarding its character, value, quantity, composition, merit or safety.' s. 9(2): a drug not labelled or packaged as the regulations require is deemed to breach subsection (1)."
+
+ca-fda-s16-cosmetics:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 16 (prohibited sales of cosmetics)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-16.html
+  accessed: 2026-10-23
+  verified: url
+  note: "No person shall sell a cosmetic that (a) has in or on it any substance that may cause injury to the health of the user when used according to the directions or as customary, (b) contains filthy or decomposed substance or foreign matter, or (c) was made or stored under unsanitary conditions. This is the general prohibition the Cosmetic Ingredient Hotlist interprets."
+
+ca-fda-s21-3-recalls:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 21.3 (Minister's power to require a recall of a therapeutic product)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-21.3.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 21.3(1): if the Minister believes a therapeutic product 'presents a serious or imminent risk of injury to health', the Minister may order a person who sells it to recall it or send it to a specified place. s. 21.3(3): no person shall sell a product the Minister has ordered recalled. Added 2014, c. 24, s. 3. s. 21.4(2): orders under ss. 21.1-21.33 must be made publicly available."
+
+ca-fda-s21-5-injunction:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 21.5 (injunction for therapeutic products)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-21.5.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 21.5(1): on the Minister's application, a court may issue an injunction ordering a person who 'has done, is about to do or is likely to do anything that constitutes or is directed toward the commission of an offence under this Act in respect of a therapeutic product' to refrain from it, or to do anything that may prevent it. s. 21.5(2): 48 hours' notice unless urgency makes notice contrary to the public interest."
+
+ca-fda-s21-8-hospital-reporting:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 21.8 (health care institutions to report serious adverse drug reactions)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-21.8.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 21.8(1): a prescribed health care institution shall provide the Minister, within the prescribed time and manner, with prescribed information in its control about a serious adverse drug reaction or medical device incident involving a therapeutic product. s. 21.8(2): for this purpose 'therapeutic product' excludes natural health products. The prescribed institutions are hospitals (Food and Drug Regulations C.01.020.1: see ca-fdr-c01-020-1-hospital-reporting)."
+
+ca-fda-s23-inspection-seizure:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 23 (powers of inspectors, including seizure and detention)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-23.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 23(1): an inspector may enter any place, including a conveyance, where they believe on reasonable grounds a regulated activity is conducted or a regulated article is located. s. 23(2): they may examine, open packages, copy records, test, take samples, photograph, and (l) 'seize and detain for the time that may be necessary any article that the inspector believes on reasonable grounds is an article by means of, or in relation to which, any provision of this Act or the regulations has been contravened'. s. 23(3): entering includes remote access by telecommunication."
+
+ca-fda-s27-1-unlawful-imports:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 27.1 (unlawful imports: removal from Canada or forfeiture)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-27.1.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 27.1(1): an inspector with reasonable grounds to believe an imported drug 'does not meet the requirements of the regulations or was imported in contravention of a provision of this Act or the regulations' decides whether to give the owner, importer or person in possession the opportunity to take a measure; s. 27.1(2): considering, among other factors, 'whether the ... drug ... presents a risk of injury to health or safety'; s. 27.1(4): the measure is removal from Canada at their expense, consent to forfeiture, or either; s. 27.1(5): on consent, it is forfeited and disposed of at the person's expense. Added 2016, c. 9, s. 6."
+
+ca-fda-s27-2-removal-destruction:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 27.2 (notice to remove or destroy unlawful imports)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-27.2.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 27.2(1): an inspector may, by notice, whether or not the drug is seized, order the owner, importer or person in possession 'to remove it from Canada at their expense or, if removal is not possible, to destroy it at their expense'. s. 27.2(3): if not removed or destroyed within the period in the notice (or 90 days), it is forfeited and may be disposed of at that person's expense. s. 27.2(4)-(5): the inspector may suspend or cancel the notice if the product presents no risk of injury to health, will not be sold, and the import will be made compliant."
+
+ca-fda-s27-3-measures:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 27.3 (Minister's power to require preventive and remedial measures)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-27.3.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 27.3(1): 'If the Minister has reasonable grounds to believe that a person has contravened, or is likely to contravene, this Act or the regulations, the Minister may order the person to take any measures that the Minister considers necessary to remedy the contravention or prevent it.' s. 27.3(2): the person shall take them. Added 2019, c. 29, s. 171. (Health Canada's statements describe a 'Ministerial Order' to stop advertising and selling; they do not name the section.)"
+
+ca-fda-s29-1-prescription-drug-list:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 29.1 (the Prescription Drug List)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-29.1.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 29.1(1): 'Subject to the regulations, the Minister may establish a list that sets out prescription drugs, classes of prescription drugs or both.' s. 29.1(2): the list is not a regulation within the meaning of the Statutory Instruments Act. Added 2012, c. 19, s. 413."
+
+ca-fda-s30-7-cost-recovery:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 30.7 (recovery of costs)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-30.7.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 30.7(1): the Crown may recover, as a debt, costs incurred in relation to anything required or authorised under the Act, 'including the inspection of a place or the analysis, examination, storage, movement, seizure, detention, forfeiture, disposal or release of an article'. s. 30.7(2): proceedings within five years."
+
+ca-fda-s31-general-penalty:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 31 (general offence and punishment)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-31.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Subject to ss. 31.1, 31.2 and 31.4, contravening the Act or regulations is an offence: on summary conviction, first offence up to $500 or three months or both, subsequent offence up to $1,000 or six months or both; on indictment up to $5,000 or three years or both. For therapeutic products (drugs and devices) s. 31.2 applies instead."
+
+ca-fda-s31-2-therapeutic-products-penalty:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 31.2 (offences relating to therapeutic products)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-31.2.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 31.2(1): a person who contravenes the Act or regulations as they relate to a therapeutic product, or an order under ss. 21.1-21.32, is liable (a) on conviction by indictment to a fine not exceeding $5,000,000 or imprisonment not exceeding two years or both; (b) on summary conviction, first offence up to $250,000 or six months or both, subsequent offence up to $500,000 or 18 months or both. s. 31.2(2) confirms it covers s. 3 (advertising) and s. 27.3(2) (measures orders) where a therapeutic product is involved. s. 31.3: due diligence is a defence (except under s. 31.4). s. 31.6: if a company (a 'person other than an individual') commits an offence under s. 31.2, its directors, officers or agents who direct, authorise, assent to, acquiesce or participate in it are parties to the offence. s. 31.7: each day is a separate offence. These are maximums the law allows, not what courts usually impose."
+
+ca-fda-s31-4-serious-risk-penalty:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drugs Act, section 31.4 (offences: false statements and knowingly or recklessly causing serious risk)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/f-27/section-31.4.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 31.4(1): a person who contravenes s. 21.6 (false or misleading statements to the Minister), or 'who knowingly or recklessly causes a serious risk of injury to human health' in contravening the Act or regulations as they relate to a therapeutic product, is liable (a) on indictment to a fine at the discretion of the court or imprisonment up to five years or both; (b) on summary conviction, first offence up to $500,000 or 18 months or both, subsequent offence up to $1,000,000 or two years or both. s. 31.5: sentencing must consider the harm or risk and 'the vulnerability of consumers of the therapeutic product'."
+
+# ================================================================ Food and Drug Regulations (C.R.C., c. 870)
+# The whole Regulations and the C.01.014 / C.08.002 rules: reuse ca-food-and-drug-regulations (status-b.yaml).
+
+ca-fdr-a01-010-definitions:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section A.01.010 (definitions: manufacturer or distributor, prescription drug, Prescription Drug List)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-A.01.010.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Regulations current to 2026-09-30, last amended 2026-06-17. 'manufacturer or distributor means a person, including an association or partnership, who under their own name, or under a trade-, design or word mark, trade name or other name, word or mark controlled by them, sells a food or drug'. 'prescription drug means a drug that is set out in the Prescription Drug List, as amended from time to time, or a drug that is part of a class of drugs that is set out in it'. 'Prescription Drug List means the list established by the Minister under section 29.1 of the Act'."
+
+ca-fdr-a01-040-import-for-sale:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section A.01.040 (imports of foods or drugs that may not lawfully be sold in Canada)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-A.01.040.html
+  accessed: 2026-10-23
+  verified: url
+  note: "'Subject to section A.01.044, no person shall import into Canada for sale a food or drug the sale of which in Canada would constitute a violation of the Act or these Regulations.' The rule covers import for sale; A.01.044 lets an importer bring in a product for relabelling or modification after notifying an inspector. A.01.041-A.01.043 (same Part, read in the full text): an inspector may examine and sample any drug sought to be imported and, if its sale would breach the Act or Regulations, notifies the collector of customs and the importer in writing."
+
+ca-fdr-a01-067-advertising-preventative:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, sections A.01.066 to A.01.068 (exemptions from section 3 of the Act for preventive claims)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-A.01.067.html
+  accessed: 2026-10-23
+  verified: url
+  note: "A.01.067: 'A drug is exempt from subsection 3(1) of the Act with respect to its advertisement to the general public as a preventative, but not as a treatment or cure, for any of the diseases, disorders or abnormal physical states referred to in Schedule A.1 to the Act.' A.01.068: the same exemption from s. 3(2) for sale. A.01.066 (read in the full text): neither exemption applies to a prescription drug or to a drug in Schedules I-V of the Controlled Drugs and Substances Act. Amended SOR/2021-46."
+
+ca-fdr-c01-041-rx-sale:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01.041 (sale of prescription drugs)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01.041.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.01.041(1): 'No person shall sell a prescription drug unless (a) they are entitled under the laws of a province to dispense a prescription drug and they sell it in that province under a verbal or written prescription that they received; or (b) they sell it under section C.01.043' (sales to manufacturers, practitioners, wholesale druggists, pharmacists or governments). Practitioner (C.01.001): a person entitled under provincial law to treat patients with a prescription drug and practising in that province."
+
+ca-fdr-c01-044-rx-advertising:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01.044 (advertising prescription drugs to the general public)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01.044.html
+  accessed: 2026-10-23
+  verified: url
+  note: "'If a person advertises a prescription drug to the general public, the person shall not make any representation other than with respect to the brand name, the proper name, the common name and the price and quantity of the drug.'"
+
+ca-fdr-c01-045-rx-import:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01.045 (who may import a prescription drug)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01.045.html
+  accessed: 2026-10-23
+  verified: url
+  note: "'No person, other than one of the following, shall import a prescription drug: (a) a practitioner; (b) a drug manufacturer; (c) a wholesale druggist; (d) a pharmacist; or (e) a resident of a foreign country while a visitor in Canada.' Amended SOR/2013-122. A Canadian resident is not on the list; Health Canada's guidance (ca-hc-gui-0116-personal-import) describes the cases in which it may permit residents to bring in a personal quantity."
+
+ca-fdr-c01a-002-compounding-import:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01A.002 (activities exempt from establishment licensing, including import and compounding by pharmacists and practitioners)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01A.002.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.01A.002(1): Division 1A (establishment licences) does not apply to '(b) ... importing or compounding, pursuant to a prescription, a drug that is not commercially available in Canada by one of the following persons: (i) a pharmacist, (ii) a practitioner, and (iii) a person who compounds a drug under the supervision of a practitioner', nor (c) to drugs used only in an authorised clinical trial."
+
+ca-fdr-c01a-004-establishment-licence:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01A.004 (establishment licence required)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01A.004.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.01A.004(1): subject to (2), 'no person shall, except in accordance with an establishment licence, (a) fabricate, package/label or import a drug; (b) perform the tests ... required under Division 2 [good manufacturing practices]; (c) distribute as a distributor ... a drug other than [an active pharmaceutical ingredient]; or (d) wholesale a drug' other than an API."
+
+ca-fdr-c01-017-manufacturer-adr:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01.017 (manufacturers' reports of serious adverse drug reactions)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01.017.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.01.017: the manufacturer shall report to the Minister information on specified serious adverse drug reactions 'within 15 days after receiving or becoming aware of the information'. C.01.016 (full text): no manufacturer shall sell a drug unless it complies with C.01.017 to C.01.019. An unauthorised seller is outside this system in practice."
+
+ca-fdr-c01-020-1-hospital-reporting:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.01.020.1 (hospital reporting of serious adverse drug reactions under section 21.8 of the Act)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.01.020.1.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.01.020.1(1): 'For the purposes of section 21.8 of the Act, hospitals are the prescribed health care institutions that shall provide information ... about a serious adverse drug reaction.' (2): the prescribed information shall be provided in writing 'within 30 days after the day on which the serious adverse drug reaction is first documented within the hospital', including the drug's brand, proper or common name."
+
+ca-fdr-c05-clinical-trials:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, Division 5, sections C.05.002 and C.05.006 (drugs for clinical trials involving human subjects)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.05.006.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.05.002(1) (full text): Division 5 applies to the sale or importation of drugs to be used in clinical trials involving human subjects. C.05.006(1): a sponsor may sell or import a drug for a clinical trial if it has submitted an application under C.05.005 and the Minister has not, within 30 days, sent a notice refusing it (for insufficient information, or reasonable grounds to believe the drug's use in the trial 'endangers the health of a clinical trial subject or other person', the trial 'is contrary to the best interests of a clinical trial subject', or its objectives will not be achieved), and a research ethics board has approved the protocol and consent form for each site. Act s. 3.1 (2019, c. 29): no person shall conduct a clinical trial of a drug without an authorisation issued under the regulations."
+
+ca-fdr-c08-001-new-drug:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.08.001 (definition of new drug)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.08.001.html
+  accessed: 2026-10-23
+  verified: url
+  note: "New drug means a drug, other than a veterinary health product, '(a) that contains or consists of a substance ... that has not been sold as a drug in Canada for sufficient time and in sufficient quantity to establish in Canada the safety and effectiveness of that substance for use as a drug'; (b) a new combination or proportion; or (c) a drug for a use or condition of use (including dosage, route of administration or duration of action) not so established. The prohibition on selling or advertising a new drug without a notice of compliance is C.08.002(1) (cite ca-food-and-drug-regulations); the Minister issues the notice of compliance under C.08.004(1) when the submission complies."
+
+ca-fdr-c08-004-notice-of-compliance:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.08.004 (notice of compliance)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.08.004.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.08.004(1): after examining a new drug submission, the Minister shall (a) issue a notice of compliance if it complies with C.08.002 (which requires, among other things, 'detailed reports of the tests made to establish the safety of the new drug' and 'substantial evidence of the clinical effectiveness of the new drug for the purpose and under the conditions of use recommended', C.08.002(2)(g)-(h)), or (b) issue a notice that it does not comply."
+
+ca-fdr-c08-010-special-access:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, sections C.08.010 and C.08.011 (sale of a new drug for emergency treatment: the Special Access Program)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.08.010.html
+  accessed: 2026-10-23
+  verified: url
+  note: "C.08.010(1): the Minister may issue a letter of authorization to a manufacturer of a new drug authorising the sale of a specified quantity 'to a practitioner, for use in the emergency treatment of ... a person under the care of that practitioner', if the practitioner provides the drug name and 'details concerning the medical emergency', the quantity, 'the information in the possession of the practitioner in respect of the use, safety and efficacy of the new drug', and the shipping address; agrees to report results and adverse reactions to the manufacturer and the Minister and to account for quantities; and, for human use, the drug is shipped to a practitioner or pharmacist. C.08.011(1) (section-C.08.011.html): despite C.08.002 the manufacturer may sell the new drug in accordance with the letter; C.08.011(3): such a sale is exempt from the Act and Regulations other than that section. C.08.010(2): the practitioner need not supply the use, safety and efficacy information if the sale was already authorised for the same emergency at least once, the EMA or the FDA has authorised the drug without terms or conditions for the same use, and its DIN was not cancelled on safety grounds. C.08.010(5): the practitioner need not know the patient's identity when the letter is issued. Amended SOR/2020-212, SOR/2021-271, SOR/2023-247 (re-read in the full text by the second run)."
+
+# ================================================================ Natural Health Products Regulations (SOR/2003-196)
+
+ca-nhpr-definition:
+  type: law
+  authors: "Government of Canada"
+  title: "Natural Health Products Regulations (SOR/2003-196), sections 1, 2 and 4 (definition, application, product licence)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/SOR-2003-196/FullText.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Regulations current to 2026-09-30, last amended 2025-06-21. s. 1(1): a natural health product is 'a substance set out in Schedule 1 or a combination of substances in which all the medicinal ingredients are substances set out in Schedule 1, a homeopathic medicine or a traditional medicine' for use in treating or preventing disease or 'restoring or correcting' or 'modifying organic functions in humans', but 'does not include a substance set out in Schedule 2'. s. 2(2): a substance is not an NHP if, under the Food and Drug Regulations, it must be sold on prescription. s. 3: the Food and Drug Regulations do not apply to NHPs except where indicated. s. 4(1): 'no person shall sell a natural health product unless a product licence is issued in respect of the natural health product.' s. 103.2: NHPs may be advertised to the general public as a preventative, but not as a treatment or cure, for Schedule A.1 conditions."
+
+ca-nhpr-schedule-1:
+  type: law
+  authors: "Government of Canada"
+  title: "Natural Health Products Regulations, Schedule 1 (included natural health product substances)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/SOR-2003-196/page-10.html#h-701181
+  accessed: 2026-10-23
+  verified: url
+  note: "Eight items: (1) a plant or plant material, an alga, a bacterium, a fungus or a non-human animal material; (2) an extract or isolate of item 1 with an unchanged primary molecular structure; (3) listed vitamins, including niacin; (4) 'An amino acid'; (5) an essential fatty acid; (6) 'A synthetic duplicate of a substance described in any of items 2 to 5'; (7) a mineral; (8) a probiotic. No item names peptides as such."
+
+ca-nhpr-schedule-2:
+  type: law
+  authors: "Government of Canada"
+  title: "Natural Health Products Regulations, Schedule 2 (excluded natural health product substances)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/SOR-2003-196/page-11.html#h-701191
+  accessed: 2026-10-23
+  verified: url
+  note: "Excluded: (1) Schedule C substances (radiopharmaceuticals); (2) Schedule D substances (biologics, including drugs obtained by recombinant DNA procedures), with exceptions for drugs from algae, bacteria or fungi and homeopathic preparations; (4) substances in Schedules I-V of the Controlled Drugs and Substances Act; (5) 'A substance that is administered by puncturing the dermis'; (6) antibiotics; (7)-(8) cannabis; (9) hard-surface disinfectants. Item 5 means no injectable product can be a natural health product."
+
+ca-nhpr-s103-1-emergency-access:
+  type: law
+  authors: "Government of Canada"
+  title: "Natural Health Products Regulations, section 103.1 (sale of a natural health product for emergency treatment)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/SOR-2003-196/section-103.1.html
+  accessed: 2026-10-23
+  verified: url
+  note: "s. 103.1: section C.08.010 and subsections C.08.011(1) and (3) of the Food and Drug Regulations (the Special Access Program) apply to natural health products, with modifications."
+
+# ================================================================ Cosmetics
+
+ca-cosmetic-regulations-s30:
+  type: law
+  authors: "Government of Canada"
+  title: "Cosmetic Regulations (C.R.C., c. 869), section 30 (notification)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._869/section-30.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Regulations current to 2026-09-30, last amended 2026-04-12. s. 30(1): every manufacturer and importer shall provide the Minister with a notification (and, where required, copies of labels) 'at the latest 10 days after the manufacturer or importer first sells a cosmetic'. Cosmetics are notified after sale, not assessed before sale."
+
+# Same id and URL as status-c.yaml; facts this page relies on below.
+ca-hc-cosmetic-drug-interface-guidance:
+  type: guideline
+  authors: "Health Canada"
+  title: "Guidance Document: Classification of Products at the Cosmetic-Drug Interface"
+  container: "Canada.ca"
+  year: 2008
+  url: https://www.canada.ca/en/health-canada/services/consumer-product-safety/reports-publications/industry-professionals/guidance-document-classification-products-cosmetic-drug-interface.html
+  accessed: 2026-10-23
+  verified: url
+  note: "2008 guidance (page details 2022-01-06), re-read by the second run. Section 2.0: 'The key consideration for the classification of a product is its proposed claim(s)', which create 'a net impression of what the product is and does'; composition alone does not decide it. Section 3.1: 'Products for which therapeutic claims are made are evaluated as drugs'; products 'claiming benefits comparable to the effects of cosmetic surgical procedures or drugs' are considered therapeutic. Section 3.3: 'In order to be a cosmetic, the product must exhibit a lack of percutaneous absorption ... Products that are administered through ingestion, inhalation, or by injection (intramuscular, subcutaneous, intravenous, etc), with the sole exception of tattoo ink, are not considered to be cosmetics.' Cited for: a GHK-Cu skin cream with cosmetic claims can be a cosmetic; injected GHK-Cu, or a cream sold with drug-like claims, cannot."
+
+# Same id and URL as status-c.yaml; facts this page relies on below.
+ca-hc-cosmetic-ingredient-hotlist:
+  type: regulator
+  authors: "Health Canada"
+  title: "Cosmetic Ingredient Hotlist: list of ingredients that are prohibited or restricted for use in cosmetic products"
+  container: "Canada.ca"
+  year: 2025
+  url: https://www.canada.ca/en/health-canada/services/consumer-product-safety/cosmetics/cosmetic-ingredient-hotlist-prohibited-restricted-ingredients/hotlist.html
+  accessed: 2026-10-23
+  verified: url
+  note: "List page (page details 2025-08-13; overview page 2026-03-31). An administrative tool linked to s. 16 of the Act; prohibited ingredients 'should not be present in cosmetic products sold in Canada'. Text-searched by the first run on 23 October 2026 for 'copper', 'cupr', 'peptid', 'GHK' and 'hormon': no entry (controls: 'Estrogens', 'Lead and its compounds' and 'Retinoic acid' found); status-c's separate search the same day agrees. Copper tripeptide-1 / GHK-Cu is therefore neither prohibited nor restricted as a cosmetic ingredient; the Hotlist is not a positive list, and this says nothing about a product making drug-like claims or meant for injection (see ca-hc-cosmetic-drug-interface-guidance). Not re-read by the second run (canada.ca does not answer this machine's scripts; the other canada.ca pages were re-read through WebFetch)."
+
+# ================================================================ Controlled substances, customs
+
+# Same id and URL as status-b.yaml and status-c.yaml; this page's searches below.
+ca-cdsa:
+  type: law
+  authors: "Government of Canada"
+  title: "Controlled Drugs and Substances Act (S.C. 1996, c. 19), Schedules I to VI"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/c-38.8/FullText.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Full text ('Act current to 2026-09-30 and last amended on 2026-07-18'), all schedules, searched on 23 October 2026 by both runs of this assignment (case-insensitive) for BPC, TB-500, thymosin, CJC, epitalon, epithalon, GHK, copper, hexarelin, examorelin, ipamorelin, KPV, melanotan, MOTS, nicotinamide, bremelanotide, retatrutide, selank, semax, elamipretide, thymalfasin, AOD, tesamorelin, sermorelin, somatropin, 'growth hormone', semaglutide, tirzepatide, gonadotro, peptide and insulin: no match. None of the peptides on this site is a controlled substance in Canada. Schedule IV item 23 lists 'Anabolic steroids and their derivatives' and item 24 zeranol (the steroids seized alongside peptides in several Health Canada advisories are controlled; the peptides are not). s. 4(1): the possession offence covers only Schedules I, II and III."
+
+ca-customs-act-s101:
+  type: law
+  authors: "Government of Canada"
+  title: "Customs Act (R.S.C., 1985, c. 1 (2nd Supp.)), section 101 (detention of controlled goods)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/acts/C-52.6/section-101.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Act current to 2026-09-30 and last amended on 2026-07-01 (re-read by the second run). 'Goods that have been imported or are about to be exported may be detained by an officer until he is satisfied that the goods have been dealt with in accordance with this Act, and any other Act of Parliament that prohibits, controls or regulates the importation or exportation of goods, and any regulations made thereunder.' The power border services officers use to hold health products for Health Canada."
+
+ca-cbsa-d19-9-1:
+  type: regulator
+  authors: "Canada Border Services Agency"
+  title: "Memorandum D19-9-1: The Administration of Health Canada Acts and Regulations Relating to Certain Controlled, Prohibited or Regulated Goods"
+  container: "CBSA Departmental Memoranda (D-Memos)"
+  year: 2023
+  url: https://www.cbsa-asfc.gc.ca/publications/dm-md/d19/d19-9-1-eng.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Ottawa, July 2023 (date modified 2023-07-11); every paragraph cited here re-read by the second run. Para. 2: the CBSA 'may detain goods under the authority of the Customs Act and refer them to Health Canada for an admissibility recommendation and disposition decision'. Paras. 7, 9-10: Health Canada inspectors may examine, test, seize and sample detained goods, recommend admissibility and order disposition. Para. 26: commercial importations include shipments over a 90-day supply, a pattern of repeat personal importations totalling more than a 90-day supply in 90 days, and shipments with advertising material. Paras. 35, 41: C.01.045 restricts import of prescription drugs to practitioners, manufacturers, wholesale druggists, pharmacists and visitors. Para. 42: Health Canada 'may exercise enforcement discretion' to let a Canadian returning from abroad bring, on their person, a single course of treatment or a 90-day supply (whichever is less) of a prescription drug dispensed before leaving or obtained abroad for care while abroad. Para. 45: 'Canadian residents may not import prescription drugs by mail or courier.' Paras. 46-47: visitors may hand-carry, or receive by mail, a 90-day supply. Para. 50: anyone may import up to a 90-day supply of non-prescription drugs and natural health products every 90 days, in pharmacy or retail packaging or with the original label 'and no indication of sale in Canada, subject to inspector discretion'."
+
+# ================================================================ Health Canada policy and guidance
+
+ca-hc-gui-0116-personal-import:
+  type: guideline
+  authors: "Health Canada, Regulatory Operations and Enforcement Branch"
+  title: "Bringing health products into Canada for personal use (GUI-0116)"
+  container: "Canada.ca"
+  year: 2020
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/compliance-enforcement/importation-exportation/personal-use-health-products-guidance/document.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 21 December 2020 (summary page, personal-use-health-products-guidance.html); the full document's page details show 2026-07-13. Re-read by the second run (exact wording checked). Personal use: for your own use or a person or animal 'under your care' or 'with whom you are travelling'; 'no more than a 90-day supply or a single course of treatment, whichever is less, based on the product's directions for use'; bringing a product in to sell or give it to someone not in your care, to treat a patient, to advertise its sale or to export it makes you a commercial importer: 'Each of these activities is considered a sale of a health product, regardless of whether there is an exchange of money'; multiple shipments totalling more than a 90-day supply 'over a 90-day period' may make you a commercial importer. 'Residents of Canada and visitors are permitted to bring into Canada a personal use quantity (a 90-day supply or single course of treatment) of an OTC medication, NHP, VHP or a medical device for personal use without requiring specific licences for the import.' Prescription drugs: 'Generally, residents of Canada are not allowed to bring prescription drugs into Canada for people or animals. This includes whether you carry them across the border or have them delivered by mail or courier.' They are 'only permitted to be imported by a practitioner, a drug manufacturer, a wholesale druggist, a registered pharmacist, or a resident of a foreign country while a visitor in Canada'. Health Canada may permit a personal quantity for residents returning with drugs prescribed and filled in Canada, residents continuing treatment started abroad, participants in foreign-sponsored clinical trials, and recently landed immigrants or refugees. (Correction by the second run: the first run's quotation 'Canadian residents are generally not permitted to import prescription drugs by mail or courier' is not the page's wording; the CBSA memorandum's para. 45 says 'Canadian residents may not import prescription drugs by mail or courier', see ca-cbsa-d19-9-1.) 'Individuals are responsible for knowing if the products being imported contain a prescription drug or a controlled substance.' Border: Health Canada works with the CBSA; officers 'may detain any health product they suspect does not comply' (Customs Act s. 101); non-compliant products 'will be refused entry or seized'; 'The assessment may include taking samples of the product for laboratory analysis'; Health Canada 'will notify you and the CBSA in writing of the outcome of the inspection'; it may recover expenses of storage, transport or disposal of seized goods (Act s. 30.7(1)) and 'is not responsible for any consequences including financial loss'. SAP: Canadian doctors may obtain drugs not available for sale in Canada for a serious or life-threatening condition when conventional therapies have been ruled out, failed, are unsuitable or unavailable. 'Health products sold online may be cheaper and easily purchased but riskier because they may be counterfeit', may contain the wrong level of an active ingredient or toxic substances, or be past their expiry date. The guide does not say how unauthorised drugs that are not on the Prescription Drug List (such as BPC-157) are treated, and does not mention 'research use' labels."
+
+ca-hc-pdl-overview:
+  type: regulator
+  authors: "Health Canada"
+  title: "The Prescription Drug List: Overview"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/prescription-drug-list.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2026-08-26 (re-read by the second run). Explains the list: it catalogues 'medicinal ingredients and classes of medicinal ingredients', sometimes with a qualifier (purpose, daily dose, route such as injection); 'Without a qualifier indicating otherwise, any medication that contains a medicinal ingredient that is on the Prescription Drug List is considered a prescription drug.' Prescription drugs 'can only be sold to the public by pharmacists, veterinarians or commercial feed mills, based on a prescription from a practitioner'. The PDL replaced Schedule F on 19 December 2013. 'Products that are prescription drugs under federal law are prescription drugs in all of Canada'; provinces may add restrictions on federally non-prescription products. When Health Canada authorises a medication new to the market it checks whether a listing captures it and adds one if needed ('routine addition')."
+
+# Same id and URL as status-b.yaml and status-c.yaml; this page's searches below.
+ca-pdl-human:
+  type: regulator
+  authors: "Health Canada"
+  title: "Prescription Drug List: list related to drugs for human use"
+  container: "Drug and Health Product Register"
+  year: 2026
+  url: https://hpr-rps.hres.ca/pdl-phu.php
+  accessed: 2026-10-23
+  verified: url
+  note: "The list established by the Minister under s. 29.1 of the Food and Drugs Act. The human-use list (latest effective date on it 2026-08-27) text-searched on 23 October 2026 by both runs of this assignment (the English page, ?lang=en; case-insensitive substrings) for BPC, TB-500, thymosin, CJC, epitalon, epithalon, GHK, copper, hexarelin, examorelin, ipamorelin, KPV, melanotan, MOTS, nicotinamide, NAD (hits only in unrelated words such as Nadolol), bremelanotide, retatrutide, selank, semax, elamipretide, thymalfasin, AOD, releasing, secretagog, melanocort, peptide: no entry. Entries found: 'Semaglutide' (effective 2018-03-12), 'Tirzepatide' (2023-03-08), 'Tesamorelin or its salts or derivatives' (2014-04-25), 'Sermorelin or its salts' (2013-12-19), 'Somatropin' (2013-12-19), 'Afamelanotide or its salts' (2026-08-27), 'Setmelanotide or its salts' (2023-06-23), 'Gonadorelin or its salts', 'Gonadotropin, chorionic (human)', 'Oxytocin', 'Triptorelin or its salts or derivatives', 'Liraglutide or its salts', 'Dulaglutide', 'Exenatide or its salts'. The list names peptide medicines one by one; it has no general entry for peptides or for injectable drugs (its seven entries that mention injection are qualifiers attached to named substances, e.g. 'when sold for administration by injection')."
+
+ca-hc-sap-drugs:
+  type: regulator
+  authors: "Health Canada"
+  title: "Request a drug through the Special Access Program"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/special-access/drugs.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2026-04-08 (re-read by the second run). A health or dental practitioner may request a drug 'unavailable for sale in Canada' for 'the treatment of a medical emergency, which Health Canada interprets as a serious or life-threatening condition where conventional treatments: have failed, are unsuitable or are unavailable in Canada' (serious: need for hospitalisation, risk of adverse pregnancy outcomes, risk of persistent or significant disability, overall prognosis). The practitioner must inform patients of risks, benefits and development status, report results and adverse reactions, keep records, and 'ensure that the decision to prescribe the drug is supported by credible evidence available in relevant medical literature or provided by the manufacturer'. 'Drugs accessed through SAP are supplied directly by manufacturers to practitioners'; the manufacturer sets the cost (some drugs are free; costs may fall on hospitals, insurers or, in some cases, patients); a request is cancelled when 'the manufacturer is unable to provide access to the drug through SAP', and manufacturers may set conditions on release. 'The SAP receives about 1000 requests each month.' Health Canada will 'consider expediting' review of a drug previously authorised through SAP for the same emergency, or one authorised by the EMA or the FDA for the same medical emergency. The route therefore needs a manufacturer willing to supply: for a peptide that no company makes to medicine standards there is, in practice, nothing to request (inference; Health Canada does not say this)."
+
+ca-hc-pol-0051-compounding:
+  type: guideline
+  authors: "Health Canada, Health Products and Food Branch Inspectorate"
+  title: "Policy on Manufacturing and Compounding Drug Products in Canada (POL-0051)"
+  container: "Canada.ca"
+  year: 2009
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/compliance-enforcement/good-manufacturing-practices/guidance-documents/policy-manufacturing-compounding-drug-products.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Issued and implemented 26 January 2009 (supersedes GUI-0030; page details 2020-10-26). Compounding 'is practised primarily by pharmacists ... and is regulated by the respective regulatory authorities in each province/territory'; manufacturing is federal (DIN and/or NOC, establishment licence, GMP). Principles: compounding 'must not be used as a means to bypass the federal drug review and approval system'. Factors for compounding: a demonstrated patient-healthcare professional relationship; 'only ... if there is a therapeutic need or lack of product availability'; must not duplicate an approved product except during a shortage; no third-party resale; 'Product should be produced from an authorized drug or Active Pharmaceutical Ingredient (API) used in an authorized drug for use in Canada or listed in a recognized Pharmacopoeia (USP, PhEur, PhF, PhI, BP, CF, NF, Codex - Schedule B Food and Drugs Act.)'; sterile compounding is 'only permitted in hospitals or other practice settings' where the relevant standards are in place. Appendix I asks eight questions; answers pointing to manufacturing include no demonstrated patient relationship, resale to third parties, no provincial regulation or inspection, output beyond the prescription history or regular in volume, an identical commercially available product, and advertising to the general public. Compounders must comply with Act 'sections 3 - Prohibited advertising; 8 - Prohibited sales of drugs; 9 - Deception regarding drugs; and 11 - Unsanitary manufacture of drug'. 'this policy does not apply to natural health products (NHP)'. Re-read by the second run."
+
+ca-hc-2025-glp1-compounding-position:
+  type: regulator
+  authors: "Health Canada"
+  title: "Health Canada's position on the unauthorized manufacturing of products sold as compounded glucagon like peptide 1 (GLP-1) receptor agonists (2 June 2025)"
+  container: "Ontario College of Pharmacists (copy of the Health Canada document)"
+  year: 2025
+  url: https://ocpinfo.com/wp-content/uploads/2025/07/health-canada-position-glp-1.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "Health Canada document dated 2 June 2025, sent to provincial and territorial partners; the copy read is hosted by the Ontario College of Pharmacists (the Alberta College of Pharmacy reprinted the same text on 10 June 2025). 'some compounding pharmacies continue to prepare and sell injectable GLP-1 products in the absence of a shortage, which is not permitted'; 'compounding of sterile preparations is a high-risk activity and should only be considered in exceptional circumstances'; Health Canada 'is not aware of any scientific evidence' supporting semaglutide with pyridoxine; no GLP-1 shortage at the time; 'To date, Health Canada has not authorized any products containing chemically synthesized versions of GLP-1, including semaglutide, nor is there any recognized pharmacopeial standard for GLP-1 antagonists [sic], including semaglutide. Therefore, any GLP-1 active ingredient used in compounded products must be the same as that which is used in an authorized product (biologically derived, as determined by Health Canada) or listed in a recognized Pharmacopoeia'; 'outside of unique case-by case patient specific scenarios, Health Canada considers this activity to be manufacturing'; Health Canada 'is taking compliance and enforcement action when practitioners and pharmacists are engaged in activities that it considers to be manufacturing'; it requested the recall of two semaglutide and pyridoxine products made with an active ingredient 'not the same as that from an approved semaglutide product' (recall RA-76830, 21 January 2025). PDF re-read in full by the second run (pdftotext). CAUTION: the statement about synthetic semaglutide dates from June 2025; generic semaglutide products have been authorised since (ca-dpd-search-canada-legal-2026-10-23, ca-hc-2026-08-generic-semaglutide-recall). Do not repeat it as current without re-checking."
+
+ca-hc-advertising-distinction-2023:
+  type: guideline
+  authors: "Health Canada"
+  title: "Guidance on distinction between advertising and other activities for health products"
+  container: "Canada.ca"
+  year: 2023
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/regulatory-requirements-advertising/policies-guidance-documents/policy-distinction-between-advertising-activities.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Published 31 July 2023 (page details 2023-07-31; re-read by the second run); supersedes the 2005 policy 'The Distinction Between Advertising and Other Activities'. EDITOR: this guidance applies to this site's own Canada pages (see canada-legal.md, section 11.3). Advertising rules apply only to promotional messages; each message is judged in its context, with linked materials; 'no single factor will determine if a particular message is promotional'. Factors: context, audience, provider (independent party less likely promotional), sponsor, manufacturer influence, balance of content (risks and benefits, scientific rigour), frequency. 'A message involving unauthorized health products or unauthorized indications, in a context such as educational activities, may be considered promotional if: the message does not caution that the product's safety and effectiveness are still under investigation and that Health Canada has not yet granted market authorization ... there's a suggestion the health product is available through the Special Access Program (SAP)'. 'Health Canada is the regulatory authority for all health product advertising in Canada.'"
+
+ca-hc-gui-0039-recall-types:
+  type: guideline
+  authors: "Health Canada"
+  title: "Guidance: Drug, natural health product and biocide recall guide (GUI-0039)"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/compliance-enforcement/recalls/guidance-drug-natural-health-products/guidance.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2026-08-10 (re-read by the second run). 'Type I: Assign this type to a situation where there is a reasonable probability that the use of (or exposure to) a product will cause serious adverse health consequences or death.' Type II: temporary adverse health consequences, or a remote probability of serious ones. Type III: not likely to cause any adverse health consequences."
+
+# ================================================================ Health Canada advisories and recalls (no seller in title or URL)
+# RA-81874 (9 April 2026, 'Think twice before injecting peptides bought online'): reuse
+# ca-hc-2026-04-think-twice-peptides (status-b). Re-read in full by the second run: the facts in status-b's note
+# hold; it also advises returning unused products to a pharmacy or following municipal hazardous-waste rules.
+
+ca-hc-2026-01-glp1-advisory:
+  type: regulator
+  authors: "Health Canada"
+  title: "Unauthorized and counterfeit GLP-1 drugs such as Ozempic or Mounjaro: public advisory RA-81518 (title paraphrased)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/node/81518
+  accessed: 2026-10-23
+  verified: url
+  note: "The node URL redirects (HTTP 302, checked by the second run) to the advisory's own page, whose URL and title contain the commerce token 'buying' (official title: 'Thinking about [token] GLP-1 drugs like Ozempic or Mounjaro? Beware of fake or unauthorized products'); the paraphrased title and node URL keep the link clean. Re-read in full by the second run. Public advisory published 21 January 2026 (RA-81518). 'Health Canada has identified various retailers in Canada selling unauthorized GLP-1 products, both in stores and online'; some websites and social media adverts 'misuse official Health Canada logos and display fake endorsements'; risks of unauthorised or counterfeit drugs (too much, too little or none of the active ingredient, unlisted ingredients, contaminants including endotoxins, poor labelling); injectables carry extra risks such as infection 'due to lack of sterility'; 'In Canada, only licensed pharmacies can legally sell prescription drugs'; Health Canada takes action 'such as seizures, issuance of compliance or warning letters' and works with the CBSA 'to stop unauthorized shipments'. Semaglutide (Ozempic, Rybelsus, Wegovy) and tirzepatide (Mounjaro, Zepbound) 'are prescription drugs authorized by Health Canada to treat type 2 diabetes and obesity'. Names no seller. Also: 'Health Canada never endorses a health product and does not allow its logo to be used in the advertising or packaging of health products'; known risks of GLP-1 drugs include 'severe gastrointestinal problems, pancreatitis, worsening kidney injury and low blood sugar'. EDITOR: the first run flagged this entry DO NOT LINK because of the token in the URL; the node URL solves that, because scripts/check-no-commerce.ts tests the URL string as written (path and query) and does not follow redirects (read, not run, by the second run). The host must still be added to the allowlist. If the editor prefers not to rely on a redirect, cite ca-hc-2026-04-think-twice-peptides instead."
+
+ca-hc-2025-01-semaglutide-pyridoxine-recall:
+  type: regulator
+  authors: "Health Canada"
+  title: "Semaglutide + Pyridoxine: produced with an unauthorized active pharmaceutical ingredient (health product recall RA-76830)"
+  container: "Recalls and safety alerts"
+  year: 2025
+  url: https://recalls-rappels.canada.ca/en/alert-recall/semaglutide-pyridoxine-produced-unauthorized-active-pharmaceutical-ingredient
+  accessed: 2026-10-23
+  verified: url
+  note: "Health product recall published 21 January 2025 (RA-76830), recall class Type I, depth of recall: end users, distribution national; re-read by the second run. Products: semaglutide + pyridoxine in syringes or vials, market authorisation 'N/A', made by a compounding pharmacy in Calgary. Issue: 'The product was produced with an unauthorized active pharmaceutical ingredient.' Health Canada's June 2025 position (ca-hc-2025-glp1-compounding-position) explains that the active ingredient was not the same as in an approved semaglutide product. EDITOR (seller rule): the page title and URL name no business, but the page's Summary 'Product' line and its 'Companies' field name the compounding pharmacy; decide whether to cite this page directly or only through ca-hc-recalls-database. Do not print strengths (the page lists them)."
+
+# Same id and URL as status-c.yaml; facts this page relies on below.
+ca-hc-2026-05-ghk-cu-bpc-157-api-recall:
+  type: regulator
+  authors: "Health Canada"
+  title: "GHK-Cu & BPC-157 powder: Unauthorized active pharmaceutical ingredients (health product recall RA-82047)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/alert-recall/ghk-cu-bpc-157-powder-unauthorized-active-pharmaceutical-ingredients
+  accessed: 2026-10-23
+  verified: url
+  note: "Health product recall published 7 May 2026 (recall date 5 May 2026; RA-82047), recall class Type I, distribution national, 'Depth of recall: Compounding and Community Pharmacies'; re-read by the second run. Products: GHK-Cu powder and BPC-157 powder (5 g and 50 g packs, five lots each), market authorisation 'N/A'. Issue: 'Products sold are unauthorized active pharmaceutical ingredients (APIs).' EDITOR (seller rule): the title and URL name no company, but the page's 'Companies' field names the recalling firm (a supplier of ingredients in British Columbia). Shows that bulk BPC-157 and GHK-Cu had reached Canadian compounding and community pharmacies and that Health Canada treats them as unauthorised APIs (under POL-0051 a compounded product 'should be produced from' an API used in an authorised drug or listed in a recognised pharmacopoeia; neither applies to BPC-157 or GHK-Cu as far as we found)."
+
+# Same id and URL as status-b.yaml (status-c used a search record of its own); this page's searches below.
+ca-hc-recalls-database:
+  type: regulator
+  authors: "Health Canada"
+  title: "Recalls and safety alerts (searchable database)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en
+  accessed: 2026-10-23
+  verified: url
+  note: "Index entry for advisories that name a seller, clinic, shop or brand (seller rule). Searches run on 23 October 2026 by both runs of this assignment (site search, recalls-rappels.canada.ca/en/search/site?search_api_fulltext=<term>): 'peptide' 12 results, 'BPC-157' 6, 'retatrutide' 3, 'melanotan' 5, 'tirzepatide' 4, 'semaglutide' 9, 'GHK' 5, 'TB-500' 6 (plus unrelated hits), and, to look for older items, 'bodybuilding' 24, 'anti-aging' 31, 'SARMs' 16, 'growth hormone' 97 (scanned by title only). The earliest peptide-specific advisory found is RA-74731 (December 2023); none was found for 2020 to 2022 (the 2017 to 2020 lists titled 'Unauthorized products may pose serious health risks' were not opened). Each advisory is reachable by a neutral URL, recalls-rappels.canada.ca/en/node/<RA number>, which redirects to it (checked for 81518, 81874 and 77218). Peptide advisories found and read in full; those naming a seller, clinic, shop or brand are summarised here by number, without names (most also name the brands on the vials and print vial strengths: never copy either): RA-74731 (13 December 2023): injectable products 'promoted as peptides' sold online by a Quebec seller; 'Most synthetic injectable peptides are regulated as prescription drugs in Canada'; Health Canada 'has ordered' the seller to stop advertising and selling and works with the CBSA to prevent import. RA-75741 (26 June 2024, updated 19 July 2024): injectable peptides and bodybuilding drugs seized from a Quebec company selling on two websites; at Health Canada's request it stopped selling and took the websites down; the update added nootropic drops and RU-58841. RA-77218 (1 April 2025, corrected 2 April): 26 named injectable peptide products seized from a wellness clinic in Calgary (including BPC-157, CJC-1295, epitalon, GHK-Cu, ipamorelin, KPV, melanotan-2, MOTS-c, PT-141, selank, thymosin alpha-1, TB-500); 'most injectable peptides are regulated as prescription drugs in Canada'; people treated there are told to consult a health professional. RA-77275 (14 April 2025): injectable peptides and bodybuilding drugs seized from an online seller in Sherbrooke, Quebec; at Health Canada's request it stopped selling and took its website down; 'injectable peptides are regulated as prescription drugs in Canada'. RA-77807 (1 August 2025): 42 named injectable peptide products seized from and sold by an online seller (including AOD9604, bremelanotide, BPC-157, CJC-1295, epitalon, GHK-Cu, hexarelin, ipamorelin, LL-37, melanotan 1 and II, retatrutide, selank, semax, SS-31, tesamorelin, thymosin alpha, TB-500, tirzepatide); 'Injectable peptides are regulated as prescription drugs in Canada.' RA-81403 (24 December 2025): injectable peptides (including semaglutide, retatrutide, BPC-157, TB-500, GHK-Cu blends, MOTS-c, SS-31, tesamorelin, thymosin alpha-1, melanotan-2), somatropin and testosterone compounds seized from a fitness business in Vancouver and sold through a website; at Health Canada's request the company stopped advertising and selling; 'Many injectable peptides are regulated as prescription drugs in Canada.' RA-81404 (24 December 2025): injectable peptides (semaglutide, tirzepatide, products labelled 'Retra', BPC-157, TB-500, ipamorelin, melanotan), SARMs, anabolic steroids and testosterone compounds seized from two supplement shops in Maple Ridge, BC; 'Some of the seized product ... have been labelled with falsified Drug Identification Numbers (DINs).' RA-81792 (25 March 2026): counterfeit Mounjaro vials and pens (a pen's DIN and batch number are invalid) and unauthorised injectables seized at a Mississauga business. Common to these advisories: risks named are infection, allergic reactions, contaminants, wrong or missing ingredients and poor manufacture or storage; the advice is to see a health professional if worried, return products to a pharmacy or follow municipal hazardous-waste rules, check for a DIN (or NPN / DIN-HM) in the Drug Product Database or the Licensed Natural Health Products Database, and report side effects to Health Canada. Re-read in full by the second run: RA-74731, RA-75741, RA-77218, RA-77275, RA-77807, RA-81403, RA-81404, RA-81792 (dates and quotations above checked; corrections: RA-81403's business is a fitness business, not described as a gym; RA-81404's falsified DINs and SARMs added). Not peptide-related and not used: a cosmetic lash serum recall, a skincare ampoule recall, a laboratory assay recall, and RA-82484 (12 August 2026), a seizure of unauthorised and counterfeit cosmetic injectables (botulinum toxin, placenta product, dermal fillers) at a beauty business in Hamilton. Other generic-semaglutide quality recalls of 2026 are in ca-hc-2026-08-generic-semaglutide-recall."
+
+ca-hc-2026-07-injunction-statement:
+  type: regulator
+  authors: "Health Canada"
+  title: "Health Canada obtains permanent injunction preventing an online seller's illegal sale of injectable peptides in Canada (statement, 29 July 2026)"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/news/2026/07/health-canada-obtains-permanent-injunction-preventing-canlab-researchs-illegal-sale-of-injectable-peptides-in-canada.html
+  accessed: 2026-10-23
+  verified: url
+  note: "DO NOT CITE DIRECTLY: the official title and URL name the seller (the title above is paraphrased; the real title names the company). Re-read by the second run through WebFetch (page details 2026-07-29); the quotations below match. The same seller is the subject of advisory RA-74731 (13 December 2023), in which Health Canada 'has ordered' it to stop advertising and selling (see ca-hc-recalls-database). Statement of 29 July 2026: 'On June 11, 2026, the Superior Court of Québec granted Health Canada a permanent injunction against [the seller] and its representatives'; the seller, 'a Québec-based online retailer', had sold unauthorized peptide drugs 'promoting them with many unproven health claims, despite repeated enforcement actions by Health Canada', including 'a Ministerial Order directing the company to cease advertising and selling unauthorized health products'; under the injunction it 'cannot manufacture, test, distribute or sell unauthorized injectable peptides, nor can it assist others', nor advertise them 'through any website or social media platform accessible with a Canadian Internet Protocol (IP) address'; non-compliance could lead to 'referring the matter for prosecution or filing an application for contempt'. 'In Canada, injectable peptides are regulated as prescription drugs and must be authorized by Health Canada before they can be sold.' The statement does not name the section of the Act; s. 21.5 is the injunction power for therapeutic products (ca-fda-s21-5-injunction), but whether the Minister applied under s. 21.5 or under the court's general powers is not stated (UNRESOLVED; the judgment itself was not found or read)."
+
+ca-hc-2026-08-generic-semaglutide-recall:
+  type: regulator
+  authors: "Health Canada"
+  title: "Apo-Semaglutide injection: incorrect dose display (health product recall RA-82536)"
+  container: "Recalls and safety alerts"
+  year: 2026
+  url: https://recalls-rappels.canada.ca/en/alert-recall/apo-semaglutide-injection-incorrect-dose-display
+  accessed: 2026-10-23
+  verified: url
+  note: "Read by the second run. Recall published 27 August 2026, Type II: one lot of Apo-Semaglutide, a generic semaglutide pen with DIN 02568020, may show and deliver a higher dose than the one selected. Two further Type II recalls the same month concern another company's generic 'Semaglutide Injection' (DIN 02567806): a pen in the wrong package (RA-82477, 12 August 2026) and an out-of-specification impurity (RA-82537, 27 August 2026). Cited for one fact only: by August 2026 generic semaglutide medicines with their own DINs were on the Canadian market, so Health Canada's June 2025 statement that no synthetic semaglutide had been authorised (ca-hc-2025-glp1-compounding-position) is out of date. Authorised medicines and their makers may be named for identification; do not print doses or strengths. Whether the generics' semaglutide is chemically synthesised was not checked (UNRESOLVED; the product monographs were not read)."
+
+# ================================================================ Databases searched (authorisation status)
+
+ca-dpd-search-canada-legal-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database API searches, 23 October 2026: the peptides on this site other than those in ca-dpd-search-status-b-2026-10-23"
+  container: "Drug Product Database (DPD)"
+  year: 2026
+  url: https://health-products.canada.ca/api/drug/activeingredient/?lang=en&type=json&ingredientname=bpc
+  accessed: 2026-10-23
+  verified: url
+  note: "Searched through the official DPD API in the evening of 23 October 2026 (active-ingredient search, substring match, all statuses including cancelled; plus brand-name search), with drug status read for every hit. No product found for: BPC (only an unrelated cancelled amyl nitrite product with 'BPC', British Pharmaceutical Codex, in its brand name), PL 14736, PL-10, PLD-116, bepecin, TB-500, TB500, thymosin, LKKTETQ, CJC, CJC1295, DAC:GRF, epitalon, epithalon, AEDG, GHK, copper peptide, copper tripeptide, prezatide, hexarelin, examorelin, EP-23905, MF-6003, ipamorelin, NNC 26, KPV, Lys-Pro-Val, melanotan, MT-II, MOTS, retatrutide, LY3437943, selank, semax, AOD, sermorelin, bremelanotide, Vyleesi, elamipretide, Forzinity, thymalfasin, Zadaxin, nicotinamide riboside, nicotinamide mononucleotide, nadide, nicotinamide adenine, adenine dinucleotide. Found: afamelanotide (melanotan I's INN; not on this site as a compound) as SCENESSE, DIN 02569825, status 'Approved' (authorised, not yet marketed) since 2026-07-09; tesamorelin as EGRIFTA, two DINs, both cancelled (see status-b); semaglutide: OZEMPIC (first marketed 2018-02-22), RYBELSUS (2020-04-19), WEGOVY (2024-03-28), two further brands with status Approved (not marketed), and generic semaglutide injections from four other companies, two marketed since May 2026; tirzepatide: MOUNJARO (2023-10-23), MOUNJARO KWIKPEN (2024-12-10), ZEPBOUND (2025-07-09). Controls (semaglutide, tirzepatide, substring 'SEMAGLU') returned products. Later the same evening the API returned HTTP 503 to every request (also seen by status-b and status-c), so searches for development codes and brand names TP-7, Selanc, MEHFPGP, MTP-131, Bendavia, SS-31, PT-141, MTII, Melanotan-2, Epithalone, LY3298176, NN9535 and Thymosin alpha could not be completed (UNRESOLVED; the INN searches above cover the same molecules). NOT RE-VERIFIED: during the second run the DPD web search and API redirected to Health Canada's maintenance page (construction.hres.ca), so none of the above could be re-checked; the second run removed two semaglutide brand names it could not confirm. Generic semaglutide with its own DINs is independently confirmed by ca-hc-2026-08-generic-semaglutide-recall; afamelanotide (SCENESSE, DIN 02569825, approved 2026-07-09) by status-c's NOC search (ca-noc-search-status-c-2026-10-23)."
+
+ca-lnhpd-nr-licence:
+  type: dataset
+  authors: "Health Canada"
+  title: "Licensed Natural Health Products Database: a product licence for oral nicotinamide riboside (licence record, medicinal ingredients, route and purpose)"
+  container: "Licensed Natural Health Products Database (LNHPD) API"
+  year: 2026
+  url: https://health-products.canada.ca/api/natural-licences/productlicence/?lang=en&type=json&id=80142882
+  accessed: 2026-10-23
+  verified: url
+  note: "Read through the official LNHPD API on 23 October 2026 (productlicence, medicinalingredient, productroute and productpurpose endpoints). Licence 80142882, licence date 2025-07-23, active (flag_product_status 1), 'General (non-traditional)' application, not monograph-attested; capsule; route 'Oral'; medicinal ingredients include 500 mg of 'Pyridinium, 3-(aminocarbonyl)-1-beta-D-ribofuranosyl-' from source 'Nicotinamide riboside', with pterostilbene and betaine; licensed purpose includes 'Source of Vitamin B3' and 'increases blood NAD+ levels, to support cellular health'. The licence number was found through a web search, then checked in the official database. Shows that oral nicotinamide riboside can be a licensed natural health product. Do not name the product or company on the page (seller rule). Not checked: how many other NR or NMN products are licensed (the LNHPD web search is a form; the API has no name search). NOT RE-VERIFIED: the LNHPD was under maintenance during the second run."
+
+ca-nhpid-nmn-monograph:
+  type: guideline
+  authors: "Health Canada, Natural and Non-prescription Health Products Directorate"
+  title: "Natural Health Product monograph: Nicotinamide mononucleotide (28 August 2024)"
+  container: "Natural Health Products Ingredients Database"
+  year: 2024
+  url: https://webprod.hc-sc.gc.ca/nhpid-bdipsn/dbImages/mono_nicotinamide-mononucleotide_english.pdf
+  accessed: 2026-10-23
+  verified: url
+  note: "Read in full (pdftotext), 7 pages, dated 28 August 2024. 'This monograph is intended to serve as a guide to industry for the preparation of Product Licence Applications (PLAs) and labels for natural health product market authorization.' Route of administration: oral only. Subpopulation: adults 18 years and older. Permitted uses include 'Source of (an) antioxidant(s)' and 'NMN is a NAD+ precursor which is an important cofactor in energy metabolism'. Sets daily and per-dose limits and duration-of-use statements (not reproduced: the site gives no doses). Cautions include asking a practitioner before use if pregnant, breastfeeding or diabetic. A monograph exists, so oral NMN products can be licensed by attesting to it; we did not check which NMN products hold a licence. Re-downloaded and re-read by the second run (same text and date). CAVEATS: (1) the NHPID 'Listing of monographs' page (monosReq) fetched by the second run does not list this monograph under N (it lists only N-acetyl-L-cysteine and nosodes), so the listing may lag or the monograph may not be in the public list (UNRESOLVED; ask Health Canada or check the NHPID ingredient record); (2) guessed URLs for nicotinamide riboside and NAD monographs return an HTML page, not a PDF, which is weak evidence that no such monograph exists (UNRESOLVED)."
+
+ca-ctgov-canada-peptide-search-2026-10-23:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2 searches: trials of the peptides on this site with a site in Canada"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=BPC-157&query.locn=Canada&countTotal=true
+  accessed: 2026-10-23
+  verified: registry
+  note: "Run on 23 October 2026 with query.intr=<term> and query.locn=Canada; each hit checked for a Canadian location. 0 trials for BPC-157, BPC 157, TB-500, thymosin beta 4, CJC-1295, ipamorelin, epitalon, MOTS-c, Semax, Selank, KPV, melanotan, thymalfasin, AOD-9604, hexarelin. GHK: 1 (NCT07706361, a not-yet-recruiting study of a skin patch measuring blood GHK and GHK-Cu, start 2027; not a trial of injected GHK-Cu). Retatrutide: 10 Lilly trials with Canadian sites (4 completed: NCT05882045, NCT05931367, NCT05936151, NCT05929066; 5 active, not recruiting: NCT07035093, NCT06859268, NCT07357415, NCT06383390, NCT06260722; 1 recruiting: NCT07165028). Tesamorelin: 3 completed (NCT00123253, NCT00608023, NCT02012556; run 2005-2008). Bremelanotide: 3 completed (NCT01382719, NCT02333071, NCT02338960; started 2011-2015, completed 2012-2017; the first run's '2011-2015' gave start years only). Elamipretide: 2 (NCT07531251 recruiting, Barth syndrome; NCT03323749 terminated). Re-run by the second run, same counts; it also searched thymosin alpha, CJC-1295, epitalon, MOTS-c, Semax, Selank, KPV, AOD-9604, hexarelin and 'copper peptide' (0 each), nicotinamide riboside (3 completed industry-sponsored supplement studies with Canadian sites, NCT02191462, NCT02712593, NCT02678611, 2014-2016) and nicotinamide mononucleotide (NCT04910061 completed, 2021; NCT07880925 not yet recruiting, 2026). The brand names of the supplements in these records must not be printed (seller rule). Health Canada's own Clinical Trials Database was not searched for these names (status-b searched it for four GH-axis peptides, status-c for six other compounds; it was down during the second run)."
+
+# ================================================================ Provincial regulators
+
+ca-napra-sterile-compounding:
+  type: guideline
+  authors: "National Association of Pharmacy Regulatory Authorities (NAPRA)"
+  title: "Model Standards for Pharmacy Compounding of Non-hazardous Sterile Preparations"
+  container: "napra.ca"
+  year: 2016
+  url: https://www.napra.ca/publication/model-standards-for-pharmacy-compounding-of-non-hazardous-sterile-preparations/
+  accessed: 2026-10-23
+  verified: url
+  note: "One of three NAPRA model standards for pharmacy compounding (non-hazardous sterile, hazardous sterile, non-sterile; the first run recorded the PDF as dated November 2015, revised November 2016; the second run read the publication page only). 'The implementation of the model standards is under the authority of the respective provincial, territorial or Canadian Armed Forces pharmacy regulatory bodies. These bodies each establish their own process for the implementation of the standards in their jurisdiction.' They 'effectively replace NAPRA's Guidelines for Pharmacy Compounding (2006)'. Re-read by the second run."
+
+ca-napra-regulatory-authorities:
+  type: web
+  authors: "National Association of Pharmacy Regulatory Authorities (NAPRA)"
+  title: "Canadian Pharmacy Regulatory Authorities"
+  container: "napra.ca"
+  year: 2026
+  url: https://www.napra.ca/resources/pharmacy-regulatory-authorities/
+  accessed: 2026-10-23
+  verified: url
+  note: "Lists the pharmacy regulator in each province and territory with its website: Alberta College of Pharmacy (abpharmacy.ca), College of Pharmacists of British Columbia (bcpharmacists.org), College of Pharmacists of Manitoba (cphm.ca), New Brunswick College of Pharmacists (nbpharmacists.ca), College of Pharmacy of Newfoundland and Labrador (cpnl.ca), Nova Scotia Pharmacy Regulator (nspharmacy.ca), Ontario College of Pharmacists (ocpinfo.com), Prince Edward Island College of Pharmacy (pepharmacists.ca), Ordre des pharmaciens du Québec (opq.org), Saskatchewan College of Pharmacy Professionals (saskpharm.ca); in the territories, government departments (Government of the Northwest Territories, Professional Licensing (hss.gov.nt.ca); Government of Nunavut, Health (gov.nu.ca); Government of Yukon, Professional Licensing and Regulatory Affairs, Community Services (community.gov.yk.ca)). Names and links re-read by the second run."
+
+ca-acp-2025-imported-api:
+  type: regulator
+  authors: "Alberta College of Pharmacy"
+  title: "Compounding with imported active pharmaceutical ingredients"
+  container: "abpharmacy.ca"
+  year: 2025
+  url: https://abpharmacy.ca/news/compounding-with-imported-active-pharmaceutical-ingredients/
+  accessed: 2026-10-23
+  verified: url
+  note: "News item of 18 February 2025 from Alberta's pharmacy regulator (re-read by the second run). After the January 2025 recall of compounded semaglutide made with an imported unauthorised API, it reminds pharmacies that to import an API without a drug establishment licence it must be 'not commercially available' in Canada (FDR C.01A.002(b)); Health Canada interprets that phrase to include discontinued or suspended drugs, drugs in shortage or back order, dormant, or approved but not marketed; other criteria are in POL-0051; APIs 'must be sourced from reliable and recognized sources'."
+
+ca-cpsa-2026-04-injectable-peptides:
+  type: regulator
+  authors: "College of Physicians & Surgeons of Alberta"
+  title: "Unauthorized injectable peptides and their potential serious health risks"
+  container: "cpsa.ca (Messenger, April 2026)"
+  year: 2026
+  url: https://cpsa.ca/news/unauthorized-injectable-peptides-and-their-potential-serious-health-risks/
+  accessed: 2026-10-23
+  verified: url
+  note: "Posted 9 April 2026 by Alberta's physician regulator (April 2026 Messenger; re-read by the second run). 'Injectable peptides are regulated as prescription medications in Canada, and while some peptide-based medications are authorized for specific medical indications, many products marketed online are experimental and unauthorized for human use'; products labelled 'for research use only' or 'not for human consumption' are 'presented in formats intended for injection'; 'For many experimental peptides, there is limited or no high-quality human clinical evidence'. Asks physicians to ask patients about non-prescribed injectables, watch for complications, check the DPD and LNHPD, counsel patients, advise return of unused products to a pharmacy for disposal, and report adverse events to Health Canada. Repeats Health Canada's list of identified products."
+
+# ================================================================ Reporting side effects and complaints
+
+ca-hc-medeffect-reporting:
+  type: regulator
+  authors: "Health Canada (MedEffect Canada)"
+  title: "Report a side effect of a health product, drug or medical device"
+  container: "Canada.ca"
+  year: 2023
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2023-09-08. 'Anyone can report a side effect to a health or cannabis product'; report 'as soon as possible ... even if you are not sure if a particular health or cannabis product was the cause'; separate routes for drugs, medical devices, vaccines, natural health products, cannabis and veterinary drugs. A report helps detect a 'signal', which 'is not proof the ... product caused the adverse reaction'. The consumer page for drugs (adverse-reaction-reporting/drug/consumer.html, title 'Report a side effect to a drug: consumers', page details 2019-12-30): 'Everyone who witnesses or experiences a side effect (adverse reaction) to a drug is strongly encouraged to report it'; online (form on hpr-rps.hres.ca), by mail to a Canada Vigilance Regional Office, or with a health care provider ('doctor, nurse, pharmacist'). Health Canada's peptide advisories tell readers to report side effects to Health Canada. Both pages re-read by the second run."
+
+ca-hc-canada-vigilance:
+  type: regulator
+  authors: "Health Canada"
+  title: "Canada Vigilance Program"
+  container: "Canada.ca"
+  year: 2022
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/canada-vigilance-program.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2022-06-15 (the first run gave the year as 2026; corrected). 'The Canada Vigilance Program is Health Canada's post-market surveillance program'; it collects and assesses reports of suspected side effects of health products marketed in Canada (drugs, natural health products, biologics and others); 'The Canada Vigilance Program has collected reports of suspected adverse reactions since 1965'; health professionals and consumers report voluntarily, either directly to Health Canada or through the company that holds the market authorisation; 'seven Canada Vigilance Regional Offices'; reporting online, by phone, or by fax or mail; reports are searchable in the Canada Vigilance Online Database. Re-read by the second run (through WebFetch, which gives short excerpts; quotations are limited to those)."
+
+ca-hc-complaints:
+  type: regulator
+  authors: "Health Canada, Regulatory Operations and Enforcement Branch"
+  title: "Reporting complaints about health products"
+  container: "Canada.ca"
+  year: 2022
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/compliance-enforcement/problem-reporting/health-product-complaint-process-summary.html
+  accessed: 2026-10-23
+  verified: url
+  note: "Page details 2022-07-12 (re-read by the second run). Health Canada's Regulatory Operations and Enforcement Branch handles complaints 'on a priority basis according to the risk to people's health and safety'. Examples include counterfeit products, 'unauthorized sale of health products', contamination, labelling errors and 'false, misleading or deceptive advertising of health products'. Online form for drugs and natural health products; asks for the product name, where it was advertised or obtained, licence or lot numbers, photos of labels, receipts and website links."
+
+# ================================================================ Anti-doping (Sport Integrity Canada, formerly CCES)
+
+ca-sic-our-brand:
+  type: web
+  authors: "Sport Integrity Canada"
+  title: "Our Brand"
+  container: "sportintegrity.ca"
+  year: 2026
+  url: https://sportintegrity.ca/our-brand
+  accessed: 2026-10-23
+  verified: url
+  note: "'In November 2025, we announced our new name: Sport Integrity Canada.' 'For over 20 years, we've served as the country's anti-doping agency'; since 2025 it also runs the national safe sport programme, and it works on competition manipulation. The boilerplate of its 2026 releases reads 'Sport Integrity Canada, formerly the Canadian Centre for Ethics in Sport (CCES)' (ca-sic-2026-04-peptides-reminder). cces.ca redirects (HTTP 301) to sportintegrity.ca. Re-read by the second run."
+
+ca-sic-cadp:
+  type: regulator
+  authors: "Sport Integrity Canada"
+  title: "Canadian Anti-Doping Program"
+  container: "sportintegrity.ca"
+  year: 2026
+  url: https://sportintegrity.ca/canadian-anti-doping-program
+  accessed: 2026-10-23
+  verified: url
+  note: "Sport Integrity Canada 'implements and administers the Canadian Anti-Doping Program (CADP) on behalf of the Canadian sport community'. National and multi-sport organisations adopt the CADP (more than 70 so far); athletes, support personnel and others in those organisations 'accept the rules as a condition of participation in sport'. The CADP complies with the World Anti-Doping Code and International Standards. 'The current version of the CADP came into force on January 1, 2021'; 'The 2027 CADP and World Anti-Doping Code will come into effect on January 1, 2027.' Re-read by the second run."
+
+ca-sic-2027-cadp:
+  type: regulator
+  authors: "Sport Integrity Canada"
+  title: "Available Now: 2027 Canadian Anti-Doping Program (advisory note, 15 October 2026)"
+  container: "sportintegrity.ca"
+  year: 2026
+  url: https://sportintegrity.ca/news/available-now-2027-canadian-anti-doping-program
+  accessed: 2026-10-23
+  verified: url
+  note: "Ottawa, 15 October 2026: the 2027 CADP 'will come into effect on January 1, 2027', keeping it compliant with the World Anti-Doping Code; national sport organisations must adopt it by 31 December 2026 as a condition of Sport Canada funding. Changes include new whereabouts deadlines, an end to the Medical Review process for student-athletes (they must apply for a retroactive TUE after a positive test), and more flexible sanctions for substances of abuse and for athletes who did not apply for a TUE in advance."
+
+ca-sic-2026-04-peptides-reminder:
+  type: regulator
+  authors: "Sport Integrity Canada"
+  title: "Reminder: Non-Approved Peptides Included on the Prohibited List (advisory note, 27 April 2026)"
+  container: "sportintegrity.ca"
+  year: 2026
+  url: https://sportintegrity.ca/news/reminder-non-approved-peptides-included-prohibited-list
+  accessed: 2026-10-23
+  verified: url
+  note: "Ottawa, 27 April 2026: 'BPC-157 and other non-approved peptides are listed as prohibited substances on the World Anti-Doping Agency's (WADA) 2026 Prohibited List'; 'BPC-157 and other peptides are classified as S0: Non-approved substances ... As a result, the use, administration, trafficking or possession of these substances could result in an anti-doping rule violation under the Canadian Anti-Doping Program (CADP).' Sport Integrity Canada 'does not comment on the use of peptides for the general population'. Athletes can submit substance inquiries or use Global DRO. Prompted by a webinar hosted by a corporate sponsor of the Canadian Academy of Sport and Exercise Medicine. Re-read by the second run."
+
+ca-sic-2025-04-bpc157-tb500-sanction:
+  type: regulator
+  authors: "Canadian Centre for Ethics in Sport (now Sport Integrity Canada)"
+  title: "U SPORTS Volleyball Athlete Suspended for the Use of BPC-157 and TB-500 (media release, 7 April 2025)"
+  container: "sportintegrity.ca"
+  year: 2025
+  url: https://sportintegrity.ca/news/u-sports-volleyball-athlete-suspended-use-bpc-157-and-tb-500
+  accessed: 2026-10-23
+  verified: url
+  note: "Ottawa, 7 April 2025: a U SPORTS (university) volleyball athlete received a four-year sanction after information showed use, in August-September 2024, of 'BPC-157, a non-approved substance, and TB-500, a growth factor'; the athlete did not dispute it in time, so it was confirmed 'by way of a deemed waiver'; because a provisional suspension was imposed, the sanction ends on 3 December 2028; during it the athlete is ineligible to participate 'in any capacity' with any CADP or Code signatory, 'including training with teammates'; 'Under the CADP rules, the CCES makes public every anti-doping rule violation.' The case was built on information submitted to the CCES, not on a positive test as far as the release says. The release names the athlete and her university: name neither on the page. Re-read by the second run."
+
+ca-sic-prohibited-list:
+  type: web
+  authors: "Sport Integrity Canada"
+  title: "The Prohibited List"
+  container: "sportintegrity.ca"
+  year: 2026
+  url: https://sportintegrity.ca/prohibited-list
+  accessed: 2026-10-23
+  verified: url
+  note: "Re-read by the second run. The Prohibited List is WADA's international standard, updated each year with effect from 1 January (revisions published in October); it says which substances are prohibited in and out of competition and in particular sports. A substance is added if it meets two of three criteria: performance enhancement, health risk, violation of the spirit of sport. Athletes should check medications (Global DRO)."
+
+# ================================================================ Help services (names and URLs only; no phone numbers recorded)
+
+ca-infopoison-centres:
+  type: web
+  authors: "Canadian Association for Poison Centres and Clinical Toxicology"
+  title: "Centres (Poison centres in Canada)"
+  container: "infopoison.ca"
+  year: 2026
+  url: https://infopoison.ca/centres/
+  accessed: 2026-10-23
+  verified: url
+  note: "The national association of Canada's poison centres. Re-read by the second run. 'Canada has five regional poison centres open seven days a week, 24 hours a day, providing telephone-based frontline service from nurses and pharmacists with specialized training in the effects of poisons': BC Drug and Poison Information Centre (British Columbia, Yukon); Poison and Drug Information Service, PADIS (Alberta, Northwest Territories, Saskatchewan); Ontario Poison Centre (Ontario, Manitoba, Nunavut; the Manitoba line runs as 'Manitoba Poison Centre' from Toronto; for Nunavut the line is for health care professionals and the 'Public to call local health centre'); Centre antipoison du Québec (Québec); Atlantic Canada Poison Centre (the summary lists Newfoundland and Labrador, Nova Scotia and Prince Edward Island; the contact list by province also gives it, with a toll-free line, for New Brunswick). The home page (infopoison.ca) adds: 'Medications are the leading cause of poisoning in Canada' and 'What we sometimes call an \"overdose\" is really a poisoning.' (The first run attributed that sentence to the centres page and cited a Health Canada release of March 2023 that it did not register; the second run moved the quotation and dropped the release.) Phone numbers deliberately not recorded."
+
+ca-poison-dpic:
+  type: web
+  authors: "BC Drug and Poison Information Centre"
+  title: "BC Drug and Poison Information Centre (DPIC)"
+  container: "dpic.org"
+  year: 2026
+  url: https://www.dpic.org/
+  accessed: 2026-10-23
+  verified: url
+  note: "Official site (page title 'Welcome to the BC Drug and Poison Information Centre'); serves British Columbia and Yukon (ca-infopoison-centres)."
+
+ca-poison-padis:
+  type: web
+  authors: "Alberta Health Services, Poison and Drug Information Service"
+  title: "Poison and Drug Information Service (PADIS)"
+  container: "padis.ca"
+  year: 2026
+  url: https://www.padis.ca/
+  accessed: 2026-10-23
+  verified: url
+  note: "Web address as given by infopoison.ca for PADIS (Alberta, Northwest Territories, Saskatchewan). UNRESOLVED: padis.ca redirects (HTTP 301) to albertahealthservices.ca/topics/Page11975.aspx, and albertahealthservices.ca refused every connection from this machine on 23 October 2026 (both runs, curl and WebFetch), so the page itself was not read. Check in a browser before use."
+
+ca-poison-ontario:
+  type: web
+  authors: "Ontario Poison Centre (The Hospital for Sick Children)"
+  title: "Ontario Poison Centre (OPC)"
+  container: "ontariopoisoncentre.ca"
+  year: 2026
+  url: https://www.ontariopoisoncentre.ca/
+  accessed: 2026-10-23
+  verified: url
+  note: "Official site (page title 'Ontario Poison Centre (OPC)'): 'The Ontario Poison Centre (OPC) is operated and supported by The Hospital for Sick Children (SickKids) in Toronto.' Serves Ontario and Manitoba, and health care professionals in Nunavut (ca-infopoison-centres)."
+
+ca-poison-quebec:
+  type: web
+  authors: "Centre antipoison du Québec (CIUSSS de la Capitale-Nationale)"
+  title: "Centre antipoison du Québec"
+  container: "ciusss-capitalenationale.gouv.qc.ca"
+  year: 2026
+  url: https://www.ciusss-capitalenationale.gouv.qc.ca/antipoison/
+  accessed: 2026-10-23
+  verified: url
+  lang: fr
+  note: "Official page (French; it opens at the CIUSSS de la Capitale-Nationale site; re-read by the second run). Serves Québec (ca-infopoison-centres). The page's HTML title includes its phone number: use the title above, not the page's. (The first run's remark about Québec and a national poison number had no registered source and was removed.)"
+
+ca-poison-atlantic:
+  type: web
+  authors: "Atlantic Canada Poison Centre"
+  title: "Atlantic Canada Poison Centre"
+  container: "atlanticcanadapoisoncentre.ca"
+  year: 2026
+  url: https://atlanticcanadapoisoncentre.ca/
+  accessed: 2026-10-23
+  verified: url
+  note: "Official site (page title 'Home | Atlantic Canada Poison Centre'; re-read by the second run); serves Newfoundland and Labrador, Nova Scotia, Prince Edward Island and, per infopoison.ca's contact list (which gives a toll-free line under New Brunswick), New Brunswick. Partly UNRESOLVED: infopoison's summary of centres does not list New Brunswick, and the centre's own page was not searched for it; before the page says the centre serves the public in New Brunswick, check its site."
+
+ca-help-healthlink-bc:
+  type: web
+  authors: "Province of British Columbia"
+  title: "HealthLink BC"
+  container: "healthlinkbc.ca"
+  year: 2026
+  url: https://www.healthlinkbc.ca/
+  accessed: 2026-10-23
+  verified: url
+  note: "Official site (page title 'HealthLink BC - 24/7 Health Advice You Can Trust'): British Columbia's health advice line and website, with nurses and other professionals."
+
+ca-help-alberta-health-link:
+  type: web
+  authors: "Alberta Health Services"
+  title: "Health Link"
+  container: "albertahealthservices.ca"
+  year: 2026
+  url: https://www.albertahealthservices.ca/info/page12630.aspx
+  accessed: 2026-10-23
+  verified: url
+  note: "Alberta's 24/7 telephone health advice service from Alberta Health Services (registered nurses and other clinicians). URL found by web search restricted to albertahealthservices.ca. UNRESOLVED: albertahealthservices.ca refused every connection from this machine on 23 October 2026 (both runs, curl and WebFetch), so the page was not read; check in a browser. (alberta.ca/health-link returned 404.)"
+
+ca-help-saskatchewan-healthline:
+  type: web
+  authors: "Government of Saskatchewan"
+  title: "HealthLine"
+  container: "saskatchewan.ca"
+  year: 2026
+  url: https://www.saskatchewan.ca/residents/health/accessing-health-care-services/healthline
+  accessed: 2026-10-23
+  verified: url
+  note: "Official page (title 'HealthLine | Accessing Health Care Services in Saskatchewan | Government of Saskatchewan'): Saskatchewan's 24-hour health advice line."
+
+ca-help-manitoba-health-links:
+  type: web
+  authors: "Shared Health Manitoba"
+  title: "Important Numbers (Health Links – Info Santé)"
+  container: "sharedhealthmb.ca"
+  year: 2026
+  url: https://sharedhealthmb.ca/contact/important-numbers/
+  accessed: 2026-10-23
+  verified: url
+  note: "Lists Health Links – Info Santé, Manitoba's bilingual 24/7 telephone health advice service staffed by registered nurses (page re-read by the second run; the name is on it); the Government of Manitoba's health contacts page (gov.mb.ca/health/contact.html) also names it (first run). UNRESOLVED: whether Manitoba has started routing 811 to it (a 2026 implementation plan for 811 was seen only in a secondary source)."
+
+ca-help-health811-ontario:
+  type: web
+  authors: "Government of Ontario"
+  title: "Health811"
+  container: "health811.ontario.ca"
+  year: 2026
+  url: https://health811.ontario.ca/
+  accessed: 2026-10-23
+  verified: url
+  note: "Ontario's free 24/7 health advice and service-finding line and website ('Connect to care 24/7 with Health811', ontario.ca page 'Your health', read 23 October 2026 by both runs, which links to health811.ontario.ca; ontario.ca/health811 also redirects there). The Health811 site itself answers scripts with HTTP 403 ('Access Denied'); the link was verified through the ontario.ca page."
+
+ca-help-quebec-info-sante:
+  type: web
+  authors: "Gouvernement du Québec"
+  title: "Info-Santé 811"
+  container: "quebec.ca"
+  year: 2026
+  url: https://www.quebec.ca/en/health/finding-a-resource/info-sante-811
+  accessed: 2026-10-23
+  verified: url
+  note: "Official page (title 'Info-Santé 811 | Gouvernement du Québec'): Québec's free telephone health advice service (nurses)."
+
+ca-help-nb-tele-care:
+  type: web
+  authors: "Government of New Brunswick"
+  title: "Tele-Care 811"
+  container: "gnb.ca"
+  year: 2026
+  url: https://www.gnb.ca/en/topic/health-wellness/access-health-care/tele-care-811.html
+  accessed: 2026-10-23
+  verified: url
+  note: "New Brunswick's free bilingual 24-hour health advice line with registered nurses. URL from a web search restricted to gnb.ca; gnb.ca returned HTTP 403 to curl and to WebFetch on 23 October 2026 (both runs), so the page was not read directly. UNRESOLVED until opened in a browser (the shared browser had no free tab during the second run)."
+
+ca-help-ns-811:
+  type: web
+  authors: "Government of Nova Scotia, Department of Health and Wellness"
+  title: "811 Service"
+  container: "novascotia.ca"
+  year: 2026
+  url: https://novascotia.ca/dhw/primaryhealthcare/811.asp
+  accessed: 2026-10-23
+  verified: url
+  note: "Official page (title '811 Service | novascotia.ca'). The service's own site, 811.novascotia.ca, returned HTTP 403 to our script."
+
+ca-help-pei-811:
+  type: web
+  authors: "Government of Prince Edward Island, Health PEI"
+  title: "811 (Health PEI)"
+  container: "princeedwardisland.ca"
+  year: 2026
+  url: https://www.princeedwardisland.ca/en/information/health-pei/811
+  accessed: 2026-10-23
+  verified: url
+  note: "UNRESOLVED: princeedwardisland.ca and healthpei.ca answered curl and WebFetch with a bot-check page (Radware, 'Verifying your browser') in both runs, so the content was not read. A web search restricted to princeedwardisland.ca shows Health PEI's 811 nurse line (24/7, registered nurses) and a brochure pointing to 'healthpei.ca/811'. Check the exact URL in a browser."
+
+ca-help-nl-healthline:
+  type: web
+  authors: "Newfoundland and Labrador Health Services"
+  title: "Care options (HealthLine 811)"
+  container: "nlhealthservices.ca"
+  year: 2026
+  url: https://nlhealthservices.ca/find-health-care/primary-care-options/care-options/
+  accessed: 2026-10-23
+  verified: url
+  note: "Official page read 23 October 2026: 'HealthLine 811 is a confidential service, available 24/7, that connects with a registered nurse for health information and medical advice', with a link to 811healthline.ca."
+
+ca-help-yukon-811:
+  type: web
+  authors: "Government of Yukon"
+  title: "Access 24-hour health advice: 811"
+  container: "yukon.ca"
+  year: 2026
+  url: https://yukon.ca/en/health-and-wellness/care-services/access-24-hour-health-advice-811
+  accessed: 2026-10-23
+  verified: url
+  note: "Yukon's free, confidential 24-hour HealthLine. URL from a web search restricted to yukon.ca; yukon.ca returned HTTP 403 to curl and to WebFetch in both runs, so the page was not read. UNRESOLVED until opened in a browser."
+
+ca-help-nwt-811:
+  type: web
+  authors: "Government of the Northwest Territories, Health and Social Services"
+  title: "811"
+  container: "hss.gov.nt.ca"
+  year: 2026
+  url: https://www.hss.gov.nt.ca/en/services/811
+  accessed: 2026-10-23
+  verified: url
+  note: "Official page (title '811 | Health and Social Services'), read directly by the second run (the first run had only a search summary): 'Our registered nurses are available 24/7 to provide you with confidential advice and support'; they assess the situation, give advice and direct callers to resources in their region; there is also an '811 Mental Health and Wellness Support Line'. The Government of the Northwest Territories' news release 'NWT 811 Health Advice Line now available to all residents' (gov.nt.ca newsroom) confirms the line is available 'in all communities across the NWT, 24 hours a day'. Nunavut: no equivalent line was found (gov.nu.ca returned HTTP 403; UNRESOLVED)."

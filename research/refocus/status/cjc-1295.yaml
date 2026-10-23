@@ -1,0 +1,91 @@
+slug: cjc-1295
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-2026-04-think-twice-peptides, fda-pcac-2024-cjc1295-briefing] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-b-2026-10-23, au-tga-2026-04-peptide-responsibilities, fda-pcac-2024-cjc1295-briefing] }
+  # UK: the data file already has a UK row (not-authorised). No UK row proposed; mhra-products-search-cjc-1295-ipamorelin
+  # is offered as an extra source for it (the current row cites no MHRA search).
+schedule:
+  AU: { code: "S4", note: "'# CJC-1295 (CAS No. 863288-34-0)' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), since 1 June 2015. The CAS number given is that of the form without DAC (see notes).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02] }
+products: []
+notes: |
+  Names searched (from the data file and the FDA briefing): CJC-1295, CJC 1295, CJC1295, CJC-1295 DAC, DAC:GRF,
+  plus the 'without DAC' names (Mod GRF (1-29)). There is no INN and no brand.
+
+  CANADA, searched 23 October 2026.
+  - DPD API by active ingredient: 'cjc' (substring), 'mod grf', 'ghrp', 'growth hormone releasing', 'somatorelin',
+    'sermorelin': no product of any status. Brand-name searches through the API could not be finished (HTTP 503
+    later that evening), so they were completed in Health Canada's DPD data extract (all approved, marketed,
+    cancelled and dormant products, files dated 5 October 2026): no brand name or ingredient containing CJC,
+    DAC:GRF, MOD GRF, GRF 1-29, GHRH or GHRP ('GRF' matched only an antacid brand). NOC medicinal-ingredient table
+    (96,057 rows), substring 'CJC': no NOC ever. Submissions under review: none. [ca-dpd-search-status-b-2026-10-23,
+    ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-sur-search-2026-10-23]
+  - FDA's 2024 evaluation also states there are no approved products containing any form of CJC-1295 in Canada,
+    Australia or the UK (among others). [fda-pcac-2024-cjc1295-briefing]
+  - Trials: Health Canada Clinical Trials Database (since April 2013): no protocol. ClinicalTrials.gov: one record,
+    NCT00267527 (ConjuChem, terminated 2006), which lists no sites. The developer, ConjuChem, was based in Montreal
+    (FDA briefing), but whether its 2004-2006 trials ran at Canadian sites is UNRESOLVED (the registry lists no
+    sites and Health Canada's database starts in 2013). Not 'investigational'. [ca-hc-ctdb-search-status-b-2026-10-23,
+    ctgov-search-status-b-2026-10-23, ctgov-nct00267527, fda-pcac-2024-cjc1295-briefing]
+  - Prescription Drug List: CJC-1295 is NOT listed by name (nor is there a group entry for GHRH analogues; only
+    sermorelin and tesamorelin are named). Health Canada nevertheless states that injectable peptides 'are regulated
+    as prescription drugs in Canada' and lists CJC-1295 as an example of seized unauthorised peptides. Selling it is
+    illegal because it has no DIN and no NOC (Food and Drug Regulations C.01.014, C.08.002). Not controlled under
+    the CDSA. UNRESOLVED: the legal basis of the 'prescription drug' statement for a peptide not on the PDL; the page
+    can safely say 'unauthorised; illegal to sell; Health Canada treats injectable peptides as prescription drugs'
+    without calling it a listed prescription drug. No CA schedule proposed for that reason. [ca-pdl-human,
+    ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-database, ca-food-and-drug-regulations, ca-cdsa]
+  - Enforcement: RA-81874 (9 April 2026) names CJC-1295 as an example of seized unauthorised injectable peptides;
+    seizure advisories RA-77218 (1 April 2025), RA-77807 (1 August 2025) and RA-81403 (24 December 2025, listing
+    both 'CJC-1295' and 'CJC-1295 DAC') name sellers, so the index is cited. [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-database]
+
+  AUSTRALIA, searched 23 October 2026.
+  - ARTG: 'CJC1295' and '"CJC-1295"': no matching results (control somatropin 30). [au-artg-search-status-b-2026-10-23]
+  - ANZCTR: 0 records; ClinicalTrials.gov: no Australian site. [au-anzctr-search-status-b-2026-10-23, ctgov-search-status-b-2026-10-23]
+  - Poisons Standard (October 2026): '# CJC-1295 (CAS No. 863288-34-0).' in Schedule 4; Appendix D clause 5 item 7
+    (possession without authority illegal). First appeared in the Poisons Standard June 2015 (commenced 1 June 2015);
+    absent from the February 2015 edition; proposed in the November 2014 scheduling round as a performance and image
+    enhancing drug. [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02,
+    au-tga-2014-09-scheduling-consultation]
+  - Which molecule the entry names: CAS 863288-34-0 is the number PubChem gives the 29-residue peptide WITHOUT DAC
+    (CID 56841945, C152H252N44O42), and the FDA calls it a 'deleted CAS'. The DAC molecule this site grades
+    (CAS 446262-90-4) is not named by its own number. It is very likely caught anyway, as a derivative of the named
+    entry (the Poisons Standard covers 'all salts and derivatives') and by the group entry 'GROWTH HORMONE RELEASING
+    HORMONES (GHRHs)' (Appendix D item 18), but this is our reading: UNRESOLVED for legal review. TGA notices simply
+    say 'CJC-1295' without distinguishing forms. [au-poisons-standard-2026-10, pubchem-cjc-1295-without-dac,
+    pubchem-cjc-1295, fda-pcac-2024-cjc1295-briefing]
+  - Import: Customs (Prohibited Imports) Regulations, Schedule 7A item 4 (GHRHs 'and synthetic analogues', ODC import
+    permit) appears to apply, since CJC-1295 is a modified GHRH(1-29); not named, same caveat. Personal importation:
+    the TGA will not release peptides labelled only by codes or without the active ingredient and strength, and
+    'research use only' wording does not make importation lawful. [au-customs-prohibited-imports-regs,
+    au-odc-growth-hormones-import-permit, au-tga-2026-04-peptide-responsibilities]
+  - Enforcement: CJC-1295 is one of five examples of unapproved peptides in the TGA safety advisory of 13 April 2026
+    and the TGA/Chief Medical Officer statement of 19 June 2026, and among products seized with NSW Police in August
+    2026. A 28 September 2026 TGA release on Federal Court proceedings over advertising of peptides including
+    CJC-1295 names a company and its directors, so it is not registered. [au-tga-2026-04-peptide-responsibilities,
+    au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure, au-tga-search-status-b-2026-10-23]
+
+  UNITED KINGDOM (re-check; existing row stands): MHRA Products '"CJC-1295"' and 'CJC1295': no results; substance
+  index C: no entry. GOV.UK: no page about the peptide. [mhra-products-search-cjc-1295-ipamorelin, uk-govuk-search-status-b-2026-10-23]
+
+  UNITED STATES: no change. None of the FDA warning letters read for this batch (695607, 729447, 734884, 735063,
+  735067, 735127) names CJC-1295.
+
+  Ireland and New Zealand: not searched (outside this batch).
+page_facts: |
+  CANADA
+  - No product containing CJC-1295 has ever been authorised in Canada (Drug Product Database and Notice of
+    Compliance database, 23 October 2026). [ca-dpd-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23]
+  - Health Canada names CJC-1295 among unauthorised injectable peptides it has seized, and says injectable peptides
+    are regulated as prescription drugs in Canada; selling unauthorised drugs is illegal. [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-database]
+  - It was developed by a Montreal company (ConjuChem) in the early 2000s; its only patient trial was stopped in 2006.
+    [fda-pcac-2024-cjc1295-briefing, ctgov-nct00267527]
+  AUSTRALIA
+  - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-b-2026-10-23]
+  - CJC-1295 has been a prescription-only medicine (Schedule 4) since 1 June 2015, and possessing it without
+    authority, such as a prescription, is illegal (Appendix D, given effect by state and territory law).
+    [au-poisons-standard-2026-10, au-poisons-standard-2015-06]
+  - The TGA lists CJC-1295 among unapproved peptide products causing concern, and it was among products seized in
+    New South Wales in August 2026. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure]
+  UNITED KINGDOM
+  - No product containing CJC-1295 has a UK licence. [mhra-products-search-cjc-1295-ipamorelin]

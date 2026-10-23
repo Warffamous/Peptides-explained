@@ -1,0 +1,89 @@
+slug: melanotan-ii
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-tga-2026-08-melanotan-ii-safety-alert, au-tga-2026-05-melanotan-ii-infringement-notices, au-artg-search-status-c-2026-10-23] }
+  # UK: the data file already has a UK row (not-authorised, 2026-10-22). Re-checked on 23 October 2026 with the same
+  # result; no UK row proposed. uk-mhra-substance-index-status-c-2026-10-23 is offered as an extra source.
+schedule:
+  AU: { code: "S4", note: "'MELANOTAN II.' in Schedule 4 (prescription-only medicine) since 1 June 2018; not in Appendix D, so the Poisons Standard adds no possession offence of its own. An application to put it in Schedule 10 (prohibited) was not followed.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2018-06, au-poisons-standard-2018-03, au-tga-2018-02-melanotan-ii-interim-decision, au-tga-2018-04-scheduling-final-decisions] }
+  # CA: no schedule proposed (not on the Prescription Drug List; not in the CDSA).
+products: []
+notes: |
+  Names searched: melanotan II, melanotan-2, melanotan, MT-II, MTII, MT2, alpha-MSH analogue terms ('melanocyte',
+  'alpha-MSH'). No INN, no brand. Melanotan I is afamelanotide (Scenesse), an authorised medicine, and must not be
+  confused with melanotan II.
+
+  CANADA (Health Canada), searched 23 October 2026.
+  - DPD API: melanotan, 'MT-II', 'alpha-MSH', 'melanocyte': no product; 'MELANO' returned only melanoma lysate,
+    afamelanotide (Scenesse, approved 9 July 2026) and setmelanotide. NOC database: MELANOTAN: 'No result found!'.
+    Submissions under review: none. [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23,
+    ca-hc-sur-search-status-c-2026-10-23]
+  - Trials: none in Canada (Health Canada portal; ClinicalTrials.gov 'melanotan': 0). [ca-hc-ctdb-search-status-c-2026-10-23,
+    ctgov-search-status-c-2026-10-23]
+  - Not on the Prescription Drug List (which names afamelanotide and setmelanotide but no melanotan II); not in the
+    CDSA. [ca-pdl-human, ca-cdsa]
+  - Health Canada warnings: there is NO melanotan-specific Health Canada advisory (the recalls database search
+    'melanotan' returns only five general peptide notices, and a web search found none). Melanotan appears in:
+    RA-81874 (9 April 2026, 'Melanotan I and II' among examples of seized unauthorised injectable peptides); seizure
+    advisories RA-77218 (1 April 2025, 'Melanotan-2'), RA-77807 (1 August 2025, 'Melanotan 1' and 'Melanotan II'),
+    RA-81403 (24 December 2025, 'Melanotan-2') and RA-81404 (24 December 2025, 'melanotan'). The page should not
+    write that Health Canada has issued a tanning warning. [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-search-status-c-2026-10-23]
+
+  AUSTRALIA (TGA), searched 23 October 2026.
+  - Status: the TGA itself states 'There are currently no products containing Melanotan II on the Australian
+    Register of Therapeutic Goods (ARTG) or approved for supply in Australia' (May and August 2026). ARTG searches
+    'melanotan', '"melanotan II"' (no matching results; 'melanotan' repeated in the second run) agree.
+    [au-tga-2026-05-melanotan-ii-infringement-notices, au-tga-2026-08-melanotan-ii-safety-alert, au-artg-search-status-c-2026-10-23]
+  - Trials: ANZCTR 'melanotan' finds only a 2005 afamelanotide (melanotan I) implant study; no melanotan II trial.
+    [au-anzctr-search-status-c-2026-10-23]
+  - Poisons Standard: 'MELANOTAN II.' in Schedule 4 since the June 2018 edition (in force 1 June 2018; absent from
+    March 2018), without the # mark, so not in Appendix D. History: an applicant asked in 2017 for Schedule 10
+    (prohibition) for 'cosmetic or therapeutic use'; the Advisory Committee on Medicines Scheduling recommended
+    Schedule 4 instead, finding 'no body of evidence demonstrating therapeutic benefits' and citing toxicity reports,
+    quality and contamination concerns and unregulated supply; the delegate's interim decision (5 February 2018) and
+    final decision (10 April 2018) followed. [au-poisons-standard-2026-10, au-poisons-standard-2018-06,
+    au-poisons-standard-2018-03, au-tga-2018-02-melanotan-ii-interim-decision, au-tga-2018-04-scheduling-final-decisions]
+  - TGA warnings and enforcement: blog of 24 January 2025 (illegal to supply melanotan tanning products without a
+    prescription, in any form; illegal to advertise to the public, including by influencers; reported harms with
+    melanotan II include increased moles and freckles, kidney dysfunction and swelling of the brain); 27 infringement
+    notices totalling $101,412 to a NSW individual for supplying melanotan II (paid May 2026); safety advisory of
+    17 August 2026: TGA tests of five seized nasal sprays labelled 30 mg found 22 to 54 mg. [au-tga-2025-01-melanotan-blog,
+    au-tga-2026-05-melanotan-ii-infringement-notices, au-tga-2026-08-melanotan-ii-safety-alert]
+  - Import: Schedule 4, so personal importation needs a doctor's written authority; not in the Customs (Prohibited
+    Imports) Regulations. [au-tg-regulations-1990-sch-5-item-1, au-customs-prohibited-imports-regs]
+  - Melanotan II is not among the five named examples in the TGA's general 2026 peptide notices (it has its own).
+
+  UNITED KINGDOM (re-check; existing row stands): MHRA substance index has no melanotan entry; exact-term search
+  melanotan*: 0 documents. New UK fact: the Office for Product Safety and Standards, the GB cosmetics regulator,
+  reports that in 2025-26 it 'undertook analysis of melanotan products to improve understanding of risks and support
+  a consistent regulatory approach' (no findings published). Existing: MHRA FOI 24/274 (2024) says injectable or pen
+  melanotan II products are medicines. [uk-mhra-substance-index-status-c-2026-10-23, uk-opss-2026-08-delivery-report,
+  mhra-2024-foi-melanotan-ii]
+
+  UNITED STATES: no new research. Existing facts: melanotan II is on the agenda of the FDA compounding advisory
+  committee meeting announced for before the end of February 2027; a 2016 FDA debarment concerned a seller of melanotan
+  II as an 'unapproved new drug'. [fda-pcac-2027-early-announcement, fr-2016-melanotan-debarment]
+  Ireland and New Zealand: not searched here, except ClinicalTrials.gov: no trial in either.
+page_facts: |
+  CANADA
+  - No product containing melanotan II has ever been authorised in Canada. [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23]
+  - Health Canada lists 'Melanotan I and II' among unauthorised injectable peptides it has seized (April 2026), and
+    melanotan products appear in four seizure advisories from 2025. It has not issued a separate tanning warning.
+    [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23]
+  AUSTRALIA
+  - Melanotan II has been a prescription-only medicine (Schedule 4) since 1 June 2018, but no product is approved:
+    'There are currently no products containing Melanotan II' on the Register. [au-poisons-standard-2018-06,
+    au-tga-2026-08-melanotan-ii-safety-alert]
+  - The TGA says it is illegal to supply melanotan tanning products without a doctor's prescription, whatever the form,
+    and illegal to advertise melanotan to the public, including by influencers. [au-tga-2025-01-melanotan-blog]
+  - In 2026 the TGA fined a New South Wales individual $101,412 (27 infringement notices) for supplying melanotan II,
+    and its laboratory found that the amount of melanotan II varied more than twofold between five seized nasal sprays
+    with the same label (TGA figures: 22 to 54 mg per bottle; the page need not print milligrams).
+    [au-tga-2026-05-melanotan-ii-infringement-notices, au-tga-2026-08-melanotan-ii-safety-alert]
+  - When Australia scheduled melanotan II in 2018, its advisory committee found 'no body of evidence demonstrating
+    therapeutic benefits'. [au-tga-2018-02-melanotan-ii-interim-decision]
+  UNITED KINGDOM
+  - No product containing melanotan II has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23]
+  - The UK's cosmetics regulator analysed melanotan products in 2025-26 to support a consistent regulatory approach.
+    [uk-opss-2026-08-delivery-report]

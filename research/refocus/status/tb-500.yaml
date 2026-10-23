@@ -1,0 +1,79 @@
+slug: tb-500
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, fda-pcac-2026-tb500-briefing] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, fda-pcac-2026-tb500-briefing] }
+  # UK: the data file already has a UK row (not-authorised, 2026-10-20). Re-checked on 23 October 2026 with the same
+  # result; no UK row proposed. uk-mhra-substance-index-status-c-2026-10-23 is offered as an extra source.
+schedule:
+  AU: { code: "S4", note: "'# TB-500' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), from 1 June 2016; full-length thymosin beta-4 has its own identical entry. The entry does not define TB-500.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2016-06, au-poisons-standard-2016-03] }
+  # CA: no schedule proposed (not on the Prescription Drug List; not in the CDSA).
+products: []
+notes: |
+  Names searched: TB-500, TB500, TB 500, Ac-LKKTETQ, thymosin beta-4 fragment 17-23 (data file), and, because sellers
+  and some regulators use the name for the full protein, thymosin beta-4, thymosin, timbetasin (INN of thymosin
+  beta-4) and the RegeneRx codes RGN-259, RGN-137, RGN-352.
+
+  CANADA (Health Canada), searched 23 October 2026.
+  - DPD API by active ingredient (all statuses): thymosin, 'thymos', 'thymosin beta', timbetasin, 'timbeta', 'TB-500':
+    no product. NOC database: THYMOSIN, TIMBETASIN (ingredient) and TB-500 (product name): 'No result found!'.
+    Submissions under review: none. [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23,
+    ca-hc-sur-search-status-c-2026-10-23]
+  - FDA's 2026 evaluation states 'There are no approved products containing TB-500 in Canada, Australia, the United
+    Kingdom' (and seven EU countries). [fda-pcac-2026-tb500-briefing]
+  - Trials: no TB-500 or thymosin beta-4 trial with a Canadian site (Health Canada portal, ClinicalTrials.gov). Not
+    'investigational'. [ca-hc-ctdb-search-status-c-2026-10-23, ctgov-search-status-c-2026-10-23]
+  - Prescription Drug List: not listed; not in the CDSA. Same UNRESOLVED point as BPC-157 on Health Canada's statement
+    that peptides are 'generally regulated as prescription drugs'. [ca-pdl-human, ca-cdsa, ca-hc-2026-04-think-twice-peptides]
+  - Enforcement: TB-500 is named in RA-81874 (April 2026) and in seizure advisories RA-77218, RA-77807, RA-81403 and
+    RA-81404 (2025). Health Canada's own lists write 'Thymosin-β4 (TB4 or TB-500)' (RA-77218, RA-77807) and list a
+    separate 'Frag 17-23 of Thymosin-β4' (RA-77218, next to a plain 'TB-500'), so its notices do not consistently
+    separate the fragment from the full protein.
+    [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23]
+  - Sport: April 2025 four-year sanction of a university athlete for BPC-157 and TB-500 (Sport Integrity Canada).
+    [ca-sic-2025-04-bpc157-tb500-sanction]
+
+  AUSTRALIA (TGA), searched 23 October 2026.
+  - ARTG: timbetasin: no matching results (repeated in the second run); thymosin: one unrelated tamoxifen product
+    (both runs); '"TB-500"' and TB500: only unrelated devices and disinfectants (engine splits the term).
+    [au-artg-search-status-c-2026-10-23]
+  - TB-500 is one of the TGA's named examples of unapproved peptide products (April and June 2026).
+    [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement]
+  - AusPAR / under evaluation: nothing. ANZCTR: 0 records for TB-500; 11 'thymosin' records, none testing thymosin
+    beta-4. ClinicalTrials.gov: no Australian site. Not 'investigational'. [au-tga-search-status-c-2026-10-23,
+    au-anzctr-search-status-c-2026-10-23, ctgov-search-status-c-2026-10-23]
+  - Poisons Standard: '# TB-500.' and '# THYMOSIN BETA 4 (THYMOSIN β4).' in Schedule 4; Appendix D clause 5 items 38
+    and 39. Both first appear in the June 2016 edition (in force 1 June 2016), absent from March 2016; present in every
+    edition checked since (March and June 2018, February and June 2024, October 2026). The entry gives no sequence or
+    CAS number, so it does not say which molecule 'TB-500' means; because thymosin beta-4 is scheduled separately in
+    the same way, either reading is caught. UNRESOLVED: the TGA's 2015-16 reasons were not read (the November 2015
+    scheduling consultation was found by site search but not opened). [au-poisons-standard-2026-10,
+    au-poisons-standard-2016-06, au-poisons-standard-2016-03, au-tga-search-status-c-2026-10-23]
+  - Import: Schedule 4, so personal importation needs a doctor's written authority; not in the Customs (Prohibited
+    Imports) Regulations. [au-tg-regulations-1990-sch-5-item-1, au-customs-prohibited-imports-regs]
+  - Enforcement: the August 2026 NSW seizure included a combination product of BPC-157 and TB-500.
+    [au-tga-2026-08-peptide-seizure]
+
+  UNITED KINGDOM (re-check; existing row stands): MHRA substance index has no THYMOSIN or TB-500 entry; exact-term
+  searches thymosin*, '"TB 500"' (as a phrase) and TB500: 0 documents (an unquoted TB-500 matches hundreds of
+  unrelated documents containing 'TB' and '500', such as tuberculosis medicines in 500 mg strengths). FDA also states
+  no approved TB-500 product in the UK.
+  [uk-mhra-substance-index-status-c-2026-10-23, fda-pcac-2026-tb500-briefing]
+
+  UNITED STATES: no new research in this batch.
+  Ireland and New Zealand: not searched here, except ClinicalTrials.gov: no trial in either.
+page_facts: |
+  CANADA
+  - No product containing TB-500 or thymosin beta-4 has ever been authorised in Canada. [ca-dpd-search-status-c-2026-10-23,
+    ca-noc-search-status-c-2026-10-23, fda-pcac-2026-tb500-briefing]
+  - Health Canada lists TB-500 among unauthorised injectable peptides it has seized; some of its notices write
+    'Thymosin-β4 (TB4 or TB-500)', using TB-500 as another name for the full protein. [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-search-status-c-2026-10-23]
+  AUSTRALIA
+  - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-c-2026-10-23, fda-pcac-2026-tb500-briefing]
+  - TB-500 and thymosin beta-4 have both been prescription-only medicines (Schedule 4) since 1 June 2016, and possessing
+    either without authority, such as a prescription, is illegal (Appendix D, given effect by state and territory law).
+    [au-poisons-standard-2026-10, au-poisons-standard-2016-06]
+  - The TGA names TB-500 as an example of unapproved peptide products, and a combination product of BPC-157 and TB-500
+    was among products seized in New South Wales in August 2026. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-08-peptide-seizure]
+  UNITED KINGDOM
+  - No product containing TB-500 or thymosin beta-4 has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23, fda-pcac-2026-tb500-briefing]

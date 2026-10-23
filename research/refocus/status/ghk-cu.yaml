@@ -1,0 +1,119 @@
+slug: ghk-cu
+rows:
+  # Status is about MEDICINES. GHK-Cu (INCI copper tripeptide-1) is also a cosmetic ingredient; that is a different
+  # legal category and is described in notes and page_facts, not in the status rows.
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-hc-2026-05-ghk-cu-bpc-157-api-recall] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement] }
+  # UK: the data file has no UK row today, so one is proposed.
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-mhra-substance-index-status-c-2026-10-23, uk-hmr-2012-reg-46, uk-hmr-2012-reg-2, uk-cosmetic-products-reg-gb-art-2, uk-cosmetic-products-reg-gb-annexes] }
+# No schedule proposed. Not named in Australia's Poisons Standard; whether the general 'COPPER COMPOUNDS for human use'
+# entry (Schedule 4, with exceptions by copper content) covers a copper-peptide complex is UNRESOLVED (see notes).
+# Not on Canada's Prescription Drug List.
+schedule: {}
+products: []
+notes: |
+  Names searched: GHK-Cu, GHK copper, copper peptide, copper tripeptide-1 (INCI), prezatide copper (and prezatide,
+  the peptide without copper), glycyl-L-histidyl-L-lysine, CAS 89030-95-5 (GHK-Cu) and 49557-75-7 (GHK), and Iamin
+  (the 1990s US wound gel). No brand of an authorised medicine exists.
+
+  THE TWO CATEGORIES. In all three countries a product applied to the skin with cosmetic claims can lawfully be a
+  cosmetic containing GHK-Cu, while anything injected (or sold with treatment claims) is regulated as a drug or
+  medicine, and no GHK-Cu medicine is authorised anywhere we searched. The page should keep the two apart: 'GHK-Cu in
+  a face cream' is not the same legal thing as 'GHK-Cu in a vial'.
+
+  CANADA (Health Canada), searched 23 October 2026.
+  - Medicine: DPD API by active ingredient: prezatide, GHK, 'glycyl', 'copper tripeptide', 'copper peptide',
+    tripeptide: no product of any status; 'COPPER' (728 rows) only copper salts and chelates; 'PEPTIDE' only
+    unrelated products. NOC database: PREZATIDE, GHK, TRIPEPTIDE: 'No result found!'; COPPER: trace-element and
+    vitamin products only. Submissions under review: none. [ca-dpd-search-status-c-2026-10-23,
+    ca-noc-search-status-c-2026-10-23, ca-hc-sur-search-status-c-2026-10-23]
+  - Not on the Prescription Drug List; not in the CDSA. [ca-pdl-human, ca-cdsa]
+  - Cosmetic: a cosmetic is a substance 'for use in cleansing, improving or altering the complexion, skin, hair or
+    teeth'; Health Canada's classification guidance says products given 'by injection (intramuscular, subcutaneous,
+    intravenous, etc)', except tattoo ink, 'are not considered to be cosmetics'. Copper tripeptide-1 / GHK-Cu is not on
+    the Cosmetic Ingredient Hotlist (neither prohibited nor restricted). The Hotlist is not a positive list; cosmetics
+    are notified after sale, not approved. [ca-food-and-drugs-act, ca-hc-cosmetic-drug-interface-guidance,
+    ca-hc-cosmetic-ingredient-hotlist]
+  - Enforcement: GHK-Cu is named in RA-81874 (April 2026) and in seizure advisories RA-77218, RA-77807 (which also
+    lists 'GHK') and RA-81403 (which also lists GHK-Cu blends). Recall RA-82047 (7 May 2026, Type I): GHK-Cu powder and
+    BPC-157 powder sold to compounding and community pharmacies, recalled as 'unauthorized active pharmaceutical
+    ingredients'. [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23,
+    ca-hc-2026-05-ghk-cu-bpc-157-api-recall]
+  - Trials: the only registered study with a Canadian site that mentions GHK-Cu (NCT07706361, not yet recruiting)
+    tests a device patch and measures GHK and GHK-Cu in blood; GHK-Cu is not the intervention. Not 'investigational'.
+    [ctgov-search-status-c-2026-10-23]
+  - NOT SEARCHED: the Licensed Natural Health Products Database (it was under maintenance during the second run), so
+    whether any licensed natural health product lists copper tripeptide-1 (for example as a non-medicinal ingredient
+    of a topical product) is UNRESOLVED. It would not change the drug status.
+
+  AUSTRALIA (TGA, AICIS), searched 23 October 2026.
+  - Medicine: ARTG 'prezatide', '"copper tripeptide"' (both runs), '"copper peptide"', tripeptide, Iamin: no
+    GHK-Cu product (the ARTG search also indexes ingredient lists). AusPAR / under evaluation: nothing. ANZCTR: 0 for
+    GHK; 'copper peptide' matched only a copper-64 imaging agent. [au-artg-search-status-c-2026-10-23,
+    au-tga-search-status-c-2026-10-23, au-anzctr-search-status-c-2026-10-23]
+  - The TGA names GHK-Cu as one of five examples of unapproved peptide products, 'often supplied in injectable form'
+    (April 2026), and again in the June 2026 statement with the Chief Medical Officer. [au-tga-2026-04-peptide-responsibilities,
+    au-tga-2026-06-cmo-peptide-statement]
+  - Cosmetic: the TGA says 'Some peptide products may be regulated as cosmetics rather than a therapeutic good if
+    their ingredients, claims, presentation and intended use are limited to cosmetic purposes.' Cosmetic ingredients
+    are industrial chemicals under AICIS: the public Inventory search finds no record for CAS 89030-95-5 or
+    49557-75-7 (one related ingredient, palmitoyl oligopeptide, is listed), but AICIS warns that chemicals can be
+    listed confidentially or introduced under other categories, so this does NOT show that GHK-Cu is unregistered or
+    banned in Australian cosmetics. UNRESOLVED: whether GHK-Cu may be introduced in cosmetics in Australia, and under
+    which category. [au-tga-peptide-products-hub, au-aicis-inventory-search-ghk-cu-2026-10-23, au-aicis-cant-find-chemical]
+  - Scheduling: GHK-Cu is not named in the Poisons Standard. Schedule 4 has 'COPPER COMPOUNDS for human use except' when
+    separately specified, 'in preparations for human internal use containing 5 mg or less of copper per recommended
+    daily dose', or 'in other preparations containing 5% or less of copper compounds' ('internal use' includes
+    parenteral use for a systemic effect), and Schedule 6 has a matching entry. Whether a copper-peptide complex is a
+    'copper compound' for these entries, and therefore whether some injectable or concentrated GHK-Cu preparations are
+    Schedule 4, is UNRESOLVED: no TGA document applies the entry to GHK-Cu. Legal reviewer to decide; until then the
+    page should say only 'not named in the Poisons Standard'. [au-poisons-standard-2026-10]
+  - Import: not named in the Customs (Prohibited Imports) Regulations; the TGA will not release code-labelled or
+    unlabelled peptide vials. [au-customs-prohibited-imports-regs, au-tga-2026-05-peptide-import-warning]
+
+  UNITED KINGDOM (new row), searched 23 October 2026.
+  - Medicine: MHRA Products substance index (active substances of every UK-licensed medicine): copper entries are only
+    copper salts and radiopharmaceutical ingredients; no prezatide, GHK or glycyl-histidyl entry. Exact-term searches
+    of the product index (SmPC and leaflet text): prezatide, prezatide*, '"copper tripeptide"', GHK, GHK*, GHK-Cu: 0
+    documents (control afamelanotide: 2). No UK-licensed medicine contains or mentions GHK-Cu. Under the Human
+    Medicines Regulations a product presented for treating disease, or used to restore, correct or modify a
+    physiological function by a pharmacological action, is a medicinal product and needs a UK marketing authorisation
+    (regulation 46). [uk-mhra-substance-index-status-c-2026-10-23, uk-hmr-2012-reg-2, uk-hmr-2012-reg-46]
+  - Cosmetic: the GB Cosmetics Regulation (assimilated Regulation 1223/2009) excludes anything 'intended to be
+    ingested, inhaled, injected or implanted' from being a cosmetic (Art. 2(2)); its Annexes II to VI do not name
+    copper tripeptide-1, GHK or prezatide, so it is neither banned nor restricted as a cosmetic ingredient in Great
+    Britain (Northern Ireland follows the EU Regulation, same position: CosIng lists COPPER TRIPEPTIDE-1 as a skin-
+    conditioning ingredient with no restriction). [uk-cosmetic-products-reg-gb-art-2, uk-cosmetic-products-reg-gb-annexes,
+    cosing-copper-tripeptide-1, eu-regulation-1223-2009-cosmetics]
+  - No MHRA or OPSS page names GHK-Cu (GOV.UK search). No GHK-Cu trial with a UK site (ClinicalTrials.gov).
+    [uk-govuk-search-status-c-2026-10-23, ctgov-search-status-c-2026-10-23]
+  - Our reading, for the legal reviewer: an injectable GHK-Cu vial is outside the cosmetics regime by Art. 2(2) and, if
+    it is used for its claimed effects on healing or tissue, falls within the medicinal-product definition; no MHRA
+    statement on GHK-Cu specifically was found (compare the MHRA's 2024 position that injectable melanotan II products
+    'are classified as medicines', mhra-2024-foi-melanotan-ii). Keep 'not authorised as a medicine' as the row; do not
+    write that the MHRA has classified GHK-Cu.
+
+  UNITED STATES: no new research. Existing facts: no FDA-approved GHK-Cu drug; a GHK-Cu wound gel was cleared as a
+  medical device in 1996 (510(k) K953853), not approved as a drug; GHK-Cu is on the agenda of an FDA Pharmacy
+  Compounding Advisory Committee meeting announced for before the end of February 2027.
+  [fda-510k-k953853-iamin, fda-pcac-2027-early-announcement]
+  Ireland and New Zealand: not searched here, except ClinicalTrials.gov: no trial in either.
+page_facts: |
+  CANADA
+  - No medicine containing GHK-Cu has ever been authorised in Canada. [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23]
+  - As a cosmetic ingredient, copper tripeptide-1 is neither prohibited nor restricted (Cosmetic Ingredient Hotlist),
+    but Health Canada does not treat injected products as cosmetics. [ca-hc-cosmetic-ingredient-hotlist,
+    ca-hc-cosmetic-drug-interface-guidance]
+  - Health Canada lists GHK-Cu among unauthorised injectable peptides it has seized, and in May 2026 recalled GHK-Cu
+    powder sold to pharmacies as an unauthorised active pharmaceutical ingredient. [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-2026-05-ghk-cu-bpc-157-api-recall]
+  AUSTRALIA
+  - Not on the Australian Register of Therapeutic Goods; the TGA names GHK-Cu as an example of unapproved peptide
+    products, often supplied for injection. [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities]
+  - Not named in the Poisons Standard. [au-poisons-standard-2026-10]
+  - The TGA says some peptide products may be regulated as cosmetics if their ingredients, claims, presentation and
+    intended use are purely cosmetic. [au-tga-peptide-products-hub]
+  UNITED KINGDOM
+  - No medicine containing GHK-Cu has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23]
+  - Copper tripeptide-1 may be used in cosmetics in the UK (it is neither banned nor restricted, subject to the usual
+    safety assessment), but UK cosmetics law excludes anything injected. [uk-cosmetic-products-reg-gb-annexes, uk-cosmetic-products-reg-gb-art-2]

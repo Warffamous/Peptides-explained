@@ -1,0 +1,47 @@
+slug: selank
+rows:
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-pdl-human, ca-hc-recalls-search-status-d-2026-10-23] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, au-poisons-standard-2026-10] }
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-hmr-2012-reg-46] }
+schedule: {}
+products: []
+notes: |
+  Names searched: Selank, Selanc, TP-7, 'tuftsin' (the parent peptide; ARTG only). Registered as a medicine in Russia
+  (data file); that registration does not apply in Canada, Australia or the UK.
+
+  CANADA (Health Canada). Health Canada's databases were down for maintenance (HTTP 503) throughout this run.
+  - DPD (canada-legal run, same day): no product for 'selank' (active ingredient and brand, all statuses). The brand
+    searches for 'TP-7' and 'Selanc' could not be completed (API 503): UNRESOLVED, covered by the name search.
+    [ca-dpd-search-canada-legal-2026-10-23]
+  - Prescription Drug List: no entry. Not in the CDSA. [ca-pdl-human,
+    ca-cdsa]
+  - Trials: ClinicalTrials.gov returns 10 records for 'Selank', none of which involves Selank (word matches in unrelated
+    trials, some with Canadian or Australian sites); no Selank trial anywhere. [ctgov-search-status-d-2026-10-23]
+  - Health Canada named Selank in RA-77218 (1 April 2025, Calgary wellness clinic) and RA-77807 (1 August 2025, online
+    seller). [ca-hc-recalls-search-status-d-2026-10-23]
+
+  AUSTRALIA (TGA), 23 October 2026.
+  - ARTG: 'selank' and 'selanc' return only unrelated matches (sealing devices; three herbal supplements whose brand
+    begins 'Selancy'); '"TP-7"' and '"tuftsin"': nothing relevant / none. [au-artg-search-status-d-2026-10-23]
+  - TGA website: no page names Selank (104 unrelated fragment matches). [au-tga-search-status-d-2026-10-23]
+  - Poisons Standard: not named (so not scheduled). [au-poisons-standard-2026-10]
+  - ANZCTR: 0 records. [au-anzctr-search-status-d-2026-10-23]
+
+  UNITED KINGDOM.
+  - MHRA Products, 23 October 2026: no results for selank or "selank"; the S index has no SELANK entry. No UK licence.
+    [mhra-products-search-status-d-2026-10-23]
+  - GOV.UK: 0 results. No MHRA statement on Selank was found (unlike Semax, for which the FSA records the MHRA's view).
+    Not a controlled drug (Misuse of Drugs Act; legal-b searched selank). [uk-govuk-search-status-d-2026-10-23,
+    uk-mda-1971-sch-2]
+
+  IRELAND / NEW ZEALAND: not searched.
+page_facts: |
+  - Selank is not approved in Canada, Australia or the UK: no product is on Canada's Drug Product Database, the
+    Australian Register of Therapeutic Goods or the MHRA's list of licensed medicines, and no trial of it is registered
+    anywhere. [ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-d-2026-10-23,
+    mhra-products-search-status-d-2026-10-23, ctgov-search-status-d-2026-10-23]
+  - Health Canada has listed Selank among unauthorised injectable peptides seized from a clinic and from an online
+    seller (2025). [ca-hc-recalls-search-status-d-2026-10-23]
+  - In Australia Selank is not named in the Poisons Standard, but it is not on the register, so importing, supplying or
+    advertising it as a therapeutic product is unlawful unless an exemption applies. [au-poisons-standard-2026-10,
+    au-tga-2026-04-peptide-responsibilities]

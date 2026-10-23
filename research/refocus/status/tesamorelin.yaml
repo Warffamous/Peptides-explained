@@ -1,0 +1,190 @@
+slug: tesamorelin
+rows:
+  # Canada: authorised 29 April 2014 (NOC 15555, 2 mg/vial; never marketed) and 27 March 2015 (NOC 16731, 1 mg/vial);
+  # the 1 mg vial was the only one ever sold (23 June 2015 to 30 September 2022, discontinued for 'business reasons'
+  # according to the company's mandatory discontinuation report). 'since' is the day the LAST Egrifta DIN was cancelled
+  # (13 July 2023): between 30 September 2022 and that day the 2 mg DIN still stood, so under the site's definitions
+  # the status was still 'authorised' (an authorisation existed). Editors who prefer the end of marketing can use
+  # 2022-09-30, which is the product's marketed_until below.
+  - { jurisdiction: CA, status: discontinued, since: 2023-07-13, authorised_since: 2014-04-29, as_of: 2026-10-23, sources: [ca-noc-egrifta, ca-sbd-egrifta, ca-dpd-egrifta-din-02438712, ca-dpd-egrifta-din-02423677, ca-dpd-extract-search-status-b-2026-10-23, ca-dsc-egrifta-discontinuation-170025, ca-food-and-drug-regulations] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-b-2026-10-23, au-tga-search-status-b-2026-10-23] }
+  # UK: the data file already has a UK row (not-authorised, mhra-products-search-tesamorelin); re-checked twice on
+  # 23 October 2026 with the same result (see notes). No UK row proposed.
+schedule:
+  CA: { code: "Prescription Drug List", note: "'Tesamorelin or its salts or derivatives', effective 25 April 2014.", sources: [ca-pdl-human] }
+  # AU: deliberately NOT proposed as a schedule field. The Poisons Standard does not name tesamorelin; on our reading
+  # it falls under the Schedule 4 group entry '# GROWTH HORMONE RELEASING HORMONES* (GHRHs)', but no official
+  # document says so (UNRESOLVED, see notes). A schedule field would print 'S4' as fact; if a legal reviewer confirms
+  # the reading, add: AU: { code: "S4", note: "Not named; covered by the group entry 'GROWTH HORMONE RELEASING
+  # HORMONES (GHRHs)' (Schedule 4; Appendix D clause 5).", sources: [au-poisons-standard-2026-10, au-tga-2014-09-scheduling-consultation] }
+products:
+  # 'authorised' is the first Canadian NOC (2 mg vial, never sold); the 1 mg vial that was actually marketed got its
+  # NOC on 27 March 2015. The Canadian product monograph (both strengths) is the official label.
+  - { id: egrifta-ca, name: Egrifta, holder: Theratechnologies Inc., jurisdiction: CA, authorised: 2014-04-29, marketed_until: 2022-09-30, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00029988.PDF", label_source: ca-pm-egrifta-2015 }
+notes: |
+  Names searched (from the data file): tesamorelin (INN), TH9507, TH-9507, (3E)-hex-3-enoylsomatoliberin; brands
+  Egrifta, Egrifta SV, Egrifta WR; holder Theratechnologies.
+
+  CANADA (Health Canada), searched 23 October 2026.
+  - Drug Product Database (DPD) API, by active ingredient (substring match, all statuses): 'tesamorelin' and 'tesamor'
+    return exactly two products, both EGRIFTA (Theratechnologies Inc.): drug code 90838, DIN 02423677, 2 mg/vial,
+    'Cancelled Pre Market' on 2023-07-13, never marketed; drug code 92311, DIN 02438712, 1 mg/vial, 'Cancelled Post
+    Market' on 2022-09-30, first marketed 2015-06-23, last lot P012329 with expiry 2023-01-31. Both: kit + powder for
+    solution, subcutaneous, schedule Prescription, ATC H01AC06, product monograph dated 2015-03-26, RMP submitted.
+    By brand: 'egrifta' gives the same two; 'egrifta sv' and 'egrifta wr' give none (neither US product was ever
+    filed or authorised in Canada as far as the DPD and NOC databases show). [ca-dpd-search-status-b-2026-10-23,
+    ca-dpd-egrifta-din-02438712, ca-dpd-egrifta-din-02423677]
+  - Second pass (late on 23 October 2026, UTC): the DPD API returned HTTP 503 and the DPD web pages a Health Canada
+    maintenance page, so the result was re-checked in Health Canada's official DPD data extract (approved, marketed,
+    cancelled and dormant products; files dated 5 October 2026): the same two EGRIFTA products and statuses, the same
+    dates and lot, and no other product for any tesamorelin name, code or brand. [ca-dpd-extract-search-status-b-2026-10-23]
+  - Notice of Compliance database: NOC 15555 of 29 April 2014 (NDS, New Active Substance, 2 mg/vial, DIN 02423677)
+    and NOC 16731 of 27 March 2015 (SNDS, 'new strength 1 mg/vial', DIN 02438712). The whole medicinal-ingredient
+    table (96,057 rows) has no other tesamorelin NOC. [ca-noc-egrifta, ca-noc-search-status-b-2026-10-23]
+  - Summary Basis of Decision SBD00185 (issued 11 July 2014) and its Post-Authorization Activity Table (updated
+    24 July 2023) confirm all of the lead: NOC 29 April 2014 (NDS 131836, filed 17 June 2011); 1 mg strength NOC
+    27 March 2015 (SNDS 177087); first sale of DIN 02438712 on 23 June 2015; DIN 02438712 cancelled post-market
+    (discontinuation date 30 September 2022) and DIN 02423677 cancelled pre-market (13 July 2023), both because
+    'The manufacturer notified Health Canada that sale of the drug has been discontinued' and cancelled under
+    C.01.014.6(1)(a) of the Food and Drug Regulations. Re-read on the portal in the second pass (same text). [ca-sbd-egrifta,
+    ca-food-and-drug-regulations]
+  - Why 'discontinued' (non-safety), now RESOLVED: (1) both DINs were cancelled at the manufacturer's notice under
+    C.01.014.6(1)(a), not by the Minister under C.01.014.6(2) (the compliance/safety route); (2) the company's
+    mandatory discontinuation report on Drug Shortages Canada (report 170025, DIN 02438712, last updated
+    22 September 2022) gives 'Reason for discontinuation: Business reasons', anticipated discontinuation date and
+    remaining supply date 30 September 2022, decision reversal 'No'; (3) there is no Health Canada recall or safety
+    alert for Egrifta (Recalls and Safety Alerts search 'egrifta': none). The live report page sits behind a
+    bot-verification screen (not bypassed); its text was read on the Internet Archive copy of the original address
+    captured on 30 September 2022, which is how melanotan-ii.yaml handled a similar case (archive used for checking,
+    not linked). A reason is a required field of the report (Food and Drug Regulations C.01.014.91(1)(k)).
+    [ca-sbd-egrifta, ca-food-and-drug-regulations, ca-dsc-egrifta-discontinuation-170025, ca-hc-recalls-database]
+  - The SBD records a hard review: a Notice of Non-Compliance, then a Notice of Non-Compliance-Withdrawal
+    (1 March 2013) over benefit-risk, the indication and IGF-1; a Reconsideration Panel (23 August 2013); then
+    approval with tighter conditions than in the US (stop if IGF-1 SDS > 2 after 26 weeks; US uses 3).
+    [ca-sbd-egrifta, ca-pm-egrifta-2015]
+  - Prescription Drug List (human): 'Tesamorelin or its salts or derivatives', effective 25 April 2014 (still listed,
+    although no product is authorised). Not in the Controlled Drugs and Substances Act. [ca-pdl-human, ca-cdsa]
+  - Trials: Health Canada's Clinical Trials Database (trials authorised since April 2013) has no tesamorelin protocol;
+    ClinicalTrials.gov lists three finished Theratechnologies trials with Canadian sites (NCT00123253, NCT00608023,
+    NCT02012556) and no open one. Not 'investigational'. [ca-hc-ctdb-search-status-b-2026-10-23,
+    ctgov-search-status-b-2026-10-23]
+  - Submissions under review (new and supplemental): no tesamorelin entry (weak evidence: these lists do not show
+    every kind of submission). [ca-hc-sur-search-2026-10-23]
+  - Not established: whether Egrifta stock was still dispensed in Canada after 30 September 2022 (the DPD footnote
+    allows distributors and pharmacies to sell remaining stock until the lot expiry, here 31 January 2023, when the
+    cancellation is not for safety reasons; the discontinuation report gives 30 September 2022 as the 'remaining
+    supply date'). Do not write that it was or was not. Whether Egrifta has since been supplied to individual
+    Canadian patients through the Special Access Program was not searched.
+
+  AUSTRALIA (TGA), searched 23 October 2026 in a browser.
+  - ARTG: no result for 'tesamorelin', 'egrifta' or the sponsor 'theratechnologies'; 'TH9507' gave only unrelated
+    fragment matches (vitamin D3 products, devices). Control 'somatropin': 30 results. The public ARTG search shows
+    only goods that 'can be supplied' now: a test search for rofecoxib (withdrawn in 2004) also returns nothing. So
+    the ARTG search proves 'not on the ARTG today', not 'never'. [au-artg-search-status-b-2026-10-23]
+  - AusPAR: no 'tesamorelin' report. Prescription medicines under evaluation: none (control semaglutide: 1).
+    Prescription medicines registrations database: none (control semaglutide: 8, earliest Ozempic 15 August 2019).
+    Whole-site search 'tesamorelin': no result at all. So the TGA's website records no registration, evaluation or
+    pending application; the page may say 'not approved in Australia, and the TGA has no record of an application',
+    but should not say 'never'. [au-tga-search-status-b-2026-10-23]
+  - ANZCTR: 0 records for tesamorelin or Egrifta; ClinicalTrials.gov: no tesamorelin record with an Australian site.
+    [au-anzctr-search-status-b-2026-10-23, ctgov-search-status-b-2026-10-23]
+  - Poisons Standard (October 2026 edition, F2026L01327, current): tesamorelin is NOT named. The group entry
+    '# GROWTH HORMONE RELEASING HORMONES* (GHRHs)' is in Schedule 4 and in Appendix D clause 5 (item 18, 'including
+    those separately specified in Schedule 4'): possession without authority is illegal. The 2014 proposal that
+    created it was worded 'Growth Hormone Releasing Hormones and Analogues'. The Reader's guide says a poison not found
+    under its own name 'may be shown under a group term', including 'a pharmacological group', and that an entry covers
+    all salts and derivatives. Tesamorelin is human GHRH(1-44) with a hexenoyl group, so on our reading it falls under
+    that entry, from 1 June 2015 (first edition with the entry).
+    UNRESOLVED: no TGA document names tesamorelin, so 'S4' is our interpretation; a legal reviewer should confirm
+    before the page states it as fact. For that reason no AU schedule field is proposed above.
+    [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-tga-2014-09-scheduling-consultation]
+  - Import: Customs (Prohibited Imports) Regulations 1956, reg 5G and Schedule 7A item 4: importing 'growth hormone
+    releasing hormones (somatorelin and synthetic analogues)' needs a written permit from the Office of Drug Control
+    (ODC lists 'import permit required: yes'). Tesamorelin is a synthetic analogue of somatorelin, so this appears
+    to apply; same caveat (no document names it). [au-customs-prohibited-imports-regs,
+    au-odc-growth-hormones-import-permit]
+
+  UNITED KINGDOM (re-check only; the data file's UK row stands).
+  - MHRA Products, 23 October 2026: no results for 'tesamorelin', 'egrifta' or 'TH9507'; the substance index (T) has
+    no tesamorelin. Re-run late the same day: 'There are no search results for tesamorelin'. Same result as
+    22 October. Suggest adding TH9507 and the substance-index check to the note of mhra-products-search-tesamorelin.
+    [mhra-products-search-tesamorelin, mhra-products-search-cjc-1295-ipamorelin]
+  - GOV.UK search 'tesamorelin': 0 results, so no MHRA alert or news item names it. Not in the Misuse of Drugs Act
+    1971 Schedule 2 (legal/uk page already says so). [uk-govuk-search-status-b-2026-10-23, uk-mda-1971-sch-2]
+  - Context the English site would otherwise lose when the EU row goes: the only European application, an EU-wide
+    (central procedure) application by Ferrer Internacional S.A., was withdrawn on 21 June 2012
+    after the EU medicines committee's provisional view that it could not be approved. The UK was an EU member then
+    (exit day 31 January 2020) and a central authorisation is valid in every member state, so that application
+    would have covered the UK. The UK row stays 'not-authorised' (no UK application or licence ever existed on its
+    own); the withdrawal belongs in the prose. [ema-egrifta-withdrawal, ie-hpra-licensing-procedures,
+    uk-euwa-2018-s20-exit-day]
+
+  UNITED STATES (no change to the existing row or products).
+  - FDA warning letters dated 24 August 2026 (MARCS-CMS 734884, 735063, 735067, 735127), each to an online seller,
+    list 'Tesamorelin' (one as 'Tesa Peptide (Tesamorelin)') among unapproved new drugs under section 505(a), and
+    734884 also a blend of tesamorelin and ipamorelin; read on fda.gov on 23 October 2026 (content current as of
+    1 September 2026). The existing fda-warning-letters-index note names only 735067; suggest adding the other
+    three numbers to it. Cite the index, not the letters (they name sellers). [fda-warning-letters-index]
+  - Drugs@FDA (read 23 October 2026) lists two products under BLA 022505, both with brand name 'EGRIFTA': product
+    001, 1 mg per vial, and product 002, 2 mg per vial, both marketing status 'Prescription'; it shows no separate
+    'Egrifta WR' product although the S-020 (25 March 2025) label is on the page. The data file's egrifta-sv entry
+    folds the original 1 mg vial into the application's 2010 approval, so no extra US product is proposed.
+    UNRESOLVED: whether the 1 mg vial is still marketed in the US (Drugs@FDA's status says only that it is not
+    listed as discontinued). [fda-drugsatfda-egrifta]
+
+  NCT01579695 (asked): the primary outcome is cancer, measured as time to event. Registry wording: 'Time to
+  development of malignancies in HIV-infected subjects with abdominal lipohypertrophy exposed to EGRIFTA vs.
+  concurrent, comparable control group not exposed to EGRIFTA', time frame 10 years. Secondary: time to development
+  or worsening of type 2 diabetes, diabetic retinopathy, hypersensitivity, liver and kidney function, adverse events
+  and MACE. Phase 4 observational cohort ('10-year Prospective Cohort Safety Study'), sponsor Theratechnologies,
+  391 enrolled, started February 2013, primary completion May 2018, study completion August 2018, terminated, no
+  reason given, no results posted, all 31 sites in the US (API v2, read twice on 23 October 2026). So 'cancer
+  incidence' is close but not exact: write 'time to a cancer diagnosis' or 'how soon cancers appeared'. The existing
+  ctgov-nct01579695 note ('primary outcome: time to malignancy') is correct. Note the mismatch: Health Canada's SBD
+  describes this study as 'intended to monitor cardiovascular safety' (MACE is only secondary in the registry).
+  [ctgov-nct01579695, ca-sbd-egrifta]
+
+  Ireland and New Zealand: not searched (outside this batch).
+page_facts: |
+  CANADA
+  - Health Canada approved Egrifta (tesamorelin) on 29 April 2014 (Notice of Compliance, 2 mg vial) and a 1 mg vial
+    on 27 March 2015. [ca-noc-egrifta, ca-sbd-egrifta]
+  - Approval came after an initial negative decision: Health Canada first issued a notice of non-compliance and then,
+    on 1 March 2013, a notice of non-compliance-withdrawal (concerns about benefit-risk, the indication and raised
+    IGF-1). At the company's request an external expert panel reconsidered the file on 23 August 2013. [ca-sbd-egrifta]
+  - In Canada, doctors had to stop treatment if IGF-1 stayed above the normal range (SDS above 2) after 26 weeks, a
+    stricter limit than the US label (above 3). [ca-sbd-egrifta, ca-pm-egrifta-2015]
+  - Only the 1 mg vial was ever sold, from 23 June 2015. The company stopped selling it on 30 September 2022 for
+    business reasons, and Health Canada cancelled its drug identification number (DIN); the never-sold 2 mg DIN was
+    cancelled on 13 July 2023. Both cancellations followed the company's own notice that it had stopped selling, not
+    a safety action. [ca-dsc-egrifta-discontinuation-170025, ca-sbd-egrifta, ca-dpd-egrifta-din-02438712,
+    ca-dpd-egrifta-din-02423677, ca-food-and-drug-regulations]
+  - Since 13 July 2023 no tesamorelin product has a DIN in Canada, so none may be sold there by a manufacturer.
+    [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23, ca-food-and-drug-regulations]
+  - Tesamorelin is on Canada's Prescription Drug List (since 25 April 2014). [ca-pdl-human]
+  - Health Canada has listed products sold as 'tesamorelin' among unauthorised injectable peptides seized from
+    sellers (advisories of 1 August 2025 and 24 December 2025). [ca-hc-recalls-database]
+  - No tesamorelin trial has been authorised in Canada since 2013 (Health Canada's trial database). [ca-hc-ctdb-search-status-b-2026-10-23]
+  AUSTRALIA
+  - No tesamorelin product is on the Australian Register of Therapeutic Goods, and the TGA's website records no
+    Australian registration, evaluation or application (as of 23 October 2026). [au-artg-search-status-b-2026-10-23,
+    au-tga-search-status-b-2026-10-23]
+  - The Poisons Standard does not name tesamorelin. Its group entry for growth hormone releasing hormones is
+    prescription only (Schedule 4), and possession without a prescription is illegal (Appendix D). Whether that entry
+    covers tesamorelin is our reading, pending legal review. [au-poisons-standard-2026-10, au-tga-2014-09-scheduling-consultation]
+  - Importing growth hormone releasing hormones and their synthetic analogues needs a permit from the Office of Drug
+    Control (same caveat for tesamorelin). [au-customs-prohibited-imports-regs, au-odc-growth-hormones-import-permit]
+  UNITED KINGDOM
+  - No tesamorelin product has a UK licence (MHRA products database, 23 October 2026). [mhra-products-search-tesamorelin,
+    mhra-products-search-cjc-1295-ipamorelin]
+  - The only European application, for an EU-wide licence that would also have covered the UK (then an EU member),
+    was withdrawn in June 2012; the EU's medicines committee's provisional view was that it could not be approved
+    (doubts about a meaningful health benefit, raised IGF-1, no long-term safety data). [ema-egrifta-withdrawal,
+    ie-hpra-licensing-procedures, uk-euwa-2018-s20-exit-day]
+  UNITED STATES
+  - In August 2026 the FDA sent warning letters to four online sellers that listed products called 'tesamorelin' as
+    unapproved new drugs, although Egrifta itself is approved. [fda-warning-letters-index]
+  TRIAL NCT01579695
+  - The FDA-required 10-year safety study measured how soon cancers appeared in people using Egrifta compared with
+    similar people not using it; it enrolled 391 people, was stopped in 2018 with no reason given, and posted no
+    results. [ctgov-nct01579695]
