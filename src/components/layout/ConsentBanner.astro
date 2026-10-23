@@ -33,15 +33,33 @@ const { locale } = Astro.props;
   const banner = document.querySelector<HTMLElement>('[data-consent-banner]');
   const SIX_MONTHS = 60 * 60 * 24 * 182;
   const secure = location.protocol === 'https:' ? '; Secure' : '';
-  // Was this page served with the statistics allowed? Then the host's scripts are running on it.
-  const statsRunning = /(?:^|;\s*)pe-stats=yes(?:;|$)/.test(document.cookie);
+  const allowed = () => /(?:^|;\s*)pe-stats=yes(?:;|$)/.test(document.cookie);
+  // Was this page served with the statistics allowed? Then the host's scripts are running on it, and they
+  // keep running (and set their cookie again) until the page is reloaded; the server then sends it back
+  // with the blocking rule. So a withdrawal reloads every such page: this one at once (choose), other open
+  // tabs through a message, and a page brought back by Back or shown again when it checks the cookie.
+  const statsRunning = allowed();
+  const CHANNEL = 'pe-consent';
+  const stopIfWithdrawn = () => {
+    if (!allowed()) location.reload();
+  };
+  if (statsRunning) {
+    if ('BroadcastChannel' in window) new BroadcastChannel(CHANNEL).addEventListener('message', stopIfWithdrawn);
+    window.addEventListener('pageshow', (e) => e.persisted && stopIfWithdrawn());
+    document.addEventListener('visibilitychange', () => document.visibilityState === 'visible' && stopIfWithdrawn());
+  }
   const choose = (choice: string) => {
     document.cookie = `pe-stats=${choice}; Path=/; Max-Age=${SIX_MONTHS}; SameSite=Lax${secure}`;
-    // The statistics cookie the host's script set while it was allowed: gone at once, not after 30 minutes.
-    if (choice === 'no') document.cookie = `session-id=; Path=/; Max-Age=0${secure}`;
-    // They would keep running (and set their cookie again) until the reader leaves the page: reload it,
-    // and the server sends it back with the blocking rule.
-    if (choice === 'no' && statsRunning) return location.reload();
+    if (choice === 'no') {
+      // The statistics cookie the host's script set while it was allowed: gone at once, not after 30 minutes.
+      document.cookie = `session-id=; Path=/; Max-Age=0${secure}`;
+      if ('BroadcastChannel' in window) {
+        const channel = new BroadcastChannel(CHANNEL);
+        channel.postMessage('no');
+        channel.close();
+      }
+      if (statsRunning) return location.reload();
+    }
     delete root.dataset.consent;
   };
   banner?.querySelectorAll<HTMLButtonElement>('[data-consent-choice]').forEach((b) => {
