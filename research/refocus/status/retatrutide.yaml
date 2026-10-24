@@ -1,0 +1,150 @@
+slug: retatrutide
+rows:
+  # Canada: no product in the DPD (any status), no Health Canada decision document, no submission listed as under
+  # review; ten Eli Lilly trials with Canadian sites, six of them still open (one recruiting).
+  # factcheck (24 October 2026): ca-hc-ctsp-retatrutide-2026-10-24 added (Health Canada's own trial portal lists the
+  # same ten Lilly trials, so they are Health Canada-authorised trials).
+  - { jurisdiction: CA, status: investigational, as_of: 2026-10-23, sources: [ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24, ca-hc-sur-search-status-a-2026-10-24, ca-ctgov-retatrutide-ca-au-2026-10-24, ca-hc-ctsp-retatrutide-2026-10-24, ctgov-nct06383390, ctgov-nct07165028] }
+  # Australia: not on the ARTG, no registration, evaluation or AusPAR; the TGA says it 'has not been approved by the TGA
+  # or any comparable international regulator'; six Lilly trials with Australian sites, two still open (one recruiting).
+  - { jurisdiction: AU, status: investigational, as_of: 2026-10-23, sources: [au-artg-search-status-a-2026-10-24, au-tga-pmr-search-status-a-2026-10-24, au-tga-2026-09-retatrutide-counterfeit, ca-ctgov-retatrutide-ca-au-2026-10-24, au-anzctr-search-status-a-2026-10-24, ctgov-nct06383390, ctgov-nct07165028] }
+  # UK: the data file already has a UK row (investigational). No UK row proposed; re-check below agrees with it.
+schedule:
+  # AU: the Poisons Standard does not name retatrutide, but the TGA's own advertising guidance says GLP-1 receptor agonists
+  # 'are regulated as prescription-only medicines. This includes derivatives of semaglutide or dulaglutide such as
+  # retatrutide.' Proposed with that wording; a legal reviewer should confirm before the page calls it settled law.
+  AU: { code: "S4", note: "Not named in the Poisons Standard. The TGA states that derivatives of semaglutide or dulaglutide 'such as retatrutide' are regulated as prescription-only (Schedule 4) medicines; the Standard's entries cover derivatives of the substances they name.", sources: [au-tga-advertising-glp1-prohibited, au-poisons-standard-2026-10] }
+  # CA: no schedule field. Retatrutide is not on the Prescription Drug List (ca-pdl-human); as an unauthorised new drug
+  # it may not be sold at all (ca-food-and-drug-regulations), so the PDL question does not arise.
+products: []
+notes: |
+  Names searched (from the data file): retatrutide (INN), LY3437943 (and 'LY-3437943' in the DPD extract). The informal
+  names 'Triple G' and 'reta' were not searched in regulator databases (they would only return noise). All searches
+  24 October 2026 (local clock; 23 October in North America).
+
+  CANADA (Health Canada).
+  - DPD extract (5 October 2026; marketed, approved, cancelled and dormant files): no product with retatrutide or
+    LY3437943 in any ingredient or brand field. The live DPD and API were down for maintenance all day.
+    [ca-dpd-extract-search-status-a-2026-10-24; the day before, the live API also found none: ca-dpd-search-canada-legal-2026-10-23]
+  - Drug and Health Product Portal review decisions: 'retatrutide' and 'LY3437943' give no result.
+    [ca-dhpp-review-search-status-a-2026-10-24]
+  - Submissions under review (new and supplemental): no retatrutide entry (orforglipron and cagrilintide + semaglutide are
+    listed). Weak evidence on its own, because the lists do not show every submission. [ca-hc-sur-search-status-a-2026-10-24]
+  - Not on the Prescription Drug List (searched 23 October 2026 by canada-legal). [ca-pdl-human]
+  - Trials with Canadian sites (ClinicalTrials.gov, 24 October 2026): 10, all Eli Lilly. Open: NCT07165028 (phase 3
+    SYNERGY-Outcomes master protocol with tirzepatide and retatrutide arms in MASLD; recruiting, 15 Canadian sites),
+    NCT06383390 (TRIUMPH-Outcomes, cardiovascular and kidney outcomes; active, not recruiting, 22 sites), NCT06260722
+    (TRANSCEND-T2D-2, against semaglutide in type 2 diabetes; active, not recruiting, 12 sites), NCT06859268 (TRIUMPH-6,
+    weight maintenance; 8 sites), NCT07035093 (TRIUMPH-7, chronic low back pain; 5 sites), NCT07357415 (TRIUMPH-9; 10
+    sites). Completed: TRIUMPH-1, -3, -4 and a phase 2 kidney study (NCT05936151). [ca-ctgov-retatrutide-ca-au-2026-10-24,
+    ctgov-nct07165028, ctgov-nct06383390, ctgov-nct06260722, ctgov-nct06859268, ctgov-nct07035093, ctgov-nct07357415,
+    ctgov-nct05929066, ctgov-nct05882045, ctgov-nct05931367, ctgov-nct05936151]
+  - Health Canada's own Clinical Trials Database (trials it authorised) could not be searched: its API returned HTTP 503
+    (UNRESOLVED; ClinicalTrials.gov covers the same Lilly trials).
+    factcheck (24 October 2026): RESOLVED. The database was replaced on 29 July 2026 by the Canadian Clinical Trial
+    Search Portal (the old address now redirects there). 'retatrutide' and 'LY3437943': 10 trials each, all Eli Lilly
+    Canada Inc, the same ten NCT numbers as above. [ca-hc-ctsp-retatrutide-2026-10-24]
+  - Regulator statements: Health Canada's advisory RA-81874 (9 April 2026) lists retatrutide among 'examples of
+    unauthorized injectable peptide drugs seized by Health Canada'; seizure advisories naming sellers (e.g. RA-77807,
+    August 2025) list retatrutide too and are cited only through the index entry. [ca-hc-2026-04-think-twice-peptides,
+    ca-hc-recalls-database]
+  - Special Access Program: not searched for retatrutide (Health Canada does not publish SAP authorisations). Lilly's
+    expanded-access record NCT07629401 lists no locations and says availability depends on geography and supply; it
+    does not establish access in Canada or Australia. [ctgov-nct07629401]
+
+  AUSTRALIA (TGA).
+  - ARTG: 'retatrutide': 'There were no matching results'; 'LY3437943': only unrelated fuzzy matches.
+    [au-artg-search-status-a-2026-10-24, au-artg-search-australia-legal-2026-10-24]
+  - Prescription medicines registrations, under evaluation, AusPAR and section 19A databases: nothing for retatrutide or
+    LY3437943. [au-tga-pmr-search-status-a-2026-10-24]
+  - TGA website search 'retatrutide': five pages, all warnings or enforcement (counterfeit alert, advertising guidance,
+    seizure, chief medical officers' statement, importers' responsibilities). [au-tga-site-search-status-a-2026-10-24]
+  - Trials with Australian sites (ClinicalTrials.gov): 6, all Eli Lilly phase 3. Open: NCT07165028 (recruiting, 16
+    sites) and NCT06383390 (active, not recruiting, 16 sites). Completed: TRIUMPH-1, -2, -3, -4. ANZCTR holds no
+    retatrutide trial of its own (its search shows the same ClinicalTrials.gov records). [ca-ctgov-retatrutide-ca-au-2026-10-24,
+    ctgov-nct05929079, au-anzctr-search-status-a-2026-10-24]
+  - Poisons Standard: retatrutide not named (au-poisons-standard-2026-10). The TGA's advertising page nevertheless puts
+    it in the prescription-only class as a 'derivative of semaglutide or dulaglutide'; the legal basis is the TGA's
+    reading, so the schedule field above carries that wording. Chemically, retatrutide is a different peptide (its own
+    sequence, a triple GIP/GLP-1/glucagon agonist); the page should not call it a semaglutide derivative in its own
+    voice. [au-tga-advertising-glp1-prohibited]
+  - Compounding: whether the October 2024 ban on compounding 'GLP-1 receptor agonist analogues' covers retatrutide is not
+    stated (UNRESOLVED, as in australia.yaml); in any case it is not on the ARTG, so supplying it outside a trial or an
+    approved access route is unlawful. [au-tg-amendment-2024-measures-2-glp1, au-tga-2026-04-peptide-responsibilities]
+
+  UNITED KINGDOM (re-check only; the data file's UK row stands).
+  - emc: no retatrutide product; MHRA Products: no substance entry. [uk-emc-search-status-a-2026-10-24,
+    uk-mhra-substance-index-status-a-2026-10-24]
+  - NICE has started an appraisal ('Retatrutide for managing overweight and obesity', ID6644): consultation on the draft
+    scope 5 to 29 October 2026; expected publication 'TBC'. This happens before a licence and does not mean one exists.
+    [nice-id6644-retatrutide]
+  - GOV.UK: the five MHRA items naming retatrutide are all enforcement releases. [uk-govuk-mhra-search-status-a-2026-10-24]
+
+  UNITED STATES (no change). Lilly plans to file a US Biologics License Application in the first quarter of 2027
+  (company filing, already in the data file: sec-lilly-2026-q2-results).
+
+  Ireland and New Zealand: not searched (outside this batch).
+page_facts: |
+  CANADA
+  - Retatrutide is not authorised in Canada: Health Canada's drug database has no retatrutide product, and no
+    retatrutide submission is listed as under review. [ca-dpd-extract-search-status-a-2026-10-24, ca-hc-sur-search-status-a-2026-10-24]
+  - It is being tested in Canada in Eli Lilly's clinical trials authorised by Health Canada: ten trials have had
+    Canadian sites; one large phase 3 trial (in fatty liver disease, with tirzepatide and retatrutide arms) is
+    recruiting, and five more are under way but no longer recruiting. [ca-ctgov-retatrutide-ca-au-2026-10-24,
+    ca-hc-ctsp-retatrutide-2026-10-24, ctgov-nct07165028, ctgov-nct06383390]
+  - Health Canada lists retatrutide among the unauthorised injectable peptides it has seized from sellers, and warns
+    against injecting peptides bought online. [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-database]
+  AUSTRALIA
+  - Retatrutide is not on the Australian Register of Therapeutic Goods, and the TGA has no registration, evaluation or
+    public assessment report for it. [au-artg-search-status-a-2026-10-24, au-tga-pmr-search-status-a-2026-10-24]
+  - The TGA says retatrutide 'has not been approved by the TGA or any comparable international regulator' and that any
+    retatrutide product used outside clinical trials 'could be a counterfeit product'. In September 2026 a vial sold as
+    retatrutide, linked to a hospitalisation with a torn oesophagus, contained semaglutide and no retatrutide.
+    [au-tga-2026-09-retatrutide-counterfeit]
+  - The TGA treats retatrutide as a prescription-only medicine, and because it is unapproved it may not be advertised.
+    [au-tga-advertising-glp1-prohibited]
+  - Australian sites took part in four completed phase 3 trials, and two Lilly trials with Australian sites are still
+    under way (one recruiting). [ca-ctgov-retatrutide-ca-au-2026-10-24, ctgov-nct07165028, ctgov-nct06383390]
+  - Enforcement: the TGA lists retatrutide among unapproved peptides it is concerned about and seized retatrutide products
+    with NSW Police in August 2026. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement,
+    au-tga-2026-08-peptide-seizure]
+  UNITED KINGDOM (supplements the existing row)
+  - NICE began scoping an appraisal of retatrutide for obesity in October 2026, ahead of any UK licence.
+    [nice-id6644-retatrutide]
+  - The MHRA says retatrutide 'has not been authorised for use in the UK' and that products sold as retatrutide outside
+    trials are supplied illegally; it seized more than 12,000 fake retatrutide and tirzepatide pens in October 2026.
+    [mhra-2026-10-counterfeit-pens, mhra-2026-05-largest-seizure]
+  UNITED STATES (supplements the existing row)
+  - The FDA has sent warning letters to online sellers of products labelled retatrutide 'for research use only', treating
+    them as unapproved new drugs. [fda-warning-letters-index]
+  - Eli Lilly says it plans to apply to the FDA in the first quarter of 2027. [sec-lilly-2026-q2-results]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026 (this machine's clock; workflow date 23 October 2026). Per-source details
+  are in the 'factcheck' notes of research/refocus/sources/status-a.yaml.
+  Every "not authorised" search repeated with retatrutide, LY3437943 (and LY-3437943 in the DPD), plus brand-free
+  variants; all empty as recorded:
+  - CANADA: DPD extract (5 October 2026, marketed/approved/cancelled/dormant files, unzipped by script): no product;
+    DHPP review decisions 'retatrutide' and 'LY3437943': 'Sorry your search returned no results'; submissions under
+    review (89 new and 71 supplemental rows): none; PDL (human-use list re-read): not named; Health Canada's Canadian
+    Clinical Trial Search Portal (new for this check): 10 trials, all Lilly, the same ten as ClinicalTrials.gov.
+  - AUSTRALIA: ARTG 'retatrutide': 'There were no matching results' ('LY3437943': unrelated fuzzy matches only);
+    prescription medicines registrations, under evaluation, AusPAR and section 19A: no result; Poisons Standard October
+    2026 official text: 'RETATRUTIDE' appears nowhere; TGA site search: the same five pages; ANZCTR 'retatrutide' 7
+    records and 'LY3437943' 6, all ClinicalTrials.gov records, no ACTRN.
+  - UK: emc 'retatrutide' and 'LY3437943': no results; MHRA Products 'No results for RETATRUTIDE' (R index: no entry);
+    GOV.UK MHRA search: 5 items, all enforcement (24 October 2025 to 15 October 2026); MHRA granted-licence lists 2021
+    to 2026: no retatrutide licence.
+  - ClinicalTrials.gov API: Canada 10, Australia 6, Ireland 0 (New Zealand 2), statuses and site counts as recorded;
+    NCT07165028 is 'A Master Protocol of Multiple Agents in Adults With Metabolic Dysfunction-Associated Steatotic Liver
+    Disease (SYNERGY-Outcomes)' with tirzepatide and retatrutide arms; NCT07629401 (expanded access) 'AVAILABLE', no
+    locations.
+  - Statements: TGA advertising page ('This includes derivatives of semaglutide or dulaglutide such as retatrutide';
+    'For retatrutide, because it is an unapproved therapeutic good') and MHRA release of 15 October 2026 ('Retatrutide
+    has not been authorised for use in the UK'; 'over 12,000 fake retatrutide and tirzepatide pens') re-read word for
+    word; NICE ID6644 ('Selected' 15 September 2025; scoping commenced 5 October 2026; provisional consultation 5 to 29
+    October 2026; expected publication 'TBC').
+  Changed: CA row and page fact now cite ca-hc-ctsp-retatrutide-2026-10-24 (the trials are Health Canada-authorised);
+  the writer's UNRESOLVED point about Health Canada's trial database is resolved.
+  Still UNRESOLVED: whether retatrutide is in law a Schedule 4 'derivative' in Australia (only the TGA's advertising
+  page says so; legal review before the page states 'S4' as settled law: the AU schedule entry is proposed, not
+  proven); whether the 2024 compounding ban covers it; Special Access Program use in Canada (not published).

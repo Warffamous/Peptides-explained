@@ -6,7 +6,7 @@ rows:
   - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, au-poisons-standard-2026-10, fda-pcac-2024-aod9604-briefing] }
   - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-hmr-2012-reg-46] }
 schedule:
-  AU: { code: "S4", note: "Poisons Standard: '# AOD-9604 (CAS No. 221231-10-3)' in Schedule 4 (prescription only) and in Appendix D clause 5 (item 3: possession without authority is illegal, for example without a legal prescription). In every edition since the one in force from 1 June 2015; not in the February 2015 edition. Proposed in the TGA's September-October 2014 consultation together with other performance and image enhancing drugs.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2014-09-scheduling-consultation] }
+  AU: { code: "S4", note: "Poisons Standard: '# AOD-9604 (CAS No. 221231-10-3)' in Schedule 4 (prescription only) and in Appendix D clause 5 (item 3: possession without authority is illegal, for example without a legal prescription). First appears in the edition in force from 1 June 2015 (F2015L00749) and is in the current October 2026 edition (F2026L01327); not in the February 2015 edition; the editions in between were not read one by one. Proposed in the TGA's September-October 2014 consultation together with other performance and image enhancing drugs.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2014-09-scheduling-consultation] }
 products: []
 notes: |
   CANADA (Health Canada). The Health Canada databases were down for maintenance (HTTP 503) throughout this run, so no
@@ -21,8 +21,10 @@ notes: |
     products. [ca-hc-recalls-search-status-d-2026-10-23]
   - Trials: ClinicalTrials.gov has no AOD-9604 record at all (AOD9604 and AOD-9604: 0); the canada-legal run found no
     AOD-9604 trial with a Canadian site. [ctgov-search-status-d-2026-10-23, ca-ctgov-canada-peptide-search-2026-10-23]
-  - Not established (UNRESOLVED, low risk): the NOC database and Health Canada's Clinical Trials Database were not
-    searched for AOD-9604 (down). No other Canadian source suggests it was ever filed.
+  - Health Canada's Canadian Clinical Trial Search Portal (fact-checker, 24 October 2026): no trial for AOD9604 or
+    AOD-9604 (controls returned trials). [ca-hc-ctdb-search-status-d-2026-10-24]
+  - Not established (UNRESOLVED, low risk): the NOC database was not searched for AOD-9604 (still down on
+    24 October 2026). No other Canadian source suggests it was ever filed.
 
   AUSTRALIA (TGA), searched 23 October 2026 in a browser.
   - ARTG: no entry. The search engine splits 'AOD9604'/'AOD-9604' into fragments (1,180 unrelated results), so the
@@ -38,9 +40,10 @@ notes: |
   - Customs (Prohibited Imports) Regulations, Schedule 7A: AOD-9604 is not named; the growth hormone entry (item 3)
     covers growth hormones, somatomedins, IGFs and GHRH analogues, and AOD-9604 is none of these, so no ODC import
     permit appears to be needed. Import still needs a prescription under the personal importation exemption because
-    it is Schedule 4. (The ACC's 2013 report put 'Schedule 7A' in AOD-9604's border-status column; the current text does
-    not support that.) [au-customs-prohibited-imports-regs, au-tg-regulations-1990-sch-5-item-1,
-    au-acc-2013-organised-crime-drugs-sport]
+    it is Schedule 4. (The ACC's 2013 report contradicts itself: its Appendix Two table puts 'Schedule 7A' against
+    AOD-9604, its Appendix Three summary says 'not a border controlled drug'. The current Schedule 7A, re-read by the
+    fact-checker, does not name it: item 3 is growth hormones, somatomedins, IGFs and GHRH analogues.)
+    [au-customs-prohibited-imports-regs, au-tg-regulations-1990-sch-5-item-1, au-acc-2013-organised-crime-drugs-sport]
   - ANZCTR: one AOD-9604 trial ever registered, ACTRN12605000067673 (the 'Options' phase 2b obesity trial, sponsor
     Metabolic Pharmaceuticals Ltd, registered 2 August 2005, completed, 12 Australian recruitment postcodes, no results
     posted). [au-anzctr-search-status-d-2026-10-23, anzctr-actrn12605000067673]
@@ -51,13 +54,16 @@ notes: |
 
   AUSTRALIAN HISTORY (asked for).
   - Developer: Metabolic Pharmaceuticals Ltd (Australia), late 1990s; the early animal studies came from Ng FM's
-    group at Monash University with the company (the city of the company was not checked in an official source); the
+    group at Monash University (PubMed affiliation of Ng 2000; whether the company took part is not stated there);
+    the company's contact address in the ANZCTR record is in Melbourne and the ABN record gives Victoria; the
     company's phase 2b 'Options' trial (536 enrolled, 502 randomised) missed its weight-loss endpoint, and on
     21 February 2007 the company announced that development for obesity was terminated. [fda-pcac-2024-aod9604-briefing,
-    anzctr-actrn12605000067673, ng-2000-aod9604-rats]
-    UNRESOLVED: what happened to the company afterwards (a later company named 'Calzada' is cited by the ACC for 2012
-    announcements about AOD9604; whether it is the renamed Metabolic Pharmaceuticals was not checked in an official
-    register such as ASIC). Leave the company's later history off the page.
+    anzctr-actrn12605000067673, ng-2000-aod9604-rats, au-abr-abn-96083866862]
+    RESOLVED by the fact-checker (ABN Lookup): Metabolic Pharmaceuticals Limited was renamed Calzada Limited on
+    17 February 2010 and took another name on 21 November 2014 (same ABN 96 083 866 862). So
+    the 'Calzada' 2012 announcements the ACC cites came from the renamed developer. The page does not need the
+    company's later names; if it mentions the 2012 claims, 'the developer (renamed in 2010)' is enough.
+    [au-abr-abn-96083866862, au-acc-2013-organised-crime-drugs-sport]
   - February 2013: the Australian Crime Commission's Project Aperio report said AOD-9604 'was identified ... as being
     used by professional athletes', was 'not approved for human use', 'Unscheduled', and 'not currently a WADA
     prohibited substance' / 'not currently prohibited under category S2'. [au-acc-2013-organised-crime-drugs-sport]
@@ -67,13 +73,14 @@ notes: |
     violations involving AOD-9604 'that occurred prior to the World Anti-Doping Agency's media release of 22 April 2013'.
     The Federal Court dismissed Essendon's and James Hird's challenge to the investigation on 19 September 2014.
     [au-fca-2014-1019-essendon-v-asada]
-    UNRESOLVED: (1) the text of WADA's 22 April 2013 media release (secondary sources, including sports federations'
-    reposts, say it placed AOD-9604 under S0, 'non-approved substances'); it was not found on a WADA host (wada-ama.org
-    blocks scripted requests and its site search did not surface it). (2) ASADA's later public statement on pre-22 April
-    2013 use (news reports say ASADA said no athlete would be pursued for use before that date) was not found on an
-    official host (asada.gov.au no longer exists; Sport Integrity Australia does not carry the old releases). The page
-    can say that WADA clarified in April 2013 that AOD-9604 is banned and that ASADA treated earlier use separately, but
-    must not quote S0 or the 'no athlete pursued' line until those primary documents are found.
+    RESOLVED by the fact-checker: (1) WADA's release of 22 April 2013 is on WADA's own site ('WADA statement on
+    substance AOD-9604'): AOD-9604 'has not been approved for therapeutic use by any government health authority in the
+    world' and so 'falls into the S.0 category' of the 2013 List (non-approved substances, prohibited at all times).
+    S0 may now be quoted, with this source. [wada-2013-04-aod9604-statement]
+    STILL UNRESOLVED: (2) ASADA's later public statement on pre-22 April 2013 use (news reports say ASADA said no
+    athlete would be pursued for use before that date) was not found on an official host (asada.gov.au no longer
+    exists; Sport Integrity Australia does not carry the old releases; a web search on 24 October 2026 found only news
+    reports). Do not quote the 'no athlete pursued' line.
   - 2014-2015: the TGA's consultation (25 September to 23 October 2014) proposed adding AOD-9604 to Schedule 4 and
     Appendix D among performance and image enhancing drugs; it entered the Poisons Standard from 1 June 2015.
     [au-tga-2014-09-scheduling-consultation, au-poisons-standard-2015-06, au-poisons-standard-2015-02]
@@ -93,18 +100,22 @@ page_facts: |
   HISTORY (Australia)
   - AOD-9604 was developed in Australia by Metabolic Pharmaceuticals in the late 1990s as an anti-obesity drug. Its
     phase 2b trial in obese adults ran at sites across Australia (registered in 2005); in February 2007 the company said
-    the results did not support it as an obesity treatment and stopped that development. [fda-pcac-2024-aod9604-briefing,
-    anzctr-actrn12605000067673]
+    the results did not support the drug's commercial viability as an obesity treatment and stopped that development.
+    [fda-pcac-2024-aod9604-briefing, anzctr-actrn12605000067673]
   - In February 2013 the Australian Crime Commission reported that professional athletes were using AOD-9604, and
     described it as not approved for human use and not then scheduled. [au-acc-2013-organised-crime-drugs-sport]
-  - After WADA's media release of 22 April 2013 the Australian anti-doping authority treated AOD-9604 as banned in
-    sport, and said it would set out separately how it would handle use before that date; this was part of the
-    investigation into Essendon's 2012 supplements program. [au-fca-2014-1019-essendon-v-asada]
+  - On 22 April 2013 WADA stated that AOD-9604, approved by no government health authority, fell under the 2013
+    Prohibited List's S0 category (non-approved substances, banned at all times). [wada-2013-04-aod9604-statement]
+  - In 2013, during the investigation of Essendon's 2011-2012 supplements program, the Australian anti-doping
+    authority's notes recorded that WADA said AOD-9604 was banned, and the authority told the AFL it would set out
+    separately how it would handle possible violations from before WADA's statement of 22 April 2013.
+    [au-fca-2014-1019-essendon-v-asada, wada-2013-04-aod9604-statement]
   AUSTRALIA
   - AOD-9604 has never been on the Australian Register of Therapeutic Goods, so it is not an approved medicine in
     Australia. [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23]
-  - Since 1 June 2015 it has been a prescription-only (Schedule 4) substance, and possessing it without a prescription
-    is illegal (Poisons Standard, Appendix D). [au-poisons-standard-2026-10, au-poisons-standard-2015-06]
+  - It was added to the Poisons Standard as a prescription-only (Schedule 4) substance from 1 June 2015 and is still
+    there (October 2026 edition); possessing it without authority, for example without a prescription, is illegal
+    (Appendix D). [au-poisons-standard-2026-10, au-poisons-standard-2015-06]
   - The TGA made unapproved peptide products a compliance priority in June 2026. [au-tga-2026-06-peptide-compliance-priority]
   CANADA
   - No AOD-9604 product is authorised in Canada (no DIN). Health Canada has listed AOD-9604 among unauthorised injectable
@@ -114,3 +125,25 @@ page_facts: |
   - No AOD-9604 product has a UK licence. It is not a controlled drug; Home Office testing found it once in Border Force
     seizures in 2017-18. [mhra-products-search-status-d-2026-10-23, uk-home-office-fews-2017-18]
   US (no change): the FDA's 2024 review found no approved product and no published efficacy trial. [fda-pcac-2024-aod9604-briefing]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026. Checked against the primary sources (re-opened or re-run): the CA, AU and UK
+  rows (all three stay not-authorised); the AU schedule entry (Schedule 4 '# AOD-9604 (CAS No. 221231-10-3)' and
+  Appendix D clause 5 item 3 in F2026L01327; first in F2015L00749, in force 1 June 2015, whose own Appendix D list
+  misspells it 'AOD-9694'; absent from F2015L00128); ARTG and TGA site searches (same counts; '9604' and "AOD 9604"
+  find only the November 2014 consultation); Customs (Prohibited Imports) Regulations Schedule 7A (AOD-9604 not named;
+  item 3 growth hormones, item 4 darbepoetin alfa); ANZCTR record ACTRN12605000067673 and searches; the Federal Court
+  judgment ([1], [83], [175]-[176], [191], [206]); the ACC report (pdftotext); MHRA Products quoted searches; GOV.UK
+  and the FEWS 2017-18 table; the Health Canada advisories RA-77807 and RA-81403; the PDL and CDSA; ClinicalTrials.gov.
+  CHANGED: (1) schedule note: 'in every edition since' replaced by what was read (June 2015 and October 2026 editions;
+  editions in between not read); same caution in the AU page fact. (2) ACC border status: the report contradicts
+  itself (Appendix Two 'Schedule 7A', Appendix Three 'not a border controlled drug'); the note now says so. (3) Company
+  history RESOLVED from ABN Lookup (renamed Calzada Limited 17 February 2010; renamed again 21 November 2014).
+  (4) WADA's 22 April 2013 release RESOLVED from wada-ama.org (S0); new page fact added. (5) 'with the company' for
+  the Monash animal studies removed (not in the PubMed affiliation). (6) Page facts: 'did not support it as an
+  obesity treatment' replaced by the FDA-quoted 'commercial viability' wording; '2012 supplements program' corrected
+  to 2011-2012 ([1] of the judgment); 'treated AOD-9604 as banned' replaced by what the judgment records.
+  (7) Health Canada's trial portal searched (no AOD-9604 trial).
+  STILL UNRESOLVED: NOC database (down); ASADA's later public statement on pre-22 April 2013 use; the TGA February
+  2016 interim scheduling page cited by the FDA; Poisons Standard editions between June 2015 and October 2026 not read
+  one by one. New sources used: wada-2013-04-aod9604-statement, au-abr-abn-96083866862,
+  ca-hc-ctdb-search-status-d-2026-10-24 (research/refocus/sources/status-d.yaml).

@@ -5,7 +5,7 @@ rows:
   # UK: the data file already has a UK row (not-authorised). No UK row proposed; mhra-products-search-cjc-1295-ipamorelin
   # is offered as an extra source for it (the current row cites no MHRA search).
 schedule:
-  AU: { code: "S4", note: "'# IPAMORELIN.' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), since 1 June 2015.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02] }
+  AU: { code: "S4", note: "'# IPAMORELIN.' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), since 1 June 2015.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2026-06-advertising-prescription-medicines-guidance] }
 products: []
 notes: |
   Names searched (from the data file): ipamorelin (INN), NNC 26-0161, ipamorelin acetate; no brand.
@@ -17,7 +17,8 @@ notes: |
     (all approved, marketed, cancelled and dormant products, files dated 5 October 2026): no brand name or
     ingredient containing IPAMOR, 'NNC 26', NNC26 or SECRETAGOG. [ca-dpd-search-status-b-2026-10-23,
     ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-sur-search-2026-10-23]
-  - Trials: Health Canada Clinical Trials Database (since April 2013): no protocol with ipamorelin or NNC 26-0161.
+  - Trials: Health Canada's trial records since April 2013 (the Clinical Trials Database, replaced on 29 July 2026
+    by the Canadian Clinical Trial Search Portal; both searched): no protocol with ipamorelin or NNC 26-0161.
     ClinicalTrials.gov: 3 records, all with US sites only (NCT00672074, NCT01280344, NCT07717866). Not
     'investigational'. [ca-hc-ctdb-search-status-b-2026-10-23, ctgov-search-status-b-2026-10-23, ctgov-ipamorelin-search-2026-10-22]
   - Prescription Drug List: ipamorelin is NOT listed by name, and there is no group entry for growth hormone
@@ -34,24 +35,30 @@ notes: |
   - ARTG: 'ipamorelin' and '"NNC 26-0161"': no matching results (control somatropin 30). [au-artg-search-status-b-2026-10-23]
   - ANZCTR: 0 records; ClinicalTrials.gov: no Australian site. [au-anzctr-search-status-b-2026-10-23, ctgov-search-status-b-2026-10-23]
   - Poisons Standard (October 2026): '# IPAMORELIN.' in Schedule 4; Appendix D clause 5 item 25 (possession without
-    authority illegal); also within the group entries for growth hormone releasing peptides and secretagogues (items
-    19 and 21). First in the June 2015 edition (commenced 1 June 2015), absent in February 2015; proposed in the
+    authority illegal); on our reading also within the group entries for growth hormone releasing peptides and
+    secretagogues (items 19 and 21, 'including those separately specified in Schedule 4'; the instrument does not
+    list their members). The TGA's own advertising guidance (June 2026) gives 'Ipamorelin' as an example of a
+    prescription medicine. [au-tga-2026-06-advertising-prescription-medicines-guidance] First in the June 2015 edition (commenced 1 June 2015), absent in February 2015; proposed in the
     November 2014 round as a performance and image enhancing drug. The FDA's 2024 evaluation reports the same
     Australian decision. [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02,
     au-tga-2014-09-scheduling-consultation, fda-pcac-2024-ipamorelin-briefing]
-  - Import: ipamorelin is NOT in Customs (Prohibited Imports) Schedule 7A (that item covers growth hormones and
-    GHRHs, not GH secretagogues), so no ODC permit by that route. A person importing it for themselves must meet the
+  - Import: ipamorelin is NOT named in Customs (Prohibited Imports) Schedule 7A (item 4 covers growth hormones and
+    GHRHs, not GH secretagogues; item 1, 'Anabolic or androgenic substances', is not defined and no official source
+    applies it to secretagogues), and the ODC's controlled-substances list has no entry for it, so no ODC permit is
+    shown to be needed by that route. A person importing it for themselves must meet the
     Personal Importation Scheme conditions, including a prescription when required, and the TGA will not release
-    products identified only by codes or without the active ingredient and strength. [au-customs-prohibited-imports-regs, au-tga-2026-04-peptide-responsibilities]
+    products identified only by codes or without the active ingredient, strength or dosage. [au-customs-prohibited-imports-regs, au-odc-growth-hormones-import-permit, au-tga-2026-04-peptide-responsibilities]
   - TGA notices: the whole-site search finds ipamorelin only in the 2014 scheduling consultation and in the advertising
-    guidance for prescription medicines; no 2026 peptide notice names it. [au-tga-search-status-b-2026-10-23]
+    guidance for prescription medicines (now registered); no 2026 peptide safety notice or media release names it.
+    [au-tga-search-status-b-2026-10-23, au-tga-2026-06-advertising-prescription-medicines-guidance]
 
   UNITED KINGDOM (re-check; existing row stands): MHRA Products 'ipamorelin' and '"NNC 26-0161"': no results;
   substance index I: no entry. GOV.UK search 'ipamorelin': 0 results. [mhra-products-search-cjc-1295-ipamorelin,
   uk-govuk-search-status-b-2026-10-23]
 
-  UNITED STATES (no change): FDA warning letter MARCS-CMS 734884 (24 August 2026, to an online seller) lists a blend
-  of tesamorelin and ipamorelin among unapproved new drugs. Cite the index. [fda-warning-letters-index]
+  UNITED STATES (no change): FDA warning letters MARCS-CMS 733652 and 734884 (both 24 August 2026, each to an online
+  seller) list a blend of tesamorelin and ipamorelin ('Tesamorelin Ipamorelin Blend'; 'BIMORELIN') among unapproved
+  new drugs. Cite the index. [fda-warning-letters-index]
 
   Ireland and New Zealand: not searched (outside this batch).
 page_facts: |
@@ -64,9 +71,33 @@ page_facts: |
   - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-b-2026-10-23]
   - Ipamorelin has been a prescription-only medicine (Schedule 4) since 1 June 2015, and possessing it without
     authority, such as a prescription, is illegal (Appendix D, given effect by state and territory law).
-    [au-poisons-standard-2026-10, au-poisons-standard-2015-06]
+    [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-tga-2026-06-advertising-prescription-medicines-guidance]
   UNITED KINGDOM
   - No product containing ipamorelin has a UK licence. [mhra-products-search-cjc-1295-ipamorelin]
   UNITED STATES
-  - An August 2026 FDA warning letter to an online seller listed a tesamorelin-ipamorelin blend as an unapproved new
-    drug. [fda-warning-letters-index]
+  - In August 2026 two FDA warning letters to online sellers listed tesamorelin-ipamorelin blends as unapproved new
+    drugs. [fda-warning-letters-index]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026 (this machine's clock; workflow date 23 October 2026). Per-source details
+  are in the 'factcheck' notes of research/refocus/sources/status-b.yaml.
+  Repeated 'not authorised' searches with every name in the data file (ipamorelin, NNC 26-0161, ipamorelin acetate):
+  - CANADA: DPD extract (IPAMOR, NNC 26, NNC26, SECRETAGOG: none); NOC extract (IPAMOR: none, since 1994; ipamorelin
+    was first described in 1998, so 'ever' holds); PDL (no entry); CDSA (none); submissions under review (none);
+    Canadian Clinical Trial Search Portal (ipamorelin, 'NNC 26-0161': no results); advisories RA-81874, RA-77218,
+    RA-77807 ('Ipamoreline'), RA-81403 and RA-81404 confirmed with their dates.
+  - AUSTRALIA: ARTG (ipamorelin, "NNC 26-0161": none), ANZCTR (0), Poisons Standard entry and Appendix D item 25
+    since 1 June 2015 (absent February 2015), Customs Schedule 7A (not named), ODC list (no results), TGA site search
+    (2 results, as recorded): all confirmed. The FDA ipamorelin briefing's account of the ACMS decision confirmed.
+  - UK: MHRA Products (ipamorelin, "NNC 26-0161": no results; I index: none); GOV.UK (0).
+  - ClinicalTrials.gov: the same 3 records (NCT00672074, NCT01280344, NCT07717866), US sites only.
+  Changed:
+  - US: a second letter (733652, 24 August 2026) also lists a tesamorelin-ipamorelin blend; note and page fact now
+    say two letters.
+  - AU: added au-tga-2026-06-advertising-prescription-medicines-guidance (TGA guidance naming 'Ipamorelin' as a
+    prescription medicine) to the schedule and page fact; the GHRP/GHS group-entry point is now marked as our reading;
+    the import note says 'not named' rather than 'not in' Schedule 7A, because item 1 ('anabolic ... substances') is
+    undefined, and cites the ODC list; the Personal Importation wording is now 'strength or dosage' as on the page.
+  - Trials note now reflects the Canadian Clinical Trial Search Portal.
+  Still UNRESOLVED: the legal basis of Health Canada's 'regulated as prescription drugs' wording for an unlisted
+  peptide (as the writer said); whether Customs Schedule 7A item 1 could reach a growth hormone secretagogue (no
+  official source either way).

@@ -1,0 +1,223 @@
+slug: tirzepatide
+rows:
+  # Canada: Mounjaro, Notice of Compliance 24 November 2022 (SBD milestone table; the product monograph says
+  # 'Date of Initial Authorization: NOV 23, 2022'). Zepbound followed on 13 May 2025.
+  - { jurisdiction: CA, status: authorised, since: 2022-11-24, as_of: 2026-10-23, sources: [ca-sbd-mounjaro, ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24] }
+  # Australia: Mounjaro, registered (ARTG date) 23 December 2022; TGA decision 22 December 2022.
+  - { jurisdiction: AU, status: authorised, since: 2022-12-23, as_of: 2026-10-23, sources: [au-tga-pmr-search-status-a-2026-10-24, au-artg-search-status-a-2026-10-24, au-artg-mounjaro-439430] }
+  # UK: the data file already has a UK row (authorised, no 'since'). No UK row proposed. Suggested 'since' for it:
+  # 2022-09-26, the first Great Britain licences (Mounjaro single-dose pens PLGB 14895/0317, 0318 and 0320 to 0323;
+# factcheck: six licences, there is no 0319; uk-mhra-ma-granted-2022).
+  # The EU authorisation of 15 September 2022 (ema-epar-mounjaro) also applied in Northern Ireland until the end of 2024
+  # (uk-mhra-uk-wide-licensing); if the editor prefers the earliest date anywhere in the UK, use 2022-09-15 and say why.
+schedule:
+  # factcheck (24 October 2026): the Poisons Standard's index gives 'TIRZEPATIDE Schedule 4, Appendix L, clause 2';
+  # Appendix L clause 2 item 41 requires warning statement 67 on the dispensing label. Added to the note.
+  AU: { code: "S4", note: "Poisons Standard (October 2026), Schedule 4 entry 'TIRZEPATIDE' (prescription-only medicine; not in Appendix D). Appendix L clause 2 (item 41) requires the dispensing label to carry warning statement 67: 'Do not use if pregnant or likely to become pregnant.'", sources: [au-poisons-standard-2026-10] }
+  CA: { code: "Prescription Drug List", note: "'Tirzepatide', effective 8 March 2023.", sources: [ca-pdl-human] }
+products:
+  # ---- United States: nothing to add. The data file's mounjaro-us and zepbound-us cover every US product (single-dose
+  #      pens, single-dose vials, multiple-dose vials from 7 January 2026, KwikPens from 20 January 2026, all under the
+  #      same two NDAs). See notes for newer label URLs.
+  # ---- United Kingdom (date = first GB licence, single-dose pens; label = KwikPen SmPC on emc, the only UK Mounjaro
+  #      SmPC there; host not allowlisted)
+  - { id: mounjaro-uk, name: Mounjaro, holder: Eli Lilly Nederland B.V., jurisdiction: UK, authorised: 2022-09-26, route: subcutaneous, label_url: "https://www.medicines.org.uk/emc/product/15481/smpc", label_source: uk-emc-smpc-mounjaro-kwikpen-2-5mg }
+  # ---- Canada (Mounjaro covers the single-dose pens, vials and Mounjaro KwikPen, which share one product monograph)
+  # factcheck (24 October 2026): label_url changed from 00077180 (September 2024) to the newer 00084159 (2 April 2026);
+  # even this one predates the June 2026 paediatric indication (see ca-pm-mounjaro).
+  - { id: mounjaro-ca, name: Mounjaro, holder: Eli Lilly Canada Inc., jurisdiction: CA, authorised: 2022-11-24, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00084159.PDF", label_source: ca-pm-mounjaro }
+  - { id: zepbound-ca, name: Zepbound, holder: Eli Lilly Canada Inc., jurisdiction: CA, authorised: 2025-05-13, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00080496.PDF", label_source: ca-pm-zepbound }
+  # ---- Australia (date = first ARTG entry, single-dose pens; label_url = KwikPen ARTG entry, the one that links the PI)
+  - { id: mounjaro-au, name: Mounjaro, holder: Eli Lilly Australia Pty Ltd, jurisdiction: AU, authorised: 2022-12-23, route: subcutaneous, label_url: "https://www.tga.gov.au/resources/artg/439430", label_source: au-artg-mounjaro-439430 }
+notes: |
+  Names searched (from the data file): tirzepatide (INN) everywhere; the code LY3298176 in the DPD extract only (every
+  authorised product carries the INN); brands Mounjaro, Zepbound (and Mounjaro KwikPen, Zepbound KwikPen). All searches
+  24 October 2026 (local clock; 23 October in North America).
+
+  UNITED STATES (no change to the row or products).
+  - Drugs@FDA/openFDA: only NDA 215866 (Mounjaro, 13 May 2022) and NDA 217806 (Zepbound, 8 November 2023), Eli Lilly
+    and Company; no other company, no generic, no tentative approval. [fda-drugsatfda-search-status-a-2026-10-24]
+  - New presentations under the same NDAs: multiple-dose vial (7 January 2026) and the four-dose KwikPen (20 January 2026,
+    after a complete response letter of 29 January 2025) for both brands. [fda-letter-215866-s041, fda-letter-215866-s009,
+    fda-letter-217806-s002]
+  - The data file's label URLs are not the newest: Drugs@FDA now also lists 215866Orig1s052lbl.pdf and
+    217806Orig1s050lbl.pdf (supplements received 9 March 2026, storage/in-use stability; action dates not shown on the
+    page). The existing labels (215866s044s045, 217806Orig1s041corrected) carry the latest indications (cardiovascular
+    risk reduction, 27 August 2026), so no change is required; update if the editor wants the newest file.
+    factcheck (24 October 2026): CORRECTED detail. Mounjaro S-044 (27 August 2026) added the indication 'to reduce
+    the risk of major adverse cardiovascular (CV) events ... in adults with type 2 diabetes mellitus who are at high
+    risk for these events' (SURPASS-CVOT); Zepbound S-041 (26 August 2026; corrected letter) added SURPASS-CVOT information to the Zepbound
+    label but no new indication. S-052/S-050 (joint letter and labels posted 1 September 2026) cover in-use storage
+    with temperature cycling for up to 21 days for the single-dose presentations. The conclusion (no change needed)
+    holds.
+
+  UNITED KINGDOM (products only; the data file has a UK row).
+  - emc: six Mounjaro KwikPen SmPCs (2.5 to 15 mg), holder Eli Lilly Nederland B.V., PLGB 14895/0340 to 0345, first
+    authorised 25 January 2024. [uk-emc-search-status-a-2026-10-24, uk-emc-smpc-mounjaro-kwikpen-2-5mg]
+  - MHRA lists of granted licences: Mounjaro single-dose pens PLGB 14895/0317 to 0323 on 26 September 2022 (the first GB
+    tirzepatide licences) and vials PLGB 14895/0331 to 0336 on 1 September 2023. MHRA Products shows all three
+    presentations by name; its product pages (behind a disclaimer that was not accepted) were not read.
+    [uk-mhra-ma-granted-2022, uk-mhra-ma-granted-2023, uk-mhra-ma-granted-2024, uk-mhra-substance-index-status-a-2026-10-24]
+  - Weight-management indication added on 8 November 2023 through 'a national application route'. No Zepbound brand in
+    the UK: Mounjaro carries both indications. [uk-mhra-2023-11-mounjaro-weight, uk-mhra-2024-01-mounjaro-kwikpen]
+
+  CANADA (Health Canada), searched 24 October 2026 (DPD down; official extract used).
+  - DPD extract: MOUNJARO (single-dose pens approved 24 November 2022, never marketed; vials approved 31 August 2023 and
+    marketed 23 October 2023), MOUNJARO KWIKPEN (approved 24 September 2024, marketed 10 December 2024), ZEPBOUND
+    multidose pens (approved 12/13 May 2025, marketed 9 July 2025). All Eli Lilly Canada Inc., schedule Prescription.
+    None cancelled or dormant. [ca-dpd-extract-search-status-a-2026-10-24]
+  - SBD: NOC 24 November 2022, reviewed in the Access Consortium's New Active Substance Work-Sharing Initiative with the
+    TGA, Singapore's HSA and Swissmedic. KwikPen SNDS 24 September 2024; paediatric type 2 diabetes (10 to under 18)
+    23 June 2026. [ca-sbd-mounjaro, ca-rds-mounjaro-kwikpen-2024, ca-rds-mounjaro-paediatric-2026]
+  - Heart failure (HFpEF) supplement: cancelled by the company on 26 November 2025, before a decision, when the review
+    was 'nearing completion' and all three Access agencies 'had identified deficiencies'. This is a withdrawn
+    application for an extra indication, not a withdrawal of the authorisation. [ca-soc-mounjaro-hfpef-2025]
+  - Zepbound: no Health Canada decision document found; date from the product monograph ('Date of Authorization:
+    2025-05-13') and the DPD. [ca-pm-zepbound, ca-dhpp-review-search-status-a-2026-10-24]
+  - Product monographs: Mounjaro PM 00077180 (revision 24 September 2024) and Zepbound PM 00080496 found through archived
+    DPD pages (August 2025) and read on pdf.hres.ca; newer revisions may exist (UNRESOLVED until the DPD is back).
+    factcheck (24 October 2026): a newer Mounjaro monograph was found (00084159, 'Date of Authorization: 2026-04-02',
+    through the 13 June 2026 archive copy of DPD code 102190) and mounjaro-ca now points to it; it still says Mounjaro
+    is not indicated in children, so a revision after the 23 June 2026 paediatric decision probably exists
+    (UNRESOLVED). Zepbound 00080496: no later archive copy (UNRESOLVED). [ca-pm-mounjaro, ca-pm-zepbound]
+  - Two tirzepatide supplements are listed as under review (accepted 2025-12 and 2026-02; indications not given).
+    [ca-hc-sur-search-status-a-2026-10-24]
+
+  AUSTRALIA (TGA), searched 24 October 2026.
+  - ARTG: 18 Mounjaro entries, Eli Lilly Australia Pty Ltd: single-dose pens (23 December 2022), vials (10 July 2023),
+    KwikPens (19 June 2024). No Zepbound brand: Mounjaro carries the weight-management indication. Only the KwikPen
+    entries link a PI (CP-2023-PI-02114-1). [au-artg-search-status-a-2026-10-24, au-artg-mounjaro-439430]
+  - Registrations: type 2 diabetes (decision 22 December 2022, registered 23 December 2022), chronic weight management
+    (9/10 September 2024), obstructive sleep apnoea (27 May / 2 June 2025). Under evaluation: type 2 diabetes from age 10
+    (listed September 2025) and cardiovascular risk reduction (listed December 2025; factcheck: these are the TGA's
+    'publication date', not acceptance dates). [au-tga-pmr-search-status-a-2026-10-24]
+  - Section 19A: UK Mounjaro KwikPens were temporarily allowed (approved until 31 March 2025) to cover a shortage of
+    Mounjaro vials; lapsed. [au-tga-pmr-search-status-a-2026-10-24]
+  - Compounding ban: the 2024 amendment covers 'GLP-1 receptor agonist analogues'; neither the instrument nor the TGA's
+    releases say in terms whether tirzepatide (a dual GIP/GLP-1 agonist) is covered (UNRESOLVED, as in australia.yaml).
+    [au-tg-amendment-2024-measures-2-glp1, au-tga-2024-06-glp1-compounding-update]
+
+  PAYMENT (only what was clearly established; see page_facts).
+  - US: Part D excludes drugs used for weight loss; the Medicare GLP-1 Bridge covers only the Zepbound KwikPen (not
+    Zepbound vials or single-dose pens); BALANCE covers all Mounjaro formulations and the Zepbound KwikPen in
+    participating state Medicaid programmes. Tirzepatide is not among the drugs selected for Medicare price
+    negotiation for 2027 or 2028 (both CMS fact sheets searched; the 2026 first-cycle list, chosen in 2023, was not
+    opened). [us-cms-ipay2027-negotiated-prices] Private insurers not researched.
+  - UK: NICE TA924 (type 2 diabetes, restricted), TA1026 (weight management, phased NHS introduction); SMC2653 (Scotland,
+    restricted); Wales per TA1026 4.15.
+  - Canada: pCPA files for Mounjaro (type 2 diabetes) and Zepbound (weight management) 'Under consideration for
+    negotiation'; CDA-AMC published recommendations for both in August 2026 (the Mounjaro report includes a
+    'Request for Reconsideration'); their content is UNRESOLVED (bot check on cda-amc.ca and Bookshelf).
+    factcheck (24 October 2026): RESOLVED through the PubMed records: Mounjaro, reimburse 'if certain conditions are
+    met' for type 2 diabetes with metformin, metformin and a sulfonylurea, or metformin and an SGLT2 inhibitor;
+    Zepbound, reimburse with conditions only for adults with a BMI of 27 or more and prediabetes (CDEC found no
+    acceptable clinical value for the full indicated population). The 'Request for Reconsideration' chapter was not
+    read. [ca-cda-amc-2026-mounjaro, ca-cda-amc-2026-zepbound]
+  - Australia: tirzepatide is not on the PBS for any use. Whether the PBAC has considered or recommended it was not
+    established (UNRESOLVED).
+    factcheck (24 October 2026): RESOLVED: four PBAC considerations, all for type 2 diabetes: not recommended July
+    2023 and November 2024, deferred July 2025, recommended March 2026; the company then 'advised that it is not
+    proceeding in the PBS listing process at this time' and 'The process for listing this medicine has ceased'.
+    Lilly has made no PBS submission for weight management or sleep apnoea (PBAC, November 2025).
+    [au-pbs-medicine-status-tirzepatide, au-pbac-2025-11-obesity-treatments-advice]
+
+  Ireland and New Zealand: not searched (outside this batch).
+page_facts: |
+  UNITED STATES
+  - The FDA approved Mounjaro for type 2 diabetes on 13 May 2022 and Zepbound for weight management on 8 November 2023
+    (both Eli Lilly); four-dose KwikPen versions of both were approved in January 2026. [fda-drugsatfda-mounjaro,
+    fda-drugsatfda-zepbound, fda-letter-215866-s009, fda-letter-217806-s002]
+  - There is no generic tirzepatide. [fda-drugsatfda-search-status-a-2026-10-24]
+  - Paying: Medicare drug plans (Part D) may not pay for tirzepatide when it is used for weight loss, though they can
+    cover Mounjaro for type 2 diabetes. From 1 July 2026 to 31 December 2027 the temporary Medicare GLP-1 Bridge covers
+    the Zepbound KwikPen (not Zepbound vials or single-dose pens) for eligible people, for $50 a month with prior
+    authorisation. [us-usc-42-1395w-102-e, us-usc-42-1396r-8-d, us-medicare-gov-weight-loss-drugs, us-cms-medicare-glp1-bridge]
+  - Under CMS's voluntary BALANCE model, participating state Medicaid programmes may cover Mounjaro and the Zepbound
+    KwikPen for weight management as early as May 2026, if the state takes part. [us-cms-balance-model]
+    (factcheck: CMS says coverage 'will launch in Medicaid as early as May 2026'.)
+  - Enforcement: the FDA has sent warning letters to online sellers of products labelled tirzepatide and 'for research
+    use only', and has proposed not to allow outsourcing facilities to compound tirzepatide from bulk; tirzepatide is not
+    in shortage. [fda-warning-letters-index, fda-2026-503b-glp1-exclusion-proposal, fda-drug-shortages-2026-10-23]
+  UNITED KINGDOM
+  - The MHRA first licensed Mounjaro in Great Britain on 26 September 2022 (for type 2 diabetes; it already applied in
+    Northern Ireland through the EU authorisation of 15 September 2022), added weight management on 8 November 2023 and
+    approved the four-dose KwikPen on 25 January 2024. There is no 'Zepbound' in the UK. [uk-mhra-ma-granted-2022,
+    ema-epar-mounjaro, uk-mhra-uk-wide-licensing, uk-mhra-2023-11-mounjaro-weight, uk-mhra-2024-01-mounjaro-kwikpen]
+  - NHS (England): NICE recommends tirzepatide for weight management for adults with a BMI of at least 35 and at least one
+    weight-related condition, introduced in phases over several years, so meeting the criteria does not mean immediate
+    NHS access; for type 2 diabetes NICE recommends it only in restricted circumstances. [nice-ta1026-tirzepatide,
+    nice-ta924-tirzepatide-t2d]
+  - Scotland: the SMC accepted Mounjaro for restricted use in weight management (BMI of at least 30 with a
+    weight-related condition). [smc-2653-tirzepatide-mounjaro]
+  - Enforcement: falsified Mounjaro KwikPens were supplied through a UK online pharmacy (February 2026), and the MHRA
+    seized large amounts of unlicensed tirzepatide and retatrutide products in May 2026 and more than 12,000 fake
+    tirzepatide and retatrutide pens in October 2026. [mhra-2026-falsified-mounjaro, mhra-2026-05-largest-seizure,
+    mhra-2026-10-counterfeit-pens] (factcheck: the May 2026 release speaks of 'unlicensed weight loss medicines',
+    not fake pens; wording corrected.)
+  CANADA
+  - Health Canada authorised Mounjaro on 24 November 2022 (on sale from October 2023), the Mounjaro KwikPen in September
+    2024 and Zepbound for weight management on 13 May 2025 (on sale from July 2025). [ca-sbd-mounjaro,
+    ca-rds-mounjaro-kwikpen-2024, ca-pm-zepbound, ca-dpd-extract-search-status-a-2026-10-24]
+  - In June 2026 Mounjaro was authorised for type 2 diabetes in children aged 10 and older. A request to add heart
+    failure (HFpEF) was withdrawn by the company in November 2025, before Health Canada decided. [ca-rds-mounjaro-paediatric-2026,
+    ca-soc-mounjaro-hfpef-2025]
+  - Tirzepatide is on Canada's Prescription Drug List (since March 2023). [ca-pdl-human]
+  - Paying: as of October 2026 neither Mounjaro nor Zepbound has a concluded public-plan price agreement; both files
+    are 'under consideration for negotiation' at the pCPA. [ca-pcpa-negotiations-2026-10-24, ca-pcpa-role-system]
+  - In August 2026 Canada's Drug Agency advised public plans to pay for Mounjaro for type 2 diabetes (with metformin
+    and some other combinations) and for Zepbound only for adults with a BMI of 27 or more and prediabetes, both under
+    conditions. [ca-cda-amc-2026-mounjaro, ca-cda-amc-2026-zepbound] (factcheck: added.)
+  - Enforcement: Health Canada has warned about unauthorised and counterfeit GLP-1 products such as Mounjaro (January
+    2026) and has seized products labelled tirzepatide and counterfeit Mounjaro from sellers. [ca-hc-2026-01-glp1-advisory,
+    ca-hc-recalls-database]
+  AUSTRALIA
+  - The TGA registered Mounjaro on 23 December 2022 for type 2 diabetes and added chronic weight management in
+    September 2024 and obstructive sleep apnoea in 2025; there is no Zepbound in Australia. [au-tga-pmr-search-status-a-2026-10-24,
+    au-artg-search-status-a-2026-10-24]
+  - Tirzepatide is a Schedule 4 (prescription-only) medicine, and advertising Mounjaro to the public is illegal.
+    [au-poisons-standard-2026-10, au-tga-advertising-glp1-prohibited]
+  - Paying: tirzepatide is not on the PBS, so Mounjaro is paid privately for any use. [au-pbs-tirzepatide-2026-10-24]
+  - The PBAC recommended Mounjaro for type 2 diabetes in March 2026 after three earlier attempts, but the company did
+    not go ahead and the listing process has stopped. The company has not asked for a PBS listing for weight
+    management. [au-pbs-medicine-status-tirzepatide, au-pbac-2025-11-obesity-treatments-advice] (factcheck: added.)
+  - During a shortage of Mounjaro vials the TGA temporarily allowed UK Mounjaro KwikPens to be supplied (until March
+    2025). [au-tga-pmr-search-status-a-2026-10-24]
+  - Enforcement: in 2026 the TGA fined individuals in Victoria for importing Mounjaro pens without the required approval.
+    [au-tga-2026-10-prescription-import-infringements]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026 (this machine's clock; workflow date 23 October 2026). Per-source details
+  are in the 'factcheck' notes of research/refocus/sources/status-a.yaml.
+  Checked against the primary sources, all confirmed unless listed under "Changed":
+  - Rows: CA authorised since 2022-11-24 (SBD00629: 'On November 24, 2022, Health Canada issued a Notice of
+    Compliance'; milestone table 'NDS # 259103 2021-11-29 Issued NOC 2022-11-24'; Access Consortium with the TGA, HSA
+    and Swissmedic); AU since 2022-12-23 (registration record: decision 22 December 2022, registered 23 December 2022;
+    ARTG 379330 and 382625 dated 23 December 2022).
+  - Schedules: Poisons Standard October 2026 Schedule 4 'TIRZEPATIDE' (official HTML re-read); PDL 'Tirzepatide'
+    effective 2023-03-08.
+  - US: openFDA (only NDA 215866 and 217806; no generic or tentative approval; 'LY3437943' and 'retatrutide' none);
+    letters S-009, S-002 (20 January 2026, complete response to the 29 January 2025 action letter, 'six presentations
+    ... each containing 4 doses'), S-041 and S-037 (7 January 2026, multiple-dose vial).
+  - UK: emc 'tirzepatide' 6 results (KwikPen SmPCs, PLGB 14895/0340 to 0345, first authorised 25 January 2024); MHRA
+    lists 2022 (pens), 2023 (vials), 2024 (KwikPen); no tirzepatide licence in 2025 or 2026; MHRA Products substance
+    index (pens, vials, KwikPens); press releases of 8 November 2023 and 25 January 2024; NICE TA924 and TA1026 (rec.
+    1.1, sections 4.10 to 4.18), SMC2653 ('BMI >=30 kg/m2 and at least one weight-related comorbidity').
+  - Canada: DPD extract (every DIN and date; none cancelled or dormant); RDS for the KwikPen (24 September 2024), the
+    paediatric indication (23 June 2026) and the HFpEF Summary of Cancellation (26 November 2025, 'All three agencies
+    had identified deficiencies'); pCPA files 23608 and 78166.
+  - Australia: ARTG 18 entries; three registrations; two under evaluation; six lapsed section 19A approvals (UK
+    KwikPens, 'Approved until 31 March 2025'); PBS search 'tirzepatide' and 'mounjaro': no result.
+  - Payment US: medicare.gov ('Zepbound (KwikPen only ...)'), CMS Bridge and BALANCE pages, IPAY 2027 and 2028 lists
+    (tirzepatide in neither).
+  Changed:
+  - mounjaro-ca label_url: 00077180 (2024) -> 00084159 (2 April 2026).
+  - Schedule AU note: Appendix L clause 2 item 41 (dispensing-label warning statement 67) added.
+  - UK row comment: the 2022 licences are 0317, 0318 and 0320 to 0323 (six, no 0319).
+  - US label note: Zepbound S-041 added trial information, not an indication; Mounjaro S-044 wording quoted.
+  - notes AU: under-evaluation dates are publication dates.
+  - page_facts UK: the May 2026 seizure was of 'unlicensed' products, not described as fake pens.
+  - page_facts US: BALANCE 'as early as May 2026'.
+  - page_facts CA and AU: CDA-AMC recommendations (August 2026) and the PBAC history (March 2026 recommendation, then
+    the company stopped the listing process) added; both were UNRESOLVED.
+  Still UNRESOLVED: the current Canadian monographs after June 2026 (DPD down); whether the 2024 Australian compounding
+  ban on 'GLP-1 receptor agonist analogues' covers tirzepatide; the CDA-AMC 'Request for Reconsideration' (Mounjaro);
+  PMPRB; US private insurance.

@@ -23,8 +23,17 @@ notes: |
   - Health Canada has listed thymosin alpha-1 among unauthorised injectable peptides seized from sellers and a clinic:
     RA-77218 (1 April 2025, a Calgary wellness clinic: 'Thymosin-α1 (TA1)'), RA-77807 (1 August 2025: 'Thymosin alpha')
     and RA-81403 (24 December 2025: 'Thymosin Alpha-1'). [ca-hc-recalls-search-status-d-2026-10-23]
-  - Not established: whether the NOC database ever held a thymalfasin submission (not searched: down). Nothing suggests
-    one; the DPD, which keeps cancelled products, has none.
+  - Health Canada's Canadian Clinical Trial Search Portal (fact-checker, 24 October 2026; the writer could not search
+    Health Canada's trial database): 'thymalfasin' and 'Zadaxin' each find ONE record, a multinational phase 2/3
+    placebo-controlled trial of Zadaxin in severe sepsis sponsored by the maker (protocol SCI-TA1-SEP-P2/3-001,
+    control number 174544), approved by Health Canada on 3 June 2014, status still 'Not yet recruiting', 'No registry
+    match found', no Canadian location or contact listed. So Health Canada authorised a thymalfasin trial in 2014,
+    but nothing shows it ever ran in Canada, and it is not open now: this does not make the CA row 'investigational'.
+    'thymosin', "thymosin alpha" and 'Ta1': no record. [ca-hc-ctdb-search-status-d-2026-10-24]
+  - Not established: whether the NOC database ever held a thymalfasin submission (not searched: still down on
+    24 October 2026). Nothing suggests one; the DPD, which keeps cancelled products, has none, and the new-drug
+    submissions-under-review list (current as of 2026-09-30) has no thymalfasin or SciClone entry.
+    [ca-hc-sur-search-2026-10-23]
 
   AUSTRALIA (TGA), 23 October 2026.
   - ARTG: no result for thymalfasin, zadaxin or "thymosin alpha"; 'thymosin' returns one unrelated product (a tamoxifen
@@ -32,13 +41,12 @@ notes: |
   - Poisons Standard: thymosin alpha-1 is not named; the only thymosin entry is THYMOSIN BETA 4 (Schedule 4, Appendix D).
     [au-poisons-standard-2026-10]
   - ANZCTR: 0 records for thymalfasin, "thymosin alpha" and zadaxin. [au-anzctr-search-status-d-2026-10-23]
-  - TGA website: "thymosin alpha" finds one media release, 'SGC Products fined $63,000 for alleged unlawful advertising
-    on "Dr. Ageless" website in relation to COVID-19' (title names a company). UNRESOLVED: the page would not load
-    (ERR_HTTP2_PROTOCOL_ERROR in the browser on three tries, curl connection failure, web fetch timeout) while other TGA
-    pages loaded. A search-engine summary says the TGA issued five infringement notices totalling $63,000 for
-    advertising thymosin alpha-1 and thymosin beta-4 peptides as a COVID-19 preventive; that summary was NOT verified
-    and is not used. A person should open the page in a normal browser; if it reads as summarised, it can support an
-    Australian page fact (cite it without naming the company). [au-tga-search-status-d-2026-10-23]
+  - TGA website: "thymosin alpha" finds one media release (31 July 2020; its title names a company and a website,
+    which must not be repeated). RESOLVED by the fact-checker, who read it on 24 October 2026: the TGA issued five
+    infringement notices totalling $63,000 to a Victorian company whose website advertised thymosin alpha-1 and
+    thymosin beta-4 peptides as a 'breakthrough preventative treatment' for COVID-19 and as effective against
+    'cancerous cells'; the TGA said the two peptide medicines were not in the ARTG and were neither exempt nor excluded.
+    [au-tga-search-status-d-2026-10-23]
 
   UNITED KINGDOM.
   - MHRA Products, 23 October 2026: no results for thymalfasin, "zadaxin" (exact; the fuzzy search gives 3 unrelated
@@ -56,12 +64,37 @@ page_facts: |
   - Thymosin alpha-1 (thymalfasin, brand Zadaxin) is not approved in Canada, Australia or the United Kingdom: no product
     is on Canada's Drug Product Database, the Australian Register of Therapeutic Goods or the MHRA's list of licensed
     medicines. [ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-d-2026-10-23, mhra-products-search-status-d-2026-10-23]
-  - No trial of it is registered with a site in Canada, Australia or the UK. [ctgov-search-status-d-2026-10-23,
-    au-anzctr-search-status-d-2026-10-23]
+  - No trial of it is open in Canada, Australia or the UK: no ClinicalTrials.gov or ANZCTR record has a site in these
+    countries. (Health Canada authorised one sepsis trial of the brand-name product in 2014, but it lists no Canadian
+    site and is still marked 'not yet recruiting'.) [ctgov-search-status-d-2026-10-23,
+    au-anzctr-search-status-d-2026-10-23, ca-hc-ctdb-search-status-d-2026-10-24]
   - Health Canada has listed thymosin alpha-1 among unauthorised injectable peptides seized from a clinic and from
     sellers (2025). [ca-hc-recalls-search-status-d-2026-10-23]
   - In Australia it is not named in the Poisons Standard (unlike thymosin beta-4), but it is not on the register, so
     importing or supplying it as a medicine is unlawful unless an exemption applies. [au-poisons-standard-2026-10,
     au-tga-2026-04-peptide-responsibilities]
+  - In 2020 the TGA fined a company that advertised thymosin alpha-1 and thymosin beta-4 as a way to prevent COVID-19;
+    the TGA said neither product was on the Australian register. [au-tga-search-status-d-2026-10-23]
   - It is approved by national regulators elsewhere (Italy, India, Hong Kong; see the data file), and those approvals do
     not apply in the reader's countries.
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026. Checked against the primary sources: ARTG (thymalfasin, zadaxin,
+  "thymosin alpha": no result; 'thymosin': one unrelated tamoxifen tablet, ARTG 43527), the Poisons Standard (only
+  THYMOSIN BETA 4, Schedule 4 and Appendix D item 39), ANZCTR (0 each), the TGA site search and the 2020 media release
+  (now read), MHRA Products, GOV.UK, the Misuse of Drugs Act Schedule 2 (no thymosin or thymalfasin), ClinicalTrials.gov
+  (68 records for each name, none with a site in CA, UK, AU, NZ or IE), openFDA (no record), the Health Canada
+  advisories RA-77218, RA-77807 and RA-81403 (product names as quoted), the PDL and CDSA, and the FDA 2024 briefing
+  (approvals in Italy, India and Hong Kong; UK wellness clinics). The three rows stay not-authorised; keep category
+  and national_authorisations as in the data file.
+  UK row SETTLED: the data file says the MHRA search 'was not settled', and us-uk-routes' fact-checker left three
+  'Zadaxin' hits unexplained. Re-tested: quoted "zadaxin", "thymalfasin", "thymosin" and "thymosin alpha" all return
+  'There are no search results'; the unquoted hits are fuzzy (one-letter-tolerance) matches, shown by 'tirzepatida'
+  returning all 106 tirzepatide documents. No MHRA document contains the word Zadaxin; thymalfasin has no UK licence.
+  CHANGED: (1) Canada: a Health Canada-approved 2014 Zadaxin sepsis trial (control number 174544, 'not yet recruiting',
+  no Canadian site) was found in Health Canada's trial portal; added to the notes, and the page fact 'No trial of it is
+  registered with a site in Canada' rewritten so it stays true. Status unchanged (not open, no site: not
+  investigational). (2) Australia: the 2020 TGA infringement-notice release, UNRESOLVED in the draft, was read; facts
+  added to au-tga-search-status-d-2026-10-23 and a page fact added (company not named). (3) Submissions under review
+  checked (no thymalfasin).
+  STILL UNRESOLVED: DPD brand search 'Thymosin alpha' and NOC search (Health Canada DPD/NOC still down on
+  24 October 2026); whether the 2014 sepsis trial ever enrolled anyone in Canada (the portal lists no site).

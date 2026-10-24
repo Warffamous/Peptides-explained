@@ -42,7 +42,8 @@ notes: |
   - Trials: the only registered study with a Canadian site that mentions GHK-Cu (NCT07706361, not yet recruiting)
     tests a device patch and measures GHK and GHK-Cu in blood; GHK-Cu is not the intervention. Not 'investigational'.
     [ctgov-search-status-c-2026-10-23]
-  - NOT SEARCHED: the Licensed Natural Health Products Database (it was under maintenance during the second run), so
+  - NOT SEARCHED: the Licensed Natural Health Products Database (it was under maintenance during the second run, and
+    still on 24 October 2026; no LNHPD data extract was found on canada.ca), so
     whether any licensed natural health product lists copper tripeptide-1 (for example as a non-medicinal ingredient
     of a topical product) is UNRESOLVED. It would not change the drug status.
 
@@ -75,7 +76,12 @@ notes: |
   - Medicine: MHRA Products substance index (active substances of every UK-licensed medicine): copper entries are only
     copper salts and radiopharmaceutical ingredients; no prezatide, GHK or glycyl-histidyl entry. Exact-term searches
     of the product index (SmPC and leaflet text): prezatide, prezatide*, '"copper tripeptide"', GHK, GHK*, GHK-Cu: 0
-    documents (control afamelanotide: 2). No UK-licensed medicine contains or mentions GHK-Cu. Under the Human
+    documents (control afamelanotide: 2). No UK-licensed medicine contains or mentions GHK-Cu.
+    FACT-CHECK (24 October 2026): repeated through the public website only. Substance index letters C, G, P and T:
+    no prezatide, GHK or glycyl entry (copper entries are salts and a radiopharmaceutical kit ingredient). Public
+    search box: 'There are no search results for' prezatide and '"copper tripeptide"'; GHK-Cu gives 810 fuzzy
+    matches there (not read). So 'contains' is confirmed; 'or mentions' rests on the second run's direct queries of
+    the search service only. The UK row stands either way. Under the Human
     Medicines Regulations a product presented for treating disease, or used to restore, correct or modify a
     physiological function by a pharmacological action, is a medicinal product and needs a UK marketing authorisation
     (regulation 46). [uk-mhra-substance-index-status-c-2026-10-23, uk-hmr-2012-reg-2, uk-hmr-2012-reg-46]
@@ -93,8 +99,10 @@ notes: |
     'are classified as medicines', mhra-2024-foi-melanotan-ii). Keep 'not authorised as a medicine' as the row; do not
     write that the MHRA has classified GHK-Cu.
 
-  UNITED STATES: no new research. Existing facts: no FDA-approved GHK-Cu drug; a GHK-Cu wound gel was cleared as a
-  medical device in 1996 (510(k) K953853), not approved as a drug; GHK-Cu is on the agenda of an FDA Pharmacy
+  UNITED STATES: no new research. Existing facts: no FDA-approved GHK-Cu drug; a wound gel (Iamin) was cleared as a
+  medical device in 1996 (510(k) K953853), not approved as a drug (FACT-CHECK: the FDA record lists no ingredients,
+  so the link to GHK-Cu comes from the literature, as the note on fda-510k-k953853-iamin says; do not write that the
+  FDA cleared a 'GHK-Cu' product); GHK-Cu is on the agenda of an FDA Pharmacy
   Compounding Advisory Committee meeting announced for before the end of February 2027.
   [fda-510k-k953853-iamin, fda-pcac-2027-early-announcement]
   Ireland and New Zealand: not searched here, except ClinicalTrials.gov: no trial in either.
@@ -117,3 +125,25 @@ page_facts: |
   - No medicine containing GHK-Cu has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23]
   - Copper tripeptide-1 may be used in cosmetics in the UK (it is neither banned nor restricted, subject to the usual
     safety assessment), but UK cosmetics law excludes anything injected. [uk-cosmetic-products-reg-gb-annexes, uk-cosmetic-products-reg-gb-art-2]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026.
+  Method: every source cited in this file was reopened on 24 October 2026 and every not-found search repeated
+  with the recorded terms plus synonyms (details and per-source corrections in the factcheck block and the
+  FACT-CHECK notes of research/refocus/sources/status-c.yaml). Canada's DPD, NOC and LNHPD were still on the
+  maintenance page, so the DPD was checked through Health Canada's DPD data extracts (marketed, approved, dormant and
+  inactive files, page of 15 October 2026) instead; the NOC database could not be re-checked.
+  Checked, no change needed: the CA, AU and new UK rows (all not-authorised as medicines); the two-categories framing
+  (Food and Drugs Act s. 2 definitions; Health Canada's interface guidance s. 3.3 quotation exact; GB Cosmetics
+  Regulation Art. 2(1)(a) and 2(2) exact; Annexes II to VI: no copper tripeptide-1, GHK or prezatide; Health Canada
+  Hotlist: no copper, peptide or GHK entry, read live); the TGA statements (April and June 2026 notices; hub's cosmetic
+  sentence); RA-82047 (five lots of each powder, Type I, compounding and community pharmacies); the October 2026
+  Poisons Standard's COPPER COMPOUNDS entries (Schedule 4 and 6 wording and the 'internal use' definition quoted
+  correctly). Not-found searches repeated with the same result: ARTG (prezatide, "copper tripeptide", "copper
+  peptide", tripeptide, and "glycyl-histidyl-lysine" (new)), ANZCTR (GHK: 0; copper peptide: only a copper-64 imaging
+  agent), AICIS Inventory (both CAS numbers, *tripeptide*, *lysinato*: 0; *histidyl*: palmitoyl oligopeptide only),
+  ClinicalTrials.gov (only NCT07706361, a device-patch study in Canada), Health Canada's trial portal (GHK, copper
+  peptide, copper tripeptide, prezatide: 0), DPD data extracts (no GHK, prezatide, glycyl-histidyl or copper-peptide
+  ingredient; copper ingredients are salts and chelates), MHRA substance index and public search box.
+  Changed: the Iamin sentence softened to match its registry entry; UK search evidence restated (see notes).
+  Still UNRESOLVED: whether the Poisons Standard COPPER COMPOUNDS entries cover GHK-Cu; whether GHK-Cu may be used
+  in Australian cosmetics (AICIS confidential listings); the LNHPD (not searchable).

@@ -22,6 +22,8 @@ notes: |
   - Trials: no ClinicalTrials.gov record with a Canadian site (the only record matching epitalon, NCT07888595, is a
     US-only 'geroprotective' study begun 21 October 2026 whose arms include a topical peptide serum).
     [ctgov-search-status-d-2026-10-23, ca-ctgov-canada-peptide-search-2026-10-23]
+  - Health Canada's Canadian Clinical Trial Search Portal (fact-checker, 24 October 2026): no trial for epitalon or
+    epithalon. [ca-hc-ctdb-search-status-d-2026-10-24]
   - Health Canada named epitalon in RA-77218 (1 April 2025, Calgary clinic), RA-77807 (1 August 2025), RA-81403
     (24 December 2025, 'Epithalon') and the 'think twice' advisory RA-81874 (9 April 2026).
     [ca-hc-recalls-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides]
@@ -55,3 +57,16 @@ page_facts: |
   - In Australia epitalon is not named in the Poisons Standard, but it is not on the register, so importing, supplying
     or advertising it as a therapeutic product is unlawful unless an exemption applies. [au-poisons-standard-2026-10,
     au-tga-2026-04-peptide-responsibilities]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026. Confirmed that the data file already has a UK row, so no UK row is
+  proposed. Re-run or re-read: ARTG (epitalon, epithalon, epithalone, epithalamin: no result), TGA site search
+  (epitalon, epithalon: none), Poisons Standard (not named), ANZCTR (0), MHRA Products (quoted "epitalon" and
+  "epithalon": no results), GOV.UK (0), ClinicalTrials.gov (1 record, NCT07888595: US only, early phase 1,
+  'enrolling by invitation', estimated start 21 October 2026; its topical peptide serum includes epitalon), the FDA
+  2026 briefing quotation ('There are no approved products containing epitalon in Canada, Australia, the United
+  Kingdom, Belgium, Ireland, France, Norway, Germany, Spain, and Italy'), Health Canada advisories RA-77218, RA-77807,
+  RA-81403 ('Epithalon 10MG'), RA-81874, the PDL and CDSA. CA and AU rows stay not-authorised.
+  CHANGED: Health Canada's trial portal searched (no epitalon trial) and added; 'from 21 October 2026' for NCT07888595
+  made 'estimated start' in status-d.yaml. Suggestion kept: add mhra-products-search-status-d-2026-10-23 to the existing
+  UK row's sources.
+  STILL UNRESOLVED: DPD brand search 'Epithalone' and NOC (still down on 24 October 2026).

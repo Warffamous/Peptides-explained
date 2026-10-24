@@ -5,7 +5,7 @@ rows:
   # UK: the data file already has a UK row (not-authorised). No UK row proposed; mhra-products-search-cjc-1295-ipamorelin
   # is offered as an extra source for it (the current row cites no MHRA search).
 schedule:
-  AU: { code: "S4", note: "'# CJC-1295 (CAS No. 863288-34-0)' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), since 1 June 2015. The CAS number given is that of the form without DAC (see notes).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02] }
+  AU: { code: "S4", note: "'# CJC-1295 (CAS No. 863288-34-0)' in Schedule 4 and Appendix D clause 5 (possession without authority illegal), since 1 June 2015. The CAS number given is that of the form without DAC (see notes); the TGA's advertising guidance names 'CJC 1295' as a prescription medicine without distinguishing the forms.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2026-06-advertising-prescription-medicines-guidance] }
 products: []
 notes: |
   Names searched (from the data file and the FDA briefing): CJC-1295, CJC 1295, CJC1295, CJC-1295 DAC, DAC:GRF,
@@ -21,7 +21,8 @@ notes: |
     ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-sur-search-2026-10-23]
   - FDA's 2024 evaluation also states there are no approved products containing any form of CJC-1295 in Canada,
     Australia or the UK (among others). [fda-pcac-2024-cjc1295-briefing]
-  - Trials: Health Canada Clinical Trials Database (since April 2013): no protocol. ClinicalTrials.gov: one record,
+  - Trials: Health Canada's trial records since April 2013 (the Clinical Trials Database, replaced on 29 July 2026
+    by the Canadian Clinical Trial Search Portal; both searched): no protocol. ClinicalTrials.gov: one record,
     NCT00267527 (ConjuChem, terminated 2006), which lists no sites. The developer, ConjuChem, was based in Montreal
     (FDA briefing), but whether its 2004-2006 trials ran at Canadian sites is UNRESOLVED (the registry lists no
     sites and Health Canada's database starts in 2013). Not 'investigational'. [ca-hc-ctdb-search-status-b-2026-10-23,
@@ -52,8 +53,12 @@ notes: |
     (CAS 446262-90-4) is not named by its own number. It is very likely caught anyway, as a derivative of the named
     entry (the Poisons Standard covers 'all salts and derivatives') and by the group entry 'GROWTH HORMONE RELEASING
     HORMONES (GHRHs)' (Appendix D item 18), but this is our reading: UNRESOLVED for legal review. TGA notices simply
-    say 'CJC-1295' without distinguishing forms. [au-poisons-standard-2026-10, pubchem-cjc-1295-without-dac,
-    pubchem-cjc-1295, fda-pcac-2024-cjc1295-briefing]
+    say 'CJC-1295' without distinguishing forms, and the TGA's advertising guidance (June 2026) gives 'BPC 157,
+    CJC 1295' as examples of names of prescription medicines. The Reader's guide adds that a substance counts as a
+    derivative only if it is not 'captured by a more restrictive group or class entry'; either route (derivative of
+    the named entry, or the GHRH group entry) gives the same result, Schedule 4 with Appendix D, so the risk of
+    printing 'S4' is low, but the route remains a reading. [au-poisons-standard-2026-10, pubchem-cjc-1295-without-dac,
+    pubchem-cjc-1295, fda-pcac-2024-cjc1295-briefing, au-tga-2026-06-advertising-prescription-medicines-guidance]
   - Import: Customs (Prohibited Imports) Regulations, Schedule 7A item 4 (GHRHs 'and synthetic analogues', ODC import
     permit) appears to apply, since CJC-1295 is a modified GHRH(1-29); not named, same caveat. Personal importation:
     the TGA will not release peptides labelled only by codes or without the active ingredient and strength, and
@@ -68,8 +73,8 @@ notes: |
   UNITED KINGDOM (re-check; existing row stands): MHRA Products '"CJC-1295"' and 'CJC1295': no results; substance
   index C: no entry. GOV.UK: no page about the peptide. [mhra-products-search-cjc-1295-ipamorelin, uk-govuk-search-status-b-2026-10-23]
 
-  UNITED STATES: no change. None of the FDA warning letters read for this batch (695607, 729447, 734884, 735063,
-  735067, 735127) names CJC-1295.
+  UNITED STATES: no change. None of the FDA warning letters read for this batch (695607, 729447, 733652, 734884,
+  735063, 735067, 735127) names CJC-1295.
 
   Ireland and New Zealand: not searched (outside this batch).
 page_facts: |
@@ -84,8 +89,34 @@ page_facts: |
   - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-b-2026-10-23]
   - CJC-1295 has been a prescription-only medicine (Schedule 4) since 1 June 2015, and possessing it without
     authority, such as a prescription, is illegal (Appendix D, given effect by state and territory law).
-    [au-poisons-standard-2026-10, au-poisons-standard-2015-06]
+    [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-tga-2026-06-advertising-prescription-medicines-guidance]
   - The TGA lists CJC-1295 among unapproved peptide products causing concern, and it was among products seized in
     New South Wales in August 2026. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure]
   UNITED KINGDOM
   - No product containing CJC-1295 has a UK licence. [mhra-products-search-cjc-1295-ipamorelin]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026 (this machine's clock; workflow date 23 October 2026). Per-source details
+  are in the 'factcheck' notes of research/refocus/sources/status-b.yaml.
+  Repeated 'not authorised' searches (recorded terms plus DAC:GRF, 'DAC GRF' and CJC1295 where missing):
+  - CANADA: DPD extract (5 October 2026; CJC, DAC:GRF, MOD GRF, GRF 1-29, GHRH, GHRP, SECRETAGOG, GROWTH HORMONE
+    RELEAS: none; 'GRF' only MAALOX GRF); NOC extract (23 October 2026; CJC, GHRP, SOMATOREL: none); PDL (no CJC
+    entry, no group entry); CDSA (none); submissions under review (none); Canadian Clinical Trial Search Portal
+    (CJC-1295, CJC1295: no results); recall advisories RA-81874, RA-77807, RA-81403 ('CJC-1295' and 'CJC-1295 DAC'),
+    RA-77218 confirmed. The DPD API could not be repeated (HTTP 503). The FDA briefing's 'no approved products
+    containing any form of CJC-1295 in Australia, ... Canada, ... or the United Kingdom' and 'ConjuChem
+    Biotechnology (Montreal, Canada)' were confirmed in the briefing PDF.
+  - AUSTRALIA: ARTG (CJC1295, "CJC-1295", "DAC:GRF": none), ANZCTR (CJC-1295, CJC1295: 0), Poisons Standard
+    entries and dates (Schedule 4 and Appendix D item 7 since 1 June 2015; absent in February 2015), Customs Schedule
+    7A (not named), ODC list ('CJC': no results), the three 2026 TGA notices: all confirmed.
+  - UK: MHRA Products ("CJC-1295", CJC1295, "DAC:GRF": no results; C index: none), GOV.UK (quoted "CJC-1295": 0).
+  - ClinicalTrials.gov: NCT00267527 only (ConjuChem, phase 2, December 2005 to September 2006, 120, terminated, no
+    sites).
+  Changed:
+  - Added au-tga-2026-06-advertising-prescription-medicines-guidance (TGA guidance of June 2026 listing 'BPC 157,
+    CJC 1295' among names of prescription medicines) to the AU schedule and the AU page fact, and noted the Poisons
+    Standard's rule that a derivative counts only if not captured by a group entry (both routes give S4).
+  - Trials note now reflects the Canadian Clinical Trial Search Portal (it replaced the database on 29 July 2026).
+  - US note: letter 733652 (24 August 2026) added to the letters checked; it does not name CJC-1295 either.
+  Still UNRESOLVED: whether the DAC form is reached as a derivative or via the GHRH group entry (legal review; the
+  outcome is the same); whether ConjuChem's 2004-2006 trials had Canadian sites (not established); the legal basis
+  of Health Canada's 'regulated as prescription drugs' wording for a peptide not on the PDL (as the writer said).

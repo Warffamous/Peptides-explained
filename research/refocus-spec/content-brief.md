@@ -52,6 +52,20 @@ safety/product-risk, safety/monitoring, safety/warning-signs, safety/if-somethin
 legal-routes · the-case-for-reform · glossary · sources · news · search · about (index), about/editorial-policy,
 about/funding, about/corrections. (legal/nl, legal/eu, legal/be, legal/de no longer exist on English.)
 
+## Country-specific cautions (from the fact-checked research)
+- **Canada:** Health Canada's 2023 advertising guidance also covers educational messages about unauthorised products. On
+  Canadian content, say plainly that Health Canada has not authorised the product, and never suggest it is available through
+  the Special Access Program (the SAP is for serious conditions when other options fail; describe it neutrally on the routes
+  page only). Health Canada says injectable peptides are "generally regulated as prescription drugs", but no provision was
+  found that makes an unlisted peptide a prescription drug in law: present it as Health Canada's position, and rest the legal
+  explanation on the new-drug/DIN rules.
+- **Australia:** state the schedule of a peptide only where the Poisons Standard names it; group-entry coverage is a
+  legal-review question, written as "may be covered by … (not named)". State-by-state possession law: give the principle
+  with NSW and Victoria as examples; the other states/territories were not checked.
+- **Sources naming businesses:** never cite or quote a document whose title or URL names a seller or company (regulators'
+  enforcement releases often do); describe the enforcement in general terms with a neutral official source.
+- **Unresolved points** in the research files are written as unknown ("No official figures were found…") or left out.
+
 ## Words
 British spelling, but no UK-only words: "your doctor" (not GP, except when explaining the UK system), "emergency
 department" (not A&E), "pharmacy" (not chemist), "medicine" (not drug, where natural). Explain each country's own terms

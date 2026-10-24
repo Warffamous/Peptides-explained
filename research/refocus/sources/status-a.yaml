@@ -1,0 +1,1180 @@
+# Sources for the refocus status batch a (semaglutide, tirzepatide, retatrutide): Canada, Australia, the products
+# authorised in the United States, the United Kingdom, Canada and Australia that the compound data files do not list
+# yet, and how the medicines are paid for in each country.
+#
+# Run: 24 October 2026 between about 10:00 and 11:30 on this machine's clock (Western Europe), which is still
+# 23 October in the Americas and early on 24 October in Australia. No earlier draft of this batch existed (the
+# interrupted run had written nothing under research/refocus/). Rows use as_of 2026-10-23 as the brief asks; every
+# entry below carries the real accessed date.
+#
+# How things were read:
+# - FDA: Drugs@FDA overview pages (curl) and the openFDA drugsfda endpoint; approval letters and labels as PDFs with
+#   curl + pdftotext (never in the browser).
+# - Health Canada: the Drug Product Database (DPD) web pages and API, the NOC database API and the Clinical Trials
+#   Database API all redirected to Health Canada's maintenance page (construction.hres.ca) or returned HTTP 503 during
+#   the whole run. The DPD was therefore read from Health Canada's official data extract (files dated 5 October 2026),
+#   unzipped inside the browser page on canada.ca (canada.ca refused command-line requests). Review decisions were
+#   read on the Drug and Health Product Portal (dhpp.hpfb-dgpsa.ca, curl). Product monographs were fetched from
+#   pdf.hres.ca with curl; their numbers came from Internet Archive copies of DPD product pages (archive used only to
+#   find the link; the PDF itself was read on the Health Canada host). canada.ca pages were read in the browser.
+# - CDA-AMC (cda-amc.ca) and NCBI Bookshelf answered with bot-verification pages; nothing was done to get round them.
+#   CDA-AMC recommendation titles were taken from NCBI E-utilities (esummary, db=books) only.
+# - TGA: tga.gov.au refused command-line requests; ARTG entries, the prescription medicines registrations and
+#   under-evaluation databases, AusPAR search, section 19A database and the site search were read in the browser
+#   (fetch from the page itself). PI and CMI PDFs on www.ebs.tga.gov.au were not opened (PDF rule; the host also
+#   refuses curl); their identifiers are recorded from the ARTG entry pages.
+# - PBS (pbs.gov.au) and ANZCTR (needs JavaScript) in the browser.
+# - MHRA: GOV.UK content and search APIs (curl); the MHRA Products substance index in the browser. MHRA Products
+#   search results and product pages sit behind a disclaimer ('I have read and understand the disclaimer. Agree');
+#   it was NOT accepted, so licence numbers and dates come from the SmPCs on emc (medicines.org.uk, curl) and from the
+#   MHRA's published lists of granted marketing authorisations (PDF attachments on assets.publishing.service.gov.uk,
+#   curl + pdftotext).
+# - NICE, CMS, medicare.gov, Cornell LII, pCPA, ClinicalTrials.gov API v2: curl.
+#
+# REUSED, not re-registered here (ids exist):
+# - src/data/sources/semaglutide.yaml: fda-drugsatfda-ozempic, fda-drugsatfda-rybelsus, fda-drugsatfda-wegovy,
+#   fda-drugsatfda-wegovy-tablets, fda-label-ozempic, fda-label-wegovy, ema-epar-ozempic, ema-epar-rybelsus,
+#   ema-epar-wegovy, mhra-glp1-what-you-need-to-know, fda-unapproved-glp1-concerns, fda-glp1-compounding-policy,
+#   fda-2026-503b-glp1-exclusion-proposal, mhra-2023-fake-weight-loss-pens.
+# - src/data/sources/tirzepatide.yaml: fda-drugsatfda-mounjaro, fda-drugsatfda-zepbound, fda-label-mounjaro,
+#   fda-label-zepbound, ema-epar-mounjaro, mhra-2026-falsified-mounjaro.
+# - src/data/sources/retatrutide.yaml: ctgov-nct06383390, ctgov-nct07165028, ctgov-nct06260722, ctgov-nct05929066,
+#   ctgov-nct05882045, ctgov-nct05931367, ctgov-nct07629401, sec-lilly-2026-q2-results, mhra-2025-retatrutide-seizure.
+# - src/data/sources/legal-b.yaml: fda-warning-letters-index, mhra-2026-10-counterfeit-pens,
+#   mhra-2026-07-no-summer-shortcut, mhra-2026-05-largest-seizure.
+# - research/refocus/sources/canada.yaml: ca-pdl-human (semaglutide on the PDL since 2018-03-12, tirzepatide since
+#   2023-03-08; retatrutide not on it), ca-hc-2026-01-glp1-advisory, ca-hc-2025-glp1-compounding-position,
+#   ca-hc-2025-01-semaglutide-pyridoxine-recall, ca-hc-2026-08-generic-semaglutide-recall, ca-hc-recalls-database,
+#   ca-dpd-search-canada-legal-2026-10-23, ca-ctgov-canada-peptide-search-2026-10-23.
+# - research/refocus/sources/status-b.yaml: ca-hc-2026-04-think-twice-peptides (RA-81874 lists retatrutide among
+#   unauthorised injectable peptides seized by Health Canada), ca-food-and-drug-regulations, uk-euwa-2018-s20-exit-day.
+# - research/refocus/sources/australia.yaml: au-poisons-standard-2026-10 (semaglutide and tirzepatide in Schedule 4;
+#   retatrutide not named), au-tga-2026-09-retatrutide-counterfeit, au-tg-amendment-2024-measures-2-glp1,
+#   au-tga-compounded-medicines-guidance, au-tga-2026-10-prescription-import-infringements,
+#   au-artg-search-australia-legal-2026-10-24, au-tga-2024-06-glp1-compounding-update (TGA media release of
+#   18 June 2024; page modified 7 October 2026; it names Ozempic, Mounjaro and Trulicity only in the context of
+#   supply and does not say whether tirzepatide is a 'GLP-1 RA analogue'), au-tga-2025-09-imported-glp1-products
+#   (TGA advisory of 29 September 2025 on imported 'GLP-1 peptide' drops; modified 14 April 2026). Both were added
+#   to australia.yaml by its second run while this batch was running; this file first registered them under other
+#   ids and then removed its copies.
+# - research/refocus/sources/status-b.yaml / status-c.yaml: au-tga-2026-04-peptide-responsibilities,
+#   au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure (all three name retatrutide).
+# - research/refocus/sources/us-uk-routes.yaml: nice-ta875-semaglutide, nice-ta1026-tirzepatide,
+#   smc-2497-semaglutide-wegovy, smc-2653-tirzepatide-mounjaro, smc-2988-semaglutide-wegovy-tablets,
+#   fda-drug-shortages-2026-10-23, fda-import-alert-66-80, ctgov-us-uk-peptide-search-2026-10-23,
+#   ctgov-expanded-access-search-2026-10-23.
+#
+# Ids were checked against src/data/sources/*.yaml and research/refocus/sources/*.yaml: no clashes.
+#
+# Link checks (not run; read config/ only):
+# - HOST NOT ALLOWLISTED (flagged in each note): health-products.canada.ca, pdf.hres.ca, dhpp.hpfb-dgpsa.ca,
+#   www.canada.ca, pcpa-app.ca, www.medicines.org.uk, www.pbs.gov.au, www.anzctr.org.au, www.ebs.tga.gov.au.
+# - Allowlisted (host or suffix): www.tga.gov.au, www.nice.org.uk, www.gov.uk, products.mhra.gov.uk and
+#   assets.publishing.service.gov.uk (.gov.uk), www.cms.gov, www.medicare.gov, www.accessdata.fda.gov and api.fda.gov
+#   (.gov), eutils.ncbi.nlm.nih.gov (.nih.gov), www.law.cornell.edu, clinicaltrials.gov.
+# - COMMERCE TOKEN in URL: us-cms-ipay2027-negotiated-prices ('prices'). Cite it in prose; do not print it as a link.
+#
+# Seller rule: authorised medicines and their marketing-authorisation holders are named for identification only.
+# Regulator notices that name a seller, clinic or private person are cited only through existing index entries.
+# No phone number is recorded anywhere below (several pages read list one).
+#
+# factcheck: INDEPENDENT FACT-CHECK, 24 October 2026 (this machine's clock; workflow date 23 October 2026).
+# Method: every entry's document opened again. FDA: openFDA re-queried, all approval letters and the three labels
+# re-downloaded (curl with a browser user agent; plain curl now gets an 'excessive requests' page) and read with
+# pdftotext. CMS, medicare.gov, Cornell LII, NICE, SMC, GOV.UK (content and search APIs), emc and pdf.hres.ca with
+# curl; all 118 MHRA granted-licence lists for 2021 to 2026 downloaded and searched. MHRA Products, TGA (ARTG,
+# registrations, under evaluation, AusPAR, section 19A, site search, the three TGA pages), PBS, ANZCTR and the
+# canada.ca pages (submissions under review; the DPD extract, unzipped by script inside the page) in the built-in
+# browser. Health Canada decision documents on dhpp.hpfb-dgpsa.ca by curl. ClinicalTrials.gov API v2. pCPA JSON export
+# downloaded again. NCBI Bookshelf still shows a reCAPTCHA check (not bypassed); the CDA-AMC recommendation summaries
+# were read as PubMed abstracts instead (E-utilities efetch). Every "not authorised / not found" search was repeated
+# with the recorded terms plus brands and codes (Kayshild, orforglipron, 'semaglutide tablet', LY3298176, NN9535,
+# CAGRILINT, Sevmia, Sandoz, Aspen): all came back as recorded.
+# Results: almost everything held. Corrections and additions are marked 'factcheck (24 October 2026)' in the notes:
+# - us-cms-ipay2027-negotiated-prices: list price is the CY 2024 list price; the third 'commonly treated condition'
+#   (cardiovascular disease and obesity/overweight) was missing; the URL token makes this entry fail the build as it
+#   stands (SourceRef always links the url, and check-no-commerce scans every URL in src/data): UNRESOLVED.
+# - ca-pm-mounjaro now points to the newer monograph 00084159 (2 April 2026); 00077180 (2024) is superseded.
+# - au-tga-2024-09-counterfeit-ozempic-pens: the 'bought online, imported under personal importation' sentence is
+#   about the pens found at the border, not the pen that caused the adverse event.
+# - au-tga-pmr-search-status-a-2026-10-24: under-evaluation dates are publication dates, not acceptance dates.
+# - fda-drugsatfda-search-status-a-2026-10-24: Ozempic and Wegovy single-dose syringes (5 May 2026) added.
+# New entries (14): uk-mhra-ma-granted-2025, uk-mhra-ma-granted-2026, ca-pm-wegovy, ca-pm-rybelsus, ca-pm-plosbrio,
+# ca-hc-ctsp-retatrutide-2026-10-24, ca-cda-amc-2022-wegovy, ca-cda-amc-2025-wegovy, ca-cda-amc-2026-mounjaro,
+# ca-cda-amc-2026-zepbound, au-pbs-dusc-2024-06-semaglutide, au-pbs-medicine-status-wegovy,
+# au-pbs-medicine-status-tirzepatide, au-pbac-2025-11-obesity-treatments-advice. They RESOLVE five of the writer's
+# UNRESOLVED points (CDA-AMC content; Health Canada's trial database; Ozempic's first PBS listing date; PBAC history of
+# Wegovy and tirzepatide; three Canadian monograph numbers).
+# Not changed but noted for the merge: (1) scripts/check-no-commerce.ts scans every URL written anywhere in a src/data
+# file, notes included, so the non-allowlisted URLs inside notes (emc, dhpp, pdf.hres.ca, ebs.tga.gov.au, pbs.gov.au,
+# pcpa-app.ca, clinical-trials-search.canada.ca) must either have their hosts allowlisted or be removed from the notes
+# when this file is merged. (2) The Poisons Standard (October 2026) also lists TIRZEPATIDE in Appendix L clause 2
+# (item 41: dispensing-label warning statement 67, 'Do not use if pregnant or likely to become pregnant.'); semaglutide
+# has no Appendix L entry. Recorded in status/tirzepatide.yaml; au-poisons-standard-2026-10 (australia.yaml) does not
+# mention Appendix L. (3) ca-sbd-ozempic and the other dhpp.hpfb-dgpsa.ca pages answer HTTP 522 intermittently.
+# Ids: no new id duplicates one in src/data/sources/*.yaml or research/refocus/sources/*.yaml (checked by script).
+# One older id is now shared: au-tga-2024-09-counterfeit-ozempic-pens also appears in australia.yaml (added by its
+# fact-check while this one ran), with the same title and URL: merge as one entry;
+# the per-batch search records (ca-dpd-extract-search-*, ca-hc-sur-search-*) share URLs with status-b/-c but record
+# different searches, so they stay separate. Formats: every entry has type (SOURCE_TYPES), title, year, url,
+# accessed and verified; the four CDA-AMC entries also carry a pmid (verified: pubmed).
+
+# ================================================================ UNITED STATES: products (FDA)
+
+fda-drugsatfda-search-status-a-2026-10-24:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA and openFDA drugsfda searches, 24 October 2026: semaglutide, tirzepatide, retatrutide"
+  container: "Drugs@FDA / openFDA"
+  year: 2026
+  url: https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:%22semaglutide%22+OR+products.active_ingredients.name:%22semaglutide%22&limit=100
+  accessed: 2026-10-24
+  verified: url
+  note: "openFDA drugsfda (meta last_updated 2026-10-23), queried by generic name and active ingredient for semaglutide, tirzepatide and retatrutide, and the Drugs@FDA overview pages of every application found, read the same day. SEMAGLUTIDE (6 applications): NDA 209637 OZEMPIC injection (NOVO; ORIG-1 approved 2017-12-05, Type 1 New Molecular Entity; seven pen presentations, one of them, 2 mg/1.5 mL, 'Discontinued'); NDA 213051 RYBELSUS tablets 3, 7, 14 mg and OZEMPIC tablets 1.5, 4, 9 mg (ORIG-1 2019-09-20, Type 3 New Dosage Form); NDA 213182 RYBELSUS 3 and 7 mg (approved 2020-01-16 as a new indication submitted as a distinct NDA and consolidated with NDA 213051 after approval); NDA 215256 WEGOVY injection (ORIG-1 2021-06-04; presentations include single-dose pens, 'WEGOVY HD' 7.2 mg/0.75 mL and 'WEGOVY FLEXTOUCH' 9.6 mg/3 mL); NDA 218316 WEGOVY tablets 1.5, 4, 9, 25 mg (ORIG-1 2025-12-22, Type 3); ANDA 220314 semaglutide injection (APOTEX INC), 'Tentative Approval' on 2026-04-07 for three strengths: a tentative approval is not an approval and does not allow marketing. TIRZEPATIDE (2 applications): NDA 215866 MOUNJARO (ELI LILLY AND CO; ORIG-1 2022-05-13, Type 1) and NDA 217806 ZEPBOUND (ORIG-1 2023-11-08), each with single-dose pens ('autoinjector'), single-dose vials, multiple-dose vials and KWIKPEN presentations. RETATRUTIDE: 'No matches found' (also no application under LY3437943). No other company holds an approved application for either medicine. factcheck (24 October 2026): openFDA queried again (meta last_updated 2026-10-23): every application, sponsor, ORIG approval date, product and the Apotex tentative approval (ANDA 220314, 'TA' 2026-04-07) confirmed; brand-name queries (Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound) return only the seven Novo Nordisk and Lilly NDAs; 'LY3437943' and 'retatrutide' 'No matches found'. Added: single-dose manual prefilled syringes of Ozempic (0.25, 0.5 and 1 mg; NDA 209637/S-039) and of Wegovy injection (0.25 to 2.4 mg; NDA 215256/S-031 with 218316/S-003) were approved on 5 May 2026 (letters read: 'addition of a new presentation ... in a single dose manual prefilled syringe (mPFS)'); they are the 0.25/0.5/1 mg per 0.5 mL presentations in the list above."
+
+fda-label-rybelsus-ozempic-tablets:
+  type: label
+  authors: "U.S. Food and Drug Administration / Novo Nordisk"
+  title: "RYBELSUS (semaglutide) tablets and OZEMPIC (semaglutide) tablets — prescribing information (revised 1/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/213051Orig1s030lbl.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Label approved with NDA 213051/S-030 (30 January 2026), the latest label on the NDA 213051 page on 24 October 2026; 'Initial U.S. Approval: 2017'; 'Revised: 1/2026'. Dosage forms: RYBELSUS tablets 3, 7 and 14 mg; OZEMPIC tablets 1.5, 4 and 9 mg; 'RYBELSUS and OZEMPIC tablets are not substitutable on a mg-to-mg basis'. Indications: glycaemic control in adults with type 2 diabetes, and reduction of major adverse cardiovascular events in adults with type 2 diabetes at high risk. Boxed warning: rodent thyroid C-cell tumours. 'Marketed by: Novo Nordisk Inc., Plainsboro, NJ'."
+
+fda-letter-213051-s030:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, NDA 213051/S-030 (Ozempic tablets and Rybelsus tablets), 30 January 2026"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/213051Orig1s030ltr.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Addressed to Novo Nordisk Inc. 'This Prior Approval sNDA provides for an update to the product labeling to change the name of the product from Rybelsus (formulation R2) to Ozempic (semaglutide) tablets.' Supplement dated and received 23 June 2025; action date 30 January 2026 (Drugs@FDA). So 'Ozempic tablets' is the earlier Rybelsus R2 formulation (see fda-letter-213051-s020) under a new name."
+
+fda-letter-213051-s020:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, NDA 213051/S-020 and S-021 (Rybelsus tablets), 9 December 2024"
+  year: 2024
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2024/213051Orig1s020,213051Orig1s021ltr.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Addressed to Novo Nordisk Inc. 'S-020: Addition of Rybelsus formulation R2, new recommended dosage for formulation R2, and recommendations for switching between formulation R1 and R2' (also a new US manufacturing site). Action date 9 December 2024 (Drugs@FDA, 'Efficacy-New Dosing Regimen'). The R2 strengths are 1.5, 4 and 9 mg (renamed Ozempic tablets on 30 January 2026)."
+
+fda-letter-215256-s029:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, NDA 215256/S-029 and NDA 218316/S-005 (Wegovy injection 7.2 mg dose), 19 March 2026"
+  year: 2026
+  url: "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215256Orig1s029;218316Orig1s005ltr.pdf"
+  accessed: 2026-10-24
+  verified: url
+  note: "Addressed to Novo Nordisk Inc. S-029 (received 25 November 2025) 'provides for the addition of a new Wegovy injection 7.2 mg subcutaneous weekly dose for weight reduction and maintenance long term'; S-005 aligns the combined Wegovy injection and tablets label. Drugs@FDA lists the 7.2 mg/0.75 mL single-dose pen as 'WEGOVY HD'. Action date 19 March 2026."
+
+fda-letter-215866-s009:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, NDA 215866/S-009 (Mounjaro KwikPen), 20 January 2026"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s009ltr.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Addressed to Eli Lilly and Company. Supplement received 28 September 2023; the company's amendment of 2 December 2025 'constituted a complete response to our January 29, 2025, action letter'. Approves 'six presentations of Mounjaro KwikPen, each containing 4 doses' for once-weekly use. Action date 20 January 2026 (Drugs@FDA)."
+
+fda-letter-217806-s002:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letter, NDA 217806/S-002 (Zepbound KwikPen), 20 January 2026"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217806Orig1s002ltr.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Addressed to Eli Lilly and Company. Supplement received 15 November 2023; amendment of 2 December 2025 was a complete response to the 29 January 2025 action letter. Approves 'six presentations of Zepbound KwikPen, each containing 4 doses'. Action date 20 January 2026 (Drugs@FDA)."
+
+fda-letter-215866-s041:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Supplement approval letters, NDA 215866/S-041 (Mounjaro) and NDA 217806/S-037 (Zepbound): multiple-dose vial, 7 January 2026"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215866Orig1s041ltr.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Two letters with the same wording, both read (the Zepbound letter is https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217806Orig1s037ltr.pdf): each supplement, received 31 July 2025, adds 'an additional presentation, the multiple-dose single-patient use vial'. Action date 7 January 2026 for both (Drugs@FDA)."
+
+# ================================================================ UNITED STATES: how the medicines are paid for
+
+us-usc-42-1395w-102-e:
+  type: law
+  authors: "Legal Information Institute, Cornell Law School (text of the United States Code)"
+  title: "42 U.S. Code § 1395w-102 – Prescription drug benefits (Social Security Act § 1860D-2), subsection (e)"
+  container: "United States Code"
+  year: 2026
+  url: https://www.law.cornell.edu/uscode/text/42/1395w-102
+  accessed: 2026-10-24
+  verified: url
+  note: "Subsection (e)(2) 'Exclusions', (A): a 'covered part D drug' does not include drugs or classes of drugs, or their medical uses, 'which may be excluded from coverage or otherwise restricted under section 1396r–8(d)(2)' (with exceptions for smoking cessation agents, certain barbiturates and benzodiazepines, none relevant here). Read with us-usc-42-1396r-8-d, this is the statutory bar on Medicare Part D paying for a drug 'when used for' weight loss."
+
+us-usc-42-1396r-8-d:
+  type: law
+  authors: "Legal Information Institute, Cornell Law School (text of the United States Code)"
+  title: "42 U.S. Code § 1396r-8 – Payment for covered outpatient drugs (Social Security Act § 1927), subsection (d)"
+  container: "United States Code"
+  year: 2026
+  url: https://www.law.cornell.edu/uscode/text/42/1396r-8
+  accessed: 2026-10-24
+  verified: url
+  note: "Subsection (d)(1)(B): 'A State may exclude or otherwise restrict coverage of a covered outpatient drug if' it is on the list in (d)(2); (d)(2) 'List of drugs subject to restriction', (A): 'Agents when used for anorexia, weight loss, or weight gain.' Supports: state Medicaid programmes may choose not to cover medicines used for weight loss; Medicare Part D excludes them by reference (us-usc-42-1395w-102-e)."
+
+us-cms-balance-model:
+  type: regulator
+  authors: "Centers for Medicare & Medicaid Services, Innovation Center"
+  title: "BALANCE (Better Approaches to Lifestyle and Nutrition for Comprehensive hEalth) Model"
+  container: "CMS.gov"
+  year: 2026
+  url: https://www.cms.gov/priorities/innovation/innovation-models/balance
+  accessed: 2026-10-24
+  verified: url
+  note: "Page last modified 29 September 2026. Voluntary model under section 1115A of the Social Security Act: 'CMS will negotiate drug pricing and coverage terms with manufacturers of GLP-1 medications on behalf of state Medicaid agencies and Medicare Part D plan sponsors'; 'currently Medicare and Medicaid generally do not cover these drugs for the weight loss indication'. State Medicaid agencies can join from May 2026 through 1 January 2027; coverage in Medicaid 'will depend on participation by drug manufacturers and states' and 'will not guarantee coverage for any individual'. Drugs in the model: 'All formulations of Mounjaro, Ozempic, Rybelsus, and Wegovy, the KwikPen formulation of Zepbound, and Foundayo'. FAQ: the BALANCE Model is not launching in Medicare in 2027; the Medicare GLP-1 Bridge 'has been extended through December 31, 2027'."
+
+us-cms-medicare-glp1-bridge:
+  type: regulator
+  authors: "Centers for Medicare & Medicaid Services"
+  title: "Medicare GLP-1 Bridge (information for Part D plans and FAQs)"
+  container: "CMS.gov"
+  year: 2026
+  url: https://www.cms.gov/medicare/coverage/prescription-drug-coverage/medicare-glp-1-bridge
+  accessed: 2026-10-24
+  verified: url
+  note: "Page last modified 13 July 2026. 'Starting July 1, 2026, Medicare will begin a short-term demonstration, called the Medicare GLP-1 Bridge, that will provide eligible Medicare Part D beneficiaries with access to certain GLP-1 drugs' between 1 July 2026 and 31 December 2027; it 'will operate outside of the Medicare Part D benefit's coverage and payment flow' (central processor for prior authorisation and claims); authority: section 402(a)(1)(A) of the Social Security Amendments of 1967 as applied to Part D by section 1860D-42(b). 'Eligible beneficiaries will have a $50 copay'; the Part D deductible does not apply, the copay does not count towards out-of-pocket (TrOOP) costs, and there is no low-income subsidy. The page gives a telephone number, not recorded here."
+
+us-medicare-gov-weight-loss-drugs:
+  type: regulator
+  authors: "Centers for Medicare & Medicaid Services"
+  title: "Weight loss drugs (Medicare coverage)"
+  container: "Medicare.gov"
+  year: 2026
+  url: https://www.medicare.gov/coverage/weight-loss-drugs
+  accessed: 2026-10-24
+  verified: url
+  note: "Consumer page. Under the Medicare GLP-1 Bridge, from 1 July 2026, Medicare covers 'Foundayo (tablet)', 'Wegovy (injection or tablet)' and 'Zepbound (KwikPen only. The program doesn't cover single-dose Zepbound vials or pens)', with a '$50 monthly copayment', for people with Part D (or the LI NET programme) aged 18 or older who, when they start, have a BMI of 35 or higher; or a BMI of 30 or higher with heart failure with preserved ejection fraction, uncontrolled high blood pressure or chronic kidney disease stage 3a or higher; or a BMI of 27 or higher with prediabetes, a previous heart attack or stroke, or symptomatic peripheral artery disease. The prescriber must complete a prior authorisation and certify use 'as part of a lifestyle program'. Not eligible: people whose GLP-1 is already covered by their Part D plan, and people with 'type 2 diabetes, moderate-to-severe sleep apnea, or fatty liver disease (but your Part D plan might cover your GLP-1s)'. The page also points to a federal price-comparison site; this site does not repeat that (seller rule). No 'last updated' date shown."
+
+us-cms-ipay2027-negotiated-prices:
+  type: regulator
+  authors: "Centers for Medicare & Medicaid Services"
+  title: "Medicare Drug Price Negotiation Program: Negotiated Prices for Initial Price Applicability Year 2027 (fact sheet)"
+  container: "CMS.gov"
+  year: 2025
+  url: https://www.cms.gov/files/document/fact-sheet-negotiated-prices-ipay-2027.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "COMMERCE TOKEN in URL ('prices'): cite in prose, do not print as a link. factcheck (24 October 2026): this is not enough on its own: SourceRef renders every source url as a link and scripts/check-no-commerce.ts scans every URL in src/data, so this entry FAILS THE BUILD if merged with this url. Before merging, the editor must either find a token-free official URL (every CMS negotiation page found has 'price' or 'prices' in its path) or leave the figure out (UNRESOLVED). Linked from the CMS page 'Selected Drugs and Negotiated Prices' (page last modified 22 September 2026). Read with pdftotext. Fifteen Part D drugs selected for the second cycle; the negotiated prices ('maximum fair prices') take effect on 1 January 2027. Row for 'Ozempic; Rybelsus; Wegovy' (Novo Nordisk Inc.; commonly treated conditions 'Type 2 diabetes; Type 2 diabetes and cardiovascular disease; Cardiovascular disease and obesity/overweight' (factcheck: the third condition was missing)): 'Agreed to Negotiated Price for 30-day Supply for CY 2027' $274, against a 'List Price for 30-day Supply, CY 2024' of $959 (factcheck: the list price is the 2024 one), a 71% discount; example per-package price $276.78 for a 4 mg/3 mL Ozempic pen and for 30 Rybelsus 7 mg tablets ($385.63 for four Wegovy 2.4 mg pens). The fact sheet says 'The negotiation period ended on November 1, 2025', so it was issued after that date; the exact publication date is not printed in the extracted text and the PDF has no date metadata (news reports of the announcement are dated 26 November 2025; year 2025 holds). Tirzepatide (Mounjaro, Zepbound) is not in this list, nor in the third-cycle list for 2028 announced on 27 January 2026 (https://www.cms.gov/files/document/factsheet-medicare-negotiation-selected-drug-list-ipay-2028.pdf, read the same day)."
+
+# ================================================================ UNITED KINGDOM: products (MHRA / emc)
+
+uk-emc-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Datapharm (electronic medicines compendium, emc)"
+  title: "emc searches, 24 October 2026: semaglutide, tirzepatide, retatrutide, Ozempic, Wegovy, Kayshild"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/search?q=semaglutide
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. emc publishes the SmPCs that UK licence holders upload. 'semaglutide': '20 results found' (all Novo Nordisk): Ozempic 0.25, 0.5, 1 and 2 mg pre-filled pens; Rybelsus 3, 7, 14 mg and 1.5, 4, 9 mg tablets; Wegovy FlexTouch 0.25, 0.5, 1, 1.7 and 2.4 mg; Wegovy 7.2 mg single-dose pen; Wegovy tablets 1.5, 4, 9 and 25 mg. 'tirzepatide': 6 results, all Mounjaro KwikPen 2.5 to 15 mg (Eli Lilly). 'retatrutide' and 'kayshild': no results. emc lists only products whose SmPC the company has uploaded, so it is not a complete list of UK licences (the MHRA lists also show Wegovy single-dose pens and Mounjaro single-dose pens and vials, see uk-mhra-substance-index-status-a-2026-10-24)."
+
+uk-emc-smpc-ozempic-0-25mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Ozempic 0.25 mg solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/9748/smpc
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Section 7 holder Novo Nordisk A/S (Bagsværd, Denmark); section 8 'PLGB 04668/0331'; section 9 'Date of first authorisation: 01 January 2021', 'Date of latest renewal: 10 June 2024'; section 10 'Date of revision of the text 07/2026'; last updated on emc 28 July 2026. The 1 January 2021 date is the GB licence created when the UK left the EU's medicines system (centrally authorised products were 'grandfathered', uk-mhra-uk-wide-licensing); Ozempic had been authorised for the whole EU, the UK included, since 8 February 2018 (ema-epar-ozempic). The Ozempic 2 mg pen has its own licence, PLGB 04668/0435, first authorised 18 July 2022 (https://www.medicines.org.uk/emc/product/14975/smpc, read the same day)."
+
+uk-emc-smpc-rybelsus-3mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Rybelsus 3 mg tablets — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/11507/smpc
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Holder Novo Nordisk A/S; 'PLGB 04668/0420'; 'Date of first authorisation: 01 January 2021', 'Date of latest renewal: 03 February 2025'; revision 03/2026. The new 1.5 mg tablet (https://www.medicines.org.uk/emc/product/101229/smpc) is 'PLGB 04668/0451', 'Date of first authorisation: 06 December 2024' (4 and 9 mg: PLGB 04668/0452 and 0453, same date, uk-mhra-ma-granted-2024)."
+
+uk-emc-smpc-wegovy-flextouch-0-25mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Wegovy 0.25 mg FlexTouch solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/13799/smpc
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Holder Novo Nordisk A/S; 'PLGB 04668/0436'; 'Date of first authorisation: 10 May 2022'; revision 09/2026; last updated on emc 22 September 2026. The FlexTouch pens were not the first UK Wegovy licences: single-dose pens PLGB 04668/0429 to 0433 were granted on 24 September 2021 (uk-mhra-ma-granted-2021); their SmPC is not on emc."
+
+uk-emc-smpc-wegovy-7-2mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Wegovy 7.2 mg solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/102093/smpc
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Holder Novo Nordisk A/S; 'PL 04668/0460' (a UK-wide licence, PL prefix, see uk-mhra-uk-wide-licensing); 'Date of first authorisation: 13 April 2026'; revision 09/2026."
+
+uk-emc-smpc-wegovy-tablets-1-5mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Wegovy 1.5 mg tablets — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/102344/smpc
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Holder Novo Nordisk A/S; 'PL 04668/0466'; 'Date of first authorisation: 11 June 2026'; revision 06/2026; last updated on emc 16 June 2026. The 4, 9 and 25 mg tablets are also on emc (products 102345, 102346, 102347)."
+
+uk-emc-smpc-mounjaro-kwikpen-2-5mg:
+  type: label
+  authors: "Eli Lilly Nederland B.V. (SmPC as published on emc)"
+  title: "Mounjaro KwikPen 2.5 mg solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/15481/smpc
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Section 7 'Eli Lilly Nederland B.V., Orteliuslaan 1000, 3528 BD Utrecht, The Netherlands'; section 8 'PLGB 14895/0340' to '/0345' (the six KwikPen strengths); section 9 'Date of first authorisation: 25 January 2024'; 'Date of revision of the text 29 August 2026'; last updated on emc 8 September 2026. The KwikPen was not the first UK Mounjaro licence: single-dose pens PLGB 14895/0317 to 0323 were granted on 26 September 2022 (uk-mhra-ma-granted-2022) and vials PLGB 14895/0331 to 0336 on 1 September 2023 (uk-mhra-ma-granted-2023); neither SmPC is on emc."
+
+uk-mhra-substance-index-status-a-2026-10-24:
+  type: dataset
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products: substance index for SEMAGLUTIDE, TIRZEPATIDE and RETATRUTIDE, and search 'tirzepatide', 24 October 2026"
+  container: "MHRA Products"
+  year: 2026
+  url: https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE
+  accessed: 2026-10-24
+  verified: url
+  note: "Read in the browser pane. SEMAGLUTIDE lists product names only (each with a number of documents): Ozempic 0.25, 0.5, 1 and 2 mg pens; Rybelsus 3, 7, 14, 1.5, 4 and 9 mg; Wegovy single-dose pens (0.25, 0.5, 1, 1.7, 2.4 mg), Wegovy FlexTouch pens, Wegovy 7.2 mg pen, Wegovy 1.5, 4, 9 and 25 mg tablets. No other brand and no generic. TIRZEPATIDE (https://products.mhra.gov.uk/substance/?substance=TIRZEPATIDE): Mounjaro single-dose pens, Mounjaro vials and Mounjaro KwikPens, 2.5 to 15 mg. Retatrutide: no substance entry (the R index has none). The full search 'tirzepatide' reports '1 to 10 of 106' documents, but the list and every product page are shown only after ticking 'I have read and understand the disclaimer' and pressing 'Agree'; that was not done, so no licence number or date was read on this site (they come from emc and the MHRA lists of granted licences instead)."
+
+uk-mhra-ma-granted-2021:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Marketing authorisations granted in 2021 (monthly lists)"
+  container: "GOV.UK"
+  year: 2022
+  url: https://www.gov.uk/government/publications/marketing-authorisations-granted-in-2021
+  accessed: 2026-10-24
+  verified: url
+  note: "Publication updated 13 January 2022. All 12 monthly PDF lists downloaded and searched (pdftotext) for semaglutide, tirzepatide, Wegovy, Mounjaro, Ozempic and Rybelsus. September 2021 list (https://assets.publishing.service.gov.uk/media/6166e4c0e90e07197718297a/Monthly_new_MA_listing_Sept_2021.pdf): PLGB 04668/0429, 0430, 0431, 0432 and 0433, 24/09/2021, NOVO NORDISK AS, WEGOVY 0.25, 0.5, 1, 1.7 and 2.4 MG solution for injection in pre-filled pen, active ingredient SEMAGLUTIDE (the PDF's columns are misaligned by pdftotext; licence numbers, date, holder and product names were matched by order and count). Ozempic and Rybelsus are not in these lists: their GB licences date from 1 January 2021 by conversion of the EU authorisations (uk-emc-smpc-ozempic-0-25mg, uk-emc-smpc-rybelsus-3mg)."
+
+uk-mhra-ma-granted-2022:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Marketing authorisations granted in 2022 (monthly and fortnightly lists)"
+  container: "GOV.UK"
+  year: 2023
+  url: https://www.gov.uk/government/publications/marketing-authorisations-granted-in-2022
+  accessed: 2026-10-24
+  verified: url
+  note: "Publication updated 5 January 2023; all 15 PDF lists searched as for 2021. May 2022: PLGB 04668/0436 to 0440, 10/05/2022, NOVO NORDISK AS, WEGOVY FLEXTOUCH 0.25 to 2.4 MG (SEMAGLUTIDE). July 2022: PLGB 04668/0435, 18/07/2022, NOVO NORDISK AS, OZEMPIC 2MG solution for injection in pre-filled pen. September 2022 (https://assets.publishing.service.gov.uk/media/633d2699e90e074401d7a6b0/Monthly_new_MA_listing_Sept_2022.pdf): PLGB 14895/0317, 0318, 0320, 0321, 0322 and 0323, 26/09/2022, ELI LILLY NEDERLAND B.V., MOUNJARO 2.5, 5, 7.5, 10, 12.5 and 15 MG solution for injection in pre-filled pen (TIRZEPATIDE): the first Great Britain licence for tirzepatide. factcheck (24 October 2026): all lines confirmed in the downloaded PDFs (six numbers; 0319 is not a Mounjaro licence)."
+
+uk-mhra-ma-granted-2023:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Marketing authorisations granted in 2023 (fortnightly lists)"
+  container: "GOV.UK"
+  year: 2024
+  url: https://www.gov.uk/government/publications/marketing-authorisations-granted-in-2023
+  accessed: 2026-10-24
+  verified: url
+  note: "Publication updated 9 January 2024; all 24 lists searched. 1 to 14 September 2023: PLGB 14895/0331 to 0336, 01/09/2023, ELI LILLY NEDERLAND B.V., MOUNJARO 2.5 to 15 MG solution for injection in vial (TIRZEPATIDE). No other semaglutide or tirzepatide licence in 2023 (the weight-management indication of 8 November 2023 was a change to existing licences, not a new licence: uk-mhra-2023-11-mounjaro-weight)."
+
+uk-mhra-ma-granted-2024:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Marketing authorisations granted in 2024 (fortnightly lists)"
+  container: "GOV.UK"
+  year: 2025
+  url: https://www.gov.uk/government/publications/marketing-authorisations-granted-in-2024
+  accessed: 2026-10-24
+  verified: url
+  note: "Publication updated 8 January 2025; all 24 lists searched. 15 to 31 January 2024: PLGB 14895/0340 to 0345, 25/01/2024, ELI LILLY NEDERLAND B.V., MOUNJARO KWIKPEN 2.5 to 15 MG (TIRZEPATIDE). 1 to 14 December 2024: PLGB 04668/0451, 0452 and 0453, 06/12/2024, NOVO NORDISK AS, RYBELSUS 1.5, 4 and 9 MG tablets. factcheck (24 October 2026): all 118 lists for 2021 to 2026 downloaded again and searched (pdftotext) for semaglutide, tirzepatide, retatrutide and the brand names; every licence number, date and holder recorded in uk-mhra-ma-granted-2021 to -2024 confirmed (note: the September 2022 Mounjaro pens are PLGB 14895/0317, 0318 and 0320 to 0323; there is no 0319). The writer's line 'the 2025 and 2026 lists were not searched' is superseded: see uk-mhra-ma-granted-2025 and uk-mhra-ma-granted-2026."
+
+uk-mhra-ma-granted-2025:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Marketing authorisations granted in 2025 (fortnightly lists)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/publications/marketing-authorisations-granted-in-2025
+  accessed: 2026-10-24
+  verified: url
+  note: "factcheck: NEW entry (24 October 2026). Publication updated 13 April 2026 (content API); 24 lists. All downloaded and searched (pdftotext) for semaglutide, tirzepatide, retatrutide, Ozempic, Wegovy, Rybelsus, Mounjaro and KwikPen: no match. No new UK licence for either medicine was granted in 2025, and no generic semaglutide or tirzepatide licence."
+
+uk-mhra-ma-granted-2026:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Marketing authorisations granted in 2026 (fortnightly lists)"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/publications/marketing-authorisations-granted-in-2026
+  accessed: 2026-10-24
+  verified: url
+  note: "factcheck: NEW entry (24 October 2026). Publication updated 20 October 2026; 19 lists (up to 1 to 14 October 2026), all downloaded and searched as for 2025. 1 to 14 April 2026: PL 04668/0460, 13/04/2026, NOVO NORDISK AS, WEGOVY 7.2 MG SOLUTION FOR INJECTION IN PRE-FILLED PEN, POM, 'UK Category 1'. 1 to 14 June 2026: PL 04668/0466, 0467, 0468 and 0469, 11/06/2026, NOVO NORDISK AS, WEGOVY 1.5, 4, 9 and 25 MG TABLETS (SEMAGLUTIDE), POM, 'UK Category 1'. No tirzepatide, retatrutide or generic semaglutide licence (the October 2026 KwikPen hits are an insulin, not tirzepatide). Confirms the SmPC dates in uk-emc-smpc-wegovy-7-2mg and uk-emc-smpc-wegovy-tablets-1-5mg from the MHRA's own list."
+
+uk-mhra-uk-wide-licensing:
+  type: guideline
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "UK-wide licensing for human medicines"
+  container: "GOV.UK"
+  year: 2025
+  url: https://www.gov.uk/government/publications/uk-wide-licensing-for-human-medicines/uk-wide-licensing-for-human-medicines
+  accessed: 2026-10-24
+  verified: url
+  note: "First published 29 September 2023, updated 12 March 2025 (content API). 'From 1 January 2025, the MHRA will regulate medicines through UK-wide marketing authorisations'; authorisations issued from that date have a PL prefix and older ones 'retain their current MA number (including the prefix even if that is a PLGB prefix)'; 'From 1 January 2025 union authorisations issued by the European Commission will no longer be valid for Northern Ireland'. Category 1 includes 'Products that were authorised in the EU through the centralised procedure and subsequently grandfathered at the time of EU Exit'. Supports: Ozempic and Rybelsus GB licences dated 1 January 2021 are converted EU authorisations; until 31 December 2024 EU authorisations (Mounjaro from 15 September 2022) also applied in Northern Ireland."
+
+uk-mhra-2023-11-mounjaro-weight:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA authorises diabetes drug Mounjaro (tirzepatide) for weight management and weight loss"
+  container: "GOV.UK"
+  year: 2023
+  url: https://www.gov.uk/government/news/mhra-authorises-diabetes-drug-mounjaro-tirzepatide-for-weight-management-and-weight-loss
+  accessed: 2026-10-24
+  verified: url
+  note: "Press release, 8 November 2023: authorised 'via a national application route, a new indication for the diabetes medicine, Mounjaro (tirzepatide), for weight loss and weight management in adults aged 18 and over' (BMI 30 or more, or 27 to 30 with a weight-related condition), with diet and physical activity; advice on oral contraceptives for 4 weeks after starting and after each dose increase."
+
+uk-mhra-2024-01-mounjaro-kwikpen:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Four-dose Mounjaro 'KwikPen' approved by MHRA for diabetes and weight management"
+  container: "GOV.UK"
+  year: 2024
+  url: https://www.gov.uk/government/news/four-dose-mounjaro-kwikpen-approved-by-mhra-for-diabetes-and-weight-management
+  accessed: 2026-10-24
+  verified: url
+  note: "Press release, 25 January 2024: approval of the four-dose KwikPen (a month's treatment) for type 2 diabetes and weight management; strengths 2.5 to 15 mg per dose. Matches PLGB 14895/0340 to 0345 dated 25 January 2024 (uk-mhra-ma-granted-2024)."
+
+uk-mhra-2024-07-wegovy-cv:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA approves GLP-1 receptor agonist semaglutide to reduce risk of serious heart problems in obese or overweight adults"
+  container: "GOV.UK"
+  year: 2024
+  url: https://www.gov.uk/government/news/mhra-approves-glp-1-receptor-agonist-semaglutide-to-reduce-risk-of-serious-heart-problems-in-obese-or-overweight-adults
+  accessed: 2026-10-24
+  verified: url
+  note: "Press release, 23 July 2024: new Wegovy indication to reduce the risk of major cardiovascular events in adults with established cardiovascular disease and a BMI of 27 or more, based on the SELECT trial (2.4 mg weekly for up to five years)."
+
+uk-mhra-2026-01-wegovy-7-2mg-dose:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Medicines regulator approves up to 7.2mg dose of semaglutide (Wegovy) for patients with obesity only"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/news/medicines-regulator-approves-up-to-72mg-dose-of-semaglutidewegovy-for-patients-with-obesity-only
+  accessed: 2026-10-24
+  verified: url
+  note: "News story, 16 January 2026: a 7.2 mg weekly dose for adults with obesity (BMI 30 or more) only, given at first as three 2.4 mg injections on the same day; not for overweight patients below BMI 30 or for the cardiovascular indication."
+
+uk-mhra-2026-04-wegovy-7-2mg-pen:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Single-dose 7.2mg semaglutide (Wegovy) pen approved to treat adult patients with obesity"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/news/single-dose-72mg-semaglutide-wegovy-pen-approved-to-treat-adult-patients-with-obesity
+  accessed: 2026-10-24
+  verified: url
+  note: "News story, 14 April 2026: approval of a single-dose 7.2 mg pen for adults with a BMI of 30 or higher; follows the January 2026 authorisation of the 7.2 mg dose. The SmPC gives 13 April 2026 as the date of first authorisation (uk-emc-smpc-wegovy-7-2mg)."
+
+uk-mhra-2026-06-wegovy-tablets:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "First GLP-1 tablet for weight loss approved in the UK"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/news/first-glp-1-tablet-for-weight-loss-approved-in-the-uk
+  accessed: 2026-10-24
+  verified: url
+  note: "Press release, 11 June 2026: semaglutide (Wegovy) tablets approved for weight loss and weight management in adults with a BMI of 30 or above, or 27 to 30 with at least one weight-related condition; 'As with all GLP-1 receptor agonists, this is a prescription-only medication.' Doses are not repeated on this site."
+
+uk-mhra-2026-07-wegovy-mash:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Semaglutide (Wegovy) approved to treat form of liver disease"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/government/news/semaglutide-wegovy-approved-to-treat-form-of-liver-disease
+  accessed: 2026-10-24
+  verified: url
+  note: "Press release, 3 July 2026: Wegovy injection approved to treat MASH in adults with moderate-to-advanced liver fibrosis, on the condition that further results from an ongoing study are provided."
+
+uk-govuk-mhra-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Government Digital Service / Medicines and Healthcare products Regulatory Agency"
+  title: "GOV.UK search API, MHRA content, 24 October 2026: tirzepatide, Mounjaro, Wegovy, semaglutide, retatrutide"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/api/search.json?q=retatrutide&filter_organisations=medicines-and-healthcare-products-regulatory-agency
+  accessed: 2026-10-24
+  verified: url
+  note: "Counts (MHRA filter): tirzepatide 22, Mounjaro 16, Wegovy 18, semaglutide 35, retatrutide 5. The 5 retatrutide items are all enforcement press releases (24 October 2025, 25 February 2026, 29 May 2026, 24 July 2026, 15 October 2026); none is an authorisation, an early-access scheme or a licence application. The approval items found are registered individually above (uk-mhra-2023-11-mounjaro-weight, uk-mhra-2024-01-mounjaro-kwikpen, uk-mhra-2024-07-wegovy-cv, uk-mhra-2026-01-wegovy-7-2mg-dose, uk-mhra-2026-04-wegovy-7-2mg-pen, uk-mhra-2026-06-wegovy-tablets, uk-mhra-2026-07-wegovy-mash). No MHRA press release on the first GB Mounjaro or Wegovy licences (2022 and 2021) was found."
+
+# ================================================================ UNITED KINGDOM: how the medicines are paid for (NICE)
+
+nice-ta924-tirzepatide-t2d:
+  type: guideline
+  authors: "National Institute for Health and Care Excellence"
+  title: "Tirzepatide for treating type 2 diabetes (technology appraisal guidance TA924)"
+  year: 2025
+  url: https://www.nice.org.uk/guidance/ta924
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 25 October 2023, last updated 1 September 2025 (last reviewed 11 May 2026). Rec. 1.1: recommended for type 2 diabetes in adults, with diet and exercise, only if triple therapy with metformin and two other oral antidiabetic drugs is ineffective, not tolerated or contraindicated, and the person has a BMI of 35 or more with specific psychological or other medical problems associated with obesity, or a BMI under 35 where insulin would have significant occupational implications or weight loss would benefit other significant obesity-related complications (lower thresholds, usually by 2.5, for some ethnic backgrounds); only under the commercial arrangement. NICE notes work to align TA924 with the updated guideline NG28."
+
+nice-ta1152-semaglutide-mace:
+  type: guideline
+  authors: "National Institute for Health and Care Excellence"
+  title: "Semaglutide for reducing the risk of major adverse cardiovascular events in people with cardiovascular disease and overweight or obesity (technology appraisal guidance TA1152)"
+  year: 2026
+  url: https://www.nice.org.uk/guidance/ta1152
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 7 May 2026. Rec. 1.1: semaglutide (up to a maintenance dose of 2.4 mg weekly) 'can be used, within its marketing authorisation', with diet and physical activity, to reduce the risk of a major adverse cardiovascular event in adults with established cardiovascular disease (previous heart attack, previous stroke, or symptomatic peripheral arterial disease as defined) and a BMI of at least 27, only under the commercial arrangement. 'Semaglutide must be funded in England within 90 days of final publication of this guidance.'"
+
+nice-id6699-semaglutide-obesity-review:
+  type: web
+  authors: "National Institute for Health and Care Excellence"
+  title: "Semaglutide for managing overweight and obesity (including review of TA875) [ID6699] — in development (GID-TA11920)"
+  year: 2026
+  url: https://www.nice.org.uk/guidance/indevelopment/gid-ta11920
+  accessed: 2026-10-24
+  verified: url
+  note: "Status 'In progress', expected publication 'TBC'. Suggested remit: the 7.2 mg dose for weight management in adults; selected 15 December 2025 as 'a significant licence extension'; consultation on the draft scope 28 May to 25 June 2026; timeline note added 23 October 2026. Until it reports, TA875 (2.4 mg) stands."
+
+nice-id6644-retatrutide:
+  type: web
+  authors: "National Institute for Health and Care Excellence"
+  title: "Retatrutide for managing overweight and obesity [ID6644] — in development (GID-TA11845)"
+  year: 2026
+  url: https://www.nice.org.uk/guidance/indevelopment/gid-ta11845
+  accessed: 2026-10-24
+  verified: url
+  note: "Status 'In progress', expected publication 'TBC'. Suggested remit: 'To appraise the clinical and cost effectiveness of retatrutide within its marketing authorisation' for obesity, or overweight with at least one weight-related comorbidity; decision to appraise ('Selected') published 15 September 2025; consultation on the suggested remit, draft scope and stakeholder list 5 to 29 October 2026. A NICE appraisal in development is not a licence: retatrutide has no UK marketing authorisation (mhra-2026-10-counterfeit-pens)."
+
+# ================================================================ CANADA: products (Health Canada)
+
+ca-dpd-extract-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database data extract (files dated 5 October 2026), searched 24 October 2026 for semaglutide, tirzepatide and retatrutide"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database/what-data-extract-drug-product-database.html
+  accessed: 2026-10-24
+  verified: url
+  note: "The DPD web pages and API were under maintenance all day (redirect to construction.hres.ca; API HTTP 503), so the official extract was used: ingred, drug, comp, status, route, form and schedule files for marketed (no suffix), approved-not-marketed (_ap), cancelled (_ia) and dormant (_dr) products, all dated 2026-10-05, unzipped in the browser and searched for SEMAGLUT, TIRZEPAT, RETATRUT, LY3437943, LY3298176 and NN9535 in ingredient and brand fields. RETATRUTIDE (and its code): no product in any file. CANCELLED: none for either medicine. SEMAGLUTIDE, marketed: OZEMPIC (Novo Nordisk Canada Inc; DIN 02471469 approved 2018-01-04, marketed 2018-02-22; DIN 02540258 approved 2023-08-04, marketed 2023-12-22); RYBELSUS (DINs 02497581, 02497603, 02497611 approved 2020-03-30, marketed 2020-04-19; new 1.5, 4, 9 mg DINs 02551012, 02551020, 02551039 approved 2024-10-08/09, marketed 2026-03-13); WEGOVY multidose pens (DINs 02528509 to 02528541 approved 2022-06-30, marketed from 2024-03-28; DIN 02552698 approved 2024-10-25, marketed 2026-08-27); SEMAGLUTIDE INJECTION (DR REDDY'S LABORATORIES LTD; DINs 02567806, 02567814 approved 2026-04-28, marketed 2026-05-06); APO-SEMAGLUTIDE INJECTION (APOTEX INC; DINs 02568012, 02568020 approved 2026-05-01, marketed 2026-05-14). Approved, not marketed: WEGOVY single-dose pens (DINs 02522551 to 02522608, approved 2021-11-23); OZEMPIC 2 mg pen (02523930, 2022-01-04) and two newer Ozempic DINs (02562618, 02562626, 2025-11-04); PLOSBRIO (Novo Nordisk Canada Inc; 02564041 to 02564084, approved 2025-12-22; 02568233, 02568241, 2026-05-11); POVIZTRA (Novo Nordisk Canada Inc; 02564106 to 02564211, 2025-12-22); SEVMIA (APOTEX INC; 02569582, 2026-06-29); ASPEN-SEMAGLUTIDE (ASPEN PHARMACARE CANADA INC.; 02569930, 02569949, 2026-07-17); SEMAGLUTIDE INJECTION (ASPEN PHARMACARE CANADA INC.; 02570912, 02570920, 2026-08-25); SANDOZ SEMAGLUTIDE (SANDOZ CANADA INCORPORATED; 02571501, 02571528, 2026-09-16). Dormant: OZEMPIC DIN 02471477 (0.25/0.5 mg 1.5 mL pen), dormant since 2026-07-24. Novo Nordisk's semaglutide products carry schedule 'Prescription' and 'Schedule D' (biologic); the generics only 'Prescription'. TIRZEPATIDE, marketed: MOUNJARO vials (ELI LILLY CANADA INC; DINs 02541041 to 02541106, approved 2023-08-31, marketed 2023-10-23); MOUNJARO KWIKPEN (02551950 to 02552000, approved 2024-09-24, marketed 2024-12-10); ZEPBOUND multidose pens (02557509 to 02557568, approved 2025-05-12/13, marketed 2025-07-09; status history also shows approvals and marketing on 2026-02-12). Approved, not marketed: MOUNJARO single-dose pens (02532891 to 02532956, approved 2022-11-24). All subcutaneous solutions except Rybelsus (oral tablets). The DPD 'approved' date can differ by a few days from the Notice of Compliance date (Sevmia: DPD 2026-06-29, NOC 2026-06-25, ca-rds-sevmia-2026). The extract has no product monograph numbers, so monographs that could not be found another way are UNRESOLVED (see the product list in research/refocus/status/semaglutide.yaml). The DPD product page for each product is https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=<drug code> (codes in the status files); those pages could not be opened on 24 October 2026. factcheck (24 October 2026): the four allfiles zips (all files dated 2026-10-05) fetched again from canada.ca inside the browser page and unzipped by script; ingredient and brand fields searched for SEMAGLUT, TIRZEPAT, RETATRUT, LY3437943, LY-3437943, LY3298176, NN9535, CAGRILINT and the brands Ozempic, Wegovy, Rybelsus, Mounjaro, Zepbound, Plosbrio, Poviztra and Sevmia. Every product, DIN, company, status date, schedule and the dormant Ozempic DIN above confirmed; no cancelled product; no retatrutide product in any file. The live DPD and its API still answered HTTP 503 / redirect to construction.hres.ca."
+
+ca-sbd-ozempic:
+  type: report
+  authors: "Health Canada"
+  title: "Summary Basis of Decision for Ozempic (SBD00388; issued 4 April 2018), with Post-Authorization Activity Table (updated 29 July 2025)"
+  container: "Drug and Health Product Portal"
+  year: 2025
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD00388
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. 'On January 4, 2018, Health Canada issued a Notice of Compliance to Novo Nordisk Canada Inc. for the drug product Ozempic' (NDS 202059, filed 2017-01-19; New Active Substance; Notice of Compliance 'issued by Director General, Biologics and Genetic Therapies Directorate'). 'Date of first sale: 2018-02-22' (DIN 02471469) and 2023-12-22 (DIN 02540258). The PAAT lists later supplements, including the 2 mg dose."
+
+ca-rds-ozempic-mace-2026:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Ozempic: risk reduction of major adverse cardiovascular events (control number 282056)"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1781878830893
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Supplement to a New Drug Submission (response to a Notice of Deficiency), decision 2026-02-25: authorised for the new indication of risk reduction of major adverse cardiovascular events in patients with type 2 diabetes and established cardiovascular disease and/or chronic kidney disease, based on four cardiovascular outcome trials (more than 9,800 patients). An earlier attempt was cancelled by the company before a decision on 6 March 2020 (Summary of Cancellation, RDS00626, https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS00626)."
+
+ca-rds-rybelsus-2020:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Rybelsus (control number 226906)"
+  container: "Drug and Health Product Portal"
+  year: 2020
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS00625
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. New Drug Submission; decision/authorization date 2020-03-30 (search listing); for glycaemic control in adults with type 2 diabetes, based on seven PIONEER phase 3a trials (8,336 randomised patients)."
+
+ca-rds-rybelsus-formulation-2024:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Rybelsus: new formulation 1.5, 4 and 9 mg (control number 281745)"
+  container: "Drug and Health Product Portal"
+  year: 2024
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1729098917291
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. SNDS, decision 2024-10-08: 'formulation D' at 1.5, 4 and 9 mg authorised as an alternative to the 3, 7 and 14 mg tablets for the same indication, mainly on one bioequivalence study. (In the US the same 1.5/4/9 mg formulation was renamed 'Ozempic tablets'; in Canada it is still Rybelsus.)"
+
+ca-rds-wegovy-2021:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Wegovy (control number 247235)"
+  container: "Drug and Health Product Portal"
+  year: 2021
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS00896
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. New Drug Submission; decision 2021-11-23 (search listing): authorised for chronic weight management in adults with an initial BMI of 30 or more, or 27 or more with at least one weight-related comorbidity, as an adjunct to a reduced-calorie diet and physical activity; four phase 3 trials, 4,182 patients."
+
+ca-rds-wegovy-mash-2025:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Wegovy: MASH with moderate to advanced fibrosis (control number 296143)"
+  container: "Drug and Health Product Portal"
+  year: 2025
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1766074543990
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. SNDS, priority review; decision 2025-12-10: 'Authorized ... as per the Notice of Compliance with Conditions Guidance' for non-cirrhotic MASH with F2-F3 fibrosis in adults; a Notice of Compliance with Conditions - Qualifying Notice was issued on 21 November 2025; based on the ongoing ESSENCE trial and two phase 2 trials."
+
+ca-sbd-mounjaro:
+  type: report
+  authors: "Health Canada"
+  title: "Summary Basis of Decision for Mounjaro (SBD00629; issued 17 March 2023), with Post-Authorization Activity Table (updated 24 October 2025)"
+  container: "Drug and Health Product Portal"
+  year: 2025
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/SBD00629
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. 'On November 24, 2022, Health Canada issued a Notice of Compliance to Eli Lilly Canada Inc. for the drug product Mounjaro' (NDS filed 2021-11-29; New Active Substance; reviewed in the Access Consortium's New Active Substance Work-Sharing Initiative with Australia's TGA, Singapore's HSA and Swissmedic). PAAT: vials (DINs 02541041 to 02541106) NOC 2023-08-31, first sale 2023-10-23; KwikPen NOC 2024-09-24, first sale 2024-12-10. The product monograph gives 'Date of Initial Authorization: NOV 23, 2022' (ca-pm-mounjaro), one day earlier than the SBD; the SBD milestone table ('Notice of Compliance issued ... 2022-11-24') is used here."
+
+ca-rds-mounjaro-kwikpen-2024:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Mounjaro KwikPen (control number 283968)"
+  container: "Drug and Health Product Portal"
+  year: 2024
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1764700842360
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. SNDS, decision 2024-09-24: an additional presentation of a preserved tirzepatide formulation in a fixed multi-dose pen (KwikPen) for the same indication and strengths; 'Mounjaro ... is currently commercialized in a single-dose prefilled pen and a single-dose vial'."
+
+ca-rds-mounjaro-paediatric-2026:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Mounjaro: type 2 diabetes in patients 10 to under 18 years (control number 300244)"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1789741943529
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. SNDS, decision 2026-06-23: new paediatric type 2 diabetes indication (10 to less than 18 years) for Mounjaro and Mounjaro KwikPen; reviewed in the Access Consortium work-sharing model with Health Canada leading the clinical review; additional post-market information on non-arteritic anterior ischaemic optic neuropathy (NAION) in adults was reviewed."
+
+ca-soc-mounjaro-hfpef-2025:
+  type: report
+  authors: "Health Canada"
+  title: "Summary of Cancellation for Mounjaro: heart failure with preserved ejection fraction (control number 293412)"
+  container: "Drug and Health Product Portal"
+  year: 2025
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1772550683826
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. SNDS to add an indication for adults with obesity and heart failure with preserved ejection fraction (SUMMIT trial, 731 participants). 'No decision was issued by Health Canada. The company cancelled its submission before a final decision was issued.' Date of cancellation 2025-11-26. Reviewed in the Access Consortium (Swissmedic led the clinical module; Health Canada and the TGA peer-reviewed); 'At the time of the cancellation, the review of the submission was nearing completion. All three agencies had identified deficiencies' (rest of the text not quoted)."
+
+ca-rds-semaglutide-injection-drreddys-2026:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Semaglutide Injection (Dr Reddys Laboratories Ltd; control number 279513)"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1776954365092
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. Abbreviated New Drug Submission, decision 2026-04-28: generic equivalent of the Canadian Reference Product Ozempic, 'which is a biologic drug manufactured using recombinant deoxyribonucleic acid (DNA) technology'; 'The active ingredient of the generic product is produced using solid phase chemical synthesis and not by recombinant DNA'; shown to be pharmaceutically equivalent, with comparable potency in cell-based assays; for type 2 diabetes in adults. The first generic semaglutide authorised in Canada (DHPP search: no earlier semaglutide ANDS). This resolves the UNRESOLVED point in ca-hc-2026-08-generic-semaglutide-recall (canada.yaml): at least the Dr Reddy's, Apotex and Sevmia semaglutide is chemically synthesised."
+
+ca-rds-apo-semaglutide-2026:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Apo-Semaglutide Injection (Apotex Inc.; control number 290796)"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1777640768488
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. ANDS, decision 2026-05-01: generic equivalent of Ozempic; active ingredient 'produced using solid phase chemical synthesis and not by recombinant DNA'; type 2 diabetes in adults."
+
+ca-rds-sevmia-2026:
+  type: report
+  authors: "Health Canada"
+  title: "Regulatory Decision Summary for Sevmia (Apotex Inc.; control number 295138)"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents/resource/RDS1782761959930
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. ANDS, decision/authorization date 2026-06-25 (search listing; the DPD shows 2026-06-29): generic equivalent of the Canadian Reference Product Wegovy; chemically synthesised semaglutide; 'indicated as a once-weekly treatment of adults and children 12 years and older ... for chronic weight management'. The first generic of Wegovy authorised in Canada (DHPP search)."
+
+ca-dhpp-review-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug and Health Product Portal, review decisions search, 24 October 2026: semaglutide, tirzepatide, retatrutide and brand names"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/review-documents?search=semaglutide
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. 'semaglutide' 24 results (18 Regulatory Decision Summaries, 4 Summary Basis of Decision documents, 2 Summary Safety Reviews); 'tirzepatide' 7; 'Ozempic' 13; 'Wegovy' 9; 'Rybelsus' 5; 'Mounjaro' 6; 'Zepbound', 'Plosbrio' and 'Poviztra' 1 each (only the March 2026 class safety review on pulmonary aspiration); 'retatrutide' and 'LY3437943': 'Sorry your search returned no results'. No decision document exists for Zepbound, Plosbrio, Poviztra, Aspen-Semaglutide, Aspen's Semaglutide Injection or Sandoz Semaglutide; their dates come from the DPD extract. The portal's drug search (dhpp.hpfb-dgpsa.ca/dhpp/search) returned HTTP 522 (it relies on the DPD, which was down). factcheck (24 October 2026): searches repeated by script: 'retatrutide' and 'LY3437943' 'Sorry your search returned no results'; 'semaglutide' 'Showing 10 results of 24 total' (all three pages listed: 18 RDS, 4 SBD, 2 SSR; the only generic-semaglutide documents are Dr Reddy's 'Semaglutide Injection', Apo-Semaglutide Injection and Sevmia); 'tirzepatide' 7; 'Zepbound', 'Plosbrio', 'Poviztra' 1 each (the GLP-1 aspiration safety review). All fourteen decision documents cited in this file re-read (dates, control numbers and quotations confirmed; the portal answers HTTP 522 intermittently, so retry)."
+
+ca-pm-ozempic:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Ozempic (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 14 April 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00084255.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. 91 pages, read with pdftotext. 'Produced by recombinant DNA technology in Saccharomyces cerevisiae'; pens of 2 mg (0.68 or 1.34 mg/mL), 4 mg (1.34 mg/mL) and 8 mg (2.68 mg/mL); 'Date of Authorization: April 14, 2026'; submission control no. 295858. The PM number was taken from the Internet Archive copy (18 June 2026) of the DPD page for drug code 96058; a newer revision may exist (the DPD was down). factcheck (24 October 2026): PDF re-read (91 pages; 'Date of Authorization: April 14, 2026', control no. 295858, Saccharomyces cerevisiae confirmed). The 18 June 2026 archive copy of code 96058 now serves Health Canada's maintenance page, but the archive copies of 21 April 2026 (code 96059) and 17 April 2026 (code 106547) both link dpd_pm/00084255.PDF ('Date: 2026-04-14'), so the number is confirmed."
+
+ca-pm-mounjaro:
+  type: label
+  authors: "Eli Lilly Canada Inc. (product monograph filed with Health Canada)"
+  title: "Mounjaro and Mounjaro KwikPen (tirzepatide injection) — Product Monograph including Patient Medication Information (date of authorization 2 April 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00084159.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck (24 October 2026): CORRECTED. The writer's monograph (00077180, 'Date of Initial Authorization: NOV 23, 2022', 'Date of Revision: SEP 24, 2024', control number 283968; confirmed on pdf.hres.ca) is superseded. The Internet Archive copy of 13 June 2026 of the DPD page for drug code 102190 (Mounjaro single-dose pen; archive used only to find the link) lists 'Product Monograph ... Date: 2026-04-02' at dpd_pm/00084159.PDF, read here on pdf.hres.ca: single-dose prefilled pen and vial (2.5 to 15 mg/0.5 mL) and KwikPen (2.5 to 15 mg/0.6 mL); 'Date of Authorization: 2026-04-02'. It still says 'MOUNJARO is not indicated for use in pediatric patients', so it predates the paediatric indication of 23 June 2026 (ca-rds-mounjaro-paediatric-2026): a later revision almost certainly exists, and its number could not be found while the DPD is down (UNRESOLVED; re-check when the DPD is back)."
+
+ca-pm-zepbound:
+  type: label
+  authors: "Eli Lilly Canada Inc. (product monograph filed with Health Canada)"
+  title: "Zepbound KwikPen (tirzepatide injection) — Product Monograph (date of authorization 13 May 2025)"
+  container: "Health Canada Drug Product Database"
+  year: 2025
+  url: https://pdf.hres.ca/dpd_pm/00080496.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. 53 pages. 'Obesity Management Medication'; 2.5 to 15 mg/0.6 mL in a multi-dose prefilled pen; 'Date of Authorization: 2025-05-13'; submission control number 275333. PM number from the Internet Archive copy (28 August 2025) of the DPD page for drug code 106082; may have been superseded (UNRESOLVED, DPD down). factcheck (24 October 2026): title page re-read on pdf.hres.ca ('PrZEPBOUND KwikPen tirzepatide injection', multi-dose prefilled pen, 'Obesity Management Medication', 'Date of Authorization: 2025-05-13', control number 275333). The only later archive copy found (drug code 106083, 12 April 2026) is Health Canada's maintenance page, so whether 00080496 is current stays UNRESOLVED."
+
+ca-pm-wegovy:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Wegovy (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 10 December 2025)"
+  container: "Health Canada Drug Product Database"
+  year: 2025
+  url: https://pdf.hres.ca/dpd_pm/00082777.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026), so that wegovy-ca can point to its monograph instead of the DPD page. PM number from the Internet Archive copy of 21 April 2026 of the DPD page for drug code 101773 (Wegovy multidose pen; archive used only to find the link: 'Product Monograph ... Date: 2025-12-10'); the PDF was read on pdf.hres.ca. Title page: 'Produced by recombinant DNA technology in Saccharomyces cerevisiae'; single-use pre-filled pens (0.25 to 2.4 mg) and multi-use FlexTouch pens; 'has been issued market authorization with conditions, pending the results of trials to verify its clinical benefit' (the MASH indication, ca-rds-wegovy-mash-2025); submission control no. 296143; 'Date of Authorization: December 10, 2025'. A later revision may exist (DPD down)."
+
+ca-pm-rybelsus:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Rybelsus (semaglutide tablets) — Product Monograph including Patient Medication Information (revision 31 December 2025)"
+  container: "Health Canada Drug Product Database"
+  year: 2025
+  url: https://pdf.hres.ca/dpd_pm/00082994.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026). PM number from the Internet Archive copy of 11 March 2026 of the DPD page for drug code 98742 (Rybelsus 14 mg; 'Product Monograph ... Date: 2025-12-31'); PDF read on pdf.hres.ca: 'semaglutide tablets', '3 mg, 7 mg and 14 mg tablets or 1.5 mg, 4 mg and 9 mg tablets'; submission control number 295001; 'Date of Initial Authorization: March 30, 2020', 'Date of Revision: December 31, 2025'. A later revision may exist (DPD down)."
+
+ca-pm-plosbrio:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Plosbrio (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 22 December 2025)"
+  container: "Health Canada Drug Product Database"
+  year: 2025
+  url: https://pdf.hres.ca/dpd_pm/00082904.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026). PM number from the Internet Archive copy of 17 April 2026 of the DPD page for drug code 106679 (Plosbrio; 'Product Monograph ... Date: 2025-12-22'); PDF read on pdf.hres.ca: pre-filled pens of 2 mg (0.68 or 1.34 mg/mL), 4 mg (1.34 mg/mL) and 8 mg (2.68 mg/mL), the same presentations as Ozempic; indicated 'for the once-weekly treatment of adult patients with type 2 diabetes mellitus to improve glycemic control' with the same combinations as Ozempic; submission control no. 296686; 'Date of Authorization: 2025-12-22'. The monograph does not say why a second brand exists (still UNRESOLVED). No archived DPD page with a monograph link was found for Poviztra, Sevmia, the Aspen or Sandoz products, the Dr. Reddy's or Apotex generics (Wayback 'available' API, English and French pages, codes 106678, 106683, 106684, 107018, 107019, 107037, 107038, 107181, 107213, 107214, 107302, 107303, 107355, 107356: no capture)."
+
+ca-hc-sur-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug and Health Product Submissions Under Review (new and supplemental), read 24 October 2026"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drug-health-product-review-approval/submissions-under-review/new-drug-submissions-under-review.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Both tables read in the browser (new drug submissions: 89 rows; supplemental: 71 rows) and searched for semaglutide, tirzepatide, retatrutide, LY3437943, orforglipron, GLP, obesity, weight. New drug submissions: 'Cagrilintide, semaglutide' (Novo Nordisk Canada Inc, accepted 2026-03, new active substance) and 'Orforglipron calcium' (Eli Lilly Canada Inc, 2026-01). Supplemental: semaglutide (Novo Nordisk, 2026-01) and tirzepatide (Eli Lilly, 2025-12 and 2026-02); the indications are not given. Retatrutide: not listed, so no retatrutide submission is publicly listed as under review in Canada (these lists show the submissions Health Canada publishes, mainly new active substances and certain supplements). factcheck (24 October 2026): both tables read again in the browser through their DataTables data (89 and 71 rows); the four hits and their months confirmed; no retatrutide or LY3437943 row."
+
+ca-hc-ctsp-retatrutide-2026-10-24:
+  type: registry
+  authors: "Health Canada"
+  title: "Canadian Clinical Trial Search Portal, searched 24 October 2026: retatrutide and LY3437943"
+  container: "Canadian Clinical Trial Search Portal (clinical-trials-search.canada.ca)"
+  year: 2026
+  url: https://clinical-trials-search.canada.ca/en/search?search_api_fulltext=retatrutide
+  accessed: 2026-10-24
+  verified: registry
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026); resolves the writer's UNRESOLVED point that Health Canada's own trial database could not be searched. The portal replaced the 2013 Clinical Trials Database on 29 July 2026 and lists the phase 1 to 3 trials Health Canada has authorised since 1 April 2013 (see ca-hc-ctdb-search-status-b-2026-10-23 in status-b.yaml). The old CTDB address now redirects to it. 'retatrutide': 'Showing 1 - 10 of 10 trials'; 'LY3437943': the same 10. All sponsored by Eli Lilly Canada Inc; protocol numbers NCT05882045, NCT05929066, NCT05931367, NCT05936151, NCT06260722, NCT06383390, NCT06859268, NCT07035093, NCT07165028 and NCT07357415: the same ten trials that ClinicalTrials.gov shows with Canadian sites (ca-ctgov-retatrutide-ca-au-2026-10-24). So every Canadian retatrutide trial on ClinicalTrials.gov is a trial Health Canada authorised, and the portal lists no other retatrutide trial. The portal answered HTTP 522 once during the day and normally on retry."
+
+ca-ctgov-retatrutide-ca-au-2026-10-24:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2, 24 October 2026: retatrutide (LY3437943) trials with a site in Canada or Australia"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=retatrutide%20OR%20LY3437943&filter.advanced=AREA%5BLocationCountry%5DCanada&countTotal=true
+  accessed: 2026-10-24
+  verified: registry
+  note: "query.intr 'retatrutide OR LY3437943' with filter.advanced AREA[LocationCountry] Canada, then Australia (also Ireland: 0). CANADA, 10 records, all Eli Lilly: phase 3 completed TRIUMPH-1 NCT05929066 (9 Canadian sites), TRIUMPH-3 NCT05882045 (17), TRIUMPH-4 NCT05931367 (10); phase 3 active, not recruiting TRIUMPH-Outcomes NCT06383390 (22 sites), TRANSCEND-T2D-2 NCT06260722 (12), TRIUMPH-6 NCT06859268 (8), TRIUMPH-7 NCT07035093 (5), TRIUMPH-9 NCT07357415 (10); phase 3 recruiting NCT07165028 (SYNERGY-Outcomes master protocol with tirzepatide and retatrutide arms; 15 Canadian sites, recruiting or not yet recruiting); phase 2 completed NCT05936151 (kidney function, 9 sites). Same 10 as ca-ctgov-canada-peptide-search-2026-10-23 the day before. AUSTRALIA, 6 records, all Eli Lilly phase 3: completed TRIUMPH-1 NCT05929066 (8 sites), TRIUMPH-2 NCT05929079 (12), TRIUMPH-3 NCT05882045 (19), TRIUMPH-4 NCT05931367 (8); active, not recruiting NCT06383390 (16); recruiting NCT07165028 (16). City lists were read but are not reproduced on the site. factcheck (24 October 2026): API query repeated: Canada 10, Australia 6, Ireland 0 (New Zealand 2: NCT07165028 with 3 sites and NCT06383390 with 9, for the Ireland/NZ notes); every status, phase and site count above confirmed (NCT07165028's Canadian sites: 7 recruiting, 8 not yet recruiting; Australian sites: 15 recruiting, 1 not yet). Health Canada's own portal lists the same ten Canadian trials (ca-hc-ctsp-retatrutide-2026-10-24)."
+
+ctgov-nct05929079:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT05929079 — A Study of Retatrutide (LY3437943) in Participants With Type 2 Diabetes Mellitus Who Have Obesity or Overweight (TRIUMPH-2)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT05929079
+  accessed: 2026-10-24
+  verified: registry
+  note: "Eli Lilly; phase 3; completed; start 2023-07-11, primary completion 2026-06-16; enrolment 1,152; 12 Australian sites; last update posted 2026-07-30. Results published (bellido-2026-triumph-2)."
+
+ctgov-nct06859268:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT06859268 — A Study of Retatrutide (LY3437943) in the Maintenance of Weight Reduction in Individuals With Obesity (TRIUMPH-6)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT06859268
+  accessed: 2026-10-24
+  verified: registry
+  note: "Eli Lilly; phase 3; active, not recruiting; start 2025-03-05, primary completion estimated 2028-04; enrolment 643; 8 Canadian sites; last update posted 2026-03-03."
+
+ctgov-nct07035093:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07035093 — A Study of Retatrutide (LY3437943) in Participants Who Have Obesity or Overweight and Chronic Low Back Pain (TRIUMPH-7)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07035093
+  accessed: 2026-10-24
+  verified: registry
+  note: "Eli Lilly; phase 3; active, not recruiting; start 2025-05-29, primary completion estimated 2027-09; enrolment 586; 5 Canadian sites; last update posted 2026-09-25."
+
+ctgov-nct07357415:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT07357415 — A Study of Retatrutide (LY3437943) in Participants Without Type 2 Diabetes Who Have Obesity or Overweight (TRIUMPH-9)"
+  year: 2026
+  url: https://clinicaltrials.gov/study/NCT07357415
+  accessed: 2026-10-24
+  verified: registry
+  note: "Eli Lilly; phase 3; active, not recruiting; start 2026-01-24, primary completion estimated 2028-10; enrolment 600; 10 Canadian sites; last update posted 2026-06-09."
+
+ctgov-nct05936151:
+  type: registry
+  authors: "ClinicalTrials.gov"
+  title: "NCT05936151 — A Study of Retatrutide (LY3437943) on Renal Function in Participants With Overweight or Obesity and Chronic Kidney Disease With or Without Type 2 Diabetes"
+  year: 2025
+  url: https://clinicaltrials.gov/study/NCT05936151
+  accessed: 2026-10-24
+  verified: registry
+  note: "Eli Lilly; phase 2; completed; start 2023-07-20, primary completion 2025-10-01; enrolment 146; 9 Canadian sites; last update posted 2025-11-25."
+
+# ================================================================ CANADA: how the medicines are paid for
+
+ca-pcpa-negotiations-2026-10-24:
+  type: dataset
+  authors: "pan-Canadian Pharmaceutical Alliance (pCPA)"
+  title: "pCPA negotiations database, public JSON export, downloaded 24 October 2026: semaglutide and tirzepatide files"
+  container: "pCPA"
+  year: 2026
+  url: https://pcpa-app.ca/browse-negotiations
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED (pcpa-app.ca; the pCPA negotiates prices for the provincial, territorial and federal public drug plans). Export at https://pcpa-app.ca/public-json-export (1,162 files; newest close date 2026-10-13). Files: Ozempic (semaglutide), type 2 diabetes: 'Concluded with an LOI', engaged 2019-01-31, closed 2019-07-26 (CDA-AMC project SR0594); a second Ozempic file concluded with an LOI 2023-12-17. Rybelsus, type 2 diabetes: 'Concluded without agreement' 2022-12-20 (SR0637); a second file 'Concluded with an LOI' 2023-12-17. Wegovy, chronic weight management: 'Negotiations were not pursued', closed 2022-10-25 (SR0725); a second Wegovy file (same weight-management indication): 'Concluded without agreement', engaged 2025-10-02, closed 2025-12-01 (SR0841). Mounjaro, type 2 diabetes: 'Under consideration for negotiation' (SR0886; INESSS 28360). Zepbound, chronic weight management: 'Under consideration for negotiation' (SR0920). No file for retatrutide or for the generic semaglutide products. factcheck (24 October 2026): export downloaded again (1,162 files; newest close date now 2026-10-23, the export is updated daily): all eight semaglutide and tirzepatide files, statuses, dates and project ids confirmed (file numbers: Ozempic 21094 and 22517, Rybelsus 21518 and 22526, Wegovy 22025 and 23209, Mounjaro 23608, Zepbound 78166); still no retatrutide or generic semaglutide file."
+
+ca-pcpa-role-system:
+  type: web
+  authors: "pan-Canadian Pharmaceutical Alliance (pCPA)"
+  title: "Our role in the drug reimbursement system"
+  container: "pCPA"
+  year: 2026
+  url: https://pcpa-app.ca/insights-and-updates/our-public-reimbursement-system/our-role-system
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. CDA-AMC (and INESSS in Quebec) recommend whether a drug should be publicly reimbursed; the pCPA negotiates and 'Successful negotiations conclude with an agreement — a letter of intent, or LOI'; 'all provinces, territories, and the federal government manage their own public drug plans and formularies' and 'are responsible for making the final decisions for public coverage'; after an LOI, each participating plan makes a product listing agreement, after which 'the drug may be listed'. Supports: a concluded LOI does not by itself mean that every public plan covers the drug, or for whom."
+
+ca-cda-amc-bookshelf-titles-2026-10-24:
+  type: dataset
+  authors: "Canada's Drug Agency (CDA-AMC; formerly CADTH), via NCBI Bookshelf metadata"
+  title: "CDA-AMC reimbursement reviews of semaglutide and tirzepatide on NCBI Bookshelf: titles and dates from NCBI E-utilities, 24 October 2026"
+  container: "NCBI Bookshelf"
+  year: 2026
+  url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=books&term=(semaglutide+OR+tirzepatide)+AND+(CDA-AMC+OR+CADTH)+AND+reimbursement
+  accessed: 2026-10-24
+  verified: url
+  note: "92 Bookshelf records (books and chapters). Reports found by title: 'Tirzepatide (Zepbound)' chronic weight management reimbursement recommendation, NBK624899 (August 2026; chapters 'Recommendation', 'Table 1. Reimbursement Conditions and Reasons'); 'Tirzepatide (Mounjaro)' type 2 diabetes, NBK624891 (August 2026; includes a chapter 'Request for Reconsideration'); 'Semaglutide (Wegovy)' weight management, NBK617241 (July 2025) and a reimbursement review NBK619924 to NBK619926 (October 2025); 'Semaglutide (Wegovy): CADTH Reimbursement Recommendation', NBK602627 (October 2022). UNRESOLVED: what each recommendation says (reimburse, reimburse with conditions, or do not reimburse). cda-amc.ca and the Bookshelf pages answered with bot-verification pages, which were not bypassed; read the recommendations before stating them. The pCPA outcomes (ca-pcpa-negotiations-2026-10-24) are established. factcheck (24 October 2026): esearch/esummary repeated (92 records; the five reports and their dates confirmed; also a 2019 CDEC recommendation for Ozempic, NBK543396, PMID 31287630, which has no abstract). The Bookshelf page still answers with a reCAPTCHA check (not bypassed), BUT each recommendation is also a PubMed record whose abstract is the recommendation summary: the UNRESOLVED point is RESOLVED for four of them, registered separately as ca-cda-amc-2022-wegovy, ca-cda-amc-2025-wegovy, ca-cda-amc-2026-mounjaro and ca-cda-amc-2026-zepbound. Cite those, not this search record."
+
+ca-cda-amc-2022-wegovy:
+  type: report
+  authors: "Canadian Agency for Drugs and Technologies in Health (CADTH)"
+  title: "Semaglutide (Wegovy): CADTH Reimbursement Recommendation (chronic weight management)"
+  container: "CADTH Reimbursement Recommendations (NCBI Bookshelf NBK602627)"
+  year: 2022
+  pmid: "38620354"
+  url: https://pubmed.ncbi.nlm.nih.gov/38620354/
+  accessed: 2026-10-24
+  verified: pubmed
+  note: "factcheck: NEW entry (24 October 2026); abstract read through PubMed E-utilities (efetch). October 2022: 'CADTH recommends that Wegovy should not be reimbursed by public drug plans for chronic weight management in adult patients', because although four trials showed more weight loss than placebo over 68 weeks, 'there was no evidence to show this weight loss translates to improvements in weight-related comorbidities' (they were not studied). Matches the pCPA file 22025 'Negotiations were not pursued' (25 October 2022)."
+
+ca-cda-amc-2025-wegovy:
+  type: report
+  authors: "Canada's Drug Agency (CDA-AMC)"
+  title: "Semaglutide (Wegovy): Reimbursement Recommendation (chronic weight management)"
+  container: "CDA-AMC Reimbursement Recommendations (NCBI Bookshelf NBK617241)"
+  year: 2025
+  pmid: "41021710"
+  url: https://pubmed.ncbi.nlm.nih.gov/41021710/
+  accessed: 2026-10-24
+  verified: pubmed
+  note: "factcheck: NEW entry (24 October 2026); abstract read through PubMed E-utilities. July 2025: CDA-AMC 'recommends that Wegovy be reimbursed by public drug plans for chronic weight management if certain conditions are met': only for adults with a BMI of 27 or more and pre-existing cardiovascular disease, with a reduced-calorie diet and increased physical activity, and only 'if ... the cost of Wegovy is reduced'; continuation after the first year needs at least a 5% reduction in BMI or body weight. Reasons: the SELECT trial showed fewer major cardiovascular complications than placebo; at the public list price Wegovy 'does not represent good value', so 'A price reduction is therefore required'. The pCPA negotiation that followed (file 23209, engaged 2 October 2025) 'Concluded without agreement' on 1 December 2025 (ca-pcpa-negotiations-2026-10-24). Do not print the budget-impact figures."
+
+ca-cda-amc-2026-mounjaro:
+  type: report
+  authors: "Canada's Drug Agency (CDA-AMC)"
+  title: "Tirzepatide (Mounjaro): Reimbursement Recommendation (type 2 diabetes)"
+  container: "CDA-AMC Reimbursement Recommendations (NCBI Bookshelf NBK624891)"
+  year: 2026
+  pmid: "42771745"
+  url: https://pubmed.ncbi.nlm.nih.gov/42771745/
+  accessed: 2026-10-24
+  verified: pubmed
+  note: "factcheck: NEW entry (24 October 2026); abstract read through PubMed E-utilities. August 2026: CDA-AMC 'recommends that Mounjaro be reimbursed by public drug plans as an add-on to diet and exercise to improve blood sugar control in adults with type 2 diabetes mellitus (T2DM) when combined with metformin, metformin and a sulfonylurea, or metformin and a sodium-glucose cotransporter-2 (SGLT2) inhibitor if certain conditions are met'; CDEC found 'acceptable clinical value versus glucagon-like peptide-1 receptor agonists'. The Bookshelf record includes a 'Request for Reconsideration' chapter whose content was not read (reCAPTCHA). The pCPA file (23608) is 'Under consideration for negotiation'."
+
+ca-cda-amc-2026-zepbound:
+  type: report
+  authors: "Canada's Drug Agency (CDA-AMC)"
+  title: "Tirzepatide (Zepbound): Reimbursement Recommendation (chronic weight management)"
+  container: "CDA-AMC Reimbursement Recommendations (NCBI Bookshelf NBK624899)"
+  year: 2026
+  pmid: "42771753"
+  url: https://pubmed.ncbi.nlm.nih.gov/42771753/
+  accessed: 2026-10-24
+  verified: pubmed
+  note: "factcheck: NEW entry (24 October 2026); abstract read through PubMed E-utilities. August 2026: CDA-AMC 'recommends that Zepbound be reimbursed by public drug plans ... in adults with a body mass index (BMI) of greater than or equal to 27 kg/m2 and prediabetes, if certain conditions are met'. CDEC 'concluded that Zepbound does not demonstrate acceptable clinical value' against diet and activity or semaglutide for the full Health Canada population, but does in the subpopulation with a BMI of 27 or more and prediabetes. The pCPA file (78166) is 'Under consideration for negotiation'."
+
+# ================================================================ AUSTRALIA: products (TGA)
+
+au-artg-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG searches, 24 October 2026: semaglutide, tirzepatide, retatrutide, Zepbound, Wegovy tablets"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=semaglutide
+  accessed: 2026-10-24
+  verified: url
+  note: "Read in the browser; every result's entry page opened for ARTG date, sponsor and licence category. 'semaglutide': 35 entries, all Novo Nordisk Pharmaceuticals Pty Ltd, licence status A: OZEMPIC pens 308324 and 315107 (ARTG date 28 August 2019), 446290 (18 November 2024), 388180 (2.68 mg/mL; 26 June 2026); RYBELSUS 3, 7, 14 mg tablets 346198, 346199, 346200 (7 February 2022); WEGOVY single-dose pens 356270, 356285 to 356288 (1 September 2022); Wegovy FlexTouch 424390 to 424394 (30 May 2024); WEGOVY pre-filled syringes 521216 to 521220 (3 March 2026); PLOSBRIO pens 523180, 523181, 523184 and POVIZTRA pens 523110 to 523114 and POVIZTRA FLEXTOUCH 523115, 523116, 523118 to 523120 (all 23 April 2026). Licence category RE (registered) for Ozempic, Rybelsus, Plosbrio and Poviztra; 'REPI' for the Wegovy entries (meaning not stated on the page). 'tirzepatide': 18 entries, all Eli Lilly Australia Pty Ltd, category RE: MOUNJARO single-dose pens 379330 to 379334 and 382625 (23 December 2022), vials 407050 to 407055 (10 July 2023), KwikPens 439430, 439690 to 439694 (19 June 2024). 'retatrutide', 'zepbound', '\"wegovy tablets\"' and 'orforglipron': 'There were no matching results'. 'LY3437943': 146 unrelated fuzzy matches (as in au-artg-search-australia-legal-2026-10-24). No generic semaglutide is on the ARTG. The public ARTG shows only goods that can be supplied now. Product Information links on the entry pages: Ozempic CP-2019-PI-01881-1, Wegovy CP-2022-PI-01930-1, Mounjaro CP-2023-PI-02114-1 (e.g. https://www.ebs.tga.gov.au/ebs/picmi/picmirepository.nsf/pdf?OpenAgent&id=CP-2019-PI-01881-1; host www.ebs.tga.gov.au NOT ALLOWLISTED; PDFs not opened); no PI link on the Rybelsus, Plosbrio, Poviztra or Mounjaro single-dose pen and vial entries. factcheck (24 October 2026): searches repeated in the browser: 'semaglutide' 35 (both pages listed; every id and ARTG date above confirmed), 'tirzepatide' 18, 'mounjaro' 18, 'wegovy' 15, 'semaglutide tablet' 3 (the three Rybelsus entries), 'retatrutide', 'zepbound', '\"wegovy tablets\"', 'kayshild' and 'orforglipron': no matching results; 'LY3437943', 'LY3298176' and 'NN9535' return only unrelated fuzzy matches. Thirteen entry pages re-opened (308324, 388180, 346198, 356286, 424390, 521216, 523180, 523184, 523110, 379330, 382625, 407050, 439430): sponsor, ARTG date, licence category (RE; REPI for the Wegovy pens, FlexTouch and syringes) and PI/CMI identifiers confirmed. The OZEMPIC 388180 entry's ARTG date is 26 June 2026 although the same page records a 2025-26 annual-charge exemption; the date shown may be a re-entry or variation date (not explained on the page; immaterial here)."
+
+au-artg-ozempic-308324:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG 308324: OZEMPIC 0.25/0.5 mg semaglutide 1.34 mg/mL solution for injection pre-filled pen"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/308324
+  accessed: 2026-10-24
+  verified: url
+  note: "ARTG date 28 August 2019; registration type Medicine; sponsor Novo Nordisk Pharmaceuticals Pty Ltd; ingredient semaglutide; licence category RE, status A. Links to the Product Information (CP-2019-PI-01881-1) and Consumer Medicine Information (CP-2020-CMI-01750-1) on www.ebs.tga.gov.au (not opened)."
+
+au-artg-rybelsus-346198:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG 346198: RYBELSUS semaglutide 3 mg tablet blister pack"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/346198
+  accessed: 2026-10-24
+  verified: url
+  note: "ARTG date 7 February 2022; sponsor Novo Nordisk Pharmaceuticals Pty Ltd; category RE, status A. No PI or CMI link on the entry. The TGA's June 2025 list of GLP-1 medicines 'currently marketed in Australia' does not include Rybelsus (au-tga-2025-06-glp1-aspiration-update), so it appears registered but not marketed (inference; not stated by the TGA)."
+
+au-artg-wegovy-356286:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG 356286: WEGOVY 1 mg semaglutide 2.0 mg/mL solution for injection pre-filled pen with pre-assembled needle"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/356286
+  accessed: 2026-10-24
+  verified: url
+  note: "ARTG date 1 September 2022; sponsor Novo Nordisk Pharmaceuticals Pty Ltd; licence category REPI, status A; Product Information CP-2022-PI-01930-1 (also linked from the FlexTouch and syringe entries)."
+
+au-artg-plosbrio-523180:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG 523180: PLOSBRIO 0.25/0.5 mg semaglutide (rys) 1.34 mg/mL solution for injection pre-filled pen"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/523180
+  accessed: 2026-10-24
+  verified: url
+  note: "ARTG date 23 April 2026; sponsor Novo Nordisk Pharmaceuticals Pty Ltd; category RE, status A; no PI link. Same strengths as Ozempic; no registration record or AusPAR for the name (au-tga-pmr-search-status-a-2026-10-24). What the second brand name is for is not stated by the TGA (UNRESOLVED)."
+
+au-artg-poviztra-523110:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG 523110: POVIZTRA 0.25 mg semaglutide 0.5 mg/mL solution for injection pre-filled pen with pre-assembled needle"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/523110
+  accessed: 2026-10-24
+  verified: url
+  note: "ARTG date 23 April 2026; sponsor Novo Nordisk Pharmaceuticals Pty Ltd; category RE, status A; no PI link. Same strengths and devices as Wegovy (single-dose pens and FlexTouch). Purpose of the second brand not stated (UNRESOLVED)."
+
+au-artg-mounjaro-439430:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG 439430: MOUNJARO KwikPen tirzepatide 4.17 mg/mL solution for injection multidose pre-filled pen"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/439430
+  accessed: 2026-10-24
+  verified: url
+  note: "ARTG date 19 June 2024; sponsor Eli Lilly Australia Pty Ltd; category RE, status A; Product Information CP-2023-PI-02114-1, CMI CP-2024-CMI-02440-1 (not opened). The first Mounjaro entries (single-dose pens 379330 to 379334, 382625) date from 23 December 2022 and have no PI link."
+
+au-tga-pmr-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Prescription medicines registrations, prescription medicines under evaluation, AusPAR and section 19A databases, 24 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/prescription-medicines-registrations?keywords=semaglutide
+  accessed: 2026-10-24
+  verified: url
+  note: "Read in the browser; each registration page opened. REGISTRATIONS (page last updated 25 September 2026). Semaglutide, 8: OZEMPIC NCE/NBE, decision 15 August 2019, registered 28 August 2019 (type 2 diabetes); RYBELSUS NCE/NBE, decision 4 February 2022, registered 7 February 2022 (two records); WEGOVY extension of indication (EOI), decision 25 March 2022, registered 1 September 2022 (chronic weight management, BMI 30 or more, or 27 to under 30 with a comorbidity); WEGOVY EOI adolescents 12 and over, decision 3 January 2024, registered 26 February 2024; WEGOVY EOI cardiovascular risk reduction (established CVD, BMI 27 or more, no diabetes), decision 16 December 2024, registered 19 December 2024; OZEMPIC EOI kidney outcomes in type 2 diabetes with CKD, decision 15 August 2025, registered 18 August 2025; WEGOVY EOI MASH, provisional approval, decision 13 March 2026, registered 30 March 2026. Tirzepatide, 3: MOUNJARO NCE/NBE, decision 22 December 2022, registered 23 December 2022 (type 2 diabetes); EOI chronic weight management, decision 9 September 2024, registered 10 September 2024; EOI obstructive sleep apnoea in adults with obesity, decision 27 May 2025, registered 2 June 2025. UNDER EVALUATION (last updated 21 September 2026; 120 entries): OZEMPIC new indication, claudication in type 2 diabetes with peripheral arterial disease ('Publication date Sep-2025'; factcheck: the page gives a publication date, not an acceptance date); MOUNJARO type 2 diabetes from age 10 (publication date Sep-2025) and cardiovascular risk reduction in type 2 diabetes (publication date Dec-2025); all 'Application type C (new indication)'. AUSPAR: Ozempic (2 December 2020), Rybelsus (11 November 2022), Wegovy adults and adolescents (5 September 2024, two reports), Mounjaro type 2 diabetes (16 November 2023) and weight management (26 September 2024). RETATRUTIDE and LY3437943: no registration, no evaluation and no AusPAR (LY3437943 gave two unrelated fuzzy matches, 'LA' products). SECTION 19A (temporary supply of overseas-registered medicines in a shortage): semaglutide 20 approvals (Ozempic from Germany, the Czech Republic, Hungary, Slovakia, Croatia, the UK and the USA) and tirzepatide 6 (UK Mounjaro KwikPen, approved until 31 March 2025 for the shortage of Mounjaro vials), all lapsed; retatrutide none. factcheck (24 October 2026): every registration page re-opened in the browser (8 semaglutide and 3 tirzepatide records; all decision and registration dates confirmed; the Wegovy MASH indication 'was approved via the provisional approval pathway'); under-evaluation counts (semaglutide 1, tirzepatide 2, retatrutide none), AusPAR counts (semaglutide 4, tirzepatide 2, retatrutide none) and section 19A counts (20, 6, none; Mounjaro KwikPen 'Approved until 31 March 2025', 'Status Expired') confirmed."
+
+au-tga-advertising-glp1-prohibited:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Advertising Ozempic and GLP-1 receptor agonists is prohibited"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/products/regulations-all-products/advertising/specialised-advertising-issues-and-topics/advertising-ozempic-and-glp-1-receptor-agonists-prohibited
+  accessed: 2026-10-24
+  verified: url
+  note: "Page first published 30 November 2022; 'Last updated 11 March 2025' (page metadata modified 23 April 2026; factcheck (24 October 2026): re-read in the browser, published 30 November 2022, both quotations below confirmed word for word, including the page's own grammatical slip). 'Ozempic and Wegovy (semaglutide), Mounjaro (tirzepatide) and Trulicity (dulaglutide) are GLP-1 receptor agonists are regulated as prescription-only medicines. This includes derivatives of semaglutide or dulaglutide such as retatrutide.' It is illegal to advertise them because prescription medicines cannot be advertised to the public, and 'For retatrutide, because it is an unapproved therapeutic good'. Off-label advertising (e.g. Ozempic for weight loss) is illegal 'even to health professionals'. This is the only TGA statement found that places retatrutide in the prescription-only class; the Poisons Standard does not name retatrutide (au-poisons-standard-2026-10) and does cover derivatives of a listed substance (its section 7). Whether retatrutide is in law a 'derivative' of semaglutide or dulaglutide is the TGA's view, not something this site can confirm: a legal reviewer should check before the page states 'Schedule 4' as settled law."
+
+au-tga-2024-09-counterfeit-ozempic-pens:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Counterfeit Ozempic pens detected and adverse event reported (safety alert)"
+  container: "tga.gov.au"
+  year: 2024
+  url: https://www.tga.gov.au/safety/safety-monitoring-and-information/safety-alerts/counterfeit-ozempic-pens-detected-and-adverse-event-reported
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 30 September 2024, last updated 23 January 2025. Counterfeit Ozempic-labelled pens imported into Australia, detected with the Australian Border Force; laboratory testing found 'the undeclared substance Insulin Glulisine'; one report of 'a life-threatening adverse event in Australia after a person used counterfeit pen labelled as Ozempic that contained insulin', bought overseas; the pens 'were purchased online from an overseas website and imported under the personal importation scheme'. Batch numbers are given on the page; not repeated here. factcheck (24 October 2026): re-read in the browser. CORRECTED attribution: the online-purchase-and-personal-import sentence is about 'The products detected by ABF'; the pen linked to the adverse event 'was bought overseas' (the page does not say it was bought online or imported). The page also says counterfeit products 'cannot be imported under any circumstances, even if a prescription is provided'. SHARED ID: australia.yaml registered the same id with the same title and URL during its fact-check the same morning; merge them as one entry and join the notes (its note agrees: the adverse-event pen 'was bought overseas')."
+
+au-tga-2025-06-glp1-aspiration-update:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Medicines containing GLP-1 and dual GIP/GLP-1 receptor agonists (safety update)"
+  container: "tga.gov.au"
+  year: 2025
+  url: https://www.tga.gov.au/news/safety-updates/medicines-containing-glp-1-and-dual-gipglp-1-receptor-agonists
+  accessed: 2026-10-24
+  verified: url
+  note: "Published 3 June 2025 (modified 5 November 2025). GLP-1 RAs 'currently marketed in Australia include' Ozempic, Trulicity and Victoza (type 2 diabetes) and Saxenda and Wegovy (chronic weight management); Mounjaro, the dual GIP/GLP-1 RA, 'is approved for both T2DM and chronic weight management'. Class warning on pulmonary aspiration during general anaesthesia or deep sedation added to PI and CMI. 'Trulicity and Ozempic are available on the PBS (authority streamlined).'"
+
+au-tga-site-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "TGA website search, 24 October 2026: retatrutide, tirzepatide, semaglutide"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/search?keywords=retatrutide
+  accessed: 2026-10-24
+  verified: url
+  note: "Run from the browser page (the search page answered normally this time). 'retatrutide': 5 results: au-tga-2026-09-retatrutide-counterfeit (14 September 2026), au-tga-advertising-glp1-prohibited, au-tga-2026-08-peptide-seizure (17 August 2026), au-tga-2026-06-cmo-peptide-statement (19 June 2026), au-tga-2026-04-peptide-responsibilities (13 April 2026); none is a registration, evaluation, scheduling decision or clinical-trial notice. 'tirzepatide': 72 results; 'semaglutide': 152 (ARTG entries, annual-charge exemptions, section 19A approvals, safety alerts on counterfeit Ozempic pens (30 September 2024 and an earlier alert), counterfeit Rybelsus tablets, counterfeit and substandard semaglutide vials, compounding safety information (15 December 2023), advertising enforcement against named businesses (not registered: they name the businesses), class safety updates on pulmonary aspiration, NAION and suicidality, and an 'Ozempic (semaglutide) safety collection'). The individual pages used are registered separately."
+
+au-anzctr-search-status-a-2026-10-24:
+  type: registry
+  authors: "Australian New Zealand Clinical Trials Registry"
+  title: "ANZCTR search 'retatrutide', 24 October 2026"
+  container: "ANZCTR"
+  year: 2026
+  url: https://www.anzctr.org.au/TrialSearch.aspx?searchTxt=retatrutide&isBasic=True
+  accessed: 2026-10-24
+  verified: registry
+  note: "HOST NOT ALLOWLISTED. Read in the browser (the page needs JavaScript). 'Number of records found: 7', every one marked 'Trial from ClinicalTrials.gov' (the search covers both registries): NCT05882045, NCT05929066, NCT05929079, NCT05931367 (completed), NCT06383390 (active, not recruiting), NCT07165028 (recruiting) and NCT07483437 (a phase 1 study of another company's compound, HS-20136-2, in healthy volunteers, which matched the search term but is not a retatrutide trial). No retatrutide trial is registered on ANZCTR itself (no ACTRN record). factcheck (24 October 2026): repeated in the browser: 'retatrutide' 'Number of records found: 7' (the same seven NCT numbers); 'LY3437943' 'Number of records found: 6' (the six Lilly trials, without the HS-20136-2 study); no ACTRN record for either term."
+
+# ================================================================ AUSTRALIA: how the medicines are paid for (PBS)
+
+au-pbs-semaglutide-2026-10-24:
+  type: dataset
+  authors: "Australian Government Department of Health, Disability and Ageing"
+  title: "Pharmaceutical Benefits Scheme, medicine search 'semaglutide', 24 October 2026"
+  container: "PBS (pbs.gov.au)"
+  year: 2026
+  url: https://www.pbs.gov.au/medicine/search?term=14844G-14846J-15311W-12075M-14163K-15322K
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. One PBS medicine, SEMAGLUTIDE injection, six items (12075M, 14163K, 15322K for the 1.34 mg/mL 3 mL pen; 14844G, 14846J, 15311W for the 0.68 mg/mL 3 mL pen), General Schedule, prescriber medical practitioner or nurse practitioner, 'Authority Required' (first prescription) or 'Authority Required (STREAMLINED)', indication 'Diabetes mellitus type 2' only; 'Available brands: Ozempic'. First-prescription criteria include use with metformin, a sulfonylurea or insulin, inadequate response, and failure of or intolerance to an SGLT2 inhibitor; no concomitant PBS-subsidised SGLT2 inhibitor, DPP-4 inhibitor or other GLP-1 RA. General patient charge shown $25.00. Wegovy and Rybelsus are not on the PBS; there is no PBS listing of semaglutide for weight management. The item pages give no date of first listing (UNRESOLVED: when Ozempic was first PBS-listed). factcheck (24 October 2026): re-read in the browser: the six items, 'Authority Required' / 'Authority Required (STREAMLINED)', General Schedule and 'Available brands Ozempic' confirmed; medicine searches 'wegovy' and 'rybelsus': 'No results!'; 'semaglutide': one medicine (the two Ozempic pen strengths). The first-listing date is now RESOLVED: 1 July 2020 (au-pbs-dusc-2024-06-semaglutide). PBAC history for Wegovy: au-pbs-medicine-status-wegovy."
+
+au-pbs-dusc-2024-06-semaglutide:
+  type: report
+  authors: "Drug Utilisation Sub-Committee (DUSC) of the PBAC, Australian Government Department of Health and Aged Care"
+  title: "Semaglutide: analysis of utilisation (Public Release Document, June 2024 DUSC meeting)"
+  container: "PBS (pbs.gov.au)"
+  year: 2024
+  url: https://www.pbs.gov.au/industry/listing/participants/public-release-docs/2024-06/semaglutide-DUSC-PRD-2024-06_final.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026), downloaded and read with pdftotext (27 pages). 'Date of listing on the Pharmaceutical Benefits Scheme (PBS): Dulaglutide was PBS listed on 1 June 2018 and semaglutide was PBS listed on 1 July 2020'; 'Semaglutide and dulaglutide are the GLP-1s currently listed on the PBS' (June 2024), for type 2 diabetes. Supports: Ozempic has been PBS-subsidised for type 2 diabetes since 1 July 2020."
+
+au-pbs-medicine-status-wegovy:
+  type: dataset
+  authors: "Australian Government Department of Health, Disability and Ageing (PBS medicine status website)"
+  title: "PBS medicine status: semaglutide (Wegovy) submissions to the PBAC, March 2022, November 2023 and November 2025"
+  container: "PBS (pbs.gov.au)"
+  year: 2026
+  url: https://www.pbs.gov.au/medicinestatus/document/1460.html
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026); resolves the writer's UNRESOLVED 'PBAC outcomes for Wegovy were not found'. Three status pages read in the browser, each 'Information current as at: 1 October 2026'. Document 692 (March 2022): Wegovy, sponsor Novo Nordisk, 'Obesity', PBAC meeting held 9 March 2022, outcome 'Not Recommended'. Document 1057 (November 2023): 'Severe obesity', meeting 1 November 2023, 'Not Recommended'. Document 1460 (November 2025): 'Established cardiovascular disease (eCVD) with obesity', meeting 5 November 2025, 'PBAC outcome published: Recommended'; 'Notice of intent submitted: 20/02/2026'; 'Lodgement of required documentation: 27/02/2026'; 'Acceptance of complete documentation: Not Accepted'; agreement to listing arrangements and government processes 'Has not yet commenced'; 'Medicine listed on the PBS: Has not yet occurred'. Supports: as of 1 October 2026 Wegovy is not PBS-listed for any use; the PBAC twice declined it for obesity and recommended it in November 2025 for people with established cardiovascular disease and obesity, but that listing has not been made. Other document URLs: https://www.pbs.gov.au/medicinestatus/document/692.html, https://www.pbs.gov.au/medicinestatus/document/1057.html."
+
+au-pbs-medicine-status-tirzepatide:
+  type: dataset
+  authors: "Australian Government Department of Health, Disability and Ageing (PBS medicine status website)"
+  title: "PBS medicine status: tirzepatide (Mounjaro) submissions to the PBAC, July 2023 to March 2026"
+  container: "PBS (pbs.gov.au)"
+  year: 2026
+  url: https://www.pbs.gov.au/medicinestatus/document/1609.html
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026); resolves the writer's UNRESOLVED 'whether the PBAC has considered or recommended it'. Four status pages read in the browser, each 'Information current as at: 1 October 2026', sponsor Eli Lilly Australia Pty Ltd, all for type 2 diabetes: document 1001 (meeting 5 July 2023, 'Not Recommended'); 1261 (6 November 2024, 'Not Recommended'); 1395 (9 July 2025, 'Deferred'); 1609 (11 March 2026, 'Recommended': 'The PBAC recommended the listing of tirzepatide (Mounjaro) for the treatment of adults with inadequately controlled type 2 diabetes mellitus'), with the banner 'The pharmaceutical company has advised that it is not proceeding in the PBS listing process at this time. The process for listing this medicine has ceased.' No status page for a weight-management or sleep-apnoea submission was found, consistent with the PBAC's November 2025 statement that Lilly 'has not made a submission' for those indications (au-pbac-2025-11-obesity-treatments-advice). Other document URLs: https://www.pbs.gov.au/medicinestatus/document/1001.html, https://www.pbs.gov.au/medicinestatus/document/1261.html, https://www.pbs.gov.au/medicinestatus/document/1395.html. Found through a web search, so a 2026 submission without a status page in that search would have been missed (low risk: the PBS medicine search still shows no tirzepatide item)."
+
+au-pbac-2025-11-obesity-treatments-advice:
+  type: report
+  authors: "Pharmaceutical Benefits Advisory Committee (PBAC)"
+  title: "Public Summary Document, November 2025 PBAC meeting: referral from the Minister for advice on equitable access to obesity treatments (item 9.02)"
+  container: "PBS (pbs.gov.au)"
+  year: 2025
+  url: https://www.pbs.gov.au/reviews/obesity-treatments-files/Obesity-Treatments-PSD-Nov-2025.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. factcheck: NEW entry (24 October 2026); 55 pages, read with pdftotext. Advice given 'under section 101(3) of the National Health Act 1953' at the meeting of 5 to 7 November 2025, after the Minister's request of 6 March 2025. Para 2.8: 'Three GLP-1s are registered in Australia for the treatment of overweight/obesity: liraglutide, semaglutide (Wegovy only) and tirzepatide. The PBAC has not yet recommended any medicine be listed on the PBS for weight management or treatment of obesity.' Para 2.11: semaglutide for severe obesity without diabetes considered March 2022 and November 2023. Para 2.17: 'Eli Lilly has not made a submission to list tirzepatide on the PBS for its TGA-registered indications of weight management or treatment of obstructive sleep apnoea.' Paras 2.18 to 2.21: tirzepatide for type 2 diabetes not recommended July 2023 and November 2024, deferred July 2025. (Its later March 2026 recommendation is in au-pbs-medicine-status-tirzepatide.)"
+
+au-pbs-tirzepatide-2026-10-24:
+  type: dataset
+  authors: "Australian Government Department of Health, Disability and Ageing"
+  title: "Pharmaceutical Benefits Scheme, medicine search 'tirzepatide', 24 October 2026"
+  container: "PBS (pbs.gov.au)"
+  year: 2026
+  url: https://www.pbs.gov.au/search?search-type=medicine&term=tirzepatide&criteria-values=drug,program
+  accessed: 2026-10-24
+  verified: url
+  note: "HOST NOT ALLOWLISTED. 'No results!' for tirzepatide (and no Mounjaro item): tirzepatide is not subsidised on the PBS for any indication. PBAC outcomes for tirzepatide or Wegovy were not found with the PBS website search (it returned only the medicine search) and were not researched further (UNRESOLVED: whether a PBS listing has been recommended but not yet made). factcheck (24 October 2026): 'tirzepatide' and 'mounjaro' medicine searches repeated in the browser: 'No results!'. The UNRESOLVED point is RESOLVED: the PBAC recommended tirzepatide for type 2 diabetes in March 2026, but the company is not proceeding and the listing process has ceased; no weight-management submission has been made (au-pbs-medicine-status-tirzepatide, au-pbac-2025-11-obesity-treatments-advice)."

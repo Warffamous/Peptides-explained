@@ -90,10 +90,12 @@ the notes: `ca-food-and-drugs-act`, `ca-cdsa`, `ca-pdl-human`, `ca-hc-recalls-da
 8. **Legal routes:** a Health Canada-authorised prescription medicine; the **Special Access Program** for a serious or
    life-threatening condition when a manufacturer agrees to supply (`ca-fdr-c08-010-special-access`,
    `ca-hc-sap-drugs`); an authorised **clinical trial** (`ca-fdr-c05-clinical-trials`); **pharmacy compounding**,
-   regulated by the provinces, but not as a way round federal approval and only from approved or pharmacopoeial
-   ingredients (`ca-hc-pol-0051-compounding`).
+   regulated by the provinces, but not as a way round federal approval and, under Health Canada's policy, made
+   from an authorised drug's ingredient or a pharmacopoeial one (`ca-hc-pol-0051-compounding`; the policy says
+   "should be produced from", so do not write "only").
 9. **Natural health products:** oral NAD+ precursors can be licensed natural health products (an NMN monograph
-   exists; an oral nicotinamide riboside product is licensed); anything injected cannot be a natural health product
+   exists; an oral nicotinamide riboside product is licensed, per the first run's LNHPD reading, not re-verified);
+   anything injected cannot be a natural health product
    (`ca-nhpr-schedule-2`, item 5). A GHK-Cu skin cream can be a cosmetic; an injected one cannot
    (`ca-hc-cosmetic-drug-interface-guidance`).
 10. **Report** side effects to Health Canada (Canada Vigilance Program, through MedEffect Canada)
@@ -156,8 +158,9 @@ Writer's notes:
 
 > **"Research use only".** Health Canada keeps finding injectable peptides labelled "For Research Use Only – Not for
 > Human Consumption". It says this label "does not make these products legal".<Cite id="ca-hc-2026-04-think-twice-peptides" />
-> Since 2023 it has seized injectable peptides from online sellers, a wellness clinic, a fitness business and
-> supplement shops, and named the products in public advisories.<Cite id="ca-hc-recalls-database" /> In June 2026 a
+> Since 2023 it has warned the public about injectable peptides sold online. Since 2024 it has seized them from
+> online sellers, a wellness clinic, a fitness business and two shops, and named the products in public
+> advisories.<Cite id="ca-hc-recalls-database" /> In June 2026 a
 > Québec court banned one online seller from selling or advertising injectable peptides in Canada.<Cite id="ca-hc-2026-07-injunction-statement" />
 > Some seized vials carried false DINs.<Cite id="ca-hc-recalls-database" /> If your product did not come from a
 > pharmacy, no one has checked what is in it.
@@ -215,7 +218,7 @@ Writer's notes:
 |---|---|
 | s. 3(1): no advertising of any food, drug, cosmetic or device to the general public as a treatment, preventative or cure for a Schedule A.1 condition; s. 3(2): no sale if so labelled or advertised | `ca-fda-s3-advertising` |
 | Schedule A.1 lists 29 conditions, including obesity, diabetes, cancer, depression, dementia, hypertension, sexually transmitted diseases, thyroid disease | `ca-fda-schedule-a1` |
-| **Schedule A or A.1?** The list was "Schedule A" until 2019; 2019, c. 29, s. 177 renumbered it **Schedule A.1**. Today's Schedule A (s. 2.4) is an empty product-classification schedule. The assignment's "s. 3 + Schedule A" means today's Schedule A.1 | `ca-fda-schedule-a1` |
+| **Schedule A or A.1?** The list was "Schedule A" until 2019; 2019, c. 29, s. 177 renamed it **Schedule A.1** (the Act's word is "renamed"). Today's Schedule A (s. 2.4) is an empty product-classification schedule. The assignment's "s. 3 + Schedule A" means today's Schedule A.1 | `ca-fda-schedule-a1` |
 | Drugs (not prescription drugs, not CDSA drugs) may be advertised as a *preventative*, not as a treatment or cure, for Schedule A.1 conditions (A.01.066–A.01.068) | `ca-fdr-a01-067-advertising-preventative` |
 | Natural health products: same preventative-only exemption (NHPR s. 103.2) | `ca-nhpr-definition` |
 | s. 9(1): no labelling, packaging, selling or advertising of a drug "in a manner that is false, misleading or deceptive or is likely to create an erroneous impression regarding its character, value, quantity, composition, merit or safety" | `ca-fda-s9-deception` |
@@ -366,7 +369,7 @@ Not found: a statement by any provincial regulator other than Alberta's on BPC-1
 |---|---|
 | Act s. 3.1: no clinical trial of a drug without an authorisation (in force) | `ca-fdr-c05-clinical-trials` |
 | C.05.006(1): a sponsor may sell or import a trial drug 30 days after applying unless the Minister objects (e.g. the drug "endangers the health of a clinical trial subject"), with research ethics board approval for each site | `ca-fdr-c05-clinical-trials` |
-| ClinicalTrials.gov, trials with a Canadian site: retatrutide 10 (Lilly); elamipretide 2 (one recruiting, Barth syndrome); tesamorelin 3 (2005–2008); bremelanotide 3 (2011–2017); GHK 1 (skin patch study, not injected GHK-Cu); NR 3 and NMN 2 (supplement studies); 0 for BPC-157, TB-500, CJC-1295, ipamorelin, epitalon, MOTS-c, Semax, Selank, KPV, melanotan, thymalfasin, AOD-9604, hexarelin | `ca-ctgov-canada-peptide-search-2026-10-23` |
+| ClinicalTrials.gov, trials with a Canadian site: retatrutide 10 (Lilly); elamipretide 2 (one recruiting, Barth syndrome); tesamorelin 3 (2005–2008); bremelanotide 3 (2011–2017); GHK 1 (skin patch study, not injected GHK-Cu); NR 3 and NMN 2 (supplement studies; one of the two "NMN" records is a trigonelline study with an NMN comparison arm); 0 for BPC-157, TB-500, CJC-1295, ipamorelin, epitalon, MOTS-c, Semax, Selank, KPV, melanotan, thymalfasin, AOD-9604, hexarelin | `ca-ctgov-canada-peptide-search-2026-10-23` |
 
 ---
 
@@ -397,14 +400,14 @@ qualifies, and Health Canada lists injectable NAD+ among unauthorised products i
 
 | Date | What | Source id |
 |---|---|---|
-| 13 Dec 2023 | RA-74731: injectable products "promoted as peptides" sold online by a Québec seller; "Most synthetic injectable peptides are regulated as prescription drugs in Canada"; Health Canada "has ordered" it to stop advertising and selling | `ca-hc-recalls-database` |
+| 13 Dec 2023 | RA-74731: injectable products "promoted as peptides" sold online by one seller (the advisory names no province; the July 2026 statement calls the seller Québec-based); no seizure is mentioned; "Most synthetic injectable peptides are regulated as prescription drugs in Canada"; Health Canada "has ordered" it to stop advertising and selling | `ca-hc-recalls-database` |
 | 26 Jun 2024 (updated 19 Jul 2024) | RA-75741: injectable peptides and bodybuilding drugs seized from a Québec company; websites taken down at Health Canada's request; update added "nootropic" drops | `ca-hc-recalls-database` |
 | 21 Jan 2025 | RA-76830: Type I recall of compounded semaglutide + pyridoxine (unauthorised API) | `ca-hc-2025-01-semaglutide-pyridoxine-recall` |
 | 1 Apr 2025 | RA-77218: 26 injectable peptide products seized from a wellness clinic in Calgary | `ca-hc-recalls-database` |
 | 14 Apr 2025 | RA-77275: injectable peptides seized from an online seller in Sherbrooke, Québec; "injectable peptides are regulated as prescription drugs in Canada" | `ca-hc-recalls-database` |
 | 2 Jun 2025 | Health Canada's position on compounded GLP-1s sent to provinces | `ca-hc-2025-glp1-compounding-position` |
 | 1 Aug 2025 | RA-77807: 42 injectable peptide products seized from and sold by an online seller | `ca-hc-recalls-database` |
-| 24 Dec 2025 | RA-81403 (fitness business, Vancouver, and its website) and RA-81404 (two supplement shops, Maple Ridge, BC; some vials with falsified DINs) | `ca-hc-recalls-database` |
+| 24 Dec 2025 | RA-81403 (fitness business, Vancouver, and its website) and RA-81404 (two shops, "two retail locations", Maple Ridge, BC; some vials with falsified DINs) | `ca-hc-recalls-database` |
 | 21 Jan 2026 | RA-81518: public advisory on unauthorised and counterfeit GLP-1 products; fake Health Canada logos and endorsements | `ca-hc-2026-01-glp1-advisory` |
 | 25 Mar 2026 | RA-81792: counterfeit Mounjaro vials and pens seized at a Mississauga business | `ca-hc-recalls-database` |
 | 9 Apr 2026 | RA-81874: "Think twice before injecting peptides bought online"; lists BPC-157, CJC-1295, DSIP, epitalon, GHK-Cu, HCG, ipamorelin, KPV, melanotan I and II, MOTS-C, NAD+, SS-31, TB-500, retatrutide | `ca-hc-2026-04-think-twice-peptides` |
@@ -504,7 +507,7 @@ Names such as "Health811" and "Info-Santé 811" contain a number; the content br
 
 | Serves | Centre | Official URL | Source id |
 |---|---|---|---|
-| British Columbia, Yukon | BC Drug and Poison Information Centre (DPIC) | https://www.dpic.org/ | `ca-poison-dpic` |
+| British Columbia, Yukon | BC Drug and Poison Information Centre (DPIC) | https://www.dpic.org/ (redirects to plain HTTP; see the source note) | `ca-poison-dpic` |
 | Alberta, Northwest Territories, Saskatchewan | Poison and Drug Information Service (PADIS) | https://www.padis.ca/ | `ca-poison-padis` (page not read) |
 | Ontario, Manitoba (as "Manitoba Poison Centre"); Nunavut health professionals | Ontario Poison Centre | https://www.ontariopoisoncentre.ca/ | `ca-poison-ontario` |
 | Québec | Centre antipoison du Québec | https://www.ciusss-capitalenationale.gouv.qc.ca/antipoison/ | `ca-poison-quebec` |
@@ -543,7 +546,8 @@ webprod.hc-sc.gc.ca · www.cbsa-asfc.gc.ca · sportintegrity.ca · www.napra.ca 
 www.ontariopoisoncentre.ca · www.ciusss-capitalenationale.gouv.qc.ca · atlanticcanadapoisoncentre.ca ·
 www.healthlinkbc.ca · www.albertahealthservices.ca · www.saskatchewan.ca · sharedhealthmb.ca · health811.ontario.ca ·
 www.quebec.ca · www.gnb.ca · novascotia.ca · www.princeedwardisland.ca · nlhealthservices.ca · yukon.ca ·
-www.hss.gov.nt.ca · clinicaltrials.gov (already used elsewhere; check)
+www.hss.gov.nt.ca (30 hosts to add) · clinicaltrials.gov is already on the allowlist (own host entry; the `.gov`
+suffix also covers it), so it needs no change
 
 Note: `check-no-commerce.ts` scans every URL in `src/data` files, notes included, so each host above must be added
 before `canada.yaml` is merged into `src/data/sources/`.
@@ -632,3 +636,112 @@ princeedwardisland.ca, yukon.ca, gov.nu.ca.
     not read).
 11. **Health Canada's 2017–2020 "Unauthorized products may pose serious health risks" lists** were not opened; they
     may name melanotan or other peptides earlier than 2023.
+
+---
+
+## Fact-check (independent)
+
+Done on 24 October 2026 (morning, this machine's clock; workflow date 23 October 2026) by a separate agent that did
+not write the notes above. Nothing under `src/`, `config/`, `docs/` or `scripts/` was edited.
+
+### What was checked, and how
+
+- **Law (Justice Laws Website).** Downloaded again: Food and Drugs Act, Food and Drug Regulations, Natural Health
+  Products Regulations, CDSA and Cosmetic Regulations (FullText, all "current to 2026-09-30", with the
+  last-amended dates recorded), Customs Act s. 101, and the 2019 Budget Implementation Act (2019, c. 29). Every
+  quotation in the notes of the 40 law entries was matched by script against these texts (all matched). Read by
+  hand: ss. 2, 3, 3.1, 8, 9, 11, 16, 21.3, 21.4, 21.5, 21.8, 23, 27.1, 27.2, 27.3, 29.1, 30.7, 31 to 31.7,
+  Schedules A, A.1 (29 conditions, counted) and B, and the amendments not in force; FDR A.01.010, A.01.040 to
+  A.01.044, A.01.066 to A.01.068, C.01.014, C.01.016, C.01.017, C.01.020.1, C.01.041, C.01.043 to C.01.045,
+  C.01A.002, C.01A.004, C.05.002, C.05.006, C.08.001, C.08.002, C.08.004, C.08.010, C.08.011; NHPR ss. 1 to 4,
+  103.1, 103.2, Schedules 1 and 2; CDSA s. 4(1) and Schedule IV items 23 and 24. All penalty amounts, terms, time
+  limits (15 days, 30 days, 90 days, 48 hours, five years) and section numbers in sections 3, 4, 5.1, 6, 7, 9, 10
+  and 12 held. The three schedule anchors (`#h-234755`, `#h-701181`, `#h-701191`) exist on their pages.
+- **Health Canada advisories and recalls.** All 16 pages (RA-74731, 75741, 76830, 77218, 77275, 77807, 81403,
+  81404, 81518, 81792, 81874, 82047, 82484, 82477, 82536, 82537) fetched again by node number and read: dates,
+  recall classes, depth of recall, product counts (26 in RA-77218, 42 in RA-77807) and every quotation held. The
+  site search was repeated for nine terms; no peptide advisory is missing from section 11.1.
+- **canada.ca pages** (through WebFetch; canada.ca does not answer scripts here): GUI-0116 (both pages), PDL
+  overview, SAP, POL-0051 (eight Appendix I questions confirmed), advertising guidance (2023), GUI-0039,
+  cosmetic–drug interface guidance, Cosmetic Ingredient Hotlist (searched again: no copper, cupr, peptide, GHK,
+  tripeptide or hormone entry; controls present), MedEffect reporting page and consumer page, Canada Vigilance,
+  complaints page, and the July 2026 injunction statement. All quotations and page dates held.
+- **CBSA D19-9-1**: paragraphs 2, 7, 9, 10, 26, 29, 35, 41, 42, 45, 46, 47 and 50 and the dates (Ottawa, July 2023;
+  modified 2023-07-11) held.
+- **Others**: Sport Integrity Canada (six pages, plus cces.ca, which redirects to sportintegrity.ca), NAPRA (two
+  pages; 13 regulators), Alberta College of Pharmacy (18 February 2025), CPSA (9 April 2026), the GLP-1 position
+  PDF (2 June 2025), and the help-line and poison-centre pages that answer scripts (BC, Saskatchewan, Manitoba,
+  ontario.ca, Québec, Nova Scotia, Newfoundland and Labrador, Northwest Territories, infopoison.ca, DPIC, Ontario
+  Poison Centre, Centre antipoison du Québec, Atlantic Canada Poison Centre).
+- **"Not found" searches repeated**: CDSA full text and PDL (all recorded terms plus afamelanotide, DSIP, HCG,
+  chorionic, pentadecapeptide, humanin, kisspeptin, LL-37, Lys-Pro, copper): no peptide match, entries and
+  effective dates as recorded. ClinicalTrials.gov API v2 with `query.locn=Canada` (all recorded terms plus SS-31,
+  PT-141, epithalon, Zadaxin, LY3437943): same counts and NCT numbers.
+- **House rules**: no id in `canada.yaml` duplicates an id in `src/data/sources/*.yaml`; the seven shared ids are the
+  only overlaps with other refocus files, as declared; the reused ids in section 0 exist with the facts claimed
+  (`wada-2026-list-en` and `wada-2027-list-en` name BPC-157 in S0). All 92 entries have type, title, year, url,
+  accessed and verified; every type is in `SOURCE_TYPES`; no commerce token (all locales, the project's regex) in
+  any URL, title or id; no telephone number in any note or in this file's tables. Every non-canada.ca URL returned
+  HTTP 200 except the designed RA-81518 redirect, dpic.org (below) and the blocked hosts listed under UNRESOLVED.
+
+### What was changed, and why
+
+1. **RA-74731 (December 2023)**: the advisory names no province; "a Québec seller" came from the July 2026
+   injunction statement. Reworded in `ca-hc-recalls-database` and in 11.1, and noted that RA-74731 mentions no
+   seizure.
+2. **"Since 2023 it has seized"** (draft 2.2): the first seizure in the series is RA-75741 (June 2024). The draft now
+   says warnings since 2023, seizures since 2024.
+3. **RA-81404**: Health Canada says "two retail locations"; "supplement shops" was an inference from the shops'
+   names. Changed to "two shops" (yaml note, 2.2, 11.1). The label on some vials (a short form of retatrutide's
+   name) is no longer copied (house rule on product labels).
+4. **Compounding** (section 1, item 8): POL-0051 says a compounded product "should be produced from" an authorised
+   or pharmacopoeial ingredient; "only" overstated it.
+5. **Schedule A.1**: the amending Act says "renamed", not "renumbered" (2019, c. 29, s. 177, read in the annual
+   statute); s. 178 added the new Schedule A. Corrected in the yaml and in 4.1.
+6. **C.08.010 / C.08.011 amendment history**: SOR/2023-247 amended C.08.011, not C.08.010 (C.08.010: SOR/2013-172,
+   SOR/2018-69, SOR/2020-212, SOR/2021-271).
+7. **s. 31.6**: also covers offences under s. 31.4 by reason of contravening s. 21.6; added.
+8. **RA-82537**: covers two generic semaglutide DINs (02567806 and 02567814); the second was missing.
+9. **ClinicalTrials.gov**: NCT07880925 is a trigonelline monohydrate study with an NMN comparison arm, not an NMN
+   trial; NCT04910061 ran from August 2021 to March 2023; the NR studies started 2014 to 2016.
+10. **LNHPD note**: the amount per capsule was removed (house rule on doses).
+11. **DPIC**: `https://www.dpic.org/` answers 302 to the plain-HTTP site; flagged in the note and in 14.2 (the
+    proposed jurisdiction entry already uses infopoison.ca).
+12. **Allowlist (section 15)**: clinicaltrials.gov is already on `config/link-allowlist.json`; 30 Canadian hosts need
+    adding, not 31.
+13. **Confirmations added** to the notes (marked "factcheck (24 October 2026)") for GUI-0116 (summary page published
+    21 December 2020), the Cosmetic Ingredient Hotlist (re-read, same result), the CDSA and PDL searches, the GLP-1
+    position PDF (the Alberta College of Pharmacy reprint of 10 June 2025 was found and checked), and the injunction
+    statement.
+
+No other error was found: every other recorded fact, date, quotation and section number that could be opened
+checked out.
+
+### Still UNRESOLVED after the fact-check
+
+1. **DPD, LNHPD and NOC** still redirect to construction.hres.ca or answer HTTP 503, and Health Canada's Clinical
+   Trials Database search answered "error code: 522". The not-found results for the experimental peptides in 5.2,
+   the brand and date details for semaglutide, tirzepatide and tesamorelin, and the NR licence (`ca-lnhpd-nr-licence`)
+   rest on the first run (and on status-b and status-c) alone. Supporting evidence that is independent: the PDL and
+   CDSA searches, ClinicalTrials.gov, and Health Canada's advisories calling products of these names unauthorised.
+   Re-run the DPD and NOC searches (INN, synonyms, codes and brands listed in `ca-dpd-search-canada-legal-2026-10-23`,
+   plus TP-7, Selanc, MEHFPGP, MTP-131, Bendavia, SS-31, PT-141, MTII, Melanotan-2, Epithalone, LY3298176, NN9535,
+   thymosin alpha) when the databases are back, before the status table is published.
+2. **NMN monograph**: webprod.hc-sc.gc.ca refused connections, so the English text was not re-read. A web search
+   shows the English PDF, a French version (August 2024) and an NHPID ingredient record (`ingredReq?id=17679`) on the
+   official host: existence, date and oral route are supported; the exact English wording of the NAD+ purpose is not
+   re-verified. Whether an NR or NAD monograph exists is still unknown.
+3. **Help services not readable by any tool here**: Alberta Health Link and PADIS (albertahealthservices.ca refused
+   curl, WebFetch and the built-in browser), New Brunswick Tele-Care 811 (403 bot check), PEI 811 (Radware bot check),
+   Yukon 811 (bot check in the built-in browser; not bypassed), Health811's own site (403; the link is confirmed from
+   ontario.ca), Nunavut (no line found). A person must open these in a browser before publishing.
+4. **Atlantic Canada Poison Centre and New Brunswick**: infopoison.ca's contact list gives it for New Brunswick, but
+   its summary does not, and the centre's home page does not mention New Brunswick.
+5. **The Superior Court of Québec judgment of 11 June 2026** was not found (web search); the legal basis of the
+   injunction (s. 21.5 or not) is unknown.
+6. **Health Canada's 2019 and 2020 "Unauthorized products may pose serious health risks" lists** (healthycanadians.gc.ca)
+   answered HTTP 503; whether they name peptides earlier than 2023 is still unknown.
+7. Unchanged from section 17: the legal basis of "injectable peptides are prescription drugs" (item 1), personal
+   import and possession of an unlisted peptide (item 2), prosecutions (item 4), provincial regulators other than
+   Alberta's (item 8), seizure statistics (item 9), whether the generic semaglutides are synthetic (item 10), and the
+   editor decisions in 11.3.

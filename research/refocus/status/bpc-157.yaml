@@ -19,6 +19,10 @@ notes: |
     'BEPECIN' and product name 'BPC-157': 'No result found!'. Not searched: the codes PL-10 and PLD-116 (the DPD API
     failed later that evening and was under maintenance during the second run); a code would not be an ingredient
     name in the DPD anyway. [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23]
+    FACT-CHECK (24 October 2026): now covered. canada.yaml's DPD API run searched PL-10 and PLD-116 (no product;
+    ca-dpd-search-canada-legal-2026-10-23), and Health Canada's DPD data extracts (all four status files) contain no
+    ingredient matching BPC, pentadecapeptide, bepecin, PL 14736, PL-10 or PLD-116. [ca-dpd-search-status-c-2026-10-23,
+    ca-dpd-search-canada-legal-2026-10-23]
   - Submissions under review (new drug submissions, current to 2026-09-30): none. [ca-hc-sur-search-status-c-2026-10-23]
   - FDA's 2026 evaluation: a globalEDGE search did not find BPC-157 'as a component of an approved product in any
     country'. [fda-pcac-2026-bpc157-briefing]
@@ -98,3 +102,23 @@ page_facts: |
     of BPC-157 and TB-500 was among products seized in New South Wales in August 2026. [au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure]
   UNITED KINGDOM
   - No product containing BPC-157 has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026.
+  Method: every source cited in this file was reopened on 24 October 2026 and every not-found search repeated
+  with the recorded terms plus synonyms (details and per-source corrections in the factcheck block and the
+  FACT-CHECK notes of research/refocus/sources/status-c.yaml). Canada's DPD, NOC and LNHPD were still on the
+  maintenance page, so the DPD was checked through Health Canada's DPD data extracts (marketed, approved, dormant and
+  inactive files, page of 15 October 2026) instead; the NOC database could not be re-checked.
+  Checked, no change needed: both rows (CA and AU not-authorised); the AU schedule (S4 '# BPC-157' and Appendix D
+  clause 5 item 5 in the October 2026 edition; first in the June 2024 edition, absent from February 2024); the
+  TGA's reasons and implementation date (checked against the live DOCX of the final-decision notice); the TGA's April,
+  May, June and August 2026 notices and the September 2026 Federal Court release; Health Canada RA-81874, RA-82047 and
+  the four seizure advisories; PDL, CDSA and Food and Drug Regulations; the MHRA substance index; the FDA briefing
+  quotation ('did not yield ... as a component of an approved product in any country'); the Sport Integrity Canada
+  entries (canada.yaml) match the paraphrases. Not-found searches repeated with the same result: ARTG ("BPC 157",
+  pentadecapeptide, bepecin, "PL 14736", "body protection compound"), ANZCTR (BPC-157: 0), ClinicalTrials.gov (0 in
+  CA, AU, UK, IE and NZ; full-text "BPC 157" OR "BPC-157" also 0), Health Canada's trial portal (0), MHRA public search
+  box (BPC157: no results), Health Canada recalls site (6, same notices), DPD data extracts (no BPC-157 ingredient).
+  Changed: the 'PL-10 and PLD-116 not searched' gap in the Canada notes is closed (see the FACT-CHECK line there).
+  Still UNRESOLVED: the legal basis of Health Canada's 'peptides are generally regulated as prescription drugs' (no
+  PDL entry); the NOC database could not be re-checked on 24 October 2026.

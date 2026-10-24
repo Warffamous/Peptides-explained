@@ -16,7 +16,9 @@ notes: |
   - Prescription Drug List: no entry. Not in the CDSA. [ca-pdl-human,
     ca-cdsa]
   - Trials: ClinicalTrials.gov returns 10 records for 'Selank', none of which involves Selank (word matches in unrelated
-    trials, some with Canadian or Australian sites); no Selank trial anywhere. [ctgov-search-status-d-2026-10-23]
+    trials, some with Canadian or Australian sites); no Selank trial on ClinicalTrials.gov. Health Canada's Canadian
+    Clinical Trial Search Portal (fact-checker, 24 October 2026): no Selank trial. [ctgov-search-status-d-2026-10-23,
+    ca-hc-ctdb-search-status-d-2026-10-24]
   - Health Canada named Selank in RA-77218 (1 April 2025, Calgary wellness clinic) and RA-77807 (1 August 2025, online
     seller). [ca-hc-recalls-search-status-d-2026-10-23]
 
@@ -38,10 +40,21 @@ notes: |
 page_facts: |
   - Selank is not approved in Canada, Australia or the UK: no product is on Canada's Drug Product Database, the
     Australian Register of Therapeutic Goods or the MHRA's list of licensed medicines, and no trial of it is registered
-    anywhere. [ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-d-2026-10-23,
-    mhra-products-search-status-d-2026-10-23, ctgov-search-status-d-2026-10-23]
+    on ClinicalTrials.gov or the Australian New Zealand Clinical Trials Registry. [ca-dpd-search-canada-legal-2026-10-23,
+    au-artg-search-status-d-2026-10-23, mhra-products-search-status-d-2026-10-23, ctgov-search-status-d-2026-10-23,
+    au-anzctr-search-status-d-2026-10-23]
   - Health Canada has listed Selank among unauthorised injectable peptides seized from a clinic and from an online
     seller (2025). [ca-hc-recalls-search-status-d-2026-10-23]
   - In Australia Selank is not named in the Poisons Standard, but it is not on the register, so importing, supplying or
     advertising it as a therapeutic product is unlawful unless an exemption applies. [au-poisons-standard-2026-10,
     au-tga-2026-04-peptide-responsibilities]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026. Re-run or re-read: ARTG (selank and selanc 49 unrelated: sealing devices),
+  TGA site search (104 unrelated), Poisons Standard (not named), ANZCTR (0), MHRA Products (quoted "selank": no
+  results; substance index S has no SELANK), GOV.UK (0), ClinicalTrials.gov (10 records, none about Selank; two
+  unrelated ones have Canadian or Australian sites), openFDA (no record), Health Canada advisories RA-77218 and
+  RA-77807 ('Selank' in both lists), the PDL and CDSA. All three rows stay not-authorised.
+  CHANGED: the page fact 'no trial of it is registered anywhere' overstated the search (only ClinicalTrials.gov and
+  ANZCTR were searched; Russian and WHO registries were not) and now names the two registries; Health Canada's trial
+  portal searched (no Selank trial) and added.
+  STILL UNRESOLVED: DPD brand searches 'TP-7' and 'Selanc' and NOC (still down on 24 October 2026).

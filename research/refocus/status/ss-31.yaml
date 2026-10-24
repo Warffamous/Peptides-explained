@@ -1,7 +1,7 @@
 slug: ss-31
 rows:
   # Investigational: the only route in Canada is a registered, recruiting trial with a Canadian site (Calgary).
-  - { jurisdiction: CA, status: investigational, as_of: 2026-10-23, sources: [ctgov-nct07531251, ctgov-search-status-d-2026-10-23, ca-dpd-search-canada-legal-2026-10-23] }
+  - { jurisdiction: CA, status: investigational, as_of: 2026-10-23, sources: [ctgov-nct07531251, ca-hc-ctdb-search-status-d-2026-10-24, ctgov-search-status-d-2026-10-23, ca-dpd-search-canada-legal-2026-10-23] }
   # No ARTG entry, no open trial (the one trial with Australian sites, NuPOWER, finished in December 2024).
   - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, ctgov-search-status-d-2026-10-23] }
   # Investigational: recruiting UK site in NCT07531251; NCT06373731 has UK sites (active, not recruiting).
@@ -27,22 +27,27 @@ notes: |
     site in Calgary with status 'recruiting'). Earlier: MMPOWER-3 (NCT03323749) had sites in Vancouver and Hamilton and
     was terminated in February 2020 after its double-blind part missed its primary endpoints. [ctgov-nct07531251,
     ctgov-nct03323749, ctgov-search-status-d-2026-10-23, ca-ctgov-canada-peptide-search-2026-10-23]
-    UNRESOLVED: Health Canada's Clinical Trials Database (which lists trials with a No Objection Letter) could not be
-    searched to confirm Health Canada's authorisation of NCT07531251's Canadian arm (database down). The status rests
-    on the registry record.
-  - Submissions under review (canada.ca): not re-checked (the request timed out); no source suggests a Canadian
-    filing.
+    RESOLVED by the fact-checker (24 October 2026): Health Canada's Canadian Clinical Trial Search Portal lists
+    NCT07531251 (protocol SPIBA-401, control number 306674) as approved by Health Canada on 2026-03-19, recruiting,
+    location Calgary, Alberta; and MMPOWER-3 (control number 213285) as approved 2018-03-01, closed. So the Canadian
+    arm is Health Canada-authorised, not only registered. The registry's own summary says the trial's primary
+    objective is to confirm the efficacy behind Forzinity's US accelerated approval. [ca-hc-ctdb-search-status-d-2026-10-24,
+    ctgov-nct07531251]
+  - Submissions under review (canada.ca), checked by the fact-checker on 24 October 2026: the new-drug list
+    ('current as of 2026-09-30', 89 submissions) has no elamipretide and no Stealth BioTherapeutics entry.
+    [ca-hc-sur-search-2026-10-23]
   - Health Canada has listed 'SS-31' among unauthorised injectable peptide drugs seized from sellers: RA-77807
     (1 August 2025), RA-81403 (24 December 2025) and the 'think twice' advisory RA-81874 (9 April 2026).
     [ca-hc-recalls-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides]
-  - Special Access Program: a doctor can ask Health Canada for an unauthorised drug for a patient with a serious
-    condition (C.08.010); whether elamipretide has been released this way is not public. Do not say it has.
+  - Special Access Program: a doctor can ask Health Canada to let a manufacturer sell an unauthorised drug for the
+    'emergency treatment' of a patient in their care (C.08.010, which speaks of a 'medical emergency'); whether
+    elamipretide has been released this way is not public. Do not say it has.
     [ca-fdr-c08-010-special-access]
 
   AUSTRALIA (TGA), 23 October 2026.
   - ARTG: no result for elamipretide, Forzinity, Bendavia or 'stealth biotherapeutics'; 'MTP-131' gives only unrelated
-    fragment matches. 'SS-31' was not searched in the ARTG (tga.gov.au stopped loading before it could be run); the INN
-    and brand searches cover any product. TGA whole-site search 'elamipretide': no result, so no TGA page (AusPAR,
+    fragment matches (two technetium kits). 'SS-31' (searched by the fact-checker on 24 October 2026): 210 results,
+    all unrelated fragment matches on the first page (knee prostheses, defibrillators, supplements). TGA whole-site search 'elamipretide': no result, so no TGA page (AusPAR,
     medicines-under-evaluation list, alert) names it; the AusPAR and under-evaluation lists were not searched separately.
     [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23]
   - Poisons Standard: elamipretide is not named (unscheduled). [au-poisons-standard-2026-10]
@@ -71,9 +76,10 @@ page_facts: |
     patients weighing at least 30 kg; the company must run a confirmatory trial. [openfda-drugsfda-elamipretide-2026-10-23,
     fda-2025-forzinity-approval-letter]
   CANADA
-  - Elamipretide is not approved in Canada. A trial of elamipretide in Barth syndrome is recruiting at a site in Calgary
-    (registered as NCT07531251), which is the only legal way to receive it there apart from a doctor's request to
-    Health Canada's Special Access Program. [ctgov-nct07531251, ca-dpd-search-canada-legal-2026-10-23,
+  - Elamipretide is not approved in Canada. Health Canada has authorised a trial of elamipretide in Barth syndrome
+    that is recruiting at a site in Calgary (NCT07531251; approved 19 March 2026). Outside a trial, a doctor can ask
+    Health Canada's Special Access Program for an unauthorised drug for the emergency treatment of a patient.
+    [ctgov-nct07531251, ca-hc-ctdb-search-status-d-2026-10-24, ca-dpd-search-canada-legal-2026-10-23,
     ca-fdr-c08-010-special-access]
   - Health Canada has listed 'SS-31' among unauthorised injectable peptides seized from sellers (2025 and 2026).
     [ca-hc-recalls-search-status-d-2026-10-23]
@@ -87,3 +93,24 @@ page_facts: |
   ALL
   - Products sold online as 'SS-31' are not Forzinity: they are unauthorised products of unknown quality.
     [ca-hc-recalls-search-status-d-2026-10-23, fda-drugsatfda-forzinity]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026. Checked against the primary sources: openFDA (NDA215244, FORZINITY, ORIG 1,
+  AP 20250919, priority, type 1 NME; no later supplement) and the approval letter (accelerated approval; 'weighing at
+  least 30 kg'; PMR 4802-1 in patients 5 years and older): the US row and product stand. ClinicalTrials.gov records
+  NCT07531251, NCT06373731, NCT05162768, NCT03323749, NCT02788747, NCT02914665 re-read (status, dates, enrolment,
+  site cities all as recorded). ARTG, TGA site search, ANZCTR, MHRA Products (quoted "elamipretide", "forzinity":
+  no results; substance index E without ELAMIPRETIDE per the us-uk-routes check), GOV.UK, the Health Canada
+  advisories naming SS-31 (RA-77807, RA-81403, RA-81874): all as recorded.
+  Rows: CA investigational (now also supported by Health Canada's own trial portal: NCT07531251 approved 2026-03-19,
+  recruiting, Calgary); AU not-authorised; UK investigational (NCT07531251 Bristol recruiting; NCT06373731 UK sites,
+  active not recruiting). No change to any status.
+  CHANGED: (1) the Canadian trial authorisation is RESOLVED (ca-hc-ctdb-search-status-d-2026-10-24 added to the CA
+  row). (2) The 'confirmatory trial' link is RESOLVED: the registry summary states the trial's primary objective is to
+  confirm the efficacy behind the US accelerated approval (ctgov-nct07531251 note corrected). (3) Submissions under
+  review checked (no elamipretide). (4) ARTG 'SS-31' searched (210 unrelated fragment matches). (5) Canadian page fact:
+  'the only legal way to receive it there' removed (not established) and the Special Access Program described in the
+  regulation's own terms (emergency treatment) instead of 'serious condition'. (6) ClinicalTrials.gov synonym note
+  corrected in status-d.yaml (MTP-131 and Bendavia find extra older records; none with a CA/UK/AU/NZ/IE site).
+  STILL UNRESOLVED: DPD searches for the codes MTP-131, Bendavia and SS-31 (DPD still down on 24 October 2026; the INN
+  and brand searches cover the molecule); whether the UK Bristol arm has MHRA clinical-trial authorisation (registry
+  only; not checked in a UK register).

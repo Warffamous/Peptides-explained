@@ -22,7 +22,8 @@ notes: |
     fda-pcac-2026-kpv-briefing]
   - Prescription Drug List: not listed; not in the CDSA. [ca-pdl-human, ca-cdsa]
   - Enforcement: KPV is named in Health Canada's April 2026 advisory (RA-81874) and in seizure advisories RA-77218
-    (1 April 2025) and RA-81403 (24 December 2025). The recalls database 'KPV' search returns exactly these three.
+    (1 April 2025) and RA-81403 (24 December 2025; there only as an ingredient of one blend product, FACT-CHECK
+    24 October 2026). The recalls database 'KPV' search returns exactly these three.
     [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23]
   - The FDA briefing's statement that no product is authorised covers the EMA only (it checked the EMA and the
     European and Japanese pharmacopoeias), so it is not cited for Canada or Australia. [fda-pcac-2026-kpv-briefing]
@@ -36,7 +37,11 @@ notes: |
     II and afamelanotide only carry cross-references to melanocyte-stimulating hormone). So KPV is UNSCHEDULED in
     Australia. That does not make it lawful to sell: a peptide product promoted or used for a therapeutic purpose is a
     therapeutic good, and 'It is unlawful to import, advertise, manufacture and supply unapproved peptide products in
-    Australia' (TGA, August 2026). [au-poisons-standard-2026-10, au-tga-peptide-products-hub, au-tga-2026-08-peptide-seizure]
+    Australia' (TGA, August 2026). FACT-CHECK addition: the TGA's regulation page also says peptide products regulated
+    as therapeutic goods 'must be included in the Australian Register of Therapeutic Goods (ARTG) before they can be
+    imported, manufactured, supplied, exported or advertised', with limited exceptions; this is a better source for
+    the page than the media release. [au-poisons-standard-2026-10, au-tga-peptide-products-hub, au-tga-2026-08-peptide-seizure,
+    au-tga-how-we-regulate-peptides]
   - Import: because it is unscheduled, the doctor's-authority condition of the personal-importation exemption does
     not apply; the other conditions do (personal use, quantity limits, packaging that 'enables the medicine to be
     accurately identified'), and the TGA says code-labelled or unlabelled peptide vials will not be released and are
@@ -47,6 +52,9 @@ notes: |
 
   UNITED KINGDOM (re-check; existing row stands): MHRA substance index letter K: no KPV; exact-term search 'KPV':
   0 documents. [uk-mhra-substance-index-status-c-2026-10-23]
+  FACT-CHECK (24 October 2026): the K index re-read (no KPV or Lys-Pro entry). The exact-term result comes from the
+  second run's direct queries of the search service; the public search box returns 1,237 fuzzy matches for 'KPV',
+  so it cannot confirm it. The substance-index evidence is enough for 'no UK licence'.
 
   UNITED STATES: no new research in this batch.
   Ireland and New Zealand: not searched here, except ClinicalTrials.gov: no trial in either.
@@ -59,6 +67,26 @@ page_facts: |
   - Not on the Australian Register of Therapeutic Goods. [au-artg-search-status-c-2026-10-23]
   - KPV is not listed in the Poisons Standard, unlike BPC-157 or TB-500; but a peptide sold for a health purpose is
     still a therapeutic good, and the TGA says it is unlawful to import, advertise, manufacture and supply unapproved
-    peptide products. [au-poisons-standard-2026-10, au-tga-peptide-products-hub, au-tga-2026-08-peptide-seizure]
+    peptide products. [au-poisons-standard-2026-10, au-tga-peptide-products-hub, au-tga-2026-08-peptide-seizure,
+    au-tga-how-we-regulate-peptides]
   UNITED KINGDOM
   - No product containing KPV has a UK licence. [uk-mhra-substance-index-status-c-2026-10-23]
+factcheck: |
+  INDEPENDENT FACT-CHECK, 24 October 2026.
+  Method: every source cited in this file was reopened on 24 October 2026 and every not-found search repeated
+  with the recorded terms plus synonyms (details and per-source corrections in the factcheck block and the
+  FACT-CHECK notes of research/refocus/sources/status-c.yaml). Canada's DPD, NOC and LNHPD were still on the
+  maintenance page, so the DPD was checked through Health Canada's DPD data extracts (marketed, approved, dormant and
+  inactive files, page of 15 October 2026) instead; the NOC database could not be re-checked.
+  Checked, no change needed: both rows (CA and AU not-authorised); 'no schedule' (the October 2026 Poisons Standard
+  names neither KPV nor Lys-Pro-Val and has no alpha-MSH or fragment entry; the only melanocyte-stimulating-hormone
+  text is the two cross-references); Schedule 5 item 1 of the Therapeutic Goods Regulations (doctor's authority only
+  for Schedule 4 or 8 goods; packaging that 'enables the medicine to be accurately identified'); the TGA's May 2026
+  import warning (read live); the FDA briefing (no human studies; EMA-only statement on authorisation); RA-81874.
+  Not-found searches repeated with the same result: ARTG ("Lys-Pro-Val": no matching results), ANZCTR (KPV: 0),
+  ClinicalTrials.gov (KPV OR "Lys-Pro-Val": 0 in all five countries), Health Canada's trial portal (0), Health Canada
+  recalls site (3, same notices), DPD data extracts (no KPV, Lys-Pro-Val or lysyl-prolyl ingredient), PDL and CDSA.
+  Changed: RA-81403 names KPV only within a blend product; the TGA's 'How we regulate therapeutic peptide products'
+  page (au-tga-how-we-regulate-peptides, australia.yaml) added as a source for 'unscheduled is not lawful to sell'.
+  Editor note: the import paragraph (unscheduled, so no doctor's authority needed) is accurate law, but keep it
+  neutral and short so that it cannot read as a route (CONTENT-GUIDE section 1).
