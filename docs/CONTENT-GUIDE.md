@@ -35,7 +35,8 @@ Therefore, in content:
   `<Lead question>`, `<InDetail title>`, the `title` of `<Compare>`, `<KeyNumber>`, `<IconArray>`,
   `<TimeStrip>` and `<Callout>`, `<KeyNumber label>`, `<Diagram caption>` and `<FaqItem q>`;
   `npm run check:commerce` checks the same in the built pages (`h1`–`h6` and the components' title
-  elements), plus every `aria-label`. Ask the question without the word: "Is a research-labelled
+  elements), plus every `aria-label`, and (since 26 October 2026) every table head (`th`: a `<Compare>` or
+  diagram row label or column head), figure caption and fold summary. Ask the question without the word: "Is a research-labelled
   peptide legal to have?", not "Is it legal for me to buy …"; "When may a doctor ask for a
   'special'?", not "… order a 'special'". Not commerce, and passing: "in order to", "the order of
   the amino acids", "why order matters", "deal with", and an order as a legal instrument ("an executive
@@ -281,7 +282,8 @@ JSON has no comments, so the config holds the exceptions, each with its reason (
   where "Netherlands" and "Dutch" may stand.
 - `allowStrings`: one i18n or data string (file, key regex, pattern ids); a `file` ending in `/`
   covers a folder. Examples: the thalidomide timeline text ("German", history), the corrections log
-  entry that records what a page said before the refocus.
+  entry that records what a page said before the refocus, the EFSA glossary alias "European Food
+  Safety Authority" (the agency's proper name; EFSA is cited as evidence).
 - `allowPhrases`: a proper name that contains a pattern but is not reader framing, skipped
   everywhere, the built pages included, together with any match that touches it ("indexed in Europe
   PMC" is not the frame "in Europe"): "Europe PMC" (a literature database), "Eli Lilly Nederland
@@ -306,10 +308,11 @@ How to run it:
   history can stay with the marker, EU framing as `frame`, EU/EMA/EPAR/CHMP/Europe as `warn`), as
   whole words and, for codes such as NL, CBG, EU and EMA, in capitals only (the brief's raw `epar`
   also matched "separate").
-- While `STRICT_RESIDUE` (`scripts/lib/residue.ts`, read by the validator and the check) is `false`,
-  all hits are warnings (the content rewrite of 24 October 2026 is in progress). After the rewrite it
-  is set to `true`: error and frame hits then fail the validator (and so the build) and
-  `npm run check`; warn hits stay warnings.
+- `STRICT_RESIDUE` (`scripts/lib/residue.ts`, read by the validator and the check) is `true` since
+  26 October 2026, when the sources and the built pages had no error or frame hit left: error and
+  frame hits fail the validator (and so the build), `npm run check` and CI (`npm run check:residue`);
+  warn hits stay warnings. (During the content rewrite of 24 October 2026 it was `false` and every hit
+  was a warning.)
 
 ## 2. Voice
 
@@ -355,6 +358,16 @@ locales that cover them (WADA everywhere), so their words name only those jurisd
 jurisdiction's action: the FDA approval and the EU authorisation of a medicine are two events, each with its
 own date and sources. A national body's source on a WADA tracker item goes in
 `local_sources: { NL: [<id>] }` and is listed only in a locale that covers that jurisdiction.
+
+**Country sources in shared data** (26 October 2026). Data that every locale shows but whose words rest on
+the reader's own country (a label, a help page, a privacy law) keeps those sources per jurisdiction in the
+same way: `sources` are cited in every locale, `local_sources: { US: [...], NL: [...], EU: [...] }` only in a
+locale that shows that jurisdiction (`visibleSources` in `src/lib/jurisdictions.ts`; the remark plugins use
+`src/plugins/locale-sources.mjs`, by the content file's locale). It is used by the product check
+(`src/data/product-check.yaml`, also `intro_local_sources`), explainers (`src/data/explainers.yaml`), image
+captions (`src/data/media.yaml`) and the organ cards' "not approved" line (`status_local_sources`). So a Dutch
+help page or an EU label stays in the data for the Dutch pages and never reaches an English reference list;
+never delete such an id to make English clean, move it under its jurisdiction.
 
 Routes come from file paths: `src/content/pages/en/safety/sterile-technique.mdx` →
 `/en/safety/sterile-technique/`. `index.mdx` is the section landing. Slugs are English in
@@ -491,7 +504,8 @@ regulatory:                   # REQUIRED: WADA, and every full jurisdiction of a
   # then cancelled for non-safety reasons: give authorised_since (the approval) and since (the cancellation);
   # e.g. tesamorelin CA: authorised_since 2014-04-29, since 2022-09-30.
   # A national schedule goes in schedule: { code, note, sources }: Australia's Poisons Standard (S4) and Canada's
-  # Prescription Drug List, ONLY where the instrument names the substance. A group entry that may cover it
+  # Prescription Drug List (PDL), ONLY where the instrument names the substance. Codes are SCHEDULE_CODES
+  # (src/schemas/vocab.ts); the table shows the name from vocab.schedule ("Schedule 4 (S4)", "Prescription Drug List"). A group entry that may cover it
   # (GHRHs, "copper compounds") is not a schedule field: the page says "may be covered by … (not named)".
   # Use unclear (WADA row only) when the substance is not named on the
   # List and the sources leave open whether a catch-all section (S0, S2 …) covers it, with no ruling from an
@@ -829,7 +843,7 @@ Four independent axes. Never collapse into one score, never add them up.
 | `<PageList section="safety" />` | Auto-generated list of pages in a section (for index pages). |
 | `<CompoundIndex />` | Compound cards (for `/compounds`). |
 | `<Timeline />`, `<GradeRubric />`, `<GradeMatrix />`, `<CorrectionsLog />`, `<ChangeTracker />`, `<NewsList />`, `<GlossaryIndex />`, `<SourcesIndex />` | Page-specific widgets driven by data. Place where the page needs them. |
-| `<JurisdictionCards which="full" />`, `<JurisdictionCard code="US" />` | The contact cards of the locale's own jurisdictions (§1b), from `src/data/jurisdictions.yaml`: regulator, side-effect reporting, anti-doping body, medicines law and help services, named and linked (never a phone number on English, §1). `which`: `full` (English: US, UK, Canada, Australia), `notes` (Ireland, New Zealand) or `all` (both, full first). One card: `code` must be one of the locale's jurisdictions (the validator checks it; a card outside the set is left out of the page). Use them wherever the reader needs "where do I report this, who can help" for their own country, instead of writing the services out. |
+| `<JurisdictionCards which="full" />`, `<JurisdictionCard code="US" />` | The contact cards of the locale's own jurisdictions (§1b), from `src/data/jurisdictions.yaml`: regulator, side-effect reporting, anti-doping body, medicines law and help services, named and linked (never a phone number on English, §1). `which`: `full` (English: US, UK, Canada, Australia), `notes` (Ireland, New Zealand) or `all` (both, full first). One card: `code` must be one of the locale's jurisdictions (the validator checks it; a card outside the set is left out of the page). Use them wherever the reader needs "where do I report this, who can help" for their own country, instead of writing the services out. A card shows an optional line under its list when `pages.jurisdiction.helpNote.<code>` exists in the locale's strings, for help services it cannot link yet (Canada: the provincial advice lines whose pages could not be read). On a whole-UK card, every entry that is not UK-wide names its nation ("NHS 111 (England)", "NHS 24 (Scotland)"); nhs.uk pages are NHS England's. |
 
 Markdown tables are fine for small comparisons. Use them instead of inventing components.
 
@@ -921,7 +935,13 @@ the claim.
 - **Reuse ids.** Search every file in `src/data/sources/` for the DOI, PMID or URL before adding an
   entry, and reuse the existing id for the same document (ids are global). The fact-checked refocus
   research is merged into `src/data/sources/refocus-*.yaml`: reuse those ids, never edit those files;
-  a group adds new sources to its own file (`src/data/sources/en-<group>.yaml`).
+  a group adds new sources to its own file (`src/data/sources/en-<group>.yaml`). A reader-facing title for one of
+  those ids (the research's own titles sometimes used internal words) is given by repeating the id, with the same
+  `url` and dates, in `src/data/sources/en-finish.yaml`: that file sorts first and `src/lib/data.ts` keeps the first
+  entry, and the validator reports the expected "duplicate source id … will be merged" warning.
+- **The link must show the claim.** A dataset source that records several searches links one of them: cite it only
+  for the claim its link shows, or say in its title that the link opens one of several searches. For a claim about
+  another compound, register that search (`au-artg-search-tirzepatide-2026-10-26`, not the semaglutide search).
 - **No source that names a business.** Never cite or quote a document whose title or URL names a
   seller or a company (regulators' enforcement releases often do): describe the enforcement in
   general terms, with a neutral official source (§1b, "Country cautions").

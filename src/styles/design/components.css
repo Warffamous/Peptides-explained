@@ -539,6 +539,7 @@ a.term:hover { color: var(--link); }
 .jurisdiction-card__list { display: grid; gap: var(--space-2); font-size: var(--s--1); }
 .jurisdiction-card__list > div { display: grid; grid-template-columns: minmax(9rem, 1fr) minmax(0, 2fr); gap: var(--space-3); }
 .jurisdiction-card__list dt { color: var(--text-2); }
+.jurisdiction-card__note { margin-block-start: var(--space-2); font-size: var(--s--1); color: var(--text-2); }
 .news__caution { padding: var(--space-4) var(--space-5); border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line-strong); color: var(--text); margin-block-end: var(--space-4); }
 .news__updated, .news__hint-note { color: var(--text-2); font-size: var(--s--1); margin-block: var(--space-3); }
 .news__filters { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-end: var(--space-4); }

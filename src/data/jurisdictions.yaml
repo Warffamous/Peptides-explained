@@ -18,8 +18,10 @@
 # helpline page (US) and health811.ontario.ca refuse automated requests (SAMHSA was read by the research from an
 # archive copy; Health811 is linked from ontario.ca), and sportintegrity.nz shows a bot check (read by the research's
 # fact-checker in a normal browser on 24 October 2026). Health advice lines with no help entry here because their
-# pages could not be read: NHS 24 (Scotland; site under maintenance), Alberta, New Brunswick, Prince Edward Island,
-# Yukon and Nunavut (bot checks or no line found). Emergency numbers are data only; the English site never prints them.
+# pages could not be read: Alberta, New Brunswick, Prince Edward Island and Yukon (bot checks or refused connections;
+# the pages name them in text instead, until a person opens them in a browser) and Nunavut (no line found). NHS 24
+# (Scotland) was added on 26 October 2026 through NHS inform. Emergency numbers are data only; the English site
+# never prints them.
 - code: NL
   emergency: ["112"]
   regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)", url: "https://www.cbg-meb.nl/" }
@@ -40,20 +42,35 @@
   medicines_law: { name: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik", url: "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet" }
 - code: UK
   emergency: ["999"]
-  # One card for the whole UK: urgent advice differs by nation (England NHS 111, Wales NHS 111 Wales, Northern Ireland
-  # the GP out-of-hours service; Scotland NHS 24, not listed until its site can be read). The National Poisons
-  # Information Service does not advise the public, so the poisons entry is the NHS page on what to do.
-  # Sources: nhs-111, uk-wales-nhs-111, uk-ni-gp-out-of-hours, nhs-poisoning, uk-npis-members-of-public,
-  # uk-frank-contact, uk-wales-dan-247, uk-nhs-urgent-help-mental-health, uk-samaritans-contact.
+  # One card for the whole UK: urgent advice, drug advice and mental health support differ by nation, so each entry
+  # names its nation (England NHS 111, Wales NHS 111 Wales, Scotland NHS 24, Northern Ireland the GP out-of-hours
+  # service; research/refocus/feeds-help-extras.md §2.2). NHS 24 (Scotland) is linked through NHS inform's "Right care
+  # right place" page (NHS inform is run by NHS 24; www.nhs24.scot refuses scripts), read on 26 October 2026; the
+  # Scotland and Northern Ireland drug-advice and mental-health entries and the Wales mental-health entry were added
+  # the same day (finishing pass, research/refocus-notes/finish.md part 2). nhs.uk pages are NHS England's, so they
+  # are labelled England. The National Poisons Information Service does not advise the public, so the poisons entry is
+  # the NHS England page on what to do; the other nations use the same urgent-advice services (uk-npis-members-of-public).
+  # Sources: nhs-111 (the help link; the pages cite uk-nhs-111-online and uk-nhs-what-happens-when-you-call-111, whose
+  # titles print no number), uk-wales-nhs-111, uk-scot-nhsinform-right-care-right-place, uk-scot-suicide-prevention-support,
+  # uk-ni-gp-out-of-hours, nhs-poisoning, uk-npis-members-of-public, uk-frank-contact, uk-wales-dan-247,
+  # uk-scot-nhsinform-drug-support, uk-ni-drug-alcohol-help, uk-nhs-urgent-help-mental-health, uk-wales-2023-111-press-2,
+  # uk-scot-breathing-space, uk-ni-signposts-help, uk-samaritans-contact.
   help:
     - { kind: urgent-advice, name: "NHS 111 (England)", url: "https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/" }
     - { kind: urgent-advice, name: "NHS 111 Wales", url: "https://111.wales.nhs.uk/" }
+    - { kind: urgent-advice, name: "NHS 24 (Scotland)", url: "https://www.nhsinform.scot/campaigns/right-care-right-place/" }
     - { kind: urgent-advice, name: "GP out-of-hours service (Northern Ireland)", url: "https://www.nidirect.gov.uk/articles/gp-out-hours-service" }
-    - { kind: poisons, name: "Poisoning: what to do (NHS)", url: "https://www.nhs.uk/conditions/poisoning/" }
-    - { kind: drugs-advice, name: "FRANK", url: "https://talktofrank.com/contact-frank" }
+    - { kind: poisons, name: "Poisoning: what to do (NHS England)", url: "https://www.nhs.uk/conditions/poisoning/" }
+    - { kind: drugs-advice, name: "FRANK (England)", url: "https://talktofrank.com/contact-frank" }
     - { kind: drugs-advice, name: "DAN 24/7 (Wales)", url: "https://dan247.org.uk/" }
-    - { kind: mental-health, name: "Urgent help for mental health (NHS)", url: "https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/" }
-    - { kind: mental-health, name: "Samaritans", url: "https://www.samaritans.org/how-we-can-help/contact-samaritan/" }
+    - { kind: drugs-advice, name: "Support for people affected by drugs (NHS inform, Scotland)", url: "https://www.nhsinform.scot/healthy-living/drugs-and-drug-use/support-for-people-affected-by-drugs/" }
+    - { kind: drugs-advice, name: "Getting help with drug or alcohol problems (nidirect, Northern Ireland)", url: "https://www.nidirect.gov.uk/articles/getting-help-drug-or-alcohol-problems" }
+    - { kind: mental-health, name: "Urgent help for mental health (NHS England)", url: "https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/" }
+    - { kind: mental-health, name: "NHS 111 Wales: urgent mental health support", url: "https://www.gov.wales/nhs-111-press-2-big-step-forward-access-urgent-mental-health-support" }
+    - { kind: mental-health, name: "NHS 24 (Scotland): urgent mental health support", url: "https://www.nhsinform.scot/campaigns/right-care-right-place/" }
+    - { kind: mental-health, name: "Breathing Space (Scotland)", url: "https://www.breathingspace.scot/" }
+    - { kind: mental-health, name: "Lifeline crisis helpline (Northern Ireland)", url: "https://www.health-ni.gov.uk/articles/signposts-help" }
+    - { kind: mental-health, name: "Samaritans (whole UK)", url: "https://www.samaritans.org/how-we-can-help/contact-samaritan/" }
   regulator: { name: "Medicines and Healthcare products Regulatory Agency (MHRA)", url: "https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency" }
   reporting: { name: "Yellow Card scheme", url: "https://yellowcard.mhra.gov.uk/" }
   anti_doping: { name: "UK Anti-Doping (UKAD)", url: "https://www.ukad.org.uk/" }
@@ -74,7 +91,10 @@
 - code: CA
   # Emergency: 9-1-1 (ca-hc-get-help-substance-use, ca-phac-mental-health-get-help). There is no federal health advice
   # line: each province and territory runs its own (the verified ones are listed; Alberta, New Brunswick, Prince Edward
-  # Island and Yukon pages sit behind bot checks, and no Nunavut line was found). Sources: ca-help-* and
+  # Island and Yukon pages sit behind bot checks, and no Nunavut line was found). Until a person opens those four pages
+  # in a browser and adds them here, the card says so in a line under its list (pages.jurisdiction.helpNote.CA in
+  # src/i18n/en/pages.json; 26 October 2026: albertahealthservices.ca timed out and gnb.ca showed a bot check in the
+  # built-in browser, which was not passed). Sources: ca-help-* and
   # ca-infopoison-centres (src/data/sources/refocus-canada.yaml), ca-hc-get-help-substance-use, ca-988-helpline,
   # ca-hc-medeffect-reporting, ca-sic-cadp, ca-food-and-drugs-act.
   emergency: ["911"]

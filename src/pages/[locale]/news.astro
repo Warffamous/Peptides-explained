@@ -4,18 +4,23 @@ import NewsList from '../../components/mdx/NewsList.astro';
 import { BUILT_LOCALES } from '../../lib/config';
 import { FEEDS } from '../../lib/data';
 import { t } from '../../lib/i18n';
+import { getLocale } from '../../lib/config';
+import { isVisible } from '../../lib/jurisdictions';
 export const getStaticPaths = () => BUILT_LOCALES.map((l) => ({ params: { locale: l.code } }));
 const { locale } = Astro.params as { locale: string };
 Astro.locals.locale = locale;
+// A national or EU regulator's feed (feeds.yaml jurisdiction) is listed only in the locales that cover it,
+// as its headlines are (NewsList): the English page never lists the EMA feed.
+const feeds = FEEDS.feeds.filter((f) => isVisible(f.jurisdiction, getLocale(locale)));
 ---
 <BuiltinPage locale={locale} routeKey="news" title={t(locale, 'pages.news.title')} description={t(locale, 'pages.news.description')} summary={[t(locale, 'pages.news.intro')]}>
   <NewsList />
-  {FEEDS.feeds.length > 0 && (
+  {feeds.length > 0 && (
     <section class="news-sources" aria-labelledby="news-sources-title">
       <h2 id="news-sources-title">{t(locale, 'pages.news.sourcesList')}</h2>
       <p>{t(locale, 'pages.news.sourcesListIntro')}</p>
       <dl class="news-sources__list">
-        {FEEDS.feeds.map((f) => (
+        {feeds.map((f) => (
           <div class="news-sources__item" data-category={f.category}>
             <dt><a href={f.homepage} rel="noopener" data-external>{f.name}</a> <span class="news__cat" data-category={f.category}>{t(locale, `pages.news.categories.${f.category}`)}</span></dt>
             <dd lang="en">{f.why}</dd>

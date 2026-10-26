@@ -18,9 +18,12 @@
  * fails a figure whose source is not cited elsewhere on its page, so every mark has a number.
  */
 import { t, tr, isFallback } from '../../lib/i18n';
-import { ctxLocale, ctxCompound, uid } from '../../lib/ctx';
+import { ctxLocale, ctxCompound, ctxContentLocale, uid } from '../../lib/ctx';
 import { getLocale, SOURCE_LOCALE } from '../../lib/config';
-import { getOrganCards, levelsUsed, ORGAN_ART } from '../../lib/organ-cards';
+import { getOrganCards, levelsUsed, statusSources, ORGAN_ART } from '../../lib/organ-cards';
+import { approvalFor, visibleRows } from '../../lib/jurisdictions';
+import { jurisdictionList } from '../../lib/approval';
+import { formatDate } from '../../lib/format';
 import { getMedia, type Media } from '../../lib/media';
 import { formatNumber } from '../../lib/format';
 import type { OrganCardsText } from '../../schemas/organ-cards';
@@ -33,7 +36,8 @@ import { CUP, SEAT, hexagon } from '../organ-cards/shapes';
 interface Props { id: string }
 const { id } = Astro.props;
 const L = ctxLocale(Astro);
-const { citeIndex } = ctxCompound(Astro, 'OrganCards');
+const { citeIndex, data } = ctxCompound(Astro, 'OrganCards');
+const scope = ctxContentLocale(Astro);
 const x = getOrganCards(id);
 const text = tr<OrganCardsText>(L, `organ-cards.${id}`);
 const ui = (key: string, vars?: Record<string, string | number>) => t(L, `organ-cards.ui.${key}`, vars);
@@ -45,6 +49,16 @@ const fallback = isFallback(L, `organ-cards.${id}.title`);
 const base = uid(Astro, `oc-${id}`);
 const receptorList = new Intl.ListFormat(getLocale(L).dateLocale ?? getLocale(L).bcp47, { style: 'long', type: 'conjunction' }).format(x.receptors.map((r) => ui(`receptorsList.${r}`)));
 const drugWord = x.approved ? text.drug : `${text.drug} (${ui('notApprovedShort')})`;
+// The "not approved" line names the locale's own countries whose rows say so (never a country without a row,
+// never "anywhere") and the date those rows were last checked, as the At a glance tile does.
+let notApproved = '';
+if (!x.approved) {
+  const a = approvalFor(data, scope);
+  if (!a.notApproved.length) throw new Error(`<OrganCards id="${id}">: approved is false, but no regulatory row of ${scope.code} says not approved (src/data/compounds/${data.slug}.yaml)`);
+  const checked = visibleRows(data, scope).filter((r) => a.notApproved.includes(r.jurisdiction)).map((r) => r.as_of).sort((p, q) => +q - +p)[0];
+  const lang = isFallback(L, 'organ-cards.ui.notApproved') ? SOURCE_LOCALE : L;
+  notApproved = ui('notApproved', { list: jurisdictionList(lang, a.notApproved, 'disjunction'), date: formatDate(lang, checked) });
+}
 const steps = [ui(x.receptors.length > 1 ? 'cell.dockMany' : 'cell.dockOne', { drug: text.drug, receptors: receptorList }), ui(x.receptors.length > 1 ? 'cell.signalMany' : 'cell.signalOne'), ui('cell.respond')];
 // Animals and cells share one line style (long dashes), so they share one legend entry.
 const legend = [...new Set(levelsUsed(x).map((lv) => (lv === 'animal' || lv === 'in-vitro' ? 'lab' : lv)))];
@@ -57,7 +71,7 @@ const arts: Media[] = [...new Set(x.cards.map((c) => ORGAN_ART.organs[c.organ]?.
     <span class="oc-title" id={`${base}-title`}>{text.title}</span>
     <span class="oc-detail">{text.detail}</span>
     {!x.approved && (
-      <span class="oc-status"><span class="oc-status__text">{ui('notApproved')}</span><CiteMarks locale={L} ids={x.status_sources} index={citeIndex} /></span>
+      <span class="oc-status"><span class="oc-status__text">{notApproved}</span><CiteMarks locale={L} ids={statusSources(x, scope)} index={citeIndex} /></span>
     )}
   </figcaption>
 

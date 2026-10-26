@@ -5,6 +5,7 @@
  */
 import YAML from 'yaml';
 import { organCardsSchema, organArtSchema, type OrganCards, type OrganArt, type OcLevel } from '../schemas/organ-cards';
+import { visibleSources, type LocaleScope } from './jurisdictions';
 
 const raw = import.meta.glob<string>('/src/data/organ-cards/*.yaml', { eager: true, query: '?raw', import: 'default' });
 
@@ -36,8 +37,13 @@ export function levelsUsed(x: OrganCards): OcLevel[] {
   return ORDER.filter((l) => used.has(l));
 }
 
-/** Every source id a figure cites (cell panel, status line, cards and notes), in order of appearance. */
-export function sourcesOf(x: OrganCards): string[] {
-  const ids = [...x.cell.sources, ...x.status_sources, ...x.cards.flatMap((c) => [...c.sources, ...(c.note?.sources ?? [])])];
+/** The "not approved" line's sources in a locale: its own, then those of the countries the locale shows. */
+export function statusSources(x: OrganCards, scope: LocaleScope): string[] {
+  return visibleSources({ sources: x.status_sources, local_sources: x.status_local_sources }, scope);
+}
+
+/** Every source id a figure cites in a locale (cell panel, status line, cards and notes), in order of appearance. */
+export function sourcesOf(x: OrganCards, scope: LocaleScope): string[] {
+  const ids = [...x.cell.sources, ...statusSources(x, scope), ...x.cards.flatMap((c) => [...c.sources, ...(c.note?.sources ?? [])])];
   return [...new Set(ids)];
 }

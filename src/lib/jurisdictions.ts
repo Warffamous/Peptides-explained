@@ -52,7 +52,14 @@ export function isVisible(codes: readonly Jurisdiction[] | Jurisdiction | undefi
   return list.some((c) => visible.includes(c));
 }
 
-/** A tracker item's sources in the locale: its own, then the local_sources of jurisdictions the locale shows. */
+/**
+ * Sources in the locale: the item's own, then the local_sources of the jurisdictions the locale shows.
+ * Used for tracker items and for the data that cites a country's own sources: the product check
+ * (src/data/product-check.yaml), explainers (explainers.yaml), image captions (media.yaml) and the
+ * organ cards' "not approved" line. A Dutch help page or an EU label stays in the data under NL or EU
+ * and is cited only where those are shown. src/plugins/locale-sources.mjs mirrors this for the remark
+ * plugins, which run before Astro and cannot import this file.
+ */
 export function visibleSources(item: { sources: readonly string[]; local_sources?: Partial<Record<Jurisdiction, readonly string[]>> }, locale: LocaleScope): string[] {
   const local = Object.entries(item.local_sources ?? {}) as [Jurisdiction, readonly string[]][];
   return [...item.sources, ...local.filter(([j]) => isVisible(j, locale)).flatMap(([, ids]) => ids)];

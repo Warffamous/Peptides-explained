@@ -98,8 +98,9 @@ for (const dist of dists) {
     // commerce (stripNonCommerce); links above are checked with only the legal-order exception.
     // h1-h6, then the components' own headings: the section question (<Lead>), the fold title
     // (<InDetail>), figure titles (Compare, IconArray, TimeStrip) and diagram captions, key-number titles and labels,
-    // callout titles.
-    const HEADINGS = 'h1, h2, h3, h4, h5, h6, .lead__q, .in-detail__title, .fig__title, .key-number__title, .key-number__label, .callout__title, .diagram__caption';
+    // callout titles; table heads (a Compare row label or column head is a label: below 38 rem each row becomes a
+    // card under it), figure captions and fold summaries (CONTENT-GUIDE §1).
+    const HEADINGS = 'h1, h2, h3, h4, h5, h6, .lead__q, .in-detail__title, .fig__title, .key-number__title, .key-number__label, .callout__title, .diagram__caption, th, figcaption, summary';
     for (const h of root.querySelectorAll(HEADINGS)) {
       const text = h.textContent.replace(/\s+/g, ' ').trim();
       const m = tokenRe.exec(stripNonCommerce(text));

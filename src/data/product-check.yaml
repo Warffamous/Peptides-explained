@@ -10,10 +10,16 @@
 # volumes, schedules, mixing sums, and nothing about where to get a product or how to judge a seller.
 # What each source is cited for: research/harm-reduction-pass.md.
 
-# English refocus (24 October 2026): the intro, label, look, certificate, storage and doctor checks now cite sources
-# from the English readers' own countries (US, UK, Canada, Australia). The schema has one source list for every
-# locale; the replaced ids are listed in the group manifest MANIFEST-safety-en-b.md, for the other locale's pages.
-intro_sources: [fda-cgmp-facts, ashraf-2024-online-semaglutide, smith-2013-fungal-methylprednisolone]
+# Sources per country (26 October 2026, research/refocus-notes/finish.md): `sources` are cited in every locale;
+# `local_sources` (and `intro_local_sources`) are keyed by jurisdiction and cited only on pages of a locale that
+# shows that jurisdiction (config/locales.json; src/lib/jurisdictions.ts, visibleSources). The English words rest on
+# the US, UK, Canadian and Australian sources; the Dutch and EU sources of the pre-refocus list
+# (git show nl-source-2026-10-23:src/data/product-check.yaml; MANIFEST-safety-en-b.md) are kept under NL and EU for
+# the Dutch pages, whose words (a future src/i18n/nl/product-check.json) cite them.
+intro_sources: [ashraf-2024-online-semaglutide, smith-2013-fungal-methylprednisolone]
+intro_local_sources:
+  US: [fda-cgmp-facts]
+  NL: [igj-online-medicijnen]
 
 items:
   - id: seal
@@ -22,20 +28,32 @@ items:
 
   - id: label
     icon: check-label
-    sources: [ecfr-21-201-100, ecfr-21-201-17, fda-considering-online-pharmacy]
+    sources: [fda-considering-online-pharmacy]
+    local_sources:
+      US: [ecfr-21-201-100, ecfr-21-201-17] # the English words: "In the US, for example, a prescription medicine must show all four"
+      EU: [eu-directive-2001-83]
 
   - id: look
     icon: check-look
-    sources: [dailymed-egrifta-sv-label, fda-label-wegovy]
+    sources: [dailymed-egrifta-sv-label]
+    local_sources:
+      US: [fda-label-wegovy]
+      EU: [ema-epar-wegovy]
 
   - id: certificate
     icon: check-certificate
-    sources: [fda-2016-ich-q7-gmp-api, nist-2018-iso17025-crosswalk-reporting, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, janvier-2018-falsified-peptides-belgium]
+    sources: [fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, janvier-2018-falsified-peptides-belgium]
+    local_sources:
+      US: [fda-2016-ich-q7-gmp-api, nist-2018-iso17025-crosswalk-reporting]
+      EU: [ema-ich-q7-gmp-api, ema-2025-synthetic-peptides-guideline]
     links: [safety/product-risk#what-a-lab-report-can-and-cannot-tell-you]
 
   - id: storage
     icon: check-cold
-    sources: [fda-label-wegovy, fda-unapproved-glp1-concerns, manning-2010-protein-stability, who-2010-injection-toolkit]
+    sources: [fda-unapproved-glp1-concerns, manning-2010-protein-stability, who-2010-injection-toolkit]
+    local_sources:
+      US: [fda-label-wegovy]
+      EU: [ema-epar-wegovy]
     links: [safety/sterile-technique#when-to-throw-a-vial-away]
 
   - id: clean
@@ -50,7 +68,13 @@ items:
 
   - id: doctor
     icon: check-doctor
-    sources: [au-healthdirect-questions-to-ask-your-doctor, vic-health-2026-retatrutide-liver, hhs-hipaa-your-rights, gmc-confidentiality-duties, opc-privacy-laws-summary, oaic-health-information]
+    sources: [vic-health-2026-retatrutide-liver]
+    local_sources:
+      US: [hhs-hipaa-your-rights]
+      UK: [gmc-confidentiality-duties]
+      CA: [opc-privacy-laws-summary]
+      AU: [au-healthdirect-questions-to-ask-your-doctor, oaic-health-information]
+      NL: [thuisarts-naar-de-huisarts, knmg-beroepsgeheim]
     links: [safety/monitoring, talking-to-your-doctor]
 
   - id: stop

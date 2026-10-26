@@ -128,6 +128,14 @@ export const WADA_STATUSES = ['prohibited', 'not-listed', 'unclear'] as const;
 /** Kinds of help service on a jurisdiction's contacts card (src/data/jurisdictions.yaml, help). */
 export const HELP_KINDS = ['urgent-advice', 'poisons', 'drugs-advice', 'mental-health'] as const;
 
+/**
+ * National schedules a regulatory row may name (schedule.code), only where the instrument names the
+ * substance (CONTENT-GUIDE §1b, §5.1): S2 to S10, a schedule of Australia's Poisons Standard (S4 =
+ * prescription-only medicine); PDL, Canada's Prescription Drug List. The table shows each code's name
+ * from vocab.schedule in src/i18n/<locale>/vocab.json ("Schedule 4 (S4)", "Prescription Drug List").
+ */
+export const SCHEDULE_CODES = ['S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'S10', 'PDL'] as const;
+
 export const WADA_SECTIONS = ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'M1', 'M2', 'M3', 'P1'] as const;
 
 export const STUDY_SPECIES = [

@@ -62,7 +62,8 @@
       ],
       "allowStrings": [
         { "file": "src/i18n/en/timeline.json", "key": "^thalidomide-withdrawn\\.text$", "patterns": ["german"], "reason": "global history: thalidomide (content brief, 'What may stay' 3)" },
-        { "file": "src/i18n/en/corrections.json", "key": "^tesamorelin-approval-answer\\.detail$", "patterns": ["eu"], "reason": "the corrections log records what the page said before the refocus (the EU status first); history of the page, not reader framing" }
+        { "file": "src/i18n/en/corrections.json", "key": "^tesamorelin-approval-answer\\.detail$", "patterns": ["eu"], "reason": "the corrections log records what the page said before the refocus (the EU status first); history of the page, not reader framing" },
+        { "file": "src/i18n/en/glossary/stubs-b.json", "key": "^efsa\\.aliases\\.\\d+$", "patterns": ["europe"], "reason": "the agency's proper name, an alias of the EFSA glossary term so that 'the European Food Safety Authority' on the NR/NMN page links to it; EFSA is cited there as scientific evidence (a food-safety assessment, marked), never as the reader's frame" }
       ],
       "allowPhrases": [
         { "re": "\\bEli Lilly Nederland B\\.V\\.", "reason": "the legal name of the UK marketing-authorisation holder of Mounjaro (src/data/compounds/tirzepatide.yaml, products table), not reader framing" },

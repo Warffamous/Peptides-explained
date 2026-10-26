@@ -151,7 +151,7 @@ export function compoundCitations(data: CompoundData, page: CompoundPage, inline
   page.glance.sport?.sources.forEach(add);
   page.glance.stop_signs?.forEach((s) => s.sources.forEach(add));
   page.glance.facts.forEach((f) => f.sources.forEach(add));
-  idsOf(body, 'OrganCards').forEach((id) => sourcesOf(getOrganCards(id)).forEach(add));
+  idsOf(body, 'OrganCards').forEach((id) => sourcesOf(getOrganCards(id), scope).forEach(add));
   return out;
 }
 
@@ -210,7 +210,11 @@ export function usedSourceIds(locale: string): Promise<Set<string>> {
         const body = entry.body ?? '';
         [...compoundCitations(data, entry.data, rpf.citations ?? [], body, contentLocale), ...blockSources(body, contentLocale)].forEach((id) => ids.add(id));
       }
-      for (const id of await usedMediaIds(locale)) MEDIA.get(id)?.sources.forEach((s) => ids.add(s));
+      // caption sources as this locale shows them (a country's own sources only where it is shown)
+      for (const id of await usedMediaIds(locale)) {
+        const m = MEDIA.get(id);
+        if (m) visibleSources(m, getLocale(locale)).forEach((s) => ids.add(s));
+      }
       return ids;
     })());
   }

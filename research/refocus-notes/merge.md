@@ -244,6 +244,9 @@ current status); the DPD brand searches named in the research (TP-7, Selanc, MEH
 SS-31, "Thymosin alpha"); current Canadian monographs for Mounjaro (after the June 2026 paediatric decision), Zepbound,
 Poviztra, the Aspen and Sandoz semaglutides.
 
+**Done on 26 October 2026** (the APIs were back, the web search pages still down): DPD, NOC and LNHPD searched in
+full through the official APIs; one row corrected (Sevmia's date). See `research/refocus-notes/finish.md`, item 14.
+
 ## 9. Validator warnings (87, none an error)
 
 - Mine: 29 "has no DOI or PMID" in refocus-*.yaml (type `guideline` or `book` from regulators, NICE, SMC, GMC, GPhC,

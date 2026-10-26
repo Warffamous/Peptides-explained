@@ -14,7 +14,11 @@ gila-monster:
   retrieved: 2026-10-20
   people: false
   focal: 52% 58%
-  sources: [eng-1992-exendin-4, muller-2019-glp1-review, ema-epar-wegovy]
+  # Caption sources per country (26 October 2026, research/refocus-notes/finish.md): 'semaglutide copies a human
+  # hormone' rests on the US label on English (12.1: 94% sequence homology to human GLP-1, re-read 26 October 2026)
+  # and on the EU product information on Dutch pages (src/lib/jurisdictions.ts, visibleSources).
+  sources: [eng-1992-exendin-4, muller-2019-glp1-review]
+  local_sources: { US: [fda-label-ozempic], EU: [ema-epar-wegovy] }
 lab-mouse:
   file: lab-mouse.jpg
   kind: photo
@@ -162,9 +166,11 @@ sharps-bin-yellow:
   retrieved: 2026-10-20
   people: false
   focal: 50% 20%
-  # English refocus (glossary-ui-media-en, 26 October 2026): apotheek-medicijnafval (Dutch pharmacists' page on
-  # returning medicine waste) removed from the caption sources; the caption needs only the FDA page.
+  # English refocus (glossary-ui-media-en, 26 October 2026): the caption needs only the FDA page on English;
+  # apotheek-medicijnafval (Dutch pharmacists' page on returning medicine waste) is cited on Dutch pages only
+  # (local_sources NL, 26 October 2026).
   sources: [fda-sharps-containers]
+  local_sources: { NL: [apotheek-medicijnafval] }
 glp1-body-map-v2:
   file: glp1-body-map-v2.png
   kind: infographic-art
@@ -524,10 +530,16 @@ pharmacy-mortar:
   retrieved: 2026-10-22
   people: false
   focal: 50% 52%
-  # English refocus (glossary-ui-media-en, 26 October 2026): the caption source was the Dutch inspectorate's page on
-  # pharmacy preparation (igj-eigen-bereidingen-apotheek, kept in legal-a.yaml for nl); this hero is on /en/legal-routes/,
-  # so the caption now rests on the four countries' pharmacy-compounding rules that page already cites.
-  sources: [usc-21-353a, uk-ma-1968-s10, ca-hc-pol-0051-compounding, au-tga-compounded-medicines-guidance]
+  # English refocus (glossary-ui-media-en, 26 October 2026): this hero is on /en/legal-routes/, so on English the
+  # caption rests on the four countries' pharmacy-compounding rules that page already cites; on Dutch pages on the
+  # Dutch inspectorate's page on pharmacy preparation (igj-eigen-bereidingen-apotheek, legal-a.yaml), as before
+  # (local_sources, 26 October 2026).
+  local_sources:
+    US: [usc-21-353a]
+    UK: [uk-ma-1968-s10]
+    CA: [ca-hc-pol-0051-compounding]
+    AU: [au-tga-compounded-medicines-guidance]
+    NL: [igj-eigen-bereidingen-apotheek]
 law-library-shelf:
   file: law-library-shelf.jpg
   kind: photo
@@ -1107,10 +1119,14 @@ skin-epidermis-dermis-he:
   retrieved: 2026-10-23
   people: false
   focal: 50% 35%
-  # English refocus (glossary-ui-media-en, 26 October 2026): the caption source was the EU cosmetics regulation
-  # (eu-regulation-1223-2009-cosmetics, kept in stubs-b.yaml); now the same definition as it applies in Great Britain
-  # and the FDA's cosmetic-or-drug page, both cited on the English GHK-Cu page.
-  sources: [uk-cosmetic-products-reg-gb-art-2, fda-cosmetic-or-drug]
+  # English refocus (glossary-ui-media-en, 26 October 2026): on English the caption rests on the definition as it
+  # applies in Great Britain and the FDA's cosmetic-or-drug page, both cited on the English GHK-Cu page; on Dutch
+  # pages on the EU cosmetics regulation (eu-regulation-1223-2009-cosmetics, stubs-b.yaml), as before
+  # (local_sources, 26 October 2026).
+  local_sources:
+    UK: [uk-cosmetic-products-reg-gb-art-2]
+    US: [fda-cosmetic-or-drug]
+    EU: [eu-regulation-1223-2009-cosmetics]
 vitamin-b3-crystals-polarised:
   file: vitamin-b3-crystals-polarised.jpg
   kind: photo

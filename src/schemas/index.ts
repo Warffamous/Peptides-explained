@@ -104,10 +104,11 @@ export const regulatoryEntrySchema = z.object({
   as_of: isoDate, // date we last confirmed it
   sources: z.array(kebab).min(1),
   /**
-   * A national schedule the medicine is in, where the regulator publishes one (e.g. the Australian
-   * Poisons Standard, code "S4": prescription only). note: the schedule's own short wording.
+   * A national schedule the medicine is in, where the regulator publishes one and the instrument names the
+   * substance: the Australian Poisons Standard (code "S4": prescription only) or Canada's Prescription Drug
+   * List (code "PDL"). The table shows the code's name (vocab.schedule). note: the schedule's own short wording.
    */
-  schedule: z.object({ code: nonEmpty, note: z.string().optional(), sources: z.array(kebab).min(1) }).optional(),
+  schedule: z.object({ code: z.enum(V.SCHEDULE_CODES), note: z.string().optional(), sources: z.array(kebab).min(1) }).optional(),
 });
 
 export const studySchema = z.object({

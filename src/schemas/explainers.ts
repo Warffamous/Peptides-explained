@@ -6,7 +6,7 @@
  * Used by the build (src/lib/explainers.ts) and the validator (scripts/lib/explainers.ts).
  */
 import { z } from 'zod';
-import { MECHANISM_LEVELS } from './vocab';
+import { MECHANISM_LEVELS, JURISDICTIONS } from './vocab';
 
 const kebab = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'must be kebab-case (a-z, 0-9, hyphens)');
 const nonEmpty = z.string().trim().min(1);
@@ -30,6 +30,12 @@ export const explainerSchema = z.object({
   steps: z.array(explainerStepSchema).min(4).max(6),
   /** Source ids the artwork and captions rest on. Rendered as the "Based on" line and numbered with the page's citations. */
   sources: z.array(kebab).min(1),
+  /**
+   * A country's own sources (a label), keyed by jurisdiction: cited after `sources` only on pages of a
+   * locale that shows that jurisdiction (src/lib/jurisdictions.ts, visibleSources), e.g. the US labels on
+   * English and the EU product information on Dutch pages.
+   */
+  local_sources: z.record(z.enum(JURISDICTIONS), z.array(kebab).min(1)).default({}),
   /** true only when the artwork is a direction-neutral flow (e.g. a time axis) that may mirror in RTL. Anatomy never mirrors. */
   mirror: z.boolean().default(false),
   /**

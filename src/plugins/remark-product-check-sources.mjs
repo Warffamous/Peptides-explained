@@ -5,6 +5,10 @@
  * checklist's source marks are numbered in order of appearance with the page's own citations and its
  * sources always appear in the page's source list.
  *
+ * Sources per country: `sources` are cited in every locale, `local_sources` only on pages of a locale
+ * that shows that jurisdiction (src/plugins/locale-sources.mjs, mirroring visibleSources in
+ * src/lib/jurisdictions.ts). The locale is the content file's own.
+ *
  * The optional compound-specific line (extra="…") names its sources in extraSources="id,id"; they go
  * into the slot "src-extra". An extra line without sources fails the build. Slot names carry the
  * "src-" prefix because Astro drops a prop that has the same name as a slot (a slot named "extra"
@@ -13,6 +17,7 @@
 import fs from 'node:fs';
 import YAML from 'yaml';
 import { visit } from 'unist-util-visit';
+import { localeFromPath, visibleSourcesFor } from './locale-sources.mjs';
 
 const DATA = new URL('../data/product-check.yaml', import.meta.url);
 
@@ -38,9 +43,15 @@ export default function remarkProductCheckSources() {
       if (extra && (typeof extraSources?.value !== 'string' || !extraSources.value.trim())) {
         file.fail('<ProductCheck extra="…"> needs a literal extraSources="id,id" attribute (the page\'s own sources for that line)', node);
       }
+      const locale = localeFromPath(file.path ?? file.history?.[0]);
+      if (!locale) file.fail('<ProductCheck />: cannot tell the locale from the file path (src/content/<collection>/<locale>/…)', node);
       const children = [];
-      if (data.intro_sources?.length) children.push(cite(node.type, data.intro_sources, 'src-intro'));
-      for (const item of data.items ?? []) if (item.sources?.length) children.push(cite(node.type, item.sources, `src-item-${item.id}`));
+      const intro = visibleSourcesFor({ sources: data.intro_sources, local_sources: data.intro_local_sources }, locale);
+      if (intro.length) children.push(cite(node.type, intro, 'src-intro'));
+      for (const item of data.items ?? []) {
+        const ids = visibleSourcesFor(item, locale);
+        if (ids.length) children.push(cite(node.type, ids, `src-item-${item.id}`));
+      }
       if (extra && extraSources) {
         children.push(cite(node.type, extraSources.value.split(',').map((s) => s.trim()).filter(Boolean), 'src-extra'));
       }

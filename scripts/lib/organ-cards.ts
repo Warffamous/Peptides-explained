@@ -13,7 +13,8 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, walk, readYaml, readJson, readMdx } from './load.ts';
+import { ROOT, walk, readYaml, readJson, readMdx, loadLocales } from './load.ts';
+import { visibleCodes, visibleSources } from '../../src/lib/jurisdictions.ts';
 import { organCardsSchema, organArtSchema, organCardsTextSchema, type OrganCards, type OrganArt } from '../../src/schemas/organ-cards.ts';
 import { mediaFileSchema } from '../../src/schemas/media.ts';
 
@@ -86,7 +87,7 @@ export function checkOrganCards(ctx: Ctx): number {
     if (!r.success) continue;
     const x = r.data;
     figures.set(id, { file, data: x });
-    const all = [...x.cell.sources, ...x.status_sources, ...x.cards.flatMap((c) => [...c.sources, ...(c.note?.sources ?? [])])];
+    const all = [...x.cell.sources, ...x.status_sources, ...Object.values(x.status_local_sources).flat(), ...x.cards.flatMap((c) => [...c.sources, ...(c.note?.sources ?? [])])];
     for (const s of new Set(all)) if (!ctx.hasSource(s)) err(file, `unknown source id "${s}"`);
     for (const c of x.cards) if (organArt && !organArt.organs[c.organ]) err(file, `card "${c.organ}": no picture for this organ in ${DIR}/_organs.yaml`);
     if (x.review.status === 'ok') {
@@ -185,18 +186,24 @@ export function checkOrganCards(ctx: Ctx): number {
       for (const c of body.matchAll(CITE_RE)) c[1].split(',').map((s) => s.trim()).forEach((s) => cited.add(s));
       const glance = (fm.glance ?? {}) as { stop_signs?: { sources?: string[] }[]; facts?: { sources?: string[] }[]; tested?: { sources?: string[] }; sport?: { sources?: string[] } };
       [...(glance.stop_signs ?? []), ...(glance.facts ?? []), ...(glance.tested ? [glance.tested] : []), ...(glance.sport ? [glance.sport] : [])].forEach((g) => (g.sources ?? []).forEach((s) => cited.add(s)));
+      // the page's locale decides which regulatory rows (and so which row sources) the page shows, and which
+      // country sources of the figure's "not approved" line it cites (src/lib/jurisdictions.ts)
+      const scope = loadLocales().locales.find((l) => l.code === relp[1]);
+      const shown = new Set<string>(scope ? visibleCodes(scope) : []);
       if (relp[0] === 'compounds') {
         const dataFile = path.join(ROOT, `src/data/compounds/${relp[relp.length - 1].replace(/\.mdx$/, '')}.yaml`);
         const cd = (fs.existsSync(dataFile) ? readYaml(dataFile) : null) as {
-          studies?: { source?: string }[]; regulatory?: { sources?: string[] }[]; authorised_products?: { label_source?: string }[]; sequence?: { source?: string };
+          studies?: { source?: string }[]; regulatory?: { jurisdiction?: string; sources?: string[] }[]; authorised_products?: { label_source?: string }[]; sequence?: { source?: string };
         } | null;
         cd?.studies?.forEach((s) => s.source && cited.add(s.source));
-        cd?.regulatory?.forEach((r) => (r.sources ?? []).forEach((s) => cited.add(s)));
+        cd?.regulatory?.filter((r) => shown.has(String(r.jurisdiction))).forEach((r) => (r.sources ?? []).forEach((s) => cited.add(s)));
         cd?.authorised_products?.forEach((p) => p.label_source && cited.add(p.label_source));
         if (cd?.sequence?.source) cited.add(cd.sequence.source);
       }
       const x = fig.data;
-      const all = [...x.cell.sources, ...x.status_sources, ...x.cards.flatMap((c) => [...c.sources, ...(c.note?.sources ?? [])])];
+      const status = scope ? visibleSources({ sources: x.status_sources, local_sources: x.status_local_sources }, scope) : x.status_sources;
+      if (!x.approved && !status.length) err(fig.file, `the "not approved" line has no source for locale "${relp[1]}" (status_sources, or status_local_sources for its countries)`);
+      const all = [...x.cell.sources, ...status, ...x.cards.flatMap((c) => [...c.sources, ...(c.note?.sources ?? [])])];
       const missing = [...new Set(all)].filter((s) => !cited.has(s));
       if (missing.length) err(file, `<OrganCards id="${id}">: cites ${missing.join(', ')}, which the page does not cite anywhere else; cite it where the page makes the same claim (the cards are numbered from the page's own source list)`);
     }

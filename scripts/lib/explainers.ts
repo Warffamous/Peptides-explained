@@ -44,7 +44,7 @@ export function checkExplainers(ctx: Ctx): number {
       if (m) err(art, `<${m[1]}> inside explainer artwork — the SVG must contain no text; overlay words from explainers.json labels instead`);
       if (Buffer.byteLength(src) > ART_BUDGET) warn(art, `artwork source is ${(Buffer.byteLength(src) / 1024).toFixed(1)} KB; aim for ≤ ${ART_BUDGET / 1024} KB of SVG`);
     }
-    for (const s of x.sources) if (!ctx.hasSource(s)) err(regFile, `${id}: unknown source id "${s}"`);
+    for (const s of [...x.sources, ...Object.values(x.local_sources).flat()]) if (!ctx.hasSource(s)) err(regFile, `${id}: unknown source id "${s}"`);
     if (x.review.status === 'ok') {
       if (!x.review.by || !x.review.on) err(regFile, `${id}: review.status ok needs review.by (person id) and review.on (date)`);
       else if (!ctx.hasPerson(x.review.by)) err(regFile, `${id}: review.by "${x.review.by}" is not in src/data/people.yaml`);

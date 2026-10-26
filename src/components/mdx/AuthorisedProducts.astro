@@ -54,7 +54,7 @@ const route = [
         <tbody>
           {products.map((p) => (
             <tr data-marketed={p.marketed_until ? 'no' : undefined}>
-              <th scope="row"><span class="authorised__name">{p.name}</span><span class="authorised__holder">{p.holder}</span>{p.marketed_until && <span class="authorised__gone">{t(L, 'compound.authorised.noLongerSold')} (<time datetime={isoDate(p.marketed_until)}>{formatDate(L, p.marketed_until)}</time>)</span>}</th>
+              <th scope="row"><span class="authorised__name">{p.name}</span>{' '}<span class="authorised__holder">{p.holder}</span>{p.marketed_until && <>{' '}<span class="authorised__gone">{t(L, 'compound.authorised.noLongerSold')} (<time datetime={isoDate(p.marketed_until)}>{formatDate(L, p.marketed_until)}</time>)</span></>}</th>
               <td data-label={t(L, 'compound.authorised.indication')}>{c.page.indications[p.id]} <span class="authorised__route-type">· {t(L, `vocab.route.${p.route}`)}</span></td>
               <td data-label={t(L, 'compound.authorised.jurisdiction')}>{t(L, `vocab.jurisdiction.${p.jurisdiction}`)}</td>
               <td data-label={t(L, 'compound.authorised.since')}><time datetime={isoDate(p.authorised)}>{formatDate(L, p.authorised)}</time></td>

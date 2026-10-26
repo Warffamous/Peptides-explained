@@ -1,8 +1,9 @@
 /**
  * Validator checks for <ProductCheck /> ("If your product did not come from a pharmacy: check before
  * you use it"; docs/CONTENT-GUIDE.md §1a and §9), called from validate-content.ts.
- *  - data (src/data/product-check.yaml): schema, pictograms exist, every source exists, every linked
- *    route exists
+ *  - data (src/data/product-check.yaml): schema, pictograms exist, every source exists (also the
+ *    per-jurisdiction local_sources), every linked route exists, and the intro and every check have at
+ *    least one source in each locale that is built (published or preview)
  *  - words (src/i18n/<locale>/product-check.json): text for every check, one link text per link,
  *    plain language (short sentences, reading ease) like summaries and captions
  *  - uses in MDX: self-closing; an extra="…" line needs its own extraSources="id,id" that exist and is
@@ -13,7 +14,8 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, walk, readYaml, readJson, readMdx } from './load.ts';
+import { ROOT, walk, readYaml, readJson, readMdx, loadLocales } from './load.ts';
+import { visibleSources } from '../../src/lib/jurisdictions.ts';
 import { productCheckDataSchema, productCheckTextSchema, type ProductCheckData } from '../../src/schemas/product-check.ts';
 import { PICTOGRAM_NAMES } from '../../src/components/ui/pictograms.ts';
 
@@ -46,12 +48,19 @@ export function checkProductCheck(ctx: Ctx): number {
   }
   const ids = new Set<string>();
   if (data) {
-    data.intro_sources.forEach((s) => ctx.hasSource(s) || err(dataFile, `intro_sources: unknown source id "${s}"`));
+    const intro = { sources: data.intro_sources, local_sources: data.intro_local_sources };
+    [...data.intro_sources, ...Object.values(data.intro_local_sources).flat()].forEach((s) => ctx.hasSource(s) || err(dataFile, `intro: unknown source id "${s}"`));
+    // every built locale cites something for the intro and for each check (its own countries' sources)
+    const built = loadLocales().locales.filter((l) => l.status !== 'planned');
+    for (const l of built) {
+      if (!visibleSources(intro, l).length) err(dataFile, `intro: no source for locale "${l.code}" (intro_sources, or intro_local_sources for ${l.jurisdictions.full.join('/')})`);
+      for (const it of data.items) if (!visibleSources(it, l).length) err(dataFile, `${it.id}: no source for locale "${l.code}" (sources, or local_sources for ${l.jurisdictions.full.join('/')})`);
+    }
     for (const it of data.items) {
       if (ids.has(it.id)) err(dataFile, `duplicate check id "${it.id}"`);
       ids.add(it.id);
       if (!PICTOGRAM_NAMES.includes(it.icon)) err(dataFile, `${it.id}: unknown pictogram "${it.icon}" (src/components/ui/pictograms.ts)`);
-      for (const s of it.sources) if (!ctx.hasSource(s)) err(dataFile, `${it.id}: unknown source id "${s}"`);
+      for (const s of [...it.sources, ...Object.values(it.local_sources).flat()]) if (!ctx.hasSource(s)) err(dataFile, `${it.id}: unknown source id "${s}"`);
       for (const l of it.links) {
         const route = l.split('#')[0];
         if (!ctx.routeExists(route)) err(dataFile, `${it.id}: link to "${l}", but no page has the route "${route}"`);

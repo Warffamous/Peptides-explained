@@ -58,7 +58,7 @@ export function validateMedia(ctx: Ctx): { images: number; infographics: number;
     if (THIRD_PARTY_ORIGINS.includes(m.origin) && m.source_url && /\/\/upload\.wikimedia\.org\//.test(m.source_url)) {
       err(regFile, `"${id}": source_url must be the human-readable file page, not the file itself (no hotlinking)`);
     }
-    for (const s of m.sources) if (!ctx.hasSource(s)) err(regFile, `"${id}": sources: unknown source id "${s}"`);
+    for (const s of [...m.sources, ...Object.values(m.local_sources).flat()]) if (!ctx.hasSource(s)) err(regFile, `"${id}": sources: unknown source id "${s}"`);
   }
   // every file on disk is registered
   if (fs.existsSync(mediaDir)) {

@@ -55,7 +55,7 @@ regulatory:
     since: 2018-01-04
     as_of: 2026-10-23
     sources: [ca-sbd-ozempic, ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24]
-    schedule: { code: "Prescription Drug List", note: "Prescription only; listed since 12 March 2018.", sources: [ca-pdl-human] }
+    schedule: { code: PDL, note: "Prescription only; listed since 12 March 2018.", sources: [ca-pdl-human] }
   # Australia: Ozempic, entered on the ARTG on 28 August 2019 (TGA decision 15 August 2019).
   - jurisdiction: AU
     status: authorised
@@ -151,7 +151,8 @@ authorised_products:
   # 2026, which adds Ozempic's heart and kidney indications). Every generic's
   # monograph says its semaglutide is 'Produced by solid-phase synthetic chemistry' (Ozempic, Wegovy, Plosbrio and
   # Poviztra: recombinant DNA in yeast). Sevmia: decision 25 June 2026 (ca-rds-sevmia-2026); its monograph's 'Date of
-  # Authorization' is 29 June 2026. DHPP status on 24 October 2026: Dr. Reddy's and Apo-Semaglutide 'Marketed';
+  # Authorization' is 29 June 2026, the date of its Notice of Compliance (NOC 37782, NOC database API read on 26 October
+  # 2026, research/refocus-notes/finish.md), so `authorised` is 29 June like every other Canadian product's NOC date. DHPP status on 24 October 2026: Dr. Reddy's and Apo-Semaglutide 'Marketed';
   # Poviztra, Sevmia, both Aspen products and Sandoz only 'Approved' (not yet sold). Ozempic, Rybelsus and the Wegovy
   # multidose pens were marketed, and Plosbrio only approved, in the DPD extract of 5 October 2026 (research).
   - { id: ozempic-ca, name: Ozempic, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2018-01-04, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085314.PDF", label_source: ca-pm-ozempic-2026-07-13 }
@@ -161,7 +162,7 @@ authorised_products:
   - { id: poviztra-ca, name: Poviztra, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2025-12-22, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00082882.PDF", label_source: ca-pm-poviztra }
   - { id: semaglutide-injection-drreddys-ca, name: Semaglutide Injection (Dr. Reddy's), holder: Dr. Reddy's Laboratories Ltd, jurisdiction: CA, authorised: 2026-04-28, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00084444.PDF", label_source: ca-pm-semaglutide-injection-drreddys }
   - { id: apo-semaglutide-ca, name: Apo-Semaglutide Injection, holder: Apotex Inc., jurisdiction: CA, authorised: 2026-05-01, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00084514.PDF", label_source: ca-pm-apo-semaglutide }
-  - { id: sevmia-ca, name: Sevmia, holder: Apotex Inc., jurisdiction: CA, authorised: 2026-06-25, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085157.PDF", label_source: ca-pm-sevmia }
+  - { id: sevmia-ca, name: Sevmia, holder: Apotex Inc., jurisdiction: CA, authorised: 2026-06-29, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085157.PDF", label_source: ca-pm-sevmia }
   - { id: aspen-semaglutide-ca, name: Aspen-Semaglutide, holder: Aspen Pharmacare Canada Inc., jurisdiction: CA, authorised: 2026-07-17, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085376.PDF", label_source: ca-pm-aspen-semaglutide }
   - { id: semaglutide-injection-aspen-ca, name: Semaglutide Injection (Aspen), holder: Aspen Pharmacare Canada Inc., jurisdiction: CA, authorised: 2026-08-25, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085867.PDF", label_source: ca-pm-semaglutide-injection-aspen }
   - { id: sandoz-semaglutide-ca, name: Sandoz Semaglutide, holder: Sandoz Canada Incorporated, jurisdiction: CA, authorised: 2026-09-16, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00086140.PDF", label_source: ca-pm-sandoz-semaglutide }

@@ -35,7 +35,9 @@ Live examples: `glp1-action` (mechanism section) and `insulin-glp1-hypo` (risks 
    with different support (e.g. "brain areas from animal studies → eating less measured in people"),
    list both levels for that step.
 5. **Sources are declared, not implied.** Every explainer lists its sources in the registry. They are
-   numbered together with the page's own citations and appear in the page's source list.
+   numbered together with the page's own citations and appear in the page's source list. A country's own
+   source, such as a label, goes in `local_sources` under its jurisdiction (the US label on English, the
+   EU product information on Dutch pages; CONTENT-GUIDE §3).
 6. **Nothing commercial, nothing glamorous.** No product shapes, no brand-like pens or vials, no
    injecting, no before/after. Medicines are abstract glyphs (a capsule, a hexagon, a tablet), and
    a glyph always comes with its word (rule 8a).

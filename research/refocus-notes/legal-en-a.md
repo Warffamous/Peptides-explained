@@ -256,6 +256,13 @@ United States and United Kingdom
 13. US border figures for peptide parcels (none found; callout on the page). PCAC per-peptide vote counts (not printed).
 14. UK: how Border Force handles personal-import seizures today (the page gives the 2022 FOI and says current practice is
     unknown).
+15. US (added by the finishing pass, 26 October 2026; research/refocus-notes/finish.md part 2): whether a person who only
+    receives an unapproved peptide for their own use, for example from a US seller shipping between states (not an
+    import), breaks federal law (21 U.S.C. 331(c) lists "the receipt in interstate commerce" of an adulterated or
+    misbranded drug as a prohibited act; source `usc-21-331`), and what state laws say about having a prescription
+    medicine without a prescription (not researched). legal/us now answers "Unknown" in its Compare table and in the
+    section "Having one, or receiving one from a seller in the US"; start-here, legal/research-use-only and legal-routes
+    point there.
 
 ## 10. Third pass (workflow date 24 October 2026; rerun after an interrupted run)
 

@@ -128,6 +128,18 @@
   compounds: [bpc-157, cjc-1295, tb-500, ghk-cu, retatrutide]
   sources: [au-tga-2026-06-peptide-compliance-priority, au-tga-2026-06-cmo-peptide-statement, au-tga-media-releases-peptide-log-2026-10-24, au-tga-2026-10-prescription-import-infringements]
 
+# New South Wales replaces its poisons law on 5 November 2026: NSW Health's page (current as at 7 July 2026) is the
+# latest dated step we could check, so it is `updated`; the start date is the next milestone. The Act as it starts and
+# the 2026 Regulation were not read (research/refocus/australia-legal.md, UNRESOLVED 2). Added by the second finishing
+# pass, 26 October 2026 (research/refocus-notes/finish.md part 2).
+- id: au-nsw-medicines-law-2026
+  jurisdiction: AU
+  status: adopted
+  updated: 2026-07-07
+  next_milestone: 2026-11-05
+  compounds: [tb-500, cjc-1295, ipamorelin, hexarelin, aod-9604]
+  sources: [au-nsw-health-s4d-2026, au-nsw-mptg-act-2022]
+
 # The consultation closed on 3 September 2026 and no decision or draft has been published, so the item is watched
 # rather than shown as an open consultation.
 - id: au-advertising-code-review

@@ -128,6 +128,22 @@ law: the problems look much the same in the United States, the United Kingdom, C
 proposal we name something like it that already exists in one of them"); "unlicensed" → "unapproved" in a few places;
 the `opinion.published` date (2026-10-20) is unchanged and `last_reviewed` is 2026-10-24.
 
+Added by the second finishing pass (26 October 2026; `research/refocus-notes/finish.md`, part 2), two owner-visible
+changes this table did not list:
+- **Proposal 4, the owner's stated support narrows.** Before: "We support those rules.", after a paragraph saying that
+  Dutch medicines law forbids stocking, offering, selling, supplying *and importing* a medicine without a licence, with no
+  exception for own use. After (line 229): "We support the rules on selling.", after a paragraph saying that own-use
+  rules differ by country. The owner's signed support no longer covers the rules on importing for one's own use. The
+  text was not changed back: the owner decides which sentence to sign.
+- **Costs for people now (line 174).** Before: "Those are real concerns" (about the Zorginstituut's reasons). After:
+  "Those are real limits of money and capacity" (about NICE TA1026). It follows from the new example, but it is new
+  wording in the owner's voice.
+- **The diagram caption** had become "Each one already exists in some form in the US, the UK, Canada or Australia"
+  (before: "Something like each one is already in place."), stronger than the table's own column head and than
+  proposal 6's argument that a route open to non-commercial sponsors does not exist yet. The finishing pass restored
+  the hedge: "Our six ideas. Something like each one already exists in the US, the UK, Canada or Australia." The owner
+  may prefer other words.
+
 ## 3. New facts and their sources
 
 New sources in `src/data/sources/en-guides-en.yaml` (first run, re-verified; second run marked *):

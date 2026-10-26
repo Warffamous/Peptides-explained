@@ -20,7 +20,8 @@
  *   (zero layout shift). The artwork receives the backdrop's size to check its viewBox against it.
  */
 import { t, tr, isFallback } from '../../lib/i18n';
-import { ctxLocale, uid } from '../../lib/ctx';
+import { ctxLocale, ctxContentLocale, uid } from '../../lib/ctx';
+import { visibleSources } from '../../lib/jurisdictions';
 import { getExplainer, levelsUsed } from '../../lib/explainers';
 import { getSource, shortSourceName } from '../../lib/data';
 import { formatNumber } from '../../lib/format';
@@ -30,8 +31,9 @@ import MediaPicture from '../media/MediaPicture.astro';
 import MediaCredit from '../media/MediaCredit.astro';
 import { getMedia, buildPicture } from '../../lib/media';
 
-interface Props { id: string }
-const { id } = Astro.props;
+/** sourceIds: set by remark-explainer-sources (the entry's sources as the page's locale shows them, src/lib/jurisdictions.ts); never written by hand. */
+interface Props { id: string; sourceIds?: string }
+const { id, sourceIds } = Astro.props;
 const L = ctxLocale(Astro);
 const xp = getExplainer(id);
 const arts = import.meta.glob<{ default: (props: Record<string, unknown>) => unknown }>('../explainers/*.astro', { eager: true });
@@ -49,8 +51,9 @@ const legend = levelsUsed(xp);
 
 // "Based on" line: a short name per source (shortSourceName, shared with <Infographic>), followed by
 // its citation marker (a named slot filled by remark-explainer-sources).
+const ids = sourceIds ? sourceIds.split(',').filter(Boolean) : visibleSources(xp, ctxContentLocale(Astro));
 const sources = await Promise.all(
-  xp.sources.map(async (sid, i) => ({
+  ids.map(async (sid, i) => ({
     name: shortSourceName(getSource(sid)),
     marker: Astro.slots.has(`src-${i}`) ? await Astro.slots.render(`src-${i}`) : '',
   })),

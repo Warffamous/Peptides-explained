@@ -56,13 +56,13 @@ regulatory:
     since: 2022-11-24
     as_of: 2026-10-23
     sources: [ca-sbd-mounjaro, ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24]
-    schedule: { code: "Prescription Drug List", note: "Prescription only; listed since 8 March 2023.", sources: [ca-pdl-human] }
+    schedule: { code: PDL, note: "Prescription only; listed since 8 March 2023.", sources: [ca-pdl-human] }
   # Australia: Mounjaro, entered on the ARTG on 23 December 2022 (TGA decision 22 December 2022).
   - jurisdiction: AU
     status: authorised
     since: 2022-12-23
     as_of: 2026-10-23
-    sources: [au-tga-pmr-search-status-a-2026-10-24, au-artg-search-status-a-2026-10-24, au-artg-mounjaro-439430]
+    sources: [au-tga-pmr-search-tirzepatide-2026-10-26, au-artg-search-tirzepatide-2026-10-26, au-artg-mounjaro-439430]
     # Schedule 4 'TIRZEPATIDE'; Appendix L clause 2 (item 41) adds dispensing-label warning statement 67.
     schedule: { code: "S4", note: "Prescription only medicine. The pharmacy label must warn: 'Do not use if pregnant or likely to become pregnant.' (Appendix L)", sources: [au-poisons-standard-2026-10] }
   - { jurisdiction: WADA, status: not-listed, as_of: 2026-10-20, sources: [wada-2026-list-en, wada-2027-list-en, wada-2026-monitoring-program, wada-2027-monitoring-program] }

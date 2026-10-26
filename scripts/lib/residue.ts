@@ -28,12 +28,12 @@ import { cardCodes, isVisible, visibleCodes, type LocaleScope } from '../../src/
 import { JURISDICTIONS, type Jurisdiction } from '../../src/schemas/vocab.ts';
 
 /**
- * The one switch. While false (the English content rewrite is in progress), every residue hit is a
- * WARNING in the validator and in `npm run check:residue`. Set it to true after the rewrite: error
- * and frame hits then fail `npm run validate` (so the build) and `npm run check`; warn hits stay
- * warnings.
+ * The one switch. True since 26 October 2026 (the English rewrite is done; src and dist had no error or
+ * frame hit, research/refocus-notes/finish.md): error and frame hits fail `npm run validate` (so the
+ * build) and `npm run check` (check:residue, also run in CI); warn hits stay warnings. While it was
+ * false, every hit was a warning.
  */
-export const STRICT_RESIDUE = false;
+export const STRICT_RESIDUE = true;
 
 export type ResidueLevel = 'error' | 'frame' | 'warn';
 const RANK: Record<ResidueLevel, number> = { error: 3, frame: 2, warn: 1 };

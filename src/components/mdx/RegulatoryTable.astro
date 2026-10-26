@@ -45,7 +45,7 @@ const [discMiddle, discAfter] = (discRest ?? '').split(MARK_TO);
                 r.since && <span class="reg-table__since">{t(L, 'compound.regulatoryTable.since')} <time datetime={isoDate(r.since)}>{formatDate(L, r.since)}</time></span>
               )}
               {r.schedule && (
-                <span class="reg-table__schedule">{t(L, 'compound.regulatoryTable.schedule', { code: r.schedule.code })}{r.schedule.note && <> · {r.schedule.note}</>}<CiteMarks locale={L} ids={r.schedule.sources} index={c.citeIndex} /></span>
+                <span class="reg-table__schedule">{t(L, 'compound.regulatoryTable.schedule', { name: t(L, `vocab.schedule.${r.schedule.code}`) })}{r.schedule.note && <> · {r.schedule.note}</>}<CiteMarks locale={L} ids={r.schedule.sources} index={c.citeIndex} /></span>
               )}
             </td>
             <td data-label={t(L, 'compound.regulatoryTable.note')} class="reg-table__note">

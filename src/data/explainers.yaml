@@ -31,9 +31,15 @@ insulin-glp1-hypo:
   mirror: true # glucose-over-time charts: the time axis may run right-to-left in RTL
   pages: [compounds/semaglutide] # safety/before-you-consider shows the medicine-neutral glp1-class-hypo since 21 Oct 2026
   sources:
-    - ema-epar-ozempic # SmPC 4.2 (with a sulfonylurea or insulin "a reduction in the dose … should be considered"), 4.4, 4.8 (no severe hypoglycaemia on monotherapy), 5.1 (glucose-dependent); package leaflet warning signs
     - sola-2015-sulfonylureas # sulfonylurea insulin release is independent of glucose levels
     - ada-2026-hypoglycaemia # glucose for the conscious person; call emergency services if unalert or unable to take carbohydrate; symptoms
+  # The label, per country (26 October 2026, research/refocus-notes/finish.md): English pages cite the US label,
+  # Dutch pages the EU product information (src/lib/jurisdictions.ts, visibleSources).
+  local_sources:
+    US:
+      - fda-label-ozempic # US prescribing information (revised 05/2026, re-read 26 October 2026): 12.1 insulin and glucagon secretion 'both in a glucose-dependent manner'; Table 2 monotherapy: severe hypoglycaemia 0%; 5.5 increased risk of hypoglycaemia with an insulin secretagogue (e.g. sulfonylurea) or insulin, 'may be lowered by a reduction in the dose of sulfonylurea … or insulin'; 7.1 'consider reducing the dose'; 17 educate patients on the signs and symptoms
+    EU:
+      - ema-epar-ozempic # SmPC 4.2 (with a sulfonylurea or insulin "a reduction in the dose … should be considered"), 4.4, 4.8 (no severe hypoglycaemia on monotherapy), 5.1 (glucose-dependent); package leaflet warning signs
   steps:
     - levels: [human] # glucose-dependent action, no severe hypoglycaemia on monotherapy (SmPC 5.1, 4.8)
     - levels: [human] # insulin, and sulfonylurea-driven insulin release, act regardless of glucose (Sola 2015)
@@ -49,10 +55,17 @@ glp1-class-hypo:
   mirror: true # the same glucose-over-time charts (the artwork of insulin-glp1-hypo, reused): the time axis may mirror in RTL
   pages: [compounds/tirzepatide, safety/before-you-consider, safety/monitoring]
   sources:
-    - ema-epar-mounjaro # SmPC 4.2 ("a reduction in the dose of sulphonylurea or insulin may be considered to reduce the risk of hypoglycaemia"), 4.4 (increased risk with an insulin secretagogue or insulin; lowered by reducing their dose), 4.8 (10-14% with a sulphonylurea, 14-19% with basal insulin; monotherapy up to 0.04 events per patient-year), 5.1 (insulin and glucagon effects glucose dependent); package leaflet signs (sweating, confusion, hunger). Product information PDF re-read 2026-10-21.
-    - ema-epar-ozempic # SmPC 4.2 ("a reduction in the dose of sulfonylurea or insulin should be considered"), 4.4, 5.1 (glucose dependent). Product information PDF re-read 2026-10-21.
     - sola-2015-sulfonylureas # sulfonylurea insulin release is independent of glucose levels
     - ada-2026-hypoglycaemia # symptoms (shakiness, sweating, confusion); glucose for the conscious person; emergency help if the person cannot take carbohydrate
+  # The labels, per country (26 October 2026, research/refocus-notes/finish.md): English pages cite the US labels,
+  # Dutch pages the EU product information (src/lib/jurisdictions.ts, visibleSources).
+  local_sources:
+    US:
+      - fda-label-mounjaro # US prescribing information (revised 08/2026, re-read 26 October 2026): 12.1 insulin secretion and glucagon 'both in a glucose-dependent manner'; Table 2 monotherapy: glucose <54 mg/dL in 0-1%; 5.3 increased risk of hypoglycaemia, including severe, with an insulin secretagogue (e.g. sulfonylurea) or insulin, 'may be lowered by a reduction in the dose of sulfonylurea … or insulin'; 7.1 'consider reducing the dose'; 17 educate patients on the signs and symptoms
+      - fda-label-ozempic # US prescribing information (revised 05/2026, re-read 26 October 2026): 12.1 glucose-dependent; 5.5 and 7.1 the same advice as Mounjaro's
+    EU:
+      - ema-epar-mounjaro # SmPC 4.2 ("a reduction in the dose of sulphonylurea or insulin may be considered to reduce the risk of hypoglycaemia"), 4.4 (increased risk with an insulin secretagogue or insulin; lowered by reducing their dose), 4.8 (10-14% with a sulphonylurea, 14-19% with basal insulin; monotherapy up to 0.04 events per patient-year), 5.1 (insulin and glucagon effects glucose dependent); package leaflet signs (sweating, confusion, hunger). Product information PDF re-read 2026-10-21.
+      - ema-epar-ozempic # SmPC 4.2 ("a reduction in the dose of sulfonylurea or insulin should be considered"), 4.4, 5.1 (glucose dependent). Product information PDF re-read 2026-10-21.
   steps:
     - levels: [human] # glucose-dependent action; little hypoglycaemia on its own (Mounjaro SmPC 4.8, 5.1; Ozempic SmPC 5.1)
     - levels: [human] # insulin, and sulfonylurea-driven insulin release, act regardless of glucose (Sola 2015)

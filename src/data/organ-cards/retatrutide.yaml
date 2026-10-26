@@ -5,7 +5,16 @@
 # figure head says so, and so does the molecule's word in the cell panel.
 page: compounds/retatrutide
 approved: false
-status_sources: [ema-medicines-json, ema-2026-10-under-evaluation, fda-unapproved-glp1-concerns, mhra-2026-10-counterfeit-pens] # the page's own sources for 'no regulator anywhere has authorised it' (20 October 2026)
+# The "not approved" line names the locale's own countries and the date their rows were checked (from
+# src/data/compounds/retatrutide.yaml). Its sources, per country (26 October 2026, research/refocus-notes/finish.md):
+# on English the page's own sources for 'not approved in the US, the UK, Canada or Australia' (What it is section);
+# the EMA ids stay for the Dutch pages, which show the EU row.
+status_local_sources:
+  US: [fda-unapproved-glp1-concerns]
+  UK: [mhra-2026-10-counterfeit-pens]
+  CA: [ca-dpd-extract-search-status-a-2026-10-24]
+  AU: [au-tga-2026-09-retatrutide-counterfeit]
+  EU: [ema-medicines-json, ema-2026-10-under-evaluation]
 receptors: [glp1, gip, glucagon]
 cell:
   level: in-vitro # cryo-EM: bound to all three receptors, each coupled to Gs (Li 2024); activity at all three in cell assays (Coskun 2022)

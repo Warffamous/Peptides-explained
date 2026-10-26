@@ -59,7 +59,7 @@ regulatory:
     since: 2022-09-30
     as_of: 2026-10-23
     sources: [ca-noc-egrifta, ca-sbd-egrifta, ca-dpd-egrifta-din-02438712, ca-dpd-egrifta-din-02423677, ca-dpd-extract-search-status-b-2026-10-23, ca-food-and-drug-regulations]
-    schedule: { code: "Prescription Drug List", note: "Prescription only; listed since 25 April 2014 ('Tesamorelin or its salts or derivatives').", sources: [ca-pdl-human] }
+    schedule: { code: PDL, note: "Prescription only; listed since 25 April 2014 ('Tesamorelin or its salts or derivatives').", sources: [ca-pdl-human] }
   # Australia: not on the ARTG and no TGA record of an application. No schedule field: the Poisons Standard does not
   # name tesamorelin; coverage by the GHRH group entry is our reading (legal-review question, research/refocus-notes/merge.md).
   - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-b-2026-10-23, au-tga-search-status-b-2026-10-23] }

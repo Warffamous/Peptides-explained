@@ -1,0 +1,377 @@
+# Sources added by the finishing pass of the English refocus (26 October 2026; log in
+# research/refocus-notes/finish.md). Each page was fetched and read on 26 October 2026.
+
+# ------------------------------------------------------------------ NHS 111 (England), without a number in the title
+# They replace nhs-111 ("When to use NHS 111 online or call 111") on the English pages: that title prints a
+# phone number, and the English site never does (CONTENT-GUIDE §1). "NHS 111" is the service's name, which may be
+# printed. nhs-111 stays in refocus-us-uk-routes.yaml (the UK contact card's help link still points to its page).
+
+uk-nhs-111-online:
+  type: web
+  authors: "NHS England"
+  title: "Get help for your symptoms"
+  container: "NHS 111 online"
+  year: 2026
+  url: https://111.nhs.uk/
+  accessed: 2026-10-26
+  verified: url
+  note: "Read 26 October 2026. Heading '111 online: Get help for your symptoms'; 'If you think you need medical help right now, 111 online can tell you what to do next'; it helps you find the best place to get help for your symptoms and does not give a diagnosis; also dental, mental health, sexual health and prescription questions; 'NHS 111 online is available in England only.' Cited for: NHS 111 in England is an online (and phone) service that tells you how urgent a problem is and where to go."
+
+uk-nhs-what-happens-when-you-call-111:
+  type: web
+  authors: "NHS (England)"
+  title: "What happens when you call NHS 111"
+  container: "nhs.uk"
+  year: 2022
+  url: https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/what-happens-when-you-call-nhs-111/
+  accessed: 2026-10-26
+  verified: url
+  note: "Read 26 October 2026; page last reviewed 14 November 2022 (next review due 14 November 2025, overdue). A health adviser asks who you are, where you are calling from and why; based on your answers the adviser may send an ambulance, refer you to an urgent care service or another professional such as a GP or dentist, arrange an out-of-hours visit or a nurse call-back, or give self-care advice. Cited for: the phone service tells you where to go or what to do; a nurse may call you back."
+
+# ------------------------------------------------------------------ Mounjaro in Australia: children from 10
+
+au-artg-mounjaro-439430-public-summary-2026-10-26:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Public Summary for ARTG Entry 439430: MOUNJARO KwikPen tirzepatide 4.17 mg/mL solution for injection multidose pre-filled pen"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg/439430
+  accessed: 2026-10-26
+  verified: url
+  note: "The 'Summary' PDF linked from the ARTG entry page (www.ebs.tga.gov.au, PrintDetailsPublic, docid 439430), downloaded and read with pdftotext on 26 October 2026 ('Produced at 27.10.2026 at 01:10:30 AEDT'; the entry page itself timed out from here). Medicine registered; sponsor Eli Lilly Australia Pty Ltd; ARTG start date 19/06/2024; product 'Effective Date 7/10/2026'. Specific Indications: type 2 diabetes in adults; 'MOUNJARO is indicated for the treatment of adolescents and children aged 10 years and above weighing 50 kg or more with insufficiently controlled type 2 diabetes mellitus as an adjunct to diet and exercise' (monotherapy when metformin is not tolerated or contraindicated, or with other medicines for type 2 diabetes); chronic weight management in adults. The TGA's list of prescription medicines under evaluation (last updated 21 September 2026, au-tga-pmr-search-status-a-2026-10-24) still showed 'type 2 diabetes from age 10' as under evaluation, and its registrations page (last updated 25 September 2026) did not list it: the register entry is the later and legal record, so the indication was on the register by 7 October 2026; the decision date itself was not found."
+
+# ------------------------------------------------------------------ Health Canada natural health products: NR and NMN
+
+ca-lnhpd-api-nr-nmn-2026-10-26:
+  type: dataset
+  authors: "Health Canada"
+  title: "Licensed Natural Health Products Database (LNHPD), searched through its API on 26 October 2026 for nicotinamide riboside, nicotinamide mononucleotide and NAD+"
+  container: "Licensed Natural Health Products Database"
+  year: 2026
+  url: https://health-products.canada.ca/lnhpd-bdpsnh/
+  accessed: 2026-10-26
+  verified: registry
+  note: "URL changed on 26 October 2026 (second finishing pass) from the API documentation page, which shows no licences, to the public search page, which answered again that evening ('Search licensed natural health products'); it is a form, so a reader repeats the search there (medicinal ingredient 'nicotinamide mononucleotide' or 'nicotinamide riboside'); the counts below come from the API. Earlier on 26 October 2026 the LNHPD web search still redirected to construction.hres.ca; the official API answered. All 831,532 medicinal-ingredient records (8,316 pages, none failed) were read and matched on the ingredient name, then joined to the full product-licence list (307,842 records; latest licence date 23 October 2026) and, for active products, the route endpoint. Nicotinamide mononucleotide: 182 products, 173 with an active licence (product status flag 1; licence dates 16 September 2021 to 22 August 2025); nicotinamide riboside: 35 products, 31 active (licence dates 12 June 2017 to 22 July 2024); every active one by the oral route (capsules, tablets, powders, liquids). Nicotinamide adenine dinucleotide (NAD+): one ingredient record, no product licence; NADH (1,4-dihydronicotinamide adenine dinucleotide): 43 active products, oral. Products are counted, never named. Cited for: oral NR and NMN products hold Canadian natural health product licences."
+
+# ==================================================================== Second finishing pass (reader findings, 26 October 2026)
+# Log: research/refocus-notes/finish.md, part 2. Each page was fetched and read on 26 October 2026.
+
+# ------------------------------------------------------------------ US: receiving a drug in trade between states
+
+usc-21-331:
+  type: law
+  authors: "Legal Information Institute, Cornell Law School (text of the United States Code)"
+  title: "21 U.S. Code § 331 – Prohibited acts (FD&C Act § 301)"
+  container: "United States Code"
+  year: 2026
+  url: https://www.law.cornell.edu/uscode/text/21/331
+  accessed: 2026-10-26
+  verified: url
+  note: "Read 26 October 2026. 'The following acts and the causing thereof are prohibited: (a) The introduction or delivery for introduction into interstate commerce of any food, drug, device, tobacco product, or cosmetic that is adulterated or misbranded. … (c) The receipt in interstate commerce of any food, drug, device, tobacco product, or cosmetic that is adulterated or misbranded, and the delivery or proffered delivery thereof for pay or otherwise. (d) The introduction or delivery for introduction into interstate commerce of any article in violation of section … 355 …'. Cited for: the list of prohibited acts includes receiving an adulterated or misbranded drug in interstate commerce. Whether this reaches a person who receives a peptide only for their own use was not researched (a question for the legal reviewer); state law was not researched (research/refocus/us-uk-routes.md, 'Federal law only')."
+
+# ------------------------------------------------------------------ Melanotan II in the US, without the debarment order
+# fr-2016-melanotan-debarment is no longer cited: the Federal Register's own title and URL for that order name the
+# seller (CONTENT-GUIDE §11, "No source that names a business"). This neutral record carries "no FDA-approved product".
+
+openfda-drugsfda-search-melanotan-2026-10-26:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "openFDA Drugs@FDA queries, 26 October 2026: melanotan, melanotan II"
+  container: "openFDA"
+  year: 2026
+  url: https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:%22melanotan%22
+  accessed: 2026-10-26
+  verified: url
+  note: "Run 26 October 2026. 'melanotan' and 'melanotan ii' searched as generic name (openfda.generic_name), brand name (openfda.brand_name) and active ingredient (products.active_ingredients.name): 'No matches found!' for every query; the control query for semaglutide returned results. openFDA carries the disclaimer that its data are not validated for clinical decisions; cited only for the absence of an FDA-approved product, alongside the FDA's own pages (fda-category-2-safety-risks, fda-503a-categories-2026-05)."
+
+# ------------------------------------------------------------------ The FDA's online report-a-problem form itself
+
+fda-report-a-problem-form:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Report a problem to the FDA (online form)"
+  container: "contact.fda.gov"
+  year: 2026
+  url: https://contact.fda.gov/report-problem
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026 (the page needs JavaScript; nothing was entered or submitted). 'Report a problem to the FDA … The report should take 5-10 minutes.' 'What type of information do you have?' Most common: 'Personal experience, for me or someone else: Injury, illness, or potential harm from infant formula, food, drugs, or other FDA-regulated products' and 'Product quality or mislabeling issues'; also clinical trial issues and insider information. 'This web experience was updated on 3/14/2026, including MedWatch Online for drugs, biologics, medical devices, and cosmetics.' The first page does not say whether reports about an online seller are taken. The FDA's former page on reporting unlawful internet sales (fda.gov/safety/report-problem-fda/reporting-unlawful-sales-medical-products-internet) answered HTTP 302 to this form on 26 October 2026. fda-report-a-problem (the overview page at fda.gov/safety/report-problem-fda) links to it. Cited for: the FDA's online form takes reports of side effects and of product quality or mislabelling problems."
+
+# ------------------------------------------------------------------ UK-wide right of access to your own records
+
+uk-govuk-data-protection:
+  type: web
+  authors: "GOV.UK"
+  title: "Data protection"
+  container: "GOV.UK"
+  year: 2025
+  url: https://www.gov.uk/data-protection
+  accessed: 2026-10-26
+  verified: url
+  note: "Read through the GOV.UK content API on 26 October 2026 (first published 15 November 2011, updated 22 January 2025). 'In the UK, data protection is governed by the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.' Stronger protection for sensitive information, including health. 'Under the legislation, you have rights in relation to your personal data, with some exceptions. These include the right to: … access personal data …'. 'Write to an organisation to ask for a copy of the information they hold about you'; 'The organisation must give you a copy of the data they hold about you as soon as possible, and within 1 month at most' (a further 2 months for complex requests); some information may be withheld; requests are usually free. UK-wide (the legislation covers the whole UK). Cited for: in every part of the UK you can ask for a copy of the personal data an organisation, such as a health service, holds about you."
+
+# ------------------------------------------------------------------ Scotland: NHS 24 (urgent advice and urgent mental health support)
+
+uk-scot-nhsinform-right-care-right-place:
+  type: web
+  authors: "NHS inform (NHS 24, Scotland)"
+  title: "Right care right place"
+  container: "NHS inform"
+  year: 2026
+  url: https://www.nhsinform.scot/campaigns/right-care-right-place/
+  accessed: 2026-10-26
+  verified: url
+  note: "Read 26 October 2026 (HTTP 200; meta description 'How to access urgent care by phoning 111, and when to use other NHS Scotland services'; the site is © NHS 24). 'Phone NHS 24 on 111 for urgent care. If you think you need to visit A&E but it's not life threatening, you can phone NHS 24 on 111 for free, day or night'; NHS 24 'will help you get the right care in the right place … This may include a phone or video consultation'. Mental health: Breathing Space for emotional support (weekday evenings and weekends); 'For urgent mental health support, phone NHS 24 on 111, day or night.' www.nhs24.scot itself answered 403 to scripts. Cited for: NHS 24 is Scotland's urgent health advice service, also for urgent mental health support, day and night."
+
+# ------------------------------------------------------------------ Reader titles for seven merged research sources
+# These ids live in refocus-*.yaml, which the writing groups do not edit (CONTENT-GUIDE §11). Their titles, printed in
+# the reference lists of English pages, used the research's internal words ("batch c compounds", another source's
+# id). Each entry below repeats the id with the SAME url and dates, so the registry keeps one source; this file sorts
+# before refocus-*.yaml and src/lib/data.ts keeps the first entry, so these titles are the ones shown (the validator
+# reports "duplicate source id … same DOI/URL, will be merged" as a warning, expected). The notes, with what was
+# searched and found, stay in the refocus files. Added by the second finishing pass, 26 October 2026.
+
+ca-dpd-search-canada-legal-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database API searches, 23 October 2026: BPC-157, TB-500, CJC-1295, ipamorelin, hexarelin, AOD-9604, KPV, GHK-Cu, melanotan II, bremelanotide (PT-141), MOTS-c, epitalon, Semax, Selank, elamipretide (SS-31), thymosin alpha-1, retatrutide, NR, NMN and NAD+ (the link opens the first of these searches)"
+  container: "Drug Product Database (DPD)"
+  year: 2026
+  url: https://health-products.canada.ca/api/drug/activeingredient/?lang=en&type=json&ingredientname=bpc
+  accessed: 2026-10-23
+  verified: url
+  note: "Reader title for the entry in refocus-canada.yaml (see that file for what was searched and found)."
+
+ca-noc-search-status-c-2026-10-23:
+  type: dataset
+  authors: "Health Canada"
+  title: "Notice of Compliance (NOC) database searches, 23 October 2026: bremelanotide (PT-141), melanotan II, BPC-157, TB-500, KPV and GHK-Cu"
+  container: "Notice of Compliance online query"
+  year: 2026
+  url: https://health-products.canada.ca/noc-ac/?lang=eng
+  accessed: 2026-10-23
+  verified: url
+  note: "Reader title for the entry in refocus-status-c.yaml (see that file for what was searched and found)."
+
+ca-hc-ctdb-search-status-c-2026-10-23:
+  type: registry
+  authors: "Health Canada"
+  title: "Canadian Clinical Trial Search Portal searches, 23 October 2026: bremelanotide (PT-141), melanotan, BPC-157, TB-500, KPV and GHK-Cu"
+  container: "clinical-trials-search.canada.ca"
+  year: 2026
+  url: https://clinical-trials-search.canada.ca/en/search?search_api_fulltext=bremelanotide
+  accessed: 2026-10-23
+  verified: registry
+  note: "Reader title for the entry in refocus-status-c.yaml (see that file for what was searched and found)."
+
+ctgov-search-status-c-2026-10-23:
+  type: registry
+  authors: "U.S. National Library of Medicine"
+  title: "ClinicalTrials.gov API searches by country, 23 October 2026: bremelanotide (PT-141), BPC-157, TB-500, KPV, melanotan and GHK-Cu in Canada, Australia, the United Kingdom, Ireland and New Zealand"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=bremelanotide&query.locn=Canada
+  accessed: 2026-10-23
+  verified: registry
+  note: "Reader title for the entry in refocus-status-c.yaml (see that file for what was searched and found)."
+
+uk-mhra-substance-index-status-c-2026-10-23:
+  type: dataset
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "MHRA Products substance index and product search, 23 October 2026: GHK-Cu (prezatide copper, copper tripeptide-1), bremelanotide, melanotan II, BPC-157, TB-500 and KPV"
+  container: "MHRA Products"
+  year: 2026
+  url: https://products.mhra.gov.uk/substance-index/?letter=C
+  accessed: 2026-10-23
+  verified: url
+  note: "Reader title for the entry in refocus-status-c.yaml (see that file for what was searched and found)."
+
+ca-hc-ctdb-search-status-d-2026-10-24:
+  type: registry
+  authors: "Health Canada"
+  title: "Canadian Clinical Trial Search Portal searches, 24 October 2026: elamipretide (SS-31), thymosin alpha-1, AOD-9604, MOTS-c, epitalon, Semax, Selank and NAD+ precursors"
+  container: "clinical-trials-search.canada.ca"
+  year: 2026
+  url: https://clinical-trials-search.canada.ca/en/search?search_api_fulltext=elamipretide
+  accessed: 2026-10-24
+  verified: registry
+  note: "Reader title for the entry in refocus-status-d.yaml (see that file for what was searched and found)."
+
+ca-dpd-extract-search-merge-2026-10-24:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug Product Database data extract (approved, marketed, cancelled and dormant products; files dated 5 October 2026), searched 24 October 2026 for MOTS-c, epitalon, Semax, Selank, thymosin alpha-1, AOD-9604, elamipretide (SS-31) and NAD+ precursors"
+  container: "Canada.ca"
+  year: 2026
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/drug-product-database/what-data-extract-drug-product-database.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Reader title for the entry in refocus-status-d.yaml (see that file for what was searched and found)."
+
+# ------------------------------------------------------------------ Australia: one search per compound, so the link shows the claim
+# au-artg-search-status-a-2026-10-24 and au-tga-pmr-search-status-a-2026-10-24 (refocus-status-a.yaml) record the
+# tirzepatide and retatrutide results in their notes, but their links open the semaglutide searches. The tirzepatide,
+# retatrutide and orforglipron claims now cite these searches, each repeated in the built-in browser on 26 October 2026
+# (www.tga.gov.au times out to scripts from here).
+
+au-artg-search-tirzepatide-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG), searched for tirzepatide, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=tirzepatide
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026: '18 result(s) found', all MOUNJARO: six KwikPens (439430, 439690 to 439694; 19 June 2024), six vials (407050 to 407055; 10 July 2023) and six single-dose pre-filled pens (379330 to 379334, 382625; 23 December 2022). 'zepbound': 'There were no matching results.' Same result as au-artg-search-status-a-2026-10-24 (24 October 2026). Cited for: Mounjaro has been on the ARTG since 23 December 2022; there is no Zepbound in Australia."
+
+au-tga-pmr-search-tirzepatide-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Prescription medicines registrations, searched for tirzepatide, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/prescription-medicines-registrations?keywords=tirzepatide
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026 (page last updated 25 September 2026): '3 result(s) found', all MOUNJARO (Eli Lilly Australia Pty Ltd), listed under the dates 22 December 2022, 9 September 2024 and 27 May 2025, the TGA's decision dates. The registration pages, opened for au-tga-pmr-search-status-a-2026-10-24 on 24 October 2026, give: type 2 diabetes, registered 23 December 2022; chronic weight management, registered 10 September 2024; obstructive sleep apnoea in adults with obesity, registered 2 June 2025. Cited for: the TGA registered Mounjaro in December 2022 and added weight management (2024) and sleep apnoea (2025)."
+
+au-tga-under-evaluation-search-tirzepatide-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Prescription medicines under evaluation, searched for tirzepatide, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/prescription-medicines-under-evaluation?keywords=tirzepatide
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026 (page last updated 21 September 2026): '2 result(s) found', MOUNJARO (Eli Lilly Australia Pty Ltd), 'Prescription medicine evaluation', publication dates Sep-2025 and Dec-2025. au-tga-pmr-search-status-a-2026-10-24 records what they are: type 2 diabetes from age 10 (Sep-2025) and cardiovascular risk reduction in type 2 diabetes (Dec-2025), both application type C (new indication). Cited for: the list of September 2026 still showed the use from age 10 as under evaluation."
+
+au-tga-s19a-search-tirzepatide-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Section 19A approvals database, searched for tirzepatide, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/section-19a-approvals?keywords=tirzepatide
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026 (page last updated 23 October 2026): '6 result(s) found', each '(Approval lapsed) MOUNJARO KWIKPEN tirzepatide … solution for injection in pre-filled pen (UK)' (2.5, 5, 7.5, 10, 12.5 and 15 mg), dated 2 August 2024, 'Not on the ARTG but approved for import and supply in Australia until 31/03/2025 due to a shortage of another medicine or for public health reasons.' Cited for: during a shortage the TGA temporarily allowed UK Mounjaro KwikPens to be supplied, until March 2025."
+
+au-tga-pmr-search-retatrutide-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Prescription medicines registrations and public assessment reports (AusPAR), searched for retatrutide, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/prescription-medicines-registrations?keywords=retatrutide
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026: registrations (page last updated 25 September 2026) 'There were no matching results.'; AusPAR search (https://www.tga.gov.au/resources/auspar?keywords=retatrutide) 'There were no matching results.' Same result as au-tga-pmr-search-status-a-2026-10-24 (24 October 2026, which also searched LY3437943). Cited for: the TGA has no registration or public assessment report for retatrutide."
+
+au-tga-under-evaluation-search-retatrutide-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Prescription medicines under evaluation, searched for retatrutide, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/prescription-medicines-under-evaluation?keywords=retatrutide
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026 (page last updated 21 September 2026): 'There were no matching results.' Cited for: no application for retatrutide is under evaluation by the TGA."
+
+au-artg-search-orforglipron-2026-10-26:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG), searched for orforglipron, 26 October 2026"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=orforglipron
+  accessed: 2026-10-26
+  verified: url
+  note: "Read in the built-in browser on 26 October 2026: 'There were no matching results.' Same result as au-artg-search-status-a-2026-10-24 (24 October 2026). Cited for: orforglipron is not on the Australian register."
+
+# Reader title for the entry in refocus-australia.yaml (same id, url and dates; see the block of reader titles above).
+au-artg-search-australia-legal-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "Australian Register of Therapeutic Goods (ARTG) searches, 24 October 2026: retatrutide, elamipretide (SS-31), thymosin alpha-1, epitalon, sermorelin, tesamorelin, bremelanotide, melanotan, AOD-9604, MOTS-c, Semax, Selank, NR and NMN, with controls (the link opens the first of these searches)"
+  container: "tga.gov.au"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg?keywords=retatrutide
+  accessed: 2026-10-24
+  verified: url
+  note: "Reader title for the entry in refocus-australia.yaml (see that file for what was searched and found). retatrutide re-checked in the built-in browser on 26 October 2026: 'There were no matching results.'"
+
+# ------------------------------------------------------------------ New Zealand: an approved tirzepatide medicine
+
+nz-medsafe-datasheet-mounjaro:
+  type: label
+  authors: "Medsafe / Eli Lilly and Company (NZ) Limited"
+  title: "Mounjaro (tirzepatide) solution for injection: New Zealand data sheet (version A4.0, September 2026)"
+  container: "Medsafe"
+  year: 2026
+  url: https://www.medsafe.govt.nz/profs/datasheet/m/mounjaroinj.pdf
+  accessed: 2026-10-26
+  verified: url
+  note: "Downloaded and read with pdftotext on 26 October 2026 (HTTP 200, application/pdf). 'NEW ZEALAND DATA SHEET'; product: Mounjaro KwikPens and single-dose solutions for injection; '7 MEDICINE SCHEDULE: Prescription'; '8 SPONSOR: Eli Lilly and Company (NZ) Limited'; '9 DATE OF FIRST APPROVAL: 22 December 2025'; '10 DATE OF REVISION: 10 September 2026' (adds obstructive sleep apnoea); 4.1 indications: type 2 diabetes, weight management, obstructive sleep apnoea in adults. Cited for: Medsafe has approved a tirzepatide medicine (Mounjaro), on prescription, first approved on 22 December 2025. Which semaglutide medicines have Medsafe consent was not established: the old data-sheet addresses for Ozempic and Wegovy return Medsafe's 'Page not found' (research/refocus/ireland-nz.md, UNRESOLVED 4.6)."
+
+# ------------------------------------------------------------------ Trial medicines: made under GMP; ethics boards weigh risks and benefits
+
+ecfr-21-210-2:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 210.2 – Applicability of current good manufacturing practice regulations"
+  container: "Code of Federal Regulations, Title 21, Part 210"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-210/section-210.2
+  accessed: 2026-10-26
+  verified: url
+  note: "Read through the eCFR versioner API on 26 October 2026 (text as of 15 October 2026). (c): 'An investigational drug for use in a phase 1 study … is subject to the statutory requirements set forth in 21 U.S.C. 351(a)(2)(B). The production of such drug is exempt from compliance with the regulations in part 211 of this chapter. However, this exemption does not apply … once the investigational drug has been made available for use by or for the sponsor in a phase 2 or phase 3 study … the drug for use in the phase 1 study must comply with part 211.' Cited for: in the US, trial medicines must be made under good manufacturing practice (the statutory CGMP requirement; part 211 in full from phase 2)."
+
+uk-si-2004-1031-reg-43:
+  type: law
+  authors: "UK Parliament"
+  title: "The Medicines for Human Use (Clinical Trials) Regulations 2004 (SI 2004/1031), regulation 43: Qualified persons"
+  container: "legislation.gov.uk"
+  year: 2004
+  url: https://www.legislation.gov.uk/uksi/2004/1031/regulation/43
+  accessed: 2026-10-26
+  verified: url
+  note: "Read through the legislation.gov.uk XML on 26 October 2026 (extent E+W+S+N.I.). Part 6, Manufacture and importation of investigational medicinal products. Reg 36(1): no person shall manufacture, assemble or import an investigational medicinal product except in accordance with a manufacturing authorisation. Reg 43(1)-(2): the holder must have a qualified person, who is responsible for ensuring that each production batch 'has been manufactured and checked in compliance with … the principles and guidelines of good manufacturing practice' (for Great Britain as modified by Schedule 2A to the 2012 Regulations), the product specification and the trial's documents. Cited for: in the UK, each batch of a trial medicine must be made and checked under good manufacturing practice."
+
+ca-fdr-c05-010:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.05.010 (sponsor's obligations in a clinical trial)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.05.010.html
+  accessed: 2026-10-26
+  verified: url
+  note: "Read 26 October 2026. 'Every sponsor shall ensure that a clinical trial is conducted in accordance with good clinical practices and … shall ensure that … (d) for each clinical trial site, the approval of a research ethics board is obtained before the clinical trial begins at the site; … (h) written informed consent … is obtained … after that person has been informed of (i) the risks and anticipated benefits to his or her health arising from participation in the clinical trial …; and (j) the drug is manufactured, handled and stored in accordance with the applicable good manufacturing practices referred to in Divisions 2 to 4 except sections C.02.019, C.02.025 and C.02.026.' Cited for: in Canada, a trial drug must be made under good manufacturing practice."
+
+ecfr-21-56-111:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 56.111 – Criteria for IRB approval of research"
+  container: "Code of Federal Regulations, Title 21, Part 56 (Institutional Review Boards)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-56/subpart-C/section-56.111
+  accessed: 2026-10-26
+  verified: url
+  note: "Read through the eCFR versioner API on 26 October 2026 (text as of 15 October 2026). (a): 'In order to approve research covered by these regulations the IRB shall determine that all of the following requirements are satisfied: (1) Risks to subjects are minimized … (2) Risks to subjects are reasonable in relation to anticipated benefits, if any, to subjects, and the importance of the knowledge that may be expected to result.' Cited for: in the US, an ethics board may approve a trial only if its risks are reasonable in relation to the expected benefits."
+
+# ------------------------------------------------------------------ US sport outside USADA: college sport and professional leagues
+
+usada-about:
+  type: web
+  authors: "U.S. Anti-Doping Agency (USADA)"
+  title: "About USADA (frequently asked questions)"
+  container: "usada.org"
+  year: 2026
+  url: https://www.usada.org/about/
+  accessed: 2026-10-26
+  verified: url
+  note: "Read 26 October 2026. FAQ: 'Is USADA responsible for testing American collegiate NCAA athletes or professional sport leagues like the NFL, NHL, MLB, or NBA? Generally not. Most professional sports leagues and the NCAA are not WADA Code signatories, and they conduct their own anti-doping programs in-house. Professional and collegiate athletes who also participate in Olympic sports (e.g. basketball, hockey), however, are subject to USADA testing in the lead up to the Games or World Championship.' Cited for: US college sport and most professional leagues run their own drug-testing programmes outside the World Anti-Doping Code."

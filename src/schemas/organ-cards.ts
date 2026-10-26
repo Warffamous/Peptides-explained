@@ -10,6 +10,7 @@
  * Used by the build (src/lib/organ-cards.ts) and the validator (scripts/lib/organ-cards.ts).
  */
 import { z } from 'zod';
+import { JURISDICTIONS } from './vocab';
 
 const kebab = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'must be kebab-case (a-z, 0-9, hyphens)');
 const nonEmpty = z.string().trim().min(1);
@@ -59,8 +60,14 @@ export const organCardsSchema = z
     receptors: z.array(z.enum(OC_RECEPTORS)).min(1).max(3),
     /** The cell panel: docking and the cAMP signal, and how well that is shown. */
     cell: z.object({ level, sources }),
-    /** Sources for the "not approved" line (required when approved is false). */
+    /**
+     * Sources for the "not approved" line (required when approved is false). The line names the locale's own
+     * countries (from the compound's regulatory rows), so its sources are usually per country:
+     * status_local_sources, keyed by jurisdiction, cited only where the locale shows that jurisdiction
+     * (src/lib/jurisdictions.ts, visibleSources); status_sources are cited in every locale.
+     */
     status_sources: z.array(kebab).default([]),
+    status_local_sources: z.record(z.enum(JURISDICTIONS), z.array(kebab).min(1)).default({}),
     cards: z.array(organCardSchema).min(2).max(9),
     /** Scientific review of the figure (drawings, levels, words). A notice is shown until ok. */
     review: z.object({
@@ -79,7 +86,9 @@ export const organCardsSchema = z
         if (!x.receptors.includes(r)) ctx.addIssue({ code: 'custom', path: ['cards', i, 'receptors'], message: `"${r}" is not one of this medicine's receptors (${x.receptors.join(', ')})` });
       }
     });
-    if (!x.approved && !x.status_sources.length) ctx.addIssue({ code: 'custom', path: ['status_sources'], message: 'a medicine that is not approved needs status_sources for the "not approved" line' });
+    if (!x.approved && !x.status_sources.length && !Object.keys(x.status_local_sources).length) {
+      ctx.addIssue({ code: 'custom', path: ['status_sources'], message: 'a medicine that is not approved needs status_sources or status_local_sources for the "not approved" line' });
+    }
   });
 export type OrganCards = z.infer<typeof organCardsSchema>;
 

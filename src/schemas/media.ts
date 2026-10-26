@@ -12,7 +12,7 @@
  * view" or all-rights-reserved). Files are always self-hosted; nothing is hotlinked.
  */
 import { z } from 'zod';
-import { MECHANISM_LEVELS } from './vocab';
+import { MECHANISM_LEVELS, JURISDICTIONS } from './vocab';
 
 const isoDate = z.coerce.date();
 const kebab = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'must be kebab-case (a-z, 0-9, hyphens)');
@@ -83,6 +83,11 @@ export const mediaEntrySchema = z
     changes: z.string().optional(),
     /** Source ids that support factual claims made in the caption. */
     sources: z.array(kebab).default([]),
+    /**
+     * A country's own caption sources, keyed by jurisdiction: listed after `sources` only in a locale that
+     * shows that jurisdiction (src/lib/jurisdictions.ts, visibleSources), e.g. a Dutch pharmacy page under NL.
+     */
+    local_sources: z.record(z.enum(JURISDICTIONS), z.array(kebab).min(1)).default({}),
     ai: aiInfoSchema.optional(),
     notes: z.string().optional(),
   })

@@ -183,6 +183,7 @@ lab-mouse:
   people: false
   focal: 42% 58%                 # where the subject is, measured on the unmirrored image
   sources: [fda-pcac-2026-kpv-briefing]   # sources for factual claims in the caption
+  local_sources: { NL: [apotheek-medicijnafval] }   # optional: a country's own caption sources, listed only where it is shown (CONTENT-GUIDE §3)
   changes: …                     # only if we did more than crop, resize and tint
   ai: { model, prompt, preamble, generated, review: pending|ok, review_note, reviewed_by }
 ```

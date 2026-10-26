@@ -23,6 +23,9 @@ jobs:
       - run: npm run check:commerce
       # One h1, heading order, landmarks, unique ids, internal links, JS budget (≤ 40 KB gz)
       - run: npm run check:html
+      # Locale residue: no Dutch, Belgian, German or EU reader framing on English, in the sources and the
+      # built pages (config/locale-residue.json; STRICT_RESIDUE in scripts/lib/residue.ts)
+      - run: npm run check:residue
       - name: Lighthouse (mobile)
         run: npx --yes @lhci/cli@0.15.1 autorun --config=lighthouserc.json
       - uses: actions/upload-artifact@v4

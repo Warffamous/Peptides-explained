@@ -13,15 +13,18 @@ import { MEDIA, mediaText, buildPicture, licenceName, sourceHost, isAi } from '.
 import { getSource } from '../../lib/data';
 import { t } from '../../lib/i18n';
 import { formatDate } from '../../lib/format';
-import { ctxLocale } from '../../lib/ctx';
+import { ctxLocale, ctxContentLocale } from '../../lib/ctx';
+import { visibleSources } from '../../lib/jurisdictions';
 import { usedMediaIds } from '../../lib/content';
 const L = ctxLocale(Astro);
 const used = await usedMediaIds(L);
+// caption sources as this locale shows them (src/lib/jurisdictions.ts, visibleSources)
+const scope = ctxContentLocale(Astro);
 const items = await Promise.all(
   [...MEDIA.values()]
     .filter((m) => used.has(m.id))
     .sort((a, b) => a.id.localeCompare(b.id))
-    .map(async (m) => ({ m, text: mediaText(L, m.id), thumb: await buildPicture(m, { widths: [112, 224], sizes: '7rem', ratio: 1 }) })),
+    .map(async (m) => ({ m, text: mediaText(L, m.id), srcs: visibleSources(m, scope), thumb: await buildPicture(m, { widths: [112, 224], sizes: '7rem', ratio: 1 }) })),
 );
 ---
 <section class="media-credits" id="image-credits" aria-labelledby="image-credits-title">
@@ -29,7 +32,7 @@ const items = await Promise.all(
   <p class="media-credits__intro">{t(L, 'media-ui.credits.intro')} <span class="media-credits__count">({t(L, 'media-ui.credits.count', { n: items.length })})</span></p>
   <p class="media-credits__intro">{t(L, 'media-ui.credits.aiNote')}</p>
   <ul class="media-credits__list" role="list">
-    {items.map(({ m, text, thumb }) => (
+    {items.map(({ m, text, srcs, thumb }) => (
       <li class="media-credits__item" id={`image-${m.id}`} data-origin={m.origin}>
         <MediaPicture pictures={[thumb]} alt="" class="media-credits__thumb" imgClass="media-credits__img" style={`--focal: ${thumb.focal}`} />
         <div class="media-credits__body">
@@ -71,10 +74,10 @@ const items = await Promise.all(
               </div>
             )}
             <div><dt>{t(L, 'media-ui.credits.changes')}</dt><dd>{m.changes ?? t(L, 'media-ui.credits.defaultChanges')}</dd></div>
-            {m.sources.length > 0 && (
+            {srcs.length > 0 && (
               <div>
                 <dt>{t(L, 'media-ui.credits.basedOn')}</dt>
-                <dd><ul class="media-credits__sources" role="list">{m.sources.map((sid) => <li><SourceRef locale={L} source={getSource(sid)} /></li>)}</ul></dd>
+                <dd><ul class="media-credits__sources" role="list">{srcs.map((sid) => <li><SourceRef locale={L} source={getSource(sid)} /></li>)}</ul></dd>
               </div>
             )}
           </dl>
