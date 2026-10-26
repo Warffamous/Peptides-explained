@@ -1,0 +1,15 @@
+# Sources added by the English refocus of the compound pages mots-c, epitalon, semax, selank, thymosin-alpha-1,
+# aod-9604, ss-31 and nad-precursors (group compounds-e; log in research/refocus-notes/compounds-e.md).
+# Every record below was fetched and read on the accessed date. All ids were checked against every file in
+# src/data/sources first: this search was not registered before.
+
+ctgov-elamipretide-us-sites-2026-10-26:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2 search, 26 October 2026: open elamipretide trials with a site in the United States, and the status of each US site"
+  container: "ClinicalTrials.gov"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=elamipretide&filter.advanced=AREA%5BLocationCountry%5DUnited%20States&filter.overallStatus=RECRUITING,NOT_YET_RECRUITING,ACTIVE_NOT_RECRUITING,ENROLLING_BY_INVITATION
+  accessed: 2026-10-26
+  verified: registry
+  note: "Query run with curl on 26 October 2026 (the machine's date), filtered to studies with a US location and an open overall status (recruiting, not yet recruiting, active not recruiting, enrolling by invitation). Three records, the same three counted as open in ctgov-us-uk-peptide-search-2026-10-23: (1) NCT07531251 (Barth syndrome, phase 4 in the registry, sponsor Stealth BioTherapeutics, estimated 48 participants, start 2 July 2026, overall status recruiting): its only US site, Needham, Massachusetts, has the facility name 'Trial Not Offered in the U.S' and site status 'Terminated' (fact-checker, re-read through the API on 26 October 2026); Calgary (Canada) and Bristol (UK) are 'Recruiting'. (2) NCT06373731 (ReNEW, dry age-related macular degeneration, phase 3, 313 enrolled): overall status 'Active, not recruiting', 31 US sites. (3) NCT07275424 (SHAPE, open-label single-arm phase 2a pilot in healthy adults aged 65 to 80, University of Washington investigator with Stealth BioTherapeutics as collaborator, estimated 30 participants, start 26 November 2025): overall and Seattle site status 'Recruiting', but the record was last verified in December 2025 and gives an estimated primary completion of 15 March 2026, so its status may be out of date. Cited for: three trials with a US site were listed as open, and the Barth syndrome trial is not offered in the US (its one US site is named 'Trial Not Offered in the U.S' and marked terminated). Not cited for whether any US site is recruiting now."

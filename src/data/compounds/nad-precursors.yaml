@@ -34,9 +34,10 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, eu-regulation-2020-16-nr, efsa-2026-nmn-novel-food, eu-union-list-novel-foods-2026-08-10] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   # Not an FDA-approved drug. NMN: not excluded from the dietary-supplement definition (FDA, 29 September 2025);
-  # NR chloride: GRAS notice 635 for food use; NAD+: 503A category 1 (pharmacy compounding tolerated under the
-  # interim policy while FDA evaluates).
-  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23, fda-2025-nmn-petition-response, fda-grn-635-nicotinamide-riboside, fda-503a-categories-2026-05] }
+  # NR chloride: GRAS notice 635 for food use (cited through the neutral GRAS inventory search, because the GRN 635
+  # record names the notifier company: seller rule, compounds-e 26 October 2026); NAD+: 503A category 1 (pharmacy
+  # compounding tolerated under the interim policy while FDA evaluates).
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23, fda-2025-nmn-petition-response, fda-gras-inventory-search-2026-10-23, fda-503a-categories-2026-05] }
   # UK, CA, AU: merged from research/refocus/status/nad-precursors.yaml (fact-checked 24 October 2026), in the same
   # sense as the US and EU rows: not authorised as a MEDICINE in the drug sense (lead's decision, 24 October 2026).
   # Canada: no NR, NMN or NAD+ product has a DIN; oral NR can hold a natural health product licence and an NMN

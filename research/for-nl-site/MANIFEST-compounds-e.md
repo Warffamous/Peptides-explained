@@ -5,7 +5,10 @@ Pages: `compounds/{mots-c,epitalon,semax,selank,thymosin-alpha-1,aod-9604,ss-31,
 `research/for-nl-site/snapshot-2026-10-23/content/compounds-en/<slug>.mdx` and in
 `git show nl-source-2026-10-23:src/content/compounds/en/<slug>.mdx`; the glossary files in
 `research/for-nl-site/snapshot-2026-10-23/i18n/en/glossary/` and `git show nl-source-2026-10-23:src/i18n/en/glossary/<file>`.
-The data files (`src/data/compounds/<slug>.yaml`) were not changed: their EU, NL, DE and BE rows are intact.
+The data files' EU, NL, DE and BE rows are intact (the only data change, in the third run, swaps one US-row source in
+`nad-precursors.yaml` under the seller rule). The third run (review, 26 October 2026) cut nothing European; this
+manifest is unchanged by it apart from this sentence. The adversarial fact-check that followed (26 October 2026) also cut
+nothing European; its fixes are logged in `research/refocus-notes/compounds-e.md` §7.
 
 ## Regulatory notes (frontmatter `regulatory_notes`), removed from all eight pages
 

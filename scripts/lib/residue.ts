@@ -60,6 +60,8 @@ export type ResidueHit = {
   why: string;
   match: string;
   context: string;
+  /** dist mode: the cited source (type and reference text) when an error-level term is in its entry */
+  cited?: string;
 };
 
 const CONFIG_FILE = path.join(ROOT, 'config/locale-residue.json');
@@ -111,7 +113,8 @@ type Match = { start: number; end: number; p: ResiduePattern };
  * so "approved in the EU" is one frame hit, not also an "EU" warning.
  */
 export function findResidue(text: string, cfg: ResidueConfig): Match[] {
-  // allowed proper names ("Europe PMC", "Eli Lilly Nederland B.V."): nothing inside them counts
+  // allowed proper names ("Europe PMC", "Eli Lilly Nederland B.V."): no match that touches one counts,
+  // so "indexed in Europe PMC" is not the frame "in Europe" either
   const names: [number, number][] = [];
   for (const a of cfg.allowPhrases) {
     a.re.lastIndex = 0;
@@ -123,7 +126,7 @@ export function findResidue(text: string, cfg: ResidueConfig): Match[] {
     for (const m of text.matchAll(p.re)) {
       const start = m.index!;
       const end = start + m[0].length;
-      if (!names.some(([s, e]) => start >= s && end <= e)) all.push({ start, end, p });
+      if (!names.some(([s, e]) => start < e && s < end)) all.push({ start, end, p });
     }
   }
   all.sort((a, b) => RANK[b.p.level] - RANK[a.p.level] || b.end - b.start - (a.end - a.start) || a.start - b.start);
@@ -409,7 +412,10 @@ function otherLocaleOnlyMedia(code: string): Set<string> {
  * Scan the built pages of one locale (dist/<code>/**.html). The language menu is skipped; cited
  * titles in reference lists and citation labels are reported as warnings (a European source may be
  * cited as evidence); everything else counts at its own level, except that markers do not survive
- * the build, so frame hits are warnings here (the source scan judges them).
+ * the build, so frame hits are warnings here (the source scan judges them). A reference-list entry
+ * with an error-level term (a Dutch, Belgian or German name) carries `cited`, so the check can list
+ * those sources once each: a source cited only through data (a component's source list) is invisible
+ * to the source scan.
  */
 export function scanDist(dist: string, locale: ResidueLocale, cfg: ResidueConfig): ResidueHit[] {
   const hits: ResidueHit[] = [];
@@ -429,11 +435,20 @@ export function scanDist(dist: string, locale: ResidueLocale, cfg: ResidueConfig
     // Not text for this locale's readers: code, the language menus (header and footer: links with
     // hreflang name each language in its own words, e.g. "Nederlands").
     for (const el of root.querySelectorAll('script, style, template, link, .lang-switch, a[hreflang]')) el.remove();
-    const record = (text: string, zone: string, reference: boolean) => {
+    const record = (text: string, zone: string, reference: boolean, cited?: string) => {
       for (const m of findResidue(text, cfg)) {
         if (allow.some((a) => a.patterns === '*' || a.patterns.includes(m.p.id))) continue;
         const level: ResidueLevel = reference || m.p.level === 'frame' ? 'warn' : m.p.level;
-        hits.push({ file, where: zone, level, id: m.p.id, why: m.p.why, match: text.slice(m.start, m.end), context: snippet(text, m.start, m.end) });
+        hits.push({
+          file,
+          where: zone,
+          level,
+          id: m.p.id,
+          why: m.p.why,
+          match: text.slice(m.start, m.end),
+          context: snippet(text, m.start, m.end),
+          ...(cited && m.p.level === 'error' ? { cited } : {}),
+        });
       }
     };
     const title = root.querySelector('title')?.textContent ?? '';
@@ -446,11 +461,25 @@ export function scanDist(dist: string, locale: ResidueLocale, cfg: ResidueConfig
     // the "Based on" lists of explainers, plates, image credits and timeline events, a figure card's
     // "Source" line (a journal such as "Acta Orthopaedica Belgica" may be cited as evidence), and the
     // headlines and summaries of the news list (the feeds' own words).
-    const refs = [
+    const found = [
       ...body.querySelectorAll('.source-list__item, .ref, [id^="source-"], .xp-sources, .plate__sources, .media-credits__sources, .timeline__sources, .news__title, .news__summary'),
       ...body.querySelectorAll('.fig__field').filter((f) => sourceKeys.has((f.querySelector('.fig__key')?.textContent ?? '').trim())),
     ];
-    for (const r of refs) record(r.textContent.replace(/\s+/g, ' '), 'reference list', true);
+    // each item once: a .ref inside a .source-list__item is the same entry
+    const set = new Set<HTMLElement>(found);
+    const inside = (el: HTMLElement) => {
+      for (let p = el.parentNode; p; p = p.parentNode) if (set.has(p)) return true;
+      return false;
+    };
+    const refs = found.filter((r) => !inside(r));
+    for (const r of refs) {
+      const text = r.textContent.replace(/\s+/g, ' ').trim();
+      // a cited source (one entry of a reference list or of the sources page): remembered with its
+      // type, so the check can list the Dutch, Belgian and German sources this locale still cites
+      const ref = r.classList.contains('ref') ? r : r.querySelector('.ref');
+      const cited = ref ? `[${ref.getAttribute('data-type') ?? 'source'}] ${ref.textContent.replace(/\s+/g, ' ').replace(/\(opens an external site\)/g, '').replace(/\s*— accessed [^.]*$/, '').trim()}` : undefined;
+      record(text, 'reference list', true, cited);
+    }
     for (const a of body.querySelectorAll('.cite__link[aria-label]')) {
       record(a.getAttribute('aria-label') ?? '', 'citation label', true);
       a.removeAttribute('aria-label');

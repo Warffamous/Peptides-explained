@@ -14,7 +14,8 @@
  * …), or anywhere in a safety string (a stop callout, a stop sign, the warning signs, the emergency
  * and notice strings). Never a phone number: part of a bigger number or an amount ("1,000",
  * "10 000", "£1000", "1999", "99.9%"), a count or a measurement ("111 participants", "112 mg/dL"), a
- * position ("week 112", "volume 999"), and the name of a service that contains the number ("NHS 111").
+ * position in a study, a publication or a law ("week 112", "volume 999", "section 112", "21 CFR part
+ * 111"), a range ("111–112"), and the name of a service that contains the number ("NHS 111").
  */
 import { cardCodes, type LocaleScope } from '../../src/lib/jurisdictions.ts';
 
@@ -34,21 +35,25 @@ export function emergencyNumbers(locale: LocaleScope, contacts: unknown): string
 
 /**
  * The numbers as written ("911", "9-1-1"), never inside a bigger number, an amount, a decimal, a
- * URL or an id: not after a letter, digit, "." "," "/" "-" "#" "+" or a currency sign, not after a
- * digit and a space ("10 000"), and not before a letter or digit, ".x" / ",x" ("111.wales", "1,112")
- * or a space and three digits (a grouped number).
+ * URL, an id or a range: not after a letter, digit, "." "," "/" "-" "–" "#" "+" or a currency sign,
+ * not after a digit and a space ("10 000"), and not before a letter or digit, ".x" / ",x"
+ * ("111.wales", "1,112"), "-x" / "–x" ("111–112", "111-2222") or a space and three digits (a
+ * grouped number).
  */
 export function emergencyRegex(nums: string[]): RegExp {
   const forms = nums.flatMap((n) => (n.length === 3 ? [n, n.split('').join('-')] : [n]));
-  return new RegExp(`(?<![\\w.,/£$€¥#+-])(?<!\\d${SPACE})(?:${forms.join('|')})(?!\\w|[.,]\\w|${SPACE}\\d{3}(?!\\d))`, 'g');
+  return new RegExp(`(?<![\\w.,/£$€¥#+\\u2013-])(?<!\\d${SPACE})(?:${forms.join('|')})(?!\\w|[.,\\u2013-]\\w|${SPACE}\\d{3}(?!\\d))`, 'g');
 }
 
 // Not inside an id or a URL ("au-triple-zero", "/triple-zero/"): no letter, digit, "-", "/" or "_" around it.
 const EMERGENCY_WORDS = /(?<![\w/-])(?:triple[- ]zero|nine[- ]one[- ]one)(?![\w/-])/gi;
 // A count, a measurement or a point in a study is never a phone number, even next to a calling word
 // ("112 participants were called back", "above 112 mg/dL? Call your doctor", "at week 112 … call").
-const NOT_A_PHONE = /^[\s-]*(?:%|(?:mg|mmol|µg|mcg|kg|g|ml|l|dl|da|kda|daltons?|percent|participants?|people|persons?|adults?|children|babies|women|men|patients?|subjects?|volunteers?|cases?|deaths?|events?|reports?|records?|times|vials?|pens?|parcels?|units?|samples?|studies|trials?|papers?|sites?|weeks?|days?|months?|years?|hours?|minutes?)\b)/i;
-const NOT_A_PHONE_BEFORE = /\b(?:week|day|month|year|volume|vol\.|issue|page|pp?\.|ref\.|table|figure|fig\.|study|trial|step)\s*$/i;
+const NOT_A_PHONE = /^[\s-]*(?:%|(?:mg|mmol|µg|mcg|kg|g|ml|l|dl|da|kda|daltons?|percent|participants?|people|persons?|adults?|children|babies|women|men|patients?|subjects?|volunteers?|cases?|deaths?|events?|reports?|records?|results?|entries|items?|products?|doses?|injections?|times|vials?|pens?|parcels?|units?|samples?|studies|trials?|papers?|sites?|mice|rats?|animals?|weeks?|days?|months?|years?|hours?|minutes?)\b)/i;
+// A position in a study, a publication or a law ("week 112", "page 999", "21 CFR part 111", "section
+// 112", "s 111", "§ 112"): the legal pages of the four countries cite many numbered provisions. "s"
+// alone only as a word, so "it's 000" still counts.
+const NOT_A_PHONE_BEFORE = /(?:\b(?:week|day|month|year|volume|vol\.|issue|pages?|pp?\.|ref\.|table|figure|fig\.|study|trial|step|sections?|sec\.|regulations?|reg\.|rules?|articles?|art\.|parts?|chapters?|clauses?|paragraphs?|para\.|items?|schedules?|appendix|annex|cfr|u\.?s\.?c\.?)|§§?|(?<![\w’'])ss?\.?)\s*$/i;
 /** The name of a service that contains the number, written as its name: "NHS 111", "NHS 111 Wales". */
 const SERVICE_NAME_BEFORE = /\bNHS\s*$/;
 const CALL_WORDS = /\b(?:call(?:s|ed|ing)?|phone|telephone|ring|dial(?:l?ing)?|bel(?:len|t)?|emergenc(?:y|ies)|ambulances?|paramedics?|noodnummer|alarmnummer|hotline)\b/i;

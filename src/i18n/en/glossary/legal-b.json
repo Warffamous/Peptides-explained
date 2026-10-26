@@ -319,7 +319,7 @@
     "aliases": [
       "Global Drug Reference Online"
     ],
-    "definition": "A free website where athletes can check whether a medicine is banned in sport. It covers medicines sold in the US, the UK, Canada, Australia, New Zealand and a few other countries.",
+    "definition": "A website where athletes can check whether a medicine is banned in sport. It covers medicines sold in the US, the UK, Canada, Australia, New Zealand and a few other countries.",
     "category": "sport",
     "see_also": [
       "prohibited-list",
@@ -422,6 +422,85 @@
     "category": "law",
     "see_also": [
       "prohibited-list"
+    ]
+  },
+  "nice-uk": {
+    "term": "National Institute for Health and Care Excellence",
+    "aliases": [],
+    "definition": "NICE: the body that tells the NHS in England which new medicines and treatments it should fund. The NHS in Wales also follows this guidance.",
+    "category": "regulation",
+    "see_also": [
+      "nhs",
+      "scottish-medicines-consortium"
+    ]
+  },
+  "scottish-medicines-consortium": {
+    "term": "Scottish Medicines Consortium",
+    "aliases": [
+      "SMC"
+    ],
+    "definition": "The body that advises NHS Scotland on which new medicines it should use.",
+    "category": "regulation",
+    "see_also": [
+      "nhs",
+      "nice-uk"
+    ]
+  },
+  "gphc": {
+    "term": "General Pharmaceutical Council",
+    "aliases": [
+      "GPhC"
+    ],
+    "definition": "The regulator of pharmacists, pharmacy technicians and pharmacies in Great Britain. It sets standards, also for pharmacies that work online.",
+    "category": "regulation",
+    "see_also": [
+      "telehealth"
+    ]
+  },
+  "telehealth": {
+    "term": "telehealth",
+    "aliases": [
+      "telemedicine"
+    ],
+    "definition": "Health care given at a distance, for example by video, phone, an app or a website. Some telehealth companies prescribe medicines after an online consultation.",
+    "category": "regulation",
+    "see_also": [
+      "gphc"
+    ]
+  },
+  "isrctn": {
+    "term": "ISRCTN registry",
+    "aliases": [
+      "ISRCTN"
+    ],
+    "definition": "A public online register of clinical trials. Many trials in the UK are listed there.",
+    "category": "evidence",
+    "see_also": [
+      "clinicaltrials-gov",
+      "anzctr"
+    ]
+  },
+  "anzctr": {
+    "term": "Australian New Zealand Clinical Trials Registry",
+    "aliases": [
+      "ANZCTR"
+    ],
+    "definition": "The public register of clinical trials in Australia and New Zealand. Its search also shows trials from ClinicalTrials.gov.",
+    "category": "evidence",
+    "see_also": [
+      "clinicaltrials-gov",
+      "isrctn"
+    ]
+  },
+  "care-quality-commission": {
+    "term": "Care Quality Commission",
+    "aliases": [
+      "CQC"
+    ],
+    "definition": "The body that registers and inspects health and adult social care services in England.",
+    "category": "regulation",
+    "see_also": [
+      "nhs"
     ]
   }
 }

@@ -97,3 +97,19 @@ law-making term), with their definitions as they were there:
 | second-reading | second reading | A late stage in making an EU law |
 
 No other glossary file pointed to these ids (checked: their `see_also` links were only inside legal-b.json).
+
+## src/i18n/en/tracker.json and src/data/tracker.yaml (items English shows)
+
+No item was deleted. Two texts of items English shows lost a European sentence; their old values are saved in
+`research/for-nl-site/i18n-replaced-en.json` under `"tracker.json"` (written there by the data group on 24 October
+2026; checked by this group against `git show nl-source-2026-10-23:src/i18n/en/tracker.json`):
+
+| Item | What it said | Where now |
+|---|---|---|
+| `us-pcac-2026-peptide-vote` (summary, next) | "None of them is an approved medicine in the EU, the UK or the US"; "Nothing changes in the EU or the Netherlands"; Federal Register date 22 October 2026 | now the US, UK, Canada and Australia, and "nothing outside the US" |
+| `wada-2027-prohibited-list` (summary) | "The Dutch Doping Authority will publish its Dutch translation from 1 January 2027" | replaced by UK Anti-Doping's note; the Dutch source stays in `local_sources: { NL: [dopingautoriteit-2027-list-news] }` |
+
+Two source ids left the `sources` lists of US items English shows: `ema-medicines-search` and `nl-geneesmiddelenwet`
+(item `us-pcac-2026-peptide-vote`; they supported "not approved in the EU" and "changes nothing in the Netherlands").
+Both stay registered in `src/data/sources/`. The text of the hidden items `eu-pharma-reform`, `de-doping-list-gazette`
+and `nl-igj-online-sellers` is unchanged.

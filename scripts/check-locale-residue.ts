@@ -50,6 +50,18 @@ for (const f of files) {
   for (const h of details ? sorted : sorted.slice(0, 3)) console.log(`  - ${describeHit(h)}`);
   if (!details && list.length > 3) console.log(`  … ${list.length - 3} more (--details${f.startsWith('src/') ? `, or npm run validate -- --only ${f}` : ''})`);
 }
+// Built pages: the cited sources whose entry has a Dutch, Belgian or German name, once each, with the
+// number of pages that cite them. A study in a Belgian journal may stay (evidence); a Dutch help page,
+// law or regulator notice cited for the reader's own situation should go (CONTENT-GUIDE §1b).
+const cited = new Map<string, Set<string>>();
+for (const h of shown) if (h.cited) cited.set(h.cited, (cited.get(h.cited) ?? new Set()).add(h.file));
+if (cited.size) {
+  const list = [...cited].sort((a, b) => b[1].size - a[1].size || a[0].localeCompare(b[0]));
+  console.log(`\n\x1b[33mwarn\x1b[0m cited sources with a Dutch, Belgian or German name on the built pages (${list.length}): evidence may stay; a source for the reader's own situation (help, law, a regulator's notice) should go`);
+  for (const [ref, pages] of details ? list : list.slice(0, 15)) console.log(`  - ${pages.size} page(s): ${ref.length > 170 ? `${ref.slice(0, 170)}…` : ref}`);
+  if (!details && list.length > 15) console.log(`  … ${list.length - 15} more (--details)`);
+}
+
 const errorish = shown.filter(failing).length;
 const warns = shown.length - errorish;
 console.log(

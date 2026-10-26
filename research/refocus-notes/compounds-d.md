@@ -232,3 +232,152 @@ prints "Schedule S4" (merge.md section 10, UI string).
    published results" for both studies.
 9. **Blood-pressure thresholds** (PT-141 monitoring fold) are the NHS's; US, Canadian and Australian guideline thresholds
    were not researched, so the page attributes them ("The NHS, for example …").
+10. **GHK-Cu, US category 1** (added in the review run, below): the page now says that the FDA "does not intend to act
+   against pharmacies that make medicines with it" for non-injectable GHK-Cu while it evaluates it. Please confirm the
+   wording reads as the FDA's enforcement policy (not a legal permission), and that naming it is not read as pointing
+   readers to a source.
+
+## Review run (third run of this assignment)
+
+The workflow re-ran this assignment ("Try again"). `git status` showed no uncommitted change in the owned files: the
+draft above had been committed in `1b7304f`. It was reviewed again, line by line, against the content brief,
+CONTENT-GUIDE §1, §1a, §1b and §5, the three status files (rows, notes, page facts, fact-check blocks) and merge.md.
+It was kept, with these corrections:
+
+| Page | Change | Why | Source ids |
+|---|---|---|---|
+| ghk-cu | Harm-reduction "Legal routes": "No medicine with GHK-Cu is approved …, so a doctor cannot prescribe one" → "No approved medicine with GHK-Cu exists …", plus two sentences: in the US, non-injectable GHK-Cu is in the FDA's category 1, so while the FDA evaluates it, it does not intend to act against pharmacies that make medicines with it if its guidance's conditions are met; that is not an approval and does not cover injections | the old sentence implied there is no prescription route at all, which is wrong for compounded non-injectable GHK-Cu in the US (FDA categories list of 14 May 2026: "GHK-Cu (except for injectable routes of administration)" in category 1; the bulks page: "FDA does not intend to take action against a compounder for compounding drugs using bulk drug substances listed in category 1, provided that the conditions described in the guidance document are met"). The routes page already says GHK-Cu for other routes is the one exception in category 1 | `fda-503a-categories-2026-05`, `fda-503a-bulks-page` (both re-fetched with curl in this run, HTTP 200; the PDF read with pdftotext) |
+| ghk-cu | US fold: the same meaning of category 1 added after "GHK-Cu for other routes is in category 1, still under evaluation" | same | same |
+| ghk-cu, melanotan-ii | Canada fold: "In law, a drug may not be sold in Canada without a drug identification number (DIN) … A new drug also needs Health Canada's approval before it is sold or advertised." (the PT-141 page already had it) | brief, Canada caution: present "generally regulated as prescription drugs" as Health Canada's position and rest the legal explanation on the DIN and new-drug rules | `ca-food-and-drug-regulations` (C.01.014(1), C.08.002(1)), `ca-hc-2026-04-think-twice-peptides` (eight-digit DIN) |
+| melanotan-ii | Regulatory Compare, Canada, "Has the regulator warned about it?": "It lists melanotan I and II among seized unauthorised peptides (2026)" → "Its 2026 warning about unauthorised peptides names melanotan I and II among seized products" | the status file: no melanotan-specific Health Canada advisory was found and the page should not say Health Canada issued a tanning warning; RA-81874 is a general peptide warning that names melanotan I and II as examples | `ca-hc-2026-04-think-twice-peptides` |
+| melanotan-ii | Regulatory Compare, Australia: "fines for a supplier" → "fines for supplying it" | avoids a commerce word in a figure cell (not a validator error; house style) | unchanged |
+
+Checked again in this run, no change needed:
+- **Facts against the research.** Every UK, Canada and Australia sentence of the three pages against
+  `research/refocus/status/{ghk-cu,melanotan-ii,pt-141}.yaml` (rows, notes, page facts, fact-check): the PT-141
+  submissions-list coverage ("since April 2015"), the 2011–2017 Canadian trial sites, the London study (2019–2020),
+  the two Sydney studies (2015, no published results), "unscheduled" in Australia and never "prescription-only"; the
+  melanotan II schedule (S4 from 1 June 2018, not Appendix D), ACMS quotation, infringement notices (27, A$101,412, a
+  NSW individual), the nasal-spray test, Victoria and NSW possession, personal import; the GHK-Cu two categories, the
+  AICIS unknown and "not named in the Poisons Standard" only. The UNRESOLVED points (COPPER COMPOUNDS, "aphrodisiacs",
+  the LNHPD, ACTRN12615001059550) are stated as unknown or left out.
+- **Seller rule.** `fr-2016-melanotan-debarment` has a descriptive title and the Federal Register short link (the
+  official title names the person); `au-tga-2026-05-melanotan-ii-infringement-notices` names no one; the Canadian
+  seizure and recall advisories are cited through `ca-hc-recalls-database` / `ca-hc-recalls-search-status-c-2026-10-23`,
+  the FDA warning letters through `fda-warning-letters-index`.
+- **The four new sources** (`en-compounds-d.yaml`) were fetched again with curl in this run (HTTP 200 each) and their
+  quotations found in the text: "Content current as of" 09/11/2024 and 02/25/2022; "regenerate cells"; "do not require
+  FDA approval before they go on the market"; no copper, peptide or GHK entry on the prohibited-and-restricted page;
+  Drugs@FDA 213793 (Rhythm, 11/25/2020, SUPPL-9 "Efficacy-New Indication"); the label PDF ("Initial U.S. Approval:
+  2020", "Revised: 03/2026", "20-fold less activity at the melanocortin 3 (MC3) and melanocortin 1 (MC1) receptors",
+  warning 5.4, "occurs in the majority of patients", "hypothalamic injury or dysfunction"). No other source file holds
+  these URLs.
+- **Reporting links.** MedWatch and Yellow Card: curl, HTTP 200. Canada.ca reporting page: WebFetch (title "Report a
+  side effect of a health product, drug or medical device - Canada.ca"). TGA reporting page: curl times out from this
+  machine; opened in the built-in browser in its own tab (title "Report an adverse event or safety problem |
+  Therapeutic Goods Administration (TGA)", last updated 2 September 2026).
+- **No-loss check** re-run with a Node script over `<Cite id>`, `source=`, `extraSources=`, `sources: [...]` and
+  `source:`, against `git show nl-source-2026-10-23:<path>`: the draft's counts above hold (ghk-cu 31 → 53,
+  melanotan-ii 83 → 108, pt-141 71 → 83), and after this run's edits ghk-cu has 54 (`ca-food-and-drug-regulations`
+  added; melanotan II and PT-141 unchanged). The removed ids are exactly the ones in the table above and in the
+  manifest, all European framing; none was removed in this run.
+- **FAGG insulin finding.** PubMed ("melanotan AND insulin", 25 records) has no paper reporting insulin in products
+  sold as melanotan (the hits are metabolic animal studies and a general review of falsified biotech drugs), so the
+  FAGG page stays the only source and is kept, marked, as product evidence (open question 1). Note for the reviewer:
+  its reference-list entry prints the Belgian agency's Dutch name and title ("Federaal Agentschap voor Geneesmiddelen en
+  Gezondheidsproducten (FAGG)"), which `check:residue` reports on the built page as a cited-title warning.
+- **Manifest** `research/for-nl-site/MANIFEST-compounds-d.md`: nothing new was cut in this run.
+- **Validation:** `npx tsx scripts/validate-content.ts --only ghk-cu|melanotan-ii|pt-141|en-compounds-d`: 0 errors;
+  the same 5 / 4 / 4 / 0 warnings as above (reporting-form links; the BE row on the Dutch preview). Residue grep from
+  the brief on the six owned text files: only the known false positives (`nada\b` in "Canada", `epar` in
+  "department", `nvic` in "convicted") and the three marked lines.
+- **Rendered check** (dev server, this run): the three pages return 200; GHK-Cu's tile reads "No. Not approved as a
+  medicine in the US, the UK, Canada or Australia.", its fact sheet "Approved in: Not in the US, the UK, Canada or
+  Australia", and its status table shows the US, UK, CA and AU rows and WADA only; the new sentences render. No
+  emergency number printed (the only 111/112/999 strings are citation numbers and journal page ranges). Still not
+  ours: the shared `<ProductCheck />` prints "In the EU, a medicine must show all four, even on a small vial." and "In
+  the Netherlands, your doctor must keep what you say private." on all three pages, with EU and IGJ sources in their
+  reference lists; and the status table's "Schedule S4" string (merge.md section 10).
+
+## Adversarial fact-check (26 October 2026)
+
+Independent check of the three pages, the data rows, the two glossaries and `en-compounds-d.yaml` against the content
+brief, CONTENT-GUIDE §1/§1a/§1b/§5, the three status files (rows, notes, page facts, fact-check blocks), the source
+records' notes and, where a claim was new or changed, the source itself.
+
+### Re-fetched in this check
+- FDA 503A categories PDF (fda.gov/media/94155/download, curl, HTTP 200, pdftotext): "Updated May 14, 2026";
+  "GHK-Cu (except for injectable routes of administration)" added back to category 1, with the May 5, 2026
+  clarification and the PCAC plan "before the end of February 2027"; no "melanotan" anywhere in the PDF (so "in none of
+  the FDA's three 503A categories" holds).
+- FDA 503A bulks page (curl, HTTP 200, "Content current as of: 05/14/2026"): "FDA does not intend to take action against
+  a compounder for compounding drugs using bulk drug substances listed in category 1, provided that the conditions
+  described in the guidance document are met" (the GHK-Cu legal-routes and US-fold sentences match).
+- `fda-cosmetic-or-drug` and `fda-cosmetics-prohibited-restricted` (curl, HTTP 200): "regenerate cells", "with the
+  exception of color additives, do not require FDA approval", "other than color additives, do not need FDA approval";
+  0 matches for copper, GHK or peptide on the prohibited-and-restricted page. Dates 09/11/2024 and 02/25/2022.
+- `fda-drugsatfda-imcivree` (curl, HTTP 200) and the SUPPL-9 approval letter linked from it (pdftotext): SUPPL-9
+  (19 March 2026) "provides for ... addition of an indication ... with acquired hypothalamic obesity". The label PDF
+  (`fda-label-imcivree-2026-03`): "Initial U.S. Approval: 2020", "Revised: 03/2026", warning 5.4, "20-fold less
+  activity at the melanocortin 3 (MC3) and melanocortin 1 (MC1) receptors", "occurs in the majority of patients".
+- Reporting links: MedWatch and Yellow Card by curl (HTTP 200); the Canada.ca reporting page by WebFetch ("Anyone can
+  report a side effect ...", "even if you are not sure", page details 2023-09-08). tga.gov.au timed out to curl and
+  WebFetch from this machine; the TGA reporting page and the TGA melanotan releases rest on the earlier browser reads
+  recorded above and in the source notes.
+- `/en/legal-routes/` headings: "Prescription", "Off-label", "US compounding", "UK specials", "Canada: special access",
+  "Australia: SAS", "Personal import", "Trials" are present, so all eight anchors exist.
+
+### Errors found and fixed
+
+| Page | Was | Now | Why | Source ids |
+|---|---|---|---|---|
+| melanotan-ii | "Setmelanotide ... approved in the US since 25 November 2020 to reduce excess weight in some rare genetic conditions, and in obesity caused by injury to, or a disorder of, the hypothalamus" | the hypothalamic-obesity indication is dated separately: "Since March 2026 it is also approved for ..." | the sentence dated the 2026 indication to 2020; Drugs@FDA SUPPL-9 (19 March 2026) is the acquired-HO indication (approval letter read). The source note of `fda-drugsatfda-imcivree` now records the letter | `fda-drugsatfda-imcivree`, `fda-label-imcivree-2026-03` |
+| melanotan-ii | "a person in New South Wales paid 27 infringement notices ... for supplying melanotan II"; Compare cell "fines for supplying it" | "for allegedly supplying"; "fines in 2026 for alleged supply" | the TGA release is titled "Individual issued 27 infringement notices for allegedly supplying Melanotan II" and describes "alleged unlawful supply"; paying an infringement notice is not a finding of guilt, so the page must not state the supply as fact | `au-tga-2026-05-melanotan-ii-infringement-notices` |
+| melanotan-ii | NSW: "melanotan II is not on the list NSW Health publishes" cited only to the list for the law from 5 November 2026 | adds "now or under the new NSW laws that apply from 5 November 2026" and cites the current S4D list as well | the offence today is under the 1966 Act and the current Appendix D (NSW Health page of 9 July 2026); both NSW Health lists omit melanotan II | `au-nsw-ptg-act-1966`, `au-nsw-health-s4d` (added), `au-nsw-health-s4d-2026` |
+| melanotan-ii | what-it-is Compare detail "checked on 22 October 2026" | "checked on 22 and 23 October 2026" | its UK, Canada and Australia row was checked on 23 October | – |
+| ghk-cu | "In May 2026 it [Health Canada] recalled GHK-Cu powder ..." | "In May 2026 Health Canada published a recall of GHK-Cu powder ..." | RA-82047 is a recall notice that Health Canada publishes (depth: compounding and community pharmacies); the record does not say Health Canada itself recalled the product | `ca-hc-recalls-database` |
+| ghk-cu | what-it-is Compare "Can it be a cosmetic?": US, UK and Canada only, with a "yes" | adds "For Australia, this could not be confirmed." with the AICIS sources | brief: each of the four countries finds its own answer; the status file leaves Australia UNRESOLVED | `au-aicis-inventory-search-ghk-cu-2026-10-23`, `au-aicis-cant-find-chemical` |
+| ghk-cu | `glance.facts` "Injected use": "No published studies in people" (the nl-source caveat "Not a cosmetic" was dropped with the EU law) | "No published studies in people; not a cosmetic (UK, Canada)" (10 words, the schema limit) | keep the caveat; the same rule exists in UK and Canadian law (the US cosmetics definition was not checked for injections, so the US is not named) | `pubmed-ghk-cu-count-2026-10-23`, `uk-cosmetic-products-reg-gb-art-2`, `ca-hc-cosmetic-drug-interface-guidance` |
+| pt-141 | lede "A US medicine for low desire in women. The UK, Canada and Australia have not approved it." (the nl-source's "It briefly raises blood pressure." had been dropped) | "A US medicine for low desire in women. Not approved in the UK, Canada or Australia. It briefly raises blood pressure." | the blood-pressure rise is the page's main safety point and was in the nl-source lede; restored. 21 words: within the 25-word rule (CONTENT-GUIDE §9.1), above the validator's 18-word aim (warning accepted, see below) | `dailymed-vyleesi-label` (page body) |
+| pt-141 | Sydney studies "gave single injections of PT-141 to men" | "to male volunteers" | ACTRN12615001059550 enrolled "males with autism"; the record read does not show that all were adults | `anzctr-actrn12615001033538`, `anzctr-actrn12615001059550` |
+| pt-141 | "In a separate study, 38% ..." | "In another study, 38% ..." | wording only: "separate" matched the brief's residue pattern `epar` (false positive), so the grep is now clean | – |
+
+### Checked, no change needed
+- **Every not-authorised claim** against the status files: GHK-Cu (US, UK, CA, AU: no approved medicine; cosmetic
+  status US/UK/CA not banned or restricted, AU unknown; "not named in the Poisons Standard" only), melanotan II (none
+  of the four; AU Schedule 4 from 1 June 2018, not Appendix D, no ARTG product; HC: no melanotan-specific advisory,
+  named in RA-81874 and four 2025 seizure notices), PT-141 (UK, CA, AU not approved; CA "never authorised", the
+  submissions lists "since April 2015"; AU unscheduled, never "prescription-only"). Afamelanotide approved in the UK
+  (MHRA substance index: SCENESSE), Canada (NOC 9 July 2026; PDL 27 August 2026) and Australia (ARTG 327947).
+- **UNRESOLVED points** stay unknown or out: COPPER COMPOUNDS, AICIS, the "aphrodisiacs" rule (both pages: "has not
+  been settled"), LNHPD (not mentioned), ACTRN12615001059550 ("we found no published results").
+- **Canada caution:** every Canadian paragraph says Health Canada has not authorised the product; "generally regulated
+  as prescription drugs" is presented as Health Canada's position, with the DIN and new-drug rules as the law; the SAP is
+  only linked in the neutral list of routes (as the assignment asks), never offered as a way to get the product.
+- **Seller rule:** the Canadian seizure and recall notices are cited through the index records; the FDA warning
+  letters through `fda-warning-letters-index`; the infringement-notice release names no one.
+- **No-loss check** (script over `<Cite id>`, `source=`, `extraSources=`, `sources: [...]`, against
+  `git show nl-source-2026-10-23:<path>`): ghk-cu 31 → 54, melanotan-ii 83 → 109 (`au-nsw-health-s4d` added in this
+  check), pt-141 71 → 83. Removed ids: exactly the European ones in the table above and in the manifest. Every
+  `<Claim>`, study row, KeyNumber, IconArray and TimeStrip of the nl-source pages is still there. PT-141's dropped US
+  Compare row "Can a doctor prescribe it? Yes: on prescription" is carried by the US row's "on prescription" cell.
+  Data files: unchanged in this check; the two renamed melanotan II study ids are used only by the English MDX
+  (no other locale MDX exists).
+- **Residue:** the brief's grep on the six owned text files now gives only `nada\b` in "Canada", `epar` in
+  "department", `nvic` in "convicted", and the two marked EMA lines (melanotan-ii.mdx 181–182 and 288–289). Markers sit
+  only on genuine evidence: the Scenesse EPAR's account of how afamelanotide works (EMA evidence), and the FAGG
+  laboratory finding of insulin in products sold as melanotan (regulator product evidence, open question 1).
+- **Guardrails:** no doses (the PT-141 label limits "one dose in 24 hours" and "more than 8 doses a month" are label
+  safety limits carried over from the nl-source), no seller help, no emergency number ("call your local emergency
+  number" only), no commerce token in a title, heading, Lead, fold title or figure title, no lab-report-ladder
+  wording, "your doctor" instead of GP, products never assumed to come from a seller.
+- **Validation:** `npx tsx scripts/validate-content.ts --only ghk-cu|melanotan-ii|pt-141|en-compounds-d`: 0 errors.
+  Warnings: the four reporting-form links per page (asked for by the brief), the Dutch-preview BE row on ghk-cu.yaml,
+  and on pt-141 "lede: 21 words (aim for 18 or fewer)": kept on purpose to restore the blood-pressure caveat; the hard
+  limit is 25 words and the reading-ease warning is gone with the three short sentences.
+
+### Open for the reviewers (in addition to questions 1–10 above)
+11. The TGA pages could not be re-opened from this machine in this check (timeouts); the melanotan II Australian
+    figures (27 notices, A$101,412, five sprays) rest on the browser reads recorded in the source notes.
+12. Melanotan II, Australian personal import: the page states the written-authority and packaging conditions of the
+    Personal Importation Scheme as law. Please confirm this reads as a legal limit, not as a route to obtain it.

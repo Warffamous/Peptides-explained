@@ -1,0 +1,197 @@
+# Sources added by the English refocus, group safety-en-b (24 October 2026): safety/product-risk (the lab-report
+# ladder and "what a medicine maker must test"), safety/monitoring, safety/before-you-consider,
+# safety/injection-safety, safety/sterile-technique and the <ProductCheck /> data. Every entry below was fetched and
+# read for what the pages cite it for (curl with pdftotext for PDFs; the eCFR versioner API; the GOV.UK content API;
+# the built-in browser, in our own tab, where a site refuses scripts). Workflow date 24 October 2026 (this machine's
+# clock showed 26 October 2026). No telephone number or e-mail address is recorded. Research notes:
+# research/refocus-notes/safety-en-b.md.
+
+# ------------------------------------------------------------------ what a medicine maker must test (US)
+
+ecfr-21-211-22:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 211.22 – Responsibilities of quality control unit"
+  container: "Code of Federal Regulations, Title 21, Part 211 (Current Good Manufacturing Practice for Finished Pharmaceuticals)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211/subpart-B/section-211.22
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through the eCFR versioner API (text as of 15 October 2026; last amended 29 November 2016). (a): 'There shall be a quality control unit that shall have the responsibility and authority to approve or reject all components, drug product containers, closures, in-process materials, packaging material, labeling, and drug products'; (b) adequate laboratory facilities for testing and approval or rejection; (c) responsibility for 'all procedures or specifications impacting on the identity, strength, quality, and purity of the drug product'. Cited for: in the US, a quality control unit at the maker approves or rejects every batch of a licensed medicine."
+
+ecfr-21-211-160:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 211.160 – General requirements (laboratory controls)"
+  container: "Code of Federal Regulations, Title 21, Part 211 (Current Good Manufacturing Practice for Finished Pharmaceuticals)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211/subpart-I/section-211.160
+  accessed: 2026-10-26
+  verified: url
+  note: "Added by the fact-checker of group safety-en-b. Read through the eCFR versioner API (full text as of 15 October 2026) on 26 October 2026. (a): specifications, standards, sampling plans and test procedures are drafted by the appropriate unit and 'reviewed and approved by the quality control unit'; (b): 'Laboratory controls shall include the establishment of scientifically sound and appropriate specifications, standards, sampling plans, and test procedures designed to assure that components, drug product containers, closures, in-process materials, labeling, and drug products conform to appropriate standards of identity, strength, quality, and purity.' Cited for: in the US, a medicine maker must test against set standards of purity (with ICH Q6B for what is measured), so that the 'impurities' row of the product-risk Compare does not rest only on a guidance whose scope excludes synthetic peptides."
+
+ecfr-21-201-100:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 201.100 – Prescription drugs for human use"
+  container: "Code of Federal Regulations, Title 21, Part 201 (Labeling)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-D/section-201.100
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through the eCFR versioner API (text as of 15 October 2026; last amended 29 November 2016). (b): the label of a prescription drug bears, among others, '(4) The quantity or proportion of each active ingredient, as well as the information required by section 502 (d) and (e)' [502(e) is the established name] and '(6) An identifying lot or control number from which it is possible to determine the complete manufacturing history of the package of the drug.' Cited for: a US prescription medicine's label shows its name, the amount of active ingredient and a lot (batch) number, which traces its manufacturing history."
+
+ecfr-21-201-17:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 201.17 – Drugs; location of expiration date"
+  container: "Code of Federal Regulations, Title 21, Part 201 (Labeling)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-201/subpart-A/section-201.17
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through the eCFR versioner API (text as of 15 October 2026). When an expiration date is required (e.g. by 21 CFR 211.137), 'it shall appear on the immediate container and also the outer package, if any, unless it is easily legible through such outer package'; single-dose containers packed in individual cartons may carry it on the carton instead. Cited for: a US medicine shows its expiry date on the vial or its box."
+
+fda-2004-aseptic-processing-guidance:
+  type: regulator
+  authors: "U.S. Food and Drug Administration (CDER, CBER, ORA)"
+  title: "Guidance for Industry: Sterile Drug Products Produced by Aseptic Processing — Current Good Manufacturing Practice"
+  year: 2004
+  url: https://www.fda.gov/media/71026/download
+  accessed: 2026-10-24
+  verified: url
+  note: "PDF (September 2004) downloaded with curl and read with pdftotext. Section XI (Sterility testing) quotes 21 CFR 211.165(a) and 211.167(a) (each batch purporting to be sterile and/or pyrogen-free is tested); XI.A: 'USP <71> \"Sterility Tests\" is the principal source used for sterility testing methods'; XI.B: 'Sterility tests are limited in their ability to detect contamination because of the small sample size typically used', the USP sampling plan 'only enables the detection of contamination in a lot in which 10% of the units are contaminated about nine times out of ten', and 'if a 10,000-unit lot with a 0.1 percent contamination level was sterility tested using 20 units, there is a 98 percent chance that the batch would pass the test.' Section VII: endotoxin contamination of an injectable product can occur as a result of poor CGMP controls. Cited for: USP <71> as the US method for sterility tests; a sterility test of a few units cannot show that every vial in a batch is sterile."
+
+fda-2026-pyrogen-endotoxins-qa:
+  type: regulator
+  authors: "U.S. Food and Drug Administration (CDER, CBER, CVM, CDRH, ORA)"
+  title: "Guidance for Industry: Pyrogen and Endotoxins Testing: Questions and Answers (Edition 2)"
+  year: 2026
+  url: https://www.fda.gov/media/83477/download
+  accessed: 2026-10-24
+  verified: url
+  note: "Final guidance, March 2026 (FDA guidance page dated 18 March 2026; PDF read with pdftotext). Gives FDA's current thinking on the testing recommendations and acceptance criteria in 'United States Pharmacopeia (USP) Chapter <85> \"Bacterial Endotoxins Test\"', USP <161> and AAMI ST72, which 'recommend that appropriate components and finished products be tested for the presence of pyrogens and endotoxins'; question 1 covers sampling for finished product release under the CGMP regulations. Cited for: USP <85> as the US method for endotoxin tests, and that finished injectable products are tested for endotoxin."
+
+fda-1999-ich-q6b:
+  type: regulator
+  authors: "U.S. Food and Drug Administration (CDER, CBER) / ICH"
+  title: "Guidance for Industry: Q6B Specifications: Test Procedures and Acceptance Criteria for Biotechnological/Biological Products"
+  year: 1999
+  url: https://www.fda.gov/media/71510/download
+  accessed: 2026-10-24
+  verified: url
+  note: "PDF (August 1999) downloaded with curl and read with pdftotext. Scope (1.3): applies to 'proteins and polypeptides, their derivatives, and products of which they are components', produced from recombinant or non-recombinant cell-culture expression systems; 'This document does not cover antibiotics, synthetic peptides and polypeptides' (chemical substances are addressed by Q6A). Drug product specification (IV.B): typical pharmacopoeial tests 'include, but are not limited to, sterility, endotoxin, microbial limits'; identity tests 'should be highly specific', and 'more than one test (physicochemical, biological, and/or immunochemical) may be necessary to establish identity for some products'; purity and impurities: levels of impurities formed in production or storage 'should be determined and acceptance criteria established'; quantity 'should be determined using an appropriate assay'. Cited for: what international guidance asks makers of peptide and protein medicines made in living cells to test, and that it does not cover synthetic peptides."
+
+fda-2016-ich-q7-gmp-api:
+  type: regulator
+  authors: "U.S. Food and Drug Administration (CDER, CBER) / ICH"
+  title: "Q7 Good Manufacturing Practice Guidance for Active Pharmaceutical Ingredients: Guidance for Industry (Revision 1)"
+  year: 2016
+  url: https://www.fda.gov/media/71518/download
+  accessed: 2026-10-24
+  verified: url
+  note: "PDF (September 2016, Revision 1) downloaded with curl and read with pdftotext; the same ICH text as the EMA-hosted copy (ema-ich-q7-gmp-api). Section 11.4, Certificates of Analysis: 11.40 'Authentic certificates of analysis should be issued for each batch'; 11.41 the certificate gives the name of the API, 'the batch number, and the date of release', and the expiry date where there is one; 11.42 it 'should list each test performed', with the acceptance limits and the numerical results; 11.43 certificates 'should be dated and signed by authorized personnel of the quality unit(s)' and show the name and address of the original manufacturer; 11.44 certificates issued by agents or brokers 'should show the name, address and telephone number of the laboratory that performed the analysis'. Cited for: what a certificate of analysis is expected to show (batch number, each test with limits and results, date, signature, the lab that did the work)."
+
+fda-cgmp-facts:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Facts About the Current Good Manufacturing Practice (CGMP)"
+  year: 2025
+  url: https://www.fda.gov/drugs/pharmaceutical-quality-resources/facts-about-current-good-manufacturing-practice-cgmp
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with curl (page modified 21 November 2025). 'A consumer usually cannot detect (through smell, touch, or sight) that a drug product is safe or if it will work. While CGMP requires testing, testing alone is not adequate to ensure quality. In most instances testing is done on a small sample of a batch (for example, a drug manufacturer may test 100 tablets from a batch that contains 2 million tablets)'; 'FDA inspects pharmaceutical manufacturing facilities worldwide, including facilities that manufacture active ingredients and the finished product.' Cited for: you cannot see whether a medicine is safe; testing alone does not ensure quality; the FDA inspects manufacturers."
+
+# ------------------------------------------------------------------ what a medicine maker must do (UK, Canada)
+
+uk-hmr-2012-sch-7-qualified-person:
+  type: law
+  authors: "UK Parliament"
+  title: "The Human Medicines Regulations 2012 (SI 2012/1916), Schedule 7: Qualified persons (Part 3, obligations of qualified person)"
+  container: "legislation.gov.uk"
+  year: 2012
+  url: https://www.legislation.gov.uk/uksi/2012/1916/schedule/7
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through legislation.gov.uk (data.xml of the revised text). Para 12(1): 'In Great Britain, the qualified person is responsible for securing— (a) that each batch of medicinal products manufactured in Great Britain has been manufactured and checked in accordance with these Regulations and the requirements of the UK marketing authorisation'; for products imported from a country that is not an approved country for import, that each batch has undergone a full qualitative analysis, a quantitative analysis of all the active substances and all other tests or checks necessary; para 12A gives the same duty in Northern Ireland; para 15: documentary evidence for each batch, kept for at least five years and available for inspection. Cited for: in the UK, a qualified person must make sure each batch was made and checked as the law and the licence require."
+
+ca-fdr-c02-014:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.02.014 (quality control department approves each lot or batch)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.02.014.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Regulations current to 2026-09-30, last amended 2026-06-17. C.02.014(1): 'Except in the case of a wholesaler or a distributor referred to in paragraph C.01A.003(a), no lot or batch of a drug shall be made available for further use in fabrication or for sale unless the person in charge of the quality control department approves the sale or the further use.' Part of Division 2 (Good Manufacturing Practices). Cited for: in Canada, no batch of a medicine may be sold until the person in charge of quality control approves it."
+
+# ------------------------------------------------------------------ labs and lab reports
+
+iso-iec-17025-2017:
+  type: web
+  authors: "International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC)"
+  title: "ISO/IEC 17025:2017 – General requirements for the competence of testing and calibration laboratories"
+  container: "ISO"
+  year: 2017
+  url: https://www.iso.org/standard/66912.html
+  accessed: 2026-10-24
+  verified: url
+  note: "The standard's own page (curl gets HTTP 403; read in the built-in browser, in our own tab). Edition 3, published November 2017, last reviewed and confirmed in 2023, so this version remains current; technical committee ISO/CASCO. 'ISO/IEC 17025 is the international standard for testing and calibration laboratories. It sets out requirements for the competence, impartiality, and consistent operation of laboratories'. The text of the standard itself is not free and was not read. Cited for: what ISO/IEC 17025 is."
+
+nist-2018-iso17025-crosswalk-reporting:
+  type: report
+  authors: "National Institute of Standards and Technology (NIST), Office of Weights and Measures"
+  title: "ISO/IEC 17025 Crosswalk – Reporting the Results (2005 to 2017)"
+  year: 2018
+  url: https://www.nist.gov/document/7-8-17025-crosswalk-reporting-results-20180201pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "One-page PDF dated February 2018 (the URL redirects to nist.gov/system/files/documents/2020/01/03/7-8-17025-crosswalk-reporting-results-20180201.pdf), read with pdftotext. Maps the report requirements of ISO/IEC 17025:2005 to clause 7.8 of the 2017 edition. Core requirements of every report include the laboratory's name and address (7.8.2.1 c), the method (f), an unambiguous identification of the item (g), the identity of the person(s) authorising the report (o), and '7.8.2.1l) Statement to the effect that the results relate only to measured items'; 7.8.2.2: 'State when results apply to sample as received'. Cited for: a report from an accredited lab must say that its results relate only to the items it tested, and must name the lab and the person who authorised it."
+
+# ------------------------------------------------------------------ monitoring: asking a doctor, costs, home tests
+
+au-healthdirect-paying-for-diagnostic-testing:
+  type: web
+  authors: "Healthdirect Australia"
+  title: "Paying for diagnostic testing"
+  container: "healthdirect.gov.au"
+  year: 2025
+  url: https://www.healthdirect.gov.au/paying-for-diagnostic-testing
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with curl (page text in the page's data; 'Last reviewed: November 2025'). 'Medicare covers the cost of most pathology tests' (pathology tests include blood tests), but not tests for elective cosmetic surgery, insurance testing and some genetic tests; 'For Medicare to pay, there must be: a medical reason for ordering the test' and an approved provider; 'If your test is bulk billed, Medicare pays the full cost and you don't have to pay anything'; 'Always ask your doctor whether Medicare covers the cost of your diagnostic test'; suggested questions include 'Do I really need this test?' and 'What are the costs?'. Cited for: in Australia, Medicare covers most blood tests when there is a medical reason; ask your doctor about costs."
+
+ca-hc-health-care-system:
+  type: regulator
+  authors: "Health Canada"
+  title: "Canada's health care system"
+  container: "Canada.ca"
+  year: 2025
+  url: https://www.canada.ca/en/health-canada/services/canada-health-care-system.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through WebFetch (curl timed out; page details 2025-06-25). 'each province and territory has its own health insurance plan'; 'The provinces and territories are responsible for delivering health care services'; 'they all provide basic standards of coverage for insured health services. These include medically necessary hospital, physician and some surgical-dental services.' The page does not mention laboratory tests. Cited for: in Canada, each province and territory runs its own health insurance plan and decides what it covers."
+
+fda-dtc-tests:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Direct-to-Consumer Tests"
+  year: 2019
+  url: https://www.fda.gov/medical-devices/in-vitro-diagnostics/direct-consumer-tests
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with curl (content current as of 20 December 2019). Tests 'marketed directly to consumers without the involvement of a health care provider are called direct-to-consumer tests'; 'Some direct-to-consumer tests are reviewed by the FDA while others are not. In general, direct-to-consumer tests for non-medical, general wellness, or low risk medical purposes are not reviewed by the FDA before they are offered'; 'Do not make any dietary or health-related decisions without first discussing your test results with your health care provider.' Cited for: in the US, many tests sold straight to the public are not reviewed by the FDA first; discuss a result with a doctor before acting on it."
+
+# ------------------------------------------------------------------ before you consider
+
+nhs-herbal-medicines-complementary:
+  type: web
+  authors: "NHS (England)"
+  title: "Herbal medicines and complementary therapies"
+  container: "nhs.uk"
+  year: 2026
+  url: https://www.nhs.uk/tests-and-treatments/herbal-medicines-and-complementary-therapies/
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with curl ('Page last reviewed: 1 May 2026'). Under 'How to check the safety of herbal medicines and complementary therapies', Do: 'tell any doctor or healthcare professional treating you if you are taking a herbal medicine or using a complementary therapy'; Don't: 'do not stop taking any prescribed medicine without first talking to your doctor' and 'do not buy unlicensed herbal medicines online – they may not be safe'. About herbal medicines and complementary therapies, not peptides. Cited only for: do not stop a prescribed medicine without first talking to your doctor."

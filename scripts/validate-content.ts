@@ -416,8 +416,11 @@ function checkFrontmatterSellerWords(file: string, data: unknown, at = '') {
     for (const [k, v] of Object.entries(data)) if (!NON_TEXT_KEYS.has(k)) checkFrontmatterSellerWords(file, v, at ? `${at}.${k}` : k);
   }
 }
-/** Prose with its quoted phrases removed (not attribute values: =\"…\" stays). */
-const unquoted = (line: string) => line.replace(/(?<!=)"[^"\n]*"|“[^”\n]*”/g, ' ');
+/**
+ * Prose with its quoted phrases removed, in double or single quotes, straight or typographic (not
+ * attribute values: =\"…\" stays; an apostrophe inside a word, as in "seller's", never opens a quote).
+ */
+const unquoted = (line: string) => line.replace(/(?<!=)"[^"\n]*"|“[^”\n]*”|‘[^’\n]*’|(?<![=\w])'[^'\n]*'(?!\w)/g, ' ');
 
 /** The page title and its menu label (frontmatter): the h1 and the navigation text. */
 const titleLabels = (data: { title?: string; nav_title?: string }): [string, string][] =>

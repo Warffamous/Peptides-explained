@@ -52,6 +52,44 @@
       "certificate-of-analysis"
     ]
   },
+  "sterility-test": {
+    "term": "sterility test",
+    "aliases": [
+      "sterility tests",
+      "sterility testing"
+    ],
+    "definition": "A lab test that looks for living germs in samples from one batch of a medicine. It checks only a few vials, so it cannot prove that every vial is free of germs.",
+    "category": "safety",
+    "see_also": [
+      "sterile",
+      "endotoxin",
+      "gmp"
+    ]
+  },
+  "assay": {
+    "term": "assay",
+    "aliases": [
+      "assays"
+    ],
+    "definition": "A lab test that measures something in a sample, such as how much of a substance is there or how strongly it acts.",
+    "category": "chemistry",
+    "see_also": [
+      "hplc",
+      "certificate-of-analysis"
+    ]
+  },
+  "qualified-person": {
+    "term": "qualified person",
+    "aliases": [
+      "qualified persons"
+    ],
+    "definition": "In the UK, the person at a medicine maker who must make sure that each batch was made and checked as the law and the licence require, before it is released.",
+    "category": "regulation",
+    "see_also": [
+      "gmp",
+      "batch-number"
+    ]
+  },
   "batch-number": {
     "term": "batch number",
     "aliases": [
@@ -141,53 +179,6 @@
       "jaundice"
     ]
   },
-  "seh": {
-    "term": "SEH",
-    "aliases": [
-      "spoedeisende hulp"
-    ],
-    "definition": "The hospital emergency department in the Netherlands. Unless a life is in danger, you go there only after the GP or huisartsenpost sends you.",
-    "category": "safety",
-    "see_also": [
-      "huisartsenpost",
-      "huisarts"
-    ]
-  },
-  "nvic": {
-    "term": "NVIC",
-    "aliases": [
-      "Nationaal Vergiftigingen Informatie Centrum",
-      "Dutch Poisons Information Centre"
-    ],
-    "definition": "The Dutch poison information centre. It advises doctors, pharmacists and other professionals. If you think you are poisoned, call your GP or the huisartsenpost, and they can contact it.",
-    "category": "safety",
-    "see_also": [
-      "huisartsenpost"
-    ]
-  },
-  "landelijk-meldpunt-zorg": {
-    "term": "Landelijk Meldpunt Zorg",
-    "aliases": [
-      "national reporting point"
-    ],
-    "definition": "The Dutch national reporting point of the health inspectorate (IGJ). You can report a doubtful website or seller of medicines there.",
-    "category": "regulation",
-    "see_also": [
-      "igj"
-    ]
-  },
-  "eigen-risico": {
-    "term": "eigen risico",
-    "aliases": [
-      "deductible",
-      "compulsory deductible"
-    ],
-    "definition": "The part of your health care costs that you pay yourself each year in the Netherlands before your basic insurance pays. GP care does not count towards it; blood tests at a lab and hospital care do.",
-    "category": "law",
-    "see_also": [
-      "huisarts"
-    ]
-  },
   "catalyst": {
     "term": "catalyst",
     "aliases": [
@@ -251,15 +242,6 @@
       "FDA MedWatch"
     ],
     "definition": "The US system for reporting side effects and problems with medicines to the FDA. Patients and health workers can both use it.",
-    "category": "regulation",
-    "see_also": []
-  },
-  "bfarm": {
-    "term": "BfArM",
-    "aliases": [
-      "Bundesinstitut für Arzneimittel und Medizinprodukte"
-    ],
-    "definition": "The German federal institute for medicines and medical devices. It runs an online portal where patients and health workers can report side effects.",
     "category": "regulation",
     "see_also": []
   }

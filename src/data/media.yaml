@@ -162,7 +162,9 @@ sharps-bin-yellow:
   retrieved: 2026-10-20
   people: false
   focal: 50% 20%
-  sources: [fda-sharps-containers, apotheek-medicijnafval]
+  # English refocus (glossary-ui-media-en, 26 October 2026): apotheek-medicijnafval (Dutch pharmacists' page on
+  # returning medicine waste) removed from the caption sources; the caption needs only the FDA page.
+  sources: [fda-sharps-containers]
 glp1-body-map-v2:
   file: glp1-body-map-v2.png
   kind: infographic-art
@@ -522,7 +524,10 @@ pharmacy-mortar:
   retrieved: 2026-10-22
   people: false
   focal: 50% 52%
-  sources: [igj-eigen-bereidingen-apotheek]
+  # English refocus (glossary-ui-media-en, 26 October 2026): the caption source was the Dutch inspectorate's page on
+  # pharmacy preparation (igj-eigen-bereidingen-apotheek, kept in legal-a.yaml for nl); this hero is on /en/legal-routes/,
+  # so the caption now rests on the four countries' pharmacy-compounding rules that page already cites.
+  sources: [usc-21-353a, uk-ma-1968-s10, ca-hc-pol-0051-compounding, au-tga-compounded-medicines-guidance]
 law-library-shelf:
   file: law-library-shelf.jpg
   kind: photo
@@ -1102,7 +1107,10 @@ skin-epidermis-dermis-he:
   retrieved: 2026-10-23
   people: false
   focal: 50% 35%
-  sources: [eu-regulation-1223-2009-cosmetics]
+  # English refocus (glossary-ui-media-en, 26 October 2026): the caption source was the EU cosmetics regulation
+  # (eu-regulation-1223-2009-cosmetics, kept in stubs-b.yaml); now the same definition as it applies in Great Britain
+  # and the FDA's cosmetic-or-drug page, both cited on the English GHK-Cu page.
+  sources: [uk-cosmetic-products-reg-gb-art-2, fda-cosmetic-or-drug]
 vitamin-b3-crystals-polarised:
   file: vitamin-b3-crystals-polarised.jpg
   kind: photo
@@ -1186,4 +1194,19 @@ leinster-house-dublin:
   retrieved: 2026-10-24
   people: false
   focal: 55% 45%
+  sources: []
+# English refocus (group glossary-ui-media-en, 26 October 2026): the hero of legal/whats-changing on English, instead
+# of the flags at the European Parliament (kept for nl). A rooster weather vane against the sky: no country, no people.
+weather-vane-rooster:
+  file: weather-vane-rooster.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  author: Nevit Dilmen
+  title: Wind vane 05643
+  source_url: https://commons.wikimedia.org/wiki/File:Wind_vane_05643.jpg
+  retrieved: 2026-10-26
+  people: false
+  focal: 52% 45%
   sources: []

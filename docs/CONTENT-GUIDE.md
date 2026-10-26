@@ -94,9 +94,11 @@ Therefore, in content:
     calling word near it (call, phone, dial, emergency, ambulance …), or any of them in stop-now
     content (a stop callout, the stop signs, the warning signs, the emergency strings). Left alone:
     part of a bigger number or an amount ("1,000", "10 000", "£1000", "1999", "99.9%"), a count or a
-    measurement ("111 participants", "112 vials", "112 mg/dL"), a position ("week 112", "volume 999")
-    and a service name ("NHS 111"). Checked against the whole English corpus on 24 October 2026 (the
-    pages as they were on 23 October and during the rewrite): no number was printed.
+    measurement ("111 participants", "112 vials", "112 mg/dL"), a position in a study, a publication
+    or a law ("week 112", "volume 999", "pages 111–112", "section 112", "21 CFR part 111", "s 111",
+    "§ 112"), a range ("100–112") and a service name ("NHS 111"). Checked against the whole English
+    corpus on 24 October 2026 (the pages as they were on 23 October and during the rewrite): no number
+    was printed.
 
 ### The FDA PCAC vote (July 2026): the canonical framing
 
@@ -281,7 +283,8 @@ JSON has no comments, so the config holds the exceptions, each with its reason (
   covers a folder. Examples: the thalidomide timeline text ("German", history), the corrections log
   entry that records what a page said before the refocus.
 - `allowPhrases`: a proper name that contains a pattern but is not reader framing, skipped
-  everywhere, the built pages included: "Europe PMC" (a literature database), "Eli Lilly Nederland
+  everywhere, the built pages included, together with any match that touches it ("indexed in Europe
+  PMC" is not the frame "in Europe"): "Europe PMC" (a literature database), "Eli Lilly Nederland
   B.V." (the UK licence holder of Mounjaro, shown in the products table).
 
 How to run it:
@@ -291,8 +294,12 @@ How to run it:
   reached a page another way (a component, data, a glossary tooltip) shows up. Markers do not survive
   the build, so there only `error` hits count; cited titles and names (reference lists, the sources
   page, "Based on" lists, a figure card's "Source" line, image credits) and the news list's
-  headlines are warnings. `-- --details` lists every hit; `-- --strict` fails on error and frame hits;
-  `-- --only <part-of-path>` filters.
+  headlines are warnings. It then lists, once each, the cited sources whose entry carries a Dutch,
+  Belgian or German name, with the number of pages that cite them: a source cited only through data
+  (a component's source list, such as `src/data/product-check.yaml`) never shows up in the source
+  scan. A study in a Belgian or Dutch journal may stay (evidence); a Dutch help page, law or
+  regulator's notice cited for the reader's own situation goes. `-- --details` lists every hit;
+  `-- --strict` fails on error and frame hits; `-- --only <part-of-path>` filters.
 - Before the script existed, writers ran the brief's grep
   (`research/refocus-spec/content-brief.md`, "Residue check"); the config holds the same terms
   (Dutch, Belgian and German terms as `error`, "German"/"Germany" as `frame` so that thalidomide

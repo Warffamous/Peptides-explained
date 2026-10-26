@@ -10,7 +10,10 @@
 # volumes, schedules, mixing sums, and nothing about where to get a product or how to judge a seller.
 # What each source is cited for: research/harm-reduction-pass.md.
 
-intro_sources: [igj-online-medicijnen, ashraf-2024-online-semaglutide, smith-2013-fungal-methylprednisolone]
+# English refocus (24 October 2026): the intro, label, look, certificate, storage and doctor checks now cite sources
+# from the English readers' own countries (US, UK, Canada, Australia). The schema has one source list for every
+# locale; the replaced ids are listed in the group manifest MANIFEST-safety-en-b.md, for the other locale's pages.
+intro_sources: [fda-cgmp-facts, ashraf-2024-online-semaglutide, smith-2013-fungal-methylprednisolone]
 
 items:
   - id: seal
@@ -19,20 +22,20 @@ items:
 
   - id: label
     icon: check-label
-    sources: [eu-directive-2001-83, fda-considering-online-pharmacy]
+    sources: [ecfr-21-201-100, ecfr-21-201-17, fda-considering-online-pharmacy]
 
   - id: look
     icon: check-look
-    sources: [dailymed-egrifta-sv-label, ema-epar-wegovy]
+    sources: [dailymed-egrifta-sv-label, fda-label-wegovy]
 
   - id: certificate
     icon: check-certificate
-    sources: [ema-ich-q7-gmp-api, ema-2025-synthetic-peptides-guideline, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, janvier-2018-falsified-peptides-belgium]
-    links: [safety/product-risk#what-a-lab-certificate-shows-and-what-it-does-not]
+    sources: [fda-2016-ich-q7-gmp-api, nist-2018-iso17025-crosswalk-reporting, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, janvier-2018-falsified-peptides-belgium]
+    links: [safety/product-risk#what-a-lab-report-can-and-cannot-tell-you]
 
   - id: storage
     icon: check-cold
-    sources: [ema-epar-wegovy, fda-unapproved-glp1-concerns, manning-2010-protein-stability, who-2010-injection-toolkit]
+    sources: [fda-label-wegovy, fda-unapproved-glp1-concerns, manning-2010-protein-stability, who-2010-injection-toolkit]
     links: [safety/sterile-technique#when-to-throw-a-vial-away]
 
   - id: clean
@@ -47,7 +50,7 @@ items:
 
   - id: doctor
     icon: check-doctor
-    sources: [thuisarts-naar-de-huisarts, vic-health-2026-retatrutide-liver, knmg-beroepsgeheim]
+    sources: [au-healthdirect-questions-to-ask-your-doctor, vic-health-2026-retatrutide-liver, hhs-hipaa-your-rights, gmc-confidentiality-duties, opc-privacy-laws-summary, oaic-health-information]
     links: [safety/monitoring, talking-to-your-doctor]
 
   - id: stop

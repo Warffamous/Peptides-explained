@@ -11,6 +11,32 @@ the allowlist entries. This second run reviewed that draft against the content b
 sharps-disposal, the glossary, the manifest and these notes. Nothing in `src/data/sources/refocus-*.yaml`,
 `src/data/jurisdictions.yaml` or another group's file was edited.
 
+A third run (26 October 2026) reviewed the committed draft (checkpoint `1b7304f`) against the brief again, re-checked
+the help, reporting and sharps claims against the source notes of the merged research and against
+`research/refocus/feeds-help-extras.md` §2, and made these fixes:
+
+- **if-something-goes-wrong:** Irish poisons line "8am to 10pm" became "every day from 08:00 to 22:00" (24-hour time;
+  `ie-npic-poisons`, `ie-npic-contact`). UK poison row: "your doctor or a pharmacist" became "the same services or your
+  doctor. In Northern Ireland, a pharmacist can also help" (`uk-npis-members-of-public` names a pharmacist only for
+  Northern Ireland).
+- **safety/index:** "Local drug services can also test for HIV and hepatitis" is now "In England, …" (the only source,
+  `uk-nhs-drug-addiction-help`, is NHS England). US bullet: added SAMHSA's National Helpline (free, confidential, day and
+  night; information and referral to local treatment, support groups and community organisations), the official US
+  link the research has (`us-samhsa-national-helpline`, read from an archive capture by the research and its
+  fact-check; samhsa.gov blocks scripts). The "no current national list of syringe services programs on an official
+  US site" statement was re-checked: a web search on 26 October 2026 found no CDC or other federal locator (only a
+  non-official directory, which is not named), and the old CDC SSP URLs answer HTTP 403 to scripts.
+- **sharps-disposal:** summary item and the "Where does a full container go?" lead: "Ask your pharmacy or local
+  council" became "Ask your pharmacy, or check your local rules" ("council" does not fit US or Canadian readers).
+  TimeStrip: "after 72 hours it no longer works" became "after 72 hours it is too late to start" (the sources say PEP
+  must start within 72 hours; none of the three notes records the stronger wording).
+- Checked and kept: `uk-nhs-when-to-call-999` (re-fetched 26 October 2026 with curl) says 999 is for life-threatening
+  emergencies "like serious road traffic accidents, strokes and heart attacks" and to use NHS 111 when unsure; it
+  supports the general rule in the stop callouts and the urgency table, while the specific signs rest on the NHS
+  condition pages cited with it. `nhs-hiv-and-aids` re-fetched: PEP within 72 hours, from sexual health clinics and A&E.
+- No new source entries; no change to `warning-signs.json` (no country framing in it; every sign and level unchanged),
+  the manifest (nothing more was cut), the glossary, the photos or the allowlist (samhsa.gov is covered by `.gov`).
+
 ## 1. What changed, per page
 
 ### safety/if-something-goes-wrong
@@ -141,7 +167,7 @@ aliases.
 |---|---|---|---|
 | if-something-goes-wrong | 33 | 55 | bfarm-ozempic-falsification, bfarm-risiken-melden, ema-2023-falsified-ozempic, ema-epar-wegovy, gesund-bund-notfallnummern, igj-2023-falsified-ozempic, igj-2025-illegal-online-medicines, igj-online-medicijnen, knmg-beroepsgeheim, knmg-beroepsgeheim-doorbreken, lareb-2021-illegal-medicines, lareb-bijwerkingen-melden, nl-wgbo-art-454-456-records, nl-wgbo-art-457-confidentiality, nvic-umcutrecht, rijksoverheid-huisartsenpost-seh, rijksoverheid-urgent-medical-help, thuisarts-naar-de-huisarts |
 | warning-signs | 49 | 63 | bfarm-risiken-melden, ema-epar-mounjaro, ema-epar-wegovy, ema-prac-2025-06-naion, knmg-beroepsgeheim, lareb-bijwerkingen-melden, lareb-home, rijksoverheid-huisartsenpost-seh, rijksoverheid-urgent-medical-help, rivm-hygiene-piercing, thuisarts-dikke-ogen-lippen, thuisarts-hiv-pep, thuisarts-pijn-op-borst, thuisarts-sepsis, thuisarts-verlamming, thuisarts-wondroos |
-| index | 9 | 17 | drugsinfo-injecteren, mainline-steroids-safe-injecting, rivm-hygiene-piercing, thuisarts-wondroos |
+| index | 9 | 18 | drugsinfo-injecteren, mainline-steroids-safe-injecting, rivm-hygiene-piercing, thuisarts-wondroos |
 | sharps-disposal | 15 | 22 | apotheek-medicijnafval, apotheek-nadroparine, drugsinfo-injecteren, ema-epar-wegovy, gesund-bund-arzneimittel-entsorgen, rijksoverheid-kca, rivm-hygiene-piercing, thuisarts-hiv-pep |
 
 Kept although European: `stammers-2026-insulin-falsified-semaglutide` (Dutch case report: science, "Dutch" dropped),
@@ -154,10 +180,13 @@ product routes are now per country).
 ## 5. Validation
 
 - `npx tsx scripts/validate-content.ts --only <each owned file>`: **0 errors**. Warnings:
-  - if-something-goes-wrong (3) and index (6): "inline outbound link … prefer <Cite id>". Kept on purpose: these are
-    reporting forms and help services the reader needs to reach (CONTENT-GUIDE §10 allows a genuinely needed link,
-    on the allowlist); each also has its `<Cite>`. Hosts: fda.gov, canada.ca, tga.gov.au, talktofrank.com,
-    dan247.org.uk, health.gov.au, healthnz.govt.nz, wedinos.wales (added to the allowlist with a "why").
+  - if-something-goes-wrong (3) and index (7 after the third run): "inline outbound link … prefer <Cite id>". Kept on
+    purpose: these are reporting forms and help services the reader needs to reach (CONTENT-GUIDE §10 allows a
+    genuinely needed link, on the allowlist); each also has its `<Cite>`. Hosts: fda.gov, canada.ca, tga.gov.au,
+    samhsa.gov, talktofrank.com, dan247.org.uk, health.gov.au, healthnz.govt.nz, wedinos.wales (added to the allowlist
+    with a "why").
+  - Third run (26 October 2026): 0 errors in every owned file; the repo-wide validator shows 0 errors (180 warnings,
+    none in this group's files except the link warnings above).
   - The sources file had two "no DOI" warnings for the GMC guidance entries; their type is now `regulator` (the GMC is
     the UK's statutory medical regulator), which clears them.
 - Residue grep from the brief on all owned files: **0 real hits**. The pattern's `nada\b` matches "Canada" and `epar`
@@ -189,3 +218,96 @@ product routes are now per country).
    photos now show only on `nl`). This group may only add entries to those files; the media owner may want to tidy them.
 8. **Other glossary files** (`safety-b.json`, `final-qa.json`, `guides.json`) still point `see_also` at `huisarts` /
    `huisartsenpost`, which no longer exist on English (harmless: the glossary page skips them).
+9. **SAMHSA's National Helpline** (added for the US on safety/index in the third run) describes itself as a referral
+   service for people facing substance use disorders. It is the only official US link the research has; FRANK (UK)
+   and Health Canada's directory have the same flavour. Reviewer: is it the right US link for someone who injects a
+   peptide, or should the US bullet keep only "ask your doctor, a pharmacist or your local health department"? Its
+   page was read only from an Internet Archive capture (samhsa.gov blocks scripts and the browser).
+10. **Stop-callout sources:** `uk-nhs-when-to-call-999` supports the general rule (life-threatening emergencies, NHS 111
+    when unsure), not each listed sign; the signs rest on the NHS condition pages cited beside it. Acceptable?
+    (Resolved by the fact-check in section 7: the source is no longer cited.)
+
+## 7. Adversarial fact-check (26 October 2026)
+
+An independent fact-check of the whole group against the content brief. Method: cite ids diffed against
+`git show nl-source-2026-10-23:<path>` for all four pages; every claim on the four pages compared with the note of
+its cited source (78 source notes read); 20 sources re-read live. Tools: curl with a browser user agent (healthdirect
+cellulitis, NHS HIV and AIDS, NHS cellulitis, MedlinePlus "When to use the emergency room", OPC, OAIC, WEDINOS, FDA
+report-a-problem, and the old FDA unlawful-sales URL, which answers 302 to contact.fda.gov); the GOV.UK content API
+(MHRA fake pens 2023, MHRA NAION 2026); the FDA label PDFs with pdftotext (Wegovy 218316s007: 5.2, 5.4, 5.5;
+Mounjaro 215866s044s045: 5.2, 5.3, 5.5); the WHO IRIS DSpace API (the toolkit's text bitstream: Table 4.1, Table 4.2,
+4.5.2, 4.5.3 and the PEP counselling box); the Commons API (both hero photos: licence, author, description); and the
+built-in browser, in its own tab, for pages that are rendered by scripts or answer 403 (healthdirect needlestick, CDC
+PEP, GMC framework paras 9 and 22, HHS "Your Rights Under HIPAA", the contact.fda.gov form). A web search for an
+official US national list of syringe services programs was repeated: it found only state directories (Massachusetts,
+Vermont, Washington) and a non-official national map, so the page's "not found" statement stands.
+`warning-signs.json` is identical to nl-source-2026-10-23: every sign, level and stop-now block is kept, none folded.
+
+### Fixed in place
+
+- **An emergency number printed through a source title.** `uk-nhs-when-to-call-999` has the title "When to call 999",
+  which the page's source list prints. Its research note says it "is never printed on the English site". It was
+  removed from the four cite lines that used it (if-something-goes-wrong: the stop callout and the urgency table;
+  warning-signs: the stop callout and level 1). The general rule now rests on `us-medlineplus-when-to-use-er`
+  (re-read: stopped breathing, severe chest pain or pressure, a seizure, sudden weakness on one side go to the
+  emergency department) and on the NHS condition pages already cited; "not sure" rests on `nhs-111` and
+  `au-healthdirect-helpline`. This resolves open question 10.
+- **Science restored (sharps-disposal, fold "What the doctor will do").** Hepatitis C: "blood tests in the following
+  weeks and months" had left with the Dutch rewrite, but it is WHO science (toolkit 4.5.3: HCV RNA at 4 to 6 weeks,
+  anti-HCV and ALT at 4 to 6 months). It is back, cited to `who-2010-injection-toolkit`. What PEP does had left with
+  the Thuisarts cite; it is back in a sourced form: "PEP is medicine that helps prevent an HIV infection after a prick
+  like this" (`cdc-hiv-pep`: "PEP is medicine that prevents HIV after a possible exposure").
+- **Science restored (if-something-goes-wrong, fold "Why confidentiality matters").** The right to see your record and
+  get a copy had left with the WGBO cite. It is back for the four countries, with the ids that the
+  talking-to-your-doctor group verified (`ecfr-45-164-524`, `nhs-constitution-england`, `cpsa-cma-code-of-ethics`,
+  `oaic-access-health-information`), in that page's wording ("with a few exceptions").
+- **Ontario sharps (table row).** "Pharmacies and other sites must take back sharps" put the legal duty on pharmacies.
+  O. Reg. 298/12 puts it on producers (s. 3(1); free of charge, s. 4(3); a sharp outside a sharps container may be
+  refused, s. 3(2)). Now: "the law requires free collection of sharps in a sharps container, at pharmacies and other
+  sites". The fold already said "the companies that supply sharps … must run free collection".
+- **UK cellulitis wording (warning-signs, "Where this list comes from").** The NHS says: call 999 or go to A&E if you
+  have cellulitis with "a very high temperature, or you feel hot, cold or shivery". The page said "with fever … call
+  an ambulance". Now: "with a very high temperature or shivering is to call an ambulance or go to an emergency
+  department".
+- **New Zealand: what CARM is.** "CARM is the centre that monitors side effects" had no source in its cite.
+  `nz-otago-nzphvc-carm` (Centre for Adverse Reactions Monitoring, contracted by Medsafe) was added.
+- **safety/index: section length.** The new harm-reduction paragraph took the opening section from 109 to 170 visible
+  words. Its two detail sentences now open the fold "Finding a harm-reduction service in your country", with their
+  cites: programmes that welcome people who inject performance and image enhancing drugs ("such as steroids", from the
+  HSE steroids page), and HIV and hepatitis testing in England. Nothing was deleted.
+
+### Checked and kept
+
+- Removed cite ids (nl-source → now): every one is Dutch, German, Belgian or EU, and each is in the manifest. The
+  other "removed" ids in a raw diff (`where-to-get-help-nl`, `where-to-report-nl`, `help-in-other-countries`) are
+  diagram ids. Ids now (cites and figure ids together): if-something-goes-wrong 38 → 64, warning-signs 53 → 66, index
+  10 → 19, sharps-disposal 16 → 24.
+- Every help, poison, reporting and sharps statement matches its source note and research/refocus/feeds-help-extras.md
+  §2 with its fact-check: the Queensland, BC and WA household-bin corrections are applied; WA is described only with
+  NSEPs and disposal units; SA, Tasmania, the NT, Northern Ireland home disposal, Nunavut and a Health Canada sharps
+  page are written as not found or not checked; SAMHSA is read from an archive capture only, as the research says.
+- New sources in `en-safety-en-a.yaml`: the quotations were confirmed live for healthdirect needlestick (last reviewed
+  March 2026), healthdirect cellulitis (December 2024), CDC PEP (2 December 2024), NHS HIV (9 July 2025), MHRA NAION
+  (5 February 2026), HHS HIPAA (30 May 2025), GMC paras 9 and 22, OPC (2018-01-31), OAIC, FDA report-a-problem
+  (05/11/2026; form option "Product quality or mislabeling issues") and WEDINOS. No metadata errors found.
+- Residue grep (the brief's pattern, UTF-8 locale): 0 real hits. The matches are `nada` (Canada), `epar` (department)
+  and `nl` inside the cite id `ca-help-nl-healthline`. The one `residue-ok` marker sits on genuine evidence (Zinzi
+  2026, a study of the EudraVigilance database: 234 reports, hypoglycaemia reported disproportionately often), and the
+  validator accepts it.
+- No emergency number in page text, i18n strings or (now) source titles of these pages. Services are named ("NHS 111",
+  "Health811", "Info-Santé 811", "13 HEALTH"), which the brief allows. No doses, no seller help, no commerce words in
+  headings, link texts or labels. The drug-checking paragraph keeps to the lab-report ladder ("a result covers only
+  the sample that was tested"). Every internal link is a route in the brief; these pages use no legal-routes anchors.
+- Validator: 0 errors in every owned file and 0 errors repo-wide. The only warnings in owned files are the 10
+  deliberate inline links to reporting forms and help services (allowlisted hosts).
+
+### Still open (for the reviewers)
+
+- `sharps-bin-yellow` (the sharps hero) still lists the Dutch `apotheek-medicijnafval` among its caption sources in
+  `src/data/media.yaml`, so that Dutch-language title appears on the English /sources/ page. This group may only add
+  entries to media.yaml; the media owner should drop it from the caption sources (open question 7).
+- The title of `nhs-111`, "When to use NHS 111 online or call 111", is printed in the source lists, and 111 is also New
+  Zealand's emergency number. It is the NHS service's name, which the brief allows; flagged for the editor.
+- Fever after an injection stays at "medical help today", although NHS guidance sends a skin infection with a very
+  high temperature or shivering to emergency care (open question 2).
+- Open questions 1 and 3 to 9 above stand.

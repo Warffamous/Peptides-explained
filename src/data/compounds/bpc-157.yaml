@@ -53,7 +53,10 @@ regulatory:
     sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, fda-pcac-2026-bpc157-briefing]
     # '# BPC-157.' in Schedule 4 and Appendix D clause 5 item 5: first in the June 2024 edition (in force 1 June 2024),
     # absent from February 2024; the TGA scheduled it after 48 import referrals since 1 July 2022.
-    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2024. Possessing it without authority, such as a prescription, is illegal (Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2024-06, au-poisons-standard-2024-02, au-tga-2024-05-final-decisions-notice] }
+    # compounds-c fact-check (26 October 2026): note reworded. Appendix D takes effect through state law, and NSW
+    # Health's published S4D lists omit BPC-157 (research/refocus/australia-legal.md UNRESOLVED 1: do not state the NSW
+    # position either way), so the note no longer says flatly that possession without authority is illegal.
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2024. Also in Appendix D, the national list of poisons not to be possessed without authority, such as a prescription; state law gives it effect, and the New South Wales position is not clear.", sources: [au-poisons-standard-2026-10, au-poisons-standard-2024-06, au-poisons-standard-2024-02, au-tga-2024-05-final-decisions-notice, au-nsw-health-s4d] }
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2022-list-modifications, wada-2026-list-en, wada-2027-list-en] }
 studies:
   # --- cells and isolated tissue (independent groups: Chang Gung University, Taiwan; Ankara, Turkey)

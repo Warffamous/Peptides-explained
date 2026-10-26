@@ -81,7 +81,7 @@
     "aliases": [],
     "definition": "A public list of clinical trials, run by the US National Library of Medicine. Trials from many countries post their plan there before they start, and some post their results.",
     "category": "evidence",
-    "see_also": ["pre-registration", "ctis"]
+    "see_also": ["pre-registration"]
   },
   "pancreas": {
     "term": "pancreas",
@@ -226,14 +226,14 @@
   "diarrhoea": {
     "term": "diarrhoea",
     "aliases": ["diarrhea"],
-    "definition": "Loose or watery poo, more often than usual. It can make you lose a lot of water.",
+    "definition": "Loose or watery stools (bowel movements), more often than usual. It can make you lose a lot of water.",
     "category": "safety",
     "see_also": ["dehydration"]
   },
   "constipation": {
     "term": "constipation",
     "aliases": ["constipated"],
-    "definition": "Pooing less often than usual, or finding it hard to poo.",
+    "definition": "Emptying your bowels less often than usual, or finding it hard to do so.",
     "category": "safety",
     "see_also": []
   },
@@ -359,7 +359,7 @@
   "plenary-vote": {
     "term": "plenary vote",
     "aliases": ["plenary", "plenary date"],
-    "definition": "A vote by all members of the European Parliament together. It comes after a committee has worked on the text.",
+    "definition": "A vote by all the members of a parliament together, not only by a committee. It usually comes after a committee has worked on the text.",
     "category": "law",
     "see_also": []
   },
@@ -367,13 +367,6 @@
     "term": "annex",
     "aliases": ["annexes"],
     "definition": "An extra part at the end of a law, often a list. It is part of the law and has the same force as the rest of it.",
-    "category": "law",
-    "see_also": []
-  },
-  "flemish-decree": {
-    "term": "Flemish decree",
-    "aliases": ["Flemish anti-doping decree"],
-    "definition": "A law passed by the Flemish Parliament, for the Dutch-speaking part of Belgium. In Flanders it has the same force as a national law.",
     "category": "law",
     "see_also": []
   },
@@ -422,14 +415,14 @@
   "zeranol": {
     "term": "zeranol",
     "aliases": [],
-    "definition": "A substance that acts like the hormone oestrogen. Some countries outside the EU give it to cattle to make them grow faster; the EU does not allow this.",
+    "definition": "A substance that acts like the hormone oestrogen. Some countries allow farmers to give it to cattle to make them grow faster; others do not.",
     "category": "pharmacology",
     "see_also": ["anabolic-agent"]
   },
   "zilpaterol": {
     "term": "zilpaterol",
     "aliases": [],
-    "definition": "A substance added to cattle feed in some countries, so that the animals put on more lean meat before slaughter. The EU does not allow it.",
+    "definition": "A substance added to cattle feed in some countries, so that the animals put on more lean meat before slaughter. Other countries do not allow it.",
     "category": "pharmacology",
     "see_also": ["anabolic-agent"]
   },
@@ -457,7 +450,7 @@
   "emideltide": {
     "term": "emideltide",
     "aliases": ["DSIP", "delta sleep-inducing peptide"],
-    "definition": "A lab-made copy of a small peptide first described in 1977 as delta sleep-inducing peptide (DSIP). It is not approved as a medicine in the EU, the UK or the US.",
+    "definition": "A lab-made copy of a small peptide first described in 1977 as delta sleep-inducing peptide (DSIP). It is not approved as a medicine in the US, the UK, Canada or Australia.",
     "category": "pharmacology",
     "see_also": ["pcac"]
   },
@@ -467,20 +460,6 @@
     "definition": "The National Health Service, the public health service of the United Kingdom. Its website gives advice for patients.",
     "category": "regulation",
     "see_also": []
-  },
-  "rivm": {
-    "term": "RIVM",
-    "aliases": ["National Institute for Public Health and the Environment", "Rijksinstituut voor Volksgezondheid en Milieu"],
-    "definition": "The Dutch national institute for public health and the environment. This government institute gives advice on infections, hygiene and vaccines.",
-    "category": "regulation",
-    "see_also": []
-  },
-  "thuisarts": {
-    "term": "Thuisarts",
-    "aliases": ["Thuisarts.nl"],
-    "definition": "A Dutch website with health advice for patients, written by the Dutch College of General Practitioners (NHG).",
-    "category": "safety",
-    "see_also": ["nhg", "huisarts"]
   },
   "cdc": {
     "term": "CDC",

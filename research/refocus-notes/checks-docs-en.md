@@ -5,7 +5,9 @@ Code and documentation only: no page, i18n string, data row or source was writte
 `src/lib/jurisdictions.ts`, `config/locales.json`, `src/data/jurisdictions.yaml`, `research/refocus-notes/merge.md`.
 An earlier run of this assignment was cut off; its draft (residue library, config and check script, emergency
 library, commerce-in-headings checks, guardrail warnings, cross-page anchor check, most of the CONTENT-GUIDE update)
-was reviewed against the brief, kept where right, and finished and corrected as listed below.
+was reviewed against the brief, kept where right, and finished and corrected as listed below. That second run's
+work was committed in the checkpoint `1b7304f`; a third run (section 10) re-checked it against the brief, re-ran
+every test on the current corpus and made three small fixes.
 
 ## 1. Files
 
@@ -175,7 +177,11 @@ the firstauthor-year rule. Neither id is in the registry or cited on any page.
   None in files I own (scripts and docs are not validated as content). Warnings are content warnings (residue while
   `STRICT_RESIDUE` is false, readability, review notices).
 - `npx tsc --noEmit -p .`: no error in `scripts/` (pre-existing errors in `src/scripts/*` only).
-- Final runs of `npm run validate`, `npm run build`, `npm run check`: see the handoff summary.
+- Final runs (third run, section 10): `npm run validate` 0 errors, 181 warnings (none in files I own; scripts and
+  docs are not content); `npm run build` passes (136 pages); `npm run check`: `check:commerce` passes,
+  `check:html` fails with 2 errors that are not mine (`the-case-for-reform.mdx` still has `related: legal/nl`, a
+  page that no longer exists; the case-for-reform group's rewrite removes it), so the chain stops there;
+  `check:residue --dist dist`, run on its own, exits 0 with warnings (expected while the content is mid-rewrite).
 
 ## 9. Open questions and items
 
@@ -190,5 +196,127 @@ the firstauthor-year rule. Neither id is in the registry or cited on any page.
 5. Help-line numbers that are not emergency numbers (811, 988, 13 11 26, 0800 …) are not checked; the brief says help
    services are named and linked, never numbered, and the names "811 (Nova Scotia)", "Health811", "988 Suicide & Crisis
    Lifeline" are service names. A check for phone-number patterns could be added if wanted.
-6. Stray untracked helper `scripts/.fre-tmp.ts` (a Flesch-score helper created by a content agent at 17:06) and
-   `c.json`, `intro.txt` in the repo root: not deleted here (may be in use; c.json belongs to the sweep group).
+6. Stray files: `scripts/.fre-tmp.ts` and `scripts/.fre-guides.ts` were removed in commit `30b46fc`; `c.json` is gone.
+   `intro.txt` (empty, untracked, 20 October) is still in the repo root: not mine, left for the sweep group.
+7. **Dutch sources still cited on English through data** (third run, from the built pages): `src/data/product-check.yaml`
+   cites `knmg-beroepsgeheim` and `thuisarts-naar-de-huisarts` (item `doctor`) and `igj-online-medicijnen` (intro), so
+   KNMG, Thuisarts.nl and the IGJ are in the reference list of 27-28 English pages (every page with `<ProductCheck />`).
+   The words of that item ("In the Netherlands, your doctor must keep what you say private") are in
+   `src/i18n/en/product-check.json` and are caught by the source scan; the source ids are not text, so only the dist
+   list shows them. For the group that owns ProductCheck (or the sweep): replace them with the readers' own sources when
+   the item is rewritten. Other Dutch/German sources cited on English pages (Geneesmiddelenwet articles, CBG-MEB, IGJ/CBG
+   2025, BfArM Ozempic falsification, Trimbos DRUGSinfo, Thuisarts "dikke ogen") come from pages still being rewritten
+   (the-case-for-reform, safety pages). Studies in Belgian or Dutch journals (Janvier 2018, Talanta; Poolton 2026, Acta
+   Orthopaedica Belgica; Stammers 2026 and Eijmael 2022, Ned Tijdschr Geneeskd) are evidence and may stay.
+8. **Legal reviewer / editor:** the commerce token list (`config/commerce-tokens.json`, not owned here) has "for sale",
+   not "sale", and singular "discount", "coupon" only, so headings such as "The core rule: approval before sale" (legal
+   pages us, uk, ca) and labels such as "web shops and social media accounts that sold medicines" (legal/uk, a
+   `<KeyNumber label>`: "shops" is not matched, only "shop") pass. They describe the law and enforcement, not an offer.
+   If the brief's "no labels with commerce words (… sale …)" is meant literally for every page, the token list needs
+   "sale", "sales", plural forms and a legal-text exception; adding them now would turn about six headings, captions and labels
+   (legal/us, uk, ca; history/how-we-got-here) into errors.
+
+## 10. Third run (re-check of the committed draft)
+
+The second run's work was in the checkpoint commit `1b7304f` (no uncommitted draft of mine was left). Reviewed
+against the brief and the assignment, item by item; everything was in place. Changes in this run:
+
+| File | Change | Why |
+|---|---|---|
+| `scripts/lib/emergency.ts` | count words after a number extended: results, entries, items, products, doses, injections, mice, rats, animals | a new test case, "112 results" next to "emergency", was reported as a phone number |
+| `scripts/validate-content.ts` | `unquoted()` also skips claims in single quotes ('…', ‘…’); an apostrophe inside a word never opens a quote | English prose here quotes with single quotes too ('research', 'special'), so the lab-report ladder's quoted claims ('the seller uses it himself') would have been reported |
+| `scripts/lib/residue.ts` | dist mode: each reference entry counted once (a `.ref` inside a `.source-list__item` was scanned twice); an entry with an error-level term carries `cited` (source type + reference text) | double counting (warn hits 3,431 → 2,305 on the same build); and a Dutch source cited only through data was invisible |
+| `scripts/check-locale-residue.ts` | with `--dist`: lists the cited sources with a Dutch, Belgian or German name once each, with the number of pages citing them | see open item 7 |
+| `docs/CONTENT-GUIDE.md` §1b, `README.md` (commands) | the cited-sources list described | |
+
+Tests re-run in this run (scratch scripts in the session scratchpad, not committed):
+
+- **Emergency numbers:** 36 unit cases pass (e.g. "Call 911 now", "call 9-1-1", "Dial 000", "ring 112", "call 111 in
+  New Zealand", "call triple zero", "In an emergency, 999." hit; "1,000", "10 000", "£1000", "$911", "111
+  participants", "112 mg/dL", "week 112", "1999", "99.9%", "NHS 111", "NHS 111 Wales", "111.wales", "988", "811",
+  "Health811", "911 times", "112 vials", "112 results", "au-triple-zero", "/triple-zero/", "4,000 penalty units",
+  "0800 000 000", "13 11 26" no hit). Whole English corpus (105 files: pages, compounds, i18n incl. glossary) in the
+  working tree: 8 raw candidates, all "NHS 111" service names or "week 112"; **0 phone numbers**. Same corpus at
+  `nl-source-2026-10-23`: 5 raw candidates, 0 phone numbers. The validator (which also treats every number in safety
+  strings as a phone number) reports 0 emergency errors. **No hit to report.**
+- **Seller-judging words:** 18 pattern cases pass (incl. single and typographic quotes, `title="A reputable lab"`
+  still reported, "legitimate" and "a trusted friend" not). Corpus: 0 occurrences of reputable, trusted
+  lab/source/seller, legit, third-party tested, uses it himself/themselves, vendor in English pages, compounds and i18n.
+- **Commerce words in titles, headings, questions, folds, figure titles, captions, labels:** 16 cases checked against
+  the real token list ("buy", "order a special", "shop", "vendor", "supplier", "price" hit; "a good deal", "deal
+  with", "in order to", "the order of the amino acids", "why order matters", "an executive order", "(Amendment) Order
+  2026" pass). **Current offenders: none** (validator 0 errors; `check:commerce` on the fresh build passes). The two
+  that do not match ("On sale online", "Discounts and offers") are not in the token list: open item 8.
+- **Residue, source scan:** 165 error/frame and 33 warn hits in 16 files, all in other groups' files still being
+  rewritten: glossary guides/safety-b/final-qa/retatrutide/stubs-b, the-case-for-reform, safety/product-risk,
+  before-you-consider, monitoring, injection-safety, sterile-technique, compounds/index, index, product-check.json,
+  retatrutide.mdx, kpv.mdx. Every matched term listed and inspected (Dutch 45, Netherlands 25, EU 20, Belgi 11, "in the
+  EU" 12, huisarts 9, EMA 7, Lareb 7 …): all genuine; no false positive found. Marker semantics re-tested on a fixture
+  (frontmatter `# residue-ok` at the end of a line; `{/* residue-ok */}` on the line before and at the end of the same
+  line; an error term after a marker still reported; allowFiles for about/index; ids, link targets, URLs and
+  `which=` masked; "Europe PMC" skipped; "AMG 133" not, "the AMG" reported). All 77 markers in the English pages and
+  compounds follow these rules: 59 stand on their own line directly before the text (none followed by a blank line),
+  18 end a line (e.g. ipamorelin line 487 ends with the marker for line 488).
+- **Residue, built pages** (`dist/`, this run's build): 461 error/frame (reported as warnings) and 2,305 warn hits
+  in 76 files; the page-text errors come from the same unrewritten files (glossary tooltips such as the
+  `medicines-regulator` definition "the CBG in the Netherlands", which reach every page that uses the term), plus
+  45 cited sources with Dutch, Belgian or German names (open item 7).
+- **Cross-page anchors:** `check:html` on the fresh build: 0 missing `#source-*` / `#image-*` targets, 0
+  cross-page anchor warnings.
+- `npx tsc --noEmit -p .`: no error in `scripts/` (58 pre-existing errors elsewhere: `astro.config.mjs`,
+  `src/components/mdx/index.ts`, `src/lib/*`, `src/scripts/*`).
+- Lovable app (`C:\dev\peptides-explained-lovable\src\server.ts`, read only): still no redirects for
+  `/en/legal/{nl,eu,be,de}/` (it 308s `/x` to `/x/` only); README "Deployment" says so.
+
+No new facts on the site and no new sources in this run.
+
+## 11. Independent code review (24 October 2026)
+
+Every task item was re-checked with its scripts on the current tree and a fresh build (scratch test scripts in the
+session scratchpad, not committed).
+
+- **Residue (task 1):** `config/locale-residue.json` has the brief's grep list as `error`, "German"/"Germany" and EU
+  framing as `frame`, EU/EMA/EPAR/CHMP/Europe as `warn`; `allowFiles` = about/index, about/editorial-policy,
+  about/funding (their 1, 2 and 3 publisher-line mentions are exempt). A 23-case fixture through `scanMdx`: EMA
+  without a marker is reported; `{/* residue-ok: EMA evidence */}` on the line before or at the end of the line
+  silences it; a marker two lines up does not; a marker never silences an `error` term (Netherlands, huisarts, Lareb
+  after a marker are still reported); frontmatter text and the YAML `# residue-ok` marker work; URLs, link targets,
+  code spans and `code=` are masked; euro amounts, "AMG" (not "AMG 133"), Germany (thalidomide) without a marker are
+  reported. `--strict` exits 1; `STRICT_RESIDUE = false` keeps the validator and `check:residue` at warnings. A
+  comparison of the built-page hits with the source scan found no visible text that the source scan misses (the
+  remaining dist-only hits are marker-exempt history/evidence lines, which dist reports as warnings, and cited source
+  titles).
+  - **Fixed:** an allowed proper name only protected matches fully inside it, so "indexed in Europe PMC" was a `frame`
+    hit ("in Europe") that would fail once strict. `findResidue` now drops any match that overlaps an allowPhrases name
+    (`scripts/lib/residue.ts`); CONTENT-GUIDE §1b says so.
+- **Emergency numbers (task 2):** numbers come from `jurisdictions.yaml` (US 911, UK 999, CA 911, AU 000/112, IE
+  112/999, NZ 111) plus 112, for locales with `printsEmergencyNumbers: false`. The requested cases: "1,000 people",
+  "10 000", "£1000", "111 participants" no hit; "Call 911", "dial 000", "triple zero" hit. 66/66 unit cases pass in
+  total. Whole English corpus (working tree, 105 files) and the same corpus at `nl-source-2026-10-23`: **0 printed
+  numbers**, also when every string is treated as a safety string. On the built pages (not checked by any script):
+  the only matches are the cited titles "When to call 999" (`uk-nhs-when-to-call-999`) and "When to use NHS 111 online
+  or call 111" (`nhs-111`) in reference lists, and generated citation numbers ("Sources 111, 112 …" on ipamorelin).
+  - **Fixed (hardening for the legal rewrite):** a numbered provision or range next to a calling word ("21 CFR part
+    111 … emergency", "section 112", "s 111", "§ 112", "pages 111–112", "100–112", "111-2222") was read as a phone
+    number. `NOT_A_PHONE_BEFORE` now covers sections, regulations, rules, articles, parts, chapters, clauses,
+    paragraphs, items, schedules, appendix, annex, CFR, U.S.C., §, "s"/"ss" (only as a word, so "it's 000" still
+    counts) and plural "pages"; the number regex no longer matches after or before an en dash or hyphen with a digit.
+    CONTENT-GUIDE §1 lists these.
+- **Commerce words (task 3):** headings `##`–`######`, `<Lead question>`, `<InDetail title>`, figure titles, callout
+  titles, `<KeyNumber label>`, `<Diagram caption>`, `<FaqItem q>` and frontmatter title/nav_title are errors in the
+  validator; `check-no-commerce.ts` checks h1–h6, the components' title elements and every `aria-label`. 15 sample
+  headings behave as expected. **Current offenders: none.**
+- **Seller words (task 4):** 21 cases pass (reputable, trusted lab/source/seller, legit, third-party tested, uses it
+  himself/themselves, vendor anywhere; quoted claims skipped, "seller's", "legitimate", "vendored" not). Corpus: none.
+- **Anchors (task 5):** a fake dist with missing `#source-*` / `#image-*` targets (with and without trailing slash, and
+  via `index.html`) gives 4 errors; a missing `/en/legal-routes/#uk-specials` is a warning. Fresh build: 0 errors.
+- **Docs (task 6):** CONTENT-GUIDE §1 (publisher's law, readers' similar rules, PCAC element 5), §1a ladder, §1b,
+  the emergency rule, §4/§5.1/§5.2/§5.4/§9/§10/§12 and the README sections are present and match the code and data
+  (the tesamorelin and thymosin alpha-1 tile texts in §5.4 match the built pages word for word).
+- Checks after the fixes: `npm run validate` 0 errors (173 warnings, none in owned files); `npm run build` 136 pages;
+  `npm run check` exits 0 (commerce passed; check-html 0 errors; residue 158 error/frame and 1,927 warn hits, all
+  warnings while STRICT_RESIDUE is false); `npx tsc --noEmit` no error in `scripts/`.
+
+Open item 9 (editor): the reference-list titles "When to call 999" and "… or call 111" print an emergency number on
+three English pages (warning-signs, if-something-goes-wrong, sources). They are the NHS pages' real titles, so the
+source metadata should stay; the editor decides whether a cited title counts as "printing" the number.

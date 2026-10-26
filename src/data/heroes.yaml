@@ -33,8 +33,8 @@ compounds/pt-141: human-brain-midsagittal-specimen
 # Melanotan II: its best-documented effect on the body is on pigment cells and moles; an abnormal (dysplastic)
 # mole under the microscope, stained tissue only (CC BY-SA 3.0, Nephron). No vial, needle, person or tanned body.
 compounds/melanotan-ii: dysplastic-nevus-micrograph
-# Safety (group safety-a): clean hands, an ambulance (112), a doctor's stethoscope, bacteria on lab dishes,
-# a skin bacterium under the microscope, and a sharps container. No needles, vials or skin punctures.
+# Safety (group safety-a): clean hands, an ambulance (now nl only; see below), a doctor's stethoscope, bacteria on
+# lab dishes, a skin bacterium under the microscope, and a sharps container. No needles, vials or skin punctures.
 safety: cdc-hand-washing
 # English refocus (group safety-en-a, 24 October 2026): a hospital vital-signs monitor (public domain, US Navy) as
 # the default; the Dutch ambulance stays on nl.
@@ -44,8 +44,8 @@ safety/sterile-technique: bacillus-cereus-plates
 safety/injection-safety: staph-aureus-usda-sem
 safety/sharps-disposal: sharps-bin-yellow
 # Safety (group safety-b): a mass spectrometer at the FDA (the kind of test that shows what is really in a
-# sample), a blood sample in a lab analyser (monitoring), and the entrance of a Dutch huisartsenpost (where
-# to go when something goes wrong). No needles, vials or products.
+# sample), a blood sample in a lab analyser (monitoring), and the entrance of an out-of-hours GP post (where
+# to go when something goes wrong; now nl only, see below). No needles, vials or products.
 safety/product-risk: mass-spectrometer-fda
 safety/monitoring: blood-sample-analyser
 # English refocus (group safety-en-a, 24 October 2026): a hospital emergency entrance (CC BY-SA 4.0) as the default;
@@ -74,7 +74,10 @@ legal/de: { de: reichstag-berlin-west }
 legal/uk: palace-of-westminster-dusk
 legal/us: fda-white-oak-building
 legal/sport-and-doping: athletics-track-lanes
-legal/whats-changing: { nl: flags-european-parliament-strasbourg }
+# English refocus (group glossary-ui-media-en, 26 October 2026): a rooster weather vane against the sky (CC BY-SA 3.0,
+# Nevit Dilmen; which way the rules are moving, no country) as the default; the flags at the European Parliament
+# stay on nl.
+legal/whats-changing: { default: weather-vane-rooster, nl: flags-european-parliament-strasbourg }
 # Legal country pages (group legal-en-a, English refocus): the Centre Block on Parliament Hill in Ottawa (Canada),
 # Parliament House in Canberra at dusk (Australia) and the Beehive with Parliament House in Wellington (Ireland and
 # New Zealand; the Irish section shows Leinster House in Dublin in its body). No products, vials, needles or people.
@@ -98,8 +101,8 @@ history/timeline: fda-lab-1960s
 history/how-we-got-here: kennedy-1962-drug-amendments
 # About pages and the reform opinion (group about): the reading room of the US National Library of Medicine (where
 # the site's sources live), an old book with a magnifying glass (checking claims), an empty two-pan balance (no one
-# on either scale: funding and independence), a 1793 errata page (corrections), and the empty debating chamber of
-# the Dutch House of Representatives (reform: rules are changed by lawmakers). The reform page shows Frances Kelsey
+# on either scale: funding and independence), a 1793 errata page (corrections), and a wooden gavel (reform: rules
+# are changed by lawmakers; the Dutch lower house photo is nl only, see below). The reform page shows Frances Kelsey
 # of the FDA with President Kennedy in 1962 in its body (<Photo id="kelsey-kennedy-1962" />, the precautionary case),
 # not as its hero, because history/how-we-got-here already uses a photo of the same 1962 signing as its hero.
 about: nlm-main-reading-room

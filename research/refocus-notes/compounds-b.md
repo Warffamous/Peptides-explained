@@ -113,6 +113,41 @@ Common to all four pages:
   no European framing; import sentence gets the same "not settled" caveat as ipamorelin (legal-review question 6);
   ClinicalTrials.gov sentence also cites `ctgov-search-status-b-2026-10-23`.
 
+### Third pass (the "try again" run of this assignment)
+
+The second run's draft (committed in the checkpoint `1b7304f`) was reviewed again against the brief, the status
+files, the merge notes and the registered source notes; the no-loss check was re-run (same result, table below). It
+held; these small corrections were made:
+- **Australia, state law (CJC-1295, ipamorelin, hexarelin).** "The other states and territories were not checked"
+  was not exact: `australia-legal.md` §5 also checked Queensland. Now "Other states and territories have their own
+  rules, and we did not check them all" (the wording semaglutide and tirzepatide use). The NSW sentence now adds that
+  the peptide stays on the S4D list under the new NSW law from 5 November 2026 (`au-nsw-health-s4d-2026`, whose
+  2026 list names CJC-1295, hexarelin and ipamorelin), so the page does not go stale on 5 November.
+- **CJC-1295, Australia.** "either way the result would be Schedule 4 with Appendix D" could be read as stating the
+  schedule of the DAC molecule as fact; now "If either applies, the result is the same: Schedule 4 and Appendix D."
+  The AU regulatory note's "(see the page)" (the note is shown on the page itself) became "whether the entry covers
+  the version with DAC is not confirmed".
+- **Ipamorelin, Canada.** "products sold as ipamorelin by … a wellness clinic" became "ipamorelin products seized
+  from …": RA-77218 describes products seized from the clinic, not sold by it (`ca-hc-recalls-database` note).
+- **Ipamorelin, unknowns Lead.** "a jab under the skin" became "an injection under the skin" (no UK-only words).
+- **CJC-1295 and ipamorelin, first Compare.** Detail "checked on 22 October 2026" became "22 and 23 October 2026":
+  the "Approved as a medicine?" row cites the UK, Canadian and Australian searches of 23 October.
+- **Tesamorelin, "Three regulators".** "Its first decision was negative: in 2013 it found the file did not meet the
+  requirements" put the first (undated) notice of non-compliance in 2013. Now: the first decision was negative; in
+  March 2013, after the company's reply, three of the four major objections remained (benefit-risk, the indication,
+  raised IGF-1), as the SBD records (`ca-sbd-egrifta` note: NON, then NON/W of 1 March 2013 "with three of the four
+  major objections still remaining").
+- Re-checked with curl on this run: the Drugs@FDA overview for NDA 205598 (HTTP 200; MACRILEN, "Discontinued",
+  ORIG-1 12/20/2017), the openFDA record (last updated 2026-10-23; S-005 approved 2026-07-23) and both labels (2017
+  and 2026: "indicated for the diagnosis of adult growth hormone deficiency", "a single oral dose"). The
+  `fda-drugsatfda-macrilen` entry stands as written.
+- **Not changed, on purpose.** "Business reasons" stays out of every tesamorelin sentence (lead decision, merge.md
+  3.2; the company's report was read only in an archive copy and its source was dropped by the merge); the pages say
+  only that both cancellations followed the company's notice that it had stopped selling and were not a safety
+  action. No new Ireland sentence: the status files did not search Ireland, so the pages only link the notes page.
+  The four inline reporting links stay (same pattern on all 21 compound pages, including the style reference).
+- The data files were checked again row by row against the status files: no error found, not edited.
+
 ## New facts and their sources
 
 All ids except `fda-drugsatfda-macrilen` were registered by the research and the merge (`src/data/sources/refocus-*.yaml`),
@@ -134,7 +169,7 @@ fact-checked there, and their notes were read for this run against each sentence
 | Poisons Standard: CJC-1295, ipamorelin, hexarelin in Schedule 4 and Appendix D since 1 June 2015; tesamorelin not named (GHRH group entry, our reading) (T, C, I, H) | au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2014-09-scheduling-consultation |
 | TGA advertising guidance names "Ipamorelin" and "CJC 1295" as prescription medicines (C, I) | au-tga-2026-06-advertising-prescription-medicines-guidance |
 | CJC-1295 entry's CAS is the form without DAC (C) | au-poisons-standard-2026-10, pubchem-cjc-1295-without-dac |
-| NSW S4D list includes CJC-1295, ipamorelin, hexarelin; Victoria: any S4 without authority is an offence; other states not checked (C, I, H) | au-nsw-health-s4d, au-vic-dpcs-act-1981 |
+| NSW S4D list includes CJC-1295, ipamorelin, hexarelin, also the list for the new law from 5 November 2026; Victoria: any S4 without authority is an offence; not every other state checked (C, I, H) | au-nsw-health-s4d, au-nsw-health-s4d-2026, au-vic-dpcs-act-1981 |
 | GHRH import permit (Customs Sch. 7A, ODC): may apply to tesamorelin and CJC-1295 (not named); ipamorelin and hexarelin not named, broader entry not settled (T, C, I, H) | au-customs-prohibited-imports-regs, au-odc-growth-hormones-import-permit |
 | Personal Importation Scheme: prescription needed for a prescription-only medicine; coded or unlabelled peptides not released; RUO label does not make import lawful (C, I, H) | au-tga-personal-importation-scheme, au-tga-2026-04-peptide-responsibilities |
 | TGA April 2026 advisory, June 2026 joint statement (liver damage, severe allergic reactions, inflammation), August 2026 NSW seizure incl. CJC-1295 (C) | au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, au-tga-2026-08-peptide-seizure |
@@ -196,6 +231,18 @@ The data files keep every row, product, study and source (EU/NL/DE/BE rows byte-
   (ids, not text), (d) the `residue-ok` marker lines themselves and the marked lines (EMA evidence; "European Union"
   in the marked UK-history sentence), and (e) the source note of `fda-drugsatfda-macrilen`, which names the id it
   replaces (`ema-epar-ghryvelin`; notes are not rendered). Allowed, marked lines only.
+- Third pass: validator again 0 errors on all owned files (pages, data files, glossary files, sources file); the
+  same four reporting-link warnings per page and the hexarelin BE warning. `check-locale-residue --only` on every owned
+  file: 0 hits. A scratch build (`astro build --outDir <scratchpad>`, nothing written to `dist/`) and
+  `check-locale-residue --dist`: the At-a-glance tiles, fact sheets and status tables render as the notes say
+  (tesamorelin: "Only in the US. Approved in the US. Canada approved it, but it is no longer sold there. Not approved
+  in the UK or Australia."; "Approved in: US since 2010; Canada 2014–2022"). The built pages still carry Dutch/EU
+  words, **all from shared files this group does not own**: `src/i18n/en/product-check.json` ("In the Netherlands,
+  your doctor must keep what you say private"; "In the EU, a medicine must show all four"), and glossary tooltips
+  from `src/i18n/en/glossary/guides.json` / `final-qa.json` (the "regulator" entry: "the EMA in the EU, the CBG in the
+  Netherlands"; the prescription-only entry: "In the Netherlands, a pharmacist may not hand it over without one"; the
+  DSIP entry: "not approved as a medicine in the EU, the UK or the US"), plus the cited sources that `<ProductCheck />`
+  brings (IGJ, KNMG, Thuisarts). For the owners of those files.
 
 ## Open questions for the medical and legal reviewers
 
@@ -227,3 +274,118 @@ The data files keep every row, product, study and source (EU/NL/DE/BE rows byte-
 9. **Lead/UI:** the hard-coded "statuses were checked on …" lines under the four status tables now give both dates
    (US and sport 22 October, UK/CA/AU 23 October; hexarelin all 23 October). The schedule string ("Schedule S4",
    "Schedule Prescription Drug List") is the UI group's (merge.md 10).
+10. **Legal (Canada):** every page links `#canada-special-access` in the neutral list of routes that the brief
+   requires ("Each has strict conditions, and none turns an unapproved product into an approved one"), and says that
+   Health Canada has not authorised the product. Whether linking the SAP anchor from a page about an unauthorised
+   product could be read under Health Canada's 2023 advertising guidance as suggesting it is available through the
+   SAP is a question for the legal reviewer (CONTENT-GUIDE §1).
+
+## Adversarial fact-check (fact-checker run, 26 October 2026; workflow date 24 October 2026)
+
+Method: every sentence that differs from `git show nl-source-2026-10-23:<path>` (word diff of all four pages) was
+checked against the note of each cited source (`src/data/sources/*.yaml`) and against the status files and their
+"Fact-check (independent)" sections; the not-authorised claims against `research/refocus/status/<slug>.yaml`
+(rows, notes, UNRESOLVED points) and the lead decisions in `merge.md` (3.2, 3.3, 12.4). Re-fetched live on this run:
+openFDA `drugsfda` for NDA 205598 (MACRILEN, "Discontinued"; ORIG-1 approved 2017-12-20, S-003 2019-11-27, S-005
+2026-07-23; data last updated 2026-10-23); Health Canada RA-81874 ("In Canada, peptides are generally regulated as
+prescription drugs", "Unauthorized drug products are illegal in Canada …", the research-use labelling sentence, and
+the list naming CJC-1295 and ipamorelin: all confirmed); the two NSW Health S4D pages, current and from 5 November
+2026 (both list CJC-1295, hexarelin and ipamorelin; "Current as at" 9 and 7 July 2026); ClinicalTrials.gov API v2
+(tesamorelin: open records only NCT07481734 China, NCT03150511 and NCT06554717 US; CJC-1295: one closed record;
+ipamorelin: NCT07717866, observational, active not recruiting, US; hexarelin and examorelin: none); GOV.UK search API
+(tesamorelin, egrifta, ipamorelin, hexarelin, examorelin, "CJC-1295": total 0). The Drug Shortages Canada report
+170025 still answers HTTP 403 (bot check), so "business reasons" stays out (lead decision unchanged).
+
+### Fixed in place
+
+1. **Tesamorelin, Canada: an UNRESOLVED point was stated as fact.** The status file says it is not established
+   whether Egrifta stock was still sold or dispensed in Canada after 30 September 2022 (the DPD footnote allows
+   remaining stock to be sold until lot expiry, here 31 January 2023): "Do not write that it was or was not". Five
+   places did: `grade_rationale.human_clinical` ("it has not been sold there since 30 September 2022"), the first
+   Compare ("it has not been sold there since 2022"), the callout "Why this page looks different" (same), the
+   regulatory Compare's Canada cell ("Not sold since 30 September 2022") and the Canada fold ("Sales stopped on
+   30 September 2022"). All now say what the SBD/PAAT and the DPD record: **the company stopped selling it** on
+   30 September 2022 (in 2022). "No longer sold" (summary, Lead, harm reduction, derived tile) is true today and stays.
+2. **Tesamorelin, harm reduction:** "In the UK, Canada and Australia no tesamorelin product is approved or sold now"
+   implied it is not (or was never) approved in Canada; the NOC stands as the historical approval and the DINs are
+   cancelled. Now: "In the UK and Australia no tesamorelin product is approved, and in Canada none is sold now."
+3. **Tesamorelin, callout:** "a product without a licence in the other countries this site covers" was wrong for
+   Canada (it was licensed). Now "a product that is not approved, or no longer sold, in the other countries …".
+4. **Tesamorelin, UK history:** "after the European Medicines Agency's committee said it could not be approved"
+   dropped "provisional" (`ema-egrifta-withdrawal`: the CHMP was "of the provisional opinion that Egrifta could not
+   have been approved"). Now "gave its provisional view that it could not be approved". The `residue-ok` comment above
+   it said "the only application that would have covered the UK", which the status fact-check had rejected as
+   unsupported; the comment now reads "the 2012 EU-wide application, which would have covered the UK".
+5. **Tesamorelin, "Three regulators":** "Both positions have a cost", after three regulators' answers, became "Each
+   answer has a cost" (wording only).
+6. **CJC-1295 and ipamorelin, Australia, import:** "The TGA will not release … peptides labelled only with codes, or
+   without the active ingredient and strength" overstated and blurred the source (`au-tga-2026-04-peptide-responsibilities`:
+   products identified only by codes "or those that do not clearly state the active ingredient, strength or dosage"
+   cannot be assessed "and will not be considered for release"). Now "The TGA says it will not consider releasing
+   imported peptides that are labelled only with codes, or that do not clearly state the active ingredient or its
+   strength".
+7. **Hexarelin, US cell:** "A new drug may not be sold without FDA approval" overstated 21 U.S.C. 355(a)
+   (introduction into interstate commerce, `usc-21-355`). Now "may not be sold across state lines without FDA
+   approval", as the retatrutide page says.
+8. **CJC-1295, the 2006 trial (honest in both directions):** after the FDA's anecdotal "192 people had enrolled" the
+   page now adds "the trial registry gives 120" (`ctgov-nct00267527`: enrolment 120, type not stated; the same in
+   `ctgov-search-status-b-2026-10-23`). No other change to the science.
+9. **Glossary `anamorelin` (ipamorelin.json):** the earlier run's replacement "In trials its effect on muscle was
+   small" was looser than its source; now "In trials it added only a little lean body mass, and no effect on grip
+   strength was shown" (`ema-epar-adlumiz`: "a marginal effect … on lean body mass", "no proven effect on hand grip
+   strength").
+
+### Checked and held (no change)
+
+- Tesamorelin, Canada: NOC 15555 (29 April 2014, 2 mg), NOC 16731 (27 March 2015, 1 mg), first sale 23 June 2015, DIN
+  02438712 cancelled post market 30 September 2022, DIN 02423677 cancelled pre market 13 July 2023, both at the
+  manufacturer's notice (C.01.014.6(1)(a)); NON, then NON/W of 1 March 2013 "with three of the four major objections
+  still remaining", reconsideration panel of external Canadian experts on 23 August 2013, the IGF-1 SDS > 2 stopping
+  rule; PDL since 25 April 2014; no recall or alert for Egrifta; RA-77807 and RA-81403 name tesamorelin. All match
+  `ca-sbd-egrifta`, `ca-noc-egrifta`, `ca-pm-egrifta-2015`, `ca-food-and-drug-regulations`, `ca-pdl-human`,
+  `ca-hc-recalls-database`.
+- Canada, personal import: GUI-0116 ("Generally, residents of Canada are not allowed to bring prescription drugs into
+  Canada … whether you carry them across the border or have them delivered by mail or courier") supports the sentence.
+- Australia: the Poisons Standard entries and dates (CJC-1295 with the CAS caveat; hexarelin; ipamorelin; the GHRH group
+  entry for tesamorelin written as "may be covered … not confirmed"); Victoria s 36B(2); NSW S4D (both laws); Customs
+  reg 5G and the ODC entry (written as "not settled" / "no official document says"); the Personal Importation Scheme;
+  the TGA's April, June and August 2026 notices and its June 2026 advertising guidance; Sport Integrity Australia.
+- UK: MHRA searches (with TH9507 and NNC 26-0161), GOV.UK (re-run), HMR regs 46 and 167, the MHRA specials guidance,
+  MDA 1971 Sch. 2, EUWA s 20 and the HPRA central-procedure page.
+- US: Macrilen (re-fetched); the PCAC 2024 votes; the July 2026 framing (CONTENT-GUIDE §1 element 5, all five elements
+  on the ipamorelin page); the FDA briefing's "no approved products containing any form of CJC-1295" in Australia,
+  Canada or the UK.
+- Ipamorelin, Canada enforcement (online seller RA-77807, wellness clinic RA-77218, fitness business RA-81403, two shops
+  RA-81404 with falsified DINs, all 2025) and hexarelin (RA-77807 only; not in RA-81874).
+- Tesamorelin: no sentence says or implies that it was not tested in people (diagram step 7 "No trial measured
+  this"; the only "never tested" is about an online vial).
+
+### No-loss, residue, guardrails, links, validator
+
+- No-loss re-run after the fixes (cite ids, `source(s)=`, frontmatter lists, `<Claim>`s, number tokens): the ids that
+  left each page are exactly the European-framing ids in the table above and in the manifest; no `<Claim>` removed;
+  the only number tokens lost are European (21 June 2012 EU withdrawal, AMG § 21 and § 73, the 1964 Belgian Act, the
+  old sport cell "S2."). Manifest unchanged (nothing new cut).
+- Residue: `check-locale-residue --only` 0 hits on all owned files. The brief's grep: only false positives
+  ("canada"/"Canada" for `nada\b`, "separate" for `epar`, cite ids) and marked lines. Markers: the tesamorelin
+  `residue-ok: EMA evidence` markers all sit on sentences about the EMA committee's assessment (evidence or history,
+  never the reader's legal frame). Two markers sit on non-regulator evidence and are kept under "keep the science":
+  CJC-1295's trial site ("sites that included Germany", from the EU trial register, `euctr-2005-003797-25`) and
+  ipamorelin's forensic laboratories "in Denmark, Germany and Norway" (`gajda-2019-glycine-ghs`: Copenhagen;
+  `krug-2018-black-market-gh`: Cologne and Oslo). Neither is European legal framing.
+- Guardrails: no dose, schedule or reconstitution; the only amounts are the authorised product's vial strengths in
+  regulatory history and laboratory values; no seller help; no emergency number ("call your local emergency number");
+  commerce words only in body text ("sale, supply and possession", "on the order of a prescriber"), never in headings,
+  labels or link texts; stop-now callouts not folded.
+- Links: internal links only to the brief's routes; the eight `/en/legal-routes/` anchors match that page's headings
+  (github-slugger: prescription, off-label, us-compounding, uk-specials, canada-special-access, australia-sas,
+  personal-import, trials). Outbound hosts unchanged and allowlisted (validator).
+- `npx tsx scripts/validate-content.ts --only` on every owned file: **0 errors**; warnings as before (4 inline
+  reporting links per page; hexarelin "no BE row").
+
+### Remaining for the reviewers (in addition to questions 1–10)
+
+11. The derived fact-sheet row "Approved in: … Canada 2014–2022" (data `since: 2022-09-30`) can read as if the
+    approval ended in 2022; the pages now say the company stopped selling it then. A UI/lead choice, not changed here.
+12. The `fda-warning-letters-index` note (legal-b.yaml) still names only letter 735067; the tesamorelin page's
+    "online sellers" (plural) rests on the five letters recorded in the status file (question 7).

@@ -65,7 +65,11 @@ marked `# residue-ok` in the frontmatter.
 | US fold, last bullet (394) | "… changes nothing in the EU or the Netherlands." | – |
 
 Kept as evidence, marked `{/* residue-ok … */}`: "we found no registered clinical trial of KPV on ClinicalTrials.gov or
-the EU trials register" (a register search, evidence that no trial exists).
+the EU trials register" (a register search, evidence that no trial exists), and the evidence-map row "Several
+independent groups (US, Europe, east Asia)" (where the cell research was done; marker in the row's last cell).
+
+Checked again on resuming this assignment: the removed cite ids above are the only ids that left each page
+(`git show nl-source-2026-10-23:<path>` against the current file; counts in `research/refocus-notes/compounds-c.md`).
 
 ## Glossary
 

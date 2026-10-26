@@ -12,7 +12,7 @@ section: safety
 order: 2
 template: safety
 reading_level: B1
-last_reviewed: 2026-10-20
+last_reviewed: 2026-10-24
 reviewed_by: pending-medical-review
 related:
   - talking-to-your-doctor
@@ -36,7 +36,7 @@ further_reading: []
 | Eating disorder, now or in the past | Appetite-lowering products (GLP-1 type) | Less hunger can make restriction worse |
 | Kidney disease | All, especially GLP-1 type | Kidneys clear many peptides; vomiting and diarrhoea can harm the kidneys |
 | Pancreatitis in the past | GLP-1 type | They are linked to an inflamed pancreas |
-| Medullary thyroid cancer or MEN 2 in you or your family | GLP-1 type | Thyroid tumours in rodents; US labels forbid use |
+| Medullary thyroid cancer or MEN 2 in you or your family | GLP-1 type | Thyroid tumours in rodents; US and Canadian labels forbid use |
 | Weak immune system | All injections | Higher risk of infection and sepsis |
 | Blood thinners | All injections, and some products directly | More bleeding and bruising; some products change clotting |
 | Competitive sport | Most unapproved peptides | Banned at all times; you are responsible for what is in your body |
@@ -57,9 +57,9 @@ Most peptides sold online have no such list. They were never tested well enough 
 
 <Lead question="Can I use them if I am pregnant or breastfeeding?">No. Animal tests showed harm to the unborn young with GLP-1 medicines. For others, nobody knows.</Lead>
 
-<TimeStrip title="Labels say to stop one or two months before a planned pregnancy. Other peptides have no human data." detail="How long before a planned pregnancy the EU labels say to stop." min={0} max={3} step={1} axis="Months before a planned pregnancy" source="ema-epar-wegovy,ema-epar-mounjaro,fda-pcac-2026-bpc157-briefing,fda-pcac-2026-tb500-briefing,fda-pcac-2026-kpv-briefing" rows={[
-  { label: "Wegovy (semaglutide)", spans: [{ from: 0, to: 2, text: "stop at least 2 months before" }] },
-  { label: "Mounjaro (tirzepatide)", spans: [{ from: 0, to: 1, text: "stop at least 1 month before" }] },
+<TimeStrip title="Labels say to stop one or two months before a planned pregnancy. Other peptides have no human data." detail="How long before a planned pregnancy the US and Canadian labels say to stop. The US label for Mounjaro gives no time." min={0} max={3} step={1} axis="Months before a planned pregnancy" source="fda-label-wegovy,ca-pm-wegovy-2026-10-02,ca-pm-mounjaro-2026-06-23,fda-pcac-2026-bpc157-briefing,fda-pcac-2026-tb500-briefing,fda-pcac-2026-kpv-briefing" rows={[
+  { label: "Wegovy (semaglutide), US and Canadian labels", spans: [{ from: 0, to: 2, text: "stop at least 2 months before" }] },
+  { label: "Mounjaro (tirzepatide), Canadian label", spans: [{ from: 0, to: 1, text: "stop at least 1 month before" }] },
   { label: "Experimental peptides (BPC-157, TB-500, KPV)", spans: [{ from: 0, to: 3, text: "no human pregnancy data at all", unknown: true }] },
 ]} />
 
@@ -67,7 +67,7 @@ An unborn baby grows very fast. A substance that changes growth, blood vessels, 
 
 <InDetail title="What the labels and the animal studies say">
 
-For GLP-1 medicines, animal studies showed harm to the unborn young. The EU label for Wegovy says not to use it in pregnancy or while breastfeeding. It says to stop at least 2 months before a planned pregnancy. The reason is that the medicine stays in the body for a long time. For Mounjaro the label says to stop at least 1 month before.<Cite id="ema-epar-wegovy,ema-epar-mounjaro" />
+For GLP-1 medicines, animal studies showed harm to the unborn young.<Cite id="fda-label-wegovy,fda-label-mounjaro" /> The US label for Wegovy says to stop it when a pregnancy is found, if it is used for weight loss. It says to stop at least 2 months before a planned pregnancy. The reason is that the medicine stays in the body for a long time.<Cite id="fda-label-wegovy" /> The Canadian label says not to use Wegovy in pregnancy or while breastfeeding, and gives the same 2 months.<Cite id="ca-pm-wegovy-2026-10-02" /> For Mounjaro, the Canadian label says not to use it in pregnancy, and to stop at least 1 month before a planned pregnancy. The US label gives no time.<Cite id="ca-pm-mounjaro-2026-06-23,fda-label-mounjaro" />
 
 For experimental peptides there are no human pregnancy data at all. BPC-157 has one study in pregnant rats. It found no birth defects in the young rats. But it did not test fertility, or how the young grew up after birth. TB-500 and KPV have no such studies.<Cite id="fda-pcac-2026-bpc157-briefing,fda-pcac-2026-tb500-briefing,fda-pcac-2026-kpv-briefing" />
 
@@ -81,7 +81,7 @@ For experimental peptides there are no human pregnancy data at all. BPC-157 has 
 
 | | Authorised medicine with a use in teenagers (for example Wegovy) | Unapproved peptide |
 |---|---|---|
-| Authorised for teenagers? | <Verdict is="yes" /> Wegovy from age 12, on prescription<Cite id="ema-epar-wegovy" /> | <Verdict is="no" /> Not an approved medicine |
+| Authorised for teenagers? | <Verdict is="yes" /> In the US, Wegovy from age 12, on prescription<Cite id="fda-label-wegovy" /> | <Verdict is="no" /> Not an approved medicine |
 | Long-term effects in teenagers known? | <Verdict is="unknown" /> Effects on bones, fertility and mental health are still uncertain<Cite id="haider-2026-glp1-adolescents" /> | <Verdict is="unknown" /> There is nothing to go on |
 
 </Compare>
@@ -92,7 +92,7 @@ Teenagers are still growing. The teenage years are the key time for building str
 
 Some peptides raise growth hormone, which is a growth signal.<Cite id="dailymed-egrifta-sv-label" /> What extra growth signals do to a body that is still growing has not been studied.
 
-Some authorised medicines are allowed for teenagers. Wegovy, for example, is authorised from age 12, on prescription.<Cite id="ema-epar-wegovy" /> Even for these, the long-term effects on bones, fertility and mental health in teenagers are still uncertain.<Cite id="haider-2026-glp1-adolescents" /> For unapproved peptides, there is nothing to go on. We advise against them for anyone under 18.
+Some authorised medicines are allowed for teenagers. Wegovy, for example, is approved in the US from age 12 for teenagers with obesity, on prescription. In Canada, those teenagers must also weigh more than 60 kg.<Cite id="fda-label-wegovy,ca-pm-wegovy-2026-10-02" /> Even for these, the long-term effects on bones, fertility and mental health in teenagers are still uncertain.<Cite id="haider-2026-glp1-adolescents" /> For unapproved peptides, there is nothing to go on. We advise against them for anyone under 18.
 
 </InDetail>
 
@@ -105,7 +105,7 @@ Some authorised medicines are allowed for teenagers. Wegovy, for example, is aut
 | | BPC-157 | TB-500 | Growth hormone boosters (CJC-1295, ipamorelin, tesamorelin) |
 |---|---|---|---|
 | Pushes blood vessel growth or growth signals? | <Verdict is="yes" /> More blood vessel growth in cells, chick eggs and rats<Cite id="hsieh-2017-vegfr2" /> | <Verdict is="unknown" /> TB-500 itself was not tested. In mice, melanoma cells with extra thymosin beta-4, the protein it is based on, spread further<Cite id="cha-2003-metastasis,fda-pcac-2026-tb500-briefing" /> | <Verdict is="yes" /> Tesamorelin raises growth hormone and IGF-1, which are growth factors<Cite id="dailymed-egrifta-sv-label" />. Anti-doping rules class CJC-1295 and ipamorelin as growth hormone releasing factors<Cite id="wada-2026-list-en" /> |
-| Could it feed a tumour in people? | <Verdict is="unknown" /> Never studied | <Verdict is="unknown" /> Never studied | <Verdict is="unknown" /> Never studied. The tesamorelin label forbids its use in active cancer<Cite id="dailymed-egrifta-sv-label" /> |
+| Could it feed a tumour in people? | <Verdict is="unknown" /> Never studied | <Verdict is="unknown" /> Never studied | <Verdict is="unknown" /> Not known. A 10-year US safety study of tesamorelin, meant to look at cancer, was stopped in 2018 with no results posted<Cite id="ctgov-nct01579695,fda-2010-egrifta-approval-letter" />. The others were never studied. The tesamorelin label forbids its use in active cancer<Cite id="dailymed-egrifta-sv-label" /> |
 
 </Compare>
 
@@ -115,9 +115,9 @@ If you have had cancer, or have an unexplained lump, do not use them. See [BPC-1
 
 <InDetail title="What the lab and animal studies found, and what nobody knows">
 
-Several "healing" peptides act on exactly this. In studies in cells, chick eggs and rats, <Claim level="animal">BPC-157 increased blood vessel growth</Claim>.<Cite id="hsieh-2017-vegfr2" /> In a study in mice, <Claim level="animal">melanoma cells that made extra thymosin beta-4 spread further and grew more blood vessels</Claim>.<Cite id="cha-2003-metastasis" /> Thymosin beta-4 is the natural protein that TB-500 is based on. TB-500 itself was not tested in that study.<Cite id="fda-pcac-2026-tb500-briefing" /> Tesamorelin, an authorised growth hormone booster, raises growth hormone and IGF-1, which are growth factors. Its label forbids its use in active cancer.<Cite id="dailymed-egrifta-sv-label" /> Anti-doping rules class CJC-1295 and ipamorelin as growth hormone releasing factors too.<Cite id="wada-2026-list-en" />
+Several "healing" peptides act on exactly this. In studies in cells, chick eggs and rats, <Claim level="animal">BPC-157 increased blood vessel growth</Claim>.<Cite id="hsieh-2017-vegfr2" /> In a study in mice, <Claim level="animal">melanoma cells that made extra thymosin beta-4 spread further and grew more blood vessels</Claim>.<Cite id="cha-2003-metastasis" /> Thymosin beta-4 is the natural protein that TB-500 is based on. TB-500 itself was not tested in that study.<Cite id="fda-pcac-2026-tb500-briefing" /> Tesamorelin, a growth hormone booster approved in the US, raises growth hormone and IGF-1, which are growth factors. Its label forbids its use in active cancer.<Cite id="dailymed-egrifta-sv-label" /> Anti-doping rules class CJC-1295 and ipamorelin as growth hormone releasing factors too.<Cite id="wada-2026-list-en" />
 
-<Claim level="hypothesis">Whether these peptides could feed a hidden or treated tumour in people has never been studied.</Claim> Nobody can tell you the risk is low.
+<Claim level="hypothesis">These peptides could, in theory, help a hidden or treated tumour grow.</Claim> For BPC-157, TB-500, CJC-1295 and ipamorelin, this has never been studied in people. For tesamorelin, the FDA required a safety study of at least 10 years when it approved the medicine in 2010.<Cite id="fda-2010-egrifta-approval-letter" /> Its main measure was how soon cancers appeared in people with HIV using tesamorelin, compared with similar people who did not use it. It enrolled 391 people and was stopped in 2018, with no reason given and no results posted.<Cite id="ctgov-nct01579695" /> So nobody can tell you the risk is low.
 
 </InDetail>
 
@@ -139,11 +139,11 @@ Never use a GLP-1 type product instead of insulin. See [semaglutide](/en/compoun
 
 <InDetail title="Why the combination is the problem, and what the labels say">
 
-GLP-1 type products (semaglutide, tirzepatide, retatrutide) make the pancreas release more insulin, but mainly when blood sugar is high. On their own, they rarely push blood sugar too low.<Cite id="ema-epar-wegovy" />
+GLP-1 type products (semaglutide, tirzepatide, retatrutide) make the pancreas release more insulin, but mainly when blood sugar is high.<Cite id="fda-label-ozempic" /> On their own, they rarely push blood sugar too low. In a 40-week placebo-controlled trial of tirzepatide alone, in 475 adults with type 2 diabetes, no one on tirzepatide had blood sugar below the label's cut-off for low blood sugar.<Cite id="fda-label-mounjaro" />
 
-Insulin and sulfonylurea tablets (such as gliclazide) work differently. They lower blood sugar whatever its level. Together with a GLP-1 type product, blood sugar can fall dangerously low. The EU labels warn about this, and a doctor may need to lower the insulin or tablet dose.<Cite id="ema-epar-wegovy,ema-epar-mounjaro,sola-2015-sulfonylureas" />
+Insulin and sulfonylurea tablets (such as gliclazide) work differently. They lower blood sugar whatever its level.<Cite id="sola-2015-sulfonylureas" /> Together with a GLP-1 type product, blood sugar can fall dangerously low. The US labels warn about this, and a doctor may need to lower the insulin or tablet dose.<Cite id="fda-label-wegovy,fda-label-mounjaro" />
 
-The Wegovy label says semaglutide is not a substitute for insulin, and that it was not studied in type 1 diabetes.<Cite id="ema-epar-wegovy" />
+The Canadian label says Wegovy is not a substitute for insulin, and is not for type 1 diabetes. The US label says its use in type 1 diabetes, or together with insulin, has not been studied.<Cite id="ca-pm-wegovy-2026-10-02,fda-label-wegovy" />
 
 </InDetail>
 
@@ -155,9 +155,9 @@ The Wegovy label says semaglutide is not a substitute for insulin, and that it w
 
 | | Bremelanotide (PT-141) | Melanotan II |
 |---|---|---|
-| An authorised medicine? | <Verdict is="yes" /> In the US, as Vyleesi<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> Not in the EU<Cite id="ema-medicines-search" /> |
+| An authorised medicine? | <Verdict is="yes" /> In the US, as Vyleesi<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> Not in the US, the UK, Canada or Australia<Cite id="fr-2016-melanotan-debarment,mhra-2024-foi-melanotan-ii,ca-hc-2026-04-think-twice-peptides,au-tga-2026-08-melanotan-ii-safety-alert" /> |
 | Raises blood pressure or heart rate? | <Verdict is="yes" /> Blood pressure rises for some hours after each dose<Cite id="dailymed-vyleesi-label" /> | <Verdict is="unknown" /> One case report of a racing heart<Cite id="nelson-2012-melanotan-rhabdomyolysis" /> |
-| Label warning about heart disease? | <Verdict is="yes" /> Not with uncontrolled high blood pressure or known heart disease<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> No EU label, because it is not authorised<Cite id="ema-medicines-search" /> |
+| Label warning about heart disease? | <Verdict is="yes" /> Not with uncontrolled high blood pressure or known heart disease<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> No official label, because no regulator in these countries approved it<Cite id="fr-2016-melanotan-debarment,mhra-2024-foi-melanotan-ii,ca-hc-2026-04-think-twice-peptides,au-tga-2026-08-melanotan-ii-safety-alert" /> |
 
 </Compare>
 
@@ -167,7 +167,7 @@ See [PT-141](/en/compounds/pt-141/) and [melanotan II](/en/compounds/melanotan-i
 
 Bremelanotide (PT-141) is a melanocortin peptide. It is authorised in the US as Vyleesi. Its label says it raises blood pressure for some hours after each dose. It must not be used with uncontrolled high blood pressure or known heart disease.<Cite id="dailymed-vyleesi-label" />
 
-Melanotan II is a close relative of bremelanotide.<Cite id="nelson-2012-melanotan-rhabdomyolysis" /> It is not an authorised medicine in the EU.<Cite id="ema-medicines-search" /> In one case report, a man had a racing heart, muscle breakdown and kidney problems after injecting it.<Cite id="nelson-2012-melanotan-rhabdomyolysis" />
+Melanotan II is a close relative of bremelanotide.<Cite id="nelson-2012-melanotan-rhabdomyolysis" /> It is not an approved medicine in the US, the UK, Canada or Australia.<Cite id="fr-2016-melanotan-debarment,mhra-2024-foi-melanotan-ii,ca-hc-2026-04-think-twice-peptides,au-tga-2026-08-melanotan-ii-safety-alert" /> In one case report, a man had a racing heart, muscle breakdown and kidney problems after injecting it.<Cite id="nelson-2012-melanotan-rhabdomyolysis" />
 
 </InDetail>
 
@@ -177,7 +177,7 @@ Melanotan II is a close relative of bremelanotide.<Cite id="nelson-2012-melanota
 
 <Diagram id="appetite-and-restriction" caption="Why less hunger can be a danger for someone who restricts food">
 
-1. GLP-1 type products make you less hungry and full sooner.<Cite id="ema-epar-wegovy,haider-2026-glp1-adolescents" />
+1. GLP-1 type products make you less hungry and full sooner.<Cite id="fda-label-wegovy,haider-2026-glp1-adolescents" />
 2. For someone who restricts food, less hunger can make the restriction deeper.
 3. Experts are concerned about misuse by people with eating disorders.<Cite id="schaefer-2025-glp1-eating-disorders" />
 
@@ -201,9 +201,9 @@ One case report describes misuse of semaglutide by a person with atypical anorex
 
 | | Semaglutide (Wegovy) | Unapproved peptides |
 |---|---|---|
-| Measured in people with kidney disease? | <Verdict is="yes" /> Kidney disease did not change the amount in the blood in a way that matters<Cite id="ema-epar-wegovy" /> | <Verdict is="no" /> Nobody has measured it |
-| More side effects with kidney disease? | <Verdict is="yes" /> People with moderate kidney disease may get more stomach and gut side effects<Cite id="ema-epar-wegovy" /> | <Verdict is="unknown" /> Not studied |
-| Advised with severe kidney disease? | <Verdict is="no" /> Not recommended<Cite id="ema-epar-wegovy" /> | <Verdict is="unknown" /> Not studied |
+| Measured in people with kidney disease? | <Verdict is="yes" /> Kidney disease did not change the amount in the blood in a way that matters<Cite id="ca-pm-wegovy-2026-10-02,fda-label-wegovy" /> | <Verdict is="no" /> Nobody has measured it |
+| More side effects with kidney disease? | <Verdict is="yes" /> In trials, kidney side effects were more common in people who already had kidney disease<Cite id="fda-label-wegovy" /> | <Verdict is="unknown" /> Not studied |
+| Advised with kidney failure? | <Verdict is="no" /> Experience with severe kidney disease is limited. The Canadian label does not recommend it with kidney failure<Cite id="ca-pm-wegovy-2026-10-02" /> | <Verdict is="unknown" /> Not studied |
 
 </Compare>
 
@@ -211,31 +211,31 @@ The kidneys filter many peptides out of the blood and break them down.<Cite id="
 
 <InDetail title="Fluid loss, and what the semaglutide label says">
 
-This is not true for every peptide. For semaglutide, kidney disease did not change the amount in the blood in a way that matters.<Cite id="ema-epar-wegovy" /> For unapproved peptides, nobody has measured it.
+This is not true for every peptide. For semaglutide, kidney disease did not change the amount in the blood in a way that matters.<Cite id="ca-pm-wegovy-2026-10-02,fda-label-wegovy" /> The Canadian label says this was tested with a single dose in people with mild to severe kidney disease and on dialysis.<Cite id="ca-pm-wegovy-2026-10-02" /> For unapproved peptides, nobody has measured it.
 
-GLP-1 type products often cause vomiting and diarrhoea at first. Losing a lot of fluid can, in rare cases, damage the kidneys.<Cite id="ema-epar-mounjaro,ema-epar-wegovy" /> People with moderate kidney disease may get more stomach and gut side effects on semaglutide. It is not recommended with severe kidney disease.<Cite id="ema-epar-wegovy" />
+GLP-1 type products often cause vomiting and diarrhoea at first. Losing a lot of fluid can, in rare cases, damage the kidneys.<Cite id="fda-label-mounjaro,fda-label-wegovy" /> In Wegovy trials, kidney side effects were more common in people who already had kidney disease.<Cite id="fda-label-wegovy" /> Experience with severe kidney disease is limited, and the Canadian label does not recommend Wegovy for people with kidney failure (end-stage kidney disease).<Cite id="ca-pm-wegovy-2026-10-02" />
 
 </InDetail>
 
 ## Pancreatitis, or thyroid cancer in the family
 
-<Lead question="What if I had pancreatitis, or thyroid cancer runs in my family?">Talk to a doctor first. Labels warn about pancreatitis. The US label also warns about thyroid cancer.</Lead>
+<Lead question="What if I had pancreatitis, or thyroid cancer runs in my family?">Talk to a doctor first. Labels warn about pancreatitis. Some also warn about a rare thyroid cancer.</Lead>
 
-<Compare title="The US label forbids use with a family risk of medullary thyroid cancer. The EU label does not." detail="Medullary thyroid cancer (MTC) or MEN 2, in you or your family.">
+<Compare title="In the US and Canada, the label says no if a rare thyroid cancer runs in your family." detail="Medullary thyroid cancer (MTC) or MEN 2, in you or your family.">
 
-| | EU label (Wegovy) | US label (Ozempic) |
+| | US labels (Ozempic, Wegovy) | Canadian label (Wegovy) |
 |---|---|---|
-| Thyroid tumours in rodents? | <Verdict is="yes" /> GLP-1 medicines caused thyroid tumours in rodents<Cite id="ema-epar-wegovy" /> | <Verdict is="yes" /> The same finding<Cite id="fda-label-ozempic" /> |
-| Shown to happen in people? | <Verdict is="unknown" /> The risk for people is thought to be low, but it cannot be ruled out<Cite id="ema-epar-wegovy" /> | <Verdict is="unknown" /> Unknown<Cite id="fda-label-ozempic" /> |
-| Use forbidden with MTC or MEN 2 in you or your family? | <Verdict is="no" /> Not a formal contraindication, so discuss it with a doctor<Cite id="ema-epar-wegovy" /> | <Verdict is="yes" /> The US label forbids use in this group<Cite id="fda-label-ozempic" /> |
+| Thyroid tumours in rodents? | <Verdict is="yes" /> Semaglutide caused thyroid tumours in rodents<Cite id="fda-label-ozempic,fda-label-wegovy" /> | <Verdict is="yes" /> The same finding<Cite id="ca-pm-wegovy-2026-10-02" /> |
+| Shown to happen in people? | <Verdict is="unknown" /> Unknown<Cite id="fda-label-ozempic,fda-label-wegovy" /> | <Verdict is="unknown" /> Unknown<Cite id="ca-pm-wegovy-2026-10-02" /> |
+| Use forbidden with MTC or MEN 2 in you or your family? | <Verdict is="yes" /> The US labels forbid use in this group<Cite id="fda-label-ozempic,fda-label-wegovy" /> | <Verdict is="yes" /> The Canadian label forbids it too<Cite id="ca-pm-wegovy-2026-10-02" /> |
 
 </Compare>
 
-- **Pancreatitis in the past:** GLP-1 medicines are linked to acute pancreatitis. The labels advise caution if you have had it.<Cite id="ema-epar-wegovy,ema-epar-mounjaro" />
+- **Pancreatitis in the past:** GLP-1 medicines are linked to acute pancreatitis.<Cite id="fda-label-wegovy" /> Wegovy and Mounjaro were not studied in people who had pancreatitis before, so the Canadian labels advise caution.<Cite id="ca-pm-wegovy-2026-10-02,ca-pm-mounjaro-2026-06-23" />
 
 <InDetail title="The thyroid warning in full">
 
-- **Medullary thyroid cancer or MEN 2, in you or your family:** GLP-1 medicines caused thyroid tumours in rodents. Whether this happens in people is unknown. The EU label says the risk for people is thought to be low, but it cannot be ruled out. The US label forbids use in this group. In the EU it is not a formal contraindication, so discuss it with a doctor.<Cite id="fda-label-ozempic,ema-epar-wegovy" />
+- **Medullary thyroid cancer or MEN 2, in you or your family:** GLP-1 medicines caused thyroid tumours in rodents. Whether this happens in people is unknown. The US and Canadian labels forbid use in this group.<Cite id="fda-label-ozempic,fda-label-wegovy,ca-pm-wegovy-2026-10-02" /> We did not check how the UK and Australian labels treat it. Discuss it with a doctor.
 
 </InDetail>
 
@@ -266,7 +266,7 @@ Talk to the doctor who treats your condition first.
 
 <InDetail title="The INR test, and semaglutide with blood thinners">
 
-The INR is the blood test for warfarin-type blood thinners. A lower INR has been reported in people who took semaglutide with acenocoumarol, a blood thinner of this type. So the label advises frequent INR checks when someone on these blood thinners starts semaglutide.<Cite id="ema-epar-wegovy" />
+The INR is the blood test for warfarin-type blood thinners. A lower INR has been reported in people who took semaglutide with acenocoumarol, a blood thinner of this type. So the Canadian label advises frequent INR checks when someone on these blood thinners starts semaglutide.<Cite id="ca-pm-wegovy-2026-10-02" />
 
 </InDetail>
 
@@ -302,26 +302,26 @@ Anti-doping rules use strict liability. If a banned substance is found in your b
 | Rule | Why |
 |---|---|
 | Never share needles, syringes, vials or pens | Blood on them can pass on HIV and hepatitis B or C. A shared vial or pen can do this even with a new needle.<Cite id="who-2010-injection-toolkit,fda-label-ozempic" /> |
-| Never use a product that looks wrong<Cite id="ema-epar-wegovy,dailymed-egrifta-sv-label,dailymed-sterile-water-label" /> | It may be spoiled or contaminated. |
-| Never stop a medicine your doctor prescribed<Cite id="thuisarts-dikke-ogen-lippen" /> | The condition it treats can come back or get worse. |
+| Never use a product that looks wrong<Cite id="fda-label-wegovy,dailymed-egrifta-sv-label,dailymed-sterile-water-label" /> | It may be spoiled or contaminated. |
+| Never stop a medicine your doctor prescribed<Cite id="nhs-herbal-medicines-complementary" /> | The condition it treats can come back or get worse. |
 
 </Diagram>
 
 <InDetail title="Why sharing is dangerous, even with a new needle">
 
-A used needle can carry a tiny amount of blood into a vial or a pen. The next person can then get HIV or hepatitis B or C, even with a new needle. Blood does not need to be visible to pass on these viruses.<Cite id="who-2010-injection-toolkit,fda-label-ozempic" /> Never share a pen, even if you change the needle. Never share a vial, water or other equipment.<Cite id="fda-label-ozempic,ema-epar-wegovy,mainline-steroids-safe-injecting,drugsinfo-injecteren" />
+A used needle can carry a tiny amount of blood into a vial or a pen. The next person can then get HIV or hepatitis B or C, even with a new needle. Blood does not need to be visible to pass on these viruses.<Cite id="who-2010-injection-toolkit,fda-label-ozempic" /> Never share a pen, even if you change the needle. Never share a vial, water or other equipment.<Cite id="fda-label-ozempic,fda-label-mounjaro,who-2010-injection-toolkit" />
 
 </InDetail>
 
 <InDetail title="What a product that looks wrong can mean">
 
-A liquid that should be clear but is cloudy, coloured or has bits in it may be spoiled or contaminated. So may a vial with a broken seal. Do not use it.<Cite id="ema-epar-wegovy,dailymed-egrifta-sv-label,dailymed-sterile-water-label" /> See [sterile technique](/en/safety/sterile-technique/) and [product risk](/en/safety/product-risk/).
+A liquid that should be clear but is cloudy, coloured or has bits in it may be spoiled or contaminated. So may a vial with a broken seal. Do not use it.<Cite id="fda-label-wegovy,dailymed-egrifta-sv-label,dailymed-sterile-water-label" /> See [sterile technique](/en/safety/sterile-technique/) and [product risk](/en/safety/product-risk/).
 
 </InDetail>
 
 <InDetail title="Why not to stop a prescribed medicine">
 
-Do not stop or change a prescribed medicine on your own.<Cite id="thuisarts-dikke-ogen-lippen" /> The condition it treats can come back or get worse. If you think a peptide could replace a medicine, discuss it with your doctor first.
+Do not stop or change a prescribed medicine on your own. Talk to your doctor first.<Cite id="nhs-herbal-medicines-complementary" /> The condition it treats can come back or get worse. If you think a peptide could replace a medicine, discuss it with your doctor first.
 
 </InDetail>
 
@@ -333,9 +333,9 @@ Do not stop or change a prescribed medicine on your own.<Cite id="thuisarts-dikk
 
 ## Tell your doctor
 
-<Lead question="Should I tell my doctor?">Yes. A doctor can check these risks with you. In the Netherlands, doctors must keep it private.</Lead>
+<Lead question="Should I tell my doctor?">Yes. A doctor can check these risks with you. What you say stays private, with few exceptions.</Lead>
 
-A doctor can check for the risks on this page. Many need only a conversation or a simple test. In the Netherlands, your doctor must keep what you say private.<Cite id="knmg-beroepsgeheim" />
+A doctor can check for the risks on this page. Many need only a conversation or a simple test. In the US, the UK, Canada and Australia, privacy rules protect what you tell your doctor, with a few exceptions set by law.<Cite id="hhs-hipaa-your-rights,gmc-confidentiality-duties,gmc-confidentiality-framework,opc-privacy-laws-summary,oaic-health-information" /> See [your rights](/en/talking-to-your-doctor/#your-rights-privacy-and-consent).
 
 <Checklist>
 

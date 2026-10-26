@@ -341,14 +341,6 @@
   compounds: [pt-141]
   sources: [fda-drugsatfda-vyleesi, dailymed-vyleesi-label]
 
-# The EMA product information is the evidence for what the implant treats, not for any status.
-- id: afamelanotide-approval-us
-  year: 2019
-  date: 2019-10-08
-  category: approval
-  jurisdictions: [US]
-  sources: [fda-drugsatfda-scenesse, ema-epar-scenesse]
-
 - id: semaglutide-approval-au
   year: 2019
   date: 2019-08-28
@@ -356,6 +348,14 @@
   jurisdictions: [AU]
   compounds: [semaglutide]
   sources: [au-tga-pmr-search-status-a-2026-10-24, au-artg-ozempic-308324]
+
+# The EMA product information is the evidence for what the implant treats, not for any status.
+- id: afamelanotide-approval-us
+  year: 2019
+  date: 2019-10-08
+  category: approval
+  jurisdictions: [US]
+  sources: [fda-drugsatfda-scenesse, ema-epar-scenesse]
 
 # ---------------------------------------------------------------- 2020s: weight-loss medicines, shortages, fakes
 - id: wegovy-approval
@@ -544,12 +544,22 @@
   date: 2026-07-23
   category: regulation
   jurisdictions: [US]
-  compounds: [bpc-157, kpv, tb-500]
+  compounds: [bpc-157, kpv, tb-500, mots-c, semax, epitalon]
   sources: [fda-pcac-2026-07-meeting, fda-pcac-2026-materials, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-semax-briefing, usc-21-353a, uk-mhra-substance-index-status-c-2026-10-23, mhra-products-search-status-d-2026-10-23, ca-dpd-search-status-c-2026-10-23, ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-c-2026-10-23, au-artg-search-status-d-2026-10-23]
 
+# A TGA safety alert (14 September 2026): the product was in an unmarked vial; the alert names no seller.
+- id: au-counterfeit-retatrutide-2026
+  year: 2026
+  date: 2026-09-14
+  category: safety
+  jurisdictions: [AU]
+  compounds: [retatrutide, semaglutide]
+  sources: [au-tga-2026-09-retatrutide-counterfeit]
+
+# The raid was on 14 October 2026; the MHRA announced it on 15 October.
 - id: uk-counterfeit-pens-2026
   year: 2026
-  date: 2026-10-15
+  date: 2026-10-14
   category: market
   jurisdictions: [UK]
   compounds: [retatrutide, tirzepatide]

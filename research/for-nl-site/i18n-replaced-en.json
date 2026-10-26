@@ -52,7 +52,8 @@
     "authorised.routeText": "In the Netherlands this medicine is prescription-only. A doctor decides whether it suits you and at what dose; a pharmacy supplies the authorised product.",
     "authorised.routeElsewhere": "A doctor can in some cases request a medicine authorised elsewhere for a named patient (artsenverklaring). This route is narrow.",
     "index.authorisedGroup": "Authorised medicines",
-    "index.experimentalGroup": "Experimental — not authorised in the EU, the UK or the US"
+    "index.experimentalGroup": "Experimental — not authorised in the EU, the UK or the US",
+    "regulatoryTable.schedule": "Schedule {code}"
   },
   "timeline.json": {
     "$comment": "Changed on 24 October 2026: events that named the EU, the EMA, the Netherlands or Germany next to a jurisdiction English shows. An FDA approval and the EU authorisation are now two events (<id> and <id>-eu or <id>-us, src/data/timeline.yaml); the European falsified-Ozempic alerts no longer carry the UK tag (the UK part is falsified-ozempic-uk). New ids are not listed here.",
@@ -105,5 +106,45 @@
       "summary": "WADA published the 2027 Prohibited List on 21 September 2026. It takes effect on 1 January 2027. Section S0 now names 'peptides' among its examples, next to BPC-157. WADA says a peptide that the list does not name may still be prohibited. The Dutch Doping Authority will publish its Dutch translation from 1 January 2027.",
       "next": "The 2027 list takes effect"
     }
+  },
+  "glossary/final-qa.json": {
+    "$comment": "Changed on 26 October 2026 by group glossary-ui-media-en. Removed entries are copied whole (Dutch and Belgian terms for the Dutch glossary); changed entries give the old definition. diarrhoea and constipation were reworded only to avoid the British-only word 'poo' (not European framing); their old text is kept for completeness. clinicaltrials-gov lost a see_also link to 'ctis' (the EU Clinical Trials Information System), which had no glossary entry on English.",
+    "flemish-decree": {
+      "term": "Flemish decree",
+      "aliases": ["Flemish anti-doping decree"],
+      "definition": "A law passed by the Flemish Parliament, for the Dutch-speaking part of Belgium. In Flanders it has the same force as a national law.",
+      "category": "law",
+      "see_also": []
+    },
+    "rivm": {
+      "term": "RIVM",
+      "aliases": ["National Institute for Public Health and the Environment", "Rijksinstituut voor Volksgezondheid en Milieu"],
+      "definition": "The Dutch national institute for public health and the environment. This government institute gives advice on infections, hygiene and vaccines.",
+      "category": "regulation",
+      "see_also": []
+    },
+    "thuisarts": {
+      "term": "Thuisarts",
+      "aliases": ["Thuisarts.nl"],
+      "definition": "A Dutch website with health advice for patients, written by the Dutch College of General Practitioners (NHG).",
+      "category": "safety",
+      "see_also": ["nhg", "huisarts"]
+    },
+    "zeranol.definition": "A substance that acts like the hormone oestrogen. Some countries outside the EU give it to cattle to make them grow faster; the EU does not allow this.",
+    "zilpaterol.definition": "A substance added to cattle feed in some countries, so that the animals put on more lean meat before slaughter. The EU does not allow it.",
+    "emideltide.definition": "A lab-made copy of a small peptide first described in 1977 as delta sleep-inducing peptide (DSIP). It is not approved as a medicine in the EU, the UK or the US.",
+    "plenary-vote.definition": "A vote by all members of the European Parliament together. It comes after a committee has worked on the text.",
+    "clinicaltrials-gov.see_also": ["pre-registration", "ctis"],
+    "diarrhoea.definition": "Loose or watery poo, more often than usual. It can make you lose a lot of water.",
+    "constipation.definition": "Pooing less often than usual, or finding it hard to poo."
+  },
+  "pages.json": {
+    "$comment": "Changed on 26 October 2026 by group glossary-ui-media-en: the glossary intro said terms were 'grouped by topic', but the page sorts them from A to Z with a topic label (not European framing; readability warning).",
+    "glossary.intro": "Terms are grouped by topic and sorted alphabetically. Each definition is written to be understood without a science background."
+  },
+  "explainers.json": {
+    "$comment": "Changed on 26 October 2026 by the fact-check of group glossary-ui-media-en: the semaglutide low-blood-sugar explainer said 'call an ambulance'; it now says 'call your local emergency number', as the content brief requires and as its twin glp1-class-hypo already did (not European framing; kept for completeness). The emideltide glossary definition (above) was also widened by the fact-check to 'the US, the UK, Canada or Australia' after database searches; its pre-refocus text is the one archived above.",
+    "insulin-glp1-hypo.steps.4": "Low sugar signs: sweating, shaking, hunger, confusion. Take sugar now. Can't swallow? Call an ambulance.",
+    "insulin-glp1-hypo.summary": "On its own, semaglutide rarely makes blood sugar too low. With insulin or a sulfonylurea tablet it can, so the prescriber may lower those doses. Know the signs and take sugar at once. If the person cannot swallow, call an ambulance."
   }
 }

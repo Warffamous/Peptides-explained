@@ -31,7 +31,7 @@ fda-drugsatfda-imcivree:
   url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213793
   accessed: 2026-10-24
   verified: url
-  note: "Overview page read with curl on 24 October 2026 (HTTP 200). Company: Rhythm. Product: IMCIVREE, setmelanotide acetate, solution for subcutaneous use, prescription. ORIG-1 approval 25 November 2020 (Type 1, new molecular entity; priority; orphan). Supplements include SUPPL-7 (20 December 2024) and SUPPL-9 (19 March 2026), both 'Efficacy-New Indication'; the current label is fda-label-imcivree-2026-03."
+  note: "Overview page read with curl on 24 October 2026 (HTTP 200). Company: Rhythm. Product: IMCIVREE, setmelanotide acetate, solution for subcutaneous use, prescription. ORIG-1 approval 25 November 2020 (Type 1, new molecular entity; priority; orphan). Supplements include SUPPL-7 (20 December 2024) and SUPPL-9 (19 March 2026), both 'Efficacy-New Indication'; the current label is fda-label-imcivree-2026-03. Fact-check (26 October 2026): overview page fetched again with curl (HTTP 200; same rows), and the SUPPL-9 approval letter linked from it (drugsatfda_docs/appletter/2026/213793Orig1s009ltr.pdf) read with pdftotext: the supplement 'provides for ... addition of an indication to reduce excess body weight and maintain weight reduction long term in adults and pediatric patients aged 4 years and older with acquired hypothalamic obesity' (trial RM-493-040). So the hypothalamic-obesity indication dates from 19 March 2026, not from the 2020 approval."
 
 fda-label-imcivree-2026-03:
   type: label

@@ -11,7 +11,7 @@
     },
     "label": {
       "title": "The label shows the name, amount, batch number and expiry date",
-      "text": "In the EU, a medicine must show all four, even on a small vial. If one is missing, or the date has passed, that is a warning sign. Take a photo of the label."
+      "text": "In the US, for example, a prescription medicine must show all four, on the vial or its box. If one is missing, or the date has passed, that is a warning sign. Take a photo of the label."
     },
     "look": {
       "title": "It looks right",
@@ -20,13 +20,13 @@
     "certificate": {
       "title": "A lab report proves little if:",
       "points": [
-        "its batch number is not the one on your vial;",
-        "it does not name the lab, or has no date or signature;",
-        "it shows only purity (HPLC), with no test of what it is, such as mass spectrometry;",
+        "its batch number is not the one on your vial, or the batch field is empty;",
+        "it does not name a lab you can find and check, or has no date or signature;",
+        "it shows only purity (HPLC), not what it is (mass spectrometry) or how much is there;",
         "it has no test for germs (sterility) or for toxins from germs (endotoxin)."
       ],
-      "text": "Even a full report covers only one sample. A report from the seller comes from someone who gains if it looks good. It cannot show that your vial is clean.",
-      "links": ["What a certificate of analysis shows, and what it does not"]
+      "text": "Even a full report covers only the sample that was tested. It cannot show that your vial is clean, or how it was stored and shipped. A report from the seller comes from someone who gains if it looks good.",
+      "links": ["What a lab report can and cannot tell you"]
     },
     "storage": {
       "title": "It was kept as the label says",
@@ -45,7 +45,7 @@
     },
     "doctor": {
       "title": "Tell a doctor, and agree which checks fit you",
-      "text": "A doctor can help you choose blood tests that fit what you use. In the Netherlands, your doctor must keep what you say private.",
+      "text": "A doctor can help you choose blood tests that fit what you use. What you tell your doctor is kept private, with a few exceptions set by law.",
       "links": ["Which checks matter, and why", "Talking to your doctor"]
     },
     "stop": {

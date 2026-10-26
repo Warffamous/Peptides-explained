@@ -211,15 +211,15 @@ No people recognisable, no products. The Canberra dusk view was chosen over dayt
 
 ## 8. Inbound links to the removed pages, in files this group does not own
 
+Re-checked in the third pass (section 10): only one file still links to a removed page.
+
 | File | Line(s) | Link |
 |---|---|---|
-| `src/content/compounds/en/retatrutide.mdx` | 427 | `/en/legal/nl/` |
-| `src/content/pages/en/legal/sport-and-doping.mdx` | 18–19 (related), 43 | `legal/nl`, `legal/de` |
-| `src/content/pages/en/legal/whats-changing.mdx` | 19, 21 (related), 32, 109, 160 | `legal/eu`, `legal/nl`, `legal/de` |
-| `src/content/pages/en/the-case-for-reform.mdx` | 23 (related), 220 | `legal/nl` |
+| `src/content/pages/en/the-case-for-reform.mdx` | 23 (`related: legal/nl`), 220 (`[Dutch law](/en/legal/nl/)`, in a Dutch-law paragraph) | `legal/nl` |
 
-(`legal/research-use-only` had links at the start of this run; they were gone by the end.) Redirects for the live URLs
-are handled separately. Glossary `see_also` entries in other groups' files that now point at moved terms are listed in
+`check-html` on a full build reports it as the only broken internal link ("/en/legal/nl/" on `/en/` and `/nl/`
+the-case-for-reform). The earlier links in `retatrutide.mdx`, `sport-and-doping.mdx`, `whats-changing.mdx` and
+`research-use-only.mdx` are gone (fixed by their groups). Redirects for the live URLs are handled separately. Glossary `see_also` entries in other groups' files that now point at moved terms are listed in
 the manifest (harmless: the glossary index drops them).
 
 ## 9. Open questions for the medical/legal reviewer
@@ -256,3 +256,160 @@ United States and United Kingdom
 13. US border figures for peptide parcels (none found; callout on the page). PCAC per-peptide vote counts (not printed).
 14. UK: how Border Force handles personal-import seizures today (the page gives the 2022 FOI and says current practice is
     unknown).
+
+## 10. Third pass (workflow date 24 October 2026; rerun after an interrupted run)
+
+The draft committed in the checkpoint (1b7304f) was reviewed again against the brief, the research files and their
+"Fact-check (independent)" sections. It was complete; the changes below are corrections of detail. Nothing was cut,
+so the manifest is unchanged. No new source was needed (`src/data/sources/en-legal-en-a.yaml` still not created).
+
+### Changes
+
+| Page | Change | Why (source id) |
+|---|---|---|
+| legal/au | Summary item 4 "To import one for yourself, you need a letter from an Australian doctor and a clear label" → "Even for your own use, you may not bring one in without an Australian prescription." | The old wording could read as a way to import an unapproved Schedule 4 peptide lawfully, which is an open legal question (open question 8). The new item states only the requirement. Reading ease checked by the validator. |
+| legal/au | Import Lead: "you need a letter from your doctor" → "you need one from an Australian doctor" | Same reason; the authority must come from an Australian practitioner (`au-tga-personal-importation-scheme`) |
+| legal/au | Import table, prescription row: "a written authority (a letter with set details)" → "a written authority from an Australian doctor, such as a prescription with set details. You must have it when the goods arrive. Electronic prescriptions (eScripts) are not accepted." | TGA page re-read live in the browser: "you must hold a valid Australian prescription or written authority at the time of importation"; "A valid written authority, such as an Australian prescription must …"; "Electronic prescriptions (eScripts) cannot be accepted" (`au-tga-personal-importation-scheme`, last updated 8 September 2026) |
+| legal/au | Advertising: "influencers, affiliates and online sellers can be held to account" → "influencers, affiliates, online sellers and health services may be held to account" | TGA wording re-read live: "Influencers, affiliates, online sellers, health services and anyone else promoting unapproved peptide products may be held accountable" (`au-tga-how-we-regulate-peptides`) |
+| legal/au | Enforcement table, March to April 2026: "seized over 10,000 vials" → "seized over 10,000 vials of steroids, peptides and similar drugs" | The joint ABF/TGA release (17 April 2026, re-read live) counts "over 10,000 vials and 600 tablets" of "PIEDs, illicit steroids and peptide products", not only peptides; three people charged with importing Tier 1 Goods (PIEDs) confirmed (`au-tga-2026-04-vic-pied-arrests`) |
+| legal/ireland-and-new-zealand | "Medsafe says to get medical advice if you feel unwell" → "… get medical advice straight away …" | ireland-nz.md fact-check, change 9 (Medsafe: "immediately"; `nz-medsafe-2026-05-peptide-advisory`) |
+
+### Re-verified in this pass
+
+- Every cite and `source=` id on the six owned pages (222 ids) resolves to a registered source; none is missing.
+- HTTP check of the 213 distinct URLs: 148 answer 200 to curl; 5 legislation.govt.nz pages answer 202 (bot check);
+  403 from legislation.nsw.gov.au, sportintegrity.nz and health.govt.nz; no answer from canada.ca, tga.gov.au,
+  sportintegrity.gov.au, odc.gov.au and ukad.org.uk. These are the same hosts the research and its fact-checks could
+  only read through WebFetch or a browser (canada-legal.md "Method"; australia-legal.md "How the sources were read";
+  ireland-nz.md fact-check). Read again this pass: GUI-0116 through WebFetch (quotations on the page hold; page
+  details "2026-07-13"); the TGA peptide regulation page, the Personal Importation Scheme page and the 17 April 2026
+  joint release in the built-in browser (quotations above).
+- Photo licences and authors re-read from the Wikimedia Commons API (all four as in section 6).
+- No-loss check repeated against `nl-source-2026-10-23`: removed and added ids exactly as in section 5.
+- `src/data/heroes.yaml`, `src/data/media.yaml`, `src/i18n/en/media.json`: the four entries are present and match.
+- Treatment-routes anchors used by the pages exist on `/en/legal-routes/` (`#us-compounding`, `#uk-specials`,
+  `#canada-special-access`, `#australia-sas`).
+
+### Validation (this pass)
+
+- `npx tsx scripts/validate-content.ts --only <path>` for `legal/index`, `legal/us`, `legal/uk`, `legal/ca`,
+  `legal/au`, `legal/ireland-and-new-zealand`, `glossary/legal-a`, `glossary/legal-en`: 0 errors, 0 warnings each
+  (one reading-ease warning on the first rewrite of the Australian summary item, fixed). Full run: 0 errors in the
+  whole site; none of its warnings is in an owned file (the four `heroes.yaml` "no such page (yet)" warnings for
+  `legal/nl|be|eu|de` are expected, see section 7).
+- Full `astro build` to a scratch folder now succeeds (136 pages). `check-no-commerce`: passed. `check-html`: the only
+  errors are the broken `/en/legal/nl/` link from the-case-for-reform (section 8).
+- Residue grep from the brief on all owned source files: no real hit. Pattern false positives only: `nada\b` in
+  "Canada", `nvic` in "conviction", `epar` in "separate" and "departments". The only European wording is the marked
+  Ireland sentence.
+- `check-locale-residue --dist` on the built pages flags text that is not in owned files: glossary tooltips from
+  `src/i18n/en/glossary/guides.json` (`medicines-regulator`: "Examples are the EMA in the EU, the CBG in the
+  Netherlands and the FDA in the US"; `prescription-only-medicine`: "In the Netherlands, a pharmacist may not hand it
+  over without one") on all six pages, and from `src/i18n/en/glossary/final-qa.json` (emideltide: "not approved as a
+  medicine in the EU, the UK or the US") on legal/us. For the groups that own those glossary files. The marked
+  Ireland sentence is also flagged there (the built-page scan cannot see the source marker).
+
+## 11. Adversarial fact-check (26 October 2026; workflow date 24 October 2026)
+
+A separate pass that assumed errors existed. It covered `legal/ca`, `legal/au`, `legal/ireland-and-new-zealand`,
+`legal/index`, the changed parts of `legal/us` and `legal/uk`, `glossary/legal-a.json`, `glossary/legal-en.json`, the
+four photo entries and the manifest. Nothing in `src/data/sources/refocus-*.yaml` was edited, and no new source,
+allowlist host, manifest row or glossary entry was needed.
+
+### How it was checked
+
+- **Every cite id on the four new or rewritten pages (171 distinct ids), plus the 11 ids added to `legal/us` and
+  `legal/uk`.** Each source note was read and set against the sentence that cites it, checking dates, numbers, section
+  numbers, quoted words and attribution. Each statement was also checked against the research file and its
+  "Fact-check (independent)" section (canada-legal, australia-legal, ireland-nz, us-uk-routes). The UNRESOLVED points
+  are stated as unknown or left out on the pages (Canada 17.1 and 17.2; Australia 1, 3, 4 to 8, 10 to 12; NZ TB-500
+  and the notice gaps; Ireland S.I. amendments; UK border practice; US border figures).
+- **Re-read live:** Health Canada advisory RA-81874 (recalls-rappels.canada.ca, curl): "talk to a healthcare
+  professional right away", "peptides are generally regulated as prescription drugs", "does not make these products
+  legal", the CBSA sentence, the eight-digit DIN and the list of risks all hold. The FDA page "FDA's concerns with
+  unapproved GLP-1 drugs" (content current as of 1 October 2026): "Retatrutide and cagrilintide cannot be used in
+  compounding under federal law" holds. The source note for `fda-unapproved-glp1-concerns` does not record this
+  sentence, but the live page has it. The TGA peptide hub (built-in browser, own tab; last updated 23 September 2026):
+  "peptide products promoted for weight loss, muscle growth, recovery, performance enhancement or other
+  health-related outcomes" may be therapeutic goods, as the page says.
+- **Status claims against the data and the status files:** the CA status table and the US PCAC point 5 (BPC-157,
+  KPV, TB-500, MOTS-c, Semax, epitalon: not authorised in the US, UK, CA or AU) match the `regulatory` rows of all
+  21 compound data files (CA: retatrutide and SS-31 `investigational`, tesamorelin `discontinued`). The AU schedule
+  table names a schedule only where the Poisons Standard names the peptide. CJC-1295 is "named, but see the note"
+  (the data gives no S4 code), and tesamorelin "may be covered by a group entry".
+- **No-loss check:** cite ids and components were counted in `legal/index`, `legal/us` and `legal/uk` against
+  `nl-source-2026-10-23`. Removed: `eu-directive-2001-83` (index, uk), `nl-geneesmiddelenwet` and
+  `ema-medicines-search` (us), all European framing and all in the manifest. Components unchanged except one
+  InDetail added on `legal/uk`. Same result as section 5.
+- **Residue:** the brief's grep was run (UTF-8, PCRE) on all eight owned files. Pattern false positives only (`nada`
+  in "Canada", `nvic` in "conviction", `epar` in "separate"). The one marker, `residue-ok: Ireland EU note`, sits on
+  the brief's allowed Ireland sentence. No EMA, EPAR or CHMP evidence marker is needed in these files.
+- **Guardrails:** no emergency or phone number appears (only "NHS 111", a service name the brief allows, on
+  `legal/uk`). No dose, no seller, no clinic, no named person. The headings, captions and Compare titles contain no
+  token from `config/commerce-tokens.json`. Spelling is British, and there is no GP, A&E or chemist outside the UK
+  page. Internal links go only to routes in the brief. The legal-routes anchors `#us-compounding`, `#uk-specials`,
+  `#canada-special-access` and `#australia-sas` exist as headings on `legal-routes.mdx`. No inbound link to
+  `legal/nl|eu|be|de` remains in `src/content` (the-case-for-reform has since been fixed by its group).
+- **Hosts:** every cited URL's host is on `config/link-allowlist.json` (checked with the project's own matching
+  rule, so www and non-www both count).
+- **Photos:** the Commons API was queried again with a generic User-Agent. Licence, author and description match
+  `media.yaml` for all four photos.
+
+### Fixed in place
+
+| Page | Was | Now | Why (source id) |
+|---|---|---|---|
+| legal/ca, summary 4 | "People in Canada may not bring in prescription drugs by mail." | "People who live in Canada ..." | The rule is for residents. Visitors may receive a 90-day supply by mail (`ca-cbsa-d19-9-1` paras 45 to 47) |
+| legal/ca, core rule | "No product with BPC-157 or any other experimental peptide ... appears in its Drug Product Database." | "When we checked in October 2026, no product ... was in its Drug Product Database." | The DPD searches are dated and partly rest on the first run alone (canada-legal fact-check, UNRESOLVED 1). The sentence now says when |
+| legal/ca, compounding fold and status table | Generic semaglutide cited to `ca-hc-2026-08-generic-semaglutide-recall` ("By August 2026 ... on the market") | "By 2026, Health Canada had also authorised generic semaglutide medicines, each with its own DIN", cited to `ca-dpd-search-canada-legal-2026-10-23` and `ca-dpd-extract-search-merge-2026-10-24` | The recall's title and URL name a company's product ("Apo-Semaglutide"), and it is an enforcement-type release. CONTENT-GUIDE §1b / §11: never cite a document whose title or URL names a company. The DPD data extract (re-read 24 October 2026) lists the generic semaglutide brands under a neutral title. "On the market" is now "authorised" (the extract does not show which brand is in which status file) |
+| legal/au, summary 3 | "BPC-157, TB-500 and many others may only be sold on a prescription." | "By law, BPC-157, TB-500 and many others need a prescription. This is called Schedule 4." | "May only be sold on a prescription" could suggest that a sale on prescription is lawful. These peptides are not in the ARTG, so they may not be supplied even then, outside an access route (`au-tg-act-s19b-19d-offences`). Reading ease checked by the validator |
+| legal/au, Schedule 4 Lead | "... may only be sold on a prescription." | "By law, BPC-157, TB-500 and others need a prescription." | Same reason |
+| legal/au, Poisons Standard paragraph | `Schedule 4 means "prescription only medicine"` | `Schedule 4 is the schedule of "prescription only medicines"` | The quoted words now match the instrument's heading, "Prescription only medicines and prescription animal remedies" (`au-poisons-standard-2026-10`, fact-check correction 8) |
+| legal/au, advertising code | "People who make or sell the goods, including influencers, may not give testimonials." | "People who make, market or supply the goods may not give testimonials, and that includes influencers who are paid for them." | Code s 24(4): "engaged in the production, marketing or supply". The note covers influencers "who have, or will receive, valuable consideration" (`au-advertising-code-2021`) |
+| legal/au, access routes table, Category A | "for a patient who is seriously ill" | "for a patient so ill that death is likely within months, or early without treatment" | Reg 12A(5) definition of a Category A patient (`au-tg-regs-reg-12a-sas-category-a`). "Seriously ill" alone made the route sound wider than it is |
+| legal/au, access routes table, Category C | "Listed practitioners, for goods on a TGA list" | "Listed types of health practitioner, only for goods on a TGA list" | `au-tga-sas-individual-patients` ("for listed practitioner types") |
+| legal/ireland-and-new-zealand, NZ table | "No entry found: Melanotan II, PT-141, GHK-Cu, KPV" | "No entry of their own found: Melanotan II and PT-141 (a prescription group, 'melanocyte stimulating compounds', exists, but nothing we read says whether it covers them); GHK-Cu and KPV" | Honest in both directions. The Regulations list the group as prescription-only (`nz-medicines-regulations-1984`), and ireland-nz.md 3.3 / UNRESOLVED says coverage is not established. "No entry found" alone could be read as "not prescription-only" |
+
+Validator after the fixes: `npx tsx scripts/validate-content.ts --only <path>` gives 0 errors and 0 warnings for
+`legal/ca`, `legal/au` and `legal/ireland-and-new-zealand`. The first rewording of the AU summary and Lead scored
+reading ease 44 and 51, and was reworded until it gave no warning. Earlier in this pass the same command gave 0
+errors and 0 warnings for `legal/index`, `legal/us`, `legal/uk`, `glossary/legal-a.json` and
+`glossary/legal-en.json`. Those files were not changed afterwards.
+
+### Checked and kept (with the reason)
+
+- `au-artg-search-status-b-2026-10-23` (legal/au, ARTG fold). Its title lists the search term "Theratechnologies",
+  Egrifta's sponsor. It was kept for three reasons: it is a search record, not an enforcement release; it names the
+  maker of an authorised medicine, not a seller; and it is the only ARTG record on the site for ipamorelin, hexarelin
+  and CJC-1295 (the data files use it too). Editor: replace it if the company rule is meant to cover any company
+  name, including in search-record titles.
+- legal/ca: Health Canada's "injectable peptides are regulated as prescription drugs" is attributed, and the page
+  rests the legal point on the new-drug and DIN rules. The Special Access Program is not named; there is only a
+  neutral link to `#canada-special-access`. The December 2023 to May 2026 timeline matches the recalls index (first
+  seizure June 2024; "two shops" = "two retail locations"; 26 and 42 products). Tesamorelin is given as approved
+  29 April 2014 with its last DIN cancelled 30 September 2022, without "business reasons" (lead decision, merge.md 3.2).
+  The 2025 sanction names neither the athlete nor the university.
+- legal/au: penalties ($1.82m / $18.2m; 12 PU = $4,368; 5 and 7 years), state possession (Vic s 36B(2) 10 PU;
+  Qld s 34 200 PU; NSW s 16 20 PU or 6 months), the Personal Importation Scheme (3 and 15 months; packaging;
+  written authority; no eScripts) and the enforcement table (27 notices, $101,412; over $120,000; over 10,000 vials,
+  three people charged; 6 October 2026 notices) all match the notes and fact-checks. No sport status is given for
+  retatrutide (UNRESOLVED 7).
+- legal/ireland-and-new-zealand: the HPRA figures (763,027 units; just under 14,000 parcels; 4,762; 1,582 to 48,752;
+  melanotan II 950 / 1,329 / 1,099 / 1,146), the 10-year maximum, the TPA repeal on 18 December 2024, the
+  19 November 2025 section 29 change, the 1 July 2024 Commission start, the notice of 3 August 2026 and the
+  08:00 to 22:00 poisons line all match.
+- legal/us and legal/uk additions: the RPM 9-2-5 commercial-shipment wording, the FOI 22/431 figures (6,320,344 doses
+  rounded to "about 6.3 million") with their 2022 date, GN14 paras 2.2 and Appendix 2, and the Federal Register
+  re-check of 23 October all match.
+- Glossary `legal-en.json` (38 entries): the definitions match the sources above. The Special Access Program entry
+  is neutral (route described, company decides), and no entry suggests that any peptide is available through it.
+
+### Remaining concerns (for the editor and the legal reviewer; the open questions in section 9 still stand)
+
+1. The Canadian DPD and NOC databases were still not re-run live. The not-authorised rows rest on the first-run API
+   searches plus the DPD data extracts (status-b, status-c, merge). Re-run them before publishing.
+2. The `fda-unapproved-glp1-concerns` note (semaglutide.yaml) does not record the retatrutide compounding sentence
+   that legal/us now cites. The live page confirms it (re-read in this pass). The owner of that file should add it to
+   the note.
+3. The Theratechnologies search-record title (above) is an editor decision.
+4. New Zealand: re-check the Gazette before 4 February 2027 (the six-month lapse of notice 2026-sl4278).

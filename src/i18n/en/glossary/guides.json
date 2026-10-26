@@ -1,206 +1,242 @@
 {
   "marketing-authorisation": {
     "term": "marketing authorisation",
-    "aliases": ["marketing authorisations", "marketing authorization", "handelsvergunning"],
+    "aliases": [
+      "marketing authorisations",
+      "marketing authorization"
+    ],
     "definition": "The licence a medicine needs before it may be sold. A regulator gives it only after checking the medicine's quality, its effects and its risks.",
     "category": "regulation",
-    "see_also": ["medicines-regulator", "prescription-only-medicine"]
+    "see_also": [
+      "medicines-regulator",
+      "prescription-only-medicine"
+    ]
   },
   "medicines-regulator": {
     "term": "medicines regulator",
-    "aliases": ["regulator", "regulators", "medicines regulators"],
-    "definition": "A government body that decides whether a medicine may be sold, and keeps watching its safety afterwards. Examples are the EMA in the EU, the CBG in the Netherlands and the FDA in the US.",
+    "aliases": [
+      "regulator",
+      "regulators",
+      "medicines regulators"
+    ],
+    "definition": "A government body that decides whether a medicine may be sold in its country, and keeps watching its safety afterwards. Examples are the FDA in the US, the MHRA in the UK, Health Canada and the TGA in Australia.",
     "category": "regulation",
-    "see_also": ["marketing-authorisation", "ema", "cbg", "fda"]
-  },
-  "ema": {
-    "term": "EMA",
-    "aliases": ["European Medicines Agency"],
-    "definition": "The European Medicines Agency. It checks medicines for the whole EU and advises whether they should be approved.",
-    "category": "regulation",
-    "see_also": ["medicines-regulator", "cbg"]
-  },
-  "cbg": {
-    "term": "CBG",
-    "aliases": ["CBG-MEB", "Medicines Evaluation Board", "College ter Beoordeling van Geneesmiddelen"],
-    "definition": "The Dutch Medicines Evaluation Board. It decides which medicines may be sold in the Netherlands, and works with the EMA on EU decisions.",
-    "category": "regulation",
-    "see_also": ["ema", "medicines-regulator"]
+    "see_also": [
+      "marketing-authorisation",
+      "fda",
+      "mhra",
+      "health-canada",
+      "tga"
+    ]
   },
   "fda": {
     "term": "FDA",
-    "aliases": ["US Food and Drug Administration", "Food and Drug Administration"],
+    "aliases": [
+      "US Food and Drug Administration",
+      "Food and Drug Administration"
+    ],
     "definition": "The US Food and Drug Administration: the government body that decides which medicines may be sold in the United States.",
     "category": "regulation",
-    "see_also": ["medicines-regulator"]
-  },
-  "igj": {
-    "term": "IGJ",
-    "aliases": ["Health and Youth Care Inspectorate", "Inspectie Gezondheidszorg en Jeugd", "health inspectorate"],
-    "definition": "The Dutch Health and Youth Care Inspectorate. It checks that care and medicines follow the law, and can act against people who sell medicines illegally.",
-    "category": "regulation",
-    "see_also": ["named-patient-route"]
-  },
-  "lareb": {
-    "term": "Lareb",
-    "aliases": ["Bijwerkingencentrum Lareb", "Netherlands Pharmacovigilance Centre"],
-    "definition": "The Dutch centre that collects reports of side effects. Anyone can report a side effect to Lareb, also for a product bought online.",
-    "category": "safety",
-    "see_also": ["pharmacovigilance"]
-  },
-  "zorginstituut": {
-    "term": "Zorginstituut Nederland",
-    "aliases": ["Zorginstituut", "National Health Care Institute"],
-    "definition": "The Dutch body that advises which care and medicines basic health insurance should pay for.",
-    "category": "regulation",
-    "see_also": []
+    "see_also": [
+      "medicines-regulator"
+    ]
   },
   "wada": {
     "term": "WADA",
-    "aliases": ["World Anti-Doping Agency"],
+    "aliases": [
+      "World Anti-Doping Agency"
+    ],
     "definition": "The World Anti-Doping Agency. Each year it publishes the list of substances that are banned in sport.",
     "category": "sport",
-    "see_also": ["wada-s0", "strict-liability"]
-  },
-  "dopingautoriteit": {
-    "term": "Dopingautoriteit",
-    "aliases": ["Dutch Doping Authority", "Doping Authority Netherlands"],
-    "definition": "The Dutch national anti-doping organisation. It tests athletes, and gives information about the health effects of doping.",
-    "category": "sport",
-    "see_also": ["wada"]
+    "see_also": [
+      "wada-s0",
+      "strict-liability"
+    ]
   },
   "anabolic-steroids": {
     "term": "anabolic steroids",
-    "aliases": ["anabolic steroid", "anabolen", "AAS"],
+    "aliases": [
+      "anabolic steroid",
+      "AAS"
+    ],
     "definition": "Man-made versions of the male hormone testosterone and related substances, used to build muscle. They are banned in sport.",
     "category": "sport",
-    "see_also": ["wada"]
+    "see_also": [
+      "wada"
+    ]
   },
   "prescription-only-medicine": {
     "term": "prescription-only medicine",
-    "aliases": ["prescription-only medicines", "prescription-only", "UR-geneesmiddel", "UR-geneesmiddelen"],
-    "definition": "A medicine you can only get with a doctor's prescription, from a pharmacy. In the Netherlands, a pharmacist may not hand it over without one.",
+    "aliases": [
+      "prescription-only medicines",
+      "prescription-only"
+    ],
+    "definition": "A medicine you can get only with a prescription from a doctor or another prescriber. Each country decides which medicines need one.",
     "category": "regulation",
-    "see_also": ["marketing-authorisation"]
+    "see_also": [
+      "marketing-authorisation",
+      "medicines-regulator"
+    ]
   },
   "off-label": {
     "term": "off-label",
-    "aliases": ["off-label use", "off-label prescribing", "off label"],
-    "definition": "Using an approved medicine for something it was not approved for. In the Netherlands a doctor may do this only if professional guidelines exist for that use. While they are still being written, the doctor must first talk it through with the pharmacist.",
+    "aliases": [
+      "off-label use",
+      "off-label prescribing",
+      "off label"
+    ],
+    "definition": "Using an approved medicine in a way it was not approved for: for another illness, at another dose or in another way. Each country has its own rules for when a doctor may do this.",
     "category": "regulation",
-    "see_also": ["marketing-authorisation"]
+    "see_also": [
+      "marketing-authorisation",
+      "medicines-regulator"
+    ]
   },
   "named-patient-route": {
     "term": "named-patient route",
-    "aliases": ["artsenverklaring", "doctor's declaration", "named-patient use"],
-    "definition": "A narrow exception that lets one patient get a medicine that has no licence in the Netherlands. The doctor must state that approved medicines cannot be used, and the inspectorate (IGJ) must agree.",
+    "aliases": [
+      "named-patient use"
+    ],
+    "definition": "A narrow exception that lets one patient get, through their doctor, a medicine that is not approved in their country. Each country has its own route and rules.",
     "category": "regulation",
-    "see_also": ["igj", "compassionate-use", "marketing-authorisation"]
+    "see_also": [
+      "compassionate-use",
+      "expanded-access",
+      "special-medicinal-product",
+      "special-access-program",
+      "special-access-scheme",
+      "marketing-authorisation"
+    ]
   },
   "clinical-trial": {
     "term": "clinical trial",
-    "aliases": ["clinical trials", "human trial", "human trials"],
+    "aliases": [
+      "clinical trials",
+      "human trial",
+      "human trials"
+    ],
     "definition": "A planned study in people that tests whether a treatment works and what harm it does. Large trials compare it with a dummy treatment or another medicine.",
     "category": "evidence",
-    "see_also": ["randomised-controlled-trial", "clinical-trial-phases", "placebo"]
+    "see_also": [
+      "randomised-controlled-trial",
+      "clinical-trial-phases",
+      "placebo"
+    ]
   },
   "randomised-controlled-trial": {
     "term": "randomised controlled trial",
-    "aliases": ["randomised controlled trials", "randomized controlled trial", "randomized controlled trials", "RCT", "RCTs"],
+    "aliases": [
+      "randomised controlled trials",
+      "randomized controlled trial",
+      "randomized controlled trials",
+      "RCT",
+      "RCTs"
+    ],
     "definition": "A trial in which chance decides who gets the treatment and who gets a comparison, such as a dummy treatment. This makes it a fair test of whether the treatment itself causes the effect.",
     "category": "evidence",
-    "see_also": ["clinical-trial", "placebo"]
+    "see_also": [
+      "clinical-trial",
+      "placebo"
+    ]
   },
   "preclinical-research": {
     "term": "preclinical research",
-    "aliases": ["preclinical", "preclinical studies", "preclinical volume"],
+    "aliases": [
+      "preclinical",
+      "preclinical studies",
+      "preclinical volume"
+    ],
     "definition": "Research done in cells and animals before a substance is tested in people. It can show a reason to test something, but not that it works in people.",
     "category": "evidence",
-    "see_also": ["in-vitro", "in-vivo", "clinical-trial"]
+    "see_also": [
+      "in-vitro",
+      "in-vivo",
+      "clinical-trial"
+    ]
   },
   "evidence-profile": {
     "term": "evidence profile",
-    "aliases": ["evidence profiles", "evidence grade", "evidence grades"],
+    "aliases": [
+      "evidence profiles",
+      "evidence grade",
+      "evidence grades"
+    ],
     "definition": "This site's four separate grades for each compound: testing in people, the amount of lab and animal research, how independent that research is, and what is known about harms in people.",
     "category": "evidence",
-    "see_also": ["preclinical-research", "independent-replication"]
+    "see_also": [
+      "preclinical-research",
+      "independent-replication"
+    ]
   },
   "research-chemical": {
     "term": "research chemical",
-    "aliases": ["research chemicals", "research use only", "for research use only", "not for human consumption"],
+    "aliases": [
+      "research chemicals",
+      "research use only",
+      "for research use only",
+      "not for human consumption"
+    ],
     "definition": "A label sellers put on products such as peptide vials. It does not make a product a licensed medicine, and it does not mean anyone checked that it is fit to inject.",
     "category": "regulation",
-    "see_also": ["marketing-authorisation"]
+    "see_also": [
+      "marketing-authorisation"
+    ]
   },
   "harm-reduction": {
     "term": "harm reduction",
-    "aliases": ["harm-reduction"],
+    "aliases": [
+      "harm-reduction"
+    ],
     "definition": "Helping people who use a substance anyway to lower the damage it can do, without judging them. Examples are clean needles and clear information about warning signs.",
     "category": "safety",
     "see_also": []
   },
-  "wgbo": {
-    "term": "WGBO",
-    "aliases": ["Medical Treatment Contracts Act", "Wet op de geneeskundige behandelingsovereenkomst"],
-    "definition": "The Dutch law on medical treatment, part of the Civil Code. It sets out your rights as a patient: information, consent, privacy and access to your medical file.",
-    "category": "law",
-    "see_also": ["informed-consent", "medical-confidentiality", "medical-file"]
-  },
   "informed-consent": {
     "term": "informed consent",
-    "aliases": ["consent"],
-    "definition": "Agreeing to a treatment after your doctor has explained what it is for, its risks, and the other options. Without your consent, nothing may be done to you.",
+    "aliases": [
+      "consent"
+    ],
+    "definition": "Agreeing to a treatment after your doctor has explained what it is for, its risks, and the other options. Apart from emergencies, a doctor needs your consent before treating you.",
     "category": "law",
-    "see_also": ["wgbo"],
+    "see_also": [
+      "medical-confidentiality",
+      "second-opinion"
+    ],
     "autolink": false
   },
   "medical-file": {
     "term": "medical file",
-    "aliases": ["medical files", "medical record", "medical records", "patient file"],
-    "definition": "The record your doctor keeps about your health and treatment. In the Netherlands it is private, and you can ask to see it and get a copy.",
+    "aliases": [
+      "medical files",
+      "medical record",
+      "medical records",
+      "patient file"
+    ],
+    "definition": "The record your doctor keeps about your health and treatment. It is private, and in most cases you can ask to see it and get a copy.",
     "category": "law",
-    "see_also": ["wgbo", "medical-confidentiality"]
+    "see_also": [
+      "medical-confidentiality",
+      "informed-consent"
+    ]
   },
   "second-opinion": {
     "term": "second opinion",
-    "aliases": ["second opinions"],
-    "definition": "A check of your diagnosis or treatment plan by a second, independent doctor in the same field. In the Netherlands your doctor should normally refer you for one if you ask.",
+    "aliases": [
+      "second opinions"
+    ],
+    "definition": "A check of your diagnosis or treatment plan by a second, independent doctor. You can ask for one.",
     "category": "law",
-    "see_also": ["wgbo"]
-  },
-  "knmg": {
-    "term": "KNMG",
-    "aliases": ["Royal Dutch Medical Association"],
-    "definition": "The Royal Dutch Medical Association, the professional body for doctors in the Netherlands. It publishes guidance on how doctors should act.",
-    "category": "law",
-    "see_also": ["medical-confidentiality"]
+    "see_also": [
+      "informed-consent"
+    ]
   },
   "enema": {
     "term": "enema",
-    "aliases": ["enemas"],
+    "aliases": [
+      "enemas"
+    ],
     "definition": "A liquid that is put into the lower bowel through the anus. Some medicines for bowel disease are given this way.",
     "category": "pharmacology",
     "see_also": []
-  },
-  "wet-big": {
-    "term": "Wet BIG",
-    "aliases": ["BIG Act", "Individual Health Care Professions Act"],
-    "definition": "The Dutch law on health care professions. It says who may use titles such as doctor or nurse, and who may do risky procedures such as injections.",
-    "category": "law",
-    "see_also": ["reserved-procedure"]
-  },
-  "reserved-procedure": {
-    "term": "reserved procedure",
-    "aliases": ["reserved procedures", "reserved act", "reserved acts", "voorbehouden handeling", "voorbehouden handelingen"],
-    "definition": "A medical procedure, such as giving an injection, that Dutch law reserves for doctors and some other care professionals. Others may do it at work only on their instructions.",
-    "category": "law",
-    "see_also": ["wet-big"]
-  },
-  "nhg": {
-    "term": "NHG",
-    "aliases": ["Nederlands Huisartsen Genootschap", "Dutch College of General Practitioners"],
-    "definition": "The Dutch College of General Practitioners. It writes the guidelines Dutch GPs work by, and runs the patient website Thuisarts.",
-    "category": "law",
-    "see_also": ["nhg-standaard", "huisarts"]
   }
 }
