@@ -51,8 +51,15 @@ regulatory:
   - { jurisdiction: NL, status: investigational, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, cbg-compassionate-use-list, ctgov-nct06383390, ctgov-nct07165028] }
   - { jurisdiction: DE, status: investigational, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, ctgov-nct06383390, ctgov-nct06662383] }
   - { jurisdiction: BE, status: investigational, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json, ctgov-nct06383390, ctgov-nct07165028] }
-  - { jurisdiction: UK, status: investigational, as_of: 2026-10-20, sources: [mhra-2025-retatrutide-seizure, mhra-2026-07-no-summer-shortcut, mhra-2026-10-counterfeit-pens, uk-hmr-2012-reg-46, ctgov-nct06383390] }
+  # UK re-checked on 23 October 2026 (MHRA Products: no substance entry); CA and AU merged from
+  # research/refocus/status/retatrutide.yaml (fact-checked 24 October 2026): not authorised, in Lilly trials with
+  # Canadian and Australian sites (Health Canada's trial portal lists the same ten trials). No AU schedule field: the
+  # Poisons Standard does not name retatrutide; only the TGA's advertising page calls it prescription-only as a
+  # 'derivative of semaglutide or dulaglutide' (legal-review question, research/refocus-notes/merge.md).
+  - { jurisdiction: UK, status: investigational, as_of: 2026-10-23, sources: [mhra-2025-retatrutide-seizure, mhra-2026-07-no-summer-shortcut, mhra-2026-10-counterfeit-pens, uk-hmr-2012-reg-46, ctgov-nct06383390, uk-mhra-substance-index-status-a-2026-10-24] }
   - { jurisdiction: US, status: investigational, as_of: 2026-10-20, sources: [fda-unapproved-glp1-concerns, usc-21-355, sec-lilly-2026-q2-results, ctgov-nct07629401] }
+  - { jurisdiction: CA, status: investigational, as_of: 2026-10-23, sources: [ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24, ca-hc-sur-search-status-a-2026-10-24, ca-ctgov-retatrutide-ca-au-2026-10-24, ca-hc-ctsp-retatrutide-2026-10-24, ctgov-nct06383390, ctgov-nct07165028] }
+  - { jurisdiction: AU, status: investigational, as_of: 2026-10-23, sources: [au-artg-search-status-a-2026-10-24, au-tga-pmr-search-status-a-2026-10-24, au-tga-2026-09-retatrutide-counterfeit, ca-ctgov-retatrutide-ca-au-2026-10-24, au-anzctr-search-status-a-2026-10-24, ctgov-nct06383390, ctgov-nct07165028] }
   # Not named on the 2026 or 2027 List; falls under the S0 definition ("drugs under pre-clinical or
   # clinical development", no approval anywhere, not covered by another section). See research notes.
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-20, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, ukad-2027-list-summary] }

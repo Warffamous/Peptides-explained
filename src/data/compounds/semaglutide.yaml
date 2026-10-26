@@ -43,8 +43,26 @@ regulatory:
   - { jurisdiction: NL, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, fk-semaglutide, zin-wegovy-reassessment, cbg-ozempic-shortage] }
   - { jurisdiction: DE, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, bfarm-glp1-shortage-archive] }
   - { jurisdiction: BE, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic] }
-  - { jurisdiction: UK, status: authorised, as_of: 2026-10-20, sources: [mhra-glp1-what-you-need-to-know] }
+  # UK (since added 24 October 2026 from research/refocus/status/semaglutide.yaml, fact-checked): Ozempic was
+  # authorised for the UK from 8 February 2018 through the EU-wide authorisation (the UK was an EU member until
+  # 31 January 2020) and has had its own Great Britain licence since 1 January 2021 (converted at the end of the EU
+  # transition; Northern Ireland stayed under the EU authorisation until the end of 2024).
+  - { jurisdiction: UK, status: authorised, since: 2018-02-08, as_of: 2026-10-23, sources: [mhra-glp1-what-you-need-to-know, uk-mhra-substance-index-status-a-2026-10-24, uk-mhra-uk-wide-licensing, uk-euwa-2018-s20-exit-day, ema-epar-ozempic] }
   - { jurisdiction: US, status: authorised, since: 2017-12-05, as_of: 2026-10-20, sources: [fda-drugsatfda-ozempic, fda-drugsatfda-rybelsus, fda-drugsatfda-wegovy, fda-drugsatfda-wegovy-tablets] }
+  # Canada: Ozempic, Notice of Compliance 4 January 2018 (the first semaglutide authorisation in Canada).
+  - jurisdiction: CA
+    status: authorised
+    since: 2018-01-04
+    as_of: 2026-10-23
+    sources: [ca-sbd-ozempic, ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24]
+    schedule: { code: "Prescription Drug List", note: "Prescription only; listed since 12 March 2018.", sources: [ca-pdl-human] }
+  # Australia: Ozempic, entered on the ARTG on 28 August 2019 (TGA decision 15 August 2019).
+  - jurisdiction: AU
+    status: authorised
+    since: 2019-08-28
+    as_of: 2026-10-23
+    sources: [au-artg-ozempic-308324, au-tga-pmr-search-status-a-2026-10-24, au-artg-search-status-a-2026-10-24]
+    schedule: { code: "S4", note: "Prescription only medicine.", sources: [au-poisons-standard-2026-10] }
   - { jurisdiction: WADA, status: not-listed, as_of: 2026-10-20, sources: [wada-prohibited-list, wada-2026-monitoring-program] }
 # Nauck 1993 (n = 10) was removed as a structured study by the fact-checker: PubMed/NLM index it as a
 # "Controlled Clinical Trial", not an RCT, and no vocabulary value fits a small placebo-controlled
@@ -101,6 +119,63 @@ authorised_products:
     route: oral
     label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
     label_source: ema-epar-wegovy
+  # ---- US, UK, CA and AU products: merged 24 October 2026 from research/refocus/status/semaglutide.yaml (fact-checked).
+  # Every label_url below was re-opened by the merge on 24 October 2026.
+  # United States (Drugs@FDA; all Novo Nordisk Inc.). Ozempic tablets = the Rybelsus 'R2' formulation (1.5, 4, 9 mg),
+  # approved 9 December 2024 and renamed on 30 January 2026; not interchangeable with Rybelsus mg for mg. Wegovy
+  # (injection) includes the FlexTouch pen, the 7.2 mg 'Wegovy HD' pen (19 March 2026) and single-dose syringes (5 May 2026).
+  - { id: ozempic-us, name: Ozempic (injection), holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2017-12-05, route: subcutaneous, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/209637s038lbl.pdf", label_source: fda-label-ozempic }
+  - { id: rybelsus-us, name: Rybelsus, holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2019-09-20, route: oral, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/213051Orig1s030lbl.pdf", label_source: fda-label-rybelsus-ozempic-tablets }
+  - { id: ozempic-tablets-us, name: Ozempic (tablets), holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2024-12-09, route: oral, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/213051Orig1s030lbl.pdf", label_source: fda-label-rybelsus-ozempic-tablets }
+  - { id: wegovy-us, name: Wegovy (injection), holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2021-06-04, route: subcutaneous, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf", label_source: fda-label-wegovy }
+  - { id: wegovy-tablets-us, name: Wegovy (tablets), holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2025-12-22, route: oral, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf", label_source: fda-label-wegovy }
+  # United Kingdom (holder Novo Nordisk A/S). Dates are the UK licences' own: Ozempic PLGB 04668/0331 and Rybelsus
+  # PLGB 04668/0420, 'Date of first authorisation: 01 January 2021' (SmPC section 9, read on emc by the research on
+  # 24 October 2026; emc is not on the link allowlist, so it is not linked: research/refocus-notes/merge.md); Wegovy
+  # pens PLGB 04668/0429 to 0433, 24 September 2021, and Wegovy tablets PL 04668/0466, 11 June 2026 (MHRA lists of
+  # granted licences). label_url: the MHRA Products substance page, which lists every UK semaglutide product with its
+  # SmPC and leaflet files.
+  - { id: ozempic-uk, name: Ozempic, holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-01-01, route: subcutaneous, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  - { id: rybelsus-uk, name: Rybelsus, holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-01-01, route: oral, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  - { id: wegovy-uk, name: Wegovy (injection), holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-09-24, route: subcutaneous, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  - { id: wegovy-tablets-uk, name: Wegovy (tablets), holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2026-06-11, route: oral, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  # Canada (holder = the Drug Product Database company; 'authorised' = the Notice of Compliance date in Health Canada's
+  # decision document where one exists, otherwise the monograph's date of authorization, which equals the DPD
+  # 'approved' date). label_url: the product monograph on pdf.hres.ca. Merge check (24 October 2026): the DPD itself
+  # was still down, but its product pages are mirrored on the Drug and Health Product Portal
+  # (dhpp.hpfb-dgpsa.ca/dhpp/resource/<drug code>), which gave the monograph numbers the research could not find; the
+  # three generics now link their monographs instead of their decision summaries, and Poviztra, the two Aspen
+  # products and Sandoz Semaglutide are listed (ca-dhpp-semaglutide-product-pages-2026-10-24). The same pages link
+  # newer monographs for the Novo Nordisk brands than the research had found through archive copies: Ozempic
+  # 00085314 and Rybelsus 00085311 (13 July 2026), Wegovy 00086293 (2 October 2026), Plosbrio 00085721 (6 August
+  # 2026, which adds Ozempic's heart and kidney indications). Every generic's
+  # monograph says its semaglutide is 'Produced by solid-phase synthetic chemistry' (Ozempic, Wegovy, Plosbrio and
+  # Poviztra: recombinant DNA in yeast). Sevmia: decision 25 June 2026 (ca-rds-sevmia-2026); its monograph's 'Date of
+  # Authorization' is 29 June 2026. DHPP status on 24 October 2026: Dr. Reddy's and Apo-Semaglutide 'Marketed';
+  # Poviztra, Sevmia, both Aspen products and Sandoz only 'Approved' (not yet sold). Ozempic, Rybelsus and the Wegovy
+  # multidose pens were marketed, and Plosbrio only approved, in the DPD extract of 5 October 2026 (research).
+  - { id: ozempic-ca, name: Ozempic, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2018-01-04, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085314.PDF", label_source: ca-pm-ozempic-2026-07-13 }
+  - { id: rybelsus-ca, name: Rybelsus, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2020-03-30, route: oral, label_url: "https://pdf.hres.ca/dpd_pm/00085311.PDF", label_source: ca-pm-rybelsus-2026-07-13 }
+  - { id: wegovy-ca, name: Wegovy, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2021-11-23, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00086293.PDF", label_source: ca-pm-wegovy-2026-10-02 }
+  - { id: plosbrio-ca, name: Plosbrio, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2025-12-22, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085721.PDF", label_source: ca-pm-plosbrio-2026-08-06 }
+  - { id: poviztra-ca, name: Poviztra, holder: Novo Nordisk Canada Inc., jurisdiction: CA, authorised: 2025-12-22, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00082882.PDF", label_source: ca-pm-poviztra }
+  - { id: semaglutide-injection-drreddys-ca, name: Semaglutide Injection (Dr. Reddy's), holder: Dr. Reddy's Laboratories Ltd, jurisdiction: CA, authorised: 2026-04-28, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00084444.PDF", label_source: ca-pm-semaglutide-injection-drreddys }
+  - { id: apo-semaglutide-ca, name: Apo-Semaglutide Injection, holder: Apotex Inc., jurisdiction: CA, authorised: 2026-05-01, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00084514.PDF", label_source: ca-pm-apo-semaglutide }
+  - { id: sevmia-ca, name: Sevmia, holder: Apotex Inc., jurisdiction: CA, authorised: 2026-06-25, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085157.PDF", label_source: ca-pm-sevmia }
+  - { id: aspen-semaglutide-ca, name: Aspen-Semaglutide, holder: Aspen Pharmacare Canada Inc., jurisdiction: CA, authorised: 2026-07-17, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085376.PDF", label_source: ca-pm-aspen-semaglutide }
+  - { id: semaglutide-injection-aspen-ca, name: Semaglutide Injection (Aspen), holder: Aspen Pharmacare Canada Inc., jurisdiction: CA, authorised: 2026-08-25, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085867.PDF", label_source: ca-pm-semaglutide-injection-aspen }
+  - { id: sandoz-semaglutide-ca, name: Sandoz Semaglutide, holder: Sandoz Canada Incorporated, jurisdiction: CA, authorised: 2026-09-16, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00086140.PDF", label_source: ca-pm-sandoz-semaglutide }
+  # Australia (holder = the ARTG sponsor; 'authorised' = the ARTG date; label_url = the ARTG entry, which links its
+  # public summary (with the approved indications) and, where the sponsor has published one, the product information;
+  # Rybelsus, Plosbrio and Poviztra link no product information). Merge check (24 October 2026): Plosbrio and Poviztra
+  # (on the ARTG since 23 April 2026) are listed after all, because their ARTG public summaries give their indications
+  # (au-artg-public-summaries-semaglutide-tirzepatide-2026-10-24): Plosbrio has Ozempic's indications, Poviztra
+  # Wegovy's apart from the provisional MASH indication. Why the second brands exist is not stated by the TGA.
+  - { id: ozempic-au, name: Ozempic, holder: Novo Nordisk Pharmaceuticals Pty Ltd, jurisdiction: AU, authorised: 2019-08-28, route: subcutaneous, label_url: "https://www.tga.gov.au/resources/artg/308324", label_source: au-artg-ozempic-308324 }
+  - { id: rybelsus-au, name: Rybelsus, holder: Novo Nordisk Pharmaceuticals Pty Ltd, jurisdiction: AU, authorised: 2022-02-07, route: oral, label_url: "https://www.tga.gov.au/resources/artg/346198", label_source: au-artg-rybelsus-346198 }
+  - { id: wegovy-au, name: Wegovy, holder: Novo Nordisk Pharmaceuticals Pty Ltd, jurisdiction: AU, authorised: 2022-09-01, route: subcutaneous, label_url: "https://www.tga.gov.au/resources/artg/356286", label_source: au-artg-wegovy-356286 }
+  - { id: plosbrio-au, name: Plosbrio, holder: Novo Nordisk Pharmaceuticals Pty Ltd, jurisdiction: AU, authorised: 2026-04-23, route: subcutaneous, label_url: "https://www.tga.gov.au/resources/artg/523180", label_source: au-artg-plosbrio-523180 }
+  - { id: poviztra-au, name: Poviztra, holder: Novo Nordisk Pharmaceuticals Pty Ltd, jurisdiction: AU, authorised: 2026-04-23, route: subcutaneous, label_url: "https://www.tga.gov.au/resources/artg/523110", label_source: au-artg-poviztra-523110 }
 related: []
 last_reviewed: 2026-10-20
 reviewed_by: pending-medical-review

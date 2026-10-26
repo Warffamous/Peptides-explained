@@ -51,8 +51,21 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, bfarm-2010-melanotan-warning, ema-medicines-json] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, fagg-melanotan-warning, ema-medicines-json] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, mhra-2024-foi-melanotan-ii] }
+  # UK re-checked on 23 October 2026 (MHRA substance index: no melanotan entry); CA and AU merged from
+  # research/refocus/status/melanotan-ii.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, mhra-2024-foi-melanotan-ii, uk-mhra-substance-index-status-c-2026-10-23] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-category-2-safety-risks, fda-503a-categories-2026-05, fda-pcac-2027-early-announcement, fr-2016-melanotan-debarment] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23] }
+  # The TGA: 'There are currently no products containing Melanotan II on the Australian Register of Therapeutic Goods
+  # (ARTG) or approved for supply in Australia' (May and August 2026).
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-tga-2026-08-melanotan-ii-safety-alert, au-tga-2026-05-melanotan-ii-infringement-notices, au-artg-search-status-c-2026-10-23]
+    # 'MELANOTAN II.' in Schedule 4 from the June 2018 edition (in force 1 June 2018; absent from March 2018), without
+    # the # mark, so not in Appendix D. An application for Schedule 10 (prohibited) was not followed. Whether Customs
+    # Schedule 8 item 4 ('aphrodisiacs') can reach it is a legal-review question (research/refocus-notes/merge.md).
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2018 (not in Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2018-06, au-poisons-standard-2018-03, au-tga-2018-02-melanotan-ii-interim-decision, au-tga-2018-04-scheduling-final-decisions] }
   # Not named on the 2026 or 2027 Prohibited List (PDFs searched for melanotan, melanocortin, bremelanotide and
   # afamelanotide on 22 October 2026). S0 covers any pharmacological substance not addressed elsewhere on the List
   # 'with no current approval by any governmental regulatory health authority for human therapeutic use'; melanotan II
@@ -99,7 +112,7 @@ studies:
   - { id: hjuler-2014-melanoma, source: hjuler-2014-melanotan-melanoma, year: 2014, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
   - { id: peters-2020-renal-infarction, source: peters-2020-melanotan-renal-infarction, year: 2020, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
   - { id: mallory-2021-priapism, source: mallory-2021-melanotan-priapism, year: 2021, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
-  - { id: eijmael-2022-netherlands, source: eijmael-2022-barbie-drug, year: 2022, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
+  - { id: eijmael-2022-sympathomimetic, source: eijmael-2022-barbie-drug, year: 2022, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
   - { id: yassin-alsabbagh-2025-oral-melanoma, source: yassin-alsabbagh-2025-oral-melanoma, year: 2025, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
   - { id: vadner-2026-melanomas-in-situ, source: vadner-2026-five-melanomas, year: 2026, species: human, n: 1, design: case-report, funding: undisclosed, group: independent, blinded: false, controlled: false }
   # Burian 2019: all eruptive-naevi reports, not only melanotan (179 patients, 41% immunosuppressants,
@@ -107,7 +120,7 @@ studies:
   - { id: burian-2019-eruptive-naevi, source: burian-2019-eruptive-naevi-review, year: 2019, species: human, n: 179, design: systematic-review, funding: undisclosed, group: independent, blinded: null, controlled: false }
   # --- what is in the products
   - { id: breindahl-2015-products, source: breindahl-2015-melanotan-products, year: 2015, species: not-applicable, n: null, design: analytical, funding: undisclosed, group: independent, blinded: null, controlled: null }
-  - { id: deville-2024-belgian-sample, source: deville-2024-barbie-drug-identification, year: 2024, species: not-applicable, n: null, design: analytical, funding: undisclosed, group: independent, blinded: null, controlled: null }
+  - { id: deville-2024-vial-analysis, source: deville-2024-barbie-drug-identification, year: 2024, species: not-applicable, n: null, design: analytical, funding: undisclosed, group: independent, blinded: null, controlled: null }
 authorised_products: []
 related: [pt-141, kpv]
 last_reviewed: 2026-10-22

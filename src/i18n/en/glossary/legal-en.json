@@ -1,0 +1,268 @@
+{
+  "health-canada": {
+    "term": "Health Canada",
+    "aliases": [],
+    "definition": "Canada's federal health department. It decides which medicines may be sold in Canada, checks their safety and acts against illegal sales.",
+    "category": "regulation",
+    "see_also": ["food-and-drugs-act", "din", "notice-of-compliance"]
+  },
+  "food-and-drugs-act": {
+    "term": "Food and Drugs Act",
+    "aliases": ["Canadian Food and Drugs Act"],
+    "definition": "Canada's main federal law on food, medicines, cosmetics and medical devices. It says what counts as a drug and what may be sold and advertised.",
+    "category": "law",
+    "see_also": ["food-and-drug-regulations", "health-canada"]
+  },
+  "food-and-drug-regulations": {
+    "term": "Food and Drug Regulations",
+    "aliases": [],
+    "definition": "The detailed rules made under Canada's Food and Drugs Act. They set out, for example, when a new drug may be sold and when it needs a DIN.",
+    "category": "law",
+    "see_also": ["food-and-drugs-act", "notice-of-compliance", "din"]
+  },
+  "din": {
+    "term": "Drug Identification Number",
+    "aliases": ["DIN", "DINs", "Drug Identification Numbers"],
+    "definition": "An eight-digit number that Health Canada gives a drug it has authorised. It is printed on the label, and you can look it up in the Drug Product Database.",
+    "category": "regulation",
+    "see_also": ["drug-product-database", "health-canada"]
+  },
+  "notice-of-compliance": {
+    "term": "notice of compliance",
+    "aliases": ["NOC", "notices of compliance"],
+    "definition": "Health Canada's approval of a new drug. Nobody may sell or advertise a new drug in Canada until Health Canada has issued one.",
+    "category": "regulation",
+    "see_also": ["din", "food-and-drug-regulations"]
+  },
+  "prescription-drug-list": {
+    "term": "Prescription Drug List",
+    "aliases": [],
+    "definition": "Health Canada's list of medicinal ingredients. A medicine that contains an ingredient on the list is a prescription drug in Canada, unless the list says otherwise.",
+    "category": "regulation",
+    "see_also": ["prescription-only-medicine", "health-canada"]
+  },
+  "drug-product-database": {
+    "term": "Drug Product Database",
+    "aliases": [],
+    "definition": "Health Canada's online list of drugs authorised in Canada, including ones that are no longer sold. You can search it by name or by DIN.",
+    "category": "regulation",
+    "see_also": ["din"]
+  },
+  "special-access-program": {
+    "term": "Special Access Program",
+    "aliases": ["Special Access Programme"],
+    "definition": "A Health Canada route that lets a doctor ask for a drug not sold in Canada, for a patient with a serious or life-threatening condition when usual treatments have failed or do not suit. The company that makes the drug decides whether to supply it.",
+    "category": "regulation",
+    "see_also": ["expanded-access", "health-canada"]
+  },
+  "natural-health-product": {
+    "term": "natural health product",
+    "aliases": ["natural health products"],
+    "definition": "In Canada, a group of health products such as vitamins, minerals and herbal remedies. Each needs its own product licence. Nothing given by injection can be a natural health product.",
+    "category": "regulation",
+    "see_also": ["health-canada"]
+  },
+  "canada-vigilance-program": {
+    "term": "Canada Vigilance Program",
+    "aliases": ["Canada Vigilance"],
+    "definition": "Health Canada's programme that collects and studies reports of side effects from medicines and other health products after they are on sale.",
+    "category": "regulation",
+    "see_also": ["pharmacovigilance", "health-canada"]
+  },
+  "cbsa": {
+    "term": "Canada Border Services Agency",
+    "aliases": ["CBSA"],
+    "definition": "Canada's border agency. It can hold parcels and goods at the border and pass health products to Health Canada, which decides what happens to them.",
+    "category": "regulation",
+    "see_also": ["health-canada", "personal-importation"]
+  },
+  "type-i-recall": {
+    "term": "Type I recall",
+    "aliases": ["Type I recalls"],
+    "definition": "Health Canada's most serious kind of recall. It is used when there is a reasonable chance that using the product will cause serious harm or death.",
+    "category": "safety",
+    "see_also": ["health-canada"]
+  },
+  "sport-integrity-canada": {
+    "term": "Sport Integrity Canada",
+    "aliases": ["Canadian Centre for Ethics in Sport", "CCES"],
+    "definition": "The body that runs the Canadian Anti-Doping Program. It used to be called the Canadian Centre for Ethics in Sport (CCES).",
+    "category": "sport",
+    "see_also": ["nado", "wada"]
+  },
+  "tga": {
+    "term": "Therapeutic Goods Administration",
+    "aliases": ["TGA"],
+    "definition": "Australia's national medicines regulator. It decides which therapeutic goods may be supplied in Australia, checks their safety and acts against illegal supply and advertising.",
+    "category": "regulation",
+    "see_also": ["artg", "therapeutic-goods-act"]
+  },
+  "therapeutic-goods-act": {
+    "term": "Therapeutic Goods Act 1989",
+    "aliases": ["Therapeutic Goods Act"],
+    "definition": "Australia's main national law on medicines and other therapeutic goods. It covers who may import, make, supply and advertise them.",
+    "category": "law",
+    "see_also": ["tga", "therapeutic-good", "artg"]
+  },
+  "therapeutic-good": {
+    "term": "therapeutic good",
+    "aliases": ["therapeutic goods"],
+    "definition": "In Australian law, a product for a health purpose, such as treating a disease or changing how the body works. Medicines are one kind of therapeutic good.",
+    "category": "law",
+    "see_also": ["therapeutic-goods-act", "artg"]
+  },
+  "artg": {
+    "term": "Australian Register of Therapeutic Goods",
+    "aliases": ["ARTG"],
+    "definition": "The TGA's public list of the therapeutic goods that can be legally supplied in Australia. A product must usually be on it before it is imported, supplied or advertised.",
+    "category": "regulation",
+    "see_also": ["tga", "therapeutic-good"]
+  },
+  "poisons-standard": {
+    "term": "Poisons Standard",
+    "aliases": [],
+    "definition": "Australia's national list that sorts medicines and poisons into schedules, such as Schedule 4 for prescription-only medicines. The states and territories turn it into law.",
+    "category": "law",
+    "see_also": ["schedule-4", "appendix-d"]
+  },
+  "schedule-4": {
+    "term": "Schedule 4",
+    "aliases": ["Schedule 4 medicine", "Schedule 4 medicines", "Schedule 4 poison"],
+    "definition": "In Australia, the group of prescription-only medicines in the Poisons Standard. Being in Schedule 4 does not mean a medicine is approved or available.",
+    "category": "law",
+    "see_also": ["poisons-standard", "prescription-only-medicine"]
+  },
+  "appendix-d": {
+    "term": "Appendix D",
+    "aliases": [],
+    "definition": "A part of Australia's Poisons Standard. One of its lists names medicines that must not be possessed without authority, such as a prescription, under the law of the state or territory.",
+    "category": "law",
+    "see_also": ["poisons-standard", "s4d"]
+  },
+  "s4d": {
+    "term": "S4D",
+    "aliases": [],
+    "definition": "In New South Wales, prescription medicines on a special list that it is an offence to have without a prescription. Many performance and image enhancing drugs are on it.",
+    "category": "law",
+    "see_also": ["schedule-4", "appendix-d"]
+  },
+  "special-access-scheme": {
+    "term": "Special Access Scheme",
+    "aliases": ["SAS"],
+    "definition": "The TGA's routes that let a health practitioner supply an unapproved therapeutic good to one patient. Depending on the category, the practitioner tells the TGA or must get its approval first.",
+    "category": "regulation",
+    "see_also": ["authorised-prescriber", "tga"]
+  },
+  "authorised-prescriber": {
+    "term": "Authorised Prescriber",
+    "aliases": ["Authorised Prescribers", "Authorised Prescriber scheme"],
+    "definition": "In Australia, a doctor whom the TGA allows to prescribe a particular unapproved medicine to a group of patients, usually with the support of an ethics committee or a specialist college.",
+    "category": "regulation",
+    "see_also": ["special-access-scheme", "tga"]
+  },
+  "personal-importation-scheme": {
+    "term": "Personal Importation Scheme",
+    "aliases": [],
+    "definition": "The Australian rules that let you import some unapproved medicines for yourself or close family, in limited amounts. A prescription-only medicine also needs a written authority from an Australian doctor.",
+    "category": "law",
+    "see_also": ["personal-importation", "tga"]
+  },
+  "infringement-notice": {
+    "term": "infringement notice",
+    "aliases": ["infringement notices"],
+    "definition": "A fine that a regulator such as the TGA can give for a breach of the law. If it is paid, the case does not go to court.",
+    "category": "law",
+    "see_also": ["penalty-unit"]
+  },
+  "penalty-unit": {
+    "term": "penalty unit",
+    "aliases": ["penalty units"],
+    "definition": "A fixed amount of money that Australian laws use to set fines. Each government sets its own value, and the value changes over time.",
+    "category": "law",
+    "see_also": ["infringement-notice"]
+  },
+  "ahpra": {
+    "term": "Ahpra",
+    "aliases": ["Australian Health Practitioner Regulation Agency"],
+    "definition": "The Australian body that registers doctors, nurses, pharmacists and other health practitioners, and deals with concerns about them.",
+    "category": "regulation",
+    "see_also": ["tga"]
+  },
+  "australian-border-force": {
+    "term": "Australian Border Force",
+    "aliases": ["ABF"],
+    "definition": "Australia's border agency. It can stop, seize and destroy goods at the border, including unlawful medicines that the TGA tells it about.",
+    "category": "regulation",
+    "see_also": ["tga", "personal-importation-scheme"]
+  },
+  "sport-integrity-australia": {
+    "term": "Sport Integrity Australia",
+    "aliases": [],
+    "definition": "The national body that runs anti-doping in Australia, set up by a law of 2020.",
+    "category": "sport",
+    "see_also": ["nado", "wada"]
+  },
+  "pieds": {
+    "term": "performance and image enhancing drugs",
+    "aliases": ["performance and image enhancing drug", "PIEDs"],
+    "definition": "Substances people use to build muscle, lose fat, change their looks or do better in sport, such as anabolic steroids, growth hormone and many peptides.",
+    "category": "safety",
+    "see_also": ["anabolic-steroids"]
+  },
+  "hpra": {
+    "term": "Health Products Regulatory Authority",
+    "aliases": ["HPRA", "Irish Medicines Board"],
+    "definition": "Ireland's medicines regulator. It licenses medicines, inspects the companies that make or distribute them and collects reports of side effects. It used to be called the Irish Medicines Board.",
+    "category": "regulation",
+    "see_also": ["medicines-regulator"]
+  },
+  "hse-ireland": {
+    "term": "Health Service Executive",
+    "aliases": ["HSE"],
+    "definition": "Ireland's public health service. Its website explains where to get care and runs services such as needle exchanges.",
+    "category": "regulation",
+    "see_also": ["hpra"]
+  },
+  "medsafe": {
+    "term": "Medsafe",
+    "aliases": [],
+    "definition": "New Zealand's medicines regulator, part of the Ministry of Health. It approves medicines, watches their safety and investigates illegal supply.",
+    "category": "regulation",
+    "see_also": ["medicines-act-1981", "carm"]
+  },
+  "medicines-act-1981": {
+    "term": "Medicines Act 1981",
+    "aliases": [],
+    "definition": "New Zealand's main law on medicines. It says who may sell, supply, import and advertise them, and makes it an offence to have a prescription medicine without a reasonable excuse.",
+    "category": "law",
+    "see_also": ["medsafe", "section-29-nz"]
+  },
+  "section-29-nz": {
+    "term": "section 29 of the Medicines Act",
+    "aliases": [],
+    "definition": "The part of New Zealand's Medicines Act that lets an unapproved medicine be supplied to a doctor, nurse practitioner or pharmacist prescriber to treat a patient in their care.",
+    "category": "law",
+    "see_also": ["medicines-act-1981", "medsafe"]
+  },
+  "carm": {
+    "term": "CARM",
+    "aliases": ["Centre for Adverse Reactions Monitoring"],
+    "definition": "New Zealand's centre for reports of side effects from medicines, part of the New Zealand Pharmacovigilance Centre at the University of Otago. Reports are made online through Medsafe's website.",
+    "category": "regulation",
+    "see_also": ["medsafe", "pharmacovigilance"]
+  },
+  "sport-integrity-commission-nz": {
+    "term": "Sport Integrity Commission Te Kahu Raunui",
+    "aliases": ["Sport Integrity Commission"],
+    "definition": "The body that runs anti-doping in New Zealand. It took over from Drug Free Sport New Zealand on 1 July 2024.",
+    "category": "sport",
+    "see_also": ["nado", "wada"]
+  },
+  "ethics-committee": {
+    "term": "ethics committee",
+    "aliases": ["ethics committees", "research ethics committee", "research ethics board", "institutional review board", "IRB"],
+    "definition": "A group of doctors, other experts and members of the public that checks a study plan before it may start. It asks whether the study is useful and not too risky for the people in it.",
+    "category": "regulation",
+    "see_also": ["clinical-trial", "informed-consent"]
+  }
+}

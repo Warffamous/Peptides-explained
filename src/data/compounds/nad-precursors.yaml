@@ -37,6 +37,17 @@ regulatory:
   # NR chloride: GRAS notice 635 for food use; NAD+: 503A category 1 (pharmacy compounding tolerated under the
   # interim policy while FDA evaluates).
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23, fda-2025-nmn-petition-response, fda-grn-635-nicotinamide-riboside, fda-503a-categories-2026-05] }
+  # UK, CA, AU: merged from research/refocus/status/nad-precursors.yaml (fact-checked 24 October 2026), in the same
+  # sense as the US and EU rows: not authorised as a MEDICINE in the drug sense (lead's decision, 24 October 2026).
+  # Canada: no NR, NMN or NAD+ product has a DIN; oral NR can hold a natural health product licence and an NMN
+  # monograph exists (NHP licences are not drug authorisations); injected or infused products cannot be natural health
+  # products. The CA row's DPD search of 23 October 2026 was confirmed in Health Canada's DPD data extract on
+  # 24 October 2026; the LNHPD (natural health product licences) and NOC could not be re-checked (re-check before publishing). Australia: no registered (AUST R) medicine; oral NR and NMN are permitted ingredients of listed (AUST L)
+  # medicines, which the TGA does not evaluate before listing; NAD+ is not a permitted ingredient. UK: no medicine
+  # licence; NR chloride is an authorised novel food in Great Britain, NMN and NAD+ are not.
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-fsa-gb-novel-96-nr-chloride, uk-fsa-novel-food-register-search-status-d-2026-10-23] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24, ca-nhpid-nmn-monograph, ca-nhpr-schedule-2, ca-hc-recalls-search-status-d-2026-10-23] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-permissible-ingredients-determination-2026-3, au-tga-2025-04-nad-nmn-safety-alert, au-tga-2026-08-nad-nmn-representations-guidance] }
   # unclear (CONTENT-GUIDE §5.1): none of the three is named on the 2026 or 2027 List or Monitoring Program, and
   # whether S0 could reach them is untested, with no anti-doping ruling. Separately, IV infusions or injections of more
   # than 100 mL in 12 hours are prohibited under M2.2 whatever is in them (explained on the page).

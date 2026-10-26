@@ -49,6 +49,16 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23] }
+  # UK, CA, AU: merged from research/refocus/status/hexarelin.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-hexarelin, uk-hmr-2012-reg-46] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-recalls-database] }
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-artg-search-status-b-2026-10-23, au-poisons-standard-2026-10]
+    # '# HEXARELIN.' in Schedule 4 and Appendix D clause 5 item 22 (listed under hexarelin, not the INN examorelin):
+    # first in the June 2015 edition (in force 1 June 2015), absent from February 2015.
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2015. Possessing it without authority, such as a prescription, is illegal (Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02] }
   # Named in S2.2.4 ("GH-releasing peptides (GHRPs) [e.g. alexamorelin, examorelin (hexarelin) ...]").
   - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en] }
 studies:

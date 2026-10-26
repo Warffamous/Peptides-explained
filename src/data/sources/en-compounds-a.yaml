@@ -1,0 +1,44 @@
+# New sources of content group compounds-a (English refocus, 24 October 2026): semaglutide, tirzepatide, retatrutide.
+# Every other source these pages cite is an existing id (src/data/sources/*.yaml). Each entry below was looked up on
+# the accessed date (PubMed records: metadata copied from the record) and says what it is cited for. Notes:
+# research/refocus-notes/compounds-a.md.
+
+drummond-2024-glp1-pregnancy-review:
+  type: review
+  authors: "Drummond RF, Seif KE, Reece EA"
+  title: "Glucagon-like peptide-1 receptor agonist use in pregnancy: a review"
+  container: "American Journal of Obstetrics and Gynecology"
+  year: 2025
+  volume: "232"
+  pages: "17-25"
+  doi: 10.1016/j.ajog.2024.08.024
+  pmid: "39181497"
+  verified: pubmed
+  note: "PubMed record read 24 October 2026 (published online 23 August 2024; issue 232(1), 2025). University of Maryland School of Medicine (maternal-fetal medicine). Narrative review. The abstract says that, with the weight loss on these medicines, many women previously unable to conceive have had unplanned pregnancies while taking them; there are no prospective human studies; and 'We recommend that all patients use contraception to prevent unintended pregnancy while taking glucagon-like peptide-1 receptor agonists.' Cited on the semaglutide page for: weight loss can improve fertility and so raise the chance of an unplanned pregnancy; a US review advises contraception. Replaces the Dutch formulary text (fk-semaglutide) that supported this line before the English refocus."
+
+burson-2026-tirzepatide-lithium:
+  type: article
+  authors: "Burson JR, Leung JG"
+  title: "Lithium toxicity following a change from semaglutide to tirzepatide for weight loss management"
+  container: "The Mental Health Clinician"
+  year: 2026
+  volume: "16"
+  pages: "34-38"
+  doi: 10.9740/mhc.2026.02.034
+  pmid: "41646202"
+  pmcid: PMC12872343
+  verified: pubmed
+  note: "PubMed record read 24 October 2026 (published 3 February 2026; Mayo Clinic, Rochester). Case report: a 23-year-old man with schizoaffective disorder developed lithium toxicity a few days after switching from semaglutide to tirzepatide, with no change in kidney function, hydration or other medicines; managed with intravenous fluids and a lower lithium dose. The authors rate the interaction 'probable' (Drug Interaction Probability Scale), note that no pharmacokinetic study has tested it, and write that 'increased monitoring of lithium levels is warranted' when a GLP-1-modulating medicine is started, changed or switched. Cited on the tirzepatide page, with cotrik-2026-lithium-glp1-review, for the lithium line. Replaces the Dutch formulary text (fk-tirzepatide) that supported it before the English refocus."
+
+cotrik-2026-lithium-glp1-review:
+  type: review
+  authors: "Cotrik E, da Silva AG, Soares JC"
+  title: "Lithium and GLP-1-based therapies in bipolar disorder: an emerging pharmacovigilance signal and monitoring considerations"
+  container: "International Clinical Psychopharmacology"
+  year: 2026
+  volume: "41"
+  pages: "365-370"
+  doi: 10.1097/YIC.0000000000000636
+  pmid: "42542974"
+  verified: pubmed
+  note: "PubMed record read 24 October 2026 (published online 28 July 2026). Narrative review: six distinct reports published since 2025 describe lithium rises or toxicity after starting, switching or increasing a GLP-1 receptor agonist or a dual GIP/GLP-1 agonist; the authors separate an uncontrolled pharmacovigilance signal from plausible mechanisms (delayed stomach emptying, fluid loss, lower lithium clearance after weight loss), none of which fully explains it, and set out monitoring considerations. Cited on the tirzepatide page for: this is an unconfirmed safety signal without a settled mechanism."

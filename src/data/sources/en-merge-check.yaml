@@ -1,0 +1,174 @@
+# Sources added by the independent check of the refocus data merge (24 October 2026; log in
+# research/refocus-notes/merge.md, section 12). Health Canada's Drug Product Database (DPD) was still down, but its
+# product pages are mirrored on the Drug and Health Product Portal (dhpp.hpfb-dgpsa.ca/dhpp/resource/<DPD drug code>),
+# which links each product's monograph on pdf.hres.ca. Every monograph below was downloaded and read (pdftotext) on
+# 24 October 2026: title page, holder, 'Date of Authorization' and section 1 (Indications).
+
+ca-dhpp-semaglutide-product-pages-2026-10-24:
+  type: dataset
+  authors: "Health Canada"
+  title: "Drug and Health Product Portal: product pages for Canadian semaglutide products (DPD drug codes 106683, 107018, 107038, 107181, 107213, 107302, 107355), read 24 October 2026"
+  container: "Drug and Health Product Portal"
+  year: 2026
+  url: https://dhpp.hpfb-dgpsa.ca/dhpp/search
+  accessed: 2026-10-24
+  verified: url
+  note: "Each page https://dhpp.hpfb-dgpsa.ca/dhpp/resource/<code> was read on 24 October 2026 (product name, company, DIN, status, status date, monograph link): 106683 POVIZTRA, Novo Nordisk Canada Inc, DIN 02564106, Approved 2025-12-22, PM 00082882; 107018 SEMAGLUTIDE INJECTION, Dr Reddy's Laboratories Ltd, DIN 02567806, Marketed 2026-05-06, PM 00084444; 107038 APO-SEMAGLUTIDE INJECTION, Apotex Inc, DIN 02568020, Marketed 2026-05-14, PM 00084514 (code 107037, the other strength, timed out); 107181 SEVMIA, Apotex Inc, DIN 02569582, Approved 2026-06-29, PM 00085157; 107213 ASPEN-SEMAGLUTIDE, Aspen Pharmacare Canada Inc., DIN 02569930, Approved 2026-07-17, PM 00085376; 107302 SEMAGLUTIDE INJECTION, Aspen Pharmacare Canada Inc., DIN 02570912, Approved 2026-08-25, PM 00085867; 107355 SANDOZ SEMAGLUTIDE, Sandoz Canada Incorporated, DIN 02571501, Approved 2026-09-16, PM 00086140. These resolve the monograph numbers that research/refocus/status/semaglutide.yaml left UNRESOLVED while the DPD was down."
+
+ca-pm-semaglutide-injection-drreddys:
+  type: label
+  authors: "Dr. Reddy's Laboratories Ltd. (product monograph filed with Health Canada)"
+  title: "Semaglutide Injection — Product Monograph including Patient Medication Information (date of authorization 28 April 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00084444.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by solid-phase synthetic chemistry'; pre-filled pens of 2 mg and 4 mg (1.34 mg/mL); DIN holder Dr. Reddy's Laboratories Ltd.; control number 279513; 'Date of Authorization: 2026-04-28'. Section 1: indicated 'for the once-weekly treatment of adult patients with type 2 diabetes to improve glycemic control', with the same combinations as Ozempic (no cardiovascular or kidney indication). Link found on the DHPP product page for code 107018 (ca-dhpp-semaglutide-product-pages-2026-10-24)."
+
+ca-pm-apo-semaglutide:
+  type: label
+  authors: "Apotex Inc. (product monograph filed with Health Canada)"
+  title: "Apo-Semaglutide Injection — Product Monograph including Patient Medication Information (date of authorization 1 May 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00084514.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by solid-phase synthetic chemistry'; pre-filled pens of 2 mg (0.68 mg/mL) and 4 mg (1.34 mg/mL); control number 290796; 'Date of Authorization: 2026-05-01'. Section 1: once-weekly treatment of adults with type 2 diabetes to improve glycemic control, with the same combinations as Ozempic. Link found on the DHPP product page for code 107038."
+
+ca-pm-sevmia:
+  type: label
+  authors: "Apotex Inc. (product monograph filed with Health Canada)"
+  title: "Sevmia (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 29 June 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085157.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by solid-phase synthetic chemistry'; multi-use pen, 4 mg/pen (1.34 mg/mL); control number 295138; 'Date of Authorization: 2026-06-29' (the Regulatory Decision Summary, ca-rds-sevmia-2026, gives 'Date of Decision: 2026-06-25'). Section 1: chronic weight management in adults with a BMI of 30 or more, or 27 or more with a weight-related comorbidity, and in patients aged 12 to under 18 with obesity and a body weight above 60 kg; and 'to reduce the risk of non-fatal myocardial infarction in adults with established cardiovascular disease and BMI equal to or greater than 27 kg/m2'. No MASH indication (Wegovy has one). Link found on the DHPP product page for code 107181."
+
+ca-pm-poviztra:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Poviztra (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 22 December 2025)"
+  container: "Health Canada Drug Product Database"
+  year: 2025
+  url: https://pdf.hres.ca/dpd_pm/00082882.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by recombinant DNA technology in Saccharomyces cerevisiae'; single-use pens (0.25 to 2.4 mg) and multi-use FlexTouch pens, the same presentations as Wegovy; 'Date of Authorization: 2025-12-22'. Section 1: chronic weight management in adults with a BMI of 30 or more, or 27 or more with a weight-related comorbidity, and in patients aged 12 to under 18 with obesity and a body weight above 60 kg; and to reduce the risk of non-fatal myocardial infarction in adults with established cardiovascular disease and a BMI of 27 or more. No MASH indication. The monograph does not say why a second brand exists (still UNRESOLVED). DHPP product page for code 106683: status 'Approved' (not marketed) since 2025-12-22."
+
+ca-pm-aspen-semaglutide:
+  type: label
+  authors: "Aspen Pharmacare Canada Inc. (product monograph filed with Health Canada)"
+  title: "Aspen-Semaglutide (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 17 July 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085376.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by solid-phase synthetic chemistry'; pre-filled pens of 2 mg and 4 mg (1.34 mg/mL); control number 302993; 'Date of Authorization: 2026-07-17'. Section 1: once-weekly treatment of adults with type 2 diabetes to improve glycemic control, with the same combinations as Ozempic. This resolves the research's open point on whether the Aspen semaglutide is synthetic. DHPP product page for code 107213: status 'Approved' since 2026-07-17."
+
+ca-pm-semaglutide-injection-aspen:
+  type: label
+  authors: "Aspen Pharmacare Canada Inc. (product monograph filed with Health Canada)"
+  title: "Semaglutide Injection (Aspen Pharmacare Canada) — Product Monograph including Patient Medication Information (date of authorization 25 August 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085867.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by solid-phase synthetic chemistry'; pre-filled pens of 2 mg and 4 mg (1.34 mg/mL); control number 293942; 'Date of Authorization: 2026-08-25'. Section 1: once-weekly treatment of adults with type 2 diabetes to improve glycemic control, with the same combinations as Ozempic. DHPP product page for code 107302: status 'Approved' since 2026-08-25."
+
+ca-pm-sandoz-semaglutide:
+  type: label
+  authors: "Sandoz Canada Inc. (product monograph filed with Health Canada)"
+  title: "Sandoz Semaglutide (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 16 September 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00086140.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026. Title page: 'Produced by solid-phase synthetic chemistry'; pre-filled pens of 2 mg and 4 mg (1.34 mg/mL); control number 501551; 'Date of Authorization: 2026-09-16'. Section 1: once-weekly treatment of adults with type 2 diabetes to improve glycemic control, with the same combinations as Ozempic. This resolves the research's open point on whether the Sandoz semaglutide is synthetic. DHPP product page for code 107355: status 'Approved' since 2026-09-16."
+
+au-artg-public-summaries-semaglutide-tirzepatide-2026-10-24:
+  type: dataset
+  authors: "Therapeutic Goods Administration"
+  title: "ARTG public summaries for ARTG 308324 (Ozempic), 346198 (Rybelsus), 356286 (Wegovy), 523180 (Plosbrio), 523110 (Poviztra) and 439430 (Mounjaro KwikPen), produced 25 October 2026 (AEDT)"
+  container: "Australian Register of Therapeutic Goods"
+  year: 2026
+  url: https://www.tga.gov.au/resources/artg
+  accessed: 2026-10-24
+  verified: url
+  note: "Each ARTG entry page (www.tga.gov.au/resources/artg/<id>) links a 'Summary' PDF (www.ebs.tga.gov.au, PrintDetailsPublic), downloaded and read with pdftotext on 24 October 2026 (Amsterdam time). 'Specific Indications': PLOSBRIO 523180 (ARTG start 23/04/2026): adults with insufficiently controlled type 2 diabetes as an adjunct to diet and exercise, as monotherapy when metformin is not tolerated or contraindicated or in addition to other medicines for type 2 diabetes; and 'to reduce the risk of sustained decline of kidney function and to reduce the risk of cardiovascular death in adults with type 2 diabetes and chronic kidney disease' (the same text as Ozempic 308324). POVIZTRA 523110 (ARTG start 23/04/2026): chronic weight management in adults with a BMI of 30 or more, or 27 to under 30 with at least one weight-related comorbidity; adolescents aged 12 and above with obesity and body weight above 60 kg; and reduction of the risk of major adverse cardiovascular events in adults with established cardiovascular disease, a BMI of 27 or more and without established type 1 or type 2 diabetes (the same text as Wegovy 356286 apart from Wegovy's provisionally registered MASH indication, approved by letter of 13 March 2026). RYBELSUS 346198: type 2 diabetes (monotherapy or combination). MOUNJARO KwikPen 439430 (record effective 7/10/2026): type 2 diabetes in adults, and 'in adolescents and children aged 10 years and above weighing 50 kg or more with insufficiently controlled type 2 diabetes mellitus'; chronic weight management in adults (BMI 30 or more, or 27 to under 30 with a weight-related comorbid condition); moderate to severe obstructive sleep apnoea in adults with obesity. Neither Plosbrio nor Poviztra links a product information document, and no summary says why the second brands exist."
+
+# Current monographs of the Canadian brand products. The DHPP product pages (read 24 October 2026) link newer
+# monographs than the ones the research found through Internet Archive copies of DPD pages while the DPD was down
+# (ca-pm-ozempic 00084255, ca-pm-rybelsus 00082994, ca-pm-wegovy 00082777, ca-pm-plosbrio 00082904, ca-pm-mounjaro
+# 00084159, ca-pm-zepbound 00080496). Each newer monograph lists '1 Indications' among its recent major label changes.
+ca-pm-ozempic-2026-07-13:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Ozempic (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 13 July 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085314.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Linked from the DHPP product page for DPD code 96058 (OZEMPIC, DIN 02471469, Marketed since 2018-02-22), read 24 October 2026. Read with pdftotext: 'Produced by recombinant DNA technology in Saccharomyces cerevisiae'; pens of 2, 4 and 8 mg; submission control no. 305296; 'Date of Authorization: 2026-07-13'. Section 1: type 2 diabetes in adults (once weekly; with diet and exercise when metformin is inappropriate, or with metformin, a sulfonylurea, an SGLT2 inhibitor or basal insulin); 'to reduce the risk of major adverse cardiovascular events (cardiovascular death, non-fatal myocardial infarction, or non-fatal stroke) in adults with type 2 diabetes and established cardiovascular disease and/or chronic kidney disease'; and 'to reduce the risk of sustained eGFR decline, end-stage kidney disease, and cardiovascular death in adults with type 2 diabetes and chronic kidney disease'."
+
+ca-pm-rybelsus-2026-07-13:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Rybelsus (semaglutide tablets) — Product Monograph including Patient Medication Information (date of authorization 13 July 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085311.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Linked from the DHPP product page for DPD code 98742 (RYBELSUS, DIN 02497611, Marketed since 2020-04-19), read 24 October 2026. Read with pdftotext: tablets of 3, 7 and 14 mg or 1.5, 4 and 9 mg; control number 305335; 'Date of Authorization: 2026-07-13'. Section 1: type 2 diabetes in adults (monotherapy when metformin is inappropriate, or in combination), and to reduce the risk of major adverse cardiovascular events in adults with type 2 diabetes 'who have established cardiovascular disease or are at high risk for these events'. Not indicated in children."
+
+ca-pm-wegovy-2026-10-02:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Wegovy (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 2 October 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00086293.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Linked from the DHPP product page for DPD code 101773 (WEGOVY, DIN 02528517, Marketed since 2024-04-02), read 24 October 2026. Read with pdftotext: submission control no. 502362; 'Date of Authorization: 2026-10-02'. Section 1 (same three indications as the December 2025 monograph): chronic weight management in adults (BMI 30 or more, or 27 or more with a weight-related comorbidity) and in patients aged 12 to under 18 with obesity and a body weight above 60 kg; to reduce the risk of non-fatal myocardial infarction in adults with established cardiovascular disease and a BMI of 27 or more; and non-cirrhotic MASH with moderate to advanced fibrosis, 'authorized under the NOC/c Policy'."
+
+ca-pm-plosbrio-2026-08-06:
+  type: label
+  authors: "Novo Nordisk Canada Inc. (product monograph filed with Health Canada)"
+  title: "Plosbrio (semaglutide injection) — Product Monograph including Patient Medication Information (date of authorization 6 August 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085721.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Linked from the DHPP product page for DPD code 106679 (PLOSBRIO, DIN 02564068, status Approved since 2025-12-22, so not marketed), read 24 October 2026. Read with pdftotext: submission control no. 503069; 'Date of Authorization: 2026-08-06'. Section 1 now has Ozempic's three indications: type 2 diabetes in adults; reduction of the risk of major adverse cardiovascular events in adults with type 2 diabetes and established cardiovascular disease and/or chronic kidney disease; and reduction of the risk of sustained eGFR decline, end-stage kidney disease and cardiovascular death in adults with type 2 diabetes and chronic kidney disease (the December 2025 monograph, ca-pm-plosbrio, had only the first)."
+
+ca-pm-mounjaro-2026-06-23:
+  type: label
+  authors: "Eli Lilly Canada Inc. (product monograph filed with Health Canada)"
+  title: "Mounjaro and Mounjaro KwikPen (tirzepatide injection) — Product Monograph including Patient Medication Information (date of authorization 23 June 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00085122.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Linked from the DHPP product page for DPD code 102190 (MOUNJARO single-dose pen, DIN 02532891, status Approved since 2022-11-24), read 24 October 2026. Read with pdftotext: one monograph for the single-dose pens, single-dose vials and Mounjaro KwikPen; control number 300244; 'Date of Authorization: 2026-06-23'. Section 1: type 2 diabetes in adults (monotherapy when metformin is inappropriate, or in combination) and 'Pediatric patients aged 10 to less than 18 years with type 2 diabetes mellitus in combination with: metformin, or basal insulin with or without metformin'. This is the revision after the June 2026 paediatric decision that the research could not find (ca-rds-mounjaro-paediatric-2026)."
+
+ca-pm-zepbound-2026-06-11:
+  type: label
+  authors: "Eli Lilly Canada Inc. (product monograph filed with Health Canada)"
+  title: "Zepbound (tirzepatide injection) KwikPen — Product Monograph including Patient Medication Information (date of authorization 11 June 2026)"
+  container: "Health Canada Drug Product Database"
+  year: 2026
+  url: https://pdf.hres.ca/dpd_pm/00084997.PDF
+  accessed: 2026-10-24
+  verified: url
+  note: "Linked from the DHPP product pages for DPD codes 106082 and 106083 (ZEPBOUND, DINs 02557509 and 02557517, Marketed, status date 2026-02-12), read 24 October 2026. Read with pdftotext: multi-dose prefilled pen (KwikPen); control number 299409; 'Date of Authorization: 2026-06-11'. Section 1: chronic weight management in adults with a BMI of 30 or more, or 27 to under 30 with at least one weight-related comorbid condition; and, new since the May 2025 monograph (ca-pm-zepbound), 'to treat moderate to severe obstructive sleep apnea (OSA) in adults with obesity (BMI 30 kg/m2 or greater)'. No paediatric indication."

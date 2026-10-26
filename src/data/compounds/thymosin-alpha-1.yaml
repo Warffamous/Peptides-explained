@@ -8,7 +8,9 @@ status: stub
 # checked 22 October 2026 but aifa.gov.it is not on the allowlist), India and Hong Kong (FDA 2024
 # briefing, citing CDSCO and the Hong Kong Drug Office); the maker reports more countries, which the FDA
 # could not verify. It is not authorised centrally in the EU (EMA medicines data), in the Netherlands
-# (CBG) or in the US (openFDA). No UK row: the MHRA products search was not settled (research/stubs-a.md).
+# (CBG) or in the US (openFDA). UK, Canada and Australia: not authorised (rows merged 24 October 2026 from
+# research/refocus/status/thymosin-alpha-1.yaml, whose fact-check settled the MHRA search: quoted searches for
+# thymalfasin, Zadaxin and thymosin return no results; the earlier unquoted hits were fuzzy matches).
 # 'authorised' needs an official label from a regulator the site tracks (a row authorised or
 # discontinued, and a product), which does not exist: Italy, India and Hong Kong are not tracked
 # jurisdictions, so they are named in national_authorisations.
@@ -55,6 +57,13 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-json, ema-orphan-thymalfasin-eu-3-02-110, fda-pcac-2024-thymosin-alpha-1-briefing] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-thymosin-alpha-1-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, openfda-drugsfda-search-2026-10-22] }
+  # UK, CA, AU: merged from research/refocus/status/thymosin-alpha-1.yaml (fact-checked 24 October 2026). Canada:
+  # Health Canada authorised one sepsis trial of Zadaxin in 2014 (no Canadian site, still 'not yet recruiting'), which
+  # does not make the row investigational. The CA row's DPD search of 23 October 2026 was confirmed in
+  # Health Canada's DPD data extract on 24 October 2026; the NOC could not be re-checked (research/refocus-notes/merge.md). Not named in the Poisons Standard (only thymosin beta-4 is).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-hmr-2012-reg-46] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24, ca-pdl-human, ca-hc-recalls-search-status-d-2026-10-23] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, au-poisons-standard-2026-10] }
   # unclear: not named on the 2026 or 2027 List, and authorised in several countries, so S0 (no
   # approval by any health authority) does not obviously apply; whether another section covers it is
   # not stated, and no anti-doping body has ruled in a source we could find (research/stubs-a.md).

@@ -56,8 +56,16 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, fda-pcac-2024-cjc1295-briefing, de-antidopg-anlage, euctr-2005-003797-25] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2024-cjc1295-briefing] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, fda-pcac-2024-cjc1295-briefing] }
+  # UK re-checked on 23 October 2026 (MHRA Products: no results); CA and AU merged from
+  # research/refocus/status/cjc-1295.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2024-cjc1295-briefing, mhra-products-search-cjc-1295-ipamorelin] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-cjc1295-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, fda-503a-categories-2026-05, federalregister-cjc1295-search-2026-10-22] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-2026-04-think-twice-peptides, fda-pcac-2024-cjc1295-briefing] }
+  # AU: no schedule field (lead's decision, 24 October 2026). The Poisons Standard lists '# CJC-1295 (CAS No.
+  # 863288-34-0)' in Schedule 4 and Appendix D, but that CAS number is the form WITHOUT DAC; whether the DAC molecule
+  # graded here is caught as a derivative or by the GHRH group entry is our reading, a legal-review question
+  # (research/refocus-notes/merge.md).
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-b-2026-10-23, au-tga-2026-04-peptide-responsibilities, fda-pcac-2024-cjc1295-briefing] }
   # Named as an example under GH releasing factors since the 2015 List; WADA said the named examples
   # were already prohibited under earlier Lists, so the start date of the prohibition is not given.
   - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2015-list-en, wada-2015-list-modifications] }

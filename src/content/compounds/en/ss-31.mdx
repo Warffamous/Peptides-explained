@@ -1,12 +1,12 @@
 ---
 slug: ss-31
 title: "SS-31 (elamipretide)"
-description: "SS-31 (elamipretide) is a US medicine for Barth syndrome, approved on limited evidence; not in the EU. What it is, what trials show, its risks, why online vials differ."
+description: "SS-31 (elamipretide) is a US medicine for Barth syndrome, approved on limited evidence, not in the UK, Canada or Australia. Trials, risks, and why online vials differ."
 summary:
   - "SS-31 is a lab-made chain of four amino acids. Its medicine name is elamipretide."
   - "Since 2025 it is a US prescription medicine for Barth syndrome, a rare muscle and heart disease."
   - "The approval is conditional. It rests on 12 patients, and a new trial must confirm the benefit."
-  - "In bigger trials for other diseases it did not help. It is not approved in the EU."
+  - "Bigger trials in other diseases found no help. It is not approved in the UK, Canada or Australia."
   - "A vial sold online as 'SS-31' is not the approved medicine. No regulator has checked it."
 lede: "A US medicine for one rare muscle disease. Online vials sold as SS-31 are a different product."
 glance:
@@ -37,9 +37,10 @@ glance:
     - label: "How it is taken"
       value: "Injection under the skin, once a day"
       sources: [fda-label-forzinity-2025]
+    # The country and year are in the derived "Approved in" row; this row gives the approved use only.
     - label: "Approved for"
-      value: "Barth syndrome, in the US, since 2025"
-      sources: [fda-drugsatfda-forzinity, fda-label-forzinity-2025]
+      value: "Barth syndrome, in people weighing at least 30 kg"
+      sources: [fda-label-forzinity-2025, fda-2025-forzinity-approval-letter]
     - label: "Type of approval"
       value: "Accelerated: the benefit still has to be confirmed"
       sources: [fda-2025-forzinity-approval-letter]
@@ -87,9 +88,10 @@ studies:
     finding: "In 218 adults with primary mitochondrial myopathy, 24 weeks of daily injections did not improve walking distance (difference −3.2 m) or tiredness compared with placebo; it was mostly well tolerated."
     limitation: "A different disease from Barth syndrome; developer-funded."
 regulatory_notes:
-  EU: "Not authorised. EU orphan designations only (2021, 2022); no application under evaluation in October 2026."
-  NL: "Not authorised. Supplying a medicine without a marketing authorisation is prohibited, with narrow exceptions."
   US: "FDA accelerated approval as Forzinity on 19 September 2025, for Barth syndrome (30 kg or more). A confirmatory trial is required."
+  UK: "No UK licence. In trials: one in Barth syndrome is recruiting in the UK; one in an eye disease no longer recruits."
+  CA: "No product has a Drug Identification Number (DIN). Health Canada authorised a Barth syndrome trial, recruiting in Calgary."
+  AU: "Not in the Australian Register of Therapeutic Goods (ARTG), and no trial is open. Not named in the Poisons Standard."
   WADA: "Unclear: not named on the 2026 or 2027 List. As an FDA-approved medicine it falls outside S0, but other classes may apply. No ruling found."
 indications:
   forzinity: "To improve muscle strength in adults and children with Barth syndrome who weigh at least 30 kg. Accelerated approval: continued approval may depend on a confirmatory trial."
@@ -98,14 +100,14 @@ indications:
 
 <Lead question="What is SS-31?">A tiny lab-made peptide aimed at mitochondria. In the US it is a medicine for one rare disease.</Lead>
 
-<Compare title="The US medicine and an online 'SS-31' vial share a name, not a guarantee." detail="What is known about each, from the FDA label and FDA enforcement letters, checked on 23 October 2026.">
+<Compare title="The US medicine and an online 'SS-31' vial share a name, not a guarantee." detail="What is known about each, from the FDA label, regulators' warnings and medicine registers, checked on 23 October 2026.">
 
 | | Forzinity (elamipretide), US prescription medicine | Vial sold online as "SS-31" |
 |---|---|---|
 | Checked by a regulator? | <Verdict is="yes" /> Approved by the FDA in 2025, under accelerated approval.<Cite id="fda-drugsatfda-forzinity" /> | <Verdict is="no" /> The FDA has warned sellers offering SS-31 "for research" that these are unapproved drugs.<Cite id="fda-warning-letters-index" /> |
 | Contents and strength stated and checked? | <Verdict is="yes" /> The label states what each vial contains.<Cite id="fda-label-forzinity-2025" /> | <Verdict is="unknown" /> No regulator has checked it.<Cite id="fda-warning-letters-index" /> |
 | Made sterile? | <Verdict is="yes" /> A sterile liquid with a preservative.<Cite id="fda-label-forzinity-2025" /> | <Verdict is="unknown" /> Not known. |
-| Approved for any use in the EU? | <Verdict is="no" /> No EU authorisation.<Cite id="ema-medicines-json" /> | <Verdict is="no" /> No. |
+| Approved in the UK, Canada or Australia? | <Verdict is="no" /> No. It is being tested in trials in the UK and Canada.<Cite id="mhra-products-search-status-d-2026-10-23,ca-dpd-search-canada-legal-2026-10-23,au-artg-search-status-d-2026-10-23,ctgov-nct07531251" /> | <Verdict is="no" /> No. Health Canada has seized vials sold as SS-31.<Cite id="ca-hc-recalls-search-status-d-2026-10-23,ca-hc-2026-04-think-twice-peptides" /> |
 
 </Compare>
 
@@ -167,7 +169,22 @@ Every clinical trial we found was funded by Stealth BioTherapeutics; in the Bart
 
 <Section id="regulatory">
 
-<Lead question="Is it legal?">A prescription medicine in the US since 2025. Not approved in the EU or the Netherlands.</Lead>
+<Lead question="Is it legal?">Yes in the US, on prescription, since 2025. Not approved in the UK, Canada or Australia.</Lead>
+
+<Compare title="Approved only in the US. The UK and Canada are testing it in trials." detail="Status in the United States, the United Kingdom, Canada and Australia, checked on 23 October 2026.">
+
+| | Approved as a medicine? | Being tested there in a trial? |
+|---|---|---|
+| United States | <Verdict is="yes" /> Since 19 September 2025, as Forzinity, for Barth syndrome. Prescription only.<Cite id="fda-drugsatfda-forzinity,fda-2025-forzinity-approval-letter" /> | <Verdict is="yes" /> ClinicalTrials.gov listed three open trials with a US site on 23 October 2026.<Cite id="ctgov-us-uk-peptide-search-2026-10-23" /> |
+| United Kingdom | <Verdict is="no" /> No UK licence.<Cite id="mhra-products-search-status-d-2026-10-23" /> | <Verdict is="yes" /> A Barth syndrome trial is recruiting. An eye-disease trial has UK sites but no longer recruits.<Cite id="ctgov-nct07531251,ctgov-nct06373731" /> |
+| Canada | <Verdict is="no" /> Health Canada has not authorised it.<Cite id="ca-dpd-search-canada-legal-2026-10-23,ca-dpd-extract-search-merge-2026-10-24" /> | <Verdict is="yes" /> Health Canada authorised a Barth syndrome trial. It is recruiting in Calgary.<Cite id="ca-hc-ctdb-search-status-d-2026-10-24,ctgov-nct07531251" /> |
+| Australia | <Verdict is="no" /> Not in Australia's register of therapeutic goods (ARTG).<Cite id="au-artg-search-status-d-2026-10-23" /> | <Verdict is="no" /> No trial is open. The last one there ended in December 2024.<Cite id="ctgov-nct05162768,ctgov-search-status-d-2026-10-23" /> |
+
+</Compare>
+
+In sport its status is unclear everywhere. It is not named on the list. Ask your anti-doping organisation.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note" />
+
+<InDetail title="How the US approval happened, and what is still due">
 
 <TimeStrip title="The FDA said not yet in May 2025, then yes in September. Proof of benefit is still due." detail="The US approval of Forzinity, from application to the required confirmatory trial." min={2024} max={2030} step={1} axis="Year" source="fda-2025-forzinity-approval-letter,fda-drugsatfda-forzinity,ctgov-nct07531251" checked="2026-10-23" rows={[
   { label: "FDA review until the first answer (not approved yet)", spans: [{ from: "2024-01-29", to: "2025-05-15", text: "29 January 2024 to 15 May 2025" }] },
@@ -175,13 +192,25 @@ Every clinical trial we found was funded by Stealth BioTherapeutics; in the Bart
   { label: "Confirmatory trial (48 patients)", spans: [{ from: "2026-07-02", to: "2026-10-23", text: "recruiting since July 2026" }, { from: "2026-10-23", to: "2029-09-30", text: "the outcome; main results planned for late 2029", unknown: true }] },
 ]} />
 
+</InDetail>
+
 <InDetail title="Status in each country, and in sport">
 
 <RegulatoryTable />
 
-Statuses were checked on 23 October 2026. In the EU, elamipretide has orphan designations for Barth syndrome (2021) and a mitochondrial DNA disease (2022). That status supports development; it is not permission to sell.<Cite id="ema-orphan-elamipretide-eu-3-21-2430" /> No EU application was under evaluation in October 2026.<Cite id="ema-under-evaluation-2026-10" /> The Dutch medicines database lists no product, and Dutch law forbids supplying a medicine without a marketing authorisation, with narrow exceptions.<Cite id="cbg-geneesmiddeleninformatiebank,nl-gmw-art-40-handelsvergunning" />
+Statuses were checked on 23 October 2026.
 
 In sport, elamipretide is not named on the 2026 or 2027 Prohibited List or the Monitoring Program. The S0 class covers only substances that no government health authority has approved, and the FDA has now approved it. But WADA says an unnamed peptide may also fall under other classes, and no anti-doping body has ruled on elamipretide. Athletes should ask their anti-doping organisation.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,wada-2026-monitoring-program,wada-2027-monitoring-program" />
+
+</InDetail>
+
+<InDetail title="The UK, Canada and Australia">
+
+- **United Kingdom.** The MHRA's database of licensed medicines has no elamipretide product, and we found no MHRA decision or alert about it.<Cite id="mhra-products-search-status-d-2026-10-23,uk-govuk-search-status-d-2026-10-23" /> Two trials have UK sites: the Barth syndrome trial meant to confirm the US approval, recruiting in Bristol, and a trial in dry age-related macular degeneration, an eye disease, which no longer recruits.<Cite id="ctgov-nct07531251,ctgov-nct06373731,ctgov-search-status-d-2026-10-23" /> These facts come from the trial registry; we did not check the UK's own trial approvals. It is not a controlled drug under the Misuse of Drugs Act.<Cite id="uk-mda-1971-sch-2" />
+- **Canada.** No elamipretide product has a Drug Identification Number (DIN), the number every authorised drug carries.<Cite id="ca-dpd-search-canada-legal-2026-10-23,ca-dpd-extract-search-merge-2026-10-24" /> Health Canada authorised the Barth syndrome trial on 19 March 2026, and it is recruiting in Calgary. An earlier trial in a mitochondrial muscle disease, MMPOWER-3, had Canadian sites and ended in 2020.<Cite id="ca-hc-ctdb-search-status-d-2026-10-24,ctgov-nct07531251,ctgov-nct03323749" /> Health Canada has also named "SS-31" among unauthorised injectable peptides it seized from sellers, in 2025 and in its April 2026 warning about peptides bought online.<Cite id="ca-hc-recalls-search-status-d-2026-10-23,ca-hc-2026-04-think-twice-peptides" />
+- **Australia.** Elamipretide is not in the Australian Register of Therapeutic Goods (ARTG), and no page of the regulator, the TGA, names it. The Poisons Standard does not name it either.<Cite id="au-artg-search-status-d-2026-10-23,au-tga-search-status-d-2026-10-23,au-poisons-standard-2026-10" /> The only trial with Australian sites, in Sydney and Victoria, ended in December 2024.<Cite id="ctgov-nct05162768" /> A product that is not in the ARTG may not be imported or supplied unless an exemption applies.<Cite id="au-tg-act-s19b-19d-offences,au-tga-2026-04-peptide-responsibilities" />
+
+More: the law in [the US](/en/legal/us/), [the UK](/en/legal/uk/), [Canada](/en/legal/ca/) and [Australia](/en/legal/au/).
 
 </InDetail>
 
@@ -241,6 +270,14 @@ A doctor can help you decide which checks fit you (see [talking to your doctor](
 - **Any rash that spreads or does not settle**, because allergic reactions can start months later.<Cite id="fda-label-forzinity-2025" />
 
 There are no data in pregnancy or breastfeeding.<Cite id="fda-label-forzinity-2025" /> For injecting, see [sterile technique](/en/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legal routes, and reporting a side effect">
+
+In the US, Forzinity is a prescription medicine for Barth syndrome.<Cite id="fda-drugsatfda-forzinity" /> In the UK and Canada, a trial is recruiting people with Barth syndrome; your doctor can ask the trial team whether it fits.<Cite id="ctgov-nct07531251,ca-hc-ctdb-search-status-d-2026-10-24" /> The [treatment routes](/en/legal-routes/) page explains the legal ways to get a medicine in the US, the UK, Canada and Australia, and what each one needs: [a prescription](/en/legal-routes/#prescription), [off-label use](/en/legal-routes/#off-label), [US pharmacy compounding](/en/legal-routes/#us-compounding), [UK "specials"](/en/legal-routes/#uk-specials), [Canada's Special Access Program](/en/legal-routes/#canada-special-access), [Australia's Special Access Scheme](/en/legal-routes/#australia-sas), [importing for yourself](/en/legal-routes/#personal-import) and [clinical trials](/en/legal-routes/#trials).
+
+You can report a side effect yourself: to [FDA MedWatch](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program) in the US, the [Yellow Card scheme](https://yellowcard.mhra.gov.uk/) in the UK, Health Canada's [Canada Vigilance Program](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html) or the [TGA](https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem) in Australia.<Cite id="fda-medwatch,mhra-yellow-card,ca-hc-medeffect-reporting,ca-hc-canada-vigilance,au-tga-report-adverse-event" />
 
 </InDetail>
 

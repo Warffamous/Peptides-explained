@@ -1,14 +1,14 @@
 ---
 slug: tesamorelin
 title: "Tesamorelin"
-description: "Tesamorelin (Egrifta) is a US-approved medicine for belly fat in adults with HIV, not approved in the EU. How it works, what trials show, its risks and its legal status."
+description: "Tesamorelin (Egrifta) is a US prescription medicine for extra belly fat in adults with HIV. How it works, what the trials show, its risks and its legal status."
 summary:
   - "Tesamorelin is a lab-made version of a brain hormone. It makes the body release more growth hormone."
   - "In the US it is a prescription medicine, Egrifta. It treats extra belly fat in adults with HIV."
-  - "It is not approved in the EU or the UK. The EU application was withdrawn in 2012."
+  - "Canada approved it in 2014, but it is no longer sold. Not approved in the UK or Australia."
   - "In trials, deep belly fat shrank by about 15%. It grew back after people stopped."
   - "It can raise blood sugar and IGF-1, a growth signal. Nobody knows what years of use do."
-lede: "A US medicine for belly fat in HIV. Not approved in the EU; not shown to slow ageing."
+lede: "A US prescription medicine for belly fat in HIV, tested in large trials. Not shown to slow ageing."
 glance:
   main_risk: "Can raise blood sugar and IGF-1, a growth signal; long-term effects unknown."
   # "Stop and get help" strip, condensed from this page's stop-now list (harm-reduction section,
@@ -36,11 +36,13 @@ glance:
     - label: "Time in the blood"
       value: "Half-life about 8 to 11 minutes"
       sources: [dailymed-egrifta-sv-label, dailymed-egrifta-wr-label]
+    # The countries come from the derived "Approved in" row (US since 2010; Canada 2014 to 2022); this row
+    # gives the approved use, which is the same in the US and the Canadian labels.
     - label: "Approved for"
-      value: "Extra belly fat in adults with HIV, in the US"
-      sources: [dailymed-egrifta-sv-label, ema-egrifta-withdrawal]
+      value: "Extra belly fat in adults with HIV"
+      sources: [dailymed-egrifta-sv-label, ca-pm-egrifta-2015]
 grade_rationale:
-  human_clinical: "Authorised in the US since 10 November 2010 (Egrifta), on the basis of two randomised, double-blind phase 3 trials in 816 adults with HIV and extra belly fat, each with a 26-week extension. Not authorised in the EU: the application was withdrawn in 2012."
+  human_clinical: "Authorised in the US since 10 November 2010 (Egrifta), on the basis of two randomised, double-blind phase 3 trials in 816 adults with HIV and extra belly fat, each with a 26-week extension. Canada authorised it on 29 April 2014; it has not been sold there since 30 September 2022."
   preclinical_volume: "Minimal. A PubMed search on 22 October 2026 found 128 records on tesamorelin or TH9507, but only a handful of primary animal or laboratory studies: the developer's non-clinical paper (rats, dogs, pigs), a dog absorption study, two rat studies from Kenya and anti-doping laboratory methods. Most of the regulatory toxicology is known only from the US label."
   independence: "Few groups. The phase 3 trials were run and paid for by the developer, Theratechnologies. Most later trials come from one academic group at Massachusetts General Hospital: NIH-funded, but its senior author was senior author of the phase 3 reports and has been a consultant to the developer, which supplied the drug for its trials and part of the funding for one. Smaller trials come from the universities of Washington, California San Diego and Texas."
   safety: "Partial. About 740 people were treated in the trials, for up to 52 weeks, and the medicine has been on the US market since 2010. But the FDA-required 10-year safety study and 3-year eye trial were stopped in 2018 with no results posted, and the label states that long-term heart safety and the effects of long-term high IGF-1 are not known."
@@ -72,7 +74,8 @@ mechanism:
   - kind: effect
     level: hypothesis
     title: "Better health or slower ageing: not shown"
-    detail: "No published trial has measured heart attacks, strokes, liver failure or deaths as its main result. The EU regulator's committee judged that the fat reduction had not been shown to bring real health benefits."
+    # residue-ok: EMA evidence (the committee's assessment of the same trials, cited as evidence, not as a legal frame)
+    detail: "No published trial has measured heart attacks, strokes, liver failure or deaths as its main result. The medicines committee of the European Medicines Agency judged that the fat reduction had not been shown to bring real health benefits."
 studies:
   ferdinandi-2007-nonclinical:
     finding: "The hexenoyl group protected the peptide from the enzyme DPP-4 and slowed its breakdown in rat, dog and human plasma. Daily injections raised growth hormone and IGF-1 in pigs, rats and dogs. In studies of up to 4 months, dogs showed reversible liver, kidney and blood changes, put down to long exposure to very high growth hormone and IGF-1."
@@ -116,31 +119,32 @@ studies:
   stewart-2026-cognition-pilot:
     finding: "In a placebo-controlled pilot in 22 adults with normal thinking to mild memory problems, 10 weeks of a low dose of tesamorelin did not significantly change thinking, body composition, sleep or fitness."
     limitation: "Very small pilot; low dose that did not raise IGF-1; exploratory machine-learning analyses only."
+# The European notes moved to MANIFEST-compounds-b.md, the manifest of saved text (the rows stay in the data file).
 regulatory_notes:
-  EU: "Application withdrawn on 21 June 2012; the CHMP's provisional view was that it could not be approved. No EU authorisation."
-  NL: "Not authorised. Only possible through a named-patient exemption (artsenverklaring), which the IGJ decides on and can refuse."
-  DE: "Not authorised. AMG § 73(3) lets a pharmacy import a medicine authorised abroad for one person, on prescription, in narrow cases."
-  BE: "Not authorised. Art. 6quater of the 1964 Medicines Act allows narrow named-patient imports on prescription."
-  UK: "Not licensed: the MHRA product database lists no tesamorelin or Egrifta product."
   US: "FDA-approved since 10 Nov 2010 (Egrifta; Egrifta SV since 2019, Egrifta WR since 2025). A biological product since 23 Mar 2020."
+  UK: "Not licensed: the MHRA product database lists no tesamorelin or Egrifta product (also searched as TH9507)."
+  CA: "Approved 29 Apr 2014; the 1 mg vial was sold from 23 Jun 2015. The maker stopped selling it on 30 Sep 2022; not a safety action."
+  AU: "Not on the ARTG; no TGA record of an application. Not named in the Poisons Standard (its GHRH group entry may cover it)."
   WADA: "Prohibited at all times under S2 (growth hormone releasing factors); named in the 2026 and 2027 Lists."
 indications:
   egrifta-sv: "Reducing excess belly fat in adults with HIV and lipodystrophy. Not for weight loss; long-term heart safety not established."
   egrifta-wr: "The same use as Egrifta SV, in a newer formulation approved in March 2025."
+  # Added by the data merge (24 October 2026, research/refocus-notes/merge.md) from the Canadian product monograph.
+  egrifta-ca: "Reducing excess belly fat in adults with HIV and lipodystrophy who have had HIV treatment, when diet and exercise have not worked. Not for weight loss."
 ---
 <Section id="what-it-is">
 
 <Lead question="What is tesamorelin?">A lab-made version of a brain hormone. In the US it is a prescription medicine called Egrifta.</Lead>
 
-<Compare title="Egrifta from a pharmacy and an online vial with the same name are not the same thing." detail="What is known about each, from regulators' documents, checked on 22 October 2026.">
+<Compare title="Egrifta from a pharmacy and an online vial with the same name are not the same thing." detail="What is known about each, from regulators' documents, checked on 22 and 23 October 2026.">
 
 | | Egrifta (US prescription medicine) | A vial sold as "tesamorelin" outside the legal supply chain |
 |---|---|---|
 | Checked by a regulator? | <Verdict is="yes" /> Approved by the FDA since 2010; its label is kept up to date<Cite id="fda-drugsatfda-egrifta,dailymed-egrifta-sv-label" /> | <Verdict is="no" /> In 2026 the FDA warned online sellers that such products are unapproved new drugs<Cite id="fda-warning-letters-index" /> |
-| Approved in the EU or the UK? | <Verdict is="no" /> The EU application was withdrawn in 2012; the UK database lists no product<Cite id="ema-egrifta-withdrawal,mhra-products-search-tesamorelin" /> | <Verdict is="no" /> No regulator has assessed it<Cite id="fda-warning-letters-index" /> |
+| Sold as a medicine in the UK, Canada or Australia? | <Verdict is="no" /> Not approved in the UK or Australia. Canada approved it in 2014, but it has not been sold there since 2022<Cite id="mhra-products-search-tesamorelin,au-artg-search-status-b-2026-10-23,ca-sbd-egrifta" /> | <Verdict is="no" /> No regulator has assessed it<Cite id="fda-warning-letters-index" /> |
 | Contents and sterility known? | <Verdict is="yes" /> A sterile powder of known content, made by the licence holder<Cite id="dailymed-egrifta-sv-label" /> | <Verdict is="unknown" /> Not checked by any regulator<Cite id="fda-warning-letters-index" /> |
 | Official risk information? | <Verdict is="yes" /> A label and leaflet with warnings<Cite id="dailymed-egrifta-sv-label" /> | <Verdict is="no" /> None |
-| Legal to supply in the Netherlands? | <Verdict is="no" /> Not normally; only through a narrow named-patient route<Cite id="igj-leveren-op-artsenverklaring" /> | <Verdict is="no" /> Supplying a medicine without a marketing authorisation is forbidden<Cite id="nl-gmw-art-40-handelsvergunning" /> |
+| Legal to sell? | <Verdict is="yes" /> In the US, from a pharmacy, on prescription<Cite id="dailymed-egrifta-sv-label" /> | <Verdict is="no" /> The FDA calls such products unapproved new drugs, and Health Canada has seized them<Cite id="fda-warning-letters-index,ca-hc-recalls-database" /> |
 
 </Compare>
 
@@ -155,7 +159,7 @@ The FDA approved Egrifta on 10 November 2010 to reduce excess abdominal fat in a
 The label limits the approved use in three ways. Long-term heart safety has not been established; it is not for weight loss, because it does not change body weight; and there are no data that it helps people take their HIV medicines.<Cite id="dailymed-egrifta-sv-label" />
 
 <Callout type="note" title="Why this page looks different">
-Most compounds on this site are experimental. Tesamorelin is authorised in the United States, but not in the EU, the UK or the Netherlands. That makes it an unusual case: a real medicine with known short-term risks for one use in the US, and an unauthorised product in Europe.
+Most compounds on this site are experimental. Tesamorelin is a real medicine, tested in large trials in people and approved in the United States. Canada approved it too, but it has not been sold there since 2022, and it is not approved in the UK or Australia.<Cite id="fda-drugsatfda-egrifta,ca-sbd-egrifta,mhra-products-search-tesamorelin,au-artg-search-status-b-2026-10-23" /> That makes it an unusual case: a medicine with known short-term risks for one use in the US, and a product without a licence in the other countries this site covers.
 </Callout>
 
 </InDetail>
@@ -192,10 +196,11 @@ US law defines a protein as a chain of more than 40 amino acids.<Cite id="ecfr-2
 | 4. Fat breakdown | Growth hormone makes fat cells release stored fat; blood sugar can rise | Human growth-hormone studies |
 | 5. Deep belly fat | Fat around the organs shrinks; fat under the skin hardly changes | Phase 3 trials |
 | 6. The brake | Growth hormone and IGF-1 slow the next burst (feedback) | Human physiology |
-| 7. Health | Fewer heart attacks, longer life, slower ageing | Not tested |
+| 7. Health | Fewer heart attacks, longer life, slower ageing | No trial measured this |
 
 </Diagram>
 
+{/* residue-ok: EMA evidence (the committee's finding that no health benefit was shown supports step 7) */}
 <Cite id="dailymed-egrifta-sv-label,stanley-2011-tesamorelin-gh-pulsatility,falutz-2007-nejm-tesamorelin,moller-2009-gh-metabolism,veldhuis-2001-gh-pulsatility,ema-egrifta-withdrawal" />
 
 Tesamorelin is not known to act on fat directly. It turns up the body's own growth-hormone system. That is why its wanted and unwanted effects look like a milder version of growth hormone's: less deep belly fat, but also fluid retention and higher blood sugar.<Cite id="fda-2010-egrifta-summary-review" />
@@ -329,7 +334,8 @@ The main result has been seen in every trial that measured it. A 2026 meta-analy
 
 As of 22 October 2026, these are specifically unknown:
 
-- **Health benefit.** Whether less visceral fat means fewer heart attacks, strokes, liver failure or deaths. The FDA did not require this evidence, and the EU regulator's committee doubted the benefit was clinically meaningful.<Cite id="fda-2010-egrifta-summary-review,ema-egrifta-withdrawal" />
+{/* residue-ok: EMA evidence (the committee's doubts about the benefit, cited as evidence) */}
+- **Health benefit.** Whether less visceral fat means fewer heart attacks, strokes, liver failure or deaths. The FDA did not require this evidence, and the medicines committee of the European Medicines Agency doubted the benefit was clinically meaningful.<Cite id="fda-2010-egrifta-summary-review,ema-egrifta-withdrawal" />
 - **Long-term heart safety.** The label states that it has not been established.<Cite id="dailymed-egrifta-sv-label" />
 - **Years of high IGF-1.** "The effects of prolonged elevations in IGF-1 levels are unknown", says the label.<Cite id="dailymed-egrifta-sv-label" />
 - **Cancer.** Lifetime cancer studies in rodents were not done. The 10-year safety study whose main outcome was cancer was stopped in 2018 with no results posted.<Cite id="dailymed-egrifta-wr-label,ctgov-nct01579695" />
@@ -346,58 +352,71 @@ As of 22 October 2026, these are specifically unknown:
 
 <Section id="regulatory">
 
-<Lead question="Is it legal?">Approved in the US. Not approved in the EU, the UK or the Netherlands. Banned in sport.</Lead>
+<Lead question="Is it legal?">Approved in the US. No longer sold in Canada. Not approved in the UK or Australia.</Lead>
 
-<Compare title="A prescription medicine in the US, not in the EU. The same trials led to two decisions." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 22 October 2026.">
+<Compare title="A prescription medicine in the US. Canada approved it, but it is no longer sold there." detail="Status in the United States, the United Kingdom, Canada and Australia. US status checked on 22 October 2026, the others on 23 October 2026.">
 
-| | Netherlands and the EU | United States |
-|---|---|---|
-| Approved as a medicine? | <Verdict is="no" /> The EU application was withdrawn on 21 June 2012; the Dutch database lists no product<Cite id="ema-egrifta-withdrawal,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="yes" /> Since 10 November 2010, for extra belly fat in adults with HIV<Cite id="fda-drugsatfda-egrifta,dailymed-egrifta-sv-label" /> |
-| Can a doctor prescribe it? | <Verdict is="no" /> Not normally. A doctor can ask for a named-patient exemption; the IGJ decides and can refuse<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> | <Verdict is="yes" /> On prescription, for the approved use<Cite id="dailymed-egrifta-sv-label" /> |
-| Legal to sell a "research" vial? | <Verdict is="no" /> Supplying a medicine without authorisation is forbidden<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> The FDA calls such products unapproved new drugs<Cite id="fda-warning-letters-index" /> |
-| Allowed in sport? | <Verdict is="no" /> Banned at all times (WADA S2)<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule<Cite id="wada-2026-list-en" /> |
+| | Approved as a medicine? | Sold as a medicine there now? | Legal to sell a "research" vial? |
+|---|---|---|---|
+| United States | <Verdict is="yes" /> Since 10 November 2010, for extra belly fat in adults with HIV<Cite id="fda-drugsatfda-egrifta,dailymed-egrifta-sv-label" /> | <Verdict is="yes" /> On prescription, from a pharmacy, for the approved use<Cite id="dailymed-egrifta-sv-label" /> | <Verdict is="no" /> The FDA calls such products unapproved new drugs<Cite id="fda-warning-letters-index" /> |
+| United Kingdom | <Verdict is="no" /> The MHRA database lists no tesamorelin product<Cite id="mhra-products-search-tesamorelin,mhra-products-search-cjc-1295-ipamorelin" /> | <Verdict is="no" /> No licensed product. A "special" for one patient is a narrow exception<Cite id="uk-hmr-2012-reg-167,mhra-specials-guidance" /> | <Verdict is="no" /> Selling or supplying an unlicensed medicine is not allowed<Cite id="uk-hmr-2012-reg-46" /> |
+| Canada | <Verdict is="yes" /> Approved on 29 April 2014. Not sold since 30 September 2022<Cite id="ca-noc-egrifta,ca-sbd-egrifta,ca-dpd-egrifta-din-02438712" /> | <Verdict is="no" /> No product has a drug identification number (DIN), so no manufacturer may sell one<Cite id="ca-dpd-extract-search-status-b-2026-10-23,ca-food-and-drug-regulations" /> | <Verdict is="no" /> Health Canada has seized products sold as tesamorelin<Cite id="ca-hc-recalls-database" /> |
+| Australia | <Verdict is="no" /> Not on the Australian Register of Therapeutic Goods (ARTG). The regulator, the TGA, has no record of an application<Cite id="au-artg-search-status-b-2026-10-23,au-tga-search-status-b-2026-10-23" /> | <Verdict is="no" /> No product is on the ARTG<Cite id="au-artg-search-status-b-2026-10-23" /> | <Verdict is="no" /> Peptide products must be on the ARTG before they are supplied<Cite id="au-tga-how-we-regulate-peptides" /> |
 
 </Compare>
+
+In sport, tesamorelin is banned at all times under the worldwide anti-doping rules (WADA, section S2).<Cite id="wada-2026-list-en" />
 
 <InDetail title="Status in each country, and in sport">
 
 <RegulatoryTable />
 
-All statuses were checked on 22 October 2026.
+The US and sport statuses were checked on 22 October 2026; the UK, Canadian and Australian statuses on 23 October 2026.
 
 ### Sport (WADA)
 
-The World Anti-Doping Agency's 2026 Prohibited List names tesamorelin under S2.2.4, growth hormone releasing factors, prohibited at all times. The 2027 List, in force from 1 January 2027, still names it.<Cite id="wada-2026-list-en,wada-2027-list-en" /> Anti-doping laboratories have published methods to detect it in urine.<Cite id="memdouh-2021-ghrh-doping-detection" /> In Germany, tesamorelin is also named in the annex of the Anti-Doping Act (Anti-Doping-Gesetz), Germany's law against doping in sport.<Cite id="de-antidopg-anlage" />
+The World Anti-Doping Agency's 2026 Prohibited List names tesamorelin under S2.2.4, growth hormone releasing factors, prohibited at all times. The 2027 List, in force from 1 January 2027, still names it.<Cite id="wada-2026-list-en,wada-2027-list-en" /> Anti-doping laboratories have published methods to detect it in urine.<Cite id="memdouh-2021-ghrh-doping-detection" />
 
 </InDetail>
 
-<InDetail title="Two regulators, the same trials, two answers">
+<InDetail title="Three regulators, the same trials, different answers">
 
 In May 2010 all 16 voting members of the FDA's advisory committee backed approval. Several cited powerful testimonies from patients and the lack of any approved treatment. The FDA approved it, but required long-term studies of cancer, diabetic eye disease, diabetes, allergic reactions and heart events.<Cite id="fda-2010-egrifta-summary-review,fda-2010-egrifta-approval-letter" />
 
-In Europe, the EMA's committee (CHMP) came to the opposite provisional view in 2012. It doubted that a smaller belly-fat area brings real health benefit. It also found the trial patients unlike European patients with HIV, who have a lower BMI and less belly fat. It called the rise in IGF-1 a "major safety concern", because high IGF-1 may be linked to cancer and to worse diabetic eye disease. And it noted that no long-term safety data were provided. The applicant then withdrew.<Cite id="ema-egrifta-withdrawal" />
+{/* residue-ok: EMA evidence (the committee's assessment of the same two trials; not a legal frame for the reader) */}
+The medicines committee of the European Medicines Agency came to the opposite provisional view in 2012, on the same two main trials. It doubted that a smaller belly-fat area brings real health benefit. It also found the trial patients unlike the European patients with HIV it was judging for, who have a lower BMI and less belly fat. It called the rise in IGF-1 a "major safety concern", because high IGF-1 may be linked to cancer and to worse diabetic eye disease. And it noted that no long-term safety data were provided. The applicant then withdrew.<Cite id="ema-egrifta-withdrawal" />
 
-Both positions have a cost. People in Europe with this kind of fat gain cannot get tesamorelin as an authorised medicine; whether that pushes some towards unchecked products has not been measured. Equally, the long-term studies the FDA asked for were stopped in 2018 without posted results, so the European committee's questions are still open.<Cite id="ema-egrifta-withdrawal,ctgov-nct01579695,ctgov-nct01591902" />
+Health Canada struggled with the same questions. Its first decision was negative: in 2013 it found the file did not meet the requirements, because of the balance of benefit and risk, the use it would be approved for and the raised IGF-1. At the company's request, a panel of outside Canadian experts looked at the file again in August 2013. Health Canada then approved it on 29 April 2014, with stricter conditions than in the US: treatment stops if IGF-1 is above 2 standard deviation scores after 26 weeks (the US label uses 3).<Cite id="ca-sbd-egrifta,ca-pm-egrifta-2015" />
+
+{/* residue-ok: EMA evidence (the committee's open questions) */}
+Both positions have a cost. People in the UK and Australia with this kind of fat gain cannot get tesamorelin as an approved medicine, and in Canada it is no longer sold; whether that pushes some towards unchecked products has not been measured.<Cite id="mhra-products-search-tesamorelin,au-artg-search-status-b-2026-10-23,ca-dpd-egrifta-din-02438712" /> Equally, the long-term studies the FDA asked for were stopped in 2018 without posted results, so the European committee's questions are still open.<Cite id="ema-egrifta-withdrawal,ctgov-nct01579695,ctgov-nct01591902" />
 
 </InDetail>
 
-<InDetail title="The Netherlands, Germany, Belgium and the United Kingdom">
-
-### Netherlands
-
-The CBG medicines database lists no tesamorelin or Egrifta product.<Cite id="cbg-geneesmiddeleninformatiebank" /> A medicine without a marketing authorisation may not be sold, supplied or imported, with narrow exceptions.<Cite id="nl-gmw-art-40-handelsvergunning" /> One exception is the named-patient route (artsenverklaring). The doctor signs a statement that the patient cannot be treated with medicines authorised in the Netherlands, for medical reasons, and takes responsibility. A pharmacy or wholesaler then asks the Health and Youth Care Inspectorate (IGJ) for an exemption. The IGJ decides within eight weeks and can refuse.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" />
-
-### Germany
-
-Finished medicines need a German or EU authorisation (AMG § 21); tesamorelin has neither.<Cite id="de-amg-21,ema-medicines-json" /> A pharmacy may import a small amount of a medicine that is authorised in its country of origin for an individual person, if no identical medicine is available in Germany. From outside the EU or the EEA this needs a prescription (AMG § 73(3)).<Cite id="de-amg-73" />
-
-### Belgium
-
-A medicine may be placed on the market only with a Belgian or EU authorisation.<Cite id="be-medicines-law-1964" /> The law allows narrow exceptions, including import by a pharmacist, on prescription, of a medicine authorised in its country of origin when the patient cannot be treated adequately with a medicine on the Belgian market.<Cite id="be-medicines-law-1964-art-6quater" />
+<InDetail title="The UK, Canada and Australia">
 
 ### United Kingdom
 
-The MHRA's product database lists no tesamorelin or Egrifta product.<Cite id="mhra-products-search-tesamorelin" /> Selling or supplying an unauthorised medicine is prohibited.<Cite id="uk-hmr-2012-reg-46" /> An unlicensed medicine can be supplied as a "special" for an individual patient, on the order of a prescriber, to meet clinical needs no licensed medicine can meet.<Cite id="uk-hmr-2012-reg-167,mhra-specials-guidance" />
+The MHRA, the UK medicines regulator, lists no tesamorelin or Egrifta product in its database, also under the code TH9507 (searched 22 and 23 October 2026). No MHRA alert or news item names it.<Cite id="mhra-products-search-tesamorelin,mhra-products-search-cjc-1295-ipamorelin,uk-govuk-search-status-b-2026-10-23" /> Selling or supplying an unauthorised medicine is prohibited.<Cite id="uk-hmr-2012-reg-46" /> An unlicensed medicine can be supplied as a "special" for an individual patient, on the order of a prescriber, to meet clinical needs no licensed medicine can meet.<Cite id="uk-hmr-2012-reg-167,mhra-specials-guidance" /> Tesamorelin is not a controlled drug under the Misuse of Drugs Act.<Cite id="uk-mda-1971-sch-2" />
+
+{/* residue-ok: EMA evidence (history of the only application that would have covered the UK) */}
+Why there is no UK licence: in 2012, when the UK was still in the European Union, the applicant withdrew its request for one licence valid in every member state, after the European Medicines Agency's committee said it could not be approved (see the fold above).<Cite id="ema-egrifta-withdrawal,ie-hpra-licensing-procedures,uk-euwa-2018-s20-exit-day" /> Whether any separate UK application was ever made is not known: the MHRA database lists licences, not applications.<Cite id="mhra-products-search-tesamorelin" />
+
+### Canada
+
+Health Canada approved Egrifta on 29 April 2014 (a 2 mg vial) and a 1 mg vial on 27 March 2015.<Cite id="ca-noc-egrifta,ca-sbd-egrifta" /> Only the 1 mg vial was ever sold, from 23 June 2015. Sales stopped on 30 September 2022, and Health Canada cancelled its drug identification number (DIN) that day; the never-sold 2 mg DIN was cancelled on 13 July 2023.<Cite id="ca-sbd-egrifta,ca-dpd-egrifta-din-02438712,ca-dpd-egrifta-din-02423677" /> Both cancellations followed the company's own notice that it had stopped selling the medicine. They were not a safety action, and Health Canada's database of recalls and safety alerts lists none for Egrifta.<Cite id="ca-sbd-egrifta,ca-food-and-drug-regulations,ca-hc-recalls-database" />
+
+Since 13 July 2023 no tesamorelin product has a DIN in Canada, so no manufacturer may sell one there.<Cite id="ca-dpd-extract-search-status-b-2026-10-23,ca-food-and-drug-regulations" /> Tesamorelin is still on Canada's Prescription Drug List (since 25 April 2014).<Cite id="ca-pdl-human" /> Health Canada has named products sold as "tesamorelin" among unauthorised injectable peptides it seized from sellers, in advisories of 1 August 2025 and 24 December 2025.<Cite id="ca-hc-recalls-database" /> No product sold as "tesamorelin" today has been authorised by Health Canada. Residents of Canada generally may not bring prescription drugs into the country, by hand or by mail.<Cite id="ca-hc-gui-0116-personal-import" />
+
+### Australia
+
+No tesamorelin product is on the Australian Register of Therapeutic Goods (ARTG), and the TGA's website records no Australian registration, evaluation or application (searched 23 October 2026).<Cite id="au-artg-search-status-b-2026-10-23,au-tga-search-status-b-2026-10-23" /> The TGA says peptide products must be on the ARTG before they can be imported, made, supplied or advertised.<Cite id="au-tga-how-we-regulate-peptides" />
+
+The Poisons Standard, Australia's national list of scheduled medicines, does not name tesamorelin. It may be covered, without being named, by the group entry for growth hormone releasing hormones, which is prescription only (Schedule 4) and on the list of medicines that are illegal to possess without authority (Appendix D). That reading has not been confirmed by the TGA or a legal reviewer.<Cite id="au-poisons-standard-2026-10,au-tga-2014-09-scheduling-consultation" /> In the same way, importing growth hormone releasing hormones and their "synthetic analogues" needs written permission, a permit issued through the Office of Drug Control; no official document says whether this covers tesamorelin.<Cite id="au-customs-prohibited-imports-regs,au-odc-growth-hormones-import-permit" /> State and territory laws may add their own rules on sale, supply and possession.<Cite id="au-tga-2026-04-peptide-responsibilities" />
+
+<Callout type="legal" title="US decisions do not apply here">
+Nothing the FDA decides, about approval or about compounding, changes the law in the UK, Canada or Australia.
+</Callout>
 
 </InDetail>
 
@@ -409,7 +428,7 @@ At approval the FDA required two long-term safety studies: a 10-year study compa
 
 Since 23 March 2020 Egrifta has been licensed as a biological product.<Cite id="fda-drugsatfda-egrifta" /> The FDA states that such products are not eligible for the exemptions that let US pharmacies and outsourcing facilities compound medicines.<Cite id="fda-2020-notice-compounders-biologics" /> In 2026 the FDA sent warning letters to online sellers whose products included tesamorelin. The letters say that, despite "research use only" labels, such products are unapproved new drugs.<Cite id="fda-warning-letters-index" />
 
-Tesamorelin was not among the seven peptides that the FDA's Pharmacy Compounding Advisory Committee discussed on 23–24 July 2026.<Cite id="fda-pcac-2026-07-meeting" /> That meeting is covered on the [BPC-157 page](/en/compounds/bpc-157/).
+Tesamorelin was not among the seven peptides that the FDA's Pharmacy Compounding Advisory Committee discussed on 23–24 July 2026.<Cite id="fda-pcac-2026-07-meeting" /> That meeting is covered on the [BPC-157 page](/en/compounds/bpc-157/). A US decision on compounding applies only in the US.
 
 </InDetail>
 
@@ -447,6 +466,7 @@ Tesamorelin raises growth hormone, which the label calls "a known growth factor"
 
 The label adds that people with HIV already have a higher background risk of cancer.<Cite id="dailymed-egrifta-sv-label" /> Standard laboratory tests for damage to genes were negative.<Cite id="dailymed-egrifta-wr-label" /> <Claim level="hypothesis">Such tests look for damage to genes; they are not designed to show whether a growth signal helps an existing tumour grow</Claim>.
 
+{/* residue-ok: EMA evidence (the committee's IGF-1 and eye-disease concern) */}
 **Eyes.** High IGF-1 may worsen diabetic eye disease (retinopathy). The label asks for regular eye checks in people with diabetes.<Cite id="dailymed-egrifta-sv-label,ema-egrifta-withdrawal" />
 
 </InDetail>
@@ -491,7 +511,7 @@ The label's warnings section gives a wider figure for injection-site reactions (
 
 <Lead question="How do I use it safely?">The legal route has the fewest unknowns. Check any other product first, and know when to get help.</Lead>
 
-The authorised medicine is Egrifta, on prescription, in the United States. In the Netherlands a doctor can only request it through the narrow named-patient route.<Cite id="dailymed-egrifta-sv-label,igj-leveren-op-artsenverklaring" /> This section gives no doses: a prescriber decides the dose. A doctor can also check your blood sugar and IGF-1, which matter with this medicine (see [talking to your doctor](/en/talking-to-your-doctor/)).
+The approved medicine is Egrifta, on prescription, in the United States. In Canada it is no longer sold, and in the UK and Australia it is not approved.<Cite id="dailymed-egrifta-sv-label,ca-dpd-egrifta-din-02438712,mhra-products-search-tesamorelin,au-artg-search-status-b-2026-10-23" /> This section gives no doses: a prescriber decides the dose. A doctor can also check your blood sugar and IGF-1, which matter with this medicine (see [talking to your doctor](/en/talking-to-your-doctor/)).
 
 The checks below are for any other product, such as a vial sold online as "tesamorelin".
 
@@ -516,7 +536,9 @@ The checks below are for any other product, such as a vial sold online as "tesam
 
 ### The legal route
 
-In the US, Egrifta is a prescription medicine from a pharmacy, for one approved use.<Cite id="dailymed-egrifta-sv-label" /> In the Netherlands it is not authorised. A doctor who thinks a patient needs it, and that no authorised medicine will do, can sign a named-patient statement (artsenverklaring). A pharmacy then asks the IGJ for an exemption, which can be refused.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> Germany and Belgium have similar narrow routes for medicines authorised abroad.<Cite id="de-amg-73,be-medicines-law-1964-art-6quater" /> See [legal routes](/en/legal-routes/).
+In the US, Egrifta is a medicine you get from a pharmacy with a [prescription](/en/legal-routes/#prescription), for one approved use.<Cite id="dailymed-egrifta-sv-label" /> A doctor may also prescribe an approved medicine for another use ([off-label use](/en/legal-routes/#off-label)), but then the FDA has not judged it safe and effective for that use.<Cite id="fda-off-label-use" /> US pharmacies may not make their own tesamorelin under the [compounding rules](/en/legal-routes/#us-compounding), because it is licensed as a biological product.<Cite id="fda-2020-notice-compounders-biologics" />
+
+In the UK, Canada and Australia no tesamorelin product is approved or sold now.<Cite id="mhra-products-search-tesamorelin,ca-dpd-extract-search-status-b-2026-10-23,au-artg-search-status-b-2026-10-23" /> Our page on [treatment routes](/en/legal-routes/) explains the other legal routes in each country and their limits: [UK "specials"](/en/legal-routes/#uk-specials), [Canada's Special Access Program](/en/legal-routes/#canada-special-access), [Australia's Special Access Scheme](/en/legal-routes/#australia-sas), [importing for yourself](/en/legal-routes/#personal-import) and [clinical trials](/en/legal-routes/#trials). Each has strict conditions, and none turns an unapproved product into an approved one. ClinicalTrials.gov lists no open tesamorelin trial with a site in the UK, Canada or Australia.<Cite id="ctgov-search-status-b-2026-10-23,au-anzctr-search-status-b-2026-10-23" />
 
 ### Why a "research" vial is a different product
 
@@ -558,11 +580,12 @@ A doctor can help you choose which of these fit you:
 
 </Checklist>
 
+{/* residue-ok: EMA evidence (the committee's IGF-1 and eye-disease concern supports the eye check) */}
 <Cite id="dailymed-egrifta-sv-label,moller-2009-gh-metabolism,ema-egrifta-withdrawal" />
 
 ### Report side effects
 
-In the Netherlands you can report a side effect to Lareb, the national centre for side effects.<Cite id="lareb-home" />
+Patients can report a side effect themselves, not only doctors. In the US, report to [FDA MedWatch](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program); in the UK, to the [Yellow Card scheme](https://yellowcard.mhra.gov.uk/); in Canada, to Health Canada's [Canada Vigilance Program](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html); in Australia, to the [TGA](https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem).<Cite id="fda-medwatch,mhra-yellow-card,ca-hc-medeffect-reporting,ca-hc-canada-vigilance,au-tga-report-adverse-event" /> For Ireland and New Zealand, see [our notes page](/en/legal/ireland-and-new-zealand/).
 
 </InDetail>
 

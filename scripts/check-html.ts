@@ -3,6 +3,8 @@
  *  - exactly one <h1>, no skipped heading levels, required landmarks, lang + dir on <html>
  *  - unique ids; every aria-labelledby/aria-describedby/href="#…" target exists
  *  - every internal link resolves to a built file (no 404s inside the site)
+ *  - cross-page anchors: /<locale>/sources/#source-<id> and #image-<id> must exist on the target page
+ *    (errors); any other missing cross-page anchor (glossary terms, another page's sections) is a warning
  *  - images have alt; links and buttons have an accessible name
  *  - no physical-direction inline styles in rendered HTML (RTL backstop for stylelint)
  *  - first-load JavaScript per page ≤ 40 KB gzipped (performance budget)
@@ -32,6 +34,25 @@ const exists = (urlPath: string) => {
   const fsPath = path.join(dist, p);
   return fs.existsSync(fsPath) && (fs.statSync(fsPath).isFile() || fs.existsSync(path.join(fsPath, 'index.html')));
 };
+/** The built file a site path resolves to (a folder URL → its index.html), or null. */
+const fileFor = (urlPath: string) => {
+  const fsPath = path.join(dist, decodeURIComponent(urlPath.split('#')[0].split('?')[0]));
+  if (fs.existsSync(fsPath) && fs.statSync(fsPath).isFile()) return fsPath;
+  const index = path.join(fsPath, 'index.html');
+  return fs.existsSync(index) ? index : null;
+};
+const idCache = new Map<string, Set<string>>();
+const idsOf = (file: string) => {
+  if (!idCache.has(file)) idCache.set(file, new Set(parse(fs.readFileSync(file, 'utf8')).querySelectorAll('[id]').map((el) => el.id)));
+  return idCache.get(file)!;
+};
+/**
+ * Cross-page anchors the reader depends on: a source (/en/sources/#source-<id>) or an image credit
+ * (#image-<id>) that is missing is an error; any other missing cross-page anchor (a glossary term, a
+ * section of another page such as /en/legal-routes/#prescription) is a warning.
+ */
+const CRITICAL_FRAGMENT = /^(?:source|image)-/;
+const crossAnchorWarnings = new Map<string, Set<string>>();
 const gzCache = new Map<string, number>();
 const gz = (p: string) => {
   if (!gzCache.has(p)) gzCache.set(p, zlib.gzipSync(fs.readFileSync(p)).length);
@@ -83,6 +104,14 @@ for (const file of files) {
       if (href.length > 1 && !ids.has(decodeURIComponent(href.slice(1)))) errors.push(`${where}: in-page link ${href} has no target`);
     } else if (href.startsWith('/') && !href.startsWith('//')) {
       if (!exists(href)) errors.push(`${where}: broken internal link ${href}`);
+      else if (href.includes('#')) {
+        const fragment = decodeURIComponent(href.slice(href.indexOf('#') + 1));
+        const target = fileFor(href);
+        if (fragment && target && !idsOf(target).has(fragment)) {
+          if (CRITICAL_FRAGMENT.test(fragment)) errors.push(`${where}: cross-page anchor ${href} has no target (no id="${fragment}" on that page)`);
+          else crossAnchorWarnings.set(href, new Set([...(crossAnchorWarnings.get(href) ?? []), where]));
+        }
+      }
     }
   }
   for (const b of root.querySelectorAll('button')) {
@@ -117,7 +146,12 @@ for (const file of files) {
   if (js > JS_BUDGET) errors.push(`${where}: first-load JS ${(js / 1024).toFixed(1)} KB gz exceeds ${JS_BUDGET / 1024} KB budget`);
 }
 
-for (const w of warnings.slice(0, 20)) console.log(`warn  ${w}`);
+for (const [href, pages] of crossAnchorWarnings) {
+  const list = [...pages];
+  warnings.push(`cross-page anchor ${href} has no target, linked from ${list.length} page(s): ${list.slice(0, 3).join(', ')}${list.length > 3 ? ' …' : ''}`);
+}
+for (const w of warnings.slice(0, 40)) console.log(`warn  ${w}`);
+if (warnings.length > 40) console.log(`warn  … ${warnings.length - 40} more`);
 for (const e of errors.slice(0, 200)) console.error(`error ${e}`);
 console.log(`\ncheck-html: ${files.length} pages · max first-load JS ${(maxJs.bytes / 1024).toFixed(1)} KB gz (${maxJs.page}) · ${errors.length} error(s), ${warnings.length} warning(s)`);
 if (errors.length) process.exit(1);

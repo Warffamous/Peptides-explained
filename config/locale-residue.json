@@ -1,0 +1,73 @@
+{
+  "$comment": "Locale residue check (scripts/lib/residue.ts; run by scripts/validate-content.ts and scripts/check-locale-residue.ts; docs/CONTENT-GUIDE.md §1b). Words that must not reach a locale's readers because they belong to another locale's audience. English refocus (owner, 23 October 2026): the English site is for the US, the UK, Canada and Australia (notes: Ireland, New Zealand); Dutch, Belgian, German and EU reader framing leaves it and is saved for the Dutch site. Levels: error = a term that never belongs on this locale (no marker exempts it; only allowFiles); frame = reader framing (\"in the EU\", \"European Union\", euro amounts) that may stay only as evidence or history, with the marker; warn = a name that may stay as evidence (EU, EMA, EPAR, CHMP, Europe), reported for a look and silenced by the marker. The marker is {/* residue-ok: <why> */} in MDX or # residue-ok: <why> in YAML frontmatter, on the line before the text or at the end of the same line (inside a table row: at the end of the row). While STRICT_RESIDUE (scripts/lib/residue.ts) is false every hit is a warning; then error and frame hits are errors. Patterns are JavaScript regular expressions; flags default to \"iu\" (case-insensitive), \"u\" makes one case-sensitive. allowFiles: pages (paths under src/content/pages/<locale>/, without .mdx) where the listed error/frame patterns are allowed (the publisher line). allowStrings: i18n or data strings (file, key regex) where the listed patterns are allowed; JSON has no comments, so this is the JSON form of the marker. A file that ends in / covers every file in that folder. allowPhrases: proper names that contain a pattern but are not reader framing (a literature database, a company's legal name), skipped in every scan, the built pages included.",
+  "locales": {
+    "en": {
+      "marker": "residue-ok",
+      "patterns": [
+        { "id": "netherlands", "level": "error", "re": "\\bnetherlands\\b", "why": "Dutch reader framing" },
+        { "id": "dutch", "level": "error", "re": "\\bdutch\\b", "why": "Dutch reader framing" },
+        { "id": "nederland", "level": "error", "re": "\\bnederland", "why": "Dutch word" },
+        { "id": "nl", "level": "error", "re": "\\bNL\\b", "flags": "u", "why": "Dutch jurisdiction code" },
+        { "id": "lareb", "level": "error", "re": "\\blareb\\b", "why": "Dutch side-effect centre (English: MedWatch, Yellow Card, Canada Vigilance, TGA)" },
+        { "id": "igj", "level": "error", "re": "\\bIGJ\\b", "flags": "u", "why": "Dutch inspectorate" },
+        { "id": "cbg", "level": "error", "re": "\\bCBG(?:-MEB)?\\b", "flags": "u", "why": "Dutch medicines board" },
+        { "id": "meb", "level": "error", "re": "\\bMEB\\b", "flags": "u", "why": "Dutch medicines board" },
+        { "id": "geneesmiddelen", "level": "error", "re": "geneesmiddelen", "why": "Dutch medicines law or database" },
+        { "id": "huisarts", "level": "error", "re": "huisarts", "why": "Dutch GP service" },
+        { "id": "thuisarts", "level": "error", "re": "thuisarts", "why": "Dutch patient website" },
+        { "id": "knmg-knmp", "level": "error", "re": "\\bKNM[GP]\\b", "why": "Dutch medical or pharmacists' body" },
+        { "id": "nhg", "level": "error", "re": "\\bNHG\\b", "flags": "u", "why": "Dutch GP guidelines body" },
+        { "id": "wgbo", "level": "error", "re": "\\bWGBO\\b", "why": "Dutch patient-rights law" },
+        { "id": "wet-big", "level": "error", "re": "\\bwet big\\b", "why": "Dutch health-professions law" },
+        { "id": "big-register", "level": "error", "re": "\\bBIG[- ]regist", "why": "Dutch register of health professionals" },
+        { "id": "big", "level": "error", "re": "\\bBIG\\b", "flags": "u", "why": "Dutch register of health professionals" },
+        { "id": "artsenverklaring", "level": "error", "re": "artsenverklaring", "why": "Dutch named-patient route" },
+        { "id": "zorg", "level": "error", "re": "\\bzorg\\w*", "why": "Dutch health-care term (Zorginstituut, zorgverzekeraar)" },
+        { "id": "eigen-risico", "level": "error", "re": "\\beigen risico\\b", "why": "Dutch insurance excess" },
+        { "id": "ggd", "level": "error", "re": "\\bGGD\\b", "flags": "u", "why": "Dutch public-health service" },
+        { "id": "rivm", "level": "error", "re": "\\bRIVM\\b", "why": "Dutch public-health institute" },
+        { "id": "nvic", "level": "error", "re": "\\bNVIC\\b", "why": "Dutch poisons centre" },
+        { "id": "seh", "level": "error", "re": "\\bSEH\\b", "flags": "u", "why": "Dutch emergency department (English: emergency department)" },
+        { "id": "dopingautoriteit", "level": "error", "re": "dopingautoriteit", "why": "Dutch anti-doping body" },
+        { "id": "trimbos-jellinek", "level": "error", "re": "\\b(?:trimbos|jellinek)\\b", "why": "Dutch addiction-care body" },
+        { "id": "opiumwet", "level": "error", "re": "opiumwet", "why": "Dutch drugs law" },
+        { "id": "tweede-kamer", "level": "error", "re": "\\btweede kamer\\b", "why": "Dutch parliament" },
+        { "id": "belgium", "level": "error", "re": "\\bbelgi", "why": "Belgian reader framing" },
+        { "id": "famhp", "level": "error", "re": "\\b(?:famhp|fagg|afmps)\\b", "why": "Belgian medicines agency" },
+        { "id": "german", "level": "frame", "re": "\\bgerman(?:y|y[’']s|s)?\\b", "why": "German reader framing (global history such as thalidomide may stay, with the marker)" },
+        { "id": "bfarm", "level": "error", "re": "\\bbfarm\\b", "why": "German medicines agency" },
+        { "id": "amg", "level": "error", "re": "\\bAMG\\b(?![- ]?\\d)", "flags": "u", "why": "German medicines law (AMG; a drug code such as AMG 133 is not)" },
+        { "id": "nada", "level": "error", "re": "\\bNADA\\b", "flags": "u", "why": "German anti-doping agency" },
+        { "id": "arzneimittel", "level": "error", "re": "arzneimittel", "why": "German medicines law" },
+        { "id": "bundes", "level": "error", "re": "\\bbundes\\w*", "why": "German federal body" },
+
+        { "id": "in-the-eu", "level": "frame", "re": "\\b(?:in|across|within|throughout|inside|outside) the EU\\b", "why": "EU reader framing (\"approved in the EU\", \"outside the EU\")" },
+        { "id": "eu-wide", "level": "frame", "re": "\\bEU[- ]wide\\b", "why": "EU reader framing (allowed once for Ireland, with the marker)" },
+        { "id": "european-union", "level": "frame", "re": "\\beuropean union\\b", "why": "EU reader framing" },
+        { "id": "eu-member-states", "level": "frame", "re": "\\bEU member states?\\b", "why": "EU reader framing" },
+        { "id": "eu-rules", "level": "frame", "re": "\\bthe EU (?:label|labels|rules|law|laws|regulators?|approval|authorisation|licen[cs]e|market|product information)\\b", "why": "the EU as the reader's frame (English: the FDA or UK label, or each country)" },
+        { "id": "in-europe", "level": "frame", "re": "\\b(?:in|across|throughout) Europe\\b", "why": "Europe as the reader's place (history may stay, with the marker)" },
+        { "id": "euro", "level": "frame", "re": "€|\\beuros?\\b", "why": "a euro amount (Dutch insurance or prices)" },
+
+        { "id": "eu", "level": "warn", "re": "\\bEU\\b", "flags": "u", "why": "EU named: only as evidence or history (marker), never as the reader's frame" },
+        { "id": "ema", "level": "warn", "re": "\\bEME?A\\b", "flags": "u", "why": "EMA named: only as scientific evidence (marker: residue-ok: EMA evidence)" },
+        { "id": "epar", "level": "warn", "re": "\\bEPARs?\\b", "why": "EMA assessment report: only as evidence (marker)" },
+        { "id": "chmp", "level": "warn", "re": "\\bCHMP\\b", "why": "EMA committee: only as evidence (marker)" },
+        { "id": "europe", "level": "warn", "re": "\\beurop(?:e|ean|eans|e[’']s)\\b", "why": "Europe named: only in history or evidence context (marker)" }
+      ],
+      "allowFiles": [
+        { "page": "about/index", "patterns": ["netherlands", "dutch"], "reason": "the publisher line: the site is published from the Netherlands, so Dutch law governs what it may say (content brief, 'What may stay' 1)" },
+        { "page": "about/editorial-policy", "patterns": ["netherlands", "dutch"], "reason": "the publisher line: the site is published from the Netherlands, so Dutch law governs what it may say (content brief, 'What may stay' 1)" },
+        { "page": "about/funding", "patterns": ["netherlands", "dutch"], "reason": "the publisher line: Dutch advertising and cookie law as the publisher's law (content brief, 'What may stay' 1)" }
+      ],
+      "allowStrings": [
+        { "file": "src/i18n/en/timeline.json", "key": "^thalidomide-withdrawn\\.text$", "patterns": ["german"], "reason": "global history: thalidomide (content brief, 'What may stay' 3)" },
+        { "file": "src/i18n/en/corrections.json", "key": "^tesamorelin-approval-answer\\.detail$", "patterns": ["eu"], "reason": "the corrections log records what the page said before the refocus (the EU status first); history of the page, not reader framing" }
+      ],
+      "allowPhrases": [
+        { "re": "\\bEli Lilly Nederland B\\.V\\.", "reason": "the legal name of the UK marketing-authorisation holder of Mounjaro (src/data/compounds/tirzepatide.yaml, products table), not reader framing" },
+        { "re": "\\bEurope PMC\\b", "reason": "the name of a literature database (EMBL-EBI), a news feed of the English site (src/data/feeds.yaml)" }
+      ]
+    }
+  }
+}

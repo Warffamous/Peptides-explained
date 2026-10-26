@@ -1,42 +1,42 @@
 ---
 slug: semaglutide
 title: "Semaglutide"
-description: "Semaglutide is an authorised GLP-1 medicine (Ozempic, Wegovy, Rybelsus). How it works, what the big trials show, its risks, and why online vials are not the same."
+description: "Semaglutide is an approved GLP-1 medicine (Ozempic, Wegovy, Rybelsus). How it works, what the big trials show, its risks, and why online vials are not the same."
 summary:
-  - "Semaglutide is an authorised EU medicine. Ozempic and Rybelsus treat type 2 diabetes. Wegovy helps manage weight."
+  - "Semaglutide is a medicine for diabetes and weight. It is approved in the US, UK, Canada and Australia."
   - "It copies a gut hormone called GLP-1. It lowers high blood sugar and makes you feel full sooner."
   - "Large trials show lower blood sugar and weight. Some groups also had fewer serious heart and kidney problems."
-  - "Stomach problems are common at first. Rarer risks include gallstones, pancreatitis and a rare eye condition. Much of the lost weight comes back after stopping."
-  - "Online 'research' semaglutide is not the authorised medicine. Nobody knows what is in it, or how much."
-lede: "A prescription medicine for type 2 diabetes and weight management. Online “research” vials are not the same."
+  - "Many feel sick at first. Gallstones and pancreatitis are rarer. Much lost weight returns after stopping."
+  - "Online 'research' semaglutide is not the approved medicine. Nobody knows what is in it, or how much."
+lede: "A medicine on prescription for type 2 diabetes and weight. Online “research” vials are not the same thing."
 glance:
   main_risk: "Many feel sick at first. Gallstones and an inflamed pancreas are rarer."
-  # "Stop and get help" strip, condensed from this page's stop-now list (section 8) and the EU
-  # product information (Wegovy SmPC 4.4 and 4.8: pancreatitis, hypoglycaemia with insulin or a
-  # sulfonylurea, anaphylaxis and angioedema; MHRA: fake pens containing insulin).
+  # "Stop and get help" strip, condensed from this page's stop-now list (section 8) and the product
+  # information (Wegovy SmPC 4.4 and 4.8 and US label 5.2, 5.4, 5.7: pancreatitis, hypoglycaemia with
+  # insulin or a sulfonylurea, anaphylaxis and angioedema; MHRA: fake pens containing insulin).
   stop_signs:
     - icon: sign-belly-pain
       text: "Severe belly pain, often spreading to your back"
-      sources: [ema-epar-wegovy]
+      sources: [ema-epar-wegovy, fda-label-wegovy]
     - icon: sign-low-sugar
       text: "Shaky, sweaty or confused (low blood sugar)"
-      sources: [ema-epar-wegovy, mhra-2023-fake-weight-loss-pens]
+      sources: [ema-epar-wegovy, fda-label-wegovy, mhra-2023-fake-weight-loss-pens]
     - icon: sign-allergic
       text: "Swollen face or throat, or trouble breathing"
-      sources: [ema-epar-wegovy]
-  # Fact sheet beside the title: label facts from the EU product information, never a dose.
+      sources: [ema-epar-wegovy, fda-label-wegovy]
+  # Fact sheet beside the title: label facts from the product information (US labels and SmPCs), never a dose.
   facts:
     - label: "How it is taken"
       value: "Injection under the skin, or a tablet"
-      sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy]
+      sources: [fda-label-ozempic, fda-label-rybelsus-ozempic-tablets, fda-label-wegovy, ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy]
     - label: "How often"
       value: "Injection once a week; tablet once a day"
-      sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy]
+      sources: [fda-label-ozempic, fda-label-rybelsus-ozempic-tablets, fda-label-wegovy, ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy]
     - label: "How long it lasts"
       value: "Half-life about one week; stays 5–7 weeks after stopping"
-      sources: [ema-epar-wegovy, ema-epar-rybelsus]
+      sources: [fda-label-wegovy, ema-epar-wegovy, ema-epar-rybelsus]
 grade_rationale:
-  human_clinical: "Authorised in the EU since 2018 (Ozempic), with Rybelsus (2020) and Wegovy (2022; tablets 2026). The authorisations rest on phase 3 programmes and several completed cardiovascular and kidney outcome trials, each with thousands of participants."
+  human_clinical: "Approved in the US since December 2017 (Ozempic), later also as Rybelsus (2019) and Wegovy (2021; tablets 2025), and in the UK, Canada and Australia since 2018–2019. The approvals rest on phase 3 programmes and several completed cardiovascular and kidney outcome trials, each with thousands of participants."
   preclinical_volume: "Well over 50 primary animal and cell studies: a PubMed search on 20 October 2026 found 472 non-review records mentioning semaglutide together with rats or mice in the title or abstract. The animal record now matters mainly for the thyroid C-cell and pregnancy findings."
   independence: "Every pivotal trial was paid for by the manufacturer, and many authors were company employees. The weight effect has been seen without company authors too (a Mayo Clinic cohort), and the main safety signals (NAION, thyroid cancer, suicidal thoughts) were tested by independent academic groups and regulators."
   safety: "Characterised in randomised trials with tens of thousands of participants followed for up to about four years, plus post-marketing surveillance since 2017–2018. Still being worked out: NAION, use beyond a few years, stopping and restarting, effects on muscle, exposure in pregnancy, and the newer high-strength dose."
@@ -56,7 +56,7 @@ mechanism:
   - kind: cellular
     level: human
     title: "More insulin and less glucagon, mainly when glucose is high"
-    detail: "Because cAMP amplifies rather than starts insulin release, the extra insulin comes mainly when blood glucose is raised. In a 12-week randomised trial in 75 people with type 2 diabetes, insulin secretion rose and glucagon fell. The EU label states that during low blood glucose semaglutide reduces insulin secretion and does not impair glucagon release, which is why its own risk of hypoglycaemia is low (but not zero)."
+    detail: "Because cAMP amplifies rather than starts insulin release, the extra insulin comes mainly when blood glucose is raised. In a 12-week randomised trial in 75 people with type 2 diabetes, insulin secretion rose and glucagon fell. The labels state that during low blood glucose semaglutide does not stop the body's glucagon response, which is why its own risk of hypoglycaemia is low (but not zero)."
   - kind: tissue
     level: human
     title: "Less hunger, more fullness"
@@ -64,7 +64,7 @@ mechanism:
   - kind: tissue
     level: human
     title: "Slower stomach emptying, mostly early on"
-    detail: "GLP-1 slows the stomach. Semaglutide delays emptying in the first hour after a meal; with continued weekly use the effect appears to fade, which the EU label attributes to tolerance (no clear delay was found at week 20 in the appetite trial). The early effect adds to nausea and is why tablets taken at the same time, and anaesthesia, need thought."
+    detail: "GLP-1 slows the stomach. Semaglutide delays emptying in the first hour after a meal; with continued weekly use the effect appears to fade, which the product information attributes to tolerance (no clear delay was found at week 20 in the appetite trial). The early effect adds to nausea and is why tablets taken at the same time, and anaesthesia, need thought."
   - kind: effect
     level: human
     title: "Lower HbA1c and weight; fewer heart and kidney events in outcome trials"
@@ -90,7 +90,7 @@ studies:
     limitation: "Designed to rule out harm (non-inferiority), not to prove benefit; relatively few events; two years only."
   pioneer-1:
     finding: "In 703 adults with type 2 diabetes on diet and exercise alone, daily oral semaglutide lowered HbA1c against placebo at all three strengths tested over 26 weeks."
-    limitation: "26 weeks; glucose and weight endpoints only; it used the original tablet formulation, which the EU label states is bioequivalent to the current tablets."
+    limitation: "26 weeks; glucose and weight endpoints only; it used the original tablet formulation. A newer formulation comes in different strengths, and the US label says the two cannot be swapped milligram for milligram."
   pioneer-6:
     finding: "In 3,183 people with type 2 diabetes at high cardiovascular risk, followed for a median of 15.9 months, major cardiovascular events occurred in 3.8% with oral semaglutide and 4.8% with placebo (HR 0.79, 95% CI 0.57–1.11)."
     limitation: "A safety trial: it ruled out a large increase in risk but was too short and small to show a reduction."
@@ -125,18 +125,45 @@ studies:
     finding: "In Danish, Norwegian and Swedish registers, starting a GLP-1 receptor agonist (145,410 people) was not associated with more thyroid cancer than starting a DPP-4 inhibitor (291,667 people) over a mean 3.9 years (HR 0.93, 95% CI 0.66–1.31)."
     limitation: "Observational; several GLP-1 drugs pooled; mean follow-up under four years is short for cancer; too few medullary cancers to be precise (HR 1.19, 95% CI 0.37–3.86)."
 regulatory_notes:
-  EU: "Authorised (centralised): Ozempic 8 Feb 2018, Rybelsus 3 Apr 2020, Wegovy injection 6 Jan 2022, Wegovy tablets 14 Jul 2026. Prescription only."
-  NL: "Authorised via the EU. Ozempic and Rybelsus reimbursed only for type 2 diabetes under Bijlage 2 conditions; Wegovy not reimbursed, reassessment under way. Ozempic shortage resolved 2 Dec 2024."
-  DE: "Authorised via the EU. Supply-shortage recommendation for Ozempic lifted on 18 Mar 2026. Falsified Ozempic pens containing insulin found in 2023."
-  BE: "Authorised via the EU; prescription only."
-  UK: "Licensed by the MHRA (Ozempic, Rybelsus, Wegovy); prescription only. MHRA: powder-in-vial products are not authorised."
-  US: "FDA-approved: Ozempic 5 Dec 2017, Rybelsus 20 Sep 2019, Wegovy 4 Jun 2021, Wegovy tablets 22 Dec 2025. Shortage declared resolved 21 Feb 2025."
+  US: "FDA-approved: Ozempic 5 Dec 2017, Rybelsus 20 Sep 2019, Wegovy 4 Jun 2021, Wegovy tablets 22 Dec 2025. No generic approved. Shortage declared resolved 21 Feb 2025."
+  UK: "Ozempic authorised for the UK since Feb 2018; Great Britain licences since 1 Jan 2021. Wegovy pens licensed Sep 2021, tablets 11 Jun 2026. Prescription only. MHRA: powder-in-vial products are not authorised."
+  CA: "Authorised: Ozempic 4 Jan 2018, Rybelsus 30 Mar 2020, Wegovy 23 Nov 2021 (sold from 2024). Generic semaglutide authorised since Apr 2026. Prescription only."
+  AU: "Registered: Ozempic 28 Aug 2019, Rybelsus 7 Feb 2022, Wegovy 1 Sep 2022. No generic and no Wegovy tablets. Pharmacists may not compound it since 1 Oct 2024."
   WADA: "Not on the 2026 Prohibited List. On the WADA Monitoring Program since 2024 (in and out of competition)."
 indications:
   ozempic: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise: on its own when metformin is unsuitable, or added to other diabetes medicines."
   rybelsus: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise: on its own when metformin is unsuitable, or with other diabetes medicines. A daily tablet."
   wegovy: "Weight management alongside a reduced-calorie diet and more physical activity: adults with a BMI of 30 or more, or 27 to 30 with at least one weight-related condition; adolescents from 12 years with obesity and body weight above 60 kg."
   wegovy-tablets: "Weight management in adults only, alongside a reduced-calorie diet and more physical activity: BMI of 30 or more, or 27 to 30 with at least one weight-related condition."
+  # Added by the data merge (24 October 2026, research/refocus-notes/merge.md) from each product's label or decision
+  # document; the content group may reword them.
+  ozempic-us: "Type 2 diabetes in adults, alongside diet and exercise. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with type 2 diabetes and heart disease, and of worsening kidney function, kidney failure and cardiovascular death in those with chronic kidney disease."
+  rybelsus-us: "Type 2 diabetes in adults, alongside diet and exercise. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with type 2 diabetes at high risk of them. A daily tablet."
+  ozempic-tablets-us: "The same uses as Rybelsus, in a newer tablet formulation. The two tablets cannot be swapped milligram for milligram."
+  wegovy-us: "Weight reduction and keeping weight off: adults and children from 12 with obesity, and adults with overweight and a weight-related condition. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with heart disease and obesity or overweight, and treats a liver disease (MASH) with moderate to advanced scarring in adults (accelerated approval)."
+  wegovy-tablets-us: "Weight reduction and keeping weight off in adults with obesity, or overweight with a weight-related condition. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with heart disease and obesity or overweight."
+  ozempic-uk: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise."
+  rybelsus-uk: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise. A daily tablet."
+  wegovy-uk: "Weight management alongside a reduced-calorie diet and more physical activity. Since 2024 also lowers the risk of serious heart problems in adults with heart disease and a BMI of 27 or more; since July 2026 also treats a liver disease (MASH) with moderate to advanced scarring, on condition that more study results follow."
+  wegovy-tablets-uk: "Weight loss and weight management in adults with a BMI of 30 or more, or 27 to 30 with at least one weight-related condition."
+  ozempic-ca: "Type 2 diabetes in adults, once weekly, alongside diet and exercise: on its own when metformin is unsuitable, or with other diabetes medicines. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with type 2 diabetes and heart or kidney disease, and of worsening kidney function, kidney failure and cardiovascular death in those with chronic kidney disease."
+  rybelsus-ca: "Type 2 diabetes in adults, alongside diet and exercise: on its own when metformin is unsuitable, or with other diabetes medicines. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with type 2 diabetes who have heart disease or are at high risk. A daily tablet."
+  wegovy-ca: "Chronic weight management: adults with a BMI of 30 or more, or 27 or more with a weight-related condition, and adolescents from 12 with obesity. Also lowers the risk of a non-fatal heart attack in adults with heart disease and a BMI of 27 or more, and treats a liver disease (MASH) with moderate to advanced scarring (authorised with conditions)."
+  plosbrio-ca: "Type 2 diabetes in adults, once weekly, alongside diet and exercise: on its own when metformin is unsuitable, or with other diabetes medicines. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with type 2 diabetes and heart or kidney disease, and of worsening kidney function, kidney failure and cardiovascular death in those with chronic kidney disease."
+  # Added by the merge check (24 October 2026) from each product's Canadian monograph (section 1) or ARTG public
+  # summary; the content group may reword them.
+  poviztra-ca: "Chronic weight management: adults with a BMI of 30 or more, or 27 or more with a weight-related condition, and adolescents from 12 with obesity. Also lowers the risk of a non-fatal heart attack in adults with heart disease and a BMI of 27 or more."
+  semaglutide-injection-drreddys-ca: "A generic of Ozempic for type 2 diabetes in adults, once weekly. Its semaglutide is made by chemical synthesis."
+  apo-semaglutide-ca: "A generic of Ozempic for type 2 diabetes in adults, once weekly. Its semaglutide is made by chemical synthesis."
+  sevmia-ca: "A generic of Wegovy for chronic weight management in adults and children from 12, alongside diet and more physical activity. Also lowers the risk of a non-fatal heart attack in adults with heart disease and a BMI of 27 or more. Its semaglutide is made by chemical synthesis."
+  aspen-semaglutide-ca: "A generic of Ozempic for type 2 diabetes in adults, once weekly. Its semaglutide is made by chemical synthesis."
+  semaglutide-injection-aspen-ca: "A generic of Ozempic for type 2 diabetes in adults, once weekly. Its semaglutide is made by chemical synthesis."
+  sandoz-semaglutide-ca: "A generic of Ozempic for type 2 diabetes in adults, once weekly. Its semaglutide is made by chemical synthesis."
+  ozempic-au: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise. Since 2025 also lowers the risk of worsening kidney function and cardiovascular death in adults with type 2 diabetes and chronic kidney disease."
+  rybelsus-au: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise. A daily tablet."
+  wegovy-au: "Chronic weight management in adults with a BMI of 30 or more, or 27 to 30 with a weight-related condition, and in adolescents from 12 with obesity. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with heart disease, a BMI of 27 or more and no diabetes, and treats a liver disease (MASH) with moderate to advanced scarring (provisional approval)."
+  plosbrio-au: "Adults with type 2 diabetes that is not well controlled, alongside diet and exercise. Also lowers the risk of worsening kidney function and cardiovascular death in adults with type 2 diabetes and chronic kidney disease."
+  poviztra-au: "Chronic weight management in adults with a BMI of 30 or more, or 27 to 30 with a weight-related condition, and in adolescents from 12 with obesity. Also lowers the risk of heart attack, stroke and cardiovascular death in adults with heart disease, a BMI of 27 or more and no diabetes."
 ---
 <Section id="what-it-is">
 
@@ -144,25 +171,25 @@ indications:
 
 <Compare title="A pharmacy medicine and an online vial with the same name are not the same thing." detail="What is known about each, from the regulators’ assessments and warnings.">
 
-| | Authorised medicine (Ozempic, Rybelsus, Wegovy) | Outside the legal supply chain (online "research" vial, unlicensed pen) |
+| | Approved medicine (Ozempic, Rybelsus, Wegovy) | Outside the legal supply chain (online "research" vial, unlicensed pen) |
 |---|---|---|
-| Checked by a regulator? | <Verdict is="yes" /> Assessed before authorisation<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy" /> | <Verdict is="no" /> Powder-in-vial GLP-1 products are not authorised<Cite id="mhra-glp1-what-you-need-to-know" /> |
-| Contents known? | <Verdict is="yes" /> Assessed by the regulator | <Verdict is="no" /> You do not know what is in it<Cite id="cbg-glp1-position" />; fake pens containing insulin have been found<Cite id="bfarm-ozempic-falsification,mhra-2023-fake-weight-loss-pens" /> |
+| Checked by a regulator? | <Verdict is="yes" /> Assessed before approval<Cite id="fda-drugsatfda-ozempic,fda-drugsatfda-wegovy,ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy" /> | <Verdict is="no" /> Not reviewed for safety, effectiveness or quality; powder-in-vial GLP-1 products are not authorised<Cite id="fda-unapproved-glp1-concerns,mhra-glp1-what-you-need-to-know" /> |
+| Contents known? | <Verdict is="yes" /> Assessed by the regulator | <Verdict is="no" /> It may hold the wrong ingredient, or too much, too little or none<Cite id="fda-unapproved-glp1-concerns" />; fake pens containing insulin have been found<Cite id="mhra-2023-fake-weight-loss-pens,au-tga-2024-09-counterfeit-ozempic-pens" /> |
 | Amount per dose known? | <Verdict is="yes" /> Fixed by the pen or tablet | <Verdict is="no" /> Depends on your own measuring<Cite id="fda-2024-compounded-semaglutide-dosing-errors" /> |
 | Made sterile? | <Verdict is="yes" /> Made by a manufacturer named in the authorisation, which releases each batch<Cite id="ema-epar-wegovy" /> | <Verdict is="unknown" /> Quality not known<Cite id="fda-unapproved-glp1-concerns" /> |
-| Risk information kept up to date? | <Verdict is="yes" /> Official label, updated<Cite id="ema-epar-wegovy" /> | <Verdict is="no" /> None: how to use it, and what it does to your health, is unclear<Cite id="cbg-glp1-position" /> |
-| Someone to ask, and medical follow-up? | <Verdict is="yes" /> Prescriber and pharmacist<Cite id="cbg-glp1-position" /> | <Verdict is="no" /> No one |
+| Risk information kept up to date? | <Verdict is="yes" /> Official label, updated<Cite id="fda-label-wegovy,ema-epar-wegovy" /> | <Verdict is="no" /> No approved label: nobody has checked how to use it or what it does to your health<Cite id="fda-unapproved-glp1-concerns,mhra-glp1-what-you-need-to-know" /> |
+| Someone to ask, and medical follow-up? | <Verdict is="yes" /> Prescriber and pharmacist: checks come before the prescription<Cite id="mhra-glp1-what-you-need-to-know,fda-unapproved-glp1-concerns" /> | <Verdict is="no" /> No one |
 
 </Compare>
 
-<InDetail title="The authorised products, and why this page looks different">
+<InDetail title="The approved products, and why this page looks different">
 
-Semaglutide is a prescription medicine. In the EU it is authorised as Ozempic (weekly injection for type 2 diabetes, since 8 February 2018), Rybelsus (daily tablet for type 2 diabetes, since 3 April 2020) and Wegovy (weight management: weekly injection since 6 January 2022, daily tablet since 14 July 2026).<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-wegovy-procedural-steps" /> The marketing authorisation holder is Novo Nordisk A/S.
+Semaglutide is a prescription medicine made by Novo Nordisk. It is sold as Ozempic (a weekly injection for type 2 diabetes), Rybelsus (a daily tablet for type 2 diabetes) and Wegovy (for weight management: a weekly injection and, in the US and the UK, also a daily tablet). The FDA approved Ozempic on 5 December 2017 and Health Canada on 4 January 2018; it has been authorised for the UK since February 2018, and Australia registered it on 28 August 2019.<Cite id="fda-drugsatfda-ozempic,ca-sbd-ozempic,ema-epar-ozempic,uk-euwa-2018-s20-exit-day,uk-mhra-uk-wide-licensing,au-artg-ozempic-308324" /> Wegovy tablets were approved in the US on 22 December 2025 and in the UK on 11 June 2026; they are not on the Canadian or Australian registers.<Cite id="fda-drugsatfda-wegovy-tablets,uk-mhra-2026-06-wegovy-tablets,ca-dpd-extract-search-status-a-2026-10-24,au-artg-search-status-a-2026-10-24" /> In the US, a newer form of the Rybelsus tablet has been called "Ozempic tablets" since January 2026; it cannot be swapped with Rybelsus milligram for milligram.<Cite id="fda-label-rybelsus-ozempic-tablets,fda-letter-213051-s030" /> Canada is the only one of the four countries with generic semaglutide (see the status section).<Cite id="ca-rds-semaglutide-injection-drreddys-2026,ca-rds-sevmia-2026,fda-drugsatfda-search-status-a-2026-10-24,uk-mhra-substance-index-status-a-2026-10-24,au-artg-search-status-a-2026-10-24" />
 
 <AuthorisedProducts />
 
 <Callout type="note" title="Why this page looks different">
-Most compounds on this site are experimental. Semaglutide is an authorised medicine with large trials behind it. It is here because its name is also used for vials sold online as research chemicals, and because it is often lumped together with experimental peptides, which misleads in both directions (see "Why 'semaglutide' is not one thing" below).
+Most compounds on this site are experimental. Semaglutide is an approved medicine with large trials behind it. It is here because its name is also used for vials sold online as research chemicals, and because it is often lumped together with experimental peptides, which misleads in both directions (see "Why 'semaglutide' is not one thing" below).
 </Callout>
 
 </InDetail>
@@ -171,7 +198,7 @@ Most compounds on this site are experimental. Semaglutide is an authorised medic
 
 ### What the molecule is
 
-Semaglutide is a chain of 31 amino acids. Twenty-nine are the same as in human GLP-1 (7–37), the active form of a hormone the gut releases after a meal; the EU label calls this 94% sequence homology.<Cite id="ema-epar-wegovy" /> The chain starts <Seq>His-Aib-Glu-Gly-Thr-Phe</Seq>.
+Semaglutide is a chain of 31 amino acids. Twenty-nine are the same as in human GLP-1 (7–37), the active form of a hormone the gut releases after a meal; the labels call this 94% sequence homology.<Cite id="fda-label-wegovy,ema-epar-wegovy" /> The chain starts <Seq>His-Aib-Glu-Gly-Thr-Phe</Seq>.
 
 Three changes make the hormone last a week. Positions use the GLP-1 (7–37) numbering of the literature and the US label, in which the first histidine is position 7.<Cite id="fda-label-ozempic,lau-2015-semaglutide-discovery,pubchem-semaglutide" />
 
@@ -188,7 +215,9 @@ In 1987 three groups showed that a gut fragment of proglucagon releases insulin:
 
 ### Injection and tablet
 
-Peptides are digested in the gut, so most are injected. Semaglutide tablets contain an absorption enhancer, SNAC (salcaprozate sodium); <Claim level="human-limited">in dogs and people, absorption took place in the stomach, next to the dissolving tablet</Claim>.<Cite id="buckley-2018-oral-semaglutide" /> Only about 1–2% of the dose is absorbed, varying widely between people, so tablet strengths are much higher than injection strengths; the EU label states that the effect of switching between tablets and injections cannot easily be predicted.<Cite id="ema-epar-rybelsus" />
+Peptides are digested in the gut, so most are injected. Semaglutide tablets contain an absorption enhancer, SNAC (salcaprozate sodium); <Claim level="human-limited">in dogs and people, absorption took place in the stomach, next to the dissolving tablet</Claim>.<Cite id="buckley-2018-oral-semaglutide" /> Only about 1–2% of the dose is absorbed, varying widely between people, so tablet strengths are much higher than injection strengths.<Cite id="fda-label-wegovy,ema-epar-rybelsus" />
+{/* residue-ok: EMA evidence */}
+The European label (EMA product information) states that the effect of switching between tablets and injections cannot easily be predicted.<Cite id="ema-epar-rybelsus" />
 
 </InDetail>
 
@@ -217,7 +246,7 @@ The short animation shows where semaglutide acts in the body, one step at a time
 
 <InDetail title="Organ by organ: what it does in each place, and how well that is shown">
 
-The figure shows first how semaglutide works in a single cell, then what happens in each organ. In a body scan study of 140 people in STEP 1, fat fell more than lean mass, and most of the weight lost was fat.<Cite id="ema-epar-wegovy" />
+The figure shows first how semaglutide works in a single cell, then what happens in each organ. In a body scan study of 140 people in STEP 1, fat fell more than lean mass, and most of the weight lost was fat.<Cite id="ema-epar-wegovy,fda-label-wegovy" />
 
 <OrganCards id="semaglutide" />
 
@@ -237,19 +266,23 @@ Semaglutide switches on the GLP-1 receptor and keeps doing so for days. Most eff
 
 ### What each step rests on
 
-**Staying in the blood.** The EU label gives a half-life of about one week and more than 99% albumin binding, measured in people.<Cite id="ema-epar-wegovy" /> The chain is mechanical: albumin is too big for the kidneys to filter, so only the small free fraction is cleared, and Aib at position 8 protects against DPP-4. Semaglutide therefore stays in the circulation for about five to seven weeks after the last dose; side effects do not end the day you stop.<Cite id="ema-epar-wegovy,ema-epar-rybelsus" />
+**Staying in the blood.** The labels give a half-life of about one week and more than 99% albumin binding, measured in people.<Cite id="fda-label-wegovy,ema-epar-wegovy" /> The chain is mechanical: albumin is too big for the kidneys to filter, so only the small free fraction is cleared, and Aib at position 8 protects against DPP-4. Semaglutide therefore stays in the circulation for about five to seven weeks after the last dose; side effects do not end the day you stop.<Cite id="fda-label-wegovy,ema-epar-wegovy,ema-epar-rybelsus" />
 
 **Receptor and cAMP.** Semaglutide is a direct agonist at the GLP-1 receptor, with an affinity measured in cell systems.<Cite id="chembl-semaglutide,lau-2015-semaglutide-discovery" /> The activated receptor switches on adenylate cyclase, so cAMP rises inside the cell; in beta cells, cAMP acts through PKA and Epac2 to increase insulin release.<Cite id="muller-2019-glp1-review" /> <Claim level="in-vitro">This chain is established in cell lines and animal islets</Claim>, not traced step by step in human pancreas.
 
-**Why the insulin effect depends on glucose.** cAMP amplifies an insulin release that glucose has already triggered; it does not start one. <Claim level="human-controlled">In a 12-week, manufacturer-funded, double-blind, placebo-controlled trial in 75 people with type 2 diabetes, semaglutide increased insulin secretion and lowered glucagon after meals</Claim>.<Cite id="kapitza-2017-beta-cell" /> The EU label adds that during hypoglycaemia semaglutide reduces insulin secretion and does not impair glucagon release.<Cite id="ema-epar-wegovy" /> That is why its own risk of low blood sugar is low, and why much of that protection is lost when it is combined with medicines that raise insulin regardless of glucose.
+**Why the insulin effect depends on glucose.** cAMP amplifies an insulin release that glucose has already triggered; it does not start one. <Claim level="human-controlled">In a 12-week, manufacturer-funded, double-blind, placebo-controlled trial in 75 people with type 2 diabetes, semaglutide increased insulin secretion and lowered glucagon after meals</Claim>.<Cite id="kapitza-2017-beta-cell" /> The labels add that during low blood sugar, insulin release still falls and the glucagon response is not impaired.<Cite id="fda-label-ozempic,ema-epar-wegovy" /> That is why its own risk of low blood sugar is low, and why much of that protection is lost when it is combined with medicines that raise insulin regardless of glucose.
 
 **Appetite.** <Claim level="animal">In rodent experiments by the manufacturer, semaglutide reached the brainstem and hypothalamus through regions where the blood–brain barrier is open, and activated areas thought to be involved in ending a meal</Claim>.<Cite id="gabery-2020-semaglutide-brain" /> <Claim level="human-controlled">In a manufacturer-funded, double-blind, randomised trial in 72 adults with obesity, 20 weeks of semaglutide cut energy intake at a free-choice lunch by 35% compared with placebo, with less hunger and fewer cravings</Claim>.<Cite id="friedrichsen-2021-appetite" /> The eating effect is measured in people; the brain sites are inferred from animals.
 
-**The stomach.** GLP-1 slows stomach emptying.<Cite id="muller-2019-glp1-review" /> The EU label describes a minor delay early after a meal, and no clinically relevant effect at the <Q>2.4 mg</Q> strength, probably because of tolerance; the appetite trial found no clear delay at week 20.<Cite id="ema-epar-wegovy,friedrichsen-2021-appetite" />
+**The stomach.** GLP-1 slows stomach emptying.<Cite id="muller-2019-glp1-review" /> The labels describe a minor delay early after a meal, and no clear effect in a study at the <Q>2.4 mg</Q> strength; the appetite trial found no clear delay at week 20.<Cite id="fda-label-ozempic,ema-epar-wegovy,friedrichsen-2021-appetite" />
+{/* residue-ok: EMA evidence */}
+The European label (EMA product information) gives tolerance as the probable reason.<Cite id="ema-epar-wegovy" />
 
 ### What the mechanism does not explain
 
-The heart and kidney benefits are real in the populations studied but only partly explained: the EU label calls the cardiovascular benefit likely multifactorial, in part driven by weight loss and by effects on blood pressure, lipids, glucose and inflammation, and states that "the exact mechanism of cardiovascular risk reduction has not been established".<Cite id="ema-epar-wegovy" />
+The heart and kidney benefits are real in the populations studied but only partly explained. The US label states that "the exact mechanism of semaglutide in CV risk reduction in adults has not been established".<Cite id="fda-label-wegovy" />
+{/* residue-ok: EMA evidence */}
+The European label (EMA product information) calls the cardiovascular benefit likely multifactorial, in part driven by weight loss and by effects on blood pressure, lipids, glucose and inflammation, and also says the exact mechanism has not been established.<Cite id="ema-epar-wegovy" />
 
 </InDetail>
 
@@ -263,7 +296,7 @@ The heart and kidney benefits are real in the populations studied but only partl
 
 <KeyNumber title="Fewer heart attacks, strokes and heart deaths" value="6.5 in 100" label="had one in about 3 years, against 8 in 100 on placebo" who="SELECT: 17,604 adults with heart or blood-vessel disease and obesity or overweight, without diabetes" source="lincoff-2023-select" level="human-controlled" />
 
-<KeyNumber title="Serious kidney problems: less often than on placebo" value="24%" label="less often: kidney failure, kidney function halved, or kidney or heart death" who="FLOW: 3,533 people with type 2 diabetes and chronic kidney disease" source="perkovic-2024-flow" level="human-controlled" />
+<KeyNumber title="Fewer had serious harm to the kidneys" value="24%" label="less often: kidney failure, kidney function halved, or kidney or heart death" who="FLOW: 3,533 people with type 2 diabetes and chronic kidney disease" source="perkovic-2024-flow" level="human-controlled" />
 
 <KeyNumber title="About two-thirds of the lost weight came back within a year of stopping" value="2 in 3" label="of the kilos lost had come back, on average, a year after stopping" who="STEP 1 extension: 327 people followed for a year after stopping" source="wilding-2022-step-1-extension" level="human-controlled" />
 
@@ -299,13 +332,15 @@ STEP 1 randomised 1,961 adults with obesity, or overweight with a weight-related
 
 <Claim level="human-controlled">Much of the effect is lost when treatment stops</Claim>. In STEP 4, a double-blind phase 3 trial, 803 people who had reached the target dose during a 20-week run-in on semaglutide (average loss 10.6%) were randomised to continue (a further 7.9% lost over 48 weeks) or switch to placebo (6.9% regained).<Cite id="rubino-2021-step-4" /> In the STEP 1 extension, of 327 people followed for a year after stopping, those who had taken semaglutide regained about two-thirds of the weight they had lost (a net loss of 5.6% remained), and most measures of blood pressure, lipids and glucose moved back towards baseline.<Cite id="wilding-2022-step-1-extension" />
 
-The daily tablet for weight management was tested in OASIS 4, a manufacturer-funded, double-blind, placebo-controlled trial in 307 adults without diabetes: mean weight change at 64 weeks was −13.6% versus −2.2%, with gastrointestinal adverse events in 74.0% versus 42.2%.<Cite id="wharton-2025-oasis-4" /> The EMA cites the same trial, as phase 3, for its tablet recommendation.<Cite id="ema-2026-wegovy-tablets" />
+The daily tablet for weight management was tested in OASIS 4, a manufacturer-funded, double-blind, placebo-controlled trial in 307 adults without diabetes: mean weight change at 64 weeks was −13.6% versus −2.2%, with gastrointestinal adverse events in 74.0% versus 42.2%.<Cite id="wharton-2025-oasis-4" /> The US label describes the same trial (as "Study 7") for Wegovy tablets.<Cite id="fda-label-wegovy" />
+{/* residue-ok: EMA evidence */}
+The European Medicines Agency cites it as a phase 3 trial.<Cite id="ema-2026-wegovy-tablets" />
 
 </InDetail>
 
 <InDetail title="Newer uses, and a negative result">
 
-In the US, Wegovy has accelerated approval (2025) for the liver disease MASH with moderate to advanced scarring but no cirrhosis; continued approval depends on confirmatory trial results.<Cite id="fda-label-wegovy" /> ESSENCE, a manufacturer-funded, double-blind, placebo-controlled phase 3 trial, reported a planned interim analysis of its first 800 participants at 72 weeks: on biopsy, steatohepatitis resolved without worsening fibrosis in 62.9% versus 34.3%, and fibrosis improved without worsening steatohepatitis in 36.8% versus 22.4%. The trial continues for clinical liver outcomes.<Cite id="sanyal-2025-essence" /> In people who already had MASH cirrhosis, a smaller phase 2 trial (71 adults, 48 weeks) found no significant improvement in fibrosis or steatohepatitis.<Cite id="loomba-2023-semaglutide-cirrhosis" /> The indication is not in the EU label.<Cite id="ema-epar-wegovy" />
+In the US, Wegovy has accelerated approval (2025) for the liver disease MASH with moderate to advanced scarring but no cirrhosis; continued approval depends on confirmatory trial results.<Cite id="fda-label-wegovy" /> ESSENCE, a manufacturer-funded, double-blind, placebo-controlled phase 3 trial, reported a planned interim analysis of its first 800 participants at 72 weeks: on biopsy, steatohepatitis resolved without worsening fibrosis in 62.9% versus 34.3%, and fibrosis improved without worsening steatohepatitis in 36.8% versus 22.4%. The trial continues for clinical liver outcomes.<Cite id="sanyal-2025-essence" /> In people who already had MASH cirrhosis, a smaller phase 2 trial (71 adults, 48 weeks) found no significant improvement in fibrosis or steatohepatitis.<Cite id="loomba-2023-semaglutide-cirrhosis" /> Canada (December 2025), Australia (March 2026) and the UK (July 2026) have also approved Wegovy for MASH, each on condition that more trial results follow.<Cite id="ca-rds-wegovy-mash-2025,au-tga-pmr-search-status-a-2026-10-24,uk-mhra-2026-07-wegovy-mash" />
 
 Health-record studies had suggested less dementia on GLP-1 medicines, but in the double-blind, placebo-controlled phase 3 evoke and evoke+ trials (3,808 people with early Alzheimer's disease) <Claim level="human-controlled">oral semaglutide did not slow clinical decline over 104 weeks</Claim>.<Cite id="cummings-2026-evoke" />
 
@@ -323,22 +358,22 @@ Every pivotal trial here was funded by the manufacturer, with many company autho
 
 <Lead question="What is still not known?">What many years of use do, how to stop well, and how large some rare risks are.</Lead>
 
-<TimeStrip title="The longest trials followed people for about four years on average. What longer use does is not known." detail="Years of use covered by the evidence, counted from the start of treatment." min={0} max={10} step={2} axis="Years of use" source="mcguire-2025-soul,zin-2024-wegovy-pharmacotherapeutic-report" rows={[
+<TimeStrip title="The longest trials followed people for about four years on average. What longer use does is not known." detail="Years of use covered by the evidence, counted from the start of treatment." min={0} max={10} step={2} axis="Years of use" source="mcguire-2025-soul,wilding-2021-step-1,wilding-2022-step-1-extension" rows={[
   { label: "Longest outcome trial (SOUL)", spans: [{ from: 0, to: 3.96, text: "about 4 years on average (47.5 months)" }] },
-  { label: "Weight-loss evidence checked in the Netherlands (2024)", spans: [{ from: 0, to: 2, text: "no data beyond 2 years" }] },
+  { label: "Main weight trial (STEP 1) and its follow-up", spans: [{ from: 0, to: 1.3, text: "68 weeks on treatment" }, { from: 1.3, to: 2.3, text: "then a year off treatment" }] },
   { label: "Longer use", spans: [{ from: 4, to: 10, text: "not covered by the trials", unknown: true }] },
 ]} />
 
 <InDetail title="All eight open questions, with their sources">
 
-- **Use beyond a few years.** The longest outcome trials averaged about four years; in June 2024 Zorginstituut Nederland wrote that, in the weight-management evidence it assessed, there were no data on use beyond two years.<Cite id="mcguire-2025-soul,zin-2024-wegovy-pharmacotherapeutic-report" />
-- **How to stop.** Weight returns after stopping, and no trial has tested a way of tapering off while keeping the benefit.<Cite id="zin-2024-wegovy-pharmacotherapeutic-report,wilding-2022-step-1-extension" />
+- **Use beyond a few years.** The longest outcome trials averaged about four years; the main weight trial treated people for 68 weeks and then followed some of them for a year off treatment.<Cite id="mcguire-2025-soul,wilding-2021-step-1,wilding-2022-step-1-extension" />
+- **How to stop.** Weight returns after stopping. We found no published trial of a way to stop that keeps the benefit (PubMed search, 24 October 2026).<Cite id="wilding-2022-step-1-extension,rubino-2021-step-4" />
 - **NAION.** The size of the risk outside type 2 diabetes, who is most at risk, and whether it depends on dose or speed of weight loss.<Cite id="ema-prac-2025-06-naion" />
 - **Thyroid cancer.** Registry studies disagree and follow-up is short; the rodent finding has neither been shown to apply to people nor fully ruled out.<Cite id="bezin-2023-thyroid-cancer,pasternak-2024-thyroid-cancer" />
 - **Muscle and function.** How much lean mass lost is muscle, and whether it matters for strength and falls in older people.<Cite id="neeland-2024-lean-mass" />
 - **Pregnancy.** Animal studies showed harm to the embryo; human data are limited.<Cite id="ema-epar-wegovy" />
 - **The <Q>7.2 mg</Q> Wegovy pen.** More altered skin sensation than lower strengths; experience is still short.<Cite id="ema-epar-wegovy" />
-- **Who benefits most.** Zorginstituut could not determine which patients with obesity gain the most health.<Cite id="zin-2024-wegovy-not-reimbursed" />
+- **Health gain beyond weight.** In 2022 Canada's drug agency found no evidence that the weight lost in the weight trials led to fewer weight-related diseases, because these were not studied. SELECT later showed fewer heart events, but only in people who already had heart or blood-vessel disease.<Cite id="ca-cda-amc-2022-wegovy,lincoff-2023-select" />
 
 </InDetail>
 
@@ -346,20 +381,21 @@ Every pivotal trial here was funded by the manufacturer, with many company autho
 
 <Section id="regulatory">
 
-<Lead question="Is it legal?">Yes, on prescription, in the EU, UK and US. Dutch basic insurance covers only diabetes use, with conditions.</Lead>
+<Lead question="Is it legal?">Yes, on prescription, in the US, the UK, Canada and Australia. Public cover for weight loss is limited.</Lead>
 
-<TimeStrip title="Semaglutide has been an authorised medicine in the EU since 2018. Wegovy tablets came in 2026." detail="Each bar runs from the EU authorisation to the day we checked." min={2017} max={2027} step={2} axis="Year" source="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-wegovy-procedural-steps" checked="2026-10-20" rows={[
-  { label: "Ozempic: weekly injection, type 2 diabetes", spans: [{ from: "2018-02-08", to: "2026-10-20", text: "since 8 February 2018" }] },
-  { label: "Rybelsus: daily tablet, type 2 diabetes", spans: [{ from: "2020-04-03", to: "2026-10-20", text: "since 3 April 2020" }] },
-  { label: "Wegovy: weekly injection, weight management", spans: [{ from: "2022-01-06", to: "2026-10-20", text: "since 6 January 2022" }] },
-  { label: "Wegovy: daily tablet, weight management", spans: [{ from: "2026-07-14", to: "2026-10-20", text: "since 14 July 2026" }] },
+<TimeStrip title="It has been approved in all four countries since 2019 or earlier." detail="Each bar runs from the first approval of a semaglutide medicine in that country to the day we checked." min={2017} max={2027} step={2} axis="Year" source="fda-drugsatfda-ozempic,ema-epar-ozempic,uk-mhra-uk-wide-licensing,ca-sbd-ozempic,ca-rds-semaglutide-injection-drreddys-2026,au-artg-ozempic-308324" checked="2026-10-23" rows={[
+  { label: "United States", spans: [{ from: "2017-12-05", to: "2026-10-23", text: "since 5 December 2017" }] },
+  { label: "United Kingdom", spans: [{ from: "2018-02-08", to: "2026-10-23", text: "since 8 February 2018" }] },
+  { label: "Canada", spans: [{ from: "2018-01-04", to: "2026-10-23", text: "since 4 January 2018" }] },
+  { label: "Canada: generic semaglutide", spans: [{ from: "2026-04-28", to: "2026-10-23", text: "since 28 April 2026" }] },
+  { label: "Australia", spans: [{ from: "2019-08-28", to: "2026-10-23", text: "since 28 August 2019" }] },
 ]} />
 
 <InDetail title="Status in each country and in sport">
 
 <RegulatoryTable />
 
-Statuses were checked on 20 October 2026.
+Statuses were checked between 20 and 23 October 2026.
 
 ### Sport (WADA)
 
@@ -367,46 +403,58 @@ Semaglutide is not on the 2026 Prohibited List, and the S0 class for non-approve
 
 </InDetail>
 
-<InDetail title="The European Union and the Netherlands">
+<InDetail title="The United States">
 
-### European Union
+The FDA approved Ozempic on 5 December 2017, Rybelsus on 20 September 2019, Wegovy injection on 4 June 2021 and Wegovy tablets on 22 December 2025, later adding cardiovascular risk reduction for Wegovy (March 2024) and a kidney indication for Ozempic (January 2025).<Cite id="fda-drugsatfda-ozempic,fda-drugsatfda-rybelsus,fda-drugsatfda-wegovy,fda-drugsatfda-wegovy-tablets" /> In March 2026 it approved a higher weekly Wegovy dose for weight management.<Cite id="fda-letter-215256-s029" /> No generic semaglutide is approved in the US: one company holds only a tentative approval, which does not allow it to be sold.<Cite id="fda-drugsatfda-search-status-a-2026-10-24" />
 
-All three are authorised through the centralised procedure, valid in every member state; Wegovy tablets and a higher-strength pen were added in July 2026.<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-wegovy-procedural-steps" /> The EMA safety committee (PRAC) concluded that the evidence does not support a causal link with suicidal thoughts (April 2024);<Cite id="ema-prac-2024-04-suicidal-thoughts" /> that labels should warn about residual stomach content before anaesthesia, although no causal link with aspiration was established (July 2024);<Cite id="ema-prac-2024-07-aspiration" /> and that NAION is a very rare side effect (June 2025).<Cite id="ema-prac-2025-06-naion" />
+The labels differ between countries. The US and Canadian labels carry a serious (boxed) warning on rodent thyroid C-cell tumours and contraindicate use with a personal or family history of medullary thyroid carcinoma or MEN 2.<Cite id="fda-label-ozempic,ca-pm-ozempic-2026-07-13,ca-pm-wegovy-2026-10-02" />
+{/* residue-ok: EMA evidence */}
+The European label (EMA product information) lists only hypersensitivity as a contraindication; we did not check the UK and Australian labels on this point.<Cite id="ema-epar-wegovy" /> The US Wegovy label dropped its suicidal-behaviour warning in early 2026, and the US Ozempic and Wegovy labels we checked (revised May and June 2026) do not list NAION, while the UK regulator warns of it.<Cite id="fda-label-wegovy,fda-label-ozempic,mhra-glp1-what-you-need-to-know" />
 
-### Netherlands
-
-The EU authorisations apply directly; semaglutide is prescription-only. Reimbursement is uneven:<Cite id="fk-semaglutide,fk-regeling-zorgverzekering-bijlage-2" />
-
-- **Ozempic and Rybelsus** are reimbursed for type 2 diabetes only, under the conditions of Bijlage 2 of the Regeling zorgverzekering (for example a BMI of at least 30 when other medicines are not enough, or a very high cardiovascular risk).
-- **Wegovy** is not reimbursed. In July 2024 Zorginstituut Nederland called it effective for weight loss but advised against reimbursement, citing unclear health gain, long-term effect and way of stopping, and costs of up to €1.3 billion a year.<Cite id="zin-2024-wegovy-not-reimbursed" /> A reassessment, first for people with a BMI of 30 or more with related disease or a BMI of 35 or more, had its first scientific discussion on 5 October 2026; consultation is expected in early November 2026.<Cite id="zin-wegovy-reassessment,zin-2025-obesity-staged-approach" />
-
-This gap has real costs, and the reasons for it are also real. An authorised weight-management medicine has existed since 2022, with outcome-trial evidence in people with heart disease since 2023,<Cite id="ema-epar-wegovy,lincoff-2023-select" /> but people who cannot pay do not get it, while the CBG notes that these medicines are increasingly used as slimming aids without a prescription.<Cite id="cbg-glp1-position" /> Whether non-reimbursement pushes people towards online products has not been measured. Equally, the Zorginstituut's concerns about long-term evidence, stopping, and a budget impact that could displace other care are legitimate.
-
-In March 2023 the CBG warned of a long Ozempic shortage and against slimming use without a doctor; it later noted that it was unclear whether off-label use had caused the shortage, which ended on 2 December 2024.<Cite id="cbg-ozempic-shortage" /> In June 2024, reporting EMA recommendations, it wrote that slimming use by people without obesity had made shortages much worse, and that GLP-1 medicines sold online may be falsified.<Cite id="cbg-2024-glp1-shortage-recommendations" />
+From 2022 semaglutide injections were on the FDA shortage list, which let pharmacies compound copies. The FDA declared the shortage resolved on 21 February 2025; the grace period ended for pharmacies after a court ruling on 24 April 2025 and for outsourcing facilities on 22 May 2025.<Cite id="fda-glp1-compounding-policy" /> In April 2026 the FDA proposed not to put semaglutide on the list of bulk substances that outsourcing facilities may compound from; the comment period was extended to 30 July 2026, and no final decision had been published by 23 October 2026.<Cite id="fda-2026-503b-glp1-exclusion-proposal,fr-2026-12937-503b-comment-extension,federalregister-fda-search-2026-10-23" /> A US compounding decision changes nothing in the UK, Canada or Australia. By 31 May 2026 the FDA had 990 adverse-event reports for compounded semaglutide, likely an undercount.<Cite id="fda-unapproved-glp1-concerns" />
 
 </InDetail>
 
-<InDetail title="Germany, Belgium, the United Kingdom and the United States">
-
-### Germany
-
-Authorised through the EU procedure.<Cite id="ema-epar-ozempic" /> The BfArM's shortage advisory board lifted its Ozempic recommendation on 18 March 2026.<Cite id="bfarm-glp1-shortage-archive" /> Falsified German-labelled Ozempic pens found in 2023 contained insulin, not semaglutide.<Cite id="bfarm-ozempic-falsification" />
-
-### Belgium
-
-Authorised through the EU procedure; prescription-only.<Cite id="ema-epar-ozempic" /> Additional Belgian prescribing or reimbursement rules are not covered, because we could not verify them on the regulator's website on 20 October 2026.
+<InDetail title="The UK, Canada and Australia">
 
 ### United Kingdom
 
-The MHRA lists Ozempic, Rybelsus and Wegovy as licensed, prescription-only medicines; GLP-1 products supplied as powder in vials are not authorised.<Cite id="mhra-glp1-what-you-need-to-know" /> In 2023 it reported seizing 369 potentially fake Ozempic pens, and hospital admissions suggesting that some fakes contained insulin.<Cite id="mhra-2023-fake-weight-loss-pens" />
+{/* residue-ok: UK licensing history (a European authorisation covered the UK until it left) */}
+Ozempic was first authorised for the UK in February 2018, under the European authorisation that covered the UK while it was a member. It has had its own Great Britain licence since 1 January 2021, as has Rybelsus.<Cite id="ema-epar-ozempic,uk-euwa-2018-s20-exit-day,uk-mhra-uk-wide-licensing,uk-mhra-substance-index-status-a-2026-10-24" /> The MHRA licensed Wegovy injection in September 2021, its heart indication in July 2024, a higher-strength pen in 2026, Wegovy tablets on 11 June 2026 and the liver indication (MASH) in July 2026.<Cite id="uk-mhra-ma-granted-2021,uk-mhra-2024-07-wegovy-cv,uk-mhra-2026-01-wegovy-7-2mg-dose,uk-mhra-2026-04-wegovy-7-2mg-pen,uk-mhra-2026-06-wegovy-tablets,uk-mhra-2026-07-wegovy-mash" />
 
-### United States
+All semaglutide medicines are prescription-only, and there is no UK generic. The MHRA says GLP-1 products supplied as powder in vials are not authorised, and that selling these medicines without a prior consultation is against the law.<Cite id="mhra-glp1-what-you-need-to-know,uk-mhra-substance-index-status-a-2026-10-24" /> In 2023 it reported seizing 369 potentially fake Ozempic pens, and hospital admissions suggesting that some fakes contained insulin.<Cite id="mhra-2023-fake-weight-loss-pens" /> Importing a medicine for your own use needs no manufacturer's licence, but supplying a prescription-only medicine without a prescription is an offence, and Border Force seizes unlicensed medicines at the border.<Cite id="uk-hmr-2012-reg-17,uk-hmr-2012-reg-214,mhra-foi-22-431-personal-import-seizures" />
 
-The FDA approved Ozempic on 5 December 2017, Rybelsus on 20 September 2019, Wegovy injection on 4 June 2021 and Wegovy tablets on 22 December 2025, later adding cardiovascular risk reduction for Wegovy (March 2024) and a kidney indication for Ozempic (January 2025).<Cite id="fda-drugsatfda-ozempic,fda-drugsatfda-rybelsus,fda-drugsatfda-wegovy,fda-drugsatfda-wegovy-tablets" />
+### Canada
 
-The US and EU labels differ. US labels carry a boxed warning on rodent thyroid C-cell tumours and contraindicate use with a personal or family history of medullary thyroid carcinoma or MEN 2; EU labels list only hypersensitivity.<Cite id="fda-label-ozempic,ema-epar-wegovy" /> The US Wegovy label dropped its suicidal-behaviour warning in early 2026, and the US Ozempic and Wegovy labels we checked (revised May and June 2026) do not list NAION.<Cite id="fda-label-wegovy,fda-label-ozempic" />
+Health Canada authorised Ozempic on 4 January 2018 (on sale from February 2018), Rybelsus on 30 March 2020 and Wegovy on 23 November 2021 (first sold in March 2024). Semaglutide is on Canada's Prescription Drug List, since March 2018.<Cite id="ca-sbd-ozempic,ca-rds-rybelsus-2020,ca-rds-wegovy-2021,ca-dpd-extract-search-status-a-2026-10-24,ca-pdl-human" />
 
-From 2022 semaglutide injections were on the FDA shortage list, which let pharmacies compound copies. The FDA declared the shortage resolved on 21 February 2025; the grace period ended for pharmacies after a court ruling on 24 April 2025 and for outsourcing facilities on 22 May 2025.<Cite id="fda-glp1-compounding-policy" /> In April 2026 the FDA proposed not to put semaglutide on the list of bulk substances that outsourcing facilities may compound from; the comment period was extended to 30 July 2026, and no final decision had been published by 20 October 2026.<Cite id="fda-2026-503b-glp1-exclusion-proposal,fr-2026-12937-503b-comment-extension" /> By 31 May 2026 the FDA had 990 adverse-event reports for compounded semaglutide, likely an undercount.<Cite id="fda-unapproved-glp1-concerns" />
+Canada is the first of the four countries with generic semaglutide. Health Canada authorised generic versions of Ozempic from April 2026 (two on sale since May 2026) and a generic of Wegovy in June 2026. Their semaglutide is made by chemical synthesis, while Ozempic and Wegovy are made in yeast; Health Canada found them equivalent.<Cite id="ca-rds-semaglutide-injection-drreddys-2026,ca-rds-apo-semaglutide-2026,ca-rds-sevmia-2026,ca-dhpp-semaglutide-product-pages-2026-10-24" /> In August 2026 it recalled one lot of a generic pen that could deliver a higher dose than the one selected.<Cite id="ca-hc-2026-08-generic-semaglutide-recall" /> Novo Nordisk also holds two further brands in Canada and Australia, Plosbrio and Poviztra; the documents we read do not say why.<Cite id="ca-dhpp-semaglutide-product-pages-2026-10-24,au-artg-public-summaries-semaglutide-tirzepatide-2026-10-24" />
+
+Health Canada says that in Canada only licensed pharmacies can legally sell prescription drugs. In January 2026 it warned about unauthorised and counterfeit GLP-1 products sold in stores and online.<Cite id="ca-hc-2026-01-glp1-advisory" /> In June 2025 it said that pharmacies may not compound injectable GLP-1 products when there is no shortage, and that it treats such work as manufacturing; in January 2025 it recalled a compounded semaglutide product made with an unauthorised ingredient.<Cite id="ca-hc-2025-glp1-compounding-position,ca-hc-recalls-database" /> Residents generally may not bring prescription drugs into Canada, whether they carry them or have them sent by mail or courier.<Cite id="ca-hc-gui-0116-personal-import,ca-cbsa-d19-9-1" />
+
+### Australia
+
+The TGA registered Ozempic on 28 August 2019, Rybelsus on 7 February 2022 and Wegovy on 1 September 2022, all sponsored by Novo Nordisk. Wegovy tablets and generic semaglutide are not on the register.<Cite id="au-artg-search-status-a-2026-10-24,au-tga-pmr-search-status-a-2026-10-24" />
+
+Semaglutide is a Schedule 4 medicine under the Poisons Standard, which means prescription only. Advertising Ozempic or Wegovy to the public is illegal, and advertising Ozempic for weight loss is illegal even to health professionals.<Cite id="au-poisons-standard-2026-10,au-tga-advertising-glp1-prohibited" /> Since 1 October 2024 pharmacists may not compound medicines containing GLP-1 receptor agonists.<Cite id="au-tg-amendment-2024-measures-2-glp1,au-tga-compounded-medicines-guidance,au-tga-2024-06-glp1-compounding-update" /> During shortages the TGA temporarily allowed overseas-registered Ozempic to be supplied; all those approvals have lapsed.<Cite id="au-tga-pmr-search-status-a-2026-10-24" />
+
+To import a prescription-only medicine for yourself, you must hold a valid Australian prescription or written authority when it arrives, among other conditions.<Cite id="au-tga-personal-importation-scheme" /> Who may possess a Schedule 4 medicine is decided by each state and territory. In Victoria, possessing any Schedule 4 medicine without authority is an offence; in New South Wales the possession offence covers only a shorter list of substances. The other states and territories have their own rules, and we did not check them all.<Cite id="au-vic-dpcs-act-1981,au-nsw-ptg-act-1966,au-nsw-health-s4d" />
+
+Counterfeit Ozempic pens found at the border had been bought online from an overseas website and imported for personal use. Another counterfeit pen, bought overseas, caused a life-threatening reaction in Australia; testing found insulin in both (TGA, September 2024).<Cite id="au-tga-2024-09-counterfeit-ozempic-pens" /> In 2023 the TGA found that two imported vial products labelled semaglutide did not contain it.<Cite id="au-tga-2023-05-counterfeit-semaglutide-vials" />
+
+</InDetail>
+
+<InDetail title="Who pays: cost and coverage in each country">
+
+**United States.** By law, Medicare drug plans (Part D) may not pay for medicines when they are used for weight loss, and state Medicaid programmes may choose not to. Part D plans can still cover semaglutide for its other approved uses, such as type 2 diabetes.<Cite id="us-usc-42-1395w-102-e,us-usc-42-1396r-8-d,us-medicare-gov-weight-loss-drugs" /> From 1 July 2026 to 31 December 2027 a temporary Medicare programme, the Medicare GLP-1 Bridge, covers Wegovy (injection or tablets) for weight management for eligible people with Part D, with a $50 monthly copayment and prior authorisation. Eligibility depends on BMI and certain conditions; people with type 2 diabetes, sleep apnoea or fatty liver disease are directed to their own Part D plan.<Cite id="us-cms-medicare-glp1-bridge,us-medicare-gov-weight-loss-drugs" /> Under the voluntary BALANCE model, state Medicaid programmes may cover GLP-1 medicines, including Ozempic, Rybelsus and Wegovy, for weight management from as early as May 2026, if the state and the maker take part.<Cite id="us-cms-balance-model" /> We did not research private insurance.
+
+**United Kingdom.** On the NHS in England, NICE recommends Wegovy for weight management only within specialist weight management services, for up to 2 years, for adults with at least one weight-related condition and a BMI of 35 or more (or 30 to 34.9 if they meet the criteria for specialist referral).<Cite id="nice-ta875-semaglutide" /> Since May 2026 NICE also says it can be used to lower the risk of heart attack and stroke in adults with heart or blood-vessel disease and a BMI of at least 27; a review that covers the higher-strength pen is under way.<Cite id="nice-ta1152-semaglutide-mace,nice-id6699-semaglutide-obesity-review" /> In Scotland the Scottish Medicines Consortium accepted Wegovy pens for restricted use, but Wegovy tablets are not recommended there because the company has not applied.<Cite id="smc-2497-semaglutide-wegovy,smc-2988-semaglutide-wegovy-tablets" /> Private prescriptions are possible after a consultation with a prescriber.<Cite id="mhra-glp1-what-you-need-to-know" /> We did not review NHS rules for semaglutide in type 2 diabetes for this page.
+
+**Canada.** Public drug plans negotiate prices together through the pCPA (pan-Canadian Pharmaceutical Alliance), and each province or territory then decides what its plan covers. The pCPA reached agreements for Ozempic and Rybelsus for type 2 diabetes.<Cite id="ca-pcpa-negotiations-2026-10-24,ca-pcpa-role-system" /> For Wegovy in weight management, Canada's Drug Agency advised in 2022 that public plans should not pay. In July 2025 it advised paying only for adults with a BMI of 27 or more who already have heart or blood-vessel disease, and only at a lower price. The price negotiation that followed ended without agreement in December 2025.<Cite id="ca-cda-amc-2022-wegovy,ca-cda-amc-2025-wegovy,ca-pcpa-negotiations-2026-10-24" />
+
+**Australia.** The Pharmaceutical Benefits Scheme (PBS) subsidises semaglutide only as Ozempic for type 2 diabetes, with an authority from the prescriber, since 1 July 2020. Wegovy is not on the PBS, so it is paid privately.<Cite id="au-pbs-semaglutide-2026-10-24,au-pbs-dusc-2024-06-semaglutide" /> The committee that advises on PBS listings turned down Wegovy for obesity in 2022 and 2023. In November 2025 it recommended Wegovy for people with obesity who already have heart or blood-vessel disease, but as of October 2026 that listing has not been made.<Cite id="au-pbs-medicine-status-wegovy,au-pbac-2025-11-obesity-treatments-advice" />
+
+These gaps have costs, and the reasons for them are real too. A weight-management medicine that lowered heart events in people with heart disease in a large trial is out of reach for many people who cannot pay privately; whether this pushes people towards online products has not been measured.<Cite id="lincoff-2023-select" /> The payers' reasons include cost, and, for weight management, little evidence in the earlier trials of health gain beyond weight.<Cite id="ca-cda-amc-2022-wegovy,ca-cda-amc-2025-wegovy" />
 
 </InDetail>
 
@@ -423,7 +471,8 @@ From 2022 semaglutide injections were on the FDA shortage list, which let pharma
   { label: "Constipation", a: 24.2, b: 11.1 },
 ]} />
 
-Unless stated otherwise, risks and frequencies come from the EU product information and the trials named.
+{/* residue-ok: EMA evidence */}
+Unless stated otherwise, the figures come from the trials named and from the Wegovy product information assessed by the European Medicines Agency (EMA), which gives the trial results in detail.
 
 <InDetail title="Stomach and gut: the exact numbers">
 
@@ -445,13 +494,16 @@ In SUSTAIN-6, diabetic retinopathy complications (bleeding in the eye, blindness
 
 ### Eyes: NAION
 
-The PRAC classes NAION as very rare (up to 1 in 10,000 people): <Claim level="human-limited">large epidemiological studies in type 2 diabetes suggest roughly a doubling of risk, about one extra case per 10,000 person-years</Claim>.<Cite id="ema-prac-2025-06-naion" /> An earlier retrospective single-centre study of 1,689 matched patients found much higher hazard ratios (4.28 and 7.64), with few events and wide confidence intervals, in patients referred to a specialist eye service.<Cite id="hathaway-2024-naion" /> Neither the PRAC announcement nor the EU label proposes a mechanism.<Cite id="ema-prac-2025-06-naion,ema-epar-wegovy" />
+{/* residue-ok: EMA evidence */}
+The safety committee of the European Medicines Agency (PRAC) classes NAION as very rare (up to 1 in 10,000 people): <Claim level="human-limited">large epidemiological studies in type 2 diabetes suggest roughly a doubling of risk, about one extra case per 10,000 person-years</Claim>.<Cite id="ema-prac-2025-06-naion" /> An earlier retrospective single-centre study of 1,689 matched patients found much higher hazard ratios (4.28 and 7.64), with few events and wide confidence intervals, in patients referred to a specialist eye service.<Cite id="hathaway-2024-naion" />
+{/* residue-ok: EMA evidence */}
+Neither that committee's announcement nor the European label proposes a mechanism.<Cite id="ema-prac-2025-06-naion,ema-epar-wegovy" /> The UK regulator also warns of very rare NAION with semaglutide; the US labels we checked do not list it.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-wegovy,fda-label-ozempic" />
 
 </InDetail>
 
 <InDetail title="Low blood sugar, with a short animation">
 
-Semaglutide's own risk of hypoglycaemia is low because its insulin effect depends on glucose, but it is not zero: in STEP 2, a weight trial in people with type 2 diabetes, clinically significant low blood sugar occurred in 6.2% with semaglutide versus 2.5% with placebo, with and without a sulfonylurea. Insulin and sulfonylureas act regardless of glucose, so in combination blood sugar can fall too low; the label says this risk can be lowered by reducing the dose of those medicines.<Cite id="ema-epar-wegovy" />
+Semaglutide's own risk of hypoglycaemia is low because its insulin effect depends on glucose, but it is not zero: in STEP 2, a weight trial in people with type 2 diabetes, clinically significant low blood sugar occurred in 6.2% with semaglutide versus 2.5% with placebo, with and without a sulfonylurea. Insulin and sulfonylureas act regardless of glucose, so in combination blood sugar can fall too low; the labels say this risk can be lowered by reducing the dose of those medicines.<Cite id="ema-epar-wegovy,fda-label-wegovy" />
 
 The animation shows how the combination pushes blood sugar too low, and what to do about it.
 
@@ -461,9 +513,11 @@ The animation shows how the combination pushes blood sugar too low, and what to 
 
 <InDetail title="Thyroid tumours in rodents, and why they may not carry over">
 
-In two-year studies, semaglutide caused thyroid C-cell tumours in rats and mice at clinically relevant exposures.<Cite id="ema-epar-wegovy,fda-label-ozempic" /> <Claim level="animal">Rodent C-cells carry GLP-1 receptors, and GLP-1 agonists stimulated calcitonin release and, over time, C-cell hyperplasia in rats and, less, in mice</Claim>. <Claim level="animal">Human and monkey C-cells had low receptor levels, the agonists did not switch on adenylate cyclase or calcitonin release in primates, and 20 months of liraglutide caused no C-cell hyperplasia in monkeys</Claim>.<Cite id="knudsen-2010-thyroid-c-cells" /> The EU label rates human relevance as low but not excluded.<Cite id="ema-epar-wegovy" />
+In two-year studies, semaglutide caused thyroid C-cell tumours in rats and mice at clinically relevant exposures.<Cite id="ema-epar-wegovy,fda-label-ozempic" /> <Claim level="animal">Rodent C-cells carry GLP-1 receptors, and GLP-1 agonists stimulated calcitonin release and, over time, C-cell hyperplasia in rats and, less, in mice</Claim>. <Claim level="animal">Human and monkey C-cells had low receptor levels, the agonists did not switch on adenylate cyclase or calcitonin release in primates, and 20 months of liraglutide caused no C-cell hyperplasia in monkeys</Claim>.<Cite id="knudsen-2010-thyroid-c-cells" /> The US and Canadian labels say the human relevance has not been determined.<Cite id="fda-label-wegovy,ca-pm-wegovy-2026-10-02" />
+{/* residue-ok: EMA evidence */}
+The European label rates it as low but not excluded.<Cite id="ema-epar-wegovy" />
 
-Human data are mixed: a French case-control study linked one to three years of GLP-1 medicines with more thyroid cancer, including medullary cancer, while a larger Scandinavian cohort found no clear increase over a mean 3.9 years but could not rule out a modest one. Both analysed GLP-1 medicines as a class rather than semaglutide alone; in the Scandinavian study, semaglutide made up about a third of use.<Cite id="bezin-2023-thyroid-cancer,pasternak-2024-thyroid-cancer" /> <Claim level="hypothesis">More thyroid check-ups in people on these medicines would find more small cancers and could inflate an observed risk</Claim>. The US contraindication covers a personal or family history of medullary thyroid carcinoma, or MEN 2, where the baseline risk is already high.<Cite id="fda-label-ozempic" />
+Human data are mixed: a French case-control study linked one to three years of GLP-1 medicines with more thyroid cancer, including medullary cancer, while a larger Scandinavian cohort found no clear increase over a mean 3.9 years but could not rule out a modest one. Both analysed GLP-1 medicines as a class rather than semaglutide alone; in the Scandinavian study, semaglutide made up about a third of use.<Cite id="bezin-2023-thyroid-cancer,pasternak-2024-thyroid-cancer" /> <Claim level="hypothesis">More thyroid check-ups in people on these medicines would find more small cancers and could inflate an observed risk</Claim>. The US and Canadian contraindication covers a personal or family history of medullary thyroid carcinoma, or MEN 2, where the baseline risk is already high.<Cite id="fda-label-ozempic,ca-pm-ozempic-2026-07-13" />
 
 </InDetail>
 
@@ -471,7 +525,7 @@ Human data are mixed: a French case-control study linked one to three years of G
 
 ### Anaesthesia, muscle and weight regain
 
-Slower stomach emptying means food may remain in the stomach during general anaesthesia or deep sedation, and could be breathed into the lungs; cases have been reported, so tell the doctor about semaglutide before a procedure.<Cite id="ema-prac-2024-07-aspiration,ema-epar-wegovy" />
+Slower stomach emptying means food may remain in the stomach during general anaesthesia or deep sedation, and could be breathed into the lungs; cases have been reported, so tell the doctor about semaglutide before a procedure.<Cite id="ema-prac-2024-07-aspiration,ema-epar-wegovy,fda-label-wegovy,mhra-glp1-what-you-need-to-know" />
 
 <Claim level="human-limited">In trials of GLP-1-based medicines, lean mass has made up from about 15% to 40–60% of the weight lost</Claim>. Lean mass also includes organs, bone and water, and MRI studies suggest the muscle change may fit the weight lost, but older or frail people may lose function; the source is a narrative review and the question is open.<Cite id="neeland-2024-lean-mass" />
 
@@ -479,9 +533,11 @@ In the STEP 1 extension, about two-thirds of the lost weight returned within a y
 
 ### Mood, pregnancy and other effects
 
-The PRAC concluded that the available evidence does not support a causal link with suicidal thoughts; if your mood changes on any medicine, tell your doctor.<Cite id="ema-prac-2024-04-suicidal-thoughts" />
+The UK regulator, after a full safety review, concluded that the data do not support a causal link between GLP-1 medicines and depression or suicidal thoughts, and the US Wegovy label dropped its suicidal-behaviour warning in early 2026.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-wegovy" />
+{/* residue-ok: EMA evidence */}
+The European Medicines Agency's safety committee reached the same conclusion in 2024. If your mood changes on any medicine, tell your doctor.<Cite id="ema-prac-2024-04-suicidal-thoughts" />
 
-In rats semaglutide harmed embryos, partly through a yolk-sac mechanism thought not to apply to humans; rabbits and monkeys had more pregnancy loss with marked maternal weight loss. The label says not to use it in pregnancy or while breastfeeding, and to stop at least two months before a planned pregnancy.<Cite id="ema-epar-wegovy" /> Weight loss can improve fertility and so raise the chance of an unplanned pregnancy.<Cite id="fk-semaglutide" />
+In rats semaglutide harmed embryos, partly through a yolk-sac mechanism thought not to apply to humans; rabbits and monkeys had more pregnancy loss with marked maternal weight loss. The labels say not to use it in pregnancy or while breastfeeding, and to stop at least two months before a planned pregnancy.<Cite id="ema-epar-wegovy,fda-label-wegovy,mhra-glp1-what-you-need-to-know" /> Weight loss can improve fertility and so raise the chance of an unplanned pregnancy; a US review reports such pregnancies and advises contraception while taking these medicines.<Cite id="drummond-2024-glp1-pregnancy-review" />
 
 The label also lists a rise in heart rate (on average about 3 beats per minute), hair loss (2.5% versus 1.0%), headache, dizziness, tiredness, rare allergic reactions including anaphylaxis and angioedema, and, mainly at <Q>7.2 mg</Q>, altered skin sensation (21.6% versus 0.3% in STEP UP).<Cite id="ema-epar-wegovy" />
 
@@ -493,11 +549,11 @@ The label also lists a rise in heart rate (on average about 3 beats per minute),
 
 <Lead question="How do I use it safely?">The pharmacy medicine has the fewest unknowns. Check any other product first, and know when to get help.</Lead>
 
-The authorised medicine is a pen or tablet from a pharmacy, on prescription. A regulator assessed what is in it, the pen or tablet fixes the amount, and the maker releases each batch.<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy" /> This section gives no doses: your prescriber decides the dose. Tell your doctor about other medicines you use.
+The approved medicine is a pen or tablet from a pharmacy, on prescription. A regulator assessed what is in it, the pen or tablet fixes the amount, and the maker releases each batch.<Cite id="fda-drugsatfda-ozempic,fda-drugsatfda-wegovy,ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy" /> This section gives no doses: your prescriber decides the dose. Tell your doctor about other medicines you use.
 
 The checks below are for any other product, such as an online "research" vial or a pen of unknown origin.
 
-<ProductCheck extra="A pen can be fake too. Compare it with the picture in the package leaflet. Does it look different? Then do not use it. Some fake pens held insulin, which can make blood sugar fall too low." extraSources="ema-2023-falsified-ozempic,bfarm-ozempic-falsification,mhra-2023-fake-weight-loss-pens" />
+<ProductCheck extra="A pen can be fake too. Check the pack and the expiry date. Does the pen look different from one a pharmacy gave you? Then do not use it. Some fake pens held insulin, which can make blood sugar fall too low." extraSources="who-2024-falsified-semaglutide,fda-unapproved-glp1-concerns,mhra-2023-fake-weight-loss-pens,au-tga-2024-09-counterfeit-ozempic-pens" />
 
 ### When to stop and get help
 
@@ -509,21 +565,23 @@ The checks below are for any other product, such as an online "research" vial or
 - **Vomiting so much you cannot keep fluids down, or passing very little urine:** risk of dehydration and kidney injury. Get same-day care.
 </Callout>
 
-<Cite id="ema-epar-wegovy,ema-prac-2025-06-naion,mhra-2023-fake-weight-loss-pens" />
+<Cite id="ema-epar-wegovy,fda-label-wegovy,ema-prac-2025-06-naion,mhra-glp1-what-you-need-to-know,mhra-2023-fake-weight-loss-pens" />
 
 <WarningSigns />
 
 <InDetail title="The legal route, and why an online vial is different">
 
-For an authorised medicine, the legal route has the fewest unknowns.
+For an approved medicine, the legal route has the fewest unknowns.
 
-### The legal route in the Netherlands
+### The legal route
 
-Semaglutide needs a prescription from a doctor, usually your GP (huisarts) or a specialist, and comes from a pharmacy. Ozempic or Rybelsus may be reimbursed for diabetes under conditions; Wegovy is authorised for weight management but, as of 20 October 2026, basic health insurance does not pay for it.<Cite id="fk-semaglutide,zin-wegovy-reassessment" /> Dutch prescribing advice adds obesity medicines to a combined lifestyle programme (GLI), not instead of it.<Cite id="fk-semaglutide" /> A prescription brings a check that the medicine suits you, interaction checks and follow-up by a doctor and pharmacist;<Cite id="cbg-glp1-position" /> see [talking to your doctor](/en/talking-to-your-doctor/).
+In the US, the UK, Canada and Australia, semaglutide is a prescription medicine: a doctor or another prescriber decides, and a pharmacy supplies it.<Cite id="fda-unapproved-glp1-concerns,mhra-glp1-what-you-need-to-know,ca-hc-2026-01-glp1-advisory,au-poisons-standard-2026-10" /> The UK regulator explains why the consultation comes first: so that the prescriber can check that the medicine suits you and explain its benefits and risks.<Cite id="mhra-glp1-what-you-need-to-know" /> Who pays differs by country (see "Who pays" in the status section above). See [talking to your doctor](/en/talking-to-your-doctor/).
+
+The [treatment routes](/en/legal-routes/) page explains each legal route and what it needs: [a prescription](/en/legal-routes/#prescription), [off-label use](/en/legal-routes/#off-label), [US pharmacy compounding](/en/legal-routes/#us-compounding) (now narrow for semaglutide, because the US shortage is over), [importing for yourself](/en/legal-routes/#personal-import) and [clinical trials](/en/legal-routes/#trials).<Cite id="fda-off-label-use,fda-glp1-compounding-policy" /> The routes for medicines that are not approved or not available, such as [UK "specials"](/en/legal-routes/#uk-specials), [Canada's Special Access Program](/en/legal-routes/#canada-special-access) and [Australia's Special Access Scheme](/en/legal-routes/#australia-sas), do not fit here: semaglutide is approved in all four countries, and the UK regulator says a licensed product should be used whenever it can meet the need.<Cite id="mhra-gn14-specials,ca-hc-sap-drugs,au-tga-sas-individual-patients" />
 
 ### Why an online "research" vial is a different product
 
-The FDA has warned companies selling semaglutide falsely labelled "for research purposes" or "not for human consumption" to consumers, and calls such products of unknown quality. It also warns that some compounded products use salt forms (semaglutide sodium or acetate), which are different active ingredients from the one in the authorised medicines.<Cite id="fda-unapproved-glp1-concerns" /> The MHRA states that powder-in-vial GLP-1 products are not authorised.<Cite id="mhra-glp1-what-you-need-to-know" /> The CBG's summary: you do not know what is in it, how to use it, or what it will do to your health.<Cite id="cbg-glp1-position" /> See [product risk](/en/safety/product-risk/).
+The FDA has warned companies selling semaglutide falsely labelled "for research purposes" or "not for human consumption" to consumers, and calls such products of unknown quality. It also warns that some compounded products use salt forms (semaglutide sodium or acetate), which are different active ingredients from the one in the approved medicines.<Cite id="fda-unapproved-glp1-concerns" /> The MHRA states that powder-in-vial GLP-1 products are not authorised.<Cite id="mhra-glp1-what-you-need-to-know" /> Health Canada warns that unauthorised or fake GLP-1 products can hold too much, too little or none of the active ingredient, as well as unlisted ingredients or contaminants, and that injecting them can cause infection.<Cite id="ca-hc-2026-01-glp1-advisory" /> See [product risk](/en/safety/product-risk/).
 
 Vials also bring dosing errors that pens prevent. The FDA has reports of people taking five to 20 times the intended amount from multi-dose vials of compounded semaglutide, often from confusing milligrams, millilitres and syringe "units". Some needed hospital care; with a one-week half-life, overdose may need prolonged observation and treatment.<Cite id="fda-2024-compounded-semaglutide-dosing-errors" /> For multi-dose vials of compounded GLP-1 medicines, the FDA advises a new sterile needle and syringe every time, discarding a vial 28 days after first use because contamination risk rises after that, and not using a product that arrived warm.<Cite id="fda-unapproved-glp1-concerns" /> See [sterile technique](/en/safety/sterile-technique/).
 
@@ -531,18 +589,20 @@ Vials also bring dosing errors that pens prevent. The FDA has reports of people 
 
 <InDetail title="Fake pens, and how to check yours">
 
-Falsified Ozempic pens have been found in the EU, the UK and elsewhere since 2023; some contained insulin, which can cause dangerously low blood sugar.<Cite id="ema-2023-falsified-ozempic,bfarm-ozempic-falsification,mhra-2023-fake-weight-loss-pens,who-2024-falsified-semaglutide" />
+Fake Ozempic pens have been found in several countries since 2023, including the UK, the US and Australia. Some contained insulin, which can cause dangerously low blood sugar.<Cite id="who-2024-falsified-semaglutide,mhra-2023-fake-weight-loss-pens,au-tga-2024-09-counterfeit-ozempic-pens,fda-unapproved-glp1-concerns" /> Fake pens can look very like the real ones.<Cite id="mhra-glp1-what-you-need-to-know" />
 
 <Checklist>
 
-- Pens and tablets are prescription-only. The EU and Dutch regulators advise getting them only through a doctor and a pharmacy.
-- Compare your pen with the picture and description in the package leaflet.
-- Do not use a pen you suspect is fake, for example one that looks different from the leaflet; ask a pharmacist.
-- Report side effects to Lareb.
+- Pens and tablets are prescription-only. Regulators advise getting them on prescription, from a licensed pharmacy.
+- Check the packaging and the expiry date.
+- Stop using a pen you think may be fake, and ask a pharmacist.
+- Report side effects, and pens you think are fake, to the medicines regulator (links below).
 
 </Checklist>
 
-<Cite id="mhra-glp1-what-you-need-to-know,ema-2023-falsified-ozempic,igj-2023-falsified-ozempic,lareb-home" />
+<Cite id="fda-unapproved-glp1-concerns,mhra-glp1-what-you-need-to-know,ca-hc-2026-01-glp1-advisory,who-2024-falsified-semaglutide" />
+
+You can report it yourself: to [FDA MedWatch](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program) in the US, the [Yellow Card scheme](https://yellowcard.mhra.gov.uk/) in the UK, Health Canada's [Canada Vigilance Program](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html) or the [TGA](https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem) in Australia. The UK regulator asks people to report suspected fakes there too.<Cite id="fda-medwatch,mhra-yellow-card,ca-hc-medeffect-reporting,ca-hc-canada-vigilance,au-tga-report-adverse-event,mhra-glp1-what-you-need-to-know" /> For Ireland and New Zealand, see [our notes page](/en/legal/ireland-and-new-zealand/).
 
 If a pen did not come from a pharmacy, the checks at the top of this section apply to it too.
 
@@ -553,7 +613,7 @@ If a pen did not come from a pharmacy, the checks at the top of this section app
 ### Who should not use it, and interactions
 
 - **Pregnancy, trying to conceive, breastfeeding:** animal harm to the embryo; stop at least two months before a planned pregnancy.<Cite id="ema-epar-wegovy" />
-- **Personal or family history of medullary thyroid carcinoma, or MEN 2:** contraindicated in the US because of the rodent finding; not a formal EU contraindication, so discuss it.<Cite id="fda-label-ozempic,ema-epar-wegovy" />
+- **Personal or family history of medullary thyroid carcinoma, or MEN 2:** a contraindication on the US and Canadian labels, because of the rodent finding; discuss it with your prescriber wherever you live.<Cite id="fda-label-ozempic,ca-pm-ozempic-2026-07-13" />
 - **Previous pancreatitis:** use with caution, because GLP-1 medicines are linked to acute pancreatitis. **Severe gastroparesis:** not recommended, because semaglutide slows the stomach further. **Uncontrolled or unstable diabetic retinopathy:** not recommended, because there is no experience in this group and a fast fall in glucose can temporarily worsen retinopathy. **Type 1 diabetes:** not studied; semaglutide never replaces insulin.<Cite id="ema-epar-wegovy" />
 - **Insulin or sulfonylureas (such as gliclazide):** higher risk of low blood sugar. **Other GLP-1 medicines:** do not combine.<Cite id="ema-epar-wegovy" />
 - **Tablets that need fast or precise absorption:** slower stomach emptying can change absorption; with semaglutide tablets levothyroxine exposure rose by 33%.<Cite id="ema-epar-wegovy,ema-epar-rybelsus" />

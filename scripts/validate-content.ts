@@ -7,6 +7,13 @@
  *
  * Errors fail CI. Warnings are guardrail heuristics that need a human (or agent) to look:
  * they flag phrasing that tends to drift into promotion or dosing advice.
+ *
+ * Besides schemas and cross-references, it checks (docs/CONTENT-GUIDE.md): commerce words in page
+ * titles, headings, section questions, fold and figure titles, diagram captions and labels (errors,
+ * §1); seller-judging words such as "reputable", "legit" or "vendor" (warnings, §1, §1a); emergency
+ * numbers printed as phone numbers on a locale with printsEmergencyNumbers: false (errors, §1;
+ * scripts/lib/emergency.ts); and another locale's framing (the residue check, §1b;
+ * scripts/lib/residue.ts, warnings while STRICT_RESIDUE is false).
  */
 import path from 'node:path';
 import fs from 'node:fs';
@@ -45,7 +52,11 @@ import {
   hostAllowed,
   loadCommerceTokens,
   commerceRegex,
+  stripNonCommerce,
+  stripLegalOrders,
 } from './lib/load.ts';
+import { STRICT_RESIDUE, loadResidueConfig, scanLocaleSources, describeHit, type ResidueHit } from './lib/residue.ts';
+import { emergencyNumbers, emergencyRegex, findEmergencyNumbers, SAFETY_KEYS } from './lib/emergency.ts';
 import { validateMedia } from './lib/validate-media.ts';
 import { checkExplainers } from './lib/explainers.ts';
 import { checkProductCheck } from './lib/product-check.ts';
@@ -64,7 +75,13 @@ import { checkOrganCards } from './lib/organ-cards.ts';
  * jurisdiction) follow STRICT_PAGE_JURISDICTIONS in src/lib/jurisdictions.ts, which the content
  * rewrite turns on.
  */
-const STRICT_LOCALE_ROWS = false;
+const STRICT_LOCALE_ROWS = true;
+/*
+ * STRICT_RESIDUE (scripts/lib/residue.ts, shared with npm run check:residue): the locale residue check
+ * (config/locale-residue.json; CONTENT-GUIDE §1b) reports Dutch, Belgian, German and EU reader framing
+ * on English as WARNINGS while it is false (the content rewrite is in progress); set it to true after
+ * the rewrite, and error and frame hits fail the validator (warn hits stay warnings).
+ */
 
 const args = process.argv.slice(2);
 const only = args.includes('--only') ? args[args.indexOf('--only') + 1] : null;
@@ -350,8 +367,13 @@ function checkVisuals(file: string, body: string, locale: string) {
   }
 }
 
-/** Phrases that tend to slip into promotion or dosing advice. Warnings, reviewed by hand. */
-const GUARDRAIL_PATTERNS: [RegExp, string][] = [
+/**
+ * Phrases that tend to slip into promotion or dosing advice. Warnings, reviewed by hand. A third
+ * element `true` skips the phrase where it is quoted in the prose ("the seller uses it himself"):
+ * the lab-report ladder (CONTENT-GUIDE §1a) quotes these claims to say they are not evidence. A
+ * quoted attribute value (title="…") is never skipped.
+ */
+const GUARDRAIL_PATTERNS: [RegExp, string, boolean?][] = [
   [/\b(?:is|are|be|considered|generally|perfectly|completely|totally)\s+safe\b/i, '"safe" — only use for authorised medicines within their label, and say so'],
   [/\bproven\b/i, '"proven" — say what was shown, in whom, in which design'],
   [/\bclinically (?:validated|proven|tested)\b/i, '"clinically validated/proven" is banned phrasing'],
@@ -361,10 +383,47 @@ const GUARDRAIL_PATTERNS: [RegExp, string][] = [
   [/\b(?:best|most effective|superior|strongest|safest)\b/i, 'superlative — no superlative comparisons between compounds'],
   [/\b(?:miracle|breakthrough|game[- ]changer|revolutionary|wonder drug)\b/i, 'hype vocabulary'],
   [/\b(?:i|we) (?:recommend|suggest) (?:taking|using|trying)\b/i, 'recommends use'],
-  [/\b(?:where to buy|reliable source|trusted (?:seller|vendor|supplier)|reputable (?:seller|vendor|supplier|lab))\b/i, 'sourcing language — never'],
+  ...SELLER_PATTERNS(),
 ];
+/**
+ * Seller-judging words (CONTENT-GUIDE §1 and §1a, the lab-report ladder): no seller or lab is ever
+ * vouched for, ranked or found for the reader. Checked in the MDX body (with the patterns above) and,
+ * on their own, in the frontmatter text and the locale's UI strings, glossary and captions.
+ */
+function SELLER_PATTERNS(): [RegExp, string, boolean?][] {
+  return [
+    [/\b(?:where to buy|reliable (?:sources?|sellers?|suppliers?|vendors?|labs?))\b/i, 'sourcing language — never'],
+    [/\breputable\b/i, '"reputable" — the site never judges, vouches for or ranks a seller or a lab (§1a)', true],
+    [/\btrusted (?:labs?|laborator(?:y|ies)|sources?|sellers?|vendors?|suppliers?)\b/i, '"trusted lab/source/seller" — the site never vouches for a seller or a lab (§1a)', true],
+    [/\blegit\b/i, '"legit" — the site never judges a seller (§1a)', true],
+    [/\bthird[- ]party[- ]tested\b/i, '"third-party tested" is not evidence without a report you can read and check (lab-report ladder, §1a)', true],
+    [/\buses it (?:himself|herself|themselves|themself)\b/i, '"the seller uses it himself" is not evidence (lab-report ladder, §1a)', true],
+    [/\bvendors?\b/i, '"vendor" — the site recommends no seller; where the role must be named, write "seller" and give no help choosing one (§1)'],
+  ];
+}
+/** Seller-judging words in one text outside the MDX body (frontmatter value, UI string): warnings. */
+function checkSellerWords(file: string, where: string, text: string) {
+  for (const [re, why, quotedOk] of SELLER_PATTERNS()) {
+    if (re.test(quotedOk ? unquoted(text) : text)) warn(file, `${where}: ${why}\n      > ${clip(text)}`);
+  }
+}
+/** Frontmatter keys that hold ids, codes, dates or URLs, never words for the reader. */
+const NON_TEXT_KEYS = new Set(['sources', 'source', 'slug', 'icon', 'id', 'related', 'further_reading', 'reviewed_by', 'signed_by', 'section', 'template', 'reading_level', 'jurisdiction', 'url', 'last_reviewed', 'published']);
+function checkFrontmatterSellerWords(file: string, data: unknown, at = '') {
+  if (typeof data === 'string') checkSellerWords(file, at, data);
+  else if (Array.isArray(data)) data.forEach((x, i) => checkFrontmatterSellerWords(file, x, `${at}[${i + 1}]`));
+  else if (data && typeof data === 'object') {
+    for (const [k, v] of Object.entries(data)) if (!NON_TEXT_KEYS.has(k)) checkFrontmatterSellerWords(file, v, at ? `${at}.${k}` : k);
+  }
+}
+/** Prose with its quoted phrases removed (not attribute values: =\"…\" stays). */
+const unquoted = (line: string) => line.replace(/(?<!=)"[^"\n]*"|“[^”\n]*”/g, ' ');
 
-function checkBody(file: string, body: string, locale: string, kind: 'page' | 'compound') {
+/** The page title and its menu label (frontmatter): the h1 and the navigation text. */
+const titleLabels = (data: { title?: string; nav_title?: string }): [string, string][] =>
+  ([['title', data.title], ['nav_title', data.nav_title]] as [string, string | undefined][]).filter((x): x is [string, string] => !!x[1]);
+
+function checkBody(file: string, body: string, locale: string, kind: 'page' | 'compound', frontmatterLabels: [string, string][] = []) {
   // components
   for (const m of body.matchAll(COMPONENT_RE)) {
     const name = m[1];
@@ -416,17 +475,32 @@ function checkBody(file: string, body: string, locale: string, kind: 'page' | 'c
     } else if (!l.href.startsWith('#')) {
       err(file, `link must be absolute internal (/${locale}/...), an anchor (#...) or https: ${l.href}`);
     }
-    if (commerceRe.test(l.text) || commerceRe.test(l.href)) err(file, `commerce token in link: [${l.text}](${l.href})`);
+    if (commerceRe.test(stripLegalOrders(l.text)) || commerceRe.test(l.href)) err(file, `commerce token in link: [${l.text}](${l.href})`);
     if (urlPatternRes.some((re) => re.test(l.href))) err(file, `link matches affiliate/shortener pattern: ${l.href}`);
   }
   // guardrails (skip code spans and <Q>…</Q> contents)
   const prose = body.replace(/<Q>[^<]*<\/Q>/g, '').replace(/`[^`]*`/g, '');
   const lines = prose.split('\n');
   lines.forEach((line, i) => {
-    for (const [re, why] of GUARDRAIL_PATTERNS) {
-      if (re.test(line)) warn(file, `line ~${i + 1}: ${why}\n      > ${line.trim().slice(0, 160)}`);
+    for (const [re, why, quotedOk] of GUARDRAIL_PATTERNS) {
+      if (re.test(quotedOk ? unquoted(line) : line)) warn(file, `line ~${i + 1}: ${why}\n      > ${line.trim().slice(0, 160)}`);
     }
   });
+  // Commerce words in headings, section questions, fold titles, figure titles and labels (the lab-report
+  // ladder rules, CONTENT-GUIDE §1a and §10): what a reader scans must never read as an offer.
+  const labelled: [string, string][] = [...frontmatterLabels];
+  for (const m of body.matchAll(/^#{2,6}\s+(.+)$/gm)) labelled.push(['heading', m[1]]);
+  const labelProps: [string, string][] = [['Lead', 'question'], ['InDetail', 'title'], ['FaqItem', 'q'], ['Callout', 'title'], ['KeyNumber', 'label'], ['Diagram', 'caption'], ...FIGURE_TITLE_COMPONENTS.map((n) => [n, 'title'] as [string, string])];
+  for (const [name, prop] of labelProps) {
+    for (const tag of openTags(body, name)) {
+      const v = attr(tag, prop);
+      if (v) labelled.push([`<${name} ${prop}>`, v]);
+    }
+  }
+  for (const [where, text] of labelled) {
+    const m = commerceRe.exec(stripNonCommerce(text));
+    if (m) err(file, `${where} contains the commerce word "${m[0]}": headings, questions, titles and labels never use buy, order, shop, vendor, supplier, price, deal, sale … (CONTENT-GUIDE §1a, §10)\n      > ${clip(text)}`);
+  }
   // headings: body must not contain an h1; compound bodies must not contain h2 (sections render their own)
   if (/^#\s/m.test(body)) err(file, 'do not use "# " (h1) in the body — the layout renders the title');
   if (kind === 'compound' && /^##\s/m.test(body)) err(file, 'compound bodies use <Section id> instead of "## " headings (use ### for sub-headings)');
@@ -526,7 +600,8 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
   }
   for (const p of cd.authorised_products) if (!r.data.indications[p.id]) err(file, `indications: missing localised indication for product "${p.id}"`);
   if (cd.status === 'complete' && r.data.mechanism.length < 3) err(file, 'complete pages need a mechanism chain of at least 3 steps');
-  checkBody(file, body, locale, 'compound');
+  checkBody(file, body, locale, 'compound', titleLabels(r.data));
+  checkFrontmatterSellerWords(file, data);
 }
 // translation parity: epistemic structure must match the source locale
 for (const [slug, byLocale] of compoundPages) {
@@ -579,7 +654,8 @@ for (const file of walk('src/content/pages', ['.mdx'])) {
   if (locale !== sourceLocale && r.data.translation.method === 'source') {
     warn(file, `translation.method is "source" in a non-source locale — set translated/adapted/native and review status`);
   }
-  checkBody(file, body, locale, 'page');
+  checkBody(file, body, locale, 'page', titleLabels(r.data));
+  checkFrontmatterSellerWords(file, data);
 }
 // related routes exist (pages, compounds, or built-in routes)
 const BUILTIN_ROUTES = ['', 'compounds', 'glossary', 'sources', 'news', 'search'];
@@ -690,40 +766,19 @@ for (const w of waivers) {
   else if (!w.used) warn(waiverFile, `waiver for ${w.file} is no longer needed (nothing there is over ${PLAIN.maxWords} words): remove the entry`);
 }
 
-// ------------------------------------------------------------------ emergency number (CONTENT-GUIDE §1)
-/**
- * The English site is read in many countries, so it never prints 112 as a phone number (owner's
- * decision, 20 October 2026): it says "call your local emergency number" (common.emergency.* in
- * components). Dutch pages say 112. The rule applies to every locale with printsEmergencyNumbers:
- * false in config/locales.json (today English). A "112" that is a phone number is one with a calling word near
- * it (call, phone, dial, emergency, ambulance …), or any 112 in a safety string (a stop callout, a
- * stop sign, the warning signs, the emergency and notice strings). Other numbers are left alone:
- * "week 112", "volume 112", "JCI112855" and "1,112" do not match.
- */
-const NUMBER_112 = /(?<![\w.,/-])112(?![\w]|[.,]\d)/g;
-// A count, a measurement or a point in a study is never a phone number, even next to a calling word
-// ("112 participants were called back", "above 112 mg/dL? Call your doctor", "at week 112 … call").
-const NOT_A_PHONE = /^[\s-]*(?:%|(?:mg|mmol|µg|mcg|kg|g|ml|l|dl|percent|participants?|people|persons?|adults?|children|patients?|subjects?|volunteers?|cases?|weeks?|days?|months?|years?|hours?|minutes?)\b)/i;
-const NOT_A_PHONE_BEFORE = /\b(?:week|day|month|year|volume|vol\.|issue|page|pp?\.|ref\.|table|figure|fig\.|study|trial|step)\s*$/i;
-const CALL_WORDS = /\b(?:call(?:s|ed|ing)?|phone|telephone|ring|dial(?:l?ing)?|bel(?:len|t)?|emergenc(?:y|ies)|ambulances?|paramedics?|noodnummer|alarmnummer|hotline)\b/i;
-const SAFETY_KEYS = /(?:^|\.)(?:emergency|stop|stop_signs|warning|warnings|warningAction|warning-signs|notice|call)(?:\.|$)/i;
-const EMERGENCY_MSG = 'prints 112 as a phone number: the English site says "call your local emergency number" (components: common.emergency.*); only Dutch pages say 112';
-const seen112 = new Set<string>();
-function find112(file: string, text: string, safety = false, where = '') {
-  for (const m of text.matchAll(NUMBER_112)) {
-    const i = m.index ?? 0;
-    if (NOT_A_PHONE.test(text.slice(i + 3, i + 20)) || NOT_A_PHONE_BEFORE.test(text.slice(Math.max(0, i - 12), i))) continue;
-    // whole words only: a window cut through "below" must not leave "bel"
-    const from = Math.max(0, i - 60);
-    const to = Math.min(text.length, i + 43);
-    let near = text.slice(from, to).replace(/\s+/g, ' ');
-    if (from > 0 && /\S/.test(text[from - 1])) near = near.replace(/^\S*/, '');
-    if (to < text.length && /\S/.test(text[to])) near = near.replace(/\S*$/, '');
-    near = near.trim();
-    if (!(safety || CALL_WORDS.test(near)) || seen112.has(file + near)) continue;
-    seen112.add(file + near);
-    const line = text.slice(0, i).split('\n').length;
-    err(file, `${where || `line ~${line}:`} ${EMERGENCY_MSG}\n      > ${clip(near)}`);
+// ------------------------------------------------------------------ emergency numbers (CONTENT-GUIDE §1)
+// A locale with printsEmergencyNumbers: false never prints an emergency number (112, and the numbers of
+// its own jurisdictions: on English 911, 999, 000, 112, 111, "triple zero"); scripts/lib/emergency.ts
+// says what counts as a phone number and what does not ("1,000", "111 participants", "NHS 111").
+const emergencyMsg = (n: string, loc: string) =>
+  `prints the emergency number "${n}": the ${loc} site never prints one; write "call your local emergency number" (components: common.emergency.*), and name and link help services instead of giving their numbers (CONTENT-GUIDE §1)`;
+const seenEmergency = new Set<string>();
+function findEmergency(file: string, text: string, re: RegExp, loc: string, safety = false, where = '') {
+  for (const h of findEmergencyNumbers(text, re, safety)) {
+    if (seenEmergency.has(file + h.number + h.context)) continue;
+    seenEmergency.add(file + h.number + h.context);
+    const line = text.slice(0, h.index).split('\n').length;
+    err(file, `${where || `line ~${line}:`} ${emergencyMsg(h.number, loc)}\n      > ${clip(h.context)}`);
   }
 }
 function walkStrings(node: unknown, at: string, out: [string, string][]) {
@@ -731,14 +786,16 @@ function walkStrings(node: unknown, at: string, out: [string, string][]) {
   else if (Array.isArray(node)) node.forEach((x, i) => walkStrings(x, `${at}.${i}`, out));
   else if (node && typeof node === 'object') for (const [k, v] of Object.entries(node)) walkStrings(v, at ? `${at}.${k}` : k, out);
 }
-for (const loc of locales.filter((l) => !l.printsEmergencyNumbers).map((l) => l.code)) {
+for (const l of locales.filter((x) => !x.printsEmergencyNumbers)) {
+  const loc = l.code;
+  const re = emergencyRegex(emergencyNumbers(l, contactsRaw));
   for (const file of [...walk(`src/content/compounds/${loc}`, ['.mdx', '.md']), ...walk(`src/content/pages/${loc}`, ['.mdx', '.md'])]) {
     const raw = fs.readFileSync(file, 'utf8');
-    find112(file, raw);
-    // Stop-now content: any 112 at all.
-    for (const m of raw.matchAll(/<Callout\s+type=["']stop["'][\s\S]*?<\/Callout>/g)) find112(file, m[0], true, 'stop callout:');
+    findEmergency(file, raw, re, loc);
+    // Stop-now content: any of the numbers at all.
+    for (const m of raw.matchAll(/<Callout\s+type=["']stop["'][\s\S]*?<\/Callout>/g)) findEmergency(file, m[0], re, loc, true, 'stop callout:');
     const glance = readMdx(file).data.glance as { stop_signs?: { text?: string }[] } | undefined;
-    (glance?.stop_signs ?? []).forEach((s, i) => find112(file, s.text ?? '', true, `glance.stop_signs[${i + 1}]:`));
+    (glance?.stop_signs ?? []).forEach((s, i) => findEmergency(file, s.text ?? '', re, loc, true, `glance.stop_signs[${i + 1}]:`));
   }
   for (const file of walk(`src/i18n/${loc}`, ['.json'])) {
     let data: unknown;
@@ -750,7 +807,45 @@ for (const loc of locales.filter((l) => !l.printsEmergencyNumbers).map((l) => l.
     const strings: [string, string][] = [];
     walkStrings(data, '', strings);
     const ns = path.basename(file, '.json');
-    for (const [at, s] of strings) find112(file, s, SAFETY_KEYS.test(`${ns}.${at}`), `${at}:`);
+    for (const [at, s] of strings) findEmergency(file, s, re, loc, SAFETY_KEYS.test(`${ns}.${at}`), `${at}:`);
+  }
+}
+// Seller-judging words in the English UI strings, glossary and captions (the patterns are English).
+for (const file of walk(`src/i18n/${sourceLocale}`, ['.json'])) {
+  let data: unknown;
+  try {
+    data = readJson(file);
+  } catch {
+    continue;
+  }
+  const strings: [string, string][] = [];
+  walkStrings(data, '', strings);
+  for (const [at, s] of strings) if (!/(?:^|\.)\$/.test(at)) checkSellerWords(file, at, s);
+}
+
+// ------------------------------------------------------------------ locale residue (config/locale-residue.json; CONTENT-GUIDE §1b)
+// Dutch, Belgian, German and EU reader framing on English (scripts/lib/residue.ts). One issue per file
+// and kind, listing every hit with its line, so `--only <file>` shows what to change.
+const residueConfigs = loadResidueConfig();
+for (const l of locales) {
+  const cfg = residueConfigs.get(l.code);
+  if (!cfg) continue;
+  const byFile = new Map<string, ResidueHit[]>();
+  for (const h of scanLocaleSources(l, cfg)) byFile.set(h.file, [...(byFile.get(h.file) ?? []), h]);
+  for (const [f, list] of byFile) {
+    const file = path.join(ROOT, f);
+    const framing = list.filter((h) => h.level !== 'warn');
+    const names = list.filter((h) => h.level === 'warn');
+    const lines = (xs: ResidueHit[]) => xs.map((h) => `\n      - ${describeHit(h).replace(/\n\s*/, '\n        ')}`).join('');
+    if (framing.length) {
+      (STRICT_RESIDUE ? err : warn)(
+        file,
+        `residue (${l.code}): ${framing.length} hit(s) of another locale's framing (Dutch, Belgian, German or EU reader framing); remove or rewrite for this locale's readers, or for EMA evidence and history mark the line with {/* residue-ok: … */} (frame hits only)${STRICT_RESIDUE ? '' : ' [a warning while STRICT_RESIDUE is false]'}:${lines(framing)}`,
+      );
+    }
+    if (names.length) {
+      warn(file, `residue (${l.code}): ${names.length} European name(s) (EU, EMA, EPAR, CHMP, Europe): keep only as evidence or history, with {/* residue-ok: … */} on the line before:${lines(names)}`);
+    }
   }
 }
 

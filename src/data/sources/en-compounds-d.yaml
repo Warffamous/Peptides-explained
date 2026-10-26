@@ -1,0 +1,45 @@
+# Sources added by the English refocus of the compound pages ghk-cu, melanotan-ii and pt-141 (group compounds-d,
+# 24 October 2026; log in research/refocus-notes/compounds-d.md). Every document below was fetched and read on
+# 24 October 2026 (curl; PDFs with pdftotext). All ids were checked against every file in src/data/sources first:
+# none of these documents was registered before.
+
+fda-cosmetic-or-drug:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Is It a Cosmetic, a Drug, or Both? (Or Is It Soap?)"
+  year: 2024
+  url: https://www.fda.gov/cosmetics/cosmetics-laws-regulations/it-cosmetic-drug-or-both-or-it-soap
+  accessed: 2026-10-24
+  verified: url
+  note: "Content current as of 11 September 2024 (read with curl on 24 October 2026, HTTP 200). 'Whether a product is a cosmetic or a drug under the law is determined by a product's intended use.' The FD&C Act defines cosmetics as 'articles intended to be rubbed, poured, sprinkled, or sprayed on, introduced into, or otherwise applied to the human body...for cleansing, beautifying, promoting attractiveness, or altering the appearance' (sec. 201(i)), and drugs in part as articles intended to treat or prevent disease and 'articles (other than food) intended to affect the structure or any function of the body' (sec. 201(g)(1)). Intended use can be set by claims on labels, in advertising or online: claims that products will 'restore hair growth, reduce cellulite, treat varicose veins, increase or decrease the production of melanin (pigment) in the skin, or regenerate cells' make a product a drug, 'even if the product is marketed as if it were a cosmetic'. 'Under the FD&C Act, cosmetic products and ingredients, with the exception of color additives, do not require FDA approval before they go on the market', while drugs generally need premarket approval (NDA) or must conform to an OTC monograph. Cited for: in the US a GHK-Cu skin cream needs no FDA approval as a cosmetic, but intended use and claims decide whether a product is a drug. The page does not mention GHK-Cu or injected products."
+
+fda-cosmetics-prohibited-restricted:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Prohibited & Restricted Ingredients in Cosmetics"
+  year: 2022
+  url: https://www.fda.gov/cosmetics/cosmetics-laws-regulations/prohibited-restricted-ingredients-cosmetics
+  accessed: 2026-10-24
+  verified: url
+  note: "Content current as of 25 February 2022 (read with curl on 24 October 2026, HTTP 200). It is against the law for a cosmetic to contain any ingredient that makes it harmful when used as directed or in the customary way, whether or not a regulation names the ingredient; 'Under U.S. law, cosmetic products and ingredients, other than color additives, do not need FDA approval before they go on the market', and manufacturers are legally responsible for safety and labelling. The ingredients FDA regulations specifically prohibit or restrict are bithionol, chlorofluorocarbon propellants, chloroform, halogenated salicylanilides, hexachlorophene, mercury compounds, methylene chloride, prohibited cattle materials, vinyl chloride and zirconium-containing complexes in aerosols (plus sunscreen wording and colour additives). Searched in the page text: no copper, peptide or GHK entry. 'If a product is intended for a therapeutic purpose, such as treating or preventing disease, it's a drug under the law and must meet those requirements, such as premarket approval by FDA, even if it affects the appearance'; FDA decides case by case. Cited for: GHK-Cu (copper tripeptide-1) is not among the ingredients FDA regulations prohibit or restrict in cosmetics."
+
+fda-drugsatfda-imcivree:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 213793 (Imcivree, setmelanotide acetate injection)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=213793
+  accessed: 2026-10-24
+  verified: url
+  note: "Overview page read with curl on 24 October 2026 (HTTP 200). Company: Rhythm. Product: IMCIVREE, setmelanotide acetate, solution for subcutaneous use, prescription. ORIG-1 approval 25 November 2020 (Type 1, new molecular entity; priority; orphan). Supplements include SUPPL-7 (20 December 2024) and SUPPL-9 (19 March 2026), both 'Efficacy-New Indication'; the current label is fda-label-imcivree-2026-03."
+
+fda-label-imcivree-2026-03:
+  type: label
+  authors: "Rhythm Pharmaceuticals, Inc. (US prescribing information approved by the FDA)"
+  title: "IMCIVREE (setmelanotide) injection, for subcutaneous use: full prescribing information (revised 03/2026)"
+  container: "Drugs@FDA"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/213793s009lbl.pdf
+  accessed: 2026-10-24
+  verified: url
+  note: "Downloaded with curl and read with pdftotext on 24 October 2026; 'Initial U.S. Approval: 2020', 'Revised: 03/2026' (linked from fda-drugsatfda-imcivree as the SUPPL-9 label). Indications: 'IMCIVREE is a melanocortin 4 (MC4) receptor agonist indicated to reduce excess body weight and maintain reduction long term' in adults and children with acquired hypothalamic obesity (from 4 years), Bardet-Biedl syndrome (from 2 years) or genetically confirmed POMC, PCSK1 or LEPR deficiency (from 2 years); not for other types of obesity. Section 14.1: the acquired-HO trial (NCT05774756) enrolled patients 'with acquired HO due to hypothalamic injury or dysfunction'. Section 12.1: setmelanotide is an MC4 receptor agonist 'with 20-fold less activity at the melanocortin 3 (MC3) and melanocortin 1 (MC1) receptors'; 'The MC1 receptor is expressed on melanocytes, and activation of this receptor leads to accumulation of melanin and increased skin pigmentation independently of ultraviolet light'. Warning 5.4 'Skin Hyperpigmentation, Darkening of Pre-Existing Nevi, and Development of New Melanocytic Nevi': 'Generalized increased skin pigmentation, darkening of pre-existing nevi, and development of new nevi have occurred. Perform a full body skin examination prior to initiation and periodically during treatment'; patient counselling: skin darkening 'occurs in the majority of patients' and 'is reversible upon discontinuation'. Warning 5.1: spontaneous penile erections in males; patients with an erection lasting longer than 4 hours should 'seek emergency medical attention'. (The label prints doses and telephone numbers; neither is for print.)"

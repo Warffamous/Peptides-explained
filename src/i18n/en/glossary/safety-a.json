@@ -42,10 +42,8 @@
   },
   "cellulitis": {
     "term": "cellulitis",
-    "aliases": [
-      "wondroos"
-    ],
-    "definition": "A bacterial infection of the deeper layers of the skin. The skin becomes red, hot, swollen and painful, and it needs antibiotics. (Doctors in the Netherlands often call a similar infection wondroos.)",
+    "aliases": [],
+    "definition": "A bacterial infection of the deeper layers of the skin. The skin becomes red, hot, swollen and painful, and it needs antibiotics.",
     "category": "safety",
     "see_also": [
       "abscess",
@@ -79,8 +77,7 @@
   "sepsis": {
     "term": "sepsis",
     "aliases": [
-      "blood poisoning",
-      "bloedvergiftiging"
+      "blood poisoning"
     ],
     "definition": "A life-threatening reaction to an infection, in which the body's response starts to damage its own organs. It needs hospital treatment straight away.",
     "category": "safety",
@@ -262,9 +259,7 @@
     "aliases": [
       "needle-stick",
       "needlestick",
-      "needle-stick injuries",
-      "prikaccident",
-      "prikaccidenten"
+      "needle-stick injuries"
     ],
     "definition": "A prick from a needle that someone has already used. It can pass on blood-borne viruses such as HIV and hepatitis B or C.",
     "category": "safety",
@@ -319,77 +314,25 @@
     "aliases": [
       "sharps containers",
       "sharps bin",
-      "naaldencontainer",
       "needle container",
       "needle box"
     ],
-    "definition": "A hard plastic box with a lid that closes tightly, for used needles. In the Netherlands you can get one at the pharmacy.",
+    "definition": "A hard plastic box for used needles, with a lid that closes tightly. Needles cannot easily pierce it.",
     "category": "safety",
     "see_also": [
       "needle-stick-injury",
-      "klein-chemisch-afval"
-    ]
-  },
-  "klein-chemisch-afval": {
-    "term": "klein chemisch afval",
-    "aliases": [
-      "kca",
-      "small chemical waste"
-    ],
-    "definition": "Dutch name for small amounts of household chemical waste, such as batteries, paint and medicines. Each municipality collects it, for example at a recycling centre (milieustraat) or with a collection van (chemokar).",
-    "category": "safety",
-    "see_also": [
-      "sharps-container"
-    ]
-  },
-  "huisarts": {
-    "term": "huisarts",
-    "aliases": [
-      "GP",
-      "general practitioner"
-    ],
-    "definition": "Your family doctor in the Netherlands. You go to the huisarts first for most health problems, and they refer you to a hospital if needed.",
-    "category": "safety",
-    "see_also": [
-      "huisartsenpost"
-    ]
-  },
-  "huisartsenpost": {
-    "term": "huisartsenpost",
-    "aliases": [
-      "huisartsen-spoedpost",
-      "out-of-hours GP service"
-    ],
-    "definition": "The Dutch out-of-hours GP service for urgent problems in the evening, at night and at weekends. Call them before you go to a hospital emergency department, unless a life is in danger.",
-    "category": "safety",
-    "see_also": [
-      "huisarts"
-    ]
-  },
-  "ggd": {
-    "term": "GGD",
-    "aliases": [
-      "GGDs",
-      "Municipal Health Service"
-    ],
-    "definition": "The Dutch regional public health service. Among other things, it helps after a needle-stick injury and with sexual health, including emergency HIV treatment.",
-    "category": "safety",
-    "see_also": [
-      "post-exposure-prophylaxis"
+      "needle-syringe-programme"
     ]
   },
   "medical-confidentiality": {
     "term": "medical confidentiality",
     "aliases": [
-      "beroepsgeheim",
-      "medisch beroepsgeheim",
-      "duty of confidentiality"
+      "duty of confidentiality",
+      "medical secrecy"
     ],
-    "definition": "A doctor's duty to keep private what they learn about you as a patient. In the Netherlands there are only a few special situations in which a doctor may or must share it.",
+    "definition": "A doctor's duty to keep private what they learn about you as a patient. The law and professional rules allow only a few exceptions, for example to protect someone from serious harm.",
     "category": "law",
-    "see_also": [
-      "huisarts"
-    ]
+    "see_also": []
   },
   "contraindication": {
     "term": "contraindication",
@@ -490,5 +433,64 @@
     "definition": "A ready-to-use pen that injects adrenaline into the thigh during a severe allergic reaction. People with known severe allergies carry one.",
     "category": "safety",
     "see_also": []
+  },
+  "needle-syringe-programme": {
+    "term": "needle and syringe programme",
+    "aliases": [
+      "needle and syringe programmes",
+      "needle and syringe program",
+      "needle and syringe programs",
+      "needle exchange",
+      "needle exchanges",
+      "syringe services program",
+      "syringe services programs",
+      "NSP",
+      "NSPs"
+    ],
+    "definition": "A health service that gives out new needles and syringes, usually free, and takes back used ones. Many also give advice and some offer tests.",
+    "category": "safety",
+    "see_also": [
+      "sharps-container",
+      "harm-reduction"
+    ]
+  },
+  "health-advice-line": {
+    "term": "health advice line",
+    "aliases": [
+      "health advice lines",
+      "nurse advice line",
+      "nurse line"
+    ],
+    "definition": "A phone and online health service, usually answered by nurses. It tells you how urgent a problem is and where to go, for example NHS 111 or healthdirect.",
+    "category": "safety",
+    "see_also": [
+      "urgent-care-centre"
+    ]
+  },
+  "urgent-care-centre": {
+    "term": "urgent-care centre",
+    "aliases": [
+      "urgent-care centres",
+      "urgent care centre",
+      "urgent care center",
+      "urgent-care service",
+      "urgent care"
+    ],
+    "definition": "A clinic for problems that need care today but are not life-threatening. A life-threatening problem needs an emergency department.",
+    "category": "safety",
+    "see_also": [
+      "health-advice-line"
+    ]
+  },
+  "drug-checking": {
+    "term": "drug checking",
+    "aliases": [
+      "drug-checking"
+    ],
+    "definition": "A service that tests a sample of a substance to find out what is in it. The result covers only the sample that was tested.",
+    "category": "safety",
+    "see_also": [
+      "harm-reduction"
+    ]
   }
 }

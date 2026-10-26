@@ -1,0 +1,190 @@
+# Sources added by group legal-en-b (English refocus, 24 October 2026): legal-routes, legal/research-use-only,
+# legal/sport-and-doping, legal/whats-changing and the tracker. Every entry was fetched on 24 October 2026 and
+# read for what the pages cite it for (curl or Node fetch; the eCFR versioner API; the GOV.UK content and search
+# APIs). Re-read a second time on the evening of 24 October 2026 by the resumed run of this group (quotations
+# matched against the live text; see the notes). No telephone number or e-mail address is recorded.
+# Research notes: research/refocus-notes/legal-en-b.md.
+
+# ------------------------------------------------------------------ quality rules for licensed medicines
+
+ecfr-21-211-165:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 211.165 – Testing and release for distribution"
+  container: "Code of Federal Regulations, Title 21, Part 211 (Current Good Manufacturing Practice for Finished Pharmaceuticals)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211/subpart-I/section-211.165
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through the eCFR versioner API (text as of 15 October 2026). (a): 'For each batch of drug product, there shall be appropriate laboratory determination of satisfactory conformance to final specifications for the drug product, including the identity and strength of each active ingredient, prior to release.' (b): appropriate laboratory testing of each batch required to be free of objectionable microorganisms. (f): products failing to meet established standards or specifications 'shall be rejected'. Cited for: in the US, every batch of a licensed medicine is tested for identity and strength before release."
+
+ecfr-21-211-167:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 211.167 – Special testing requirements"
+  container: "Code of Federal Regulations, Title 21, Part 211 (Current Good Manufacturing Practice for Finished Pharmaceuticals)"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211/subpart-I/section-211.167
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through the eCFR versioner API (text as of 15 October 2026). (a): 'For each batch of drug product purporting to be sterile and/or pyrogen-free, there shall be appropriate laboratory testing to determine conformance to such requirements. The test procedures shall be in writing and shall be followed.' Cited for: an injectable licensed medicine is tested batch by batch for sterility."
+
+ecfr-21-314-80:
+  type: law
+  authors: "U.S. Food and Drug Administration (Electronic Code of Federal Regulations)"
+  title: "21 CFR 314.80 – Postmarketing reporting of adverse drug experiences"
+  container: "Code of Federal Regulations, Title 21, Part 314"
+  year: 2026
+  url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-314/subpart-B/section-314.80
+  accessed: 2026-10-24
+  verified: url
+  note: "Read through the eCFR versioner API (text as of 15 October 2026). (b): each applicant with an approved application 'must promptly review all adverse drug experience information obtained or otherwise received by the applicant from any source' and must have written procedures for surveillance, receipt, evaluation and reporting to FDA. (c)(1)(i): each adverse drug experience that is both serious and unexpected must be reported 'as soon as possible but no later than 15 calendar days from initial receipt of the information'. Cited for: the holder of a US approval must collect and report side effects."
+
+ca-fdr-c02-018:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.02.018 (finished product testing: each lot or batch tested before sale)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.02.018.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Regulations current to 2026-09-30, last amended 2026-06-17 (page details 2026-10-15). C.02.018(1): 'Each lot or batch of a drug shall, before it is made available for further use in fabrication or for sale, be tested against the specifications for that drug.' (2): no lot or batch may be made available for sale 'unless it complies with the specifications for that drug'. Part of Division 2 (Good Manufacturing Practices). Cited for: in Canada, every batch of a medicine is tested before sale."
+
+ca-fdr-c02-029:
+  type: law
+  authors: "Government of Canada"
+  title: "Food and Drug Regulations, section C.02.029 (sterile products)"
+  container: "Justice Laws Website"
+  year: 2026
+  url: https://laws-lois.justice.gc.ca/eng/regulations/C.R.C.,_c._870/section-C.02.029.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Regulations current to 2026-09-30. C.02.029: 'In addition to the other requirements of this Division, a drug that is intended to be sterile shall be fabricated and packaged/labelled (a) in separate and enclosed areas; (b) under the supervision of personnel trained in microbiology; and (c) by a method scientifically proven to ensure sterility.' Cited for: Canadian GMP rules for sterile medicines."
+
+mhra-gmp-gdp-guidance:
+  type: regulator
+  authors: "Medicines and Healthcare products Regulatory Agency"
+  title: "Medicines: good manufacturing practice and good distribution practice"
+  container: "GOV.UK"
+  year: 2024
+  url: https://www.gov.uk/guidance/good-manufacturing-practice-and-good-distribution-practice
+  accessed: 2026-10-24
+  verified: url
+  note: "GOV.UK content API: first published 18 December 2014, updated 13 May 2024. 'Good manufacturing practice (GMP) is the minimum standard that a medicines manufacturer must meet in their production processes'; products must be of consistent high quality, appropriate to their intended use and meet the requirements of the marketing authorisation; good distribution practice requires that medicines are obtained from the licensed supply chain and stored, transported and handled under suitable conditions; the MHRA inspects manufacturing and distribution sites, at application and then periodically based on risk, including overseas sites. Cited for: UK GMP and MHRA inspection of licensed manufacturers."
+
+au-tga-manufacturing:
+  type: regulator
+  authors: "Therapeutic Goods Administration"
+  title: "Manufacturing"
+  container: "TGA"
+  year: 2026
+  url: https://www.tga.gov.au/products/regulations-all-products/manufacturing
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026 (page metadata modified 4 May 2026). 'In Australia, the Therapeutic Goods Act 1989 requires, with certain exceptions, that manufacturers of therapeutic goods hold a licence or a conformity assessment certificate'; 'It is an offence, carrying heavy penalties, to manufacture therapeutic goods for human use without a licence ... unless the manufacturer or goods are exempt'; overseas manufacturers obtain GMP certification after a TGA on-site inspection; 'Manufacturers of therapeutic goods are regularly inspected by the TGA using a risk-based approach to ensure compliance with GMP standards.' Cited for: Australian GMP licensing and inspection."
+
+# ------------------------------------------------------------------ off-label (Canada)
+
+ca-hc-2019-investigational-use-marketed-drugs:
+  type: regulator
+  authors: "Health Canada"
+  title: "Notice to Stakeholders: Statement on the Investigational Use of Marketed Drugs in Clinical Trials"
+  container: "Canada.ca"
+  year: 2021
+  url: https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/announcements/notice-statement-investigational-use-marketed-drugs-clinical-trials.html
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026 (also through WebFetch). 'This policy statement is effective June 5, 2019. Revised on April 26, 2021' (page details 2021-04-26). Off-label use is 'a use not in accordance with the labelled uses or conditions of use for which the drug has received market authorization'. 'As the off-label uses of an authorized drug can often be supported by well-established clinical practice overseen by provincial bodies that govern medical practice, this interpretation may be creating an unnecessary barrier to clinical research.' Cited only for: off-label use concerns a drug authorised for sale in Canada, and the practice of medicine is overseen by provincial bodies. It is guidance about clinical trial applications, not a rule for prescribers."
+
+# ------------------------------------------------------------------ "research use only" (UK search record)
+
+uk-govuk-search-legal-en-b-2026-10-24:
+  type: dataset
+  authors: "Government Digital Service (GOV.UK search API)"
+  title: "GOV.UK search API, MHRA content, 24 October 2026: 'research use only', 'not for human consumption', 'research chemicals peptides', 'peptides'"
+  container: "GOV.UK"
+  year: 2026
+  url: https://www.gov.uk/api/search.json?q=research+use+only&filter_organisations=medicines-and-healthcare-products-regulatory-agency
+  accessed: 2026-10-24
+  verified: url
+  note: "Run on 24 October 2026 with filter_organisations=medicines-and-healthcare-products-regulatory-agency; the first 10 results of each query were read (re-run the same evening with the same top 10). Totals: research use only 3,685, not for human consumption 994, research chemicals peptides 754, peptides 33 (the API matches single words, so the totals are mostly unrelated). 'research use only': clinical trials and clinical investigation guidance only; 'not for human consumption': unrelated items (a 2017 counterfeit-medicines campaign, drug safety updates); 'research chemicals peptides' and 'peptides': GLP-1 safety updates, approvals and the May 2026 seizure release. For 'peptides' all 33 results were read on the evening re-run (GLP-1 safety updates and approvals, the February and May 2026 seizure releases, a falsified Mounjaro alert, 2021 guidance for specials manufacturers, vaccine and antibody approvals). In those results, no MHRA statement about 'research use only' or 'not for human consumption' labels on peptides was found. The MHRA's enforcement releases (mhra-2026-10-counterfeit-pens) say retatrutide sold outside clinical trials is supplied illegally, without discussing labels. Cited for: we found no MHRA statement about such labels."
+
+# ------------------------------------------------------------------ anti-doping bodies: who is tested, where to ask
+
+usada-testing:
+  type: web
+  authors: "U.S. Anti-Doping Agency (USADA)"
+  title: "Testing & Whereabouts"
+  container: "USADA"
+  year: 2026
+  url: https://www.usada.org/testing/
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with curl on 24 October 2026 (page published 1 May 2019, modified 22 May 2026). 'Athletes under USADA's jurisdiction are subject to testing 365 days a year and do not have \"off-seasons\" or cutoff periods in which testing does not occur'; USADA tests without advance notice out of competition; 'Athletes are subject to testing if they compete in events sanctioned by, or are members or license holders of, a National Governing Body or International Federation or fall under the USADA testing jurisdiction as defined in the USADA Protocol for Olympic and Paralympic Movement Testing.' Cited for: who USADA can test."
+
+usada-bpc-157:
+  type: web
+  authors: "U.S. Anti-Doping Agency (USADA)"
+  title: "BPC-157: What Athletes Should Know About the Prohibited Experimental Peptide"
+  container: "USADA (Spirit of Sport)"
+  year: 2026
+  url: https://www.usada.org/spirit-of-sport/bpc-157-peptide-prohibited/
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with curl on 24 October 2026 (published 3 March 2020, modified 10 August 2026). 'The experimental peptide BPC-157 is prohibited under the World Anti-Doping Agency (WADA) Prohibited List in the category of S0 Non-Approved Substances'; it 'is not approved for human clinical use by the U.S. Food and Drug Administration (FDA) or any other global health authority'; 'It is unlikely that a TUE for BPC-157 would be approved because there are permitted alternatives available, but USADA considers each TUE application on a case-by-case basis'; athletes with questions about specific products, substances and methods can contact USADA's Drug Reference Line (contact details not recorded). Cited for: USADA's view on BPC-157 and where US athletes can ask."
+
+ukad-introduction-testing:
+  type: web
+  authors: "UK Anti-Doping (UKAD)"
+  title: "Introduction to Testing"
+  container: "UK Anti-Doping"
+  year: 2026
+  url: https://www.ukad.org.uk/athletes/introduction-testing
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026 (curl fails on this host with a TLS error). 'Who can be tested and when? Athletes can be tested any time, any place. Organisations that have the authority to conduct testing are: National Anti-Doping Organisations (NADO) such as UK Anti-Doping, International Federations (IFs), or Major Event Organisers (MEO)'; 'refusing a test can carry a four-year ban'. Cited for: who can be tested in the UK and the consequence of refusing."
+
+ukad-anti-doping-rules:
+  type: web
+  authors: "UK Anti-Doping (UKAD)"
+  title: "The Anti-Doping Rules"
+  container: "UK Anti-Doping"
+  year: 2026
+  url: https://www.ukad.org.uk/anti-doping-rules
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026. Lists the 11 anti-doping rule violations (presence, use, possession, trafficking and others; possession also applies to athlete support personnel). Under the 2021 UK Anti-Doping Rules UKAD defines National-Level Athletes (testing pools, funded athletes, national squads, sport-specific criteria) and a 'Recreational Athlete': 'An Athlete who is under the jurisdiction of the NGB and who, within the five years prior to committing any Anti-Doping Rule Violation, has not been an International-Level Athlete ... or a National-Level Athlete'. 'If in doubt, check your National Governing Body's website for more information on your sport's anti-doping rules.' Cited for: the rules reach athletes through their national governing body; possession is a violation."
+
+ukad-checking-medications:
+  type: web
+  authors: "UK Anti-Doping (UKAD)"
+  title: "Checking your medication"
+  container: "UK Anti-Doping"
+  year: 2026
+  url: https://www.ukad.org.uk/checking-medications
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026. Strict liability: athletes are '100% responsible for any medication they use' and 'cannot rely on their doctor ... to make these checks for them'. 'Global DRO provides athletes and support personnel with information about the anti-doping status of specific medications and ingredients based on the current WADA Prohibited List. Visitors can search Global DRO for medications sold in Australia, Canada, Japan, New Zealand, Switzerland, the United Kingdom, and the United States'; it gives a reference number per search; users who cannot find a medication can send an enquiry to UKAD from Global DRO. Cited for: Global DRO covers the US, the UK, Canada, Australia and New Zealand; where UK athletes can ask."
+
+au-sia-anti-doping:
+  type: regulator
+  authors: "Sport Integrity Australia"
+  title: "Anti-doping"
+  container: "Sport Integrity Australia"
+  year: 2026
+  url: https://www.sportintegrity.gov.au/what-we-do/anti-doping
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026 (no page date shown). 'As Australia's anti-doping organisation we are responsible for: applying the World Anti-Doping Code in Australia'; 'anyone signed up to a sports organisation that abides by the National Anti-Doping Rules, can be sanctioned for doping'; 'An athlete can be selected for testing anywhere, any time.' Cited for: who the Australian rules cover."
+
+au-sia-athlete-testing:
+  type: regulator
+  authors: "Sport Integrity Australia"
+  title: "Athlete testing (doping control)"
+  container: "Sport Integrity Australia"
+  year: 2026
+  url: https://www.sportintegrity.gov.au/what-we-do/anti-doping/athlete-testing
+  accessed: 2026-10-24
+  verified: url
+  note: "Read with Node fetch on 24 October 2026 (no page date shown). Athletes can be tested in and out of competition; 'Out-of-competition testing can take place at any time of the year and at any location, including: your home, training, hotel or: when you're overseas'; any attempt to evade notification may result in an anti-doping rule violation and a ban from sport. Cited for: when and where athletes are tested in Australia."

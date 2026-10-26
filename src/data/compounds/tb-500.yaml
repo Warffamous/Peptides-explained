@@ -49,8 +49,20 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, fda-pcac-2026-tb500-briefing] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2026-tb500-briefing] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-tb500-briefing] }
+  # UK re-checked on 23 October 2026 (MHRA substance index: no thymosin or TB-500 entry); CA and AU merged from
+  # research/refocus/status/tb-500.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-tb500-briefing, uk-mhra-substance-index-status-c-2026-10-23] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-tb500-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks, fda-503a-categories-2026-05] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, fda-pcac-2026-tb500-briefing] }
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, fda-pcac-2026-tb500-briefing]
+    # '# TB-500.' and '# THYMOSIN BETA 4 (THYMOSIN β4).' in Schedule 4 and Appendix D clause 5 items 38 and 39, both
+    # first in the June 2016 edition (in force 1 June 2016; absent from March 2016) and present in every edition checked
+    # since. The entry gives no sequence or CAS number, so it does not say which molecule 'TB-500' means; either reading
+    # is caught, because thymosin beta-4 has its own identical entry.
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2016 (thymosin beta-4 has its own entry). Possessing it without authority, such as a prescription, is illegal (Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2016-06, au-poisons-standard-2016-03] }
   # Named as an example under S2 (growth factors) from the 2018 List; S2.3 in the 2026 and 2027 Lists.
   - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, since: 2018-01-01, as_of: 2026-10-20, sources: [wada-2018-list-modifications, wada-2026-list-en, wada-2027-list-en] }
 # "group" is relative to the dominant network in this literature: Allan Goldstein and Hynda Kleinman

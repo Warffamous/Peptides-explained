@@ -43,6 +43,14 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search, cosing-copper-tripeptide-1, eu-regulation-1223-2009-cosmetics] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [openfda-drugsfda-search-stubs-b-2026-10-23, fda-503a-categories-2026-05, fda-category-2-safety-risks, fda-pcac-2027-early-announcement] }
+  # UK, CA, AU: merged from research/refocus/status/ghk-cu.yaml (fact-checked 24 October 2026). Status as a MEDICINE;
+  # copper tripeptide-1 as a cosmetic ingredient is a different legal category (described on the page). The UK row
+  # cites the cosmetics regulation because UK law excludes injected products from being cosmetics. No AU schedule
+  # field: GHK-Cu is not named in the Poisons Standard, and whether the 'COPPER COMPOUNDS' entries cover it is a
+  # legal-review question (research/refocus-notes/merge.md).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-mhra-substance-index-status-c-2026-10-23, uk-hmr-2012-reg-46, uk-hmr-2012-reg-2, uk-cosmetic-products-reg-gb-art-2, uk-cosmetic-products-reg-gb-annexes] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-database] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement] }
   # unclear (CONTENT-GUIDE §5.1): not named on the 2026 or 2027 List. S0 bans substances with no current approval by
   # any government health authority for human therapeutic use, and the 2027 explanatory note says unnamed peptides
   # may fall under S0, S2 or S4. No medicine approval was found, but a GHK-Cu wound gel was cleared as a medical

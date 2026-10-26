@@ -3,7 +3,7 @@ slug: ipamorelin
 title: "Ipamorelin"
 description: "Ipamorelin is a lab-made peptide that makes the body release growth hormone. Its one published patient trial found no clear benefit. Evidence, risks and law."
 summary:
-  - "Ipamorelin is a lab-made peptide. It is not an approved medicine in Europe or the US."
+  - "Ipamorelin is a lab-made peptide. It is not approved in the US, the UK, Canada or Australia."
   - "It copies ghrelin, a hunger hormone. This makes a small gland under the brain release growth hormone."
   - "About 150 people took part in two published studies. It did not clearly help the gut after surgery."
   - "Nobody knows what months of use do. Similar drugs raised blood sugar and caused water retention."
@@ -111,13 +111,12 @@ studies:
   gajda-2019-seized-powders:
     finding: "Powders seized by Danish customs turned out to be modified versions of growth hormone releasing peptides, including ipamorelin with an extra amino acid (glycine) added at the start of the chain."
     limitation: "A few seized samples from one country; shows that such products exist, not how common they are. The effects and safety of the modified molecule have never been studied."
+# The European notes moved to MANIFEST-compounds-b.md, the manifest of saved text (the rows stay in the data file).
 regulatory_notes:
-  EU: "No authorised product, and no record in EMA's medicines data (checked 22 October 2026)."
-  NL: "Not authorised; no product in the CBG database. Supplying a medicine without authorisation is prohibited (Geneesmiddelenwet art. 40)."
-  DE: "No EU authorisation, and no approval anywhere in ChEMBL. The Anti-Doping Act annex names it as a growth hormone secretagogue."
-  BE: "Not authorised: the 1964 Medicines Act requires a national or EU licence. No EU licence exists, and ChEMBL records no approval anywhere."
-  UK: "Not authorised; supplying an unlicensed medicine is prohibited by the Human Medicines Regulations 2012."
   US: "Not FDA-approved. In October 2024 FDA advisers voted 0–12 (one abstention) against adding either form to the 503A list; the acetate is in 503B category 2."
+  UK: "Not authorised; the MHRA database lists no ipamorelin product. Supplying an unlicensed medicine is prohibited by the Human Medicines Regulations 2012."
+  CA: "No product ever authorised. Not on the Prescription Drug List; Health Canada treats injectable peptides as prescription drugs and has seized ipamorelin."
+  AU: "Not on the ARTG. Named in the Poisons Standard as prescription only (Schedule 4) and illegal to possess without authority (Appendix D)."
   WADA: "Prohibited at all times under S2 (growth hormone releasing factors); named as an example since the 2015 List."
 ---
 <Section id="what-it-is">
@@ -133,7 +132,7 @@ regulatory_notes:
 | An official medicine name? | <Verdict is="yes" /> "Ipamorelin" is its international non-proprietary name.<Cite id="who-2014-inn-biological-review" /> |
 | One substance under that name? | <Verdict is="no" /> It is sold as a free base or an acetate salt. The FDA treats them as different substances.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> |
 | Tested in patients? | <Verdict is="yes" /> In one published trial after bowel surgery. It did not clearly help.<Cite id="beck-2014-ipamorelin-ileus" /> |
-| Approved as a medicine? | <Verdict is="no" /> Not in the EU, the UK or the US.<Cite id="ema-medicines-json,chembl-ipamorelin,fda-pcac-2024-ipamorelin-briefing" /> |
+| Approved as a medicine? | <Verdict is="no" /> Not in the US, the UK, Canada or Australia. A drug database, ChEMBL, records no approval anywhere.<Cite id="fda-pcac-2024-ipamorelin-briefing,mhra-products-search-cjc-1295-ipamorelin,ca-dpd-extract-search-status-b-2026-10-23,au-artg-search-status-b-2026-10-23,chembl-ipamorelin" /> |
 
 </Compare>
 
@@ -166,7 +165,9 @@ The Swiss company Helsinn later developed it as a drip to restart the bowel afte
 
 ### Related medicines that did reach patients
 
-Ipamorelin belongs to a real drug class. Macimorelin, another substance that triggers growth hormone release, is authorised in the EU (as Ghryvelin, since 11 January 2019) as a single-dose test for growth hormone deficiency in adults.<Cite id="ema-epar-ghryvelin" /> The EU refused anamorelin, a ghrelin-receptor tablet meant to treat weight loss and muscle wasting in people with lung cancer, in 2017: its effect on lean body mass was marginal, and no effect on grip strength or quality of life was shown.<Cite id="ema-epar-adlumiz" /> So these drugs can move hormones in people. A lasting benefit from long-term use has not been shown.
+Ipamorelin belongs to a real drug class. Macimorelin, another substance that triggers growth hormone release, was approved by the FDA on 20 December 2017 (as Macrilen) as a test for growth hormone deficiency in adults, taken once by mouth; the FDA's database now lists that product as discontinued.<Cite id="fda-drugsatfda-macrilen" />
+{/* residue-ok: EMA evidence (a regulator's assessment of a related drug's trial results) */}
+Anamorelin, a ghrelin-receptor tablet meant to treat weight loss and muscle wasting in people with lung cancer, was refused by the European Medicines Agency in 2017: its effect on lean body mass was marginal, and no effect on grip strength or quality of life was shown.<Cite id="ema-epar-adlumiz" /> So these drugs can move hormones in people. A lasting benefit from long-term use has not been shown.
 
 ### How it is used now
 
@@ -268,7 +269,7 @@ The picture is not empty. In healthy men, ipamorelin released growth hormone, an
 | Animals | About 15 studies, mostly in rats, mice and pigs | Mostly Novo Nordisk and its partners; gut studies from one Oklahoma laboratory working with Helsinn | Short; no formal toxicity studies found by the FDA |
 | People, controlled | One phase 1 study (about 40 to 48 healthy men) and one phase 2 trial (114 patients) | Universities working with the developers (Novo Nordisk staff; Helsinn funding) | Into a vein only; at most 7 days |
 | People, unpublished | One phase 2 trial, 320 patients, finished 2014 | Helsinn | No results available |
-| Products | Two lab analyses of seized or black-market products | Anti-doping and forensic laboratories in Denmark, Germany and Norway | Few samples; shows what exists, not how often |
+| Products | Two lab analyses of seized or black-market products | Anti-doping and forensic laboratories in Denmark, Germany and Norway | Few samples; shows what exists, not how often {/* residue-ok: evidence (where the laboratories were) */} |
 
 </Diagram>
 
@@ -316,7 +317,7 @@ One volunteer took ipamorelin through the nose in a doping-test study: <Claim le
 
 <InDetail title="Where the evidence is promising, and what the gap costs">
 
-Some of the biology is solid. Ipamorelin releases growth hormone in people, and drugs that act on the same system have passed regulators: macimorelin as a diagnostic test.<Cite id="gobburu-1999-ipamorelin-pkpd,ema-epar-ghryvelin" /> In a 2-year trial in 65 older adults, the related tablet MK-677 raised growth hormone and IGF-1 to young-adult levels and added about 1 kg of fat-free mass. But strength and function did not change, although the authors say the trial was too small to judge them.<Cite id="nass-2008-mk677-older-adults" /> Raising a hormone level is not the same as making people stronger or healthier.
+Some of the biology is solid. Ipamorelin releases growth hormone in people, and a drug that acts on the same system has passed a regulator: macimorelin, as a diagnostic test.<Cite id="gobburu-1999-ipamorelin-pkpd,fda-drugsatfda-macrilen" /> In a 2-year trial in 65 older adults, the related tablet MK-677 raised growth hormone and IGF-1 to young-adult levels and added about 1 kg of fat-free mass. But strength and function did not change, although the authors say the trial was too small to judge them.<Cite id="nass-2008-mk677-older-adults" /> Raising a hormone level is not the same as making people stronger or healthier.
 
 The gap has a cost. Bowel paralysis after surgery is a real problem with few drug options, so testing a ghrelin-like drug for it was reasonable. The FDA notes that one drug, alvimopan, is approved for it in the US.<Cite id="beck-2014-ipamorelin-ileus,fda-pcac-2024-ipamorelin-briefing" /> The development stopped, the largest trial was never published, and the compound turned up in wellness clinics and on websites for uses nobody had tested in people.<Cite id="ctgov-nct01280344,fda-pcac-2024-ipamorelin-briefing" />
 
@@ -358,49 +359,54 @@ As of 22 October 2026, these are specifically unknown:
 
 <Section id="regulatory">
 
-<Lead question="Is it legal?">It is not approved in Europe or the US, and it is banned in sport at all times.</Lead>
+<Lead question="Is it legal?">It is not approved in the US, the UK, Canada or Australia, and it is banned in sport.</Lead>
 
-<Compare title="Nobody has approved it as a medicine. US experts said pharmacies should not make it." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 22 October 2026.">
+<Compare title="Nobody has approved it as a medicine. US experts said pharmacies should not make it." detail="Status in the United States, the United Kingdom, Canada and Australia. US status checked on 22 October 2026, the others on 23 October 2026.">
 
-| | Netherlands and the EU | United States |
+| | Approved as a medicine? | Legal to sell or supply? |
 |---|---|---|
-| Approved as a medicine? | <Verdict is="no" /> No EU or Dutch authorisation. EMA's medicines data hold no record of it.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Not FDA-approved, and part of no approved drug.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> |
-| Legal to sell or supply as a medicine? | <Verdict is="no" /> Dutch law forbids selling or supplying a medicine without a marketing authorisation, with narrow exceptions.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Pharmacies may not make it from raw powder: it has no official quality standard and is not on the 503A list.<Cite id="usc-21-353a,fda-pcac-2024-ipamorelin-briefing" /> |
-| Assessed by a regulator? | <Verdict is="no" /> EMA and Dutch records show no application for it.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="yes" /> In October 2024. FDA staff advised against it; the advisers voted 0–12, with one abstention.<Cite id="fda-pcac-2024-ipamorelin-briefing,fda-pcac-2024-minutes" /> |
-| Changed by the July 2026 US vote? | <Verdict is="no" /> Nothing the FDA or its advisers decide changes the law here.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> Ipamorelin was not among the seven peptides discussed in July 2026.<Cite id="fda-pcac-2026-briefing-intro" /> |
-| Allowed in sport? | <Verdict is="no" /> Banned at all times, as a growth hormone releasing factor.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule applies.<Cite id="wada-2026-list-en" /> |
+| United States | <Verdict is="no" /> Not FDA-approved, and part of no approved drug.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> | <Verdict is="no" /> Pharmacies may not make it from raw powder. In October 2024 FDA advisers voted 0–12, with one abstention, against changing that.<Cite id="usc-21-353a,fda-pcac-2024-ipamorelin-briefing,fda-pcac-2024-minutes" /> |
+| United Kingdom | <Verdict is="no" /> The MHRA database lists no ipamorelin product.<Cite id="mhra-products-search-cjc-1295-ipamorelin" /> | <Verdict is="no" /> Selling or supplying an unlicensed medicine is not allowed.<Cite id="uk-hmr-2012-reg-46" /> |
+| Canada | <Verdict is="no" /> Health Canada has never authorised an ipamorelin product.<Cite id="ca-dpd-search-status-b-2026-10-23,ca-noc-search-status-b-2026-10-23" /> | <Verdict is="no" /> Health Canada says unauthorised drug products are illegal, and it has seized ipamorelin.<Cite id="ca-hc-2026-04-think-twice-peptides,ca-hc-recalls-database" /> |
+| Australia | <Verdict is="no" /> Not on the Australian Register of Therapeutic Goods (ARTG).<Cite id="au-artg-search-status-b-2026-10-23" /> | <Verdict is="no" /> A prescription-only medicine (Schedule 4) that is not on the ARTG.<Cite id="au-poisons-standard-2026-10,au-tga-2026-04-peptide-responsibilities" /> |
 
 </Compare>
+
+In sport it is banned at all times under the worldwide anti-doping rules, as a growth hormone releasing factor.<Cite id="wada-2026-list-en" />
 
 <InDetail title="Status in each country, and in sport">
 
 <RegulatoryTable />
 
-All statuses were checked on 22 October 2026.
+The US and sport statuses were checked on 22 October 2026; the UK, Canadian and Australian statuses on 23 October 2026.
 
 ### Sport (WADA)
 
-Ipamorelin is on the World Anti-Doping Agency's Prohibited List under S2.2.4, growth hormone releasing factors, as an example of a growth hormone secretagogue. S2 substances are banned at all times, in and out of competition, and are non-Specified Substances.<Cite id="wada-2026-list-en,wada-2027-list-en" /> It has been named since the 2015 List; WADA said the named examples were already prohibited under earlier lists.<Cite id="wada-2015-list-en,wada-2015-list-modifications" /> Doping laboratories can find a breakdown product in urine after the intact peptide has gone.<Cite id="semenistaya-2015-ghrp-nasal" />
+Ipamorelin is on the World Anti-Doping Agency's Prohibited List under S2.2.4, growth hormone releasing factors, as an example of a growth hormone secretagogue. S2 substances are banned at all times, in and out of competition, and are non-Specified Substances.<Cite id="wada-2026-list-en,wada-2027-list-en" /> It has been named since the 2015 List; WADA said the named examples were already prohibited under earlier lists.<Cite id="wada-2015-list-en,wada-2015-list-modifications" /> Doping laboratories can find a breakdown product in urine after the intact peptide has gone.<Cite id="semenistaya-2015-ghrp-nasal" /> Sport Integrity Australia names ipamorelin among the unapproved peptides that are prohibited in sport.<Cite id="au-sia-peptides" />
 
 </InDetail>
 
-<InDetail title="The European Union, the Netherlands, Germany, Belgium and the United Kingdom">
+<InDetail title="The UK, Canada and Australia">
 
-### European Union and member states
-
-No ipamorelin product has an EU marketing authorisation. EMA's medicines data, which also include refused and withdrawn applications, contain no record of it.<Cite id="ema-medicines-search,ema-medicines-json" /> ChEMBL, a European drug database, records no approval anywhere; its highest stage reached is phase 2.<Cite id="chembl-ipamorelin" />
-
-- **Netherlands.** The CBG database lists no ipamorelin product.<Cite id="cbg-geneesmiddeleninformatiebank" /> A substance presented as treating disease, or one that can be used to change body functions through a pharmacological effect, is a medicine (Geneesmiddelenwet art. 1). Selling, supplying, stocking or importing a medicine without a marketing authorisation is prohibited, with narrow exceptions (art. 40).<Cite id="nl-gmw-art-1-geneesmiddel,nl-gmw-art-40-handelsvergunning" />
-- **Germany.** Finished medicines need a national licence or an EU authorisation (AMG § 21). Ipamorelin has no EU authorisation, and ChEMBL records no approval anywhere; we did not search the German national database.<Cite id="de-amg-21,ema-medicines-json,chembl-ipamorelin" /> The annex to the Anti-Doping Act names ipamorelin as a growth hormone secretagogue. Acquiring or possessing more than a small amount of it for doping in sport is prohibited (§ 2(3)).<Cite id="de-antidopg-anlage,de-antidopg-2" />
-- **Belgium.** A medicine may be placed on the market only with a national or EU marketing authorisation (Medicines Act of 25 March 1964, art. 6 § 1). Ipamorelin has no EU authorisation.<Cite id="be-medicines-law-1964,ema-medicines-json" />
-
-<Callout type="legal" title="The US vote does not apply here">
-Nothing the FDA or its advisory committee decides changes the legal position in the Netherlands or anywhere else in the EU.
-</Callout>
+No ipamorelin product is approved anywhere that ChEMBL, a drug database, records; the highest stage it reached is phase 2.<Cite id="chembl-ipamorelin" />
 
 ### United Kingdom
 
-Selling or supplying a medicinal product without a UK authorisation is prohibited (Human Medicines Regulations 2012, regulation 46).<Cite id="uk-hmr-2012-reg-46" /> We found no UK licence for ipamorelin; the MHRA's product database could not be searched automatically, so this rests on the absence of any approval in ChEMBL.<Cite id="chembl-ipamorelin" />
+The MHRA, the UK medicines regulator, lists no ipamorelin product in its database (searched 23 October 2026, also under the code NNC 26-0161), and no MHRA alert or news item names it.<Cite id="mhra-products-search-cjc-1295-ipamorelin,uk-govuk-search-status-b-2026-10-23" /> Selling or supplying a medicinal product without a UK authorisation is prohibited (Human Medicines Regulations 2012, regulation 46).<Cite id="uk-hmr-2012-reg-46" /> It is not a controlled drug under the Misuse of Drugs Act.<Cite id="uk-mda-1971-sch-2" />
+
+### Canada
+
+Health Canada has not authorised any product containing ipamorelin: there is none in its Drug Product Database or in its database of approvals (notices of compliance), searched 23 October 2026.<Cite id="ca-dpd-search-status-b-2026-10-23,ca-dpd-extract-search-status-b-2026-10-23,ca-noc-search-status-b-2026-10-23" /> Its safety and effectiveness have not been established (see the evidence above). Ipamorelin is not on Canada's Prescription Drug List, but Health Canada says that "peptides are generally regulated as prescription drugs" in Canada, and that a "research use only" label does not make such products legal.<Cite id="ca-pdl-human,ca-hc-2026-04-think-twice-peptides" /> It names ipamorelin among the unauthorised injectable peptides it has seized. In 2025 it warned about products sold as ipamorelin by an online seller, a wellness clinic, a fitness business and two shops; some products seized from the shops carried falsified drug identification numbers (DINs).<Cite id="ca-hc-2026-04-think-twice-peptides,ca-hc-recalls-database" /> A manufacturer may not sell a drug in Canada without a DIN.<Cite id="ca-food-and-drug-regulations" /> Residents of Canada generally may not bring prescription drugs into the country, by hand or by mail.<Cite id="ca-hc-gui-0116-personal-import" />
+
+### Australia
+
+No ipamorelin product is on the Australian Register of Therapeutic Goods (ARTG).<Cite id="au-artg-search-status-b-2026-10-23" /> Since 1 June 2015 the Poisons Standard, Australia's national list of scheduled medicines, has named ipamorelin as prescription only (Schedule 4) and on the list of medicines that are illegal to possess without authority (Appendix D). The TGA's own guidance gives ipamorelin as an example of a prescription medicine.<Cite id="au-poisons-standard-2026-10,au-poisons-standard-2015-06,au-poisons-standard-2015-02,au-tga-2026-06-advertising-prescription-medicines-guidance" /> It was scheduled as a performance and image enhancing drug.<Cite id="au-tga-2014-09-scheduling-consultation" />
+
+Possession without a prescription is a matter for each state and territory. In New South Wales, ipamorelin is on the state's list of restricted medicines that may not be possessed without authority; in Victoria, possessing any Schedule 4 medicine without authority is an offence. The other states and territories were not checked.<Cite id="au-nsw-health-s4d,au-vic-dpcs-act-1981" /> Ipamorelin is not named among the substances that need an import permit; whether a broader entry could still apply is not settled.<Cite id="au-customs-prohibited-imports-regs,au-odc-growth-hormones-import-permit" /> Someone importing it for themselves must meet the conditions of the Personal Importation Scheme, which for a prescription-only medicine include a prescription. The TGA will not release peptides labelled only with codes, or without the active ingredient and strength.<Cite id="au-tga-personal-importation-scheme,au-tga-2026-04-peptide-responsibilities" />
+
+<Callout type="legal" title="US decisions do not apply here">
+Nothing the FDA or its advisory committee decides changes the law in the UK, Canada or Australia.
+</Callout>
 
 </InDetail>
 
@@ -422,9 +428,9 @@ That later meeting is often confused with ipamorelin's own vote, so here are its
 - On 23 July 2026 the same committee voted 8–6, with one abstention, to recommend BPC-157 for the 503A list. It considered seven peptides and recommended six: BPC-157, KPV, TB-500, MOTS-c, Semax and epitalon. Emideltide (DSIP) was not recommended. The FDA has posted no minutes, so these results are as reported from the public meeting.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions,fda-pcac-2026-briefing-intro" />
 - That vote is advisory and not binding. It went against FDA staff's own recommendation.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" />
 - Legal compounding of those peptides stays prohibited until the FDA adopts the advice and completes rulemaking.<Cite id="fda-503a-bulks-page" />
-- None of them is an approved medicine in the EU, the UK or the US; Semax is registered as a medicine in Russia. A 503A listing would only allow pharmacy compounding on prescription in the US. It is not a marketing authorisation, says nothing about whether a substance works, and changes nothing in the EU or the Netherlands.<Cite id="fda-pcac-2026-semax-briefing,fr-2026-07361-pcac-notice,fda-pcac-2026-presentations-day1,usc-21-353a,nl-geneesmiddelenwet" />
+- None of them is an approved medicine in the US, the UK, Canada or Australia; Semax is registered as a medicine in Russia.<Cite id="fda-pcac-2026-semax-briefing,fr-2026-07361-pcac-notice,uk-mhra-substance-index-status-c-2026-10-23,mhra-products-search-status-d-2026-10-23,ca-dpd-search-status-c-2026-10-23,ca-dpd-extract-search-merge-2026-10-24,au-artg-search-status-c-2026-10-23,au-artg-search-status-d-2026-10-23" /> A 503A listing would only allow pharmacy compounding on prescription in the US. It is not a marketing authorisation, says nothing about whether a substance works, and changes nothing outside the US.<Cite id="fda-pcac-2026-presentations-day1,usc-21-353a" />
 
-None of this makes ipamorelin an approved medicine, and none of it changes anything in the EU or the Netherlands.
+None of this makes ipamorelin an approved medicine, and none of it changes the law in the UK, Canada or Australia.
 
 </InDetail>
 
@@ -478,7 +484,8 @@ The reasoning is a chain, and only its first links are established:
 
 <InDetail title="Product quality and immune reactions">
 
-The most immediate risk may be the product itself. The certificates of analysis the FDA reviewed reported purity only. They did not test impurities, clumps of peptide or bacterial toxins (endotoxins), which the FDA calls critical for anything injected.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> The nominators' certificates named one form in the title and gave the formula of the other.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> Forensic and anti-doping laboratories in Denmark, Germany and Norway found products containing "Gly-ipamorelin", ipamorelin with an extra amino acid. Its effects and safety have never been studied.<Cite id="gajda-2019-glycine-ghs,krug-2018-black-market-gh" />
+The most immediate risk may be the product itself. The certificates of analysis the FDA reviewed reported purity only. They did not test impurities, clumps of peptide or bacterial toxins (endotoxins), which the FDA calls critical for anything injected.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> The nominators' certificates named one form in the title and gave the formula of the other.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence (where the laboratories were) */}
+Forensic and anti-doping laboratories in Denmark, Germany and Norway found products containing "Gly-ipamorelin", ipamorelin with an extra amino acid. Its effects and safety have never been studied.<Cite id="gajda-2019-glycine-ghs,krug-2018-black-market-gh" />
 
 Peptides can clump together during storage, and synthesis leaves near-copies of the chain. Both can trigger the immune system. The FDA is concerned about immune reactions to injected ipamorelin, more so under the skin than into a vein. Reactions range from antibodies without symptoms to life-threatening reactions, and no study has tested this.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> See [product risk](/en/safety/product-risk/).
 
@@ -562,6 +569,20 @@ Tell any doctor who treats you that you use it, so a change in blood sugar or a 
 - **Diabetes medicines, including insulin**, because a rise in blood sugar could work against them.<Cite id="nass-2008-mk677-older-adults,fda-pcac-2024-ipamorelin-briefing" />
 - **Other growth hormone boosters** (CJC-1295, sermorelin, tesamorelin, growth hormone itself or MK-677), which push the same system. Mixtures are sold, but we found no study of their combined effect in people.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
 - **Medicines that affect heart rhythm**, because an approved drug acting on the same system can prolong the QT interval.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+<InDetail title="Legal routes, and reporting side effects">
+
+### The legal routes, country by country
+
+No ipamorelin product is approved in the US, the UK, Canada or Australia, so there is nothing a doctor can [prescribe](/en/legal-routes/#prescription) as an approved medicine, and [off-label use](/en/legal-routes/#off-label) applies only to medicines that are approved.<Cite id="fda-pcac-2024-ipamorelin-briefing,fda-off-label-use" /> In the US, pharmacies may not make it from raw powder, and for outsourcing facilities the FDA lists ipamorelin acetate among substances that may pose significant safety risks ([US compounding](/en/legal-routes/#us-compounding)).<Cite id="usc-21-353a,fda-pcac-2024-ipamorelin-briefing,fda-category-2-safety-risks" />
+
+Our page on [treatment routes](/en/legal-routes/) explains the other legal routes in each country and their limits: [UK "specials"](/en/legal-routes/#uk-specials), [Canada's Special Access Program](/en/legal-routes/#canada-special-access), [Australia's Special Access Scheme](/en/legal-routes/#australia-sas), [importing for yourself](/en/legal-routes/#personal-import) and [clinical trials](/en/legal-routes/#trials). Each has strict conditions, and none turns an unapproved product into an approved one. ClinicalTrials.gov lists no open clinical trial of ipamorelin; its only record still active, in the US, is an observational study. The Australian and New Zealand registry lists none.<Cite id="ctgov-search-status-b-2026-10-23,ctgov-nct07717866,au-anzctr-search-status-b-2026-10-23" />
+
+### Report side effects
+
+Patients can report a side effect themselves, not only doctors. In the US, report to [FDA MedWatch](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program); in the UK, to the [Yellow Card scheme](https://yellowcard.mhra.gov.uk/); in Canada, to Health Canada's [Canada Vigilance Program](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html); in Australia, to the [TGA](https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem).<Cite id="fda-medwatch,mhra-yellow-card,ca-hc-medeffect-reporting,ca-hc-canada-vigilance,au-tga-report-adverse-event" /> For Ireland and New Zealand, see [our notes page](/en/legal/ireland-and-new-zealand/).
 
 </InDetail>
 

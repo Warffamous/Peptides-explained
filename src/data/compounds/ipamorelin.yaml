@@ -49,8 +49,18 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, chembl-ipamorelin] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, chembl-ipamorelin] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, chembl-ipamorelin] }
+  # UK re-checked on 23 October 2026 (MHRA Products: no results); CA and AU merged from
+  # research/refocus/status/ipamorelin.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, chembl-ipamorelin, mhra-products-search-cjc-1295-ipamorelin] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-ipamorelin-briefing, fda-pcac-2024-minutes, fda-category-2-safety-risks, fda-503b-categories-2025-03, federalregister-ipamorelin-search-2026-10-22] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-b-2026-10-23, ca-dpd-extract-search-status-b-2026-10-23, ca-noc-search-status-b-2026-10-23, ca-hc-2026-04-think-twice-peptides] }
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-artg-search-status-b-2026-10-23, au-poisons-standard-2026-10]
+    # '# IPAMORELIN.' in Schedule 4 and Appendix D clause 5 item 25: first in the June 2015 edition (in force 1 June
+    # 2015), absent from February 2015. The TGA's June 2026 advertising guidance also names it as a prescription medicine.
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2015. Possessing it without authority, such as a prescription, is illegal (Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2026-06-advertising-prescription-medicines-guidance] }
   # Named as an example since the 2015 List; WADA states the named examples were already prohibited
   # under earlier lists ('GH and its releasing factors'), so no 'since' date is given.
   - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2015-list-en, wada-2015-list-modifications] }

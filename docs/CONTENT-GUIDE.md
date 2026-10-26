@@ -8,20 +8,44 @@ voice, honesty and the editorial guardrails.
 
 ## 1. The non-negotiables
 
-The site **sells nothing, links to no seller, recommends no vendor**. Under Dutch law
-(Geneesmiddelenwet art. 84–85, implementing Directive 2001/83/EC) public advertising for a
-medicine without marketing authorisation is prohibited, and courts read "advertising" broadly:
-even objective information can be advertising if it carries a promotional purpose. A commercial
-link is what supplies that purpose. **The absence of commerce is what makes the content legal.**
+The site **sells nothing, links to no seller, recommends no seller**. It is **published from the
+Netherlands, so Dutch law is the publisher's law**: it governs what the site may say, wherever the
+reader lives. Under the Geneesmiddelenwet (art. 84–85, implementing Directive 2001/83/EC) public
+advertising for a medicine without marketing authorisation is prohibited, and courts read
+"advertising" broadly: even objective information can be advertising if it carries a promotional
+purpose. A commercial link is what supplies that purpose. **The absence of commerce is what makes
+the content legal.** The readers' countries (§1b) have similar rules on advertising medicines. Health
+Canada's advertising guidance (2023), for example, says that a message about an unauthorised health
+product, even in an educational setting, may be considered promotional if it does not caution that
+Health Canada has not authorised the product and that its safety and effectiveness are still under
+investigation, or if it suggests the product is available through the Special Access Program (source
+`ca-hc-advertising-distinction-2023`; research/refocus/canada-legal.md §11.3; a question for the legal
+reviewer). The pages say this once, in the publisher line on the about pages (§1b), and never frame
+Dutch law as the reader's law.
 
 Therefore, in content:
 
 - No outbound link except to hosts on `config/link-allowlist.json` (regulators, law databases,
   PubMed/DOI, universities, anti-doping bodies, patient and harm-reduction organisations).
   Cite through `<Cite id>` and the source registry rather than inline links.
-- No link text or call to action containing commerce words (buy, shop, order, vendor, supplier,
-  discount, kopen, bestellen, korting …, see `config/commerce-tokens.json`). The build fails.
-- Never name a seller, a "reputable lab", a brand of research chemical, or a website that sells.
+- No link text, call to action, **page title, heading, section question, fold title, figure title,
+  diagram caption or label** containing commerce words (buy, shop, order, vendor, supplier, price,
+  deal, for sale, discount, kopen, bestellen, korting …, see `config/commerce-tokens.json`). The build
+  fails: the validator checks the frontmatter `title` and `nav_title`, `##`–`######` headings,
+  `<Lead question>`, `<InDetail title>`, the `title` of `<Compare>`, `<KeyNumber>`, `<IconArray>`,
+  `<TimeStrip>` and `<Callout>`, `<KeyNumber label>`, `<Diagram caption>` and `<FaqItem q>`;
+  `npm run check:commerce` checks the same in the built pages (`h1`–`h6` and the components' title
+  elements), plus every `aria-label`. Ask the question without the word: "Is a research-labelled
+  peptide legal to have?", not "Is it legal for me to buy …"; "When may a doctor ask for a
+  'special'?", not "… order a 'special'". Not commerce, and passing: "in order to", "the order of
+  the amino acids", "why order matters", "deal with", and an order as a legal instrument ("an executive
+  order", "a court order", "the … (Amendment) Order 2026"); `stripNonCommerce` in `scripts/lib/load.ts`.
+- Never name a seller, a "reputable lab", a brand of research chemical, or a website that sells,
+  and never vouch for one. The validator warns on "reputable", "trusted lab/source/seller", "legit",
+  "third-party tested", "uses it himself/themselves", "where to buy", "reliable source" and "vendor",
+  in the MDX body, the frontmatter text and the English UI strings and glossary (a claim quoted in
+  order to say it is not evidence, as in the lab-report ladder, §1a, is not reported). Where the role
+  must be named, write "seller", and give no help choosing one.
   Trade names of **authorised** medicines (Ozempic, Wegovy, Mounjaro, Egrifta, Vyleesi) are
   allowed for identification only, always neutral, never persuasive.
 
@@ -44,20 +68,35 @@ Therefore, in content:
 - Uncertainty explicitly, **in both directions**. Where evidence is genuinely promising, say so
   plainly. Where the regulatory lag imposes real costs, say so. This site is not anti-peptide.
 - Regulatory status with the date it was accurate ("as of 20 October 2026").
-- The distinction between **authorised**, **under regulatory review** and **unapproved**.
+- The distinction between **authorised**, **under regulatory review** and **unapproved**, and, where
+  it applies, **approved but no longer sold** (`discontinued`: tesamorelin in Canada, approved 29 April
+  2014, no longer sold since 30 September 2022). Never write "not approved" for a country whose status
+  is unknown.
 - The authorised molecule is not the grey-market vial: "semaglutide" bought online as a research
   chemical is an unauthorised product of unknown quality even though Ozempic is authorised.
-- **The emergency number, by locale** (owner's decision, 20 October 2026). The English site is read
-  in many countries, so it **never prints 112** (or any other emergency number): write "call your
-  local emergency number" ("If it is severe, call your local emergency number."). Only the Dutch
-  pages say 112 ("Bel 112"). Components never hard-code a number: they use the locale's
-  `common.emergency.*` strings (`call`, `now`, `ifSevere`, `jurisdiction`), and
-  `src/data/jurisdictions.yaml` keeps each country's numbers as data, passed only to a locale with
-  `printsEmergencyNumbers: true` in `config/locales.json` (the Dutch strings). The
-  validator fails an English content or i18n file that prints 112 as a phone number (112 near a
-  calling word such as call, phone, dial, emergency or ambulance, or any 112 in stop-now content);
-  other numbers such as "week 112", "1,112", "volume 112" or a count or measurement ("112 participants",
-  "112 mg/dL") are left alone.
+- **The emergency number, by locale** (owner's decisions, 20 and 23 October 2026). The English site is
+  read in several countries, so it **never prints an emergency number**: not 911 (US, Canada; also
+  written 9-1-1), 999 (UK, also Ireland), 000 or "triple zero" (Australia), 112 (Australia from a
+  mobile, Ireland, and across Europe) or 111 (New Zealand). Write "call your local emergency number"
+  ("If it is severe, call your local emergency number."). Only the Dutch pages say 112 ("Bel 112").
+  - Help services are **named and linked, never numbered**: "your country's health advice line
+    (NHS 111 in England, healthdirect in Australia …)", using the help entries of the contact cards
+    (`<JurisdictionCards />`, `<JurisdictionCard code>`). A service whose **name** contains a number may
+    be named as the service: "NHS 111", "NHS 111 Wales", "988 Suicide & Crisis Lifeline", "Health811".
+  - Components never hard-code a number: they use the locale's `common.emergency.*` strings (`call`,
+    `now`, `ifSevere`, `jurisdiction`), and `src/data/jurisdictions.yaml` keeps each country's numbers
+    as data (`emergency: ["000", "112"]`), passed only to a locale with `printsEmergencyNumbers: true`
+    in `config/locales.json` (the Dutch strings).
+  - The validator (`scripts/lib/emergency.ts`) fails a content or i18n file of a locale with
+    `printsEmergencyNumbers: false` that prints one of these numbers as a phone number. The numbers are
+    112 plus the `emergency` numbers of the locale's full and notes jurisdictions (on English: 911,
+    999, 000, 112, 111), and the words "triple zero" and "nine-one-one". A phone number is one with a
+    calling word near it (call, phone, dial, emergency, ambulance …), or any of them in stop-now
+    content (a stop callout, the stop signs, the warning signs, the emergency strings). Left alone:
+    part of a bigger number or an amount ("1,000", "10 000", "£1000", "1999", "99.9%"), a count or a
+    measurement ("111 participants", "112 vials", "112 mg/dL"), a position ("week 112", "volume 999")
+    and a service name ("NHS 111"). Checked against the whole English corpus on 24 October 2026 (the
+    pages as they were on 23 October and during the rewrite): no number was printed.
 
 ### The FDA PCAC vote (July 2026): the canonical framing
 
@@ -70,18 +109,21 @@ of the following (verify each element against fda.gov before first use and cite 
    and recommended **six** (BPC-157, KPV, TB-500, MOTS-c, Semax, epitalon). Confirm per-peptide
    votes from FDA materials; if a primary source contradicts this, follow the primary source and
    flag it in your research notes.
-   *Status of the sources (checked 20 October 2026):* FDA documents (meeting page, briefing
+   *Status of the sources (checked 20 October 2026; re-checked by the refocus research,
+   research/refocus/us-uk-routes.md, US-20):* FDA documents (meeting page, briefing
    documents, voting questions) support "considered seven". The vote counts and the six-of-seven
-   outcome are not yet on any fda.gov page (no minutes posted). Until they are, cite the FDA
+   outcome are not yet on any fda.gov page (no minutes or vote results posted; the meeting page was
+   unchanged since 6 August 2026). Until they are, cite the FDA
    meeting page and voting questions, and write the counts as "as reported from the public
    meeting". Each substance had separate votes for its salt forms (e.g. free base and acetate).
 3. The vote is **advisory and non-binding**, and went **against FDA staff's own recommendation**.
 4. Legal compounding remains prohibited until the FDA formally adopts the recommendation and
    completes rulemaking.
-5. **None of these is an approved medicine in the EU, the UK or the US** (Semax is registered as a
-   medicine in Russia, as the FDA's own briefing notes; say so where Semax is discussed). A 503A listing, if it ever happens, would allow
-   pharmacy compounding on prescription in the US. It is not a marketing authorisation, says
-   nothing about efficacy, and changes nothing in the EU or the Netherlands.
+5. **None of these is an approved medicine in the US, the UK, Canada or Australia** (the four rows of
+   each compound's data file, checked 20–23 October 2026; Semax is registered as a medicine in
+   Russia, as the FDA's own briefing notes; say so where Semax is discussed). A 503A listing, if it
+   ever happens, would allow pharmacy compounding on prescription in the US. It is not a marketing
+   authorisation, says nothing about efficacy, and **changes nothing outside the US**.
 
 ---
 
@@ -105,7 +147,162 @@ informed and the use safer. Harm reduction is the core, not an afterthought.
   product, practice or actor are allowed (the brief asks for them) when they are negative-only,
   sourced to regulators, and the page says plainly that no sign proves a product is good. Never
   a list of positive signs, a 'how to find a reliable source' or anything that ranks sellers.
-  That line is what keeps practical safety information legal (Geneesmiddelenwet art. 84–85).
+  The one exception is the lab-report ladder below, in exactly that form. That line is what keeps
+  practical safety information legal under the publisher's law (Geneesmiddelenwet art. 84–85) and the
+  readers' countries' similar rules (§1).
+
+### The lab-report ladder (owner, 23 October 2026)
+
+Readers say "we know what's in the vial and that it is clean". The answer is one figure on
+`/en/safety/product-risk/`, **"What a lab report can and cannot tell you"** (a table or figure built
+from existing components such as `<Compare>` or `<Diagram>`). It ranks **kinds of evidence about a
+vial**, never sellers or labs. Rungs, from most to least informative:
+
+1. A report from an **independent laboratory accredited to ISO/IEC 17025**, for **that exact batch**
+   (the batch number on the report matches your label), testing identity (mass spectrometry), the
+   amount per vial (assay), purity (HPLC), and ideally endotoxin and sterility.
+2. The **seller's own report** (or a report from a lab you cannot identify, check or verify).
+3. **No report.**
+4. **Not evidence at all**: "the seller uses it himself", reviews, "third-party tested" without a
+   report you can read.
+
+Every rung lists what **stays unknown**: whether it is sterile (most reports test endotoxin at best,
+not sterility); the real amount in *your* vial; whether your vial is from the tested batch (a report
+with an empty batch field cannot be linked to any vial); whether the report is genuine; how it was
+stored and shipped. "Analysis results relate only to the samples tested": a report covers one
+sample. A report can show what was in the sample tested; "clean" needs sterility and endotoxin
+results for that batch, and neither covers what happens after. The figure closes with: only the
+pharmacy supply chain has these checks built in (GMP, every batch tested and released by a
+responsible person, inspected by the regulator), and no report replaces that.
+
+Rules: no seller or lab names; no "trusted", "reputable", "legit", "reliable source" (the validator
+warns, §1); no ranking of sellers; no commerce words in its headings, link texts or labels (the build
+fails, §1). Sources: FDA 21 CFR 211 (CGMP), USP <71> (sterility) and <85> (endotoxin), ICH Q6B,
+ISO/IEC 17025 (the standard's scope page), and the page's existing product-risk sources.
+`start-here` and `<ProductCheck />` (its lab-report item) point to the ladder; they do not repeat it.
+
+## 1b. Audience and jurisdictions (owner, 23 October 2026)
+
+**Who each locale is for comes from `config/locales.json`**, never from a page: `jurisdictions.full`
+are the countries (or the EU) covered in full, in display order (regulatory rows, products, the
+"approved?" answers, contact cards, timeline and tracker items, regulator news), and
+`jurisdictions.notes` get short notes (a contact card and a notes page). WADA is shown everywhere and
+never listed. Data of every other jurisdiction stays in `src/data/` (never delete a row) and the
+components leave it out (`src/lib/jurisdictions.ts`).
+
+| Locale | Full | Notes | Emergency numbers printed |
+|---|---|---|---|
+| English (`en`, published) | US, UK, CA, AU | IE, NZ | never (§1) |
+| Dutch (`nl`, preview) | NL, EU, BE | none | yes ("Bel 112") |
+
+**English is written for readers in the United States, the United Kingdom, Canada and Australia**, with
+short notes for Ireland and New Zealand (`/en/legal/ireland-and-new-zealand/`). Wherever the answer
+depends on the country, a reader in each of the four finds their own: one parallel row or card per
+country, in the order US, UK, Canada, Australia, and never one country as "the default". Side effects
+are reported to FDA MedWatch (US), the Yellow Card scheme (UK), the Canada Vigilance Program (Canada)
+and the TGA (Australia); notes: the HPRA (Ireland) and Medsafe, through CARM (New Zealand). Compound
+pages link the treatment routes on `/en/legal-routes/` by these fixed anchors: `#prescription`,
+`#off-label`, `#us-compounding`, `#uk-specials`, `#canada-special-access`, `#australia-sas`,
+`#personal-import`, `#trials`.
+
+**What leaves the English site** (and is saved for the Dutch site): all European framing, that is the
+Netherlands, the EU, Belgium and Germany as the reader's frame: their law, status rows, help services,
+insurance, treatment routes, reporting routes, photos, glossary terms, and "approved / not in the EU"
+phrasing. Before you cut anything from a page that stays, record it in
+`research/for-nl-site/MANIFEST-<group>.md` (page, section heading, one line on what it said, and where
+the full text is: `research/for-nl-site/snapshot-2026-10-23/…` or `git show nl-source-2026-10-23:<path>`).
+Replaced English UI strings go to `research/for-nl-site/i18n-replaced-en.json`. The European legal
+pages (`legal/nl`, `legal/eu`, `legal/be`, `legal/de`) no longer exist on English.
+
+**What may stay** (keep it small):
+
+1. **The publisher line**, on the about pages only: the site is published from the Netherlands, so
+   Dutch law governs what it may say; that is why it sells nothing, links to no seller and gives no
+   doses. Readers' countries have similar advertising rules (§1).
+2. **European regulators as scientific evidence**: an EMA assessment report's trial data, or a
+   committee's doubts about a benefit (tesamorelin: the EMA committee doubted the benefit was
+   clinically meaningful; the applicant withdrew in 2012). Cite it as evidence, never as the reader's
+   legal frame, with the marker on the line before:
+   `{/* residue-ok: EMA evidence */}`.
+3. **History**: global events (thalidomide, the 1962 Kefauver-Harris amendments) stay; Dutch law
+   history goes. Mark a European mention: `{/* residue-ok: history */}`.
+4. **Ireland**: one sentence that EU-wide (central) approvals also apply in Ireland, on the notes page
+   and where Ireland is mentioned (marked).
+
+**Words.** British spelling, but no UK-only words: "your doctor" (not GP, except when explaining the UK
+system), "emergency department" (not A&E), "pharmacy" (not chemist), "medicine" (not drug, where
+natural). Explain each country's own terms once (DIN, ARTG, Schedule 4, "specials", 503A).
+
+**Country cautions** (from the fact-checked research, `research/refocus/`):
+
+- *Canada:* say plainly that Health Canada has not authorised the product, and never suggest it is
+  available through the Special Access Program (describe the SAP neutrally, on the routes page only).
+  "Injectable peptides are generally regulated as prescription drugs" is Health Canada's position:
+  present it as such, and rest the legal explanation on the new-drug and DIN rules.
+- *Australia:* state a peptide's schedule only where the Poisons Standard names it (the data's
+  `schedule` field); a group entry is written as "may be covered by … (not named)". State and territory
+  possession law: the principle, with NSW and Victoria as examples.
+- *Sources that name a business:* never cite or quote a document whose title or URL names a seller or
+  company (regulators' enforcement releases often do); describe the enforcement in general terms, with
+  a neutral official source.
+- *Unresolved points* in the research are written as unknown ("No official figures were found …") or
+  left out.
+
+### The residue check
+
+`config/locale-residue.json` lists, per locale, the words that belong to another locale's readers;
+`scripts/lib/residue.ts` finds them. On English it reads the MDX (body and frontmatter text, not ids,
+codes, URLs or link targets), the i18n JSON (UI strings, glossary, media captions, and the timeline,
+tracker and corrections text of the items English shows), and the data text English shows (contact
+cards of its own jurisdictions, schedule notes of its rows, its products' names and holders, its news
+feeds). Three levels:
+
+| Level | What | Example | Exempted by |
+|---|---|---|---|
+| `error` | Dutch, Belgian and German terms that never belong on English | Netherlands, Dutch, Lareb, IGJ, CBG, huisarts, Zorginstituut, eigen risico, Belgium, FAMHP, BfArM, AMG, NADA … | only `allowFiles` / `allowStrings` (the publisher line) |
+| `frame` | EU reader framing | "in the EU", "outside the EU", "EU-wide", "European Union", "the EU label", "in Europe", a euro amount, Germany (thalidomide history may stay) | the marker (evidence, history, the Ireland sentence) |
+| `warn` | European names that may stay as evidence | EU, EMA, EPAR, CHMP, Europe, European | the marker |
+
+The marker is `{/* residue-ok: <why> */}` in MDX, or `# residue-ok: <why>` in YAML frontmatter, on the
+line before the text or at the end of the same line. In a table row, put it inside the row's last
+cell, before the closing `|` (a line between two rows would end the table). It exempts `frame` and
+`warn` hits only, on that one line; an `error` term is never exempted by a marker.
+
+```mdx
+{/* residue-ok: EMA evidence */}
+The EMA's medicines committee doubted that the benefit was clinically meaningful, and the company withdrew its application in 2012.<Cite id="…" />
+```
+
+JSON has no comments, so the config holds the exceptions, each with its reason (use them sparingly):
+
+- `allowFiles`: the publisher line's pages (`about/index`, `about/editorial-policy`, `about/funding`),
+  where "Netherlands" and "Dutch" may stand.
+- `allowStrings`: one i18n or data string (file, key regex, pattern ids); a `file` ending in `/`
+  covers a folder. Examples: the thalidomide timeline text ("German", history), the corrections log
+  entry that records what a page said before the refocus.
+- `allowPhrases`: a proper name that contains a pattern but is not reader framing, skipped
+  everywhere, the built pages included: "Europe PMC" (a literature database), "Eli Lilly Nederland
+  B.V." (the UK licence holder of Mounjaro, shown in the products table).
+
+How to run it:
+
+- `npm run validate -- --only <file>` lists every hit in your file, with its line.
+- `npm run check:residue` runs the same scan, then the built pages (`dist/en/`), where a word that
+  reached a page another way (a component, data, a glossary tooltip) shows up. Markers do not survive
+  the build, so there only `error` hits count; cited titles and names (reference lists, the sources
+  page, "Based on" lists, a figure card's "Source" line, image credits) and the news list's
+  headlines are warnings. `-- --details` lists every hit; `-- --strict` fails on error and frame hits;
+  `-- --only <part-of-path>` filters.
+- Before the script existed, writers ran the brief's grep
+  (`research/refocus-spec/content-brief.md`, "Residue check"); the config holds the same terms
+  (Dutch, Belgian and German terms as `error`, "German"/"Germany" as `frame` so that thalidomide
+  history can stay with the marker, EU framing as `frame`, EU/EMA/EPAR/CHMP/Europe as `warn`), as
+  whole words and, for codes such as NL, CBG, EU and EMA, in capitals only (the brief's raw `epar`
+  also matched "separate").
+- While `STRICT_RESIDUE` (`scripts/lib/residue.ts`, read by the validator and the check) is `false`,
+  all hits are warnings (the content rewrite of 24 October 2026 is in progress). After the rewrite it
+  is set to `true`: error and frame hits then fail the validator (and so the build) and
+  `npm run check`; warn hits stay warnings.
 
 ## 2. Voice
 
@@ -120,8 +317,9 @@ informed and the use safer. Harm reduction is the core, not an afterthought.
 - **Reading level.** Safety and legal pages: CEFR **B1** throughout (short sentences, common
   words, one idea per sentence, define every technical term on first use). Mechanism and evidence
   pages may reach B2–C1, but open with the B1 `summary`.
-- **British English spelling** in `en` (authorised, haemorrhage, oestrogen), metric units,
-  24-hour time, day-month-year dates in prose ("20 October 2026").
+- **British English spelling** in `en` (authorised, haemorrhage, oestrogen), but **no UK-only words**
+  (your doctor, emergency department, pharmacy, medicine; §1b), metric units, 24-hour time,
+  day-month-year dates in prose ("20 October 2026").
 - Be specific about what you do **not** know. "No human pharmacokinetic data have been
   published" is more useful than "more research is needed".
 
@@ -140,6 +338,10 @@ informed and the use safer. Harm reduction is the core, not an afterthought.
 | Warning signs (single source of truth) | `src/i18n/<locale>/warning-signs.json` | safety editor |
 | People (reviewers, editors) | `src/data/people.yaml` | editors |
 | Images: files, licence registry, page heroes, infographic plates | `src/assets/media/`, `src/data/media.yaml`, `src/data/heroes.yaml`, `src/data/infographics/<id>.yaml`; alt text and captions in `src/i18n/<locale>/media.json`, plate text in `src/i18n/<locale>/infographics.json` (see `docs/MEDIA-GUIDE.md`) | writers, editors |
+| Who each locale is for (full and notes jurisdictions, emergency numbers printed or not) | `config/locales.json` (§1b) | editor |
+| Contact cards: regulator, reporting, anti-doping body, medicines law, help services, emergency numbers (as data) | `src/data/jurisdictions.yaml` | editors |
+| Words that belong to another locale's readers | `config/locale-residue.json` (§1b) | editor |
+| European material saved for the Dutch site | `research/for-nl-site/` (snapshot, `MANIFEST-<group>.md`, `i18n-replaced-en.json`) | writers |
 
 Timeline events (`jurisdictions`, `[]` = global) and tracker items (`jurisdiction`) are shown only in the
 locales that cover them (WADA everywhere), so their words name only those jurisdictions. An event is one
@@ -185,10 +387,14 @@ Opinion pages (only `/the-case-for-reform`) add `template: opinion` and
 Legal jurisdiction pages add `jurisdiction: US` (or another code). It must be one of the locale's
 jurisdictions (`config/locales.json`, `jurisdictions.full` and `.notes`; English: US, UK, CA, AU, IE,
 NZ), as must every `<JurisdictionCard code>`. `<JurisdictionCards which="full|notes|all" />` renders
-the contact cards of all of them. The European pages on English are removed in the content rewrite
-(until then the validator warns and those cards are left out). A card of the locale's own whose
-jurisdiction has no entry in `src/data/jurisdictions.yaml` yet (CA, AU, IE, NZ until the refocus research
-is merged) is left out too, with a warning.
+the contact cards of the locale's full jurisdictions, its notes jurisdictions, or both, in the
+locale's order (§9). English country pages: `legal/us`, `legal/uk`, `legal/ca`, `legal/au` and the notes
+page `legal/ireland-and-new-zealand` (no `jurisdiction`; it uses `<JurisdictionCards which="notes" />`).
+The European pages (`legal/nl`, `eu`, `be`, `de`) left the English site in the refocus. While
+`STRICT_PAGE_JURISDICTIONS` (`src/lib/jurisdictions.ts`) is false, a card or page `jurisdiction` outside
+the locale's set is left out of the page with a warning; after the content rewrite it fails the build.
+A card whose jurisdiction has no entry in `src/data/jurisdictions.yaml` is left out too (an error on a
+published locale: `STRICT_LOCALE_ROWS` in `scripts/validate-content.ts`).
 
 **Never** put a `# ` heading in the body; the layout renders the title. Start body sections at
 `## `.
@@ -261,13 +467,26 @@ evidence:                     # REQUIRED — the four axes, see §7
   independence: single-group-dominant
   safety: uncharacterised
 regulatory:                   # REQUIRED: WADA, and every full jurisdiction of a published locale (English: US, UK, CA, AU).
-                              # Keep EU, NL, DE, BE rows for the Dutch site. A missing row is shown as unknown, never "not approved".
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search] }
-  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2026-list] }
+                              # Keep EU, NL, DE, BE rows for the Dutch site (never delete them). A missing row is shown as unknown, never "not approved".
+  # (shortened from src/data/compounds/bpc-157.yaml: the real rows list more sources)
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, uk-mhra-substance-index-status-c-2026-10-23] }
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-bpc157-briefing, fda-pcac-2026-07-meeting] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23] }
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities]
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2024. …", sources: [au-poisons-standard-2026-10, au-poisons-standard-2024-06] }
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search] }   # a row for the Dutch site
+  - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2022-list-modifications, wada-2026-list-en] }
   # status: authorised | discontinued | not-authorised | refused | withdrawn | under-review | investigational;
   # the WADA row is prohibited | not-listed | unclear (and only it can be). discontinued = authorised and marketed,
-  # then cancelled for non-safety reasons: give authorised_since (the approval) and since (the cancellation).
-  # A national schedule goes in schedule: { code: S4, note: "Prescription only medicine", sources: [...] }. Use unclear (WADA row only) when the substance is not named on the
+  # then cancelled for non-safety reasons: give authorised_since (the approval) and since (the cancellation);
+  # e.g. tesamorelin CA: authorised_since 2014-04-29, since 2022-09-30.
+  # A national schedule goes in schedule: { code, note, sources }: Australia's Poisons Standard (S4) and Canada's
+  # Prescription Drug List, ONLY where the instrument names the substance. A group entry that may cover it
+  # (GHRHs, "copper compounds") is not a schedule field: the page says "may be covered by … (not named)".
+  # Use unclear (WADA row only) when the substance is not named on the
   # List and the sources leave open whether a catch-all section (S0, S2 …) covers it, with no ruling from an
   # anti-doping body: e.g. Semax and Selank (registered in Russia, so S0 may not apply), or SS-31 and PT-141
   # (FDA-approved, so outside S0, but WADA says unnamed peptides may fall under other classes). Never
@@ -309,9 +528,9 @@ glance:
   sport:                       # optional, rare: the same for the "allowed in sport?" words (no tone)
     { short: "Unclear", text: "…", sources: [wada-2026-list-en] }
   stop_signs:                  # optional: the "Stop and get help" strip after At a glance (§9.1). Exactly 3.
-    - { icon: sign-belly-pain, text: "Severe belly pain, often spreading to your back", sources: [ema-epar-wegovy] }
+    - { icon: sign-belly-pain, text: "Severe belly pain, often spreading to your back", sources: [fda-label-wegovy] }
   facts:                       # optional: up to 4 label/value rows for the fact sheet beside the title (§9.1)
-    - { label: "How it is taken", value: "Injection under the skin, or a tablet", sources: [ema-epar-ozempic] }
+    - { label: "How it is taken", value: "Injection under the skin, or a tablet", sources: [fda-label-ozempic] }
 grade_rationale:               # one or two sentences per axis explaining the grade
   human_clinical: "…"
   preclinical_volume: "…"
@@ -326,8 +545,10 @@ studies:                       # one entry per study id in the data file
   chang-2011-tendon:
     finding: "Tendon fibroblasts from rats grew out faster and survived oxidative stress better when BPC-157 was added."
     limitation: "Cells in a dish, from one species; no living animal, no clinical outcome."
-regulatory_notes:              # optional one-line notes per jurisdiction shown in the table (only the locale's own rows and WADA)
-  US: "Not FDA-approved. …"
+regulatory_notes:              # optional one-line notes per jurisdiction shown in the table: only the locale's own rows and WADA
+  US: "Not FDA-approved. …"    # (English: US, UK, CA, AU, WADA; a note for EU, NL, DE or BE is never rendered on English)
+  CA: "Health Canada has not authorised it: no DIN. …"
+  AU: "Not on the ARTG. Schedule 4 since 1 June 2024. …"
 indications: {}                # authorised products only: { ozempic: "Type 2 diabetes in adults" }
 ---
 
@@ -356,7 +577,8 @@ indications: {}                # authorised products only: { ozempic: "Type 2 di
 <Section id="regulatory">
 <RegulatoryTable />
 
-…prose per jurisdiction, dated, with the PCAC framing where relevant…
+…prose per country, dated, one parallel paragraph or row each (US, UK, Canada, Australia), with the PCAC framing where relevant…
+…the legal routes to a treatment: link /en/legal-routes/#prescription, #off-label, #us-compounding, #uk-specials, #canada-special-access, #australia-sas, #personal-import or #trials…
 </Section>
 
 <Section id="risks">
@@ -365,6 +587,7 @@ indications: {}                # authorised products only: { ozempic: "Type 2 di
 
 <Section id="harm-reduction">
 …If someone is going to do this anyway: hygiene, monitoring, warning signs, interactions, when to stop. No protocol, no mg.
+…report a side effect: <JurisdictionCards which="full" /> (MedWatch, Yellow Card, Canada Vigilance, TGA), or name and link each…
 </Section>
 ```
 
@@ -378,6 +601,17 @@ Rules:
   no props needed.
 - Tier 2 stubs need only `what-it-is`, `evidence`, `regulatory`, `risks` (others optional),
   a full data file and summary. Stubs still need honest evidence grades.
+- **The regulatory section answers for each of the locale's countries** (§1b): on English, a reader
+  in the US, the UK, Canada and Australia each finds their own status, date and route, in that order,
+  and no country is "the default". Say "Health Canada has not authorised it" on Canadian content
+  (§1b, Canada); state an Australian schedule only where the Poisons Standard names the substance. An
+  EMA document may be cited as evidence (trial data, a committee's doubts), marked (§1b), never as the
+  reader's status.
+- **The prose agrees with the derived answers.** The badge, *At a glance* and the fact sheet are
+  computed from the data rows (below); the text must say the same (tesamorelin: approved in the US;
+  approved in Canada in 2014 but no longer sold there since 2022; not approved in the UK or
+  Australia). If the text and the tile disagree, fix the data or the text, never the words in
+  `beginner.json`.
 
 **The beginner layer comes first.** Every compound page opens in this order: title and status
 badge → **At a glance** → **The 30-second version** (`summary`) → review line → page photo →
@@ -463,21 +697,40 @@ These get a visibly different treatment. This is a core editorial contribution o
 
 ```yaml
 authorised_products:
-  - id: wegovy
-    name: Wegovy
-    holder: Novo Nordisk A/S
-    jurisdiction: EU
-    authorised: 2022-01-06
+  - id: wegovy-us
+    name: Wegovy (injection)
+    holder: Novo Nordisk Inc.
+    jurisdiction: US
+    authorised: 2021-06-04
     route: subcutaneous
-    label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy   # EMA EPAR / CBG / FDA label — never a seller
-    label_source: ema-epar-wegovy
+    label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf"
+    label_source: fda-label-wegovy
+  - id: egrifta-ca               # approved, then no longer sold: the row is discontinued
+    name: Egrifta
+    holder: Theratechnologies Inc.
+    jurisdiction: CA
+    authorised: 2014-04-29
+    marketed_until: 2022-09-30   # shown as "No longer sold"
+    route: subcutaneous
+    label_url: https://pdf.hres.ca/dpd_pm/00029988.PDF
+    label_source: ca-pm-egrifta-2015
 ```
+
+`label_url` is the regulator's own product information, never a seller: the FDA label (US), the MHRA
+Products page for the substance (UK; emc, `medicines.org.uk`, is not on the allowlist), the Health
+Canada product monograph (`pdf.hres.ca`) and the ARTG entry (Australia). An EU product (EMA EPAR) is
+kept for the Dutch site and is not shown on English. Every product needs a localised `indications`
+line in each page's frontmatter, written from that label (the validator fails without it).
 
 - Prose: put `<AuthorisedProducts />` near the top of `what-it-is`. It renders the badge ("Authorised
   medicine" when every one of the locale's jurisdictions approved it, otherwise "Authorised in the US"
   and so on), the prescription-route box and the official labels of the locale's own jurisdictions
   ("No longer sold" with `marketed_until`). The badge under the title and the *At a glance* tile say
-  the same, from the same rows; nothing names a jurisdiction the locale does not cover.
+  the same, from the same rows (`approvalFor` in `src/lib/jurisdictions.ts`: all, some, former,
+  elsewhere, trials, none); nothing names a jurisdiction the locale does not cover. A medicine approved
+  only in some of the four reads, for example, "Only in the US. Approved in the US. Canada approved it,
+  but it is no longer sold there. Not approved in the UK or Australia." (tesamorelin), and the page
+  text says the same.
 - The harm-reduction section for authorised medicines focuses on: the legal prescription route,
   why grey-market "research" versions are a different (unauthorised) product, counterfeit pens,
   and label-based safety (contraindications, interactions, warning signs).
@@ -522,8 +775,9 @@ as guidance is not. Rules:
 - Never convert an animal dose to a human dose, never mention a human-equivalent dose figure,
   never give a range "people use". The translation-gap page explains why animal doses do not
   scale, in principle, without numbers a reader could act on.
-- For authorised medicines you may state the authorised dose range **as written in the SmPC**,
-  attributed to the SmPC, with "your prescriber decides the dose".
+- For authorised medicines you may state the authorised dose range **as written in the label**
+  (the FDA prescribing information, the UK SmPC, the Canadian product monograph or the Australian
+  product information), attributed to that label, with "your prescriber decides the dose".
 
 ---
 
@@ -559,15 +813,16 @@ Four independent axes. Never collapse into one score, never add them up.
 | `<Infographic id="glp1-body-map" />` | A labelled atlas plate: text-free artwork with numbered markers and a key in real text. Markers and sources in `src/data/infographics/<id>.yaml`; title, one label per marker and a full text equivalent in `src/i18n/<locale>/infographics.json`. AI art must be reviewed (`ai.review: ok`) before the page ships. |
 | `<MediaCredits />` | The full image credits (what each image shows, author, licence, source, AI model and review status). Already on `/sources/`. |
 | `<OrganCards id="tirzepatide" />` | Organ-by-organ cards (owner, 22 October 2026: a mechanism figure that keeps WHERE a medicine acts apart from WHAT happens there; the all-organs-in-one receptor animations were too busy). Static, no motion. First "How it works in a cell": the cell surface with the medicine's receptor types side by side, the molecule docking in each, the cAMP signal inside and "the cell responds"; every part has its word, and receptor types differ by **shape and word** (GLP-1 receptor = round cup, GIP receptor = square cup, glucagon receptor = V), never colour alone; numbered steps beside it are the text equivalent. Then one card per organ or tissue (3 columns on wide screens, 1 on phones): the organ picture (a crop of registered text-free art, set once for every page in `src/data/organ-cards/_organs.yaml`), a small cell close-up with the receptors on that cell and their words, **one** plain effect line (B1, ≤ 18 words) and its evidence level as a word plus the site's line style (solid = shown in people, long dashes = animals or cells, short amber dashes = an idea, short grey dashes = not known). A card may add one note line with its own level ("Shown in animals: which brain cells it reaches."). Receptors, organs, cells, levels and sources in `src/data/organ-cards/<id>.yaml`; every word in `src/i18n/<locale>/organ-cards.json`. A medicine that is not approved says so in the figure head (`approved: false`, with `status_sources`). Compound pages only, self-closing, `id` only; the marks on each line are numbered from the page's own source list, so **every source a figure uses must also be cited in the page text** (the validator fails otherwise, and checks the words, their plainness and the placement). Never a dose. Placed on `compounds/semaglutide` (a fold in the mechanism section), `compounds/tirzepatide` and `compounds/retatrutide` (the mechanism figure). |
-| Page hero (no component) | One line in `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster`. Rendered after the summary on phones and beside the title on wide screens. Every page should have one. |
+| Page hero (no component) | One line in `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster`. Rendered after the summary on phones and beside the title on wide screens. Every page should have one. A photo for one locale only: `{ nl: id }` (shown only on the Dutch page) or `{ default: id, nl: id }` (swapped there); a European photo (a Dutch ambulance, a parliament in The Hague) never heads an English page, and its captions in `src/i18n/en/media.json` are then not checked by the residue check. |
 | `<Checklist>` + markdown list + `</Checklist>` | A scannable checklist (what to bring to your doctor, aseptic steps). |
 | `<Faq>` `<FaqItem q="Question?">answer</FaqItem>` `</Faq>` | Real question-and-answer sections only. Emits FAQPage structured data. |
 | `<WarningSigns />` | The canonical stop-now list. `<WarningSigns only="injection" />` for a subset: `general`, `injection`, `allergic`, `cardiovascular`, `metabolic`, `neurological`. |
-| `<ProductCheck />` | "If your product did not come from a pharmacy: check before you use it" (§1a): the shared, sourced checklist for people who already have a product. Nine checks, each a pictogram plus words: the seal, the label (name, amount, batch number, expiry), how it looks, what a lab report does not prove, storage, clean steps with a new needle and syringe, keeping the vial and label, a doctor for checks, and the warning signs with the locale's emergency line. Negative signs only; the intro says no check shows a product is good. Order, pictograms, sources and links in `src/data/product-check.yaml`, words in `src/i18n/<locale>/product-check.json`; its sources are numbered with the page's citations. Optional compound-specific line: `<ProductCheck extra="Check which form the label names. …" extraSources="id,id" />` (sources required and taken from the page's own sources; `extraAfter="certificate"` moves it, default after the label check). Self-closing, once per page, never inside an `<InDetail>` fold (the validator checks all three). Place it near the top of a compound page's harm-reduction section, and on safety pages where use is discussed. No amounts, volumes, schedules or mixing sums in an extra line, and nothing about where to get a product or how to judge a seller. |
+| `<ProductCheck />` | "If your product did not come from a pharmacy: check before you use it" (§1a): the shared, sourced checklist for people who already have a product. Nine checks, each a pictogram plus words: the seal, the label (name, amount, batch number, expiry), how it looks, what a lab report does not prove (it points to the lab-report ladder on `/en/safety/product-risk/`, §1a), storage, clean steps with a new needle and syringe, keeping the vial and label, a doctor for checks, and the warning signs with the locale's emergency line. Negative signs only; the intro says no check shows a product is good. Order, pictograms, sources and links in `src/data/product-check.yaml`, words in `src/i18n/<locale>/product-check.json`; its sources are numbered with the page's citations. Optional compound-specific line: `<ProductCheck extra="Check which form the label names. …" extraSources="id,id" />` (sources required and taken from the page's own sources; `extraAfter="certificate"` moves it, default after the label check). Self-closing, once per page, never inside an `<InDetail>` fold (the validator checks all three). Place it near the top of a compound page's harm-reduction section, and on safety pages where use is discussed. No amounts, volumes, schedules or mixing sums in an extra line, and nothing about where to get a product or how to judge a seller. |
 | `<EvidenceGrade compound="bpc-157" />` | The four-axis grade card for a compound, usable outside its own page. |
 | `<PageList section="safety" />` | Auto-generated list of pages in a section (for index pages). |
 | `<CompoundIndex />` | Compound cards (for `/compounds`). |
-| `<Timeline />`, `<GradeRubric />`, `<GradeMatrix />`, `<CorrectionsLog />`, `<ChangeTracker />`, `<NewsList />`, `<GlossaryIndex />`, `<SourcesIndex />`, `<JurisdictionCard code="NL" />` | Page-specific widgets driven by data. Place where the page needs them. |
+| `<Timeline />`, `<GradeRubric />`, `<GradeMatrix />`, `<CorrectionsLog />`, `<ChangeTracker />`, `<NewsList />`, `<GlossaryIndex />`, `<SourcesIndex />` | Page-specific widgets driven by data. Place where the page needs them. |
+| `<JurisdictionCards which="full" />`, `<JurisdictionCard code="US" />` | The contact cards of the locale's own jurisdictions (§1b), from `src/data/jurisdictions.yaml`: regulator, side-effect reporting, anti-doping body, medicines law and help services, named and linked (never a phone number on English, §1). `which`: `full` (English: US, UK, Canada, Australia), `notes` (Ireland, New Zealand) or `all` (both, full first). One card: `code` must be one of the locale's jurisdictions (the validator checks it; a card outside the set is left out of the page). Use them wherever the reader needs "where do I report this, who can help" for their own country, instead of writing the services out. |
 
 Markdown tables are fine for small comparisons. Use them instead of inventing components.
 
@@ -602,7 +857,7 @@ required props, plain-language titles, labels and answers, and that every `sourc
 
 - `lede`: one sentence under the title: what it is and the one thing to know. At most 25 words.
 - `glance.stop_signs`: exactly three signs, each at most 8 words, B1, each with a pictogram (`sign-belly-pain`, `sign-low-sugar`, `sign-allergic`, `sign-vision`; the word always carries the meaning) and its `sources`. Condense them from this page's own stop-now list and the label; no new advice. The strip adds the locale's emergency line (English: "If it is severe, call your local emergency number."; Dutch: "Is het ernstig? Bel 112."; see §1), a link to the full stop-now list (give the stop callout `id="stop-now"`; the validator checks it) and to the warning-signs page. It is rendered directly after At a glance and is never folded.
-- `glance.facts`: up to four label/value rows for the fact sheet beside the title (label ≤ 4 words, value ≤ 10 words, sources required): how it is taken, how often, how long it lasts. Class, status in the EU and testing in people come from the data file (testing in people: or the page's `glance.tested`, §5.2). Label facts only, never a dose.
+- `glance.facts`: up to four label/value rows for the fact sheet beside the title (label ≤ 4 words, value ≤ 10 words, sources required): how it is taken, how often, how long it lasts. Class, "Approved in" (the locale's own jurisdictions, the same answer as *At a glance*) and testing in people come from the data file (testing in people: or the page's `glance.tested`, §5.2). Label facts only, never a dose.
 
 With at least one fold on the page, the summary box says how long the short version takes and how
 long everything takes, and the source list is folded too (its numbers still link both ways).
@@ -613,12 +868,25 @@ long everything takes, and the source list is folded too (its numbers still link
   Link text must say where it goes. Never "click here".
 - External: avoid in prose. Put the source in the registry and `<Cite>` it. If a link is
   genuinely needed (e.g. to a reporting form), it must be on the allowlist.
-- Never put commerce words in link text (see §1).
+- Never put commerce words in link text, headings, questions, titles or labels (see §1).
+- **Link only to routes that exist** (on English: the route list in
+  `research/refocus-spec/content-brief.md`, "Routes"). The European legal pages (`/en/legal/nl/`,
+  `/en/legal/eu/`, `/en/legal/be/`, `/en/legal/de/`) no longer exist on English: link the country
+  pages `/en/legal/us/`, `/en/legal/uk/`, `/en/legal/ca/`, `/en/legal/au/` and the notes page
+  `/en/legal/ireland-and-new-zealand/` instead. (The live host redirects the old addresses; see
+  README, Deployment.)
+- **Treatment routes** have fixed anchors on `/en/legal-routes/`: `#prescription`, `#off-label`,
+  `#us-compounding`, `#uk-specials`, `#canada-special-access`, `#australia-sas`, `#personal-import`,
+  `#trials` (§1b). Link those, never a heading's generated id.
+- **Cross-page anchors are checked** after the build (`npm run check:html`): a link to a source
+  (`/en/sources/#source-<id>`) or an image credit (`/en/sources/#image-<id>`) whose target does not
+  exist fails; any other missing cross-page anchor (a glossary term, another page's section) is a
+  warning.
 
 ## 11. Sources — `src/data/sources/<group>.yaml`
 
 ```yaml
-sikiric-2018-review:            # id: firstauthor-year-keyword, kebab-case, globally unique
+sikiric-2011-gi-review:         # id: firstauthor-year-keyword, kebab-case, globally unique
   type: review                  # article|review|meta-analysis|trial|preprint|book|chapter|regulator|law|guideline|label|registry|dataset|report|web
   authors: "Sikiric P, Seiwerth S, Rucman R, et al."
   title: "Stable gastric pentadecapeptide BPC 157: novel therapy in gastrointestinal tract"
@@ -627,12 +895,12 @@ sikiric-2018-review:            # id: firstauthor-year-keyword, kebab-case, glob
   doi: 10.2174/138161211796196954
   pmid: "21548867"
   verified: pubmed              # pubmed | doi | url | registry — HOW you confirmed it exists and says what you cite it for
-ema-epar-wegovy:
+fda-label-wegovy:
   type: label
-  authors: "European Medicines Agency"
-  title: "Wegovy: EPAR – Product information"
-  year: 2025
-  url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
+  authors: "U.S. Food and Drug Administration / Novo Nordisk"
+  title: "WEGOVY (semaglutide) injection and tablets — prescribing information (revised 06/2026)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf
   accessed: 2026-10-20
   verified: url
 ```
@@ -642,6 +910,18 @@ resolving the DOI) and the metadata copied from the record — never from memory
 or mismatched DOI is the most damaging error this site can make. Every regulator/law URL must
 have been fetched and must say what you cite it for. If you cannot verify a source, do not use
 the claim.
+
+- **Reuse ids.** Search every file in `src/data/sources/` for the DOI, PMID or URL before adding an
+  entry, and reuse the existing id for the same document (ids are global). The fact-checked refocus
+  research is merged into `src/data/sources/refocus-*.yaml`: reuse those ids, never edit those files;
+  a group adds new sources to its own file (`src/data/sources/en-<group>.yaml`).
+- **No source that names a business.** Never cite or quote a document whose title or URL names a
+  seller or a company (regulators' enforcement releases often do): describe the enforcement in
+  general terms, with a neutral official source (§1b, "Country cautions").
+- **The reader's frame is their own regulator.** On English, status, law and routes rest on the FDA,
+  the MHRA and UK legislation, Health Canada and Canadian law, the TGA and Australian law (and the HPRA
+  and Medsafe for the notes). An EMA document (EPAR, a committee's assessment) may be cited as
+  scientific evidence, with the marker (§1b), never as the reader's status.
 
 ## 12. Glossary — `src/i18n/<locale>/glossary/<group>.json`
 
@@ -659,6 +939,16 @@ the claim.
 
 Add every technical term you use that a B1 reader would not know. The first plain-text use on
 each page is auto-linked. Check other glossary files first; do not duplicate ids.
+
+- **Each country's own terms** are defined once, plainly, with the country named: DIN (Canada), ARTG
+  and Schedule 4 (Australia), "specials" (UK), 503A and 503B (US), the Special Access Program and the
+  Special Access Scheme. Never define a term as if it applied everywhere.
+- **No Dutch, Belgian or German terms on English** (huisarts, Lareb, Zorginstituut, eigen risico …).
+  The residue check (§1b) reads the English glossary, and a glossary definition appears on every page
+  that uses the term (as its tooltip), so one Dutch example in a definition reaches many pages.
+  Replaced or removed English entries are kept for the Dutch site in
+  `research/for-nl-site/i18n-replaced-en.json`. JSON has no comments: a definition that must keep a
+  European name (EMA as evidence) needs an `allowStrings` entry in `config/locale-residue.json`.
 
 Auto-linking matches the term and every alias **case-insensitively, on whole words**, after the page
 text has been given typographic quotes. So:

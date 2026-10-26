@@ -2,8 +2,13 @@
 # src/schemas/index.ts). Words in src/i18n/<locale>/tracker.json, keyed by id.
 #
 # Written by group legal-b on 22 October 2026; every item was checked against its sources on that day.
+# English refocus (group legal-en-b, 24 October 2026): the US items re-checked against the Federal Register search of
+# 23 October 2026 (re-run on 24 October: no new relevant document); new UK, CA and AU items from the fact-checked
+# research (research/refocus/feeds-help-extras.md section 4), each source re-read on 23 or 24 October 2026
+# (research/refocus-notes/legal-en-b.md). The EU, DE and NL items stay in the data with their jurisdiction tags: English
+# hides them; their text stays in src/i18n/en/tracker.json because a published locale needs text for every item.
 # `updated` is the date of the last verified development in the item (not the date we checked: that is
-# 22 October 2026 for all items, and the page says so). `next_milestone` only where an official source gives a
+# 23 or 24 October 2026, and the page says so). `next_milestone` only where an official source gives a
 # date. `compounds` lists only compounds that have a page on this site; other substances are named in the text.
 # Statements reported in the press but not published by the regulator are not tracked until an official
 # document appears (research/legal-b.md, "Tracker").
@@ -16,7 +21,7 @@
   status: advisory-vote
   updated: 2026-07-24
   compounds: [bpc-157, kpv, tb-500, mots-c, semax, epitalon]
-  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, federalregister-fda-search-2026-10-22]
+  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, uk-mhra-substance-index-status-c-2026-10-23, mhra-products-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-c-2026-10-23, au-artg-search-status-d-2026-10-23, federalregister-fda-search-2026-10-22, federalregister-fda-search-2026-10-23]
 
 - id: us-pcac-2027-meeting
   jurisdiction: US
@@ -38,7 +43,7 @@
   status: proposed
   updated: 2026-07-30
   compounds: [semaglutide, tirzepatide]
-  sources: [fda-2026-503b-glp1-exclusion-proposal, fr-2026-08552-503b-glp1, fr-2026-12937-503b-comment-extension, fda-glp1-compounding-policy, federalregister-fda-search-2026-10-22]
+  sources: [fda-2026-503b-glp1-exclusion-proposal, fr-2026-08552-503b-glp1, fr-2026-12937-503b-comment-extension, fda-glp1-compounding-policy, federalregister-fda-search-2026-10-22, federalregister-fda-search-2026-10-23]
 
 - id: us-ruo-warning-letters
   jurisdiction: US
@@ -84,7 +89,53 @@
   status: watching
   updated: 2026-10-15
   compounds: [retatrutide, tirzepatide]
-  sources: [mhra-2026-10-counterfeit-pens, mhra-2026-05-largest-seizure, mhra-2026-01-seizures-2025]
+  sources: [mhra-2026-10-counterfeit-pens, mhra-2026-05-largest-seizure, uk-mhra-2026-02-second-facility, mhra-2026-01-seizures-2025]
+
+# England only; IV "wellbeing" procedures (the IV-drip setting of NAD+ infusions). It names no peptide and no NAD+, so
+# compounds stays empty.
+- id: uk-high-risk-wellbeing-procedures
+  jurisdiction: UK
+  status: consultation
+  updated: 2026-10-21
+  next_milestone: 2027-01-13
+  compounds: []
+  sources: [uk-dhsc-2026-high-risk-cosmetic-wellbeing-consultation]
+
+# Health Canada's action against unauthorised injectable peptides. `updated` is the May 2026 recall (RA-82047, in the
+# neutral index ca-hc-recalls-database). The June 2026 court injunction is not tracked: its only source names the
+# seller in its title and URL (seller rule; research/refocus-notes/merge.md 1.3).
+- id: ca-hc-injectable-peptides-enforcement
+  jurisdiction: CA
+  status: watching
+  updated: 2026-05-07
+  compounds: [bpc-157, ghk-cu]
+  sources: [ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-database, ca-cpsa-2026-04-injectable-peptides, ca-hc-pdl-notices-2026]
+
+# Therapeutic Goods Legislation Amendment (2026 Measures No. 1) Regulations 2026, Schedule 1 Part 1, from 8 September 2026.
+- id: au-personal-import-packaging
+  jurisdiction: AU
+  status: in-force
+  updated: 2026-09-08
+  compounds: []
+  sources: [au-tg-amendment-2026-measures-1, au-tga-2026-09-personal-import-packaging, au-tga-personal-importation-scheme, au-tga-compounded-medicines-guidance]
+
+# Unapproved peptides a TGA compliance priority since June 2026; latest dated step: the infringement notices announced
+# on 6 October 2026. The Federal Court case of 28 September 2026 is described without the company's name.
+- id: au-tga-peptide-compliance-priority
+  jurisdiction: AU
+  status: watching
+  updated: 2026-10-06
+  compounds: [bpc-157, cjc-1295, tb-500, ghk-cu, retatrutide]
+  sources: [au-tga-2026-06-peptide-compliance-priority, au-tga-2026-06-cmo-peptide-statement, au-tga-media-releases-peptide-log-2026-10-24, au-tga-2026-10-prescription-import-infringements]
+
+# The consultation closed on 3 September 2026 and no decision or draft has been published, so the item is watched
+# rather than shown as an open consultation.
+- id: au-advertising-code-review
+  jurisdiction: AU
+  status: watching
+  updated: 2026-09-03
+  compounds: []
+  sources: [au-tga-2026-07-advertising-code-consultation]
 
 - id: de-doping-list-gazette
   jurisdiction: DE

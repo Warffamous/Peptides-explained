@@ -159,21 +159,10 @@
       "cosmetics",
       "cosmetic ingredient"
     ],
-    "definition": "In EU law, a product put on the outside of the body, such as skin, hair or lips, to clean, protect or change its look. Anything injected is not a cosmetic.",
+    "definition": "A product put on the outside of the body, such as skin, hair or lips, to clean, protect or change its look. Anything injected is not a cosmetic.",
     "category": "law",
-    "see_also": [
-      "cosing"
-    ],
+    "see_also": [],
     "autolink": false
-  },
-  "cosing": {
-    "term": "CosIng",
-    "aliases": [],
-    "definition": "The European Commission's public database of cosmetic ingredients and the rules that apply to them.",
-    "category": "regulation",
-    "see_also": [
-      "cosmetic-product"
-    ]
   },
   "medical-device-clearance": {
     "term": "510(k) clearance",
@@ -250,7 +239,7 @@
       "beta-NMN",
       "β-NMN"
     ],
-    "definition": "A molecule one step before NAD+ in the cell. It is sold as a supplement, but in the EU it is not yet authorised as a food.",
+    "definition": "A molecule one step before NAD+ in the cell. It is sold as a supplement in some countries; the rules differ from country to country.",
     "category": "biology",
     "see_also": [
       "nad-plus",
@@ -260,10 +249,9 @@
   "novel-food": {
     "term": "novel food",
     "aliases": [
-      "novel foods",
-      "Union list of novel foods"
+      "novel foods"
     ],
-    "definition": "In EU law, a food or ingredient that was not commonly eaten in the EU in the past. It may only be sold after a safety check and an EU authorisation.",
+    "definition": "A food or ingredient that people did not commonly eat in the past. In Great Britain it may only be sold after a safety check and an authorisation.",
     "category": "law",
     "see_also": [
       "efsa"
@@ -274,7 +262,7 @@
     "aliases": [
       "European Food Safety Authority"
     ],
-    "definition": "The EU agency that checks the safety of foods and food ingredients. It gives advice; the European Commission decides.",
+    "definition": "A food-safety agency whose scientists assess foods and food ingredients and publish their safety opinions. It gives advice; it does not decide what may be sold.",
     "category": "regulation",
     "see_also": [
       "novel-food"
@@ -287,7 +275,7 @@
       "food supplement",
       "food supplements"
     ],
-    "definition": "A product swallowed to add nutrients, such as vitamins, to the diet. In the US and EU it is regulated as a food, not as a medicine.",
+    "definition": "A product swallowed to add nutrients, such as vitamins, to the diet. In the US and the UK it is regulated as a food, not as a medicine; Canada and Australia have their own categories.",
     "category": "law",
     "see_also": [
       "new-dietary-ingredient"
@@ -300,6 +288,18 @@
       "new dietary ingredient notification"
     ],
     "definition": "In the US, a supplement ingredient not sold before October 1994. The maker must tell the FDA why it is expected to be safe before selling it.",
+    "category": "law",
+    "see_also": [
+      "dietary-supplement"
+    ]
+  },
+  "listed-medicine": {
+    "term": "listed medicine",
+    "aliases": [
+      "listed medicines",
+      "AUST L"
+    ],
+    "definition": "In Australia, a lower-risk medicine, such as a vitamin pill, made only from ingredients on an approved list. It carries an AUST L number. The TGA does not check whether it works before it is listed.",
     "category": "law",
     "see_also": [
       "dietary-supplement"

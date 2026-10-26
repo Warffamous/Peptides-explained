@@ -44,8 +44,15 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-kpv-briefing] }
+  # UK re-checked on 23 October 2026 (MHRA substance index: no KPV); CA and AU merged from
+  # research/refocus/status/kpv.yaml (fact-checked 24 October 2026). KPV is not named in the Poisons Standard
+  # (unscheduled), so the AU row has no schedule.
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-kpv-briefing, uk-mhra-substance-index-status-c-2026-10-23] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-kpv-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-pcac-2026-questions, fda-category-2-safety-risks] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23] }
+  # compounds-c (24 October 2026): au-poisons-standard-2026-10 added to the AU sources, so the English note 'Not named in
+  # the Poisons Standard' carries its source (research/refocus/status/kpv.yaml cites it for 'unscheduled'); status unchanged.
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-c-2026-10-23, au-tga-search-status-c-2026-10-23, au-tga-peptide-products-hub, au-poisons-standard-2026-10] }
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-20, sources: [wada-2026-list-en, wada-2027-list-en] }
 studies:
   # --- anti-inflammatory pharmacology: several independent groups

@@ -46,6 +46,15 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-orphan-elamipretide-eu-3-21-2430] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: authorised, since: 2025-09-19, as_of: 2026-10-23, sources: [fda-drugsatfda-forzinity, fda-2025-forzinity-approval-letter, fda-label-forzinity-2025] }
+  # UK, CA, AU: merged from research/refocus/status/ss-31.yaml (fact-checked 24 October 2026). UK investigational:
+  # NCT07531251 (Barth syndrome, Bristol site recruiting) and NCT06373731 (UK sites, active, not recruiting); whether
+  # the UK arm has an MHRA trial authorisation was not checked (registry only). CA investigational: Health Canada's
+  # trial portal lists NCT07531251 as approved on 19 March 2026, recruiting in Calgary. AU not-authorised: no ARTG
+  # entry and no open trial (NuPOWER, the one trial with Australian sites, ended in December 2024). The CA row's DPD
+  # search (23 October 2026) was confirmed in Health Canada's DPD data extract on 24 October 2026 (research/refocus-notes/merge.md).
+  - { jurisdiction: UK, status: investigational, as_of: 2026-10-23, sources: [ctgov-nct07531251, ctgov-nct06373731, mhra-products-search-status-d-2026-10-23] }
+  - { jurisdiction: CA, status: investigational, as_of: 2026-10-23, sources: [ctgov-nct07531251, ca-hc-ctdb-search-status-d-2026-10-24, ctgov-search-status-d-2026-10-23, ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24] }
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, ctgov-search-status-d-2026-10-23] }
   # unclear (CONTENT-GUIDE §5.1: 'never not-listed unless the sources say it is allowed'). Not named on the 2026 or
   # 2027 Prohibited List or Monitoring Program (PDFs searched 23 October 2026). S0 covers only substances with no
   # current approval by any government health authority, and elamipretide is FDA-approved, so S0 no longer applies;

@@ -76,6 +76,38 @@ export function loadCommerceTokens(): { tokens: Record<string, string[]>; urlPat
   return readJson(path.join(ROOT, 'config/commerce-tokens.json')) as never;
 }
 
+/**
+ * An order as a legal instrument, never an offer: "an executive order", "a court order", "a Treasury
+ * order", "the … Trading Fund Order 2003", "the … (Amendment) Order 2026", "an Order in Council". The
+ * only exception that also applies to link text and citation labels (a cited statutory instrument's
+ * title or author), because every link's host must be on the allowlist anyway.
+ */
+const LEGAL_ORDER_PHRASES = [
+  /\b(?:executive|court|ministerial|statutory|amendment|banning|prohibition|interim|commencement|exemption|treasury|fund|council|control)\)? orders?\b/giu,
+  /\border in council\b/giu,
+  /\border (?:19|20)\d{2}\b/giu,
+];
+export function stripLegalOrders(text: string): string {
+  return LEGAL_ORDER_PHRASES.reduce((t, re) => t.replace(re, ' '), text);
+}
+
+/**
+ * English phrases where a commerce token is not about buying: "in order to", "the order of the amino
+ * acids", "why order matters", "deal with side effects", and the legal orders above. Removed from
+ * headings, figure titles and labels before they are tested (validator, check-no-commerce). Links are
+ * tested with only the legal-order exception (stripLegalOrders).
+ */
+const NON_COMMERCE_PHRASES = [
+  /\bin order (?:to|that|for)\b/giu,
+  /\border (?:of|in which|matters)\b/giu,
+  /\b(?:the same|same|right|correct|wrong|reverse|fixed|chronological|alphabetical|residue|amino[- ]acid|sequence|its|their|in that|in this) order\b/giu,
+  /\bdeal(?:s|t)? with\b/giu,
+  /\ba (?:good|great) deal\b/giu,
+];
+export function stripNonCommerce(text: string): string {
+  return NON_COMMERCE_PHRASES.reduce((t, re) => t.replace(re, ' '), stripLegalOrders(text));
+}
+
 export function commerceRegex(tokens: Record<string, string[]>): RegExp {
   const all = Object.values(tokens).flat();
   const escaped = all.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+'));

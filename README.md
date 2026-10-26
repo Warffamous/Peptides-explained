@@ -5,24 +5,41 @@ what they are, what the evidence shows, what the law says, and how to lower the 
 already use them. Static site built with [Astro 5](https://astro.build/), one design ("Mechanism",
 `docs/design/DESIGN-DIRECTIONS-2026-10.md`), light and dark following the reader's setting.
 
-**State on 23 October 2026.** English is complete: 43 pages, 21 compound pages (11 full pages and
-10 short Tier 2 pages, flagged "Short page"), plus the glossary, sources, news and search pages.
-Dutch (`nl`) is in preview: it is built with English fallback pages, a banner and `noindex`, and is
-translated next. Medical and legal review by named people is pending (see [Review status](#review-status)).
+**State on 24 October 2026.** The English site is being refocused (owner's decision, 23 October 2026)
+on readers in **the United States, the United Kingdom, Canada and Australia**, with short notes for
+**Ireland and New Zealand**: 42 pages, 21 compound pages (11 full pages and 10 short Tier 2 pages,
+flagged "Short page"), plus the glossary, sources, news and search pages. The fact-checked research
+and the status data for the new countries are merged; the pages are being rewritten, then checked and
+reviewed before the refocused site replaces the live one (still the version of 23 October). All
+European framing (the Netherlands, the EU, Belgium, Germany) leaves the English site and is kept for
+the Dutch site (`research/for-nl-site/`, git tag `nl-source-2026-10-23`). Dutch (`nl`) is in
+preview: it is built with English fallback pages, a banner and `noindex`, and is translated next.
+Medical and legal review by named people is pending (see [Review status](#review-status)).
 
 ---
 
 ## What this site is, and what it is not
 
-- **It sells nothing, links to no seller and recommends no vendor.** No ads, no sponsors, no
-  affiliate or referral links, no cookies, no tracking. The footer says so on every page, and
-  `/en/about/funding/` explains it.
-- **The absence of commerce is what keeps the information legal.** Dutch law (Geneesmiddelenwet
-  art. 84–85, implementing Directive 2001/83/EC) bans advertising for medicines without a marketing
+- **Who it is for.** Each language has its own readers (`config/locales.json`, `jurisdictions`).
+  English is written for readers in the US, the UK, Canada and Australia: wherever the answer depends
+  on the country (law, approval status, treatment routes, side-effect reporting, help services), each
+  of the four finds their own, side by side, and none is "the default". Ireland and New Zealand get
+  short notes (`/en/legal/ireland-and-new-zealand/`). The Dutch site (in preview) is for readers in
+  the Netherlands, with Belgian and EU law. CONTENT-GUIDE §1b.
+- **It sells nothing, links to no seller and recommends no seller.** No ads, no sponsors, no
+  affiliate or referral links. The footer says so on every page, and `/en/about/funding/` explains
+  it, including the host's visitor statistics, which run only with the reader's consent.
+- **The absence of commerce is what keeps the information legal.** The site is **published from the
+  Netherlands**, so Dutch law is the publisher's law, wherever the reader lives: the Geneesmiddelenwet
+  (art. 84–85, implementing Directive 2001/83/EC) bans advertising for medicines without a marketing
   authorisation, and "advertising" is read broadly: a commercial purpose turns information into
-  advertising. So every outbound link must be on `config/link-allowlist.json` (regulators, law,
-  PubMed/DOI, universities, anti-doping bodies, patient and harm-reduction organisations), and the
-  build fails on any commerce word in a link or call to action (`config/commerce-tokens.json`).
+  advertising. The readers' countries have similar rules on advertising medicines. So every outbound
+  link must be on `config/link-allowlist.json` (regulators, law, PubMed/DOI, universities, anti-doping
+  bodies, patient and harm-reduction organisations), and the build fails on any commerce word in a
+  link, a call to action, a heading, a section question or a figure title
+  (`config/commerce-tokens.json`).
+- **It never prints an emergency number on English** (its readers live in several countries): it
+  says "call your local emergency number", and names and links each country's help services.
 - **It informs, it does not discourage** (`docs/CONTENT-GUIDE.md` §1a). Harm reduction is the core:
   practical, sourced safety information for people who already have a product.
 - **The legal line.** No doses, schedules, protocols, "start low", reconstitution maths, stacks or
@@ -50,11 +67,12 @@ npm run preview   # serve dist/ locally (search works here, not in dev: the inde
 
 | Command | What it does |
 |---|---|
-| `npm run validate` | The content validator (`scripts/validate-content.ts`): schemas, sources, the editorial guardrails, plain-language limits, emergency-number rule, media and glossary checks. Fails on errors. `npm run validate -- --only <part-of-path>` reports one file or group, e.g. `--only bpc-157` or `--only legal/nl`. |
+| `npm run validate` | The content validator (`scripts/validate-content.ts`): schemas, sources, the editorial guardrails (including seller-judging words such as "reputable" or "vendor"), commerce words in titles, headings, questions and figure titles, plain-language limits, the emergency-number rule (`scripts/lib/emergency.ts`), the locale residue check (warnings until `STRICT_RESIDUE`), media and glossary checks. Fails on errors. `npm run validate -- --only <part-of-path>` reports one file or group, e.g. `--only bpc-157` or `--only legal/ca`. |
 | `npm run lint:css` | Stylelint. Bans physical left/right properties so every layout mirrors in right-to-left scripts. |
-| `npm run check:commerce` | After a build: every outbound URL in `dist/` is on the allowlist, and no link or button carries a commerce word, affiliate parameter, redirector or URL shortener. "The load-bearing wall". |
-| `npm run check:html` | After a build: one `h1`, no skipped heading levels, landmarks, `lang` and `dir`, unique ids, every internal link and `#` target resolves, alt text and accessible names, no physical-direction inline styles, first-load JavaScript at most 40 KB gzipped per page. |
-| `npm run check` | Both checks above. |
+| `npm run check:commerce` | After a build: every outbound URL in `dist/` is on the allowlist, no link or button carries a commerce word, affiliate parameter, redirector or URL shortener, and no heading (`h1`–`h6`), section question, fold or figure title, diagram caption or `aria-label` carries a commerce word. "The load-bearing wall". |
+| `npm run check:html` | After a build: one `h1`, no skipped heading levels, landmarks, `lang` and `dir`, unique ids, every internal link and `#` target resolves, cross-page links to a source (`/en/sources/#source-<id>`) or an image credit (`#image-<id>`) find their target (other missing cross-page anchors are warnings), alt text and accessible names, no physical-direction inline styles, first-load JavaScript at most 40 KB gzipped per page. |
+| `npm run check:residue` | The locale residue check (`scripts/check-locale-residue.ts`, `config/locale-residue.json`, CONTENT-GUIDE §1b): words that belong to another locale's readers (on English: Dutch, Belgian and German terms and EU reader framing; EMA, EPAR, CHMP and Europe as warnings), in the sources and in the built pages of `dist/`. `-- --details` lists every hit, `-- --only <part-of-path>` filters, `-- --strict` fails now. While `STRICT_RESIDUE` (`scripts/lib/residue.ts`) is false every hit is a warning. |
+| `npm run check` | The three checks above. |
 | `npm run build:rtl` | Builds every page with `dir="rtl"` into `dist-rtl/` (`PSEUDO_RTL=1`, POSIX syntax: use Git Bash, or in PowerShell `$env:PSEUDO_RTL='1'; npx astro build --outDir dist-rtl`). In a browser, `?pseudo=rtl` does the same for one tab (`?pseudo=off` ends it). |
 | `npm run news` | Fetches headlines from the vetted feeds in `src/data/feeds.yaml` into `src/data/news.json` (normally run by the daily GitHub Action). |
 | `npm run media:commons` / `npm run media:generate` | Register an open-licensed image from Wikimedia Commons, or make text-free AI artwork (`docs/MEDIA-GUIDE.md`). |
@@ -68,11 +86,13 @@ warnings in the files it touches.
 
 ```text
 config/
-  locales.json            locales and their status (planned | preview | published)
+  locales.json            locales, their status (planned | preview | published), their readers'
+                          jurisdictions (full and notes) and printsEmergencyNumbers
   site.json               brand, canonical site URL, "content as of" date
   link-allowlist.json     the only hosts any page may link to
   commerce-tokens.json    commerce words per locale; a link or button containing one fails the build
   readability-waivers.json  time-boxed waivers for the plain-language limits
+  locale-residue.json     per locale, the words that belong to another locale's readers (residue check)
 docs/
   CONTENT-GUIDE.md        the editorial contract (guardrails, voice, page and compound rules, components)
   MEDIA-GUIDE.md          images: licences, AI artwork review, alt text, cost log
@@ -88,9 +108,17 @@ src/
   i18n/<locale>/<namespace>.json      every UI string, per locale (glossary/ is a folder of files)
   components/  layouts/  pages/       templates; the words they show come from src/i18n
   lib/  plugins/  schemas/  scripts/  styles/
-scripts/                  validator, commerce and HTML checks, newsfeed, media tools
+scripts/                  validator, commerce, HTML and residue checks, newsfeed, media tools
+  lib/emergency.ts        what counts as a printed emergency number
+  lib/residue.ts          the locale residue scan (sources and built pages)
 research/                 research notes and verification logs per content group
+  refocus/                the fact-checked research for the English refocus (US, UK, CA, AU, IE, NZ)
+  refocus-spec/           the refocus brief (content-brief.md) and data model
+  refocus-notes/          per-group notes of the refocus rewrite, for the fact-checkers
+  for-nl-site/            European material saved for the Dutch site: snapshot-2026-10-23/,
+                          MANIFEST-<group>.md (what each group cut), i18n-replaced-en.json
 .claude/workflows/write-content-groups.js   the research, write and fact-check workflow (below)
+.claude/workflows/refocus-en.js             the English refocus: merge, rewrite, fact-check, sweep
 .github/workflows/        ci.yml (build and checks on every push) and news.yml (daily newsfeed)
 ```
 
@@ -112,15 +140,23 @@ grade matrix, the sitemaps and the compound routes are generated from the data f
    `config/link-allowlist.json`. CONTENT-GUIDE §11.
 3. **Write the data file** `src/data/compounds/<slug>.yaml` (CONTENT-GUIDE §5.1; schema in
    `src/schemas/index.ts`): names, identifiers, formula and mass, sequence, `category`, the four
-   evidence grades (see [the rubric](#how-the-grading-rubric-works)), dated and sourced regulatory rows
-   (EU, NL, US and WADA required; DE, BE and UK where known), structured `studies` (at least 3 for a
-   complete page), `authorised_products` or `national_authorisations` where the category needs them,
-   `related`, and the review fields `last_reviewed: <date>` and `reviewed_by: pending-medical-review`.
-   The "At a glance" answers are derived from this file, so keep it exact.
+   evidence grades (see [the rubric](#how-the-grading-rubric-works)), dated and sourced regulatory rows,
+   structured `studies` (at least 3 for a complete page), `authorised_products` or
+   `national_authorisations` where the category needs them, `related`, and the review fields
+   `last_reviewed: <date>` and `reviewed_by: pending-medical-review`. **Which rows:** WADA, plus one
+   row for every `jurisdictions.full` code of every published locale in `config/locales.json` (today
+   English: US, UK, CA, AU; the validator fails without them), and the rows of locales in preview where
+   known (Dutch: NL, EU, BE). Never delete a row another locale shows. A jurisdiction that has not been
+   researched gets no row: it is shown as unknown, never "not approved". An Australian or Canadian
+   `schedule` only where the instrument names the substance. Products of an authorised medicine link
+   the regulator's own label (FDA, MHRA Products, Health Canada monograph, ARTG entry). The "At a
+   glance" answers are derived from this file, so keep it exact.
 4. **Write the prose** `src/content/compounds/en/<slug>.mdx` (CONTENT-GUIDE §5.2–5.4, §9.1): the
    frontmatter (`summary`, `lede`, `glance`, `grade_rationale`, `mechanism`, one `studies` entry per
-   study id, `regulatory_notes`, `indications` for authorised products) and the `<Section id="…">`
-   blocks in the fixed order. Every factual claim gets a `<Cite id>`; every efficacy or mechanism
+   study id, `regulatory_notes` for the locale's own rows, `indications` for every authorised
+   product) and the `<Section id="…">` blocks in the fixed order. The regulatory section answers for
+   each of the locale's countries and links the treatment routes by their fixed anchors on
+   `/en/legal-routes/`. Every factual claim gets a `<Cite id>`; every efficacy or mechanism
    claim a `<Claim level>`. Authorised medicines add `<AuthorisedProducts />`; everything else gets
    the harm-reduction section with `<ProductCheck />` and `<WarningSigns />`.
 5. **Add glossary terms** a B1 reader would not know to `src/i18n/en/glossary/<slug>.json`
@@ -169,7 +205,9 @@ it without touching components, layouts or scripts; every user-visible word live
      `src/data/jurisdictions.yaml`, and every compound a row for each full code of a published locale
      (the validator checks both; `STRICT_LOCALE_ROWS` in `scripts/validate-content.ts`);
    - `printsEmergencyNumbers`: `false` if the locale's readers live in more than one country (it then
-     says "call your local emergency number" and never prints a number), `true` for one country;
+     says "call your local emergency number" and never prints a number), `true` for one country. With
+     `false`, the validator fails a page or UI string that prints 112 or any `emergency` number of the
+     locale's full and notes jurisdictions (`src/data/jurisdictions.yaml`) as a phone number;
    - `status`: start with `planned`.
 2. **Know the three statuses.**
    - `planned`: files are validated, nothing is built.
@@ -202,10 +240,17 @@ it without touching components, layouts or scripts; every user-visible word live
    country page (for Dutch, `legal/nl`) is rewritten for that reader from the national law and
    official sources, with `translation: { method: adapted, from: en, review: pending }`, or
    `method: native` if written from scratch. Legal pages stay at B1 and keep
-   `reviewed_by: pending-legal-review` until a lawyer signs off.
+   `reviewed_by: pending-legal-review` until a lawyer signs off. Only the locale's own jurisdictions
+   get pages (`jurisdictions.full`, plus a notes page for `.notes`). The English European pages of
+   23 October 2026 (`legal/nl`, `eu`, `be`, `de`) and every European passage cut from English are kept
+   for the Dutch site in `research/for-nl-site/` (the snapshot and the groups' `MANIFEST-*.md`) and
+   under the git tag `nl-source-2026-10-23`.
 7. **Add the locale's commerce words** to `config/commerce-tokens.json` (`tokens.<code>`: buy,
    order, discount … in that language) and any national regulators, law databases or patient
-   organisations you cite to `config/link-allowlist.json`.
+   organisations you cite to `config/link-allowlist.json`. If the locale's readers must not see
+   another locale's framing (as English must not see Dutch or EU framing), add a
+   `locales.<code>` entry to `config/locale-residue.json` (patterns with levels `error`, `frame`,
+   `warn`; CONTENT-GUIDE §1b); `npm run check:residue` then covers it.
 8. **Right-to-left languages** need nothing beyond `dir: "rtl"`: every page then renders mirrored
    (`<html dir="rtl">`, logical CSS throughout). Check pages with `?pseudo=rtl` in the browser and
    with `npm run build:rtl`; nothing may clip or overflow, and amino-acid sequences, numbers and
@@ -297,8 +342,9 @@ pretends a review happened: schema.org `reviewedBy` is emitted only for an activ
 To add a named reviewer:
 
 1. Add the person to `src/data/people.yaml` with `kind: person`, `role: medical-reviewer` (or
-   `legal-reviewer`, `translator`), `name`, `credentials` (for a Dutch doctor, the BIG
-   registration), `big_number` where it applies, an optional `url`, and `active: true`.
+   `legal-reviewer`, `translator`), `name`, `credentials` (the professional registration in the
+   reviewer's own country), `big_number` for a doctor registered in the Netherlands, an optional
+   `url`, and `active: true`.
 2. On each page they signed off, set `reviewed_by: <their id>` and `last_reviewed: <date>`: in the
    page's frontmatter for pages, and in `src/data/compounds/<slug>.yaml` for compound pages.
 3. For a translation, set `translation.review: reviewed`, `reviewed_by` and `reviewed_on` in the
@@ -323,17 +369,26 @@ To add a named reviewer:
      --site dist-live --silent` (bash; `npm run build:live` does the same where `VAR=1 cmd` works),
      then delete `dist-live/_headers`. `PUBLISHED_ONLY=1` leaves out locales still in `preview`, so a
      language goes live only when its status is `published`.
-  2. Run `check:html` and `check:commerce` on `dist-live` (`npx tsx scripts/check-html.ts dist-live`).
+  2. Run the three checks on `dist-live`: `npx tsx scripts/check-html.ts dist-live`,
+     `npx tsx scripts/check-no-commerce.ts dist-live` and
+     `npx tsx scripts/check-locale-residue.ts --dist dist-live` (residue: no `error` hit may remain
+     once `STRICT_RESIDUE` is true).
   3. Replace the Lovable repository's `public/` with the contents of `dist-live/`, commit, push to
      `main`, then publish in Lovable (or with the Lovable connector's deploy).
   The host sets its own security cookie (`__cf_bm`, Cloudflare bot protection) and ignores `_headers`.
+- **Removed addresses.** The English refocus removes `/en/legal/nl/`, `/en/legal/eu/`, `/en/legal/be/`
+  and `/en/legal/de/` from the build. The static build has no redirects, so they are handled in the
+  Lovable app's `src/server.ts`: a permanent (301) redirect from each to `/en/legal/` (or, once the
+  Dutch site is published, to its own Dutch page). Not yet added on 24 October 2026: add them in the
+  same push that publishes the refocused English pages, and check that each old address answers 301.
 - **Any other static host** works with `dist/` as it is (`public/_headers` sets long caches for the
   hashed stylesheet, `/_astro/` and fonts on Cloudflare Pages and Netlify).
 - **The canonical domain** (canonical links, hreflang, sitemaps, robots, the commerce check's own
   host) comes from `siteUrl` in `config/site.json`. Change it there when the site moves; the
   `SITE_URL` environment variable only changes Astro's own `site` setting.
 - **CI** (`.github/workflows/ci.yml`, every push and pull request): `npm ci`, `npm run build`
-  (with the validator and stylelint), `check:commerce`, `check:html`, then Lighthouse on mobile
+  (with the validator and stylelint), `check:commerce`, `check:html` (`check:residue` is not in CI
+  yet: add it when `STRICT_RESIDUE` is set to true), then Lighthouse on mobile
   (`lighthouserc.json`: at least 95 on all four categories, zero layout shift).
 - **The daily newsfeed** (`.github/workflows/news.yml`, 05:17 UTC, or run by hand): `npm run news`,
   then `npm run validate`, then it commits `src/data/news.json` to the branch it runs on (GitHub runs

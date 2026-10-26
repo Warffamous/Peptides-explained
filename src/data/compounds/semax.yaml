@@ -45,6 +45,15 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-semax-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  # UK, CA, AU: merged from research/refocus/status/semax.yaml (fact-checked 24 October 2026); the Russian
+  # registration does not apply in these countries. UK: the FSA records that the MHRA considers Semax a medicine, so
+  # it may be sold only with a UK marketing authorisation, and none exists. For CA, the Drug Product Database
+  # search of 23 October 2026 was confirmed in Health Canada's DPD data extract on 24 October 2026; the NOC database
+  # could not be re-checked (re-check before publishing, research/refocus-notes/merge.md).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-fsa-2018-importing-food-supplements, uk-hmr-2012-reg-46] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24, ca-pdl-human, ca-hc-recalls-search-status-d-2026-10-23] }
+  # Not named in the Poisons Standard (unscheduled).
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, au-poisons-standard-2026-10] }
   # unclear: not named on the 2026 or 2027 List, and registered in Russia, so it is unclear whether S0
   # applies; the 2027 explanatory note says unnamed peptides may still fall under S0, S2 or S4. No
   # anti-doping body has ruled in a source we could find (research/stubs-a.md).

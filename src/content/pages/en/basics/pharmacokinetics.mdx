@@ -12,7 +12,7 @@ section: basics
 order: 3
 template: reference
 reading_level: B2
-last_reviewed: 2026-10-22
+last_reviewed: 2026-10-24
 reviewed_by: pending-medical-review
 related:
   - basics/what-is-a-peptide
@@ -39,7 +39,7 @@ Pharmacokinetics is what the body does to a medicine. It decides how often a med
 
 </Diagram>
 
-<Cite id="santiago-2021-core-concepts,supersaxo-1990-lymphatic,diao-2013-peptide-pharmacokinetics,di-2015-peptide-adme,ema-epar-wegovy" />
+<Cite id="santiago-2021-core-concepts,supersaxo-1990-lymphatic,diao-2013-peptide-pharmacokinetics,di-2015-peptide-adme,fda-label-wegovy" />
 
 For a natural peptide, breakdown and kidney filtering are fast. That is why many natural peptide hormones last only minutes in the blood.<Cite id="di-2015-peptide-adme,werle-2006-half-life" /> Almost everything chemists do to turn a peptide into a medicine aims at slowing those two steps.
 
@@ -51,7 +51,9 @@ For a natural peptide, breakdown and kidney filtering are fast. That is why many
 - **Volume of distribution**: a theoretical measure of how far a medicine has moved from the blood into tissues. Binding to blood proteins and tissues affects how a medicine moves through the body.<Cite id="santiago-2021-core-concepts" />
 - **Elimination** covers both breakdown and excretion; excretion is only the physical removal.<Cite id="santiago-2021-core-concepts" />
 
-Semaglutide shows how these fit together. More than 99% of it in the blood is bound to albumin. It is broken down by enzymes that cut its peptide backbone (one of them is called neutral endopeptidase) and by breaking down its fatty side chain, and only about 3% leaves in the urine unchanged.<Cite id="ema-epar-wegovy" />
+Semaglutide shows how these fit together. More than 99% of it in the blood is bound to albumin. It is broken down by enzymes that cut its peptide backbone and by breaking down its fatty side chain, and only about 3% leaves in the urine unchanged.<Cite id="fda-label-wegovy" />
+{/* residue-ok: EMA evidence */}
+The European product information names one of these enzymes, neutral endopeptidase.<Cite id="ema-epar-wegovy" />
 
 </InDetail>
 
@@ -59,11 +61,12 @@ Semaglutide shows how these fit together. More than 99% of it in the blood is bo
 
 <Lead question="What is a half-life?">The time it takes for the amount of a medicine in the blood to fall by half.</Lead>
 
-<KeyNumber title="The natural hormone is gone in minutes" value="1.5–2 minutes" label="half-life of natural GLP-1 in the blood" who="The body's own GLP-1; EU product information for Trulicity (dulaglutide)" source="ema-epar-trulicity" level="established" />
+{/* residue-ok: EMA evidence */}
+<KeyNumber title="The natural hormone is gone in minutes" value="1.5–2 minutes" label="half-life of natural GLP-1 in the blood" who="The body's own GLP-1; European product information for Trulicity (dulaglutide)" source="ema-epar-trulicity" level="established" />
 
-<KeyNumber title="The changed copy takes about a week to fall by half" value="about 1 week" label="half-life in the blood, in people" who="People with overweight or obesity; EU product information for Wegovy (semaglutide)" source="ema-epar-wegovy" level="established" />
+<KeyNumber title="The changed copy takes about a week to fall by half" value="about 1 week" label="half-life in the blood, in people" who="People with overweight or obesity; US label for Wegovy (semaglutide)" source="fda-label-wegovy" level="established" />
 
-The two molecules act on the same receptor. The difference in how long they last is engineered: semaglutide resists the enzyme that cuts GLP-1 and clings to albumin, so the kidneys clear it slowly and enzymes reach it less.<Cite id="ema-epar-wegovy" /> Half-life then sets how often a medicine is given, how long it takes to build up and how long it lingers.
+The two molecules act on the same receptor. The difference in how long they last is engineered: semaglutide resists the enzyme that cuts GLP-1 and clings to albumin, so the kidneys clear it slowly and enzymes reach it less.<Cite id="fda-label-wegovy" /> Half-life then sets how often a medicine is given, how long it takes to build up and how long it lingers.
 
 <InDetail title="What half-life controls, step by step">
 
@@ -83,13 +86,13 @@ When a medicine is used repeatedly, it builds up until the amount removed betwee
 
 </Diagram>
 
-This is why the EU label for semaglutide tablets states that, with a half-life of about one week, steady state is reached after four to five weeks of daily use.<Cite id="ema-epar-wegovy" /> It is also why semaglutide stays in the circulation for about five to seven weeks after the last dose.<Cite id="ema-epar-rybelsus,ema-epar-wegovy" />
+This is why the US label for semaglutide tablets, with a half-life of about one week, states that steady state is reached after four to five weeks of daily use.<Cite id="fda-label-rybelsus-ozempic-tablets" /> It is also why semaglutide stays in the circulation for about five to seven weeks after the last dose.<Cite id="fda-label-wegovy" />
 
 ### Why a long half-life cuts both ways
 
 - **Fewer injections and steadier levels.** A long half-life allows weekly use, and daily tablets with a long half-life give fewer ups and downs from day to day.<Cite id="ema-epar-wegovy,ema-epar-rybelsus" />
-- **Side effects last long too.** After an overdose of semaglutide, the EU label warns that a prolonged period of observation and treatment may be needed because of its one-week half-life. There is no specific antidote.<Cite id="ema-epar-rybelsus" />
-- **Slow to start, slow to stop.** It takes weeks to reach steady levels, and weeks for them to fade. Because of the long half-life, the EU label says to stop semaglutide at least two months before a planned pregnancy.<Cite id="ema-epar-wegovy" />
+- **Side effects last long too.** After an overdose of semaglutide, the US label warns that a prolonged period of observation and treatment may be needed because of its one-week half-life.<Cite id="fda-label-wegovy" /> There is no specific antidote.<Cite id="ema-epar-rybelsus" />
+- **Slow to start, slow to stop.** It takes weeks to reach steady levels, and weeks for them to fade. Because of the long half-life, the US label for Wegovy says to stop it at least two months before a planned pregnancy.<Cite id="fda-label-wegovy" />
 
 </InDetail>
 
@@ -109,7 +112,7 @@ The amide bonds that link amino acids are easily cut by enzymes in the body when
 
 ### The kidney filter
 
-The kidney's filter holds back molecules by size and charge, letting only small amounts of albumin through.<Cite id="haraldsson-2008-glomerular-barrier" /> Peptides are generally filtered freely, and filtration plus breakdown in the kidney remove many peptide medicines.<Cite id="diao-2013-peptide-pharmacokinetics" /> Exenatide (Byetta, authorised in the EU until 1 January 2026) is an example: in animal studies it was cleared mainly by kidney filtration followed by breakdown, and its half-life in people was 2.4 hours.<Cite id="ema-epar-byetta" />
+The kidney's filter holds back molecules by size and charge, letting only small amounts of albumin through.<Cite id="haraldsson-2008-glomerular-barrier" /> Peptides are generally filtered freely, and filtration plus breakdown in the kidney remove many peptide medicines.<Cite id="diao-2013-peptide-pharmacokinetics" /> Exenatide (Byetta) is an example: in animal studies it was cleared mainly by kidney filtration followed by breakdown, and its half-life in people was 2.4 hours.<Cite id="dailymed-byetta-label" />
 
 ### Where the BPC-157 numbers come from
 
@@ -126,20 +129,20 @@ The half-lives above come from one study in which rats and dogs received a singl
 | Molecule | What was changed | Half-life in people | How often the label says it is used |
 |---|---|---|---|
 | Natural GLP-1 | Nothing: cut by the enzyme DPP-4 and filtered by the kidneys | 1.5–2 minutes | Not a medicine |
-| Exenatide (Byetta) | A related peptide from lizard venom | 2.4 hours | Twice a day (no longer authorised in the EU) |
+| Exenatide (Byetta) | A related peptide from lizard venom | 2.4 hours | Twice a day |
 | Liraglutide (Victoza) | Fatty-acid chain that binds albumin; molecules cluster under the skin; more stable against enzymes | about 13 hours | Once a day |
 | Dulaglutide (Trulicity) | Fused to part of an antibody; resists DPP-4; too big to filter easily | 4.7 days | Once a week |
 | Semaglutide (Ozempic, Wegovy) | DPP-4 blocked at position 8; fatty-acid chain that binds albumin | about 1 week | Once a week (injection) |
 
 </Diagram>
 
-<Cite id="ema-epar-trulicity,ema-epar-byetta,eng-1992-exendin-4,ema-epar-victoza,ema-epar-wegovy,lau-2015-semaglutide-discovery,wang-2022-therapeutic-peptides" />
+<Cite id="ema-epar-trulicity,dailymed-byetta-label,eng-1992-exendin-4,ema-epar-victoza,fda-label-wegovy,lau-2015-semaglutide-discovery,wang-2022-therapeutic-peptides" />
 
-Three strategies dominate. Clinging to albumin hides a peptide from the kidney filter and from enzymes. Fusing it to a large protein does the same by size. Changing the amino acid an enzyme targets removes the cutting site.<Cite id="ema-epar-wegovy,ema-epar-trulicity,wang-2022-therapeutic-peptides" />
+Three strategies dominate. Clinging to albumin hides a peptide from the kidney filter and from enzymes. Fusing it to a large protein does the same by size. Changing the amino acid an enzyme targets removes the cutting site.<Cite id="fda-label-wegovy,ema-epar-trulicity,wang-2022-therapeutic-peptides" />
 
 <InDetail title="Albumin, antibody parts, PEG and reactive hooks">
 
-- **Albumin binding through a fatty acid.** Albumin is a large blood protein that the kidneys hardly filter. A fatty-acid chain makes the peptide cling to it; bound peptide escapes kidney filtration and is protected from breakdown.<Cite id="haraldsson-2008-glomerular-barrier,ema-epar-wegovy,wang-2022-therapeutic-peptides" /> Liraglutide adds a second trick: its molecules cluster under the skin and are absorbed slowly.<Cite id="ema-epar-victoza" />
+- **Albumin binding through a fatty acid.** Albumin is a large blood protein that the kidneys hardly filter. A fatty-acid chain makes the peptide cling to it; bound peptide escapes kidney filtration and is protected from breakdown.<Cite id="haraldsson-2008-glomerular-barrier,fda-label-wegovy,wang-2022-therapeutic-peptides" /> Liraglutide adds a second trick: its molecules cluster under the skin and are absorbed slowly.<Cite id="ema-epar-victoza" />
 - **Fusion to an antibody part (Fc).** Dulaglutide joins two GLP-1-like chains to part of a human antibody. Its large size slows absorption and reduces kidney clearance.<Cite id="ema-epar-trulicity" />
 - **PEG chains.** Attaching chains of polyethylene glycol (PEGylation) increases a molecule's size and shields it from protein-cutting enzymes.<Cite id="harris-2003-pegylation" />
 - **A reactive hook for albumin.** CJC-1295, an experimental growth-hormone-releasing peptide, carries a reactive chemical group that bonds to albumin after injection. <Claim level="animal">In the developer's own study in rats (numbers not given in the abstract), it was found bound to albumin 15 minutes after injection and was still in the blood beyond 72 hours</Claim>.<Cite id="jette-2005-cjc1295-albumin" /> In two randomised, placebo-controlled trials in healthy adults its estimated half-life was 5.8 to 8.1 days.<Cite id="teichman-2006-cjc1295" />
@@ -152,17 +155,18 @@ Every trick changes the molecule. A longer half-life also means that a side effe
 
 <Lead question="What happens after an injection under the skin?">The medicine seeps into small blood vessels, or into lymph if the molecule is large.</Lead>
 
-<KeyNumber title="Most of the injected dose got into the blood" value="89%" label="of the dose reached the bloodstream after an injection under the skin" who="Semaglutide; EU product information for Wegovy" source="ema-epar-wegovy" level="established" />
+<KeyNumber title="Most of the injected dose got into the blood" value="89%" label="of the dose reached the bloodstream after an injection under the skin" who="Semaglutide; US label for Wegovy" source="fda-label-wegovy" level="established" />
 
-<KeyNumber title="With this one, only about half got in" value="about 55%" label="of the dose reached the bloodstream after an injection under the skin" who="Liraglutide; EU product information for Victoza" source="ema-epar-victoza" level="established" />
+{/* residue-ok: EMA evidence */}
+<KeyNumber title="With this one, only about half got in" value="about 55%" label="of the dose reached the bloodstream after an injection under the skin" who="Liraglutide; European product information for Victoza" source="ema-epar-victoza" level="established" />
 
 Even an injection does not deliver the whole dose, and the share differs between molecules. Small molecules enter the tiny blood vessels near the injection site. <Claim level="animal">In a study in sheep (three per substance, four substances), the larger the molecule, the more of it travelled through the lymph instead; above a molecular weight of 16,000, most did</Claim>.<Cite id="supersaxo-1990-lymphatic" />
 
 <InDetail title="What slows absorption, and what does not">
 
-- **Size.** Large molecules are absorbed more slowly. The EU label for dulaglutide says its large size slows absorption.<Cite id="ema-epar-trulicity" /> The sheep study above found more lymphatic absorption with every step up in molecular weight, from 246 to 19,000.<Cite id="supersaxo-1990-lymphatic" />
+- **Size.** Large molecules are absorbed more slowly. The European product information for dulaglutide says its large size slows absorption.<Cite id="ema-epar-trulicity" /> {/* residue-ok: EMA evidence */} The sheep study above found more lymphatic absorption with every step up in molecular weight, from 246 to 19,000.<Cite id="supersaxo-1990-lymphatic" />
 - **Clustering.** Liraglutide molecules cluster together under the skin, which releases them slowly.<Cite id="ema-epar-victoza" />
-- **Site.** For semaglutide, the label reports similar exposure after injection in the abdomen, thigh or upper arm.<Cite id="ema-epar-wegovy" />
+- **Site.** For semaglutide, the US label reports similar exposure after injection in the abdomen, thigh or upper arm.<Cite id="fda-label-wegovy" />
 
 Bioavailability after an injection under the skin is a property of each product, measured in trials. It cannot be assumed for a molecule that has never been studied in people.
 
@@ -172,13 +176,13 @@ Bioavailability after an injection under the skin is a property of each product,
 
 <Lead question="How do unapproved peptides behave in the human body?">Often nobody knows. For many of them, this was never measured in people.</Lead>
 
-<Compare title="For an authorised medicine these basic facts are known. For three unapproved peptides, they are not." detail="What the EU label says about semaglutide, and what the FDA found for BPC-157, TB-500 and KPV in 2026.">
+<Compare title="For an authorised medicine these basic facts are known. For three unapproved peptides, they are not." detail="What the US label says about semaglutide, and what the FDA found for BPC-157, TB-500 and KPV in 2026.">
 
 | | Semaglutide (authorised) | BPC-157 | TB-500 | KPV |
 |---|---|---|---|---|
-| Half-life measured in people? | <Verdict is="yes" /> About one week<Cite id="ema-epar-wegovy" /> | <Verdict is="no" /> No human measurement<Cite id="fda-pcac-2026-bpc157-briefing" /> | <Verdict is="no" /> No human studies found<Cite id="fda-pcac-2026-tb500-briefing" /> | <Verdict is="no" /> No human studies found<Cite id="fda-pcac-2026-kpv-briefing" /> |
-| Known how much reaches the blood after an injection under the skin? | <Verdict is="yes" /> 89%<Cite id="ema-epar-wegovy" /> | <Verdict is="no" /> Not known, even in animals<Cite id="fda-pcac-2026-bpc157-briefing" /> | <Verdict is="no" /> Not known in people<Cite id="fda-pcac-2026-tb500-briefing" /> | <Verdict is="no" /> Not known in people<Cite id="fda-pcac-2026-kpv-briefing" /> |
-| Known how long it stays after stopping? | <Verdict is="yes" /> About five to seven weeks<Cite id="ema-epar-rybelsus,ema-epar-wegovy" /> | <Verdict is="unknown" /> Not known in people<Cite id="fda-pcac-2026-bpc157-briefing" /> | <Verdict is="unknown" /> Not known in people<Cite id="fda-pcac-2026-tb500-briefing" /> | <Verdict is="unknown" /> Not known in people<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Half-life measured in people? | <Verdict is="yes" /> About one week<Cite id="fda-label-wegovy" /> | <Verdict is="no" /> No human measurement<Cite id="fda-pcac-2026-bpc157-briefing" /> | <Verdict is="no" /> No human studies found<Cite id="fda-pcac-2026-tb500-briefing" /> | <Verdict is="no" /> No human studies found<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Known how much reaches the blood after an injection under the skin? | <Verdict is="yes" /> 89%<Cite id="fda-label-wegovy" /> | <Verdict is="no" /> Not known, even in animals<Cite id="fda-pcac-2026-bpc157-briefing" /> | <Verdict is="no" /> Not known in people<Cite id="fda-pcac-2026-tb500-briefing" /> | <Verdict is="no" /> Not known in people<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Known how long it stays after stopping? | <Verdict is="yes" /> About five to seven weeks<Cite id="fda-label-wegovy" /> | <Verdict is="unknown" /> Not known in people<Cite id="fda-pcac-2026-bpc157-briefing" /> | <Verdict is="unknown" /> Not known in people<Cite id="fda-pcac-2026-tb500-briefing" /> | <Verdict is="unknown" /> Not known in people<Cite id="fda-pcac-2026-kpv-briefing" /> |
 
 </Compare>
 

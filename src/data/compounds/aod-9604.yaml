@@ -54,6 +54,20 @@ regulatory:
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search, fda-pcac-2024-aod9604-briefing] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [fda-pcac-2024-aod9604-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, openfda-drugsfda-search-stubs-b-2026-10-23] }
+  # UK, CA, AU: merged from research/refocus/status/aod-9604.yaml (fact-checked 24 October 2026). For CA,
+  # the Drug Product Database search of 23 October 2026 was confirmed in Health Canada's DPD data extract on
+  # 24 October 2026; the NOC database could not be re-checked (re-check before publishing, research/refocus-notes/merge.md).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-status-d-2026-10-23, uk-hmr-2012-reg-46] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24, ca-pdl-human, ca-hc-recalls-search-status-d-2026-10-23] }
+  # Never on the ARTG; developed in Australia, development for obesity stopped in February 2007.
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-artg-search-status-d-2026-10-23, au-tga-search-status-d-2026-10-23, au-poisons-standard-2026-10, fda-pcac-2024-aod9604-briefing]
+    # '# AOD-9604 (CAS No. 221231-10-3)' in Schedule 4 and Appendix D clause 5 item 3: first in the edition in force
+    # from 1 June 2015 (absent from February 2015) and in the October 2026 edition; the editions in between were not
+    # read one by one, so the note does not say "since".
+    schedule: { code: "S4", note: "Prescription only medicine, first listed from 1 June 2015. Possessing it without authority, such as a prescription, is illegal (Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2015-06, au-poisons-standard-2015-02, au-tga-2014-09-scheduling-consultation] }
   # Named in S2.2.3 ("growth hormone fragments, e.g. AOD-9604 and hGH 176-191") in the 2026 and 2027 Lists.
   - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-23, sources: [wada-2026-list-en, wada-2027-list-en] }
 studies:

@@ -1,0 +1,25 @@
+# Sources added by the English refocus, group compounds-c (BPC-157, TB-500, KPV), 24 October 2026.
+# Notes for the fact-checker: research/refocus-notes/compounds-c.md. Every other source these pages cite is reused
+# from the existing registry (src/data/sources/*.yaml, including the merged refocus-*.yaml research files).
+
+us-fda-drugsfda-search-compounds-c-2026-10-24:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA data (openFDA drugsfda endpoint) searches, 24 October 2026: thymosin beta-4 (timbetasin)"
+  container: "openFDA"
+  year: 2026
+  url: https://api.fda.gov/drug/drugsfda.json?search=openfda.generic_name:thymosin
+  accessed: 2026-10-24
+  verified: url
+  note: "The drugsfda endpoint holds the Drugs@FDA records of FDA-approved applications (NDAs and ANDAs, and BLAs held by CDER: 485 BLA records on 24 October 2026); dataset 'last_updated' 2026-10-23. Queried with curl on 24 October 2026: openfda.generic_name:timbetasin, openfda.generic_name:thymosin, openfda.generic_name:\"thymosin beta\", openfda.substance_name:thymosin, openfda.brand_name:thymosin, products.brand_name:thymosin, products.active_ingredients.name:THYMOSIN and products.active_ingredients.name:TIMBETASIN all answered 'No matches found!'. Control: openfda.generic_name:tesamorelin returned EGRIFTA. openFDA's own disclaimer says its results should be treated as unvalidated, so this record is read together with us-fda-purple-book-search-compounds-c-2026-10-24 (licensed biological products). Cited only for 'no FDA approval was found for thymosin beta-4'; TB-500 itself is covered by the FDA's own briefing (fda-pcac-2026-tb500-briefing: 'neither is a component of an FDA-approved drug')."
+
+us-fda-purple-book-search-compounds-c-2026-10-24:
+  type: dataset
+  authors: "U.S. Food and Drug Administration"
+  title: "Purple Book: Database of Licensed Biological Products, September 2026 data download, searched 24 October 2026: thymosin beta-4 (timbetasin)"
+  container: "Purple Book"
+  year: 2026
+  url: https://www.accessdata.fda.gov/drugsatfda_docs/PurpleBook/2026/purplebook-search-September-data-download.csv
+  accessed: 2026-10-24
+  verified: url
+  note: "The newest data file linked from purplebooksearch.fda.gov/downloads on 24 October 2026 ('Purple Book Monthly Historical Data Changes Report - September 2026'). Its second table lists every product in the Purple Book (2,251 product rows with a BLA number, counted with a CSV parser on the evening re-download; an earlier count of 2,231 was wrong: applicant, BLA number, proprietary and proper name, licensure status, centre). Downloaded with curl and searched as text: no row contains 'thymosin', 'timbetasin' or 'RGN-' (the only 'thymo' rows are two anti-thymocyte globulins, Atgam and Thymoglobulin). Controls: somatropin (68 rows) and aldesleukin (1) present. Re-downloaded and re-searched on the evening of 24 October 2026 with the same result (the first attempts that evening received the FDA's 'excessive requests' page instead of the file). With us-fda-drugsfda-search-compounds-c-2026-10-24 this supports 'no FDA-approved or FDA-licensed product containing thymosin beta-4 was found'."

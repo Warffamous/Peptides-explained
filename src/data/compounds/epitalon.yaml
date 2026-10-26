@@ -43,8 +43,15 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, fda-pcac-2026-epitalon-briefing] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, fda-pcac-2026-epitalon-briefing] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-epitalon-briefing] }
+  # UK re-checked on 23 October 2026 (MHRA Products: no results); CA and AU merged from
+  # research/refocus/status/epitalon.yaml (fact-checked 24 October 2026). For CA, the Drug Product Database
+  # search of 23 October 2026 was confirmed in Health Canada's DPD data extract on 24 October 2026; the NOC database
+  # could not be re-checked (re-check before publishing, research/refocus-notes/merge.md).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-epitalon-briefing, mhra-products-search-status-d-2026-10-23] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-epitalon-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24, ca-pdl-human, fda-pcac-2026-epitalon-briefing, ca-hc-recalls-search-status-d-2026-10-23] }
+  # Not named in the Poisons Standard (unscheduled).
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-poisons-standard-2026-10, fda-pcac-2026-epitalon-briefing] }
   # Not named on the List; S0 covers substances with no approval by any government health authority.
   # Same reasoning as KPV (research/stubs-a.md, WADA).
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en, wada-2027-list-explanatory-note, fda-pcac-2026-epitalon-briefing] }

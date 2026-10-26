@@ -10,8 +10,16 @@
 # your local emergency service number"); the Dutch site says "Bel 112".
 # help (optional): help services for the public, each { kind, name, url }, kind one of urgent-advice,
 # poisons, drugs-advice, mental-health (label: pages.jurisdiction.help.<kind>).
-# Every jurisdiction a locale lists (jurisdictions.full and .notes) needs an entry here: CA, AU, IE and NZ
-# are added from the refocus research (research/refocus/); until then the validator warns.
+# Every jurisdiction a locale lists (jurisdictions.full and .notes) needs an entry here.
+# CA, AU, IE and NZ, and the US and UK help services, were added on 24 October 2026 by the refocus merge from the
+# fact-checked research (research/refocus/canada-legal.md, australia-legal.md, ireland-nz.md, feeds-help-extras.md;
+# sources in src/data/sources/refocus-*.yaml). The merge opened every URL again on 24 October 2026 (curl, or the
+# built-in browser where a site refuses scripts). Exceptions, recorded in research/refocus-notes/merge.md: the SAMHSA
+# helpline page (US) and health811.ontario.ca refuse automated requests (SAMHSA was read by the research from an
+# archive copy; Health811 is linked from ontario.ca), and sportintegrity.nz shows a bot check (read by the research's
+# fact-checker in a normal browser on 24 October 2026). Health advice lines with no help entry here because their
+# pages could not be read: NHS 24 (Scotland; site under maintenance), Alberta, New Brunswick, Prince Edward Island,
+# Yukon and Nunavut (bot checks or no line found). Emergency numbers are data only; the English site never prints them.
 - code: NL
   emergency: ["112"]
   regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)", url: "https://www.cbg-meb.nl/" }
@@ -32,16 +40,108 @@
   medicines_law: { name: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik", url: "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet" }
 - code: UK
   emergency: ["999"]
+  # One card for the whole UK: urgent advice differs by nation (England NHS 111, Wales NHS 111 Wales, Northern Ireland
+  # the GP out-of-hours service; Scotland NHS 24, not listed until its site can be read). The National Poisons
+  # Information Service does not advise the public, so the poisons entry is the NHS page on what to do.
+  # Sources: nhs-111, uk-wales-nhs-111, uk-ni-gp-out-of-hours, nhs-poisoning, uk-npis-members-of-public,
+  # uk-frank-contact, uk-wales-dan-247, uk-nhs-urgent-help-mental-health, uk-samaritans-contact.
+  help:
+    - { kind: urgent-advice, name: "NHS 111 (England)", url: "https://www.nhs.uk/nhs-services/urgent-and-emergency-care-services/when-to-use-111/" }
+    - { kind: urgent-advice, name: "NHS 111 Wales", url: "https://111.wales.nhs.uk/" }
+    - { kind: urgent-advice, name: "GP out-of-hours service (Northern Ireland)", url: "https://www.nidirect.gov.uk/articles/gp-out-hours-service" }
+    - { kind: poisons, name: "Poisoning: what to do (NHS)", url: "https://www.nhs.uk/conditions/poisoning/" }
+    - { kind: drugs-advice, name: "FRANK", url: "https://talktofrank.com/contact-frank" }
+    - { kind: drugs-advice, name: "DAN 24/7 (Wales)", url: "https://dan247.org.uk/" }
+    - { kind: mental-health, name: "Urgent help for mental health (NHS)", url: "https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/" }
+    - { kind: mental-health, name: "Samaritans", url: "https://www.samaritans.org/how-we-can-help/contact-samaritan/" }
   regulator: { name: "Medicines and Healthcare products Regulatory Agency (MHRA)", url: "https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency" }
   reporting: { name: "Yellow Card scheme", url: "https://yellowcard.mhra.gov.uk/" }
   anti_doping: { name: "UK Anti-Doping (UKAD)", url: "https://www.ukad.org.uk/" }
   medicines_law: { name: "Human Medicines Regulations 2012", url: "https://www.legislation.gov.uk/uksi/2012/1916/contents" }
 - code: US
   emergency: ["911"]
+  # There is no national nurse advice line (your provider or insurer may have one). Sources: us-hrsa-poison-help,
+  # us-hrsa-poison-help-about, us-findtreatment-gov, us-samhsa-national-helpline, us-988-lifeline-about, us-samhsa-988.
+  help:
+    - { kind: poisons, name: "Poison Help (HRSA)", url: "https://poisonhelp.hrsa.gov/" }
+    - { kind: drugs-advice, name: "SAMHSA National Helpline", url: "https://www.samhsa.gov/find-help/helplines/national-helpline" }
+    - { kind: drugs-advice, name: "FindTreatment.gov", url: "https://findtreatment.gov/" }
+    - { kind: mental-health, name: "988 Suicide & Crisis Lifeline", url: "https://988lifeline.org/" }
   regulator: { name: "U.S. Food and Drug Administration (FDA)", url: "https://www.fda.gov/" }
   reporting: { name: "FDA MedWatch", url: "https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program" }
   anti_doping: { name: "U.S. Anti-Doping Agency (USADA)", url: "https://www.usada.org/" }
   medicines_law: { name: "Federal Food, Drug, and Cosmetic Act (21 U.S.C. chapter 9)", url: "https://www.law.cornell.edu/uscode/text/21/chapter-9" }
+- code: CA
+  # Emergency: 9-1-1 (ca-hc-get-help-substance-use, ca-phac-mental-health-get-help). There is no federal health advice
+  # line: each province and territory runs its own (the verified ones are listed; Alberta, New Brunswick, Prince Edward
+  # Island and Yukon pages sit behind bot checks, and no Nunavut line was found). Sources: ca-help-* and
+  # ca-infopoison-centres (src/data/sources/refocus-canada.yaml), ca-hc-get-help-substance-use, ca-988-helpline,
+  # ca-hc-medeffect-reporting, ca-sic-cadp, ca-food-and-drugs-act.
+  emergency: ["911"]
+  help:
+    - { kind: urgent-advice, name: "HealthLink BC (British Columbia)", url: "https://www.healthlinkbc.ca/" }
+    - { kind: urgent-advice, name: "HealthLine (Saskatchewan)", url: "https://www.saskatchewan.ca/residents/health/accessing-health-care-services/healthline" }
+    - { kind: urgent-advice, name: "Health Links – Info Santé (Manitoba)", url: "https://sharedhealthmb.ca/contact/important-numbers/" }
+    - { kind: urgent-advice, name: "Health811 (Ontario)", url: "https://health811.ontario.ca/" }
+    - { kind: urgent-advice, name: "Info-Santé 811 (Québec)", url: "https://www.quebec.ca/en/health/finding-a-resource/info-sante-811" }
+    - { kind: urgent-advice, name: "811 (Nova Scotia)", url: "https://novascotia.ca/dhw/primaryhealthcare/811.asp" }
+    - { kind: urgent-advice, name: "HealthLine 811 (Newfoundland and Labrador)", url: "https://nlhealthservices.ca/find-health-care/primary-care-options/care-options/" }
+    - { kind: urgent-advice, name: "811 (Northwest Territories)", url: "https://www.hss.gov.nt.ca/en/services/811" }
+    - { kind: poisons, name: "Poison centres in Canada (by province and territory)", url: "https://infopoison.ca/centres/" }
+    - { kind: drugs-advice, name: "Get help with substance use (Health Canada)", url: "https://www.canada.ca/en/health-canada/services/substance-use/get-help-with-substance-use.html" }
+    - { kind: mental-health, name: "9-8-8: Suicide Crisis Helpline", url: "https://988.ca/" }
+  regulator: { name: "Health Canada", url: "https://www.canada.ca/en/health-canada.html" }
+  reporting: { name: "Canada Vigilance Program: report a side effect (Health Canada)", url: "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html" }
+  anti_doping: { name: "Sport Integrity Canada", url: "https://sportintegrity.ca/" }
+  medicines_law: { name: "Food and Drugs Act (R.S.C., 1985, c. F-27)", url: "https://laws-lois.justice.gc.ca/eng/acts/f-27/" }
+- code: AU
+  # Emergency: 000, and 112 from a mobile phone (au-triple-zero). healthdirect is the national nurse line (called
+  # Nurse-on-Call in Victoria); Queensland has 13 HEALTH. Sources: au-healthdirect-helpline, au-vic-nurse-on-call,
+  # au-qld-13health, au-healthdirect-poisoning, au-health-aod-hotline, au-healthdirect-mental-health-helplines,
+  # au-tga-report-adverse-event, au-sia-act-2020, au-tg-act-s3-definitions.
+  emergency: ["000", "112"]
+  help:
+    - { kind: urgent-advice, name: "healthdirect", url: "https://www.healthdirect.gov.au/how-healthdirect-can-help-you" }
+    - { kind: urgent-advice, name: "Nurse-on-Call (Victoria)", url: "https://www.health.vic.gov.au/primary-care/nurse-on-call" }
+    - { kind: urgent-advice, name: "13 HEALTH (Queensland)", url: "https://www.qld.gov.au/health/contacts/advice/13health" }
+    - { kind: poisons, name: "Poisons Information Centre (healthdirect: poisoning)", url: "https://www.healthdirect.gov.au/healthy-living/toxins-and-poisoning/poisoning" }
+    - { kind: drugs-advice, name: "National Alcohol and Other Drug Hotline", url: "https://www.health.gov.au/contacts/national-alcohol-and-other-drug-hotline" }
+    - { kind: mental-health, name: "Mental health helplines (healthdirect)", url: "https://www.healthdirect.gov.au/healthcare-and-services/mental-health/mental-health-helplines" }
+  regulator: { name: "Therapeutic Goods Administration (TGA)", url: "https://www.tga.gov.au/" }
+  reporting: { name: "TGA: report an adverse event or safety problem", url: "https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem" }
+  anti_doping: { name: "Sport Integrity Australia", url: "https://www.sportintegrity.gov.au/" }
+  medicines_law: { name: "Therapeutic Goods Act 1989", url: "https://www.legislation.gov.au/C2004A03952/latest/text" }
+# Notes jurisdictions (short notes only on English): Ireland and New Zealand.
+- code: IE
+  # Emergency: 112 or 999 (ie-hse-mental-health-urgent-help). There is no national nurse line: the HSE page lists GP
+  # out-of-hours services, injury units and emergency departments. EU-wide (central) approvals also apply in Ireland.
+  # Sources: ie-hse-urgent-emergency-care, ie-npic-poisons, ie-hse-drugs-alcohol-helpline, ie-hse-mental-health-urgent-help,
+  # ie-hpra-what-we-regulate, ie-hpra-report-side-effect, ie-sport-ireland-anti-doping, ie-imb-act-1995.
+  emergency: ["112", "999"]
+  help:
+    - { kind: urgent-advice, name: "Urgent and emergency care (HSE)", url: "https://www2.hse.ie/services/urgent-emergency-care/" }
+    - { kind: poisons, name: "National Poisons Information Centre", url: "https://poisons.ie/" }
+    - { kind: drugs-advice, name: "HSE Drugs and Alcohol Helpline", url: "https://www2.hse.ie/services/habit-addiction/drugs-and-alcohol-helpline/" }
+    - { kind: mental-health, name: "Get urgent help for a mental health crisis (HSE)", url: "https://www2.hse.ie/mental-health/services-support/get-urgent-help/" }
+  regulator: { name: "Health Products Regulatory Authority (HPRA)", url: "https://www.hpra.ie/" }
+  reporting: { name: "HPRA: report a side effect", url: "https://www.hpra.ie/report-an-issue/medicines-for-human-use/side-effects" }
+  anti_doping: { name: "Sport Ireland Anti-Doping", url: "https://www.sportireland.ie/anti-doping" }
+  medicines_law: { name: "Irish Medicines Board Act 1995 (revised)", url: "https://revisedacts.lawreform.ie/eli/1995/act/29/revised/en/html" }
+- code: NZ
+  # Emergency: 111 (nz-healthnz-mental-health-where-to-get-help). Side effects are reported to Medsafe and processed by
+  # the Centre for Adverse Reactions Monitoring (CARM). Sources: nz-healthnz-healthline, nz-national-poisons-centre,
+  # nz-healthnz-mental-health-where-to-get-help, nz-healthnz-national-telehealth-service, nz-medsafe-about,
+  # nz-medsafe-report-a-problem, nz-sic-sports-anti-doping-rules, nz-medicines-act-1981.
+  emergency: ["111"]
+  help:
+    - { kind: urgent-advice, name: "Healthline", url: "https://www.healthnz.govt.nz/online-phone-healthcare/healthline" }
+    - { kind: poisons, name: "National Poisons Centre", url: "https://poisons.co.nz/" }
+    - { kind: drugs-advice, name: "Alcohol Drug Helpline", url: "https://alcoholdrughelp.org.nz/" }
+    - { kind: mental-health, name: "Where to get help for mental health (Health NZ)", url: "https://www.healthnz.govt.nz/health-topics/mental-health/where-to-get-help" }
+  regulator: { name: "Medsafe", url: "https://www.medsafe.govt.nz/" }
+  reporting: { name: "Medsafe: report a side effect (CARM)", url: "https://www.medsafe.govt.nz/safety/report-a-problem.asp" }
+  anti_doping: { name: "Sport Integrity Commission Te Kahu Raunui", url: "https://sportintegrity.nz/" }
+  medicines_law: { name: "Medicines Act 1981", url: "https://www.legislation.govt.nz/act/public/1981/118/en/latest/" }
 - code: EU
   emergency: ["112"]
   regulator: { name: "European Medicines Agency (EMA)", url: "https://www.ema.europa.eu/en/homepage" }

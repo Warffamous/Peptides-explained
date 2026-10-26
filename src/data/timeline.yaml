@@ -10,9 +10,13 @@
 # source listed (Drugs@FDA ORIG-1 dates, EMA EPAR authorisation dates, the act itself for laws); see
 # research/history.md. An event without `date` is known to the year only. Re-checked by the independent fact-checker
 # on 22 October 2026 (openFDA ORIG-1 dates, the EMA medicines JSON, the acts); see research/history.md, "Fact-check log".
-# `compounds` may only name compounds that have a data file in src/data/compounds/ (bpc-157, kpv, retatrutide,
-# semaglutide, tb-500, tirzepatide on 22 October 2026). Bremelanotide (pt-141), tesamorelin and afamelanotide events
-# can be tagged once those data files exist.
+# `compounds` may only name compounds that have a data file in src/data/compounds/ (21 on 24 October 2026, including
+# pt-141 and tesamorelin; afamelanotide has none).
+# English refocus (24 October 2026, group about-history-en; research/refocus/feeds-help-extras.md section 3, fact-checked):
+# UK, Canadian and Australian events added so the English timeline (US, UK, CA, AU and global events) is balanced.
+# The EU and NL events stay for the Dutch site (hidden on English). Canadian events do not cite the Federal Court of
+# Appeal decision (its title names a company; content brief), so the 1962 sale ban and the 1963 efficacy rule are not
+# events; the Canadian thalidomide dates conflict between official records, so only the year is given.
 
 # ---------------------------------------------------------------- 1920s to 1950s: the first peptide medicines
 - id: insulin-first-treatment
@@ -60,6 +64,12 @@
   jurisdictions: []
   sources: [vargesson-2015-thalidomide, kim-2011-thalidomide-review, fda-kelsey-history]
 
+- id: au-mcbride-letter
+  year: 1961
+  category: safety
+  jurisdictions: [AU]
+  sources: [mcbride-1961-thalidomide-letter, au-tga-mcewen-2007-history]
+
 - id: kefauver-harris-1962
   year: 1962
   date: 1962-10-10
@@ -67,11 +77,42 @@
   jurisdictions: [US]
   sources: [us-pl-87-781-drug-amendments-1962, fda-2006-promoting-safe-effective-drugs, fda-history-milestones]
 
+- id: ca-thalidomide-withdrawn
+  year: 1962
+  category: safety
+  jurisdictions: [CA]
+  sources: [ca-hesa-2017-05-09-thalidomide-evidence, webb-1963-canadian-thalidomide]
+
 - id: solid-phase-synthesis
   year: 1963
   category: chemistry
   jurisdictions: []
   sources: [merrifield-1963-solid-phase, nobel-1984-merrifield-press]
+
+- id: uk-committee-on-safety-of-drugs
+  year: 1963
+  category: regulation
+  jurisdictions: [UK]
+  sources: [uk-hansard-1963-04-04-safety-of-drugs, uk-tna-mh171-csd-csm]
+
+- id: au-drug-evaluation-committee
+  year: 1963
+  date: 1963-06-03
+  category: regulation
+  jurisdictions: [AU]
+  sources: [au-tga-mcewen-2007-history]
+
+- id: uk-yellow-card
+  year: 1964
+  category: safety
+  jurisdictions: [UK]
+  sources: [uk-mhra-2014-yellow-card-50, uk-mhra-2015-yellow-card-digital]
+
+- id: au-adverse-reaction-reporting
+  year: 1964
+  category: safety
+  jurisdictions: [AU]
+  sources: [au-tga-mcewen-2007-history]
 
 - id: eu-directive-65-65
   year: 1965
@@ -79,6 +120,19 @@
   category: regulation
   jurisdictions: [EU]
   sources: [eu-directive-65-65, ec-legal-framework-medicines, ec-pharma-legislation-timeline]
+
+- id: ca-adverse-reaction-reporting
+  year: 1965
+  category: safety
+  jurisdictions: [CA]
+  sources: [ca-hc-canada-vigilance]
+
+- id: uk-medicines-act-1968
+  year: 1968
+  date: 1968-10-25
+  category: regulation
+  jurisdictions: [UK]
+  sources: [uk-medicines-act-1968-enacted]
 
 # ---------------------------------------------------------------- 1970s and 1980s: brain peptides and biotech
 - id: gnrh-sequence
@@ -127,6 +181,13 @@
   jurisdictions: [US]
   sources: [fda-drugsatfda-sandostatin, bauer-1982-octreotide]
 
+- id: au-therapeutic-goods-act
+  year: 1991
+  date: 1991-02-15
+  category: regulation
+  jurisdictions: [AU]
+  sources: [au-tga-mcewen-2007-history, au-tg-act-1989-asmade-details, au-tg-act-artg-registration-listing]
+
 # ---------------------------------------------------------------- 1990s: faster routes and a European agency
 - id: exendin-4-discovery
   year: 1992
@@ -154,6 +215,13 @@
   category: regulation
   jurisdictions: [EU]
   sources: [eu-directive-2001-83-original, eu-directive-2001-83]
+
+- id: uk-mhra-formed
+  year: 2003
+  date: 2003-04-01
+  category: regulation
+  jurisdictions: [UK]
+  sources: [uk-si-2003-1076-mhra-trading-fund]
 
 - id: exenatide-approval
   year: 2005
@@ -207,6 +275,7 @@
   date: 2010-11-10
   category: approval
   jurisdictions: [US]
+  compounds: [tesamorelin]
   sources: [fda-drugsatfda-egrifta, dailymed-egrifta-sv-label]
 
 # ---------------------------------------------------------------- 2010s: new routes, new medicines, new bans
@@ -216,6 +285,14 @@
   category: approval
   jurisdictions: [EU]
   sources: [ema-epar-scenesse]
+
+- id: tesamorelin-approval-ca
+  year: 2014
+  date: 2014-04-29
+  category: approval
+  jurisdictions: [CA]
+  compounds: [tesamorelin]
+  sources: [ca-noc-egrifta, ca-sbd-egrifta]
 
 - id: ema-prime-launched
   year: 2016
@@ -231,6 +308,14 @@
   jurisdictions: [US]
   compounds: [semaglutide]
   sources: [fda-drugsatfda-ozempic]
+
+- id: semaglutide-approval-ca
+  year: 2018
+  date: 2018-01-04
+  category: approval
+  jurisdictions: [CA]
+  compounds: [semaglutide]
+  sources: [ca-sbd-ozempic]
 
 - id: wada-tb500-s2
   year: 2018
@@ -253,6 +338,7 @@
   date: 2019-06-21
   category: approval
   jurisdictions: [US]
+  compounds: [pt-141]
   sources: [fda-drugsatfda-vyleesi, dailymed-vyleesi-label]
 
 # The EMA product information is the evidence for what the implant treats, not for any status.
@@ -263,6 +349,14 @@
   jurisdictions: [US]
   sources: [fda-drugsatfda-scenesse, ema-epar-scenesse]
 
+- id: semaglutide-approval-au
+  year: 2019
+  date: 2019-08-28
+  category: approval
+  jurisdictions: [AU]
+  compounds: [semaglutide]
+  sources: [au-tga-pmr-search-status-a-2026-10-24, au-artg-ozempic-308324]
+
 # ---------------------------------------------------------------- 2020s: weight-loss medicines, shortages, fakes
 - id: wegovy-approval
   year: 2021
@@ -271,6 +365,14 @@
   jurisdictions: [US]
   compounds: [semaglutide]
   sources: [fda-drugsatfda-wegovy]
+
+- id: wegovy-approval-uk
+  year: 2021
+  date: 2021-09-24
+  category: approval
+  jurisdictions: [UK]
+  compounds: [semaglutide]
+  sources: [uk-mhra-ma-granted-2021]
 
 - id: wada-bpc157-s0
   year: 2022
@@ -310,6 +412,38 @@
   jurisdictions: [EU]
   compounds: [tirzepatide]
   sources: [ema-epar-mounjaro]
+
+- id: tirzepatide-approval-uk
+  year: 2022
+  date: 2022-09-26
+  category: approval
+  jurisdictions: [UK]
+  compounds: [tirzepatide]
+  sources: [uk-mhra-ma-granted-2022]
+
+- id: tesamorelin-ca-no-longer-sold
+  year: 2022
+  date: 2022-09-30
+  category: market
+  jurisdictions: [CA]
+  compounds: [tesamorelin]
+  sources: [ca-sbd-egrifta, ca-dpd-egrifta-din-02438712]
+
+- id: tirzepatide-approval-ca
+  year: 2022
+  date: 2022-11-24
+  category: approval
+  jurisdictions: [CA]
+  compounds: [tirzepatide]
+  sources: [ca-sbd-mounjaro]
+
+- id: tirzepatide-approval-au
+  year: 2022
+  date: 2022-12-23
+  category: approval
+  jurisdictions: [AU]
+  compounds: [tirzepatide]
+  sources: [au-tga-pmr-search-status-a-2026-10-24]
 
 - id: fda-category-2-peptides
   year: 2023
@@ -351,6 +485,14 @@
   compounds: [semaglutide]
   sources: [who-2024-falsified-semaglutide]
 
+- id: au-bpc-157-schedule-4
+  year: 2024
+  date: 2024-06-01
+  category: regulation
+  jurisdictions: [AU]
+  compounds: [bpc-157]
+  sources: [au-tga-2024-05-final-decisions-notice, au-tga-2024-05-scheduling-final-decisions]
+
 - id: lasker-glp1
   year: 2024
   category: discovery
@@ -366,6 +508,14 @@
   compounds: [semaglutide, tirzepatide]
   sources: [fda-glp1-compounding-policy]
 
+- id: uk-illicit-factory-retatrutide
+  year: 2025
+  date: 2025-10-24
+  category: market
+  jurisdictions: [UK]
+  compounds: [retatrutide, tirzepatide]
+  sources: [mhra-2025-retatrutide-seizure]
+
 - id: unlicensed-supply-seizures
   year: 2026
   date: 2026-01-26
@@ -374,10 +524,33 @@
   compounds: [semaglutide, tirzepatide, retatrutide]
   sources: [mhra-2026-01-seizures-2025, mhra-2026-05-largest-seizure, belcourt-2025-research-purposes]
 
+- id: ca-peptides-advisory-2026
+  year: 2026
+  date: 2026-04-09
+  category: safety
+  jurisdictions: [CA]
+  compounds: [bpc-157, cjc-1295, ipamorelin, tb-500, retatrutide]
+  sources: [ca-hc-2026-04-think-twice-peptides]
+
+- id: au-peptides-compliance-priority
+  year: 2026
+  date: 2026-06-10
+  category: regulation
+  jurisdictions: [AU]
+  sources: [au-tga-2026-06-peptide-compliance-priority]
+
 - id: fda-pcac-2026-vote
   year: 2026
   date: 2026-07-23
   category: regulation
   jurisdictions: [US]
   compounds: [bpc-157, kpv, tb-500]
-  sources: [fda-pcac-2026-07-meeting, fda-pcac-2026-materials, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-semax-briefing, usc-21-353a]
+  sources: [fda-pcac-2026-07-meeting, fda-pcac-2026-materials, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-bpc157-briefing, fda-pcac-2026-tb500-briefing, fda-pcac-2026-kpv-briefing, fda-pcac-2026-semax-briefing, usc-21-353a, uk-mhra-substance-index-status-c-2026-10-23, mhra-products-search-status-d-2026-10-23, ca-dpd-search-status-c-2026-10-23, ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-c-2026-10-23, au-artg-search-status-d-2026-10-23]
+
+- id: uk-counterfeit-pens-2026
+  year: 2026
+  date: 2026-10-15
+  category: market
+  jurisdictions: [UK]
+  compounds: [retatrutide, tirzepatide]
+  sources: [mhra-2026-10-counterfeit-pens]

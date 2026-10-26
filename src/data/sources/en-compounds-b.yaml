@@ -1,0 +1,13 @@
+# New sources of content group compounds-b (English refocus, 24 October 2026): tesamorelin, CJC-1295, ipamorelin,
+# hexarelin. Every other source these pages cite is an existing id (src/data/sources/*.yaml). Each entry below was
+# fetched on the accessed date and says what it is cited for. Notes: research/refocus-notes/compounds-b.md.
+
+fda-drugsatfda-macrilen:
+  type: regulator
+  authors: "U.S. Food and Drug Administration"
+  title: "Drugs@FDA: NDA 205598 (Macrilen, macimorelin acetate)"
+  year: 2026
+  url: https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=205598
+  accessed: 2026-10-24
+  verified: url
+  note: "Read on 24 October 2026 (Drugs@FDA overview page, fetched again with curl on 24 October 2026, and the openFDA drugsfda endpoint, data last updated 2026-10-23). NDA 205598: product 001 MACRILEN (macimorelin acetate), equivalent to 60 mg base per pouch, for solution, oral; marketing status 'Discontinued'. Original approval ORIG-1 on 12/20/2017 (Type 1, new molecular entity, orphan); later supplements S-003 (labelling, 27 November 2019) and S-005 ('Efficacy-Labeling Change With Clinical Data', 23 July 2026; the July 2026 label, 205598s005lbl.pdf, read with pdftotext on 24 October 2026, keeps the indication 'diagnosis of adult growth hormone deficiency (AGHD)' and adds to section 8.4 that diagnostic accuracy was not demonstrated in a study of 102 children aged 3 to 17). The 2017 label linked from the page (drugsatfda_docs/label/2017/205598s000lbl.pdf, read with pdftotext): 'MACRILEN is indicated for the diagnosis of adult growth hormone deficiency (AGHD)', given as 'a single oral dose'; it calls macimorelin 'a growth hormone secretagogue receptor agonist'. Cited on the ipamorelin page for: macimorelin, a drug acting on the same receptor as ipamorelin, was approved in the US in December 2017 as a one-dose test for adult growth hormone deficiency, and the product is now listed as discontinued. Replaces the EU authorisation (ema-epar-ghryvelin) that the page cited before the English refocus."

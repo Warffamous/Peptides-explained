@@ -42,8 +42,18 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2026-bpc157-briefing] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-20, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-bpc157-briefing] }
+  # UK re-checked on 23 October 2026 (MHRA substance index: no BPC-157); CA and AU merged from
+  # research/refocus/status/bpc-157.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-bpc157-briefing, uk-mhra-substance-index-status-c-2026-10-23] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-bpc157-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-503a-categories-2026-05, fda-category-2-safety-risks] }
+  - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, fda-pcac-2026-bpc157-briefing] }
+  - jurisdiction: AU
+    status: not-authorised
+    as_of: 2026-10-23
+    sources: [au-artg-search-status-c-2026-10-23, au-tga-2026-04-peptide-responsibilities, au-tga-2026-06-cmo-peptide-statement, fda-pcac-2026-bpc157-briefing]
+    # '# BPC-157.' in Schedule 4 and Appendix D clause 5 item 5: first in the June 2024 edition (in force 1 June 2024),
+    # absent from February 2024; the TGA scheduled it after 48 import referrals since 1 July 2022.
+    schedule: { code: "S4", note: "Prescription only medicine from 1 June 2024. Possessing it without authority, such as a prescription, is illegal (Appendix D).", sources: [au-poisons-standard-2026-10, au-poisons-standard-2024-06, au-poisons-standard-2024-02, au-tga-2024-05-final-decisions-notice] }
   - { jurisdiction: WADA, status: prohibited, wada_section: S0, wada_scope: at-all-times, since: 2022-01-01, as_of: 2026-10-20, sources: [wada-2022-list-modifications, wada-2026-list-en, wada-2027-list-en] }
 studies:
   # --- cells and isolated tissue (independent groups: Chang Gung University, Taiwan; Ankara, Turkey)

@@ -1,289 +1,427 @@
 {
-  "arzneimittelgesetz": {
-    "term": "Arzneimittelgesetz",
-    "aliases": ["AMG", "German Medicines Act"],
-    "definition": "The German Medicines Act. It says what counts as a medicine, which medicines need a licence, and which acts are crimes.",
-    "category": "law",
-    "see_also": ["fertigarzneimittel", "marketing-authorisation"]
-  },
-  "fertigarzneimittel": {
-    "term": "Fertigarzneimittel",
-    "aliases": ["ready-made medicine", "ready-made medicines"],
-    "definition": "German legal term for a medicine made in advance and sold in a pack meant for the user. A ready-made medicine needs a licence before it may be sold.",
-    "category": "law",
-    "see_also": ["arzneimittelgesetz"]
-  },
-  "inverkehrbringen": {
-    "term": "Inverkehrbringen",
-    "aliases": [],
-    "definition": "German legal term for putting a product on the market. It covers keeping stock to sell, offering it and handing it to others, not only the sale itself.",
-    "category": "law",
-    "see_also": ["arzneimittelgesetz"]
-  },
-  "heilmittelwerbegesetz": {
-    "term": "Heilmittelwerbegesetz",
-    "aliases": ["HWG"],
-    "definition": "The German law on advertising for medicines. It bans adverts for medicines that need a licence but do not have one.",
-    "category": "law",
-    "see_also": ["arzneimittelgesetz"]
-  },
-  "anti-doping-gesetz": {
-    "term": "Anti-Doping-Gesetz",
-    "aliases": ["AntiDopG", "German anti-doping law"],
-    "definition": "The German law against doping in sport. It makes trading in doping substances a crime, and owning a large amount of some listed substances too.",
-    "category": "law",
-    "see_also": ["nicht-geringe-menge", "prohibited-list"]
-  },
-  "nicht-geringe-menge": {
-    "term": "nicht geringe Menge",
-    "aliases": [],
-    "definition": "German for 'not a small amount'. Under the German anti-doping law, owning this amount or more of a listed substance, for doping in sport, is a crime. A regulation sets the amount for each substance.",
-    "category": "law",
-    "see_also": ["anti-doping-gesetz"]
-  },
-  "ordnungswidrigkeit": {
-    "term": "Ordnungswidrigkeit",
-    "aliases": [],
-    "definition": "German for an administrative offence. An authority can punish it with a fine. It is not a criminal conviction.",
-    "category": "law",
-    "see_also": ["administrative-fine"]
-  },
-  "bundesgesetzblatt": {
-    "term": "Bundesgesetzblatt",
-    "aliases": ["BGBl", "federal law gazette"],
-    "definition": "The official German journal in which federal laws and treaties are published. Germany publishes each year's doping list there.",
-    "category": "law",
-    "see_also": ["anti-doping-gesetz"]
-  },
-  "paul-ehrlich-institut": {
-    "term": "Paul-Ehrlich-Institut",
-    "aliases": ["PEI"],
-    "definition": "A German federal institute for vaccines and medicines made from living material. With the BfArM, it runs the German portal for reporting side effects.",
-    "category": "regulation",
-    "see_also": ["bfarm"]
-  },
   "human-medicines-regulations": {
     "term": "Human Medicines Regulations 2012",
-    "aliases": ["Human Medicines Regulations"],
+    "aliases": [
+      "Human Medicines Regulations"
+    ],
     "definition": "The main UK law on medicines. It says what a medicinal product is, who may sell or supply one, and which acts are crimes.",
     "category": "law",
-    "see_also": ["mhra", "unlicensed-medicine"]
+    "see_also": [
+      "mhra",
+      "unlicensed-medicine"
+    ]
   },
   "mhra": {
     "term": "MHRA",
-    "aliases": ["Medicines and Healthcare products Regulatory Agency"],
+    "aliases": [
+      "Medicines and Healthcare products Regulatory Agency"
+    ],
     "definition": "The UK medicines regulator. It licenses medicines, runs the Yellow Card scheme and has its own unit that investigates crimes involving medicines.",
     "category": "regulation",
-    "see_also": ["yellow-card", "human-medicines-regulations"]
+    "see_also": [
+      "yellow-card",
+      "human-medicines-regulations"
+    ]
   },
   "unlicensed-medicine": {
     "term": "unlicensed medicine",
-    "aliases": ["unlicensed medicines", "unlicensed medicinal product", "unlicensed medicinal products"],
+    "aliases": [
+      "unlicensed medicines",
+      "unlicensed medicinal product",
+      "unlicensed medicinal products"
+    ],
     "definition": "A medicine that has no licence (marketing authorisation) in the country where it is sold. Its safety, effect and quality have not been assessed there.",
     "category": "regulation",
-    "see_also": ["marketing-authorisation", "special-medicinal-product"]
+    "see_also": [
+      "marketing-authorisation",
+      "special-medicinal-product"
+    ]
   },
   "special-medicinal-product": {
     "term": "special medicinal product",
-    "aliases": ["specials", "special medicinal products"],
+    "aliases": [
+      "specials",
+      "special medicinal products"
+    ],
     "definition": "In the UK, an unlicensed medicine made or imported for one patient, ordered by a doctor or other prescriber for that patient's clinical needs.",
     "category": "regulation",
-    "see_also": ["unlicensed-medicine", "mhra"]
+    "see_also": [
+      "unlicensed-medicine",
+      "mhra"
+    ]
   },
   "misuse-of-drugs-act": {
     "term": "Misuse of Drugs Act",
-    "aliases": ["Misuse of Drugs Act 1971"],
+    "aliases": [
+      "Misuse of Drugs Act 1971"
+    ],
     "definition": "The UK law on controlled drugs. It sorts them into Class A, B and C, with criminal penalties for owning or supplying them.",
     "category": "law",
-    "see_also": ["class-c-drug"]
+    "see_also": [
+      "class-c-drug"
+    ]
   },
   "class-c-drug": {
     "term": "Class C drug",
-    "aliases": ["Class C drugs", "Class C"],
+    "aliases": [
+      "Class C drugs",
+      "Class C"
+    ],
     "definition": "The lowest of three groups of controlled drugs in the UK. It includes some hormones, such as growth hormone, but none of the peptides on this site.",
     "category": "law",
-    "see_also": ["misuse-of-drugs-act"]
+    "see_also": [
+      "misuse-of-drugs-act"
+    ]
   },
   "conviction-on-indictment": {
     "term": "conviction on indictment",
-    "aliases": ["on indictment"],
+    "aliases": [
+      "on indictment"
+    ],
     "definition": "In the UK, a conviction after the more serious kind of criminal trial, usually in the Crown Court. Higher penalties are possible than in a magistrates' court.",
     "category": "law",
     "see_also": []
   },
   "ukad": {
     "term": "UK Anti-Doping",
-    "aliases": ["UKAD"],
+    "aliases": [
+      "UKAD"
+    ],
     "definition": "The national anti-doping organisation of the United Kingdom. It tests athletes and applies the World Anti-Doping Code in the UK.",
     "category": "sport",
-    "see_also": ["nado", "wada"]
+    "see_also": [
+      "nado",
+      "wada"
+    ]
+  },
+  "usada": {
+    "term": "USADA",
+    "aliases": [
+      "U.S. Anti-Doping Agency",
+      "US Anti-Doping Agency"
+    ],
+    "definition": "The national anti-doping organisation of the United States. It tests athletes and applies the World Anti-Doping Code there.",
+    "category": "sport",
+    "see_also": [
+      "nado",
+      "wada"
+    ]
   },
   "fdca": {
     "term": "Federal Food, Drug, and Cosmetic Act",
-    "aliases": ["FD&C Act", "FDCA"],
+    "aliases": [
+      "FD&C Act",
+      "FDCA"
+    ],
     "definition": "The main US federal law on medicines, foods and cosmetics. The FDA enforces it.",
     "category": "law",
-    "see_also": ["fda", "unapproved-new-drug"]
+    "see_also": [
+      "fda",
+      "unapproved-new-drug"
+    ]
   },
   "unapproved-new-drug": {
     "term": "unapproved new drug",
-    "aliases": ["unapproved new drugs"],
+    "aliases": [
+      "unapproved new drugs"
+    ],
     "definition": "In US law, a drug that experts do not generally recognise as safe and effective for its use, and that the FDA has not approved. It may not be sold across state lines.",
     "category": "law",
-    "see_also": ["fdca", "interstate-commerce"]
+    "see_also": [
+      "fdca",
+      "interstate-commerce"
+    ]
   },
   "interstate-commerce": {
     "term": "interstate commerce",
-    "aliases": ["trade between states"],
+    "aliases": [
+      "trade between states"
+    ],
     "definition": "In US law, trade that crosses the border between two or more states. The federal ban on selling unapproved new drugs applies to it.",
     "category": "law",
-    "see_also": ["unapproved-new-drug"]
+    "see_also": [
+      "unapproved-new-drug"
+    ]
   },
   "bulk-drug-substance": {
     "term": "bulk drug substance",
-    "aliases": ["bulk drug substances", "active pharmaceutical ingredient", "active pharmaceutical ingredients"],
+    "aliases": [
+      "bulk drug substances",
+      "active pharmaceutical ingredient",
+      "active pharmaceutical ingredients"
+    ],
     "definition": "The raw active ingredient, often a powder, from which a pharmacy or factory makes a medicine.",
     "category": "regulation",
-    "see_also": ["503a-bulks-list", "pharmacy-compounding"]
+    "see_also": [
+      "503a-bulks-list",
+      "pharmacy-compounding"
+    ]
   },
   "warning-letter": {
     "term": "warning letter",
-    "aliases": ["warning letters"],
+    "aliases": [
+      "warning letters"
+    ],
     "definition": "A public letter from the FDA telling a company that it is breaking the law and must fix it. If it does not, the FDA can take further steps, such as seizing products.",
     "category": "regulation",
-    "see_also": ["fda"]
+    "see_also": [
+      "fda"
+    ]
   },
   "drug-shortage-list": {
     "term": "drug shortage list",
-    "aliases": ["shortage list", "FDA drug shortage list"],
+    "aliases": [
+      "shortage list",
+      "FDA drug shortage list"
+    ],
     "definition": "The FDA's list of medicines that are in short supply in the US. While a medicine is on it, US law allows more compounding of copies.",
     "category": "regulation",
-    "see_also": ["pharmacy-compounding", "outsourcing-facility"]
+    "see_also": [
+      "pharmacy-compounding",
+      "outsourcing-facility"
+    ]
   },
   "federal-register": {
     "term": "Federal Register",
     "aliases": [],
     "definition": "The official daily journal of the US government. Proposed and final rules, and notices of FDA advisory meetings, are published there.",
     "category": "law",
-    "see_also": ["rulemaking"]
+    "see_also": [
+      "rulemaking"
+    ]
   },
   "rulemaking": {
     "term": "rulemaking",
-    "aliases": ["notice-and-comment rulemaking", "proposed rule", "final rule"],
+    "aliases": [
+      "notice-and-comment rulemaking",
+      "proposed rule",
+      "final rule"
+    ],
     "definition": "How a US agency makes a binding rule: it publishes a proposed rule, takes public comments, and then publishes a final rule.",
     "category": "law",
-    "see_also": ["federal-register"]
+    "see_also": [
+      "federal-register"
+    ]
   },
   "personal-importation": {
     "term": "personal importation",
-    "aliases": ["personal import", "importing for personal use"],
+    "aliases": [
+      "personal import",
+      "importing for personal use"
+    ],
     "definition": "Bringing a medicine into a country for your own use, in your luggage or by post, rather than to sell it.",
     "category": "law",
     "see_also": []
   },
+  "right-to-try": {
+    "term": "Right to Try",
+    "aliases": [
+      "Right to Try Act"
+    ],
+    "definition": "A US law of 2018. A person with a life-threatening illness can ask for a medicine that has finished a first human trial but is not approved. The FDA does not review the request, and the company does not have to agree.",
+    "category": "law",
+    "see_also": [
+      "expanded-access"
+    ]
+  },
+  "eams": {
+    "term": "Early Access to Medicines Scheme",
+    "aliases": [
+      "EAMS"
+    ],
+    "definition": "A UK scheme that lets people with a life-threatening or seriously disabling condition get a medicine before it is licensed. A company must hold a scientific opinion from the MHRA and be able to supply it. Taking part is voluntary.",
+    "category": "regulation",
+    "see_also": [
+      "mhra",
+      "expanded-access"
+    ]
+  },
   "advisory-committee": {
     "term": "advisory committee",
-    "aliases": ["advisory committees"],
+    "aliases": [
+      "advisory committees"
+    ],
     "definition": "A group of outside experts that gives a regulator advice. Its vote is a recommendation, not a decision.",
     "category": "regulation",
-    "see_also": ["pcac", "fda"]
-  },
-  "second-reading": {
-    "term": "second reading",
-    "aliases": [],
-    "definition": "A late stage in making an EU law. The European Parliament votes on the position the Council has taken on the text.",
-    "category": "law",
-    "see_also": ["eu-directive", "eu-regulation"]
+    "see_also": [
+      "pcac",
+      "fda"
+    ]
   },
   "prohibited-list": {
     "term": "Prohibited List",
-    "aliases": ["WADA Prohibited List", "Prohibited Lists"],
+    "aliases": [
+      "WADA Prohibited List",
+      "Prohibited Lists"
+    ],
     "definition": "WADA's yearly list of substances and methods banned in sport. A new list takes effect each 1 January.",
     "category": "sport",
-    "see_also": ["wada", "wada-s0", "wada-s2"]
+    "see_also": [
+      "wada",
+      "wada-s0",
+      "wada-s2"
+    ]
   },
   "wada-s2": {
     "term": "S2 (peptide hormones and growth factors)",
-    "aliases": ["section S2"],
+    "aliases": [
+      "section S2"
+    ],
     "definition": "The section of the WADA Prohibited List for peptide hormones, growth factors and similar substances. It names TB-500 and several growth-hormone peptides. They are banned at all times.",
     "category": "sport",
-    "see_also": ["prohibited-list", "wada-s2-3"]
+    "see_also": [
+      "prohibited-list",
+      "wada-s2-3"
+    ]
   },
   "wada-s4": {
     "term": "S4 (hormone and metabolic modulators)",
-    "aliases": ["section S4"],
+    "aliases": [
+      "section S4"
+    ],
     "definition": "The section of the WADA Prohibited List for substances that change hormones or metabolism. It names MOTS-c. They are banned at all times.",
     "category": "sport",
-    "see_also": ["prohibited-list"]
+    "see_also": [
+      "prohibited-list"
+    ]
   },
   "specified-substance": {
     "term": "specified substance",
-    "aliases": ["specified substances", "non-specified substance", "non-specified substances"],
+    "aliases": [
+      "specified substances",
+      "non-specified substance",
+      "non-specified substances"
+    ],
     "definition": "In anti-doping rules, a banned substance that is more likely to have been taken for reasons other than sport. It is not less dangerous. The standard ban is shorter than for non-specified substances.",
     "category": "sport",
-    "see_also": ["prohibited-list", "strict-liability"]
+    "see_also": [
+      "prohibited-list",
+      "strict-liability"
+    ]
   },
   "therapeutic-use-exemption": {
     "term": "Therapeutic Use Exemption",
-    "aliases": ["TUE", "TUEs", "medical exemption", "medical exemptions"],
+    "aliases": [
+      "TUE",
+      "TUEs",
+      "medical exemption",
+      "medical exemptions"
+    ],
     "definition": "Permission from an anti-doping organisation for an athlete to use a banned substance for a medical reason. Four strict tests must all be met.",
     "category": "sport",
-    "see_also": ["prohibited-list", "wada"]
+    "see_also": [
+      "prohibited-list",
+      "wada"
+    ]
+  },
+  "global-dro": {
+    "term": "Global DRO",
+    "aliases": [
+      "Global Drug Reference Online"
+    ],
+    "definition": "A free website where athletes can check whether a medicine is banned in sport. It covers medicines sold in the US, the UK, Canada, Australia, New Zealand and a few other countries.",
+    "category": "sport",
+    "see_also": [
+      "prohibited-list",
+      "therapeutic-use-exemption"
+    ]
   },
   "recreational-athlete": {
     "term": "recreational athlete",
-    "aliases": ["recreational athletes"],
+    "aliases": [
+      "recreational athletes"
+    ],
     "definition": "Under the 2027 World Anti-Doping Code, an athlete below national level, as each national anti-doping organisation defines it. Lower bans are possible for them.",
     "category": "sport",
-    "see_also": ["nado"]
+    "see_also": [
+      "nado"
+    ]
   },
   "contaminated-source": {
     "term": "contaminated source",
-    "aliases": ["contaminated product"],
+    "aliases": [
+      "contaminated product"
+    ],
     "definition": "In anti-doping rules, a product or food with a banned substance that its label does not mention. It can lower a ban only in rare cases.",
     "category": "sport",
-    "see_also": ["strict-liability"]
+    "see_also": [
+      "strict-liability"
+    ]
   },
   "testing-pool": {
     "term": "testing pool",
-    "aliases": ["registered testing pool"],
+    "aliases": [
+      "registered testing pool"
+    ],
     "definition": "A group of top athletes who must say where they are, so they can be tested without warning, also outside competitions.",
     "category": "sport",
-    "see_also": ["nado"]
+    "see_also": [
+      "nado"
+    ]
   },
   "ghrh": {
     "term": "growth hormone releasing hormone",
-    "aliases": ["GHRH", "growth-hormone-releasing hormone", "growth hormone releasing hormones", "growth hormone releasing factors"],
+    "aliases": [
+      "GHRH",
+      "growth-hormone-releasing hormone",
+      "growth hormone releasing hormones",
+      "growth hormone releasing factors"
+    ],
     "definition": "A hormone from the brain that tells the pituitary gland to release growth hormone. Lab-made versions such as tesamorelin and CJC-1295 copy it.",
     "category": "biology",
-    "see_also": ["gh-secretagogue", "ghrp"]
+    "see_also": [
+      "gh-secretagogue",
+      "ghrp"
+    ]
   },
   "gh-secretagogue": {
     "term": "growth hormone secretagogue",
-    "aliases": ["growth hormone secretagogues", "GHS", "GH secretagogue", "GH secretagogues"],
+    "aliases": [
+      "growth hormone secretagogues",
+      "GHS",
+      "GH secretagogue",
+      "GH secretagogues"
+    ],
     "definition": "A substance that makes the body release more growth hormone, for example by acting like the hunger hormone ghrelin. Ipamorelin is one.",
     "category": "biology",
-    "see_also": ["ghrh", "ghrp"]
+    "see_also": [
+      "ghrh",
+      "ghrp"
+    ]
   },
   "ghrp": {
     "term": "growth hormone releasing peptide",
-    "aliases": ["growth hormone releasing peptides", "GHRP", "GHRPs", "growth-hormone-releasing peptides"],
+    "aliases": [
+      "growth hormone releasing peptides",
+      "GHRP",
+      "GHRPs",
+      "growth-hormone-releasing peptides"
+    ],
     "definition": "A small lab-made peptide that makes the body release growth hormone. Hexarelin is one.",
     "category": "biology",
-    "see_also": ["gh-secretagogue", "ghrh"]
+    "see_also": [
+      "gh-secretagogue",
+      "ghrh"
+    ]
   },
   "ampk": {
     "term": "AMPK",
-    "aliases": ["AMP-activated protein kinase"],
+    "aliases": [
+      "AMP-activated protein kinase"
+    ],
     "definition": "An enzyme inside cells that senses how much energy is available and switches energy use up or down.",
     "category": "biology",
     "see_also": []
   },
   "unesco-convention": {
     "term": "International Convention against Doping in Sport",
-    "aliases": ["UNESCO convention"],
+    "aliases": [
+      "UNESCO convention"
+    ],
     "definition": "A 2005 treaty by which governments agree to support the fight against doping. Its annex is the WADA Prohibited List.",
     "category": "law",
-    "see_also": ["prohibited-list"]
+    "see_also": [
+      "prohibited-list"
+    ]
   }
 }

@@ -43,8 +43,26 @@ regulatory:
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, de-amg-73] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, be-medicines-law-1964-art-6quater] }
-  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-22, sources: [mhra-products-search-tesamorelin, uk-hmr-2012-reg-46] }
+  # UK re-checked twice on 23 October 2026 (MHRA Products: no results for tesamorelin, egrifta or TH9507; GOV.UK: no
+  # MHRA item). CA and AU merged from research/refocus/status/tesamorelin.yaml (fact-checked 24 October 2026).
+  - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [mhra-products-search-tesamorelin, uk-hmr-2012-reg-46, uk-govuk-search-status-b-2026-10-23] }
   - { jurisdiction: US, status: authorised, since: 2010-11-10, as_of: 2026-10-22, sources: [fda-drugsatfda-egrifta, dailymed-egrifta-sv-label, dailymed-egrifta-wr-label] }
+  # Canada (lead's decision, 24 October 2026): approved 29 April 2014 (NOC 15555, 2 mg vial, never sold; the 1 mg vial
+  # got NOC 16731 on 27 March 2015 and was sold from 23 June 2015). 'since' is 30 September 2022, the end of marketing
+  # of the only marketed DIN (02438712, cancelled post market that day). The never-marketed 2 mg DIN (02423677) was
+  # cancelled on 13 July 2023. Both cancellations followed the manufacturer's notice that it had stopped selling the
+  # drug (C.01.014.6(1)(a)), not a safety action. The reason the company gave is not stated here (its report could not
+  # be read on the live site).
+  - jurisdiction: CA
+    status: discontinued
+    authorised_since: 2014-04-29
+    since: 2022-09-30
+    as_of: 2026-10-23
+    sources: [ca-noc-egrifta, ca-sbd-egrifta, ca-dpd-egrifta-din-02438712, ca-dpd-egrifta-din-02423677, ca-dpd-extract-search-status-b-2026-10-23, ca-food-and-drug-regulations]
+    schedule: { code: "Prescription Drug List", note: "Prescription only; listed since 25 April 2014 ('Tesamorelin or its salts or derivatives').", sources: [ca-pdl-human] }
+  # Australia: not on the ARTG and no TGA record of an application. No schedule field: the Poisons Standard does not
+  # name tesamorelin; coverage by the GHRH group entry is our reading (legal-review question, research/refocus-notes/merge.md).
+  - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-b-2026-10-23, au-tga-search-status-b-2026-10-23] }
   - { jurisdiction: WADA, status: prohibited, wada_section: S2, wada_scope: at-all-times, as_of: 2026-10-22, sources: [wada-2026-list-en, wada-2027-list-en] }
 # Structured studies. "originating" = the developer, Theratechnologies (sponsor of the phase 3 programme and
 # the diabetes trial, and author of the non-clinical work). The Massachusetts General Hospital (MGH) studies
@@ -84,6 +102,18 @@ authorised_products:
     route: subcutaneous
     label_url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/022505s020lbl.pdf
     label_source: fda-label-egrifta-wr-2025
+  # Canada (merged 24 October 2026): 'authorised' is the first NOC (29 April 2014, 2 mg vial, never sold); the 1 mg
+  # vial, the only one ever sold, was marketed from 23 June 2015 until 30 September 2022. The product monograph (both
+  # strengths, revised 26 March 2015) is the official Canadian label; re-read on pdf.hres.ca on 24 October 2026.
+  - id: egrifta-ca
+    name: Egrifta
+    holder: Theratechnologies Inc.
+    jurisdiction: CA
+    authorised: 2014-04-29
+    marketed_until: 2022-09-30
+    route: subcutaneous
+    label_url: https://pdf.hres.ca/dpd_pm/00029988.PDF
+    label_source: ca-pm-egrifta-2015
 related: [cjc-1295, ipamorelin, semaglutide]
 last_reviewed: 2026-10-22
 reviewed_by: pending-medical-review

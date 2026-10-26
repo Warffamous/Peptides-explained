@@ -1,18 +1,4 @@
 {
-  "geneesmiddelenwet": {
-    "term": "Geneesmiddelenwet",
-    "aliases": [
-      "Dutch Medicines Act",
-      "Medicines Act (Netherlands)",
-      "Gnw"
-    ],
-    "definition": "The Dutch Medicines Act. It says what a medicine is, who may make, sell and advertise one, and what happens if someone breaks the rules.",
-    "category": "law",
-    "see_also": [
-      "marketing-authorisation",
-      "igj"
-    ]
-  },
   "medicine-by-presentation": {
     "term": "medicine by presentation",
     "aliases": [
@@ -38,54 +24,6 @@
     "category": "law",
     "see_also": [
       "medicine-by-presentation"
-    ]
-  },
-  "cjeu": {
-    "term": "Court of Justice of the European Union",
-    "aliases": [
-      "CJEU",
-      "EU Court of Justice",
-      "European Court of Justice",
-      "Court of Justice"
-    ],
-    "definition": "The highest court for EU law, in Luxembourg. When a national court asks it what an EU rule means, its answer binds courts in every EU country.",
-    "category": "law",
-    "see_also": []
-  },
-  "eu-directive": {
-    "term": "directive",
-    "aliases": [
-      "EU directive",
-      "directives"
-    ],
-    "definition": "A type of EU law that tells every EU country what result to reach. Each country then writes the rules into its own national law.",
-    "category": "law",
-    "see_also": [
-      "eu-regulation"
-    ]
-  },
-  "eu-regulation": {
-    "term": "EU regulation",
-    "aliases": [
-      "EU regulations"
-    ],
-    "definition": "A type of EU law that applies directly in every EU country, without a national law in between.",
-    "category": "law",
-    "see_also": [
-      "eu-directive"
-    ]
-  },
-  "centralised-procedure": {
-    "term": "centralised procedure",
-    "aliases": [
-      "central procedure",
-      "centralised authorisation"
-    ],
-    "definition": "The EU route to approve a medicine for all EU countries at once. The EMA assesses it and the European Commission decides.",
-    "category": "regulation",
-    "see_also": [
-      "ema",
-      "marketing-authorisation"
     ]
   },
   "marketing-authorisation-holder": {
@@ -116,8 +54,6 @@
   "pharmacopoeia": {
     "term": "pharmacopoeia",
     "aliases": [
-      "European Pharmacopoeia",
-      "Ph. Eur.",
       "pharmacopoeias"
     ],
     "definition": "An official book of quality standards for medicines and their ingredients. It says how pure a substance must be and how to test it.",
@@ -126,174 +62,6 @@
       "gmp"
     ]
   },
-  "magistral-preparation": {
-    "term": "magistral preparation",
-    "aliases": [
-      "magistrale bereiding",
-      "magistral formula",
-      "pharmacy preparation",
-      "pharmacy preparations",
-      "apotheekbereiding"
-    ],
-    "definition": "A medicine that a pharmacy makes itself for one named patient, on a doctor's prescription. It needs no marketing authorisation, but it must still meet quality rules.",
-    "category": "regulation",
-    "see_also": [
-      "pharmacopoeia",
-      "pharmacy-compounding"
-    ]
-  },
-  "administrative-fine": {
-    "term": "administrative fine",
-    "aliases": [
-      "bestuurlijke boete",
-      "administrative fines"
-    ],
-    "definition": "A fine that a government body such as the IGJ gives itself, without going to a criminal court.",
-    "category": "law",
-    "see_also": [
-      "igj"
-    ]
-  },
-  "economic-offences-act": {
-    "term": "Economic Offences Act",
-    "aliases": [
-      "Wet op de economische delicten",
-      "WED"
-    ],
-    "definition": "A Dutch law that makes breaches of certain other laws, such as parts of the Medicines Act, into criminal offences. Done on purpose, they count as crimes.",
-    "category": "law",
-    "see_also": [
-      "geneesmiddelenwet"
-    ]
-  },
-  "nvwa": {
-    "term": "NVWA",
-    "aliases": [
-      "Netherlands Food and Consumer Product Safety Authority",
-      "Nederlandse Voedsel- en Warenautoriteit"
-    ],
-    "definition": "The Dutch food and consumer product safety authority. Together with the IGJ it watches over the Medicines Act.",
-    "category": "regulation",
-    "see_also": [
-      "igj"
-    ]
-  },
-  "eu-common-logo": {
-    "term": "EU common logo",
-    "aliases": [
-      "common logo",
-      "EU logo",
-      "European logo"
-    ],
-    "definition": "The logo that legal online sellers of medicines in the EU must show. Clicking it should lead to a government list where the seller is registered.",
-    "category": "regulation",
-    "see_also": [
-      "falsified-medicine"
-    ]
-  },
-  "safety-features": {
-    "term": "safety features",
-    "aliases": [
-      "unique identifier",
-      "anti-tampering device",
-      "tamper seal"
-    ],
-    "definition": "A unique code and a seal on the box of most prescription medicines in the EU. Pharmacies scan the code to check that the pack is genuine.",
-    "category": "safety",
-    "see_also": [
-      "falsified-medicine"
-    ]
-  },
-  "clinical-trials-regulation": {
-    "term": "Clinical Trials Regulation",
-    "aliases": [
-      "Regulation 536/2014",
-      "Regulation (EU) No 536/2014"
-    ],
-    "definition": "The EU law on testing medicines in people. It sets rules for approval, consent and openness, and has applied since 31 January 2022.",
-    "category": "law",
-    "see_also": [
-      "ctis",
-      "clinical-trial",
-      "informed-consent"
-    ]
-  },
-  "ctis": {
-    "term": "CTIS",
-    "aliases": [
-      "Clinical Trials Information System"
-    ],
-    "definition": "The EU's online system for clinical trials. Companies apply through it, and the public part lets anyone search for trials in the EU.",
-    "category": "regulation",
-    "see_also": [
-      "clinical-trials-regulation"
-    ]
-  },
-  "ccmo": {
-    "term": "CCMO",
-    "aliases": [
-      "Centrale Commissie Mensgebonden Onderzoek",
-      "Central Committee on Research Involving Human Subjects"
-    ],
-    "definition": "The Dutch central committee for research in people. It supervises the ethics committees and reviews some studies itself.",
-    "category": "regulation",
-    "see_also": [
-      "metc"
-    ]
-  },
-  "metc": {
-    "term": "METC",
-    "aliases": [
-      "medical ethics review committee",
-      "medical research ethics committee",
-      "ethics committee",
-      "medisch-ethische toetsingscommissie"
-    ],
-    "definition": "A committee of doctors, lawyers and others that checks a study plan before it may start. It asks whether the study is useful and not too risky for the people in it.",
-    "category": "regulation",
-    "see_also": [
-      "ccmo",
-      "informed-consent"
-    ]
-  },
-  "famhp": {
-    "term": "FAMHP",
-    "aliases": [
-      "FAGG",
-      "AFMPS",
-      "Federal Agency for Medicines and Health Products"
-    ],
-    "definition": "Belgium's medicines agency. It approves and checks medicines, collects side-effect reports and acts against illegal medicines.",
-    "category": "regulation",
-    "see_also": [
-      "medicines-regulator"
-    ]
-  },
-  "medical-need-programme": {
-    "term": "medical need programme",
-    "aliases": [
-      "medical need programmes",
-      "MNP",
-      "unmet medical need programme"
-    ],
-    "definition": "In Belgium, a programme that lets doctors use an approved medicine for a serious illness it is not yet approved for, while that use is being studied or assessed.",
-    "category": "regulation",
-    "see_also": [
-      "compassionate-use",
-      "off-label"
-    ]
-  },
-  "out-of-court-settlement": {
-    "term": "out-of-court settlement",
-    "aliases": [
-      "settlement",
-      "minnelijke schikking",
-      "transactie"
-    ],
-    "definition": "A sum you can pay to close a case, so that it does not go to a criminal court.",
-    "category": "law",
-    "see_also": []
-  },
   "nado": {
     "term": "NADO",
     "aliases": [
@@ -301,11 +69,11 @@
       "national anti-doping organisations",
       "NADOs"
     ],
-    "definition": "The body that runs doping tests and anti-doping rules in a country or region. Belgium has four.",
+    "definition": "The body that runs doping tests and anti-doping rules in a country, such as UK Anti-Doping, Sport Integrity Canada or Sport Integrity Australia.",
     "category": "sport",
     "see_also": [
       "wada",
-      "dopingautoriteit"
+      "ukad"
     ]
   },
   "intended-use": {
@@ -335,15 +103,6 @@
       "clinical-trial"
     ]
   },
-  "eea": {
-    "term": "EEA",
-    "aliases": [
-      "European Economic Area"
-    ],
-    "definition": "The European Economic Area: the EU countries plus Norway, Iceland and Liechtenstein. They share the EU rules on medicines.",
-    "category": "regulation",
-    "see_also": []
-  },
   "smpc": {
     "term": "summary of product characteristics",
     "aliases": [
@@ -355,31 +114,6 @@
     "category": "regulation",
     "see_also": [
       "marketing-authorisation"
-    ]
-  },
-  "mra-country": {
-    "term": "MRA country",
-    "aliases": [
-      "MRA countries",
-      "mutual recognition agreement"
-    ],
-    "definition": "A country outside the EU that has an agreement with the EU to accept each other's checks on how medicines are made.",
-    "category": "regulation",
-    "see_also": [
-      "gmp"
-    ]
-  },
-  "big-register": {
-    "term": "BIG register",
-    "aliases": [
-      "BIG-register",
-      "BIG registration"
-    ],
-    "definition": "The Dutch public register of licensed health professionals, such as doctors and pharmacists. Only a doctor in this register may sign a doctor's declaration.",
-    "category": "law",
-    "see_also": [
-      "wet-big",
-      "named-patient-route"
     ]
   }
 }

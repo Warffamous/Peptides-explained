@@ -181,12 +181,47 @@
     "category": "pharmacology",
     "see_also": []
   },
-  "gvs": {
-    "term": "GVS",
-    "aliases": ["geneesmiddelenvergoedingssysteem", "Bijlage 2", "medicines reimbursement system"],
-    "definition": "The Dutch system that decides which prescription medicines the basic health insurance pays for. Medicines on its 'Bijlage 2' list are only paid for under set conditions.",
+  "medicare-part-d": {
+    "term": "Medicare Part D",
+    "aliases": ["Part D", "Medicare drug plans", "Medicare drug plan"],
+    "definition": "The part of Medicare, the US public health insurance for people aged 65 and over and some younger people with disabilities, that helps pay for prescription medicines. Private plans run it under federal rules.",
     "category": "regulation",
-    "see_also": []
+    "see_also": ["medicaid"]
+  },
+  "medicaid": {
+    "term": "Medicaid",
+    "aliases": ["state Medicaid programmes", "state Medicaid programme"],
+    "definition": "US public health cover for people on low incomes. Each state runs its own programme within federal rules, so what it pays for differs from state to state.",
+    "category": "regulation",
+    "see_also": ["medicare-part-d"]
+  },
+  "pharmaceutical-benefits-scheme": {
+    "term": "Pharmaceutical Benefits Scheme",
+    "aliases": ["PBS"],
+    "definition": "Australia's public scheme that pays part of the cost of listed prescription medicines. A medicine not listed on it is paid for privately.",
+    "category": "regulation",
+    "see_also": ["pbac"]
+  },
+  "pbac": {
+    "term": "PBAC",
+    "aliases": ["Pharmaceutical Benefits Advisory Committee"],
+    "definition": "The Australian expert committee that advises the government on which medicines to list on the Pharmaceutical Benefits Scheme.",
+    "category": "regulation",
+    "see_also": ["pharmaceutical-benefits-scheme"]
+  },
+  "pcpa": {
+    "term": "pCPA",
+    "aliases": ["pan-Canadian Pharmaceutical Alliance"],
+    "definition": "The body through which Canada's federal, provincial and territorial public drug plans negotiate prices together. Each plan then decides what it covers.",
+    "category": "regulation",
+    "see_also": ["cda-amc"]
+  },
+  "cda-amc": {
+    "term": "Canada's Drug Agency",
+    "aliases": ["CDA-AMC", "CADTH", "Canada’s Drug Agency"],
+    "definition": "A Canadian agency (formerly CADTH) that reviews the evidence on medicines and advises public drug plans whether, and on what conditions, to pay for them.",
+    "category": "regulation",
+    "see_also": ["pcpa"]
   },
   "wada-monitoring-program": {
     "term": "WADA Monitoring Program",

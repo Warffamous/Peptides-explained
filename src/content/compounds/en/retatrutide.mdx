@@ -13,7 +13,7 @@ glance:
   main_risk: "Feeling sick and a faster heartbeat. Online products may be fake."
   # "Stop and get help" strip, condensed from this page's own stop-now list (harm-reduction section,
   # <Callout id="stop-now">): pancreatitis (serious cases in the phase 2 registry results; a known
-  # class risk in the Mounjaro EU product information), the heart-rate and rhythm signal, and the
+  # class risk in the Mounjaro product information, US label 5.2 and SmPC), the heart-rate and rhythm signal, and the
   # allergic-type reactions in the pooled early trials. The NHS pages give the general "get help now"
   # signs (pain spreading to the back; palpitations with chest pain or fainting; swollen lips or throat,
   # struggling to breathe). The other three stop items (liver injury, dehydration, ketoacidosis in
@@ -21,7 +21,7 @@ glance:
   stop_signs:
     - icon: sign-belly-pain
       text: "Severe belly pain, often spreading to your back"
-      sources: [nhs-acute-pancreatitis, ctgov-nct04881760, ctgov-nct04867785, ema-epar-mounjaro]
+      sources: [nhs-acute-pancreatitis, ctgov-nct04881760, ctgov-nct04867785, fda-label-mounjaro, ema-epar-mounjaro]
     - icon: sign-heart
       text: "Racing heartbeat with chest pain or fainting"
       sources: [nhs-heart-palpitations, jastreboff-2023-retatrutide-phase-2, pasqualotto-2024-retatrutide-meta-analysis]
@@ -145,13 +145,11 @@ studies:
     finding: "Three products sold in Australia as 10 mg retatrutide all contained retatrutide, but at 51%, 165% and 190% of the labelled amount. A trace of lead was found, well below the safety limit for injectable medicines."
     limitation: "Only three products, submitted anonymously to a testing service; sterility and bacterial toxins were not tested."
 regulatory_notes:
-  EU: "Not authorised; not on the EMA list of applications under evaluation (5 October 2026). Phase 3 trials run at EU sites."
-  NL: "Not authorised; no approved compassionate-use programme. In practice legal only inside an approved trial."
-  DE: "Not authorised; a licence is required under AMG § 21. Phase 3 trial sites in Germany."
-  BE: "Not authorised; a licence is required under the 1964 Medicines Act. Phase 3 trial sites in Belgium."
-  UK: "Not authorised. MHRA: products sold outside trials are likely illegal; fake pens seized in 2025 and 2026."
   US: "Not FDA-approved and may not be compounded. Single-patient expanded access on a doctor's request. Company plans an application in Q1 2027."
-  WADA: "Not named, but covered by S0 (non-approved substances): prohibited at all times."
+  UK: "Not authorised. MHRA: products sold outside trials are supplied illegally; fake pens seized in 2025 and 2026. NICE has begun scoping an appraisal (this is not a licence)."
+  CA: "Not authorised; no submission listed as under review. Ten Lilly trials have had Canadian sites. Health Canada has seized products sold as retatrutide."
+  AU: "Not on the ARTG; in Lilly trials. Not named in the Poisons Standard, but the TGA treats it as prescription-only. A vial sold as retatrutide held semaglutide (Sep 2026)."
+  WADA: "Not named on the List (Sport Integrity Australia: 'not listed'), but covered by S0 (non-approved substances): prohibited at all times."
 ---
 <Section id="what-it-is">
 
@@ -161,24 +159,24 @@ regulatory_notes:
 
 | | Retatrutide in a trial | Sold online as "retatrutide" |
 |---|---|---|
-| Contents known? | <Verdict is="yes" /> The developer's own drug, made under a licence to strict manufacturing rules<Cite id="ctgov-nct05929066,nl-geneesmiddelenwet" /> | <Verdict is="no" /> Tested products held half to nearly double the label, and one held a different drug<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news" /> |
+| Contents known? | <Verdict is="yes" /> The developer's own product, given under the trial's protocol<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> Tested products held half to nearly double the label, and at least one held a different drug. No published test looked at sterility<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,au-tga-2026-09-retatrutide-counterfeit" /> |
 | Amount per dose fixed? | <Verdict is="yes" /> Fixed by the trial<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> Depends on the label and your own measuring<Cite id="piatkowski-2026-retatrutide-product-testing" /> |
-| Sterile? | <Verdict is="yes" /> Required: trial medicines must follow good manufacturing practice<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="unknown" /> No published study has tested this<Cite id="piatkowski-2026-retatrutide-product-testing" /> |
+| Checked before anyone takes it? | <Verdict is="yes" /> A trial needs the regulator's permission and an ethics committee's approval before it starts<Cite id="ecfr-21-312-20,ecfr-21-56-103,uk-si-2004-1031-reg-12,ca-fdr-c05-clinical-trials,au-tg-regs-sch-5a-item-3-clinical-trials" /> | <Verdict is="no" /> No regulator has assessed it<Cite id="au-tga-2026-09-retatrutide-counterfeit,mhra-2026-10-counterfeit-pens" /> |
 | Safety follow-up? | <Verdict is="yes" /> Visits, blood tests, a safety committee<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> None |
-| Legal to supply? | <Verdict is="yes" /> Medicines for research are an exception in the law<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> Illegal to sell or supply<Cite id="nl-geneesmiddelenwet" /> |
+| Legal to supply? | <Verdict is="yes" /> Inside an authorised trial<Cite id="ecfr-21-312-20,uk-si-2004-1031-reg-12,ca-fdr-c05-clinical-trials,au-tg-regs-sch-5a-item-3-clinical-trials" /> | <Verdict is="no" /> Illegal to sell or supply in the US, the UK, Canada and Australia<Cite id="usc-21-355,uk-hmr-2012-reg-46,ca-food-and-drug-regulations,au-tg-act-s19b-19d-offences" /> |
 
 </Compare>
 
-<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,nl-geneesmiddelenwet" />
+<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,au-tga-2026-09-retatrutide-counterfeit" />
 
-It is investigational. As of 20 October 2026, no regulator anywhere has authorised it, and it is not on the European Medicines Agency (EMA) list of applications under assessment dated 5 October 2026.<Cite id="ema-medicines-json,ema-2026-10-under-evaluation,fda-unapproved-glp1-concerns,mhra-2026-10-counterfeit-pens" /> In a filing with the US financial regulator in August 2026, Lilly said that it plans to ask the US Food and Drug Administration (FDA) for approval in the first quarter of 2027.<Cite id="sec-lilly-2026-q2-results" />
+It is investigational. As of 23 October 2026 it is not approved in the US, the UK, Canada or Australia, and the Australian regulator says no comparable international regulator has approved it either.<Cite id="fda-unapproved-glp1-concerns,mhra-2026-10-counterfeit-pens,ca-dpd-extract-search-status-a-2026-10-24,au-tga-2026-09-retatrutide-counterfeit" /> In a filing with the US financial regulator in August 2026, Lilly said that it plans to ask the US Food and Drug Administration (FDA) for approval in the first quarter of 2027.<Cite id="sec-lilly-2026-q2-results" />
 
 <InDetail title="The developer, and why it is legal only inside a trial">
 
 Retatrutide is an injectable peptide made by Eli Lilly, also known by its development code LY3437943. It switches on three hormone receptors at once: the receptors for GIP, GLP-1 and glucagon.<Cite id="chembl-retatrutide,coskun-2022-ly3437943-discovery" /> That is why it is called a triple agonist.
 
 <Callout type="legal" title="Investigational means: in practice, legal only inside a trial">
-A medicine needs a marketing authorisation before anyone may sell or supply it. Dutch law forbids selling, supplying, stocking or importing a medicine without one. The exceptions are narrow: medicines for research, formal compassionate-use programmes, and a special exemption from the health inspectorate.<Cite id="nl-geneesmiddelenwet" /> So outside an approved trial, every product sold as "retatrutide" is unauthorised, whatever its label says. See [research use only](/en/legal/research-use-only/).
+In the US, the UK, Canada and Australia, a medicine needs the regulator's approval before anyone may sell or supply it. In the US, a new drug may not be sold across state lines without an approved application. In the UK, selling or supplying a medicine without a UK authorisation is against the law. In Canada, no one may sell or advertise a new drug that Health Canada has not authorised. In Australia, supplying a medicine that is not on the national register, without an exemption or approval, is an offence.<Cite id="usc-21-355,uk-hmr-2012-reg-46,ca-food-and-drug-regulations,au-tg-act-s19b-19d-offences" /> The exceptions are narrow: authorised clinical trials, and formal access routes for serious illness. So outside a trial, every product sold as "retatrutide" is unauthorised, whatever its label says. See [research use only](/en/legal/research-use-only/) and the [treatment routes](/en/legal-routes/).
 </Callout>
 
 </InDetail>
@@ -194,7 +192,7 @@ Retatrutide is a chain of 39 amino acids that starts <Seq>Tyr-Aib-Gln-Gly-Thr-Ph
 - **Position 17:** a lysine that carries a short spacer, a glutamic-acid linker and a 20-carbon fatty diacid.
 - **The end of the chain** is an amide rather than an acid.
 
-Its formula is C221H342N46O68 and its mass is about <Q>4731 Da</Q>.<Cite id="pubchem-retatrutide" /> Tirzepatide carries the same kind of fatty-acid tail; its EU label says the tail binds albumin in the blood and lengthens its half-life.<Cite id="ema-epar-mounjaro" /> <Claim level="hypothesis">Retatrutide's tail probably works the same way</Claim>; its measured half-life in people is about six days.<Cite id="urva-2022-ly3437943-phase-1b" />
+Its formula is C221H342N46O68 and its mass is about <Q>4731 Da</Q>.<Cite id="pubchem-retatrutide" /> Tirzepatide carries the same kind of fatty-acid tail; its US label says the tail lets it bind albumin in the blood and lengthens its half-life.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> <Claim level="hypothesis">Retatrutide's tail probably works the same way</Claim>; its measured half-life in people is about six days.<Cite id="urva-2022-ly3437943-phase-1b" />
 
 ### Where it came from
 
@@ -204,7 +202,7 @@ Lilly described it in 2022. <Claim level="in-vitro">In cell assays it was about 
 
 <InDetail title="Why so many people have heard of it">
 
-Its trial results drew wide attention (see the evidence below), and long before any approval it reached a grey market. The UK regulator dismantled an illegal factory making retatrutide and tirzepatide pens in October 2025, and seized more than 12,000 fake pens in October 2026.<Cite id="mhra-2025-retatrutide-seizure,mhra-2026-10-counterfeit-pens" /> In July 2026 it warned people not to be tempted by "the online hype around retatrutide".<Cite id="mhra-2026-07-no-summer-shortcut" /> In the United States, the FDA has warned companies that sold it falsely labelled "for research purposes".<Cite id="fda-unapproved-glp1-concerns" />
+Its trial results drew wide attention (see the evidence below), and long before any approval it reached a grey market. The UK regulator dismantled an illegal factory making retatrutide and tirzepatide pens in October 2025, and seized more than 12,000 fake pens in October 2026.<Cite id="mhra-2025-retatrutide-seizure,mhra-2026-10-counterfeit-pens" /> In July 2026 it warned people not to be tempted by "the online hype around retatrutide".<Cite id="mhra-2026-07-no-summer-shortcut" /> In the United States, the FDA has warned companies that sold it falsely labelled "for research purposes".<Cite id="fda-unapproved-glp1-concerns" /> Health Canada lists retatrutide among the unauthorised injectable peptides it has seized, and in Australia the TGA tested a vial sold as retatrutide that held semaglutide instead.<Cite id="ca-hc-2026-04-think-twice-peptides,au-tga-2026-09-retatrutide-counterfeit" />
 
 The trial evidence on this page belongs to a product of known content, given in a supervised trial. A vial or pen bought online shares the name and none of those guarantees. The comparison at the top of this section sets out the differences row by row.
 
@@ -334,7 +332,7 @@ TRIUMPH-3 and TRIUMPH-4 have finished, and Lilly has announced positive results.
 
 ### What the substudies add
 
-- **Liver fat.** In 98 adults with at least 10% liver fat, <Claim level="human-controlled">liver fat fell by up to 82% at 24 weeks</Claim>, without signs of liver toxicity. The substudy used MRI rather than biopsy, made many comparisons without correction, and lacked 48-week scans for 56% of people.<Cite id="sanyal-2024-retatrutide-masld" /> A large liver-outcome trial is recruiting, including in the Netherlands.<Cite id="ctgov-nct07165028" />
+- **Liver fat.** In 98 adults with at least 10% liver fat, <Claim level="human-controlled">liver fat fell by up to 82% at 24 weeks</Claim>, without signs of liver toxicity. The substudy used MRI rather than biopsy, made many comparisons without correction, and lacked 48-week scans for 56% of people.<Cite id="sanyal-2024-retatrutide-masld" /> A large liver-outcome trial is recruiting, with sites in the US, the UK, Canada and Australia.<Cite id="ctgov-nct07165028,ctgov-us-uk-peptide-search-2026-10-23,ca-ctgov-retatrutide-ca-au-2026-10-24" />
 - **Body composition.** In the diabetes trial, body fat fell by about a quarter at higher doses; only 103 of 189 people had scans at both start and week 36. The company authors judged the share of lean tissue lost to be similar to other obesity drugs.<Cite id="coskun-2025-retatrutide-body-composition" />
 - **Kidneys and blood fats.** Post hoc analyses of the two phase 2 trials, written by or with Lilly scientists, found less protein (albumin) in the urine and lower triglycerides and LDL cholesterol.<Cite id="heerspink-2025-retatrutide-kidney,wen-2025-retatrutide-angptl38" />
 
@@ -390,17 +388,16 @@ As of 20 October 2026, these are specifically unknown:
 
 <Section id="regulatory">
 
-<Lead question="Is it legal?">Approved nowhere and banned in sport. In the EU, in practice, it is legal only in a trial.</Lead>
+<Lead question="Is it legal?">Approved nowhere. In all four countries selling it is illegal; a trial is the main legal route.</Lead>
 
-<Compare title="No country has approved it, and selling it is against the law." detail="Status in the Netherlands, the EU and the US, and in sport, checked on 20 October 2026.">
+<Compare title="No country has approved it, and selling it is against the law in all four." detail="Status in the United States (checked on 20 October 2026) and in the UK, Canada and Australia (checked on 23 October 2026). Sport is in the first fold below.">
 
-| | Netherlands and the EU | United States |
-|---|---|---|
-| Approved as a medicine? | <Verdict is="no" /> No EU authorisation. The CBG database lists no retatrutide product.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Not FDA-approved.<Cite id="fda-unapproved-glp1-concerns" /> |
-| Has the maker asked for approval? | <Verdict is="no" /> It is not on the EMA list of applications under evaluation dated 5 October 2026.<Cite id="ema-2026-10-under-evaluation" /> | <Verdict is="no" /> Not yet. Lilly plans to apply in the first quarter of 2027.<Cite id="sec-lilly-2026-q2-results" /> |
-| Legal to sell or supply? | <Verdict is="no" /> Dutch law forbids it without a marketing authorisation, with narrow exceptions.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> A new drug may not be sold across state lines without an approved application.<Cite id="usc-21-355" /> |
-| A legal way to get it outside a trial? | <Verdict is="no" /> None that we know of. No approved compassionate-use programme includes it.<Cite id="cbg-compassionate-use-list" /> | <Verdict is="yes" /> A doctor may ask for it through Lilly's single-patient expanded-access programme, under strict conditions.<Cite id="ctgov-nct07629401" /> |
-| Allowed in sport? | <Verdict is="no" /> Not named, but covered by S0: prohibited at all times.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule applies.<Cite id="wada-2026-list-en" /> |
+| | Approved as a medicine? | Has the maker asked for approval? | Legal to sell or supply? |
+|---|---|---|---|
+| United States | <Verdict is="no" /> Not FDA-approved<Cite id="fda-unapproved-glp1-concerns" /> | <Verdict is="no" /> Not yet. Lilly plans to apply in the first quarter of 2027<Cite id="sec-lilly-2026-q2-results" /> | <Verdict is="no" /> A new drug may not be sold across state lines without approval, and the FDA says it cannot be used in compounding<Cite id="usc-21-355,fda-unapproved-glp1-concerns" /> |
+| United Kingdom | <Verdict is="no" /> The MHRA says it has not been authorised for use in the UK<Cite id="mhra-2026-10-counterfeit-pens,uk-mhra-substance-index-status-a-2026-10-24" /> | <Verdict is="unknown" /> No UK application is public. NICE has begun scoping an appraisal, which is not a licence<Cite id="nice-id6644-retatrutide" /> | <Verdict is="no" /> The MHRA says products sold outside trials are supplied illegally<Cite id="uk-hmr-2012-reg-46,mhra-2026-10-counterfeit-pens" /> |
+| Canada | <Verdict is="no" /> Health Canada has not authorised it: its drug database lists no retatrutide product<Cite id="ca-dpd-extract-search-status-a-2026-10-24" /> | <Verdict is="unknown" /> None is listed as under review, but that list does not show every submission<Cite id="ca-hc-sur-search-status-a-2026-10-24" /> | <Verdict is="no" /> A new drug may not be sold without Health Canada's authorisation. Health Canada has seized retatrutide products<Cite id="ca-food-and-drug-regulations,ca-hc-2026-04-think-twice-peptides" /> |
+| Australia | <Verdict is="no" /> Not on the Australian Register of Therapeutic Goods<Cite id="au-artg-search-status-a-2026-10-24" /> | <Verdict is="no" /> The TGA has no application or evaluation for it on record<Cite id="au-tga-pmr-search-status-a-2026-10-24" /> | <Verdict is="no" /> Supplying an unapproved medicine is an offence<Cite id="au-tg-act-s19b-19d-offences,au-tga-2026-09-retatrutide-counterfeit" /> |
 
 </Compare>
 
@@ -408,45 +405,45 @@ As of 20 October 2026, these are specifically unknown:
 
 <RegulatoryTable />
 
-All statuses were checked on 20 October 2026.
+Statuses were checked between 20 and 23 October 2026.
 
 ### Sport (WADA)
 
-Retatrutide is not named on the 2026 Prohibited List or on the 2027 List that takes effect on 1 January 2027.<Cite id="wada-2026-list-en,wada-2027-list-en" /> On the wording of section S0, it is still prohibited at all times. S0 covers any substance not addressed elsewhere on the List "with no current approval by any governmental regulatory health authority for human therapeutic use", including "drugs under pre-clinical or clinical development".<Cite id="wada-2026-list-en" /> WADA's 2027 explanatory note and UK Anti-Doping both stress that a peptide does not have to be named to fall under S0.<Cite id="wada-2027-list-explanatory-note,ukad-2027-list-summary" /> An approval anywhere would change this, so it needs rechecking. See [sport and doping](/en/legal/sport-and-doping/).
+Retatrutide is not named on the 2026 Prohibited List or on the 2027 List that takes effect on 1 January 2027.<Cite id="wada-2026-list-en,wada-2027-list-en" /> On the wording of section S0, it is still prohibited at all times. S0 covers any substance not addressed elsewhere on the List "with no current approval by any governmental regulatory health authority for human therapeutic use", including "drugs under pre-clinical or clinical development".<Cite id="wada-2026-list-en" /> WADA's 2027 explanatory note and UK Anti-Doping both stress that a peptide does not have to be named to fall under S0.<Cite id="wada-2027-list-explanatory-note,ukad-2027-list-summary" />
+
+Sport Integrity Australia's page on retatrutide says it "is not listed on the Prohibited List". That is true in the sense that it is not named. The page does not discuss S0, and we found no ruling from WADA on retatrutide itself, so athletes should ask their anti-doping organisation before using it.<Cite id="au-sia-retatrutide" /> An approval anywhere would change the S0 position, so it needs rechecking. See [sport and doping](/en/legal/sport-and-doping/).
 
 </InDetail>
 
-<InDetail title="The European Union and the Netherlands">
+<InDetail title="The United States">
 
-### European Union
+A new drug may not be sold across state lines without an approved application.<Cite id="usc-21-355" /> The FDA states that retatrutide is not part of any approved drug, cannot be used in compounding, and has been sold illegally as "for research purposes"; JAMA reported 21 FDA warning letters to sellers since December 2024.<Cite id="fda-unapproved-glp1-concerns,rubin-2026-jama-news" /> Retatrutide was not among the seven peptides the FDA's compounding advisory committee considered in July 2026.<Cite id="fda-pcac-2026-07-meeting" />
 
-No retatrutide product has an EU marketing authorisation. It is absent from the EMA's medicines data and from the EMA list of applications under evaluation dated 5 October 2026.<Cite id="ema-medicines-json,ema-2026-10-under-evaluation" /> Its legal use in the EU is in clinical trials; the heart-and-kidney outcomes trial has sites in Belgium, Germany and the Netherlands.<Cite id="ctgov-nct06383390" />
-
-### Netherlands
-
-The CBG database lists no retatrutide product.<Cite id="cbg-geneesmiddeleninformatiebank" /> The Geneesmiddelenwet forbids selling, supplying, stocking, offering or importing a medicine without a marketing authorisation (article 40). The exceptions include medicines for research, approved compassionate-use programmes, and an exemption that the Health and Youth Care Inspectorate (IGJ) can grant (article 40, third paragraph).<Cite id="nl-geneesmiddelenwet" /> The CBG's list of approved programmes does not include retatrutide.<Cite id="cbg-compassionate-use-list" /> We know of no inspectorate exemption for retatrutide, so in practice the only legal way to receive it is in a trial; Dutch hospitals and practices take part in two.<Cite id="ctgov-nct06383390,ctgov-nct07165028" /> See [the law in the Netherlands](/en/legal/nl/).
+Outside trials, a physician may request it through Lilly's single-patient expanded-access programme. It is meant for an adult with a BMI of 35 or more whose obesity has not responded to approved weight-loss treatment, with at least two serious obesity-related complications and no access to a trial; availability depends on geography and supply.<Cite id="ctgov-nct07629401" /> On 23 October 2026, 26 retatrutide studies on ClinicalTrials.gov had US sites; one was recruiting and eight more were under way.<Cite id="ctgov-us-uk-peptide-search-2026-10-23" /> Lilly plans to submit a Biologics License Application in the first quarter of 2027; until the FDA approves it, retatrutide stays unapproved.<Cite id="sec-lilly-2026-q2-results" />
 
 </InDetail>
 
-<InDetail title="Germany, Belgium, the United Kingdom and the United States">
-
-### Germany
-
-Finished medicines need a national or EU licence (AMG § 21); retatrutide has neither.<Cite id="de-amg-21,ema-medicines-json" /> German centres take part in phase 3 trials, including the comparison with tirzepatide.<Cite id="ctgov-nct06662383" />
-
-### Belgium
-
-A medicine may be placed on the market only after a national or EU authorisation (Medicines Act of 25 March 1964, art. 6 § 1).<Cite id="be-medicines-law-1964" /> Retatrutide has neither.<Cite id="ema-medicines-json" /> Belgian centres take part in the heart-and-kidney outcomes trial and in the liver-disease trial.<Cite id="ctgov-nct06383390,ctgov-nct07165028" />
+<InDetail title="The UK, Canada and Australia">
 
 ### United Kingdom
 
-Selling or supplying an unauthorised medicine is prohibited (Human Medicines Regulations 2012, regulation 46).<Cite id="uk-hmr-2012-reg-46" /> The MHRA states that retatrutide is not authorised in the UK, that products sold outside authorised trials are likely illegal, and that "there's no guarantee that they even contain retatrutide".<Cite id="mhra-2025-retatrutide-seizure,mhra-2026-10-counterfeit-pens,mhra-2026-07-no-summer-shortcut" />
+Selling or supplying a medicine without a UK authorisation is against the law (Human Medicines Regulations 2012, regulation 46).<Cite id="uk-hmr-2012-reg-46" /> The MHRA states that retatrutide has not been authorised for use in the UK, that products sold as retatrutide outside trials are supplied illegally, and that "there's no guarantee that they even contain retatrutide".<Cite id="mhra-2026-10-counterfeit-pens,mhra-2025-retatrutide-seizure,mhra-2026-07-no-summer-shortcut" /> It dismantled an illegal factory making retatrutide and tirzepatide pens in October 2025, made its largest seizure of unlicensed weight-loss medicines in May 2026, and seized more than 12,000 fake retatrutide and tirzepatide pens in October 2026.<Cite id="mhra-2025-retatrutide-seizure,mhra-2026-05-largest-seizure,mhra-2026-10-counterfeit-pens" />
 
-### United States
+NICE began scoping an appraisal of retatrutide for obesity in October 2026, ahead of any UK licence; a NICE appraisal is not a licence.<Cite id="nice-id6644-retatrutide" /> Eight retatrutide studies on ClinicalTrials.gov had UK sites on 23 October 2026; one was recruiting and four more were under way.<Cite id="ctgov-us-uk-peptide-search-2026-10-23" /> Importing a medicine for your own use needs no manufacturer's licence, but selling or supplying an unlicensed medicine is an offence, and Border Force can seize unlicensed medicines at the border.<Cite id="uk-hmr-2012-reg-17,uk-hmr-2012-reg-46,mhra-foi-22-431-personal-import-seizures" />
 
-A new drug may not be sold across state lines without an approved application.<Cite id="usc-21-355" /> The FDA states that retatrutide is not part of any approved drug, cannot be used in compounding, and has been sold illegally as "for research purposes"; JAMA reported 21 FDA warning letters to sellers since December 2024.<Cite id="fda-unapproved-glp1-concerns,rubin-2026-jama-news" />
+### Canada
 
-Outside trials, a physician may request it through Lilly's single-patient expanded-access programme. It is meant for an adult with a BMI of 35 or more whose obesity has not responded to approved weight-loss treatment, with at least two serious obesity-related complications and no access to a trial; availability depends on geography and supply.<Cite id="ctgov-nct07629401" /> Lilly plans to submit a Biologics License Application in the first quarter of 2027; until the FDA approves it, retatrutide stays unapproved.<Cite id="sec-lilly-2026-q2-results" /> Retatrutide was not among the seven peptides the FDA's compounding advisory committee considered in July 2026.<Cite id="fda-pcac-2026-07-meeting" />
+Health Canada has not authorised retatrutide, and its safety and effectiveness have not been established. Its drug database has no retatrutide product, and no retatrutide submission is listed as under review.<Cite id="ca-dpd-extract-search-status-a-2026-10-24,ca-hc-sur-search-status-a-2026-10-24" /> It is being tested in Canada in Eli Lilly trials that Health Canada authorised: ten trials have had Canadian sites; one large phase 3 trial (in fatty liver disease, with tirzepatide and retatrutide arms) is recruiting, and five more are under way but no longer recruiting.<Cite id="ca-ctgov-retatrutide-ca-au-2026-10-24,ca-hc-ctsp-retatrutide-2026-10-24,ctgov-nct07165028,ctgov-nct06383390" />
+
+Health Canada lists retatrutide among the unauthorised injectable peptides it has seized, and says a "research use only" label does not make such products legal. It says it works with the Canada Border Services Agency to stop shipments of unauthorised peptides.<Cite id="ca-hc-2026-04-think-twice-peptides,ca-hc-recalls-database" /> The border agency can hold such goods and refer them to Health Canada, which can refuse, seize or destroy them.<Cite id="ca-cbsa-d19-9-1,ca-fda-s27-2-removal-destruction" />
+
+### Australia
+
+Retatrutide is not on the Australian Register of Therapeutic Goods (ARTG), and the TGA has no registration, evaluation or public assessment report for it.<Cite id="au-artg-search-status-a-2026-10-24,au-tga-pmr-search-status-a-2026-10-24" /> The TGA says it "has not been approved by the TGA or any comparable international regulator" and that any retatrutide product used outside clinical trials "could be a counterfeit product". In September 2026 a vial sold as retatrutide, linked to a hospital admission with a torn oesophagus after severe vomiting, held semaglutide and no retatrutide.<Cite id="au-tga-2026-09-retatrutide-counterfeit" />
+
+Retatrutide is not named in the Poisons Standard. The TGA's advertising page says that GLP-1 receptor agonists are prescription-only medicines, including "derivatives of semaglutide or dulaglutide such as retatrutide", and that retatrutide may not be advertised because it is unapproved. That is the TGA's reading; whether it is a Schedule 4 medicine in law, and so whether the state possession rules apply, has not been settled.<Cite id="au-poisons-standard-2026-10,au-tga-advertising-glp1-prohibited" /> Whether the 2024 ban on compounding "GLP-1 receptor agonist analogues" covers retatrutide is not stated either; in any case, supplying it outside a trial or an approved access route is unlawful.<Cite id="au-tg-amendment-2024-measures-2-glp1,au-tga-2026-04-peptide-responsibilities" />
+
+The TGA lists retatrutide among the unapproved peptides it is concerned about, and seized retatrutide products with NSW Police in August 2026.<Cite id="au-tga-2026-04-peptide-responsibilities,au-tga-2026-06-cmo-peptide-statement,au-tga-2026-08-peptide-seizure" /> Australian sites took part in four completed phase 3 trials, and two Lilly trials with Australian sites are still under way (one recruiting).<Cite id="ca-ctgov-retatrutide-ca-au-2026-10-24,ctgov-nct07165028,ctgov-nct06383390" />
 
 </InDetail>
 
@@ -473,9 +470,9 @@ Outside trials, a physician may request it through Lilly's single-patient expand
 - **Stomach and gut.** Nausea, diarrhoea, vomiting and constipation were the most common side effects, mostly mild to moderate and related to dose.<Cite id="jastreboff-2023-retatrutide-phase-2,rosenstock-2023-retatrutide-t2d-phase-2" /> In TRIUMPH-2, diarrhoea affected 27% to 34% against 13% on placebo, and nausea 14% to 28% against 8%.<Cite id="bellido-2026-triumph-2" />
 - **Stopping.** In TRIUMPH-2, 4% to 12% stopped because of side effects or death, against 5% on placebo; in TRANSCEND-T2D-1, 2% to 5% against none.<Cite id="bellido-2026-triumph-2,bajaj-2026-transcend-t2d-1" />
 - **Low blood pressure.** In TRIUMPH-2, 1% to 6% against fewer than 1% on placebo.<Cite id="bellido-2026-triumph-2" />
-- **Abnormal skin sensations.** Burning, tingling or painful skin (dysaesthesia) affected 4% to 7% in TRIUMPH-2, against 1% on placebo.<Cite id="bellido-2026-triumph-2" /> In the phase 2 obesity trial, 4 of 62 people on the highest dose had allodynia, against none in any other group.<Cite id="ctgov-nct04881760" /> In the unpublished TRIUMPH-4, the company reported higher rates, up to about one in five at the highest dose; this figure has not been peer-reviewed. Most reported cases were mild to moderate, and the mechanism is unknown.<Cite id="kaczynski-2026-retatrutide-review" /> The EU product information for semaglutide (Wegovy) and tirzepatide (Mounjaro) also lists dysaesthesia, so it may not be unique to retatrutide.<Cite id="ema-epar-wegovy,ema-epar-mounjaro" />
+- **Abnormal skin sensations.** Burning, tingling or painful skin (dysaesthesia) affected 4% to 7% in TRIUMPH-2, against 1% on placebo.<Cite id="bellido-2026-triumph-2" /> In the phase 2 obesity trial, 4 of 62 people on the highest dose had allodynia, against none in any other group.<Cite id="ctgov-nct04881760" /> In the unpublished TRIUMPH-4, the company reported higher rates, up to about one in five at the highest dose; this figure has not been peer-reviewed. Most reported cases were mild to moderate, and the mechanism is unknown.<Cite id="kaczynski-2026-retatrutide-review" /> The labels of semaglutide (Wegovy) and tirzepatide (Mounjaro, Zepbound) also list dysaesthesia, so it may not be unique to retatrutide.<Cite id="fda-label-wegovy,fda-label-mounjaro,fda-label-zepbound,ema-epar-wegovy,ema-epar-mounjaro" />
 - **Allergic-type reactions.** Pooling three early trials, they were more frequent than with placebo (risk ratio 3.79, 95% CI 1.20–11.96).<Cite id="pasqualotto-2024-retatrutide-meta-analysis" />
-- **Pancreas and gallbladder.** A few serious cases of acute pancreatitis (three) and gallbladder inflammation (two) occurred across the two phase 2 trials.<Cite id="ctgov-nct04881760,ctgov-nct04867785" /> Both are known, uncommon risks of GLP-1-based drugs.<Cite id="ema-epar-mounjaro" />
+- **Pancreas and gallbladder.** A few serious cases of acute pancreatitis (three) and gallbladder inflammation (two) occurred across the two phase 2 trials.<Cite id="ctgov-nct04881760,ctgov-nct04867785" /> Both are known, uncommon risks of GLP-1-based drugs.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" />
 - **Deaths.** TRIUMPH-2 recorded six deaths on retatrutide and one on placebo; the investigators judged all unrelated to the drug.<Cite id="bellido-2026-triumph-2" />
 
 </InDetail>
@@ -499,7 +496,7 @@ There are honest counter-arguments. A Spanish laboratory study found no glucagon
 
 ### Low blood sugar, and type 1 diabetes
 
-No severe low blood sugar was reported in the phase 2 diabetes trial or in TRANSCEND-T2D-1.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2,bajaj-2026-transcend-t2d-1" /> With insulin or sulfonylureas, which lower glucose whether it is high or not, other GLP-1-based drugs can push blood sugar too low.<Cite id="ema-epar-mounjaro" /> TRIUMPH-2 allowed sulfonylureas, but its abstract gives no figures for low blood sugar.<Cite id="bellido-2026-triumph-2" /> None of the 34 registered retatrutide studies is about type 1 diabetes.<Cite id="ctgov-retatrutide-search-2026-10-20" /> In one case report, a man with type 1 diabetes developed severe vomiting, high ketones and kidney injury after an online product, and later repeated low blood sugar; he also had a gut infection, so the cause is uncertain.<Cite id="branine-2026-retatrutide-ketosis-case" /> In type 1 diabetes, vomiting and missed insulin let ketones build up.<Cite id="branine-2026-retatrutide-ketosis-case" /> <Claim level="hypothesis">A drug that also raises ketones could make this worse</Claim>.<Cite id="sanyal-2024-retatrutide-masld" />
+No severe low blood sugar was reported in the phase 2 diabetes trial or in TRANSCEND-T2D-1.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2,bajaj-2026-transcend-t2d-1" /> With insulin or sulfonylureas, which lower glucose whether it is high or not, other GLP-1-based drugs can push blood sugar too low.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> TRIUMPH-2 allowed sulfonylureas, but its abstract gives no figures for low blood sugar.<Cite id="bellido-2026-triumph-2" /> None of the 34 registered retatrutide studies is about type 1 diabetes.<Cite id="ctgov-retatrutide-search-2026-10-20" /> In one case report, a man with type 1 diabetes developed severe vomiting, high ketones and kidney injury after an online product, and later repeated low blood sugar; he also had a gut infection, so the cause is uncertain.<Cite id="branine-2026-retatrutide-ketosis-case" /> In type 1 diabetes, vomiting and missed insulin let ketones build up.<Cite id="branine-2026-retatrutide-ketosis-case" /> <Claim level="hypothesis">A drug that also raises ketones could make this worse</Claim>.<Cite id="sanyal-2024-retatrutide-masld" />
 
 ### Thyroid and pregnancy
 
@@ -513,13 +510,13 @@ No severe low blood sugar was reported in the phase 2 diabetes trial or in TRANS
 
 - **Wrong amounts.** Three products sold as <Q>10 mg</Q> in Australia held 51%, 165% and 190% of the label; a trace of lead was well below safety limits, and none was tested for sterility.<Cite id="piatkowski-2026-retatrutide-product-testing" />
 - **A different drug.** In Australian testing, one product sold as retatrutide held "a high dose of semaglutide and no retatrutide", JAMA reported.<Cite id="rubin-2026-jama-news" />
-- **Liver injury.** The Victoria Department of Health in Australia received reports of six cases of liver toxicity linked to products labelled retatrutide.<Cite id="rubin-2026-jama-news" /> No sign of liver toxicity was seen in the phase 2 obesity trial,<Cite id="sanyal-2024-retatrutide-masld" /> so <Claim level="hypothesis">a contaminant may be to blame</Claim>; this has not been shown.
+- **Liver injury.** The Victorian Department of Health in Australia reported six cases of acute liver injury since January 2026 after use of products labelled retatrutide, and said a contaminant was possible; testing was ongoing.<Cite id="vic-health-2026-retatrutide-liver,rubin-2026-jama-news" /> No sign of liver toxicity was seen in the phase 2 obesity trial,<Cite id="sanyal-2024-retatrutide-masld" /> so <Claim level="hypothesis">a contaminant may be to blame</Claim>; this has not been shown.
 - **Hospital care.** A young woman was admitted to hospital with days of vomiting after injections given by a non-medical "life coach".<Cite id="buzzi-2026-retatrutide-case-report" />
 - **Self-reports.** 13,589 social media users wrote about using it. Among the 7,823 who named a symptom, common ones were increased appetite, fatigue, increased energy, nausea and insomnia; 4.8% mentioned a raised heart rate. These are posts, not measurements.<Cite id="sehgal-2026-retatrutide-social-media" />
 
 ### Sport
 
-Retatrutide is prohibited at all times under S0.<Cite id="wada-2026-list-en" /> <Claim level="human-limited">An anti-doping laboratory still detected it in the blood of four users 56 days after the first of two injections</Claim>.<Cite id="carneiro-2026-retatrutide-antidoping" />
+On the wording of the anti-doping list, retatrutide is prohibited at all times under S0, although it is not named (see the status section).<Cite id="wada-2026-list-en,au-sia-retatrutide" /> <Claim level="human-limited">An anti-doping laboratory still detected it in the blood of four users 56 days after the first of two injections</Claim>.<Cite id="carneiro-2026-retatrutide-antidoping" />
 
 </InDetail>
 
@@ -531,11 +528,13 @@ Retatrutide is prohibited at all times under S0.<Cite id="wada-2026-list-en" /> 
 
 ### The legal routes
 
-In the EU, retatrutide is in practice legal only inside a trial. You can look for recruiting trials in the EU and US trial registers and ask your doctor whether you might qualify; trials have strict entry rules.<Cite id="ctgov-nct06383390,ctgov-nct07165028" />
+In the US, the UK, Canada and Australia, retatrutide is in practice legal only inside a trial. Lilly's trials have had sites in all four countries. You can look for recruiting trials on ClinicalTrials.gov and ask your doctor whether you might qualify; trials have strict entry rules.<Cite id="ctgov-nct06383390,ctgov-nct07165028,ctgov-us-uk-peptide-search-2026-10-23,ca-ctgov-retatrutide-ca-au-2026-10-24" /> A doctor can also ask Lilly for it through a single-patient expanded-access programme for severe obesity with serious complications. Lilly says availability depends on geography and supply, and the record lists no locations, so it does not show that access exists in any given country.<Cite id="ctgov-nct07629401" />
 
-Two related medicines are authorised: [semaglutide](/en/compounds/semaglutide/) and [tirzepatide](/en/compounds/tirzepatide/). They come with a label, a known dose and medical follow-up. A doctor can tell you whether one of them suits you. See [talking to your doctor](/en/talking-to-your-doctor/) and [legal routes](/en/legal-routes/).
+The [treatment routes](/en/legal-routes/) page explains the legal ways to get a medicine in the four countries, and what each one needs: [a prescription](/en/legal-routes/#prescription), [off-label use](/en/legal-routes/#off-label), [US pharmacy compounding](/en/legal-routes/#us-compounding), [UK "specials"](/en/legal-routes/#uk-specials), [Canada's Special Access Program](/en/legal-routes/#canada-special-access), [Australia's Special Access Scheme](/en/legal-routes/#australia-sas), [importing for yourself](/en/legal-routes/#personal-import) and [clinical trials](/en/legal-routes/#trials). For retatrutide, there is no approved product to prescribe, and the FDA says it cannot be used in US compounding.<Cite id="fda-unapproved-glp1-concerns" />
 
-Retatrutide itself is approved nowhere, and outside trials selling it is illegal, so no pharmacy can legally sell it either. The checks below apply to any product with this name, whoever supplied it. That includes pens: the UK regulator has seized thousands of fake retatrutide and tirzepatide pens.<Cite id="ema-medicines-json,nl-geneesmiddelenwet,mhra-2026-07-no-summer-shortcut,mhra-2026-10-counterfeit-pens" />
+Two related medicines are approved: [semaglutide](/en/compounds/semaglutide/) and [tirzepatide](/en/compounds/tirzepatide/). They come with a label, a known dose and medical follow-up. A doctor can tell you whether one of them suits you. See [talking to your doctor](/en/talking-to-your-doctor/).
+
+Retatrutide itself is approved nowhere, and outside trials selling it is illegal, so no pharmacy can legally sell it either. The checks below apply to any product with this name, whoever supplied it. That includes pens: the UK regulator has seized thousands of fake retatrutide and tirzepatide pens.<Cite id="fda-unapproved-glp1-concerns,au-tga-2026-09-retatrutide-counterfeit,ca-hc-2026-04-think-twice-peptides,mhra-2026-07-no-summer-shortcut,mhra-2026-10-counterfeit-pens" />
 
 <ProductCheck extra="Even a full label can be wrong. Tested products held half to nearly twice the amount on the label. One held a different drug instead." extraSources="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news" />
 
@@ -586,7 +585,7 @@ A doctor can help you choose which of these fit you. Tell them what you use.
 
 ### Plausible interactions (none published)
 
-- **Insulin and sulfonylureas:** higher risk of low blood sugar, as with other GLP-1-based drugs.<Cite id="ema-epar-mounjaro" />
+- **Insulin and sulfonylureas:** higher risk of low blood sugar, as with other GLP-1-based drugs.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" />
 - **The contraceptive pill:** a short company report says retatrutide delays stomach emptying (we could read only its title and index terms).<Cite id="urva-2023-retatrutide-gastric-emptying" /> <Claim level="hypothesis">Slower stomach emptying could change how well tablets are absorbed</Claim>. A pill study finished in 2024 without public results.<Cite id="ctgov-nct06039826" /> For tirzepatide, UK and US regulators advise a non-pill method or condoms for four weeks after starting and after each dose increase.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-mounjaro" />
 - **Warfarin and other medicines where small changes matter:** an interaction study finished in 2023 without published results.<Cite id="ctgov-nct05445232" />
 - **Other GLP-1 drugs, or "stacks" with other peptides:** they add the same side effects, and make any reaction harder to trace.

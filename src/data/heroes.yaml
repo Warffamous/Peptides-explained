@@ -36,7 +36,9 @@ compounds/melanotan-ii: dysplastic-nevus-micrograph
 # Safety (group safety-a): clean hands, an ambulance (112), a doctor's stethoscope, bacteria on lab dishes,
 # a skin bacterium under the microscope, and a sharps container. No needles, vials or skin punctures.
 safety: cdc-hand-washing
-safety/warning-signs: { nl: ambulance-den-haag }
+# English refocus (group safety-en-a, 24 October 2026): a hospital vital-signs monitor (public domain, US Navy) as
+# the default; the Dutch ambulance stays on nl.
+safety/warning-signs: { default: vital-signs-monitor, nl: ambulance-den-haag }
 safety/before-you-consider: stethoscope-grey
 safety/sterile-technique: bacillus-cereus-plates
 safety/injection-safety: staph-aureus-usda-sem
@@ -46,7 +48,9 @@ safety/sharps-disposal: sharps-bin-yellow
 # to go when something goes wrong). No needles, vials or products.
 safety/product-risk: mass-spectrometer-fda
 safety/monitoring: blood-sample-analyser
-safety/if-something-goes-wrong: { nl: huisartsenpost-oss }
+# English refocus (group safety-en-a, 24 October 2026): a hospital emergency entrance (CC BY-SA 4.0) as the default;
+# the Dutch huisartsenpost stays on nl.
+safety/if-something-goes-wrong: { default: hospital-emergency-entrance, nl: huisartsenpost-oss }
 # Entry pages (group guides): a signpost at a crossroads (a decision point), a closed consulting-room door
 # (the conversation with a doctor), and amino-acid crystals (the building blocks of every compound listed).
 start-here: signpost-crossroads
@@ -71,6 +75,12 @@ legal/uk: palace-of-westminster-dusk
 legal/us: fda-white-oak-building
 legal/sport-and-doping: athletics-track-lanes
 legal/whats-changing: { nl: flags-european-parliament-strasbourg }
+# Legal country pages (group legal-en-a, English refocus): the Centre Block on Parliament Hill in Ottawa (Canada),
+# Parliament House in Canberra at dusk (Australia) and the Beehive with Parliament House in Wellington (Ireland and
+# New Zealand; the Irish section shows Leinster House in Dublin in its body). No products, vials, needles or people.
+legal/ca: parliament-hill-centre-block
+legal/au: parliament-house-canberra-dusk
+legal/ireland-and-new-zealand: beehive-parliament-wellington
 # Basics (group basics): a computer model of a protein (the section), a ball-and-stick molecule model (what a
 # peptide is), cells under a fluorescence microscope (signalling happens in cells), an hourglass (half-life) and
 # the stomach lining under a microscope (why peptides are not swallowed). No products, vials, needles or people.
@@ -96,7 +106,9 @@ about: nlm-main-reading-room
 about/editorial-policy: book-and-magnifier
 about/funding: pharmacy-balance
 about/corrections: errata-1793
-the-case-for-reform: { nl: tweede-kamer-plenary-hall }
+# English refocus (group guides-en, 24 October 2026): a plain wooden gavel (rule-making, no country) on English;
+# the Dutch lower house stays on nl.
+the-case-for-reform: { default: wooden-gavel, nl: tweede-kamer-plenary-hall }
 # Evidence (group evidence): a wooden ladder (the evidence ladder), a coin toss (chance in small studies), a hooded
 # laboratory rat (the translation gap), three rulers with different scales (four grades, never one score) and a
 # drawn handshake (who paid). No products, vials, needles or identifiable people.

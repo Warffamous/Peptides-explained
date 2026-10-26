@@ -13,7 +13,7 @@ glance:
   main_risk: "Moles may darken or change, which makes skin cancer harder to spot."
   # "Stop and get help" strip, condensed from this page's own stop-now list (harm-reduction section,
   # <Callout id="stop-now">): priapism (case reports and the NHS page), sympathomimetic toxicity with
-  # muscle breakdown (Nelson 2012; Eijmael 2022, a Dutch case) and PRES (Kaski 2013; Fugate 2015; NHS
+  # muscle breakdown (Nelson 2012; Eijmael 2022, a hospital case report) and PRES (Kaski 2013; Fugate 2015; NHS
   # headaches). The changing-mole sign is in the stop list and the "biggest risk" tile.
   stop_signs:
     - icon: sign-clock
@@ -33,8 +33,8 @@ glance:
       value: "Three small trials, 23 men in all, 1996 to 2000"
       sources: [dorr-1996-mt2-phase-1, wessells-1998-mt2-psychogenic-ed, wessells-2000-mt2-organic-ed]
     - label: "Approved relatives"
-      value: "Afamelanotide (Scenesse, EU) and bremelanotide (Vyleesi, US)"
-      sources: [ema-epar-scenesse, fda-drugsatfda-vyleesi, king-2007-melanocortin-erection]
+      value: "Afamelanotide (Scenesse) and bremelanotide (Vyleesi, in the US)"
+      sources: [fda-drugsatfda-scenesse, uk-mhra-substance-index-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, au-artg-search-status-c-2026-10-23, fda-drugsatfda-vyleesi, king-2007-melanocortin-erection]
     - label: "Developed at"
       value: "University of Arizona, late 1980s"
       sources: [al-obeidi-1989-cyclic-lactam, hadley-2006-melanocortin-therapeutics]
@@ -114,7 +114,7 @@ studies:
     limitation: "One person, who injected an unusually large amount and whose urine also tested positive for opiates."
   mang-2012-dermoscopy:
     finding: "A 24-year-old man's moles were filmed with a dermatoscope before and during melanotan II use; the changes made it hard to tell a mole from a melanoma."
-    limitation: "One person; in German; shows a diagnostic problem, not a cancer risk."
+    limitation: "One person; the report is not in English; shows a diagnostic problem, not a cancer risk."
   kaski-2013-pres:
     finding: "A letter reporting posterior reversible encephalopathy syndrome (PRES), a swelling in the back of the brain, after melanotan injections."
     limitation: "One letter without an abstract; details could not be checked; cannot show cause."
@@ -127,9 +127,9 @@ studies:
   mallory-2021-priapism:
     finding: "A 55-year-old man arrived after 30 hours of painful erection following a melanotan II injection; drainage and medicine failed, surgery was needed, and 15 weeks later he had new erection problems and scarring."
     limitation: "One person; earlier uses had caused only erections of a few minutes, and why this episode was different is not known."
-  eijmael-2022-netherlands:
-    finding: "A 27-year-old man came to the emergency department of a hospital in Gouda two hours after injecting melanotan II with sympathomimetic symptoms and was treated with a sedative, potassium and intravenous fluids."
-    limitation: "One person; in Dutch; product content not reported in the abstract."
+  eijmael-2022-sympathomimetic:
+    finding: "A 27-year-old man came to a hospital emergency department two hours after injecting melanotan II with sympathomimetic symptoms and was treated with a sedative, potassium and intravenous fluids."
+    limitation: "One person; the report is not in English; product content not reported in the abstract."
   yassin-alsabbagh-2025-oral-melanoma:
     finding: "A 22-year-old woman who had used a melanotan II nasal spray for tanning developed a melanoma inside the mouth, treated with surgery and immunotherapy."
     limitation: "One person; mouth melanoma also occurs without any drug; cannot show cause."
@@ -142,16 +142,14 @@ studies:
   breindahl-2015-products:
     finding: "Vials sold as melanotan II by three online shops all contained melanotan II, but only 43–88% of the amount on the label; vials from two shops held 4.1–5.9% unknown impurities."
     limitation: "Three shops; the study tested identity, content and purity only, not sterility or bacterial toxins."
-  deville-2024-belgian-sample:
-    finding: "A Belgian forensic laboratory confirmed melanotan II in vials labelled with that name; the powder was 30% pure."
+  deville-2024-vial-analysis:
+    finding: "A forensic laboratory confirmed melanotan II in vials labelled with that name; the powder was 30% pure."
     limitation: "Two vials sent to one laboratory; what the other 70% was is not reported."
 regulatory_notes:
-  EU: "Not authorised; no record in EMA's medicines data. Afamelanotide (Scenesse), a different molecule, is authorised for EPP."
-  NL: "Not authorised; no CBG record. Supplying an unauthorised medicine is prohibited by the Geneesmiddelenwet."
-  DE: "Not authorised. The BfArM warned against melanotan products in October 2010."
-  BE: "Not authorised; the FAGG calls its distribution illegal and found insulin in products sold as melanotan."
-  UK: "Not authorised; the MHRA treats injectable products as medicines and advises users to stop (April 2024)."
   US: "Not FDA-approved. On the agenda of an FDA advisory meeting planned before the end of February 2027."
+  UK: "Not authorised; the MHRA treats injectable products as medicines and advises users to stop (April 2024)."
+  CA: "Not authorised. Health Canada lists melanotan I and II among unauthorised injectable peptides it has seized (April 2026)."
+  AU: "Not on the ARTG. Prescription-only (Schedule 4) since 1 June 2018; the TGA says supplying it without a prescription is illegal."
   WADA: "Not named on the List; falls under S0 (non-approved substances) by our reading: prohibited at all times."
 ---
 <Section id="what-it-is">
@@ -163,9 +161,9 @@ regulatory_notes:
 | | Melanotan II | Afamelanotide (Scenesse; once called melanotan I) | Bremelanotide (Vyleesi; PT-141) |
 |---|---|---|---|
 | The molecule sold as melanotan II? | <Verdict is="yes" /> A ring of six amino acids with one more at the front.<Cite id="pubchem-melanotan-ii,dorr-1996-mt2-phase-1" /> | <Verdict is="no" /> A longer, straight chain of 13 amino acids.<Cite id="haskell-luevano-1996-mc1r-dissociation,hadley-2006-melanocortin-therapeutics" /> | <Verdict is="no" /> The same ring, with a different end.<Cite id="king-2007-melanocortin-erection,pubchem-melanotan-ii" /> |
-| Approved in the EU? | <Verdict is="no" /> No product in EMA's medicines data.<Cite id="ema-medicines-json" /> | <Verdict is="yes" /> Since 22 December 2014, for a rare light-pain disease (EPP).<Cite id="ema-epar-scenesse" /> | <Verdict is="no" /> No EU product.<Cite id="ema-medicines-json" /> |
-| Approved in the US? | <Verdict is="no" /> Called "an unapproved new drug" by the FDA.<Cite id="fr-2016-melanotan-debarment" /> | <Verdict is="yes" /> Since 8 October 2019.<Cite id="fda-drugsatfda-scenesse" /> | <Verdict is="yes" /> Since 21 June 2019, for low sexual desire in some women.<Cite id="fda-drugsatfda-vyleesi,dailymed-vyleesi-label" /> |
-| Quality checked by a regulator? | <Verdict is="no" /> Tested vials held 43–88% of the label amount.<Cite id="breindahl-2015-melanotan-products" /> | <Verdict is="yes" /> As an authorised medicine.<Cite id="ema-epar-scenesse" /> | <Verdict is="yes" /> As an authorised medicine in the US.<Cite id="dailymed-vyleesi-label" /> |
+| Approved in the US? | <Verdict is="no" /> Called "an unapproved new drug" by the FDA.<Cite id="fr-2016-melanotan-debarment" /> | <Verdict is="yes" /> Since 8 October 2019, for a rare light-pain disease (EPP).<Cite id="fda-drugsatfda-scenesse" /> | <Verdict is="yes" /> Since 21 June 2019, for low sexual desire in some women.<Cite id="fda-drugsatfda-vyleesi,dailymed-vyleesi-label" /> |
+| Approved in the UK, Canada or Australia? | <Verdict is="no" /> In none of them.<Cite id="uk-mhra-substance-index-status-c-2026-10-23,ca-dpd-search-status-c-2026-10-23,au-tga-2026-08-melanotan-ii-safety-alert" /> | <Verdict is="yes" /> In all three; in Canada since July 2026.<Cite id="uk-mhra-substance-index-status-c-2026-10-23,ca-noc-search-status-c-2026-10-23,ca-dpd-search-status-c-2026-10-23,au-artg-search-status-c-2026-10-23" /> | <Verdict is="no" /> In none of them.<Cite id="mhra-products-search-bremelanotide,ca-dpd-search-status-c-2026-10-23,au-artg-search-status-c-2026-10-23" /> |
+| Quality checked by a regulator? | <Verdict is="no" /> Tested vials held 43–88% of the label amount.<Cite id="breindahl-2015-melanotan-products" /> | <Verdict is="yes" /> As an approved medicine.<Cite id="fda-drugsatfda-scenesse" /> | <Verdict is="yes" /> As an approved medicine in the US.<Cite id="dailymed-vyleesi-label" /> |
 
 </Compare>
 
@@ -179,7 +177,9 @@ Melanotan II is a chain of seven amino acids: <Seq>Ac-Nle-cyclo[Asp-His-D-Phe-Ar
 - **A mirror-image building block.** Phenylalanine is in its D-form. The developers describe melanotan I and II as resistant to the enzymes that break down the natural hormone.<Cite id="pubchem-melanotan-ii,hadley-2006-melanocortin-therapeutics,haskell-luevano-1996-mc1r-dissociation" />
 - **Norleucine at the front**, capped with an acetyl group, and an amide at the end.<Cite id="pubchem-melanotan-ii" />
 
-**Afamelanotide**, once called melanotan I, is the full 13-amino-acid hormone with two changes and no ring.<Cite id="haskell-luevano-1996-mc1r-dissociation,hadley-2006-melanocortin-therapeutics" /> In the EU it is an implant for erythropoietic protoporphyria (EPP), a rare disease in which light causes burning pain; it works by increasing dark melanin in the skin, which blocks light.<Cite id="ema-epar-scenesse" />
+**Afamelanotide**, once called melanotan I, is the full 13-amino-acid hormone with two changes and no ring.<Cite id="haskell-luevano-1996-mc1r-dissociation,hadley-2006-melanocortin-therapeutics" /> It is an implant for erythropoietic protoporphyria (EPP), a rare disease in which light causes burning pain, approved in the US, the UK, Canada and Australia.<Cite id="fda-drugsatfda-scenesse,uk-mhra-substance-index-status-c-2026-10-23,ca-hc-pdl-2026-08-27-additions,au-artg-search-status-c-2026-10-23" />
+{/* residue-ok: EMA evidence */}
+The European medicines regulator's assessment describes how it works: it increases dark melanin in the skin, which blocks light.<Cite id="ema-epar-scenesse" />
 
 **Bremelanotide** (PT-141) has exactly the same ring as melanotan II, but ends in a free acid instead of an amide.<Cite id="king-2007-melanocortin-erection,pubchem-melanotan-ii" /> See [PT-141](/en/compounds/pt-141/). Its US label is a rough guide to what a molecule this close may do in people, because it was tested in large trials; melanotan II never was.<Cite id="dailymed-vyleesi-label" />
 
@@ -189,7 +189,7 @@ Melanotan II is a chain of seven amino acids: <Seq>Ac-Nle-cyclo[Asp-His-D-Phe-Ar
 
 In 1989 chemists at the University of Arizona reported a series of ring-shaped alpha-MSH fragments built for potency and long action.<Cite id="al-obeidi-1989-cyclic-lactam" /> The developers later wrote that melanotan I might give a "therapeutic tan" that could lower the risk of skin cancer.<Cite id="hadley-2006-melanocortin-therapeutics" /> In the first test of melanotan II in people, in 1996, two of three men tanned, and the men also had spontaneous erections.<Cite id="dorr-1996-mt2-phase-1" /> One of the developers later wrote that the sexual effects "were discovered accidentally" during the tanning work.<Cite id="hadley-2005-discovery" />
 
-After two small erection trials (1998 and 2000), development moved on to its free-acid form, PT-141, which became the US medicine Vyleesi in 2019, while tanning work continued with melanotan I, now afamelanotide.<Cite id="wessells-2000-mt2-organic-ed,hadley-2006-melanocortin-therapeutics,fda-drugsatfda-vyleesi,ema-epar-scenesse" /> No further trial of melanotan II itself has been published, and regulators were already warning about products sold under its name in 2010.<Cite id="bfarm-2010-melanotan-warning" />
+After two small erection trials (1998 and 2000), development moved on to its free-acid form, PT-141, which became the US medicine Vyleesi in 2019, while tanning work continued with melanotan I, now afamelanotide.<Cite id="wessells-2000-mt2-organic-ed,hadley-2006-melanocortin-therapeutics,fda-drugsatfda-vyleesi,fda-drugsatfda-scenesse" /> No further trial of melanotan II itself has been published. Products under its name kept being sold: in 2024 the UK medicines regulator wrote that it had been removing melanotan products from the market for over ten years.<Cite id="mhra-2024-foi-melanotan-ii" />
 
 </InDetail>
 
@@ -284,7 +284,9 @@ What these trials cannot tell you: anything about women (none took part), repeat
 
 <InDetail title="Where the evidence is promising, and what the gap costs">
 
-The biology behind melanotan II has produced real medicines. Afamelanotide, its straight-chain relative, is authorised in the EU for EPP because the extra melanin it causes lets patients tolerate more light.<Cite id="ema-epar-scenesse" /> <Claim level="human-controlled">In a randomised trial completed by 65 people, afamelanotide raised skin melanin, and in volunteers who burn easily it more than halved the sunburn cells caused by a standard test dose of UV</Claim>.<Cite id="barnetson-2006-afamelanotide-photoprotection" /> Bremelanotide is a US medicine, and setmelanotide (Imcivree), an MC4 receptor agonist, has been authorised in the EU since 16 July 2021 for obesity and hunger in some rare genetic and hypothalamic conditions.<Cite id="dailymed-vyleesi-label,ema-medicines-json,ema-epar-imcivree" />
+The biology behind melanotan II has produced real medicines. Afamelanotide, its straight-chain relative, is approved for EPP in the US, the UK, Canada and Australia.<Cite id="fda-drugsatfda-scenesse,uk-mhra-substance-index-status-c-2026-10-23,ca-hc-pdl-2026-08-27-additions,au-artg-search-status-c-2026-10-23" />
+{/* residue-ok: EMA evidence */}
+The European medicines regulator's assessment explains why it helps: the extra melanin it causes lets patients tolerate more light.<Cite id="ema-epar-scenesse" /> <Claim level="human-controlled">In a randomised trial completed by 65 people, afamelanotide raised skin melanin, and in volunteers who burn easily it more than halved the sunburn cells caused by a standard test dose of UV</Claim>.<Cite id="barnetson-2006-afamelanotide-photoprotection" /> Bremelanotide is a US medicine.<Cite id="dailymed-vyleesi-label" /> Setmelanotide (Imcivree), an MC4 receptor agonist, has been approved in the US since 25 November 2020 to reduce excess weight in some rare genetic conditions, and in obesity caused by injury to, or a disorder of, the hypothalamus, a part of the brain.<Cite id="fda-drugsatfda-imcivree,fda-label-imcivree-2026-03" />
 
 So the idea of a melanocortin tan is not fantasy, and a tested product for people who burn easily could have value. The cost of the gap is that melanotan II itself stopped at 23 men in 2000, while it kept being sold. Its users now get a strong, unselective version of that biology, from products of uncertain strength and purity, without the trials that would show what it does over years.
 
@@ -324,7 +326,7 @@ As of 22 October 2026, these are specifically unknown:
 - **Effects in women.** No published trial included women. One of the developers wrote that it also raised desire and arousal in women, but no such trial has been published.<Cite id="dorr-1996-mt2-phase-1,wessells-1998-mt2-psychogenic-ed,wessells-2000-mt2-organic-ed,hadley-2005-discovery" />
 - **Pregnancy and breastfeeding.** No data on melanotan II.<Cite id="pubmed-melanotan-ii-count-2026-10-22" />
 - **How often harms happen.** Case reports and regulator reports cannot give rates; the MHRA notes its reports do not equal the number of people harmed.<Cite id="mhra-2024-foi-melanotan-ii" />
-- **What products contain.** Tested vials held less than the label amount, or were 30% pure; some products sold as melanotan held insulin.<Cite id="breindahl-2015-melanotan-products,deville-2024-barbie-drug-identification,fagg-melanotan-warning" />
+- **What products contain.** Tested vials held less than the label amount, or were 30% pure; nasal sprays with the same label held amounts that varied more than twofold; some products sold as melanotan held insulin.<Cite id="breindahl-2015-melanotan-products,deville-2024-barbie-drug-identification,au-tga-2026-08-melanotan-ii-safety-alert,fagg-melanotan-warning" />
 
 </InDetail>
 
@@ -332,16 +334,16 @@ As of 22 October 2026, these are specifically unknown:
 
 <Section id="regulatory">
 
-<Lead question="Is it legal?">It is approved nowhere and banned in sport. European regulators warn against it.</Lead>
+<Lead question="Is it legal?">It is approved nowhere and banned in sport. Regulators in all four countries have warned about it.</Lead>
 
-<Compare title="Melanotan II is not an approved medicine in Europe, the UK or the US." detail="Status checked on 22 October 2026.">
+<Compare title="None of the four countries has approved melanotan II as a medicine." detail="Status in the US, the UK, Canada and Australia, checked on 22 and 23 October 2026. For sport, see the fold below.">
 
-| | Netherlands and the EU | United Kingdom | United States |
+| | Approved as a medicine? | Legal to sell or supply? | Has the regulator warned about it? |
 |---|---|---|---|
-| Approved as a medicine? | <Verdict is="no" /> No EU or Dutch authorisation.<Cite id="ema-medicines-json,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Unauthorised; the MHRA treats injectable products as medicines.<Cite id="mhra-2024-foi-melanotan-ii" /> | <Verdict is="no" /> The FDA calls it "an unapproved new drug".<Cite id="fr-2016-melanotan-debarment" /> |
-| Legal to sell or supply? | <Verdict is="no" /> Dutch law forbids supplying a medicine without authorisation; Belgium calls its distribution illegal.<Cite id="nl-geneesmiddelenwet,fagg-melanotan-warning" /> | <Verdict is="no" /> Sale, supply and advertising of unauthorised medicines are not permitted.<Cite id="mhra-2024-foi-melanotan-ii,uk-hmr-2012-reg-46" /> | <Verdict is="no" /> A seller was convicted and permanently barred by the FDA.<Cite id="fr-2016-melanotan-debarment" /> |
-| Has a regulator flagged its risks? | <Verdict is="yes" /> The German (2010) and Belgian regulators warned against it; we found no Dutch warning.<Cite id="bfarm-2010-melanotan-warning,fagg-melanotan-warning" /> | <Verdict is="yes" /> "Stop using them immediately" (2024).<Cite id="mhra-2024-foi-melanotan-ii" /> | <Verdict is="yes" /> The FDA lists serious harms from case reports.<Cite id="fda-category-2-safety-risks" /> |
-| Allowed in sport? | <Verdict is="no" /> Not named, but by our reading banned at all times as a non-approved substance (S0).<Cite id="wada-2026-list-en,wada-2027-list-en" /> | <Verdict is="no" /> The same worldwide rule.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> The same worldwide rule.<Cite id="wada-2026-list-en" /> |
+| United States | <Verdict is="no" /> The FDA calls it "an unapproved new drug".<Cite id="fr-2016-melanotan-debarment" /> | <Verdict is="no" /> A seller was convicted and permanently barred by the FDA.<Cite id="fr-2016-melanotan-debarment" /> | <Verdict is="yes" /> The FDA lists serious harms from case reports.<Cite id="fda-category-2-safety-risks" /> |
+| United Kingdom | <Verdict is="no" /> Unauthorised; the MHRA treats injectable products as medicines.<Cite id="mhra-2024-foi-melanotan-ii,uk-mhra-substance-index-status-c-2026-10-23" /> | <Verdict is="no" /> Sale, supply and advertising of unauthorised medicines are not permitted.<Cite id="mhra-2024-foi-melanotan-ii,uk-hmr-2012-reg-46" /> | <Verdict is="yes" /> "Stop using them immediately" (2024).<Cite id="mhra-2024-foi-melanotan-ii" /> |
+| Canada | <Verdict is="no" /> Health Canada has not authorised it.<Cite id="ca-dpd-search-status-c-2026-10-23,ca-noc-search-status-c-2026-10-23" /> | <Verdict is="no" /> Health Canada says unauthorised drug products are illegal in Canada.<Cite id="ca-hc-2026-04-think-twice-peptides" /> | <Verdict is="yes" /> It lists melanotan I and II among seized unauthorised peptides (2026).<Cite id="ca-hc-2026-04-think-twice-peptides" /> |
+| Australia | <Verdict is="no" /> No product is approved; it has been prescription-only since 2018.<Cite id="au-tga-2026-08-melanotan-ii-safety-alert,au-poisons-standard-2018-06" /> | <Verdict is="no" /> Supplying it without a prescription is illegal.<Cite id="au-tga-2025-01-melanotan-blog" /> | <Verdict is="yes" /> Warnings in 2025 and 2026, and fines for a supplier.<Cite id="au-tga-2025-01-melanotan-blog,au-tga-2026-08-melanotan-ii-safety-alert,au-tga-2026-05-melanotan-ii-infringement-notices" /> |
 
 </Compare>
 
@@ -349,7 +351,7 @@ As of 22 October 2026, these are specifically unknown:
 
 <RegulatoryTable />
 
-All statuses were checked on 22 October 2026.
+The US status and the sport rules were checked on 22 October 2026; the UK, Canadian and Australian statuses on 23 October 2026.
 
 ### Sport (WADA)
 
@@ -357,29 +359,23 @@ Melanotan II is not named on the 2026 or 2027 Prohibited List. By our reading, i
 
 </InDetail>
 
-<InDetail title="The EU, the Netherlands, Germany and Belgium">
+<InDetail title="The UK, Canada and Australia">
 
-### European Union
+### United Kingdom
 
-No melanotan II product has been authorised in the EU, and EMA's medicines data, which also list refused and withdrawn applications, contain no record of it. Afamelanotide (Scenesse) and setmelanotide (Imcivree) are authorised, but they are different molecules.<Cite id="ema-medicines-search,ema-medicines-json,ema-epar-scenesse" />
+No melanotan II product is authorised, and supplying an unauthorised medicine is prohibited.<Cite id="uk-hmr-2012-reg-46,mhra-2024-foi-melanotan-ii,uk-mhra-substance-index-status-c-2026-10-23" /> In April 2024 the MHRA, the UK medicines regulator, wrote that products containing melanotan II are classified as medicines if they are injectable or pens; a nasal spray only if it is sold with medical claims. Its advice to users is to stop using them immediately, see a doctor about side effects and report them through the Yellow Card scheme. It had received 16 suspected side-effect reports from 2012 to 2022, and has removed melanotan products from sale for over ten years.<Cite id="mhra-2024-foi-melanotan-ii" /> In 2021 it had described injectable products as "not automatically medicines"; the 2024 wording is clearer.<Cite id="mhra-2021-foi-melanotan-ii" /> The Office for Product Safety and Standards, which watches over cosmetics on the market in Great Britain, reported that in 2025–26 it analysed melanotan products "to improve understanding of risks". It did not say what it found.<Cite id="uk-opss-2026-08-delivery-report" />
 
-### Netherlands
+### Canada
 
-The CBG medicines database lists no melanotan II product.<Cite id="cbg-geneesmiddeleninformatiebank" /> Under the Geneesmiddelenwet a product is a medicine if it is presented for treating or preventing disease, or used to change body functions through a pharmacological effect, and selling, supplying or importing a medicine without a marketing authorisation is prohibited, with narrow exceptions.<Cite id="nl-geneesmiddelenwet" /> We found no specific warning about melanotan from the IGJ or the CBG online. Dutch dermatologists have warned about it in the medical literature, and a Dutch hospital reported a patient with acute symptoms after an injection.<Cite id="habbema-2017-melanotan-review,eijmael-2022-barbie-drug" />
+Health Canada has not authorised any product with melanotan II.<Cite id="ca-dpd-search-status-c-2026-10-23,ca-noc-search-status-c-2026-10-23" /> It is not on Canada's Prescription Drug List, but Health Canada says that peptides are "generally regulated as prescription drugs".<Cite id="ca-pdl-human,ca-hc-2026-04-think-twice-peptides" /> In April 2026 it listed melanotan I and II among unauthorised injectable peptides it had seized, and melanotan products appear in four of its seizure notices from 2025.<Cite id="ca-hc-2026-04-think-twice-peptides,ca-hc-recalls-search-status-c-2026-10-23" /> A label such as "For Research Use Only" does not make these products legal, Health Canada says.<Cite id="ca-hc-2026-04-think-twice-peptides" /> Border officers can hold a parcel and pass it to Health Canada, which can refuse or seize it.<Cite id="ca-cbsa-d19-9-1,ca-hc-gui-0116-personal-import" />
 
-### Germany
+### Australia
 
-Finished medicines need a licence (AMG § 21), and melanotan II has none.<Cite id="de-amg-21,ema-medicines-json" /> On 28 October 2010 the BfArM urgently advised against obtaining melanotan products from unidentifiable internet sources and using them for cosmetic purposes: they are not authorised, their quality, safety and efficacy have not been adequately studied, and the known risks concern the heart and circulation, the digestive tract and unintended changes in skin colour.<Cite id="bfarm-2010-melanotan-warning" />
+Melanotan II has been a prescription-only medicine since 1 June 2018: it is in Schedule 4 of the Poisons Standard, the national list that sorts medicines into schedules.<Cite id="au-poisons-standard-2018-06,au-poisons-standard-2026-10" /> When it was scheduled, the national advisory committee found "no body of evidence demonstrating therapeutic benefits"; a request to ban it outright (Schedule 10) was not followed.<Cite id="au-tga-2018-02-melanotan-ii-interim-decision" /> Being in Schedule 4 does not make it approved. The TGA, Australia's medicines regulator, says: "There are currently no products containing Melanotan II" on its register or approved for supply.<Cite id="au-tga-2026-08-melanotan-ii-safety-alert,au-poisons-standard-2026-10" />
 
-### Belgium
+The TGA says it is illegal to supply melanotan tanning products without a doctor's prescription, in any form, and illegal to advertise melanotan to the public, including through social media influencers.<Cite id="au-tga-2025-01-melanotan-blog" /> In May 2026 a person in New South Wales paid 27 infringement notices, 101,412 Australian dollars in total, for supplying melanotan II.<Cite id="au-tga-2026-05-melanotan-ii-infringement-notices" /> In August 2026 the TGA's laboratory tested five seized nasal sprays with the same label: the amount of melanotan II varied more than twofold between them.<Cite id="au-tga-2026-08-melanotan-ii-safety-alert" />
 
-A medicine may be placed on the market only with a national or EU authorisation.<Cite id="be-medicines-law-1964" /> The federal medicines agency (FAGG) calls melanotan, also sold as MT2, an experimental product not authorised as a medicine, so its distribution is illegal. In one of its investigations, products sold as melanotan contained insulin, which can cause a coma.<Cite id="fagg-melanotan-warning" />
-
-</InDetail>
-
-<InDetail title="The United Kingdom">
-
-No melanotan II product is authorised, and supplying an unauthorised medicine is prohibited.<Cite id="uk-hmr-2012-reg-46,mhra-2024-foi-melanotan-ii" /> In April 2024 the MHRA wrote that products containing melanotan II are classified as medicines if they are injectable or pens; a nasal spray only if it is sold with medical claims. Its advice to users is to stop using them immediately, see a doctor about side effects and report them through the Yellow Card scheme. It had received 16 suspected side-effect reports from 2012 to 2022, and has removed melanotan products from sale for over ten years.<Cite id="mhra-2024-foi-melanotan-ii" /> In 2021 it had described injectable products as "not automatically medicines"; the 2024 wording is clearer.<Cite id="mhra-2021-foi-melanotan-ii" />
+Who may have a Schedule 4 medicine is decided by each state and territory. Melanotan II is not on the national list of medicines that "must not be possessed" without authority (Appendix D).<Cite id="au-poisons-standard-2026-10" /> In Victoria, having any Schedule 4 medicine without authority, such as a prescription, is an offence. In New South Wales the offence covers only the state's own list, and melanotan II is not on the list NSW Health publishes.<Cite id="au-vic-dpcs-act-1981,au-nsw-ptg-act-1966,au-nsw-health-s4d-2026" /> We did not check the other states and territories, so check your own state or territory's law. Importing it for yourself needs a written authority from an Australian doctor and a clearly labelled pack.<Cite id="au-tg-regulations-1990-sch-5-item-1,au-tga-personal-importation-scheme" /> Australia's import rules also restrict "aphrodisiacs". Whether that rule can apply to melanotan II has not been settled, and we found no official statement on it.<Cite id="au-customs-prohibited-imports-regs" />
 
 </InDetail>
 
@@ -391,10 +387,10 @@ It was once nominated for pharmacy compounding and placed in Category 2, substan
 
 **Not part of the July 2026 meeting.** Melanotan II was not on the agenda of the FDA's Pharmacy Compounding Advisory Committee (PCAC) on 23–24 July 2026; that meeting is explained on the [US law page](/en/legal/us/).<Cite id="fda-pcac-2026-07-meeting" />
 
-**What comes next.** The FDA has announced a PCAC meeting "before the end of February 2027" to discuss melanotan II together with LL-37, GHK-Cu, dihexa acetate and pegylated mechano growth factor. By 22 October 2026 no date, docket or briefing document had been published.<Cite id="fda-pcac-2027-early-announcement" /> Advisory committees give non-binding advice.<Cite id="fda-pcac-2027-early-announcement" /> Even if melanotan II were later added to the 503A list by rulemaking, that would only allow pharmacy compounding on prescription in the US; it would not be an approval, would say nothing about efficacy and would change nothing in the EU.<Cite id="fda-503a-bulks-page,usc-21-353a,fda-pcac-2026-presentations-day1" />
+**What comes next.** The FDA has announced a PCAC meeting "before the end of February 2027" to discuss melanotan II together with LL-37, GHK-Cu, dihexa acetate and pegylated mechano growth factor. By 22 October 2026 no date, docket or briefing document had been published.<Cite id="fda-pcac-2027-early-announcement" /> Advisory committees give non-binding advice.<Cite id="fda-pcac-2027-early-announcement" /> Even if melanotan II were later added to the 503A list by rulemaking, that would only allow pharmacy compounding on prescription in the US; it would not be an approval, would say nothing about efficacy and would change nothing outside the US.<Cite id="fda-503a-bulks-page,usc-21-353a,fda-pcac-2026-presentations-day1" />
 
-<Callout type="legal" title="US decisions do not apply here">
-Nothing the FDA or its advisers decide changes the legal position in the Netherlands or anywhere else in the EU.<Cite id="nl-geneesmiddelenwet" />
+<Callout type="legal" title="US decisions apply only in the US">
+Nothing the FDA or its advisers decide changes the law in the UK, Canada or Australia. Melanotan II is not an approved medicine in the US, the UK, Canada or Australia.<Cite id="fr-2016-melanotan-debarment,uk-mhra-substance-index-status-c-2026-10-23,ca-dpd-search-status-c-2026-10-23,au-tga-2026-08-melanotan-ii-safety-alert" /> Each country's own rules still apply there.<Cite id="uk-hmr-2012-reg-46,ca-food-and-drug-regulations,au-tga-how-we-regulate-peptides" />
 </Callout>
 
 </InDetail>
@@ -413,7 +409,7 @@ Nothing the FDA or its advisers decide changes the legal position in the Netherl
 | New moles, or moles that darken | <Verdict is="yes" /> In many case reports, once within a day of one injection.<Cite id="burian-2019-eruptive-naevi-review,schulze-2014-naevi-24-hours" /> |
 | Melanoma | <Verdict is="unknown" /> Reported during or soon after use; a link has not been shown.<Cite id="habbema-2017-melanotan-review,vadner-2026-five-melanomas" /> |
 | An erection that will not stop (priapism) | <Verdict is="yes" /> In case reports; one man needed surgery and was left with erection problems.<Cite id="mallory-2021-melanotan-priapism,dreyer-2019-melanotan-priapism" /> |
-| Racing heart, agitation, muscle breakdown | <Verdict is="yes" /> In case reports, including one from the Netherlands.<Cite id="nelson-2012-melanotan-rhabdomyolysis,eijmael-2022-barbie-drug" /> |
+| Racing heart, agitation, muscle breakdown | <Verdict is="yes" /> In case reports.<Cite id="nelson-2012-melanotan-rhabdomyolysis,eijmael-2022-barbie-drug" /> |
 | Brain swelling (PRES), kidney infarction | <Verdict is="yes" /> In single case reports.<Cite id="kaski-2013-melanotan-pres,peters-2020-melanotan-renal-infarction" /> |
 | Raised blood pressure | <Verdict is="unknown" /> Not measured for melanotan II; shown for close relatives.<Cite id="dailymed-vyleesi-label,greenfield-2009-mc4r-blood-pressure" /> |
 
@@ -445,11 +441,11 @@ The worry follows a chain that is partly established and partly a hypothesis:
 
 <Cite id="wolf-horrell-2016-mc1r,abdel-malek-1995-melanocyte-mitogenic,burian-2019-eruptive-naevi-review,mang-2012-dermoscopy-changes,habbema-2017-melanotan-review" />
 
-**What is seen.** <Claim level="human-limited">Many case reports describe existing moles darkening and new moles appearing during melanotan use</Claim>, in one report within 24 hours of a single injection.<Cite id="cousen-2009-eruptive-naevi,schulze-2014-naevi-24-hours,burian-2019-eruptive-naevi-review" /> A review of all published eruptive-mole cases found 179 people; immunosuppressant drugs, chemotherapy or melanotan were the suspected trigger in 41%, 16% had at least one abnormal (dysplastic) mole, and five had a melanoma.<Cite id="burian-2019-eruptive-naevi-review" /> In a German case followed with a dermatoscope, the changes made it difficult to tell a mole from a melanoma.<Cite id="mang-2012-dermoscopy-changes" /> Pigment can also appear on the gums and inner cheeks, and in one man the gum colour was still there three months after stopping; he also smoked, which can darken the gums too.<Cite id="bonchev-2026-oral-pigmentation" />
+**What is seen.** <Claim level="human-limited">Many case reports describe existing moles darkening and new moles appearing during melanotan use</Claim>, in one report within 24 hours of a single injection.<Cite id="cousen-2009-eruptive-naevi,schulze-2014-naevi-24-hours,burian-2019-eruptive-naevi-review" /> A review of all published eruptive-mole cases found 179 people; immunosuppressant drugs, chemotherapy or melanotan were the suspected trigger in 41%, 16% had at least one abnormal (dysplastic) mole, and five had a melanoma.<Cite id="burian-2019-eruptive-naevi-review" /> In one case followed with a dermatoscope, the changes made it difficult to tell a mole from a melanoma.<Cite id="mang-2012-dermoscopy-changes" /> A related approved medicine shows a similar effect: setmelanotide acts mainly on MC4 and much more weakly on MC1, yet its US label warns that it darkens existing moles and can cause new ones, and asks for a full skin check before and during treatment.<Cite id="fda-label-imcivree-2026-03" /> Pigment can also appear on the gums and inner cheeks, and in one man the gum colour was still there three months after stopping; he also smoked, which can darken the gums too.<Cite id="bonchev-2026-oral-pigmentation" />
 
-**Melanoma reports.** <Claim level="human-limited">Melanoma has been reported during or shortly after melanotan use in several case reports</Claim>: a Dutch review counted four by 2017.<Cite id="habbema-2017-melanotan-review" /> Reported cases include a melanoma in a woman (2011), a melanoma in situ in a young woman (2012), a 20-year-old woman in Denmark who also used sunbeds, a woman whose mouth melanoma followed a melanotan II nasal spray, and in 2026 a 49-year-old man with five early melanomas (melanoma in situ), whose moles had "turned black" within about a week of starting.<Cite id="paurobally-2011-melanotan-melanoma,ong-2012-melanoma-in-situ,hjuler-2014-melanotan-melanoma,yassin-alsabbagh-2025-oral-melanoma,vadner-2026-five-melanomas" /> A man with a past melanoma had new atypical moles after using a synthetic alpha-MSH peptide, and his moles lightened after he stopped; the authors concluded that such peptides "can drive proliferation" of abnormal pigment cells in predisposed people.<Cite id="cardones-2009-eruptive-nevi" />
+**Melanoma reports.** <Claim level="human-limited">Melanoma has been reported during or shortly after melanotan use in several case reports</Claim>: a 2017 review counted four.<Cite id="habbema-2017-melanotan-review" /> Reported cases include a melanoma in a woman (2011), a melanoma in situ in a young woman (2012), a 20-year-old woman in Denmark who also used sunbeds, a woman whose mouth melanoma followed a melanotan II nasal spray, and in 2026 a 49-year-old man with five early melanomas (melanoma in situ), whose moles had "turned black" within about a week of starting.<Cite id="paurobally-2011-melanotan-melanoma,ong-2012-melanoma-in-situ,hjuler-2014-melanotan-melanoma,yassin-alsabbagh-2025-oral-melanoma,vadner-2026-five-melanomas" /> A man with a past melanoma had new atypical moles after using a synthetic alpha-MSH peptide, and his moles lightened after he stopped; the authors concluded that such peptides "can drive proliferation" of abnormal pigment cells in predisposed people.<Cite id="cardones-2009-eruptive-nevi" />
 
-**Why that is not proof.** Melanoma is common, and the people in these reports often had other strong risks. In 27 observational studies, people who had ever used sunbeds had about a fifth more melanoma, and nearly twice as much when they started before age 35.<Cite id="boniol-2012-sunbed-melanoma" /> The 2026 case also had many moles, fair skin, a grandmother with melanoma and unregulated testosterone use. His doctors add that the melanomas may already have been there, and only became visible when the moles darkened.<Cite id="vadner-2026-five-melanomas" /> The Dutch reviewers conclude that conclusive evidence linking melanotan to melanoma is lacking.<Cite id="habbema-2017-melanotan-review" />
+**Why that is not proof.** Melanoma is common, and the people in these reports often had other strong risks. In 27 observational studies, people who had ever used sunbeds had about a fifth more melanoma, and nearly twice as much when they started before age 35.<Cite id="boniol-2012-sunbed-melanoma" /> The 2026 case also had many moles, fair skin, a grandmother with melanoma and unregulated testosterone use. His doctors add that the melanomas may already have been there, and only became visible when the moles darkened.<Cite id="vadner-2026-five-melanomas" /> The authors of the 2017 review conclude that conclusive evidence linking melanotan to melanoma is lacking.<Cite id="habbema-2017-melanotan-review" />
 
 **The argument the other way.** MC1R signalling also helps pigment cells repair UV damage to their DNA: <Claim level="in-vitro">in cultured human melanocytes, alpha-MSH reduced UV-induced DNA damage and cell death</Claim>, and people whose MC1R works poorly are more prone to melanoma.<Cite id="kadekaro-2005-msh-dna-repair,wolf-horrell-2016-mc1r" /> <Claim level="animal">In 12 mice with an implanted melanoma, melanotan II put on the skin slowed the tumour</Claim>; in a dish, blocking MC1R removed its effect on melanoma cells.<Cite id="wu-2020-topical-mtii-melanoma" /> So stimulating MC1R could in theory protect as well as harm. Which effect wins for melanotan II in real use, often with sunbeds, has never been studied.
 
@@ -473,17 +469,19 @@ In this kind of priapism ("low-flow" or ischaemic), blood is trapped in the peni
 
 <InDetail title="Heart, blood pressure, brain and kidneys">
 
-<Claim level="human-limited">A Chicago man who injected an unusually large amount of melanotan II developed a racing heart, sweating, tremor and anxiety within two hours; his muscle broke down (rhabdomyolysis), his kidney function fell, and he spent three days in intensive care</Claim>. Testing confirmed the product was melanotan II; his urine also tested positive for opiates.<Cite id="nelson-2012-melanotan-rhabdomyolysis" /> A Dutch hospital treated a 27-year-old man for similar "sympathomimetic" symptoms two hours after an injection.<Cite id="eijmael-2022-barbie-drug" />
+<Claim level="human-limited">A Chicago man who injected an unusually large amount of melanotan II developed a racing heart, sweating, tremor and anxiety within two hours; his muscle broke down (rhabdomyolysis), his kidney function fell, and he spent three days in intensive care</Claim>. Testing confirmed the product was melanotan II; his urine also tested positive for opiates.<Cite id="nelson-2012-melanotan-rhabdomyolysis" /> Another hospital treated a 27-year-old man for similar "sympathomimetic" symptoms two hours after an injection.<Cite id="eijmael-2022-barbie-drug" />
 
 PRES, a swelling at the back of the brain, has been reported after melanotan injections.<Cite id="kaski-2013-melanotan-pres" /> PRES is linked to swings in blood pressure, among other causes. Mild forms may cause only a headache or a fit; most cases get better, but severe forms can cause bleeding in the brain.<Cite id="fugate-2015-pres" /> <Claim level="hypothesis">A rise in blood pressure through MC4 receptors would be a plausible route</Claim>, because related molecules raise blood pressure in people; this has not been tested.<Cite id="greenfield-2009-mc4r-blood-pressure,dailymed-vyleesi-label" />
 
-A man in Sweden had a kidney infarction, part of a kidney dying from a blocked blood supply, which his doctors judged most likely caused by melanotan II.<Cite id="peters-2020-melanotan-renal-infarction" /> The German regulator lists risks to the heart and circulation and to the digestive tract.<Cite id="bfarm-2010-melanotan-warning" />
+A man in Sweden had a kidney infarction, part of a kidney dying from a blocked blood supply, which his doctors judged most likely caused by melanotan II.<Cite id="peters-2020-melanotan-renal-infarction" /> Australia's medicines regulator lists kidney problems and swelling of the brain among the harms reported with melanotan II.<Cite id="au-tga-2025-01-melanotan-blog" />
 
 </InDetail>
 
 <InDetail title="What is in the products">
 
-Vials bought from three online shops did contain melanotan II, but only 43–88% of the amount on the label, and vials from two shops held 4.1–5.9% unknown impurities.<Cite id="breindahl-2015-melanotan-products" /> A Belgian forensic laboratory found vials labelled melanotan II that were 30% pure.<Cite id="deville-2024-barbie-drug-identification" /> The Belgian medicines agency found insulin in products sold as melanotan.<Cite id="fagg-melanotan-warning" /> Samples seized by Italian police included both melanotan II and bremelanotide.<Cite id="mestria-2021-seized-melanotan-bremelanotide" />
+Vials bought from three online shops did contain melanotan II, but only 43–88% of the amount on the label, and vials from two shops held 4.1–5.9% unknown impurities.<Cite id="breindahl-2015-melanotan-products" /> A forensic laboratory found vials labelled melanotan II that were 30% pure.<Cite id="deville-2024-barbie-drug-identification" /> Australia's medicines regulator tested five seized nasal sprays with the same label: the amount of melanotan II in them varied more than twofold.<Cite id="au-tga-2026-08-melanotan-ii-safety-alert" />
+{/* residue-ok: European regulator evidence (what a tested product contained) */}
+A European medicines regulator found insulin in products sold as melanotan; insulin can cause a coma.<Cite id="fagg-melanotan-warning" /> Samples seized by Italian police included both melanotan II and bremelanotide.<Cite id="mestria-2021-seized-melanotan-bremelanotide" />
 
 Peptides can clump together, and making them leaves near-copies of the chain as impurities. For these reasons the FDA says compounded melanotan II "may pose risk for immunogenicity", an unwanted immune reaction, for some routes of use.<Cite id="fda-category-2-safety-risks" /> Injecting anything also brings the risk of infection; see [product risk](/en/safety/product-risk/) and [sterile technique](/en/safety/sterile-technique/).
 
@@ -497,11 +495,11 @@ Peptides can clump together, and making them leaves near-copies of the chain as 
 
 This section gives no amounts, schedules or sources. It is for people who already use melanotan II or have a product.
 
-<ProductCheck extra="Even a full label can be wrong. Tested vials held less than the label said. One sample was only 30% pure. Some products with this name held insulin." extraSources="breindahl-2015-melanotan-products,deville-2024-barbie-drug-identification,fagg-melanotan-warning" />
+<ProductCheck extra="Even a full label can be wrong. Tested vials held less than the label said, and sprays with the same label held very different amounts. One sample was only 30% pure. Some products with this name held insulin." extraSources="breindahl-2015-melanotan-products,au-tga-2026-08-melanotan-ii-safety-alert,deville-2024-barbie-drug-identification,fagg-melanotan-warning" />
 
 ### A doctor can help you keep watch
 
-A GP or a dermatologist can check your moles and compare them over time. Tell them you use melanotan. The changes it causes can look like melanoma. A doctor who knows about it can judge them better.<Cite id="mang-2012-dermoscopy-changes,nhs-moles" /> A doctor can also check your blood pressure. See [talking to your doctor](/en/talking-to-your-doctor/).
+Your doctor or a dermatologist can check your moles and compare them over time. Tell them you use melanotan. The changes it causes can look like melanoma. A doctor who knows about it can judge them better.<Cite id="mang-2012-dermoscopy-changes,nhs-moles" /> A doctor can also check your blood pressure. See [talking to your doctor](/en/talking-to-your-doctor/).
 
 <Callout type="stop" title="Stop and get help if" id="stop-now">
 - **An erection lasts more than 3 hours, or is painful and will not go down.** This is priapism. Call your local emergency number or go to an emergency department now; delay can damage the penis for good.
@@ -518,10 +516,10 @@ A GP or a dermatologist can check your moles and compare them over time. Tell th
 
 <Checklist>
 
-- **A full skin check before you start**, by a GP or dermatologist, with photos of your moles. New and darker moles can appear within days. Photos give you something to compare with.<Cite id="schulze-2014-naevi-24-hours,mang-2012-dermoscopy-changes" />
+- **A full skin check before you start**, by your doctor or a dermatologist, with photos of your moles. New and darker moles can appear within days. Photos give you something to compare with.<Cite id="schulze-2014-naevi-24-hours,mang-2012-dermoscopy-changes" />
 - **Regular checks while you use it and afterwards.** If you have many moles, ask for dermoscopy (a lit magnifier). The changes can make a mole hard to tell from melanoma.<Cite id="mang-2012-dermoscopy-changes" />
 - **Look in your mouth too.** Brown patches on the gums and cheeks have been reported, and one melanoma inside the mouth.<Cite id="bonchev-2026-oral-pigmentation,yassin-alsabbagh-2025-oral-melanoma" />
-- **See a GP about any mole that changes size, shape or colour, itches, bleeds or crusts.**<Cite id="nhs-moles" />
+- **See a doctor about any mole that changes size, shape or colour, itches, bleeds or crusts.**<Cite id="nhs-moles" />
 - **Sunbeds add their own risk.** They raise melanoma risk on their own, and a melanotan tan has not been shown to protect you.<Cite id="boniol-2012-sunbed-melanoma,coelho-2015-uva-tan" />
 
 </Checklist>
@@ -532,7 +530,8 @@ A GP or a dermatologist can check your moles and compare them over time. Tell th
 
 - **Blood pressure, before and while using it.** Related molecules that switch on MC4 receptors raised blood pressure in people. The US label for bremelanotide says not to use it with uncontrolled high blood pressure or known heart or blood vessel disease.<Cite id="greenfield-2009-mc4r-blood-pressure,dailymed-vyleesi-label" />
 - **Kidney tests and a muscle enzyme test (CK)** if you had muscle pain, dark urine or a racing heart after an injection. Muscle breakdown releases a protein that can harm the kidneys.<Cite id="nelson-2012-melanotan-rhabdomyolysis,medlineplus-rhabdomyolysis" />
-- **Report side effects.** In the Netherlands, report to Lareb; in the UK, through the Yellow Card scheme.<Cite id="lareb-home,mhra-2024-foi-melanotan-ii" />
+- **Report side effects**, even if you are not sure the product caused them. In the US, report to [FDA MedWatch](https://www.fda.gov/safety/medwatch-fda-safety-information-and-adverse-event-reporting-program); in the UK, to the [Yellow Card scheme](https://yellowcard.mhra.gov.uk/); in Canada, to Health Canada's [Canada Vigilance Program](https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting.html); in Australia, to the [TGA](https://www.tga.gov.au/safety/report-problem/report-adverse-event-or-safety-problem). For Ireland and New Zealand, see [our notes page](/en/legal/ireland-and-new-zealand/).<Cite id="fda-medwatch,mhra-yellow-card,mhra-2024-foi-melanotan-ii,ca-hc-medeffect-reporting,ca-hc-canada-vigilance,au-tga-report-adverse-event" />
+- **If you stop**, you can take unused products to a pharmacy for disposal. The TGA and Health Canada both advise this.<Cite id="au-tga-2026-08-melanotan-ii-safety-alert,ca-hc-recalls-database" />
 
 </InDetail>
 
@@ -557,7 +556,9 @@ A GP or a dermatologist can check your moles and compare them over time. Tell th
 
 <InDetail title="Legal routes, if you want what it promises">
 
-There is no legal route to melanotan II itself. For the conditions its relatives treat, there are. In the EU, afamelanotide for EPP is prescribed only by specialist doctors in recognised centres.<Cite id="ema-epar-scenesse" /> Bremelanotide is a US medicine for low sexual desire in some premenopausal women; it is not authorised in the EU.<Cite id="dailymed-vyleesi-label,ema-medicines-json" /> For erection problems or low desire, a doctor can look for causes and offer authorised treatment. See [legal routes](/en/legal-routes/).
+None of the four countries has approved melanotan II, so no doctor can prescribe an approved product.<Cite id="fr-2016-melanotan-debarment,uk-mhra-substance-index-status-c-2026-10-23,ca-dpd-search-status-c-2026-10-23,au-tga-2026-08-melanotan-ii-safety-alert" /> For the conditions its relatives treat, there are approved medicines. Afamelanotide (Scenesse) is approved for EPP in the US, the UK, Canada and Australia.<Cite id="fda-drugsatfda-scenesse,uk-mhra-substance-index-status-c-2026-10-23,ca-hc-pdl-2026-08-27-additions,au-artg-search-status-c-2026-10-23" /> Bremelanotide (Vyleesi) is a US medicine for low sexual desire in some premenopausal women; it is not approved in the UK, Canada or Australia.<Cite id="dailymed-vyleesi-label,mhra-products-search-bremelanotide,ca-dpd-search-status-c-2026-10-23,au-artg-search-status-c-2026-10-23" /> For erection problems or low desire, a doctor can look for causes and offer approved treatment on [prescription](/en/legal-routes/#prescription).
+
+Our page on [treatment routes](/en/legal-routes/) explains the other legal routes and their limits: [off-label use](/en/legal-routes/#off-label), [US pharmacy compounding](/en/legal-routes/#us-compounding), [UK "specials"](/en/legal-routes/#uk-specials), [Canada's Special Access Program](/en/legal-routes/#canada-special-access), [Australia's Special Access Scheme](/en/legal-routes/#australia-sas), [importing for yourself](/en/legal-routes/#personal-import) and [clinical trials](/en/legal-routes/#trials). Each has strict conditions, and none turns an unapproved product into an approved one.
 
 </InDetail>
 

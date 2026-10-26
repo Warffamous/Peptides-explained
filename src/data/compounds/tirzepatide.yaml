@@ -44,8 +44,27 @@ regulatory:
   - { jurisdiction: NL, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, fk-tirzepatide, fk-regeling-zorgverzekering-bijlage-2-tirzepatide, zin-tirzepatide-obesity-assessment] }
   - { jurisdiction: DE, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, de-sgb5-34] }
   - { jurisdiction: BE, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, be-medicines-law-1964] }
-  - { jurisdiction: UK, status: authorised, as_of: 2026-10-20, sources: [mhra-glp1-what-you-need-to-know, mhra-2026-falsified-mounjaro] }
+  # UK (since added 24 October 2026 from research/refocus/status/tirzepatide.yaml, fact-checked): the first Great
+  # Britain licences, Mounjaro single-dose pens PLGB 14895/0317, 0318 and 0320 to 0323, dated 26 September 2022 (the
+  # EU authorisation of 15 September 2022 also applied in Northern Ireland until the end of 2024).
+  - { jurisdiction: UK, status: authorised, since: 2022-09-26, as_of: 2026-10-23, sources: [mhra-glp1-what-you-need-to-know, mhra-2026-falsified-mounjaro, uk-mhra-ma-granted-2022, uk-mhra-substance-index-status-a-2026-10-24] }
   - { jurisdiction: US, status: authorised, since: 2022-05-13, as_of: 2026-10-20, sources: [fda-drugsatfda-mounjaro, fda-drugsatfda-zepbound, fda-label-mounjaro, fda-label-zepbound] }
+  # Canada: Mounjaro, Notice of Compliance 24 November 2022 (the monograph's 'Date of Initial Authorization' reads
+  # 23 November 2022); Zepbound followed on 13 May 2025.
+  - jurisdiction: CA
+    status: authorised
+    since: 2022-11-24
+    as_of: 2026-10-23
+    sources: [ca-sbd-mounjaro, ca-dpd-extract-search-status-a-2026-10-24, ca-dhpp-review-search-status-a-2026-10-24]
+    schedule: { code: "Prescription Drug List", note: "Prescription only; listed since 8 March 2023.", sources: [ca-pdl-human] }
+  # Australia: Mounjaro, entered on the ARTG on 23 December 2022 (TGA decision 22 December 2022).
+  - jurisdiction: AU
+    status: authorised
+    since: 2022-12-23
+    as_of: 2026-10-23
+    sources: [au-tga-pmr-search-status-a-2026-10-24, au-artg-search-status-a-2026-10-24, au-artg-mounjaro-439430]
+    # Schedule 4 'TIRZEPATIDE'; Appendix L clause 2 (item 41) adds dispensing-label warning statement 67.
+    schedule: { code: "S4", note: "Prescription only medicine. The pharmacy label must warn: 'Do not use if pregnant or likely to become pregnant.' (Appendix L)", sources: [au-poisons-standard-2026-10] }
   - { jurisdiction: WADA, status: not-listed, as_of: 2026-10-20, sources: [wada-2026-list-en, wada-2027-list-en, wada-2026-monitoring-program, wada-2027-monitoring-program] }
 # Heise 2023 (appetite, same 117 participants as Heise 2022) is cited in the prose but not listed
 # as a separate structured study, so the same people are not counted twice.
@@ -103,6 +122,23 @@ authorised_products:
     route: subcutaneous
     label_url: https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/217806Orig1s041correctedlbl.pdf
     label_source: fda-label-zepbound
+  # ---- UK, CA and AU products: merged 24 October 2026 from research/refocus/status/tirzepatide.yaml (fact-checked).
+  # Every label_url below was re-opened by the merge on 24 October 2026. The US products above cover every US
+  # presentation (single-dose pens and vials, multiple-dose vials from 7 January 2026, KwikPens from 20 January 2026).
+  # United Kingdom: the first GB licence (single-dose pens, 26 September 2022, MHRA list of granted licences); vials
+  # and KwikPens followed. There is no 'Zepbound' in the UK: Mounjaro carries both indications. label_url: the MHRA
+  # Products substance page, which lists every UK tirzepatide product with its SmPC and leaflet files.
+  - { id: mounjaro-uk, name: Mounjaro, holder: Eli Lilly Nederland B.V., jurisdiction: UK, authorised: 2022-09-26, route: subcutaneous, label_url: "https://products.mhra.gov.uk/substance/?substance=TIRZEPATIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  # Canada: one product monograph covers the Mounjaro pens, vials and KwikPen. Merge check (24 October 2026): the
+  # Drug and Health Product Portal (dhpp.hpfb-dgpsa.ca/dhpp/resource/<DPD code>) links the current monographs, newer
+  # than those the research found while the DPD was down: Mounjaro 00085122 (23 June 2026, with the paediatric type 2
+  # diabetes indication) instead of 00084159 (2 April 2026), and Zepbound 00084997 (11 June 2026, which adds obstructive
+  # sleep apnoea in adults with obesity) instead of 00080496 (May 2025).
+  - { id: mounjaro-ca, name: Mounjaro, holder: Eli Lilly Canada Inc., jurisdiction: CA, authorised: 2022-11-24, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00085122.PDF", label_source: ca-pm-mounjaro-2026-06-23 }
+  - { id: zepbound-ca, name: Zepbound, holder: Eli Lilly Canada Inc., jurisdiction: CA, authorised: 2025-05-13, route: subcutaneous, label_url: "https://pdf.hres.ca/dpd_pm/00084997.PDF", label_source: ca-pm-zepbound-2026-06-11 }
+  # Australia: 'authorised' = the first ARTG entry (single-dose pens, 23 December 2022); label_url = the KwikPen ARTG
+  # entry (19 June 2024), the one that links the product information. No Zepbound brand in Australia.
+  - { id: mounjaro-au, name: Mounjaro, holder: Eli Lilly Australia Pty Ltd, jurisdiction: AU, authorised: 2022-12-23, route: subcutaneous, label_url: "https://www.tga.gov.au/resources/artg/439430", label_source: au-artg-mounjaro-439430 }
 related: [semaglutide]
 last_reviewed: 2026-10-20
 reviewed_by: pending-medical-review

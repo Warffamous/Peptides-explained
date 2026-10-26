@@ -430,6 +430,34 @@ huisartsenpost-oss:
   people: false
   focal: 50% 62%
   sources: [rijksoverheid-urgent-medical-help] # caption: a huisartsenpost is the out-of-hours GP service
+# English refocus (group safety-en-a, 24 October 2026): country-neutral heroes for safety/warning-signs and
+# safety/if-something-goes-wrong, replacing the Dutch ambulance and huisartsenpost photos on English (they stay on nl).
+vital-signs-monitor:
+  file: vital-signs-monitor.jpg
+  kind: photo
+  origin: public-domain
+  license: public-domain
+  author: Petty Officer 1st Class James Stenberg
+  credit: U.S. Navy
+  title: Vital signs monitor display
+  source_url: https://commons.wikimedia.org/wiki/File:Vital_signs_monitor_display.jpg
+  retrieved: 2026-10-24
+  people: false
+  focal: 50% 45%
+  sources: []
+hospital-emergency-entrance:
+  file: hospital-emergency-entrance.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  author: Kenneth C. Zirkel
+  title: Emergency entrance, Newport Hospital Rhode Island
+  source_url: https://commons.wikimedia.org/wiki/File:Emergency_entrance,_Newport_Hospital_Rhode_Island.jpg
+  retrieved: 2026-10-24
+  people: false
+  focal: 50% 45%
+  sources: []
 ridderzaal-binnenhof:
   file: ridderzaal-binnenhof.jpg
   kind: photo
@@ -805,6 +833,22 @@ tweede-kamer-plenary-hall:
   people: false
   focal: 50% 45%
   sources: []
+# English hero of the-case-for-reform (refocus, 24 October 2026; the Dutch lower house photo above stays on nl).
+# A plain gavel stands for rule-making without favouring one of the four countries. Commons 3840 px thumbnail,
+# resized to 2400 px wide (JPEG quality 85); nothing else changed. No people, text or product.
+wooden-gavel:
+  file: wooden-gavel.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  author: Santeri Viinamäki
+  title: Wooden gavel 20170417
+  source_url: https://commons.wikimedia.org/wiki/File:Wooden_gavel_20170417.jpg
+  retrieved: 2026-10-24
+  people: false
+  focal: 40% 55%
+  sources: []
 wooden-ladder:
   file: wooden-ladder.jpg
   kind: photo
@@ -1086,3 +1130,60 @@ adipose-tissue-low-power:
   people: false
   focal: 50% 40%
   sources: [heffernan-2001-aod9604-mice, fda-pcac-2024-aod9604-briefing]
+# Legal country pages (group legal-en-a, 24 October 2026): parliament buildings where each country's medicines
+# laws are made. Licence, author and size read from the Commons API (npm run media:commons -- --dry-run) and the
+# file pages; downscaled to 2400 px. No people can be recognised in any of them (a few tiny figures on the steps of
+# the Centre Block). Canberra: the dusk view across the forecourt pool was chosen over the daytime views, which
+# show the forecourt mosaic (an artwork whose freedom-of-panorama status was not established).
+parliament-hill-centre-block:
+  file: parliament-hill-centre-block.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  author: Saffron Blaze
+  title: Centre Block - Parliament Hill
+  source_url: https://commons.wikimedia.org/wiki/File:Centre_Block_-_Parliament_Hill.jpg
+  retrieved: 2026-10-24
+  people: false
+  focal: 50% 50%
+  sources: []
+parliament-house-canberra-dusk:
+  file: parliament-house-canberra-dusk.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  author: Thennicke
+  title: Parliament House at dusk, Canberra ACT
+  source_url: https://commons.wikimedia.org/wiki/File:Parliament_House_at_dusk,_Canberra_ACT.jpg
+  retrieved: 2026-10-24
+  people: false
+  focal: 50% 45%
+  sources: []
+beehive-parliament-wellington:
+  file: beehive-parliament-wellington.jpg
+  kind: photo
+  origin: cc0
+  license: CC0-1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+  author: Daderot
+  title: Beehive and Parliament House - Wellington - New Zealand - DSC00165
+  source_url: https://commons.wikimedia.org/wiki/File:Beehive_and_Parliament_House_-_Wellington_-_New_Zealand_-_DSC00165.jpg
+  retrieved: 2026-10-24
+  people: false
+  focal: 50% 45%
+  sources: []
+leinster-house-dublin:
+  file: leinster-house-dublin.jpg
+  kind: photo
+  origin: cc-by-sa
+  license: CC-BY-SA-3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  author: Jean Housen
+  title: 20130810 dublin214
+  source_url: https://commons.wikimedia.org/wiki/File:20130810_dublin214.JPG
+  retrieved: 2026-10-24
+  people: false
+  focal: 55% 45%
+  sources: []
