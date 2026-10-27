@@ -4,14 +4,15 @@ import DocLayout from './DocLayout.astro';
 import { CONTENT_AS_OF } from '../lib/config';
 import { alternatesFor } from '../lib/content';
 import { webPage } from '../lib/jsonld';
-interface Props { locale: string; routeKey: string; title: string; description: string; summary: string[]; medical?: boolean; reviewedBy?: string; noindex?: boolean }
-const { locale, routeKey, title, description, summary, medical = false, reviewedBy = 'editorial-board', noindex = false } = Astro.props;
+/** intro: one plain line under the title (pages.json; checked by the validator as plain text). */
+interface Props { locale: string; routeKey: string; title: string; description: string; intro: string; medical?: boolean; reviewedBy?: string; noindex?: boolean }
+const { locale, routeKey, title, description, intro, medical = false, reviewedBy = 'editorial-board', noindex = false } = Astro.props;
 Astro.locals.locale = locale;
 const trail = [{ key: routeKey, label: title }];
 const alternates = await alternatesFor(routeKey);
 const jsonld = webPage({ locale, key: routeKey, title, description, lastReviewed: CONTENT_AS_OF, reviewedBy, medical, trail });
 ---
-<DocLayout locale={locale} routeKey={routeKey} alternates={alternates} title={title} description={description} summary={summary}
+<DocLayout locale={locale} routeKey={routeKey} alternates={alternates} title={title} description={description} lede={intro}
   template="index" section="reference" lastReviewed={CONTENT_AS_OF} reviewedBy={reviewedBy} editedBy="editorial-board" trail={trail} jsonld={jsonld} noindex={noindex}>
   <slot />
 </DocLayout>

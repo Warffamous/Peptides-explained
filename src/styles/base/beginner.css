@@ -1,6 +1,6 @@
 /*
  * Beginner layer — the bare structure of the "At a glance" strip, the
- * "In short" summary box and the technical-details block that follows them on compound pages.
+ * TL;DR box and the technical-details block that follows them on compound pages.
  * design/beginner.css gives them their look and imports this file first.
  * Logical properties only; nothing here depends on JavaScript or motion.
  */
@@ -19,18 +19,13 @@
 .at-a-glance__more { justify-self: start; }
 .at-a-glance__foot { margin: 0; }
 
-/* ------------------------------------------------------------------ in short */
-.summary-box__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-4); }
-.summary-box__title { margin: 0; }
-.summary-box__time { display: flex; align-items: center; gap: 0.5em; margin: 0; }
-.summary-box__list { display: grid; margin: 0; padding: 0; list-style: none; counter-reset: summary; }
-.summary-box__item { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; counter-increment: summary; }
-.summary-box__marker::before { content: counter(summary); }
-/* A one-point summary (the built-in pages) needs no numbering. */
-.summary-box__item:only-child { grid-template-columns: minmax(0, 1fr); }
-.summary-box__item:only-child .summary-box__marker { display: none; }
-:lang(ar) .summary-box__marker::before { content: counter(summary, arabic-indic); }
-.summary-box__text { min-inline-size: 0; }
+/* ------------------------------------------------------------------ TL;DR */
+.tldr { min-inline-size: 0; }
+.tldr__head { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-4); }
+.tldr__title, .tldr__note { margin: 0; }
+.tldr__list { display: grid; margin: 0; }
+.tldr__item { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+.tldr__q, .tldr__a { margin: 0; min-inline-size: 0; }
 
 /* ------------------------------------------------------------------ technical details */
 .compound-tech { min-inline-size: 0; }
@@ -39,6 +34,6 @@
 
 /* Forced colours drop backgrounds; keep every tile and box visibly bounded. */
 @media (forced-colors: active) {
-  .at-a-glance__tile, .summary-box, .compound-tech { border: 1px solid CanvasText; }
+  .at-a-glance__tile, .tldr, .compound-tech { border: 1px solid CanvasText; }
   .at-a-glance__icon .pictogram { fill: CanvasText; }
 }

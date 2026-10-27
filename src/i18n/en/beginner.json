@@ -1,5 +1,5 @@
 {
-  "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the fact sheet, the summary box's reading time and the technical-details block. Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. The approved answer is built from the whole sentences in glance.approved (src/lib/approval.ts): {list} is the locale's own jurisdictions (vocab.jurisdictionInSentence, joined with and / or), never a jurisdiction the locale does not cover. Keep every answer to one plain line (B1, everyday words, no jargon); short answers at most 4 words.",
+  "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the fact sheet and the technical-details block (the TL;DR and the chapter list: common.tldr, common.chapters). Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. The approved answer is built from the whole sentences in glance.approved (src/lib/approval.ts): {list} is the locale's own jurisdictions (vocab.jurisdictionInSentence, joined with and / or), never a jurisdiction the locale does not cover. Keep every answer to one plain line (B1, everyday words, no jargon); short answers at most 4 words.",
   "glance": {
     "title": "At a glance",
     "checked": "Status checked on {date}. The details and sources are further down this page.",
@@ -52,13 +52,6 @@
       "more": "More about the risks",
       "fallback": "Warning signs: when to stop and get help"
     }
-  },
-  "summary": {
-    "readingTime": {
-      "one": "Reading the whole page takes about {minutes} minute.",
-      "other": "Reading the whole page takes about {minutes} minutes."
-    },
-    "readingTimeSplit": "About {short} minutes for the short version; {full} with every detail open."
   },
   "technical": {
     "title": "Technical details",

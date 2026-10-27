@@ -132,7 +132,7 @@ grade matrix, the sitemaps and the compound routes are generated from the data f
 
 1. **Choose the slug and tier.** The slug is English kebab-case (`bpc-157`). Tier 1 is a full page
    (`status: complete`), Tier 2 a short page (`status: stub`), which only needs the sections
-   `what-it-is`, `evidence`, `regulatory` and `risks`, a full data file and a summary.
+   `what-it-is`, `evidence`, `regulatory` and `risks`, a full data file and a TL;DR (`tldr`).
 2. **Register the sources** in `src/data/sources/<group>.yaml` (one file per topic; ids are global,
    so search the folder for the DOI or URL first and reuse an existing id). Copy the metadata from
    the PubMed record or the fetched page, never from memory, and record how you checked it
@@ -152,7 +152,7 @@ grade matrix, the sitemaps and the compound routes are generated from the data f
    the regulator's own label (FDA, MHRA Products, Health Canada monograph, ARTG entry). The "At a
    glance" answers are derived from this file, so keep it exact.
 4. **Write the prose** `src/content/compounds/en/<slug>.mdx` (CONTENT-GUIDE §5.2–5.4, §9.1): the
-   frontmatter (`summary`, `lede`, `glance`, `grade_rationale`, `mechanism`, one `studies` entry per
+   frontmatter (`tldr`, `lede`, `glance`, `grade_rationale`, `mechanism`, one `studies` entry per
    study id, `regulatory_notes` for the locale's own rows, `indications` for every authorised
    product) and the `<Section id="…">` blocks in the fixed order. The regulatory section answers for
    each of the locale's countries and links the treatment routes by their fixed anchors on

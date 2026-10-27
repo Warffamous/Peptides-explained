@@ -1,0 +1,59 @@
+---
+/**
+ * The chapter list: the page's sections, in order, with how long the page takes to read.
+ *
+ *   variant="rail"    beside the article (DocLayout's .doc-shell). From 75rem a column at the start
+ *                     of the page that stays in view while the reader scrolls (sticky, no script).
+ *                     Narrower: the same list opens as a sheet (popover) from a bar fixed to the top
+ *                     of the screen, which the script shows once the inline list has scrolled away.
+ *   variant="inline"  inside the article, after the page top: the list on phones and tablets, and
+ *                     the whole feature without JavaScript there. Hidden from 75rem (the rail shows it).
+ *
+ * Only one of the two is displayed at any width, so assistive technology meets one list. The
+ * script (src/scripts/chapters.ts) marks the chapter being read (aria-current="location"), puts its
+ * name in the bar and closes the sheet when a chapter is chosen. Without it every link still works.
+ */
+import Icon from '../ui/Icon.astro';
+import { t } from '../../lib/i18n';
+import { readingTimeParts } from '../../lib/reading';
+
+interface Props { locale: string; items: { id: string; text: string }[]; variant: 'rail' | 'inline'; readingMinutes?: number; readingMinutesShort?: number }
+const { locale, items, variant, readingMinutes, readingMinutesShort } = Astro.props;
+const time = readingTimeParts(locale, readingMinutes, readingMinutesShort);
+const id = variant === 'rail' ? 'chapters' : 'chapters-inline';
+---
+{variant === 'rail' ? (
+  <div class="chapters-rail" data-pagefind-ignore="all">
+    <div class="chapters-bar" data-chapters-bar hidden>
+      <button type="button" class="chapters-bar__button" popovertarget={id}>
+        <Icon name="list" class="chapters-bar__icon" />
+        <span class="chapters-bar__label">{t(locale, 'common.chapters.open')}</span>
+        <span class="chapters-bar__current" data-chapters-current></span>
+        <Icon name="chevron" class="chapters-bar__chevron" />
+      </button>
+    </div>
+    <nav class="chapters" id={id} popover aria-labelledby={`${id}-title`} data-chapters>
+      <div class="chapters__head">
+        <h2 class="chapters__title" id={`${id}-title`}>{t(locale, 'common.chapters.title')}</h2>
+        <button type="button" class="chapters__close" popovertarget={id} popovertargetaction="hide">
+          <Icon name="close" /><span class="visually-hidden">{t(locale, 'common.chapters.close')}</span>
+        </button>
+      </div>
+      {time && <p class="chapters__time">{time.map((part, i) => (i % 2 ? <bdi class="qty">{part}</bdi> : part))}</p>}
+      <ol class="chapters__list" role="list">
+        {items.map((it) => <li class="chapters__item"><a class="chapters__link" href={`#${it.id}`} data-chapter={it.id}>{it.text}</a></li>)}
+      </ol>
+    </nav>
+  </div>
+) : (
+  <nav class="chapters-inline" id={id} aria-labelledby={`${id}-title`} data-chapters-inline data-pagefind-ignore="all">
+    <h2 class="chapters-inline__title" id={`${id}-title`}>{t(locale, 'common.chapters.title')}</h2>
+    {time && <p class="chapters-inline__time">{time.map((part, i) => (i % 2 ? <bdi class="qty">{part}</bdi> : part))}</p>}
+    <ol class="chapters-inline__list" role="list">
+      {items.map((it) => <li><a href={`#${it.id}`}>{it.text}</a></li>)}
+    </ol>
+  </nav>
+)}
+<script>
+  import '../../scripts/chapters.ts';
+</script>

@@ -127,7 +127,7 @@ const urlPatternRes = commerce.urlPatterns.map((p) => new RegExp(p, 'i'));
  * reads first. Word counts apply in every locale; Flesch Reading Ease (src/lib/readability.ts)
  * only to English text. See docs/CONTENT-GUIDE.md §4.
  */
-const PLAIN = { warnWords: 18, maxWords: 30, minFlesch: 60, maxSummaryItems: 5 };
+const PLAIN = { warnWords: 18, maxWords: 30, minFlesch: 60 };
 const englishLocales = new Set(locales.filter((l) => l.bcp47.toLowerCase().startsWith('en')).map((l) => l.code));
 /**
  * Time-boxed waivers (config/readability-waivers.json) for files another workstream had in flight
@@ -157,9 +157,25 @@ function checkPlain(file: string, where: string, text: string, locale: string, n
     if (f < PLAIN.minFlesch) warn(file, `${where}: reading ease ${Math.round(f)} (aim for ${PLAIN.minFlesch}+: shorter sentences, everyday words)\n      > ${clip(text)}`);
   }
 }
-function checkSummary(file: string, items: string[], locale: string, names: string[] = []) {
-  if (items.length > PLAIN.maxSummaryItems) warn(file, `summary: ${items.length} items (aim for ${PLAIN.maxSummaryItems} or fewer: only the essentials)`);
-  items.forEach((s, i) => checkPlain(file, `summary item ${i + 1}`, s, locale, names));
+/**
+ * TL;DR (CONTENT-GUIDE §4.1): readable in one minute. Every answer is plain (the summary limits);
+ * the whole box stays under TLDR.maxWords, or TLDR.maxWordsCompound on compound pages, where the
+ * four At a glance answers (about 70 words) sit in the same box.
+ */
+const TLDR = { maxWords: 140, warnWords: 120, maxWordsCompound: 100, warnWordsCompound: 85 };
+function checkTldr(file: string, items: { q: string; a: string }[], locale: string, names: string[] = [], compound = false) {
+  items.forEach((it, i) => {
+    // The same promotion and dosing guardrails as the body (warnings, reviewed by hand).
+    for (const [re, why] of GUARDRAIL_PATTERNS) if (re.test(`${it.q} ${it.a}`)) warn(file, `tldr item ${i + 1}: ${why}
+      > ${clip(it.a)}`);
+    if (!/[?:]$/.test(it.q.trim())) warn(file, `tldr item ${i + 1}: end the question with "?" (or a lead-in with ":")
+      > ${clip(it.q)}`);
+    checkPlain(file, `tldr item ${i + 1}`, it.a, locale, names);
+  });
+  const n = wordCount(items.map((it) => `${it.q} ${it.a}`).join(' '));
+  const [max, aim] = compound ? [TLDR.maxWordsCompound, TLDR.warnWordsCompound] : [TLDR.maxWords, TLDR.warnWords];
+  if (n > max) err(file, `tldr: ${n} words (max ${max}: it must read in one minute)`);
+  else if (n > aim) warn(file, `tldr: ${n} words (aim for ${aim} or fewer)`);
 }
 
 // ------------------------------------------------------------------ sources
@@ -533,7 +549,9 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
 
   // beginner layer: plain summary and the "Biggest risk" tile
   const names = [cd.names.common, cd.names.inn, ...cd.names.other, ...cd.names.brands].filter((n): n is string => !!n);
-  checkSummary(file, r.data.summary, locale, names);
+  if (r.data.summary) err(file, 'summary: retired — the TL;DR (tldr) replaced "The 30-second version" (CONTENT-GUIDE §4.1)');
+  if (r.data.tldr) checkTldr(file, r.data.tldr, locale, names, true);
+  else err(file, 'tldr: every compound page needs a TL;DR (CONTENT-GUIDE §4.1)');
   if (r.data.lede) checkPlain(file, 'lede', r.data.lede, locale, names);
   // "Stop and get help" strip and fact sheet: sourced and plain; the strip links to the full stop-now list.
   r.data.glance.stop_signs?.forEach((sg, i) => {
@@ -646,7 +664,8 @@ for (const file of walk('src/content/pages', ['.mdx'])) {
   if (!pageRoutes.has(locale)) pageRoutes.set(locale, new Set());
   pageRoutes.get(locale)!.add(route);
   pageFiles.push({ file, locale, route, data: r.data, body });
-  checkSummary(file, r.data.summary, locale);
+  if (r.data.summary) err(file, 'summary: retired — write a TL;DR (tldr) if the page needs one; the chapter list replaced "In short" (CONTENT-GUIDE §4.1)');
+  if (r.data.tldr) checkTldr(file, r.data.tldr, locale);
   const pageOwn = cardCodes(localeByCode.get(locale)!, 'all') as string[];
   if (r.data.jurisdiction && !pageOwn.includes(r.data.jurisdiction)) {
     byStatus(locale, STRICT_PAGE_JURISDICTIONS)(file, `jurisdiction: ${r.data.jurisdiction} is not one of the ${locale} locale's jurisdictions (${pageOwn.join(', ')}); the content rewrite removes or rewrites this page`);
@@ -728,7 +747,7 @@ for (const loc of localeCodes) {
 }
 
 // ------------------------------------------------------------------ plain language: built-in pages
-// Glossary, sources, news and search take their one-item summary from pages.json
+// Glossary, sources, news and search take the intro line under their title from pages.json
 // (keep in sync with src/pages/[locale]/{glossary,sources,news,search}.astro).
 const BUILTIN_SUMMARIES = ['glossary.intro', 'sources.intro', 'news.intro', 'search.privacy'];
 for (const loc of localeCodes) {
@@ -738,7 +757,7 @@ for (const loc of localeCodes) {
   for (const key of BUILTIN_SUMMARIES) {
     const [ns, k] = key.split('.');
     const v = raw[ns]?.[k];
-    if (typeof v === 'string') checkPlain(file, `pages.${key} (the summary of /${loc}/${ns}/)`, v, loc);
+    if (typeof v === 'string') checkPlain(file, `pages.${key} (the intro line of /${loc}/${ns}/)`, v, loc);
   }
 }
 // Captions kept outside MDX: explainer step captions and image / infographic captions
@@ -799,6 +818,8 @@ for (const l of locales.filter((x) => !x.printsEmergencyNumbers)) {
     for (const m of raw.matchAll(/<Callout\s+type=["']stop["'][\s\S]*?<\/Callout>/g)) findEmergency(file, m[0], re, loc, true, 'stop callout:');
     const glance = readMdx(file).data.glance as { stop_signs?: { text?: string }[] } | undefined;
     (glance?.stop_signs ?? []).forEach((s, i) => findEmergency(file, s.text ?? '', re, loc, true, `glance.stop_signs[${i + 1}]:`));
+    // The TL;DR is often all a reader in trouble reads: any of the numbers at all.
+    ((readMdx(file).data.tldr ?? []) as { a?: string }[]).forEach((x, i) => findEmergency(file, x.a ?? '', re, loc, true, `tldr[${i + 1}]:`));
   }
   for (const file of walk(`src/i18n/${loc}`, ['.json'])) {
     let data: unknown;

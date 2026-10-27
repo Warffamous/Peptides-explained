@@ -298,11 +298,11 @@ three-design comparison is preserved at the git tag `three-designs-2026-10-21`).
 | | Treatment |
 |---|---|
 | Photos | Natural colour (`saturate(0.92)`) in a hairline frame with the 8 px radius; caption and short credit under it. Dark: the same photo slightly dimmed (`brightness(0.88)`), never tinted or inverted. In the text a photo runs wider than the reading column but starts on the page's one left edge. |
-| Hero | Phones and tablets: a 16:9 photo after the beginner layer. From 64 rem: a 3:2 photo in the aside beside the title, the review line and the fact sheet (compound pages) or the summary (other pages), its top level with the eyebrow. |
+| Hero | Phones and tablets: a 16:9 photo after the beginner layer. From 64 rem: a 3:2 photo in the aside beside the title, the review line and the fact sheet (compound pages) or the TL;DR (other pages), its top level with the eyebrow. |
 | Plates | A specimen on a light table: the art on a light panel with a 1 px line; cyan/amber epistemic markers (neutral without a level) that grow a little when their key item is highlighted. Dark: the `art_dark` version as drawn on the card surface, markers in the dark tones; without one, the light art dimmed to 85% on a `#D9DEE5` panel. |
 
 The page photo never pushes the beginner layer down. The DOM order (= reading and focus order) is
-title → "At a glance" → stop strip → summary → fact sheet → review line → photo, which is what
+title → TL;DR (with "At a glance" and the stop strip) → fact sheet → review line → photo, which is what
 phones and tablets show: a 16:9 photo (capped at 24 rem high) after them. From 64 rem
 `base/structure.css` lifts the review line and the fact sheet under the title and the photo
 beside them (3:2, in the aside track; on 64–74 rem screens it takes up to 6.5 rem of the reading

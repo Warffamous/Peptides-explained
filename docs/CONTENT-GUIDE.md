@@ -326,7 +326,7 @@ How to run it:
 - **Short paragraphs.** Two to four sentences. Frequent `###` subheadings in long sections.
 - **Reading level.** Safety and legal pages: CEFR **B1** throughout (short sentences, common
   words, one idea per sentence, define every technical term on first use). Mechanism and evidence
-  pages may reach B2–C1, but open with the B1 `summary`.
+  pages may reach B2–C1, but their TL;DR (`tldr`) is B1.
 - **British English spelling** in `en` (authorised, haemorrhage, oestrogen), but **no UK-only words**
   (your doctor, emergency department, pharmacy, medicine; §1b), metric units, 24-hour time,
   day-month-year dates in prose ("20 October 2026").
@@ -384,10 +384,11 @@ Run `npm run validate -- --only <part-of-your-path>` while writing.
 title: "Why peptides are injected, not swallowed"
 nav_title: "Why not a pill"            # optional, short label for menus
 description: "The gut treats a peptide drug like food protein. Here is the physical reason most peptides are injected, and how oral semaglutide works around it."   # 50–170 chars, meta description
-summary:                               # REQUIRED. "In short" box, the beginner entry point. 2–5 items, ≤18 words each (§4.1).
-  - "Your gut breaks down protein into small pieces. Peptide drugs are made of the same building blocks, so the gut breaks them down too."
-  - "Peptides are also too large and too water-loving to pass easily through the gut wall."
-  - "That is why most peptide medicines are injected under the skin."
+tldr:                                  # TL;DR box, first on the page, on pages a reader comes to with a question (§4.1). 3–6 pairs.
+  - q: "Can I take a peptide as a pill?"
+    a: "Mostly no. Your gut digests peptides like food protein, so most of each dose is broken down."
+  - q: "Then how do peptide medicines work?"
+    a: "Most are injected under the skin. One semaglutide tablet uses a helper, and still little gets in."
 section: basics                        # home|start|basics|history|compounds|evidence|legal|safety|guides|reform|reference|about|news
 order: 4                               # position within the section
 template: reference                    # reference|safety|opinion|landing|index
@@ -419,30 +420,63 @@ published locale: `STRICT_LOCALE_ROWS` in `scripts/validate-content.ts`).
 **Never** put a `# ` heading in the body; the layout renders the title. Start body sections at
 `## `.
 
-### 4.1 The summary is the beginner layer
+### 4.1 The TL;DR and the chapters
 
-The `summary` is the first text on every page, in a box set larger than the body ("In short";
-"The 30-second version" on compound pages). Many readers stop there. **Write it for a reader with
-low health literacy: everyday words, short sentences, the most important fact first.**
+Two things open a page, and they do different jobs (owner's decision, 27 October 2026):
 
-- **One idea per item, one or two short sentences, at most 18 words.** The validator warns above
-  18 words and **fails above 30**. Aim for 3–5 items; it warns above 5.
-- **The most important fact first.** On a compound page that is usually "what it is and whether it
-  is an approved medicine".
+- **The TL;DR** (`tldr`) is the first block on every page a reader comes to with a question:
+  every compound page (required), the safety, legal, guide, basics, evidence and history pages, the
+  reform page and the home page. It gives **only the essentials the reader most likely came for,
+  readable in one minute**. It **answers**; it never describes the page ("This page explains…").
+  On compound pages it holds the four *At a glance* answers first, and its lines add what the tiles
+  do not say (what it is used for, what the research found, how to get it legally, the one
+  harm-reduction point). Section overviews, the about pages, the timeline and the corrections page
+  have none.
+- **The chapter list** is built for you from the page's `##` headings (on compound pages, from
+  the fixed sections), with the TL;DR first and the sources last, and the reading time. From 75rem
+  it is a column beside the article that stays in view while the reader scrolls, with the chapter
+  being read marked; on phones and tablets it follows the page top, and once it scrolls away a bar
+  at the top of the screen shows the current chapter and opens the list. **Write `##` headings
+  that work as chapter names**: short, plain, and saying what the section answers.
+
+The old "In short" box (on compound pages "The 30-second version", frontmatter `summary`) is
+retired; the validator rejects `summary`.
+
+**Writing the TL;DR.** Write it for a reader with low health literacy: everyday words, short
+sentences, the most important answer first.
+
+```yaml
+tldr:
+  - q: "Does it work?"          # the reader's question, ≤ 6 words (8 at most), ending in "?"
+    a: "Nobody knows in people. Almost all research is in rats, most of it from one lab."
+```
+
+- **3–6 pairs.** `q` is the question in the reader's words; on an action page a lead-in ending in
+  ":" is allowed. `a` starts with the direct answer where natural ("No.", "Nobody knows.", "Only
+  with a prescription."): one or two short sentences, at most 18 words (the validator warns above
+  18 and **fails above 30**).
+- **One minute.** All pairs together at most 120 words on an ordinary page (it fails above 140); at
+  most 85 on a compound page (fails above 100), because the four At a glance answers in the same box
+  already take about 70.
 - **Everyday words.** "Feel sick" rather than "nausea", "lab" rather than "in vitro", "three in four"
-  rather than "74.6%". If a technical word is unavoidable, say what it does ("a switch called
-  NF-κB"). Names are fine: the compound's own names and trade names do not count as hard words.
-- **Reading ease.** English items should score 60 or more on the Flesch Reading Ease scale
+  rather than "74.6%". If a technical word is unavoidable, say what it does. Names are fine: the
+  compound's own names and trade names do not count as hard words.
+- **Reading ease.** English answers should score 60 or more on the Flesch Reading Ease scale
   (`src/lib/readability.ts`; the validator warns below 60). Other locales get the word limits only.
-- **No new claims.** The summary condenses what the page says and cites below; never add a fact,
-  a number or a nuance that the body does not support. Shorter must not mean stronger: keep
-  "in mice", "in some groups", "only advice".
-- The same limits apply to every **caption**: `<Diagram caption>`, explainer step captions
-  (`src/i18n/<locale>/explainers.json`) and image captions (`src/i18n/<locale>/media.json`).
-- The box also shows **how long the whole page takes to read**. It is computed from the body at
+- **No new claims.** The TL;DR condenses what the page says and cites below; never add a fact, a
+  number or a nuance that the body does not support. Shorter must not mean stronger: keep "in
+  mice", "in some groups", "only advice", "our reading", "unknown".
+- **The site's other rules apply in full:** no doses, no seller help, no "safe" outside an approved
+  label; English never prints an emergency number ("call your local emergency number"; the validator
+  checks the TL;DR as strictly as a stop list); the locale's countries only (§1b).
+- The same plain-language limits apply to every **caption**: `<Diagram caption>`, explainer step
+  captions (`src/i18n/<locale>/explainers.json`) and image captions (`src/i18n/<locale>/media.json`),
+  and to the intro line under the title of the glossary, sources, news and search pages
+  (`src/i18n/<locale>/pages.json`).
+- The chapter list shows **how long the whole page takes to read**. It is computed from the body at
   build time (200 words a minute); do not write it.
 
-Before a page goes out: `npm run validate -- --only <your-file>` and fix every summary warning you
+Before a page goes out: `npm run validate -- --only <your-file>` and fix every TL;DR warning you
 can without losing meaning. `config/readability-waivers.json` holds time-boxed waivers for files
 another workstream had in flight when the 30-word limit arrived; never add one for your own text.
 
@@ -537,10 +571,11 @@ reviewed_by: pending-medical-review
 slug: bpc-157
 title: "BPC-157"
 description: "BPC-157 is an experimental peptide studied almost entirely in animals, mostly by one research group. What it is, what the evidence shows, and what is unknown."
-summary:                       # "The 30-second version". 3–5 items, ≤18 words each (§4.1). Right after the glance strip.
-  - "BPC-157 is a lab-made chain of 15 amino acids. It is not an approved medicine anywhere."
-  - "Most research is in rats and mice, and most of it comes from one group in Zagreb."
-  - "No controlled human trial results have been published, so its effects and risks in people are unknown."
+tldr:                          # REQUIRED. TL;DR lines under the At a glance answers, in one box (§4.1). 3–6 pairs, ≤85 words.
+  - q: "What do people use it for?"
+    a: "…"
+  - q: "What did the research find?"
+    a: "Mostly faster healing in rats, nearly all from one group in Zagreb. Nobody knows what it does in people."
 lede: "…"                      # optional: one sentence under the title (22–24 px), ≤25 words, B1 (§9.1)
 glance:
   main_risk: "…"               # "Biggest risk" tile: ≤12 words, B1, condensed from YOUR risks section (§5.2 rules)
@@ -614,14 +649,14 @@ indications: {}                # authorised products only: { ozempic: "Type 2 di
 
 Rules:
 
-- The **section order is fixed** and validated. Section 1 (30-second version) is the `summary`;
+- The **section order is fixed** and validated. The TL;DR is the `tldr` frontmatter;
   section 9 (Sources) is generated from your `<Cite>`s. Do not write them.
 - Use `###` for sub-headings inside a section. Never `#` or `##` in compound bodies.
 - Section headings are rendered from the UI strings; do not write them.
 - `<Mechanism />`, `<StudyTable />`, `<RegulatoryTable />` read the compound from the page —
   no props needed.
 - Tier 2 stubs need only `what-it-is`, `evidence`, `regulatory`, `risks` (others optional),
-  a full data file and summary. Stubs still need honest evidence grades.
+  a full data file and a TL;DR. Stubs still need honest evidence grades.
 - **The regulatory section answers for each of the locale's countries** (§1b): on English, a reader
   in the US, the UK, Canada and Australia each finds their own status, date and route, in that order,
   and no country is "the default". Say "Health Canada has not authorised it" on Canadian content
@@ -635,10 +670,10 @@ Rules:
   `beginner.json`.
 
 **The beginner layer comes first.** Every compound page opens in this order: title and status
-badge → **At a glance** → **The 30-second version** (`summary`) → review line → page photo →
-evidence profile, sequence and technical details (INN, other names, formula, mass) → the sections.
-On wide screens the photo and the review line sit beside and under the title instead. The
-technical facts deliberately come after the plain answers.
+badge → **TL;DR** (one box: the **At a glance** answers, the stop strip, then the page's `tldr`
+lines) → review line → page photo → evidence profile, sequence and technical details (INN, other
+names, formula, mass) → the sections. On wide screens the photo and the review line sit beside and
+under the title instead. The technical facts deliberately come after the plain answers.
 
 *At a glance* is four tiles. Three are written for you from the data file, so every compound with
 the same facts gets the same words, in every language:
@@ -835,7 +870,7 @@ Four independent axes. Never collapse into one score, never add them up.
 | `<Infographic id="glp1-body-map" />` | A labelled atlas plate: text-free artwork with numbered markers and a key in real text. Markers and sources in `src/data/infographics/<id>.yaml`; title, one label per marker and a full text equivalent in `src/i18n/<locale>/infographics.json`. AI art must be reviewed (`ai.review: ok`) before the page ships. |
 | `<MediaCredits />` | The full image credits (what each image shows, author, licence, source, AI model and review status). Already on `/sources/`. |
 | `<OrganCards id="tirzepatide" />` | Organ-by-organ cards (owner, 22 October 2026: a mechanism figure that keeps WHERE a medicine acts apart from WHAT happens there; the all-organs-in-one receptor animations were too busy). Static, no motion. First "How it works in a cell": the cell surface with the medicine's receptor types side by side, the molecule docking in each, the cAMP signal inside and "the cell responds"; every part has its word, and receptor types differ by **shape and word** (GLP-1 receptor = round cup, GIP receptor = square cup, glucagon receptor = V), never colour alone; numbered steps beside it are the text equivalent. Then one card per organ or tissue (3 columns on wide screens, 1 on phones): the organ picture (a crop of registered text-free art, set once for every page in `src/data/organ-cards/_organs.yaml`), a small cell close-up with the receptors on that cell and their words, **one** plain effect line (B1, ≤ 18 words) and its evidence level as a word plus the site's line style (solid = shown in people, long dashes = animals or cells, short amber dashes = an idea, short grey dashes = not known). A card may add one note line with its own level ("Shown in animals: which brain cells it reaches."). Receptors, organs, cells, levels and sources in `src/data/organ-cards/<id>.yaml`; every word in `src/i18n/<locale>/organ-cards.json`. A medicine that is not approved says so in the figure head (`approved: false`, with `status_sources`). Compound pages only, self-closing, `id` only; the marks on each line are numbered from the page's own source list, so **every source a figure uses must also be cited in the page text** (the validator fails otherwise, and checks the words, their plainness and the placement). Never a dose. Placed on `compounds/semaglutide` (a fold in the mechanism section), `compounds/tirzepatide` and `compounds/retatrutide` (the mechanism figure). |
-| Page hero (no component) | One line in `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster`. Rendered after the summary on phones and beside the title on wide screens. Every page should have one. A photo for one locale only: `{ nl: id }` (shown only on the Dutch page) or `{ default: id, nl: id }` (swapped there); a European photo (a Dutch ambulance, a parliament in The Hague) never heads an English page, and its captions in `src/i18n/en/media.json` are then not checked by the residue check. |
+| Page hero (no component) | One line in `src/data/heroes.yaml`: `compounds/semaglutide: gila-monster`. Rendered after the TL;DR on phones and beside the title on wide screens. Every page should have one. A photo for one locale only: `{ nl: id }` (shown only on the Dutch page) or `{ default: id, nl: id }` (swapped there); a European photo (a Dutch ambulance, a parliament in The Hague) never heads an English page, and its captions in `src/i18n/en/media.json` are then not checked by the residue check. |
 | `<Checklist>` + markdown list + `</Checklist>` | A scannable checklist (what to bring to your doctor, aseptic steps). |
 | `<Faq>` `<FaqItem q="Question?">answer</FaqItem>` `</Faq>` | Real question-and-answer sections only. Emits FAQPage structured data. |
 | `<WarningSigns />` | The canonical stop-now list. `<WarningSigns only="injection" />` for a subset: `general`, `injection`, `allergic`, `cardiovascular`, `metabolic`, `neurological`. |
@@ -881,7 +916,7 @@ required props, plain-language titles, labels and answers, and that every `sourc
 - `glance.stop_signs`: exactly three signs, each at most 8 words, B1, each with a pictogram (`sign-belly-pain`, `sign-low-sugar`, `sign-allergic`, `sign-vision`; the word always carries the meaning) and its `sources`. Condense them from this page's own stop-now list and the label; no new advice. The strip adds the locale's emergency line (English: "If it is severe, call your local emergency number."; Dutch: "Is het ernstig? Bel 112."; see §1), a link to the full stop-now list (give the stop callout `id="stop-now"`; the validator checks it) and to the warning-signs page. It is rendered directly after At a glance and is never folded.
 - `glance.facts`: up to four label/value rows for the fact sheet beside the title (label ≤ 4 words, value ≤ 10 words, sources required): how it is taken, how often, how long it lasts. Class, "Approved in" (the locale's own jurisdictions, the same answer as *At a glance*) and testing in people come from the data file (testing in people: or the page's `glance.tested`, §5.2). Label facts only, never a dose.
 
-With at least one fold on the page, the summary box says how long the short version takes and how
+With at least one fold on the page, the chapter list says how long the short version takes and how
 long everything takes, and the source list is folded too (its numbers still link both ways).
 
 ## 10. Links

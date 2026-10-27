@@ -1,14 +1,15 @@
 ---
 /**
  * Article shell shared by every content page. Enforces the per-page editorial duties:
- * review date + named reviewer, the standing medical notice, the B1 summary first,
- * sources last. Templates: reference | safety | opinion | landing | index | compound.
+ * review date + named reviewer, the standing medical notice, the TL;DR first (on the pages that
+ * have one), sources last, and the chapter list beside the article (Chapters.astro).
+ * Templates: reference | safety | opinion | landing | index | compound.
  */
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/layout/Breadcrumbs.astro';
 import ReviewMeta from '../components/layout/ReviewMeta.astro';
-import SummaryBox from '../components/layout/SummaryBox.astro';
-import Toc from '../components/layout/Toc.astro';
+import Tldr from '../components/layout/Tldr.astro';
+import Chapters from '../components/layout/Chapters.astro';
 import SourceList from '../components/layout/SourceList.astro';
 import RelatedList from '../components/layout/RelatedList.astro';
 import Icon from '../components/ui/Icon.astro';
@@ -26,11 +27,11 @@ interface Props {
   title: string;
   description: string;
   eyebrow?: string;
-  summary: string[];
-  summaryTitle?: string;
-  /** Estimated minutes to read the whole page (src/lib/readability.ts), shown in the summary box. */
+  /** TL;DR pairs (frontmatter tldr), the first block on the page. Compound pages put their At a glance tiles inside it (slot "tiles"). */
+  tldr?: { q: string; a: string }[];
+  /** Estimated minutes to read the whole page (src/lib/readability.ts), shown in the chapter list. */
   readingMinutes?: number;
-  /** Minutes for the short version (everything outside the "In detail" folds); with it the box says both. */
+  /** Minutes for the short version (everything outside the "In detail" folds); with it the chapter list says both. */
   readingMinutesShort?: number;
   /** One sentence under the title (22–24 px): what it is and the one thing to know. */
   lede?: string;
@@ -62,9 +63,14 @@ const loc = getLocale(p.locale);
 const contentLang = p.fallback ? getLocale(SOURCE_LOCALE) : loc;
 const showTranslationNotice = !p.fallback && p.locale !== SOURCE_LOCALE && p.translation?.review === 'pending';
 const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
+// Chapters: the TL;DR first, then the page's own sections; a list of fewer than three is no help.
+const chapters = [...(p.tldr ? [{ id: 'tldr', text: t(p.locale, 'common.tldr.title') }] : []), ...(p.toc ?? [])];
+const hasChapters = chapters.length >= 3;
 ---
 <BaseLayout locale={p.locale} title={p.title} description={p.description} routeKey={p.routeKey} alternates={p.alternates} jsonld={p.jsonld} terms={p.terms} noindex={p.noindex} fallback={p.fallback} renderAfter="page-top-end" pageClass={`page--${p.template} section--${p.section}`}>
   <Breadcrumbs slot="before-main" locale={p.locale} trail={p.trail ?? []} />
+  <div class:list={['doc-shell', hasChapters && 'doc-shell--chapters']}>
+  {hasChapters && <Chapters variant="rail" locale={p.locale} items={chapters} readingMinutes={p.readingMinutes} readingMinutesShort={p.readingMinutesShort} />}
   <article class:list={['doc', `doc--${p.template}`, p.docClass]} lang={p.fallback ? contentLang.bcp47 : undefined} dir={p.fallback ? contentLang.dir : undefined} data-pagefind-body>
     {p.fallback && (
       <p class="notice notice--fallback" lang={loc.bcp47} dir={loc.dir}>{t(p.locale, 'common.translation.fallback', { language: loc.name })}</p>
@@ -97,24 +103,27 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
     </header>
     <slot name="lead" />
     {/*
-      Beginner layer first: the "At a glance" strip (compound pages), then the summary, before
-      anything else. DOM order is the phone order (and the reading and focus order): title ·
-      beginner layer · fact sheet · review line · page photo · on this page. From 64rem the review
-      line and the fact sheet move up under the title, the photo beside them and "On this page"
-      beside the summary, with CSS `order` (base/structure.css; columns in design/layout.css).
+      Beginner layer first: the TL;DR (on compound pages with the "At a glance" answers and the stop
+      strip inside it, before its lines), before anything else. DOM order is the phone order (and
+      the reading and focus order): title · TL;DR · fact sheet · review line · page photo · chapters. From 64rem the review line and the fact sheet move up under the title and
+      the photo beside them, with CSS `order` (base/structure.css; columns in design/layout.css);
+      from 75rem the chapters are the column beside the article instead.
       Focusable content that moves: the photo's one "Image details" link, and the review line's
       corrections link on the rare page that has a correction.
     */}
-    <slot name="glance" />
-    <SummaryBox locale={p.locale} items={p.summary} title={p.summaryTitle} readingMinutes={p.readingMinutes} readingMinutesShort={p.readingMinutesShort} />
-    {/* Fact sheet (compound pages): after the summary on phones, under the title from 64rem. */}
+    {p.tldr && (
+      <Tldr locale={p.locale} items={p.tldr} wide={Astro.slots.has('tiles')}>
+        <slot name="tiles" />
+      </Tldr>
+    )}
+    {/* Fact sheet (compound pages): after the TL;DR on phones, under the title from 64rem. */}
     <slot name="facts" />
     <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} compact legal={p.legal} class="doc-review" />
     {/* Page photo (src/data/heroes.yaml). */}
     <Hero locale={p.locale} routeKey={p.routeKey} />
     {/* End of the reordered page top: the first paint waits for this marker (BaseHead, rel="expect"). */}
     <span id="page-top-end" hidden></span>
-    {p.toc && <Toc locale={p.locale} items={p.toc} />}
+    {hasChapters && <Chapters variant="inline" locale={p.locale} items={chapters} readingMinutes={p.readingMinutes} readingMinutesShort={p.readingMinutesShort} />}
     {/* Reading tools ("Open all details") on pages with "In detail" folds. */}
     <slot name="tools" />
     <div class="prose">
@@ -127,4 +136,5 @@ const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
       <p class="standing-notice"><Icon name="info" />{t(p.locale, 'common.notice.standing')}</p>
     </footer>
   </article>
+  </div>
 </BaseLayout>

@@ -51,7 +51,12 @@ for (let i = 0; i < parts.length; i++) {
 }
 const medical = ['basics', 'evidence', 'safety', 'guides', 'compounds', 'start'].includes(d.section);
 const alternates = fallback ? [] : await alternatesFor(key);
-const toc = d.template === 'landing' || d.template === 'index' ? [] : headings.filter((h) => h.depth === 2).map((h) => ({ id: h.slug, text: h.text }));
+// Chapters: the page's ## headings, then its sources (DocLayout puts the TL;DR first).
+const hasSources = (rpf.citations ?? []).length > 0 || d.further_reading.length > 0;
+const toc = [
+  ...headings.filter((h) => h.depth === 2).map((h) => ({ id: h.slug, text: h.text })),
+  ...(hasSources ? [{ id: 'sources', text: t(locale, 'common.sources') }] : []),
+];
 const jsonld = webPage({
   locale, key, title: d.title, description: d.description, lastReviewed: d.last_reviewed, reviewedBy: d.reviewed_by,
   medical, article: d.template !== 'landing' && d.template !== 'index', faq: rpf.faq, trail,
@@ -61,9 +66,9 @@ const jsonld = webPage({
 // every fold closed, counted the same way as on compound pages (src/lib/reading.ts).
 const body = entry.body ?? '';
 const folds = bodyHasFolds(body);
-const summaryWords = wordCount(d.summary.join(' '));
-const pageWords = bodyWords(locale, body) + summaryWords;
-const shortWords = folds ? bodyWords(locale, withoutFolds(body)) + summaryWords : 0;
+const tldrWords = wordCount((d.tldr ?? []).map((x) => `${x.q} ${x.a}`).join(' '));
+const pageWords = bodyWords(locale, body) + tldrWords;
+const shortWords = folds ? bodyWords(locale, withoutFolds(body)) + tldrWords : 0;
 const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' ? t(locale, 'common.opinion.label') : d.section === 'legal' && d.jurisdiction ? t(locale, `vocab.jurisdiction.${d.jurisdiction}`) : undefined;
 ---
 <DocLayout
@@ -73,7 +78,7 @@ const eyebrow = d.template === 'landing' ? undefined : d.template === 'opinion' 
   title={d.title}
   description={d.description}
   eyebrow={eyebrow}
-  summary={d.summary}
+  tldr={d.tldr}
   readingMinutes={readingMinutes(pageWords)}
   readingMinutesShort={folds ? readingMinutes(shortWords) : undefined}
   foldSources={folds}

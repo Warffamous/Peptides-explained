@@ -93,9 +93,9 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
 
 /*
  * Page top (DocLayout.astro). The DOM order is the phone order, which is also the reading and focus
- * order: title · beginner layer (at a glance, stop strip, in short) · fact sheet · review line ·
- * page photo · on this page. From 64rem the review line and the fact sheet move up under the title,
- * the photo beside them, and "On this page" beside "In short" (columns in design/layout.css).
+ * order: title · beginner layer (TL;DR, with the At a glance answers on compound pages; stop strip)
+ * · fact sheet · review line · page photo · chapters. From 64rem the review line and the fact sheet
+ * move up under the title and the photo beside them (columns in design/layout.css).
  * Focusable content that moves: the photo's "Image details" link, and the review line's corrections
  * link on a page that has a correction; the fact sheet has no links.
  * Because the moved blocks come later in the DOM, the first paint waits until they are parsed
@@ -112,7 +112,27 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
   .doc > .fact-sheet { order: 3; }
 }
 
+/*
+ * Chapters (Chapters.astro, design/layout.css and components.css). One list is displayed at any
+ * width: the inline one below 75rem, the side column from 75rem. Below 75rem the side column's list
+ * is a popover sheet opened from the bar; a browser without popovers keeps the inline list only.
+ * While the bar is shown (html[data-chapters-bar], set by the script), anchors and the pinned
+ * mechanism stage leave room for it.
+ */
+@media (min-width: 75rem) {
+  .chapters-inline, .chapters-bar { display: none !important; }
+}
+@supports not selector(:popover-open) {
+  @media (max-width: 74.99rem) { .chapters-rail { display: none; } }
+}
+@media (max-width: 74.99rem) {
+  :root.js:has([data-chapters-bar]) { scroll-padding-block-start: calc(var(--chapters-bar-h) + var(--space-3)); }
+}
+@container doc (max-width: 52rem) {
+  :root[data-chapters-bar] .mechanism.is-live .mechanism__stage-wrap { inset-block-start: var(--chapters-bar-h); }
+}
+
 @media print {
-  .site-header, .site-footer, .toc, .skip-link, .site-banners, .scheme-toggle { display: none !important; }
+  .site-header, .site-footer, .chapters-rail, .chapters-inline, .skip-link, .site-banners, .scheme-toggle { display: none !important; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
 }

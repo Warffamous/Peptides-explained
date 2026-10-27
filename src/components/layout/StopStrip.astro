@@ -1,8 +1,9 @@
 ---
 /**
- * "Stop and get help" strip: rendered by the compound page directly after "At a glance", so the
- * three signs that matter most for this compound are on the first screens, not at the end of the
- * page (docs/design/DESIGN-DIRECTIONS-2026-10.md §3.1, backlog item 2). Driven by
+ * "Stop and get help" strip: rendered by the compound page inside the TL;DR box, directly after the
+ * "At a glance" answers and before the TL;DR lines (embedded: its heading is an h3 under the
+ * TL;DR's h2), so the three signs that matter most for this compound are on the first screens, not
+ * at the end of the page (docs/design/DESIGN-DIRECTIONS-2026-10.md §3.1, backlog item 2). Driven by
  * glance.stop_signs in the compound frontmatter: three signs of at most 8 words, each a pictogram
  * AND the words (the pictogram is decorative; the words carry the meaning), each with its sources.
  * Then the locale's emergency instruction (common.emergency.ifSevere: "If it is severe, call your
@@ -18,11 +19,12 @@ import CiteMarks from '../ui/CiteMarks.astro';
 import { t } from '../../lib/i18n';
 import { routeUrl } from '../../lib/urls';
 type Sign = { icon: string; text: string; sources: string[] };
-interface Props { locale: string; signs: Sign[]; citeIndex: Map<string, number>; fullListId?: string }
-const { locale: L, signs, citeIndex, fullListId = 'stop-now' } = Astro.props;
+interface Props { locale: string; signs: Sign[]; citeIndex: Map<string, number>; fullListId?: string; embedded?: boolean }
+const { locale: L, signs, citeIndex, fullListId = 'stop-now', embedded = false } = Astro.props;
+const Heading = embedded ? 'h3' : 'h2';
 ---
 <section class="stop-strip" id="stop-strip" aria-labelledby="stop-strip-title">
-  <h2 class="stop-strip__title" id="stop-strip-title"><Icon name="alert" class="stop-strip__glyph" /><span>{t(L, 'beginner.stop.title')}</span></h2>
+  <Heading class="stop-strip__title" id="stop-strip-title"><Icon name="alert" class="stop-strip__glyph" /><span>{t(L, 'beginner.stop.title')}</span></Heading>
   <ul class="stop-strip__list" role="list">
     {signs.map((s) => (
       <li class="stop-strip__item">

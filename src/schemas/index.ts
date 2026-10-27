@@ -257,6 +257,16 @@ export type CompoundData = z.infer<typeof compoundDataSchema>;
 
 const summarySchema = z.array(nonEmpty).min(2).max(6);
 
+/**
+ * TL;DR: the first block on the page. The essentials a reader most likely came for, readable in
+ * one minute: 3–6 pairs of the reader's question (q, a few words) and a plain answer (a, B1, one or
+ * two short sentences). It only condenses what the page says and cites (CONTENT-GUIDE §4.1).
+ */
+export const tldrSchema = z
+  .array(z.object({ q: nonEmpty.refine((s) => maxWords(s, 8), { message: 'at most 8 words' }), a: nonEmpty }))
+  .min(3)
+  .max(6);
+
 const translationMetaSchema = z
   .object({
     /** source = written in this language; translated = from another locale; adapted = rewritten per jurisdiction */
@@ -285,8 +295,10 @@ export const compoundPageSchema = z.object({
   slug: kebab,
   title: nonEmpty,
   description: z.string().min(50).max(170),
-  /** "The 30-second version". B1 reading level. 3–5 short sentences. */
-  summary: summarySchema,
+  /** TL;DR lines under the At a glance answers (which sit inside the TL;DR box): 3–6 pairs, B1. */
+  tldr: tldrSchema.optional(),
+  /** Retired: the "30-second version" box (replaced by tldr). */
+  summary: summarySchema.optional(),
   /**
    * The "At a glance" strip above the summary. Three of its four tiles are derived from the data
    * file (the locale's regulatory rows and national_authorisations, evidence.human_clinical, the
@@ -385,8 +397,10 @@ export const pageSchema = z
     /** Optional shorter label for navigation and breadcrumbs. */
     nav_title: z.string().optional(),
     description: z.string().min(50).max(170),
-    /** "In short" box, B1 reading level, rendered first on the page. */
-    summary: summarySchema,
+    /** TL;DR box, first on the page, on pages a reader comes to with a question (CONTENT-GUIDE §4.1). */
+    tldr: tldrSchema.optional(),
+    /** Retired: the "In short" box (replaced by tldr where a page needs one, by the chapter list elsewhere). */
+    summary: summarySchema.optional(),
     section: z.enum(V.PAGE_SECTIONS),
     order: z.number().int().default(100),
     template: z.enum(V.PAGE_TEMPLATES).default('reference'),

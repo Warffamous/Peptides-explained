@@ -1,0 +1,32 @@
+---
+/**
+ * The TL;DR: the first block on a page that a reader comes to with a question. The essentials they
+ * most likely came for, readable in one minute: pairs of their question and a plain answer
+ * (frontmatter `tldr`, CONTENT-GUIDE §4.1). It answers; it never describes the page — the chapter
+ * list (Chapters.astro) does that.
+ *
+ * On compound pages the four "At a glance" answers come first, inside the same box (default slot),
+ * and these lines add what the tiles do not say.
+ *
+ * "TL;DR" is read aloud letter by letter or not at all, so the heading's spoken name is the words.
+ */
+import { t } from '../../lib/i18n';
+
+interface Props { locale: string; items: { q: string; a: string }[]; wide?: boolean }
+const { locale, items, wide = false } = Astro.props;
+---
+<section class:list={['tldr', wide && 'tldr--wide']} id="tldr" aria-labelledby="tldr-title">
+  <div class="tldr__head">
+    <h2 class="tldr__title" id="tldr-title"><span aria-hidden="true">{t(locale, 'common.tldr.title')}</span><span class="visually-hidden">{t(locale, 'common.tldr.spoken')}</span></h2>
+    <p class="tldr__note">{t(locale, 'common.tldr.note')}</p>
+  </div>
+  <slot />
+  <dl class="tldr__list">
+    {items.map((it) => (
+      <div class="tldr__item">
+        <dt class="tldr__q">{it.q}</dt>
+        <dd class="tldr__a">{it.a}</dd>
+      </div>
+    ))}
+  </dl>
+</section>

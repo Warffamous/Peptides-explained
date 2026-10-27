@@ -13,7 +13,7 @@ Astro.locals.locale = locale;
 // as its headlines are (NewsList): the English page never lists the EMA feed.
 const feeds = FEEDS.feeds.filter((f) => isVisible(f.jurisdiction, getLocale(locale)));
 ---
-<BuiltinPage locale={locale} routeKey="news" title={t(locale, 'pages.news.title')} description={t(locale, 'pages.news.description')} summary={[t(locale, 'pages.news.intro')]}>
+<BuiltinPage locale={locale} routeKey="news" title={t(locale, 'pages.news.title')} description={t(locale, 'pages.news.description')} intro={t(locale, 'pages.news.intro')}>
   <NewsList />
   {feeds.length > 0 && (
     <section class="news-sources" aria-labelledby="news-sources-title">

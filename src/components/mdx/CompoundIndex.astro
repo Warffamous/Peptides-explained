@@ -63,7 +63,7 @@ const GROUPS = [
                 {d.status === 'stub' && <span class="compound-card__stub">{t(L, 'common.stub.label')}</span>}
               </p>
               <p class="compound-card__approved"><span class="compound-card__approved-label">{t(L, 'compound.index.approvedIn')}:</span> {approvedInValue(L, d, approval)}</p>
-              <p class="compound-card__desc" lang={fallback ? 'en' : undefined}>{page.summary[0]}</p>
+              <p class="compound-card__desc" lang={fallback ? 'en' : undefined}>{page.lede ?? page.description}</p>
               <EvidenceMini evidence={d.evidence} locale={L} />
             </li>
           ))}

@@ -161,10 +161,13 @@ a:hover { text-decoration-thickness: 2px; }
 .doc > * { grid-column: text; min-inline-size: 0; }
 /*
  * From 64rem the page top is two columns (structure.css sets the order):
- *   compound pages:  title | photo · review line | photo · fact sheet | photo, then the "At a glance"
- *                    cards and the stop strip across the wide track, then "In short" | "On this page";
- *   other pages:     title | photo · review line | photo · "In short" | photo, then "On this page";
- *   without a photo: title · review line · "In short" | "On this page".
+ *   compound pages:  title | photo · review line | photo · fact sheet | photo, then the TL;DR (with
+ *                    the "At a glance" cards) and the stop strip across the wide track;
+ *   other pages:     title | photo · review line | photo · TL;DR | photo (a page without a TL;DR
+ *                    leaves the space beside the rest of the photo empty);
+ *   without a photo: title · review line · TL;DR.
+ * Below 75rem the chapter list follows in the reading column; from 75rem it is the column beside
+ * the article (.doc-shell, below).
  * The photo spans three rows; the last of them is flexible and takes the photo's extra height, so
  * the rows above it stay tight instead of each opening an empty band. A notice above the title
  * (translation, fallback, opinion) adds a plain row before them. Where the aside is narrower than a
@@ -175,14 +178,47 @@ a:hover { text-decoration-thickness: 2px; }
   .doc { --hero-pull: max(0px, 22.5rem - (min(100cqi, var(--wide)) - var(--measure))); }
   .doc > .hero { grid-column: aside; grid-row: span 3; margin-inline-start: calc(var(--space-6) - var(--hero-pull)); }
   .doc:has(> .hero) > :is(.doc-header, .doc-review, .fact-sheet) { margin-inline-end: var(--hero-pull); }
-  .doc:has(> .hero):not(:has(> .fact-sheet)) > .summary-box { margin-inline-end: var(--hero-pull); }
+  .doc:has(> .hero):not(:has(> .fact-sheet)) > .tldr { margin-inline-end: var(--hero-pull); }
+  /* Without a TL;DR the next block in the reading column sits beside the photo instead. */
+  .doc:has(> .hero):not(:has(> .fact-sheet, > .tldr)) > :is(.chapters-inline, .reading-tools) { margin-inline-end: var(--hero-pull); }
   .doc:has(> .hero) { grid-template-rows: auto auto 1fr; }
   .doc:has(> .hero):has(> :first-child + .doc-header) { grid-template-rows: auto auto auto 1fr; }
   .doc:has(> .hero):has(> :first-child + * + .doc-header) { grid-template-rows: auto auto auto auto 1fr; }
-  .doc > :is(.doc-header, .doc-review, .fact-sheet, .summary-box) { align-self: start; }
-  .doc > .toc { grid-column: aside; align-self: start; margin-inline-start: var(--space-6); }
-  /* A photo beside "In short" leaves "On this page" its own row under them, in the reading column. */
-  .doc:has(> .hero):not(:has(> .fact-sheet)) > .toc { grid-column: text; margin-inline-start: 0; }
+  .doc > :is(.doc-header, .doc-review, .fact-sheet, .tldr, .chapters-inline) { align-self: start; }
+}
+/*
+ * Chapters beside the article (Chapters.astro), from 75rem: the page keeps its wide track, which
+ * the chapter column and the article share. The article keeps its reading measure; its aside (the
+ * photo, wide figures) gives up the room, as on a 64rem screen. The list stays in view while the
+ * reader scrolls: sticky inside a column as tall as the article.
+ */
+@media (min-width: 75rem) {
+  .doc-shell--chapters {
+    display: grid;
+    grid-template-columns: [rail-start] var(--rail) [rail-end main-start] minmax(0, 1fr) [main-end];
+    column-gap: var(--space-6);
+    max-inline-size: var(--wide);
+    margin-inline: auto;
+  }
+  .doc-shell--chapters > .doc { grid-column: main; grid-row: 1; }
+  .doc-shell--chapters > .chapters-rail { grid-column: rail; grid-row: 1; }
+  .chapters {
+    display: block;
+    position: sticky;
+    inset: auto;
+    inset-block-start: var(--space-5);
+    inline-size: auto;
+    block-size: auto;
+    max-block-size: calc(100dvh - 2 * var(--space-5));
+    margin: 0;
+    padding: var(--space-2) 0 var(--space-4);
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    border: 0;
+    background: none;
+    color: inherit;
+  }
 }
 .prose { display: grid; grid-template-columns: subgrid; grid-column: full; }
 .prose > *, .csec > * { grid-column: text; min-inline-size: 0; }

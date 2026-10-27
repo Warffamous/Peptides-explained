@@ -2,9 +2,9 @@
 /**
  * Compound page: localised prose (src/content/compounds/<locale>/<slug>.mdx) joined with
  * locale-independent facts (src/data/compounds/<slug>.yaml). Fixed structure, beginner first:
- * title + status badge · at a glance · 1 the 30-second version · review line · page photo
- * (beside the title on wide screens) · evidence profile, sequence, technical details · 2–8 the
- * MDX sections in fixed order · 9 sources.
+ * title + status badge · TL;DR (the At a glance answers, the stop strip, then the page's tldr
+ * lines) · review line · page photo (beside the title on wide screens) · evidence profile, sequence,
+ * technical details · 2–8 the MDX sections in fixed order · 9 sources.
  */
 import { render } from 'astro:content';
 import DocLayout from '../../../layouts/DocLayout.astro';
@@ -64,10 +64,9 @@ const sectionTitle = (s: string) => t(locale, `compound.sections.${authorised &&
 // "Less text, more visuals": pages whose depth sits in "In detail" folds get the reading tools
 // ("Open all details"), a folded source list, and a reading time for the short version too.
 const hasFolds = entry.body?.includes('<InDetail') ?? false;
+// Chapters after the TL;DR (DocLayout puts it first).
 const toc = [
-  { id: 'at-a-glance', text: t(locale, 'beginner.glance.title') },
   ...(page.glance.stop_signs ? [{ id: 'stop-strip', text: t(locale, 'beginner.stop.title') }] : []),
-  { id: 'summary', text: t(locale, 'compound.sections.thirty-second') },
   { id: `grade-${slug}`, text: t(locale, 'evidence.title') },
   { id: 'technical', text: t(locale, 'beginner.technical.title') },
   ...sectionsPresent.map((s) => ({ id: s, text: sectionTitle(s) })),
@@ -100,15 +99,16 @@ const techFacts: TechFact[] = [
 const propText = sharedPropText;
 const explainerText = (src: string) => sharedExplainerText(locale, src);
 const body = entry.body ?? '';
+const tldrText = (page.tldr ?? []).flatMap((x) => [x.q, x.a]);
 // Reading time for the whole page: the MDX body (with its props and explainers) plus the
-// frontmatter prose the page renders (summary, grade rationale, mechanism steps, study findings,
+// frontmatter prose the page renders (TL;DR, grade rationale, mechanism steps, study findings,
 // table notes, the stop strip and fact sheet).
 const pageWords =
   wordCount(mdxToPlain(body)) +
   wordCount(propText(body)) +
   wordCount(explainerText(body)) +
   wordCount([
-    ...page.summary,
+    ...tldrText,
     page.lede ?? '',
     page.glance.main_risk ?? '',
     page.glance.tested?.text ?? '',
@@ -122,7 +122,7 @@ const pageWords =
     ...page.glance.facts.flatMap((f) => [f.label, f.value]),
   ].join(' '));
 // The short version: everything outside the folds (the body without its <InDetail> blocks, with
-// the words in its props and explainers, plus the lede, summary, fact sheet, stop strip and risk
+// the words in its props and explainers, plus the lede, TL;DR, fact sheet, stop strip and risk
 // tile). Tables, the causal chain, study notes and the grade reasons are folded.
 const shortBody = body.replace(/<InDetail\s[\s\S]*?<\/InDetail>/g, ' ');
 // The At a glance tiles and the evidence card are fixed strings from i18n (about 150 words).
@@ -133,7 +133,7 @@ const shortWords = hasFolds
     wordCount(propText(shortBody)) +
     wordCount(explainerText(shortBody)) +
     wordCount([
-      ...page.summary,
+      ...tldrText,
       page.lede ?? '',
       page.glance.main_risk ?? '',
       page.glance.tested?.text ?? '',
@@ -151,8 +151,7 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
   title={page.title}
   description={page.description}
   eyebrow={t(locale, `vocab.class.${data.class}`)}
-  summary={page.summary}
-  summaryTitle={t(locale, 'compound.sections.thirty-second')}
+  tldr={page.tldr}
   readingMinutes={readingMinutes(pageWords)}
   readingMinutesShort={hasFolds ? readingMinutes(shortWords) : undefined}
   lede={page.lede}
@@ -182,9 +181,11 @@ const jsonld = webPage({ locale, key, title: page.title, description: page.descr
   <Fragment slot="lead">
     {data.status === 'stub' && <p class="notice notice--stub"><strong>{t(locale, 'common.stub.label')}.</strong> {t(locale, 'common.stub.notice')}</p>}
   </Fragment>
-  <Fragment slot="glance">
-    <AtAGlance locale={locale} data={data} approval={approval} contentLocale={contentLocale} glance={page.glance} citeIndex={citeIndex} hasRisksSection={sectionsPresent.includes('risks')} />
-    {page.glance.stop_signs && <StopStrip locale={locale} signs={page.glance.stop_signs} citeIndex={citeIndex} />}
+  {/* The TL;DR box: the At a glance answers, then the stop strip (on the first screens, never
+      below the tldr lines), then the page's tldr lines. */}
+  <Fragment slot="tiles">
+    <AtAGlance locale={locale} data={data} approval={approval} contentLocale={contentLocale} glance={page.glance} citeIndex={citeIndex} hasRisksSection={sectionsPresent.includes('risks')} embedded />
+    {page.glance.stop_signs && <StopStrip locale={locale} signs={page.glance.stop_signs} citeIndex={citeIndex} embedded />}
   </Fragment>
   <FactSheet slot="facts" locale={locale} data={data} approval={approval} facts={page.glance.facts} testedShort={page.glance.tested?.short} />
   {hasFolds && <ReadingTools slot="tools" locale={locale} />}

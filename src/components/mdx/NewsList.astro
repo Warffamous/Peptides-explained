@@ -23,6 +23,7 @@ const cats = [...new Set(items.map((i) => feeds.get(i.feed)?.category).filter(Bo
 <div class:list={['news', compact && 'news--compact']} data-news>
   {!compact && (
     <>
+      <h2 class="news__heading">{t(L, 'pages.news.latest')}</h2>
       <p class="news__caution">{t(L, 'pages.news.caution')} <a href={routeUrl(L, 'evidence/how-to-read-a-study')}>{t(L, 'pages.news.cautionLink')}</a>.</p>
       <p class="news__updated">{t(L, 'pages.news.updated', { date: formatDate(L, NEWS.generated) })}</p>
       {cats.length > 1 && (

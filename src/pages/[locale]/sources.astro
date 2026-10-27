@@ -8,7 +8,7 @@ export const getStaticPaths = () => BUILT_LOCALES.map((l) => ({ params: { locale
 const { locale } = Astro.params as { locale: string };
 Astro.locals.locale = locale;
 ---
-<BuiltinPage locale={locale} routeKey="sources" title={t(locale, 'pages.sources.title')} description={t(locale, 'pages.sources.description')} summary={[t(locale, 'pages.sources.intro')]}>
+<BuiltinPage locale={locale} routeKey="sources" title={t(locale, 'pages.sources.title')} description={t(locale, 'pages.sources.description')} intro={t(locale, 'pages.sources.intro')}>
   <SourcesIndex />
   <MediaCredits />
 </BuiltinPage>

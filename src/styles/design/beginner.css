@@ -1,8 +1,8 @@
 @import "../base/beginner.css";
 
 /*
- * The beginner layer: four plain answer cards, the stop strip (figures.css) and the summary as a
- * strand of numbered beads. Colour keeps its one job: only a "Yes" on the two evidence questions
+ * The beginner layer: the TL;DR box (on compound pages it holds four plain answer cards) and the
+ * stop strip (figures.css). Colour keeps its one job: only a "Yes" on the two evidence questions
  * ("approved?" and "tested in people?") gets a cyan ring; the answer word itself stays in ink.
  * "No", "Very little" and other partial answers are neutral grey — a dashed ring for no, a solid
  * one for partly — never amber (amber means hypothesised and nothing else). Sport and risk are
@@ -88,52 +88,45 @@
   .at-a-glance__text--risk { font-size: var(--s-0); line-height: 1.35; }
 }
 
-/* ------------------------------------------------------------------ in short: a strand of beads */
-.summary-box {
+/* ------------------------------------------------------------------ TL;DR */
+/*
+ * The first block on the page: a box with a cyan edge (the one accent of the beginner layer), the
+ * reader's questions in bold and the answers in body ink. Two columns when the box is wide enough,
+ * so the eye runs down the questions; one on phones. On compound pages the box spans the wide track
+ * and holds the At a glance answers above its lines, which keep the reading measure.
+ */
+.tldr {
   margin-block-end: var(--space-6);
-  padding: var(--space-5) var(--space-4);
+  padding: var(--space-4) var(--space-4) var(--space-5);
   border: 1px solid var(--line);
+  border-inline-start: 4px solid var(--cyan);
   border-radius: var(--radius);
   background: var(--surface);
+  container: tldr / inline-size;
 }
-@container doc (min-width: 40rem) { .summary-box { padding-inline: var(--space-5); } }
-.summary-box__head { align-items: baseline; justify-content: space-between; margin-block-end: var(--space-4); }
-.summary-box__title { font-size: var(--s-2); font-weight: 600; letter-spacing: -0.015em; line-height: 1.15; color: var(--text); }
-.summary-box__time { align-items: flex-start; font-size: var(--s--1); color: var(--text-2); }
-.summary-box__time::before { content: ''; flex: none; inline-size: 0.55rem; block-size: 0.55rem; margin-block-start: 0.5em; border-radius: 50%; border: 1.5px solid currentColor; }
-.summary-box__list { gap: var(--space-3); font-size: var(--s-1); line-height: 1.5; }
-.summary-box__item { position: relative; column-gap: var(--space-3); }
-.summary-box__marker {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  inline-size: 1.9rem;
-  block-size: 1.9rem;
-  margin-block-start: 0.05rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
-  background: var(--surface-2);
-  font-family: var(--font-mono);
-  font-size: var(--s--2);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  color: var(--text);
+.doc > .tldr--wide { grid-column: wide; }
+@container doc (min-width: 40rem) { .tldr { padding-inline: var(--space-5); } }
+.tldr__head { align-items: baseline; margin-block-end: var(--space-4); }
+.tldr__title { font-size: var(--s-2); font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; color: var(--text); }
+.tldr__note { font-size: var(--s--1); color: var(--text-2); }
+.tldr__list { gap: var(--space-3); max-inline-size: var(--measure); font-size: var(--s-0); line-height: 1.5; }
+.tldr__q { font-weight: 600; color: var(--text); }
+.tldr__a { color: var(--text); }
+/* Sized by the box itself: beside the page photo it can be narrow even on a wide screen. */
+@container tldr (min-width: 34rem) {
+  .tldr__item { grid-template-columns: minmax(9rem, 2fr) minmax(0, 5fr); column-gap: var(--space-4); }
+  .tldr__item + .tldr__item { padding-block-start: var(--space-3); border-block-start: 1px solid var(--line); }
 }
-/* The strand: each bead is linked to the next, like residues on the sequence chain. */
-.summary-box__item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  inset-block: 1.95rem calc(-1 * var(--space-3));
-  inset-inline-start: calc(0.95rem - 0.5px);
-  border-inline-start: 1px solid var(--line-strong);
-}
-.summary-box__text { color: var(--text); }
-/* Phones: a tighter box, so the first point starts on the first screen even under a long title. */
+/* The At a glance answers inside the box: tiles on the ground colour, so they stand off the box. */
+.tldr .at-a-glance { margin-block-end: var(--space-4); }
+.tldr .at-a-glance__tile { background: var(--ground); }
+.tldr .at-a-glance__foot { margin-block-start: var(--space-2); }
+.tldr .stop-strip { margin-block-end: var(--space-4); }
+.tldr :is(.at-a-glance, .stop-strip) + .tldr__list { padding-block-start: var(--space-4); border-block-start: 1px solid var(--line); }
+/* Phones: a tighter box, so the first answer starts on the first screen even under a long title. */
 @media (max-width: 29.99rem) {
-  .summary-box { padding-block-start: var(--space-4); }
-  .summary-box__head { margin-block-end: var(--space-3); }
-  .summary-box__list { font-size: var(--s-0); }
+  .tldr { padding-block-start: var(--space-3); }
+  .tldr__head { margin-block-end: var(--space-3); }
 }
 
 /* ------------------------------------------------------------------ technical details */

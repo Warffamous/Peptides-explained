@@ -15,7 +15,7 @@ const pages = (await allPages()).map((p) => ({ ...splitPageId(p.id), title: p.da
 const compounds = [...(await compoundDataMap()).values()].map((c) => ({ key: `compounds/${c.slug}`, title: c.names.common }));
 const all = [...pages, ...compounds].sort((a, b) => a.key.localeCompare(b.key));
 ---
-<BuiltinPage locale={locale} routeKey="search" title={t(locale, 'pages.search.title')} description={t(locale, 'pages.search.description')} summary={[t(locale, 'pages.search.privacy')]} noindex>
+<BuiltinPage locale={locale} routeKey="search" title={t(locale, 'pages.search.title')} description={t(locale, 'pages.search.description')} intro={t(locale, 'pages.search.privacy')} noindex>
   <form class="search" role="search" data-search data-bundle={url('/pagefind/')} action={routeUrl(locale, 'search')} method="get">
     <label class="search__label" for="search-q">{t(locale, 'pages.search.label')}</label>
     <div class="search__row">

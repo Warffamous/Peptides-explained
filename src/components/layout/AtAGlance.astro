@@ -1,7 +1,8 @@
 ---
 /**
- * "At a glance": four plain answers at the top of every compound page, before the 30-second
- * version, for readers who need the essentials in seconds. Three answers are derived from the
+ * "At a glance": four plain answers at the top of every compound page, inside the TL;DR box
+ * (embedded: its heading becomes a hidden h3 under the TL;DR's h2) and before the TL;DR lines, for
+ * readers who need the essentials in seconds. Three answers are derived from the
  * data file, so every compound with the same facts gets the same words in every locale:
  *
  *   approved  <- the regulatory rows of the locale's own jurisdictions (approvalFor in
@@ -39,8 +40,9 @@ import type { CompoundData, CompoundPage } from '../../schemas';
 
 type Glance = CompoundPage['glance'];
 /** approval: approvalFor(data, contentLocale), computed once by the page (the badge says the same). */
-interface Props { locale: string; data: CompoundData; approval: Approval; contentLocale: string; glance: Glance; citeIndex: Map<string, number>; hasRisksSection?: boolean }
-const { locale: L, data, approval, contentLocale, glance, citeIndex, hasRisksSection = true } = Astro.props;
+interface Props { locale: string; data: CompoundData; approval: Approval; contentLocale: string; glance: Glance; citeIndex: Map<string, number>; hasRisksSection?: boolean; embedded?: boolean }
+const { locale: L, data, approval, contentLocale, glance, citeIndex, hasRisksSection = true, embedded = false } = Astro.props;
+const Heading = embedded ? 'h3' : 'h2';
 const mainRisk = glance.main_risk;
 const k = (key: string) => `beginner.glance.${key}`;
 
@@ -88,8 +90,8 @@ const MARK = '\u0000';
 const [codeBefore, codeAfter] = t(L, k('sport.code'), { section: MARK }).split(MARK);
 const [checkedBefore, checkedAfter] = t(L, k('checked'), { date: MARK }).split(MARK);
 ---
-<section class="at-a-glance" id="at-a-glance" aria-labelledby="at-a-glance-title">
-  <h2 class="at-a-glance__title" id="at-a-glance-title">{t(L, k('title'))}</h2>
+<section class:list={['at-a-glance', embedded && 'at-a-glance--embedded']} id="at-a-glance" aria-labelledby="at-a-glance-title">
+  <Heading class:list={['at-a-glance__title', embedded && 'visually-hidden']} id="at-a-glance-title">{t(L, k('title'))}</Heading>
   <dl class="at-a-glance__tiles">
     {tiles.map((tile) => (
       <div class="at-a-glance__tile" data-q={tile.id} data-tone={tile.tone} style={`--frac:${tile.frac.toFixed(2)}`}>
