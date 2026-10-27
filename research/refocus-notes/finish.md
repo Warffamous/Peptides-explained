@@ -504,3 +504,141 @@ Data and words: `src/data/jurisdictions.yaml`, `src/data/tracker.yaml`, `src/dat
 Code and docs: `src/components/mdx/JurisdictionCard.astro`, `src/styles/design/components.css`,
 `scripts/check-no-commerce.ts`, `docs/CONTENT-GUIDE.md` (§1, §9, §11). Notes: this file,
 `research/refocus-notes/{legal-en-a,guides-en}.md`, `research/for-nl-site/MANIFEST-finish.md`.
+
+---
+
+# Part 3: UK product information on emc (27 October 2026)
+
+**Owner decision, 27 October 2026:** links to emc (www.medicines.org.uk, the UK's electronic medicines compendium)
+are allowed for UK medicine information (SmPC and patient leaflet). This part applies it. Nothing was committed, pushed
+or deployed; the Lovable repo was not touched.
+
+Result: `npm run validate` 0 errors (164 warnings, none about the lines changed here); `npm run build` passes (136 pages);
+`npm run check` passes (commerce: 299 source files, 136 pages, 54,342 links, zero commercial outbound links; HTML
+0 errors, 0 warnings; residue 0 error/frame hits); `npx tsx scripts/check-locale-residue.ts dist --locale en`: 0 hits.
+
+## 1. Allowlist
+
+`config/link-allowlist.json`: host `www.medicines.org.uk`, why "emc (electronic medicines compendium), the UK's standard
+compendium of medicine information: the SmPCs and patient leaflets of UK-licensed medicines; sells nothing (owner
+decision, 27 October 2026)". The URLs used contain no commerce token. `docs/CONTENT-GUIDE.md` (the `label_url` rule)
+now says: UK = the product's SmPC on emc; the MHRA Products substance page where emc has none, and as a source of the
+UK row.
+
+## 2. The eight emc sources, back (`src/data/sources/en-emc.yaml`, new)
+
+The merge had dropped them only because emc was not allowlisted (merge.md §1.3; that row now points here). Ids
+unchanged (no clash in `src/data/sources/*.yaml`). Every URL was fetched again on 27 October 2026 (HTTP 200, curl with
+a browser user agent; emc answers fast runs with HTTP 429, so the searches were repeated slowly), the text read, and
+`accessed: 2026-10-27`. What the pages say now:
+
+| Id | Page (emc product) | Checked on 27 October 2026 |
+|---|---|---|
+| `uk-emc-search-status-a-2026-10-24` | search 'semaglutide' | 20 results (Ozempic 4 pens, Rybelsus 6 tablets, Wegovy 5 FlexTouch pens + 7.2 mg pen + 4 tablets); 'tirzepatide' and 'Mounjaro' 6 each (KwikPens only); 'retatrutide' and 'Kayshild' none. As recorded, plus: Rybelsus 3, 7 and 14 mg are now marked "Discontinued". Title now says "24 and 27 October 2026". |
+| `uk-emc-smpc-ozempic-0-25mg` | 9748 | holder Novo Nordisk A/S, PLGB 04668/0331, first authorised 1 January 2021, renewal 10 June 2024, revision 07/2026: as recorded. Ozempic 2 mg (14975): PLGB 04668/0435, 18 July 2022, as recorded. |
+| `uk-emc-smpc-rybelsus-3mg` | 11507 | PLGB 04668/0420, 1 January 2021, renewal 3 February 2025, revision 03/2026: as recorded; the page is now marked "Discontinued". |
+| `uk-emc-smpc-wegovy-flextouch-0-25mg` | 13799 | PLGB 04668/0436, 10 May 2022, revision 09/2026: as recorded. |
+| `uk-emc-smpc-wegovy-7-2mg` | 102093 | PL 04668/0460, 13 April 2026, revision 09/2026: as recorded. |
+| `uk-emc-smpc-wegovy-tablets-1-5mg` | 102344 | PL 04668/0466, 11 June 2026, revision 06/2026: as recorded; 4, 9 and 25 mg (102345 to 102347) in the search list. |
+| `uk-emc-smpc-mounjaro-kwikpen-2-5mg` | 15481 | Eli Lilly Nederland B.V., PLGB 14895/0340 to 0345, 25 January 2024, revision 29 August 2026: as recorded. New: section 4.1 now includes children from 10 (section 4 below). The research note's "0317 to 0323" is corrected to "0317, 0318 and 0320 to 0323" (uk-mhra-ma-granted-2022). |
+| `uk-emc-search-2026-10-24` | search 'elamipretide' | none for elamipretide, Forzinity, SS-31, MTP-131, Bendavia, "elamipretide hydrochloride", Szeto-Schiller, thymalfasin, Zadaxin, thymosin, "thymosin alpha 1"; control 'wegovy' 10. As recorded. Still does not support "thymalfasin is not licensed in the UK" (the MHRA Zadaxin documents stay unread). |
+
+One new entry: `uk-emc-smpc-rybelsus-1-5mg` (101229; Novo Nordisk A/S, PLGB 04668/0451, first authorised 6 December
+2024, revision 03/2026, not marked discontinued), so that the products table links the current Rybelsus tablet rather
+than a page emc marks discontinued.
+
+Each SmPC note also records section 4.1 (indications), 4.3 (the only contraindication: hypersensitivity to the active
+substance or an excipient) and 5.3 (rodent thyroid C-cell tumours; semaglutide: "The relevance for humans is
+considered to be low, but cannot be completely excluded"; tirzepatide, rats: "The human relevance of these findings is
+unknown"). No SmPC read mentions medullary thyroid carcinoma or MEN 2. Not cited on any page (supporting entries, said
+so in their notes): the two searches and the Wegovy 7.2 mg SmPC.
+
+## 3. UK products table (`src/data/compounds/{semaglutide,tirzepatide}.yaml`)
+
+`label_url`/`label_source` now point to the emc SmPC; the product name and the holder (SmPC section 7) were checked
+against each row. These five are the only UK products in the 21 compound files.
+
+| Row | Now links | Note |
+|---|---|---|
+| ozempic-uk | 9748, `uk-emc-smpc-ozempic-0-25mg` | name, holder and date (1 January 2021) match |
+| rybelsus-uk | 101229, `uk-emc-smpc-rybelsus-1-5mg` | the current tablet; the row date (1 January 2021) is the original tablets' licence (`uk-emc-smpc-rybelsus-3mg`) |
+| wegovy-uk | 13799, `uk-emc-smpc-wegovy-flextouch-0-25mg` | the FlexTouch SmPC carries every Wegovy pen indication; the row date (24 September 2021) is the single-dose pens', which have no SmPC on emc |
+| wegovy-tablets-uk | 102344, `uk-emc-smpc-wegovy-tablets-1-5mg` | name, holder and date match |
+| mounjaro-uk | 15481, `uk-emc-smpc-mounjaro-kwikpen-2-5mg` | the only Mounjaro SmPC on emc; the row date (26 September 2022) is the single-dose pens' |
+
+The products schema has no note field, so the MHRA Products substance page stays where it already was: a source of
+each UK regulatory row (the data comments say so). Added to the UK rows: `uk-emc-smpc-ozempic-0-25mg` (semaglutide; the
+1 January 2021 Great Britain licence in `regulatory_notes.UK`) and `uk-emc-smpc-mounjaro-kwikpen-2-5mg` (tirzepatide;
+the KwikPen date and the children's indication). No status, date or `as_of` changed. Built pages: every "Product
+information (UK)" link on /en/compounds/semaglutide/ and /en/compounds/tirzepatide/ goes to emc.
+
+## 4. Sentences that said the UK product information was not checked
+
+Each now rests on the SmPC read today, with a Cite. The Australian product information is still unread (the TGA PI
+needs a licence acceptance), and the sentences say so. No doses were added.
+
+- `safety/before-you-consider` (thyroid fold): "We did not check how the UK and Australian labels treat it." became
+  "The UK product information for Ozempic, Wegovy and Mounjaro does not list it as a reason not to use them. It
+  reports the tumours in rodents and does not rule out a risk to people." (Ozempic, Wegovy and Mounjaro SmPCs; the
+  products were named by the independent check, §6, so the sentence claims no more than the three SmPCs cited) "We did not check the
+  Australian labels. Discuss it with a doctor." The overview table row and the Compare ("In the US and Canada, the
+  label says no …") were already accurate and are unchanged.
+- `compounds/semaglutide` (status, the labels paragraph): the UK product information has no such warning or
+  contraindication (its only contraindication is an allergy to semaglutide or another ingredient); it reports the
+  rodent tumours with its animal data and calls their relevance for people low, but not ruled out. Australia: not
+  checked.
+- `compounds/tirzepatide` (same paragraph): the same, with "the rat thyroid tumours" and "relevance for people is
+  unknown" (the Mounjaro SmPC's words differ from semaglutide's).
+- UK indication lines (`indications` in the two pages' frontmatter), checked against section 4.1:
+  - `ozempic-uk`, `rybelsus-uk`: were minimal (merge.md §12.4); now "on its own when metformin is unsuitable, or
+    added to / with other diabetes medicines", like the EU and Canadian lines. The UK SmPCs refer heart and kidney
+    results to section 5.1; they are not separate UK indications, so none is added.
+  - `wegovy-uk`: now says who (adults with a BMI of 30 or more, or 27 to 30 with a weight-related condition;
+    adolescents from 12 with obesity and body weight above 60 kg). The heart and MASH parts (MASH a conditional
+    authorisation) match the SmPC.
+  - `wegovy-tablets-uk`: matched; unchanged.
+  - `mounjaro-uk`: was wrong by omission. The UK SmPC (text revised 29 August 2026) covers type 2 diabetes in "adults,
+    adolescents and children aged 10 years and above"; the line now ends "By October 2026 also children and
+    adolescents from 10 with type 2 diabetes." `regulatory_notes.UK` adds "children 10+ with type 2 diabetes by Oct
+    2026", and the page's UK paragraph a sentence with the Cite. When the MHRA added it was not found (GOV.UK search,
+    27 October 2026), so no "since" date is given, as for Australia (part 1, §9).
+- `compounds/semaglutide`, UK paragraph: the Great Britain licences of Ozempic and Rybelsus since 1 January 2021 now
+  also cite the two SmPCs that state the date.
+
+## 5. Not changed (for the editor)
+
+- `safety/before-you-consider` pregnancy strip: "How long before a planned pregnancy the US and Canadian labels say to
+  stop." The UK SmPCs say at least 2 months (semaglutide) and at least 1 month (tirzepatide); the strip could add the UK.
+- `compounds/semaglutide`, NAION: the UK Ozempic SmPC (section 4.4) has a NAION warning; the page already says the UK
+  regulator warns of it (`mhra-glp1-what-you-need-to-know`); the SmPC could be added as a second Cite.
+- `legal-routes` ("Where to check") and `legal/research-use-only` (official leaflet row) still name MHRA Products, which
+  is right: it is the regulator's own list of every UK product.
+- `docs/REVIEW-2026-10-26-english-refocus.md` §2.2 still asks the emc question; it is answered.
+- Open item from part 2 (UK and Australian product information on contraindications): the UK half is done; the
+  Australian product information is still open.
+
+## 6. Independent check (27 October 2026)
+
+Every emc URL in `en-emc.yaml` and every UK `label_url` was fetched again (curl, slowly; all HTTP 200) and read as text:
+SmPCs 9748, 14975, 11507, 101229, 13799, 102093, 102344 and 15481, and the searches semaglutide (20), tirzepatide (6),
+Mounjaro (6), Ozempic (4), Wegovy (10), retatrutide, Kayshild, elamipretide, Forzinity, thymalfasin and Zadaxin (none).
+Product name, strength, holder (section 7), licence numbers (section 8), dates (sections 9 and 10), "last updated on
+emc", "Discontinued" marks, sections 4.1, 4.3 and 5.3 all match the notes; no SmPC contains "medullary", "multiple
+endocrine" or "MEN 2", and none has a thyroid warning in section 4.4. Each changed sentence and indication line
+matches the SmPC text. The allowlist entry is right (host only; the URLs carry no commerce token). GOV.UK search
+(mounjaro children / paediatric) again found no MHRA notice of the children's indication; the 24 October copy of the
+KwikPen SmPC (emc update 8 September 2026) already had it, so "By October 2026" stands.
+
+Fixed: `safety/before-you-consider` said "these medicines" while citing three SmPCs; it now names Ozempic, Wegovy and
+Mounjaro. The note of `uk-mhra-substance-index-status-a-2026-10-24` (`src/data/sources/refocus-status-a.yaml`) still
+said it was the UK `label_url` because emc was not allowed; a dated sentence now says the products link emc instead.
+After the fixes: `npm run validate` 0 errors (164 warnings), `npm run build` 136 pages, `npm run check` passed.
+
+## Files changed in part 3
+
+`config/link-allowlist.json`; `src/data/sources/en-emc.yaml` (new: 8 re-added sources, 1 new);
+`src/data/compounds/{semaglutide,tirzepatide}.yaml` (UK products' label links and comments, UK row sources);
+`src/content/compounds/en/{semaglutide,tirzepatide}.mdx` (UK indication lines, thyroid paragraph, UK paragraph, UK
+note); `src/content/pages/en/safety/before-you-consider.mdx` (thyroid fold); `docs/CONTENT-GUIDE.md` (`label_url`);
+`research/refocus-notes/merge.md` (pointer in §1.3); `src/data/sources/refocus-status-a.yaml` (one note, §6); this
+file.

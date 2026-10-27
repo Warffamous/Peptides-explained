@@ -737,8 +737,9 @@ authorised_products:
     label_source: ca-pm-egrifta-2015
 ```
 
-`label_url` is the regulator's own product information, never a seller: the FDA label (US), the MHRA
-Products page for the substance (UK; emc, `medicines.org.uk`, is not on the allowlist), the Health
+`label_url` is the official product information, never a seller: the FDA label (US), the product's
+SmPC on emc (UK, `www.medicines.org.uk`, allowed by the owner on 27 October 2026; the MHRA Products
+page for the substance where emc has no SmPC for the product, and as a source of the UK row), the Health
 Canada product monograph (`pdf.hres.ca`) and the ARTG entry (Australia). An EU product (EMA EPAR) is
 kept for the Dutch site and is not shown on English. Every product needs a localised `indications`
 line in each page's frontmatter, written from that label (the validator fails without it).

@@ -47,7 +47,8 @@ regulatory:
   # UK (since added 24 October 2026 from research/refocus/status/tirzepatide.yaml, fact-checked): the first Great
   # Britain licences, Mounjaro single-dose pens PLGB 14895/0317, 0318 and 0320 to 0323, dated 26 September 2022 (the
   # EU authorisation of 15 September 2022 also applied in Northern Ireland until the end of 2024).
-  - { jurisdiction: UK, status: authorised, since: 2022-09-26, as_of: 2026-10-23, sources: [mhra-glp1-what-you-need-to-know, mhra-2026-falsified-mounjaro, uk-mhra-ma-granted-2022, uk-mhra-substance-index-status-a-2026-10-24] }
+  # uk-emc-smpc-mounjaro-kwikpen-2-5mg added 27 October 2026 (KwikPen date; children from 10 in regulatory_notes.UK).
+  - { jurisdiction: UK, status: authorised, since: 2022-09-26, as_of: 2026-10-23, sources: [mhra-glp1-what-you-need-to-know, mhra-2026-falsified-mounjaro, uk-mhra-ma-granted-2022, uk-mhra-substance-index-status-a-2026-10-24, uk-emc-smpc-mounjaro-kwikpen-2-5mg] }
   - { jurisdiction: US, status: authorised, since: 2022-05-13, as_of: 2026-10-20, sources: [fda-drugsatfda-mounjaro, fda-drugsatfda-zepbound, fda-label-mounjaro, fda-label-zepbound] }
   # Canada: Mounjaro, Notice of Compliance 24 November 2022 (the monograph's 'Date of Initial Authorization' reads
   # 23 November 2022); Zepbound followed on 13 May 2025.
@@ -126,9 +127,13 @@ authorised_products:
   # Every label_url below was re-opened by the merge on 24 October 2026. The US products above cover every US
   # presentation (single-dose pens and vials, multiple-dose vials from 7 January 2026, KwikPens from 20 January 2026).
   # United Kingdom: the first GB licence (single-dose pens, 26 September 2022, MHRA list of granted licences); vials
-  # and KwikPens followed. There is no 'Zepbound' in the UK: Mounjaro carries both indications. label_url: the MHRA
-  # Products substance page, which lists every UK tirzepatide product with its SmPC and leaflet files.
-  - { id: mounjaro-uk, name: Mounjaro, holder: Eli Lilly Nederland B.V., jurisdiction: UK, authorised: 2022-09-26, route: subcutaneous, label_url: "https://products.mhra.gov.uk/substance/?substance=TIRZEPATIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  # and KwikPens followed. There is no 'Zepbound' in the UK: Mounjaro carries both indications. label_url (since
+  # 27 October 2026, when the owner allowed emc, www.medicines.org.uk: research/refocus-notes/finish.md part 3): the
+  # Mounjaro KwikPen 2.5 mg SmPC on emc (holder Eli Lilly Nederland B.V., PLGB 14895/0340 to 0345, first authorised
+  # 25 January 2024), the only Mounjaro SmPC on emc; the single-dose pens (26 September 2022, the date above) and the
+  # vials have none there. The MHRA Products substance page, which lists every UK tirzepatide product with its SmPC
+  # and leaflet files, stays a source of the UK regulatory row above.
+  - { id: mounjaro-uk, name: Mounjaro, holder: Eli Lilly Nederland B.V., jurisdiction: UK, authorised: 2022-09-26, route: subcutaneous, label_url: "https://www.medicines.org.uk/emc/product/15481/smpc", label_source: uk-emc-smpc-mounjaro-kwikpen-2-5mg }
   # Canada: one product monograph covers the Mounjaro pens, vials and KwikPen. Merge check (24 October 2026): the
   # Drug and Health Product Portal (dhpp.hpfb-dgpsa.ca/dhpp/resource/<DPD code>) links the current monographs, newer
   # than those the research found while the DPD was down: Mounjaro 00085122 (23 June 2026, with the paediatric type 2

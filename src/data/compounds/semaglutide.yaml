@@ -47,7 +47,8 @@ regulatory:
   # authorised for the UK from 8 February 2018 through the EU-wide authorisation (the UK was an EU member until
   # 31 January 2020) and has had its own Great Britain licence since 1 January 2021 (converted at the end of the EU
   # transition; Northern Ireland stayed under the EU authorisation until the end of 2024).
-  - { jurisdiction: UK, status: authorised, since: 2018-02-08, as_of: 2026-10-23, sources: [mhra-glp1-what-you-need-to-know, uk-mhra-substance-index-status-a-2026-10-24, uk-mhra-uk-wide-licensing, uk-euwa-2018-s20-exit-day, ema-epar-ozempic] }
+  # uk-emc-smpc-ozempic-0-25mg added 27 October 2026 (the Great Britain licence date, 1 January 2021, in regulatory_notes.UK).
+  - { jurisdiction: UK, status: authorised, since: 2018-02-08, as_of: 2026-10-23, sources: [mhra-glp1-what-you-need-to-know, uk-mhra-substance-index-status-a-2026-10-24, uk-mhra-uk-wide-licensing, uk-euwa-2018-s20-exit-day, ema-epar-ozempic, uk-emc-smpc-ozempic-0-25mg] }
   - { jurisdiction: US, status: authorised, since: 2017-12-05, as_of: 2026-10-20, sources: [fda-drugsatfda-ozempic, fda-drugsatfda-rybelsus, fda-drugsatfda-wegovy, fda-drugsatfda-wegovy-tablets] }
   # Canada: Ozempic, Notice of Compliance 4 January 2018 (the first semaglutide authorisation in Canada).
   - jurisdiction: CA
@@ -130,15 +131,19 @@ authorised_products:
   - { id: wegovy-us, name: Wegovy (injection), holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2021-06-04, route: subcutaneous, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf", label_source: fda-label-wegovy }
   - { id: wegovy-tablets-us, name: Wegovy (tablets), holder: Novo Nordisk Inc., jurisdiction: US, authorised: 2025-12-22, route: oral, label_url: "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/218316s007lbl.pdf", label_source: fda-label-wegovy }
   # United Kingdom (holder Novo Nordisk A/S). Dates are the UK licences' own: Ozempic PLGB 04668/0331 and Rybelsus
-  # PLGB 04668/0420, 'Date of first authorisation: 01 January 2021' (SmPC section 9, read on emc by the research on
-  # 24 October 2026; emc is not on the link allowlist, so it is not linked: research/refocus-notes/merge.md); Wegovy
-  # pens PLGB 04668/0429 to 0433, 24 September 2021, and Wegovy tablets PL 04668/0466, 11 June 2026 (MHRA lists of
-  # granted licences). label_url: the MHRA Products substance page, which lists every UK semaglutide product with its
-  # SmPC and leaflet files.
-  - { id: ozempic-uk, name: Ozempic, holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-01-01, route: subcutaneous, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
-  - { id: rybelsus-uk, name: Rybelsus, holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-01-01, route: oral, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
-  - { id: wegovy-uk, name: Wegovy (injection), holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-09-24, route: subcutaneous, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
-  - { id: wegovy-tablets-uk, name: Wegovy (tablets), holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2026-06-11, route: oral, label_url: "https://products.mhra.gov.uk/substance/?substance=SEMAGLUTIDE", label_source: uk-mhra-substance-index-status-a-2026-10-24 }
+  # PLGB 04668/0420, 'Date of first authorisation: 01 January 2021' (SmPC section 9 on emc, read by the research on
+  # 24 October 2026 and again on 27 October 2026); Wegovy pens PLGB 04668/0429 to 0433, 24 September 2021, and Wegovy
+  # tablets PL 04668/0466, 11 June 2026 (MHRA lists of granted licences). label_url (since 27 October 2026, when the
+  # owner allowed emc, www.medicines.org.uk: research/refocus-notes/finish.md part 3): the product's SmPC on emc,
+  # whose holder (section 7) is Novo Nordisk A/S for each. Wegovy (injection) links the FlexTouch 0.25 mg SmPC
+  # (PLGB 04668/0436, first authorised 10 May 2022), which carries every Wegovy pen indication; the first Wegovy pens
+  # (single-dose, 24 September 2021) have no SmPC on emc. Rybelsus links the current 1.5 mg tablet (PLGB 04668/0451),
+  # because emc marks the original 3, 7 and 14 mg tablets 'Discontinued'. The MHRA Products substance page, which
+  # lists every UK semaglutide product with its SmPC and leaflet files, stays a source of the UK regulatory row above.
+  - { id: ozempic-uk, name: Ozempic, holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-01-01, route: subcutaneous, label_url: "https://www.medicines.org.uk/emc/product/9748/smpc", label_source: uk-emc-smpc-ozempic-0-25mg }
+  - { id: rybelsus-uk, name: Rybelsus, holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-01-01, route: oral, label_url: "https://www.medicines.org.uk/emc/product/101229/smpc", label_source: uk-emc-smpc-rybelsus-1-5mg }
+  - { id: wegovy-uk, name: Wegovy (injection), holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2021-09-24, route: subcutaneous, label_url: "https://www.medicines.org.uk/emc/product/13799/smpc", label_source: uk-emc-smpc-wegovy-flextouch-0-25mg }
+  - { id: wegovy-tablets-uk, name: Wegovy (tablets), holder: Novo Nordisk A/S, jurisdiction: UK, authorised: 2026-06-11, route: oral, label_url: "https://www.medicines.org.uk/emc/product/102344/smpc", label_source: uk-emc-smpc-wegovy-tablets-1-5mg }
   # Canada (holder = the Drug Product Database company; 'authorised' = the Notice of Compliance date in Health Canada's
   # decision document where one exists, otherwise the monograph's date of authorization, which equals the DPD
   # 'approved' date). label_url: the product monograph on pdf.hres.ca. Merge check (24 October 2026): the DPD itself

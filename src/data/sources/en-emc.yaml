@@ -1,0 +1,112 @@
+# UK product information on emc, the electronic medicines compendium (www.medicines.org.uk). The owner allowed
+# emc on 27 October 2026 (config/link-allowlist.json); log in research/refocus-notes/finish.md, part 3.
+#
+# Eight entries come back from the fact-checked research, which the data merge dropped only because emc was not on
+# the allowlist (research/refocus-notes/merge.md, section 1.3): seven from research/refocus/sources/status-a.yaml and
+# uk-emc-search-2026-10-24 from research/refocus/sources/us-uk-routes.yaml. Ids are unchanged (none clashes with
+# src/data/sources/*.yaml). One entry is new: uk-emc-smpc-rybelsus-1-5mg, the current Rybelsus tablet, which the
+# products table links because emc marks the original Rybelsus tablets 'Discontinued'.
+# Every URL was fetched again on 27 October 2026 (HTTP 200; curl with a browser user agent, the page text read in
+# full) and each note says what the page says now and what it is cited for. The research's notes were carried over
+# where the page still says the same; "HOST NOT ALLOWLISTED" is dropped. emc publishes the SmPCs and patient leaflets
+# that UK licence holders upload; it is not the licensing register, so a product missing from emc may still hold a UK
+# licence (the MHRA Products substance pages, uk-mhra-substance-index-status-a-2026-10-24, list every UK product).
+
+uk-emc-search-status-a-2026-10-24:
+  type: dataset
+  authors: "Datapharm (electronic medicines compendium, emc)"
+  title: "emc searches, 24 and 27 October 2026: semaglutide, tirzepatide, retatrutide, Ozempic, Wegovy, Mounjaro, Kayshild"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/search?q=semaglutide
+  accessed: 2026-10-27
+  verified: url
+  note: "Searched by the research on 24 October 2026 and again on 27 October 2026, with the same results. 'semaglutide': '20 results found', all under the company Novo Nordisk Limited (the UK office; each SmPC names Novo Nordisk A/S as the holder): Ozempic 0.25, 0.5, 1 and 2 mg pre-filled pens; Rybelsus 3, 7 and 14 mg tablets (each marked 'Discontinued' on 27 October 2026) and Rybelsus 1.5, 4 and 9 mg tablets; Wegovy FlexTouch 0.25, 0.5, 1, 1.7 and 2.4 mg; Wegovy 7.2 mg pen; Wegovy tablets 1.5, 4, 9 and 25 mg. 'tirzepatide' and 'Mounjaro': 6 results each, all Mounjaro KwikPen 2.5 to 15 mg (company Eli Lilly and Company Limited). 'Ozempic': 4 results; 'Wegovy': 10. 'retatrutide' and 'Kayshild': 'No search results for'. emc lists only products whose SmPC the company has uploaded, so it is not a complete list of UK licences (the MHRA lists also show Wegovy single-dose pens and Mounjaro single-dose pens and vials, see uk-mhra-substance-index-status-a-2026-10-24). Not cited on a page (27 October 2026). Supports: which UK semaglutide and tirzepatide products have product information on emc; none for retatrutide."
+
+uk-emc-smpc-ozempic-0-25mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Ozempic 0.25 mg solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/9748/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "Re-read 27 October 2026; last updated on emc 28 July 2026. Section 7 holder Novo Nordisk A/S (Bagsværd, Denmark); section 8 'PLGB 04668/0331'; section 9 'Date of first authorisation: 01 January 2021', 'Date of latest renewal: 10 June 2024'; section 10 'Date of revision of the text 07/2026'. Section 4.1: adults with insufficiently controlled type 2 diabetes as an adjunct to diet and exercise, 'as monotherapy when metformin is considered inappropriate due to intolerance or contraindications' or 'in addition to other medicinal products for the treatment of diabetes'; cardiovascular, peripheral arterial disease and kidney results are referred to section 5.1, not listed as separate indications. Section 4.3, the only contraindication: 'Hypersensitivity to the active substance or to any of the excipients listed in section 6.1.' Section 5.3: 'Non-lethal thyroid C-cell tumours observed in rodents are a class effect for GLP-1 receptor agonists'; semaglutide caused them in 2-year rat and mouse studies at clinically relevant exposures; 'The relevance for humans is considered to be low, but cannot be completely excluded.' The text has no warning or contraindication for medullary thyroid carcinoma or MEN 2 (neither term appears). The 1 January 2021 date is the GB licence created when the UK left the EU's medicines system (centrally authorised products were 'grandfathered', uk-mhra-uk-wide-licensing); Ozempic had been authorised for the whole EU, the UK included, since 8 February 2018 (ema-epar-ozempic). The Ozempic 2 mg pen has its own licence, PLGB 04668/0435, first authorised 18 July 2022 (https://www.medicines.org.uk/emc/product/14975/smpc, re-read 27 October 2026, same holder, indication and contraindication). Cited for: the UK Ozempic licence and its date, the UK indication, and how the UK product information treats the rodent thyroid finding; the label link of the UK Ozempic row in the products table."
+
+uk-emc-smpc-rybelsus-3mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Rybelsus 3 mg tablets — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/11507/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "Re-read 27 October 2026; last updated on emc 7 April 2026; the page is marked 'Discontinued' (as are the 7 and 14 mg tablets). Holder Novo Nordisk A/S; 'PLGB 04668/0420'; 'Date of first authorisation: 01 January 2021', 'Date of latest renewal: 03 February 2025'; revision 03/2026. Section 4.1 as Ozempic's (monotherapy when metformin is inappropriate, or in combination with other diabetes medicines); 4.3 hypersensitivity only; 5.3 the same rodent C-cell wording. The newer tablets (uk-emc-smpc-rybelsus-1-5mg) have their own licences, PLGB 04668/0451 to 0453, first authorised 6 December 2024 (uk-mhra-ma-granted-2024). Cited for: the Great Britain licence of the original Rybelsus tablets dates from 1 January 2021."
+
+uk-emc-smpc-rybelsus-1-5mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Rybelsus 1.5 mg tablets — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/101229/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "New entry, 27 October 2026 (the research named this page in the Rybelsus 3 mg note). Last updated on emc 7 April 2026; not marked 'Discontinued' (nor are the 4 and 9 mg tablets). Section 7 holder Novo Nordisk A/S (Bagsværd, Denmark); section 8 'PLGB 04668/0451'; section 9 'Date of first authorisation: 06 December 2024'; revision 03/2026. Section 4.1: adults with insufficiently controlled type 2 diabetes as an adjunct to diet and exercise, 'as monotherapy when metformin is considered inappropriate due to intolerance or contraindications' or 'in combination with other medicinal products for the treatment of diabetes'. Section 4.3 hypersensitivity only; 5.3 the rodent thyroid C-cell wording of the other semaglutide SmPCs ('The relevance for humans is considered to be low, but cannot be completely excluded'). Cited for: the label link and indication of the UK Rybelsus row in the products table (the current tablet; the row's date, 1 January 2021, is the original tablets' licence, uk-emc-smpc-rybelsus-3mg)."
+
+uk-emc-smpc-wegovy-flextouch-0-25mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Wegovy 0.25 mg FlexTouch solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/13799/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "Re-read 27 October 2026; last updated on emc 22 September 2026. Holder Novo Nordisk A/S; 'PLGB 04668/0436'; 'Date of first authorisation: 10 May 2022'; revision 09/2026; subject to additional monitoring. Section 4.1: weight management with a reduced-calorie diet and increased physical activity in adults with an initial BMI of 30 kg/m2 or more, or 27 to under 30 with at least one weight-related comorbidity; in adolescents aged 12 and above with obesity and body weight above 60 kg; reducing the risk of major adverse cardiovascular events in adults with established cardiovascular disease and obesity or overweight (BMI 27 or more); non-cirrhotic MASH with moderate to advanced fibrosis (F2 to F3), for which section 5.1 says the authorisation 'has been changed to conditional marketing authorisation' pending further evidence. Section 4.3 hypersensitivity only; 5.3 the rodent thyroid C-cell wording ('The relevance for humans is considered to be low, but cannot be completely excluded'); no medullary thyroid carcinoma or MEN 2 warning. The FlexTouch pens were not the first UK Wegovy licences: single-dose pens PLGB 04668/0429 to 0433 were granted on 24 September 2021 (uk-mhra-ma-granted-2021); their SmPC is not on emc. Cited for: the label link and indications of the UK Wegovy injection row, and how the UK product information treats the rodent thyroid finding."
+
+uk-emc-smpc-wegovy-7-2mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Wegovy 7.2 mg solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/102093/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "Re-read 27 October 2026; last updated on emc 1 October 2026. Holder Novo Nordisk A/S; 'PL 04668/0460' (a UK-wide licence, PL prefix, see uk-mhra-uk-wide-licensing); 'Date of first authorisation: 13 April 2026'; revision 09/2026. Section 4.1: weight management in adults with an initial BMI of 30 or more, or 27 to under 30 with at least one weight-related comorbidity (no other indication in this SmPC); 4.3 hypersensitivity only. Not cited on a page (27 October 2026). Supports: the UK licence date of the single-dose 7.2 mg pen (with uk-mhra-2026-04-wegovy-7-2mg-pen)."
+
+uk-emc-smpc-wegovy-tablets-1-5mg:
+  type: label
+  authors: "Novo Nordisk A/S (SmPC as published on emc)"
+  title: "Wegovy 1.5 mg tablets — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/102344/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "Re-read 27 October 2026; last updated on emc 16 June 2026. Holder Novo Nordisk A/S; 'PL 04668/0466'; 'Date of first authorisation: 11 June 2026'; revision 06/2026. Section 4.1: weight management, including weight loss and weight maintenance, in adults only, with an initial BMI of 30 or more, or 27 to under 30 with at least one weight-related comorbidity. Section 4.3 hypersensitivity only; 5.3 the rodent thyroid C-cell wording of the pens. The 4, 9 and 25 mg tablets are also on emc (products 102345, 102346 and 102347, in the search list of 27 October 2026). Cited for: the label link and indication of the UK Wegovy tablets row in the products table."
+
+uk-emc-smpc-mounjaro-kwikpen-2-5mg:
+  type: label
+  authors: "Eli Lilly Nederland B.V. (SmPC as published on emc)"
+  title: "Mounjaro KwikPen 2.5 mg solution for injection in pre-filled pen — Summary of Product Characteristics"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/product/15481/smpc
+  accessed: 2026-10-27
+  verified: url
+  note: "Re-read 27 October 2026; last updated on emc 8 September 2026. Section 7 'Eli Lilly Nederland B.V., Orteliuslaan 1000, 3528 BD Utrecht, The Netherlands'; section 8 'PLGB 14895/0340' to '/0345' (the six KwikPen strengths); section 9 'Date of first authorisation: 25 January 2024'; section 10 'Date of revision of the text 29 August 2026'; subject to additional monitoring. Section 4.1: type 2 diabetes in 'adults, adolescents and children aged 10 years and above' when not well controlled, as an adjunct to diet and exercise (monotherapy when metformin is inappropriate, or with other diabetes medicines); weight management, including weight loss and weight maintenance, in adults with an initial BMI of 30 or more, or 27 to under 30 with at least one weight-related comorbid condition; obstructive sleep apnoea and heart failure results are referred to section 5.1. When the children's indication was added in the UK is not stated (a GOV.UK search on 27 October 2026 found no MHRA notice). Section 4.3, the only contraindication: 'Hypersensitivity to the active substance or to any of the excipients listed in section 6.1.' Section 5.3: in a 2-year rat study tirzepatide 'caused an increase in thyroid C-cell tumours (adenomas and carcinomas) at all doses compared to controls. The human relevance of these findings is unknown'; a 6-month study in rasH2 transgenic mice found no increase. No medullary thyroid carcinoma or MEN 2 warning (neither term appears). Section 4.6: stop at least 1 month before a planned pregnancy. The KwikPen was not the first UK Mounjaro licence: single-dose pens PLGB 14895/0317, 0318 and 0320 to 0323 were granted on 26 September 2022 (uk-mhra-ma-granted-2022) and vials PLGB 14895/0331 to 0336 on 1 September 2023 (uk-mhra-ma-granted-2023); neither SmPC is on emc. Cited for: the label link and indications of the UK Mounjaro row (children from 10 with type 2 diabetes by October 2026), the KwikPen licence, and how the UK product information treats the rat thyroid finding."
+
+uk-emc-search-2026-10-24:
+  type: dataset
+  authors: "Datapharm (electronic medicines compendium, emc)"
+  title: "emc searches, 24 and 27 October 2026: elamipretide and thymalfasin (UK product information)"
+  container: "emc (medicines.org.uk)"
+  year: 2026
+  url: https://www.medicines.org.uk/emc/search?q=elamipretide
+  accessed: 2026-10-27
+  verified: url
+  note: "Searched by the research and its fact-check on 24 October 2026 (research/refocus/sources/us-uk-routes.yaml) and again on 27 October 2026 (server-rendered results pages): 'No search results for' elamipretide, Forzinity, SS-31, MTP-131, Bendavia, 'elamipretide hydrochloride', Szeto-Schiller, thymalfasin, Zadaxin, thymosin and 'thymosin alpha 1'. Control: 'wegovy' '10 results found', Wegovy pens and Wegovy tablets. LIMIT: emc is not the licensing register and does not list every UK-licensed product, so this supports, but does not prove, that neither elamipretide nor thymalfasin has a UK licence. The MHRA Products database found no elamipretide product, but three 'Zadaxin' documents behind its disclaimer remain unread (mhra-products-search-elamipretide-thymalfasin), so this entry does not support 'thymalfasin is not licensed in the UK'. Not cited on a page (27 October 2026). Supports: no UK product information for elamipretide or thymalfasin on emc."
