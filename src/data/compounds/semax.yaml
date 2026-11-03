@@ -45,7 +45,9 @@ regulatory:
   # EU and NL rows re-checked 27 October 2026 (research/nl/status/semax.yaml, fact-checked; research/nl-notes/merge.md).
   - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10] }
   - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
-  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-semax-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  # US re-checked 3 November 2026 for compounding: still not on the 503A list, no rule proposed; the HHS draft
+  # enforcement-discretion policy of 30 October 2026 lists it (Appendix A). Approval status unchanged.
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-11-03, sources: [fda-pcac-2026-semax-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks, fr-2026-22192-hhs-peptide-enforcement-discretion, hhs-2026-503a-peptide-policy, federalregister-503a-search-2026-11-03] }
   # UK, CA, AU: merged from research/refocus/status/semax.yaml (fact-checked 24 October 2026); the Russian
   # registration does not apply in these countries. UK: the FSA records that the MHRA considers Semax a medicine, so
   # it may be sold only with a UK marketing authorisation, and none exists. For CA, the Drug Product Database

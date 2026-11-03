@@ -49,7 +49,9 @@ regulatory:
   # research/refocus/status/kpv.yaml (fact-checked 24 October 2026). KPV is not named in the Poisons Standard
   # (unscheduled), so the AU row has no schedule.
   - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-kpv-briefing, uk-mhra-substance-index-status-c-2026-10-23] }
-  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-20, sources: [fda-pcac-2026-kpv-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-pcac-2026-questions, fda-category-2-safety-risks] }
+  # US re-checked 3 November 2026 for compounding: still not on the 503A list, no rule proposed; the HHS draft
+  # enforcement-discretion policy of 30 October 2026 lists it (Appendix A). Approval status unchanged.
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-11-03, sources: [fda-pcac-2026-kpv-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-pcac-2026-questions, fda-category-2-safety-risks, fr-2026-22192-hhs-peptide-enforcement-discretion, hhs-2026-503a-peptide-policy, federalregister-503a-search-2026-11-03] }
   - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-status-c-2026-10-23, ca-noc-search-status-c-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-hc-recalls-search-status-c-2026-10-23] }
   # compounds-c (24 October 2026): au-poisons-standard-2026-10 added to the AU sources, so the English note 'Not named in
   # the Poisons Standard' carries its source (research/refocus/status/kpv.yaml cites it for 'unscheduled'); status unchanged.

@@ -10,6 +10,12 @@
 # routes: route keys affected ("compounds/bpc-157"); "*" = the whole site.
 # Never invent an entry. Every substantive entry says what was wrong, what it says now, and the source.
 
+- id: us-hhs-2026-peptide-policy
+  date: 2026-11-03
+  kind: regulatory-update
+  routes: ["compounds/bpc-157", "compounds/tb-500", "compounds/kpv", "compounds/semax", "compounds/epitalon", "compounds/mots-c", "compounds/ipamorelin", "legal/us", "legal/whats-changing", "legal-routes", "start-here", "history/timeline", "the-case-for-reform"]
+  locales: [en]
+
 - id: nl-v1-publication
   date: 2026-11-03
   kind: publication

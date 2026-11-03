@@ -49,7 +49,9 @@ regulatory:
   # search of 23 October 2026 was confirmed in Health Canada's DPD data extract on 24 October 2026; the NOC database
   # could not be re-checked (re-check before publishing, research/refocus-notes/merge.md).
   - { jurisdiction: UK, status: not-authorised, as_of: 2026-10-23, sources: [uk-hmr-2012-reg-46, fda-pcac-2026-epitalon-briefing, mhra-products-search-status-d-2026-10-23] }
-  - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-epitalon-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
+  # US re-checked 3 November 2026 for compounding: still not on the 503A list, no rule proposed; the HHS draft
+  # enforcement-discretion policy of 30 October 2026 lists it (Appendix A). Approval status unchanged.
+  - { jurisdiction: US, status: not-authorised, as_of: 2026-11-03, sources: [fda-pcac-2026-epitalon-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks, fr-2026-22192-hhs-peptide-enforcement-discretion, hhs-2026-503a-peptide-policy, federalregister-503a-search-2026-11-03] }
   - { jurisdiction: CA, status: not-authorised, as_of: 2026-10-23, sources: [ca-dpd-search-canada-legal-2026-10-23, ca-dpd-extract-search-merge-2026-10-24, ca-pdl-human, fda-pcac-2026-epitalon-briefing, ca-hc-recalls-search-status-d-2026-10-23] }
   # Not named in the Poisons Standard (unscheduled).
   - { jurisdiction: AU, status: not-authorised, as_of: 2026-10-23, sources: [au-artg-search-status-d-2026-10-23, au-poisons-standard-2026-10, fda-pcac-2026-epitalon-briefing] }

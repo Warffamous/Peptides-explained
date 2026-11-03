@@ -21,7 +21,19 @@
   status: advisory-vote
   updated: 2026-07-24
   compounds: [bpc-157, kpv, tb-500, mots-c, semax, epitalon]
-  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, uk-mhra-substance-index-status-c-2026-10-23, mhra-products-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-c-2026-10-23, au-artg-search-status-d-2026-10-23, federalregister-fda-search-2026-10-22, federalregister-fda-search-2026-10-23]
+  sources: [fda-pcac-2026-07-meeting, fr-2026-07361-pcac-notice, fda-pcac-2026-questions, fda-pcac-2026-briefing-intro, fda-503a-bulks-page, fda-pcac-2026-presentations-day1, fda-pcac-2026-semax-briefing, uk-mhra-substance-index-status-c-2026-10-23, mhra-products-search-status-d-2026-10-23, ca-hc-2026-04-think-twice-peptides, ca-dpd-search-canada-legal-2026-10-23, au-artg-search-status-c-2026-10-23, au-artg-search-status-d-2026-10-23, federalregister-fda-search-2026-10-22, federalregister-fda-search-2026-10-23, federalregister-503a-search-2026-11-03, hhs-2026-503a-peptide-policy]
+
+# English (3 November 2026): the HHS draft policy of 30 October 2026, open for comments until 13 November 2026
+# (fr-2026-22192-hhs-peptide-enforcement-discretion). A draft, interim, non-binding statement that HHS does not intend to
+# take enforcement action under strict conditions: "consultation", not a rule. The Federal Register search of
+# 3 November 2026 found no proposed or final rule on the 503A list.
+- id: us-hhs-2026-peptide-enforcement-policy
+  jurisdiction: US
+  status: consultation
+  updated: 2026-10-30
+  next_milestone: 2026-11-13
+  compounds: [bpc-157, epitalon, kpv, mots-c, semax, tb-500]
+  sources: [fr-2026-22192-hhs-peptide-enforcement-discretion, hhs-2026-503a-peptide-policy, federalregister-503a-search-2026-11-03, fda-pcac-2026-07-meeting]
 
 - id: us-pcac-2027-meeting
   jurisdiction: US
@@ -36,7 +48,7 @@
   status: in-force
   updated: 2026-05-14
   compounds: [bpc-157, kpv, tb-500, mots-c, cjc-1295, aod-9604, semax, epitalon, ghk-cu]
-  sources: [fda-503a-bulks-page, fda-category-2-safety-risks, fda-503a-categories-2026-05]
+  sources: [fda-503a-bulks-page, fda-category-2-safety-risks, fda-503a-categories-2026-05, hhs-2026-503a-peptide-policy]
 
 - id: us-503b-glp1-exclusion
   jurisdiction: US

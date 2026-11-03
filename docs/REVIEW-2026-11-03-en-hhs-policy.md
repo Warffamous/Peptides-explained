@@ -32,7 +32,7 @@ Appendix A and B), `federalregister-503a-search-2026-11-03` (no rule), and `fda-
 > it, it approves nothing, and it changes nothing outside the US.
 
 Never "legal now", "allowed" or "approved". The verdicts stay **No** in every "Legal to sell or supply?" cell and in
-the routes table (see 6.1).
+the routes table (see section 6, point 1).
 
 ---
 
@@ -44,7 +44,7 @@ Line numbers are in the new file. "Was" and "Now" show the changed words only; c
 
 | # | Edit | BPC-157 | TB-500 | KPV | Semax | Epitalon | MOTS-c |
 |---|---|---|---|---|---|---|---|
-| 1 | **TL;DR, "Is it legal to sell?"** Was: "…US pharmacies cannot legally make it. The July 2026 vote was only advice." (wording differed per page). Now: "No, in all four countries. A draft US policy plans no action against pharmacies that follow strict rules." KPV keeps its own question ("Did the 2026 vote change that?"): "No, only advice. A draft US policy plans no action against pharmacies that follow strict rules." | :11 | :11 | :13 | :11 | :13 | :13 |
+| 1 | **TL;DR, "Is it legal to sell?"** Was: "…US pharmacies cannot legally make it. The July 2026 vote was only advice." (wording differed per page). Now: "No, in all four countries. A draft US policy plans no action against pharmacies that follow strict rules." (MOTS-c: "…pharmacies following strict rules", to stay within the word limit.) KPV keeps its own question ("Did the 2026 vote change that?"): "No, only advice. A draft US policy plans no action against pharmacies that follow strict rules." | :11 | :11 | :13 | :11 | :13 | :13 |
 | 2 | **US note in the status table** (frontmatter). Was: "Not FDA-approved. The July 2026 advisory vote … is non-binding; no rule has been made." Now adds: "…and not on the 503A list … A draft HHS policy of 30 October 2026 says HHS does not intend to act against compounding it under strict conditions; it is not binding." TB-500 also loses "vote to allow pharmacy compounding" (a vote cannot allow anything). | :131 | :156 | :122 | :85 | :90 | :85 |
 | 3 | **Status table date line.** Adds "compounding checked again on 3 November 2026". | :377 | :393 | :333 | :156 | :159 | :162 |
 | 4 | **US row, "Legal to sell or supply?"** (verdict stays No). Was: "Pharmacies may not (legally) make it until the FDA makes a rule adding it to the 503A list. [The July 2026 vote was only advice.]" Now: "It is not on the 503A list of ingredients pharmacies may use[, and the July 2026 vote was only advice]. A draft HHS policy of 30 October 2026 says HHS does not intend to act against pharmacies that compound it under strict conditions. The policy is not binding." | :381 | :397 | :337 | :160 | :163 | :166 |
@@ -66,20 +66,20 @@ Line numbers are in the new file. "Was" and "Now" show the changed words only; c
 
 | # | Line | Was | Now |
 |---|---|---|---|
-| 15 | :4 description | "…the July 2026 advisory vote, 'research use' sellers…" | "…the July 2026 advisory vote and the draft HHS policy, 'research use' sellers…" |
+| 15 | :4 description | "What US federal law says about unapproved peptides: … the July 2026 advisory vote, 'research use' sellers, importing and reporting." | "US federal law on unapproved peptides: … the 2026 advisory vote and draft HHS policy, 'research use' sellers, importing, reporting." (the description may have at most 170 characters) |
 | 16 | :11 TL;DR "Can US pharmacies make BPC-157?" | "Not legally. FDA advisers backed it and five others in July 2026, reports say. Only advice." | "Not under the law. A draft US policy plans no action if strict rules are met." |
 | 17 | :34 further reading | — | Adds the Federal Register notice |
 | 18 | :39 table date line | "checked on 22 October and again on 24 October 2026" | adds "compounding checked again on 3 November 2026" |
 | 19 | :46 table, new row | — | "Did the HHS policy of 30 October 2026 change the law? **No.** It is a draft. HHS says it does not intend to act against compounding with six peptides under strict conditions. It is not a rule and not binding." |
 | 20 | :169 the five points, point 4 | "**Still prohibited for now.** Compounding with these peptides stays unlawful until the FDA adopts the advice and completes rulemaking." | "**No rule yet.** None of the six is on the 503A list … by 3 November 2026 it had proposed no such rule. On 30 October 2026 a draft HHS policy said … It is not binding and changes no rule (see below)." |
 | 21 | :178 what happens next | "On 22 and 23 October 2026 we found no new rule…" | "On 22 and 23 October 2026, and again on 3 November 2026, we found no proposed or final rule … The only new document was the HHS notice below." |
-| 22 | :182–214 (new chapter) | — | New chapter **"The draft HHS policy of 30 October 2026"**: what HHS published; who it covers (state-licensed pharmacy, federal facility, licensed doctor); "enforcement discretion" explained; a numbered list of the **nine conditions** (Appendix A; Appendix B forms and routes with the three examples; FDA-registered CGMP maker with certificate of analysis; one active ingredient; documented absorption for forms taken by mouth; the label "This is a compounded drug product. Not for resale."; only an FDA-cleared syringe; MedWatch and state reporting; all other rules, including a named-patient prescription); draft until 13 November, not binding, may be revisited, no listing, not an approval, nothing changes in the UK, Canada or Australia. A fold: HHS's stated reason (a 9-word quote about "research-use-only peptides"), CDER's recommendations for TB-500, epitalon, KPV and MOTS-c, FDA staff's July proposal, no minutes yet |
+| 22 | :182–214 (new chapter) | — | New chapter **"The draft HHS policy of 30 October 2026"**, with the lead "A draft: HHS plans no action against pharmacies making six peptides under strict rules. No law changed." Then: what HHS published; who it covers (state-licensed pharmacy, federal facility, licensed doctor); "enforcement discretion" explained; a numbered list of the **nine conditions** (Appendix A; Appendix B forms and routes with the three examples; FDA-registered CGMP maker with certificate of analysis; one active ingredient; documented absorption for forms taken by mouth; the label "This is a compounded drug product. Not for resale."; only an FDA-cleared syringe; MedWatch and state reporting; all other rules, including a named-patient prescription); draft until 13 November, not binding, may be revisited, no listing, not an approval, nothing changes in the UK, Canada or Australia. A fold: HHS's stated reason (a 9-word quote about "research-use-only peptides"), CDER's recommendations for TB-500, epitalon, KPV and MOTS-c, FDA staff's July proposal, no minutes yet |
 
 ### 2.3 What's changing (`/en/legal/whats-changing/`)
 
 | # | Line | Was | Now |
 |---|---|---|---|
-| 23 | :7 TL;DR "Has the FDA made BPC-157 legal?" | "No. Advisers backed it in July 2026, reports say. The FDA has not decided yet." | "No, no rule yet. A draft US policy plans no action against pharmacies following strict rules." |
+| 23 | :7 TL;DR "Has the FDA made BPC-157 legal?" | "No. Advisers backed it in July 2026, reports say. The FDA has not decided yet." | "No rule yet. A draft US policy plans no action against pharmacies following strict rules." |
 | 24 | :36 | "We checked every item against its sources on 23 and 24 October 2026." | adds ", and the US compounding items again on 3 November 2026." |
 | 25 | :65 US lead | "The FDA must decide what to do with its advisers' vote. The law has not changed yet." | "No FDA rule on its advisers' vote yet. A draft HHS policy plans no action under strict conditions." |
 | 26 | :71 diagram step 3 | — | adds "Meanwhile, a draft HHS policy covers the six that the advisers recommended (see below)." |
@@ -145,7 +145,16 @@ serious side effects to the FDA", say so.
 | 47 | `src/i18n/en/glossary/legal-b.json` :216 (new) | **HHS**: "The US Department of Health and Human Services: the federal government department for health. The FDA is part of it." |
 | 48 | Glossary `503a-bulks-list` (`src/i18n/en/glossary/bpc-157.json`) | Checked, **unchanged**: it says what the list is and that being on it is not an approval, which is still true |
 
-DATA-ROWS-PLACEHOLDER
+### 4.1 Data files (dates, sources, the new tracker and timeline items, the corrections log)
+
+| # | File and line | Change |
+|---|---|---|
+| 49 | US status rows: `src/data/compounds/bpc-157.yaml` :51, `tb-500.yaml` :58, `kpv.yaml` :54, `semax.yaml` :50, `epitalon.yaml` :54, `mots-c.yaml` :45 | The date shown beside the US note in each status table moves from 20 (or 22) October to **3 November 2026**; the three new sources are added, with a comment. The status stays "not authorised". |
+| 50 | `src/data/tracker.yaml` :24 (`us-pcac-2026-peptide-vote`) | Adds the 3 November Federal Register search and the HHS policy as sources. Status stays "Advisory vote", last update 24 July 2026. |
+| 51 | `src/data/tracker.yaml` :30 (new `us-hhs-2026-peptide-enforcement-policy`) | New tracker item: status **"Public consultation"** (a draft open for comments, not a rule), last update 30 October 2026, next milestone 13 November 2026 |
+| 52 | `src/data/tracker.yaml` :51 (`us-503a-interim-categories`) | Adds the HHS policy as a source (for the new sentence in 43) |
+| 53 | `src/data/timeline.yaml` :667 (new `hhs-2026-peptide-enforcement-policy`) | New timeline event on 30 October 2026 (US, regulation), text in 45 |
+| 54 | `src/data/corrections.yaml` :13 and `src/i18n/en/corrections.json` :2 (new `us-hhs-2026-peptide-policy`) | New corrections-log entry, kind "regulatory update", English only, the 13 changed pages: "US compounding of six peptides: brought up to date with the draft HHS policy of 30 October 2026." The detail says what the pages said before, what they say now, and the two sources. |
 
 ---
 
@@ -153,7 +162,7 @@ DATA-ROWS-PLACEHOLDER
 
 | # | Line | Change |
 |---|---|---|
-| 49 | `docs/CONTENT-GUIDE.md` :123 | Point 4 of "The FDA PCAC vote: the canonical framing" now gives the section-1 framing and its sources, with the words never to use ("legal now", "allowed", "approved", "permitted"). The old wording is kept in brackets. |
+| 55 | `docs/CONTENT-GUIDE.md` :123 | Point 4 of "The FDA PCAC vote: the canonical framing" now gives the section-1 framing and its sources, with the words never to use ("legal now", "allowed", "approved", "permitted"). The old wording is kept in brackets. |
 
 ---
 
@@ -175,7 +184,19 @@ DATA-ROWS-PLACEHOLDER
 
 ## 7. Checks
 
-CHECKS-PLACEHOLDER
+Run on this branch after merging the Dutch publishing commit (`b454e8c`), 3 November 2026:
+
+- `npx tsx scripts/validate-content.ts`: **0 errors**, 177 warnings. The base branch has the same 177 warnings (one
+  KPV warning only moved line); none is new.
+- `npm run build`: **134 pages built**, exit 0.
+- `npm run check`: commerce check passed (0 commercial outbound links); HTML check 0 errors, 0 warnings; residue
+  check 0 error and 0 frame hits.
+- In the built pages: the US law chapter's anchor exists and the links to it from the compound, What's changing and
+  routes pages resolve; the new tracker item, timeline event and corrections entry appear; "enforcement discretion"
+  links to the glossary. The new chapter was looked at in the browser preview.
+
+Not done: no check by a lawyer. The site's footer still says "Content as of 20 October 2026" (`config/site.json`
+`contentAsOf`); this change does not touch it (it is site-wide; your call whether to move it).
 
 ## 8. After your yes
 
