@@ -120,8 +120,19 @@ of the following (verify each element against fda.gov before first use and cite 
    meeting page and voting questions, and write the counts as "as reported from the public
    meeting". Each substance had separate votes for its salt forms (e.g. free base and acetate).
 3. The vote is **advisory and non-binding**, and went **against FDA staff's own recommendation**.
-4. Legal compounding remains prohibited until the FDA formally adopts the recommendation and
-   completes rulemaking.
+4. **No rule has been made, and a draft HHS policy does not change that.** A substance joins the 503A
+   list only through notice-and-comment rulemaking; none of the six is on it, and on 3 November 2026
+   the Federal Register held no proposed rule (`federalregister-503a-search-2026-11-03`). On 30 October
+   2026 HHS published a **draft, interim, non-binding enforcement-discretion policy** (FR Doc. 2026-22192;
+   sources `fr-2026-22192-hhs-peptide-enforcement-discretion`, `hhs-2026-503a-peptide-policy`): until a
+   final rule decides on each of the six, HHS does not intend to take enforcement action against a
+   state-licensed pharmacy, a federal facility or a licensed doctor that compounds it under strict
+   conditions (Appendix B forms and routes, a CGMP bulk source with a certificate of analysis, MedWatch
+   reporting, one active ingredient, the label, a patient-specific prescription). Write it as exactly
+   that. Never "legal now", "allowed", "approved" or "permitted": it puts no peptide on the list, is
+   not an approval, HHS may revisit it, and it changes nothing outside the US. (Until 3 November 2026
+   this point read "legal compounding remains prohibited until the FDA formally adopts the
+   recommendation and completes rulemaking".)
 5. **None of these is an approved medicine in the US, the UK, Canada or Australia** (the four rows of
    each compound's data file, checked 20–23 October 2026; Semax is registered as a medicine in
    Russia, as the FDA's own briefing notes; say so where Semax is discussed). A 503A listing, if it
