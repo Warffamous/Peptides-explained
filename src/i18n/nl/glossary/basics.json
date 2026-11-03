@@ -1,0 +1,515 @@
+{
+  "amino-acid": {
+    "term": "aminozuur",
+    "aliases": ["aminozuren"],
+    "definition": "Een klein molecuul dat een bouwsteen is van peptiden en eiwitten. Er zijn 20 standaardsoorten; elk heeft een aminogroep, een zuurgroep en een eigen zijketen.",
+    "category": "chemistry",
+    "see_also": ["peptide", "peptide-bond", "protein"]
+  },
+  "peptide": {
+    "term": "peptide",
+    "aliases": ["peptiden"],
+    "definition": "Een korte keten van aminozuren, meestal 2 tot ongeveer 50, verbonden door peptidebindingen. Veel hormonen en sommige medicijnen zijn peptiden.",
+    "category": "chemistry",
+    "see_also": ["amino-acid", "polypeptide", "protein"],
+    "autolink": false
+  },
+  "polypeptide": {
+    "term": "polypeptide",
+    "aliases": ["polypeptiden"],
+    "definition": "Een langere keten van aminozuren. Eén of meer polypeptiden vouwen samen tot een eiwit.",
+    "category": "chemistry",
+    "see_also": ["peptide", "protein"]
+  },
+  "protein": {
+    "term": "eiwit",
+    "aliases": ["eiwitten"],
+    "definition": "Een lange keten van aminozuren, of meerdere ketens, gevouwen in een vaste vorm. Waar een peptide ophoudt en een eiwit begint, is een afspraak, geen natuurlijke grens.",
+    "category": "biology",
+    "see_also": ["peptide", "polypeptide"],
+    "autolink": false
+  },
+  "peptide-bond": {
+    "term": "peptidebinding",
+    "aliases": ["peptidebindingen", "amidebinding", "amidebindingen"],
+    "definition": "De chemische verbinding tussen 2 aminozuren in een keten. Verteringsenzymen en andere enzymen breken die door er water aan toe te voegen (hydrolyse).",
+    "category": "chemistry",
+    "see_also": ["amino-acid", "hydrolysis", "protease"]
+  },
+  "condensation-reaction": {
+    "term": "condensatie",
+    "aliases": ["condensatiereactie", "condensatiereacties"],
+    "definition": "Een chemische reactie die 2 moleculen verbindt, waarbij een klein molecuul vrijkomt, meestal water. Aminozuren aan elkaar koppelen tot een keten is een condensatie.",
+    "category": "chemistry",
+    "see_also": ["peptide-bond", "hydrolysis"]
+  },
+  "hydrolysis": {
+    "term": "hydrolyse",
+    "aliases": ["gehydrolyseerd", "hydrolyseren", "hydrolyseert"],
+    "definition": "Een chemische binding breken door water toe te voegen. Zo breekt de vertering eiwitten en peptiden af.",
+    "category": "chemistry",
+    "see_also": ["peptide-bond", "protease"]
+  },
+  "n-terminus": {
+    "term": "N-terminus",
+    "aliases": ["N-termini", "N-terminaal", "N-terminale"],
+    "definition": "Het begin van een peptideketen, waar een vrije aminogroep zit, tenzij die is veranderd. Een aminozuurvolgorde schrijf je vanaf hier.",
+    "category": "chemistry",
+    "see_also": ["c-terminus"]
+  },
+  "c-terminus": {
+    "term": "C-terminus",
+    "aliases": ["C-termini", "C-terminaal", "C-terminale"],
+    "definition": "Het einde van een peptideketen, waar een vrije zuurgroep zit, tenzij die is veranderd.",
+    "category": "chemistry",
+    "see_also": ["n-terminus", "c-terminal-amide"]
+  },
+  "primary-structure": {
+    "term": "primaire structuur",
+    "aliases": [],
+    "definition": "De volgorde van de aminozuren in een peptide- of eiwitketen: de aminozuurvolgorde.",
+    "category": "chemistry",
+    "see_also": ["secondary-structure", "tertiary-structure"]
+  },
+  "secondary-structure": {
+    "term": "secundaire structuur",
+    "aliases": ["helix", "alfahelix", "α-helix", "bètaplaat", "β-plaat"],
+    "definition": "Plaatselijke draaien of plooien in een peptideketen, zoals een spiraal (helix) of een plat vlak (bètaplaat). Vooral waterstofbruggen houden ze bij elkaar.",
+    "category": "chemistry",
+    "see_also": ["primary-structure", "tertiary-structure", "hydrogen-bond"]
+  },
+  "tertiary-structure": {
+    "term": "tertiaire structuur",
+    "aliases": [],
+    "definition": "De totale driedimensionale vouwing van een hele keten. Contacten tussen de zijketens houden die bij elkaar, en soms zwavelbruggen.",
+    "category": "chemistry",
+    "see_also": ["secondary-structure", "quaternary-structure", "disulfide-bond"]
+  },
+  "quaternary-structure": {
+    "term": "quaternaire structuur",
+    "aliases": [],
+    "definition": "Een eenheid van 2 of meer ketens die samen werken.",
+    "category": "chemistry",
+    "see_also": ["tertiary-structure"]
+  },
+  "hydrogen-bond": {
+    "term": "waterstofbrug",
+    "aliases": ["waterstofbruggen", "waterstofbinding", "waterstofbindingen"],
+    "definition": "Een zwakke aantrekking tussen een waterstofatoom en een zuurstof- of stikstofatoom in de buurt. Veel waterstofbruggen samen houden een peptideketen in een draai of vouw.",
+    "category": "chemistry",
+    "see_also": ["secondary-structure"]
+  },
+  "disulfide-bond": {
+    "term": "disulfidebrug",
+    "aliases": ["disulfidebruggen", "disulfidebinding", "disulfidebindingen", "zwavelbrug", "zwavelbruggen"],
+    "definition": "Een sterke verbinding tussen 2 zwavelatomen, meestal van 2 cysteïnes (een aminozuur). Zo’n brug kan een keten sluiten tot een ring of 2 ketens aan elkaar vastmaken.",
+    "category": "chemistry",
+    "see_also": ["cyclic-peptide", "tertiary-structure"]
+  },
+  "dalton": {
+    "term": "dalton",
+    "aliases": ["kilodalton", "kDa"],
+    "definition": "De eenheid voor de massa van een molecuul. Eén dalton is ongeveer de massa van één waterstofatoom.",
+    "category": "chemistry",
+    "see_also": []
+  },
+  "d-amino-acid": {
+    "term": "D-aminozuur",
+    "aliases": ["D-aminozuren", "D-vorm", "L-vorm"],
+    "definition": "De spiegelbeeldvorm van een aminozuur. Het lichaam bouwt zijn eiwitten uit de andere vorm (L); enzymen die op L-ketens passen, kunnen vaak niet knippen bij een D-aminozuur.",
+    "category": "chemistry",
+    "see_also": ["racemisation", "protease"]
+  },
+  "racemisation": {
+    "term": "racemisatie",
+    "aliases": ["epimerisatie"],
+    "definition": "Het omklappen van een aminozuur naar zijn spiegelbeeldvorm tijdens de productie. Zo ontstaat een onzuiverheid die bijna precies lijkt op het peptide dat je wilt maken.",
+    "category": "chemistry",
+    "see_also": ["d-amino-acid", "impurity"]
+  },
+  "cyclic-peptide": {
+    "term": "cyclisch peptide",
+    "aliases": ["cyclische peptide", "cyclische peptiden", "ringvormig peptide", "ringvormige peptiden", "cyclisering"],
+    "definition": "Een peptide waarvan de keten tot een ring is gesloten. Een ring heeft geen losse uiteinden voor sommige enzymen en een stijvere vorm. Daardoor blijft het peptide vaak langer heel.",
+    "category": "chemistry",
+    "see_also": ["disulfide-bond"]
+  },
+  "pegylation": {
+    "term": "PEGylering",
+    "aliases": ["gepegyleerd", "gepegyleerde", "polyethyleenglycol", "PEG-ketens"],
+    "definition": "Ketens van polyethyleenglycol (PEG) aan een medicijn vastmaken. Het molecuul wordt groter, zodat de nieren het minder filteren, en enzymen kunnen er minder goed bij.",
+    "category": "pharmacology",
+    "see_also": ["glomerulus", "protease"]
+  },
+  "fc-fusion": {
+    "term": "Fc-fusie",
+    "aliases": ["Fc-fragment", "Fc-fusie-eiwit", "Fc-fusie-eiwitten", "Fc-deel"],
+    "definition": "Een medicijn vastmaken aan een stukje van een antistof (het Fc-deel). De nieren filteren het grotere molecuul minder, dus blijft het langer in het lichaam.",
+    "category": "pharmacology",
+    "see_also": ["pegylation"]
+  },
+  "solid-phase-peptide-synthesis": {
+    "term": "vaste-fasesynthese",
+    "aliases": ["vaste-fase-peptidesynthese", "vastefasesynthese", "SPPS"],
+    "definition": "De gebruikelijke chemische manier om peptiden te maken: je bouwt de keten aminozuur voor aminozuur op aan heel kleine harsbolletjes, en spoelt tussen de stappen.",
+    "category": "chemistry",
+    "see_also": ["deletion-sequence", "protecting-group"]
+  },
+  "protecting-group": {
+    "term": "beschermgroep",
+    "aliases": ["beschermgroepen", "beschermende groep", "beschermende groepen", "beschermde aminozuren"],
+    "definition": "Een tijdelijk chemisch kapje dat voorkomt dat een deel van een aminozuur op het verkeerde moment reageert tijdens de synthese. Later gaat het kapje er weer af.",
+    "category": "chemistry",
+    "see_also": ["solid-phase-peptide-synthesis"]
+  },
+  "receptor": {
+    "term": "receptor",
+    "aliases": ["receptoren"],
+    "definition": "Een eiwit op of in een cel waar een hormoon of medicijn in past, zoals een sleutel in een slot. Wordt de receptor aangezet, dan reageert de cel.",
+    "category": "biology",
+    "see_also": ["g-protein-coupled-receptor", "agonist", "antagonist"]
+  },
+  "g-protein-coupled-receptor": {
+    "term": "G-eiwitgekoppelde receptor",
+    "aliases": ["G-eiwitgekoppelde receptoren", "GPCR", "GPCR’s"],
+    "definition": "Een grote familie receptoren in het celmembraan, die een signaal naar binnen doorgeven via een G-eiwit. Veel peptidehormonen werken via deze receptoren.",
+    "category": "biology",
+    "see_also": ["receptor", "g-protein", "second-messenger"]
+  },
+  "g-protein": {
+    "term": "G-eiwit",
+    "aliases": ["G-eiwitten"],
+    "definition": "Een eiwit net binnen het celmembraan dat werkt als schakelaar. Een aangezette receptor zet het aan, en het geeft het signaal door aan een enzym.",
+    "category": "biology",
+    "see_also": ["g-protein-coupled-receptor", "gs-protein"]
+  },
+  "second-messenger": {
+    "term": "tweede boodschapper",
+    "aliases": ["tweede boodschappers", "second messenger", "second messengers"],
+    "definition": "Een klein molecuul dat in een cel ontstaat als een receptor aan de buitenkant wordt aangezet. Het brengt de boodschap verder de cel in. cAMP is er één.",
+    "category": "biology",
+    "see_also": ["camp", "g-protein-coupled-receptor"]
+  },
+  "adenylate-cyclase": {
+    "term": "adenylaatcyclase",
+    "aliases": ["adenylylcyclase"],
+    "definition": "Het enzym dat in een cel de boodschapper cAMP maakt als een G-eiwit het aanzet.",
+    "category": "biology",
+    "see_also": ["camp", "g-protein"]
+  },
+  "kinase": {
+    "term": "kinase",
+    "aliases": ["kinasen", "kinases", "proteïnekinase A"],
+    "definition": "Een enzym dat andere eiwitten aan- of uitzet door er een fosfaatgroep aan te hangen. Proteïnekinase A (PKA) is een kinase die door cAMP wordt aangezet.",
+    "category": "biology",
+    "see_also": ["camp", "second-messenger"]
+  },
+  "affinity": {
+    "term": "affiniteit",
+    "aliases": ["bindingsaffiniteit"],
+    "definition": "Hoe stevig een molecuul zich aan zijn receptor vasthoudt. Een hoge affiniteit betekent op zich nog geen sterk effect.",
+    "category": "pharmacology",
+    "see_also": ["intrinsic-efficacy", "potency"]
+  },
+  "intrinsic-efficacy": {
+    "term": "intrinsieke activiteit",
+    "aliases": ["intrinsieke werkzaamheid"],
+    "definition": "Hoe sterk een molecuul een receptor aanzet als het eenmaal gebonden is. Agonisten hebben die; antagonisten niet.",
+    "category": "pharmacology",
+    "see_also": ["affinity", "partial-agonist", "antagonist"]
+  },
+  "potency": {
+    "term": "potentie",
+    "aliases": ["potent", "potente"],
+    "definition": "Hoeveel van een medicijn nodig is voor een bepaald effect. Een potent medicijn werkt al bij een kleine hoeveelheid.",
+    "category": "pharmacology",
+    "see_also": ["affinity", "intrinsic-efficacy"]
+  },
+  "full-agonist": {
+    "term": "volledige agonist",
+    "aliases": ["volledige agonisten"],
+    "definition": "Een molecuul dat een receptor zo volledig aanzet als de cel toelaat.",
+    "category": "pharmacology",
+    "see_also": ["agonist", "partial-agonist"]
+  },
+  "partial-agonist": {
+    "term": "partiële agonist",
+    "aliases": ["partiële agonisten", "gedeeltelijke agonist", "gedeeltelijke agonisten", "partieel agonisme"],
+    "definition": "Een molecuul dat een receptor maar voor een deel aanzet, ook als het alle receptoren bezet. Het kan het effect van een sterkere agonist afzwakken.",
+    "category": "pharmacology",
+    "see_also": ["full-agonist", "antagonist"]
+  },
+  "antagonist": {
+    "term": "antagonist",
+    "aliases": ["antagonisten", "receptorantagonist", "receptorantagonisten"],
+    "definition": "Een molecuul dat aan een receptor bindt zonder die aan te zetten. Zo blokkeert het het eigen signaal van het lichaam.",
+    "category": "pharmacology",
+    "see_also": ["agonist", "inverse-agonist"]
+  },
+  "inverse-agonist": {
+    "term": "inverse agonist",
+    "aliases": ["inverse agonisten", "invers agonisme"],
+    "definition": "Een molecuul dat een receptor die uit zichzelf actief is, juist minder actief maakt: het omgekeerde van een agonist.",
+    "category": "pharmacology",
+    "see_also": ["antagonist", "agonist"]
+  },
+  "selectivity": {
+    "term": "selectiviteit",
+    "aliases": ["niet-selectief", "niet-selectieve"],
+    "definition": "De voorkeur van een medicijn voor één doelwit boven andere. Die voorkeur is nooit absoluut: bij grotere hoeveelheden werkt een medicijn op meer doelwitten.",
+    "category": "pharmacology",
+    "see_also": ["off-target-effect"]
+  },
+  "off-target-effect": {
+    "term": "off-targeteffect",
+    "aliases": ["off-targeteffecten", "off-target-effect", "off-target-effecten", "off-target"],
+    "definition": "Een effect doordat een medicijn op iets anders werkt dan het doelwit waarvoor het bedoeld is.",
+    "category": "pharmacology",
+    "see_also": ["selectivity"]
+  },
+  "drug-tolerance": {
+    "term": "tolerantie (voor een medicijn)",
+    "aliases": ["medicijntolerantie", "tolerantie-effect", "tolerantieontwikkeling"],
+    "definition": "Een zwakkere reactie op een medicijn na herhaald of lang gebruik, bijvoorbeeld omdat cellen minder werkende receptoren hebben.",
+    "category": "pharmacology",
+    "see_also": ["receptor-desensitisation", "receptor-internalisation"]
+  },
+  "negative-feedback": {
+    "term": "negatieve terugkoppeling",
+    "aliases": ["negatieve feedback", "terugkoppelingslus", "terugkoppelingslussen", "feedbacklus", "feedbacklussen"],
+    "definition": "Een regelkring waarin een uitkomst zijn eigen bron afremt, zoals bij een thermostaat. Veel hormoonsystemen werken zo.",
+    "category": "biology",
+    "see_also": ["hypothalamus", "pituitary-gland"]
+  },
+  "hypothalamus": {
+    "term": "hypothalamus",
+    "aliases": [],
+    "definition": "Een klein gebied onderaan de hersenen dat veel hormonen regelt, vooral door de hypofyse opdrachten te geven.",
+    "category": "biology",
+    "see_also": ["pituitary-gland", "negative-feedback"]
+  },
+  "pituitary-gland": {
+    "term": "hypofyse",
+    "aliases": ["hersenaanhangsel"],
+    "definition": "Een klier onder de hersenen, zo groot als een erwt. Die geeft hormonen af die andere klieren aansturen, zoals groeihormoon, LH en FSH.",
+    "category": "biology",
+    "see_also": ["hypothalamus"]
+  },
+  "growth-hormone": {
+    "term": "groeihormoon",
+    "aliases": ["groeihormonen", "GH"],
+    "definition": "Een hormoon uit de hypofyse dat de groei stimuleert en de stofwisseling beïnvloedt, deels door IGF-1 te verhogen. Het komt in golven vrij.",
+    "category": "biology",
+    "see_also": ["igf-1", "ghrh", "somatostatin"]
+  },
+  "somatostatin": {
+    "term": "somatostatine",
+    "aliases": [],
+    "definition": "Een lichaamseigen peptidehormoon dat de afgifte van groeihormoon en andere hormonen afremt. Het blijft maar een paar minuten in het bloed.",
+    "category": "biology",
+    "see_also": ["growth-hormone", "negative-feedback"]
+  },
+  "gnrh": {
+    "term": "GnRH",
+    "aliases": ["gonadotropine-releasing hormoon", "gonadotrofine-releasing hormoon"],
+    "definition": "Een peptidehormoon uit de hersenen dat in golven vrijkomt. Het laat de hypofyse LH en FSH afgeven, die de geslachtshormonen op peil houden.",
+    "category": "biology",
+    "see_also": ["lh-and-fsh", "pituitary-gland"]
+  },
+  "lh-and-fsh": {
+    "term": "LH en FSH",
+    "aliases": ["LH", "FSH", "luteïniserend hormoon", "follikelstimulerend hormoon"],
+    "definition": "De 2 hormonen uit de hypofyse die de zaadballen en de eierstokken aansturen. Ze laten die geslachtshormonen maken, en zaadcellen of eicellen.",
+    "category": "biology",
+    "see_also": ["gnrh"]
+  },
+  "castrate-level": {
+    "term": "castratieniveau",
+    "aliases": ["castratieniveaus", "castratiewaarde", "castratiewaarden"],
+    "definition": "Een testosteronwaarde die zo laag is als na het verwijderen van de zaadballen. Sommige behandelingen van prostaatkanker willen dat juist bereiken.",
+    "category": "biology",
+    "see_also": ["gnrh"]
+  },
+  "melanocyte": {
+    "term": "melanocyt",
+    "aliases": ["melanocyten", "pigmentcel", "pigmentcellen"],
+    "definition": "Een huidcel die het donkere pigment melanine maakt.",
+    "category": "biology",
+    "see_also": ["melanocortin-receptor"]
+  },
+  "pharmacokinetics": {
+    "term": "farmacokinetiek",
+    "aliases": ["farmacokinetisch", "farmacokinetische"],
+    "definition": "Wat het lichaam met een medicijn doet: hoe het wordt opgenomen, verspreid, afgebroken en verwijderd, en hoe snel.",
+    "category": "pharmacology",
+    "see_also": ["adme", "half-life", "bioavailability"]
+  },
+  "adme": {
+    "term": "ADME",
+    "aliases": [],
+    "definition": "Afkorting van absorptie, distributie, metabolisme en excretie: opnemen, verspreiden, afbreken en uitscheiden. Dat zijn de 4 dingen die het lichaam met een medicijn doet.",
+    "category": "pharmacology",
+    "see_also": ["pharmacokinetics"]
+  },
+  "bioavailability": {
+    "term": "biologische beschikbaarheid",
+    "aliases": ["absolute biologische beschikbaarheid", "orale biologische beschikbaarheid", "biologisch beschikbaar", "biobeschikbaarheid"],
+    "definition": "Het deel van een dosis dat onveranderd in het bloed komt, vergeleken met een injectie direct in een ader.",
+    "category": "pharmacology",
+    "see_also": ["first-pass-metabolism", "pharmacokinetics"]
+  },
+  "clearance": {
+    "term": "klaring",
+    "aliases": ["nierklaring", "renale klaring"],
+    "definition": "Hoe snel het lichaam een medicijn verwijdert. Je drukt het uit als het volume plasma (het vloeibare deel van het bloed) dat het lichaam per tijdseenheid, bijvoorbeeld per uur, helemaal vrijmaakt van het medicijn.",
+    "category": "pharmacology",
+    "see_also": ["half-life", "glomerulus"]
+  },
+  "volume-of-distribution": {
+    "term": "verdelingsvolume",
+    "aliases": [],
+    "definition": "Een maat voor hoe ver een medicijn zich vanuit het bloed over de weefsels verspreidt. Het is een berekend getal, geen echte ruimte in het lichaam.",
+    "category": "pharmacology",
+    "see_also": ["pharmacokinetics"]
+  },
+  "steady-state": {
+    "term": "steady state",
+    "aliases": ["steady-state", "evenwichtstoestand"],
+    "definition": "Het niveau waarop een medicijn zich instelt bij regelmatig gebruik: tussen 2 doses verdwijnt evenveel als er bijkomt. Het duurt ongeveer 4 tot 5 halfwaardetijden voordat je daar dichtbij bent.",
+    "category": "pharmacology",
+    "see_also": ["half-life"]
+  },
+  "first-pass-metabolism": {
+    "term": "first-passeffect",
+    "aliases": ["first-pass-effect", "first-passmetabolisme", "first-pass-metabolisme"],
+    "definition": "Afbraak van een ingeslikt medicijn in de darmwand of de lever, voordat het de rest van het lichaam bereikt.",
+    "category": "pharmacology",
+    "see_also": ["bioavailability"]
+  },
+  "protease": {
+    "term": "protease",
+    "aliases": ["proteasen", "proteases", "peptidase", "peptidasen", "peptidases", "eiwitsplitsende enzymen"],
+    "definition": "Een enzym dat de bindingen tussen aminozuren doorknipt. Proteasen werken in de darm, in het bloed en in de meeste weefsels.",
+    "category": "biology",
+    "see_also": ["peptide-bond", "pepsin", "trypsin"]
+  },
+  "neutral-endopeptidase": {
+    "term": "neutrale endopeptidase",
+    "aliases": ["neprilysine"],
+    "definition": "Een enzym dat peptiden knipt (afgekort NEP). Het is een van de enzymen die semaglutide afbreken.",
+    "category": "biology",
+    "see_also": ["protease"]
+  },
+  "glomerulus": {
+    "term": "glomerulus",
+    "aliases": ["glomeruli", "glomerulaire filtratie", "nierfilter", "nierfilters"],
+    "definition": "Het kleine filter in de nier dat afvalstoffen uit het bloed haalt. Het laat kleine moleculen door, ook de meeste peptiden, en houdt grote eiwitten zoals albumine tegen.",
+    "category": "biology",
+    "see_also": ["clearance", "albumin-binding"]
+  },
+  "lymph": {
+    "term": "lymfe",
+    "aliases": ["lymfevocht", "lymfevaten", "lymfestelsel", "lymfatisch systeem"],
+    "definition": "Helder vocht dat uit de weefsels via eigen vaten terugloopt naar het bloed. Grote moleculen die onder de huid zijn gespoten, gaan deels via deze weg.",
+    "category": "biology",
+    "see_also": ["subcutaneous"]
+  },
+  "intravenous": {
+    "term": "intraveneus",
+    "aliases": ["intraveneuze", "in een ader"],
+    "definition": "Direct in een ader gegeven. De hele dosis komt in één keer in het bloed.",
+    "category": "pharmacology",
+    "see_also": ["bioavailability"]
+  },
+  "pepsin": {
+    "term": "pepsine",
+    "aliases": [],
+    "definition": "Het belangrijkste eiwitsplitsende enzym van de maag. Het werkt in sterk zuur en stopt als het zuur is geneutraliseerd.",
+    "category": "biology",
+    "see_also": ["protease", "trypsin"]
+  },
+  "trypsin": {
+    "term": "trypsine",
+    "aliases": ["chymotrypsine", "elastase", "carboxypeptidase", "carboxypeptidasen"],
+    "definition": "Een van de eiwitsplitsende enzymen die de alvleesklier in de dunne darm afgeeft om eiwit uit voedsel te verteren.",
+    "category": "biology",
+    "see_also": ["pepsin", "protease"]
+  },
+  "brush-border": {
+    "term": "borstelzoom",
+    "aliases": ["borstelzoomenzymen"],
+    "definition": "Het oppervlak van de cellen aan de binnenkant van de dunne darm, bedekt met heel kleine uitsteeksels en enzymen. Die verteren eiwit verder tot aminozuren.",
+    "category": "biology",
+    "see_also": ["tight-junction"]
+  },
+  "tight-junction": {
+    "term": "tight junction",
+    "aliases": ["tight junctions"],
+    "definition": "Een afsluiting tussen cellen die naast elkaar liggen in een bekleding, zoals de darmwand. Die houdt grote moleculen tegen, zodat ze niet tussen de cellen door glippen.",
+    "category": "biology",
+    "see_also": ["brush-border"]
+  },
+  "hydrophilic": {
+    "term": "hydrofiel",
+    "aliases": ["hydrofiele", "waterminnend", "waterminnende"],
+    "definition": "Aangetrokken tot water. Hydrofiele moleculen lossen goed op in bloed, maar komen slecht door de vettige wanden van cellen.",
+    "category": "chemistry",
+    "see_also": ["cell-membrane"]
+  },
+  "cell-membrane": {
+    "term": "celmembraan",
+    "aliases": ["celmembranen"],
+    "definition": "De dunne, vettige buitenwand van een cel. Kleine moleculen die van vet houden gaan erdoorheen; grote moleculen die van water houden meestal niet.",
+    "category": "biology",
+    "see_also": ["hydrophilic", "receptor"]
+  },
+  "small-molecule": {
+    "term": "kleinmoleculair geneesmiddel",
+    "aliases": ["kleinmoleculaire geneesmiddelen", "klein molecuul", "kleine moleculen", "kleinmoleculair", "kleinmoleculaire"],
+    "definition": "Een medicijn van een kleine chemische stof, in plaats van een keten van aminozuren. De meeste pillen zijn kleine moleculen.",
+    "category": "pharmacology",
+    "see_also": ["peptide", "dalton"]
+  },
+  "rule-of-five": {
+    "term": "regel van vijf",
+    "aliases": ["regel van 5", "rule of five"],
+    "definition": "Een vuistregel uit de medicijnchemie: een ingeslikt medicijn wordt minder snel goed opgenomen als het onder meer zwaarder is dan 500 dalton.",
+    "category": "pharmacology",
+    "see_also": ["dalton", "bioavailability"]
+  },
+  "permeation-enhancer": {
+    "term": "opnameversterker",
+    "aliases": ["opnameversterkers", "absorptieversterker", "absorptieversterkers", "permeatieversterker", "permeatieversterkers"],
+    "definition": "Een toegevoegde stof die een medicijn helpt door een bekleding te komen, zoals de darmwand. SNAC in semaglutide-tabletten is er één.",
+    "category": "pharmacology",
+    "see_also": ["snac", "bioavailability"]
+  },
+  "sublingual": {
+    "term": "sublinguaal",
+    "aliases": ["sublinguale", "onder de tong"],
+    "definition": "Onder de tong laten oplossen, zodat het medicijn via het slijmvlies van de mond wordt opgenomen.",
+    "category": "pharmacology",
+    "see_also": ["intranasal"]
+  },
+  "intranasal": {
+    "term": "intranasaal",
+    "aliases": ["intranasale", "neusspray", "neussprays", "neusdruppels"],
+    "definition": "In de neus gegeven, als spray of druppels, zodat het via het slijmvlies van de neus wordt opgenomen.",
+    "category": "pharmacology",
+    "see_also": ["sublingual"]
+  },
+  "cyp3a4": {
+    "term": "CYP3A4",
+    "aliases": [],
+    "definition": "Een leverenzym dat veel medicijnen afbreekt. Andere middelen die dit enzym remmen of versnellen, kunnen veranderen hoeveel van een medicijn in het lichaam blijft.",
+    "category": "pharmacology",
+    "see_also": ["first-pass-metabolism"]
+  },
+  "boxed-warning": {
+    "term": "zware waarschuwing",
+    "aliases": ["zware waarschuwingen", "boxed warning", "boxed warnings", "black box warning"],
+    "definition": "De zwaarste waarschuwing in de Amerikaanse productinformatie van een medicijn, in een kader bovenaan.",
+    "category": "regulation",
+    "see_also": []
+  }
+}

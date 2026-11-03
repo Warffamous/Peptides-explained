@@ -22,9 +22,28 @@
 # the pages name them in text instead, until a person opens them in a browser) and Nunavut (no line found). NHS 24
 # (Scotland) was added on 26 October 2026 through NHS inform. Emergency numbers are data only; the English site
 # never prints them.
+# Dutch entries (NL, BE, EU) re-checked 27 October 2026 from the fact-checked research/nl/ (merge: research/nl-notes/merge.md).
 - code: NL
   emergency: ["112"]
-  regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)", url: "https://www.cbg-meb.nl/" }
+  # Help services for the public (research/nl/nl-help.md §7.1 and its fact-check; every URL opened again on
+  # 27 October 2026). 112 is for danger to life; otherwise your huisarts, outside office hours the huisartsenpost.
+  # There is no national number for the huisartsenpost: the Thuisarts page says where to find your own
+  # (pages.jurisdiction.helpNote.NL); never print a regional number. The NVIC advises professionals only; its own page
+  # tells the public to call the huisarts or the huisartsenpost, so the poisons entry is that advice. The card names
+  # services; numbers appear in page text only where the brief allows (113, the Drugs Infolijn). Sources:
+  # thuisarts-spoed-wie-bellen, rijksoverheid-huisartsenpost-seh, nvic-umcutrecht, drugsinfo-drugs-infolijn,
+  # drugsinfo-hulpkaart, stichting-113-hulplijn, thuisarts-psychische-crisis; reporting: lareb-bijwerkingen-melden,
+  # cbg-bijwerking-melden. The inspectorate entry stays the IGJ online-medicines page, which leads to the Landelijk
+  # Meldpunt Zorg (now part of igj.nl; www.landelijkmeldpuntzorg.nl redirects there) for reporting a website.
+  help:
+    - { kind: urgent-advice, name: "Spoed: je huisarts of de huisartsenpost (Thuisarts)", url: "https://www.thuisarts.nl/spoed-wie-bel-je" }
+    - { kind: urgent-advice, name: "Huisartsenpost of spoedeisende hulp? (Rijksoverheid)", url: "https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/eerstelijnszorg/huisartsenpost-spoedeisende-hulp" }
+    - { kind: poisons, name: "Vergiftiging: bel je huisarts of de huisartsenpost (NVIC)", url: "https://nvic.umcutrecht.nl/" }
+    - { kind: drugs-advice, name: "Drugs Infolijn (Trimbos-instituut)", url: "https://www.drugsinfo.nl/contact/" }
+    - { kind: drugs-advice, name: "Verslavingszorg bij jou in de buurt (DRUGSinfo)", url: "https://www.drugsinfo.nl/hulpkaart/" }
+    - { kind: mental-health, name: "113 Zelfmoordpreventie", url: "https://www.113.nl/heb-je-nu-hulp-nodig/hulplijn" }
+    - { kind: mental-health, name: "Psychische crisis: wat moet je doen? (Thuisarts)", url: "https://www.thuisarts.nl/psychische-klachten-bij-volwassenen/iemand-die-ik-goed-ken-heeft-psychische-crisis-wat-moet-ik-doen" }
+  regulator: { name: "College ter Beoordeling van Geneesmiddelen (CBG)", url: "https://www.cbg-meb.nl/" }
   inspectorate: { name: "Inspectie Gezondheidszorg en Jeugd (IGJ)", url: "https://www.igj.nl/onderwerpen/medicijnen/online-medicijnen" }
   reporting: { name: "Bijwerkingencentrum Lareb", url: "https://www.lareb.nl/pages/alles-over-bijwerkingen-melden" }
   anti_doping: { name: "Dopingautoriteit", url: "https://www.dopingautoriteit.nl/" }
@@ -36,9 +55,28 @@
   anti_doping: { name: "Nationale Anti Doping Agentur (NADA)", url: "https://www.nada.de/" }
   medicines_law: { name: "Arzneimittelgesetz (AMG)", url: "https://www.gesetze-im-internet.de/amg_1976/" }
 - code: BE
+  # Belgium: notes only, on the Dutch site (Flemish readers; config/locales.json nl notes), so the names are the official
+  # Dutch (Flemish) ones. Re-checked 27 October 2026 (research/nl/be-notes.md §7.1 and its fact-check; every URL opened
+  # again that day: curl, and the built-in browser for health.belgium.be and fagg-afmps.be, which refuse scripts).
+  # Emergency: 112 for ambulance and fire (police 101; 100 is not on the official list) (be-112-andere-noodnummers).
+  # 1733 reaches the dokter van wacht outside the huisarts's hours in most regions, not yet everywhere
+  # (be-fod-1733-dokter-van-wacht; a helpNote.BE string can say so). Unlike the Dutch NVIC, the Antigifcentrum advises the
+  # public directly, 24/7 (be-antigifcentrum-over-ons, be-antigifcentrum-wanneer-bellen). De Druglijn is VAD's public
+  # line, not an emergency line (be-druglijn-over-ons, be-druglijn-bel); Zelfmoordlijn 1813 (be-zelfmoordlijn-1813).
+  # Reporting: the FAGG's Dutch patient page (fagg-melden-bijwerking-patient); the short address the FAGG prints,
+  # www.eenbijwerkingmelden.be, ended on "Pagina niet gevonden" on 27 October 2026 and is not linked. Anti-doping: NADO
+  # Vlaanderen (be-nado-vlaanderen-over; the old www.dopinglijn.be is stale). EU-wide (central) approvals also apply in
+  # Belgium (be-medicines-law-1964, art. 6 § 1). No inspectorate entry: the FAGG is also the enforcement body, and its
+  # parcel-seizure Q&A (fagg-postal-seizure-qa-nl) belongs on the notes page.
   emergency: ["112"]
-  regulator: { name: "Federal Agency for Medicines and Health Products (FAMHP / FAGG / AFMPS)", url: "https://www.famhp.be/en" }
-  reporting: { name: "FAMHP — report a side effect", url: "https://www.famhp.be/en/side_effect" }
+  help:
+    - { kind: urgent-advice, name: "Dokter van wacht: 1733 (FOD Volksgezondheid)", url: "https://www.health.belgium.be/nl/themas/gezondheid/dringende-geneeskundige-hulpverlening/actoren-dringende-geneeskundige-hulpverlening/dokter-wacht" }
+    - { kind: poisons, name: "Antigifcentrum", url: "https://www.antigifcentrum.be/wanneer-bellen/" }
+    - { kind: drugs-advice, name: "De Druglijn (VAD)", url: "https://www.druglijn.be/" }
+    - { kind: mental-health, name: "Zelfmoordlijn 1813", url: "https://www.zelfmoord1813.be/" }
+  regulator: { name: "Federaal Agentschap voor Geneesmiddelen en Gezondheidsproducten (FAGG)", url: "https://www.fagg-afmps.be/nl" }
+  reporting: { name: "FAGG: een bijwerking melden als patiënt", url: "https://www.fagg-afmps.be/nl/melden_van_een_bijwerking_als_patient" }
+  anti_doping: { name: "NADO Vlaanderen", url: "https://www.dopingvrij.vlaanderen/" }
   medicines_law: { name: "Wet van 25 maart 1964 op de geneesmiddelen voor menselijk gebruik", url: "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=nl&la=N&cn=1964032530&table_name=wet" }
 - code: UK
   emergency: ["999"]
@@ -163,6 +201,12 @@
   anti_doping: { name: "Sport Integrity Commission Te Kahu Raunui", url: "https://sportintegrity.nz/" }
   medicines_law: { name: "Medicines Act 1981", url: "https://www.legislation.govt.nz/act/public/1981/118/en/latest/" }
 - code: EU
+  # Re-checked 27 October 2026 (research/nl/eu-status.md §7 and its fact-check): unchanged. 112 works in every member
+  # state (ec-112-emergency-number). Directive 2001/83/EC, consolidated 1 January 2025, is still the latest consolidation
+  # and still the law (a Publications Office query confirmed it); the new directive and regulation (Council position
+  # adopted 28 September 2026) await Parliament's second reading and are not in the Official Journal. When the new
+  # directive is published, change medicines_law to it and note its application date (24 months after entry into force).
+  # No reporting entry: side effects are reported to the national centre (NL: Lareb; BE: the FAGG).
   emergency: ["112"]
   regulator: { name: "European Medicines Agency (EMA)", url: "https://www.ema.europa.eu/en/homepage" }
   medicines_law: { name: "Directive 2001/83/EC (consolidated text of 1 January 2025)", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02001L0083-20250101" }

@@ -80,5 +80,7 @@ items:
   - id: stop
     icon: action-stop
     sources: [nhs-cellulitis, nhs-sepsis, nhs-anaphylaxis]
+    local_sources:
+      NL: [thuisarts-wondroos, thuisarts-sepsis, thuisarts-dikke-ogen-lippen] # the Dutch help levels (research/nl/nl-help.md §7.4, fact 17)
     links: [safety/warning-signs]
     emergency: true

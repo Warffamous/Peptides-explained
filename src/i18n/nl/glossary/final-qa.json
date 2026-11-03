@@ -1,0 +1,485 @@
+{
+  "median": {
+    "term": "mediaan",
+    "aliases": ["medianen"],
+    "definition": "De middelste waarde als je alle uitkomsten van laag naar hoog zet. De helft ligt erboven en de helft eronder, dus een paar uitschieters trekken de mediaan niet omhoog of omlaag.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "efficacy": {
+    "term": "werkzaamheid",
+    "aliases": [],
+    "definition": "Hoe goed een medicijn doet wat het moet doen, zoals studies laten zien. Bij receptoren kan het ook betekenen hoe sterk een molecuul zijn receptor aanzet.",
+    "category": "evidence",
+    "see_also": ["intrinsic-efficacy", "randomised-controlled-trial"]
+  },
+  "toxicity-study": {
+    "term": "toxiciteitsonderzoek",
+    "aliases": ["toxiciteitsstudie", "toxiciteitsstudies", "toxiciteitstest", "toxiciteitstests"],
+    "definition": "Een test, meestal bij dieren, die zoekt naar schade door een stof, bijvoorbeeld aan de lever, de nieren of het bloed. Zulke tests gebeuren voordat een nieuw medicijn voor het eerst aan mensen wordt gegeven.",
+    "category": "evidence",
+    "see_also": ["genotoxicity"]
+  },
+  "pivotal-trial": {
+    "term": "registratiestudie",
+    "aliases": ["registratiestudies", "pivotale studie", "pivotale studies"],
+    "definition": "Een grote studie die een bedrijf doet om een medicijnautoriteit te laten zien dat zijn medicijn werkt en dat de voordelen groter zijn dan de risico’s. De goedkeuring rust vooral op deze studies.",
+    "category": "evidence",
+    "see_also": ["randomised-controlled-trial"]
+  },
+  "pilot-study": {
+    "term": "pilotstudie",
+    "aliases": ["pilotstudies", "pilotonderzoek"],
+    "definition": "Een kleine eerste studie die test of een grotere studie haalbaar is. Ze is te klein om te laten zien of een behandeling werkt.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "multicentre-trial": {
+    "term": "multicenterstudie",
+    "aliases": ["multicenterstudies", "multicenteronderzoek", "multicentrisch", "multicentrische"],
+    "definition": "Een studie die tegelijk in meerdere ziekenhuizen of klinieken loopt, allemaal volgens hetzelfde plan.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "evaluator-blinded": {
+    "term": "geblindeerde beoordeling",
+    "aliases": ["beoordelaar-geblindeerd", "beoordelaar-geblindeerde", "met geblindeerde beoordelaars"],
+    "definition": "Een studie waarin de mensen die de uitkomsten beoordelen niet weten wie welke behandeling kreeg. De patiënten en het personeel dat de behandeling geeft, mogen het wel weten.",
+    "category": "evidence",
+    "see_also": ["blinding"]
+  },
+  "comparator": {
+    "term": "vergelijkingsbehandeling",
+    "aliases": ["vergelijkingsbehandelingen", "comparator"],
+    "definition": "Waarmee een nieuwe behandeling in een studie wordt vergeleken: een nepmiddel (placebo), een ander medicijn of geen behandeling. Die keuze kan een nieuw medicijn beter of slechter laten lijken.",
+    "category": "evidence",
+    "see_also": ["placebo"]
+  },
+  "saline": {
+    "term": "fysiologisch zout",
+    "aliases": ["fysiologische zoutoplossing", "zoutoplossing"],
+    "definition": "Steriel zout water met evenveel zout als lichaamsvocht. In studies spuiten onderzoekers het vaak in als nepbehandeling (placebo).",
+    "category": "pharmacology",
+    "see_also": ["placebo"]
+  },
+  "pubmed": {
+    "term": "PubMed",
+    "aliases": [],
+    "definition": "Een gratis zoekmachine voor medische onderzoeksartikelen van de Amerikaanse National Library of Medicine. Je vindt er de meeste studies uit de geneeskunde en de biologie.",
+    "category": "evidence",
+    "see_also": ["embase"]
+  },
+  "embase": {
+    "term": "Embase",
+    "aliases": [],
+    "definition": "Een grote database van gepubliceerd medisch onderzoek en onderzoek naar medicijnen. Wie een review maakt, zoekt er ook in, naast PubMed, om minder studies te missen.",
+    "category": "evidence",
+    "see_also": ["pubmed"]
+  },
+  "clinicaltrials-gov": {
+    "term": "ClinicalTrials.gov",
+    "aliases": [],
+    "definition": "Een openbare lijst van klinische studies, van de Amerikaanse National Library of Medicine. Studies uit veel landen zetten er hun plan op voordat ze beginnen, en sommige ook hun uitkomsten.",
+    "category": "evidence",
+    "see_also": ["pre-registration", "ctis"]
+  },
+  "pancreas": {
+    "term": "alvleesklier",
+    "aliases": ["pancreas"],
+    "definition": "Een orgaan achter de maag. Het maakt insuline en andere hormonen die de bloedsuiker regelen, en sappen die helpen voedsel te verteren.",
+    "category": "biology",
+    "see_also": ["insulin", "acute-pancreatitis"]
+  },
+  "insulin": {
+    "term": "insuline",
+    "aliases": [],
+    "definition": "Een hormoon uit de alvleesklier dat suiker uit het bloed de cellen in helpt, zodat de bloedsuiker daalt. Mensen met diabetes hebben het soms als medicijn nodig.",
+    "category": "biology",
+    "see_also": ["pancreas", "glucose", "hypoglycaemia"]
+  },
+  "hormone": {
+    "term": "hormoon",
+    "aliases": ["hormonen"],
+    "definition": "Een boodschapperstof die een klier in het bloed afgeeft. Die gaat naar andere organen en verandert hoe ze werken; insuline en groeihormoon zijn voorbeelden.",
+    "category": "biology",
+    "see_also": ["insulin", "growth-hormone"]
+  },
+  "inflammation": {
+    "term": "ontsteking",
+    "aliases": ["ontstekingen", "ontstekingsreactie", "ontstekingsreacties", "ontstoken"],
+    "definition": "De reactie van het lichaam op letsel of een infectie. De plek wordt rood, warm, dik en pijnlijk, terwijl het lichaam bacteriën bestrijdt of schade herstelt.",
+    "category": "biology",
+    "see_also": ["immune-system"]
+  },
+  "immune-system": {
+    "term": "afweersysteem",
+    "aliases": ["immuunsysteem", "afweerreactie", "afweerreacties", "immuunreactie", "immuunreacties", "afweercellen", "immuuncellen"],
+    "definition": "De verdediging van het lichaam tegen bacteriën, virussen en andere dingen die het als vreemd ziet. Witte bloedcellen en antistoffen horen erbij.",
+    "category": "biology",
+    "see_also": ["antibody", "t-cell", "weakened-immune-system"]
+  },
+  "antibody": {
+    "term": "antistof",
+    "aliases": ["antistoffen", "antilichaam", "antilichamen"],
+    "definition": "Een eiwit dat het afweersysteem maakt om iets vreemds te herkennen, zoals een bacterie of een medicijn. De antistof markeert het, zodat het wordt opgeruimd.",
+    "category": "biology",
+    "see_also": ["immune-system", "anti-drug-antibodies"]
+  },
+  "tissue": {
+    "term": "weefsel",
+    "aliases": ["weefsels"],
+    "definition": "Een groep gelijke cellen die samen één taak doen in het lichaam, zoals spier, huid, vet of pees.",
+    "category": "biology",
+    "see_also": []
+  },
+  "tumour": {
+    "term": "tumor",
+    "aliases": ["tumoren", "gezwel", "gezwellen"],
+    "definition": "Een bult van cellen die blijven delen terwijl dat niet zou moeten. Een tumor kan goedaardig zijn, of een kanker die zich kan verspreiden (kwaadaardig).",
+    "category": "biology",
+    "see_also": []
+  },
+  "glucose": {
+    "term": "glucose",
+    "aliases": ["bloedglucose", "bloedsuiker"],
+    "definition": "De belangrijkste suiker in het bloed (bloedsuiker). Cellen halen er energie uit, en insuline helpt de hoeveelheid gezond te houden.",
+    "category": "biology",
+    "see_also": ["insulin", "hypoglycaemia", "hyperglycaemia"]
+  },
+  "fasting-glucose": {
+    "term": "nuchtere glucose",
+    "aliases": ["nuchtere bloedglucose", "nuchtere bloedsuiker"],
+    "definition": "De hoeveelheid suiker in je bloed als je minstens 8 uur niets hebt gegeten en alleen water hebt gedronken. Meestal wordt die ’s ochtends gemeten.",
+    "category": "biology",
+    "see_also": ["glucose", "hba1c"]
+  },
+  "cholesterol": {
+    "term": "cholesterol",
+    "aliases": [],
+    "definition": "Een vetachtige stof in het bloed. Te veel van sommige soorten verhoogt de kans op een hartaanval of een beroerte.",
+    "category": "biology",
+    "see_also": []
+  },
+  "plasma": {
+    "term": "plasma",
+    "aliases": ["bloedplasma"],
+    "definition": "Het vloeibare deel van het bloed, zonder de bloedcellen. Het vervoert voedingsstoffen, hormonen en medicijnen door het lichaam.",
+    "category": "biology",
+    "see_also": []
+  },
+  "spleen": {
+    "term": "milt",
+    "aliases": [],
+    "definition": "Een orgaan links in de buik, onder de ribben. Het filtert het bloed en helpt het lichaam infecties te bestrijden.",
+    "category": "biology",
+    "see_also": ["immune-system"]
+  },
+  "hippocampus": {
+    "term": "hippocampus",
+    "aliases": [],
+    "definition": "Een deel van de hersenen dat belangrijk is voor het geheugen en voor leren.",
+    "category": "biology",
+    "see_also": []
+  },
+  "histamine": {
+    "term": "histamine",
+    "aliases": [],
+    "definition": "Een stof die sommige afweercellen afgeven, zoals mestcellen. Die stof geeft jeuk, roodheid en zwelling, bijvoorbeeld bij een allergische reactie.",
+    "category": "biology",
+    "see_also": ["mast-cell"]
+  },
+  "autoimmune-disease": {
+    "term": "auto-immuunziekte",
+    "aliases": ["auto-immuunziekten", "auto-immuunziektes", "auto-immuun"],
+    "definition": "Een ziekte waarbij het afweersysteem de eigen weefsels van het lichaam aanvalt. Diabetes type 1 is een voorbeeld.",
+    "category": "biology",
+    "see_also": ["immune-system"]
+  },
+  "folate": {
+    "term": "folaat",
+    "aliases": ["foliumzuur", "folaatcyclus"],
+    "definition": "Een B-vitamine. Cellen hebben het nodig om de bouwstenen van DNA te maken.",
+    "category": "biology",
+    "see_also": []
+  },
+  "gallbladder": {
+    "term": "galblaas",
+    "aliases": [],
+    "definition": "Een zakje onder de lever. Het bewaart gal, een sap dat het lichaam helpt vet te verteren.",
+    "category": "biology",
+    "see_also": ["cholelithiasis"]
+  },
+  "menopause": {
+    "term": "menopauze",
+    "aliases": ["postmenopauzaal", "postmenopauzale", "menopauzaal"],
+    "definition": "Het moment in het leven van een vrouw, meestal tussen ongeveer 45 en 55 jaar, waarop de menstruatie voorgoed stopt. Het hoort bij de overgang.",
+    "category": "biology",
+    "see_also": ["premenopausal"]
+  },
+  "nausea": {
+    "term": "misselijkheid",
+    "aliases": ["misselijk"],
+    "definition": "Een naar gevoel in je maag, alsof je moet overgeven. Het is een bijwerking die bij veel medicijnen vaak voorkomt.",
+    "category": "safety",
+    "see_also": ["antiemetic"]
+  },
+  "diarrhoea": {
+    "term": "diarree",
+    "aliases": [],
+    "definition": "Dunne of waterige ontlasting (poep), vaker dan normaal. Je kunt er veel vocht door verliezen.",
+    "category": "safety",
+    "see_also": ["dehydration"]
+  },
+  "constipation": {
+    "term": "verstopping",
+    "aliases": ["obstipatie"],
+    "definition": "Minder vaak poepen dan normaal, of moeite hebben met poepen.",
+    "category": "safety",
+    "see_also": []
+  },
+  "dehydration": {
+    "term": "uitdroging",
+    "aliases": ["uitgedroogd", "vochtverlies"],
+    "definition": "Het lichaam verliest meer vocht dan het binnenkrijgt. Tekenen zijn dorst, donkere plas, weinig plassen, duizeligheid en moeheid.",
+    "category": "safety",
+    "see_also": ["diarrhoea"]
+  },
+  "eczema": {
+    "term": "eczeem",
+    "aliases": [],
+    "definition": "Een huidaandoening waarbij plekken huid droog, rood en jeukend zijn, en soms gebarsten.",
+    "category": "biology",
+    "see_also": []
+  },
+  "ulcer": {
+    "term": "zweer",
+    "aliases": ["ulcus", "beenzweer", "voetzweer"],
+    "definition": "Een open wond op de huid, of op de binnenkant van een orgaan zoals de maag, die langzaam geneest.",
+    "category": "biology",
+    "see_also": []
+  },
+  "migraine": {
+    "term": "migraine",
+    "aliases": ["migraineaanval", "migraineaanvallen"],
+    "definition": "Een hevige hoofdpijn die steeds terugkomt, vaak aan één kant van het hoofd. Veel mensen zijn er ook misselijk bij of kunnen slecht tegen licht.",
+    "category": "biology",
+    "see_also": []
+  },
+  "osteoporosis": {
+    "term": "osteoporose",
+    "aliases": ["botontkalking"],
+    "definition": "Een aandoening waarbij botten dun en zwak worden, zodat ze makkelijker breken.",
+    "category": "biology",
+    "see_also": []
+  },
+  "insomnia": {
+    "term": "slapeloosheid",
+    "aliases": ["insomnie"],
+    "definition": "Moeite met inslapen of doorslapen, zodat je overdag moe bent.",
+    "category": "biology",
+    "see_also": []
+  },
+  "narcolepsy": {
+    "term": "narcolepsie",
+    "aliases": [],
+    "definition": "Een langdurige hersenaandoening waardoor mensen overdag heel slaperig zijn. Ze kunnen op elk moment plotseling in slaap vallen.",
+    "category": "biology",
+    "see_also": []
+  },
+  "opioid": {
+    "term": "opioïde",
+    "aliases": ["opioïden"],
+    "definition": "Een stof die werkt op de opioïdreceptoren in de hersenen en het lichaam, die pijn dempen. Morfine en heroïne zijn opioïden, en het lichaam maakt ze ook zelf, zoals enkefalinen.",
+    "category": "pharmacology",
+    "see_also": ["enkephalin"]
+  },
+  "stimulant": {
+    "term": "stimulerend middel",
+    "aliases": ["stimulerende middelen", "stimulantia"],
+    "definition": "Een stof die de hersenen en het lichaam opjaagt, zodat je je wakkerder en alerter voelt. Cafeïne en amfetamine zijn stimulerende middelen.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "corticosteroid": {
+    "term": "corticosteroïd",
+    "aliases": ["corticosteroïden", "corticosteroïde", "corticosteroïdinjectie", "corticosteroïdinjecties"],
+    "definition": "Een medicijn dat lijkt op cortisol, een stresshormoon dat het lichaam zelf maakt. Het remt ontstekingen en het afweersysteem. Mensen noemen het vaak een steroïde, maar het is niet het soort dat spieren opbouwt.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-steroids", "inflammation"]
+  },
+  "anabolic-agent": {
+    "term": "anabool middel",
+    "aliases": ["anabole middelen", "anabole stof", "anabole stoffen"],
+    "definition": "Een stof die spieren opbouwt, zoals testosteron, verwante steroïden en sommige andere middelen. De dopinglijst verbiedt ze altijd, in groep S1.",
+    "category": "sport",
+    "see_also": ["anabolic-steroids", "prohibited-list"]
+  },
+  "toxin": {
+    "term": "toxine",
+    "aliases": ["toxinen", "bacteriële toxine", "bacteriële toxinen"],
+    "definition": "Een gif dat een levend wezen maakt, zoals een bacterie. Sommige bacteriële toxinen blijven in een product, ook als de bacteriën zelf al dood zijn.",
+    "category": "safety",
+    "see_also": ["endotoxin"]
+  },
+  "vial": {
+    "term": "flacon",
+    "aliases": ["flacons", "injectieflacon", "injectieflacons"],
+    "definition": "Een klein glazen flesje, afgesloten met een rubberen stop. Om de vloeistof op te zuigen, gaat er een naald door de stop.",
+    "category": "safety",
+    "see_also": ["vial-stopper", "single-dose-vial", "multi-dose-vial"]
+  },
+  "legal-supply-chain": {
+    "term": "legale keten",
+    "aliases": ["legale distributieketen"],
+    "definition": "De officiële weg van een medicijn van de fabriek naar de apotheek of het ziekenhuis. Elk bedrijf onderweg heeft een vergunning nodig. In Nederland houdt de Inspectie Gezondheidszorg en Jeugd (IGJ) daar toezicht op.",
+    "category": "regulation",
+    "see_also": ["falsified-medicine"]
+  },
+  "on-label": {
+    "term": "on-label",
+    "aliases": ["on-labelgebruik", "on-label gebruik"],
+    "definition": "Een medicijn gebruiken voor de ziekte, de groep mensen en op de manier waarvoor het is goedgekeurd. Dat staat in de officiële productinformatie: de SmPC en de bijsluiter.",
+    "category": "regulation",
+    "see_also": ["off-label"]
+  },
+  "abstention": {
+    "term": "onthouding",
+    "aliases": ["onthoudingen"],
+    "definition": "Een lid van een commissie doet wel mee aan een stemming, maar stemt niet voor en niet tegen.",
+    "category": "regulation",
+    "see_also": ["pcac"]
+  },
+  "docket": {
+    "term": "docket",
+    "aliases": ["dockets"],
+    "definition": "Een openbaar online dossier waarin een Amerikaanse overheidsdienst de stukken voor een besluit zet. Iedereen kan ze lezen en een reactie insturen.",
+    "category": "regulation",
+    "see_also": ["federal-register"]
+  },
+  "plenary-vote": {
+    "term": "plenaire stemming",
+    "aliases": ["plenaire stemmingen", "plenaire vergadering", "plenaire zitting"],
+    "definition": "Een stemming van alle leden van een parlement samen, zoals het Europees Parlement, en niet alleen van een commissie. Die komt meestal nadat een commissie aan de tekst heeft gewerkt.",
+    "category": "law",
+    "see_also": []
+  },
+  "annex": {
+    "term": "bijlage (bij een wet)",
+    "aliases": ["wetsbijlage", "bijlage bij de verordening", "bijlage bij de richtlijn", "bijlage bij de wet"],
+    "definition": "Een extra deel aan het eind van een wet, vaak een lijst. Het hoort bij de wet en geldt net zo sterk als de rest.",
+    "category": "law",
+    "see_also": []
+  },
+  "self-doping": {
+    "term": "zelfdoping",
+    "aliases": [],
+    "definition": "Een verboden stof of methode op je eigen lichaam gebruiken om beter te presteren in de sport. In sommige landen is dat ook een strafbaar feit, en niet alleen verboden volgens de sportregels.",
+    "category": "sport",
+    "see_also": ["prohibited-list"]
+  },
+  "world-anti-doping-code": {
+    "term": "Wereld Anti-Doping Code",
+    "aliases": ["WADA-Code", "World Anti-Doping Code"],
+    "definition": "Het regelboek dat WADA en sportorganisaties over de hele wereld volgen. Het bepaalt hoe dopingcontroles gaan, wat een dopingovertreding is en welke sancties, zoals een schorsing, daarbij horen.",
+    "category": "sport",
+    "see_also": ["wada", "prohibited-list", "strict-liability"]
+  },
+  "melanocortin": {
+    "term": "melanocortine",
+    "aliases": ["melanocortinen", "melanocortinepeptide", "melanocortinepeptiden"],
+    "definition": "Een familie hormonen die via melanocortinereceptoren de huidskleur, honger en zin in seks beïnvloeden. Melanotan II en PT-141 zijn versies uit het lab.",
+    "category": "biology",
+    "see_also": ["melanocortin-receptor", "alpha-msh", "proopiomelanocortin"]
+  },
+  "hcg": {
+    "term": "humaan choriongonadotrofine",
+    "aliases": ["hCG", "choriongonadotrofine", "choriongonadotropine", "humaan choriongonadotropine"],
+    "definition": "Een hormoon dat de placenta maakt tijdens de zwangerschap. Als medicijn wordt het gebruikt bij vruchtbaarheidsbehandelingen; bij mannen laat het het lichaam meer testosteron maken.",
+    "category": "biology",
+    "see_also": ["hormone"]
+  },
+  "somatropin": {
+    "term": "somatropine",
+    "aliases": ["somatotropine", "somatrem"],
+    "definition": "Groeihormoon dat in een lab is gemaakt: een medicijn op recept als het lichaam zelf te weinig maakt. Somatotropine is het eigen hormoon van het lichaam; somatrem was een oudere versie uit het lab.",
+    "category": "pharmacology",
+    "see_also": ["growth-hormone"]
+  },
+  "clenbuterol": {
+    "term": "clenbuterol",
+    "aliases": [],
+    "definition": "Een medicijn dat de luchtwegen wijder maakt. Sommige landen gebruiken het bij astma, en dierenartsen bij paarden. Mensen misbruiken het om vet te verliezen en spieren op te bouwen. In de sport is het verboden.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-agent"]
+  },
+  "zeranol": {
+    "term": "zeranol",
+    "aliases": [],
+    "definition": "Een stof die werkt zoals het hormoon oestrogeen. Sommige landen staan toe dat boeren het aan runderen geven, zodat ze sneller groeien; andere landen niet.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-agent"]
+  },
+  "zilpaterol": {
+    "term": "zilpaterol",
+    "aliases": [],
+    "definition": "Een stof die sommige landen in veevoer toestaan, zodat de dieren voor de slacht meer mager vlees krijgen. Andere landen staan het niet toe.",
+    "category": "pharmacology",
+    "see_also": ["anabolic-agent"]
+  },
+  "ll-37": {
+    "term": "LL-37",
+    "aliases": [],
+    "definition": "Een klein eiwit dat het lichaam maakt in de huid, de darm en witte bloedcellen. Het helpt bacteriën te doden.",
+    "category": "biology",
+    "see_also": ["peptide"]
+  },
+  "dihexa": {
+    "term": "dihexa",
+    "aliases": [],
+    "definition": "Een molecuul uit het lab, gebouwd van een stukje van het hormoon angiotensine IV. Onderzoekers hebben het bij dieren onderzocht voor het geheugen.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "mechano-growth-factor": {
+    "term": "mechano growth factor",
+    "aliases": ["MGF", "PEG-MGF", "gepegyleerde mechano growth factor"],
+    "definition": "Een vorm van IGF-1 die spieren maken na belasting of letsel. PEG-MGF is een versie uit het lab met PEG-ketens eraan, zodat het langer in het lichaam blijft.",
+    "category": "biology",
+    "see_also": ["igf-1", "pegylation"]
+  },
+  "emideltide": {
+    "term": "emideltide",
+    "aliases": ["DSIP", "delta sleep-inducing peptide"],
+    "definition": "Een kopie uit het lab van een klein peptide dat in 1977 voor het eerst werd beschreven als “delta sleep-inducing peptide” (DSIP). Het is geen goedgekeurd medicijn in Nederland of de EU.",
+    "category": "pharmacology",
+    "see_also": ["pcac"]
+  },
+  "cdc": {
+    "term": "CDC",
+    "aliases": ["Centers for Disease Control and Prevention", "US Centers for Disease Control and Prevention"],
+    "definition": "De Amerikaanse overheidsdienst voor volksgezondheid (Centers for Disease Control and Prevention). Die geeft advies over het voorkomen van infecties, bijvoorbeeld bij het geven van injecties.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "medlineplus": {
+    "term": "MedlinePlus",
+    "aliases": [],
+    "definition": "Een Amerikaanse gezondheidswebsite voor patiënten, van de National Library of Medicine.",
+    "category": "safety",
+    "see_also": ["pubmed"]
+  },
+  "world-health-organization": {
+    "term": "Wereldgezondheidsorganisatie",
+    "aliases": ["World Health Organization", "World Health Organisation"],
+    "definition": "De organisatie van de Verenigde Naties voor gezondheid (WHO). Gezondheidsdiensten over de hele wereld gebruiken haar adviezen, bijvoorbeeld over het voorkomen van infecties bij injecties.",
+    "category": "regulation",
+    "see_also": []
+  },
+  "precursor": {
+    "term": "voorloperstof",
+    "aliases": ["voorloperstoffen", "precursor", "precursors"],
+    "definition": "Een stof die het lichaam omzet in een andere stof. NAD+-voorloperstoffen zijn vormen van vitamine B3 die cellen omzetten in NAD+.",
+    "category": "biology",
+    "see_also": ["nad-plus", "niacin"]
+  }
+}

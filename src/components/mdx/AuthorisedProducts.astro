@@ -5,7 +5,7 @@
  * answer as the badge under the title and the At a glance tile; src/lib/approval.ts), and the table
  * lists only the products of those jurisdictions, with "No longer sold" where marketed_until is set.
  */
-import { t } from '../../lib/i18n';
+import { t, has } from '../../lib/i18n';
 import { ctxCompound, ctxContentLocale } from '../../lib/ctx';
 import { routeUrl } from '../../lib/urls';
 import { formatDate, isoDate } from '../../lib/format';
@@ -27,6 +27,9 @@ const route = [
   ...(approvedNow ? [t(L, 'compound.authorised.routeText')] : []),
   ...(approval.key !== 'all' ? [t(L, 'compound.authorised.routeElsewhere')] : []),
 ].join(' ');
+// The route link jumps to the matching section of the legal-routes page when the locale names its anchors.
+const anchorKey = approvedNow ? 'compound.authorised.routeAnchor' : 'compound.authorised.routeAnchorElsewhere';
+const routeHref = `${routeUrl(L, 'legal-routes')}${has(L, anchorKey) ? `#${t(L, anchorKey)}` : ''}`;
 ---
 <aside class:list={['authorised', approval.key === 'all' ? 'authorised--all' : 'authorised--partial']} data-approval={approval.key} aria-labelledby="authorised-title">
   <p class="authorised__badge" id="authorised-title">
@@ -36,7 +39,7 @@ const route = [
   <p class="authorised__explain">{explain}</p>
   <div class="authorised__route">
     <h3 class="authorised__route-title">{t(L, 'compound.authorised.routeTitle')}</h3>
-    <p>{route} <a href={routeUrl(L, 'legal-routes')}>{t(L, 'compound.authorised.routeLink')}</a></p>
+    <p>{route} <a href={routeHref}>{t(L, 'compound.authorised.routeLink')}</a></p>
   </div>
   {products.length === 0 ? (
     <p class="authorised__none">{t(L, 'compound.authorised.noProducts')}</p>

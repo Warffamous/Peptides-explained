@@ -1,0 +1,34 @@
+# Sources added by the Dutch tesamorelin group (src/content/compounds/nl/tesamorelin.mdx), 27 October 2026.
+# Shape as in src/data/sources/legal-a.yaml (sourceSchema, src/schemas/index.ts). Both URLs below were fetched and read
+# on 27 October 2026 (curl with a browser user agent, HTML converted to text; the ClinicalTrials.gov search also through
+# its API v2) and say what their notes say. Notes: research/nl-notes/tesamorelin.md.
+#
+# Everything else the Dutch page cites is reused by id: the science sources of the English page (tesamorelin.yaml,
+# safety-a.yaml, history.yaml, basics.yaml, bpc-157.yaml and the other topic files), the Dutch and EU sources merged from
+# the research of 27 October 2026 (nl-research-*.yaml), and the Dutch sources of 23 October (guides.yaml, legal-a.yaml,
+# safety-a.yaml, safety-b.yaml, shared.yaml, nl-legal-sport-changing.yaml).
+
+# ---------------------------------------------------------------- Netherlands: help (high blood sugar)
+
+thuisarts-diabetes-type-2:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb diabetes type 2, wat betekent dat voor mij?"
+  year: 2026
+  url: https://www.thuisarts.nl/diabetes-type-2/ik-heb-diabetes-type-2
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 23 mrt 2026' (page metadata dateModified 2026-03-23). 'Meestal merk je een hoge bloedsuiker niet. Sommige mensen krijgen wel klachten, zoals: veel plassen, dorst, moe zijn, afvallen'. Under 'Wat is een te lage of te hoge bloedsuiker?': a high blood sugar ('hyper') is 'meestal niet direct gevaarlijk', but with a very high value and one or more of 'Je plast niet of heel weinig. En je hebt dorst. Je geeft over. Je ademt moeilijk: snel of diep. Je reageert niet of bijna niet meer op anderen' someone must 'direct de huisarts of de huisartsen-spoedpost bellen'; 'Wanneer bellen': '112: Iemand moet direct 112 bellen als je bewusteloos bent'. Cited for the Dutch signs of a high blood sugar and the Dutch help level (bel direct je huisarts of de huisartsenpost) in the stop-now list. The page's blood-sugar values are not copied."
+
+# ---------------------------------------------------------------- Netherlands: trials
+
+ctgov-search-tesamorelin-nl-2026-10-27:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov search of 27 October 2026: trials of tesamorelin with a site in the Netherlands"
+  year: 2026
+  url: https://clinicaltrials.gov/search?intr=tesamorelin&country=Netherlands
+  accessed: 2026-10-27
+  verified: registry
+  note: "Run through the API v2 on 27 October 2026 (query.intr=tesamorelin, query.locn=Netherlands): totalCount 0, so no trial of tesamorelin, open or closed, lists a Dutch site. Without the location filter: 24 trials (14 completed, 4 terminated, 3 withdrawn, 3 recruiting); the three recruiting trials have sites only in the United States (NCT06554717, NCT03150511) or China (NCT07481734). One completed extension study of the phase 3 programme (NCT00608023) had sites in Belgium, France and Spain, among others. Agrees with ctgov-nl-peptide-search-2026-10-27 (nl-care research), whose link opens the retatrutide query; this entry links the tesamorelin search itself."

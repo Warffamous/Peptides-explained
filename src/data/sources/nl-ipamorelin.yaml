@@ -1,0 +1,84 @@
+# Sources added for the Dutch ipamorelin page (src/content/compounds/nl/ipamorelin.mdx), group ipamorelin,
+# 27 October 2026. Shape as in src/data/sources/legal-a.yaml (sourceSchema, src/schemas/index.ts). Every URL below was
+# fetched and read on 27 October 2026 (curl with a browser user agent; HTML converted to text; the PDF with pdftotext;
+# the two registers through their own public APIs) and says what its note says. Notes: research/nl-notes/ipamorelin.md.
+#
+# Everything else the Dutch page cites is reused by id: the science sources of the English page (ipamorelin.yaml,
+# en-compounds-b.yaml, semaglutide.yaml, shared.yaml and the other topic files), the Dutch and EU sources merged from the
+# research of 27 October 2026 (nl-research-*.yaml), the Dutch sources of 23 October (guides.yaml, legal-a.yaml,
+# safety-a.yaml, safety-b.yaml) and thuisarts-diabetes-type-2 (nl-tesamorelin.yaml).
+#
+# These replace, on the Dutch page, the English page's NHS symptom pages (the UK help service: nhs-oedema,
+# nhs-heart-palpitations, nhs-fainting; nhs-cellulitis, nhs-sepsis, nhs-anaphylaxis and nhs-high-blood-sugar are replaced
+# by Thuisarts pages already registered) and its trial searches for Australia and New Zealand
+# (au-anzctr-search-status-b-2026-10-23).
+
+# ---------------------------------------------------------------- Netherlands: help (Thuisarts, the NHG's patient site)
+
+thuisarts-hartfalen:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb hartfalen"
+  year: 2026
+  url: https://www.thuisarts.nl/hartfalen/ik-heb-hartfalen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 9 apr 2026'. Signs: 'Je voelt je snel buiten adem en benauwd. Je voeten en enkels worden dikker.'; fluid leaks from the blood vessels 'vooral naar de longen, buik, benen en enkels'. 'Wanneer bellen bij hartfalen?': 'Bel direct de huisarts, huisartsen-spoedpost of 112' when 'Je ademt opeens heel snel of moeilijk', 'Je voelt je opeens erg benauwd' or 'Je kunt helemaal niet meer liggen door de benauwdheid'; 'Maak een afspraak met je huisarts' among others when 'Je krijgt steeds dikke voeten en enkels' or 'Je wordt in 3 dagen 2 kilo of meer zwaarder'. Cited for the signs of fluid build-up (swollen feet, ankles and legs with breathlessness) and the Dutch help levels in the stop-now list and the stop strip."
+
+thuisarts-hartkloppingen:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb hartkloppingen, wat kan ik doen?"
+  year: 2026
+  url: https://www.thuisarts.nl/hartkloppingen/ik-heb-hartkloppingen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 20 jul 2026'. 'Je hartslag kan onregelmatig zijn'. 'Wanneer bellen bij hartkloppingen?': 'Bel direct je huisarts of de huisartsen-spoedpost als je hartkloppingen hebt met 1 of meer van deze klachten: Je voelt pijn of druk in of op de borst. En het gaat niet weg na een paar minuten. ... Je ademt moeilijk. Je hebt het gevoel dat je flauwvalt. Je hart klopt ineens anders dan je gewend bent. En het gaat niet weg als je even rustig zit.' Cited for the heart-rhythm item of the stop-now list; the site keeps its faster level (112) for palpitations with chest pain, breathlessness or fainting (research/nl/nl-help.md, fact 17)."
+
+thuisarts-flauwvallen:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik ben flauwgevallen, waar kwam het door?"
+  year: 2026
+  url: https://www.thuisarts.nl/flauwvallen/ik-ben-flauwgevallen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 28 jul 2026'. 'Wanneer bellen bij flauwvallen?': 'Bel direct je huisarts of de huisartsen-spoedpost als je flauw bent gevallen en 1 van deze dingen hieronder had', among them 'Je had pijn op de borst of hartkloppingen vlak voordat je flauwviel', 'Je armen en benen schokten een tijdje', 'Je was langer dan 3 minuten bewusteloos'; 'Bel op werkdagen of maak een afspraak met je huisarts' among others when 'Je valt vaker opeens flauw'. Cited for the fainting item of the stop-now list; the site keeps its own level for fainting with chest pain or a racing heart (112, warning sign fainting-serious)."
+
+# ---------------------------------------------------------------- EU: a related authorised medicine (macimorelin)
+
+ema-pi-ghryvelin-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Ghryvelin (macimorelin): productinformatie in het Nederlands (samenvatting van de productkenmerken en bijsluiter)"
+  year: 2024
+  url: https://www.ema.europa.eu/nl/documents/product-information/ghryvelin-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "PDF, 28 pages, read with pdftotext on 27 October 2026. SmPC 4.1: 'Dit geneesmiddel is uitsluitend voor diagnostisch gebruik. GHRYVELIN is geïndiceerd voor gebruik bij volwassenen voor de diagnose van groeihormoondeficiëntie (GHD)'; 'diagnostische test met een enkelvoudige dosis'; granulaat voor orale suspensie. 4.3: 'Overgevoeligheid voor de werkzame stof of voor een van de in rubriek 6.1 vermelde hulpstoffen.' 4.4 and 4.8: QTc-verlenging (about 11 ms). 4.8: most common 'dysgeusie (5%), hoofdpijn, vermoeidheid, misselijkheid (elk 3%), duizeligheid (2%)'; package leaflet: 'een bittere smaak of metaalsmaak (dysgeusie)'. Section 9: 'Datum eerste vergunning: 11 januari 2019'. The EMA medicines JSON of 27 October 2026 (ema-medicines-json; timestamp 2026-10-27T18:19:10Z) lists Ghryvelin, EMEA/H/C/004660, as 'Authorised', marketing authorisation 11/01/2019, last update 13/05/2024 (the year above). Registered instead of ema-epar-ghryvelin for the Dutch page, whose title names a company. Cited for: macimorelin, a drug acting on the same receptor as ipamorelin, is authorised in the EU as a one-dose test for growth hormone deficiency in adults, with its main side effect, its contraindication and the QT warning."
+
+# ---------------------------------------------------------------- trials: registers searched for every country
+
+ctis-ipamorelin-search-2026-10-27:
+  type: registry
+  authors: "European Medicines Agency, Clinical Trials Information System (CTIS)"
+  title: "CTIS public searches of 27 October 2026: trials of ipamorelin in every EU member state"
+  year: 2026
+  url: https://euclinicaltrials.eu/search-for-clinical-trials/?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "CTIS public API (POST ctis-public-api/search, full-text 'containAll', no member-state filter). 'ipamorelin': 0 records; 'NNC 26-0161': 0. Control: 'retatrutide' returned 9 records, the same count as research/nl/eu-status.md (fact-check of 27 October 2026). The link opens the public search page; the API result is not a page of its own. Agrees with ctis-nl-peptide-search-2026-10-27 (Dutch sites only)."
+
+ctgov-ipamorelin-search-2026-10-27:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2 search of 27 October 2026: studies of ipamorelin, in every country"
+  year: 2026
+  url: https://clinicaltrials.gov/search?intr=ipamorelin
+  accessed: 2026-10-27
+  verified: registry
+  note: "API v2, query.intr=ipamorelin, no location filter: totalCount 3. NCT00672074 and NCT01280344 (the two phase 2 trials after bowel surgery, sites in the United States, both 'Completed') and NCT07717866 (an observational study in the United States, 'Active, not recruiting'). query.term=ipamorelin gives the same 3. None recruits and none has a site in the Netherlands or another EU member state. Same result as ctgov-ipamorelin-search-2026-10-22 and ctgov-search-status-b-2026-10-23."

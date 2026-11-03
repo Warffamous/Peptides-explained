@@ -1,0 +1,33 @@
+# EU and Dutch status of tirzepatide on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: tirzepatide
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: authorised, since: 2022-09-15, as_of: 2026-10-27, sources: [ema-epar-mounjaro, ema-mounjaro-procedural-steps, ema-mounjaro-procedural-steps-archive, ec-union-register-mounjaro, ema-medicines-json] }
+  - { jurisdiction: NL, status: authorised, since: 2022-09-15, as_of: 2026-10-27, sources: [ema-epar-mounjaro, eu-regulation-726-2004, cbg-gib-search-tirzepatide-2026-10-27, cbg-afslankmedicijnen] }
+products:
+  # One EU marketing authorisation covers the single-dose pens, the single-dose vials and the multi-dose KwikPen.
+  - { id: mounjaro, name: Mounjaro, holder: Eli Lilly Nederland B.V., jurisdiction: EU, authorised: 2022-09-15, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/mounjaro", label_source: ema-epar-mounjaro }
+compare_with_data_file:
+  - "Rows: status and since unchanged (authorised since 2022-09-15). as_of 2026-10-20 -> 2026-10-27. EU row: add ec-union-register-mounjaro."
+  - "NL row sources: the data file cites ema-epar-mounjaro, fk-tirzepatide, fk-regeling-zorgverzekering-bijlage-2-tirzepatide and zin-tirzepatide-obesity-assessment (reimbursement; fact-check: ema-epar-mounjaro was missing from this list). Suggested for the authorisation: ema-epar-mounjaro + eu-regulation-726-2004 (art. 13(1)) + cbg-gib-search-tirzepatide-2026-10-27 + cbg-afslankmedicijnen; keep the FK/ZIN ids for the reimbursement prose if the insurance research confirms them."
+  - "Product: the data file's EU product (Mounjaro, Eli Lilly Nederland B.V., 2022-09-15, subcutaneous, EPAR URL) matches the EPAR and the Union Register: no correction. No other EU tirzepatide product; Zepbound (in the data file's brands) is a US name and does not exist in the EU."
+  - "New EU indication in 2026: only the extension of type 2 diabetes to children and adolescents from 10 years (CHMP opinion 11 December 2025, Commission decision 22 January 2026, C(2026) 527). SURPASS-CVOT (outcome 25 June 2026) and HFpEF (opinion 29 January 2026) added data to the product information without a new indication. Pending: a CHMP variation on oral contraceptives (sections 4.5 and 4.6; on the October 2026 agenda 'for adoption')."
+  - "Additional monitoring: the EU product information and EMA's list (Rev. 147, 25 September 2026) say Mounjaro is under additional monitoring (since September 2022, 'New active substance'); EMA's medicines JSON field says 'No'. Follow the list and the label (conflict, eu-status.md §4). Fact-check (27 October 2026): confirmed; the Mounjaro EPAR page also lacks the 'Additional monitoring' box that the Kayshild, Kyinsu and Scenesse pages show, so EMA's web record and its list disagree; the Dutch SmPC's first line is 'Dit geneesmiddel is onderworpen aan aanvullende monitoring.'"
+regulatory_notes:
+  EU: "Authorised EU-wide as Mounjaro (15 Sep 2022): type 2 diabetes from age 10 (children added 22 Jan 2026) and weight management in adults; pens, vials and KwikPen. Prescription only."
+  NL: "Authorised in the Netherlands through the EU authorisation; in the CBG register. Prescription only. Not on the EMA or Farmanco shortage lists on 27 October 2026. [Reimbursement clause from the insurance research.]"
+indications_nl_from_smpc:
+  mounjaro: "Diabetes type 2 bij volwassenen, adolescenten en kinderen vanaf 10 jaar, naast dieet en beweging; en gewichtsbeheersing bij volwassenen met BMI ≥ 30, of 27 tot 30 met minstens één gewichtsgerelateerde aandoening, naast een caloriearm dieet en meer beweging (ema-pi-mounjaro-nl)."
+notes: |
+  EMA medicines JSON (27 October 2026): one tirzepatide record, Mounjaro EMEA/H/C/005620, 'Authorised', holder Eli Lilly
+  Nederland B.V., MA 15/09/2022, EC decision date 21/09/2026, revision 22, last updated 08/10/2026. EPAR page: holder
+  'Eli Lilly Nederland B.V. Orteliuslaan 1000 3528 BD Utrecht Netherlands'; opinion 21/07/2022; product information
+  last updated 21/09/2026.
+  Dutch SmPC (27 October 2026): pens 2,5-15 mg, vials ('injectieflacon') 2,5-15 mg and 'KwikPen' 2,5-15 mg/dosis;
+  black triangle; aspiration warning; caution in gastroparesis; no NAION section.
+  Geneesmiddeleninformatiebank: 18 product lines, all Mounjaro EU/1/22/1685. Union Register: ACTIVE.
+  Shortage: no Mounjaro entry in the EMA shortages catalogue (85 records, 27 October 2026); no tirzepatide entry on the
+  Farmanco public list. PRAC: April 2026, warfarin/INR signal closed without a label change; October 2026 agenda,
+  lithium-GLP-1 agonist interaction signal (class; EPITT 20275, fact-check correction of 20280) for adoption. The
+  oral-contraceptive variation (EMA/VR/0000340438) was also on the PRAC agenda of 28 September-1 October 2026 (item
+  10.1.2) before the October CHMP; no outcome public on 27 October 2026 (no new procedure in the Union Register).

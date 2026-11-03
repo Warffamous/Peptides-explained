@@ -1,0 +1,298 @@
+---
+slug: aod-9604
+title: "AOD-9604"
+description: "AOD-9604 is een stukje groeihormoon dat ooit als dieetpil werd ontwikkeld. Wat het is, waarom de ontwikkeling stopte, de wet in Nederland en wat onbekend is."
+tldr:
+  - q: "Wat is het?"
+    a: "Een stukje groeihormoon uit het lab. Amerikaanse klinieken prijzen het aan voor afvallen, gewrichten en tegen veroudering." # residue-ok: world context
+  - q: "Werkt het?"
+    a: "Nee. Bij 502 volwassenen was het gewichtsverlies niet groter dan met een nepmiddel. Volledige resultaten verschenen nooit."
+  - q: "En voor gewrichten of veroudering?"
+    a: "Hooguit dierstudies. We vonden geen studie naar injecties bij mensen."
+  - q: "Mag ik het invoeren?"
+    a: "Nee. Zonder handelsvergunning is invoeren verboden, ook voor eigen gebruik."
+  - q: "Gebruik je het toch?"
+    a: "Vertel het je huisarts. Pijn op je borst? Bel dan direct 112."
+lede: "Een stukje groeihormoon, ooit getest als dieetpil. In een grote studie hielp het niet."
+glance:
+  main_risk: "Wat in een flacon zit, is onbekend. Lange termijn nooit onderzocht."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section): the FDA review (a severe "feeling of chest tightness" judged possibly related; the immune-reaction
+  # concern for injections), the NHS pages on chest pain, cellulitis and anaphylaxis (as on English), and the
+  # Thuisarts pages for the Dutch help level (112 for chest pain that stays; huisarts or huisartsenpost for a hot,
+  # red injection site; 112 for a swelling throat or trouble breathing).
+  stop_signs:
+    - icon: sign-heart
+      text: "Pijn of een drukkend gevoel op je borst"
+      sources: [fda-pcac-2024-aod9604-briefing, nhs-chest-pain, thuisarts-pijn-op-borst]
+    - icon: sign-infection
+      text: "Rode, warme, dikke of pijnlijke prikplek"
+      sources: [nhs-cellulitis, thuisarts-wondroos]
+    - icon: sign-allergic
+      text: "Dik gezicht of dikke keel, of moeilijk ademen"
+      sources: [nhs-anaphylaxis, thuisarts-dikke-ogen-lippen, fda-pcac-2024-aod9604-briefing]
+  facts:
+    - label: "Wat het is"
+      value: "De laatste 15 bouwstenen van groeihormoon, plus tyrosine"
+      sources: [fda-pcac-2024-aod9604-briefing]
+    - label: "Ontwikkeld voor"
+      value: "Obesitas, als pil; gestopt in 2007"
+      sources: [fda-pcac-2024-aod9604-briefing]
+    - label: "Grootste studie"
+      value: "502 volwassenen, 24 weken: geen duidelijk extra gewichtsverlies"
+      sources: [fda-pcac-2024-aod9604-briefing]
+    - label: "Injecties onderzocht?"
+      value: "Geen studie bij mensen gevonden"
+      sources: [fda-pcac-2024-aod9604-briefing]
+grade_rationale:
+  human_clinical: "Fase 2 volgens onze beoordeling. De ontwikkelaar deed 6 gerandomiseerde studies met placebo als vergelijking. De grootste was bij 502 volwassenen met obesitas, gedurende 24 weken. Maar de ontwikkelaar publiceerde alleen een samenvatting over de veiligheid. Volgens het eigen verslag van het bedrijf haalde de grote studie haar hoofddoel niet. De Amerikaanse medicijnautoriteit FDA vond geen studie bij mensen met injecties of huidcrèmes." # residue-ok: FDA evidence
+  preclinical_volume: "Weinig. In PubMed staan minder dan 10 primaire studies van AOD-9604 zelf, bij dieren of in cellen (zoekopdracht van 23 oktober 2026)."
+  independence: "Eén groep overheerst. Bijna al het dieronderzoek komt van de groep van Monash University die het maakte, en van de ontwikkelaar. Er is één onafhankelijke studie bij konijnen."
+  safety: "Deels bekend. Ongeveer 900 mensen deden mee aan korte studies van het bedrijf met pillen en infusen. Die zijn alleen beschreven als samenvatting, zonder aantallen per groep. De onderzoeker vond dat de kankers die in één studie werden gemeld, er niet mee samenhingen. De FDA vond de informatie te beperkt om dat te beoordelen." # residue-ok: FDA evidence
+mechanism:
+  - kind: binding
+    level: hypothesis
+    title: "Het doelwit is onbekend"
+    detail: "De FDA schrijft dat het moleculaire doelwit en het werkingsmechanisme onbekend zijn. Anders dan groeihormoon bond het in een schaaltje niet aan groeihormoonreceptoren op cellen." # residue-ok: FDA evidence
+  - kind: tissue
+    level: animal
+    title: "Meer vetafbraak bij knaagdieren met obesitas"
+    detail: "Muizen en ratten met obesitas die AOD-9604 kregen, kwamen minder aan en braken meer vet af. Anders dan groeihormoon verhoogde het bij deze dieren de bloedsuiker niet."
+  - kind: effect
+    level: human
+    title: "Afvallen bij mensen: niet aangetoond"
+    detail: "In de grootste studie, bij 502 volwassenen met obesitas die ook een dieet volgden en bewogen, was het gewichtsverlies na 12 weken niet statistisch significant anders dan met placebo."
+studies:
+  ng-2000-obese-rats:
+    finding: "Ratten met obesitas die 19 dagen AOD-9604 via de mond kregen, kwamen minder dan half zoveel aan als onbehandelde ratten. Anders dan groeihormoon maakte het ze niet ongevoelig voor insuline."
+    limitation: "Ratten, van de groep die het maakte; niet onderzocht of een hogere dosis meer effect gaf; de statistiek was niet gecorrigeerd voor meerdere toetsen (FDA)." # residue-ok: FDA evidence
+  heffernan-2001-obese-mice:
+    finding: "Bij muizen met obesitas verlaagden 14 dagen injecties in de buikholte het lichaamsgewicht en het vet. Muizen zonder de bèta-3-receptor reageerden niet op dezelfde manier."
+    limitation: "Muizen, oorspronkelijke groep; niet onderzocht of een hogere dosis meer effect gaf."
+  kwon-2015-rabbit-knees:
+    finding: "Bij 32 konijnen met opgewekte artrose in de knie gaven injecties met AOD-9604 in het gewricht minder schade aan het kraakbeen dan een zoutoplossing. Samen met hyaluronzuur was de schade nog kleiner."
+    limitation: "Alleen konijnen; één onafhankelijke groep; gebruik in het gewricht is nooit bij mensen getest."
+  stier-2013-six-trials:
+    finding: "Een samenvatting van 6 studies van het bedrijf (infusen en pillen) meldde geen effect op IGF-1 of de bloedsuiker, en geen antistoffen tegen het peptide bij de mensen die werden getest."
+    limitation: "Geschreven door mensen die voor de ontwikkelaar werkten; geen aantallen bijwerkingen per groep; geen resultaten over de werking."
+  options-2007-obesity-trial:
+    finding: "Bij 502 volwassenen met obesitas die door loting 24 weken een dagelijkse pil kregen, naast dieet en beweging, was het gewichtsverlies niet statistisch significant groter dan met placebo. Het bedrijf stopte de ontwikkeling tegen obesitas."
+    limitation: "Alleen bekend uit het verslag van het bedrijf aan de beurs, zoals de FDA dat aanhaalt; nooit in een tijdschrift gepubliceerd." # residue-ok: FDA evidence
+  vanhee-2014-seized-products:
+    finding: "Een nationaal laboratorium voor volksgezondheid vond AOD-9604 in onbekende producten die de overheid in beslag had genomen."
+    limitation: "Een kort verslag over in beslag genomen producten. Het laat zien dat de stof buiten de legale keten in omloop is, niet wat gewone producten bevatten."
+regulatory_notes:
+  EU: "Geen handelsvergunning voor de hele EU: geen vergunning, aanvraag of aanwijzing als weesgeneesmiddel in de gegevens van het EMA (gecontroleerd op 27 oktober 2026)."
+  NL: "Niet goedgekeurd in Nederland: geen product in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Een geneesmiddel zonder handelsvergunning leveren of invoeren is verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Altijd verboden: bij naam genoemd in S2 als groeihormoonfragment."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is AOD-9604?">Een stukje groeihormoon uit het lab, eerst ontwikkeld als dieetpil. Het is geen goedgekeurd medicijn.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<Compare title="AOD-9604 komt uit groeihormoon, maar werkt niet zoals groeihormoon. Het is niet goedgekeurd." detail="Wat bekend is over de stof die onder deze naam in omloop is, uit de beoordeling van de Amerikaanse medicijnautoriteit FDA uit 2024, gecontroleerd op 23 oktober 2026. De status in Nederland en de EU is gecontroleerd op 27 oktober 2026.">
+
+| | AOD-9604 |
+|---|---|
+| Gemaakt in een lab? | <Verdict is="yes" /> Een keten van 16 aminozuren: de laatste 15 van groeihormoon, met een tyrosine ervoor.<Cite id="fda-pcac-2024-aod9604-briefing" /> |
+| Werkt het zoals groeihormoon? | <Verdict is="no" /> Het bond in cellen niet aan groeihormoonreceptoren, en het verhoogde IGF-1 niet in studies.<Cite id="fda-pcac-2024-aod9604-briefing,stier-2013-aod9604-safety" /> |
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Niet in Nederland en niet voor de EU. Het zit ook in geen enkel medicijn dat de FDA goedkeurde.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,fda-pcac-2024-aod9604-briefing" /> {/* residue-ok: world context */} |
+| Bij mensen getest als injectie? | <Verdict is="no" /> De FDA vond zo'n studie niet.<Cite id="fda-pcac-2024-aod9604-briefing" /> {/* residue-ok: FDA evidence */} |
+
+</Compare>
+
+Het Australische bedrijf Metabolic Pharmaceuticals ontwikkelde het eind jaren 90 als middel tegen obesitas, en stopte in 2007.<Cite id="fda-pcac-2024-aod9604-briefing" /> Amerikaanse klinieken prijzen het nu aan, meestal als injectie of pil, voor afvallen, gewrichten en tegen veroudering.<Cite id="fda-pcac-2024-aod9604-briefing" />
+
+<InDetail title="Het molecuul, en de “GRAS”-claim">
+
+AOD-9604 is <Seq>Tyr-Leu-Arg-Ile-Val-Gln-Cys-Arg-Ser-Val-Glu-Gly-Ser-Cys-Gly-Phe</Seq>, met een brug tussen de 2 cysteïnes. Brutoformule C78H123N23O23S2, molecuulmassa <Q>1.815,1 g/mol</Q>.<Cite id="fda-pcac-2024-aod9604-briefing,pubchem-aod-9604" /> Het is in omloop als vrije base of als acetaatzout.
+{/* residue-ok: FDA evidence */}
+Volgens de FDA is het niet goed beschreven: er zijn geen openbare tests op onzuiverheden, klontjes, bacteriën of gifstoffen van bacteriën.<Cite id="fda-pcac-2024-aod9604-briefing" /> PubChem noemt "Tyr-somatostatin (177-191)" als andere naam. Dat klopt niet: het is gebaseerd op groeihormoon (somatotropine), niet op somatostatine.<Cite id="pubchem-aod-9604" />
+
+{/* residue-ok: world context (a US food term) */}
+"GRAS" is een Amerikaanse term voor voedsel: "generally recognised as safe" ("algemeen erkend als veilig"). Noemt een productbeschrijving AOD-9604 GRAS? De openbare lijst van GRAS-notificaties van de FDA heeft er geen vermelding van.<Cite id="fda-gras-inventory-search-2026-10-23" /> GRAS gaat over voedsel, niet over medicijnen. In de EU is een levensmiddel iets wat bedoeld is om door mensen te worden geconsumeerd, en geneesmiddelen vallen daar uitdrukkelijk buiten.<Cite id="eu-regulation-178-2002-food-law" /> Een product om te spuiten is volgens ons dus geen levensmiddel.
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Niemand weet waar het op aangrijpt. Bij knaagdieren met obesitas verhoogde het de vetafbraak.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+De resultaten bij dieren komen bijna allemaal van de groep die het maakte.
+{/* residue-ok: FDA evidence */}
+De FDA merkt op dat geen van deze studies verschillende doses vergeleek, of de statistiek corrigeerde voor veel vergelijkingen.<Cite id="fda-pcac-2024-aod9604-briefing,heffernan-2001-aod9604-mice,ng-2000-aod9604-rats" /> Bij muizen met obesitas was voor het effect de bèta-3-receptor op vetcellen nodig. Toch concludeerden de auteurs dat AOD-9604 niet zelf op die receptor werkt.<Cite id="heffernan-2001-aod9604-mice" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Nee. In de grootste studie vielen mensen niet duidelijk meer af dan met een nepmiddel.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<KeyNumber title="Bij 502 volwassenen was het gewichtsverlies niet beter dan met placebo" value="502" label="volwassenen met obesitas deden mee; na 12 weken waren ze niet duidelijk meer afgevallen" who="OPTIONS-studie: 24 weken elke dag een pil, naast dieet en beweging (verslag van het bedrijf, aangehaald door de FDA)" source="fda-pcac-2024-aod9604-briefing" level="human-controlled" />
+
+{/* residue-ok: FDA evidence */}
+<KeyNumber title="De maker gaf het op als dieetmiddel" value="2007" label="het jaar waarin de maker zei dat de resultaten het als dieetmiddel niet steunden" counted="Bekendmaking van het bedrijf van 21 februari 2007, aangehaald in de beoordeling van de FDA uit 2024" source="fda-pcac-2024-aod9604-briefing" />
+
+{/* residue-ok: FDA evidence */}
+De FDA concludeerde dat het bewijs het gebruik tegen obesitas niet steunt, via welke toedieningsweg ook.<Cite id="fda-pcac-2024-aod9604-briefing" /> Claims over gewrichten, botten of veroudering rusten hooguit op dierstudies.<Cite id="fda-pcac-2024-aod9604-briefing,kwon-2015-aod9604-rabbit-oa" />
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+Drie kleinere studies, bij 23, 16 en 36 mensen met obesitas, vonden geen statistisch significant gewichtsverlies tegenover placebo. Een studie van 12 weken bij 300 mensen is alleen bekend uit een congresabstract, dat kleine verschillen meldde.<Cite id="fda-pcac-2024-aod9604-briefing" /> Alle studies bij mensen zijn gedaan en betaald door de ontwikkelaar. De auteurs van de samenvatting over de veiligheid werkten voor het bedrijf of adviseerden het.<Cite id="fda-pcac-2024-aod9604-briefing,stier-2013-aod9604-safety" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is geen goedgekeurd medicijn. In de sport is het altijd verboden.</Lead>
+
+<Compare title="Niet goedgekeurd in Nederland of de EU. Leveren en invoeren zijn verboden." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026. De Amerikaanse stemming en de sport staan in het deel hieronder.">
+
+| | Goedgekeurd als medicijn? | Mag iemand het leveren of invoeren? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> Geen handelsvergunning. De Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG) vindt geen product.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> De Geneesmiddelenwet verbiedt verkopen, leveren en invoeren zonder handelsvergunning. De uitzonderingen zijn smal.<Cite id="nl-gmw-art-40-handelsvergunning" /> |
+| Europese Unie | <Verdict is="no" /> Geen handelsvergunning voor de hele EU, geen aanvraag in beoordeling en geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> | <Verdict is="no" /> Zonder handelsvergunning van een lidstaat of voor de hele EU mag een medicijn in geen enkele lidstaat in de handel.<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+In de sport geldt overal dezelfde regel: AOD-9604 is altijd verboden. Het staat bij naam in groep S2 van de dopinglijst.<Cite id="wada-2026-list-en,wada-2027-list-en,dopingautoriteit-vertaling-dopinglijst-2026" />
+
+{/* residue-ok: world context (the fold title names the US vote) */}
+<InDetail title="Status in Nederland, de EU en de sport, en de Amerikaanse stemming">
+
+<RegulatoryTable />
+
+{/* residue-ok: world context (a US advisory vote, once and short) */}
+Op 4 december 2024 stemde de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) met 12 stemmen tegen 0: geen van beide vormen hoort op de lijst van stoffen die Amerikaanse apotheken mogen bereiden. Dat hadden de medewerkers van de FDA ook voorgesteld.<Cite id="fda-pcac-2024-12-minutes,fda-pcac-2024-aod9604-briefing" />
+{/* residue-ok: world context */}
+De FDA had AOD-9604 in categorie 2 gezet, voor stoffen die mogelijk grote veiligheidsrisico's geven. De voordrachten zijn ingetrokken.<Cite id="fda-category-2-safety-risks" /> Een Amerikaanse lijst verandert niets buiten de VS.
+
+Het Wereld Anti-Doping Agentschap (WADA) noemt AOD-9604 in groep S2 als groeihormoonfragment. De Nederlandse vertaling van de lijst zegt: "Groeihormoonfragmenten zoals AOD-9604". Het is altijd verboden, binnen en buiten wedstrijden.<Cite id="wada-2026-list-en,wada-2027-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> Zie [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de EU, en waar het begon">
+
+### Wat de Nederlandse wet zegt
+
+De Geneesmiddeleninformatiebank van het CBG vindt geen product met AOD-9604.<Cite id="cbg-gib-search-status-2026-10-27" /> Volgens de Geneesmiddelenwet mag niemand een geneesmiddel zonder handelsvergunning in voorraad hebben, verkopen, afleveren, aan iemand geven, invoeren of op een andere manier Nederland binnenbrengen (artikel 40). De uitzonderingen zijn smal.<Cite id="nl-gmw-art-40-handelsvergunning" /> Wordt een product aangeprezen voor afvallen of herstel? Dan valt het volgens onze lezing meestal al onder de omschrijving van een geneesmiddel.<Cite id="nl-gmw-art-1-geneesmiddel" /> Zie [wat een geneesmiddel is](/nl/legal/nl/#wat-een-geneesmiddel-is). AOD-9604 staat niet op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" /> In de lijst van goedgekeurde programma's voor compassionate use van het CBG staat AOD-9604 niet.<Cite id="cbg-compassionate-use-list" /> Zie [de Nederlandse wet](/nl/legal/nl/).
+
+### Zelf gebruiken en zelf invoeren
+
+Gebruiken staat niet in de lijst van verboden handelingen. Of een paar flacons thuis al "in voorraad hebben" is, zegt de wet niet duidelijk.<Cite id="nl-gmw-art-40-handelsvergunning" /> Invoeren is wel verboden, ook voor eigen gebruik: artikel 40 heeft geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Reizigers mogen medicijnen voor eigen gebruik meenemen zonder invoervergunning. Die regel gaat alleen over die vergunning: het verbod van artikel 40 blijft gelden.<Cite id="nl-gnw-art-18-licence,nl-gmw-art-40-handelsvergunning" /> En voor een pakket dat je laat opsturen, geldt de regel voor reizigers niet. Dat oordeelde een rechter in 2019.<Cite id="nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane controleert post- en pakketzendingen.<Cite id="douane-invoer-geneesmiddelen-2026" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+### De Europese Unie
+
+Geen product met AOD-9604 heeft een handelsvergunning voor de hele EU. Het staat niet in de gegevens van het Europees Geneesmiddelenbureau (EMA), niet op de lijst van aanvragen in beoordeling en niet bij de weesgeneesmiddelen.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> Zonder handelsvergunning van een lidstaat of voor de hele EU mag een medicijn in geen enkele lidstaat in de handel.<Cite id="eu-directive-2001-83" /> Of een ander EU-land zelf een handelsvergunning gaf, hebben we niet nagekeken.
+
+### Waar het begon
+
+{/* residue-ok: history */}
+AOD-9604 is ontwikkeld in Australië. De ontwikkelaar, Metabolic Pharmaceuticals, deed zijn grote studie naar afvallen op plaatsen verspreid over het land. De studie werd in 2005 geregistreerd.<Cite id="anzctr-actrn12605000067673,fda-pcac-2024-aod9604-briefing" /> In februari 2007 zei het bedrijf dat de resultaten niet steunden dat het als middel tegen obesitas commercieel haalbaar was. Het stopte dat werk.<Cite id="fda-pcac-2024-aod9604-briefing" />
+
+{/* residue-ok: history */}
+In februari 2013 meldde de Australische misdaadcommissie (Australian Crime Commission) dat profsporters AOD-9604 gebruikten. Volgens de commissie was het niet goedgekeurd voor gebruik bij mensen, en toen nog niet verboden in de sport.<Cite id="au-acc-2013-organised-crime-drugs-sport" /> Twee maanden later zei WADA dat AOD-9604 onder S0 viel: de groep niet-goedgekeurde stoffen die altijd verboden zijn. Geen enkele overheidsgezondheidsautoriteit had het goedgekeurd.<Cite id="wada-2013-04-aod9604-statement" /> Nu staat het bij naam in S2.<Cite id="wada-2026-list-en" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">De veiligheid op lange termijn is nooit onderzocht. Een product van buiten de apotheek kan iets anders bevatten.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<Compare title="Kleine studies gaven een paar signalen over de veiligheid. Niemand onderzocht ze verder." detail="Wat de FDA vond in de gepubliceerde samenvattingen en dierstudies, op 23 oktober 2026.">
+
+| Mogelijke schade | Gezien bij mensen? |
+|---|---|
+| Een benauwd gevoel op de borst | <Verdict is="yes" /> Eén keer, ernstig, in een studie met een infuus; volgens de beoordeling mogelijk door het middel.<Cite id="fda-pcac-2024-aod9604-briefing" /> |
+| Kanker | <Verdict is="unknown" /> Vier keer kanker in één studie van 12 weken; de onderzoeker vond dat het er niet mee samenhing. Volgens de FDA is er te weinig informatie om dat te beoordelen.<Cite id="fda-pcac-2024-aod9604-briefing" /> {/* residue-ok: FDA evidence */} |
+| Effecten op bot of lever | <Verdict is="unknown" /> Veranderingen in een botwaarde bij ratten en in levercellen bij apen.<Cite id="fda-pcac-2024-aod9604-briefing" /> |
+| Een afweerreactie op een injectie | <Verdict is="unknown" /> Een zorg van de FDA bij peptiden om te spuiten; niet onderzocht.<Cite id="fda-pcac-2024-aod9604-briefing" /> {/* residue-ok: FDA evidence */} |
+
+</Compare>
+
+<InDetail title="Wat er gemeld is, en waarom de gaten ertoe doen">
+
+In de studies van het bedrijf waren de meest gemelde klachten hoofdpijn, moeheid en duizeligheid bij infusen, en hoofdpijn, diarree en winderigheid bij pillen. Een lichte of matige euforie (een opgewonden, blij gevoel) werd 5 keer gemeld met het middel en nooit met placebo.<Cite id="fda-pcac-2024-aod9604-briefing" /> In een studie van 26 weken bij ratten veranderde een botwaarde, osteocalcine, met de dosis. In een studie van 9 maanden bij apen waren er kleine veranderingen in levercellen.
+{/* residue-ok: FDA evidence */}
+De FDA noemt beide mogelijke signalen over de veiligheid.<Cite id="fda-pcac-2024-aod9604-briefing" /> Tests op schade aan genen gaven geen duidelijke uitkomst.<Cite id="fda-pcac-2024-aod9604-briefing" />
+
+{/* residue-ok: evidence (seized vials abroad) */}
+Dit alles gaat over het product van de ontwikkelaar. Een nationaal laboratorium voor volksgezondheid vond AOD-9604 in producten die de overheid in beslag had genomen. Het zat ook in flacons die in de VS in beslag zijn genomen.<Cite id="vanhee-2014-aod9604-seized,cox-2015-aod9604-detection" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer eerst de flacon, betrek een arts erbij, en weet wanneer je stopt.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<ProductCheck extra="Kijk welke vorm op het etiket staat. AOD-9604 is in omloop als vrije base of als acetaatzout. De FDA ziet die als verschillende stoffen." extraSources="fda-pcac-2024-aod9604-briefing" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **Je krijgt pijn of een drukkend gevoel op je borst, of je ademt moeilijk.** Bel direct 112.
+- **De prikplek wordt rood, warm, dik of pijnlijk, of je krijgt koorts** (misschien een infectie). Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je gezicht of keel wordt dik, je krijgt jeukende bulten (netelroos), of je ademt moeilijk** (misschien een allergische reactie). Wordt je keel of tong dik, of adem je moeilijk? Bel direct 112. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Stop met het product en maak een afspraak met je huisarts.
+
+Twijfel je? Bel je huisarts of de huisartsenpost.
+</Callout>
+
+<Cite id="nhs-chest-pain,nhs-cellulitis,nhs-anaphylaxis,fda-pcac-2024-aod9604-briefing,thuisarts-pijn-op-borst,thuisarts-wondroos,thuisarts-sepsis,thuisarts-dikke-ogen-lippen" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular" />
+
+<InDetail title="Controles die zinvol zijn">
+
+Je huisarts kan met je bespreken welke controles bij jou passen. Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+- **Laat een nieuwe bult, een moedervlek die verandert of ongewoon bloeden nakijken.** In één studie zijn kankers gemeld, en niemand kon beoordelen of die met het middel samenhingen.<Cite id="fda-pcac-2024-aod9604-briefing" />
+- **Let op de dopingregels als je aan wedstrijden meedoet.** Het is altijd verboden, en een dopingcontrole kan het aantonen.<Cite id="wada-2026-list-en,cox-2015-aod9604-detection" />
+
+Spuit je het? Lees dan [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+### Legale wegen
+
+De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt de legale wegen in Nederland uit, en wat elke weg nodig heeft: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [een artsenverklaring](/nl/legal-routes/#artsenverklaring), [een magistrale bereiding](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren). Voor AOD-9604 is er in Nederland geen goedgekeurd product om voor te schrijven, en off-label gaat alleen over goedgekeurde medicijnen.<Cite id="cbg-gib-search-status-2026-10-27,nl-gmw-art-68-off-label" /> Voor een artsenverklaring vraagt de Inspectie Gezondheidszorg en Jeugd (IGJ) officiële productinformatie, of anders een onderzoekersdossier, en bewijs dat het product volgens de regels voor medicijnen (GMP) is gemaakt. Of die weg kan werken voor een stof die nergens als medicijn is goedgekeurd, weten we niet.<Cite id="igj-qa-zonder-handelsvergunning" /> Een apotheek mag op recept zelf een medicijn maken voor één patiënt: een magistrale bereiding. Staat een grondstof in geen enkele officiële farmacopee? Dan kan die volgens de IGJ "niet zomaar worden gebruikt". Of AOD-9604 in een officiële farmacopee staat, hebben we niet kunnen nagaan.<Cite id="eu-directive-2001-83,igj-eigen-bereidingen-apotheek" />
+
+{/* residue-ok: world context (registries as evidence) */}
+ClinicalTrials.gov noemt helemaal geen studie met AOD-9604. De enige studie in het register van Australië en Nieuw-Zeeland, de studie naar afvallen uit 2005, is lang geleden afgerond.<Cite id="ctgov-search-status-d-2026-10-23,au-anzctr-search-status-d-2026-10-23,anzctr-actrn12605000067673" /> In Nederland vonden we geen studie.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" />
+
+### Een bijwerking melden
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG. Zie [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

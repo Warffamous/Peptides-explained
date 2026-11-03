@@ -1,0 +1,609 @@
+---
+slug: cjc-1295
+title: "CJC-1295"
+description: "CJC-1295 is een niet-goedgekeurd peptide uit het lab dat het groeihormoon verhoogt. De 2 versies met die naam, het onderzoek, de risico’s en de wet."
+tldr:
+  - q: "Wat doet het?"
+    a: "Het verhoogt dagenlang groeihormoon bij gezonde volwassenen. Geen studie testte een voordeel voor de gezondheid."
+  - q: "Met of zonder DAC?"
+    a: "Ze verschillen. Alleen “met DAC” is bij mensen getest."
+  - q: "Overleed er iemand in een studie?"
+    a: "Eén deelnemer in 2006, volgens berichten online die de FDA aanhaalt. Of het middel meespeelde, is onbekend." # residue-ok: FDA evidence (the FDA's 2024 review)
+  - q: "Mag iemand het leveren?"
+    a: "Nee. Zonder handelsvergunning mag niemand het verkopen, doorgeven of invoeren."
+  - q: "Gebruik je het toch?"
+    a: "Niet bij kanker, zwangerschap of in de groei. Praat eerst met je huisarts."
+lede: "Een peptide uit het lab dat dagenlang het groeihormoon verhoogt. Niet goedgekeurd. Twee versies hebben dezelfde naam."
+glance:
+  main_risk: "Niemand weet wat lang gebruik doet. Flacons kunnen een andere versie bevatten."
+  # Strook "Stop en zoek hulp", samengevat uit de stop-nu-lijst van deze pagina (sectie "Als iemand het toch gaat
+  # gebruiken", <Callout id="stop-now">): in de studies bij mensen steeg de hartslag en kwamen rood worden met een lage
+  # bloeddruk voor, en een deelnemer aan het gestopte onderzoek kreeg een hartaanval (beoordeling van de FDA, 2024);
+  # galbulten op de prikplek kwamen voor en overgevoeligheid staat in de productinformatie van tesamorelin, een in de VS
+  # goedgekeurde GHRH-analoog (Egrifta); ontsteking en weefselschade op de prikplek bij dieren, en geen tests op endotoxine
+  # op analysecertificaten (beoordeling van de FDA).
+  stop_signs:
+    - icon: sign-heart
+      text: "Pijn op de borst of hevige hartkloppingen"
+      sources: [fda-pcac-2024-cjc1295-briefing]
+    - icon: sign-allergic
+      text: "Jeukende bulten, dik gezicht of keel, moeilijk ademen"
+      sources: [fda-pcac-2024-cjc1295-briefing, dailymed-egrifta-sv-label]
+    - icon: sign-infection
+      text: "Warme, rode, dikke prikplek, of koorts"
+      sources: [fda-pcac-2024-cjc1295-briefing, cdc-2024-safe-injection-practices]
+  # Feitenblad naast de titel: feiten uit de studies, nooit een dosis.
+  facts:
+    - label: "Hoe het werd gegeven"
+      value: "Injectie onder de huid, in elke studie bij mensen"
+      sources: [teichman-2006-cjc1295, ionescu-2006-cjc1295-pulsatility]
+    - label: "Hoe lang het blijft"
+      value: "Halfwaardetijd ongeveer 6 tot 8 dagen (met DAC)"
+      sources: [teichman-2006-cjc1295]
+    - label: "Zonder DAC"
+      value: "Een ander peptide; geen gepubliceerde studie bij mensen"
+      sources: [fda-pcac-2024-cjc1295-briefing]
+    - label: "Studies bij mensen"
+      value: "Gezonde volwassenen, 3 kleine studies (2006–2009)"
+      sources: [fda-pcac-2024-cjc1295-briefing, teichman-2006-cjc1295, ionescu-2006-cjc1295-pulsatility, sackmann-sala-2009-cjc1295-proteome]
+grade_rationale:
+  human_clinical: "Fase 1. Het hoogste gepubliceerde bewijs bij mensen zijn 2 kleine gerandomiseerde studies met placebo als vergelijking, bij 66 gezonde volwassenen (2006). Daarnaast zijn er 2 kleine studies zonder vergelijkingsgroep, bij 12 en 11 gezonde mannen, deels dezelfde mannen. Het fase 2-onderzoek van de ontwikkelaar bij mensen met hiv werd in 2006 gestopt en nooit gepubliceerd. Volgens onze beoordeling telt het daarom niet mee."
+  preclinical_volume: "Weinig. Volgens onze telling op 22 oktober 2026 beschrijven 4 volledige artikelen wat CJC-1295 doet in cellen of bij dieren: 2 uit het netwerk van de ontwikkelaar, en 2 van onafhankelijke labs die het als hulpmiddel gebruikten. Nog 3 artikelen beschrijven hoe het wordt afgebroken. Het onderzoek van de ontwikkelaar naar giftigheid bestaat alleen als 4 congresabstracts. Ook als je die meetelt, is het totaal ongeveer 11: helemaal onderaan de volgende klasse."
+  independence: "Eén groep overheerst. Elke studie bij mensen komt van de ontwikkelaar (ConjuChem) of van zijn academische partner in Chicago, die ook meeschreef aan de studies van de ontwikkelaar. Dat geldt ook voor 2 van de 4 artikelen over dieren en cellen. Samen zijn dat 5 van de 7 studies naar de werking en bij mensen. Twee onafhankelijke labs (NIH, 2009; Cedars-Sinai, 2020) bevestigden bij muizen dat het op het groeihormoonsysteem werkt (meer groeihormoon of IGF-1). Maar geen onafhankelijke groep heeft het bij mensen onderzocht."
+  safety: "Deels bekend. De FDA telde 63 gezonde volwassenen in gepubliceerde studies. Van hen kregen er 46 één injectie, en ze werden weken gevolgd; de studies meldden geen ernstige bijwerkingen. Het enige langere onderzoek bij patiënten werd in 2006 gestopt (volgens de FDA nadat een deelnemer overleed), en de gegevens over de veiligheid zijn nooit gepubliceerd. Bij mensen zijn er geen gegevens over lang gebruik, kanker of zwangerschap, en het dieronderzoek naar giftigheid bestaat alleen als congresabstracts." # residue-ok: FDA evidence (the FDA's count of exposed people)
+mechanism:
+  - kind: binding
+    level: animal
+    title: "Een chemisch haakje bindt het aan albumine"
+    detail: "Het extra lysine aan het eind draagt een maleïmidegroep: het drug affinity complex (DAC). Bij ratten zat CJC-1295 binnen 15 minuten vast aan albumine, een eiwit in het bloed, en het bleef langer dan 72 uur in het bloed. De halfwaardetijd van 5,8 tot 8,1 dagen bij mensen past bij die binding. Maar de binding zelf is alleen bij ratten aangetoond."
+  - kind: binding
+    level: in-vitro
+    title: "Het zet de GHRH-receptor in de hypofyse aan"
+    detail: "Ook als het vastzat aan albumine, liet CJC-1295 hypofysecellen van ratten in een kweekschaaltje groeihormoon afgeven. De GHRH-receptor zit op somatotrofe cellen: de cellen voor in de hypofyse die groeihormoon maken."
+  - kind: signal
+    level: in-vitro
+    title: "cAMP stijgt in de cel"
+    detail: "De GHRH-receptor werkt vooral via de boodschapperstof cAMP. In hypofysecellen van muizen verhoogde CJC-1295 het cAMP en de afgifte van groeihormoon."
+  - kind: cellular
+    level: human
+    title: "Meer groeihormoon, nog steeds in pieken"
+    detail: "Bij 12 gezonde mannen veranderde één injectie de grootte en het aantal pieken van groeihormoon niet. Maar de laagste punten tussen de pieken werden 7,5 keer hoger, en het gemiddelde groeihormoon steeg met 46%."
+  - kind: tissue
+    level: human
+    title: "De lever maakt meer IGF-1"
+    detail: "Groeihormoon zet de lever aan om IGF-1 te maken. Bij gezonde volwassenen werd IGF-1 na één injectie 1,5 tot 3 keer hoger, 9 tot 11 dagen lang. Na een paar injecties bleef het tot 28 dagen boven de beginwaarde."
+  - kind: tissue
+    level: animal
+    title: "De hypofyse zelf kan groeien"
+    detail: "GHRH laat groeihormooncellen ook delen. Bij muizen kwamen er door CJC-1295 meer van deze cellen, en werd de hypofyse zwaarder. In één studie stegen ook de tekenen van DNA-schade in de hypofyse."
+  - kind: effect
+    level: hypothesis
+    title: "Effecten op spieren, vet, herstel of ouder worden: niet aangetoond"
+    detail: "Geen gepubliceerde studie mat een uitkomst voor de gezondheid bij mensen. Het enige onderzoek bij patiënten, naar buikvet bij mensen met hiv, werd in 2006 gestopt en nooit gerapporteerd."
+studies:
+  jette-2005-albumin:
+    finding: "Vast aan albumine liet CJC-1295 hypofysecellen van ratten nog steeds groeihormoon afgeven, en het was bestand tegen het enzym DPP-4. Bij ratten gaf het in 2 uur 4 keer zoveel groeihormoon vrij als GHRH(1-29). Na 72 uur was het nog in het bloed. Bij één rat was het van 15 minuten tot na 24 uur aan albumine gebonden te zien."
+    limitation: "Een studie van de ontwikkelaar zelf; het aantal dieren staat niet in de samenvatting; de binding aan albumine is gezien in het bloed van één rat. De studie scheidt het effect van het haakje niet van dat van de 4 veranderde aminozuren."
+  developer-toxicology-abstracts:
+    finding: "Bij ratten en honden met herhaalde injecties tot 14 dagen: bloedingen, ontsteking en wat afgestorven weefsel op de prikplek, iets minder rode bloedcellen en een hoger cholesterol; honden gaven ook over. Een studie bij drachtige ratten vond geen misvormingen. Een studie van 6 maanden bij apen meldde geen effecten op het afweersysteem."
+    limitation: "Alleen bekend uit 4 congresabstracts van de ontwikkelaar, zoals de FDA ze samenvat. Welke vorm van het peptide is gebruikt, staat er niet in, en de FDA noemde de gegevens over de apen vaag. Er bestaat geen studie naar het risico op kanker." # residue-ok: FDA evidence (the FDA summary of the abstracts)
+  alba-2006-knockout-mice:
+    finding: "Muizen die zonder eigen GHRH waren geboren, kregen een normaal gewicht en een normale lengte met dagelijks CJC-1295, 5 weken lang. Injecties om de 2 of 3 dagen hielpen minder. Hun hypofyse maakte meer RNA voor groeihormoon en had meer groeihormooncellen."
+    limitation: "Een model van een tekort, niet van gezonde volwassenen; het aantal dieren staat niet in de samenvatting; 2 medewerkers van de ontwikkelaar waren medeauteur."
+  teichman-2006-healthy-adults:
+    finding: "Bij gezonde volwassenen van 21–61 jaar maakte één injectie het groeihormoon 2 tot 10 keer hoger, 6 dagen of langer, en IGF-1 1,5 tot 3 keer hoger, 9 tot 11 dagen lang, afhankelijk van de dosis. De halfwaardetijd was 5,8–8,1 dagen. Na herhaalde injecties bleef IGF-1 tot 28 dagen boven de beginwaarde. De studies meldden geen ernstige bijwerkingen."
+    limitation: "Klein en kort (28 en 49 dagen), bij gezonde vrijwilligers, uitgevoerd door de ontwikkelaar. Gemeten werden hormoonwaarden, niet de gezondheid. Bijwerkingen kwamen vaak voor, en in totaal kregen maar 11 mensen placebo."
+  ionescu-2006-pulsatility:
+    finding: "Een week na één injectie kwam groeihormoon nog steeds in pieken van dezelfde grootte en hetzelfde aantal. Maar de laagste punten tussen de pieken waren 7,5 keer hoger; het gemiddelde groeihormoon steeg met 46% en IGF-1 met 45%."
+    limitation: "Een kleine groep: 12 gezonde mannen van 20–40 jaar, met één nacht bloedafname ervoor en één erna, zonder placebogroep. De hartslag steeg met de dosis. Het middel kwam van de ontwikkelaar; de laatste auteur schreef mee aan de studies van de ontwikkelaar."
+  conjuchem-2006-hiv-phase-2:
+    finding: "Opgezet als gerandomiseerd onderzoek van 12 weken met placebo als vergelijking, bij volwassenen met hiv en extra vet rond de organen. Het werd in 2006 gestopt. Volgens de FDA, die berichten online aanhaalt, kreeg een deelnemer een hartaanval en overleed hij." # residue-ok: FDA evidence (the FDA review)
+    limitation: "Er zijn nooit resultaten gepubliceerd of in een register gezet, en het register geeft geen reden voor het stoppen. Wat het onderzoek vond, goed of slecht, is onbekend."
+  sackmann-sala-2009-serum-proteins:
+    finding: "In bloed van 11 van dezelfde jonge mannen veranderden 5 eiwitten in het bloed een week na één injectie. De auteurs stellen ze voor als markers van de werking van groeihormoon."
+    limitation: "Een zoektocht naar markers, geen test van voordeel of schade; geen placebo; deels betaald door de ontwikkelaar en WADA; bijwerkingen niet vermeld."
+  gautam-2009-dwarf-mice:
+    finding: "Dagelijks CJC-1295, 8 weken lang, gaf jonge dwergmuizen zonder een bepaalde receptor in de hersenen weer een normale groei, een normale hypofyse, normaal groeihormoon en normaal IGF-1. Het maakte ook jonge gewone muizen zwaarder."
+    limitation: "CJC-1295 was een hulpmiddel in het lab, om een vraag over de hersenen te onderzoeken; 5–8 muizen per groep; het peptide was een geschenk van de ontwikkelaar."
+  ben-shlomo-2020-pituitary:
+    finding: "In hypofysecellen van muizen verhoogde het cAMP en groeihormoon. Bij volwassen muizen die 8 weken werden behandeld (16 met CJC-1295, 15 met zoutoplossing), was de hypofyse 47% zwaarder, was IGF-1 hoger en stegen de tekenen van DNA-schade in de hypofyse."
+    limitation: "Muizen, geen mensen. De hypofyse werd gewogen bij 10 behandelde en 9 controlemuizen, en de komeettest op DNA-schade gebruikte er 3 en 3. Het laat een mogelijke weg naar schade zien, niet dat er tumoren ontstaan."
+  henninge-2010-seized-vial:
+    finding: "Een onbekend product dat de Noorse politie en douane in 2009 in beslag namen, bevatte een peptide van 29 aminozuren. Dat paste bij een peptide dat toen als CJC-1295 werd verkocht: de versie zonder het DAC-lysine."
+    limitation: "Eén product; alleen de identiteit, geen test van zuiverheid, hoeveelheid of steriliteit."
+  gajda-2019-seized-powders:
+    finding: "Poeders die de Deense douane in beslag nam, bevatten peptiden die groeihormoon laten vrijkomen, met een extra glycine aan het begin van de keten. Daaronder was een gewijzigd GRF(1-29)."
+    limitation: "Een paar forensische zaken. Het laat zien dat producten varianten kunnen bevatten die geen studie heeft getest, niet hoe vaak dat gebeurt."
+# Alleen de rijen van de Nederlandse site (NL, EU) en WADA; teksten uit research/nl/status/cjc-1295.yaml (27 oktober 2026).
+regulatory_notes:
+  NL: "Niet goedgekeurd in Nederland: geen product in het register van het CBG (27 oktober 2026). Een medicijn zonder handelsvergunning leveren is verboden (Geneesmiddelenwet, art. 40)."
+  EU: "Niet goedgekeurd in de EU: geen Europese handelsvergunning, en bij het EMA geen aanvraag en geen aanwijzing als weesgeneesmiddel (gecontroleerd op 27 oktober 2026)."
+  WADA: "Altijd verboden, in S2 (groep S2.2.4: stoffen die groeihormoon laten vrijkomen). Met naam genoemd sinds de dopinglijst van 2015, ook op die van 2027."
+translation: { method: translated, from: en, review: pending }
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is CJC-1295?">Een stukje van een hersenhormoon, nagemaakt in het lab. Een chemisch haakje houdt het dagenlang in het bloed.</Lead>
+
+<Compare title="Twee verschillende peptiden heten CJC-1295. Er is er maar één bij mensen getest." detail="Het originele CJC-1295 “met DAC” en het peptide dat “CJC-1295 zonder DAC” of “Mod GRF (1-29)” heet. Gecontroleerd op 22 en 23 oktober 2026; de status op 27 oktober 2026.">
+
+| | CJC-1295 met DAC (het origineel) | "CJC-1295 zonder DAC" (Mod GRF 1-29) |
+|---|---|---|
+| Dezelfde kern van 29 aminozuren? | <Verdict is="yes" /> Een deel van menselijk GHRH, met 4 veranderingen<Cite id="fda-pcac-2024-cjc1295-briefing,gsrs-cjc-1295" /> | <Verdict is="yes" /> Dezelfde kern, die daar eindigt<Cite id="fda-pcac-2024-cjc1295-briefing,pubchem-cjc-1295-without-dac" /> |
+| Een extra lysine met een chemisch haakje (DAC)? | <Verdict is="yes" /> Aan het eind van de keten<Cite id="gsrs-cjc-1295,jette-2005-cjc1295-albumin" /> | <Verdict is="no" /> Geen haakje<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Bindt het in het bloed aan albumine? | <Verdict is="yes" /> Aangetoond bij ratten<Cite id="jette-2005-cjc1295-albumin" /> | <Verdict is="no" /> Het mist het haakje dat de binding maakt<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Gemeten hoe lang het bij mensen blijft? | <Verdict is="yes" /> Halfwaardetijd 5,8–8,1 dagen<Cite id="teichman-2006-cjc1295" /> | <Verdict is="unknown" /> Geen gepubliceerde meting<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Getest bij mensen? | <Verdict is="yes" /> 3 kleine studies bij gezonde volwassenen<Cite id="fda-pcac-2024-cjc1295-briefing" /> | <Verdict is="no" /> Geen gepubliceerde studie<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Niet in Nederland of de EU<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> | <Verdict is="no" /> Niet in Nederland of de EU<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,fda-pcac-2024-cjc1295-briefing" /> |
+
+</Compare>
+
+De ontwikkelaar, ConjuChem in Montreal, gebruikte de naam CJC-1295 voor de versie met DAC.<Cite id="jette-2005-cjc1295-albumin,fda-pcac-2024-cjc1295-briefing" /> Nu heet ook de versie zonder DAC zo, zelfs bij de Amerikaanse medicijnautoriteit FDA. Die noemt de verwarring een risico voor de veiligheid van patiënten.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Deze pagina beoordeelt de versie met DAC, omdat alle studies bij mensen die versie gebruikten. {/* residue-ok: FDA evidence */}
+
+<InDetail title="Het molecuul, stukje voor stukje">
+
+Groeihormoon-releasing hormoon (GHRH) is een hormoon van 44 aminozuren. De hypothalamus maakt het, aan de onderkant van de hersenen. De eerste 29 aminozuren zijn genoeg voor de volledige werking.<Cite id="fda-pcac-2024-cjc1295-briefing" /> CJC-1295 begint bij die 29, en verandert er 4 van:<Cite id="fda-pcac-2024-cjc1295-briefing,jette-2005-cjc1295-albumin" />
+
+- **Positie 2:** alanine wordt zijn spiegelbeeld, D-alanine. Ketens met D-alanine op deze plek zijn bestand tegen DPP-4. Dat is het belangrijkste enzym in het bloed dat GHRH knipt en uitschakelt.
+- **Positie 8:** asparagine wordt glutamine. Zo kan de keten zich niet omvormen, en niet in asparaginezuur veranderen.
+- **Positie 15:** glycine wordt alanine.
+- **Positie 27:** methionine wordt leucine, tegen schade door oxidatie.
+
+De versie met DAC krijgt daarna een 30e aminozuur, een lysine. De zijketen daarvan draagt een maleïmidegroep: een klein, reactief ringetje.<Cite id="gsrs-cjc-1295,pubchem-cjc-1295" /> Na de injectie vormt dat ringetje een blijvende chemische binding (een covalente binding) met een vrije zwavelgroep op albumine, een eiwit in het bloed. Die zwavelgroep zit op een plek die cysteïne 34 heet.<Cite id="jette-2005-cjc1295-albumin" /> Het ringetje kan ook binden aan andere eiwitten in het bloed met een vrije zwavelgroep.<Cite id="timms-2019-cjc1295-equine,fda-pcac-2024-cjc1295-briefing" />
+
+De volledige volgorde is <Seq>Tyr-D-Ala-Asp-Ala-Ile-Phe-Thr-Gln-Ser-Tyr-Arg-Lys-Val-Leu-Ala-Gln-Leu-Ser-Ala-Arg-Lys-Leu-Leu-Gln-Asp-Ile-Leu-Ser-Arg-Lys</Seq>, met een amide aan het eind en de maleïmide op het laatste lysine. De brutoformule is C165H269N47O46 en de molecuulmassa <Q>3.647,2 Da</Q>. Zonder het extra lysine is de brutoformule C152H252N44O42 en de massa <Q>3.367,9 Da</Q>.<Cite id="pubchem-cjc-1295,pubchem-cjc-1295-without-dac,fda-pcac-2024-cjc1295-briefing" />
+
+De ontwikkelaar maakte de versie met DAC met vaste-fasesynthese: er komt telkens één aminozuur bij, aan een keten die vastzit aan kleine harsbolletjes. Over hoe de versie zonder DAC wordt gemaakt, vond de FDA geen informatie. Bij dit soort synthese kunnen te korte of verkeerd gebouwde ketens, oplosmiddelen en andere resten achterblijven.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Wie het maakte, en waarom de ontwikkeling stopte">
+
+ConjuChem had een onderzoeksprogramma om GHRH langer te laten werken, omdat het GHRH van het lichaam zelf maar kort werkt.<Cite id="teichman-2006-cjc1295,ionescu-2006-cjc1295-pulsatility" /> In 2005 beschreef het bedrijf 3 versies met een maleïmidehaakje. Het koos CJC-1295 als de versie die volgens het bedrijf het meest beloofde.<Cite id="jette-2005-cjc1295-albumin,fda-pcac-2024-cjc1295-briefing" /> In 2006 volgden studies bij gezonde volwassenen.<Cite id="teichman-2006-cjc1295,ionescu-2006-cjc1295-pulsatility" />
+
+In december 2005 begon het bedrijf een fase 2-onderzoek bij volwassenen met hiv, met onder meer locaties in Duitsland. Beide onderzoeksregisters noemen het vroeg beëindigd, zonder reden en zonder resultaten.<Cite id="ctgov-nct00267527,euctr-2005-003797-25" /> Volgens de beoordeling van de FDA uit 2024 trok ConjuChem CJC-1295 in 2006 terug uit klinisch onderzoek, nadat een deelnemer aan dat onderzoek was overleden (zie de risico's hieronder).<Cite id="fda-pcac-2024-cjc1295-briefing" /> Sindsdien is er geen nieuw onderzoek geregistreerd, ook niet in het Europese register CTIS.<Cite id="ctgov-nct00267527,ctis-cjc-1295-search-2026-10-27" /> {/* residue-ok: FDA evidence */}
+
+De versie zonder DAC verschijnt voor het eerst in de wetenschappelijke literatuur in een artikel uit 2010. In 2009 namen de Noorse politie en douane een onbekend product in beslag. Een dopinglab vond er een peptide van 29 aminozuren in, dat paste bij een peptide dat toen als CJC-1295 werd verkocht.<Cite id="henninge-2010-cjc1295-seized,fda-pcac-2024-cjc1295-briefing" /> Volgens de FDA is dit de eerste keer dat CJC-1295 zonder DAC in de wetenschappelijke literatuur wordt genoemd.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Waarom de naam een probleem is">
+
+De FDA vond minstens 9 verschillende namen voor 5 verschillende stoffen die CJC-1295 heten: 2 werkzame moleculen (met en zonder DAC), elk als vrije base of als zout (acetaat of trifluoracetaat, TFA).<Cite id="fda-pcac-2024-cjc1295-briefing" /> De verwarring zit overal: {/* residue-ok: FDA evidence */}
+
+- **Aanvragen bij de FDA.** Twee groepen vroegen de FDA om CJC-1295 toe te laten in bereidingen door apotheken. De ene aanvraag noemde het acetaatzout, gaf de chemie van het vrije peptide zonder DAC, en verwees naar studies met de versie met DAC. De andere gaf een chemische naam die bij geen enkele vorm van CJC-1295 paste.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+- **Databanken.** De FDA merkte op dat het officiële stoffenregister de namen en de structuren van de 2 versies door elkaar haalde.<Cite id="fda-pcac-2024-cjc1295-briefing" /> In PubChem heeft één record van de versie zonder DAC tegelijk de namen "CJC 1295 with DAC" en "CJC-1295-no DAC acetate".<Cite id="pubchem-cjc-1295-without-dac" /> {/* residue-ok: FDA evidence */}
+- **Wetenschap.** Sommige onderzoekers op het gebied van doping schrijven "CJC-1295" voor de versie zonder DAC, en "CJC-1295 with drug affinity complex" voor het origineel.<Cite id="memdouh-2021-ghrh-analog-detection" />
+- **Producten.** Beide versies worden online verkocht "voor onderzoek", alleen of in mengsels met ipamorelin, GHRP-2, GHRP-6, hexarelin of tesamorelin. De productbeschrijvingen die de FDA bekeek, zeiden niet welk zout erin zat. Bij sommige mengsels stond er ook niet welke versie erin zat.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Poeders die in Denemarken in beslag werden genomen, bevatten versies van deze peptiden met een extra aminozuur. Niemand weet wat die doen.<Cite id="gajda-2019-glycine-ghs" /> {/* residue-ok: FDA evidence */}
+
+Dit is belangrijk, want de twee zijn verschillende moleculen, en het bewijs hoort bij maar één ervan. De FDA waarschuwt dat je wat bekend is over de werking van de versie met DAC, niet kunt doortrekken naar de versie zonder DAC.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Zie [productrisico's](/nl/safety/product-risk/) en [wat "alleen voor onderzoek" betekent](/nl/legal/research-use-only/). {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Het laat de hypofyse meer groeihormoon afgeven. De lever maakt dan meer IGF-1.</Lead>
+
+<Diagram id="cjc-1295-gh-axis" caption="CJC-1295 werkt waar GHRH werkt: op de groeihormooncellen van de hypofyse.">
+
+| Stap | Waar | Wat er gebeurt | Aangetoond |
+|---|---|---|---|
+| 1 | Hypothalamus (onderkant van de hersenen) | Geeft GHRH af in golven | Bij mensen |
+| 2 | Bloed | CJC-1295 met DAC bindt aan albumine en blijft dagenlang | Bij ratten (de binding); bij mensen (de lange halfwaardetijd) |
+| 3 | Hypofyse | CJC-1295 zet de GHRH-receptor op groeihormooncellen aan, zoals GHRH dat doet | In cellen in het lab |
+| 4 | Hypofyse | Groeihormoon komt in pieken vrij; de laagste punten tussen de pieken stijgen | Bij mensen |
+| 5 | Lever | Maakt meer IGF-1, dat dagenlang hoog blijft | Bij mensen |
+| 6 | Hersenen en hypofyse | Groeihormoon en IGF-1 remmen het systeem normaal af (negatieve terugkoppeling, deels via somatostatine) | Bij mensen (de lichaamseigen hormonen) |
+| 7 | Spieren, vet, botten, herstel | Een effect op de gezondheid | Niet aangetoond |
+
+</Diagram>
+
+<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback,jette-2005-cjc1295-albumin,teichman-2006-cjc1295,ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" />
+
+Bij gezonde volwassenen hield één injectie het groeihormoon 6 dagen of langer hoger, en IGF-1 9 tot 11 dagen.<Cite id="teichman-2006-cjc1295" /> Groeihormoon kwam nog steeds in pieken, maar de laagste punten tussen de pieken stegen sterk.<Cite id="ionescu-2006-cjc1295-pulsatility" /> Of dat goed of slecht is voor de gezondheid, is niet onderzocht.
+
+<InDetail title="Stap voor stap: de keten, en waar elke stap op rust">
+
+<Mechanism />
+
+### In het bloed blijven
+
+<Claim level="animal">Bij ratten zat CJC-1295 binnen 15 minuten vast aan albumine in het bloed, en na 24 uur nog steeds</Claim>. Het peptide was na meer dan 72 uur nog in het bloed te vinden. GHRH(1-29) dat op dezelfde manier was gegeven, was maar ongeveer een uur te vinden.<Cite id="jette-2005-cjc1295-albumin,fda-pcac-2024-cjc1295-briefing" /> <Claim level="human-controlled">Bij gezonde volwassenen was de halfwaardetijd 5,8 tot 8,1 dagen</Claim>.<Cite id="teichman-2006-cjc1295" /> Het idee achter het haakje: het filter van de nieren laat maar weinig albumine door. Een klein peptide dat aan albumine vastzit, wordt dus niet snel weggefilterd.<Cite id="haraldsson-2008-glomerular-barrier,jette-2005-cjc1295-albumin" /> Maar de FDA wijst erop dat niemand de versies met en zonder DAC rechtstreeks heeft vergeleken. Ook kunnen volgens de FDA de 4 veranderde aminozuren de afbraak vertragen. Hoeveel van het lange verblijf in het bloed door het haakje komt, is dus niet aangetoond.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+### De receptor en het signaal
+
+GHRH werkt op somatotrofe cellen: de cellen voor in de hypofyse die groeihormoon maken. De receptor werkt vooral via de boodschapperstof cAMP, en GHRH laat deze cellen ook delen.<Cite id="mayo-2000-ghrh-receptor" /> <Claim level="in-vitro">Vast aan albumine liet CJC-1295 hypofysecellen van ratten in een kweekschaaltje nog steeds groeihormoon afgeven</Claim>.<Cite id="jette-2005-cjc1295-albumin" /> <Claim level="in-vitro">In hypofysecellen van muizen verhoogde het cAMP en de afgifte van groeihormoon</Claim>, in een onafhankelijk lab.<Cite id="ben-shlomo-2020-cjc1295-pituitary" />
+
+### Groeihormoon en IGF-1 bij mensen
+
+<Claim level="human-limited">Bij 12 gezonde mannen van 20 tot 40 jaar veranderde één injectie de grootte en het aantal pieken van groeihormoon niet, maar de laagste punten tussen de pieken werden 7,5 keer hoger. Het gemiddelde groeihormoon steeg met 46% en IGF-1 met 45%</Claim>.<Cite id="ionescu-2006-cjc1295-pulsatility" /> Groeihormoon schommelt door de dag. Daarom meten artsen en onderzoekers meestal IGF-1: de lever maakt dat vooral als reactie op groeihormoon, en het blijft stabieler.<Cite id="medlineplus-igf1,ben-shlomo-2020-cjc1295-pituitary" />
+
+### Wat de keten niet laat zien
+
+De keten stopt bij hormoonwaarden. Geen studie volgde die verder, naar spieren, vet, botten, herstel of slaap bij mensen.<Cite id="fda-pcac-2024-cjc1295-briefing" /> De FDA merkt ook op dat het maleïmidehaakje zich kan binden aan andere eiwitten dan albumine. Of dat iets doet, is onbekend.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Voor de versie zonder DAC vond de FDA helemaal geen studie naar wat die doet in cellen, bij dieren of bij mensen.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Waarom het lichaam groeihormoon normaal afremt">
+
+Het groeihormoon van het lichaam zelf komt in golven. GHRH uit de hypothalamus zet elke golf in gang, en somatostatine, een ander hormoon uit de hersenen, houdt die tegen. Een golf groeihormoon werkt daarna terug op de hersenen: die zetten somatostatine aan en remmen GHRH. IGF-1 is een tweede, tragere rem.<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback" />
+
+Een GHRH-analoog die lang werkt, drukt de hele tijd op één deel van deze regelkring. In de studie in Chicago bleven de pieken bestaan. Dat wijst erop dat de remmen in die week nog werkten.<Cite id="ionescu-2006-cjc1295-pulsatility" /> <Claim level="hypothesis">Maar een middel dat ongeveer een week in het bloed blijft, blijft duwen, wat de IGF-1-waarde ook is</Claim>. Niemand heeft onderzocht wat maanden hiervan doen met de regelkring, of met de hypofyse zelf.<Cite id="teichman-2006-cjc1295,fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Het verhoogt groeihormoon en IGF-1 bij gezonde volwassenen. Geen studie testte een voordeel voor de gezondheid.</Lead>
+
+<KeyNumber title="IGF-1 bleef na één injectie meer dan een week hoger" value="1,5–3×" label="zoveel keer hoger werd IGF-1, 9 tot 11 dagen lang, na één injectie" who="Teichman 2006: 2 kleine studies met placebo als vergelijking, bij gezonde volwassenen van 21–61 jaar" source="teichman-2006-cjc1295" level="human-controlled" />
+
+<KeyNumber title="Groeihormoon bleef in pieken komen, met hogere dalwaarden" value="7,5×" label="meer groeihormoon tussen de pieken, een week na één injectie" who="Ionescu 2006: 12 gezonde mannen van 20–40 jaar, zonder vergelijkingsgroep" source="ionescu-2006-cjc1295-pulsatility" level="human-limited" />
+
+{/* residue-ok: FDA evidence (the FDA count) */}
+<KeyNumber title="Heel weinig mensen kregen het in een studie" value="63" unit="mensen" label="kregen het in gepubliceerde studies. Allemaal gezond; 46 kregen maar één injectie." who="Telling van de FDA, 2024: 3 studies, 2006–2009; 87 op de 100 waren mannen" source="fda-pcac-2024-cjc1295-briefing" level="human-limited" />
+
+Dit zijn effecten op hormoonwaarden, niet op de gezondheid. Geen gepubliceerde studie mat spieren, vet, kracht, herstel, slaap of ouder worden bij mensen.<Cite id="fda-pcac-2024-cjc1295-briefing" /> De FDA vond voor geen enkele vorm van CJC-1295 gegevens over de werking bij een tekort aan groeihormoon, het gebruik dat ze beoordeelde.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+De tabel bevat ook 2 forensische analyses van producten die in beslag zijn genomen. Wat er in een flacon zit, hoort bij het bewijs dat je nodig hebt.<Cite id="henninge-2010-cjc1295-seized,gajda-2019-glycine-ghs" />
+
+</InDetail>
+
+<InDetail title="Studies bij mensen, één voor één">
+
+### De studies van de ontwikkelaar bij gezonde volwassenen (2006)
+
+Teichman en collega's deden 2 gerandomiseerde, dubbelblinde studies met placebo als vergelijking, met oplopende doses, bij gezonde volwassenen van 21 tot 61 jaar. Ze duurden 28 en 49 dagen.<Cite id="teichman-2006-cjc1295" /> Volgens de samenvatting van de FDA deden er 42 mensen mee aan de eerste (35 met CJC-1295, 7 met placebo) en 24 aan de tweede (20 en 4).<Cite id="fda-pcac-2024-cjc1295-briefing" /> <Claim level="human-controlled">Na één injectie werd groeihormoon 2 tot 10 keer hoger, 6 dagen of langer, en IGF-1 1,5 tot 3 keer hoger, 9 tot 11 dagen lang, meer bij hogere doses. Na 2 of 3 injecties bleef IGF-1 tot 28 dagen boven de beginwaarde</Claim>.<Cite id="teichman-2006-cjc1295" /> IGF-1 kwam alleen bij de hoogste enkele dosis boven het normale bereik voor leeftijd en geslacht.<Cite id="fda-pcac-2024-cjc1295-briefing" /> De auteurs schreven in het Engels dat het middel "safe and relatively well tolerated" was (veilig en redelijk goed te verdragen), en dat de effecten optelden.<Cite id="teichman-2006-cjc1295" /> Dat oordeel gaat over een paar weken bij gezonde volwassenen. En bijwerkingen kwamen vaak voor (zie de risico's hieronder). {/* residue-ok: FDA evidence */}
+
+### De studies in Chicago (2006 en 2009)
+
+Ionescu en Frohman namen bij 12 gezonde mannen een hele nacht lang elke 20 minuten bloed af, vóór en een week na één injectie.<Cite id="ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" /> De pieken van groeihormoon hielden hun grootte en hun aantal, terwijl de laagste punten stegen. IGF-1 steeg met 45% en bleef bij elke man binnen het normale bereik.<Cite id="ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" /> Dit was belangrijk voor de ontwikkelaar. Zijn onderzoekers stelden dat een GHRH dat lang werkt, het lichaam een natuurlijker patroon van groeihormoon zou geven dan een dagelijkse injectie met groeihormoon zelf.<Cite id="fda-pcac-2024-cjc1295-briefing,ionescu-2006-cjc1295-pulsatility" /> Een latere analyse van bloed van 11 van deze mannen vond 5 eiwitten in het bloed die veranderden. De auteurs stellen ze voor als markers van de werking van groeihormoon.<Cite id="sackmann-sala-2009-cjc1295-proteome" />
+
+### Het onderzoek bij patiënten dat nooit werd gepubliceerd
+
+Het fase 2-onderzoek van de ontwikkelaar bij mensen met hiv was de enige test bij patiënten. Het werd in 2006 gestopt, en er zijn nooit resultaten in een register gezet of gepubliceerd.<Cite id="ctgov-nct00267527,euctr-2005-003797-25,fda-pcac-2024-cjc1295-briefing" /> Of CJC-1295 het vet rond de organen verminderde, het doel van het onderzoek, is dus onbekend.
+
+### Waarom deze studies geen voordeel kunnen aantonen
+
+Alle gepubliceerde studies waren bij gezonde mensen, ze waren kort, en ze maten hormonen. Er waren geen studies bij mensen met een tekort aan groeihormoon, en geen metingen van bijvoorbeeld de lichaamssamenstelling of de groei. Daarom oordeelde de FDA dat de studies niet laten zien dat het werkt.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Een hogere IGF-1 is een surrogaateindpunt: een verandering in een bloedtest die wel of niet leidt tot een verandering in de gezondheid. {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Studies in cellen en bij dieren">
+
+Het artikel van de ontwikkelaar uit 2005 is de basis. <Claim level="in-vitro">Vast aan albumine was CJC-1295 bestand tegen DPP-4, en liet het nog steeds groeihormoon vrijkomen uit hypofysecellen van ratten</Claim>. En <Claim level="animal">bij ratten gaf het in 2 uur 4 keer zoveel groeihormoon als GHRH(1-29)</Claim>.<Cite id="jette-2005-cjc1295-albumin" />
+
+Muizen die zonder GHRH zijn geboren, groeien slecht. Bij hen <Claim level="animal">gaf dagelijks CJC-1295, 5 weken lang, een normaal lichaamsgewicht en een normale lengte, en meer groeihormooncellen in de hypofyse</Claim>. Injecties om de 2 of 3 dagen werkten minder goed. Twee medewerkers van de ontwikkelaar waren medeauteur.<Cite id="alba-2006-cjc1295-ghrh-knockout" />
+
+Later gebruikten 2 onafhankelijke labs CJC-1295 als hulpmiddel. Bij de NIH, het medisch onderzoeksinstituut van de Amerikaanse overheid, <Claim level="animal">gaf 8 weken dagelijks CJC-1295 dwergmuizen zonder een bepaalde receptor in de hersenen weer een normale groei, een normale hypofyse, normaal groeihormoon en normaal IGF-1</Claim>. Het peptide was een geschenk van de ontwikkelaar.<Cite id="gautam-2009-m3-cjc1295" /> Bij Cedars-Sinai, een medisch centrum in Los Angeles, behandelde een lab dat tumoren van de hypofyse onderzoekt 16 volwassen muizen 8 weken met CJC-1295, en 15 met zoutoplossing. <Claim level="animal">De behandelde muizen hadden een 47% zwaardere hypofyse (gewogen bij 10 en 9 muizen), een hogere IGF-1 en meer tekenen van DNA-schade in de hypofyse</Claim>.<Cite id="ben-shlomo-2020-cjc1295-pituitary" /> Die bevinding staat bij de risico's.
+
+</InDetail>
+
+<InDetail title="Wie het onderzoek betaalde">
+
+ConjuChem deed zijn eigen studies bij mensen, en schreef mee aan 2 van de 4 artikelen over dieren en cellen. Zijn academische partner, Lawrence Frohman, schreef mee aan die studies en aan de studies in Chicago, die het middel van de ontwikkelaar gebruikten. De analyse uit 2009 werd deels door de ontwikkelaar betaald.<Cite id="teichman-2006-cjc1295,alba-2006-cjc1295-ghrh-knockout,sackmann-sala-2009-cjc1295-proteome" /> Dat maakt de resultaten niet fout: de studies bij muizen van de NIH en Cedars-Sinai, zonder auteurs van de ontwikkelaar, vonden ook meer groeihormoon of IGF-1.<Cite id="gautam-2009-m3-cjc1295,ben-shlomo-2020-cjc1295-pituitary" /> Maar de vragen kwamen van de ontwikkelaar. En de ene studie die bij patiënten een voordeel of schade had kunnen laten zien, is nooit gepubliceerd.
+
+</InDetail>
+
+<InDetail title="Wat er voor het idee pleitte, en wat het gat betekent">
+
+Het idee achter CJC-1295 was redelijk. <Claim level="hypothesis">Een middel dat het eigen groeihormoon verhoogt, en daarbij de natuurlijke pieken en de remmen van het lichaam laat werken, zou milder kunnen zijn dan groeihormoon zelf spuiten</Claim>. Dat was de redenering van de ontwikkelaar, en die is nooit getest.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Een verwant middel kreeg wel een goedkeuring, voor één bepaald gebruik: tesamorelin, een andere GHRH-analoog, is in de VS goedgekeurd om overtollig buikvet te verminderen bij volwassenen met hiv.<Cite id="dailymed-egrifta-sv-label" /> In de EU is het niet goedgekeurd: de aanvrager trok de aanvraag in 2012 in. Op dat moment vond de medicijncommissie van het Europees Geneesmiddelenbureau (EMA) het voordeel voor de gezondheid niet aangetoond.<Cite id="ema-egrifta-withdrawal" /> De eerste hormoongegevens van CJC-1295 waren consistent, en onafhankelijke studies bij muizen bevestigden ze.<Cite id="teichman-2006-cjc1295,gautam-2009-m3-cjc1295" /> {/* residue-ok: world context (tesamorelin is approved in the US, not in the EU) */}
+
+Het gat heeft echte gevolgen. De ontwikkeling stopte in 2006, het ene onderzoek bij patiënten is nooit gepubliceerd, en niemand heeft de versie zonder DAC ooit getest.<Cite id="ctgov-nct00267527,fda-pcac-2024-cjc1295-briefing" /> Twintig jaar later hebben mensen die CJC-1295 gebruiken alleen hormoongegevens van een paar tientallen gezonde vrijwilligers, meestal na één injectie. Op de vragen die voor hen belangrijk zijn, is geen antwoord.
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat weten we nog niet?">Wat langer gebruik doet, wat de versie zonder DAC doet, en wat er echt in een flacon zit.</Lead>
+
+<TimeStrip title="De studies bij mensen duurden hoogstens 7 weken. Langer gebruik is nooit onderzocht." detail="Hoeveel weken gebruik en nacontrole het onderzoek beslaat. Het onderzoek van 12 weken bij patiënten werd gestopt en nooit gerapporteerd." min={0} max={26} step={4} axis="Weken" source="teichman-2006-cjc1295,ctgov-nct00267527,fda-pcac-2024-cjc1295-briefing" checked="2026-10-22" rows={[
+  { label: "Langste gepubliceerde studie bij mensen (gezonde volwassenen)", spans: [{ from: 0, to: 7, text: "49 dagen; hoogstens een paar injecties" }] },
+  { label: "Onderzoek van de ontwikkelaar bij mensen met hiv", spans: [{ from: 0, to: 12, text: "12 weken gepland; geen resultaten", unknown: true }] },
+  { label: "Langste algemene tests op giftigheid (ratten, honden)", spans: [{ from: 0, to: 2, text: "14 dagen; alleen congresabstracts" }] },
+  { label: "Langer gebruik bij mensen", spans: [{ from: 7, to: 26, text: "nooit onderzocht", unknown: true }] },
+]} />
+
+<InDetail title="Alle open vragen, met hun bronnen">
+
+Op 22 oktober 2026 was dit nog onbekend:
+
+- **Een voordeel bij mensen.** Geen gepubliceerde studie mat een uitkomst voor de gezondheid, en het enige onderzoek bij patiënten is nooit gerapporteerd.<Cite id="fda-pcac-2024-cjc1295-briefing,ctgov-nct00267527" />
+- **De versie zonder DAC.** Er is geen gepubliceerde studie naar wat die doet in cellen, bij dieren of bij mensen, of naar hoe lang die in het lichaam blijft.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Herhaald gebruik.** Van de mensen in de gepubliceerde studies kregen 3 op de 4 maar één injectie. Niemand werd langer dan 7 weken gevolgd.<Cite id="fda-pcac-2024-cjc1295-briefing,teichman-2006-cjc1295" />
+- **Kanker en de hypofyse.** Er bestaat geen onderzoek naar kankerverwekkendheid (carcinogeniteitsonderzoek). En geen gepubliceerde studie onderzocht de hypofyse bij mensen die CJC-1295 gebruikten.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **De dood in 2006.** Of CJC-1295 een rol speelde, kan niemand beoordelen. Er zijn geen gegevens van het onderzoek gepubliceerd.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Antistoffen.** De ontwikkelaar meldde geen "significante" antistoffen, maar beschreef de test niet. De FDA merkt op dat antistoffen ook kunnen reageren met het eigen GHRH van het lichaam.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+- **Zwangerschap, kinderen en ouderen.** Er zijn geen gegevens bij mensen.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Wisselwerkingen (interacties)** met andere medicijnen, en met de andere peptiden waarmee het vaak wordt gemengd.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Wat producten bevatten.** We vonden geen gepubliceerd onderzoek naar de inhoud, de zuiverheid of de steriliteit van producten die als CJC-1295 worden verkocht.
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is in Nederland en de EU niet goedgekeurd. In de sport is het altijd verboden.</Lead>
+
+<Compare title="Nederland en de EU hebben het niet goedgekeurd. Leveren en invoeren mag niet." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026.">
+
+| | Nederland | De EU |
+|---|---|---|
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met CJC-1295 in zijn register.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> Er is geen Europese handelsvergunning. Het Europees Geneesmiddelenbureau (EMA) heeft ook geen aanvraag, en geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> |
+| Mag iemand het leveren of invoeren? | <Verdict is="no" /> Een medicijn zonder handelsvergunning mag niemand verkopen, leveren of invoeren. Er zijn smalle uitzonderingen.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Een EU-land laat een medicijn alleen toe met een handelsvergunning.<Cite id="eu-directive-2001-83" /> |
+| Loopt er klinisch onderzoek? | <Verdict is="no" /> We vonden in Nederland geen onderzoek met CJC-1295.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" /> | <Verdict is="no" /> Het Europese register CTIS heeft geen onderzoek met CJC-1295. Een onderzoek uit 2005 stopte vroeg.<Cite id="ctis-cjc-1295-search-2026-10-27,euctr-2005-003797-25" /> |
+
+</Compare>
+
+In de sport is het altijd verboden. Het staat op de dopinglijst van het Wereld Anti-Doping Agentschap (WADA), in groep S2.<Cite id="wada-2026-list-en" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+### Sport (WADA)
+
+CJC-1295 staat met naam op de dopinglijst van WADA, in S2.2.4, bij de stoffen die groeihormoon laten vrijkomen. Het is een voorbeeld van de stoffen die op GHRH lijken. Het is altijd verboden, binnen en buiten wedstrijden, en alle stoffen in S2 zijn niet-specifieke stoffen.<Cite id="wada-2026-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> Ook de lijst van 2027, die vanaf 1 januari 2027 geldt, noemt het.<Cite id="wada-2027-list-en" /> CJC-1295 staat er sinds de lijst van 2015 met naam op. WADA schreef toen dat de genoemde voorbeelden al onder eerdere lijsten verboden waren.<Cite id="wada-2015-list-en,wada-2015-list-modifications" />
+
+S2 (“Peptidehormonen, groeifactoren, verwante stoffen en mimetica”) verbiedt ook "andere stoffen met een vergelijkbare chemische structuur of vergelijkbare biologische werking". Dus ook de versie zonder DAC is verboden.<Cite id="wada-2026-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> In Nederland is de Dopingautoriteit de nationale antidopingorganisatie.<Cite id="nl-wuab-art-2-4-dopingautoriteit" /> Zie [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland">
+
+Een medicijn heeft in Nederland een handelsvergunning nodig: van het CBG, of van de EU voor de hele EU.<Cite id="nl-gmw-art-40-handelsvergunning" /> In de Geneesmiddeleninformatiebank van het CBG staat geen product met CJC-1295 (gezocht op 27 oktober 2026).<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> Een handelsvergunning voor de hele EU is er ook niet (zie hieronder).
+
+De Geneesmiddelenwet kijkt op 2 manieren of iets een geneesmiddel is. Wordt het gepresenteerd als middel tegen een ziekte? Of is het bedoeld om een functie van het lichaam te veranderen, door een werking als van een medicijn (een farmacologisch effect)? Dan is het een geneesmiddel.<Cite id="nl-gmw-art-1-geneesmiddel" /> Een geneesmiddel zonder handelsvergunning mag niemand verkopen, leveren of invoeren. Er zijn smalle uitzonderingen, zoals de artsenverklaring.<Cite id="nl-gmw-art-40-handelsvergunning" /> Iets doorgeven aan iemand anders is ook verboden, zelfs als je er geen geld voor vraagt.<Cite id="nl-gmw-art-40-handelsvergunning,nl-gnw-art-1-lidstaat-werkzame-stof" />
+
+Een etiket met "alleen voor onderzoek" verandert dat niet. Valt een middel onder de wet? Dan maakt die tekst niets uit. De Douane schreef in augustus 2026: "Onderzoeksdoeleinden spelen dan geen rol."<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> De Douane noemt peptiden buiten de afslankmiddelen "experimentele middelen die op sociale media worden aangeraden". Volgens de Douane is de werking ervan vaak niet duidelijk, en rusten de beweringen soms alleen op dierproeven. De gevaren en de effecten op langere tijd zijn onbekend.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> Zie ["alleen voor onderzoek"](/nl/legal/research-use-only/).
+
+Een medicijn zonder handelsvergunning mag je niet invoeren, ook niet voor eigen gebruik. Dat geldt ook voor een pakket dat je laat opsturen.<Cite id="nl-gmw-art-40-handelsvergunning,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane kan zo'n pakket tegenhouden en in beslag nemen.<Cite id="douane-hvgem-geneesmiddelen-h12-fysiek-toezicht" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+CJC-1295 staat niet op de lijsten van de Opiumwet. Voor CJC-1295 geldt dus de Geneesmiddelenwet, niet de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" />
+
+Meer over de wet staat op de pagina over [Nederland](/nl/legal/nl/). Voor België, zie [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+<InDetail title="De Europese Unie">
+
+Een medicijn mag in een EU-land alleen op de markt met een handelsvergunning van dat land, of met een handelsvergunning voor de hele EU.<Cite id="eu-directive-2001-83" /> Een Europese handelsvergunning geldt in elke lidstaat, ook in Nederland.<Cite id="eu-regulation-726-2004" />
+
+In de gegevens van het EMA over medicijnen staat CJC-1295 niet. Die gegevens noemen ook aanvragen die zijn geweigerd of ingetrokken. Er ligt bij het EMA ook geen aanvraag voor CJC-1295. En CJC-1295 heeft geen aanwijzing als weesgeneesmiddel (een middel voor een zeldzame ziekte). We controleerden dat op 27 oktober 2026.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> Tesamorelin, een verwant middel dat in de VS is goedgekeurd, staat er alleen in als aanvraag die in 2012 werd ingetrokken.<Cite id="ema-egrifta-withdrawal" /> {/* residue-ok: world context (tesamorelin is approved in the US, not in the EU) */}
+
+Andere EU-landen hebben we niet zelf nagekeken. De FDA vond in 2024 in geen van de landen die ze naging een goedgekeurd product met CJC-1295, ook niet in België, Duitsland, Frankrijk, Italië of Spanje.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+Het Europese register voor klinisch onderzoek, CTIS, heeft geen onderzoek met CJC-1295 (gezocht op 27 oktober 2026).<Cite id="ctis-cjc-1295-search-2026-10-27" /> Wel staat de fase 2-studie van de ontwikkelaar uit 2005, met onder meer locaties in Duitsland, in het oudere EU-register. Dat register noemt die studie vroeg beëindigd.<Cite id="euctr-2005-003797-25" />
+
+</InDetail>
+
+{/* residue-ok: FDA evidence and world context (the FDA's 2024 review and its advisers' vote) */}
+<InDetail title="Wat de FDA in 2024 concludeerde">
+
+CJC-1295 is in de VS niet goedgekeurd, en Amerikaanse apotheken mogen er geen bereidingen mee maken.<Cite id="fda-pcac-2024-cjc1295-briefing,fda-503a-bulks-page" /> Twee groepen hadden de FDA gevraagd om dat toe te staan, en trokken hun aanvraag later in. De FDA beoordeelde toch alle 5 stoffen die CJC-1295 heten, voor een tekort aan groeihormoon. Ze stelde voor om geen ervan toe te laten.<Cite id="fda-pcac-2024-12-meeting,fda-pcac-2024-cjc1295-briefing" /> Ze gaf 4 redenen. De stoffen zijn niet goed beschreven, mede door de verwarring over de namen. Er is weinig bekend over het gebruik in bereidingen. Dieronderzoek wijst op risico's voor de veiligheid. En er zijn geen gegevens over de werking, terwijl er goedgekeurde behandelingen voor een tekort aan groeihormoon zijn.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+Op 4 december 2024 was de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) het daarmee eens. Over CJC-1295 als vrije base stemde ze met 0 stemmen voor en 13 tegen. Over het acetaatzout: 1 voor en 12 tegen. Over elk van de 3 vormen met DAC: 0 voor en 13 tegen. Eén lid wees op het gebrek aan bewijs dat het werkt.<Cite id="fda-pcac-2024-12-minutes" /> De commissie geeft alleen advies; de FDA beslist. Hier kwam het advies overeen met het voorstel van de FDA zelf.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Op 22 oktober 2026 stond er in het Federal Register, het Amerikaanse staatsblad, geen formele regel (rulemaking) over CJC-1295.<Cite id="federalregister-cjc1295-search-2026-10-22" /> {/* residue-ok: FDA evidence */}
+
+De pagina van de FDA over risico's voor de veiligheid noemt CJC-1295 bij de stoffen die eerder in categorie 2 stonden en waarvan de aanvraag werd ingetrokken. Ze noemt afweerreacties, onzuiverheden en ernstige ongewenste voorvallen, zoals een snellere hartslag en een vaatverwijdende reactie in het hele lichaam.<Cite id="fda-category-2-safety-risks" /> De eigen beoordeling van de FDA uit 2024 merkte juist op dat de gepubliceerde studies geen ernstige ongewenste voorvallen meldden.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+CJC-1295 hoorde niet bij de 7 peptiden die dezelfde commissie op 23 en 24 juli 2026 besprak.<Cite id="fda-pcac-2026-briefing-intro" /> Die vergadering staat uitgelegd op de [pagina over BPC-157](/nl/compounds/bpc-157/).
+
+<Callout type="legal" title="Amerikaanse besluiten gelden niet in Nederland">
+Wat de FDA of haar adviseurs besluiten, verandert niets aan de wet in Nederland of in de rest van de EU. {/* residue-ok: world context */}
+</Callout>
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Reacties op de prikplek, rood worden en hoofdpijn kwamen vaak voor. Wat langer gebruik doet, weet niemand.</Lead>
+
+| Wat mensen meldden (eerste studie van de ontwikkelaar, één injectie) | CJC-1295 (35 mensen) | Placebo (7 mensen) |
+|---|---|---|
+| Minstens één bijwerking | 33 van de 35 | 2 van de 7 |
+| Reactie op de prikplek (rood, hard, pijn, jeuk) | ongeveer 70 op de 100 | zelden |
+| Hoofdpijn | 63 op de 100 | 14 op de 100 (1 persoon) |
+| Diarree | 43 op de 100 | geen |
+| Rood en warm worden (flushing), of kort een lage bloeddruk | 30 op de 100 | geen |
+
+<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+Deze korte studies bij gezonde volwassenen meldden geen ernstige bijwerkingen.<Cite id="teichman-2006-cjc1295" /> Maar de meeste mensen kregen één injectie. En het enige langere onderzoek, bij patiënten, werd gestopt en nooit gepubliceerd.<Cite id="fda-pcac-2024-cjc1295-briefing,ctgov-nct00267527" /> Wat maanden met meer groeihormoon kunnen doen, weten we alleen van groeihormoon zelf, en van een verwant medicijn dat in de VS is goedgekeurd (zie hieronder). {/* residue-ok: world context (tesamorelin) */}
+
+<InDetail title="Bijwerkingen in de studies, in detail">
+
+Alle cijfers hieronder komen uit de samenvatting van de gepubliceerde studies door de FDA (2024).<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+- **Prikplek.** Roodheid, verharding, pijn of jeuk bij ongeveer 70 op de 100 mensen na één injectie. Erger en langer bij hogere doses, en bij iedereen die herhaalde injecties kreeg. Kortdurende jeukende bulten (netelroos) op de prikplek bij bijna 30 op de 100.
+- **Rood worden en bloeddruk.** Rood en warm worden (flushing) en een korte daling van de bloeddruk bij 30 op de 100 na één injectie. Bij herhaalde injecties kwam het rood worden binnen 30 minuten, en ging het binnen 1 tot 2 uur over. Dat gebeurde bij 40 tot 100 op de 100, afhankelijk van de dosis. Twee mensen werden duizelig en hadden een lage bloeddruk na hun eerste injectie.
+- **Hartslag.** In de studie in Chicago steeg de hartslag met de dosis.<Cite id="ionescu-2006-cjc1295-pulsatility,fda-pcac-2024-cjc1295-briefing" />
+- **Darmen en hoofd.** Hoofdpijn bij 63 op de 100 (14 op de 100 bij placebo). Dunne ontlasting of diarree, meer bij hogere doses. Misselijkheid of buikpijn bij 20 op de 100 bij herhaalde injecties.
+- **Zenuwen en spieren.** Eén persoon had na een tweede injectie korte, onwillekeurige samentrekkingen van de beenspieren, en wat verlies van coördinatie.
+
+De auteurs vonden geen consistente veranderingen in bloed- of urinetests, glucose, leverwaarden of hartfilmpjes.<Cite id="fda-pcac-2024-cjc1295-briefing" /> De FDA schrijft dat sommige van deze effecten meer onderzoek nodig hebben, bijvoorbeeld bij mensen met een hartziekte of met een risico om te vallen. De studies keken alleen naar gezonde volwassenen.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Het onderzoek van 2006 dat werd gestopt">
+
+Het fase 2-onderzoek van de ontwikkelaar bij mensen met hiv werd in december 2005 geregistreerd. In 2006 stond het als beëindigd in het register, zonder reden.<Cite id="ctgov-nct00267527" /> De beoordeling van de FDA uit 2024 vertelt wat er gebeurde, op basis van wat de FDA anekdotische berichten op internet noemt. Volgens die berichten deden er 192 mensen mee; het onderzoeksregister noemt 120.<Cite id="fda-pcac-2024-cjc1295-briefing,ctgov-nct00267527" /> Twee uur na zijn 11e wekelijkse injectie kreeg één deelnemer een drukkend gevoel op de borst. Een hartfilmpje (ECG) liet een acute hartaanval (hartinfarct) zien, en ongeveer een uur later overleed hij. De behandelend arts vond dit de meest waarschijnlijke verklaring: een vernauwing van de kransslagaders (de bloedvaten van het hart) die nog niet was ontdekt, met een plotselinge afsluiting. Het onderzoek werd gestopt, en de gegevens zijn nooit gepubliceerd.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+Eén sterfgeval in een onderzoek laat niet zien dat een middel de oorzaak was. Hier dacht de behandelend arts het meest aan een hartziekte die nog niet was ontdekt. Maar niemand buiten het bedrijf heeft de gegevens van het onderzoek gezien. Of CJC-1295 meespeelde, is daarom niet te zeggen. Bij gezonde vrijwilligers verhoogde CJC-1295 de hartslag, en gaf het rood worden met een lage bloeddruk. De effecten bij mensen met een hartziekte zijn nooit onderzocht.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Te veel groeihormoon: wat het doet, en waarom">
+
+CJC-1295 is nooit lang genoeg onderzocht om de effecten van maanden met meer groeihormoon te laten zien. Tesamorelin lijkt ook op GHRH, en is in de VS goedgekeurd. Het is 26 tot 52 weken onderzocht, en de productinformatie noemt de risico's hieronder.<Cite id="dailymed-egrifta-sv-label" /> De FDA vond niets wat erop wijst dat CJC-1295 de risico's van medicijnen met groeihormoon zou vermijden.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: world context and FDA evidence (tesamorelin label) */}
+
+<IconArray title="Tesamorelin werkt op dezelfde manier. Wie het kreeg, had vaker zwelling en een hoge bloedsuiker." detail="Mensen op de 100 met elk probleem in de eerste 26 weken: 543 volwassenen met hiv op tesamorelin, 263 op placebo. Tesamorelin is niet CJC-1295." a="Tesamorelin" b="Placebo" source="dailymed-egrifta-sv-label" level="human-controlled" rows={[
+  { label: "Zwelling door vocht (oedeem)", a: 6, b: 2 },
+  { label: "Spierpijn", a: 6, b: 2 },
+  { label: "Gewrichtspijn", a: 13, b: 11 },
+  { label: "Bloedsuiker op lange termijn zo hoog als bij diabetes", a: 5, b: 1 },
+]} />
+
+- **Vocht vasthouden.** Meer groeihormoon zorgt dat het lichaam vocht vasthoudt. Weefsels zwellen op en voelen strak aan. Je kunt dat merken aan dikke enkels of handen, pijnlijke gewrichten en carpaletunnelsyndroom. Volgens de productinformatie van tesamorelin gaan deze effecten over, of verdwijnen ze als de behandeling stopt.<Cite id="dailymed-egrifta-sv-label" /> Bij carpaletunnelsyndroom drukt er iets op een zenuw in de pols. Daardoor tintelen de hand en de vingers, worden ze gevoelloos of doen ze pijn.<Cite id="nhs-carpal-tunnel-syndrome" />
+- **Hogere bloedsuiker.** Groeihormoon haalt vet uit de vetvoorraden. De extra vetzuren in het bloed zorgen dat spieren en lever minder goed op insuline reageren (insulineresistentie). Dan stijgt de bloedsuiker.<Cite id="moller-2009-gh-metabolism" /> Bij tesamorelin kwam de bloedsuiker op lange termijn (HbA1c) bij 5% van de patiënten in het bereik van diabetes, tegenover 1% bij placebo.<Cite id="dailymed-egrifta-sv-label" />
+- **IGF-1 boven het normale bereik.** Na 26 weken tesamorelin had 47% van de patiënten een IGF-1 die veel hoger was dan normaal (meer dan 2 standaarddeviaties). Volgens de productinformatie zijn de effecten van een lange tijd hoog IGF-1 onbekend.<Cite id="dailymed-egrifta-sv-label" /> In de korte studies met CJC-1295 kwam IGF-1 alleen bij de hoogste enkele dosis boven het normale bereik.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Andere risico's in de productinformatie van groeihormoon.** Alle Amerikaanse productinformatie van groeihormoon waarschuwt voor tumoren, een verstoorde suikerstofwisseling en diabetes, hogere druk in de schedel, vocht vasthouden, effecten op de bijnieren en de schildklier, en een ontstoken alvleesklier (pancreatitis).<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Waarom een risico op kanker wordt verondersteld">
+
+De zorg rust op biologie die vaststaat, plus een paar bevindingen bij dieren met CJC-1295:
+
+1. **Groeihormoon en IGF-1 zijn groeisignalen.** De productinformatie van tesamorelin noemt IGF-1 een groeifactor, en groeihormoon een bekende groeifactor. Ze sluit gebruik uit bij mensen met actieve kanker.<Cite id="dailymed-egrifta-sv-label" /> In observationeel onderzoek hadden mensen met een hogere IGF-1 iets vaker prostaatkanker, en borstkanker vóór de overgang. De verbanden waren bescheiden en verschilden per soort kanker.<Cite id="renehan-2004-igf1-cancer" />
+2. **Te veel GHRH laat de hypofyse groeien.** Een jonge vrouw had een tumor in de alvleesklier die GHRH afgaf. Daardoor gingen de groeihormooncellen van haar hypofyse delen, en kreeg ze acromegalie. Toen de tumor was weggehaald, werden haar hormonen weer normaal.<Cite id="thorner-1982-ghrf-tumour-acromegaly" /> Muizen die zo waren veranderd dat ze menselijk GHRH maakten, kregen een enorm grote hypofyse.<Cite id="mayo-1988-ghrf-transgenic-hyperplasia" /> De FDA noemt deze muizen als reden waarom onderzoek naar kanker op lange termijn met CJC-1295 nodig zou zijn.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+3. **CJC-1295 deed dit bij muizen.** <Claim level="animal">Na 8 weken CJC-1295 was de hypofyse van muizen 47% zwaarder dan bij muizen met zoutoplossing (gewogen bij 10 en 9 muizen), met meer tekenen van DNA-schade</Claim>. De auteurs koppelen het constante cAMP-signaal aan DNA-schade in tumorcellen van de hypofyse.<Cite id="ben-shlomo-2020-cjc1295-pituitary" /> <Claim level="animal">Bij muizen die zonder GHRH waren geboren, liet CJC-1295 groeihormooncellen delen</Claim>.<Cite id="alba-2006-cjc1295-ghrh-knockout" />
+
+De zorg is dus dat maanden CJC-1295 de hypofyse groter kunnen maken, of een tumor kunnen laten groeien die er al is en misschien nog niet is ontdekt. Die zorg heeft ook grenzen. De studie bij muizen was kort en klein, DNA-schade is geen kanker, en we vonden geen gemelde tumor na CJC-1295. Maar niemand heeft ernaar gekeken: er is geen onderzoek naar kankerverwekkendheid, en niemand heeft mensen lang gevolgd.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Wat de dierproeven lieten zien">
+
+Het onderzoek van de ontwikkelaar naar giftigheid kennen we alleen uit congresabstracts, zoals de FDA ze samenvat.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+- **Prikplek.** Bloedingen, ontsteking en wat afgestorven weefsel op de prikplek, bij ratten en honden met herhaalde injecties tot 14 dagen. Bij honden ook pijn, roodheid, zwelling en een dikkere huid.
+- **Bloed.** Ongeveer 5 tot 16% minder rode bloedcellen; een hoger cholesterol bij beide soorten.
+- **Gedrag.** Ratten aten en bewogen minder; honden gaven over en bewogen minder.
+- **Zwangerschap.** In één studie bij ratten aten de moeders meer en werden ze zwaarder, en waren de foetussen iets zwaarder. De onderzoekers zagen geen misvormingen.
+- **Afweersysteem.** Een studie van 6 maanden bij apen meldde geen effecten op het afweersysteem. De FDA noemde de gegevens vaag. {/* residue-ok: FDA evidence */}
+
+De FDA concludeerde dat deze studies voor de versies met DAC wijzen op mogelijke risico's voor de veiligheid. Voor de versie zonder DAC zijn er helemaal geen gegevens over giftigheid.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Risico’s van het product zelf">
+
+- **De verkeerde versie.** Een flacon met "CJC-1295" op het etiket kan de versie met DAC bevatten, de versie zonder DAC, een mengsel, of een variant waarvan niemand weet wat die doet.<Cite id="fda-pcac-2024-cjc1295-briefing,henninge-2010-cjc1295-seized,gajda-2019-glycine-ghs" /> De 2 versies zijn verschillende moleculen. Volgens de FDA kun je wat bekend is over de werking van de ene, niet toepassen op de andere.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+- **Onzuiverheden en klonten.** De analysecertificaten die de FDA bekeek, noemden de zuiverheid. Maar ze noemden niet welke onzuiverheden erin zaten, en niets over klonten van peptide (aggregaten) of bacteriële endotoxine. Juist die tellen het zwaarst bij alles wat je inspuit.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+- **Zoutvormen.** De eigen vroege studie van de ontwikkelaar gebruikte een trifluoracetaatzout (TFA-zout). De FDA wijst erop dat TFA bekendstaat als giftig, en dat peptiden er eerder een reactie van het afweersysteem door kunnen geven. De productbeschrijvingen die de FDA bekeek, zeiden niet welk zout erin zat.<Cite id="fda-pcac-2024-cjc1295-briefing" /> {/* residue-ok: FDA evidence */}
+- **Afweerreacties.** Peptiden die je inspuit, kunnen antistoffen opwekken, van onschuldige tot ernstige reacties. CJC-1295 is voor 86% gelijk aan het eigen GHRH van het lichaam. Antistoffen ertegen kunnen dus ook je eigen hormoon aanvallen.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+Zie [productrisico's](/nl/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe maak ik het risico kleiner?">Controleer flacon en etiket, laat je bloed controleren via je huisarts, en weet wanneer je stopt.</Lead>
+
+<ProductCheck extra="Kijk welke versie op het etiket staat. “Met DAC” en “zonder DAC” (Mod GRF 1-29) zijn verschillende stoffen. Staat er alleen CJC-1295? Dan weet je niet welke het is." extraSources="fda-pcac-2024-cjc1295-briefing,henninge-2010-cjc1295-seized" />
+
+### Praat eerst met je huisarts
+
+Een arts kan nagaan of je een aandoening hebt waarbij extra groeihormoon het meest uitmaakt: kanker, diabetes of prediabetes, een hartziekte, of een zwangerschap. Een arts kan ook IGF-1 en je bloedsuiker meten, voordat je begint en tijdens het gebruik. IGF-1 is de gewone manier om te zien hoe hard het groeihormoonsysteem wordt aangezet.<Cite id="dailymed-egrifta-sv-label,medlineplus-igf1" /> Vertel je arts eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Zie [praten met je arts](/nl/talking-to-your-doctor/) en [controles](/nl/safety/monitoring/).
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **Je hebt pijn of druk op je borst, of een hart dat heel snel of bonzend klopt en niet tot rust komt.** Bel direct 112.
+- **Je gezicht, lippen of keel worden dik, je krijgt overal jeukende bulten, of je kunt moeilijk ademen.** Dit kan een zware allergische reactie zijn. Bel direct 112.
+- **Je valt flauw, of je wordt heel duizelig en rood en warm na een injectie.** Misschien is je bloeddruk gedaald. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost. Kom je niet binnen een minuut weer bij, of had je pijn op de borst, een heel snelle hartslag of een aanval met schokken? Dan moet iemand direct 112 bellen.
+- **De prikplek wordt warm, rood, dik en pijnlijk, of je krijgt koorts.** Dit kan een infectie zijn. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je krijgt heel erge hoofdpijn die niet overgaat, met overgeven of wazig zien.** Bel direct 112.
+</Callout>
+
+<Cite id="fda-pcac-2024-cjc1295-briefing,dailymed-egrifta-sv-label,thuisarts-pijn-op-borst,thuisarts-dikke-ogen-lippen,thuisarts-wondroos,thuisarts-spoed-wie-bellen,nhs-headaches,medlineplus-malignant-hypertension,nhs-fainting,thuisarts-flauwvallen" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,neurological" />
+
+<InDetail title="Controles die zinvol zijn, en waarom">
+
+Een arts kan je helpen kiezen welke van deze bij jou passen:
+
+<Checklist>
+
+- **IGF-1**, voordat je begint en tijdens het gebruik, want het laat zien hoe hard het groeihormoonsysteem wordt aangezet. Groeihormoon zelf verandert te snel om met één bloedtest te meten. De productinformatie van tesamorelin vraagt om IGF-1 regelmatig te controleren.<Cite id="medlineplus-igf1,dailymed-egrifta-sv-label" />
+- **Nuchtere bloedsuiker of HbA1c**, want door groeihormoon reageert het lichaam minder goed op insuline.<Cite id="moller-2009-gh-metabolism,dailymed-egrifta-sv-label" />
+- **Bloeddruk en hartslag**, want in de studies steeg de hartslag en daalde de bloeddruk kort.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Het bevolkingsonderzoek naar kanker dat bij je leeftijd hoort, en elke bult of onverklaarde klacht eerst laten nakijken**, want IGF-1 en groeihormoon zijn groeisignalen.<Cite id="dailymed-egrifta-sv-label,renehan-2004-igf1-cancer" />
+- **Je arts precies vertellen wat je gebruikt**, ook mengsels, zodat de uitslagen goed worden gelezen.
+
+</Checklist>
+
+Hoe controles via je huisarts gaan, en wie ze betaalt, staat bij [controles via je huisarts](/nl/safety/monitoring/#controles-via-je-huisarts).
+
+</InDetail>
+
+<InDetail title="Wanneer je stopt en een afspraak maakt (geen spoed)">
+
+Merk je een van deze dingen? Stop met het product en maak een afspraak met je huisarts.
+
+- **Dikke enkels, voeten of handen**, of een strak gevoel in de huid: vocht vasthouden.<Cite id="dailymed-egrifta-sv-label,nhs-oedema" />
+- **Tintelingen of een doof gevoel in de vingers, of nieuwe pijn in gewrichten of spieren**: misschien carpaletunnelsyndroom, of een ander gevolg van vocht vasthouden.<Cite id="dailymed-egrifta-sv-label" />
+- **Veel dorst, veel plassen, of je ongewoon moe voelen**: misschien een hoge bloedsuiker.<Cite id="nhs-high-blood-sugar,thuisarts-diabetes-type-2" />
+- **Jeukende bulten of jeuk op de prikplek die steeds terugkomen**: misschien een afweerreactie.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Een nieuwe bult, waar dan ook.**<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+<InDetail title="Wie het niet moet gebruiken, en wie eerst een arts nodig heeft">
+
+Deze groepen moeten het niet gebruiken:
+
+- **Iedereen die nu kanker heeft.** Groeihormoon en IGF-1 zijn groeisignalen. Tesamorelin, een GHRH-analoog die in de VS is goedgekeurd, mag niet worden gebruikt bij actieve kanker.<Cite id="dailymed-egrifta-sv-label" /> {/* residue-ok: world context (tesamorelin label) */}
+- **Iedereen die zwanger is, borstvoeding geeft of zwanger wil worden.** Er zijn geen gegevens bij mensen, en er is maar één studie van CJC-1295 bij drachtige ratten, bekend uit een congresabstract.<Cite id="fda-pcac-2024-cjc1295-briefing" /> Tesamorelin mag niet worden gebruikt in de zwangerschap. Bij ratten kregen de jongen door tesamorelin vocht in de hersenen (hydrocefalie).<Cite id="dailymed-egrifta-sv-label" />
+- **Kinderen en tieners**, die nog groeien. Er zijn geen gegevens.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Sporters die getest kunnen worden**, want het is altijd verboden.<Cite id="wada-2026-list-en" />
+
+Deze groepen lopen extra risico, en hebben eerst advies van een arts nodig:
+
+- **Mensen die kanker hebben gehad.** De productinformatie van tesamorelin vraagt om er goed over na te denken bij kanker in het verleden.<Cite id="dailymed-egrifta-sv-label" />
+- **Mensen met diabetes of prediabetes**, want de bloedsuiker kan stijgen.<Cite id="moller-2009-gh-metabolism,dailymed-egrifta-sv-label" />
+- **Mensen met een hartziekte.** Bij gezonde vrijwilligers steeg de hartslag en daalde de bloeddruk. De effecten op het hart zijn nooit onderzocht.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="Mogelijke wisselwerkingen (geen enkele is onderzocht)">
+
+- **Medicijnen tegen diabetes.** Stijgt de bloedsuiker? Dan moet de dosis van deze medicijnen misschien veranderen. Dat staat in de productinformatie van tesamorelin.<Cite id="dailymed-egrifta-sv-label" />
+- **Vervangende corticosteroïden bij bijnieren die te weinig hormoon maken.** Volgens de productinformatie van tesamorelin moet de dosis misschien omhoog.<Cite id="dailymed-egrifta-sv-label" />
+- **Medicijnen die de lever met enzymen afbreekt** (zoals corticosteroïden, geslachtshormonen, sommige medicijnen tegen epilepsie, en ciclosporine). Groeihormoon kan veranderen hoe snel de lever ze opruimt.<Cite id="dailymed-egrifta-sv-label" />
+- **Mengsels en andere producten die groeihormoon verhogen**, zoals ipamorelin of mengsels met GHRP. Ze kunnen dezelfde effecten versterken. Gaat er iets mis? Dan kan niemand zeggen welk deel de oorzaak was.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+
+</InDetail>
+
+<InDetail title="De legale wegen in Nederland">
+
+In Nederland en de EU is er geen goedgekeurd product met CJC-1295. Een arts kan dus niets voorschrijven met een gewoon [recept](/nl/legal-routes/#recept). En [off-label](/nl/legal-routes/#off-label) voorschrijven gaat alleen over medicijnen die wel zijn goedgekeurd.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,nl-gmw-art-68-off-label" />
+
+De andere wegen hebben strenge voorwaarden:
+
+- **[Artsenverklaring](/nl/legal-routes/#artsenverklaring).** Voor een middel dat nergens is goedgekeurd, vraagt de Inspectie Gezondheidszorg en Jeugd (IGJ) het onderzoekersdossier (Investigator's Brochure of IMPD). De IGJ vraagt ook bewijs dat het volgens GMP is gemaakt, de kwaliteitsregels voor het maken van medicijnen. Een flacon "voor onderzoek" heeft die papieren niet. De IGJ zegt niet of deze weg ooit kan werken voor zo'n stof. Dit is onze lezing.<Cite id="igj-qa-zonder-handelsvergunning" />
+- **[Magistrale bereiding](/nl/legal-routes/#magistrale-bereiding).** Een apotheek mag zelf een medicijn maken voor één patiënt, op recept. Maar een grondstof die niet in een officiële farmacopee staat, "kan daarom niet zomaar worden gebruikt", schrijft de IGJ.<Cite id="igj-eigen-bereidingen-apotheek" /> Of CJC-1295 in een farmacopee staat, hebben we niet kunnen nagaan.
+- **[Klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek).** We vonden in Nederland geen onderzoek met CJC-1295 (gezocht op 27 oktober 2026).<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" /> Ook het Europese register CTIS en het internationale register ClinicalTrials.gov noemen geen lopend onderzoek met CJC-1295.<Cite id="ctis-cjc-1295-search-2026-10-27,ctgov-search-status-b-2026-10-23" />
+- **[Compassionate use](/nl/legal-routes/#compassionate-use).** Dit kan alleen voor een middel waarvoor een handelsvergunning is aangevraagd, of dat nog in klinisch onderzoek is. Bij CJC-1295 is geen van beide zo, en er is geen programma.<Cite id="cbg-compassionate-use-criteria,cbg-compassionate-use-list" />
+- **[Zelf invoeren](/nl/legal-routes/#zelf-invoeren).** Een medicijn zonder handelsvergunning mag je niet invoeren, ook niet voor jezelf. De Douane kan het pakket in beslag nemen.<Cite id="nl-gmw-art-40-handelsvergunning,douane-hvgem-geneesmiddelen-h12-fysiek-toezicht" />
+
+Geen van deze wegen maakt van een niet-goedgekeurd product een goedgekeurd medicijn. Elke weg staat uitgelegd op [Legale wegen naar een behandeling](/nl/legal-routes/).
+
+</InDetail>
+
+<InDetail title="Schoon spuiten en bijwerkingen melden">
+
+Naalden en spuiten zijn steriel en voor één keer. Er zijn infecties verspreid toen mensen zich daar niet aan hielden.<Cite id="cdc-2024-safe-injection-practices" /> Gebruik elke keer een nieuwe steriele naald en spuit. Zie [steriel werken](/nl/safety/sterile-technique/) en [veilig injecteren](/nl/safety/injection-safety/). Gaat er iets mis? Zie [als er iets misgaat](/nl/safety/if-something-goes-wrong/).
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb, ook als je product niet van een apotheek komt. Lareb neemt ook meldingen aan van mensen die illegale medicijnen gebruiken. Lareb deelt je melding niet met je arts of apotheker.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> In België meld je een bijwerking bij het FAGG; zie [onze notities over België](/nl/legal/be/).
+
+<JurisdictionCard code="NL" />
+
+</InDetail>
+
+</Section>

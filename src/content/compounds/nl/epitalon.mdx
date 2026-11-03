@@ -1,0 +1,288 @@
+---
+slug: epitalon
+title: "Epitalon"
+description: "Epitalon is een peptide van 4 aminozuren, aangeprezen tegen veroudering en vooral onderzocht door één Russische groep. Wat het is, het onderzoek, status en risico’s."
+tldr:
+  - q: "Wat is het?"
+    a: "Een peptide uit het lab. Online wordt het aangeprezen tegen veroudering."
+  - q: "Remt het veroudering?"
+    a: "Bij mensen is dat onbekend. Bij muizen veranderde de gemiddelde levensduur niet."
+  - q: "Wie onderzocht het?"
+    a: "Vooral één groep in Sint-Petersburg, Rusland: ongeveer 2 op de 3 artikelen."
+  - q: "Wat zegt de wet?"
+    a: "Verkopen, leveren en invoeren zijn verboden. Een Amerikaanse stemming in juli 2026 was alleen advies."
+  - q: "Wie moet het vermijden?"
+    a: "Vooral mensen die kanker hebben of hadden. Over zwangerschap en borstvoeding zijn geen gegevens."
+lede: "Aangeprezen tegen veroudering. Het meeste onderzoek komt van één Russische groep. De risico’s bij mensen zijn onbekend."
+glance:
+  main_risk: "Risico’s bij mensen onbekend. De FDA ziet een mogelijk kankerrisico." # residue-ok: evidence
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">). The FDA review supports the gaps behind them (no safety data in people,
+  # an immune-reaction concern for injections). On English the NHS pages describe the signs; the Dutch page
+  # cites Thuisarts for the same signs (research/nl-notes/stubs-a1.md).
+  stop_signs:
+    - icon: sign-infection
+      text: "Prikplek warm, rood, dik of pijnlijk"
+      sources: [thuisarts-wondroos, fda-pcac-2026-epitalon-briefing]
+    - icon: sign-fever
+      text: "Koorts of rillingen na een injectie"
+      sources: [thuisarts-sepsis, thuisarts-wondroos]
+    - icon: sign-allergic
+      text: "Dikke lippen of keel, of moeilijk ademen"
+      sources: [thuisarts-dikke-ogen-lippen, fda-pcac-2026-epitalon-briefing]
+  facts:
+    - label: "Gemaakt van"
+      value: "4 aminozuren: alanine, glutaminezuur, asparaginezuur, glycine"
+      sources: [pubchem-epitalon, fda-pcac-2026-epitalon-briefing]
+    - label: "Gebaseerd op"
+      value: "Een extract uit pijnappelklieren van runderen"
+      sources: [fda-pcac-2026-epitalon-briefing]
+    - label: "Wie het onderzocht"
+      value: "Eén groep in Sint-Petersburg: ongeveer 2 op de 3 artikelen"
+      sources: [pubmed-epitalon-count-2026-10-22]
+    - label: "Studies bij mensen"
+      value: "3 kleine studies; geen mat slaap of levensduur"
+      sources: [fda-pcac-2026-epitalon-briefing]
+grade_rationale:
+  human_clinical: "Volgens onze indeling net fase 2. De FDA vond 3 studies die epitalon aan mensen gaven. De grootste was een gerandomiseerde studie met placebo als vergelijking, met een spray onder de tong, bij 40 vrouwen die nachtdiensten werkten. Het instituut van de oorspronkelijke groep publiceerde die in het Russisch. De studie mat een afbraakproduct van melatonine in de urine, geen slaap, en vermeldde niet of iemand geblindeerd was. De auteurs melden ook een beter welbevinden (83% tegen 25% met placebo), zonder te zeggen hoe ze dat maten." # residue-ok: evidence
+  preclinical_volume: "Veel. Op 22 oktober 2026 stonden in PubMed 146 records over epitalon die geen overzichtsartikel of commentaar zijn. Haal je ongeveer 8 treffers weg die er niets mee te maken hebben, dan blijven er ruim meer dan 50 primaire studies in cellen en dieren over."
+  independence: "Eén groep overheerst. Van die 146 records hebben er 100 (68%; ongeveer 72% zonder de treffers die er niets mee te maken hebben) Khavinson, Anisimov of Linkova van de groep in Sint-Petersburg als auteur. De meeste andere komen van instituten in hetzelfde Russische onderzoeksnetwerk. Alleen een handvol, zoals een celstudie uit Londen uit 2025, komt van labs zonder band met de groep."
+  safety: "Niet in kaart gebracht. De FDA vond geen klinische studies naar de veiligheid, geen gegevens over farmacokinetiek bij mensen, en geen onderzoek naar acute toxiciteit, herhaalde doses of de voortplanting. De gegevens over schade aan het DNA (genotoxiciteit) en over tumoren komen van één groep, met één dosis, alleen vrouwelijke muizen en een korte blootstelling." # residue-ok: evidence
+mechanism:
+  - kind: binding
+    level: hypothesis
+    title: "Er is geen receptor of doelwit gevonden"
+    detail: "De FDA schrijft dat niet bekend is hoe epitalon de hoeveelheid melatonine verandert, en dat er geen gegevens zijn over farmacokinetiek bij mensen." # residue-ok: evidence
+  - kind: cellular
+    level: in-vitro
+    title: "Telomerase gaat aan in cellen in een schaaltje"
+    detail: "In fibroblasten van menselijke foetussen zag de oorspronkelijke groep dat telomerase aanging en de telomeren langer werden (2003). Een onafhankelijk lab in Londen zag hetzelfde in 2025 in normale menselijke cellen. In 2 cellijnen van borstkanker werden de telomeren ook langer, via een andere route."
+  - kind: tissue
+    level: animal
+    title: "Meer melatonine in de avond bij oude apen"
+    detail: "Bij oude vrouwelijke resusapen steeg de melatonine in de avond meer dan 4 keer na 10 dagen injecties (netwerk van de oorspronkelijke groep). In pijnappelklieren van ratten in een schaaltje gaf epitalon niet meer melatonine af."
+  - kind: effect
+    level: hypothesis
+    title: "Langzamer ouder worden of langer leven bij mensen: niet aangetoond"
+    detail: "Bij muizen veranderde de gemiddelde levensduur niet, al leefde het langstlevende tiende deel langer. Geen studie heeft veroudering, slaap of levensduur bij mensen gemeten."
+studies:
+  khavinson-2003-telomerase:
+    finding: "In fibroblasten van menselijke foetussen die in een schaaltje groeiden, zette epitalon telomerase aan, en de telomeren werden langer."
+    limitation: "Een verslag van 3 pagina’s van de oorspronkelijke groep; alleen cellen; geen levend dier of mens."
+  anisimov-2003-mice:
+    finding: "Bij 108 vrouwelijke muizen die hun leven lang 5 dagen per maand werden behandeld, veranderde de gemiddelde levensduur niet. De langstlevende 10% leefde 13% langer. Leukemie kwam minder vaak voor, maar het totale aantal tumoren veranderde niet."
+    limitation: "Eén dosis, vrouwelijke muizen van één stam, de oorspronkelijke groep; de FDA wijst op de korte totale blootstelling en op twijfels over de controlegegevens van de chromosoomtests." # residue-ok: evidence
+  goncharova-2001-monkeys:
+    finding: "Bij oude vrouwelijke resusapen steeg de melatonine in de avond meer dan 4 keer na 10 dagen injecties, en het dagritme van cortisol herstelde. Bij jonge apen veranderde de melatonine niet."
+    limitation: "Een kleine studie bij apen in het netwerk van de oorspronkelijke groep; één dosis; slaap is niet gemeten, dus wat het voor slaap betekent, is onbekend."
+  khavinson-2002-retina:
+    finding: "Ratten met een erfelijke aandoening van het netvlies hielden meer netvliesfunctie over. De auteurs melden een positief klinisch effect bij 90% van de patiënten met een degeneratieve netvliesziekte die injecties naast het oog kregen."
+    limitation: "Het aantal patiënten, de vergelijkingsgroep en de uitkomstmaten staan niet in de samenvatting; de oorspronkelijke groep; een Amerikaanse aanwijzing als weesgeneesmiddel voor dit gebruik is in 2016 ingetrokken."
+  ivko-2020-night-shift:
+    finding: "In deze studie kregen 40 vrouwen van 40 tot 50 jaar met nachtdiensten en een lage aanmaak van melatonine (20 per groep) 20 dagen een spray onder de tong. Met epitalon werd een afbraakproduct van melatonine in de urine 1,7 keer zo hoog. Met placebo veranderde het niet. De auteurs melden ook een beter welbevinden bij 83% tegen 25%."
+    limitation: "In het Russisch gepubliceerd door het instituut van de oorspronkelijke groep; niet vermeld of er geblindeerd is; niet beschreven hoe welbevinden is gemeten; geen uitkomsten over slaap en geen gegevens over veiligheid (beoordeling van de FDA)." # residue-ok: evidence
+  al-dulaimi-2025-telomeres:
+    finding: "In normale menselijke cellen maakte epitalon de telomeren langer via telomerase, meer bij hogere doses. In 2 cellijnen van borstkanker werden de telomeren ook langer, via een andere route die sommige kankercellen gebruiken."
+    limitation: "Cellen in een schaaltje; een kleine studie, uit eigen middelen betaald; 2 figuren zijn na publicatie verbeterd; zegt niets over effecten in een lichaam."
+  vanhee-2015-illegal-products:
+    finding: "Een Belgisch lab voor volksgezondheid vond epitalon in 2 illegale farmaceutische producten."
+    limitation: "Een korte brief over 2 producten; het laat zien dat het peptide op de illegale markt is, niet wat er gewoonlijk in producten zit."
+regulatory_notes:
+  EU: "Geen goedkeuring voor de hele EU: de gegevens van het EMA tonen geen goedkeuring, geen aanvraag en geen aanwijzing als weesgeneesmiddel (gecontroleerd op 27 oktober 2026)."
+  NL: "Niet goedgekeurd in Nederland: geen product in het register van het CBG (27 oktober 2026). Een medicijn zonder handelsvergunning leveren is verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Niet met naam op de lijst. Volgens de tekst van S0 altijd verboden als niet erkende stof: nergens is een goedkeuring voor gebruik bij mensen bekend. Twijfel je? Vraag het de Dopingautoriteit."
+translation: { method: translated, from: en, review: pending }
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is epitalon?">Een kunstmatig peptide van 4 aminozuren, aangeprezen tegen veroudering. Voor zover bekend keurde geen land het goed.</Lead>
+
+<Compare title="Epitalon komt uit het lab en van één onderzoeksgroep. Voor zover bekend heeft geen land het goedgekeurd." detail="Wat bekend is over de stof die onder deze naam rondgaat, gecontroleerd op 22 en 27 oktober 2026.">
+
+| | Epitalon |
+|---|---|
+| In een lab gemaakt? | <Verdict is="yes" /> Een keten van 4 aminozuren: alanine, glutaminezuur, asparaginezuur en glycine.<Cite id="pubchem-epitalon,fda-pcac-2026-epitalon-briefing" /> |
+| Waar komt het vandaan? | <Verdict is="unknown" /> Het is in Sint-Petersburg ontworpen als het mogelijke werkzame deel van een extract uit <Term id="pineal-gland">pijnappelklieren</Term> van runderen.<Cite id="fda-pcac-2026-epitalon-briefing" /> |
+| Ergens goedgekeurd als medicijn? | <Verdict is="no" /> Niet in Nederland en niet voor de hele EU. De Amerikaanse medicijnautoriteit FDA vond ook geen goedkeuring in de VS of in 10 andere landen, zoals België, Duitsland en Italië.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,fda-pcac-2026-epitalon-briefing" /> {/* residue-ok: evidence */} |
+| Getest op veiligheid bij mensen? | <Verdict is="no" /> De FDA vond geen klinische studies naar de veiligheid.<Cite id="fda-pcac-2026-epitalon-briefing" /> {/* residue-ok: evidence */} |
+
+</Compare>
+
+Online wordt het aangeprezen tegen veroudering, als injectie, capsule of spray voor de mond. Op sommige producten staat "alleen voor onderzoek".<Cite id="fda-pcac-2026-epitalon-briefing" /> Een Belgisch lab voor volksgezondheid vond het in illegale farmaceutische producten.<Cite id="vanhee-2015-epitalon-illegal" />
+
+<InDetail title="Het molecuul, en waar het vandaan komt">
+
+Epitalon is <Seq>Ala-Glu-Asp-Gly</Seq>, brutoformule C14H22N4O9, molecuulmassa <Q>390,35 g/mol</Q>.<Cite id="pubchem-epitalon,fda-pcac-2026-epitalon-briefing" /> Onderzoekers onder leiding van Vladimir Khavinson in Sint-Petersburg maakten het voor het eerst eind jaren tachtig. Het moest nabootsen wat zij zagen als het werkzame deel van epithalamine, een extract uit pijnappelklieren van runderen.<Cite id="fda-pcac-2026-epitalon-briefing" /> PubChem noemt "epithalamin" als andere naam voor epitalon. Dat klopt niet: het extract en het tetrapeptide zijn verschillende producten.<Cite id="pubchem-epitalon,fda-pcac-2026-epitalon-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Niemand weet het. In cellen zet het telomerase aan, dat de uiteinden van chromosomen weer opbouwt.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+De bevinding over telomerase kwam eerst van de oorspronkelijke groep, in cellen in een schaaltje.<Cite id="khavinson-2003-epitalon-telomerase" /> In 2025 herhaalde een onafhankelijk lab in Londen dat in normale menselijke cellen.<Cite id="al-dulaimi-2025-epitalon-telomeres" /> De bevinding over melatonine komt van oude apen, in het netwerk van de oorspronkelijke groep. In pijnappelklieren van ratten in een schaaltje gaf epitalon niet meer melatonine af. Hoe het op die klier zou werken, is dus onduidelijk.<Cite id="goncharova-2001-epitalon-monkeys,fda-pcac-2026-epitalon-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Onbekend. Er zijn veel dierstudies, maar bijna allemaal van één groep. Bij mensen nauwelijks onderzocht.</Lead>
+
+<KeyNumber title="Ongeveer 2 op de 3 artikelen komen van één groep" value="100 van 146" label="artikelen hebben een auteur van de groep in Sint-Petersburg" counted="Records in PubMed over epitalon die geen overzichtsartikel of commentaar zijn, met Khavinson, Anisimov of Linkova als auteur (onze telling, 23 oktober 2026)" source="pubmed-epitalon-count-2026-10-22" level="animal" />
+
+<KeyNumber title="Alleen de oudste muizen leefden langer" value="13,3%" label="langer leven voor het laatste tiende deel van de muizen; de gemiddelde levensduur veranderde niet" who="Anisimov 2003: 108 vrouwelijke muizen van één stam, hun leven lang 5 dagen per maand injecties, oorspronkelijke groep" source="anisimov-2003-epitalon-shr-mice" level="animal" />
+
+Veel artikelen van één groep zijn niet hetzelfde als controles door anderen. Dezelfde voorzichtigheid geldt als bij BPC-157: zie [hoe één lab de literatuur over BPC-157 opbouwde](/nl/history/the-croatian-lab/).
+
+<InDetail title="Elke studie in één tabel">
+
+<StudyTable />
+
+{/* residue-ok: evidence */}
+De FDA vond 3 studies die epitalon aan mensen gaven. Twee gebruikten een spray onder de tong bij mensen met nachtdiensten. Eén gebruikte injecties naast het oog bij mensen met een netvliesziekte.<Cite id="fda-pcac-2026-epitalon-briefing,khavinson-2002-epitalon-retinitis" /> In de gerandomiseerde studie steeg met epitalon een afbraakproduct van melatonine in de urine. De studie mat geen slaap. De auteurs melden ook een beter welbevinden, maar ze zeggen niet hoe ze dat maten.<Cite id="ivko-2020-aedg-circadian,fda-pcac-2026-epitalon-briefing" /> Bij muizen veranderde de gemiddelde levensduur niet.<Cite id="anisimov-2003-epitalon-shr-mice" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Wat zegt de wet in Nederland?">Het is geen goedgekeurd medicijn: verkopen, leveren en invoeren zijn verboden. In de sport is het verboden.</Lead>
+
+<Compare title="Geen goedgekeurd medicijn in Nederland of de EU. De Amerikaanse stemming van 2026 veranderde dat niet." detail="Status in Nederland en voor de hele EU, gecontroleerd op 27 oktober 2026.">
+
+| | Goedgekeurd als medicijn? | Mag iemand het als medicijn leveren? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met epitalon in zijn register.<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> De Geneesmiddelenwet verbiedt om een medicijn zonder handelsvergunning in voorraad te hebben, te verkopen, te leveren of in te voeren.<Cite id="nl-gmw-art-40-handelsvergunning" /> |
+| Europese Unie | <Verdict is="no" /> De gegevens van het Europees Geneesmiddelenbureau (EMA) tonen geen goedkeuring en geen aanvraag. Epitalon heeft ook geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> | <Verdict is="no" /> Zonder handelsvergunning mag een medicijn in geen enkele lidstaat in de handel komen.<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+In de sport geldt overal dezelfde regel: volgens de tekst van S0, de groep voor niet erkende stoffen, is epitalon altijd verboden.<Cite id="wada-2026-list-en,wada-2027-list-en" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De statussen zijn gecontroleerd op 27 oktober 2026.
+
+{/* residue-ok: world context */}
+De FDA vond geen goedgekeurd product met epitalon in 10 andere landen, waaronder België, Duitsland, Frankrijk, Italië, Spanje en Ierland. Een goedkeuring voor de hele EU, via het EMA, vond de FDA ook niet.<Cite id="fda-pcac-2026-epitalon-briefing" /> In de VS kreeg epitalon in 2010 een aanwijzing als weesgeneesmiddel voor retinitis pigmentosa, een erfelijke netvliesziekte. Die is in 2016 ingetrokken.<Cite id="fda-pcac-2026-epitalon-briefing" /> {/* residue-ok: world context */}
+De FDA had epitalon in categorie 2 gezet: stoffen die mogelijk grote risico's geven als apotheken ze verwerken. De voordrachten zijn later ingetrokken.<Cite id="fda-category-2-safety-risks" />
+
+Epitalon staat niet met naam op de dopinglijst van het Wereld Anti-Doping Agentschap (WADA). Groep S0 ("Niet erkende stoffen") verbiedt elke stof die geen overheidsinstantie voor gezondheid heeft goedgekeurd voor gebruik bij mensen. De lijst van 2027 noemt daarbij ook "peptiden" als voorbeeld.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,dopingautoriteit-vertaling-dopinglijst-2026" /> {/* residue-ok: evidence */}
+We vonden nergens een goedkeuring: de FDA keek in 10 landen naast de VS, en epitalon staat niet in een gepubliceerde lijst van peptidemedicijnen die in Rusland zijn toegelaten.<Cite id="fda-pcac-2026-epitalon-briefing,deigin-2022-russian-peptides" /> Daarom gaan we ervan uit dat het onder S0 verboden is. Geen antidopingorganisatie heeft het met naam genoemd. Twijfel je? Vraag het de Dopingautoriteit.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Meer: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de Europese Unie">
+
+- **Nederland.** In de Geneesmiddeleninformatiebank van het CBG staat geen product met epitalon.<Cite id="cbg-gib-search-status-2026-10-27" /> Een medicijn zonder handelsvergunning mag niemand in voorraad hebben, verkopen, leveren of invoeren.<Cite id="nl-gmw-art-40-handelsvergunning" /> Staat er "alleen voor onderzoek" op het etiket? Dat verandert dit niet. Valt een middel onder de wet, dan spelen onderzoeksdoeleinden geen rol, schreef de Douane in augustus 2026.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> Epitalon staat niet in de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" />
+- **Europese Unie.** De gegevens van het EMA tonen geen goedkeuring van epitalon, geen aanvraag die het EMA beoordeelt, en geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> Of andere EU-landen het zelf goedkeurden, hebben we niet zelf nagekeken; de FDA vond in de landen die ze bekeek geen goedkeuring.<Cite id="fda-pcac-2026-epitalon-briefing" /> {/* residue-ok: evidence */}
+
+Meer: [de wet in Nederland](/nl/legal/nl/), [de regels van de EU](/nl/legal/eu/) en [“alleen voor onderzoek”](/nl/legal/research-use-only/).
+
+</InDetail>
+
+{/* residue-ok: PCAC framing */}
+<InDetail title="De Amerikaanse stemming van juli 2026, punt voor punt">
+
+1. **De stemming.** Op 23 juli 2026 stemde de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) met 8 stemmen voor, 6 tegen en 1 onthouding om BPC-157 op de Amerikaanse 503A-lijst te zetten. De aantallen zijn zoals gemeld vanuit de openbare vergadering.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" /> {/* residue-ok: PCAC framing */}
+2. **Zeven besproken, zes aanbevolen.** De commissie besprak 7 peptiden, waaronder epitalon. De FDA beoordeelde epitalon voor slapeloosheid.<Cite id="fda-pcac-2026-07-meeting,fr-2026-07361-pcac-notice" /> Zoals gemeld vanuit de vergadering raadde de commissie er 6 aan: BPC-157, KPV, TB-500, MOTS-c, Semax en epitalon. Emideltide (DSIP) raadde ze niet aan. De FDA vroeg om aparte stemmingen over de vrije base en het acetaatzout van elke stof.<Cite id="fda-pcac-2026-questions" /> Op 3 november 2026 had de FDA nog geen verslag gepubliceerd. Daarom geven we de aantallen en de uitkomst zoals gemeld vanuit de openbare vergadering.<Cite id="fda-pcac-2026-07-meeting" /> {/* residue-ok: PCAC framing */}
+3. **Alleen een advies.** De stemming is niet bindend, en tegen het advies van de eigen medewerkers van de FDA in. Die raadden af om epitalon op de lijst te zetten.<Cite id="fda-pcac-2026-briefing-intro" /> {/* residue-ok: PCAC framing */}
+4. **Nog niet op de lijst.** Formeel mogen Amerikaanse apotheken epitalon pas bereiden als de FDA het advies overneemt en een formele regel (rulemaking) afrondt. Op 3 november 2026 had de FDA nog geen regel voorgesteld.<Cite id="fda-503a-bulks-page,federalregister-503a-search-2026-11-03" /> Op 30 oktober 2026 publiceerde het Amerikaanse ministerie van Volksgezondheid (HHS) wel een ontwerp voor tijdelijk beleid, dat niet bindend is. HHS is niet van plan op te treden tegen bereiding van epitalon door een Amerikaanse apotheek, zolang de formele regel ontbreekt. Dat geldt alleen onder strenge voorwaarden, zoals een recept voor een bepaalde patiënt en een geregistreerde fabrikant.<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> Voor Nederland en de EU verandert dit niets. {/* residue-ok: PCAC framing */}
+5. **Geen goedkeuring.** Geen van de 6 aanbevolen peptiden is een goedgekeurd medicijn in Nederland of de EU. Semax is in Rusland als medicijn toegelaten.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,fda-pcac-2026-semax-briefing" /> Met een plek op de 503A-lijst zouden Amerikaanse apotheken het op recept mogen bereiden. Dat is geen handelsvergunning, zegt niets over of het werkt, en verandert niets buiten de VS.<Cite id="fda-pcac-2026-presentations-day1" /> {/* residue-ok: PCAC framing */}
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+{/* residue-ok: evidence */}
+<Lead question="Wat zijn de risico’s?">Onbekend bij mensen. De FDA wijst op een mogelijk kankerrisico. Producten zijn niet op kwaliteit gecontroleerd.</Lead>
+
+{/* residue-ok: evidence */}
+<Compare title="Verschillende soorten schade zijn mogelijk. Geen ervan is goed onderzocht bij mensen." detail="Wat de beoordeling van de FDA en de studies in cellen en dieren laten zien, op 22 oktober 2026.">
+
+| Mogelijke schade | Aangetoond bij mensen? |
+|---|---|
+| Kankercellen helpen om te blijven delen | <Verdict is="unknown" /> Een zorg die volgt uit hoe telomerase werkt. De tumorstudies bij dieren duurden te kort om de vraag te beantwoorden.<Cite id="fda-pcac-2026-epitalon-briefing" /> |
+| Een afweerreactie op het peptide of op onzuiverheden | <Verdict is="unknown" /> De FDA kan dat bij injecties niet uitsluiten.<Cite id="fda-pcac-2026-epitalon-briefing" /> {/* residue-ok: evidence */} |
+| Een infectie door bacteriën in het product | <Verdict is="unknown" /> Er zijn illegale producten gevonden; hun kwaliteit is onbekend.<Cite id="vanhee-2015-epitalon-illegal" /> |
+| Bijwerkingen bij mensen | <Verdict is="unknown" /> Geen studie meldde gegevens over de veiligheid.<Cite id="fda-pcac-2026-epitalon-briefing" /> |
+
+</Compare>
+
+<InDetail title="Waarom een effect op kanker wordt vermoed, en het bewijs aan beide kanten">
+
+De meeste lichaamscellen houden telomerase uit. Daardoor worden hun telomeren steeds korter, tot de cel stopt met delen. Die grens is een van de remmen van het lichaam op kanker. {/* residue-ok: evidence */}
+De FDA schrijft dat epitalon telomerase aanzet en telomeren langer maakt. Daardoor zou langdurig, onafgebroken gebruik cellen kunnen helpen om aan dat stoppen met delen (senescentie) te ontsnappen en kankercellen te worden. De FDA voegt eraan toe dat lange telomeren samenhangen met een hoger risico op sommige soorten kanker.<Cite id="fda-pcac-2026-epitalon-briefing" /> In 2025 vond een onafhankelijk lab dat epitalon ook de telomeren langer maakte in 2 cellijnen van borstkanker.<Cite id="al-dulaimi-2025-epitalon-telomeres" />
+
+Aan de andere kant meldt de oorspronkelijke groep minder leukemie bij behandelde muizen, zonder verandering in het totale aantal tumoren.<Cite id="anisimov-2003-epitalon-shr-mice" /> {/* residue-ok: evidence */}
+De FDA merkt op dat die studies één dosis gebruikten, alleen vrouwelijke muizen en een korte blootstelling. Ze kunnen de vraag dus niet beantwoorden. Het gebruikelijke kankeronderzoek van 2 jaar bij dieren is niet gedaan.<Cite id="fda-pcac-2026-epitalon-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe maak ik het risico kleiner?">Controleer eerst de flacon, betrek een arts erbij, en weet wanneer je stopt.</Lead>
+
+{/* residue-ok: evidence */}
+<ProductCheck extra="Controleer welke vorm op het etiket staat. Epitalon bestaat als vrije base en als acetaatzout. De FDA ziet die als verschillende stoffen." extraSources="fda-pcac-2026-epitalon-briefing" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **De prikplek wordt warm, rood, dik of pijnlijk:** misschien een infectie of een besmet product. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Koorts of rillingen, of je heel ziek voelen na een injectie:** misschien zijn er bacteriën in je bloed gekomen. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost. Ben je ook verward, of adem je heel snel? Bel dan 112.
+- **Jeukende bulten (netelroos), een dik gezicht of een dikke keel, of moeite met ademen:** misschien een allergische reactie. Wordt je tong of keel dik, of is ademen moeilijk? Bel dan 112. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Stop met het product en maak een afspraak met je huisarts.
+
+Is het ernstig? Bel 112.
+</Callout>
+
+<Cite id="thuisarts-wondroos,thuisarts-sepsis,thuisarts-dikke-ogen-lippen,thuisarts-spoed-wie-bellen,fda-pcac-2026-epitalon-briefing" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Zinvolle controles, en wie het niet moet gebruiken">
+
+Een arts kan je helpen kiezen welke controles bij jou passen (zie [praten met je arts](/nl/talking-to-your-doctor/)):
+
+- **De controles op kanker die bij je leeftijd horen.** Laat ook elke nieuwe bult, bloeding of onverklaard gewichtsverlies nakijken. Dat is vanwege de zorg over telomerase hierboven.<Cite id="fda-pcac-2026-epitalon-briefing" />
+- **De dopingregels**, als je aan sport doet: epitalon valt volgens de tekst van S0 onder het verbod en is dan altijd verboden.<Cite id="wada-2026-list-en" />
+
+Mensen die kanker hebben of hadden, hebben het meest te verliezen door de zorg over telomerase. Over zwangerschap en borstvoeding zijn geen gegevens.<Cite id="fda-pcac-2026-epitalon-briefing" /> Vertel je arts eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Zie ook [de risico's van het product](/nl/safety/product-risk/) en [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt uit welke legale wegen er in Nederland zijn, en wat elke weg nodig heeft: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [een artsenverklaring](/nl/legal-routes/#artsenverklaring), [een magistrale bereiding](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren). Voor epitalon betekent dat:
+
+- **Recept en off-label:** die wegen gaan over goedgekeurde medicijnen, en er is geen goedgekeurd medicijn met epitalon.<Cite id="cbg-gib-search-status-2026-10-27,nl-gmw-art-68-off-label" />
+- **Artsenverklaring:** voor een stof die nergens is goedgekeurd, vraagt de Inspectie Gezondheidszorg en Jeugd (IGJ) het onderzoekersdossier dat een bedrijf erover schrijft (Investigator's Brochure of IMPD). Ook vraagt de IGJ bewijs dat het product volgens GMP is gemaakt (de kwaliteitsregels voor het maken van medicijnen).<Cite id="igj-qa-zonder-handelsvergunning" /> Een flacon "voor onderzoek" komt met geen van beide; dat is onze lezing. Of deze weg ooit kan werken voor zo'n stof, zegt de IGJ niet.
+- **Magistrale bereiding:** een apotheek mag voor één patiënt zelf een medicijn maken. Een grondstof die niet in een farmacopee staat die officieel in gebruik is, kan de apotheek niet zomaar gebruiken.<Cite id="igj-eigen-bereidingen-apotheek" />
+- **Compassionate use:** alleen een fabrikant kan zo'n programma bij het CBG aanvragen. Op de lijst van het CBG staat geen programma met epitalon.<Cite id="cbg-compassionate-use-criteria,cbg-compassionate-use-list" />
+- **Klinisch onderzoek:** in Nederland loopt geen onderzoek met epitalon (gezocht op 27 oktober 2026).<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" /> De enige studie op ClinicalTrials.gov met epitalon is een vroege Amerikaanse studie naar middelen tegen veroudering, alleen op uitnodiging. Epitalon is daar een van de peptiden in een serum voor de huid.<Cite id="ctgov-search-status-d-2026-10-23" /> {/* residue-ok: world context */}
+- **Zelf invoeren:** een middel zonder handelsvergunning mag je niet invoeren of naar Nederland brengen, ook niet voor eigen gebruik. Dat geldt ook als je het zelf meeneemt op reis of laat opsturen.<Cite id="nl-gmw-art-40-handelsvergunning,nl-gnw-art-18-licence,douane-medicijnen-reizen-2026,douane-invoer-geneesmiddelen-2026,nl-rbdha-2019-4817-postzending-eigen-gebruik" />
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

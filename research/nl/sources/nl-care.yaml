@@ -1,0 +1,452 @@
+# Sources for research topic nl-care (getting a peptide medicine legally in the Netherlands, patient rights and
+# insurance), research/nl/nl-care.md. For the Dutch pages legal-routes, talking-to-your-doctor, start-here,
+# compounds/semaglutide and compounds/tirzepatide (Dutch insurance and access), the-case-for-reform and
+# history/how-we-got-here.
+#
+# Every URL below was fetched on 27 October 2026 (curl with a browser user agent, HTML converted to text and read;
+# PDFs with pdftotext) and says what its note says. Where a site refuses scripts (onderzoekmetmensen.nl search,
+# richtlijnen.nhg.org), the page was read in the built-in browser in a tab of our own; the note says so. Dates are the
+# page's own date (DCTERMS metadata, "Laatst gewijzigd", "Geldend van"); where a page shows none, `year` is the year
+# accessed. Shape: src/schemas/index.ts (sourceSchema), as in src/data/sources/legal-a.yaml.
+#
+# Reused (already registered in src/data/sources/; NOT repeated here; each re-fetched and re-read on 27 October 2026
+# unless marked *, see research/nl/nl-care.md §3):
+#   guides.yaml: nl-gmw-art-1-geneesmiddel, nl-gmw-art-40-handelsvergunning, nl-gmw-art-61-prescription,
+#     nl-gmw-art-67-internet-prescribing, nl-gmw-art-68-off-label, nl-wgbo-art-448-information, nl-wgbo-art-450-consent,
+#     nl-wgbo-art-452-patient-information, nl-wgbo-art-453-good-care, nl-wgbo-art-454-456-records,
+#     nl-wgbo-art-457-confidentiality, nl-wet-big-art-35-36, igj-online-medicijnen, igj-leveren-op-artsenverklaring,
+#     cbg-compassionate-use-criteria, knmg-beroepsgeheim-doorbreken, knmg-2024-second-opinion, thuisarts-naar-de-huisarts,
+#     dopingautoriteit-2025-harm-reduction-chair
+#   legal-a.yaml: nl-gnw-art-18-licence, nl-gnw-art-84-85-advertising, nl-gnw-art-101-fines,
+#     rijksoverheid-fine-categories-2026, nl-regeling-gnw-art-3-17, igj-qa-zonder-handelsvergunning,
+#     igj-2026-off-label-standpunt, igj-eigen-bereidingen-apotheek, ccmo-achtergrond-meedoen, ccmo-ivo-meedoen,
+#     ema-clinical-trials-regulation, eu-regulation-536-2014*, eu-regulation-726-2004*, cjeu-2015-abcur* (do not cite
+#     on Dutch pages until retitled: its title names two companies; see the fact-check),
+#     ctgov-nl-be-peptide-search-2026-10-22 (superseded for NL by ctgov-nl-peptide-search-2026-10-27 below)
+#   shared.yaml: nl-geneesmiddelenwet, cbg-geneesmiddeleninformatiebank
+#   history.yaml: nl-wog-1958*, nl-geneesmiddelenwet-2007-version, ema-compassionate-use*
+#   semaglutide.yaml: fk-semaglutide, fk-regeling-zorgverzekering-bijlage-2, zin-2024-wegovy-not-reimbursed,
+#     zin-wegovy-reassessment, zin-2025-obesity-staged-approach, cbg-ozempic-shortage, cbg-glp1-position
+#   tirzepatide.yaml: fk-tirzepatide, fk-regeling-zorgverzekering-bijlage-2-tirzepatide, zin-tirzepatide-obesity-assessment
+#   retatrutide.yaml: cbg-compassionate-use-list, ctgov-nct06383390, ctgov-nct07165028
+#   stubs-b.yaml: ctgov-nct07531251; refocus-status-d.yaml: ctgov-nct05162768
+#   safety-a.yaml: lareb-bijwerkingen-melden, knmg-beroepsgeheim; safety-b.yaml: zin-huisarts-zvw,
+#     igj-2025-illegal-online-medicines, lareb-2021-illegal-medicines
+#   other: brunt-2011-dims* (scholarly; not re-checked by the researcher; metadata re-checked on PubMed by the fact-check)
+#   shared.yaml (added by the fact-check): eu-directive-2001-83 (art. 3(1), magistral formula 'for an individual
+#     patient'), to cite instead of cjeu-2015-abcur, whose title names two companies (CONTENT-GUIDE §11)
+#   nl-help (added by the fact-check): igj-2026-10-gestolen-medicijnen (IGJ, 20 October 2026: stolen insulin pens
+#     that may be offered as obesity medicine)
+#
+# Fact-check of 27 October 2026 (research/nl/nl-care.md, "## Fact-check (independent, 27 October 2026)"): id
+# nl-mvt-2004-geneesmiddelenwet renamed nl-mvt-2003-geneesmiddelenwet (dated 10 December 2003); new id
+# nl-zvw-art-19-eigen-risico-2027; titles of omon-nl-omon61412, omon-nl-omon51992 and farmanco-liraglutide-obesitas-tekort
+# corrected; vws-2026-ontwerpbegroting-2027 URL and page number corrected.
+#   (* reused as fact-checked on 22–23 October 2026; not re-fetched today.)
+#
+# Reused from the parallel topic nl-help (research/nl/sources/nl-help.yaml, not yet merged; same URLs, so not repeated):
+#   rijksoverheid-eigen-risico-2026, zin-eigen-risico-zvw, rijksoverheid-2026-09-vws-begroting,
+#   nhg-2025-gewichtsreducerende-medicatie, dims-welke-drugs
+# Reused from the parallel topic eu-status (research/nl/sources/eu-status.yaml, not yet merged; same trials):
+#   ctis-2025-522674-36-00 (SYNERGY-Outcomes), ctis-2025-523837-25-00 (4TAZPower). Details we read in the CTIS
+#   public API on 27 October 2026 that its notes may add: SYNERGY-Outcomes has 7 Dutch sites authorised and a Dutch
+#   START_OF_TRIAL notified on 22 September 2026; 4TAZPower has one Dutch site (Amsterdam UMC) and no Dutch start
+#   notification.
+#
+# Hosts below that are NOT on config/link-allowlist.json (proposed in research/nl/nl-care.md §7):
+#   onderzoekmetmensen.nl, euclinicaltrials.eu, richtlijnen.nhg.org, www.bigregister.nl, farmanco.knmp.nl.
+#   All other hosts are allowed (wetten.overheid.nl and repository.overheid.nl via the .overheid.nl suffix,
+#   www.igj.nl, www.cbg-meb.nl, www.zorginstituutnederland.nl, www.rijksoverheid.nl, www.farmacotherapeutischkompas.nl,
+#   www.knmg.nl, www.knmp.nl, www.thuisarts.nl, www.trimbos.nl, clinicaltrials.gov).
+# No title or URL below names a seller or company.
+
+# ---------------------------------------------------------------- Netherlands: statutes and policy rules
+
+nl-gnw-art-1-recept:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Geneesmiddelenwet, artikel 1, eerste lid, onder s en pp (UR-geneesmiddel; recept)"
+  container: "wetten.overheid.nl (BWBR0021505), version in force from 9 September 2025"
+  year: 2007
+  url: https://wetten.overheid.nl/BWBR0021505/2025-09-09/#HoofdstukI_Artikel1
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 ('Geldend van 09-09-2025 t/m heden'). (s) 'UR-geneesmiddel: een geneesmiddel dat uitsluitend op recept ter hand mag worden gesteld'. (pp) 'recept': a document drawn up by a professional 'met naam en werkadres aangeduide' as in art. 36(14) Wet BIG, 'dan wel een daartoe in een andere lidstaat bevoegde beroepsbeoefenaar', instructing a person or body under art. 61(1) (pharmacist, dispensing GP) to hand over a medicine named by substance or brand name, in the stated quantity, strength and way of use, 'aan een te identificeren patiënt', signed, or secured by a code that lets an authorised person check its authenticity."
+
+nl-wet-big-art-36-voorschrijven:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Wet op de beroepen in de individuele gezondheidszorg (Wet BIG), artikel 36, veertiende lid (voorschrijven van UR-geneesmiddelen)"
+  container: "wetten.overheid.nl (BWBR0006251), version in force from 5 July 2025"
+  year: 1993
+  url: https://wetten.overheid.nl/BWBR0006251/2025-07-05/#HoofdstukIV_Artikel36
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 (current version). Art. 36(14): 'Tot het voorschrijven van UR-geneesmiddelen ... zijn bevoegd': (a) de artsen; (b) de tandartsen; (c) de verloskundigen, within their field; (d) designated categories of nurses, only where a doctor, dentist or midwife has made the diagnosis, where 'medische protocollen en standaarden' are followed, within limits set by regulation, and with an annotation in the register; (e) designated categories of specialist nurses (verpleegkundig specialisten), within limits; (f) de physician assistants, within their field. Art. 36(5) on injections is cited from nl-wet-big-art-35-36 (guides.yaml)."
+
+nl-wgbo-art-460-opzegging:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Burgerlijk Wetboek Boek 7, artikel 460 (WGBO: opzegging door de hulpverlener)"
+  container: "wetten.overheid.nl (BWBR0005290), version in force from 8 October 2026"
+  year: 1994
+  url: https://wetten.overheid.nl/BWBR0005290/2026-10-08/#Boek7_Titeldeel7_Afdeling5_Artikel460
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 ('Geldend van 08-10-2026 t/m heden'). 'De hulpverlener kan, behoudens gewichtige redenen, de behandelingsovereenkomst niet opzeggen.' (The care provider cannot end the treatment agreement except for weighty reasons.)"
+
+nl-wmo-art-2-6-7:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden"
+  title: "Wet medisch-wetenschappelijk onderzoek met mensen (WMO), artikelen 1, 2, 6 en 7"
+  container: "wetten.overheid.nl (BWBR0009408), version in force from 1 January 2025"
+  year: 1998
+  url: https://wetten.overheid.nl/BWBR0009408/2025-01-01/#Paragraaf1_Artikel2
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 ('Geldend van 01-01-2025 t/m heden'). Art. 1(1)(o): 'wetenschappelijk onderzoek met geneesmiddelen: een klinische proef waarop Verordening (EU) 536/2014 van toepassing is'. Art. 2: research follows a protocol on which 'een positief oordeel' is needed from an authorised committee or, in listed cases, the central committee (CCMO). Art. 6: research is forbidden without written consent (16 and over: the person; 12 to 15: the person and the parents or guardian; with rules for people who cannot judge their interests). Art. 7(1): research may only start if insurance covers death or injury caused by it; the insurance 'behoeft niet te dekken de schade waarvan op grond van de aard van het onderzoek zeker of nagenoeg zeker was dat deze zich zou voordoen'."
+
+nl-beleidsregel-voorschrijven-via-internet:
+  type: regulator
+  authors: "Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Beleidsregel voorschrijven via internet"
+  container: "wetten.overheid.nl (BWBR0048048), version in force from 12 April 2023; published in Staatscourant 2023, 10521"
+  year: 2023
+  url: https://wetten.overheid.nl/BWBR0048048/2023-04-12/#Artikel2
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 ('Geldend van 12-04-2023 t/m heden'; decision of 27 March 2023, kenmerk 3453103-1038189-GMT, signed by Minister Kuipers; also read as published in the Staatscourant). Art. 2: when a medicine is prescribed via the internet to a person the prescriber has never met in person and does not know, 'treedt de minister niet handhavend op tegen overtreding van artikel 67 van de Geneesmiddelenwet indien: a. een fysiek consult of onderzoek om te bepalen of een geneesmiddel moet worden voorgeschreven en zo ja, welk geneesmiddel moet worden voorgeschreven, niet nodig is, en; b. de voorschrijver beschikt over de geactualiseerde medicatiehistorie van de patiënt en de medicatiehistorie voor zover nodig raadpleegt.' The IGJ gives 11 April 2023 as the start date; the rule enters into force the day after publication."
+
+nl-regeling-zorgverzekering-bijlage-2-glp1:
+  type: law
+  authors: "Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Regeling zorgverzekering, bijlage 2, onderdelen 58 (exenatide), 141 (liraglutide), 146 (dulaglutide en semaglutide), 147 (bupropion met naltrexon) en 194 (tirzepatide)"
+  container: "wetten.overheid.nl (BWBR0018715), version in force from 6 October 2026"
+  year: 2026
+  url: https://wetten.overheid.nl/BWBR0018715/2026-10-06/#Bijlage2
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 ('Geldend van 06-10-2026 t/m heden'). Item 146 (dulaglutide, semaglutide) and item 194 (tirzepatide, only insured persons 'van achttien jaar en ouder'): type 2 diabetes only: (a) BMI of 30 or more, not controlled on metformin plus a sulfonylurea at maximum tolerated doses, not using insulin; (b) added to metformin and basal insulin, BMI of 30 or more, after at least 3 months of optimised basal insulin; (c) very high cardiovascular risk (proven cardiovascular disease and/or chronic kidney damage), added to an SGLT2 inhibitor and metformin, or when an SGLT2 inhibitor is contraindicated. Item 141 (liraglutide): the type 2 diabetes routes, and (c) 'in combinatie met een door het RIVM erkende gecombineerde leefstijlinterventie (GLI), indien de GLI niet succesvol is na 1 jaar, voor de behandeling van volwassenen zonder diabetes mellitus type 2 met een extreem verhoogd gewichtsgerelateerd gezondheidsrisico en die (nog) niet in aanmerking komen voor metabole chirurgie': BMI of 35 or more with a comorbidity (cardiovascular disease, sleep apnoea and/or osteoarthritis), or BMI of 40 or more; stop if after 3 months on the maintenance dose weight has not fallen by at least 5%. Item 147 (bupropion with naltrexone): adults with a GLI not successful after 1 year, BMI of 30 or more, or 27 to 30 with a comorbidity; stop if less than 5% weight loss after four months. Item 58 (exenatide): type 2 diabetes routes. Bijlage 1 lists Saxenda, Victoza, Ozempic, Rybelsus, Trulicity and Mounjaro products; Wegovy and Zepbound do not appear. Doses printed in the regulation are not to be copied."
+
+nl-mvt-2003-geneesmiddelenwet:
+  type: report
+  authors: "Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Vaststelling van een nieuwe Geneesmiddelenwet; Memorie van toelichting (Kamerstukken II 2003/04, 29 359, nr. 3)"
+  container: "Tweede Kamer der Staten-Generaal, vergaderjaar 2003–2004 (via repository.overheid.nl)"
+  year: 2003
+  url: https://repository.overheid.nl/frbr/officielepublicaties/kst/29359/kst-29359-3/1/pdf/kst-29359-3.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Dated 10 December 2003 (official metadata DCTERMS.available 2003-12-10; imprint 'Sdu Uitgevers 's-Gravenhage 2003'; vergaderjaar 2003-2004). Fact-check 27 October 2026: id and year corrected from 2004 to 2003. PDF downloaded and read with pdftotext on 27 October 2026. Section 3: 'Het College ter beoordeling van geneesmiddelen (CBG) is ingesteld bij de WOG in 1963'; registration was entrusted to the 'College ter beoordeling van verpakte geneesmiddelen'; 'Het College bestaat als zelfstandig bestuursorgaan (ZBO) reeds sinds 1963.' Section 4.3: 'Sinds de inwerkingtreding van de WOG in 1963 is het verboden een geneesmiddel voor de eerste keer in het handelsverkeer te brengen zonder voorafgaande registratie (= handelsvergunning) van een bevoegde autoriteit. Enkele andere Europese landen waren Nederland daarin reeds voorgegaan.' Directive 65/65/EEC of 26 January 1965 is mentioned next. The memorandum gives the year 1963, not the day."
+
+# ---------------------------------------------------------------- Netherlands: regulators (IGJ, CBG)
+
+igj-medicijnen-voorschrijven-via-internet:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Medicijnen voorschrijven via internet"
+  year: 2026
+  url: https://www.igj.nl/onderwerpen/themas-in-het-toezicht/medicatieveiligheid/medicijnen-voorschrijven-via-internet
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Issued 28 April 2023, modified 14 July 2026 (metadata). 'Zorgverleners mogen medicijnen voorschrijven na contact met de patiënt via internet, maar hiervoor gelden strenge voorwaarden. Hiervoor geldt een beleidsregel.' 'Er mag geen fysiek onderzoek nodig zijn bij de patiënt en de voorschrijver moet beschikken over de actuele medicatiegegevens van de patiënt.' The rule took effect 11 April 2023; it covers video, audio or text; 'Als het voor goede zorg noodzakelijk is dat de voorschrijver de patiënt fysiek onderzoekt of ziet dan mag voor het voorschrijven van een geneesmiddel niet worden volstaan met een consult via internet'; the prescriber may rely on an examination by another care provider; the Wkkgz, Wet BIG and WGBO norms apply; the rule applies until art. 67 Gnw is amended; ordinary telephone calls without internet fall outside art. 67, but similar conditions apply."
+
+igj-overzicht-vrijstellingsbesluiten:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Overzicht vrijstellingsbesluiten"
+  year: 2026
+  url: https://www.igj.nl/zorgsectoren/geneesmiddelen/beschikbaarheid-van-geneesmiddelen/overzicht-vrijstellingsbesluiten
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 26 October 2026 (metadata). The IGJ's list of general exemptions under Regeling Gnw art. 3.17a for temporary shortages. Text-searched on 27 October 2026 for semaglutide, liraglutide, tirzepatide, dulaglutide, Ozempic, Victoza, Saxenda, Mounjaro, Trulicity and GLP: no GLP-1 medicine is listed."
+
+cbg-cup-vragen-en-antwoorden:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Vragen en antwoorden over Compassionate Use Programma"
+  year: 2025
+  url: https://www.cbg-meb.nl/onderwerpen/handelsvergunning-voor-aanvraag-handelsvergunning/hv-compassionate-use-programma/vraag-en-antwoord/handelsvergunning-geneesmiddelen-voor-mensen/vragen-en-antwoorden-over-compassionate-use-programma
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Issued 1 December 2024, modified 14 January 2025 (metadata). A CUP is for a group (cohort) of patients; the artsenverklaring is for one patient at a doctor's initiative. 'Alleen de fabrikant van het geneesmiddel kan een aanvraag voor een CUP indienen.' No CUP for a new indication of an authorised medicine: 'Niet geregistreerde indicaties van een geregistreerd geneesmiddel vallen wettelijk gezien onder de regels voor off-label gebruik.' A Dutch CUP 'is uitsluitend voor Nederland'. The CBG decides within 6 weeks of starting its assessment. Approval is 'voor onbepaalde tijd', until marketing authorisation or a negative benefit-risk balance; 'Tot 2023 gold een goedkeuring voor de termijn van 1 jaar'. Patients keep access until a positive reimbursement decision and availability. The manufacturer collects all suspected side effects (EudraVigilance) and files a safety report after a year."
+
+cbg-2024-cup-nieuw-beleid:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Nieuw beleid voor Compassionate Use Programma's"
+  year: 2024
+  url: https://www.cbg-meb.nl/actueel/nieuws/2024/12/19/nieuw-beleid-voor-compassionate-use-programmas
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "News item of 19 December 2024 (modified 14 February 2025). The CUP procedure is published in policy document MEB 49 (1 December 2024), with the three criteria (a group of patients with a chronic, seriously debilitating or life-threatening disease; insufficient treatment with an authorised medicine; a marketing application filed or trials ongoing). 'Geen tijdelijke goedkeuring meer': approval is now for an indefinite period, until marketing authorisation, or earlier if the benefit-risk balance turns negative. The policy applies at once."
+
+# ---------------------------------------------------------------- Netherlands: insurance (Zorginstituut, Rijksoverheid, FK)
+
+zin-geneesmiddelen-zvw:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Geneesmiddelen (Zvw)"
+  year: 2026
+  url: https://www.zorginstituutnederland.nl/verzekerde-zorg/g/geneesmiddelen-zvw
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 4 June 2026 (metadata). 'Alleen geregistreerde geneesmiddelen die zijn opgenomen in het Geneesmiddelenvergoedingssysteem (GVS) worden vergoed uit het basispakket'; bijlage 1A (clusters with a reimbursement limit), bijlage 1B (unique medicines) and bijlage 2 (extra conditions). 'Sinds 2019 is er een maximum bedrag vastgesteld voor de eigen bijdrage voor geneesmiddelen. Een verzekerde betaalt per jaar maximaal € 250 aan eigen bijdrage.' 'Voor geneesmiddelen geldt het eigen risico.' A registered medicine not in the GVS cannot be reimbursed from the basic package."
+
+zin-gli-zvw:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Gecombineerde Leefstijlinterventie (GLI) (Zvw)"
+  year: 2026
+  url: https://www.zorginstituutnederland.nl/verzekerde-zorg/g/gecombineerde-leefstijlinterventie-gli-zvw
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Issued 24 January 2019, modified 29 May 2026 (metadata). 'Een GLI is een programma van 2 jaar.' Eligible with a BMI between 25 and 35 with a large waist (women 88 cm or more, men 102 cm or more) or with one or more weight-related diseases, or a BMI of 35 or more. 'De huisarts stelt vast of u een GLI kan krijgen'; it can also be a digital programme; given by lifestyle coaches, dietitians, physio- or exercise therapists. Reimbursed if the programme is on the RIVM's Loket Gezond Leven. 'U betaalt geen eigen bijdrage voor een GLI.' 'De kosten voor een GLI vallen niet onder het verplicht eigen risico.' A BMI under 25: not reimbursed from the basic package."
+
+rijksoverheid-2026-prinsjesdag-zorg:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Prinsjesdag 2026: Zorg"
+  year: 2026
+  url: https://www.rijksoverheid.nl/themas/overheid-en-democratie/prinsjesdag/zorg
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Issued 15 September 2026 (metadata). Section 'Eigen risico, premie en zorgtoeslag': total care spending rises to € 118 billion in 2027; the premium rises by € 12,50 to an average of € 169 a month; the zorgtoeslag for single people rises to at most € 140 a month; 'Het verplicht eigen risico gaat in 2027 met de inflatie mee en stijgt van € 385 naar € 400.' The cabinet's budget announcement; the legal instrument that sets the amount is the ministerial regulation of 25 September 2026 (Stcrt. 2026, 34372), cited as nl-zvw-art-19-eigen-risico-2027. The same sentence is in the news item registered by topic nl-help (rijksoverheid-2026-09-vws-begroting)."
+
+nl-zvw-art-19-eigen-risico-2027:
+  type: law
+  authors: "Staten-Generaal / Koninkrijk der Nederlanden; bedrag vastgesteld door de Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Zorgverzekeringswet, artikel 19, eerste lid (verplicht eigen risico), versie met ingang van 1 januari 2027"
+  container: "wetten.overheid.nl (BWBR0018450), version in force from 1 January 2027; amount set by the Regeling van de Minister van VWS van 25 september 2026, kenmerk 4527716-1104927-WJZ, houdende vaststelling van het verplicht eigen risico Zvw 2027 (Staatscourant 2026, 34372)"
+  year: 2026
+  url: https://wetten.overheid.nl/BWBR0018450/2027-01-01/#Hoofdstuk3_Paragraaf3.4_Artikel19
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Found by the fact-check of 27 October 2026. The current Zvw (version 'Geldend van 01-01-2026 t/m heden') art. 19(1): '€ 385 per kalenderjaar', with '[Toekomstige wijziging(en) voorzien met ingang van: 01-01-2027.]'. The version from 1 January 2027, art. 19(1): 'Iedere verzekerde van achttien jaar of ouder heeft een verplicht eigen risico van € 400 per kalenderjaar.' Change history: 'Datum inwerkingtreding: 01-01-2027', 'Ontstaansbron: Stcrt. 2026, 34372', signed 25-09-2026. The regulation itself (Staatscourant 2026, 34372, published 30 September 2026, read on zoek.officielebekendmakingen.nl, host not allowlisted): 'Het bedrag, bedoeld in artikel 19, eerste lid, van de Zorgverzekeringswet, wordt vastgesteld op € 400'; 'Deze regeling treedt in werking met ingang van 1 januari 2027'; signed by Minister S.Th.M. Hermans; the explanatory note says the planned € 60 increase (bill 36 943) was postponed by a year, so 2027 is indexation only. So € 400 for 2027 is set in law (in force from 1 January 2027), not only a plan."
+
+vws-2026-ontwerpbegroting-2027:
+  type: report
+  authors: "Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Vaststelling van de begrotingsstaat van het Ministerie van Volksgezondheid, Welzijn en Sport (XVI) voor het jaar 2027 (Kamerstukken II 2026/27, 37 020 XVI, nr. 2)"
+  container: "Rijksbegroting 2027 (rijksoverheid.nl)"
+  year: 2026
+  url: https://www.rijksoverheid.nl/documenten/2026/09/15/xvi-volksgezondheid-welzijn-en-sport-rijksbegroting-2027
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Received by the Tweede Kamer 15 September 2026; the PDF linked from the page (16-volksgezondheid-welzijn-en-sport.pdf) was downloaded and read with pdftotext. (Fact-check 27 October 2026: the earlier URL /documenten/begrotingen/2026/09/15/... redirects to this one; the passage is on printed page 20, PDF page 23, not p. 19; the Staatscourant regulation of 25 September 2026 also cites 'nr. 2, p. 20'.) P. 20: 'Het verplicht eigen risico bedraagt sinds 2016 € 385'; 'Het kabinet heeft besloten de verhoging van het verplicht eigen risico met € 60 uit te stellen naar 2028'; preparations in 2027 'om het verplicht eigen risico te trancheren tot maximaal € 150 per behandelprestatie in de medisch-specialistische zorg', introduced 'per 2028'. Budget notes: 'Het kabinet heeft besloten om de verhoging van € 60 van het verplicht eigen risico in de Zorgverzekeringswet uit te stellen van 1 januari 2027 naar 1 januari 2028.' No passage on reimbursing obesity medicines."
+
+fk-liraglutide:
+  type: guideline
+  authors: "Zorginstituut Nederland, Farmacotherapeutisch Kompas"
+  title: "Liraglutide — Farmacotherapeutisch Kompas (preparaattekst)"
+  year: 2026
+  url: https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/l/liraglutide
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026. All listed liraglutide products, including Victoza, Saxenda and generic products, have the status 'Bijlage 2' ('Aan de vergoeding van dit geneesmiddel zijn bepaalde voorwaarden verbonden, die zijn vermeld op bijlage 2 van de Regeling zorgverzekering'). Lists ZIN reports of 2022 on Saxenda (adjustment of bijlage 2; weight management in adults with an extremely raised weight-related health risk). Doses printed on the page are not to be copied."
+
+# ---------------------------------------------------------------- Netherlands: professional bodies and patient information
+
+knmg-wie-mogen-voorschrijven:
+  type: guideline
+  authors: "KNMG (Koninklijke Nederlandsche Maatschappij tot bevordering der Geneeskunst)"
+  title: "Wie mogen geneesmiddelen voorschrijven?"
+  year: 2020
+  url: https://www.knmg.nl/ik-ben-arts/praktijkdilemmas-1/praktijkdilemma/wie-mogen-geneesmiddelen-voorschrijven
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Practice dilemma, published 16 December 2020 (page date 5 February 2026). Doctors, dentists and midwives may prescribe UR medicines within their field. 'Ook physician assistants en verpleegkundig specialisten mogen UR-geneesmiddelen voorschrijven binnen hun eigen deskundigheidsgebied. Dit mogen zij alleen doen voor zover het om minder complexe, routinematige recepten gaat'. Nurses specialised in diabetes, oncology or asthma/COPD may prescribe a limited list after a doctor's diagnosis (diabetes nurses: 'alleen bloedglucose regulerende geneesmiddelen'). 'Andere beroepsbeoefenaren, zoals doktersassistentes en praktijkondersteuners, mogen geen recepten schrijven. Ook niet in opdracht van een arts.'"
+
+nhg-2018-standpunt-offlabel:
+  type: guideline
+  authors: "Nederlands Huisartsen Genootschap (NHG)"
+  title: "Aanbevelingen voor het offlabel voorschrijven van geneesmiddelen (NHG-Standpunt)"
+  year: 2018
+  url: https://richtlijnen.nhg.org/medisch-inhoudelijke-nhg-standpunten/aanbevelingen-voor-het-offlabel-voorschrijven-van
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read in the built-in browser on 27 October 2026 (the site answers scripts with HTTP 401; a passive security check cleared by itself). 'Laatst gewijzigd: januari 2018'. 'Het NHG adviseert om terughoudend om te gaan met het offlabel voorschrijven van geneesmiddelen als die niet in de NHG-Standaarden en NHG-Behandelrichtlijnen worden geadviseerd. Offlabel voorschrijven is alleen een optie als dat voor de patiënt op dat moment de best denkbare behandeling is.' Refers to the NHG-Standpunt 'Offlabel voorschrijven in de huisartsenpraktijk', written with the Federatie Medisch Specialisten."
+
+nhg-standaard-obesitas-2025:
+  type: guideline
+  authors: "Nederlands Huisartsen Genootschap (NHG); werkgroep Eshuis MS, el Hajoui M, Huls MHJ, van Kemenade JE, Oud M, Poldervaart JM, Schalkwijk AAH, Stijntjes F, Wittenberg J"
+  title: "NHG-Standaard Obesitas (M95)"
+  year: 2025
+  url: https://richtlijnen.nhg.org/standaarden/obesitas
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read in the built-in browser on 27 October 2026 (HTTP 401 to scripts; cookie banner left untouched). 'Gepubliceerd: oktober 2025 Laatste aanpassing: augustus 2026'. GLI: consider at BMI 25 or more with a large waist or weight-related comorbidity, or BMI 35 or more; 'Sinds 2019 vergoeden zorgverzekeraars de GLI'. Weight-reducing medication: consider at BMI 35–39.9 with weight-related comorbidity, or BMI 40 or more; only for patients who took part in a (combined) lifestyle intervention for at least a year with motivation and no more than 10% weight loss and keep it up; stop at less than 5% weight loss after 12 weeks at the maximum tolerated dose; none over 75 or in pregnancy or lactation; consider tapering to a trial stop after 2 years. 'Het voorschrijven van gewichtsreducerende medicatie is extra aanbod en daarom facultatief. Verwijs naar de tweede lijn (bij voorkeur naar een obesitascentrum in een ziekenhuis of een internist gespecialiseerd in obesitas) wanneer medicatie niet door huisarts zelf wordt voorgeschreven.' Recommended: subcutaneous liraglutide or semaglutide, or naltrexone/bupropion. 'Semaglutide oraal wordt niet aanbevolen vanwege beperkt bewijs. Tirzepatide (GIP/GLP1-agonist) wordt afgeraden omdat hier nog nauwelijks ervaring mee opgedaan is, er nog te veel onzekerheid is over de veiligheid en de kosten zeer hoog zijn.' Doses in the standard are not to be copied."
+
+thuisarts-obesitas-medicijnen-huisarts:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik ben veel te zwaar en krijg daarvoor misschien medicijnen van de huisarts"
+  year: 2025
+  url: https://www.thuisarts.nl/obesitas-bij-volwassenen/ik-ben-veel-te-zwaar-en-krijg-daarvoor-misschien-medicijnen-van-huisarts
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 4 nov 2025'. Written in the 'je' form. 'Er zijn huisartsen die deze medicijnen niet voorschrijven. Er zijn ook huisartsen die deze medicijnen soms wel voorschrijven.' With a BMI of 40 or more, or 35 or more with a disease such as osteoarthritis or heart problems, 'kun je soms een medicijn krijgen dat jou helpt om een gezonder gewicht te krijgen. Je bespreekt dit met je huisarts.' Based on the GP guideline on overweight and obesity."
+
+bigregister-over-het-register:
+  type: regulator
+  authors: "BIG-register (CIBG, Ministerie van Volksgezondheid, Welzijn en Sport)"
+  title: "Over het BIG-register"
+  year: 2025
+  url: https://www.bigregister.nl/over-het-big-register
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst bijgewerkt op 18 juni 2025'. 'Het BIG-register ... is een wettelijk, online en openbaar register. Alleen wie in het BIG-register staat, mag een beschermde beroepstitel voeren en mag de bij het beroep horende voorbehouden handelingen zelfstandig uitvoeren.' Protected titles include apotheker, arts, physician assistant, tandarts, verpleegkundige and verloskundige; more than 380,000 registered. 'Iedereen kan het register bekijken', by name or BIG number. 'Het BIG-register houdt geen toezicht op zorgverleners en behandelt geen klachten over zorgverleners.' Run by CIBG under the Wet BIG."
+
+knmp-richtlijn-bereiden-2016:
+  type: guideline
+  authors: "KNMP (Koninklijke Nederlandse Maatschappij ter bevordering der Pharmacie)"
+  title: "KNMP-richtlijn Bereiden"
+  year: 2016
+  url: https://www.knmp.nl/richtlijnen/bereiden
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Geautoriseerd in mei 2016'; replaces the April 2008 guideline. Recommendations for community pharmacists preparing medicines for their own patients. 'Ga bij een voorschrift voor een apotheekbereiding eerst na of in de zorgvraag kan worden voorzien met een geregistreerd handelspreparaat'; only when no registered product is available, or not in the right strength or form, or preparation has added value, does the pharmacist consider preparing it; standardised preparations are preferred."
+
+knmp-faq-apotheekbereiding:
+  type: guideline
+  authors: "KNMP (Koninklijke Nederlandse Maatschappij ter bevordering der Pharmacie)"
+  title: "Veelgestelde vragen over bereiding (dossier Apotheekbereiding)"
+  year: 2024
+  url: https://www.knmp.nl/dossiers/apotheekbereiding/veelgestelde-vragen-over-bereiding
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Items 'Laatst bijgewerkt op 05 maart 2024'. 'Apothekers mogen in de eigen apotheek op kleine schaal geneesmiddelen bereiden voor eigen patiënten'; community pharmacies follow the KNMP guideline 'Bereiden', hospital pharmacies the NVZA's GMP-Z guideline. Minister Bruins's letter of April 2019: 'verstrekking in het klein' means a few to about 50 unique patients a month for long-term use and about 150 for short-term use. Collegial supply between pharmacies without a marketing authorisation 'is strijdig met de Geneesmiddelenwet' but is tolerated by the IGJ under the policy rule 'Collegiaal doorleveren en ter hand stellen van apotheekbereidingen' (from 1 February 2025, with prior assessment and a 'gedoogverklaring'). Reimbursement requires rational pharmacotherapy (Besluit zorgverzekering art. 2.8(1)); not reimbursed are preparations containing a registered medicine not designated for reimbursement, and preparations 'met dezelfde werkzame stof, toedieningsweg en vergelijkbare toepassing als een geregistreerd geneesmiddel dat niet voor vergoeding is aangewezen'."
+
+farmanco-liraglutide-obesitas-tekort:
+  type: dataset
+  authors: "KNMP Farmanco"
+  title: "Liraglutide-injectiepen (bij obesitas en overgewicht): tekort"
+  year: 2026
+  url: https://farmanco.knmp.nl/geneesmiddel/4455.html
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026. 'Laatst bijgewerkt op: 27-08-2026'. One liraglutide 6 mg/ml pen product for obesity and overweight is listed as in shortage; 'Reden van tekort: Verhoogde vraag'; expected date 'onbekend'. The page for the liraglutide pen for type 2 diabetes (geneesmiddel/4621.html, updated 3 July 2026) lists no product in shortage. The Farmanco home page, read the same day, lists 271 current shortages and none for semaglutide, tirzepatide or dulaglutide; it still lists the diabetes liraglutide pen entry (4621), whose page shows no product in shortage, so do not write that diabetes liraglutide is 'not on the shortage list'. Title paraphrased from the page heading, with the strength and dose range left out (fact-check 27 October 2026: no doses or strengths in titles); the page body names the product, its maker and insurers, which our text must not repeat. Host not on the allowlist (research/nl/nl-care.md §7)."
+
+trimbos-dims-monitoring:
+  type: web
+  authors: "Trimbos-instituut"
+  title: "Monitoring drugsmarkt in Nederland: DIMS"
+  year: 2026
+  url: https://www.trimbos.nl/kennis/drugs/feiten-cijfers-drugshandel-drugsincidenten/monitoring-drugsmarkt-dims/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Published 2 November 2021, modified 29 May 2026 (page data). 'Het DIMS-bureau is ondergebracht bij het Trimbos-instituut. Het coördineert het Drugs Informatie en Monitoring Systeem (DIMS). Voor het DIMS verzamelen wij informatie via een landelijk netwerk van twaalf deelnemers met 34 testlocaties in Nederland.' 'In 2025 leverden gebruikers bij het DIMS ruim 17.500 drugsmonsters in van vooral ecstasy, MDMA-poeder en 3-MMC'. The Trimbos history page (2022) dates the founding of DIMS to 1992. That DIMS does not test medicines or steroids is on the DIMS site (dims-welke-drugs, topic nl-help)."
+
+# ---------------------------------------------------------------- Clinical trials: registers and searches
+
+omon-overzicht-ctis-2026:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "Onderzoek met mensen: overzicht van medisch-wetenschappelijk onderzoek in Nederland"
+  year: 2026
+  url: https://onderzoekmetmensen.nl/nl
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Home page read 27 October 2026. OMON contains the old Nationaal Trial Register, Toetsingonline, the Onderzoeksportaal and 'het onderzoek uit het publieke gedeelte van CTIS'. 'Vanaf mei 2026 zijn de onderzoeken uit het publieke gedeelte van CTIS ook zichtbaar in het Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON). Dit betekent dat al het medisch-wetenschappelijk onderzoek in Nederland dat officieel getoetst moet worden in OMON is opgenomen.' Warning: 'de informatie kan verouderd zijn (zoals Status werving)'; check with the submitter."
+
+omon-peptide-search-2026-10-27:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "OMON searches of 27 October 2026: trials of retatrutide, elamipretide, thymosin alpha-1 and other peptides on this site"
+  year: 2026
+  url: https://onderzoekmetmensen.nl/nl/zoeken
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "The search page answers scripts with 'Geen toegang'; searched in the built-in browser (own tab), first through the search box, then with the site's own search URL in the same session. Results: retatrutide 2 (NL-OMON60031, NL-OMON61112); LY3437943 1 (NL-OMON61112); elamipretide 4 (NL-OMON45920, 45900, 51595, 61412); thymosin(e) and thymalfasin: NL-OMON51992 (thymosine-alpha-1); BPC-157, TB-500, tesamorelin, CJC-1295, epitalon, melanotan, bremelanotide, AOD-9604, hexarelin: 0. Short names ('BPC 157', 'KPV', 'GHK', 'semax', 'selank', 'MOTS-c') return large fuzzy result lists; the first results were checked and none concerned these peptides; the single 'ipamorelin' hit (NL-OMON29795) is a triptorelin study."
+
+omon-nl-omon60031:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "NL-OMON60031: Het effect van eenmaal per week retatrutide op cardiovasculaire uitkomsten en nieruitkomsten bij volwassenen met obesitas (TRIUMPH-OUTCOMES)"
+  year: 2026
+  url: https://onderzoekmetmensen.nl/nl/trial/60031
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Read 27 October 2026. Source CTIS (EU CT 2023-508630-34-00; NCT06383390). Published 30 April 2026, last updated 19 May 2026. 'Goedgekeurd WMO'; status 'Werving gestopt'. For adults with obesity and cardiovascular and/or chronic kidney disease."
+
+omon-nl-omon61112:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "NL-OMON61112: Een hoofdprotocol voor onderzoek naar meerdere middelen bij volwassenen met steatotische leverziekte geassocieerd met metabole disfunctie (SYNERGY-Outcomes)"
+  year: 2026
+  url: https://onderzoekmetmensen.nl/nl/trial/61112
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Read 27 October 2026. Source CTIS (EU CT 2025-522674-36-00; NCT07165028). Published 7 October 2026, last updated 8 October 2026. 'Goedgekeurd WMO'; status 'Werving gestart'. Tirzepatide and retatrutide versus placebo in adults with high-risk MASLD. Fact-check 27 October 2026: the CTIS public record for the Netherlands shows a START_OF_TRIAL notification of 22 September 2026 but no START_OF_RECRUITMENT notification ('hasRecruitmentStarted': false), while ClinicalTrials.gov lists Utrecht as 'Recruiting'. The registers disagree on Dutch recruitment; write that the trial has started in the Netherlands, not that it is recruiting here."
+
+omon-nl-omon61412:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "NL-OMON61412: Een gerandomiseerd, dubbelblind placebogecontroleerd fase 3b/4-onderzoek met parallelgroepen ter beoordeling van de werkzaamheid en veiligheid van dagelijkse subcutane injecties met elamipretide bij patiënten met genetisch bevestigd syndroom van Barth"
+  year: 2026
+  url: https://onderzoekmetmensen.nl/nl/trial/61412
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Read 27 October 2026. Source CTIS (EU CT 2025-523837-25-00; also NCT07531251; acronym 4TAZPower, which is not in the OMON title). Published 17 October 2026, last updated 18 October 2026. 'Goedgekeurd WMO'; status 'Werving nog niet gestart'; expected start 1 July 2026. Fact-check 27 October 2026: title copied exactly from the record (the earlier title was a paraphrase). CTIS: Dutch part authorised 27 July 2026, one Dutch site, 5 participants planned in the Netherlands (22 across France, Ireland, Italy and the Netherlands), no Dutch trial events; ClinicalTrials.gov: males aged 5 to 55."
+
+omon-nl-omon51992:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "NL-OMON51992: Een open-label 8-weken proof-of-concept studie met thymosine-α1 (thymalfasin) in de behandeling van primaire antistof deficientie (PAD) geassocieerde stemmingsstoornissen (TIDAM)"
+  year: 2022
+  url: https://onderzoekmetmensen.nl/nl/trial/51992
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Read 27 October 2026. Source ToetsingOnline (ABR NL78339.078.21). Published 19 January 2022, last updated 1 September 2025. 'Goedgekeurd WMO'; status 'Werving nog niet gestart' although the expected start date given is 1 March 2022 (OMON warns that statuses may be outdated). Primary sponsor Erasmus MC; other support 'Europese Unie;Horizon2020 project Moodstratification (2017)'. Title copied from the record ('deficientie', without diaeresis). Primary outcome: change in regulatory T cells after 8 weeks. Not found on ClinicalTrials.gov with a Dutch site, nor in CTIS for the Netherlands. Whether it started is unknown."
+
+ctis-nl-peptide-search-2026-10-27:
+  type: registry
+  authors: "European Medicines Agency, Clinical Trials Information System (CTIS)"
+  title: "CTIS public searches of 27 October 2026: trials of peptides on this site with the Netherlands as a member state concerned"
+  year: 2026
+  url: https://euclinicaltrials.eu/search-for-clinical-trials/?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "CTIS public API (POST ctis-public-api/search, full-text term plus member-state filter 528 = the Netherlands; the filter was checked against each record's 'trialCountries'). Results: retatrutide 1 (2025-522674-36-00); elamipretide 1 (2025-523837-25-00); afamelanotide 1 (2023-507311-35-00, a pharmacokinetic study in erythropoietic protoporphyria, Dutch start 22 May 2024, ended 20 January 2025; afamelanotide is not a compound page of this site). 0 for TB-500, thymosin beta, BPC, Body Protection Compound, tesamorelin, ipamorelin, CJC-1295, semax, selank, epitalon, MOTS-c, melanotan, bremelanotide, GHK, AOD-9604, hexarelin, thymalfasin, thymosin alpha, SS-31. TRIUMPH-Outcomes (EU CT 2023-508630-34-00) was not returned by the title search and its record came back empty through the API, although OMON shows it with CTIS as source."
+
+ctgov-nl-peptide-search-2026-10-27:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2 searches of 27 October 2026: trials of peptides on this site with a site in the Netherlands"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.intr=retatrutide&query.locn=Netherlands&countTotal=true
+  accessed: 2026-10-27
+  verified: registry
+  note: "One query per name with query.locn=Netherlands. Retatrutide and LY3437943: 2 (NCT06383390 TRIUMPH-Outcomes, active not recruiting, 28 Dutch sites; NCT07165028 SYNERGY-Outcomes, recruiting, 6 Dutch sites: Utrecht recruiting, 's-Hertogenbosch, Amsterdam, Nijmegen, Rotterdam and Zwolle not yet recruiting). Elamipretide: 3, all completed (NCT02788747 and NCT02914665, phase 2, 2017; NCT05162768, phase 3, completed 4 December 2024). 0 for BPC-157, BPC 157, TB-500, thymosin beta 4, KPV, SS-31, tesamorelin, ipamorelin, CJC-1295, semax, selank, epitalon, MOTS-c, melanotan, bremelanotide, GHK-Cu, AOD-9604, hexarelin, thymalfasin, thymosin alpha 1. Separate query (elamipretide + Barth): NCT07531251 (4TAZPower) recruiting, sites in Canada, the UK and the US only. Supersedes ctgov-nl-be-peptide-search-2026-10-22 for the Netherlands."

@@ -45,8 +45,9 @@ evidence:
   independence: few-groups
   safety: partial
 regulatory:
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json, chembl-ipamorelin] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/ipamorelin.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10, chembl-ipamorelin] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-22, sources: [de-amg-21, ema-medicines-json, chembl-ipamorelin] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-22, sources: [be-medicines-law-1964, ema-medicines-json, chembl-ipamorelin] }
   # UK re-checked on 23 October 2026 (MHRA Products: no results); CA and AU merged from

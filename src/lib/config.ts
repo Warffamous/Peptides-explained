@@ -34,6 +34,12 @@ export function getLocale(code: string): Locale {
   return l;
 }
 
+/** Whether a locale shows the English page or string where its own is missing: preview locales, unless marked complete (fallback: false). */
+export function fallsBack(code: string): boolean {
+  const l = getLocale(code);
+  return l.status === 'preview' && l.fallback;
+}
+
 /** The jurisdictions a locale covers in full (config/locales.json), in its display order. */
 export function fullJurisdictions(code: string): Jurisdiction[] {
   return getLocale(code).jurisdictions.full;

@@ -37,8 +37,9 @@ evidence:
   independence: broadly-replicated
   safety: uncharacterised
 regulatory:
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-search, ema-medicines-json, fda-pcac-2026-mots-c-briefing] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/mots-c.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10, fda-pcac-2026-mots-c-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2026-mots-c-briefing, fda-pcac-2026-briefing-intro, fda-pcac-2026-07-meeting, fda-category-2-safety-risks] }
   # UK, CA, AU: merged from research/refocus/status/mots-c.yaml (fact-checked 24 October 2026). CA: the Drug Product Database
   # search of 23 October 2026 was confirmed in Health Canada's DPD data extract on 24 October 2026; the NOC database

@@ -1,0 +1,28 @@
+# Sources added for the Dutch KPV page (src/content/compounds/nl/kpv.mdx), group kpv, 27 October 2026.
+# Both searches were run on 27 October 2026 with curl against the registers' own public APIs and read in full
+# (research/nl-notes/kpv.md). They replace, on the Dutch page, the English page's trial searches for Canada, Australia,
+# the UK, Ireland and New Zealand (ctgov-search-status-c-2026-10-23, ca-hc-ctdb-search-status-c-2026-10-23,
+# au-anzctr-search-status-c-2026-10-23) and its uncited "EU trials register" check of 20 October 2026.
+#
+# Reused, not repeated here: ctgov-nl-peptide-search-2026-10-27 and ctis-nl-peptide-search-2026-10-27
+# (nl-research-nl-care.yaml; Dutch sites only), cbg-gib-search-status-2026-10-27 (nl-research-eu-status.yaml).
+
+ctgov-kpv-search-2026-10-27:
+  type: registry
+  authors: "U.S. National Library of Medicine, ClinicalTrials.gov"
+  title: "ClinicalTrials.gov API v2 searches of 27 October 2026: studies of KPV, in every country"
+  year: 2026
+  url: https://clinicaltrials.gov/api/v2/studies?query.term=KPV&countTotal=true
+  accessed: 2026-10-27
+  verified: registry
+  note: "No location filter. 'query.term=KPV': totalCount 0. 'query.intr=KPV': 0. Free-text 'Lys-Pro-Val' (61 records) and 'lysine-proline-valine' (35) match studies that mention the single amino acids (nutrition, amino-acid and unrelated drug trials); the first 20 of each were read and none tests KPV. 'alpha-MSH 11-13': 8 unrelated records. So no registered study of KPV was found on ClinicalTrials.gov."
+
+ctis-kpv-search-2026-10-27:
+  type: registry
+  authors: "European Medicines Agency, Clinical Trials Information System (CTIS)"
+  title: "CTIS public searches of 27 October 2026: trials of KPV in every EU member state"
+  year: 2026
+  url: https://euclinicaltrials.eu/search-for-clinical-trials/?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "CTIS public API (POST ctis-public-api/search, full-text 'containAll', no member-state filter). 'KPV': 0 records; 'Lys-Pro-Val': 0. Control: 'retatrutide' returned 9 records, the same count as research/nl/eu-status.md (fact-check of 27 October 2026). The link opens the public search page; the API result is not a page of its own."

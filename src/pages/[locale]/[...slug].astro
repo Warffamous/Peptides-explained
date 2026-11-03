@@ -6,7 +6,7 @@
 import { render } from 'astro:content';
 import DocLayout from '../../layouts/DocLayout.astro';
 import { mdxComponents } from '../../components/mdx';
-import { BUILT_LOCALES, SOURCE_LOCALE } from '../../lib/config';
+import { BUILT_LOCALES, SOURCE_LOCALE, fallsBack } from '../../lib/config';
 import { allPages, splitPageId, resolvePage, alternatesFor } from '../../lib/content';
 import { webPage } from '../../lib/jsonld';
 import { t } from '../../lib/i18n';
@@ -21,7 +21,7 @@ export async function getStaticPaths() {
     const keys = new Set<string>();
     for (const p of pages) {
       const s = splitPageId(p.id);
-      if (s.locale === loc.code || (loc.status === 'preview' && s.locale === SOURCE_LOCALE)) keys.add(s.key);
+      if (s.locale === loc.code || (fallsBack(loc.code) && s.locale === SOURCE_LOCALE)) keys.add(s.key);
     }
     for (const key of keys) out.push({ params: { locale: loc.code, slug: key || undefined }, props: { key } });
   }

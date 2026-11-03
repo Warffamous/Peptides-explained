@@ -1,0 +1,34 @@
+# EU and Dutch status of retatrutide on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: retatrutide
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: investigational, as_of: 2026-10-27, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ctis-2024-511450-49-00, ctis-2025-522674-36-00, ctgov-nct06383390] }
+  - { jurisdiction: NL, status: investigational, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, nl-geneesmiddelenwet, cbg-compassionate-use-list, ctis-2025-522674-36-00, ctgov-nct06383390, ctgov-nct07165028] }
+products: []
+compare_with_data_file:
+  - "Status unchanged (investigational, both rows). as_of 2026-10-20 -> 2026-10-27."
+  - "EU row: the data file cites ema-2026-10-under-evaluation; the same document is also registered as ema-under-evaluation-2026-10 (pt-141.yaml). Use one id (research file, section 7). Add the CTIS records ctis-2024-511450-49-00 and ctis-2025-522674-36-00 once euclinicaltrials.eu is allowlisted; until then ctgov-nct06383390 and ctgov-nct07165028 carry the trial facts."
+  - "NL row: cbg-geneesmiddeleninformatiebank -> cbg-gib-search-status-2026-10-27 (the search itself). Add ctis-2025-522674-36-00 (the Dutch arm of SYNERGY-Outcomes is authorised and recruiting)."
+  - "The 23 October EU note said 'Not authorised; ...' while the row says investigational: the suggested note below starts with the row's word."
+regulatory_notes:
+  EU: "Investigational: not authorised and not under EMA evaluation (list of 5 October 2026); phase 3 trials run in EU countries."
+  NL: "Investigational: no Dutch authorisation and no approved compassionate-use programme. Dutch hospitals take part in two phase 3 trials; one (liver disease) started in the Netherlands on 22 September 2026."
+  # Fact-check (27 October 2026): "started" rather than "has been recruiting": CTIS has a start-of-trial notification for
+  # the Netherlands dated 22 September 2026 (under Regulation 536/2014 art. 2(2)(25) the first act of recruitment) but
+  # no first-visit (start-of-recruitment) notification yet; ClinicalTrials.gov shows only the Utrecht site recruiting.
+notes: |
+  EMA medicines JSON: 0 for retatrutide and LY3437943; under-evaluation list of 5 October 2026: absent (orforglipron and
+  three generic semaglutide applications present as controls). CBG compassionate-use list (re-fetched 27 October 2026,
+  page sort date 10 July 2026): no retatrutide or LY3437943.
+  CTIS (searches 'retatrutide', 'LY3437943', 'J1I', 'TRIUMPH'): nine trials. Ongoing in the EU: 2024-511450-49-00
+  (TRIUMPH-5, retatrutide vs tirzepatide; Germany and Poland, 'Ongoing, recruitment ended'; end of trial estimated
+  16 November 2026), 2025-522674-36-00 (SYNERGY-Outcomes master protocol with tirzepatide and retatrutide arms; 15
+  countries, 14 EU member states and Norway; Netherlands 'Authorised, recruiting', decision 4 February 2026, start 22 September 2026) and
+  2024-518470-13-00 (phase 1, Germany, 'Ongoing, recruitment ended'). Six others 'Ended' (Spain, Romania, Hungary,
+  Poland, Slovakia, Italy, Austria). TRIUMPH-Outcomes (NCT06383390) lists EU CT number 2023-508630-34-00 on
+  ClinicalTrials.gov, but CTIS showed no public information for that number on 27 October 2026 (record empty in the
+  portal and the API).
+  ClinicalTrials.gov (27 October 2026): NCT06383390 'Active, not recruiting', 28 Dutch site entries (Alkmaar to Zwolle),
+  last update 8 October 2026; NCT07165028 'Recruiting', 6 Dutch sites (Utrecht recruiting; 's-Hertogenbosch, Amsterdam,
+  Nijmegen, Rotterdam and Zwolle not yet recruiting).
+  Geneesmiddeleninformatiebank: 'Geen producten gevonden' for 'retatrutide'.

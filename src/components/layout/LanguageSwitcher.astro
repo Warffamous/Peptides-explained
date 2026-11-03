@@ -1,5 +1,5 @@
 ---
-import { BUILT_LOCALES, getLocale } from '../../lib/config';
+import { BUILT_LOCALES, getLocale, fallsBack } from '../../lib/config';
 import { routeUrl } from '../../lib/urls';
 import { t } from '../../lib/i18n';
 import { translationMatrix } from '../../lib/content';
@@ -11,7 +11,7 @@ const matrix = await translationMatrix();
 const have = matrix.get(routeKey) ?? new Set<string>();
 const current = getLocale(locale);
 const items = BUILT_LOCALES.map((l) => {
-  const exists = have.has(l.code) || l.status === 'preview';
+  const exists = have.has(l.code) || fallsBack(l.code);
   return { l, href: exists ? routeUrl(l.code, routeKey) : routeUrl(l.code, ''), exists };
 });
 ---

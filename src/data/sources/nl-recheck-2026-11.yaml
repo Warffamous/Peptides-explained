@@ -1,0 +1,131 @@
+# Sources of the publishing-day re-check of the Dutch site (3 November 2026). Each page was read on 3 November 2026
+# on the official site; the notes say what it showed. New sources first, then re-checked copies of entries whose
+# files say DO NOT EDIT (nl-research-eu-status.yaml, nl-research-nl-care.yaml): this file sorts before them, and
+# src/lib/data.ts keeps the first entry of an id with the same URL, so the copies here are the ones the site shows.
+
+ec-union-register-human-active-2026-11-03:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products for human use: active products (last updated 30 October 2026)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/reg_hum_act.htm
+  accessed: 2026-11-03
+  verified: registry
+  note: "Read 3 November 2026 (curl, HTTP 200; the old alfregister.htm address redirects here): 'Last updated on 30/10/2026'. No entry for Foundayo or orforglipron; the highest EU number listed is EU/1/26/2066 (Cavoley, pegfilgrastim). Rybelsus (EU/1/20/1430) and Wegovy (EU/1/21/1608) are listed as active. Cited for: the European Commission had not yet authorised Foundayo (orforglipron) after the CHMP's positive opinion of 15 October 2026 (see ema-epar-foundayo-opinion)."
+
+ema-prac-2026-10-highlights:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Meeting highlights from the Pharmacovigilance Risk Assessment Committee (PRAC) 26 - 29 October 2026"
+  year: 2026
+  url: https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-26-29-october-2026
+  accessed: 2026-11-03
+  verified: url
+  note: "First published 30 October 2026. Two items: 'PRAC starts review of depression and anxiety medicine Deanxit (flupentixol/melitracen)' and a review of increased reporting of allergic reactions with specific batches of human normal immunoglobulin medicines; ongoing referrals: flupentixol/melitracen and parenteral iron-containing medicines. No item on semaglutide, tirzepatide, any other GLP-1 medicine or lithium. Checked on 3 November 2026 together with the meeting's event page (only the draft agenda EMA/PRAC/227255/2026 linked) and EMA's page 'PRAC recommendations on safety signals' (newest entry: the 28 September-1 October 2026 meeting, published 26 October 2026; nothing yet for 26-29 October). Cited for: the October meeting took place, and on 3 November 2026 no outcome was public for the semaglutide cardioembolic-stroke assessment (agenda items 6.4.2-6.4.4) or the lithium-GLP-1 signal (EPITT 20275, item 4.2.2)."
+
+fr-2026-22192-hhs-peptide-enforcement-discretion:
+  type: regulator
+  authors: "U.S. Department of Health and Human Services"
+  title: "Enforcement Discretion Policy Regarding 503A Compounding Using Certain Peptide Bulk Drug Substances; Notice of availability (FR Doc. 2026-22192, Docket No. HHS-OASH-2026-0496)"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/2026/10/30/2026-22192/enforcement-discretion-policy-regarding-503a-compounding-using-certain-peptide-bulk-drug-substances
+  accessed: 2026-11-03
+  verified: url
+  note: "Read 3 November 2026 (text of the public-inspection PDF and the govinfo PDF, 91 FR 68526; filed 28 October 2026, published 30 October 2026; signed by HHS Secretary Robert F. Kennedy, Jr.; RIN 0910-ZD94). Notice of availability of a draft policy: 'HHS does not intend to take enforcement action against a State-licensed pharmacy, Federal facility, or licensed physician compounding a drug product using a peptide bulk drug substance found in Appendix A' while the 503A bulks list 'is developed through rulemaking'; 'FDA's future rulemakings may propose adding some or all of these peptides to the 503A bulks list'. Based on 'the Pharmacy Compounding Advisory Committee meetings and data regarding utilization of peptides'. HHS may revisit the policy if 'a safety signal or product quality issue arises'; it is 'not binding on HHS or the public'. Comments until 2 weeks after publication. The notice gives no vote counts and does not reproduce Appendix A; the policy itself, with Appendix A, is hhs-2026-503a-peptide-policy. Comments on regulations.gov docket HHS-OASH-2026-0496 until 13 November 2026 (US Eastern time)."
+
+hhs-2026-503a-peptide-policy:
+  type: regulator
+  authors: "U.S. Department of Health and Human Services"
+  title: "Enforcement Discretion Policy Regarding 503A Compounding Using Certain Peptide Bulk Drug Substances (with Appendix A, the list of peptides, and Appendix B)"
+  year: 2026
+  url: https://www.hhs.gov/sites/default/files/hhs-503a-peptide-enforcement-discretion-policy-appendix-b.pdf
+  accessed: 2026-11-03
+  verified: url
+  note: "The address the Federal Register notice gives for the policy (fr-2026-22192-hhs-peptide-enforcement-discretion). Read 3 November 2026 (the text of the PDF, 380 KB). Appendix A, 'List of Peptide Bulk Drug Substances Addressed by HHS Interim Enforcement Policy Regarding 503A Compounding': 1. BPC-157, 2. Epitalon, 3. KPV, 4. MOTS-c, 5. Semax, 6. TB-500. 'Until a peptide bulk drug substance is addressed in a final rule as being included or not included on the 503A bulks list, HHS does not intend to take action against a State-licensed pharmacy, Federal facility, or licensed physician' compounding with it when all of these are present: the peptide is in Appendix A; it has the identity and route limits of Appendix B (BPC-157 acetate: subcutaneous, intramuscular, oral and topical; TB-500 acetate: subcutaneous or intramuscular injection; Semax free base: intranasal); the bulk substance comes from an FDA-registered (section 510), CGMP-compliant manufacturer with a valid certificate of analysis; serious adverse events and quality problems are reported to FDA MedWatch and the States; the label says 'This is a compounded drug product. Not for resale.'; one active ingredient per product; documented oral bioavailability for oral forms; no device other than an FDA 510(k)-cleared syringe; and all other FD&C Act requirements, including a patient-specific prescription. Stated aim: to 'discourage the continued, widespread use of certain research-use-only peptides supplied by foreign manufacturers that pose a safety risk to US patients'. Appendix B summarises each peptide's record; for TB-500, epitalon, KPV and MOTS-c it says CDER (the FDA's drug centre) had recommended against listing them (the BPC-157 and Semax passages could not be read in full from the PDF's text, so nothing is recorded for them here; the July 2026 PCAC briefing, fda-pcac-2026-briefing-intro, proposed listing none of the 14 forms). Not binding; HHS may revisit it if a safety signal or product-quality issue arises."
+
+federalregister-503a-search-2026-11-03:
+  type: dataset
+  authors: "Office of the Federal Register"
+  title: "Federal Register document search, 3 November 2026: \"503A\" and \"bulk drug substances\", published from 20 October 2026 — no proposed or final rule on the 503A bulks list"
+  container: "Federal Register"
+  year: 2026
+  url: https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=503A&conditions%5Bpublication_date%5D%5Bgte%5D=10%2F20%2F2026
+  accessed: 2026-11-03
+  verified: url
+  note: "Run through the federalregister.gov documents API on 3 November 2026, all agencies, publication date from 20 October 2026: '503A' 1 result, 'bulk drug substances' 1 result, 'Pharmacy Compounding Advisory Committee' 1 result. In each case the result is the HHS notice of availability of 30 October 2026 (FR Doc. 2026-22192, fr-2026-22192-hhs-peptide-enforcement-discretion), which is not a proposed or final rule. No PCAC meeting notice. The public-inspection list of 3 November 2026 (documents for 4 November) had no document on compounding, 503A, bulk drug substances, peptides or an FDA advisory committee meeting. Follows federalregister-503a-search-2026-10-20."
+
+# ------------------------------------------------------------------ re-checked copies
+
+# Re-checked copy of ema-prac-2026-10-agenda from nl-research-eu-status.yaml (that file says DO NOT EDIT; this file sorts first, so
+# this copy is the one the site uses: src/lib/data.ts keeps the first entry of an id with the same URL).
+ema-prac-2026-10-agenda:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "PRAC agenda of the meeting on 26-29 October 2026 (EMA/PRAC/227255/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/agenda/agenda-prac-meeting-26-29-october-2026_en.pdf
+  accessed: 2026-11-03
+  verified: url
+  note: "Meeting in progress on 27 October 2026. Items 6.4.2-6.4.4 (Ozempic, Rybelsus, Wegovy): 'To assess the potential association between semaglutide exposure and cardioembolic stroke as part of a post-authorisation measure (LEG) - EMEA/H/C/PSUSA/00010671/202505', 'For adoption'. Item 4.2.2, lithium (nationally authorised): 'Signal of drug interaction between lithium and GLP-1 agonists leading to increased lithium levels', 'EPITT 20275 – Follow-up to June 2026', 'For adoption'. (Fact-check, 27 October 2026: the research had EPITT 20280, which is the cefpodoxime-PPI signal listed just before it; the June 2026 minutes and signal recommendations confirm lithium = EPITT 20275, new signal in June 2026, supplementary information requested by 26 August 2026.) Outcomes not public on 27 October 2026. Re-checked 3 November 2026: the meeting took place; the EMA highlights of 30 October 2026 (ema-prac-2026-10-highlights) name no GLP-1 or lithium item, no minutes are linked, and no signal recommendations of this meeting are published yet."
+
+# Re-checked copy of ema-prac-signals-2026-09-28 from nl-research-eu-status.yaml (that file says DO NOT EDIT; this file sorts first, so
+# this copy is the one the site uses: src/lib/data.ts keeps the first entry of an id with the same URL).
+ema-prac-signals-2026-09-28:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "PRAC recommendations on signals adopted at the 28 September-1 October 2026 PRAC meeting (EMA/PRAC/206892/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/prac-recommendation/prac-recommendations-signals-adopted-28-september-1-october-2026-prac-meeting_en.pdf
+  accessed: 2026-11-03
+  verified: url
+  note: "Dated 26 October 2026; read with pdftotext on 27 October 2026. Section 2 (supplementary information): semaglutide and insulin icodec / semaglutide, 'Gastrointestinal volvulus (20260)', PRAC Rapporteur Karin Bolin (SE), action 'Reassess in the next PSUR (submission by 29 August 2027)' (no product-information change at this stage); semaglutide, 'Ischaemic colitis (20309)', a new signal, action 'Supplementary information requested (submission by 1 December 2026)'. The meeting's agenda (EMA/PRAC/204838/2026) lists both, the colitis signal as 'New signal' for Ozempic, Kayshild, Rybelsus and Wegovy. No other semaglutide or tirzepatide signal in this document. Re-read 3 November 2026: still the newest signal recommendations on EMA's page; volvulus and ischaemic colitis actions unchanged."
+
+# Re-checked copy of ema-prac-2026-05-minutes from nl-research-eu-status.yaml (that file says DO NOT EDIT; this file sorts first, so
+# this copy is the one the site uses: src/lib/data.ts keeps the first entry of an id with the same URL).
+ema-prac-2026-05-minutes:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "Minutes of the PRAC meeting on 4-7 May 2026 (EMA/PRAC/128532/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/minutes/minutes-prac-meeting-4-7-may-2026_en.pdf
+  accessed: 2026-11-03
+  verified: url
+  note: "New signals: EPITT 20270, peripheral neuropathies (exenatide; semaglutide: Kayshild, Ozempic, Rybelsus, Wegovy, Kyinsu), from 18 literature cases with dulaglutide, tirzepatide and semaglutide; 'PRAC agreed that further evaluation on the signal is warranted'; the holder to review the semaglutide RCTs (SUSTAIN 6, PIONEER 6, SELECT, SOUL, FLOW, STRIDE) and observational studies; 90-day timetable. EPITT 20260, gastrointestinal volvulus (semaglutide products), new signal. The signal recommendations of this meeting (EMA/PRAC/98634/2026, 22 June 2026) asked Novo Nordisk for supplementary information on neuropathies by 22 July 2026 and on volvulus by 29 July 2026. Fact-check (27 October 2026): the volvulus signal was concluded at the PRAC of 28 September-1 October 2026 ('Reassess in the next PSUR', see ema-prac-signals-2026-09-28); no outcome on peripheral neuropathies was found in the June, July or August-September minutes, the September-October and October agendas, or the signal recommendations published up to 26 October 2026. Re-checked 3 November 2026: still no outcome on peripheral neuropathies; the newest signal recommendations are those of 28 September-1 October 2026."
+
+# Re-checked copy of ema-chmp-2026-10-agenda from nl-research-eu-status.yaml (that file says DO NOT EDIT; this file sorts first, so
+# this copy is the one the site uses: src/lib/data.ts keeps the first entry of an id with the same URL).
+ema-chmp-2026-10-agenda:
+  type: regulator
+  authors: "European Medicines Agency, CHMP"
+  title: "CHMP draft agenda for the meeting on 12-15 October 2026 (EMA/CHMP/211366/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/agenda/agenda-chmp-meeting-12-15-october-2026_en.pdf
+  accessed: 2026-11-03
+  verified: url
+  note: "Section 3.1 (initial applications; opinions), item 3.1.1: orforglipron EMEA/H/C/006632 (fact-check: the research had 'Section 3.2'; 3.2 is the Day 180 list of outstanding issues). Section 3.3 (Day 120 list of questions, 'For adoption'): Semaglutide EMEA/H/C/006902 ('treatment of type 2 diabetes in adults') and Semaglutide EMEA/H/C/006910 ('weight management including weight loss and weight maintenance in adults') — generic applications still at an early stage. Kyinsu EMA/VR/0000322527: extension of indication based on COMBINE 4. Mounjaro EMA/VR/0000340438: 'Update of sections 4.5, and 4.6 of the SmPC pertaining to the interaction of obesity and overweight and of the gastric emptying delay due to tirzepatide on oral contraceptive exposure following PRAC request in PSUSA/00011019/202505', 'For adoption' (outcome not published by 27 October 2026). Re-checked 3 November 2026: still no outcome public. The CHMP meetings page lists no minutes for 12-15 October 2026 (next meeting 9-12 November 2026). The Mounjaro EPAR page (last updated 08/10/2026) and the procedural-steps PDF (last updated 21/09/2026) have no entry for EMA/VR/0000340438. The English product information (last updated 21/09/2026) and the Dutch product information still say in 4.5 that the reduced oral-contraceptive exposure 'is not considered clinically relevant' and that no dose adjustment is required. The Union Register (last updated 30/09/2026) lists no procedure EMA/VR/0000340438; its last procedure is EMA/VR/0000369537, closed 2026-09-21."
+
+# Re-checked copy of ctis-2025-523837-25-00 from nl-research-eu-status.yaml (that file says DO NOT EDIT; this file sorts first, so
+# this copy is the one the site uses: src/lib/data.ts keeps the first entry of an id with the same URL).
+ctis-2025-523837-25-00:
+  type: registry
+  authors: "EU Clinical Trials Information System (CTIS)"
+  title: "2025-523837-25-00 — 4TAZPower: A Phase 3b/4, Randomized, Double-Blind, Parallel-Group, Placebo-Controlled, Trial to Evaluate the Efficacy and Safety of Daily Subcutaneous Injections of Elamipretide in Patients with Genetically Confirmed Barth Syndrome"
+  year: 2026
+  url: https://euclinicaltrials.eu/ctis-public/view/2025-523837-25-00?lang=en
+  accessed: 2026-11-03
+  verified: registry
+  note: "Overall status 'Authorised' (public code 2: authorised, recruitment pending). Member states concerned: Netherlands (first decision 27/07/2026), Italy (28/07/2026), France (29/07/2026), Ireland (04/08/2026); all 'Authorised, recruitment pending' on 27 October 2026. Re-read 3 November 2026 (CTIS public API, retrieve and search): unchanged, last publication update 17/10/2026; hasRecruitmentStarted false and no trial events in all four; one Dutch site (Amsterdam UMC Stichting), 5 of 22 EU participants planned in the Netherlands. Spain appears in the trial-events list but is not a member state concerned (no Spanish decision public). One substantial modification per country, all authorised (last decisions IE 25/09, IT 28/09, NL 07/10, FR 16/10/2026)."
+
+# Re-checked copy of omon-nl-omon61412 from nl-research-nl-care.yaml (that file says DO NOT EDIT; this file sorts first, so
+# this copy is the one the site uses: src/lib/data.ts keeps the first entry of an id with the same URL).
+omon-nl-omon61412:
+  type: registry
+  authors: "Overzicht van Medisch-wetenschappelijk Onderzoek in Nederland (OMON)"
+  title: "NL-OMON61412: Een gerandomiseerd, dubbelblind placebogecontroleerd fase 3b/4-onderzoek met parallelgroepen ter beoordeling van de werkzaamheid en veiligheid van dagelijkse subcutane injecties met elamipretide bij patiënten met genetisch bevestigd syndroom van Barth"
+  year: 2026
+  url: https://onderzoekmetmensen.nl/nl/trial/61412
+  accessed: 2026-11-03
+  lang: nl
+  verified: registry
+  note: "Read 27 October 2026. Source CTIS (EU CT 2025-523837-25-00; also NCT07531251; acronym 4TAZPower, which is not in the OMON title). Published 17 October 2026, last updated 18 October 2026. 'Goedgekeurd WMO'; status 'Werving nog niet gestart'; expected start 1 July 2026. Fact-check 27 October 2026: title copied exactly from the record (the earlier title was a paraphrase). CTIS: Dutch part authorised 27 July 2026, one Dutch site, 5 participants planned in the Netherlands (22 across France, Ireland, Italy and the Netherlands), no Dutch trial events; ClinicalTrials.gov: males aged 5 to 55. Re-read 3 November 2026: unchanged (last updated 18 October 2026; status 'Werving nog niet gestart'; site Amsterdam UMC)."

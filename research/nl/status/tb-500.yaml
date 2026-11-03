@@ -1,0 +1,15 @@
+# EU and Dutch status of TB-500 on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: tb-500
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
+products: []
+compare_with_data_file:
+  - "Status unchanged. as_of 2026-10-20 -> 2026-10-27. The EU row's fda-pcac-2026-tb500-briefing may stay; add ema-under-evaluation-2026-10. NL: add cbg-gib-search-status-2026-10-27 and nl-gmw-art-40-handelsvergunning."
+regulatory_notes:
+  EU: "Not authorised in the EU: no authorisation, application or orphan designation for TB-500 or thymosin beta-4 in EMA records (checked 27 October 2026)."
+  NL: "Not authorised in the Netherlands: no product in the CBG register (27 October 2026). Supplying a medicine without a marketing authorisation is prohibited (Geneesmiddelenwet art. 40)."
+notes: |
+  EMA medicines and orphan JSON: 0 hits for TB-500, TB500, TB 500, LKKTETQ, 'thymosin beta', timbetasin. CTIS: 0 for
+  'TB-500' and 'thymosin beta'. Geneesmiddeleninformatiebank: 'Geen producten gevonden' for 'TB-500' and 'timbetasin'.

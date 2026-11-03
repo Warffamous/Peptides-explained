@@ -94,6 +94,7 @@ export function checkProductCheck(ctx: Ctx): number {
         continue;
       }
       if (t.links.length !== it.links.length) err(file, `items.${it.id}: ${t.links.length} link text(s) for ${it.links.length} link(s) in src/data/product-check.yaml`);
+      if (t.anchors && t.anchors.length !== it.links.length) err(file, `items.${it.id}: ${t.anchors.length} anchor(s) for ${it.links.length} link(s) in src/data/product-check.yaml`);
       ctx.checkPlain(file, `items.${it.id}.title`, t.title.replace(/:$/, ''), loc);
       t.points.forEach((p, i) => ctx.checkPlain(file, `items.${it.id}.points[${i + 1}]`, p.replace(/[;.]$/, ''), loc));
       sentences(t.text).forEach((s, i) => ctx.checkPlain(file, `items.${it.id}.text, sentence ${i + 1}`, s, loc));

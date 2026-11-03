@@ -324,7 +324,7 @@ ctgov-nct06662383:
   title: "NCT06662383 — A Phase 3, Randomized, Double-Blind Study to Evaluate the Efficacy and Safety of Retatrutide Compared to Tirzepatide in Adults Who Have Obesity (TRIUMPH-5)"
   year: 2026
   url: https://clinicaltrials.gov/study/NCT06662383
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   verified: registry
   note: "Estimated enrolment 800; active, not recruiting; primary completion estimated November 2026; sites include Germany."
 
@@ -334,7 +334,7 @@ ctgov-nct06383390:
   title: "NCT06383390 — A Phase 3, Randomized, Double-Blind, Placebo-Controlled, Event-Driven Study to Investigate the Effect of Retatrutide on the Incidence of Major Adverse Cardiovascular Events and Major Adverse Kidney Events in Participants With Body Mass Index ≥27 kg/m2 and Atherosclerotic Cardiovascular Disease and/or Chronic Kidney Disease (TRIUMPH-Outcomes)"
   year: 2026
   url: https://clinicaltrials.gov/study/NCT06383390
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   verified: registry
   note: "Event-driven, placebo-controlled phase 3; estimated enrolment 10,000; active, not recruiting; primary completion estimated February 2029; sites in 27 countries including Belgium, Germany, the Netherlands and the United Kingdom."
 
@@ -344,7 +344,7 @@ ctgov-nct07165028:
   title: "NCT07165028 — A Master Protocol for a Randomized, Controlled, Clinical Trial of Multiple Pharmacologic Agents in Adult Participants With Metabolic Dysfunction-Associated Steatotic Liver Disease Who Are at Increased Risk of Developing Major Adverse Liver Outcomes"
   year: 2026
   url: https://clinicaltrials.gov/study/NCT07165028
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   verified: registry
   note: "Phase 3 with tirzepatide, retatrutide and placebo arms; recruiting; estimated enrolment 4,500; primary completion estimated August 2030; sites include Belgium, Germany, the Netherlands ('s-Hertogenbosch, Amsterdam, Nijmegen, Rotterdam, Utrecht, Zwolle) and the United Kingdom."
 
@@ -424,16 +424,9 @@ sec-lilly-2025-q4-results:
   note: "Lists positive phase 3 results of 'retatrutide for people with obesity and knee osteoarthritis' (TRIUMPH-4) as a company announcement. Cited only to show that this result was announced by the company, not published."
 
 # ------------------------------------------------------------------ regulators
-
-ema-2026-10-under-evaluation:
-  type: regulator
-  authors: "European Medicines Agency"
-  title: "Applications for new human medicines under evaluation by the CHMP — October 2026 (EMA/222468/2026)"
-  year: 2026
-  url: https://www.ema.europa.eu/en/documents/report/applications-new-human-medicines-under-evaluation-october-2026_en.xlsx
-  accessed: 2026-10-20
-  verified: url
-  note: "Spreadsheet dated 5 October 2026 listing the INN of each initial marketing-authorisation application under evaluation. Retatrutide is not listed; orforglipron (obesity and type 2 diabetes) and three semaglutide applications are."
+# The EMA list of applications under evaluation (October 2026) is cited as ema-under-evaluation-2026-10 (pt-141.yaml);
+# its duplicate id ema-2026-10-under-evaluation was removed in the Dutch final sweep (27 October 2026), when no page
+# or data file cited it any more.
 
 cbg-compassionate-use-list:
   type: regulator
@@ -441,10 +434,10 @@ cbg-compassionate-use-list:
   title: "Overzicht van goedgekeurde compassionate use programma's"
   year: 2026
   url: https://www.cbg-meb.nl/onderwerpen/handelsvergunning-voor-aanvraag-handelsvergunning/hv-compassionate-use-programma/overzicht-goedgekeurde-cup
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   lang: nl
   verified: url
-  note: "List of compassionate-use programmes approved by the CBG (page sort date 10 July 2026). It does not mention retatrutide or LY3437943; the Lilly Nederland entries are for other, older programmes."
+  note: "CBG \"Overzicht van goedgekeurde compassionate use programma's\" (modified 10 July 2026; 43 programmes, the most recent approved 5 December 2025). Text-searched on 27 October 2026 for every compound of the site, among them retatrutide, LY3437943, bremelanotide, tesamorelin, elamipretide, semax and selank. None is on the list; the Lilly Nederland entries are older programmes for other medicines."
 
 mhra-2025-retatrutide-seizure:
   type: regulator

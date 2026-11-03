@@ -1,0 +1,284 @@
+---
+slug: nad-precursors
+title: "NAD+-voorlopers (NR, NMN, NAD+)"
+description: "NR, NMN en NAD+ zijn vormen van vitamine B3, geen peptiden, maar worden ernaast aangeboden. Wat ze zijn, wat studies laten zien, de EU-regels en de risico’s."
+tldr:
+  - q: "Wat zijn het?"
+    a: "Vormen van vitamine B3. Het lichaam maakt er NAD+ van."
+  - q: "Werken ze?"
+    a: "Ze verhogen NAD+ in het bloed. Een duidelijk gezondheidsvoordeel is niet aangetoond."
+  - q: "Zijn NR- en NMN-pillen toegestaan?"
+    a: "NR mag in voedingssupplementen. NMN is in de EU niet toegelaten."
+  - q: "Helpen NAD+-infusen?"
+    a: "Niet aangetoond. Een overzichtsartikel uit 2026 vond vooral kleine studies met wisselende uitkomsten, en noemde infusen experimenteel."
+  - q: "Wie moet voorzichtig zijn?"
+    a: "Wie kanker of parkinson heeft, zwanger is of borstvoeding geeft. Bij muizen hielpen ze tumoren groeien."
+lede: "Vormen van vitamine B3 die naast peptiden worden aangeboden. Geen peptiden: de regels en risico’s zijn anders."
+glance:
+  main_risk: "Infusen en injecties kunnen een infectie geven. Effecten op lange termijn: onbekend."
+  # Override of "Is het getest bij mensen?" (CONTENT-GUIDE §5.2), as on English: the derived words for
+  # human_clinical: phase-3 ("Ja. Er zijn grote studies bij veel mensen gepubliceerd") read as a positive result.
+  # There is one large trial, NOPARK (410 people with early Parkinson disease, NR for 52 weeks), and it found no
+  # benefit; the other trials (45 human RCT records on PubMed for NR or NMN) are smaller, and NAD+ drips have only a
+  # few small studies.
+  tested:
+    short: "Ja"
+    text: "Veel studies, vooral met pillen. De grootste, bij 410 mensen met de ziekte van Parkinson, vond geen voordeel."
+    sources: [pubmed-nr-nmn-count-2026-10-23, brakedal-2026-nopark, godic-2026-iv-longevity-review]
+  # Override of "Mag het in de sport?": the derived "Onduidelijk" words leave out the one rule that certainly applies
+  # to drips, WADA M2.2 (more than 100 ml in 12 hours is prohibited whatever it contains), which this page explains.
+  # On the Dutch page the Dopingautoriteit's Dutch translation of the 2026 list (M2.2) is cited beside the English list.
+  sport:
+    short: "Onduidelijk"
+    text: "Niet met naam op de dopinglijst. Infusen van meer dan 100 ml binnen 12 uur zijn verboden."
+    sources: [wada-2026-list-en, wada-2027-list-en, usada-iv-infusions, dopingautoriteit-vertaling-dopinglijst-2026]
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's stop-now list (harm-reduction section):
+  # the NHS pages on cellulitis, sepsis and anaphylaxis and the review of IV 'longevity' drips (as on English), and
+  # the Thuisarts pages for the Dutch help levels.
+  stop_signs:
+    - icon: sign-infection
+      text: "Warme, rode, dikke huid waar de naald zat"
+      sources: [nhs-cellulitis, thuisarts-wondroos]
+    - icon: sign-fever
+      text: "Koorts of rillingen na een infuus of injectie"
+      sources: [nhs-sepsis, godic-2026-iv-longevity-review, thuisarts-sepsis]
+    - icon: sign-allergic
+      text: "Dik gezicht of dikke keel, of moeilijk ademen"
+      sources: [nhs-anaphylaxis, thuisarts-dikke-ogen-lippen]
+  facts:
+    - label: "Wat het zijn"
+      value: "Vormen van vitamine B3, geen peptiden"
+      sources: [pubchem-nad, efsa-2019-nr-novel-food]
+    - label: "In welke vorm"
+      value: "Capsules; NAD+ ook als infuus of injectie"
+      sources: [efsa-2019-nr-novel-food, godic-2026-iv-longevity-review, fda-503a-categories-2026-05]
+    - label: "Regels voor pillen"
+      value: "EU-regels voor voedsel en voedingssupplementen"
+      sources: [eu-regulation-2020-16-nr, eu-union-list-novel-foods-2026-08-10, nvwa-toezicht-voedingssupplementen]
+    - label: "Grootste studie"
+      value: "410 mensen met de ziekte van Parkinson: geen voordeel"
+      sources: [brakedal-2026-nopark]
+grade_rationale:
+  human_clinical: "Fase 3. NOPARK, een gerandomiseerde studie met placebo als vergelijking, gaf nicotinamide-riboside aan 410 mensen met een vroege ziekte van Parkinson. De resultaten verschenen in oktober 2026. Er zijn ook tientallen kleinere gerandomiseerde studies met NR en NMN. Voor NAD+-infusen is het bewijs een handvol kleine studies."
+  preclinical_volume: "Veel. Op 23 oktober 2026 vond PubMed 2.036 records (geen overzichtsartikelen) over nicotinamide-riboside of NMN; in 1.091 daarvan komen ratten of muizen voor."
+  independence: "Door veel groepen herhaald. De studies bij mensen komen van veel onafhankelijke universiteitsgroepen op 3 continenten. Sommige gebruiken een product dat fabrikanten leverden, en sommige auteurs hebben patenten."
+  safety: "Deels bekend. NR en NMN als pil werden goed verdragen in studies van weken tot een jaar. EFSA vond beide veilig als supplement voor volwassenen, binnen vaste grenzen. Gebruik op lange termijn, hoge hoeveelheden en infusen zijn veel minder onderzocht."
+mechanism:
+  - kind: cellular
+    level: human
+    title: "Pillen verhogen NAD+ in het bloed"
+    detail: "In een cross-overstudie bij gezonde volwassenen van middelbare en oudere leeftijd (30 gerandomiseerd, 24 maakten het af) verhoogde 6 weken NR het NAD+ en verwante moleculen in bloedcellen, vergeleken met placebo."
+  - kind: cellular
+    level: animal
+    title: "NAD+ helpt cellen energie te maken en zich te herstellen"
+    detail: "NAD+ is een hulpmolecuul bij het maken van energie en voor sommige herstelenzymen. Bij knaagdieren maakt het lichaam minder NAD+ bij veroudering en obesitas. Daarop rust het idee achter de voorlopers."
+  - kind: effect
+    level: human
+    title: "Betere gezondheid bij mensen: meestal niet aangetoond"
+    detail: "Eén kleine NMN-studie verbeterde de insulinegevoeligheid van spieren. Andere studies verbeterden de insulinegevoeligheid niet, en de grootste studie, bij de ziekte van Parkinson, vond geen voordeel."
+studies:
+  martens-2018-older-adults:
+    finding: "Bij 30 gezonde volwassenen van middelbare en oudere leeftijd (24 maakten het af) werd 6 weken NR goed verdragen. Het verhoogde de NAD+-stofwisseling in bloedcellen; voor een effect op de bloeddruk was er alleen een aanwijzing."
+    limitation: "Klein en kort; metingen in het bloed, geen gezondheidsuitkomsten. De maker van NR leverde de pillen en betaalde een deel."
+  dollerup-2018-obese-men:
+    finding: "Bij 40 mannen met obesitas en insulineresistentie verbeterden 12 weken NR de insulinegevoeligheid, de bloedsuiker, het energieverbruik en de lichaamssamenstelling niet. Er waren geen ernstige bijwerkingen door NR."
+    limitation: "Alleen mannen; 12 weken; een hoge hoeveelheid."
+  yoshino-2021-prediabetic-women:
+    finding: "Bij 25 vrouwen met prediabetes na de overgang verbeterden 10 weken NMN de reactie van de spieren op insuline, vergeleken met placebo."
+    limitation: "Klein; één geslacht en één leeftijdsgroep; sommige auteurs hebben patenten op NMN of krijgen er licentiegeld voor."
+  nadpark-2022:
+    finding: "Bij 30 mensen bij wie net de ziekte van Parkinson was vastgesteld, verhoogden 30 dagen NR het NAD in de hersenen. Dat hing samen met een lichte klinische verbetering."
+    limitation: "Een kleine, korte fase 1-studie; de grotere studie die volgde, bevestigde geen voordeel."
+  nopark-2026:
+    finding: "Bij 410 mensen met een vroege ziekte van Parkinson hielp een jaar NR niet. De score ging iets meer achteruit dan met placebo (2,72 punten), en de klachten buiten het bewegen ook. Ernstige ongewenste voorvallen: 8,3% tegenover 14,1% met placebo."
+    limitation: "Eén ziekte; het verschil was kleiner dan wat de studie klinisch belangrijk vond. De maker leverde NR en placebo."
+  grant-2019-iv-nad:
+    finding: "Bij 11 gezonde mannen liep een infuus met NAD+ 6 uur lang. In de eerste 2 uur verdween NAD+ bijna meteen uit het bloed. De onderzoekers zagen geen ongewenste voorvallen."
+    limitation: "Heel klein; één infuus; mede betaald door een bedrijf waarvan de directeur een kliniek leidt die NAD+-infusen geeft."
+  yu-2026-iv-nad-heart-failure:
+    finding: "Bij 180 volwassenen met hartfalen na een hartaanval gaven 7 dagen NAD+-infusen, naast de gewone behandeling, na een maand een iets hogere pompkracht van het hart (45,4% tegenover 42,4%)."
+    limitation: "Eén ziekenhuis; niet gemeld of de studie geblindeerd was; het verschil na 6 maanden was niet statistisch significant."
+  nakazzi-2026-pancreatic-cancer:
+    finding: "In cellen van alvleesklierkanker en bij muizen hielpen NMN en nicotinamide kankercellen om chemotherapie te weerstaan, en ze steunden de groei van tumoren."
+    limitation: "Alleen cellen en muizen; het laat een mogelijk risico zien voor mensen met actieve kanker, geen aangetoond risico."
+regulatory_notes:
+  EU: "Geen goedgekeurd medicijn: geen handelsvergunning en geen aanvraag (EMA, 27 oktober 2026). NR-chloride is sinds 2020 een toegelaten nieuw voedingsmiddel. NMN kreeg in 2026 een positief advies van EFSA, maar staat niet op de EU-lijst."
+  NL: "Geen medicijn met NR, NMN of NAD+ in het register van het CBG (27 oktober 2026). De NVWA houdt toezicht op voedingssupplementen. Een infuus of injectie is geen voedingsmiddel."
+  WADA: "Onduidelijk: geen van de drie staat met naam op de dopinglijst. Los daarvan zijn infusen van meer dan 100 ml binnen 12 uur verboden, wat er ook in zit."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat zijn NAD+-voorlopers?">Vormen van vitamine B3 die het lichaam omzet in NAD+. Het zijn geen peptiden.</Lead>
+
+<Compare title="Drie nauw verwante stoffen. Geen ervan is een goedgekeurd medicijn in Nederland of de EU." detail="Wat elk is en welke regels gelden, gecontroleerd op 27 oktober 2026.">
+
+| | NR (nicotinamide-riboside) | NMN (nicotinamide-mononucleotide) | NAD+ zelf |
+|---|---|---|---|
+| Toegelaten in voedingssupplementen in de EU? | <Verdict is="yes" /> Sinds 2020 toegelaten als nieuw voedingsmiddel, vooral voor supplementen voor volwassenen.<Cite id="eu-regulation-2020-16-nr,eu-union-list-novel-foods-2026-08-10" /> | <Verdict is="no" /> Niet op de EU-lijst van toegelaten nieuwe voedingsmiddelen. EFSA gaf in 2026 een positief advies voor volwassenen, maar EFSA geeft alleen advies.<Cite id="eu-union-list-novel-foods-2026-08-10,efsa-2026-nmn-novel-food,eu-op-novel-food-acts-search-2026-10-27" /> | <Verdict is="unknown" /> Niet op de EU-lijst van toegelaten nieuwe voedingsmiddelen. We vonden geen EU-besluit erover.<Cite id="eu-union-list-novel-foods-2026-08-10,eu-op-novel-food-acts-search-2026-10-27" /> |
+| Een goedgekeurd medicijn in Nederland of de EU? | <Verdict is="no" /> Niet goedgekeurd.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> Niet goedgekeurd.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> Niet goedgekeurd, ook niet als infuus of injectie.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> |
+| Getest bij mensen? | <Verdict is="yes" /> Veel studies, waaronder één grote.<Cite id="brakedal-2026-nopark,pubmed-nr-nmn-count-2026-10-23" /> | <Verdict is="yes" /> Kleine studies.<Cite id="yoshino-2021-nmn-prediabetic-women" /> | <Verdict is="yes" /> Een paar kleine studies met infusen.<Cite id="grant-2019-iv-nad-pilot,yu-2026-iv-nad-heart-failure" /> |
+
+</Compare>
+
+{/* residue-ok: world context */}
+Ze staan op deze site omdat ze naast peptiden worden aangeboden. In de VS werd NAD+ voorgesteld voor bereiding door apotheken, en het staat op dezelfde lijst van de Amerikaanse medicijnautoriteit FDA als GHK-Cu. Die lijst is geen goedkeuring en verandert niets buiten de VS. Klinieken bieden NAD+-infusen aan als behandeling voor een “langer leven”.<Cite id="fda-503a-categories-2026-05,godic-2026-iv-longevity-review" />
+
+<InDetail title="Waarom de soort product ertoe doet">
+
+Een peptide is een keten van aminozuren. NR is een ring van vitamine B3 met een suiker eraan. NMN is NR met een fosfaatgroep. NAD+ koppelt NMN aan een tweede deel, met adenine. Geen van de drie bevat een aminozuur.<Cite id="pubchem-nad" />
+
+De soort product bepaalt welke controles het heeft gehad. EFSA, de Europese Autoriteit voor voedselveiligheid, beoordeelde NR als voedingsmiddel om in te slikken, binnen grenzen, voor volwassenen.<Cite id="efsa-2019-nr-novel-food" /> In de EU mogen alleen nieuwe voedingsmiddelen in de handel die op de EU-lijst staan. NR-chloride staat erop, vooral voor voedingssupplementen voor volwassenen.<Cite id="eu-regulation-2020-16-nr,eu-union-list-novel-foods-2026-08-10" /> Volgens de EU-wet is een voedingsmiddel bedoeld om te eten of te drinken, en een geneesmiddel is nooit een voedingsmiddel.<Cite id="eu-regulation-178-2002-food-law" /> De regels voor supplementen gaan dus niet over injecties of infusen. Een beoordeling als supplement zegt niets over of een injectie steriel of veilig is. In de sport is een infuus van meer dan 100 ml binnen 12 uur verboden, ook als wat erin zit is toegestaan.<Cite id="wada-2026-list-en,usada-iv-infusions,dopingautoriteit-vertaling-dopinglijst-2026" />
+
+</InDetail>
+
+<InDetail title="De moleculen">
+
+NAD+ (nadide) is C21H27N7O14P2, molecuulmassa <Q>663,4 g/mol</Q>. Nicotinamide-riboside is C11H15N2O5+, <Q>255,25 g/mol</Q>. NMN is C11H15N2O8P, <Q>334,22 g/mol</Q>.<Cite id="pubchem-nad" /> EFSA noemt NR en NMN bronnen van nicotinamide, een vorm van niacine (vitamine B3).<Cite id="efsa-2019-nr-novel-food,efsa-2026-nmn-novel-food" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werken ze?">Het lichaam maakt er NAD+ van, een helper voor energie en herstel. Pillen verhogen NAD+ in het bloed.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+Dat NAD+ in het bloed stijgt, is aangetoond bij mensen.<Cite id="martens-2018-nr-older-adults" /> Het idee dat meer NAD+ gezonder ouder worden betekent, komt van knaagdieren. Bij hen verlagen obesitas en veroudering de aanmaak van NAD+.<Cite id="yoshino-2021-nmn-prediabetic-women" /> NAD+ uit een infuus verdwijnt heel snel uit het bloed. Welke weefsels het opnemen, is niet gemeten.<Cite id="grant-2019-iv-nad-pilot" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werken ze?">Ze verhogen NAD+ in het bloed. Een duidelijk voordeel voor de gezondheid is niet aangetoond.</Lead>
+
+<KeyNumber title="In de grootste studie ging het mensen iets slechter dan met placebo" value="+2,72 punten" label="slechter op een score voor parkinson na een jaar dan met placebo; een klein verschil" who="NOPARK: 410 mensen met een vroege ziekte van Parkinson, NR via de mond, 52 weken" source="brakedal-2026-nopark" level="human-controlled" />
+
+<KeyNumber title="Het lichaam ging niet beter met insuline om" value="40" label="mannen met obesitas kregen 12 weken NR of placebo" who="Dollerup 2018: gerandomiseerde, dubbelblinde studie" source="dollerup-2018-nr-obese-men" level="human-controlled" />
+
+<KeyNumber title="Spieren gebruikten insuline beter in één kleine studie" value="25" label="vrouwen met prediabetes kregen 10 weken NMN of placebo" who="Yoshino 2021: gerandomiseerde, dubbelblinde studie" source="yoshino-2021-nmn-prediabetic-women" level="human-controlled" />
+
+Een kleine eerdere studie bij de ziekte van Parkinson leek een voordeel te laten zien. De grote studie die volgde, bevestigde dat niet.<Cite id="brakedal-2022-nadpark,brakedal-2026-nopark" />
+
+<InDetail title="Elke studie in één tabel">
+
+<StudyTable />
+
+Voor NAD+-infusen vond een overzichtsartikel uit 2026 vooral kleine reeksen, weinig studies met placebo als vergelijking, en tegenstrijdige uitkomsten. Het noemde de infusen experimenteel.<Cite id="godic-2026-iv-longevity-review" /> Eén studie in één ziekenhuis bij 180 mensen met hartfalen meldde dat het hart na een week infusen iets beter pompte. Dat moet nog worden herhaald.<Cite id="yu-2026-iv-nad-heart-failure" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Wat zijn de regels in Nederland?">Geen enkel NAD+-product is een goedgekeurd medicijn. Voor pillen gelden de EU-regels voor voedsel.</Lead>
+
+<Compare title="Geen ervan is een goedgekeurd medicijn. Voor pillen gelden de EU-regels voor voedsel." detail="Status in Nederland en de Europese Unie, gecontroleerd op 27 oktober 2026.">
+
+| | Goedgekeurd als medicijn? | NR toegelaten in voedingssupplementen? | NMN toegelaten in voedingssupplementen? |
+|---|---|---|---|
+| Nederland | <Verdict is="no" /> Het register van het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen medicijn met NR, NMN of NAD+.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="yes" /> De EU-toelating geldt ook hier. De Nederlandse Voedsel- en Warenautoriteit (NVWA) houdt toezicht op supplementen.<Cite id="eu-regulation-2020-16-nr,nvwa-toezicht-voedingssupplementen" /> | <Verdict is="no" /> Niet toegelaten in de EU, dus ook niet hier.<Cite id="eu-union-list-novel-foods-2026-08-10,eu-op-novel-food-acts-search-2026-10-27" /> |
+| Europese Unie | <Verdict is="no" /> Geen handelsvergunning, en geen aanvraag bij het Europees Geneesmiddelenbureau (EMA).<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> | <Verdict is="yes" /> Sinds 2020, als nieuw voedingsmiddel, vooral voor supplementen voor volwassenen.<Cite id="eu-regulation-2020-16-nr,eu-union-list-novel-foods-2026-08-10" /> | <Verdict is="no" /> EFSA gaf in 2026 een positief advies, maar NMN staat niet op de EU-lijst.<Cite id="efsa-2026-nmn-novel-food,eu-union-list-novel-foods-2026-08-10,eu-op-novel-food-acts-search-2026-10-27" /> |
+
+</Compare>
+
+Geen NAD+-infuus of -injectie is een goedgekeurd medicijn in Nederland of de EU. In de sport is een infuus van meer dan 100 ml binnen 12 uur overal verboden, wat er ook in zit.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27,wada-2026-list-en,usada-iv-infusions,dopingautoriteit-vertaling-dopinglijst-2026" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+In de sport staat geen van de drie met naam op de dopinglijst van 2026 of 2027. Infusen of injecties van meer dan 100 ml binnen 12 uur zijn verboden. Dat geldt niet bij een ziekenhuisbehandeling, een operatie of medisch onderzoek om een diagnose te stellen, of met een dispensatie.<Cite id="wada-2026-list-en,wada-2027-list-en,usada-iv-infusions,dopingautoriteit-vertaling-dopinglijst-2026" /> Ben je sporter? Vraag het dan aan de Dopingautoriteit.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Zie ook [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="De Europese Unie en Nederland">
+
+- **Europese Unie.** Geen product met NR, NMN of NAD+ heeft een handelsvergunning voor de hele EU, en er ligt geen aanvraag bij het EMA.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> NMN is in 2023 aangewezen als weesgeneesmiddel voor sikkelcelziekte, een erfelijke bloedziekte. Dat helpt bij de ontwikkeling als medicijn, maar het is geen goedkeuring.<Cite id="ema-orphan-designations-json" /> Als voedsel geldt: alleen nieuwe voedingsmiddelen op de EU-lijst mogen in de handel. NR-chloride staat daar sinds 2020 op, vooral voor voedingssupplementen voor volwassenen. Bij zwangerschap en borstvoeding geldt een lagere grens.<Cite id="eu-regulation-2020-16-nr,eu-union-list-novel-foods-2026-08-10" /> EFSA vond NMN in mei 2026 veilig voor volwassenen, onder de voorwaarden die de aanvrager voorstelde. Dat oordeel geldt niet voor zwangere vrouwen en vrouwen die borstvoeding geven. Maar EFSA geeft alleen advies; de Europese Commissie beslist. NMN stond niet in de versie van de EU-lijst van 10 augustus 2026, op 27 oktober 2026 de nieuwste versie. Een later besluit over NMN vonden we niet.<Cite id="efsa-2026-nmn-novel-food,eu-union-list-novel-foods-2026-08-10,eu-op-novel-food-acts-search-2026-10-27" /> NAD+ zelf staat ook niet op de EU-lijst.<Cite id="eu-op-novel-food-acts-search-2026-10-27" /> Of een ander EU-land een van de drie als medicijn goedkeurde, hebben we niet nagekeken.
+- **Nederland.** Het register van het CBG heeft geen medicijn met NR, NMN of NAD+. Een zoekopdracht op "nicotinamide" vond alleen multivitaminen en een paar andere producten waar vitamine B3 in zit.<Cite id="cbg-gib-search-status-2026-10-27" /> De NVWA houdt toezicht op voedingssupplementen die in Nederland worden verkocht. Voldoet een product niet aan de regels? Dan kan de NVWA de verkoop verbieden.<Cite id="nvwa-toezicht-voedingssupplementen" /> Een voedingsmiddel met een medische claim valt volgens de NVWA onder de definitie van een geneesmiddel. Ook de werking van een product kan het tot een geneesmiddel maken. Zonder handelsvergunning mag het dan niet in de handel.<Cite id="nvwa-verbod-medische-claims,nl-gmw-art-40-handelsvergunning" /> Volgens de EU-wet is een voedingsmiddel bedoeld om te eten of te drinken. Een infuus of injectie is dus geen voedingsmiddel.<Cite id="eu-regulation-178-2002-food-law" /> Geen van de drie staat op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" />
+
+Meer: [de Nederlandse wet](/nl/legal/nl/), [de Europese regels](/nl/legal/eu/) en [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Pillen lijken in korte studies goed verdragen te worden. Infusen en injecties geven extra risico’s, zoals infecties.</Lead>
+
+<Compare title="Pillen gaven in korte studies weinig problemen. Sommige vragen voor de lange termijn zijn open." detail="Wat studies, EFSA en dierstudies laten zien, op 23 oktober 2026.">
+
+| Mogelijke schade | Gezien bij mensen? |
+|---|---|
+| Ernstige bijwerkingen van pillen in studies | <Verdict is="no" /> Niet vaker dan met placebo in de grootste studie.<Cite id="brakedal-2026-nopark" /> |
+| Schade door hoge hoeveelheden, jarenlang | <Verdict is="unknown" /> EFSA zag mogelijke manieren waarop hoge hoeveelheden schade kunnen doen. De veilige bovengrens moet misschien opnieuw worden bekeken.<Cite id="efsa-2021-nr-extension" /> |
+| Een bestaande kanker helpen groeien | <Verdict is="unknown" /> Gezien bij muizen en in kankercellen.<Cite id="maric-2023-nr-metastasis-mice,nakazzi-2026-b3-pancreatic-cancer" /> |
+| Infectie of reacties door infusen en injecties | <Verdict is="unknown" /> Risico’s van het prikken zelf; niet onderzocht voor NAD+.<Cite id="godic-2026-iv-longevity-review,nhs-cellulitis" /> |
+
+</Compare>
+
+<InDetail title="Waarom deze risico’s worden vermoed">
+
+Ook kankercellen hebben NAD+ nodig. Bij muizen met borstkanker gaf NR meer uitzaaiingen naar de hersenen. In cellen van alvleesklierkanker en bij muizen hielp NMN tumoren om chemotherapie te weerstaan.<Cite id="maric-2023-nr-metastasis-mice,nakazzi-2026-b3-pancreatic-cancer" /> Dit zijn bevindingen bij dieren, geen bewijs bij mensen. Het oordeel van EFSA over de veiligheid van NMN geldt niet voor zwangere vrouwen en vrouwen die borstvoeding geven. Voor NR accepteerde EFSA voor hen alleen een lagere hoeveelheid. In een studie van 90 dagen bij ratten had NMN effect op de voortplantingsorganen.<Cite id="efsa-2019-nr-novel-food,efsa-2026-nmn-novel-food" /> Bij de ziekte van Parkinson deed een jaar NR het iets slechter dan placebo.<Cite id="brakedal-2026-nopark" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe verklein ik het risico?">Weet welk product je hebt. Bij een injectie gelden de risico’s van elke injectie. Weet wanneer je stopt.</Lead>
+
+<ProductCheck extra="Kijk of het product is bedoeld om in te slikken of om te spuiten. De regels voor supplementen gelden niet voor injecties of infusen." extraSources="eu-regulation-178-2002-food-law" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **De huid waar een naald of infuus in zat, wordt warm, rood, dik of pijnlijk:** mogelijk een infectie. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Koorts of rillingen, of je voelt je heel ziek na een infuus of injectie:** misschien zijn er bacteriën in je bloed gekomen. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost. Word je suf of verward, of adem je heel snel? Dan kan het sepsis (bloedvergiftiging) zijn: je lichaam reageert zo sterk op een infectie dat organen beschadigd raken. Bel direct 112.
+- **Jeukende bulten (netelroos), een dik gezicht of een dikke keel, of moeite met ademen:** mogelijk een allergische reactie. Wordt je tong of keel dik, of kun je moeilijk ademen? Bel dan direct 112. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Stop met het product en maak een afspraak met je huisarts.
+
+Is het ernstig? Bel 112.
+</Callout>
+
+<Cite id="nhs-cellulitis,nhs-sepsis,nhs-anaphylaxis,godic-2026-iv-longevity-review,thuisarts-wondroos,thuisarts-sepsis,thuisarts-dikke-ogen-lippen,thuisarts-spoed-wie-bellen" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Zinvolle controles, en wie voorzichtig moet zijn">
+
+Een arts kan met je bekijken wat bij jou past (zie [praten met je arts](/nl/talking-to-your-doctor/)). Vertel je arts eerlijk wat je gebruikt, ook als het een supplement is. Je arts is er om je te helpen, niet om je te beoordelen.
+
+- **Behandeling voor kanker:** vertel het je behandelteam. Bij muizen en in kankercellen hielpen deze stoffen tumoren.<Cite id="nakazzi-2026-b3-pancreatic-cancer,maric-2023-nr-metastasis-mice" />
+- **Zwangerschap of borstvoeding:** het oordeel van EFSA over de veiligheid van NMN geldt niet voor jou. Voor NR accepteerde EFSA alleen een lagere hoeveelheid.<Cite id="efsa-2026-nmn-novel-food,efsa-2019-nr-novel-food" />
+- **Ziekte van Parkinson:** in de grootste studie deed NR het iets slechter dan placebo.<Cite id="brakedal-2026-nopark" />
+- **Sport:** een infuus van meer dan 100 ml binnen 12 uur is in strijd met de antidopingregels.<Cite id="wada-2026-list-en,usada-iv-infusions,dopingautoriteit-vertaling-dopinglijst-2026" />
+
+Over injecties: zie [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+Geen NAD+-product is in Nederland een goedgekeurd medicijn.<Cite id="cbg-gib-search-status-2026-10-27" /> Pillen met NR vallen onder de regels voor voedingssupplementen.<Cite id="eu-regulation-2020-16-nr,nvwa-toezicht-voedingssupplementen" /> De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt uit welke legale wegen er zijn naar een medicijn, en wat elke weg nodig heeft: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [de artsenverklaring](/nl/legal-routes/#artsenverklaring), [een magistrale bereiding](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb, ook van een voedingssupplement. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

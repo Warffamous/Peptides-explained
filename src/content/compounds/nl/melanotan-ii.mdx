@@ -1,0 +1,592 @@
+---
+slug: melanotan-ii
+title: "Melanotan II"
+description: "Melanotan II is een niet-goedgekeurd peptide voor een bruine huid. Wat het doet met huid, moedervlekken en hersenen, wat het onderzoek laat zien, en wat de wet zegt."
+tldr:
+  - q: "Word je er bruin van?"
+    a: "Bij 2 van de 3 mannen in één kleine studie. Alle gepubliceerde studies samen: maar 23 mannen."
+  - q: "Wat zegt de wet?"
+    a: "Volgens onze lezing zijn verkopen, doorgeven en zelf invoeren verboden. Gebruiken verbiedt de wet niet."
+  - q: "Beschermt die kleur je huid?"
+    a: "Reken er niet op. Niemand heeft dat getest."
+  - q: "Geeft het huidkanker (melanoom)?"
+    a: "Onbekend. Bij gebruikers zijn melanomen beschreven, maar een verband is niet aangetoond."
+  - q: "Gebruik je het toch?"
+    a: "Laat je moedervlekken eerst nakijken door je huisarts, en daarna regelmatig."
+lede: "Een middel om bruin te worden, niet goedgekeurd in Nederland. Moedervlekken worden donkerder; erecties en misselijkheid komen voor."
+glance:
+  main_risk: "Moedervlekken kunnen donkerder worden of veranderen. Huidkanker zie je dan moeilijker."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">): priapism (case reports and the NHS page), sympathomimetic toxicity with
+  # muscle breakdown (Nelson 2012; Eijmael 2022, a case from a hospital in Gouda) and PRES (Kaski 2013; Fugate 2015;
+  # NHS headaches). The changing-mole sign is in the stop list and the "grootste risico" tile. The Dutch help levels
+  # (112 / huisarts / huisartsenpost) are in the stop callout, not in the strip (the strip adds "Is het ernstig? Bel 112.").
+  stop_signs:
+    - icon: sign-clock
+      text: "Erectie langer dan 3 uur, of pijnlijk"
+      sources: [nhs-priapism, mallory-2021-melanotan-priapism, dreyer-2019-melanotan-priapism]
+    - icon: sign-heart
+      text: "Heel snelle hartslag, trillen of donkere urine"
+      sources: [nelson-2012-melanotan-rhabdomyolysis, eijmael-2022-barbie-drug, medlineplus-rhabdomyolysis]
+    - icon: sign-vision
+      text: "Plotseling hevige hoofdpijn, schokken of slecht zien"
+      sources: [kaski-2013-melanotan-pres, fugate-2015-pres, nhs-headaches]
+  facts:
+    - label: "Hoe het wordt gebruikt"
+      value: "Injectie onder de huid; ook als neusspray in omloop"
+      sources: [dorr-1996-mt2-phase-1, mhra-2024-foi-melanotan-ii, yassin-alsabbagh-2025-oral-melanoma]
+    - label: "Studies bij mensen"
+      value: "3 kleine studies, samen 23 mannen, 1996 tot 2000"
+      sources: [dorr-1996-mt2-phase-1, wessells-1998-mt2-psychogenic-ed, wessells-2000-mt2-organic-ed]
+    - label: "Goedgekeurde verwanten"
+      value: "Afamelanotide (Scenesse, EU) en bremelanotide (Vyleesi, VS)"
+      sources: [ema-epar-scenesse, ema-pi-scenesse-nl, fda-drugsatfda-vyleesi, king-2007-melanocortin-erection]
+    - label: "Ontwikkeld bij"
+      value: "Universiteit van Arizona, eind jaren tachtig"
+      sources: [al-obeidi-1989-cyclic-lactam, hadley-2006-melanocortin-therapeutics]
+grade_rationale:
+  human_clinical: "Fase 2, helemaal onderaan die groep. Twee kleine dubbelblinde cross-overstudies met placebo als vergelijking testten erecties bij 20 mannen met erectieproblemen (1998 en 2000). Dat stadium heet meestal fase 2. Daarvoor kwam een eerste studie (fase 1) bij 3 gezonde mannen (1996). Alle studies kwamen van één groep van de Universiteit van Arizona, geen ervan onderzocht vrouwen, en sinds 2000 is geen nieuwe studie gepubliceerd (één studie in een onderzoeksregister heeft geen resultaten). Bruin worden is alleen gezien in de studie met 3 mannen. Dit is een afweging aan de onderkant van de groep; een arts moet die nog controleren."
+  preclinical_volume: "Veel. Een zoekopdracht in PubMed op 22 oktober 2026 vond 189 records (geen overzichtsartikelen) met “melanotan II” in de titel of de samenvatting, en 364 als je de afkorting MTII in artikelen over melanocortinen meetelt. Bijna al die records gaan over dieren of cellen. Melanotan II werd een standaardmiddel om de melanocortinereceptoren in de hersenen te onderzoeken."
+  independence: "Door veel groepen herhaald, maar alleen het labwerk. De groep die het ontwikkelde, schreef 10 van de 189 records (45 van de 364). Onafhankelijke groepen, zoals Merck en de Universiteit van Cincinnati, herhaalden het effect op de eetlust bij ratten. Elke gepubliceerde studie bij mensen kwam daarentegen van die ene groep, en niemand anders heeft ze herhaald."
+  safety: "Deels bekend. In studies kregen 23 mannen het, hooguit 2 weken. Al het andere komt uit casusbeschrijvingen en uit meldingen bij medicijnautoriteiten over gebruik buiten de legale keten (16 meldingen bij de Britse MHRA in 2012–2022). Die beschrijven ernstige voorvallen, maar kunnen geen aantallen geven of een oorzaak bewijzen. We vonden geen studie naar lange termijn, kanker of zwangerschap." # residue-ok: evidence (MHRA reports as safety data)
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Kopieert alfa-MSH en past op 4 receptoren"
+    detail: "Melanotan II is een ingekorte, ringvormige kopie van alfa-MSH, het lichaamseigen hormoon dat de huid donkerder maakt. In cellen met gekloonde receptoren werkte het op de MC1-, MC3-, MC4- en MC5-receptor, niet alleen op de MC1-receptor van de huid. Aan de menselijke MC1-receptor bleef het uren vastzitten: 6 uur nadat het losse peptide was weggespoeld, zat 86% er nog aan."
+  - kind: signal
+    level: in-vitro
+    title: "cAMP stijgt in pigmentcellen"
+    detail: "MC1R is een G-eiwitgekoppelde receptor op melanocyten, de pigmentcellen. Staat die receptor aan, dan stijgt cAMP in de cel. Daardoor komen er meer enzymen die donker melanine maken. In gekweekte menselijke melanocyten liet het natuurlijke hormoon de cellen ook delen. Gezien in cellen; voor melanotan II niet gemeten in menselijke huid."
+  - kind: tissue
+    level: human
+    title: "Huid, moedervlekken en tandvlees worden donkerder"
+    detail: "In een eerste studie bij 3 gezonde mannen hadden er 2 een donkerdere huid op het gezicht, het bovenlichaam en de billen, een week na 2 weken injecties. Casusbeschrijvingen noemen bestaande moedervlekken die donkerder werden en nieuwe moedervlekken, in één verslag binnen 24 uur na één injectie, en bruine plekken op het tandvlees."
+  - kind: cellular
+    level: animal
+    title: "Receptoren in hersenen en ruggenmerg geven erecties en remmen de eetlust"
+    detail: "Bij ratten gaf melanotan II erecties via melanocortinereceptoren in de hersenen en het onderste deel van het ruggenmerg; in de penis gespoten deed het niets. Bij muizen verminderde melanotan II in de hersenen het eten via MC3- en MC4-receptoren. Bij ratten die het in een ader kregen, verminderde het ook het eten, al kwam het nauwelijks in de hersenen. Het bereikte alleen plekken waar de bloed-hersenbarrière open is."
+  - kind: effect
+    level: human
+    title: "Erecties, meer zin in seks, misselijkheid en geeuwen bij mannen"
+    detail: "In 2 kleine cross-overstudies met placebo als vergelijking, bij 20 mannen met erectieproblemen, volgde na de meeste injecties met melanotan II een erectie, en na weinig placebo-injecties. Misselijkheid, uitrekken en geeuwen kwamen vaak voor, en de misselijkheid was soms hevig."
+  - kind: effect
+    level: hypothesis
+    title: "De bloeddruk kan stijgen"
+    detail: "Het aanzetten van MC4-receptoren verhoogde de bloeddruk bij mensen die een andere MC4-agonist kregen, en bij vrouwen die bremelanotide kregen, de vrijezuurvorm van melanotan II. In een studie met melanotan II is het niet gemeten."
+  - kind: effect
+    level: hypothesis
+    title: "Bescherming tegen de zon of kans op kanker: onbekend"
+    detail: "Of een bruine kleur door melanotan II de huid beschermt, en of het aanzetten van pigmentcellen de kans op melanoom bij mensen verandert, in welke richting dan ook, is nooit getest. Casusbeschrijvingen roepen de vraag op, maar kunnen haar niet beantwoorden. Eén studie bij muizen vond dat het een bestaand melanoom afremde."
+studies:
+  al-obeidi-1989-design:
+    finding: "Onderzoekers maakten 7 ringvormige stukjes (cyclische lactamen) van alfa-MSH. Het stukje dat nu melanotan II heet, maakte hagedissenhuid ongeveer 90 keer zo sterk donker als alfa-MSH, en het effect hield langer aan."
+    limitation: "Huid van kikkers en hagedissen in een schaaltje, geen zoogdieren. Hoe sterk het daar werkt, zegt niets over effecten of veiligheid bij mensen."
+  hruby-1995-receptors:
+    finding: "Cellen met gekloonde melanocortinereceptoren lieten zien dat MC1, MC3, MC4 en MC5 allemaal reageren op melanotan II. Met één andere bouwsteen ontstond SHU9119, dat de MC3- en MC4-receptoren in de hersenen blokkeert maar MC1 en MC5 nog aanzet."
+    limitation: "Cellen in een schaaltje. Het artikel gaat vooral over de nieuwe blokkers; melanotan II diende als vergelijking."
+  haskell-luevano-1996-mc1r:
+    finding: "Zes uur nadat de peptiden waren weggespoeld, zat nog 86% van melanotan II vast aan de menselijke MC1-receptor, tegen 65% van melanotan I en 25% van alfa-MSH."
+    limitation: "Cellen in een schaaltje. Dat het langzaam loslaat, kan de lange werking verklaren, maar dat is bij mensen niet getest."
+  fan-1997-feeding:
+    finding: "Melanotan II in de vochtruimten van de hersenen verminderde het eten in 4 muismodellen van te veel eten. Een blokker van dezelfde receptoren liet muizen meer eten."
+    limitation: "Muizen, met de stof direct in de hersenen. Een chemicus van de groep die het ontwikkelde, was medeauteur, dus niet helemaal onafhankelijk."
+  wessells-2003-rat-erection:
+    finding: "Bij wakkere ratten gaf melanotan II erecties, gegeven in de hersenen, in het hersenvocht of in een ader. Een receptorblokker in het hersenvocht stopte het effect via het ruggenmerg. In de penis van verdoofde ratten gespoten had het geen effect."
+    limitation: "Ratten; de groep die het ontwikkelde; aantal dieren en blindering niet vermeld in de samenvatting."
+  trivedi-2003-appetite:
+    finding: "Melanotan II in een ader verminderde het eten bij ratten, terwijl er bijna niets van in de hersenen kwam. Gelabeld peptide bereikte alleen kleine plekken waar de bloed-hersenbarrière open is."
+    limitation: "Ratten; alleen eten op korte termijn; betaald door de industrie (Merck)."
+  benoit-2003-aversion:
+    finding: "Ratten die melanotan II kregen, één keer of 7 dagen lang, leerden een smaak te vermijden die eraan gekoppeld was, zoals na een stof die ze ziek maakt. Die afkeer duurde langer dan bij lithium."
+    limitation: "Ratten. Een afkeer van een smaak is een indirect teken dat een dier zich ziek voelt."
+  wu-2020-melanoma-model:
+    finding: "Bij 12 muizen met een ingebracht melanoom (6 per groep) remde melanotan II op de huid de groei van de tumor af. In een schaaltje veranderde het niet hoe snel melanoomcellen deelden, maar ze drongen minder ver binnen. Werd MC1R in het schaaltje geblokkeerd, dan verdween dat effect."
+    limitation: "Melanoomcellen van muizen en muizen; een bestaande tumor, geen gewone moedervlekken; de MC1R-test alleen in cellen. Het zegt niets over of melanotan II bij mensen melanoom laat ontstaan of sneller laat groeien."
+  dorr-1996-phase-1:
+    finding: "Drie gezonde mannen kregen 2 weken lang om de werkdag een injectie onder de huid, met zoutoplossing op de andere dagen. Twee hadden een week later een donkerdere huid. Lichte misselijkheid kwam vaak voor; één man was bij de hoogste dosis matig slaperig en moe, en geeuwen ging samen met spontane erecties."
+    limitation: "Drie mannen, enkelblind, 2 weken; alleen 2 van hen werden bruin; geen vrouwen; geen eindpunten over zonbescherming of kanker."
+  wessells-1998-psychogenic-ed:
+    finding: "Van 10 mannen met erectieproblemen zonder bekende lichamelijke oorzaak kregen er 8 een erectie na melanotan II. Stijve erecties duurden gemiddeld 38,0 minuten, tegen 3,0 minuten met placebo. Misselijkheid, uitrekken, geeuwen en minder eetlust kwamen vaker voor dan met placebo."
+    limitation: "Tien mannen, elk getest met melanotan II en met placebo, 6 uur gevolgd per test. De samenvatting zegt niet hoe de volgorde van de behandelingen werd bepaald. Nooit herhaald door een andere groep."
+  wessells-2000-organic-ed:
+    finding: "Bij 10 mannen met erectieproblemen en lichamelijke risicofactoren volgde een erectie na 12 van de 19 injecties met melanotan II, tegen 1 van de 21 placebo-injecties. De zin in seks nam toe. Na 4 van de 19 injecties waren mannen hevig misselijk."
+    limitation: "Tien mannen, 2 testinjecties van elke behandeling (19 injecties met melanotan II in totaal), elk 6 uur gevolgd. Dezelfde groep als de studie van 1998; geen vervolg op lange termijn."
+  cousen-2009-naevi:
+    finding: "Een brief over veel nieuwe moedervlekken (eruptieve naevi) na injecties met melanotan."
+    limitation: "Eén brief zonder samenvatting; de details konden we niet controleren; laat geen oorzaak zien."
+  nelson-2012-rhabdomyolysis:
+    finding: "Een man kwam 2 uur na een injectie met melanotan II naar het ziekenhuis met een snelle hartslag, zweten, trillen en angst. Daarna braken zijn spieren af en raakten zijn nieren belast; hij lag 3 dagen op de intensive care. Labonderzoek bevestigde dat het product melanotan II was."
+    limitation: "Eén persoon, die een ongewoon grote hoeveelheid spoot en bij wie ook opiaten in de urine zaten."
+  mang-2012-dermoscopy:
+    finding: "De moedervlekken van een man van 24 werden vóór en tijdens gebruik van melanotan II gefilmd met een dermatoscoop. Door de veranderingen was een moedervlek moeilijk te onderscheiden van een melanoom."
+    limitation: "Eén persoon; het verslag is in het Duits; het laat een probleem bij het stellen van de diagnose zien, geen risico op kanker."
+  kaski-2013-pres:
+    finding: "Een brief over posterieur reversibel encefalopathiesyndroom (PRES), een zwelling achter in de hersenen, na injecties met melanotan."
+    limitation: "Eén brief zonder samenvatting; de details konden we niet controleren; laat geen oorzaak zien."
+  hjuler-2014-melanoma:
+    finding: "Een vrouw van 20 met een lichte huid gebruikte melanotan II 3 tot 4 weken, samen met de zonnebank. Drie maanden later werd een melanoom van haar bil weggehaald."
+    limitation: "Eén persoon; de zonnebank is zelf een risico op melanoom; laat geen oorzaak zien."
+  peters-2020-renal-infarction:
+    finding: "Een man van middelbare leeftijd kreeg een nierinfarct: een deel van een nier stierf af doordat de bloedtoevoer was afgesloten. De artsen vonden melanotan II de meest waarschijnlijke oorzaak."
+    limitation: "Eén persoon. Het mechanisme dat de auteurs noemen (een effect op de bloedstolling of directe schade aan de nier) is een idee, niet getest."
+  mallory-2021-priapism:
+    finding: "Een man van 55 kwam na 30 uur pijnlijke erectie na een injectie met melanotan II. Bloed afzuigen en medicijnen hielpen niet; hij moest worden geopereerd. Na 15 weken had hij nieuwe erectieproblemen en littekenweefsel."
+    limitation: "Eén persoon. Eerder gebruik gaf alleen erecties van een paar minuten; waarom het deze keer anders ging, is niet bekend."
+  eijmael-2022-sympathomimetic:
+    finding: "Een man van 27 kwam 2 uur na een injectie met melanotan II op de spoedeisende hulp van een ziekenhuis in Gouda, met sympathicomimetische klachten. Hij kreeg een kalmerend middel, kalium en vocht via een infuus."
+    limitation: "Eén persoon; de samenvatting zegt niet wat er in het product zat."
+  yassin-alsabbagh-2025-oral-melanoma:
+    finding: "Een vrouw van 22 die een neusspray met melanotan II gebruikte om bruin te worden, kreeg een melanoom in de mond. Ze werd behandeld met een operatie en immunotherapie."
+    limitation: "Eén persoon; een melanoom in de mond komt ook voor zonder enig middel; laat geen oorzaak zien."
+  vadner-2026-melanomas-in-situ:
+    finding: "Een man van 49 met een lichte huid en veel moedervlekken gebruikte de zonnebank en melanotan II, en daarna melanotan I. Binnen ongeveer een week werden verschillende moedervlekken zwart. Vijf biopten lieten een vroeg melanoom (melanoom in situ) zien, in sterk afwijkende moedervlekken."
+    limitation: "Eén persoon met veel andere factoren: de zonnebank, veel moedervlekken, melanoom in de familie en testosteron van buiten de legale keten."
+  burian-2019-eruptive-naevi:
+    finding: "Een systematische zoektocht vond 179 mensen met eruptieve naevi in 93 artikelen. Bij 41% waren afweerremmers, chemotherapie of melanotan de vermoedelijke oorzaak; 16% had minstens één afwijkende (dysplastische) moedervlek, en 5 hadden een melanoom."
+    limitation: "Samengevoegde casusbeschrijvingen, niet alleen over melanotan. De auteurs schrijven dat de gegevens het risico op kanker niet kunnen schatten."
+  breindahl-2015-products:
+    finding: "Flacons die als melanotan II werden verkocht door 3 online verkopers, bevatten allemaal melanotan II, maar maar 43 tot 88% van de hoeveelheid op het etiket. Flacons van 2 verkopers bevatten 4,1 tot 5,9% onbekende onzuiverheden."
+    limitation: "Drie verkopers. De studie testte alleen identiteit, gehalte en zuiverheid, geen steriliteit en geen gifstoffen van bacteriën."
+  deville-2024-vial-analysis:
+    finding: "Een forensisch lab in België bevestigde melanotan II in flacons met die naam op het etiket. Het poeder was voor 30% zuiver."
+    limitation: "Twee flacons, naar één lab gestuurd. Wat de andere 70% was, staat er niet bij."
+regulatory_notes:
+  EU: "Geen goedkeuring voor de hele EU: het EMA vermeldt geen product (27 oktober 2026). Afamelanotide (Scenesse), een ander peptide, is sinds 22 december 2014 in de EU goedgekeurd voor erytropoëtische protoporfyrie (EPP)."
+  NL: "Niet goedgekeurd in Nederland: geen product in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Zonder handelsvergunning is handel verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Niet met naam op de dopinglijst. Volgens onze lezing valt het onder S0 (“Niet erkende stoffen”): altijd verboden. Twijfel je? Vraag het de Dopingautoriteit."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is melanotan II?">Een kunstmatige kopie van een hormoon dat de huid bruin maakt. Niet goedgekeurd in Nederland of de EU.</Lead>
+
+{/* residue-ok: world context (the US column of this comparison) */}
+<Compare title="Melanotan II is in de EU niet goedgekeurd. Afamelanotide, een naaste verwant, wel." detail="Melanotan II en zijn 2 naaste verwanten. Gecontroleerd bij het Europees Geneesmiddelenbureau (EMA) en het College ter Beoordeling van Geneesmiddelen (CBG) op 27 oktober 2026, en bij de Amerikaanse medicijnautoriteit FDA van 22 tot 26 oktober 2026.">
+
+| | Melanotan II | Afamelanotide (Scenesse; vroeger melanotan I) | Bremelanotide (Vyleesi; PT-141) |
+|---|---|---|---|
+| Hetzelfde molecuul als melanotan II? | <Verdict is="yes" /> Een ring van 6 aminozuren, met er één ervoor.<Cite id="pubchem-melanotan-ii,dorr-1996-mt2-phase-1" /> | <Verdict is="no" /> Een langere, rechte keten van 13 aminozuren.<Cite id="haskell-luevano-1996-mc1r-dissociation,hadley-2006-melanocortin-therapeutics" /> | <Verdict is="no" /> Dezelfde ring, met een ander uiteinde.<Cite id="king-2007-melanocortin-erection,pubchem-melanotan-ii" /> |
+| Goedgekeurd in de EU en Nederland? | <Verdict is="no" /> Geen product bij het EMA of in de Geneesmiddeleninformatiebank van het CBG.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> | <Verdict is="yes" /> Sinds 22 december 2014, alleen voor volwassenen met een zeldzame ziekte waarbij licht pijn doet (EPP).<Cite id="ema-epar-scenesse,ema-pi-scenesse-nl" /> | <Verdict is="no" /> Geen product in de EU of in Nederland.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> |
+| Goedgekeurd in de VS? | <Verdict is="no" /> De database van de FDA met goedgekeurde medicijnen noemt geen product met melanotan II.<Cite id="openfda-drugsfda-search-melanotan-2026-10-26" /> | <Verdict is="yes" /> Sinds 8 oktober 2019.<Cite id="fda-drugsatfda-scenesse" /> | <Verdict is="yes" /> Sinds 21 juni 2019, voor weinig zin in seks bij sommige vrouwen.<Cite id="fda-drugsatfda-vyleesi,dailymed-vyleesi-label" /> {/* residue-ok: world context */} |
+| Kwaliteit gecontroleerd door een medicijnautoriteit? | <Verdict is="no" /> Geteste flacons bevatten 43–88% van de hoeveelheid op het etiket.<Cite id="breindahl-2015-melanotan-products" /> | <Verdict is="yes" /> Als goedgekeurd medicijn.<Cite id="ema-epar-scenesse" /> | <Verdict is="yes" /> Als goedgekeurd medicijn in de VS.<Cite id="dailymed-vyleesi-label" /> {/* residue-ok: world context */} |
+
+</Compare>
+
+Melanotan II is eind jaren tachtig ontworpen aan de Universiteit van Arizona. Het werd eerst bij mensen getest als manier om bruin te worden zonder zon.<Cite id="al-obeidi-1989-cyclic-lactam,dorr-1996-mt2-phase-1" /> Het wordt online aangeboden als poeder in flacons, in pennen en als neusspray.<Cite id="mhra-2024-foi-melanotan-ii,deville-2024-barbie-drug-identification,yassin-alsabbagh-2025-oral-melanoma" /> Op online fora vertellen mensen dat ze het gebruiken om bruin te worden voor een zonvakantie of een fitnesswedstrijd. De zonnebank komt daar vaak ter sprake.<Cite id="gilhooley-2021-forum-study" />
+
+<InDetail title="Het molecuul, en hoe het verschilt van zijn 2 verwanten">
+
+Melanotan II is een keten van 7 aminozuren: <Seq>Ac-Nle-cyclo[Asp-His-D-Phe-Arg-Trp-Lys]-NH2</Seq>. De brutoformule is C50H69N15O9 en de molecuulmassa <Q>1024,2 Da</Q>.<Cite id="pubchem-melanotan-ii" /> Het is een kopie van de posities 4 tot 10 van alfa-MSH, het hormoon dat de huid donkerder maakt, met 3 veranderingen:<Cite id="dorr-1996-mt2-phase-1,al-obeidi-1989-cyclic-lactam" />
+
+- **Een ring.** De zijketens van asparaginezuur en lysine zijn verbonden door een lactambrug. Zo vormen 6 van de 7 aminozuren een gesloten ring. Die ring hield het molecuul in een vorm die het in een test met hagedissenhuid ongeveer 90 keer zo sterk maakte als alfa-MSH, met een effect dat langer aanhield.<Cite id="al-obeidi-1989-cyclic-lactam" />
+- **Een bouwsteen in spiegelbeeld.** Fenylalanine zit er in de D-vorm in. De ontwikkelaars schrijven dat melanotan I en II bestand zijn tegen de enzymen die het natuurlijke hormoon afbreken.<Cite id="pubchem-melanotan-ii,hadley-2006-melanocortin-therapeutics,haskell-luevano-1996-mc1r-dissociation" />
+- **Norleucine aan het begin**, met een acetylgroep erop, en een amide aan het eind.<Cite id="pubchem-melanotan-ii" />
+
+**Afamelanotide**, vroeger melanotan I, is het volledige hormoon van 13 aminozuren, met 2 veranderingen en zonder ring.<Cite id="haskell-luevano-1996-mc1r-dissociation,hadley-2006-melanocortin-therapeutics" /> Het is een ander middel dan melanotan II. In de EU is het sinds 22 december 2014 goedgekeurd als Scenesse, een implantaat onder de huid. Volgens de Europese productinformatie (de samenvatting van de productkenmerken, SmPC) is het bedoeld "voor de preventie van fototoxiciteit bij volwassen patiënten met erytropoëtische protoporfyrie (EPP)". Bij die zeldzame erfelijke ziekte geeft licht een hevige, brandende pijn.<Cite id="ema-epar-scenesse,ema-pi-scenesse-nl" /> Een goedkeuring voor de hele EU geldt ook in Nederland.<Cite id="eu-regulation-726-2004" />
+
+De Europese Commissie keurde het goed op advies van het Europees Geneesmiddelenbureau (EMA), onder <Term id="exceptional-circumstances-authorisation">uitzonderlijke omstandigheden</Term>: onder meer omdat de ziekte zo zeldzaam is, waren niet alle gegevens over het medicijn te krijgen. Het EMA bekijkt elk jaar de nieuwe informatie. Alleen specialisten in erkende porfyriecentra mogen het voorschrijven.<Cite id="ema-epar-scenesse,ema-pi-scenesse-nl" /> Volgens het EMA maakt het meer donker melanine in de huid aan, en dat houdt licht tegen.<Cite id="ema-epar-scenesse" />
+
+Ook dit goedgekeurde medicijn heeft bijwerkingen. De vaakste zijn hoofdpijn (bij 20% van de behandelde mensen), reacties op de plek van het implantaat (21%) en misselijkheid (19%). Soms komt een allergische reactie voor, ook een zware (anafylaxie). Wie allergisch is voor de werkzame stof, een ernstige leverziekte heeft, of een lever of nieren heeft die niet goed werken, mag het niet krijgen. Het kan bestaande moedervlekken en andere pigmentvlekken donkerder maken. Daarom raadt de productinformatie elke 6 maanden een onderzoek van de hele huid aan. Ook raadt ze aan dat patiënten zich gewoon blijven beschermen tegen de zon.<Cite id="ema-pi-scenesse-nl" />
+
+**Bremelanotide** (PT-141) heeft precies dezelfde ring als melanotan II, maar eindigt op een vrij zuur in plaats van een amide.<Cite id="king-2007-melanocortin-erection,pubchem-melanotan-ii" /> Zie [PT-141](/nl/compounds/pt-141/). In de EU en in Nederland is het niet goedgekeurd.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> De Amerikaanse productinformatie geeft een ruwe indruk van wat een molecuul dat er zo op lijkt bij mensen kan doen, omdat bremelanotide in grote studies is getest. Melanotan II is dat nooit.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Waar het vandaan komt">
+
+In 1989 beschreven chemici van de Universiteit van Arizona een reeks ringvormige stukjes van alfa-MSH, gemaakt om sterk en lang te werken.<Cite id="al-obeidi-1989-cyclic-lactam" /> De ontwikkelaars schreven later dat melanotan I misschien een "therapeutische bruine kleur" kon geven, die de kans op huidkanker kon verlagen.<Cite id="hadley-2006-melanocortin-therapeutics" /> In de eerste test van melanotan II bij mensen, in 1996, werden 2 van de 3 mannen bruin. De mannen kregen ook spontane erecties.<Cite id="dorr-1996-mt2-phase-1" /> Een van de ontwikkelaars schreef later dat de seksuele effecten tijdens het werk aan bruin worden "per toeval" waren ontdekt.<Cite id="hadley-2005-discovery" />
+
+Na 2 kleine studies naar erecties (1998 en 2000) ging de ontwikkeling verder met de vrijezuurvorm, PT-141. Die werd in 2019 het Amerikaanse medicijn Vyleesi. Het werk aan bruin worden ging verder met melanotan I, nu afamelanotide.<Cite id="wessells-2000-mt2-organic-ed,hadley-2006-melanocortin-therapeutics,fda-drugsatfda-vyleesi,ema-epar-scenesse" /> Van melanotan II zelf is geen nieuwe studie gepubliceerd. Producten met die naam bleven wel in omloop. De Britse medicijnautoriteit schreef in 2024 dat ze al meer dan 10 jaar melanotanproducten uit de handel haalt.<Cite id="mhra-2024-foi-melanotan-ii" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Het zet verschillende receptoren aan. In de huid geeft het meer pigment, in de hersenen erecties.</Lead>
+
+<Diagram id="melanotan-ii-receptor-map" caption="Eén stof, 4 receptoren. Elke receptor leidt tot een ander effect.">
+
+| Receptor | Waar die zit | Wat aanzetten doet | Voor melanotan II gezien in |
+|---|---|---|---|
+| MC1 | Pigmentcellen (melanocyten) in de huid, in moedervlekken en in het tandvlees | Meer donker melanine; in een schaaltje meer pigmentcellen | Cellen; bruin worden bij 2 van de 3 mannen; casusbeschrijvingen van donkerdere moedervlekken en tandvlees |
+| MC4 | Hersenen en ruggenmerg | Erecties, minder honger; met verwante middelen een hogere bloeddruk | Ratten en muizen; erecties bij 20 mannen |
+| MC3 | Hersenen | Eetlust, samen met MC4 | Muizen en ratten |
+| MC5 | Veel weefsels buiten de hersenen | Niet onderzocht in de studies op deze pagina | Alleen cellen |
+
+</Diagram>
+
+<Cite id="hruby-1995-melanocortin-antagonists,wolf-horrell-2016-mc1r,abdel-malek-1995-melanocyte-mitogenic,dorr-1996-mt2-phase-1,fan-1997-melanocortin-feeding,wessells-2003-mt2-spinal-erection,wessells-2000-mt2-review-20-men,greenfield-2009-mc4r-blood-pressure" />
+
+Het lichaamseigen hormoon alfa-MSH werkt op verschillende melanocortinereceptoren. Melanotan II is een sterke kopie die er 4 aanzet.<Cite id="hruby-1995-melanocortin-antagonists" /> Daarom komen de effecten samen: in de eerste studie werden dezelfde mannen die bruin werden ook misselijk, en kregen ze spontane erecties.<Cite id="dorr-1996-mt2-phase-1" />
+
+<InDetail title="Stap voor stap: de keten en waar elke stap op rust">
+
+<Mechanism />
+
+### Receptoren: waarom één molecuul veel dingen doet
+
+<Claim level="in-vitro">In cellen met gekloonde receptoren van mensen of muizen reageerden de MC1-, MC3-, MC4- en MC5-receptor allemaal op melanotan II</Claim>. MC2, de receptor voor het stresshormoon ACTH, reageert vooral op ACTH.<Cite id="hruby-1995-melanocortin-antagonists" /> <Claim level="in-vitro">Van de menselijke MC1-receptor liet het heel langzaam los: 6 uur na het wegspoelen zat nog 86% vast, tegen 25% van alfa-MSH</Claim>.<Cite id="haskell-luevano-1996-mc1r-dissociation" /> Volgens de auteurs helpt dat langzame loslaten de lange werking te verklaren. De Amerikaanse productinformatie van bremelanotide beschrijft hetzelfde patroon bij die naaste verwant: het zet niet-selectief verschillende receptoren aan, het sterkst MC1R en daarna MC4R.<Cite id="dailymed-vyleesi-label" />
+
+### Pigmentcellen: donkerder, en meer
+
+MC1R is een G-eiwitgekoppelde receptor. Staat die aan, dan stijgt cAMP in de melanocyt. De cel maakt dan meer melanine en geeft dat door aan de huidcellen eromheen.<Cite id="wolf-horrell-2016-mc1r" /> <Claim level="in-vitro">In gekweekte menselijke melanocyten verhoogde alfa-MSH tyrosinase, het enzym dat de aanmaak van melanine start, met 70–450%, en het aantal cellen met 50–270%, afhankelijk van de donor</Claim>.<Cite id="abdel-malek-1995-melanocyte-mitogenic" /> Dat tweede effect telt mee bij de vraag over moedervlekken hieronder: hetzelfde signaal dat pigmentcellen donkerder maakt, laat ze ook delen, in elk geval in een schaaltje. Bij mensen komen de enige gegevens over bruin worden uit de eerste studie met 3 mannen (zie het onderzoek hieronder).<Cite id="dorr-1996-mt2-phase-1" />
+
+### Hersenen en ruggenmerg: erecties, eetlust en misselijkheid
+
+<Claim level="animal">Bij wakkere ratten gaf melanotan II erecties, gegeven in de hersenen, in het hersenvocht of in een ader. Een receptorblokker in het hersenvocht stopte het effect via het ruggenmerg, en in de penis van verdoofde ratten gespoten deed het niets</Claim>. Bij ratten begint het signaal voor een erectie dus in de hersenen en het onderste deel van het ruggenmerg, niet in de penis.<Cite id="wessells-2003-mt2-spinal-erection" />
+
+<Claim level="animal">Bij muizen verminderde melanotan II in de hersenen het eten in 4 verschillende modellen van te veel eten, en een blokker liet muizen meer eten</Claim>.<Cite id="fan-1997-melanocortin-feeding" /> <Claim level="animal">In een ader bij ratten verminderde het nog steeds het eten, al kwam er bijna niets in de hersenen: het bereikte kleine plekken waar de bloed-hersenbarrière open is</Claim>.<Cite id="trivedi-2003-mt2-anorectic-site" /> <Claim level="animal">Ratten leerden ook een smaak te vermijden die aan melanotan II gekoppeld was, een teken dat ze zich er ziek door voelen</Claim>. Dat past bij de misselijkheid die mannen hadden.<Cite id="benoit-2003-mt2-taste-aversion,wessells-2000-mt2-organic-ed" />
+
+### Bloeddruk: aangetoond bij verwanten, niet gemeten bij melanotan II
+
+<Claim level="human-controlled">Bij 28 vrijwilligers met overgewicht of obesitas verhoogde een andere MC4-agonist, 7 dagen lang elke dag gegeven, de bloeddruk met ongeveer 9 mm Hg (bovendruk) en 7 mm Hg (onderdruk) vergeleken met placebo, bij de hoogste dosis die ze verdroegen</Claim>. In dezelfde studie hadden mensen die geboren waren met een niet goed werkende MC4-receptor minder vaak een hoge bloeddruk dan mensen met evenveel overgewicht zonder die fout.<Cite id="greenfield-2009-mc4r-blood-pressure" /> Bremelanotide verhoogt de bloeddruk na elke dosis, met ten hoogste 6 mm Hg (bovendruk), het hoogst 2 tot 4 uur na de dosis.<Cite id="dailymed-vyleesi-label" /> <Claim level="hypothesis">Melanotan II doet waarschijnlijk hetzelfde via dezelfde receptor</Claim>, maar geen studie heeft het gemeten.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Het maakte de huid donkerder en gaf erecties, in kleine studies met samen 23 mannen.</Lead>
+
+<KeyNumber title="Aan alle gepubliceerde studies deden maar 23 mensen mee" value="23" unit="mannen" label="in 3 kleine studies, alle van één groep, van 1996 tot 2000" who="Elke gepubliceerde studie van melanotan II: 3 gezonde mannen (1996) en 2 cross-overstudies met elk 10 mannen met erectieproblemen (1998, 2000); geen vrouwen" source="dorr-1996-mt2-phase-1,wessells-1998-mt2-psychogenic-ed,wessells-2000-mt2-organic-ed" level="human-limited" />
+
+<KeyNumber title="De meeste mannen in de eerste studie met controlegroep kregen een erectie" value="8 van de 10" label="mannen kregen een erectie na melanotan II, 6 uur gevolgd" who="Wessells 1998: dubbelblind, met placebo als vergelijking, cross-over; 10 mannen met erectieproblemen zonder bekende lichamelijke oorzaak" source="wessells-1998-mt2-psychogenic-ed" level="human-controlled" />
+
+<KeyNumber title="Twee van de drie gezonde mannen werden bruin" value="2 van de 3" label="mannen hadden een week na de laatste injectie een donkerdere huid" who="Dorr 1996: eerste studie (fase 1), 3 gezonde mannen, 2 weken, enkelblind met dagen met zoutoplossing" source="dorr-1996-mt2-phase-1" level="human-limited" />
+
+In deze kleine studies waren de effecten duidelijk, maar het bewijs is dun. Een bruine kleur en erecties passen allebei bij de biologie, en een naaste verwant, bremelanotide, ging door naar grote studies en een goedkeuring in de VS.<Cite id="dailymed-vyleesi-label" /> {/* residue-ok: world context */} Maar niemand heeft getest of een bruine kleur door melanotan II de huid beschermt, hoe lang die blijft, of wat maanden gebruik doet.
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+De tabel bevat het lab- en dieronderzoek achter het mechanisme, elke gepubliceerde studie bij mensen, de belangrijkste casusbeschrijvingen van schade en 2 analyses van producten. Een casusbeschrijving vertelt wat er met één persoon gebeurde. Ze kan niet laten zien dat melanotan II de oorzaak was, en niet hoe vaak het gebeurt.
+
+</InDetail>
+
+<InDetail title="Lab- en dieronderzoek">
+
+Melanotan II is een veelgebruikt hulpmiddel om het melanocortinesysteem in de hersenen te onderzoeken. Een zoekopdracht in PubMed op 22 oktober 2026 vond 189 records (geen overzichtsartikelen) met "melanotan II" in de titel of de samenvatting, en 364 als je de afkorting MTII in artikelen over melanocortinen meetelt. Bijna allemaal gaan ze over dieren of cellen.<Cite id="pubmed-melanotan-ii-count-2026-10-22" /> De groep van de Universiteit van Arizona die het ontwikkelde, schreef er 10 van de 189 en 45 van de 364.<Cite id="pubmed-melanotan-ii-count-2026-10-22" />
+
+Daarom is het labwerk goed herhaald. <Claim level="animal">Het effect op de eetlust dat bij muizen in Oregon werd gezien, herhaalde een team van Merck bij ratten, en een team uit Cincinnati met een test op afkeer van een smaak</Claim>.<Cite id="fan-1997-melanocortin-feeding,trivedi-2003-mt2-anorectic-site,benoit-2003-mt2-taste-aversion" /> Het werk aan erecties bij ratten en de studies van de receptoren komen van de groep die het ontwikkelde, en van de mensen met wie die samenwerkte.<Cite id="wessells-2003-mt2-spinal-erection,hruby-1995-melanocortin-antagonists,haskell-luevano-1996-mc1r-dissociation" />
+
+Voor gebruikers telt zwaarder wat het dieronderzoek niet dekt. Een zoekopdracht in PubMed op 22 oktober 2026 naar studies van melanotan II over giftigheid, kanker en zwangerschap vond er geen.<Cite id="pubmed-melanotan-ii-count-2026-10-22" /> <Claim level="animal">Eén studie bij 12 muizen met een ingebracht melanoom vond het omgekeerde van een effect dat kanker bevordert: melanotan II op de huid remde de tumor af</Claim>. Die studie testte een bestaande tumor bij muizen, geen gewone moedervlekken bij mensen.<Cite id="wu-2020-topical-mtii-melanoma" />
+
+</InDetail>
+
+<InDetail title="De 3 studies bij mensen">
+
+Alle drie de studies komen van de groep van de Universiteit van Arizona die het molecuul ontwierp. De studietabel hierboven geeft van elke studie de uitkomsten en de beperkingen.<Cite id="dorr-1996-mt2-phase-1,wessells-1998-mt2-psychogenic-ed,wessells-2000-mt2-organic-ed" />
+
+- **1996, 3 gezonde mannen, 2 weken.** <Claim level="human-limited">Twee werden bruin; lichte misselijkheid kwam vaak voor; geeuwen en uitrekken gingen samen met spontane erecties</Claim>.<Cite id="dorr-1996-mt2-phase-1" />
+- **1998, 10 mannen met erectieproblemen zonder bekende lichamelijke oorzaak.** <Claim level="human-controlled">Acht kregen een erectie met melanotan II; stijve erecties duurden gemiddeld 38,0 minuten, tegen 3,0 minuten met placebo</Claim>.<Cite id="wessells-1998-mt2-psychogenic-ed" />
+- **2000, 10 mannen met lichamelijke risicofactoren.** <Claim level="human-controlled">Een erectie volgde na 12 van de 19 injecties met melanotan II en na 1 van de 21 placebo-injecties, en de zin in seks nam toe; na 4 van de 19 injecties waren mannen hevig misselijk</Claim>.<Cite id="wessells-2000-mt2-organic-ed" />
+
+Wat deze studies je niet kunnen vertellen: iets over vrouwen (die deden niet mee), over herhaald gebruik langer dan 2 weken, over hoe goed een bruine kleur beschermt, of over zeldzame schade. Met 23 mensen zie je alleen effecten die vaak voorkomen en snel optreden.
+
+</InDetail>
+
+<InDetail title="Wat de biologie opleverde, en wat de kloof betekent">
+
+De biologie achter melanotan II heeft echte medicijnen opgeleverd. Afamelanotide, de verwant met de rechte keten, is in de EU goedgekeurd om bij volwassenen met EPP schade door licht te voorkomen. Hoofdpijn, misselijkheid en reacties op de plek van het implantaat komen bij ongeveer 1 op de 5 behandelde mensen voor.<Cite id="ema-epar-scenesse,ema-pi-scenesse-nl" /> Het EMA legt uit waarom het helpt: door het extra melanine verdragen patiënten meer licht.<Cite id="ema-epar-scenesse" /> <Claim level="human-controlled">In een gerandomiseerd gecontroleerd onderzoek dat 65 mensen afmaakten, verhoogde afamelanotide het melanine in de huid. Bij vrijwilligers die snel verbranden, daalde het aantal zonverbrande cellen na een vaste testdosis uv-licht met meer dan de helft</Claim>.<Cite id="barnetson-2006-afamelanotide-photoprotection" />
+
+{/* residue-ok: world context */}
+Bremelanotide is een medicijn in de VS, niet in de EU.<Cite id="dailymed-vyleesi-label,ema-medicines-json" /> Setmelanotide (Imcivree) zet de MC4-receptor aan. In de EU is het goedgekeurd sinds 16 juli 2021. Volgens de huidige productinformatie is het bedoeld voor obesitas en honger bij volwassenen en kinderen met een paar zeldzame aandoeningen: een aangeboren fout in beide kopieën van het gen voor POMC, PCSK1 of de leptinereceptor, het Bardet-Biedl-syndroom, en obesitas door schade aan of een stoornis van de hypothalamus, een deel van de hersenen. De vaakste bijwerkingen zijn een donkerdere huid (66%), reacties op de prikplek (45%), misselijkheid (36%) en hoofdpijn (19%).<Cite id="ema-epar-imcivree,ema-pi-imcivree-nl" /> In de VS is het goedgekeurd sinds 25 november 2020.<Cite id="fda-drugsatfda-imcivree,fda-label-imcivree-2026-03" />
+
+Het idee van een bruine kleur via melanocortinen is dus geen fantasie. Een geteste behandeling voor mensen die snel verbranden, zou waarde kunnen hebben. Die kloof heeft gevolgen: het onderzoek naar melanotan II zelf stopte in 2000 bij 23 mannen, terwijl het wel in omloop bleef. Gebruikers krijgen nu een sterke, niet-selectieve versie van die biologie, uit producten waarvan sterkte en zuiverheid onzeker zijn, en zonder de studies die laten zien wat het over jaren doet.
+
+</InDetail>
+
+<InDetail title="Het enige onderzoek in een register">
+
+ClinicalTrials.gov noemt één studie: een fase 2-studie met placebo als vergelijking, waarin melanotan II wordt toegevoegd aan lichttherapie bij vitiligo. Bij die ziekte verliest de huid haar pigmentcellen. De studie wil 60 deelnemers in één ziekenhuis in Shenzhen, China. Volgens de registratie zoekt ze nog deelnemers.<Cite id="ctgov-nct07437560" />
+
+<Callout type="uncertain" title="Wees voorzichtig met deze registratie">
+De registratie noemt zichzelf "This example interventional study record". Ze deelt de opdrachtgever, de plek, de contactpersoon en de data met een registratie van een studie met BPC-157. Zolang er geen resultaten in een vakblad staan, voegt ze niets toe aan wat bekend is.<Cite id="ctgov-nct07437560" />
+</Callout>
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog onbekend?">Wat langer gebruik doet, of het de kans op kanker verandert, en wat er in de flacons zit.</Lead>
+
+<TimeStrip title="De studies duurden hooguit 2 weken. Langer gebruik is nooit onderzocht." detail="Hoe lang de gepubliceerde studies mensen volgden, in weken gebruik." min={0} max={12} step={2} axis="Weken gebruik" source="dorr-1996-mt2-phase-1,wessells-1998-mt2-psychogenic-ed,wessells-2000-mt2-organic-ed" checked="2026-10-22" rows={[
+  { label: "Eerste studie: 3 gezonde mannen", spans: [{ from: 0, to: 2, text: "2 weken" }] },
+  { label: "Studies naar erecties: 20 mannen", spans: [{ from: 0, to: 0.2, text: "testinjecties, elk 6 uur gevolgd" }] },
+  { label: "Gebruik over maanden of jaren", spans: [{ from: 2, to: 12, text: "geen onderzoek naar veiligheid", unknown: true }] },
+]} />
+
+<InDetail title="Alle 9 open vragen, met hun bronnen">
+
+Op 22 oktober 2026 waren deze dingen onbekend:
+
+- **Veiligheid op lange termijn.** Geen studie duurde langer dan 2 weken, en we vonden geen studie naar giftigheid op lange termijn bij dieren.<Cite id="dorr-1996-mt2-phase-1,pubmed-melanotan-ii-count-2026-10-22" />
+- **De kans op melanoom.** Casusbeschrijvingen noemen melanomen tijdens of kort na het gebruik. Maar overtuigend bewijs voor een verband ontbreekt, en de samengevoegde verslagen kunnen geen risico schatten.<Cite id="habbema-2017-melanotan-review,burian-2019-eruptive-naevi-review" />
+- **Of nieuwe moedervlekken weer weggaan.** Eruptieve moedervlekken blijven meestal, al is beschreven dat ze na het stoppen lichter werden.<Cite id="burian-2019-eruptive-naevi-review,cardones-2009-eruptive-nevi" />
+- **Bescherming tegen de zon.** Of een bruine kleur door melanotan II de huid beschermt, is nooit gemeten.<Cite id="dorr-1996-mt2-phase-1" />
+- **Bloeddruk.** Nooit gemeten in een studie met melanotan II, al verhogen naaste verwanten de bloeddruk.<Cite id="dailymed-vyleesi-label,greenfield-2009-mc4r-blood-pressure" />
+- **Effecten bij vrouwen.** Aan geen enkele gepubliceerde studie deden vrouwen mee. Een van de ontwikkelaars schreef dat het ook bij vrouwen de zin in seks en de opwinding verhoogde, maar zo'n studie is nooit gepubliceerd.<Cite id="dorr-1996-mt2-phase-1,wessells-1998-mt2-psychogenic-ed,wessells-2000-mt2-organic-ed,hadley-2005-discovery" />
+- **Zwangerschap en borstvoeding.** Geen gegevens over melanotan II.<Cite id="pubmed-melanotan-ii-count-2026-10-22" />
+- **Hoe vaak schade voorkomt.** Casusbeschrijvingen en meldingen bij medicijnautoriteiten geven geen aantallen. De Britse medicijnautoriteit schrijft dat haar meldingen niet gelijk zijn aan het aantal mensen met schade.<Cite id="mhra-2024-foi-melanotan-ii" />
+- **Wat er in producten zit.** Geteste flacons bevatten minder dan op het etiket stond, of waren voor 30% zuiver. Neussprays met hetzelfde etiket bevatten hoeveelheden die meer dan een factor 2 verschilden. In sommige producten met de naam melanotan zat insuline.<Cite id="breindahl-2015-melanotan-products,deville-2024-barbie-drug-identification,au-tga-2026-08-melanotan-ii-safety-alert,fagg-melanotan-warning" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is geen goedgekeurd medicijn. Volgens onze lezing zijn verkopen, doorgeven, invoeren en gebruik in de sport verboden.</Lead>
+
+<Compare title="Melanotan II is in Nederland en de EU geen goedgekeurd medicijn. Handel en reclame zijn verboden." detail="Gecontroleerd op 27 oktober 2026. Dat de regels voor geneesmiddelen gelden, is onze lezing van de wet: hieronder lees je waarom. De sport staat in een apart deel.">
+
+| | Nederland | Europese Unie |
+|---|---|---|
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Geen product in de Geneesmiddeleninformatiebank van het CBG.<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Geen product en geen aanvraag bij het EMA.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> |
+| Mag iemand het doorgeven of invoeren? | <Verdict is="no" /> Zonder handelsvergunning zijn verkopen en doorgeven verboden. Invoeren ook, zelfs voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Zonder handelsvergunning mag een medicijn in geen enkele lidstaat op de markt.<Cite id="eu-directive-2001-83" /> |
+| Mag iemand er reclame voor maken? | <Verdict is="no" /> Reclame voor een geneesmiddel zonder handelsvergunning is verboden, ook online.<Cite id="nl-gnw-art-84-85-advertising,igj-geneesmiddelenreclame-wat-is" /> | <Verdict is="no" /> Elke lidstaat moet die reclame verbieden.<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De statussen voor Nederland en de EU zijn gecontroleerd op 27 oktober 2026.
+
+### Sport (WADA)
+
+Melanotan II staat niet met naam op de dopinglijst van 2026 of 2027. Volgens onze lezing valt het onder S0 ("Niet erkende stoffen"). Die groep verbiedt altijd elke farmacologische stof die niet onder een andere groep valt, en die geen gezondheidsautoriteit van een overheid heeft goedgekeurd als medicijn voor mensen.<Cite id="wada-2026-list-en,wada-2027-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> Melanotan II is niet goedgekeurd in Nederland of de EU, en ook niet in de VS, het VK, Canada of Australië. Andere landen hebben we niet gecontroleerd.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,openfda-drugsfda-search-melanotan-2026-10-26,uk-mhra-substance-index-status-c-2026-10-23,ca-dpd-search-status-c-2026-10-23,au-tga-2026-08-melanotan-ii-safety-alert" /> {/* residue-ok: world context (the registers checked for the S0 reading) */}
+
+Het Wereld Anti-Doping Agentschap (WADA) en de Britse antidopingorganisatie schrijven dat een peptide verboden kan zijn, ook als de lijst het niet noemt. De lijst van 2027 noemt peptiden als voorbeeld bij S0.<Cite id="wada-2027-list-explanatory-note,ukad-2027-list-summary" /> Ben je lid van een sportbond en twijfel je? Vraag het dan de Dopingautoriteit. Een stof die je niet in haar app vindt, is daarmee nog niet toegestaan.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Meer over de regels in Nederland: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de Europese Unie">
+
+### Europese Unie
+
+Voor de hele EU is geen product met melanotan II goedgekeurd. De gegevens van het EMA noemen het niet, en daar staan ook geweigerde en ingetrokken aanvragen in. Er ligt geen aanvraag ter beoordeling, en het heeft geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-search,ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> Afamelanotide (Scenesse) en setmelanotide (Imcivree) zijn wel goedgekeurd, maar het zijn andere moleculen.<Cite id="ema-epar-scenesse,ema-epar-imcivree" />
+
+Volgens EU-richtlijn 2001/83/EG mag een medicijn alleen op de markt met een handelsvergunning van een lidstaat of van de EU. Ook moeten de lidstaten reclame verbieden voor een medicijn zonder handelsvergunning.<Cite id="eu-directive-2001-83" />
+
+### Nederland
+
+In de Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG) staat geen product met melanotan II. Zoek je op "melanotan", dan vind je alleen Scenesse, met afamelanotide.<Cite id="cbg-gib-search-melanotan-2026-10-28" />
+
+Volgens de Geneesmiddelenwet is een product een geneesmiddel als het wordt aangeboden om een ziekte te behandelen of te voorkomen. Het is ook een geneesmiddel als het lichaamsfuncties verandert door een farmacologisch effect.<Cite id="nl-gmw-art-1-geneesmiddel" /> Melanotan II verandert de kleur van de huid via receptoren (zie hierboven, bij hoe het werkt). Volgens onze lezing is een product met melanotan II daarom een geneesmiddel, ook als er "alleen voor onderzoek" op staat. Zo'n etiket beslist het niet: de Douane kijkt naar het product, hoe het wordt aangeboden en wat erin zit.<Cite id="douane-hvgem-geneesmiddelen-h7-vaststelling-geneesmiddel,douane-2026-08-illegale-online-handel-medicijnen" /> Zie ["alleen voor onderzoek"](/nl/legal/research-use-only/).
+
+Zonder handelsvergunning mag niemand een geneesmiddel in voorraad hebben, verkopen, doorgeven of invoeren. Er is geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Gebruiken staat niet in die lijst. Of een paar flacons thuis al een voorraad zijn, zegt de wet niet duidelijk.<Cite id="nl-gmw-art-40-handelsvergunning" /> Reclame voor een geneesmiddel zonder handelsvergunning is verboden.<Cite id="nl-gnw-art-84-85-advertising" /> De Inspectie Gezondheidszorg en Jeugd (IGJ) schrijft dat wat offline niet mag, ook online niet mag.<Cite id="igj-geneesmiddelenreclame-wat-is" />
+
+Over andere peptiden dan afslankmiddelen schrijft de Douane: "Dit zijn experimentele middelen die op sociale media worden aangeraden." De Douane controleert post en pakketten op illegale medicijnen.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> Nederlandse dermatologen beschreven in 2017 in een overzichtsartikel de risico's van melanotan voor moedervlekken en melanoom.<Cite id="habbema-2017-melanotan-review" /> Een ziekenhuis in Gouda beschreef in 2022 een man die na een injectie op de spoedeisende hulp kwam.<Cite id="eijmael-2022-barbie-drug" />
+
+**Zelf invoeren.** Een reiziger mag de meeste medicijnen voor eigen gebruik meenemen, in de originele verpakking. Dat gaat over medicijnen die je op een legale manier hebt gekregen. Een pakket valt niet onder die regel.<Cite id="douane-medicijnen-reizen-2026,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> Melanotan II heeft geen handelsvergunning. Invoeren of naar Nederland brengen mag dus niet, ook niet voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning,douane-invoer-geneesmiddelen-2026" /> Ziet de Douane een poeder als werkzame stof (een grondstof voor medicijnen)? Dan mag een particulier het helemaal niet per post invoeren. De Douane neemt het dan in beslag en ziet ook de ontvanger als verdachte.<Cite id="douane-hvgem-geneesmiddelen-h13-fysiek-toezicht-werkzame-stoffen" /> Of de Douane een flacon met poeder als medicijn of als werkzame stof ziet, is niet openbaar. Wat wel en niet mag, staat bij [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+**België.** Het Belgische Federaal Agentschap voor Geneesmiddelen en Gezondheidsproducten (FAGG) noemt melanotan een experimenteel product dat niet als geneesmiddel is goedgekeurd. De verspreiding is daar dus illegaal.<Cite id="fagg-melanotan-warning" /> Meer in de [notities over België](/nl/legal/be/).
+
+</InDetail>
+
+<InDetail title="Wat medicijnautoriteiten buiten de EU zeggen">
+
+{/* residue-ok: world context (FDA safety evidence) */}
+**De VS.** De Amerikaanse medicijnautoriteit FDA heeft melanotan II niet goedgekeurd: haar database van goedgekeurde medicijnen noemt geen product.<Cite id="openfda-drugsfda-search-melanotan-2026-10-26" /> Het werd ooit voorgedragen voor bereiding door Amerikaanse apotheken en kwam in Categorie 2: stoffen die grote veiligheidsrisico's kunnen geven. De voordracht is ingetrokken. De FDA noemt de redenen nog steeds: mogelijke afweerreacties door klontjes of onzuiverheden, en ernstige voorvallen in casusbeschrijvingen, namelijk melanoom, PRES, een sympathicomimetische vergiftiging en priapisme.<Cite id="fda-category-2-safety-risks" /> Op de lijst van 14 mei 2026 staat het in geen van de 3 categorieën van de FDA voor de Amerikaanse 503A-lijst.<Cite id="fda-503a-categories-2026-05" />
+
+{/* residue-ok: world context (FDA advisory meeting; CONTENT-GUIDE §1, point 5) */}
+De FDA heeft aangekondigd dat haar adviescommissie voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) vóór eind februari 2027 vergadert over melanotan II, samen met LL-37, GHK-Cu, dihexa-acetaat en gepegyleerde mechano growth factor. Op 3 november 2026 waren er nog geen datum, dossier of vergaderstukken.<Cite id="fda-pcac-2027-early-announcement" /> Zo'n commissie geeft alleen een advies, en dat is niet bindend.<Cite id="fda-pcac-2027-early-announcement" /> Komt melanotan II later via een formele regel (rulemaking) op de Amerikaanse 503A-lijst? Dan mogen apotheken in de VS het op recept bereiden, en meer niet. Het is dan nog steeds geen goedgekeurd medicijn, het zegt niets over of het werkt, en het verandert niets buiten de VS.<Cite id="fda-503a-bulks-page,usc-21-353a,fda-pcac-2026-presentations-day1" />
+
+{/* residue-ok: world context (other regulators as evidence) */}
+**Het VK, Canada en Australië.** Ook daar is melanotan II niet goedgekeurd.<Cite id="uk-mhra-substance-index-status-c-2026-10-23,ca-dpd-search-status-c-2026-10-23,au-tga-2026-08-melanotan-ii-safety-alert" /> De Britse medicijnautoriteit (MHRA) ziet injecties en pennen met melanotan II als geneesmiddelen. Ze raadt gebruikers aan er meteen mee te stoppen, en kreeg 16 meldingen van vermoedelijke bijwerkingen in de jaren 2012 tot 2022.<Cite id="mhra-2024-foi-melanotan-ii" /> De Canadese medicijnautoriteit noemde melanotan I en II in april 2026 bij de niet-goedgekeurde peptiden voor injectie die ze in beslag had genomen.<Cite id="ca-hc-2026-04-think-twice-peptides" /> In Australië is het sinds 1 juni 2018 alleen op recept, maar er is geen goedgekeurd product. Een adviescommissie vond toen geen bewijs voor een therapeutisch voordeel.<Cite id="au-poisons-standard-2018-06,au-tga-2018-02-melanotan-ii-interim-decision,au-tga-2026-08-melanotan-ii-safety-alert" />
+
+<Callout type="legal" title="Een Amerikaans besluit verandert niets in Nederland">
+Wat de FDA of haar adviseurs ook besluiten, het verandert de wet in Nederland en de EU niet. Melanotan II is in Nederland en de EU geen goedgekeurd medicijn.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,nl-gmw-art-40-handelsvergunning" /> {/* residue-ok: PCAC framing (CONTENT-GUIDE §1, point 5) */}
+</Callout>
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Veel mensen worden misselijk. Artsen zagen veranderde moedervlekken, lange erecties en melanomen. Of het melanoom veroorzaakt, is onbekend.</Lead>
+
+<Compare title="Bij mensen is ernstige schade gezien. Geen studie telde hoe vaak dat gebeurt." detail="Wat studies, casusbeschrijvingen en medicijnautoriteiten beschrijven, op 22 oktober 2026. Een casusbeschrijving laat zien dat iets gebeurde, niet dat melanotan II de oorzaak was.">
+
+| Mogelijke schade | Gezien bij mensen? |
+|---|---|
+| Misselijk zijn, geeuwen, minder eetlust | <Verdict is="yes" /> Vaak in de studies; in één studie hevige misselijkheid na 4 van de 19 injecties.<Cite id="wessells-2000-mt2-organic-ed,wessells-1998-mt2-psychogenic-ed" /> |
+| Nieuwe moedervlekken, of moedervlekken die donkerder worden | <Verdict is="yes" /> In veel casusbeschrijvingen, één keer binnen een dag na één injectie.<Cite id="burian-2019-eruptive-naevi-review,schulze-2014-naevi-24-hours" /> |
+| Melanoom | <Verdict is="unknown" /> Beschreven tijdens of kort na het gebruik; een verband is niet aangetoond.<Cite id="habbema-2017-melanotan-review,vadner-2026-five-melanomas" /> |
+| Een erectie die niet weggaat (priapisme) | <Verdict is="yes" /> In casusbeschrijvingen; één man moest worden geopereerd en hield erectieproblemen.<Cite id="mallory-2021-melanotan-priapism,dreyer-2019-melanotan-priapism" /> |
+| Snelle hartslag, onrust, spierafbraak | <Verdict is="yes" /> In casusbeschrijvingen, ook uit Nederland.<Cite id="nelson-2012-melanotan-rhabdomyolysis,eijmael-2022-barbie-drug" /> |
+| Zwelling in de hersenen (PRES), nierinfarct | <Verdict is="yes" /> In losse casusbeschrijvingen.<Cite id="kaski-2013-melanotan-pres,peters-2020-melanotan-renal-infarction" /> |
+| Hogere bloeddruk | <Verdict is="unknown" /> Niet gemeten bij melanotan II; wel aangetoond bij naaste verwanten.<Cite id="dailymed-vyleesi-label,greenfield-2009-mc4r-blood-pressure" /> |
+
+</Compare>
+
+Wat over schade bekend is, komt vooral uit casusbeschrijvingen van mensen die producten van buiten de legale keten gebruikten, vaak samen met de zonnebank of andere middelen.<Cite id="hjuler-2014-melanotan-melanoma,vadner-2026-five-melanomas,nelson-2012-melanotan-rhabdomyolysis" /> De Amerikaanse medicijnautoriteit noemt dezelfde ernstige voorvallen.<Cite id="fda-category-2-safety-risks" /> Geen van beide kan zeggen hoe vaak ze voorkomen.
+
+<InDetail title="Bijwerkingen in de studies">
+
+In de studies kwamen misselijkheid, uitrekken en geeuwen, minder eetlust en spontane erecties vaak voor. In hun samengevoegde verslag schatten de onderzoekers hevige misselijkheid op 12,9% bij de dosis die ze onderzochten.<Cite id="dorr-1996-mt2-phase-1,wessells-1998-mt2-psychogenic-ed,wessells-2000-mt2-review-20-men" /> Bij ratten geeft zuiver melanotan II een aangeleerde afkeer van een smaak die eraan gekoppeld is, op welke manier het ook wordt gegeven. Dat is een teken dat misselijkheid bij de werking van de stof zelf hoort, en niet bij één product.<Cite id="benoit-2003-mt2-taste-aversion" />
+
+Ter vergelijking: bremelanotide, een naaste verwant, maakte in de grote studies voor de Amerikaanse goedkeuring 40% van de vrouwen misselijk. Donkere plekken op het gezicht, het tandvlees of de borsten kwamen voor bij 1% bij af en toe gebruik, maar bij 38% na 8 dagen dagelijks gebruik. Ze gingen na het stoppen niet altijd weg.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Moedervlekken en melanoom: waarom de zorg logisch is, en waarom het niet is aangetoond">
+
+De zorg volgt een keten die deels vaststaat en deels een hypothese is:
+
+<Diagram id="melanotan-ii-mole-question" caption="Waarom melanotan II een vraag over huidkanker oproept. De laatste stap is niet getest.">
+
+1. **Melanotan II zet MC1R aan op elke pigmentcel, ook in moedervlekken** (aangetoond in cellen).
+2. **De cellen maken meer melanine, dus moedervlekken worden donkerder** (gezien bij mensen: casusbeschrijvingen).
+3. **Hetzelfde signaal laat pigmentcellen delen, in elk geval in een schaaltje; er komen nieuwe moedervlekken** (cellen; casusbeschrijvingen van eruptieve moedervlekken).
+4. **Donkerdere en nieuwe moedervlekken zijn moeilijker te beoordelen, dus een melanoom wordt misschien later gevonden** (gezien in één geval met dermatoscopie).
+5. **Of dit de kans op melanoom zelf verhoogt, is niet bekend** (hypothese; de zonnebank en veel moedervlekken maken het beeld onduidelijk).
+
+</Diagram>
+
+<Cite id="wolf-horrell-2016-mc1r,abdel-malek-1995-melanocyte-mitogenic,burian-2019-eruptive-naevi-review,mang-2012-dermoscopy-changes,habbema-2017-melanotan-review" />
+
+**Wat is gezien.** <Claim level="human-limited">Veel casusbeschrijvingen noemen bestaande moedervlekken die donkerder werden en nieuwe moedervlekken tijdens gebruik van melanotan</Claim>, in één verslag binnen 24 uur na één injectie.<Cite id="cousen-2009-eruptive-naevi,schulze-2014-naevi-24-hours,burian-2019-eruptive-naevi-review" /> Een overzicht van alle gepubliceerde gevallen van eruptieve moedervlekken vond 179 mensen. Bij 41% waren afweerremmers, chemotherapie of melanotan de vermoedelijke oorzaak, 16% had minstens één afwijkende (dysplastische) moedervlek, en 5 hadden een melanoom.<Cite id="burian-2019-eruptive-naevi-review" /> In één geval dat met een dermatoscoop werd gevolgd, waren een moedervlek en een melanoom door de veranderingen moeilijk uit elkaar te houden.<Cite id="mang-2012-dermoscopy-changes" />
+
+Een verwant goedgekeurd medicijn laat een vergelijkbaar effect zien. Setmelanotide werkt vooral op MC4 en veel zwakker op MC1. Toch waarschuwt de Europese productinformatie dat het bestaande moedervlekken donkerder kan maken, en noemt ze moedervlekken (melanocytaire naevus) een zeer vaak voorkomende bijwerking. Vóór de behandeling en daarna elk jaar moet een arts de hele huid onderzoeken. De Amerikaanse productinformatie waarschuwt op dezelfde manier.<Cite id="ema-pi-imcivree-nl,fda-label-imcivree-2026-03" /> Ook het tandvlees en de binnenkant van de wangen kunnen pigment krijgen. Bij één man zat de kleur op het tandvlees er 3 maanden na het stoppen nog. Hij rookte ook, en ook roken kan het tandvlees donkerder maken.<Cite id="bonchev-2026-oral-pigmentation" />
+
+**Verslagen over melanoom.** <Claim level="human-limited">In verschillende casusbeschrijvingen kreeg iemand een melanoom tijdens of kort na gebruik van melanotan</Claim>. Een overzichtsartikel van Nederlandse dermatologen uit 2017 telde er 4.<Cite id="habbema-2017-melanotan-review" /> Beschreven zijn onder meer een melanoom bij een vrouw (2011), een melanoom in situ bij een jonge vrouw (2012), een vrouw van 20 in Denemarken die ook de zonnebank gebruikte, een vrouw bij wie een melanoom in de mond volgde op een neusspray met melanotan II, en in 2026 een man van 49 met 5 vroege melanomen (melanoom in situ). Zijn moedervlekken waren binnen ongeveer een week na de start "zwart geworden".<Cite id="paurobally-2011-melanotan-melanoma,ong-2012-melanoma-in-situ,hjuler-2014-melanotan-melanoma,yassin-alsabbagh-2025-oral-melanoma,vadner-2026-five-melanomas" /> Een man die eerder een melanoom had gehad, kreeg nieuwe atypische moedervlekken na gebruik van een kunstmatig alfa-MSH-peptide. Zijn moedervlekken werden lichter toen hij stopte. De auteurs concludeerden dat zulke peptiden bij mensen met aanleg de groei van afwijkende pigmentcellen kunnen aanjagen.<Cite id="cardones-2009-eruptive-nevi" />
+
+**Waarom dat geen bewijs is.** Melanoom komt vaak voor, en de mensen in deze verslagen hadden vaak andere sterke risico's. In 27 observationele studies hadden mensen die ooit de zonnebank gebruikten ongeveer een vijfde meer melanoom, en bijna 2 keer zoveel als ze vóór hun 35e begonnen.<Cite id="boniol-2012-sunbed-melanoma" /> De man uit 2026 had ook veel moedervlekken, een lichte huid, een oma met melanoom en gebruikte testosteron van buiten de legale keten. Zijn artsen voegen eraan toe dat de melanomen er misschien al waren, en pas zichtbaar werden toen de moedervlekken donkerder werden.<Cite id="vadner-2026-five-melanomas" /> De auteurs van het overzichtsartikel uit 2017 concluderen dat overtuigend bewijs voor een verband tussen melanotan en melanoom ontbreekt.<Cite id="habbema-2017-melanotan-review" />
+
+**Het argument de andere kant op.** Het signaal via MC1R helpt pigmentcellen ook om uv-schade aan hun DNA te herstellen: <Claim level="in-vitro">in gekweekte menselijke melanocyten verminderde alfa-MSH de DNA-schade en celdood door uv-licht</Claim>, en mensen bij wie MC1R slecht werkt, krijgen makkelijker melanoom.<Cite id="kadekaro-2005-msh-dna-repair,wolf-horrell-2016-mc1r" /> <Claim level="animal">Bij 12 muizen met een ingebracht melanoom remde melanotan II op de huid de tumor af</Claim>; in een schaaltje verdween het effect op melanoomcellen als MC1R werd geblokkeerd.<Cite id="wu-2020-topical-mtii-melanoma" /> Het aanzetten van MC1R kan dus in theorie beschermen en schaden. Welk effect bij melanotan II in de praktijk de overhand heeft, vaak samen met de zonnebank, is nooit onderzocht.
+
+</InDetail>
+
+<InDetail title="Waarom je niet kunt rekenen op bescherming tegen de zon">
+
+Een bruine kleur door melanotan II lijkt op een kleur van de zon, maar niemand heeft gemeten waartegen die beschermt. <Claim level="human-limited">Op een lichte huid geeft zelfs een natuurlijke bruine kleur maar weinig bescherming</Claim>.<Cite id="young-2020-pigmentation-sunscreens" /> <Claim level="human-limited">In een studie bij 12 vrijwilligers gaf een kleur door UVA-licht minder bescherming dan een beschermingsfactor (SPF) van 1,5, en een kleur door UVB maar heel weinig</Claim>. De onderzoekers noemden een bruine kleur van UVA-rijke hoogtezonnen vóór de vakantie averechts.<Cite id="coelho-2015-uva-tan" /> Hoe een kleur ontstaat, verandert dus wat die doet.
+
+Bij afamelanotide, een verwant molecuul dat in een gerandomiseerd onderzoek is getest, verminderde het extra melanine wel het aantal zonverbrande cellen bij vrijwilligers die snel verbranden.<Cite id="barnetson-2006-afamelanotide-photoprotection" /> Ook bij dat goedgekeurde medicijn raadt de productinformatie aan dat patiënten zich gewoon blijven beschermen tegen de zon.<Cite id="ema-pi-scenesse-nl" /> Voor melanotan II is het nooit getest. Op online fora noemen gebruikers vaak ook de zonnebank, en die geeft zelf uv-schade.<Cite id="gilhooley-2021-forum-study,boniol-2012-sunbed-melanoma" />
+
+</InDetail>
+
+<InDetail title="Erecties die niet stoppen (priapisme)">
+
+Bij ratten start melanotan II erecties vanuit de hersenen en het ruggenmerg, niet vanuit de penis. Bij mannen gaf het erecties zonder seksuele prikkel.<Cite id="wessells-2003-mt2-spinal-erection,wessells-2000-mt2-review-20-men" /> In de eerste studie uit 1996 kwamen en gingen spontane erecties gedurende 1 tot 5 uur na een injectie.<Cite id="dorr-1996-mt2-phase-1" /> Maar <Claim level="human-limited">verschillende casusbeschrijvingen noemen priapisme, een erectie die niet weggaat, na injecties met melanotan</Claim>.<Cite id="dreyer-2019-melanotan-priapism,devlin-2013-melanotan-priapism,mallory-2021-melanotan-priapism" />
+
+Bij deze vorm van priapisme ("low-flow" of ischemisch) zit het bloed vast in de penis, en krijgt het weefsel te weinig zuurstof. Daardoor kan littekenweefsel ontstaan. In een geval in Glasgow hielpen bloed afzuigen en medicijnen, maar 4 weken later waren de erecties nog niet hersteld.<Cite id="dreyer-2019-melanotan-priapism,mallory-2021-melanotan-priapism" /> In een geval in Miami kwam een man van 55 na 30 uur. Medicijnen hielpen niet, hij moest worden geopereerd, en 15 weken later had hij nieuwe erectieproblemen en littekenweefsel.<Cite id="mallory-2021-melanotan-priapism" /> Een erectie die langer dan 3 uur duurt, heeft spoedzorg nodig, want wachten kan blijvende schade geven.<Cite id="nhs-priapism" /> Bel dan direct 112.
+
+</InDetail>
+
+<InDetail title="Hart, bloeddruk, hersenen en nieren">
+
+<Claim level="human-limited">Een man in Chicago die een ongewoon grote hoeveelheid melanotan II spoot, kreeg binnen 2 uur een snelle hartslag, zweette, trilde en was angstig. Zijn spieren braken af (rabdomyolyse), zijn nieren werkten minder goed en hij lag 3 dagen op de intensive care</Claim>. Een test bevestigde dat het product melanotan II was; in zijn urine zaten ook opiaten.<Cite id="nelson-2012-melanotan-rhabdomyolysis" /> Een ziekenhuis in Gouda behandelde een man van 27 met vergelijkbare "sympathicomimetische" klachten, 2 uur na een injectie.<Cite id="eijmael-2022-barbie-drug" />
+
+PRES, een zwelling achter in de hersenen, is beschreven na injecties met melanotan.<Cite id="kaski-2013-melanotan-pres" /> PRES hangt onder meer samen met schommelingen in de bloeddruk. Lichte vormen geven soms alleen hoofdpijn of een aanval met schokken. Bij de meeste mensen gaat het over, maar ernstige vormen kunnen een bloeding in de hersenen geven.<Cite id="fugate-2015-pres" /> <Claim level="hypothesis">Een hogere bloeddruk via MC4-receptoren zou een aannemelijke route zijn</Claim>, omdat verwante moleculen de bloeddruk bij mensen verhogen. Dat is niet getest.<Cite id="greenfield-2009-mc4r-blood-pressure,dailymed-vyleesi-label" />
+
+Een man in Zweden kreeg een nierinfarct: een deel van een nier stierf af doordat de bloedtoevoer was afgesloten. Zijn artsen vonden melanotan II de meest waarschijnlijke oorzaak.<Cite id="peters-2020-melanotan-renal-infarction" /> De Australische medicijnautoriteit noemt nierproblemen en zwelling van de hersenen bij de schade die met melanotan II is gemeld.<Cite id="au-tga-2025-01-melanotan-blog" />
+
+</InDetail>
+
+<InDetail title="Wat er in de producten zit">
+
+Onderzoekers kochten flacons bij 3 online verkopers. Ze bevatten wel melanotan II, maar maar 43 tot 88% van de hoeveelheid op het etiket. Flacons van 2 verkopers bevatten 4,1 tot 5,9% onbekende onzuiverheden.<Cite id="breindahl-2015-melanotan-products" /> Een forensisch lab in België vond flacons met melanotan II op het etiket die voor 30% zuiver waren.<Cite id="deville-2024-barbie-drug-identification" /> De Australische medicijnautoriteit testte 5 in beslag genomen neussprays met hetzelfde etiket: de hoeveelheid melanotan II verschilde meer dan een factor 2.<Cite id="au-tga-2026-08-melanotan-ii-safety-alert" />
+
+Het Belgische FAGG vond insuline in producten die als melanotan werden verkocht. Insuline kan een coma geven.<Cite id="fagg-melanotan-warning" /> In monsters die de Italiaanse politie in beslag nam, zaten zowel melanotan II als bremelanotide.<Cite id="mestria-2021-seized-melanotan-bremelanotide" />
+
+{/* residue-ok: evidence (FDA safety assessment) */}
+Peptiden kunnen samenklonteren, en bij het maken ontstaan bijna-kopieën van de keten als onzuiverheden. Daarom zegt de FDA dat melanotan II uit een Amerikaanse apotheekbereiding bij sommige manieren van gebruik een risico op een ongewenste afweerreactie kan geven.<Cite id="fda-category-2-safety-risks" /> Elke injectie geeft ook een risico op infectie. Zie [de risico's van het product](/nl/safety/product-risk/) en [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer het product, laat eerst je huid nakijken, en ken de alarmsignalen.</Lead>
+
+Dit deel noemt geen hoeveelheden of schema's, en zegt niet waar je het krijgt. Het is voor mensen die melanotan II al gebruiken, of die al een product hebben.
+
+<ProductCheck extra="Ook een volledig etiket kan niet kloppen. Geteste flacons bevatten minder dan op het etiket stond. Sprays met hetzelfde etiket bevatten heel verschillende hoeveelheden. Eén monster was maar voor 30% zuiver. In sommige producten met deze naam zat insuline." extraSources="breindahl-2015-melanotan-products,au-tga-2026-08-melanotan-ii-safety-alert,deville-2024-barbie-drug-identification,fagg-melanotan-warning" />
+
+### Een arts kan meekijken
+
+Je huisarts kan je moedervlekken bekijken en ze in de loop van de tijd vergelijken. Is meer onderzoek nodig? Dan stuurt je huisarts je door naar een dermatoloog (huidarts). Vertel dat je melanotan gebruikt. De veranderingen die het geeft, kunnen op een melanoom lijken. Een arts die het weet, kan ze beter beoordelen.<Cite id="mang-2012-dermoscopy-changes,thuisarts-moedervlek-niet-vertrouwen" /> Je huisarts kan ook je bloeddruk meten.<Cite id="thuisarts-hoge-bloeddruk" /> Vertel je arts eerlijk wat je hebt gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **Een erectie duurt langer dan 3 uur, of doet pijn en gaat niet weg.** Dit heet priapisme. Bel direct 112. Wacht niet: de penis kan blijvend beschadigd raken.
+- **Je hart jaagt, je zweet, trilt of bent heel onrustig**, vooral met spierpijn of donkere urine die op cola lijkt. Dit kan een vergiftiging zijn waarbij spieren afbreken. Bel 112.
+- **Je krijgt plotseling hevige hoofdpijn, een aanval met schokken, verwardheid of problemen met zien.** Dit kunnen tekenen zijn van zwelling in de hersenen of van een heel hoge bloeddruk. Bel 112.
+- **Een moedervlek is nieuw, of verandert van grootte, vorm of kleur, jeukt of bloedt**, of je ziet een donkere plek in je mond. Stop met melanotan II en maak een afspraak met je huisarts.
+</Callout>
+
+<Cite id="nhs-priapism,mallory-2021-melanotan-priapism,nelson-2012-melanotan-rhabdomyolysis,medlineplus-rhabdomyolysis,kaski-2013-melanotan-pres,fugate-2015-pres,nhs-headaches,thuisarts-verlamming,thuisarts-moedervlek-niet-vertrouwen,nhs-moles,yassin-alsabbagh-2025-oral-melanoma,thuisarts-spoed-wie-bellen" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,metabolic,neurological" />
+
+<InDetail title="Huidcontroles die zin hebben, en waarom">
+
+<Checklist>
+
+- **Een controle van je hele huid voordat je begint**, door je huisarts (of de dermatoloog naar wie die je doorstuurt), met foto's van je moedervlekken. Nieuwe en donkerdere moedervlekken kunnen binnen een paar dagen verschijnen. Met foto's kun je vergelijken.<Cite id="schulze-2014-naevi-24-hours,mang-2012-dermoscopy-changes" />
+- **Regelmatig controleren tijdens het gebruik en daarna.** Heb je veel moedervlekken? Vraag dan om dermatoscopie (een vergrootglas met licht). Door de veranderingen is een moedervlek soms moeilijk te onderscheiden van een melanoom.<Cite id="mang-2012-dermoscopy-changes" />
+- **Kijk ook in je mond.** Bruine plekken op het tandvlees en de wangen zijn beschreven, en één melanoom in de mond.<Cite id="bonchev-2026-oral-pigmentation,yassin-alsabbagh-2025-oral-melanoma" />
+- **Bel je huisarts over elke moedervlek die groter wordt, van vorm of kleur verandert, jeukt, bloedt of een korstje krijgt.**<Cite id="thuisarts-moedervlek-niet-vertrouwen,nhs-moles" />
+- **De zonnebank is zelf ook een risico.** Die verhoogt op zichzelf de kans op melanoom, en niemand heeft aangetoond dat een kleur door melanotan je beschermt.<Cite id="boniol-2012-sunbed-melanoma,coelho-2015-uva-tan" />
+
+</Checklist>
+
+</InDetail>
+
+<InDetail title="Andere controles, en waarom">
+
+- **Je bloeddruk, voordat je begint en tijdens het gebruik.** Verwante moleculen die MC4-receptoren aanzetten, verhoogden de bloeddruk bij mensen. Volgens de Amerikaanse productinformatie van bremelanotide mag je dat middel niet gebruiken bij een hoge bloeddruk die niet onder controle is, of bij een bekende ziekte van hart of bloedvaten.<Cite id="greenfield-2009-mc4r-blood-pressure,dailymed-vyleesi-label" />
+- **Je nierfunctie en een test op een spierenzym (CK)**, als je na een injectie spierpijn, donkere urine of een snelle hartslag had. Als spieren afbreken, komt er een eiwit vrij dat de nieren kan beschadigen.<Cite id="nelson-2012-melanotan-rhabdomyolysis,medlineplus-rhabdomyolysis" />
+- **Meld bijwerkingen**, ook als je niet zeker weet of het product de oorzaak was. Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines,lareb-home" /> In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" />
+- **Stop je ermee?** Breng wat over is naar de apotheek of naar een plek voor klein chemisch afval in je gemeente, zoals de milieustraat. Gooi het niet in de prullenbak, de gootsteen of de wc.<Cite id="apotheek-medicijnafval" /> Gebruikte naalden gaan in een naaldencontainer: zie [naalden weggooien](/nl/safety/sharps-disposal/).
+
+Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+</InDetail>
+
+<InDetail title="Wie het helemaal niet moet gebruiken">
+
+- **Iemand die een melanoom heeft gehad, veel of atypische moedervlekken heeft, of melanoom in de familie.** Melanotan II zet de pigmentcellen aan waaruit een melanoom groeit. De mensen in de beschreven gevallen hadden vaak deze risico's.<Cite id="cardones-2009-eruptive-nevi,vadner-2026-five-melanomas,wolf-horrell-2016-mc1r" />
+- **Iemand met een hoge bloeddruk of een hartziekte.** Verwante moleculen verhogen de bloeddruk. Bremelanotide mag je niet gebruiken bij een hoge bloeddruk die niet onder controle is, of bij een bekende ziekte van hart of bloedvaten.<Cite id="dailymed-vyleesi-label,greenfield-2009-mc4r-blood-pressure" />
+- **Iemand die zwanger is, zwanger wil worden of borstvoeding geeft.** Over melanotan II zijn geen gegevens. De Amerikaanse productinformatie zegt dat je met bremelanotide stopt als je denkt dat je zwanger bent.<Cite id="dailymed-vyleesi-label" />
+- **Kinderen en tieners.** Voor hen zijn er helemaal geen gegevens.
+- **Sporters die onder de dopingregels vallen.** Volgens onze lezing van de dopinglijst is het altijd verboden, onder S0. Zie [sport en doping](/nl/legal/sport-and-doping/).<Cite id="wada-2026-list-en,wada-2027-list-en" />
+
+</InDetail>
+
+<InDetail title="Mogelijke wisselwerkingen (geen ervan onderzocht)">
+
+- **Medicijnen voor een erectie** (zoals sildenafil of tadalafil) of injecties in de penis: melanotan II start erecties via een andere route. De effecten kunnen dus optellen, en dat kan de kans op priapisme verhogen.<Cite id="wessells-2003-mt2-spinal-erection,mallory-2021-melanotan-priapism" />
+- **Opwekkende middelen en andere middelen die de hartslag of de bloeddruk verhogen**, vanwege de beschreven sympathicomimetische reacties.<Cite id="nelson-2012-melanotan-rhabdomyolysis,eijmael-2022-barbie-drug" />
+- **Tabletten die je doorslikt, vooral naltrexon:** bremelanotide kan het legen van de maag vertragen, en het lichaam neemt dan minder naltrexon uit tabletten op. Of melanotan II hetzelfde doet, is onbekend.<Cite id="dailymed-vyleesi-label" />
+- **Mengsels met andere peptiden of hormonen.** Dan weet je niet meer welk middel een reactie gaf. In het geval van melanoom uit 2026 werden ook melanotan I en testosteron gebruikt.<Cite id="vadner-2026-five-melanomas" />
+
+</InDetail>
+
+<InDetail title="Legale wegen, als je zoekt wat het belooft">
+
+Melanotan II is in Nederland en de EU niet goedgekeurd. Daarom kan geen arts een goedgekeurd product voorschrijven.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> Een artsenverklaring vraagt een medische reden, en een arts die de behandeling nodig vindt. De IGJ schrijft: "Niet-medische redenen zijn geen argumenten."<Cite id="nl-regeling-gnw-art-3-17,igj-qa-zonder-handelsvergunning" /> Compassionate use kan alleen als iemand een handelsvergunning heeft aangevraagd, of als er klinisch onderzoek loopt. Voor melanotan II is er geen aanvraag, en de lijst van het CBG noemt geen programma.<Cite id="nl-gmw-art-40-handelsvergunning,ema-under-evaluation-2026-10,cbg-compassionate-use-list" /> In de registers van klinisch onderzoek in Nederland vonden we op 27 oktober 2026 geen onderzoek met melanotan II.<Cite id="ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" />
+
+Voor de ziekten die zijn verwanten behandelen, bestaan wel goedgekeurde medicijnen. Afamelanotide (Scenesse) is in de EU goedgekeurd voor volwassenen met EPP. Alleen specialisten in erkende porfyriecentra mogen het voorschrijven.<Cite id="ema-epar-scenesse,ema-pi-scenesse-nl" /> {/* residue-ok: world context */} Bremelanotide (Vyleesi) is een medicijn in de VS voor vrouwen vóór de overgang met weinig zin in seks. In de EU en in Nederland is het niet goedgekeurd.<Cite id="dailymed-vyleesi-label,ema-medicines-json,cbg-gib-search-status-2026-10-27" /> Heb je erectieproblemen of weinig zin in seks? Dan kan een arts zoeken naar de oorzaak, en een goedgekeurde behandeling op [recept](/nl/legal-routes/#recept) voorstellen.
+
+Onze pagina over [legale wegen naar een behandeling](/nl/legal-routes/) legt de routes uit, met hun grenzen: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [de artsenverklaring](/nl/legal-routes/#artsenverklaring), [een bereiding door de apotheek](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren). Elke route heeft strenge voorwaarden, en geen ervan maakt van een niet-goedgekeurd product een goedgekeurd medicijn.
+
+</InDetail>
+
+</Section>

@@ -1,0 +1,287 @@
+---
+slug: ghk-cu
+title: "GHK-Cu"
+description: "GHK-Cu is een tripeptide dat koper bindt. Het zit in huidcrèmes en in flacons om te spuiten. Wat het is, de kleine studies, de regels en waarom spuiten niet getest is."
+tldr:
+  - q: "Wat is het?"
+    a: "Een koperpeptide uit het bloed. Het zit in huidcrèmes en in flacons om te spuiten."
+  - q: "Werken crèmes?"
+    a: "Wisselend, in kleine studies. In één studie hielp een gel, naast gewone wondzorg, bij diabetische voetwonden."
+  - q: "Mag het in een crème?"
+    a: "Ja. De EU heeft het in cosmetica niet verboden of beperkt."
+  - q: "En om te spuiten?"
+    a: "Dan is het volgens de Europese wet geen cosmetisch product."
+  - q: "Gebruik je het toch?"
+    a: "Houd crèmes op de huid. Stop als uitslag groter wordt of niet weggaat."
+lede: "Een peptide met koper dat in huidcrèmes zit. Geen gepubliceerde studie testte spuiten bij mensen."
+glance:
+  main_risk: "Geen gepubliceerde tests van spuiten bij mensen. Flacons kunnen bacteriën bevatten."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">): the NHS pages on cellulitis, sepsis and anaphylaxis (as on English), the
+  # Thuisarts pages for the Dutch help level, and the FDA's immune-reaction concern for injected GHK-Cu.
+  stop_signs:
+    - icon: sign-infection
+      text: "Rode, warme, dikke of pijnlijke prikplek"
+      sources: [nhs-cellulitis, thuisarts-wondroos]
+    - icon: sign-fever
+      text: "Koorts of rillingen na het spuiten"
+      sources: [nhs-sepsis, thuisarts-sepsis]
+    - icon: sign-allergic
+      text: "Dik gezicht of dikke keel, of moeilijk ademen"
+      sources: [nhs-anaphylaxis, thuisarts-dikke-ogen-lippen, fda-category-2-safety-risks]
+  facts:
+    - label: "Gemaakt van"
+      value: "3 aminozuren die één koperion vasthouden"
+      sources: [pubchem-ghk-cu, pickart-1980-ghk-copper]
+    - label: "Op de huid"
+      value: "Een cosmetisch ingrediënt, copper tripeptide-1, in huidcrèmes"
+      sources: [pubchem-ghk-cu, cosing-copper-tripeptide-1]
+    - label: "Om te spuiten"
+      value: "Geen gepubliceerde studies bij mensen; volgens EU-recht geen cosmetica"
+      sources: [pubmed-ghk-cu-count-2026-10-23, eu-regulation-1223-2009-cosmetics]
+    - label: "Studies bij mensen"
+      value: "Een paar kleine studies met crèmes en gels"
+      sources: [mulder-1994-ghk-diabetic-ulcers, bishop-1992-venous-ulcers-copper-cream, miller-2006-ghk-laser-resurfacing]
+grade_rationale:
+  human_clinical: "Fase 2 volgens onze beoordeling, alleen voor gebruik op de huid: kleine gerandomiseerde studies met een gel met GHK-Cu bij diabetische voetwonden (het aantal patiënten staat niet in de samenvatting), een crème met een kopertripeptide bij open benen (86 patiënten, niet beter dan een crème zonder werkzame stof) en huidverzorging na een laserbehandeling (13 patiënten, geen objectief verschil). Geen gepubliceerde studie heeft GHK-Cu bij mensen ingespoten."
+  preclinical_volume: "Veel. Op 23 oktober 2026 stonden in PubMed 171 records over GHK-Cu die geen overzichtsartikel zijn. In 64 daarvan worden dieren genoemd. Daarnaast zijn er veel studies in cellen."
+  independence: "Door veel groepen herhaald. De ontdekker, Loren Pickart, en de groep in Reims staan elk op maar 6 van die records. Effecten op collageen en wonden kwamen van verschillende groepen zonder band met elkaar."
+  safety: "Niet in kaart gebracht. Tests in cellen wijzen op weinig huidirritatie, en crèmes met GHK-Cu zijn wijdverbreid. Maar er zijn geen systematische gegevens over de veiligheid bij mensen, en voor spuiten helemaal geen."
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Houdt koper vast en brengt het de cel in"
+    detail: "GHK bindt koper(II) stevig. Bij kankercellen uit de lever, gekweekt in een schaaltje, verhoogde het hoeveel koper de cellen opnamen (1980)."
+  - kind: cellular
+    level: in-vitro
+    title: "Herstelcellen van de huid maken meer collageen"
+    detail: "In kweken van fibroblasten, de cellen die collageen maken, verhoogde GHK-Cu de aanmaak van collageen al bij zeer lage concentraties."
+  - kind: tissue
+    level: animal
+    title: "Meer herstelweefsel in wonden bij ratten"
+    detail: "Bij ratten verhoogde GHK-Cu, ingespoten in wondkamers onder de huid, de hoeveelheid collageen en ander herstelweefsel. Een tripeptide ter controle deed dat niet."
+  - kind: effect
+    level: human
+    title: "Betere genezing of een jongere huid bij mensen: wisselend"
+    detail: "Eén studie met een gel bij diabetische voetwonden meldde dat de wonden sneller sloten. Een studie bij open benen en een studie na een laserbehandeling van de huid vonden geen objectief voordeel. Spuiten is niet onderzocht."
+studies:
+  pickart-1973-discovery:
+    finding: "Een kleine factor in menselijk bloedserum hielp gezonde levercellen in kweek te overleven, en liet kankercellen uit de lever groeien."
+    limitation: "Levercellen in een schaaltje; pas in 1977 bleek de factor Gly-His-Lys te zijn."
+  maquart-1988-collagen:
+    finding: "GHK-Cu verhoogde de aanmaak van collageen door fibroblasten in kweek, bij zeer lage concentraties en zonder dat het aantal cellen veranderde."
+    limitation: "Cellen in een schaaltje; de ontdekker was medeauteur."
+  maquart-1993-rat-wounds:
+    finding: "Bij ratten met wondkamers onder de huid verhoogde GHK-Cu de hoeveelheid collageen, eiwit en DNA in de kamer, afhankelijk van de concentratie."
+    limitation: "Een kunstmatig wondmodel bij ratten; geen genezingstijd of litteken gemeten in een natuurlijke wond."
+  mulder-1994-diabetic-ulcers:
+    finding: "Naast gewone wondzorg sloot een gel met GHK-Cu diabetische wonden aan de voetzool verder dan een gel zonder werkzame stof (mediaan 98,5% tegen 60,8%), en infecties kwamen minder vaak voor."
+    limitation: "De samenvatting noemt geen aantal patiënten en geen financier; één studie, die we nergens herhaald vonden."
+  bishop-1992-venous-ulcers:
+    finding: "Bij 86 patiënten met een open been door slecht werkende aders deed een crème met een kopertripeptide het niet beter dan een crème zonder werkzame stof. Een crème met zilver deed het beter dan beide."
+    limitation: "De samenvatting noemt het tripeptide niet bij naam; een open been is geen voetwond."
+  miller-2006-laser-skin:
+    finding: "Na een laserbehandeling van de huid vonden geblindeerde deskundigen en een computeranalyse geen verschil in roodheid, rimpels of huidkwaliteit met huidverzorging met GHK-Cu. De patiënten zelf vonden hun huid wel beter."
+    limitation: "Maar 13 patiënten maakten de studie af; het oordeel van de patiënten was geen geblindeerde meting."
+  hostynek-2011-skin-penetration:
+    finding: "Op afgestane menselijke huid in een labopstelling ging koper uit GHK-Cu in 48 uur door de huid, en een deel bleef in de huid achter."
+    limitation: "Losse huid, geen levend mens; de opstelling gebruikte een grote, constante hoeveelheid."
+regulatory_notes:
+  EU: "Geen medicijn met GHK-Cu heeft een handelsvergunning voor de hele EU (gegevens van het EMA, 27 oktober 2026). Als cosmetisch ingrediënt (copper tripeptide-1) staat het in CosIng zonder verbod of beperking. Iets om te spuiten is nooit een cosmetisch product."
+  NL: "Geen medicijn met GHK-Cu in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Een geneesmiddel zonder handelsvergunning leveren of invoeren is verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Onduidelijk: niet bij naam op de dopinglijst. S0 kan gelden omdat het geen goedgekeurd medicijn is, maar geen antidopingorganisatie heeft erover beslist. Vraag het de Dopingautoriteit."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is GHK-Cu?">Een peptide uit het bloed dat koper vasthoudt. Het zit in huidcrèmes en in flacons om te spuiten.</Lead>
+
+<Compare title="Een huidcrème en een injectie met GHK-Cu zijn niet hetzelfde." detail="Wat over elk gebruik bekend is, uit de Europese regels en uit gepubliceerde studies. De regels zijn gecontroleerd op 27 oktober 2026.">
+
+| | Op de huid (cosmetische crème) | Gespoten |
+|---|---|---|
+| Kan het een cosmetisch product zijn? | <Verdict is="yes" /> In de Europese databank van cosmetische ingrediënten staat het als copper tripeptide-1, zonder verbod of beperking.<Cite id="cosing-copper-tripeptide-1" /> | <Verdict is="no" /> Wat je inspuit, is volgens de Europese wet nooit een cosmetisch product. In Nederland en de EU is geen medicijn met GHK-Cu goedgekeurd.<Cite id="eu-regulation-1223-2009-cosmetics,ema-medicines-json,cbg-gib-search-status-2026-10-27" /> |
+| Onderzocht bij mensen? | <Verdict is="yes" /> Een paar kleine studies, met wisselende uitkomsten.<Cite id="mulder-1994-ghk-diabetic-ulcers,bishop-1992-venous-ulcers-copper-cream,miller-2006-ghk-laser-resurfacing" /> | <Verdict is="no" /> Geen gepubliceerde studie.<Cite id="pubmed-ghk-cu-count-2026-10-23" /> |
+| Bekende risico's? | <Verdict is="unknown" /> Weinig gegevens; weinig huidirritatie in tests met cellen.<Cite id="li-2016-copper-compounds-skin-irritation" /> | <Verdict is="unknown" /> De Amerikaanse medicijnautoriteit FDA waarschuwt voor mogelijke afweerreacties door klontjes en onzuiverheden.<Cite id="fda-category-2-safety-risks" /> {/* residue-ok: FDA evidence */} |
+
+</Compare>
+
+Loren Pickart vond de factor in 1973 in menselijk bloed. In 1977 bleek het glycyl-histidyl-lysine (GHK) te zijn, en in 1980 dat het koper bindt.<Cite id="pickart-1973-ghk-serum,schlesinger-1977-ghk-sequence,pickart-1980-ghk-copper" />
+
+<InDetail title="Het molecuul, en een wondgel uit de jaren 90">
+
+GHK-Cu is <Seq>Gly-His-Lys</Seq> met één koper(II)-ion eraan. PubChem geeft het complex als C14H23CuN6O4+, met een massa van <Q>402,92 g/mol</Q>. Het peptide alleen is C14H24N6O4, <Q>340,38 g/mol</Q>.<Cite id="pubchem-ghk-cu" /> Andere namen zijn prezatide copper en, op het etiket van cosmetica, copper tripeptide-1.<Cite id="pubchem-ghk-cu,cosing-copper-tripeptide-1" />
+
+In de jaren 90 is een gel met GHK-Cu getest bij diabetische voetwonden. Het verslag van de studie noemt die "lamin Gel".<Cite id="mulder-1994-ghk-diabetic-ulcers" />
+{/* residue-ok: world context */}
+Een wondverband met de naam Iamin Gel kreeg in 1996 in de VS toestemming als medisch hulpmiddel, via de 510(k)-procedure. Dat is een andere weg dan goedkeuring als medicijn.<Cite id="fda-510k-k953853-iamin" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">In cellen brengt het koper binnen en verhoogt het collageen. Of dat bij mensen telt, is onduidelijk.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+De stappen over koper en collageen komen uit cellen in een schaaltje. De stap over herstelweefsel komt uit ratten.<Cite id="pickart-1980-ghk-copper,maquart-1988-ghk-collagen,maquart-1993-ghk-rat-wounds" /> Op de huid komt GHK-Cu slecht door de waterdichte buitenste laag. Hoeveel er diepere lagen bereikt, is weinig onderzocht.<Cite id="ogorek-2025-ghk-cu-skin-permeation,hostynek-2011-copper-tripeptide-skin" /> In 1980 schreven de ontdekkers dat de effecten in gekweekte cellen uiteenliepen: van meer groei en rijping van cellen tot regelrechte giftigheid.<Cite id="pickart-1980-ghk-copper" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Voor huid en wonden gaven kleine studies wisselende uitkomsten. Spuiten is nooit getest.</Lead>
+
+<KeyNumber title="Eén studie met een gel bij voetwonden vond een voordeel" value="98,5%" label="mediane sluiting van de wond met de gel, tegen 60,8% met een gel zonder werkzame stof" who="Mulder 1994: multicenterstudie met geblindeerde beoordelaars; het aantal patiënten staat niet in de samenvatting" source="mulder-1994-ghk-diabetic-ulcers" level="human-controlled" />
+
+<KeyNumber title="Bij open benen hielp de kopercrème niet beter dan een crème zonder werkzame stof" value="86" label="patiënten met een open been vergeleken 3 crèmes" who="Bishop 1992: gerandomiseerde studie met geblindeerde beoordelaars" source="bishop-1992-venous-ulcers-copper-cream" level="human-controlled" />
+
+<KeyNumber title="Na een laserbehandeling zagen deskundigen geen verschil" value="13" label="patiënten maakten de studie af; alleen zijzelf vonden hun huid beter" who="Miller 2006: gerandomiseerde studie na een laserbehandeling van de huid" source="miller-2006-ghk-laser-resurfacing" level="human-controlled" />
+
+Het meeste onderzoek is gedaan in cellen en bij dieren, door veel groepen.<Cite id="pubmed-ghk-cu-count-2026-10-23" /> In 2026 begon een studie met een gel met GHK-Cu op kleine huidwonden bij 60 gezonde volwassenen.<Cite id="ctgov-nct07437586" />
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+Geen van deze studies gebruikte injecties, en de meeste zijn tientallen jaren oud. Claims over haargroei, rimpels of "herstel" van het hele lichaam rusten op studies in cellen, bij dieren of op kleine cosmetische studies. Ze rusten niet op studies met een controlegroep naar gespoten GHK-Cu.<Cite id="pubmed-ghk-cu-count-2026-10-23" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">In een huidcrème mag het. Het is geen goedgekeurd medicijn in Nederland of de EU.</Lead>
+
+<Compare title="Toegestaan in huidcrèmes. Geen goedgekeurd medicijn in Nederland of de EU." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026. De sport staat in het deel hieronder.">
+
+| | Goedgekeurd als medicijn? | Toegestaan als cosmetisch ingrediënt? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> De Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG) vindt geen product met GHK-Cu.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="yes" /> De Europese regels voor cosmetica gelden ook hier. De Nederlandse Voedsel- en Warenautoriteit (NVWA) houdt toezicht.<Cite id="cosing-copper-tripeptide-1,nvwa-cosmetica-toezicht" /> |
+| Europese Unie | <Verdict is="no" /> Geen handelsvergunning voor de hele EU, en geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-orphan-designations-json" /> | <Verdict is="yes" /> Het staat in de Europese databank van cosmetische ingrediënten (CosIng), zonder verbod of beperking.<Cite id="cosing-copper-tripeptide-1" /> |
+
+</Compare>
+
+{/* residue-ok: world context (the FDA fold title) */}
+<InDetail title="Status in Nederland, de EU en de sport, en wat de FDA doet">
+
+<RegulatoryTable />
+
+### Sport
+
+GHK-Cu staat niet bij naam op de dopinglijst van 2026 of 2027. Groep S0 ("Niet erkende stoffen") verbiedt stoffen die geen enkele overheidsgezondheidsautoriteit heeft goedgekeurd als medicijn voor mensen. De lijst van 2027 noemt daarbij voor het eerst "peptiden" als voorbeeld. Het Wereld Anti-Doping Agentschap (WADA) schrijft dat een peptide dat niet bij naam op de lijst staat, toch verboden kan zijn.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,dopingautoriteit-vertaling-dopinglijst-2026" /> We vonden geen goedgekeurd medicijn met GHK-Cu.
+{/* residue-ok: world context */}
+Een wondgel kreeg in 1996 in de VS toestemming als medisch hulpmiddel. Dat is geen goedkeuring als medicijn, en geen antidopingorganisatie heeft erover beslist.<Cite id="fda-510k-k953853-iamin" /> Ben je sporter? Vraag het dan de Dopingautoriteit voordat je het gebruikt, ook als crème.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Zie [sport en doping](/nl/legal/sport-and-doping/).
+
+### Wat de Amerikaanse medicijnautoriteit doet
+
+{/* residue-ok: world context (FDA evidence and the US listing, once and short) */}
+De Amerikaanse medicijnautoriteit FDA zette GHK-Cu om te spuiten in categorie 2: stoffen die mogelijk grote veiligheidsrisico's geven. De FDA noemde mogelijke afweerreacties en weinig gegevens bij mensen. Die voordracht is ingetrokken.<Cite id="fda-category-2-safety-risks" /> GHK-Cu voor andere toedieningswegen staat in categorie 1 en wordt nog beoordeeld.<Cite id="fda-503a-categories-2026-05,fda-503a-bulks-page" /> De FDA wil haar adviescommissie voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) vóór eind februari 2027 om advies vragen over GHK-Cu.<Cite id="fda-pcac-2027-early-announcement" />
+{/* residue-ok: world context (the US listing) */}
+Zo'n stemming is alleen een advies. Een plek op de Amerikaanse 503A-lijst zou Amerikaanse apotheken toestaan het op recept te bereiden. Het zou geen goedkeuring als medicijn zijn, niets zeggen over de werking en niets veranderen buiten de VS. GHK-Cu is geen goedgekeurd medicijn in Nederland of de EU.<Cite id="fda-503a-bulks-page,cbg-gib-search-status-2026-10-27,ema-medicines-json" />
+
+</InDetail>
+
+<InDetail title="Cosmetica of geneesmiddel: de regels in Nederland en de EU">
+
+### Een crème en een flacon zijn verschillende producten
+
+Volgens de Europese wet is een cosmetisch product bedoeld voor de buitenkant van het lichaam, zoals de huid, het haar, de nagels en de lippen, of voor de tanden en de binnenkant van de mond. Het is vooral bedoeld om schoon te maken, geur te geven, het uiterlijk te veranderen, te beschermen, in goede staat te houden of lichaamsgeur tegen te gaan. Iets wat bedoeld is om in te slikken, in te ademen, in te spuiten of in het lichaam te brengen, is nooit een cosmetisch product.<Cite id="eu-regulation-1223-2009-cosmetics" /> In Nederland houdt de NVWA toezicht op cosmetica.<Cite id="nvwa-cosmetica-toezicht" /> Een crème met GHK-Cu en een flacon om te spuiten vallen dus onder verschillende regels.
+
+Een product kan ook een geneesmiddel zijn. Volgens de Geneesmiddelenwet is dat zo als het wordt voorgesteld als middel om een ziekte te genezen of te voorkomen. Dat geldt ook als het bedoeld is om lichaamsfuncties te veranderen door een werking zoals die van een medicijn.<Cite id="nl-gmw-art-1-geneesmiddel" /> Volgens onze lezing kan dus ook een crème onder de Geneesmiddelenwet vallen, als die wordt voorgesteld als middel tegen een ziekte. Hoe de wet dat toetst, staat bij [wat een geneesmiddel is](/nl/legal/nl/#wat-een-geneesmiddel-is).
+
+### Wat de Nederlandse wet zegt
+
+De Geneesmiddeleninformatiebank van het CBG vindt geen medicijn met GHK-Cu. Er staan alleen andere producten met koper in.<Cite id="cbg-gib-search-status-2026-10-27" /> Volgens de Geneesmiddelenwet mag niemand een geneesmiddel zonder handelsvergunning in voorraad hebben, verkopen, afleveren, aan iemand geven, invoeren of op een andere manier Nederland binnenbrengen (artikel 40). De uitzonderingen zijn smal.<Cite id="nl-gmw-art-40-handelsvergunning" /> GHK-Cu staat niet op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" /> Zie [de Nederlandse wet](/nl/legal/nl/).
+
+### Zelf gebruiken en zelf invoeren
+
+Gebruiken staat niet in de lijst van verboden handelingen. Of een paar flacons thuis al "in voorraad hebben" is, zegt de wet niet duidelijk.<Cite id="nl-gmw-art-40-handelsvergunning" /> Is een flacon volgens de wet een geneesmiddel? Dan is invoeren verboden, ook voor eigen gebruik. Artikel 40 heeft geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Ziet de Douane de inhoud als werkzame stof (een grondstof voor medicijnen)? Dan kan een particulier die helemaal niet per post invoeren.<Cite id="douane-hvgem-geneesmiddelen-h13-fysiek-toezicht-werkzame-stoffen" /> Reizigers mogen medicijnen voor eigen gebruik meenemen zonder invoervergunning. Die regel gaat alleen over die vergunning: het verbod van artikel 40 blijft gelden.<Cite id="nl-gnw-art-18-licence,nl-gmw-art-40-handelsvergunning" /> En voor een pakket dat je laat opsturen, geldt de regel voor reizigers niet. Dat oordeelde een rechter in 2019.<Cite id="nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane controleert post- en pakketzendingen.<Cite id="douane-invoer-geneesmiddelen-2026" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Op de huid zijn weinig problemen bekend. Bij spuiten is het effect onbekend, en het product misschien onzuiver.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<Compare title="De grootste risico’s van spuiten komen uit wat onbekend is." detail="Wat de Amerikaanse medicijnautoriteit FDA en de gepubliceerde studies zeggen, op 23 oktober 2026.">
+
+| Mogelijke schade | Gezien bij mensen? |
+|---|---|
+| Een afweerreactie op het peptide, op klontjes of op onzuiverheden | <Verdict is="unknown" /> Een zorg van de FDA bij vormen om te spuiten; niet onderzocht.<Cite id="fda-category-2-safety-risks" /> {/* residue-ok: FDA evidence */} |
+| Een infectie door bacteriën in een product dat niet steriel is | <Verdict is="unknown" /> Niet onderzocht bij GHK-Cu; een bekend risico van elke injectie die niet steriel is.<Cite id="nhs-cellulitis,thuisarts-wondroos" /> |
+| Huidirritatie door crèmes | <Verdict is="unknown" /> Weinig in tests met cellen; geen systematische gegevens bij mensen.<Cite id="li-2016-copper-compounds-skin-irritation" /> |
+
+</Compare>
+
+<InDetail title="Waarom de gaten ertoe doen">
+
+GHK-Cu verandert hoe cellen koper opnemen. In vroeg onderzoek met cellen liepen de effecten uiteen van meer groei tot regelrechte giftigheid, afhankelijk van het soort cel.<Cite id="pickart-1980-ghk-copper" /> We vonden geen studie die mat wat een injectie doet met de koperwaarden, de lever of andere organen bij mensen.<Cite id="pubmed-ghk-cu-count-2026-10-23" />
+{/* residue-ok: FDA evidence */}
+Volgens de FDA zijn er te weinig gegevens bij mensen om de veiligheid van injecties te beoordelen.<Cite id="fda-category-2-safety-risks" />
+
+{/* residue-ok: evidence (other regulators' safety warnings) */}
+Ook medicijnautoriteiten buiten Europa waarschuwen. In juni 2026 waarschuwden de Australische medicijnautoriteit TGA en de hoogste medisch adviseur van Australië voor leverschade en zware allergische reacties bij niet-goedgekeurde peptiden in het algemeen. GHK-Cu was een van de voorbeelden die ze noemden.<Cite id="au-tga-2026-06-cmo-peptide-statement" /> De Canadese medicijnautoriteit noemt GHK-Cu bij de niet-goedgekeurde peptiden om te spuiten die ze in beslag nam.<Cite id="ca-hc-2026-04-think-twice-peptides" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer eerst het product, houd crèmes op de huid, en weet wanneer je stopt.</Lead>
+
+<ProductCheck extra="Kijk waarvoor het product volgens het etiket bedoeld is. GHK-Cu in cosmetica is gemaakt voor de huid. Volgens de Europese wet is iets om te spuiten nooit een cosmetisch product." extraSources="eu-regulation-1223-2009-cosmetics,cosing-copper-tripeptide-1" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **De prikplek wordt rood, warm, dik of pijnlijk** (misschien een infectie). Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je krijgt koorts of rillingen, of je voelt je erg ziek na een injectie.** Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je gezicht of keel wordt dik, je krijgt jeukende bulten (netelroos), of je ademt moeilijk** (misschien een allergische reactie). Wordt je keel of tong dik, of adem je moeilijk? Bel direct 112. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Stop met het product en maak een afspraak met je huisarts.
+
+Twijfel je? Bel je huisarts of de huisartsenpost.
+</Callout>
+
+<Cite id="nhs-cellulitis,nhs-sepsis,nhs-anaphylaxis,fda-category-2-safety-risks,thuisarts-wondroos,thuisarts-sepsis,thuisarts-dikke-ogen-lippen" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Controles die zinvol zijn">
+
+Je huisarts kan met je bespreken welke controles bij jou passen. Zie [praten met je arts](/nl/talking-to-your-doctor/). Vertel je arts welk product je gebruikt, ook als het een crème is. Let op de huid waar je het smeert. Wordt uitslag groter, of gaat die niet weg? Dan is dat een reden om te stoppen. Spuit je het? Lees dan [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+### Legale wegen
+
+In Nederland en de EU is geen medicijn met GHK-Cu goedgekeurd.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt elke weg uit, met de grenzen. Een arts kan GHK-Cu niet als goedgekeurd medicijn [voorschrijven](/nl/legal-routes/#recept), en [off-label](/nl/legal-routes/#off-label) gaat alleen over goedgekeurde medicijnen.<Cite id="nl-gmw-art-68-off-label" /> Voor een [artsenverklaring](/nl/legal-routes/#artsenverklaring) vraagt de Inspectie Gezondheidszorg en Jeugd (IGJ) officiële productinformatie, of anders een onderzoekersdossier, en bewijs dat het product volgens de regels voor medicijnen (GMP) is gemaakt. Of die weg kan werken voor een stof die nergens als medicijn is goedgekeurd, weten we niet.<Cite id="igj-qa-zonder-handelsvergunning" /> Een apotheek mag op recept zelf een medicijn maken voor één patiënt: een [magistrale bereiding](/nl/legal-routes/#magistrale-bereiding). Staat een grondstof in geen enkele officiële farmacopee? Dan kan die volgens de IGJ "niet zomaar worden gebruikt". Of GHK-Cu in een officiële farmacopee staat, hebben we niet kunnen nagaan.<Cite id="eu-directive-2001-83,igj-eigen-bereidingen-apotheek" /> We vonden in Nederland geen [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek) met GHK-Cu, en geen programma voor [compassionate use](/nl/legal-routes/#compassionate-use).<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27,cbg-compassionate-use-list" /> Over [zelf invoeren](/nl/legal-routes/#zelf-invoeren) lees je hierboven, bij de wettelijke status. Elke weg heeft strenge voorwaarden.
+{/* residue-ok: world context (the US listing) */}
+Een Amerikaanse stemming over bereiding door apotheken verandert niets in Nederland of de EU.<Cite id="fda-pcac-2027-early-announcement,fda-503a-bulks-page" />
+
+### Een bijwerking melden
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Iedereen mag melden, ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Krijg je een reactie op een crème? Ga dan voor medisch advies naar je huisarts. Een onveilig cosmetisch product kun je melden bij de NVWA.<Cite id="nvwa-cosmetica-toezicht" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG. Zie [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

@@ -39,8 +39,9 @@ evidence:
   independence: broadly-replicated
   safety: well-characterised
 regulatory:
-  - { jurisdiction: EU, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-wegovy-procedural-steps] }
-  - { jurisdiction: NL, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, fk-semaglutide, zin-wegovy-reassessment, cbg-ozempic-shortage] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/semaglutide.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: authorised, since: 2018-02-08, as_of: 2026-10-27, sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-epar-kayshild, ema-epar-kyinsu, ema-wegovy-procedural-steps, ec-union-register-ozempic, ec-union-register-kayshild, ec-union-register-kyinsu, ema-medicines-json] }
+  - { jurisdiction: NL, status: authorised, since: 2018-02-08, as_of: 2026-10-27, sources: [ema-epar-ozempic, eu-regulation-726-2004, cbg-gib-search-semaglutide-2026-10-27, cbg-afslankmedicijnen] }
   - { jurisdiction: DE, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic, bfarm-glp1-shortage-archive] }
   - { jurisdiction: BE, status: authorised, since: 2018-02-08, as_of: 2026-10-20, sources: [ema-epar-ozempic] }
   # UK (since added 24 October 2026 from research/refocus/status/semaglutide.yaml, fact-checked): Ozempic was
@@ -105,7 +106,7 @@ authorised_products:
     label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/rybelsus
     label_source: ema-epar-rybelsus
   - id: wegovy
-    name: Wegovy (injection)
+    name: Wegovy
     holder: Novo Nordisk A/S
     jurisdiction: EU
     authorised: 2022-01-06
@@ -113,13 +114,20 @@ authorised_products:
     label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
     label_source: ema-epar-wegovy
   - id: wegovy-tablets
-    name: Wegovy (tablets)
+    name: Wegovy
     holder: Novo Nordisk A/S
     jurisdiction: EU
     authorised: 2026-07-14     # Commission decision on extension X/0000296344 (procedural steps document)
     route: oral
     label_url: https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy
     label_source: ema-epar-wegovy
+  # Kayshild and Kyinsu (EU only; shown on the Dutch site, which gives their indications): added 27 October 2026 by the
+  # Dutch semaglutide group from research/nl/status/semaglutide.yaml (research/nl-notes/merge.md §2), re-checked that day
+  # on the EPAR pages (holder, CHMP opinion, marketing-authorisation date, route) and in the Union Register (ACTIVE):
+  # Kayshild EU/1/26/2019, C(2026) 2197 of 26 March 2026, conditional, MASH; Kyinsu EU/1/25/1992 (insulin icodec /
+  # semaglutide), C(2025) 8233 of 24 November 2025, once a week under the skin (research/nl-notes/semaglutide.md).
+  - { id: kayshild, name: Kayshild, holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2026-03-26, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/kayshild", label_source: ema-epar-kayshild }
+  - { id: kyinsu, name: Kyinsu, holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2025-11-24, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/kyinsu", label_source: ema-epar-kyinsu }
   # ---- US, UK, CA and AU products: merged 24 October 2026 from research/refocus/status/semaglutide.yaml (fact-checked).
   # Every label_url below was re-opened by the merge on 24 October 2026.
   # United States (Drugs@FDA; all Novo Nordisk Inc.). Ozempic tablets = the Rybelsus 'R2' formulation (1.5, 4, 9 mg),

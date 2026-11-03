@@ -43,8 +43,13 @@ evidence:
   independence: broadly-replicated
   safety: partial
 regulatory:
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-orphan-elamipretide-eu-3-21-2430] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/ss-31.yaml, fact-checked; research/nl-notes/merge.md).
+  # EU and NL: investigational since this check (was not-authorised), as on the UK and CA rows: two late-phase trials are authorised
+  # in the EU (ReNEW, phase 3, CTIS 2024-511482-11-00 = NCT06373731, running in five member states, recruitment ended; 4TAZPower,
+  # phase 3b/4, CTIS 2025-523837-25-00, authorised for the NL on 27 July 2026, recruitment pending: no start of the trial notified in
+  # any member state on 27 October 2026, merge check). Nothing is authorised; the approval answer on Dutch pages does not change.
+  - { jurisdiction: EU, status: investigational, as_of: 2026-10-27, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-orphan-elamipretide-eu-3-21-2430, ctis-2024-511482-11-00, ctis-2025-523837-25-00, ctgov-nct06373731] }
+  - { jurisdiction: NL, status: investigational, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, nl-gmw-art-40-handelsvergunning, ctis-2025-523837-25-00, cbg-geneesmiddeleninformatiebank] }
   - { jurisdiction: US, status: authorised, since: 2025-09-19, as_of: 2026-10-23, sources: [fda-drugsatfda-forzinity, fda-2025-forzinity-approval-letter, fda-label-forzinity-2025] }
   # UK, CA, AU: merged from research/refocus/status/ss-31.yaml (fact-checked 24 October 2026). UK investigational:
   # NCT07531251 (Barth syndrome, Bristol site recruiting) and NCT06373731 (UK sites, active, not recruiting); whether

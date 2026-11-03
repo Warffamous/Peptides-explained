@@ -1,0 +1,69 @@
+# Sources for the Dutch pages /nl/legal/sport-and-doping/ and /nl/legal/whats-changing/ and the five Dutch and EU
+# tracker items added on 27 October 2026 (group legal-sport-changing; notes: research/nl-notes/legal-sport-changing.md).
+# Every page below was fetched with curl on 27 October 2026 and read for the sentence it is cited for (the PDF with
+# pdftotext). The Dopingautoriteit's pages carry no date except news items, so `year` is the year accessed unless a
+# date is printed.
+#
+# Reused ids are not repeated here: dopingautoriteit-controles-belgie, -eigen-kracht, -positieve-test,
+# -2027-list-news (legal-b.yaml); dopingautoriteit-doping-en-de-wet (legal-a.yaml); dopingautoriteit-code-2027,
+# -nationaal-dopingreglement, -2026-07-reactie-concept-lijst-2027, -2025-12-samenwerking-opsporing,
+# isr-2025-nationaal-dopingreglement, nl-wuab-art-2-4-dopingautoriteit, wada-2027-list-resource-page and the 2026
+# advertising judgments (nl-research-nl-law.yaml); the EU procedure files, Council documents and PRAC documents
+# (nl-research-eu-status.yaml); the WADA lists, Code and standards (bpc-157.yaml, legal-b.yaml, semaglutide.yaml,
+# tirzepatide.yaml). No title or URL below names a seller or company.
+
+dopingautoriteit-vertaling-dopinglijst-2026:
+  type: regulator
+  authors: "Dopingautoriteit"
+  title: "Vertaling WADA dopinglijst: Dopinglijst geldig vanaf 1 januari 2026"
+  container: "dopingautoriteit.nl (PDF)"
+  year: 2025
+  url: https://www.dopingautoriteit.nl/media/files/documenten/2026/Vertaling%20WADA%20dopinglijst%202026.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Dated 15 December 2025; linked from the page 'WADA-Dopinglijst 2026' (dopingautoriteit.nl/juridisch/dopinglijst/wada-dopinglijst: 'Bijgaand de Nederlandse vertaling van de WADA- Dopinglijst van 2026'). The Dutch group names used on the Dutch site: 'S0 Niet erkende stoffen', 'S2 Peptidehormonen, groeifactoren, verwante stoffen en mimetica' (table of contents; the heading on p. 7 reads 'Peptide hormonen, ...'), 'S4 Hormoon- en metabole modulatoren', 'S4.4. Metabole modulatoren'; 'Te allen tijde verboden (binnen- en buiten wedstrijdverband)'. S0: 'Elke farmacologische stof die niet behoort tot een van de volgende paragrafen van de lijst en die niet is goedgekeurd door een overheidsgerelateerde gezondheidsautoriteit voor menselijk therapeutisch gebruik (zoals medicijnen in preklinische of klinische ontwikkelingsfase of waarvan de ontwikkeling is stopgezet, designer drugs, geneesmiddelen die alleen voor veterinair gebruik zijn toegestaan) is te allen tijde verboden'; 'inclusief maar niet beperkt tot BPC-157'. S2: 'De volgende stoffen en andere stoffen met een vergelijkbare chemische structuur of vergelijkbare biologische werking zijn verboden'; S2.2.3 'Groeihormoonfragmenten zoals AOD-9604'; S2.2.4 'Groeihormoon Releasing Factors', with GHRH analogues 'CJC-1293, CJC-1295, sermoreline en tesamoreline', secretagogues including 'ipamoreline', GHRPs including 'examoreline (hexareline)'; S2.3 'Thymosin-β4 en derivaten, zoals TB-500'; S4.4.1 AMPK activators including MOTS-c. M2 'Chemische en fysieke manipulatie' ('Het volgende is verboden:'), M2.2 (re-read in the final sweep, 28 October 2026, for the NAD+ page; the SS-31 page cites this id for S0 and S2, not M2.2): 'Intraveneuze infusies en/of –injecties van meer dan 100 milliliter binnen een periode van 12 uur, tenzij ze legitiem worden gegeven bij chirurgische ingrepen, ziekenhuisbehandelingen of klinisch onderzoeken.' The Dutch translation of the 2027 list follows on 1 January 2027 (dopingautoriteit-2027-list-news)."
+
+dopingautoriteit-dopingovertredingen:
+  type: web
+  authors: "Dopingautoriteit"
+  title: "Dopingovertredingen"
+  year: 2026
+  url: https://www.dopingautoriteit.nl/wat_is_doping/dopingovertredingen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "No date on the page. Eleven violations. Presence: 'Je bent zelf verantwoordelijk voor de aanwezigheid van verboden stoffen en/of methoden in je lichaam. Ook het onbewust binnenkrijgen van doping is een dopingovertreding.' Use: '(Poging tot) gebruik kan worden aangetoond door betrouwbare bewijsmiddelen, zoals een bekentenis, getuigenverklaring of schriftelijk bewijs. Een positieve test is niet altijd nodig om gebruik aan te tonen.' Possession: 'Is het gebruik van een bepaalde stof zowel binnen als buiten wedstrijdverband verboden? Dan mag je het dus op geen enkel moment in bezit hebben'; possession includes control over a place such as 'jouw huis of garage'. Trafficking: distributing, also without payment. The page says the rules apply in the Netherlands to 'alle leden van de topsportbonden'; the NDR's own scope is wider (isr-2025-nationaal-dopingreglement, art. 71.10)."
+
+dopingautoriteit-geneesmiddelen-controleren:
+  type: web
+  authors: "Dopingautoriteit"
+  title: "Geneesmiddelen (Mag ik dit gebruiken?)"
+  year: 2026
+  url: https://www.dopingautoriteit.nl/magdit/geneesmiddelen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "No date on the page. 'Als (top)sporter kun je niet alle geneesmiddelen zomaar gebruiken. ... Het is dus belangrijk dat je dit goed controleert als je een geneesmiddel nodig hebt.' The Dopingwaaier app ('Geneesmiddelen controleren') shows whether a medicine contains a doping substance, in and out of competition. 'Let op: geen resultaat betekent niet dat een geneesmiddel of werkzame stof toegestaan is!' Foreign medicines: Global DRO, or the anti-doping organisation of that country. Dispensatie: 'Als je om medische redenen geneesmiddelen moet gebruiken die op de dopinglijst staan, kun je daar dispensatie (vrijstelling) voor aanvragen ... In het buitenland wordt deze verklaring een Therapeutic Use Exemption (TUE) genoemd'; applications through the website Geneesmiddelen Dispensatie Sporter (GDS). Questions by e-mail (dopingvragen) or WhatsApp, answered within one working day."
+
+dopingautoriteit-voedingssupplementen:
+  type: web
+  authors: "Dopingautoriteit"
+  title: "Voedingssupplementen (Mag ik dit gebruiken?)"
+  year: 2026
+  url: https://www.dopingautoriteit.nl/magdit/voedingssupplementen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "No date on the page. Medicines fall under the Geneesmiddelenwet, with strict production requirements: 'Hierdoor heb je bij een geneesmiddel de hoogst mogelijke zekerheid dat het alleen stoffen bevat die op het etiket staan. De kans op vervuiling van een geneesmiddel met doping is daardoor zo goed als nihil.' Supplements fall under the Warenwetbesluit voedingssupplementen, with less strict requirements; in a study of high-risk supplements 25 (38%) of 66 products were contaminated. A positive test you think was caused by a contaminated supplement: report it to the Dopingautoriteit at once and keep the supplements. (The page also describes a batch-tested supplement scheme; not cited, as it would point readers to products.)"
+
+dopingautoriteit-2025-12-code-2027-aangenomen:
+  type: web
+  authors: "Dopingautoriteit"
+  title: "Wereld Anti-Doping Code 2027 aangenomen"
+  year: 2025
+  url: https://www.dopingautoriteit.nl/nieuws/2025-12-05_wereld-anti-doping-code-2027-aangenomen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "News, 5 December 2025: the World Conference on Doping in Sport in Busan adopted the new World Anti-Doping Code and the International Standards, 'de herziene regelgeving die op 1 januari 2027 in werking treedt'; '2026 in teken van implementatie' by WADA, national anti-doping organisations, governments and other signatories. Cited for the date of the decision that changes the Nationaal Dopingreglement on 1 January 2027 (with dopingautoriteit-code-2027)."

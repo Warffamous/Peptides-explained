@@ -40,8 +40,9 @@ evidence:
   independence: broadly-replicated
   safety: well-characterised
 regulatory:
-  - { jurisdiction: EU, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, ema-mounjaro-procedural-steps, ema-mounjaro-procedural-steps-archive] }
-  - { jurisdiction: NL, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, fk-tirzepatide, fk-regeling-zorgverzekering-bijlage-2-tirzepatide, zin-tirzepatide-obesity-assessment] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/tirzepatide.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: authorised, since: 2022-09-15, as_of: 2026-10-27, sources: [ema-epar-mounjaro, ema-mounjaro-procedural-steps, ema-mounjaro-procedural-steps-archive, ec-union-register-mounjaro, ema-medicines-json] }
+  - { jurisdiction: NL, status: authorised, since: 2022-09-15, as_of: 2026-10-27, sources: [ema-epar-mounjaro, eu-regulation-726-2004, cbg-gib-search-tirzepatide-2026-10-27, cbg-afslankmedicijnen] }
   - { jurisdiction: DE, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, de-sgb5-34] }
   - { jurisdiction: BE, status: authorised, since: 2022-09-15, as_of: 2026-10-20, sources: [ema-epar-mounjaro, be-medicines-law-1964] }
   # UK (since added 24 October 2026 from research/refocus/status/tirzepatide.yaml, fact-checked): the first Great

@@ -52,13 +52,16 @@
   compounds: [semaglutide, tirzepatide, retatrutide]
   sources: [fda-warning-letters-index, fda-unapproved-glp1-concerns]
 
+# EU: re-checked 27 October 2026 (research/nl/eu-status.md §1 E and §7, fact-checked): status, updated (the committee draft
+# report of 12 October 2026) and the indicative plenary date unchanged; the Council's first-reading positions (adopted
+# 28 September 2026, published 1 October 2026) added as sources.
 - id: eu-pharma-reform
   jurisdiction: EU
   status: rulemaking
   updated: 2026-10-12
   next_milestone: 2026-11-23
   compounds: []
-  sources: [ep-oeil-2023-0132-cod, ep-oeil-2023-0131-cod, ema-pharma-reform-page]
+  sources: [ep-oeil-2023-0132-cod, ep-oeil-2023-0131-cod, ema-pharma-reform-page, council-st-7105-2026-rev2, council-st-7106-2026-rev2]
 
 - id: wada-2027-prohibited-list
   jurisdiction: WADA
@@ -156,9 +159,86 @@
   compounds: [tb-500, bpc-157]
   sources: [de-bgbl-2025-ii-312, de-antidopg-2, de-antidopg-anlage, de-antidopg-6]
 
+# NL: updated 27 October 2026 (research/nl/nl-law.md §7, fact-checked): the latest dated official step is the Minister of
+# VWS's answers to Kamervragen of 5 October 2026 (IGJ enforcement against illegal online offers: websites taken offline,
+# fines; the IGJ cannot split its figures by product). Was 2025-10-30 (the IGJ's 2025 figures, which stay). The Dutch
+# text (src/i18n/nl/tracker.json, nl-igj-online-sellers) needs the sentence given in research/nl-notes/merge.md.
 - id: nl-igj-online-sellers
   jurisdiction: NL
   status: watching
-  updated: 2025-10-30
+  updated: 2026-10-05
   compounds: []
-  sources: [igj-2025-online-nepapotheken, igj-toezicht-online-medicijnen]
+  sources: [igj-2025-online-nepapotheken, igj-toezicht-online-medicijnen, tk-2026-ah-249-antwoord-afslankmedicatie]
+
+# ---------------------------------------------------------------- Dutch and EU items added 27 October 2026
+# Added by group legal-sport-changing (research/nl-notes/merge.md §7 "Proposed new tracker items", each status and
+# date re-checked against research/nl/nl-law.md and research/nl/eu-status.md and their fact-checks of 27 October 2026;
+# notes: research/nl-notes/legal-sport-changing.md). NL and EU items are shown only on the Dutch site, so their text is
+# only in src/i18n/nl/tracker.json (the validator needs text only in the locales that show an item).
+
+# NL: the 2026 case law on advertising for medicines (nl-law.md fact 17a). The law did not change; the courts said how
+# broadly it reads, so `watching`. `updated`: the latest of the three judgments (Rechtbank Noord-Nederland, 21 April
+# 2026). The IGJ's published fine of 28 September 2026 is not tracked (its record names the company). Whether the
+# Amsterdam judgment is under appeal is reported by media only (nl-law.md UNRESOLVED 15), so the text does not say.
+- id: nl-advertising-case-law-2026
+  jurisdiction: NL
+  status: watching
+  updated: 2026-04-21
+  compounds: [semaglutide]
+  sources: [nl-rvs-2026-1072-publieksreclame-website, nl-rbams-2026-5160-publieksreclame-journalistiek, nl-rbnne-2026-1471-publieksreclame-natuurlijk-persoon, igj-2025-12-boetes-openbaar, nl-gnw-art-84-85-advertising]
+
+# NL: the Nationaal Dopingreglement (NDR) changes on 1 January 2027 with the 2027 World Anti-Doping Code (nl-law.md
+# fact 45); federations hand prosecution, provisional suspensions and disciplinary proceedings in doping cases to the
+# Dopingautoriteit. Status `rulemaking` (independent check, 27 October 2026; the writer had `adopted`): the change is
+# announced by the Dopingautoriteit and follows from the Code adopted on 5 December 2025 (`updated`), but the text of
+# the 2027 NDR was not found on 27 October 2026 (nl-law.md UNRESOLVED 9), so its adoption by the Instituut
+# Sportrechtspraak cannot be shown; the NDR 2025 was "vastgesteld op 2 mei 2025" before it took effect. Move to
+# `adopted` (or `in-force` from 1 January 2027) once the 2027 text is published. The Dutch text says it was not found.
+- id: nl-ndr-2027
+  jurisdiction: NL
+  status: rulemaking
+  updated: 2025-12-05
+  next_milestone: 2027-01-01
+  compounds: []
+  sources: [dopingautoriteit-code-2027, isr-2025-nationaal-dopingreglement, dopingautoriteit-nationaal-dopingreglement, dopingautoriteit-2025-12-code-2027-aangenomen]
+
+# EU: the Critical Medicines Act, 2025/0102(COD) (eu-status.md fact 33): provisional agreement in the night of 11 to 12
+# May 2026; committee approval of the agreed text 14 July 2026 (`updated`); "Awaiting Parliament's position in 1st
+# reading"; indicative plenary 23 November 2026. About the supply of critical medicines, not the authorisation of any
+# compound on the site, so `compounds` is empty.
+- id: eu-critical-medicines-act
+  jurisdiction: EU
+  status: rulemaking
+  updated: 2026-07-14
+  next_milestone: 2026-11-23
+  compounds: []
+  sources: [ep-oeil-2025-0102-cod, ec-2026-ip-26-1017-cma]
+
+# EU: the European Biotech Act, 2025/0406(COD), which would amend the Clinical Trials Regulation (EU) No 536/2014
+# (eu-status.md fact 36): Commission proposal 16 December 2025; committee referral announced 18 May 2026 (`updated`);
+# "Awaiting committee decision"; indicative plenary 14 December 2026. Its text was not read (eu-status.md UNRESOLVED 9),
+# so the Dutch text says nothing about what it changes. ema-clinical-trials-regulation: the regulation in application
+# since 31 January 2022.
+- id: eu-biotech-act-clinical-trials
+  jurisdiction: EU
+  status: proposed
+  updated: 2026-05-18
+  next_milestone: 2026-12-14
+  compounds: []
+  sources: [ep-oeil-2025-0406-cod, ema-clinical-trials-regulation]
+
+# EU: open PRAC safety reviews of GLP-1 medicines (eu-status.md fact 23 with its fact-check corrections). Open on 3
+# November 2026: semaglutide and cardioembolic stroke, and lithium with GLP-1 agonists (EPITT 20275), both "For adoption"
+# at the PRAC meeting of 26-29 October 2026 (held; the highlights of 30 October 2026 name no outcome, and no signal
+# recommendations or minutes of that meeting were published on 3 November 2026); peripheral neuropathies (EPITT 20270, new
+# signal May 2026, no outcome found); ischaemic colitis (EPITT 20309, new signal, supplementary information by 1 December
+# 2026 = `next_milestone`). Closed: gastrointestinal volvulus (EPITT 20260), "Reassess in the next PSUR", no change to
+# the product information. `updated`: the signal recommendations of the 28 September-1 October meeting, published 26
+# October 2026. No outcome is predicted in the text.
+- id: eu-glp1-safety-reviews
+  jurisdiction: EU
+  status: watching
+  updated: 2026-10-26
+  next_milestone: 2026-12-01
+  compounds: [semaglutide, tirzepatide]
+  sources: [ema-prac-signals-2026-09-28, ema-prac-2026-10-agenda, ema-prac-2026-05-minutes, ema-prac-2026-10-highlights]

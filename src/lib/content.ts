@@ -3,7 +3,7 @@
  * translation matrix used for hreflang, the language switcher and preview fallbacks.
  */
 import { getCollection, render, type CollectionEntry } from 'astro:content';
-import { BUILT_LOCALES, PUBLISHED_LOCALES, SOURCE_LOCALE, getLocale } from './config';
+import { BUILT_LOCALES, PUBLISHED_LOCALES, SOURCE_LOCALE, fallsBack, getLocale } from './config';
 import { isVisible, visibleProducts, visibleRows, visibleSources } from './jurisdictions';
 import { TIMELINE, TRACKER } from './data';
 import { EXPLAINERS } from './explainers';
@@ -61,7 +61,7 @@ export async function resolvePage(locale: string, key: string): Promise<{ entry:
   const pages = await allPages();
   const own = pages.find((p) => { const s = splitPageId(p.id); return s.locale === locale && s.key === key; });
   if (own) return { entry: own, fallback: false };
-  if (getLocale(locale).status === 'preview') {
+  if (fallsBack(locale)) {
     const src = pages.find((p) => { const s = splitPageId(p.id); return s.locale === SOURCE_LOCALE && s.key === key; });
     if (src) return { entry: src, fallback: true };
   }
@@ -72,7 +72,7 @@ export async function resolveCompound(locale: string, slug: string): Promise<{ e
   const all = await allCompoundPages();
   const own = all.find((c) => c.id === `${locale}/${slug}`);
   if (own) return { entry: own, fallback: false };
-  if (getLocale(locale).status === 'preview') {
+  if (fallsBack(locale)) {
     const src = all.find((c) => c.id === `${SOURCE_LOCALE}/${slug}`);
     if (src) return { entry: src, fallback: true };
   }
@@ -157,11 +157,11 @@ export function compoundCitations(data: CompoundData, page: CompoundPage, inline
 
 /** The pages and compound pages a locale builds, each with the locale its text is in. */
 async function builtEntries(locale: string) {
-  const preview = getLocale(locale).status === 'preview';
+  const fallback = fallsBack(locale);
   const keys = new Set<string>();
   for (const p of await allPages()) {
     const s = splitPageId(p.id);
-    if (s.locale === locale || (preview && s.locale === SOURCE_LOCALE)) keys.add(s.key);
+    if (s.locale === locale || (fallback && s.locale === SOURCE_LOCALE)) keys.add(s.key);
   }
   const pages: { key: string; entry: PageEntry; contentLocale: string }[] = [];
   for (const key of keys) {

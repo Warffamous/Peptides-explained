@@ -54,8 +54,9 @@ regulatory:
   # research/refocus-spec/data-model.md; research/for-nl-site/MANIFEST-data.md). Not "Italy only": the
   # maker reports approvals in "Eastern Europe", which the FDA could not verify, so other EU states are
   # possible but unchecked (fact-check 23 Oct 2026). The sources still support the Italian note on the page.
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-22, sources: [ema-medicines-json, ema-orphan-thymalfasin-eu-3-02-110, fda-pcac-2024-thymosin-alpha-1-briefing] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-22, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/thymosin-alpha-1.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-orphan-thymalfasin-eu-3-02-110, fda-pcac-2024-thymosin-alpha-1-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-22, sources: [fda-pcac-2024-thymosin-alpha-1-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, openfda-drugsfda-search-2026-10-22] }
   # UK, CA, AU: merged from research/refocus/status/thymosin-alpha-1.yaml (fact-checked 24 October 2026). Canada:
   # Health Canada authorised one sepsis trial of Zadaxin in 2014 (no Canadian site, still 'not yet recruiting'), which

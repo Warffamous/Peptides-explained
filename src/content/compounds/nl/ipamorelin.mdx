@@ -1,0 +1,645 @@
+---
+slug: ipamorelin
+title: "Ipamorelin"
+description: "Ipamorelin is een peptide uit het lab dat groeihormoon laat vrijkomen. De enige gepubliceerde studie bij patiënten vond geen duidelijk effect. Onderzoek, risico’s en wet."
+tldr:
+  - q: "Wat is het?"
+    a: "Een peptide uit het lab dat groeihormoon vrijmaakt. Amerikaanse klinieken prijzen het aan voor afvallen, spieren en slaap."
+  - q: "Werkt het?"
+    a: "Geen studie bij mensen testte die toepassingen. De enige gepubliceerde studie bij patiënten vond geen duidelijk effect."
+  - q: "Is het legaal in Nederland?"
+    a: "Het heeft geen handelsvergunning. Leveren is dus verboden, en invoeren ook, zelfs voor eigen gebruik."
+  - q: "Gebruik je het toch?"
+    a: "Laat je huisarts je bloedsuiker en bloeddruk meten, en kijken of je enkels dik worden."
+lede: "Een peptide uit het lab dat groeihormoon vrijmaakt. Het onderzoek bij patiënten stopte. Het is geen goedgekeurd medicijn."
+glance:
+  main_risk: "Flacons kunnen bacteriën of de verkeerde stof bevatten. Je bloedsuiker kan stijgen."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction section,
+  # <Callout id="stop-now">): infection after injecting (Thuisarts wondroos; FDA 2024: no endotoxin or microbial tests on
+  # the certificates), allergic reaction (Thuisarts dikke ogen of lippen; FDA immunogenicity concern) and fluid build-up
+  # with breathlessness (Thuisarts hartfalen; the related drug MK-677 caused leg oedema and a heart-failure signal).
+  # On English the strip cites NHS pages (the UK help service); the Dutch page cites Thuisarts (research/nl-notes/ipamorelin.md).
+  # STOP_SIGN_ICONS has no pictogram for swollen legs; sign-heart is the closest, and the words carry the meaning.
+  stop_signs:
+    - icon: sign-infection
+      text: "Prikplek heet, rood en dik, of koorts"
+      sources: [thuisarts-wondroos, fda-pcac-2024-ipamorelin-briefing]
+    - icon: sign-allergic
+      text: "Jeukende bulten, dikke lippen of keel, moeilijk ademen"
+      sources: [thuisarts-dikke-ogen-lippen, fda-pcac-2024-ipamorelin-briefing]
+    - icon: sign-heart
+      text: "Dikke benen en snel buiten adem"
+      sources: [thuisarts-hartfalen, nass-2008-mk677-older-adults, adunsky-2011-mk677-hip-fracture]
+  # Fact sheet beside the title: study facts from this page, never a dose.
+  facts:
+    - label: "Toediening bij mensen"
+      value: "In een ader; niets gepubliceerd over injecties onder de huid"
+      sources: [gobburu-1999-ipamorelin-pkpd, beck-2014-ipamorelin-ileus, fda-pcac-2024-ipamorelin-briefing]
+    - label: "Halfwaardetijd bij mensen"
+      value: "Ongeveer 2 uur, na een infuus in een ader"
+      sources: [gobburu-1999-ipamorelin-pkpd]
+    - label: "Reactie van groeihormoon"
+      value: "Eén piek, na ongeveer 40 minuten"
+      sources: [gobburu-1999-ipamorelin-pkpd, fda-pcac-2024-ipamorelin-briefing]
+    - label: "Studie bij patiënten"
+      value: "Na een darmoperatie, 2014: geen duidelijk effect"
+      sources: [beck-2014-ipamorelin-ileus]
+grade_rationale:
+  human_clinical: "Fase 2. Het hoogste gepubliceerde bewijs is één gerandomiseerde, dubbelblinde fase 2-studie met placebo als vergelijking bij 114 volwassenen na een darmoperatie (2014). Die vond geen statistisch significant voordeel. Een fase 1-studie met placebo bij gezonde mannen (8 per dosisniveau, bij 5 niveaus) mat de spiegels in het bloed en het groeihormoon. Een tweede fase 2-studie met 320 patiënten was in 2014 klaar, maar is nooit gepubliceerd. Volgens onze regels telt die dus niet mee."
+  preclinical_volume: "Redelijk veel. Volgens onze telling op 22 oktober 2026 staan in PubMed ongeveer 15 tot 20 primaire studies in cellen en dieren waarin ipamorelin zelf is getest. Daarnaast zijn er ongeveer 10 chemische artikelen die het als uitgangspunt gebruikten voor andere moleculen. Dat is boven de grens van 10 en ver onder 50."
+  independence: "Een paar groepen. Het meeste dieronderzoek naar de werking komt van Novo Nordisk, dat ipamorelin ontdekte, en zijn Deense en Zweedse partners aan universiteiten. De meeste studies naar de darm komen van één lab van de University of Oklahoma, dat samenwerkte met Helsinn, het bedrijf dat ipamorelin later ontwikkelde. Er zijn een paar losse studies van andere groepen; weinig daarvan herhalen de belangrijkste proeven."
+  safety: "Deels bekend. In gepubliceerde studies kregen mensen ipamorelin in een ader: één keer, bij ongeveer 30 gezonde mannen, en tot 7 dagen bij 56 patiënten na een darmoperatie (plus één vrijwilliger die een neusspray gebruikte in een studie voor dopingcontrole). In de studie na de operatie kwamen een hoge bloedsuiker, te weinig kalium en slecht slapen vaker voor dan met placebo. Er waren ook 2 sterfgevallen; of die met ipamorelin te maken hadden, is niet duidelijk. Er zijn geen gepubliceerde gegevens over de veiligheid van injecties onder de huid, van gebruik via de neus of de mond, of van gebruik langer dan een week. De Amerikaanse medicijnautoriteit FDA vond geen formele toxiciteitsstudies." # residue-ok: evidence
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Zet de ghrelinereceptor aan"
+    detail: "Ipamorelin doet na wat ghreline doet, een hormoon dat vooral in de maag wordt gemaakt. Het zet de receptor van ghreline aan (GHS-R1a). In hypofysecellen van ratten in een schaaltje liet het ongeveer even sterk groeihormoon vrijkomen als het oudere peptide GHRP-6. Proeven met blokkers lieten zien dat het via hetzelfde type receptor werkt als GHRP-6, niet via de GHRH-receptor."
+  - kind: signal
+    level: in-vitro
+    title: "Een signaal in de hypofysecel"
+    detail: "De ghrelinereceptor werkt vooral via het Gq-eiwit, dat een enzym aanzet (een fosfolipase). Daardoor geeft de cel het groeihormoon af dat ze heeft opgeslagen. Dit is beschreven voor ghrelinereceptoren in het algemeen. Het is niet stap voor stap nagegaan voor ipamorelin in menselijke cellen."
+  - kind: cellular
+    level: human
+    title: "Een korte piek groeihormoon"
+    detail: "Gezonde mannen kregen een infuus van 15 minuten in een ader (8 per dosisniveau bij 5 niveaus, van wie 2 placebo kregen). Hun groeihormoon steeg tot één piek na ongeveer 40 minuten (0,67 uur) en was na 6 uur weer heel laag. Ipamorelin zelf had een halfwaardetijd van ongeveer 2 uur."
+  - kind: tissue
+    level: animal
+    title: "IGF-1, botgroei en gewicht bij ratten"
+    detail: "Groeihormoon laat de lever IGF-1 maken. Bij ratten zorgde herhaald ipamorelin voor langere botten en een hoger gewicht. IGF-1 steeg in de ene studie bij ratten, maar niet in de andere. We vonden geen gepubliceerde meting van IGF-1 bij mensen die ipamorelin kregen."
+  - kind: tissue
+    level: animal
+    title: "Maag en darm sneller op gang na een operatie, bij ratten"
+    detail: "Ghrelinereceptoren op zenuwen in de darm laten de darm sneller bewegen. Bij ratten na een buikoperatie raakte de maag met ipamorelin in een ader sneller leeg, en kwam de eerste ontlasting eerder. In de studie bij patiënten na een darmoperatie was het verschil met placebo niet statistisch significant."
+  - kind: effect
+    level: hypothesis
+    title: "Spieren, vetverlies, slaap of herstel bij mensen: niet aangetoond"
+    detail: "Ipamorelin wordt aangeprezen voor spieren, vetverlies, slaap, herstel en tegen veroudering. Geen enkele studie bij mensen heeft een daarvan getest. Bij muizen gaf het juist meer lichaamsvet, het tegendeel van vetverlies."
+studies:
+  raun-1998-selectivity:
+    finding: "In hypofysecellen van ratten liet ipamorelin ongeveer even sterk groeihormoon vrijkomen als GHRP-6, via hetzelfde type receptor. Bij verdoofde ratten en wakkere varkens steeg het groeihormoon mee met de dosis. Bij varkens steeg ACTH of cortisol niet, ook niet bij meer dan 200 keer de dosis die nodig was voor de helft van het effect op groeihormoon; bij GHRP-6 en GHRP-2 wel."
+    limitation: "Helemaal uitgevoerd door het bedrijf dat het ontdekte. “Selectief” is alleen aangetoond bij varkens, na losse doses, en alleen voor hormonen van de hypofyse; het is niet getest bij mensen. De samenvatting noemt geen aantallen dieren."
+  johansen-1998-rat-pk:
+    finding: "Bij mannelijke ratten verdween ipamorelin 5 keer langzamer uit het bloed dan GHRP-6. Het verliet het lichaam vooral via de urine, en grotendeels onveranderd. Via de neus kwam ongeveer een vijfde van de dosis in het bloed."
+    limitation: "Alleen ratten, onderzoek van de ontwikkelaar; zegt niets over injecties onder de huid of over mensen."
+  johansen-1999-bone-growth:
+    finding: "Volwassen vrouwelijke ratten kregen 15 dagen lang 3 keer per dag ipamorelin onder de huid. Hun scheenbeen groeide sneller (van 42 tot maximaal 52 micrometer per dag) en ze kwamen meer aan. Hoe hoger de dosis, hoe groter die effecten. Het totale IGF-1 veranderde niet, en de reactie van groeihormoon op een testdosis was daarna iets kleiner."
+    limitation: "Ratten, 15 dagen, van de ontwikkelaar met partners aan universiteiten. Bij volwassen ratten kunnen de lange botten nog in de lengte groeien; bij volwassen mensen niet, omdat hun groeischijven gesloten zijn."
+  svensson-2000-bone-mineral:
+    finding: "Vrouwelijke ratten kregen 12 weken lang ipamorelin, GHRP-6 of groeihormoon via een pompje. Ze kwamen aan in gewicht en in botmineraal. Gecorrigeerd voor het lichaamsgewicht veranderde het totale botmineraal niet: de botten werden groter, niet dichter."
+    limitation: "Ratten; 7 of 8 dieren per groep; deels uitgevoerd met medewerkers van de ontwikkelaar; geen uitkomst over botbreuken of sterkte."
+  lall-2001-body-fat:
+    finding: "Bij muizen verhoogde ipamorelin, 2 keer per dag, het lichaamsgewicht met ongeveer 15% binnen 2 weken, en nam het vet toe ten opzichte van het lichaamsgewicht. Dat gebeurde ook bij muizen die weinig groeihormoon maken. Bij muizen met normaal groeihormoon verhoogden de geteste stoffen die groeihormoon laten vrijkomen (ipamorelin en GHRP-6) de voedselinname en het leptine; groeihormoon zelf deed dat niet."
+    limitation: "Muizen; de samenvatting noemt geen groepsgrootte; de toename van vet geldt misschien niet voor mensen, maar gaat in tegen de claim dat ipamorelin vetverlies geeft."
+  adeghate-2004-insulin:
+    finding: "Stukjes alvleesklier van gewone ratten en van ratten met diabetes gaven meer insuline af als er in een schaaltje ipamorelin bij kwam. Middelen die calciumkanalen en adrenalinereceptoren blokkeren, maakten het effect kleiner."
+    limitation: "Weefsel van ratten in een schaaltje; één lab; zegt niets over de bloedsuiker van een levend dier of mens, waar ook andere effecten meespelen (groeihormoon, eetlust)."
+  venkova-2009-ileus-rats:
+    finding: "Bij ratten na een buikoperatie kwam de eerste ontlasting eerder na één dosis ipamorelin in een ader. Herhaalde doses gedurende 2 dagen gaven meer ontlasting, meer eten en meer gewichtstoename."
+    limitation: "Ratten; één lab van een universiteit dat later samenwerkte met het bedrijf dat ipamorelin ontwikkelde; de samenvatting noemt geen financiering."
+  greenwood-2012-gastric-emptying:
+    finding: "Na een buikoperatie bleef bij de ratten 78% van een testmaaltijd in de maag met een nepinfuus, en 52% met ipamorelin (44% bij ratten zonder operatie). In maagspier in een schaaltje herstelden ipamorelin en ghreline de samentrekkingen."
+    limitation: "Ratten, kleine groepen (5 tot 10 per groep), een test van 15 minuten; de stof kwam van de ontwikkelaar, en een medewerker van dat bedrijf was medeauteur."
+  gobburu-1999-healthy-men:
+    finding: "Gezonde mannen kregen één infuus van 15 minuten in een ader, met een van 5 doses. De halfwaardetijd van ipamorelin was ongeveer 2 uur. Groeihormoon steeg in één piek, die na ongeveer 40 minuten het hoogst was. Na 6 uur was het weer heel laag."
+    limitation: "Gezonde mannen, losse doses, alleen in een ader; alleen ipamorelin en groeihormoon zijn gemeten, dus andere hormonen, bloedsuiker en IGF-1 staan er niet in; bijwerkingen worden niet genoemd; onderzoek van een universiteit, met medewerkers van de ontwikkelaar voor de farmacokinetiek."
+  beck-2014-ileus-trial:
+    finding: "114 volwassenen kregen na een darmoperatie 2 keer per dag een infuus met ipamorelin of placebo, tot 7 dagen lang. Met ipamorelin werd de tijd tot een eerste maaltijd die binnenbleef, niet statistisch significant korter (mediaan 25,3 uur tegen 32,6 uur met placebo, p = 0,15). Ook andere maten voor herstel verschilden niet statistisch significant."
+    limitation: "Een kleine studie om het idee te testen (proof of concept), betaald door de ontwikkelaar, bij patiënten met veel verschillende aandoeningen. In een ader en in het ziekenhuis: het zegt niets over injecties onder de huid of over gebruik buiten het ziekenhuis."
+  nct01280344-unpublished:
+    finding: "Een tweede fase 2-studie van hetzelfde bedrijf vergeleek 3 schema’s van toediening, in een ader, met placebo bij 320 patiënten na een darmoperatie. De studie was in 2014 klaar. Er zijn geen resultaten geplaatst of gepubliceerd."
+    limitation: "Resultaten onbekend. Een studie die niet is gepubliceerd, kun je niet beoordelen. En als studies niet worden gepubliceerd, kan het gepubliceerde bewijs er beter of slechter uitzien dan het is."
+  semenistaya-2015-urine:
+    finding: "Eén vrijwilliger kreeg ipamorelin via de neus. Het werd sterk afgebroken. Eén afbraakproduct bleef in de urine te vinden toen het hele peptide al verdwenen was."
+    limitation: "Eén persoon, één dosis; opgezet voor dopingcontroles, niet om effecten of veiligheid te meten."
+  gajda-2019-seized-powders:
+    finding: "Poeders die de Deense douane in beslag nam, bleken aangepaste versies van groeihormoon-releasing peptiden te zijn. Daaronder was ipamorelin met een extra aminozuur (glycine) aan het begin van de keten."
+    limitation: "Een paar in beslag genomen monsters uit één land; laat zien dat zulke producten bestaan, niet hoe vaak. De effecten en de veiligheid van het aangepaste molecuul zijn nooit onderzocht."
+# Notes only for the rows the Dutch site shows (NL, EU, WADA); EU and NL from research/nl/status/ipamorelin.yaml (fact-checked 27 October 2026).
+regulatory_notes:
+  EU: "Niet goedgekeurd in de EU: in de gegevens van het EMA staat geen handelsvergunning, geen aanvraag en geen aanwijzing als weesgeneesmiddel (gecontroleerd op 27 oktober 2026)."
+  NL: "Niet goedgekeurd in Nederland: geen product in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Een geneesmiddel zonder handelsvergunning leveren, in voorraad hebben of invoeren is verboden (Geneesmiddelenwet art. 40)."
+  WADA: "Altijd verboden in de sport, onder S2 (stoffen die groeihormoon laten vrijkomen); als voorbeeld genoemd sinds de lijst van 2015."
+indications: {}
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is ipamorelin?">Een peptide uit het lab dat je lichaam groeihormoon laat afgeven. Het is geen goedgekeurd medicijn.</Lead>
+
+<Compare title="Het heeft een officiële naam en is getest bij patiënten. Toch is het geen goedgekeurd medicijn." detail="Wat bekend is over de stof met deze naam, gecontroleerd op 22 en 27 oktober 2026.">
+
+| | Ipamorelin |
+|---|---|
+| Gemaakt in een lab? | <Verdict is="yes" /> Een keten van 5 bouwstenen. Drie daarvan gebruikt het lichaam niet om eiwitten te maken.<Cite id="raun-1998-ipamorelin,fda-pcac-2024-ipamorelin-briefing" /> |
+| Lijkt het op een hormoon uit je lichaam? | <Verdict is="yes" /> Het werkt zoals ghreline, een hongerhormoon uit de maag.<Cite id="fda-pcac-2024-ipamorelin-briefing,kojima-1999-ghrelin" /> |
+| Een officiële naam als medicijn? | <Verdict is="yes" /> "Ipamorelin" is de internationale generieke naam (INN) van de stof.<Cite id="who-2014-inn-biological-review" /> |
+| Eén stof onder die naam? | <Verdict is="no" /> Het bestaat als vrije base en als acetaatzout. De Amerikaanse medicijnautoriteit FDA ziet dat als 2 verschillende stoffen.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */} |
+| Getest bij patiënten? | <Verdict is="yes" /> In één gepubliceerde studie na een darmoperatie. Het hielp niet duidelijk.<Cite id="beck-2014-ipamorelin-ileus" /> |
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Niet in Nederland en niet in de EU. De databank ChEMBL vindt nergens ter wereld een goedkeuring.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,chembl-ipamorelin" /> |
+
+</Compare>
+
+{/* residue-ok: world context */}
+Amerikaanse klinieken en websites prijzen ipamorelin aan voor afvallen, spieren, slaap en tegen veroudering, vaak gemengd met CJC-1295 of sermorelin. De FDA zocht naar bewijs bij groeihormoondeficiëntie en bij herstel van de darm na een operatie. Ze vond één studie na een darmoperatie, en die was negatief.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+<InDetail title="Het molecuul, en hoe het wordt gemaakt">
+
+Ipamorelin is een pentapeptide: <Seq>Aib-His-D-2Nal-D-Phe-Lys-NH2</Seq>. De brutoformule is C38H49N9O5 en de molecuulmassa <Q>711,9 g/mol</Q>.<Cite id="pubchem-ipamorelin,raun-1998-ipamorelin" /> Maar 2 van de 5 bouwstenen, histidine en lysine, zijn gewone aminozuren uit eiwitten:<Cite id="fda-pcac-2024-ipamorelin-briefing,chembl-ipamorelin" />
+
+- **Aib** (2-aminoisoboterzuur) aan het begin, hetzelfde ongewone aminozuur dat ook in semaglutide zit.<Cite id="pubchem-semaglutide" />
+- **D-2Nal**, het spiegelbeeld van naftylalanine, een aminozuur met een grote dubbele ring.
+- **D-Phe**, het spiegelbeeld van fenylalanine.
+- Een **amide** aan het eind, in plaats van de gewone zuurgroep.
+
+<Claim level="hypothesis">De enzymen die peptiden knippen, zijn gebouwd voor de gewone bouwstenen. Aminozuren in spiegelbeeld en Aib maken de afbraak dus waarschijnlijk trager.</Claim> Bij ratten verliet het grootste deel van een ingespoten dosis het lichaam onveranderd, via urine en gal. Dat past bij dat idee.<Cite id="johansen-1998-ipamorelin-pk" />
+
+### Hoe het wordt gemaakt
+
+Het wordt gemaakt met vaste-fasesynthese: aminozuren worden één voor één gekoppeld aan een keten die vastzit aan kleine bolletjes van hars. Daarna wordt de keten losgeknipt en gezuiverd.<Cite id="raun-1998-ipamorelin,fda-pcac-2024-ipamorelin-briefing" /> Elke stap kan ketens achterlaten die te kort zijn of net anders, en restjes van oplosmiddelen en andere stoffen.
+{/* residue-ok: evidence */}
+De FDA wijst erop dat ongewone aminozuren zulke onzuiverheden moeilijker te meten maken.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+{/* residue-ok: evidence */}
+De vrije base lost nauwelijks op in water: een lab van een universiteit moest azijnzuur toevoegen om die op te lossen.<Cite id="fda-pcac-2024-ipamorelin-briefing,greenwood-2012-ipamorelin-gastric" /> Het acetaatzout lost wel op. Beide vormen zijn in omloop, en de FDA ziet ze als verschillende stoffen.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+<InDetail title="Waar het vandaan komt, en waarom het onderzoek stopte">
+
+Onderzoekers van Novo Nordisk in Denemarken maakten ipamorelin in het midden van de jaren negentig, onder de code NNC 26-0161.<Cite id="fda-pcac-2024-ipamorelin-briefing,johansen-1998-ipamorelin-pk" /> In 1998 noemden ze het "de eerste selectieve groeihormoonsecretagoog". Een groeihormoonsecretagoog is een stof die de hypofyse groeihormoon laat afgeven. "Selectief" betekende: zonder dat ook de stresshormonen ACTH en cortisol vrijkwamen, in hun proeven bij varkens.<Cite id="raun-1998-ipamorelin,pubchem-ipamorelin" /> Het heeft een officiële internationale generieke naam, uit de familie "-morelin" van de Wereldgezondheidsorganisatie (WHO), voor peptiden die groeihormoon laten vrijkomen.<Cite id="who-2014-inn-biological-review" />
+
+Het Zwitserse bedrijf Helsinn ontwikkelde het later als infuus om de darm na een operatie weer op gang te brengen.<Cite id="greenwood-2012-ipamorelin-gastric,ctgov-nct00672074" />
+{/* residue-ok: evidence (where the trials ran) */}
+Het bedrijf deed 2 fase 2-studies in de VS, tussen 2008 en 2014. De eerste liet geen statistisch significant voordeel zien; de tweede, met 320 patiënten, is nooit gepubliceerd.<Cite id="ctgov-nct00672074,ctgov-nct01280344,beck-2014-ipamorelin-ileus" />
+{/* residue-ok: evidence */}
+De FDA haalt een overzichtsartikel uit 2020 aan: de ontwikkeling zou zijn gestopt door de tegenvallende resultaten.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+### Verwante medicijnen die wel bij patiënten kwamen
+
+Ipamorelin hoort bij een echte groep medicijnen. Macimorelin, een andere stof die de hypofyse groeihormoon laat afgeven, is in de EU sinds 11 januari 2019 goedgekeurd, als Ghryvelin. Volgens de productinformatie is het "uitsluitend voor diagnostisch gebruik": volwassenen nemen het één keer in als test op groeihormoondeficiëntie, onder toezicht van een arts. De bijwerkingen die het vaakst voorkwamen, waren een bittere smaak of metaalsmaak, hoofdpijn, moeheid, misselijkheid en duizeligheid. Het kan ook het hartritme veranderen (QT-verlenging), en wie overgevoelig is voor de stof, mag het niet gebruiken.<Cite id="ema-pi-ghryvelin-nl,ema-medicines-json" />
+{/* residue-ok: world context */}
+In de VS keurde de FDA macimorelin op 20 december 2017 goed, als Macrilen; de databank van de FDA noemt dat product nu niet meer in de handel.<Cite id="fda-drugsatfda-macrilen" />
+Anamorelin, een tablet die de ghrelinereceptor aanzet, was bedoeld tegen gewichtsverlies en spierverlies bij mensen met longkanker. In 2017 kreeg het in de EU geen handelsvergunning: het effect op de vetvrije massa was klein, en een effect op de knijpkracht of de kwaliteit van leven was niet aangetoond.<Cite id="ema-epar-adlumiz" /> Deze middelen kunnen dus hormonen bij mensen veranderen. Een blijvend voordeel van lang gebruik is niet aangetoond.
+
+### Hoe het nu wordt gebruikt
+
+{/* residue-ok: world context */}
+In de VS meldden apotheken die op grote schaal bereiden (outsourcing facilities) dat ze van minstens 2017 tot 2020 ipamorelin-injecties maakten. Websites van Amerikaanse apotheken die zelf medicijnen bereiden, bieden het vooral aan als injectie of als zuigtablet die in de mond smelt, vaak gemengd met CJC-1295 of sermorelin. Eén melding van een bijwerking bij de FDA ging over een neusspray.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Het doet na wat een hongerhormoon doet. Een klier onder de hersenen geeft dan een stoot groeihormoon af.</Lead>
+
+<Diagram id="ipamorelin-gh-axis" caption="Waar ipamorelin werkt in het groeihormoonsysteem, en hoe goed elke stap is aangetoond.">
+
+| Stap | Wat er gebeurt | Aangetoond bij |
+|---|---|---|
+| 1. De hersenen bepalen het ritme | De hypothalamus stuurt GHRH (een "start"-signaal) en somatostatine (een "stop"-signaal) naar de hypofyse. Daardoor komt groeihormoon in pieken vrij. | Mensen (normale werking van het lichaam) |
+| 2. Ghreline of ipamorelin | Ghreline uit de maag, of ipamorelin, zet de ghrelinereceptor aan op cellen van de hypofyse en in de hypothalamus. | Cellen en dieren |
+| 3. Een piek groeihormoon | De hypofyse geeft een stoot groeihormoon af. Na ipamorelin in een ader: één piek na ongeveer 40 minuten, na 6 uur weer heel laag. | Mensen (gezonde mannen, één infuus) |
+| 4. IGF-1 uit de lever | Groeihormoon laat de lever IGF-1 afgeven. Dat zorgt voor veel van de effecten op groei. | Ratten, met wisselende resultaten; geen gepubliceerde meting bij mensen die ipamorelin kregen |
+| 5. De rem | Groeihormoon en IGF-1 zetten somatostatine aan en dempen de volgende piek (negatieve terugkoppeling). | Mensen (normale werking van het lichaam) |
+| 6. Andere plekken met dezelfde receptor | De maag, zenuwen in de darm, de alvleesklier en delen van de hersenen voor honger en beloning. | Dieren; ghreline zelf bij mensen |
+
+</Diagram>
+
+<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback,howard-1996-ghs-receptor,raun-1998-ipamorelin,gobburu-1999-ipamorelin-pkpd,medlineplus-igf1,johansen-1999-ipamorelin-bone,malmlof-1999-ipamorelin-igf1,muller-2015-ghrelin-review" />
+
+{/* residue-ok: evidence */}
+Er zit geen groeihormoon in ipamorelin. Het werkt via je eigen hypofyse, en kan dus alleen vrijmaken wat die klier zelf kan maken. Volgens de FDA helpt het daarom waarschijnlijk niet bij mensen van wie de hypofyse helemaal geen groeihormoon maakt.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+<InDetail title="Stap voor stap: de keten en waar elke stap op rust">
+
+<Mechanism />
+
+### De receptor en het hormoon dat ipamorelin nadoet
+
+In 1996 vonden onderzoekers van Merck de receptor waarop synthetische stoffen werken die groeihormoon laten vrijkomen. Die receptor zit in de hypofyse en de hypothalamus van varkens en mensen. Volgens de onderzoekers zetten deze stoffen de afgifte van groeihormoon in pieken aan, en maken ze die pieken sterker.<Cite id="howard-1996-ghs-receptor" /> In 1999 vond een Japanse groep de natuurlijke partner van die receptor in de maag van ratten: ghreline, een peptide van 28 aminozuren.<Cite id="kojima-1999-ghrelin" /> We weten nu dat ghreline niet alleen honger geeft. Het werkt ook op de beweging van de darm, het maagzuur, de bloedsuiker, de slaap en het zoeken naar beloning.<Cite id="muller-2015-ghrelin-review,wren-2001-ghrelin-appetite" />
+
+<Claim level="in-vitro">In hypofysecellen van ratten in een schaaltje liet ipamorelin groeihormoon vrijkomen met ongeveer dezelfde potentie en een vergelijkbaar maximaal effect als GHRP-6. Proeven met blokkers lieten zien dat het via hetzelfde type receptor werkt, niet via de GHRH-receptor</Claim>.<Cite id="raun-1998-ipamorelin" />
+{/* residue-ok: evidence */}
+De FDA beschrijft dat het signaal van de receptor vooral loopt via het Gq-eiwit en het enzym fosfolipase.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+### De piek van groeihormoon bij mensen
+
+Groeihormoon komt normaal in stoten vrij, aangezet door GHRH en afgeremd door somatostatine. Elke stoot zet somatostatine aan, en dat dempt de volgende stoot; IGF-1 is een tragere rem.<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback" /> <Claim level="human-controlled">Bij gezonde mannen gaf één infuus met ipamorelin in een ader één piek groeihormoon, die na ongeveer 40 minuten het hoogst was en na 6 uur weer heel laag</Claim>; de halfwaardetijd van het peptide was ongeveer 2 uur.<Cite id="gobburu-1999-ipamorelin-pkpd,fda-pcac-2024-ipamorelin-briefing" />
+
+### IGF-1, bot en gewicht
+
+Wat er na de piek gebeurt, komt uit onderzoek bij ratten, en de resultaten wisselen. <Claim level="animal">Bij ratten die 15 dagen lang 3 keer per dag ipamorelin kregen, groeiden de lange botten sneller en steeg het gewicht, maar het totale IGF-1 veranderde niet</Claim>.<Cite id="johansen-1999-ipamorelin-bone" /> In een andere studie bij ratten steeg IGF-1 wel, na herhaalde doses in een ader.<Cite id="malmlof-1999-ipamorelin-igf1" /> In de studie van 15 dagen was de reactie van groeihormoon op een testdosis daarna iets kleiner. Dat is een eerste aanwijzing dat de hypofyse misschien minder gaat reageren als die steeds opnieuw wordt aangezet.<Cite id="johansen-1999-ipamorelin-bone,fda-pcac-2024-ipamorelin-briefing" /> We vonden geen gepubliceerde meting van IGF-1 bij mensen die ipamorelin kregen.
+
+### De darm
+
+<Claim level="animal">Bij ratten na een buikoperatie kwam met ipamorelin in een ader de eerste ontlasting eerder, en raakte de maag sneller leeg</Claim>. In maagspier in een schaaltje herstelde het de samentrekkingen, net als ghreline.<Cite id="venkova-2009-ipamorelin-ileus,greenwood-2012-ipamorelin-gastric" /> <Claim level="human-controlled">Bij patiënten na een darmoperatie was het effect op het herstel niet statistisch significant</Claim>.<Cite id="beck-2014-ipamorelin-ileus" />
+
+</InDetail>
+
+<InDetail title="Waarom “selectief” bij varkens geen bewijs van veiligheid is bij mensen">
+
+Ipamorelin wordt vaak "selectief" genoemd. Dat woord komt uit één proef uit 1998. <Claim level="animal">Bij wakkere varkens verhoogden GHRP-6 en GHRP-2 de stresshormonen ACTH en cortisol, maar ipamorelin deed dat niet, ook niet bij meer dan 200 keer de dosis die nodig was voor de helft van het effect op groeihormoon</Claim>. Geen van de drie veranderde bij die varkens de voortplantingshormonen LH en FSH, prolactine of het schildklierstimulerend hormoon (TSH).<Cite id="raun-1998-ipamorelin" />
+
+Dat resultaat is belangrijk, want natuurlijk ghreline is bij mensen niet selectief. <Claim level="human-limited">Bij 4 gezonde mannen verhoogde een injectie met ghreline niet alleen het groeihormoon, maar ook ACTH, cortisol en prolactine</Claim>.<Cite id="takaya-2000-ghrelin-humans" /> En tussen de bevinding bij varkens en veiligheid bij mensen zitten 4 gaten:
+
+1. **Diersoort en dosis.** Het is aangetoond bij varkens, na losse doses. De studie bij gezonde mannen mat groeihormoon, niet cortisol of prolactine.<Cite id="gobburu-1999-ipamorelin-pkpd,fda-pcac-2024-ipamorelin-briefing" />
+2. **Alleen hormonen van de hypofyse.** "Selectief" zegt niets over dezelfde receptor in de maag, de alvleesklier en de hersenen. Die receptor stuurt ook honger, de beweging van de darm en de bloedsuiker.<Cite id="muller-2015-ghrelin-review" />
+3. **Meer groeihormoon heeft eigen risico's.** Bij goedgekeurde medicijnen met groeihormoon waarschuwt de productinformatie voor een hoge bloedsuiker en diabetes, vocht vasthouden, een verhoogde druk in de schedel en mogelijke groei van tumoren. De FDA ziet geen gegevens die laten zien dat ipamorelin dat vermijdt.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */}
+4. **Het product is misschien geen zuiver ipamorelin.** Selectiviteit hoort bij het precieze molecuul, niet bij wat er in een flacon zit.<Cite id="fda-pcac-2024-ipamorelin-briefing,gajda-2019-glycine-ghs" />
+
+</InDetail>
+
+<InDetail title="Honger en bloedsuiker: wat de ghrelinereceptor doet">
+
+Ghreline is een hongerhormoon. <Claim level="human-controlled">In een dubbelblinde cross-overstudie bij 9 vrijwilligers aten mensen na een infuus met ghreline 28% meer van een buffet</Claim>.<Cite id="wren-2001-ghrelin-appetite" /> <Claim level="animal">Bij muizen verhoogde ipamorelin het lichaamsvet, ook bij muizen die weinig groeihormoon maken; stoffen die groeihormoon laten vrijkomen, verhoogden de voedselinname, maar groeihormoon zelf niet</Claim>.<Cite id="lall-2001-ghs-adiposity" /> Hoeveel ipamorelin de eetlust van mensen verandert, is niet gemeten.
+
+Het beeld van de bloedsuiker is gemengd. <Claim level="human-controlled">Bij 11 vrijwilligers verhoogde ghreline binnen enkele minuten de bloedsuiker en verlaagde het de insuline, terwijl hexarelin, een synthetische stof die groeihormoon laat vrijkomen, dat niet deed</Claim>.<Cite id="broglio-2001-ghrelin-glucose" /> <Claim level="in-vitro">In stukjes alvleesklier van ratten verhoogde ipamorelin de afgifte van insuline</Claim>.<Cite id="adeghate-2004-ipamorelin-insulin" /> Maar in de studie na een darmoperatie kwam een hoge bloedsuiker bij ontslag uit het ziekenhuis vaker voor met ipamorelin (14,3% tegen 8,6%).<Cite id="fda-pcac-2024-ipamorelin-briefing" /> En <Claim level="human-controlled">MK-677, een verwante tablet voor elke dag, verhoogde in een jaar de nuchtere bloedsuiker en verlaagde de insulinegevoeligheid bij 65 gezonde oudere volwassenen</Claim>.<Cite id="nass-2008-mk677-older-adults" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Het laat bij mensen groeihormoon vrijkomen. Maar de enige gepubliceerde studie bij patiënten vond geen duidelijk effect.</Lead>
+
+<KeyNumber title="Het hielp niet duidelijk na een darmoperatie" value="25,3 tegen 32,6 uur" label="tot de helft van de patiënten een maaltijd binnenhield, met ipamorelin tegen placebo. Het verschil kan toeval zijn." who="Fase 2-studie, 2014: 114 volwassenen na een darmoperatie, gerandomiseerd en dubbelblind; infusen in een ader tot 7 dagen" source="beck-2014-ipamorelin-ileus" level="human-controlled" />
+
+<KeyNumber title="Groeihormoon steeg in één korte piek" value="0,67 uur" label="tot de piek van groeihormoon (ongeveer 40 minuten) na één infuus; na 6 uur weer heel laag" who="Fase 1-studie, 1999: gezonde mannen, 8 per dosisniveau bij 5 niveaus (6 met ipamorelin, 2 met placebo), één infuus van 15 minuten in een ader" source="gobburu-1999-ipamorelin-pkpd,fda-pcac-2024-ipamorelin-briefing" level="human-controlled" />
+
+<KeyNumber title="De grootste studie is nooit openbaar gemaakt" value="320" unit="patiënten" label="deden mee aan een tweede studie na een darmoperatie, klaar in 2014. Resultaten zijn niet geplaatst of gepubliceerd." who="NCT01280344: fase 2, met placebo als vergelijking, uitgevoerd door de ontwikkelaar Helsinn" source="ctgov-nct01280344" />
+
+Er is wel iets aangetoond. Bij gezonde mannen liet ipamorelin groeihormoon vrijkomen, en bij ratten bracht het de darm na een operatie sneller op gang en liet het botten groeien.<Cite id="gobburu-1999-ipamorelin-pkpd,greenwood-2012-ipamorelin-gastric,johansen-1999-ipamorelin-bone" /> Maar geen enkele studie bij mensen testte de toepassingen waarvoor het wordt aangeprezen, en de enige gepubliceerde studie bij patiënten haalde haar doel niet.<Cite id="fda-pcac-2024-ipamorelin-briefing,beck-2014-ipamorelin-ileus" />
+
+<InDetail title="Elke studie in één tabel, en waar het onderzoek vandaan komt">
+
+<StudyTable />
+
+<Diagram id="ipamorelin-evidence-map" caption="Waar het onderzoek vandaan komt. We telden het op 22 oktober 2026.">
+
+| Niveau | Ongeveer hoeveel | Wie deed het | Grootste beperking |
+|---|---|---|---|
+| Cellen en weefsel in een schaaltje | Een paar studies | Novo Nordisk; losse studies van andere universiteiten | Concentraties niet gekoppeld aan wat er echt in het lichaam komt |
+| Dieren | Ongeveer 15 studies, vooral bij ratten, muizen en varkens | Vooral Novo Nordisk en zijn partners; studies naar de darm van één lab in Oklahoma dat samenwerkte met Helsinn | Kort; de FDA vond geen formele toxiciteitsstudies {/* residue-ok: evidence */} |
+| Mensen, met controlegroep | Eén fase 1-studie (ongeveer 40 tot 48 gezonde mannen) en één fase 2-studie (114 patiënten) | Universiteiten die samenwerkten met de ontwikkelaars (medewerkers van Novo Nordisk; geld van Helsinn) | Alleen in een ader; hooguit 7 dagen |
+| Mensen, niet gepubliceerd | Eén fase 2-studie, 320 patiënten, klaar in 2014 | Helsinn | Geen resultaten beschikbaar |
+| Producten | Twee labanalyses van in beslag genomen of illegaal verhandelde producten | Labs voor dopingcontrole en forensisch onderzoek in Denemarken, Duitsland en Noorwegen | Weinig monsters; laat zien wat er bestaat, niet hoe vaak |
+
+</Diagram>
+
+<Cite id="raun-1998-ipamorelin,johansen-1999-ipamorelin-bone,venkova-2009-ipamorelin-ileus,gobburu-1999-ipamorelin-pkpd,beck-2014-ipamorelin-ileus,ctgov-nct01280344,fda-pcac-2024-ipamorelin-briefing,gajda-2019-glycine-ghs,krug-2018-black-market-gh" />
+
+</InDetail>
+
+<InDetail title="Studies in cellen en dieren, één voor één">
+
+### Het ontdekkingswerk bij Novo Nordisk
+
+Het eerste artikel beschreef het basisprofiel. <Claim level="animal">In hypofysecellen van ratten, bij verdoofde ratten en bij wakkere varkens liet ipamorelin ongeveer even sterk groeihormoon vrijkomen als GHRP-6, zonder ACTH of cortisol te verhogen bij varkens</Claim>.<Cite id="raun-1998-ipamorelin" /> <Claim level="animal">Bij ratten verdween het 5 keer langzamer uit het bloed dan GHRP-6, en het verliet het lichaam grotendeels onveranderd via de urine</Claim>.<Cite id="johansen-1998-ipamorelin-pk" />
+
+Hetzelfde bedrijf en zijn partners aan universiteiten testten daarna langer gebruik bij ratten. <Claim level="animal">In 15 dagen liet ipamorelin de lange botten van volwassen vrouwelijke ratten sneller groeien, tot ongeveer een kwart sneller, en kwamen ze meer aan</Claim>.<Cite id="johansen-1999-ipamorelin-bone" /> In een studie van 12 weken vond een Zweeds en Brits team, met een medeauteur van Novo Nordisk, dat <Claim level="animal">ipamorelin, GHRP-6 en groeihormoon allemaal het botmineraal verhoogden, maar alleen doordat de botten groter werden; per gram lichaamsgewicht veranderde er niets</Claim>.<Cite id="svensson-2000-ipamorelin-bone" /> Bij ratten die een corticosteroïd kregen, een middel dat spieren en botten zwakker maakt, <Claim level="animal">hield ipamorelin erbij gedurende 3 maanden de kuitspieren sterker, en ging de vorming van nieuw bot aan het botoppervlak 4 keer zo snel</Claim>.<Cite id="andersen-2001-ipamorelin-glucocorticoid" />
+
+### Andere groepen
+
+Er zijn weinig onafhankelijke studies van universiteiten, en het zijn losse studies. Een team uit Cambridge en Göteborg vond dat <Claim level="animal">ipamorelin bij muizen het lichaamsvet verhoogde, ook bij muizen die weinig groeihormoon maken, en dat stoffen die groeihormoon laten vrijkomen de voedselinname verhoogden</Claim>. Dat is het tegendeel van de claims over vetverlies die er nu over worden gedaan.<Cite id="lall-2001-ghs-adiposity" /> Een groep in de Verenigde Arabische Emiraten vond dat <Claim level="in-vitro">ipamorelin de afgifte van insuline uit stukjes alvleesklier van ratten verhoogde</Claim>.<Cite id="adeghate-2004-ipamorelin-insulin" />
+
+### Het onderzoek naar de darm
+
+Een lab van de University of Oklahoma testte ipamorelin bij de darmstilstand die na een operatie optreedt. <Claim level="animal">Eén dosis in een ader liet de eerste ontlasting bij ratten eerder komen; herhaalde doses gedurende 2 dagen gaven meer ontlasting, meer eten en meer gewicht</Claim>.<Cite id="venkova-2009-ipamorelin-ileus" /> In een latere studie, met ipamorelin van Helsinn en een medewerker van Helsinn als medeauteur, <Claim level="animal">bleef bij geopereerde ratten 78% van een testmaaltijd in de maag met een nepinfuus, tegen 52% met ipamorelin</Claim>.<Cite id="greenwood-2012-ipamorelin-gastric" /> Op deze resultaten volgden de studies bij patiënten.
+
+</InDetail>
+
+<InDetail title="Studies bij mensen, en studies die nooit zijn gepubliceerd">
+
+### Gezonde vrijwilligers
+
+In een gerandomiseerde fase 1-studie met placebo als vergelijking kregen gezonde mannen één infuus van 15 minuten in een ader: 8 per dosisniveau bij 5 niveaus, van wie 6 ipamorelin kregen en 2 placebo.<Cite id="gobburu-1999-ipamorelin-pkpd,fda-pcac-2024-ipamorelin-briefing" />
+{/* residue-ok: evidence */}
+Dat zijn 40 mannen, maar de samenvatting van de FDA noemt 48 deelnemers; misschien verklaart het volledige artikel het verschil.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> <Claim level="human-controlled">Ipamorelin had een halfwaardetijd van ongeveer 2 uur; groeihormoon steeg in één piek, die na ongeveer 40 minuten het hoogst was en na 6 uur weer heel laag</Claim>.<Cite id="gobburu-1999-ipamorelin-pkpd,fda-pcac-2024-ipamorelin-briefing" /> Volgens de samenvatting van het artikel steeg groeihormoon bij alle doses.
+{/* residue-ok: evidence */}
+Volgens de samenvatting van de FDA had de groep met de laagste dosis te weinig groeihormoon om te analyseren.<Cite id="gobburu-1999-ipamorelin-pkpd,fda-pcac-2024-ipamorelin-briefing" />
+{/* residue-ok: evidence */}
+De FDA wijst erop dat het artikel geen bijwerkingen noemt. Het was opgezet om spiegels in het bloed te meten, niet de veiligheid.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+### De studie na een darmoperatie
+
+De fase 2-studie van Helsinn nam 117 volwassenen op bij wie een deel van de darm werd verwijderd; 114 kregen de behandeling. Ze kregen ipamorelin of placebo als infuus in een ader, 2 keer per dag, vanaf de dag na de operatie, tot 7 dagen lang.<Cite id="beck-2014-ipamorelin-ileus" /> <Claim level="human-controlled">De mediane tijd tot patiënten een eerste vaste maaltijd binnenhielden, was 25,3 uur met ipamorelin en 32,6 uur met placebo (p = 0,15); ook de tijd tot de eerste ontlasting, het herstel van de darm en de duur van de opname verschilden niet statistisch significant</Claim>.<Cite id="beck-2014-ipamorelin-ileus,fda-pcac-2024-ipamorelin-briefing" /> In een subgroep met een open operatie leek de darm sneller te herstellen met ipamorelin. De onderzoekers vroegen om voorzichtigheid: de studie was klein, met heel verschillende patiënten.<Cite id="fda-pcac-2024-ipamorelin-briefing,beck-2014-ipamorelin-ileus" />
+
+### De studie die niemand kan lezen
+
+Daarna deed Helsinn een grotere fase 2-studie bij 320 patiënten. Die vergeleek 3 schema's van toediening, in een ader, met placebo, en was klaar in mei 2014. We vonden geen resultaten in het register en geen artikel in een tijdschrift.<Cite id="ctgov-nct01280344" /> Wat de studie ook liet zien: omdat ze niet is gepubliceerd, is het gepubliceerde bewijs onvolledig.
+
+### Andere gegevens bij mensen
+
+Eén vrijwilliger gebruikte ipamorelin via de neus in een studie voor dopingcontrole: <Claim level="human-limited">het peptide werd sterk afgebroken, en één afbraakproduct was nog in de urine te vinden toen het hele peptide al weg was</Claim>.<Cite id="semenistaya-2015-ghrp-nasal" /> Een Amerikaans observationeel onderzoek bij veteranen noemt ipamorelin als een van meerdere supplementen in een hormoonprogramma, dat vóór andere behandelingen wordt gegeven; het kan het effect van ipamorelin niet apart meten.<Cite id="ctgov-nct07717866" /> Op 22 oktober 2026 noemde ClinicalTrials.gov geen lopende of geplande studie die ipamorelin test. Op 27 oktober 2026 was dat nog zo.<Cite id="ctgov-ipamorelin-search-2026-10-22,ctgov-ipamorelin-search-2026-10-27" />
+
+</InDetail>
+
+<InDetail title="Wat wel vaststaat, en wat het gat in het onderzoek betekent">
+
+Een deel van de biologie staat vast. Ipamorelin laat bij mensen groeihormoon vrijkomen, en een middel dat op hetzelfde systeem werkt, is goedgekeurd: macimorelin, als test.<Cite id="gobburu-1999-ipamorelin-pkpd,ema-pi-ghryvelin-nl,fda-drugsatfda-macrilen" /> In een studie van 2 jaar bij 65 oudere volwassenen bracht de verwante tablet MK-677 groeihormoon en IGF-1 op het niveau van jonge volwassenen, en kwam er ongeveer 1 kg vetvrije massa bij. Maar kracht en functie veranderden niet, al zeggen de onderzoekers dat de studie te klein was om dat te beoordelen.<Cite id="nass-2008-mk677-older-adults" /> Een hormoon hoger maken is niet hetzelfde als mensen sterker of gezonder maken.
+
+Het gat in het onderzoek heeft gevolgen. Darmstilstand na een operatie is een echt probleem, met weinig medicijnen ertegen. Een middel dat lijkt op ghreline daarvoor testen, was dus redelijk.
+{/* residue-ok: world context */}
+De FDA wijst erop dat één medicijn, alvimopan, daarvoor in de VS is goedgekeurd.<Cite id="beck-2014-ipamorelin-ileus,fda-pcac-2024-ipamorelin-briefing" /> De ontwikkeling stopte, de grootste studie is nooit gepubliceerd, en de stof dook op in wellnessklinieken en op websites, voor toepassingen die niemand bij mensen had getest.<Cite id="ctgov-nct01280344,fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog onbekend?">Geen studie bij mensen duurde langer dan een week of testte een injectie onder de huid.</Lead>
+
+<TimeStrip title="In studies kregen mensen ipamorelin hooguit één week. Langer gebruik is nooit onderzocht." detail="Weken gebruik waar het onderzoek over gaat. De dierstudies testten effecten, niet de veiligheid." min={0} max={26} step={2} axis="Weken gebruik" source="gobburu-1999-ipamorelin-pkpd,beck-2014-ipamorelin-ileus,andersen-2001-ipamorelin-glucocorticoid,fda-pcac-2024-ipamorelin-briefing" checked="2026-10-22" rows={[
+  { label: "Gezonde mannen: één infuus in een ader", spans: [{ from: 0, to: 0.15, text: "één dosis" }] },
+  { label: "Patiënten na een darmoperatie: infusen in een ader", spans: [{ from: 0, to: 1, text: "tot 7 dagen" }] },
+  { label: "Langste dierstudie (ratten; geen veiligheidsstudie)", spans: [{ from: 0, to: 13, text: "3 maanden" }] },
+  { label: "Langer gebruik bij mensen, onder de huid", spans: [{ from: 1, to: 26, text: "nooit onderzocht", unknown: true }] },
+]} />
+
+<InDetail title="Alle open vragen, met hun bronnen">
+
+Op 22 oktober 2026 was dit allemaal onbekend:
+
+- **Of het helpt bij iets waarvoor mensen het gebruiken.** Geen studie bij mensen testte spieren, vetverlies, slaap, herstel of veroudering. De FDA vond ook geen gegevens over de werking bij groeihormoondeficiëntie.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */}
+- **Hoe het lichaam het verwerkt onder de huid, via de neus of via de mond.** Behalve van één vrijwilliger in een studie voor dopingcontrole zijn er bij mensen alleen gegevens over infusen in een ader.<Cite id="fda-pcac-2024-ipamorelin-briefing,gobburu-1999-ipamorelin-pkpd,semenistaya-2015-ghrp-nasal" />
+- **De veiligheid op lange termijn.** De FDA vond geen studies naar giftigheid bij herhaalde doses (toxiciteit), naar schade aan het erfelijk materiaal (genotoxiciteit), naar het ontstaan van kanker (carcinogeniteit) of naar de voortplanting.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */}
+- **Of het bij mensen selectief is.** In de gepubliceerde studies zijn cortisol, ACTH en prolactine alleen bij varkens gemeten.<Cite id="raun-1998-ipamorelin,gobburu-1999-ipamorelin-pkpd" />
+- **Wat maanden gebruik doet met IGF-1, de bloedsuiker en de bloeddruk** bij mensen. Geen studie keek verder dan één week in het ziekenhuis.<Cite id="fda-pcac-2024-ipamorelin-briefing,beck-2014-ipamorelin-ileus" />
+- **Of het effect afneemt.** Bij ratten was de reactie van groeihormoon na 15 dagen iets kleiner; de FDA noemt dezelfde zorg voor mensen.<Cite id="johansen-1999-ipamorelin-bone,fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */}
+- **Afweerreacties.** Geen studie testte of het antistoffen opwekt.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Combinaties** met CJC-1295, sermorelin of andere middelen die groeihormoon verhogen. Ze zijn samen in omloop, maar we vonden geen studie die ze samen bij mensen testte.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Zwangerschap en vruchtbaarheid.** Er zijn geen gegevens. Bij muizen schaadden zowel het aanzetten als het blokkeren van de ghrelinereceptor de bevruchting en de ontwikkeling van het embryo.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Beloning en afhankelijkheid.** De ghrelinereceptor zit in delen van de hersenen voor beloning; of ipamorelin daarop werkt, is niet getest.<Cite id="fda-pcac-2024-ipamorelin-briefing,muller-2015-ghrelin-review" />
+- **De resultaten van de studie met 320 patiënten**, klaar in 2014.<Cite id="ctgov-nct01280344" />
+- **Wat er in producten zit.** In beslag genomen poeders bevatten een aangepast ipamorelin met een extra aminozuur. We vonden geen onderzoek naar de inhoud, de zuiverheid of de steriliteit van producten die in omloop zijn.<Cite id="gajda-2019-glycine-ghs,krug-2018-black-market-gh" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is geen goedgekeurd medicijn. Leveren en invoeren mogen dus niet. In de sport is het altijd verboden.</Lead>
+
+<Compare title="Niemand heeft het als medicijn goedgekeurd. In Nederland zijn leveren en invoeren verboden." detail="Status in Nederland en de EU gecontroleerd op 27 oktober 2026, de sport op 22 oktober 2026.">
+
+| | Nederland | Europese Unie |
+|---|---|---|
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met ipamorelin in zijn register.<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Er is geen EU-handelsvergunning, en het Europees Geneesmiddelenbureau (EMA) beoordeelt geen aanvraag.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> |
+| Mag iemand het leveren? | <Verdict is="no" /> Een geneesmiddel zonder handelsvergunning mag niemand leveren, in voorraad hebben of invoeren.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Zonder vergunning mag een geneesmiddel in geen enkel EU-land op de markt komen.<Cite id="eu-directive-2001-83" /> |
+| Verandert een Amerikaans besluit iets? | <Verdict is="no" /> Wat de FDA of haar adviseurs besluiten, verandert de wet hier niet.<Cite id="nl-geneesmiddelenwet" /> | <Verdict is="no" /> Alleen een vergunning van de EU of van een lidstaat telt.<Cite id="eu-directive-2001-83,eu-regulation-726-2004" /> {/* residue-ok: world context */} |
+| Toegestaan in de sport? | <Verdict is="no" /> Altijd verboden, als stof die groeihormoon laat vrijkomen.<Cite id="wada-2026-list-en" /> | <Verdict is="no" /> De dopinglijst van het Wereld Anti-Doping Agentschap (WADA) geldt in elk land.<Cite id="wada-2026-list-en" /> |
+
+</Compare>
+
+Ipamorelin is in de sport altijd verboden, binnen en buiten wedstrijden, als stof die groeihormoon laat vrijkomen. Dat staat op de dopinglijst, die wereldwijd geldt.<Cite id="wada-2026-list-en" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De status in Nederland en de EU is gecontroleerd op 27 oktober 2026.
+
+### Sport (WADA)
+
+Ipamorelin staat op de dopinglijst van WADA onder S2.2.4, de factoren die groeihormoon laten vrijkomen, als voorbeeld van een groeihormoonsecretagoog. Stoffen uit S2 zijn altijd verboden, binnen en buiten wedstrijden, en het zijn niet-specifieke stoffen.<Cite id="wada-2026-list-en,wada-2027-list-en" /> Ipamorelin wordt genoemd sinds de lijst van 2015; volgens WADA waren de genoemde voorbeelden al verboden onder eerdere lijsten.<Cite id="wada-2015-list-en,wada-2015-list-modifications" /> Op de lijst van 2027, die op 1 januari 2027 ingaat, staat het op dezelfde plek.<Cite id="wada-2027-list-en" /> Dopinglabs kunnen een afbraakproduct in de urine vinden als het hele peptide al weg is.<Cite id="semenistaya-2015-ghrp-nasal" /> Meer over de regels in Nederland: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de Europese Unie">
+
+### Nederland
+
+Het CBG, de Nederlandse medicijnautoriteit, heeft geen product met ipamorelin in zijn register, de Geneesmiddeleninformatiebank (gezocht op 27 oktober 2026).<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> Volgens de Geneesmiddelenwet is een stof een geneesmiddel als die wordt aangeboden om een ziekte te behandelen of te voorkomen, of als die de werking van het lichaam verandert door een farmacologisch effect (artikel 1).<Cite id="nl-gmw-art-1-geneesmiddel" /> Een geneesmiddel zonder handelsvergunning mag niemand in voorraad hebben, aanbieden, verkopen, leveren of meegeven. Niemand mag het invoeren of op een andere manier Nederland binnenbrengen. Er zijn alleen smalle uitzonderingen (artikel 40).<Cite id="nl-gmw-art-40-handelsvergunning" />
+
+Wat betekent dat als je het zelf gebruikt? Gebruiken staat niet in dat verbod. Invoeren en doorgeven wel, ook als je er geen geld voor vraagt. Of bezit voor eigen gebruik mag, is niet duidelijk.<Cite id="nl-gmw-art-40-handelsvergunning,nl-gnw-art-1-lidstaat-werkzame-stof" /> Zie [wat dit voor jou betekent](/nl/legal/nl/#wat-dit-voor-jou-betekent).
+
+Een etiket "alleen voor onderzoek" verandert daar niets aan. Wat telt, is wat het product is en hoe het wordt aangeboden. De Douane schreef in augustus 2026 over middelen die onder de wet vallen: "Onderzoeksdoeleinden spelen dan geen rol."<Cite id="nl-gmw-art-1-geneesmiddel,douane-2026-08-illegale-online-handel-medicijnen" /> Zie ["alleen voor onderzoek"](/nl/legal/research-use-only/).
+
+**Zelf invoeren.** Een reiziger mag de meeste medicijnen voor eigen gebruik meenemen, in de originele verpakking. Voor een medicijn zonder handelsvergunning blijft het verbod gelden. En een pakket valt niet onder die regel voor reizigers, want dat draag je niet zelf bij je.<Cite id="douane-medicijnen-reizen-2026,nl-gnw-art-18-licence,nl-gmw-art-40-handelsvergunning,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane kan een pakket tegenhouden, melden bij de Inspectie Gezondheidszorg en Jeugd (IGJ) of in beslag nemen.<Cite id="douane-invoer-geneesmiddelen-2026,douane-hvgem-geneesmiddelen-h12-fysiek-toezicht" /> Wat wel en niet mag, staat bij [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+### Europese Unie
+
+Geen enkel product met ipamorelin heeft een Europese handelsvergunning. De gegevens van het EMA, waarin ook geweigerde en ingetrokken aanvragen staan, noemen het niet. Er ligt geen aanvraag ter beoordeling, en het heeft geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-search,ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> Volgens ChEMBL, een databank met gegevens over stoffen en medicijnen, is het nergens ter wereld goedgekeurd; het verst kwam het in fase 2.<Cite id="chembl-ipamorelin" /> Zonder een vergunning van de EU of van een lidstaat mag een medicijn in geen enkel EU-land op de markt komen.<Cite id="eu-directive-2001-83,eu-regulation-726-2004" /> In het Europese register van klinisch onderzoek (CTIS) staat geen onderzoek met ipamorelin.<Cite id="ctis-ipamorelin-search-2026-10-27" />
+
+Voor België: zie [onze notities over België](/nl/legal/be/).
+
+<Callout type="legal" title="Amerikaanse besluiten gelden hier niet">
+{/* residue-ok: world context */}
+Wat de FDA of haar adviescommissie ook besluit, het verandert niets aan de wet in Nederland of in de rest van de EU.
+</Callout>
+
+</InDetail>
+
+<InDetail title="De Verenigde Staten: de stemming van 2024, punt voor punt">
+
+{/* residue-ok: world context */}
+Dit deel gaat over de regels voor apotheken in de VS. Voor Nederland verandert het niets, maar het laat zien hoe de FDA ipamorelin beoordeelde.
+
+{/* residue-ok: world context */}
+Ipamorelin is niet goedgekeurd door de FDA, heeft geen kwaliteitsnorm in de Amerikaanse farmacopee (USP) en zit in geen enkel goedgekeurd medicijn. Een Amerikaanse apotheek mag het daarom pas uit poeder bereiden als het via een formele regel (rulemaking) op de 503A-lijst komt.<Cite id="usc-21-353a,fda-pcac-2024-ipamorelin-briefing,fda-503a-bulks-page" />
+
+- Twee Amerikaanse bedrijven die medicijnen bereiden, droegen het voor die lijst voor: het ene de acetaatvorm, het andere de vrije base. Allebei trokken ze hun voordracht in op 19 september 2024, maar de FDA legde beide vormen toch aan haar adviseurs voor.<Cite id="fda-pcac-2024-presentations-pm" /> {/* residue-ok: world context */}
+- De medewerkers van de FDA raadden af om een van beide vormen op de lijst te zetten. Hun redenen: de stof is niet goed beschreven, de werking bij groeihormoondeficiëntie en bij darmstilstand is niet onderbouwd, er zijn signalen over de veiligheid, en er zijn goedgekeurde behandelingen.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: world context */}
+- Op 29 oktober 2024 stemde de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) over elke vorm apart. Vrije base: 0 stemmen voor, 12 tegen en 1 onthouding. Acetaat: 0 stemmen voor, 12 tegen en 1 onthouding. De leden noemden een gebrek aan gegevens over veiligheid en werking.<Cite id="fda-pcac-2024-minutes" /> {/* residue-ok: world context */}
+- De stemming is een advies en niet bindend.<Cite id="fda-pcac-2024-10-meeting" /> Hier was ze het eens met de medewerkers van de FDA. Op 3 november 2026 had de FDA nog geen regel voorgesteld, in welke richting ook.<Cite id="federalregister-ipamorelin-search-2026-10-22,federalregister-503a-search-2026-11-03" /> {/* residue-ok: world context */}
+- Voor outsourcing facilities staat ipamorelinacetaat sinds 29 september 2023 in "categorie 2": stoffen die mogelijk grote risico's voor de veiligheid geven. De FDA noemt mogelijke afweerreacties, ongewone aminozuren en de ernstige voorvallen in de studie na een darmoperatie.<Cite id="fda-category-2-safety-risks,fda-503b-categories-2025-03" /> Voor apotheken stond het ook in categorie 2, tot de voordrachten werden ingetrokken.<Cite id="fda-category-2-safety-risks" /> {/* residue-ok: world context */}
+- Ipamorelin hoorde niet bij de vergadering van juli 2026; die ging over 7 andere peptiden.<Cite id="fda-pcac-2026-briefing-intro" />
+
+### De stemming van juli 2026, ter vergelijking
+
+Die latere vergadering wordt vaak verward met de stemming over ipamorelin. Daarom hier de feiten:
+
+- Op 23 juli 2026 stemde dezelfde commissie met 8 stemmen voor, 6 tegen en 1 onthouding om aan te bevelen BPC-157 op de Amerikaanse 503A-lijst te zetten. Ze besprak 7 peptiden en raadde er 6 aan: BPC-157, KPV, TB-500, MOTS-c, Semax en epitalon. Emideltide (DSIP) werd niet aanbevolen. De FDA heeft geen verslag gepubliceerd; de aantallen zijn dus zoals gemeld vanuit de openbare vergadering.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions,fda-pcac-2026-briefing-intro" /> {/* residue-ok: PCAC framing */}
+- Die stemming is alleen een advies, niet bindend, en tegen het advies van de eigen medewerkers van de FDA in.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" /> {/* residue-ok: PCAC framing */}
+- Die peptiden staan nog niet op de 503A-lijst. Formeel mogen Amerikaanse apotheken ze pas bereiden als de FDA het advies overneemt en een formele regel (rulemaking) afrondt.<Cite id="fda-503a-bulks-page,federalregister-503a-search-2026-11-03" /> Op 30 oktober 2026 publiceerde het Amerikaanse ministerie van Volksgezondheid (HHS) een ontwerp voor tijdelijk beleid, tot er een formele regel is. HHS is niet van plan op te treden tegen bereiding van die 6 peptiden door een Amerikaanse apotheek, onder strenge voorwaarden. Het beleid is niet bindend. Ipamorelin staat er niet in.<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> {/* residue-ok: PCAC framing */}
+- Geen van deze peptiden is een goedgekeurd medicijn in Nederland of de EU. Semax is wel in Rusland als medicijn toegelaten, schrijft de FDA.<Cite id="fda-pcac-2026-semax-briefing,fr-2026-07361-pcac-notice,cbg-gib-search-status-2026-10-27,ema-medicines-json" /> Een plek op de 503A-lijst zou Amerikaanse apotheken alleen laten bereiden op recept. Het is geen goedkeuring, zegt niets over of een stof werkt, en verandert niets buiten de VS.<Cite id="fda-pcac-2026-presentations-day1,usc-21-353a" /> {/* residue-ok: PCAC framing */}
+
+Niets hiervan maakt van ipamorelin een goedgekeurd medicijn, en niets hiervan verandert de wet in Nederland of de rest van de EU.
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">De grootste zorgen: onbekende producten, een hogere bloedsuiker en vocht vasthouden. Wat lang gebruik doet, is niet onderzocht.</Lead>
+
+<IconArray title="In één studie kwamen sommige problemen vaker voor met ipamorelin. De groepen waren klein." detail="Aantal mensen op de 100 met elk probleem: 56 patiënten met ipamorelin en 58 met placebo, met infusen in een ader tot 7 dagen na een operatie." a="Ipamorelin" b="Placebo" source="fda-pcac-2024-ipamorelin-briefing" level="human-controlled" rows={[
+  { label: "Hoge bloedsuiker bij ontslag uit het ziekenhuis", a: 14.3, b: 8.6 },
+  { label: "Te weinig kalium in het bloed", a: 12.5, b: 3.4 },
+  { label: "Slecht slapen", a: 10.7, b: 5.2 },
+  { label: "Een ernstig medisch voorval, door welke oorzaak ook", a: 17.9, b: 15.5 },
+]} />
+
+{/* residue-ok: evidence */}
+De samenvatting van de FDA geeft geen statistische toetsen voor deze verschillen, en de operatie zelf veroorzaakt veel van deze problemen. In totaal hadden iets minder patiënten met ipamorelin een probleem (87,5%) dan met placebo (94,8%).<Cite id="fda-pcac-2024-ipamorelin-briefing,beck-2014-ipamorelin-ileus" />
+
+<InDetail title="Wat er bij mensen is gemeld">
+
+{/* residue-ok: evidence */}
+Tenzij anders vermeld, komt dit deel uit de beoordeling van de FDA uit 2024 en de genoemde studies.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+In de studie na een darmoperatie had bijna iedereen na de operatie een of ander gezondheidsprobleem (een ongewenst voorval): 87,5% met ipamorelin en 94,8% met placebo. De meeste waren licht tot matig, en hingen samen met de operatie of de ziekte. Misselijkheid, overgeven en een opgezette buik kwamen het meest voor, en iets minder vaak met ipamorelin.<Cite id="beck-2014-ipamorelin-ileus,fda-pcac-2024-ipamorelin-briefing" /> Een hoge bloedsuiker bij ontslag uit het ziekenhuis (14,3% tegen 8,6%), te weinig kalium (12,5% tegen 3,4%) en slecht slapen (10,7% tegen 5,2%) kwamen vaker voor met ipamorelin. In elke groep stopten 3 patiënten met de behandeling door bijwerkingen. De onderzoekers schreven dat ipamorelin goed werd verdragen.<Cite id="fda-pcac-2024-ipamorelin-briefing,beck-2014-ipamorelin-ileus" />
+
+Ernstige voorvallen, zoals infecties en een lek op de plek waar de darm weer aan elkaar was gezet (naadlekkage), kwamen voor bij 17,9% met ipamorelin en 15,5% met placebo; de meeste na het einde van de behandeling. Twee patiënten met ipamorelin overleden. Allebei hadden ze een operatie voor darmkanker gehad, met daarna een naadlekkage. Allebei overleden ze aan complicaties zoals nierfalen en sepsis (bloedvergiftiging: het lichaam reageert zo sterk op een infectie dat organen beschadigd raken).
+{/* residue-ok: evidence */}
+Volgens de FDA is niet duidelijk of de sterfgevallen met ipamorelin te maken hadden. Dat ze voorkwamen, samen met het vaker voorkomen van te weinig kalium en een hoge bloedsuiker, is een van de redenen dat de FDA de stof een zorg voor de veiligheid noemt.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+{/* residue-ok: evidence */}
+Tot 30 september 2023 stonden er in de databank van de FDA voor meldingen van bijwerkingen 2 meldingen die niet ernstig waren, allebei met producten die een Amerikaanse apotheek zelf had bereid: tranende ogen en hoofdpijn na een neusspray, en pijn in de elleboog na injecties met ipamorelin gemengd met sermorelin.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> Geen van beide bewijst een oorzaak.
+{/* residue-ok: evidence */}
+De FDA krijgt niet alle meldingen binnen, vooral niet bij producten die apotheken zelf bereiden. Twee meldingen zeggen dus weinig over hoe vaak problemen voorkomen.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+<InDetail title="Bloedsuiker, vocht en het hart: lessen van verwante middelen">
+
+In gepubliceerde studies heeft niemand ipamorelin maandenlang gekregen. Verwante middelen wel, en die laten zien wat het maandenlang aanzetten van dit systeem kan doen. In een studie van 2 jaar kregen 65 gezonde oudere volwassenen de tablet MK-677 (ibutamoren), die de ghrelinereceptor aanzet, of placebo. <Claim level="human-controlled">MK-677 verhoogde de nuchtere bloedsuiker met ongeveer 0,3 mmol/l en verlaagde de insulinegevoeligheid; cortisol steeg; de vaakste bijwerkingen waren meer eetlust, lichte zwelling van de onderbenen en spierpijn</Claim>.<Cite id="nass-2008-mk677-older-adults" /> Bij 123 oudere mensen die herstelden van een gebroken heup, <Claim level="human-controlled">werd een studie met MK-677 vroeg gestopt, door een signaal van hartfalen (het hart pompt minder goed) bij een paar patiënten</Claim>.<Cite id="adunsky-2011-mk677-hip-fracture" />
+
+{/* residue-ok: evidence */}
+Bij goedgekeurde medicijnen met groeihormoon waarschuwt de productinformatie voor een hoge bloedsuiker en diabetes, vocht vasthouden, een verhoogde druk in de schedel, een ontstoken alvleesklier en, bij kinderen, problemen met heup en wervelkolom. De FDA ziet geen gegevens die laten zien dat ipamorelin die risico's vermijdt. Ze wijst ook op een effect op het hartritme (QT-verlenging) bij macimorelin, een goedgekeurd middel dat op hetzelfde systeem werkt.<Cite id="fda-pcac-2024-ipamorelin-briefing,ema-pi-ghryvelin-nl" /> Dit zijn waarschuwingen voor de hele groep, geen bevindingen bij ipamorelin. Maar het mechanisme dat ze zou veroorzaken, is precies het mechanisme waarvoor ipamorelin wordt gebruikt.
+
+</InDetail>
+
+<InDetail title="Waarom een effect op kanker wordt verondersteld">
+
+De redenering is een keten, en alleen de eerste schakels staan vast:
+
+1. **Ipamorelin laat bij mensen groeihormoon vrijkomen.**<Cite id="gobburu-1999-ipamorelin-pkpd" />
+2. **Groeihormoon verhoogt IGF-1, een groeisignaal voor veel cellen.** Met MK-677 steeg IGF-1 bij oudere volwassenen tot het niveau van jonge volwassenen.<Cite id="medlineplus-igf1,nass-2008-mk677-older-adults" />
+3. **Mensen met een hoger IGF-1 hebben iets vaker sommige vormen van kanker.** <Claim level="human-limited">In een meta-analyse van 21 observationele studies hing een hoger IGF-1 samen met meer prostaatkanker, en met meer borstkanker vóór de menopauze</Claim>; zulke studies kunnen geen oorzaak bewijzen.<Cite id="renehan-2004-igf1-cancer" />
+4. **De productinformatie van goedgekeurde medicijnen met groeihormoon waarschuwt voor een grotere kans op tumoren.**<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+<Claim level="hypothesis">De zorg is dus niet dat ipamorelin kanker veroorzaakt. De zorg is dat een groeisignaal een tumor die er al is, en die misschien nog niet is ontdekt, kan helpen groeien.</Claim>
+{/* residue-ok: evidence */}
+Geen studie heeft dit voor ipamorelin getest, en de FDA vond geen carcinogeniteitsonderzoek.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+<InDetail title="De kwaliteit van het product, en afweerreacties">
+
+{/* residue-ok: evidence */}
+Het meest directe risico is misschien het product zelf. De analysecertificaten die de FDA bekeek, gaven alleen de zuiverheid. Ze testten geen onzuiverheden, klonten van peptide of gifstoffen van bacteriën (endotoxinen), en volgens de FDA zijn die tests cruciaal voor alles wat wordt ingespoten.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> De certificaten van de bedrijven die het voordroegen, noemden de ene vorm in de titel en gaven de brutoformule van de andere.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+Labs voor forensisch onderzoek en dopingcontrole in Denemarken, Duitsland en Noorwegen vonden producten met "Gly-ipamorelin": ipamorelin met een extra aminozuur. De effecten en de veiligheid daarvan zijn nooit onderzocht.<Cite id="gajda-2019-glycine-ghs,krug-2018-black-market-gh" />
+
+Peptiden kunnen tijdens het bewaren aan elkaar gaan klonteren, en bij het maken ontstaan bijna-kopieën van de keten. Allebei kunnen ze het afweersysteem prikkelen.
+{/* residue-ok: evidence */}
+De FDA maakt zich zorgen over afweerreacties op ingespoten ipamorelin, meer onder de huid dan in een ader. Die reacties lopen van antistoffen zonder klachten tot reacties die levensgevaarlijk zijn, en geen studie heeft dit getest.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+</InDetail>
+
+<InDetail title="Honger, slaap, beloning en zwangerschap">
+
+- **Honger en gewicht.** Door ghreline aten vrijwilligers 28% meer, en ipamorelin verhoogde bij muizen de voedselinname en het lichaamsvet.<Cite id="wren-2001-ghrelin-appetite,lall-2001-ghs-adiposity" />
+- **Slaap.** Slecht slapen kwam in de studie na een darmoperatie vaker voor met ipamorelin (10,7% tegen 5,2%).<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Beloning.** De ghrelinereceptor zit in delen van de hersenen die beloning verwerken, en door ghreline gingen ratten meer naar heroïne zoeken. Volgens de FDA zou ipamorelin in theorie een belonend effect kunnen hebben; dat is niet getest.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */}
+- **Zwangerschap.** Er zijn geen studies met ipamorelin naar de voortplanting. Bij muizen schaadden zowel ghreline als een blokker van ghreline de bevruchting en de ontwikkeling van het embryo.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer het product, vraag je huisarts om een paar bloedtests, en weet wanneer je stopt.</Lead>
+
+Dit deel is voor mensen die hebben besloten ipamorelin te gebruiken, of het al gebruiken. Het is geen aanbeveling. We noemen geen hoeveelheden of schema's, en we zeggen niet waar je het kunt krijgen.
+
+{/* residue-ok: evidence */}
+<ProductCheck extra="Controleer welke vorm op het etiket staat. Ipamorelin bestaat als vrije base en als acetaatzout. De FDA ziet dat als 2 verschillende stoffen." extraSources="fda-pcac-2024-ipamorelin-briefing" />
+
+### Hoe je huisarts kan helpen
+
+Je huisarts kan nagaan wat ipamorelin kan veranderen: je bloedsuiker, vocht en bloeddruk, en je hormonen.<Cite id="fda-pcac-2024-ipamorelin-briefing,nass-2008-mk677-older-adults" /> Gebruik je het omdat je moe bent, slecht slaapt of spieren verliest? Dan kan je huisarts ook zoeken naar een oorzaak die te behandelen is. Een echt tekort aan groeihormoon stellen artsen bijvoorbeeld vast met speciale tests, en daar zijn goedgekeurde behandelingen voor.<Cite id="fda-pcac-2024-ipamorelin-briefing" /> Vertel je arts eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Alle artsen in Nederland hebben een beroepsgeheim.<Cite id="thuisarts-naar-de-huisarts" /> Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **De prikplek wordt heet, rood, dik of pijnlijk, of je krijgt koorts of koude rillingen** (een infectie of een besmet product). Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost. Ben je ook suf of verward, of adem je heel snel? Bel dan 112.
+- **Je krijgt jeukende bulten (netelroos), dikke lippen, een dikke tong of keel, of je kunt moeilijk ademen** (een allergische reactie). Is je tong of keel dik, of kun je moeilijk ademen? Bel dan 112. Alleen jeukende bulten of dikke lippen, en je ademt normaal? Maak dan een afspraak met je huisarts.
+- **Je benen of enkels worden dik en je raakt snel buiten adem, of je krijgt pijn op de borst** (vocht dat zich ophoopt, of een hart dat het zwaar heeft). Heb je pijn op de borst, of ben je opeens erg benauwd? Bel dan 112. Worden je benen of enkels steeds dikker, of raak je sneller buiten adem als je je inspant? Maak dan een afspraak met je huisarts.
+- **Je hebt veel dorst en je plast veel, en je moet ook overgeven, je wordt suf, of je ademt snel of diep** (een heel hoge bloedsuiker). Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je hart klopt heel snel of onregelmatig en wordt niet rustiger, of je hebt daarbij pijn op de borst, moeite met ademen of het gevoel dat je flauwvalt.** Bel direct 112. Komen hartkloppingen steeds terug, maar gaan ze vanzelf over en voel je je daarna goed? Maak dan een afspraak met je huisarts.
+- **Je valt flauw.** Kom je niet binnen een minuut weer bij? Dan moet iemand anders direct 112 bellen. Had je vlak voordat je flauwviel pijn op de borst of hartkloppingen? Bel dan ook 112. Kwam je snel bij en voel je je goed? Maak dan een afspraak met je huisarts.
+
+Twijfel je? Bel je huisarts of de huisartsenpost. Is het ernstig? Bel 112.
+</Callout>
+
+<Cite id="thuisarts-wondroos,thuisarts-sepsis,thuisarts-dikke-ogen-lippen,thuisarts-hartfalen,thuisarts-pijn-op-borst,thuisarts-diabetes-type-2,thuisarts-hartkloppingen,nhs-heart-palpitations,thuisarts-flauwvallen,fda-pcac-2024-ipamorelin-briefing" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,metabolic" />
+
+<InDetail title="Wat je niet kunt weten over het product">
+
+Een flacon met "ipamorelin" op het etiket kan de vrije base of de acetaatvorm bevatten, meer of minder peptide dan er staat, bijna-kopieën van de keten, een aangepaste versie, oplosmiddelen of gifstoffen van bacteriën. Geen medicijnautoriteit heeft het gecontroleerd.<Cite id="fda-pcac-2024-ipamorelin-briefing,gajda-2019-glycine-ghs" /> Zie [de risico's van het product](/nl/safety/product-risk/) en [wat een labrapport wel en niet zegt](/nl/safety/product-risk/#wat-een-labrapport-wel-en-niet-zegt). Spuit je iets in? Volg dan [steriel werken](/nl/safety/sterile-technique/): een nieuwe steriele naald en spuit voor elke injectie verkleint de kans op een infectie, wat er ook in de flacon zit.<Cite id="cdc-2024-safe-injection-practices,thuisarts-insuline-spuiten" /> Zie ook [wanneer je een flacon weggooit](/nl/safety/sterile-technique/#wanneer-je-een-flacon-weggooit).
+
+</InDetail>
+
+<InDetail title="Controles die zinvol zijn, en waarom">
+
+Je huisarts kan je helpen kiezen welke controles bij jou passen:
+
+<Checklist>
+
+- **Bloedsuiker (nuchtere glucose of HbA1c), voor en tijdens het gebruik**, omdat middelen die de ghrelinereceptor aanzetten en groeihormoon de bloedsuiker kunnen verhogen. HbA1c laat het gemiddelde zien van de afgelopen 2 tot 3 maanden.<Cite id="nass-2008-mk677-older-adults,fda-pcac-2024-ipamorelin-briefing,medlineplus-hba1c" />
+- **Bloeddruk, gewicht en je enkels**, omdat vocht vasthouden een vaak voorkomende bijwerking was van een verwant middel.<Cite id="nass-2008-mk677-older-adults" />
+- **IGF-1**, omdat dat stabieler is dan groeihormoon, dat in pieken komt. Het laat het effect van groeihormoon dus beter zien. Het is een controle op veiligheid, geen doel.<Cite id="medlineplus-igf1" />
+- **Kalium, als je je zwak voelt, kramp hebt of hartkloppingen**, omdat te weinig kalium in de studie vaker voorkwam met ipamorelin.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Onderzoek naar kanker dat bij jouw leeftijd hoort, en elke onverklaarde bult eerst laten nakijken**, vanwege het theoretische effect van meer groeihormoon en IGF-1.<Cite id="renehan-2004-igf1-cancer,fda-pcac-2024-ipamorelin-briefing" />
+
+</Checklist>
+
+Vertel elke arts die je behandelt dat je het gebruikt. Dan wordt een verandering in je bloedsuiker of een reactie niet aangezien voor iets anders. Een gesprek met je huisarts valt niet onder het eigen risico. Bloedonderzoek dat je huisarts in een lab laat doen, valt er wel onder.<Cite id="zin-huisarts-zvw" />
+
+</InDetail>
+
+<InDetail title="Wie het beter niet gebruikt, en wisselwerkingen">
+
+### Wie het beter helemaal niet gebruikt
+
+- **Wie zwanger is, borstvoeding geeft of zwanger wil worden**: er zijn geen studies naar de voortplanting, en bij muizen had ghreline invloed op de bevruchting en de ontwikkeling van het embryo.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Wie kanker heeft, kanker heeft gehad of een onverklaarde bult heeft**, door het mechanisme van groeihormoon en IGF-1 hierboven.<Cite id="renehan-2004-igf1-cancer,fda-pcac-2024-ipamorelin-briefing" />
+- **Mensen met diabetes of prediabetes**, omdat de bloedsuiker kan stijgen.<Cite id="nass-2008-mk677-older-adults,fda-pcac-2024-ipamorelin-briefing" />
+- **Mensen met hartfalen, of met een ziekte van de nieren of de lever die zwelling geeft**, omdat verwante middelen vocht lieten vasthouden en een signaal van hartfalen gaven.<Cite id="nass-2008-mk677-older-adults,adunsky-2011-mk677-hip-fracture" />
+- **Kinderen en tieners**, van wie de botten nog groeien: de productinformatie van groeihormoon waarschuwt voor problemen met heup en wervelkolom bij kinderen, en er zijn geen gegevens.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Sporters die onder de dopingregels vallen**, omdat het altijd verboden is.<Cite id="wada-2026-list-en" /> Zie [sport en doping](/nl/legal/sport-and-doping/).
+
+### Mogelijke wisselwerkingen (geen enkele is onderzocht)
+
+- **Medicijnen tegen diabetes, ook insuline**, omdat een hogere bloedsuiker hun werking kan tegengaan.<Cite id="nass-2008-mk677-older-adults,fda-pcac-2024-ipamorelin-briefing" />
+- **Andere middelen die groeihormoon verhogen** (CJC-1295, sermorelin, tesamorelin, groeihormoon zelf of MK-677), die hetzelfde systeem aanzetten. Er zijn mengsels in omloop, maar we vonden geen studie naar hun gezamenlijke effect bij mensen.<Cite id="fda-pcac-2024-ipamorelin-briefing" />
+- **Medicijnen die het hartritme beïnvloeden**, omdat een goedgekeurd middel dat op hetzelfde systeem werkt, de QT-tijd kan verlengen.<Cite id="fda-pcac-2024-ipamorelin-briefing,ema-pi-ghryvelin-nl" />
+
+</InDetail>
+
+<InDetail title="Legale wegen, en bijwerkingen melden">
+
+### De legale wegen in Nederland
+
+Er is in Nederland en de EU geen goedgekeurd product met ipamorelin. Een arts kan het dus niet als goedgekeurd medicijn voorschrijven op een [recept](/nl/legal-routes/#recept). En [off-label](/nl/legal-routes/#off-label) voorschrijven gaat alleen over goedgekeurde medicijnen, voor een andere ziekte of groep dan in de productinformatie staat.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,nl-gmw-art-68-off-label" />
+
+- **[Artsenverklaring](/nl/legal-routes/#artsenverklaring).** Deze uitzondering is voor één patiënt, als er in Nederland geen goed alternatief is. Een apotheek, groothandel of fabrikant in Nederland vraagt dan een ontheffing aan bij de IGJ, nooit de patiënt zelf. Voor een middel dat nergens is goedgekeurd, vraagt de IGJ het onderzoekersdossier (Investigator's Brochure of IMPD) en bewijs dat het volgens GMP is gemaakt, de kwaliteitsregels voor het maken van medicijnen. Een flacon "voor onderzoek" komt met geen van beide; dat is onze lezing. De IGJ zegt niet of deze weg ooit kan werken voor een stof die nergens is goedgekeurd.<Cite id="nl-regeling-gnw-art-3-17,igj-qa-zonder-handelsvergunning,igj-leveren-op-artsenverklaring" />
+- **[Magistrale bereiding](/nl/legal-routes/#magistrale-bereiding).** Een apotheek maakt dan zelf een medicijn, op recept en op kleine schaal, voor één patiënt. Een grondstof die in geen officiële farmacopee staat, kan de apotheek volgens de IGJ "niet zomaar" gebruiken. Of ipamorelin in de Europese Farmacopee staat, hebben we niet kunnen nagaan. Volgens de FDA heeft het geen Amerikaanse norm (USP).<Cite id="igj-eigen-bereidingen-apotheek,eu-directive-2001-83,fda-pcac-2024-ipamorelin-briefing" /> {/* residue-ok: evidence */}
+- **[Compassionate use](/nl/legal-routes/#compassionate-use).** Daarvoor moet er een aanvraag voor een handelsvergunning zijn, of moet er nog klinisch onderzoek lopen. Voor ipamorelin is er geen van beide. Op de lijst van het CBG staat geen programma met een peptide van deze site.<Cite id="cbg-compassionate-use-criteria,cbg-compassionate-use-list,ema-under-evaluation-2026-10,ctis-ipamorelin-search-2026-10-27,ctgov-ipamorelin-search-2026-10-27" />
+- **[Klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek).** Er loopt geen onderzoek met ipamorelin in Nederland of elders in de EU. ClinicalTrials.gov noemt geen lopende studie die ipamorelin test; het enige actieve record, in de VS, is een observationeel onderzoek.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,ctis-ipamorelin-search-2026-10-27,ctgov-ipamorelin-search-2026-10-27,ctgov-search-status-b-2026-10-23,ctgov-nct07717866" /> {/* residue-ok: world context */}
+- **[Zelf invoeren](/nl/legal-routes/#zelf-invoeren).** Dat mag niet voor een medicijn zonder handelsvergunning, ook niet voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning,douane-invoer-geneesmiddelen-2026" />
+
+Elke weg heeft strenge voorwaarden. Geen enkele maakt van een niet-goedgekeurd product een goedgekeurd medicijn. Zie [legale wegen naar een behandeling](/nl/legal-routes/).
+
+### Bijwerkingen melden
+
+Niet alleen je arts, ook jij kunt een bijwerking melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG. Zie ook [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

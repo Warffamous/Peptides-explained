@@ -10,6 +10,12 @@
 # routes: route keys affected ("compounds/bpc-157"); "*" = the whole site.
 # Never invent an entry. Every substantive entry says what was wrong, what it says now, and the source.
 
+- id: nl-v1-publication
+  date: 2026-11-03
+  kind: publication
+  routes: ["*"]
+  locales: [nl]
+
 - id: v1-publication
   date: 2026-10-23
   kind: publication

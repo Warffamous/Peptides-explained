@@ -1,0 +1,624 @@
+---
+slug: bpc-157
+title: "BPC-157"
+description: "BPC-157 is een experimenteel peptide, vooral onderzocht bij ratten door één groep in Zagreb. Wat het is, wat het onderzoek laat zien, wat onbekend is en wat de wet zegt."
+tldr:
+  - q: "Wat is het?"
+    a: "Een peptide uit het lab. Online wordt het aangeprezen bij klachten aan pezen, spieren en darmen."
+  - q: "Werkt het?"
+    a: "Niemand weet of het bij mensen werkt. De meeste studies zijn rattenstudies van één groep in Zagreb."
+  - q: "Is handel in BPC-157 legaal?"
+    a: "Nee. Verkopen en invoeren zijn in Nederland verboden. Het Amerikaanse advies van juli 2026 verandert dat niet."
+  - q: "Gebruik je het toch?"
+    a: "Niet bij kanker of zwangerschap. Ga eerst naar je huisarts. Een gescheurde pees moet soms snel worden geopereerd."
+lede: "Een labpeptide, vooral bij ratten onderzocht door één groep in Zagreb. Niemand weet wat het bij mensen doet."
+glance:
+  main_risk: "Effect bij mensen onbekend. Flacons kunnen bacteriën of een andere stof bevatten."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">) and the FDA's 2026 review (injection-site reaction report, no endotoxin or
+  # microbial testing, immunogenicity, clotting signals) plus the angiogenesis findings behind the tumour concern,
+  # as on the English page. The strip adds "Is het ernstig? Bel 112." itself (common.emergency.ifSevere).
+  stop_signs:
+    - icon: sign-infection
+      text: "Hete, rode, dikke prikplek, of koorts"
+      sources: [fda-pcac-2026-bpc157-briefing]
+    - icon: sign-allergic
+      text: "Jeukende bulten, dik gezicht of keel, moeilijk ademen"
+      sources: [fda-pcac-2026-bpc157-briefing]
+    - icon: sign-bleeding
+      text: "Nieuwe knobbel, bloedingen zonder reden, één dik been"
+      sources: [fda-pcac-2026-bpc157-briefing, hsieh-2017-vegfr2]
+  # Fact sheet beside the title: study facts from this page, never a dose.
+  facts:
+    - label: "Belangrijkste bron van onderzoek"
+      value: "Eén Zagrebse groep: ongeveer 140 van 160 dier- en celstudies"
+      sources: [pubmed-bpc157-count-2026-10-20]
+    - label: "Bij mensen getest via"
+      value: "Klysma, en injectie in gewricht, blaaswand, ader of tandvlees"
+      sources: [fda-pcac-2026-bpc157-briefing, lee-2021-knee, lee-2024-interstitial-cystitis, lee-2025-intravenous, froum-2026-nerve-cases]
+    - label: "Halfwaardetijd bij dieren"
+      value: "15 min bij ratten, 5 bij honden, in een ader"
+      sources: [he-2022-pharmacokinetics]
+    - label: "Lopend onderzoek"
+      value: "Eén studie met placebo zoekt deelnemers (hamstringblessure, China)"
+      sources: [ctgov-nct07437547]
+grade_rationale:
+  human_clinical: "Casusbeschrijvingen. De enige gepubliceerde gegevens bij mensen zijn 4 kleine verslagen zonder vergelijkingsgroep: 3 onder leiding van dezelfde Amerikaanse arts (16, 12 en 2 mensen), en één over 3 tandartspatiënten die BPC-157 kregen in een mengsel met 4 andere middelen. Een gerandomiseerde fase 2-studie bij 53 mensen met colitis ulcerosa bestaat alleen als congresabstract uit 2005, en een fase 1-studie met placebo bij 32 gezonde mannen alleen als eerdere congresabstracts. Geen van beide is volledig gepubliceerd. Volgens onze regels voor het beoordelen van het bewijs tellen ze daarom niet als gepubliceerde fase 1- of fase 2-studies."
+  preclinical_volume: "Veel. Volgens onze telling van 20 oktober 2026 staan er in PubMed ongeveer 160 primaire studies over BPC-157 in het lab en bij dieren, ver boven de grens van 50."
+  independence: "Eén groep overheerst. Auteurs van één groep aan de Universiteit van Zagreb staan op ongeveer 140 van de ongeveer 160 primaire experimentele artikelen (ongeveer 85%). Ongeveer 20 komen van groepen buiten Zagreb, en weinig daarvan herhalen de proeven van die groep direct. De enige onafhankelijke test van de claim over de achillespees bij ratten (2026) vond geen statistisch significant effect op de sterkte van de pees of op de totale weefselscores. Eén meting van collageen verschilde wel."
+  safety: "Niet in kaart gebracht. De gepubliceerde studies bij mensen zijn heel klein en kort, en de meeste zeggen niet hoe de onderzoekers op bijwerkingen letten. De Amerikaanse medicijnautoriteit FDA concludeerde in 2026 dat de klinische gegevens te beperkt zijn om de risico’s te beschrijven. Het toxicologisch onderzoek bij dieren komt uit één lab en duurde hoogstens 28 dagen." # residue-ok: evidence
+mechanism:
+  - kind: binding
+    level: hypothesis
+    title: "Er is geen receptor gevonden"
+    detail: "De meeste medicijnen werken doordat ze aan een bepaald doelwit binden. Voor BPC-157 is geen doelwit vastgesteld; volgens de beoordeling van de FDA uit 2026 zijn de moleculaire doelwitten niet gevonden. Eén celstudie uit 2026 stelt voor dat het bindt aan een eiwit in de cel (FBXO22), maar dat is niet herhaald." # residue-ok: evidence
+  - kind: signal
+    level: in-vitro
+    title: "Bloedvatcellen: VEGFR2 en stikstofmonoxide"
+    detail: "In gekweekte menselijke bloedvatcellen verhoogde BPC-157 de hoeveelheid van de receptor VEGFR2. Het zette ook de route VEGFR2–Akt–eNOS aan, die stikstofmonoxide maakt. Eén lab in Taiwan liet dat zien; een Turkse groep vond later dat het stukjes menselijke slagader ontspande, vooral via stikstofmonoxide."
+  - kind: signal
+    level: in-vitro
+    title: "Peescellen: FAK–paxilline en de groeihormoonreceptor"
+    detail: "In peesfibroblasten van ratten zette het focal adhesion kinase (FAK) en paxilline sterker aan, en het verhoogde het aantal groeihormoonreceptoren. Dat was hetzelfde Taiwanese lab. Los daarvan meldde het lab van de ontwikkelaar dat het in een menselijke darmcellijn het herstelgen EGR-1 sneller aanzette dan een bekende groeifactor."
+  - kind: cellular
+    level: in-vitro
+    title: "Cellen bewegen, overleven stress en vormen buisjes"
+    detail: "Behandelde fibroblasten bewogen en spreidden zich sneller uit en overleefden oxidatieve stress beter; endotheelcellen vormden meer buisjes die op bloedvaten lijken. BPC-157 alleen liet peescellen niet sneller delen, al meldde het lab in Xi’an snellere groei van endotheelcellen. De groep in Zagreb vond in celkweek geen direct effect op de groei van bloedvaten."
+  - kind: tissue
+    level: animal
+    title: "Meer bloedvaten en beter geordend collageen in genezend weefsel"
+    detail: "Bij ratten met letsel had behandeld weefsel meer bloedvaten en beter geordend collageen. Vooral de groep in Zagreb meldde dat; het Taiwanese lab zag dat de bloedstroom sneller herstelde in poten van ratten met te weinig bloed (ischemie)."
+  - kind: effect
+    level: animal
+    title: "Sneller herstel bij letsel in knaagdieren"
+    detail: "Letsel aan pezen, banden, spieren en darmen genas bij ratten sneller in veel studies uit Zagreb. Eén onafhankelijke peesstudie (32 ratten) zag sterkere pezen en betere weefselscores, maar die verschillen waren niet statistisch significant; één meting van collageen wel."
+  - kind: effect
+    level: hypothesis
+    title: "Voordeel bij mensen met letsel: niet aangetoond"
+    detail: "Geen enkel onderzoek bij mensen met een controlegroep is volledig gepubliceerd. Of een van de stappen hierboven bij mensen gebeurt, bij welke hoeveelheden, en of het herstel verbetert, is onbekend."
+studies:
+  chang-2011-tendon-fibroblasts:
+    finding: "Uit stukjes pees van ratten groeiden met BPC-157 sneller cellen. Die cellen bewogen en spreidden zich meer uit, overleefden stress door waterstofperoxide beter en hadden meer geactiveerd FAK en paxilline. De celdeling zelf nam niet toe."
+    limitation: "Cellen en stukjes weefsel in een schaaltje, van één diersoort; één lab; geen levend dier en geen klinische uitkomst."
+  chang-2014-ghr:
+    finding: "BPC-157 verhoogde het aantal groeihormoonreceptoren in peesfibroblasten van ratten, meer bij een hogere dosis en na langere tijd. Groeihormoon erbij liet de cellen daarna meer vermenigvuldigen en zette het JAK2-signaal aan."
+    limitation: "Cellen in een schaaltje; hetzelfde lab als de studie uit 2011; niet herhaald door een andere groep; het idee is niet getest bij dieren of mensen."
+  hsieh-2017-vegfr2:
+    finding: "Meer groei van bloedvaten in het vlies van kippeneieren en in buisjestests met endotheelcellen; sneller herstel van de bloedstroom en meer bloedvaten in achterpoten van ratten met te weinig bloed (ischemie); meer VEGFR2 (maar niet meer VEGF) in menselijke endotheelcellen, met activering van VEGFR2–Akt–eNOS."
+    limitation: "Een mix van proeven met cellen, eieren en ratten uit één lab; het aantal dieren en de blindering staan niet in de samenvatting; niet onafhankelijk herhaald."
+  hsieh-2020-enos:
+    finding: "BPC-157 verwijdde losse ringen van de aorta van ratten, sterker bij een hogere concentratie en vooral via de vaatwand (het endotheel). L-NAME, dat de aanmaak van stikstofmonoxide remt, verminderde het effect. In endotheelcellen zette het Src, caveoline-1 en eNOS aan."
+    limitation: "Alleen losse bloedvaten en cellen; hetzelfde Taiwanese lab; zegt niets over bloeddruk of herstel bij een levend dier of een mens."
+  yildirim-2026-artery:
+    finding: "In ringen van borstslagader die over waren na een bypassoperatie bij 12 mannen, ontspande BPC-157 de slagader meer naarmate de concentratie steeg. Het effect was veel groter met een intacte vaatwand, en werd zwakker als L-NAME de aanmaak van stikstofmonoxide blokkeerde."
+    limitation: "Stukjes slagader in een orgaanbad, van mannen met een ernstige ziekte van de kransslagaders; concentraties ver boven de bloedwaarden die bij ratten zijn gemeten; geen ringen die even lang alleen het oplosmiddel kregen; een deel van de ontspanning bleef over met geblokkeerd stikstofmonoxide. Zegt niets over bloeddruk of herstel."
+  tkalcevic-2007-egr1:
+    finding: "PL 14736 (BPC-157) zette de vorming van granulatieweefsel rond sponsjes in ratten, en in wonden van muizen met diabetes, op een vergelijkbare manier aan als PDGF-BB, de groeifactor in de gel becaplermine. Het ordende collageen vroeg beter. In een menselijke darmcellijn zette het EGR-1 sneller aan dan PDGF-BB."
+    limitation: "Gedaan door het lab van het bedrijf dat PL 14736 ontwikkelde. Medewerkers daarvan schreven ook artikelen met de groep in Zagreb, dus de studie is niet onafhankelijk van de ontwikkelaar. Het aantal dieren staat niet in de samenvatting."
+  staresinic-2003-achilles:
+    finding: "Na het doorsnijden van de achillespees bij ratten verbeterde BPC-157, elke dag gegeven, in 14 dagen de breekkracht, de stijfheid, een score voor het lopen en het uiterlijk van het weefsel, vergeleken met een zoutoplossing."
+    limitation: "Oorspronkelijke groep; het aantal dieren en de blindering staan niet in de samenvatting; 3 doses die een miljoen keer verschilden, maar de samenvatting meldt geen dosis-respons; de behandeling begon 30 minuten na het letsel."
+  klicek-2008-fistula:
+    finding: "BPC-157 als injectie of in het drinkwater sloot bij ratten in 28 dagen fistels tussen dikke darm en huid, die met een operatie waren gemaakt. Het effect bleef bestaan als L-NAME de aanmaak van stikstofmonoxide blokkeerde."
+    limitation: "Oorspronkelijke groep; de behandeling begon 30 minuten nadat de fistel was gemaakt, dus het zegt niets over fistels die er al langer zijn; de FDA zag geen weefselonderzoek en geen dosis-respons tussen de 2 geteste doses." # residue-ok: evidence
+  bicer-2026-achilles:
+    finding: "Bij 32 ratten met een gehechte achillespees (8 per groep) gaf BPC-157 een hogere breekkracht en betere totale weefselscores dan de controle, maar geen van beide verschillen was statistisch significant; bij TB-500 wel. Eén meting van collageen (de kleuring van type I-collageen) was met BPC-157 significant hoger. De combinatie voegde niets toe."
+    limitation: "Kleine studie van 4 weken: de 8 pezen van elke groep werden verdeeld, 4 voor de sterktetest en 4 voor weefselonderzoek. De beoordelaars wisten niet welke behandeling elke pees kreeg, en de auteurs meldden geen financiering. Maar de studie is te klein om een bescheiden effect aan te tonen of uit te sluiten, en één positieve uitkomst tussen veel weefselmetingen is zwak bewijs."
+  xu-2020-toxicology:
+    finding: "In studies bij muizen, ratten, konijnen en honden gaven eenmalige injecties en 28 dagen herhaalde injecties (ratten en honden) geen ernstige giftige effecten. De standaardtests op schade aan het DNA waren negatief, en een embryofoetaal onderzoek bij ratten vond geen afwijkingen."
+    limitation: "Eén lab; hoogstens 28 dagen, alleen injecties in een spier; de gegevens van het weefselonderzoek zijn niet gepubliceerd; de nieuwe analyse van de FDA zag veranderingen in stoltijd, lever en bloedvetten; geen carcinogeniteitsonderzoek." # residue-ok: evidence
+  he-2022-pharmacokinetics:
+    finding: "Bij 366 ratten en 6 honden verdween BPC-157 binnen een paar minuten uit het bloed (halfwaardetijd ongeveer 15 minuten bij ratten en 5 minuten bij honden, na toediening in een ader). Het werd geknipt in kleinere stukjes en uiteindelijk in losse aminozuren."
+    limitation: "Alleen dieren; alleen in een ader en in een spier; zegt niets over gebruik onder de huid, via de mond of via de neus, of over mensen."
+  ruenzi-2005-colitis-abstract:
+    finding: "In een gerandomiseerde, dubbelblinde studie met een klysma (PL 14736) bij 53 mensen met lichte tot matige colitis ulcerosa daalde een score voor de ziekteactiviteit met 3,2 punten met BPC-157 en met 1,6 punten met placebo; het verschil was niet statistisch significant."
+    limitation: "Alleen gepubliceerd als congresabstract; de FDA vond de gegevens onvoldoende (eindpunt, toelatingscriteria en statistiek onduidelijk). Onderdeel van het eigen programma van de ontwikkelaar voor PL 14736; er kwam nooit een volledig artikel." # residue-ok: evidence
+  lee-2021-knee:
+    finding: "Van 16 mensen met verschillende soorten kniepijn die injecties met BPC-157 in het kniegewricht hadden gekregen (sommigen samen met thymosine bèta-4), zeiden er 14 aan de telefoon dat hun pijn minder was."
+    limitation: "Een telefonische terugblik, meestal 6 tot 12 maanden na de injectie; geen vergelijkingsgroep, geen gevalideerde pijnschaal, verschillende diagnoses; één privékliniek; financiering niet vermeld."
+  lee-2024-interstitial-cystitis:
+    finding: "Twaalf vrouwen met interstitiële cystitis, bij wie het bestaande medicijn pentosanpolysulfaat niet had geholpen, kregen één keer BPC-157 in de blaaswand gespoten. Van hen meldden er 10 dat hun klachten helemaal weg waren. Er werden geen ongewenste voorvallen gemeld."
+    limitation: "Geen vergelijkingsgroep, geen blindering, alleen een eigen oordeel over het totaal; één privékliniek met een product dat een apotheek zelf had bereid; de opvolging is niet duidelijk beschreven."
+  lee-2025-intravenous:
+    finding: "Twee volwassenen kregen op 2 dagen na elkaar BPC-157 in een ader. Bloedwaarden en waarden zoals hartslag en bloeddruk veranderden niet, en er werden geen bijwerkingen gemeld."
+    limitation: "Twee mensen, die allebei al eerder BPC-157 in een ader hadden gebruikt; 3 dagen opvolging; kan alleen heel vaak voorkomende effecten zien die meteen optreden."
+  froum-2026-nerve-cases:
+    finding: "Drie tandartspatiënten met een doof gevoel na letsel aan een zenuw in de onderkaak kregen elke week injecties in het tandvlees met een mengsel van 5 middelen, waaronder BPC-157. Het gevoel kwam in ongeveer 4 weken grotendeels terug, en er werden geen ongewenste voorvallen gemeld."
+    limitation: "Drie mensen, geen vergelijkingsgroep, geen standaardtests van de zenuw. BPC-157 zat in een mengsel met 2 andere experimentele peptiden, een corticosteroïd en een middel voor plaatselijke verdoving, en lichtere letsels van deze zenuw herstellen vaak vanzelf. De auteurs schrijven dat oorzaak en gevolg niet zijn vast te stellen. Geen financiering gemeld."
+regulatory_notes:
+  NL: "Niet goedgekeurd in Nederland: geen product in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Handel in een geneesmiddel zonder handelsvergunning is verboden, ook invoeren (Geneesmiddelenwet, artikel 40)."
+  EU: "Niet goedgekeurd in de EU: in de gegevens van het EMA staat geen goedkeuring, geen aanvraag en geen aanwijzing als weesgeneesmiddel (gecontroleerd op 27 oktober 2026)."
+  WADA: "Altijd verboden, in S0, sinds 1 januari 2022. Ook genoemd op de dopinglijst van 2027."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is BPC-157?">Een keten van 15 aminozuren, gemaakt in een lab. Geen enkel land heeft het als medicijn goedgekeurd.</Lead>
+
+<Compare title="BPC-157 wordt in een lab gemaakt, heeft geen officiële medicijnnaam en is nergens goedgekeurd." detail="Wat bekend is over de stof die deze naam draagt, gecontroleerd op 20 oktober 2026.">
+
+| | BPC-157 |
+|---|---|
+| Gemaakt in een lab? | <Verdict is="yes" /> Door chemische synthese, één aminozuur tegelijk.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" /> |
+| Een stof die het lichaam zelf maakt? | <Verdict is="unknown" /> Een groep in Zagreb meldde het als deel van een eiwit in maagsap. De volgorde lijkt op geen enkel bekend darmpeptide.<Cite id="sikiric-1993-bpc-origin,jozwiak-2025-review" /> |
+| Een officiële medicijnnaam? | <Verdict is="no" /> "BPC-157" is alleen een gewone naam.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Eén stof onder die naam? | <Verdict is="no" /> Achter die naam zitten verschillende stoffen, zoals een vrije base of een acetaatzout.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Ergens goedgekeurd als medicijn? | <Verdict is="no" /> De Amerikaanse medicijnautoriteit FDA vond in geen enkel land een goedgekeurd product.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */} |
+
+</Compare>
+
+BPC-157 wordt online aangeprezen bij klachten aan pezen, banden, spieren en darmen. In 2024 zochten mensen er meer naar dan ooit.<Cite id="fda-pcac-2026-bpc157-briefing,vasireddi-2025-systematic-review" /> Die populariteit rust niet op onderzoek bij mensen, want dat is er bijna niet.
+
+<InDetail title="Het molecuul, en hoe het wordt gemaakt">
+
+BPC-157 is een synthetisch peptide: een keten van 15 aminozuren, <Seq>Gly-Glu-Pro-Pro-Pro-Gly-Lys-Pro-Ala-Asp-Asp-Ala-Gly-Leu-Val</Seq>, met gewone vrije uiteinden. De brutoformule is C62H98N16O22 en de molecuulmassa is <Q>1.419,5 Da</Q>.<Cite id="pubchem-bpc-157" /> Vroeg labwerk meldde dat het in maagsap niet afbreekt.<Cite id="fda-pcac-2026-bpc157-briefing" /> <Claim level="hypothesis">Vier van de aminozuren zijn proline, en stukken die rijk zijn aan proline weerstaan veel verteringsenzymen; dat zou die stabiliteit kunnen verklaren</Claim>. In bloed breekt het daarentegen binnen een paar minuten af.<Cite id="he-2022-pharmacokinetics" />
+
+### Hoe het wordt gemaakt
+
+Het wordt gemaakt door vaste-fasesynthese: aminozuren komen één voor één aan een keten die vastzit aan harskorrels. Daarna wordt de keten losgemaakt en gezuiverd. Bij elke stap kunnen te korte of verkeerd gebouwde ketens, oplosmiddelen en hulpstoffen achterblijven. Commercieel materiaal is er als vrije base of als acetaatzout, en de FDA ziet die als verschillende stoffen. PubChem noemt ook een trifluoracetaatzout.<Cite id="fda-pcac-2026-bpc157-briefing,pubchem-bpc-157" /> {/* residue-ok: evidence */}
+
+</InDetail>
+
+<InDetail title="Waar de naam vandaan komt, en wie het ontwikkelde">
+
+"BPC" staat voor Body Protection Compound. In 1993 beschreef een groep aan de Universiteit van Zagreb een eiwit van ongeveer 40.000 dalton uit menselijk maagsap. De groep noemde het BPC, en beschreef BPC-157 als een stuk van 15 aminozuren dat volgens hen onmisbaar was voor de werking.<Cite id="sikiric-1993-bpc-origin,fda-pcac-2026-bpc157-briefing" /> Die herkomst rust op de eigen verslagen van de groep. De FDA schrijft dat het peptide zo'n stuk "zou zijn", en een onafhankelijk overzichtsartikel merkt op dat de volgorde op geen enkel bekend darmpeptide lijkt.<Cite id="fda-pcac-2026-bpc157-briefing,jozwiak-2025-review" /> Het peptide dat onderzoekers gebruiken, wordt chemisch gemaakt.<Cite id="fda-pcac-2026-bpc157-briefing,he-2022-pharmacokinetics" /> {/* residue-ok: evidence */}
+
+In de jaren 1990 en 2000 ontwikkelde het Kroatische bedrijf PLIVA het onder de codes PL 14736 en PLD-116. In databases staan ook de namen PL-10 en bepecin.<Cite id="chembl-bpc-157,staresinic-2003-achilles,tkalcevic-2007-egr1" /> Het heeft geen officiële generieke naam (INN). De FDA merkt op dat "BPC-157" alleen een gewone naam is, en dat er onder die naam verschillende chemische stoffen in omloop zijn.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Niemand weet hoe het werkt, en ook niet of het bij mensen iets doet.</Lead>
+
+Volgens de beoordeling van de FDA uit 2026 zijn de moleculaire doelwitten niet gevonden en is de werking slecht begrepen.<Cite id="fda-pcac-2026-bpc157-briefing" /> Wat er wel is, is een reeks waarnemingen in cellen en bij ratten die geen enkele studie met elkaar verbindt. Geen ervan is bij een mens gedaan. {/* residue-ok: evidence */}
+
+De korte animatie loopt langs de voorgestelde keten en laat zien waar elke stap is gezien.
+
+<Explainer id="bpc-157-proposed-chain" />
+
+<InDetail title="De voorgestelde keten in één tabel, met de bronnen">
+
+<Compare title="Sommige stappen zijn gezien in het lab of bij ratten. Bij mensen is geen enkele aangetoond." detail="De voorgestelde keten, stap voor stap, en waar elke stap is gezien.">
+
+| | In het lab of bij ratten | Bij mensen |
+|---|---|---|
+| Bindt het aan één bekend doelwit? | <Verdict is="unknown" /> Er is er geen vastgesteld. Eén celstudie uit 2026 stelt een eiwit voor, FBXO22; dat is niet herhaald.<Cite id="fda-pcac-2026-bpc157-briefing,zhang-2026-fbxo22" /> | <Verdict is="unknown" /> Niet onderzocht bij mensen. |
+| Zet het signalen in bloedvaten aan? | <Verdict is="yes" /> In cellen, vooral in één lab in Taiwan. Stukjes menselijke slagader in een schaaltje ontspanden, vooral via stikstofmonoxide.<Cite id="hsieh-2017-vegfr2,hsieh-2020-src-cav1-enos,yildirim-2026-mammary-artery" /> | <Verdict is="unknown" /> Niet gemeten bij een levend mens. |
+| Bewegen cellen sneller en overleven ze stress? | <Verdict is="yes" /> In peescellen van ratten, in hetzelfde lab in Taiwan.<Cite id="chang-2011-tendon-fibroblasts" /> | <Verdict is="unknown" /> Niet gemeten bij mensen. |
+| Meer bloedvaten in genezend weefsel? | <Verdict is="yes" /> Bij ratten met letsel, vooral gemeld door de groep in Zagreb.<Cite id="brcic-2009-angiogenesis,hsieh-2017-vegfr2" /> | <Verdict is="unknown" /> Niet gemeten bij mensen. |
+| Sneller herstel? | <Verdict is="yes" /> In veel studies met ratten uit Zagreb. Eén onafhankelijke peestest vond geen significant sterkere pees, al verbeterde één meting van collageen.<Cite id="staresinic-2003-achilles,bicer-2026-achilles" /> | <Verdict is="unknown" /> Geen onderzoek met controlegroep is volledig gepubliceerd.<Cite id="poolton-2026-human-sr" /> |
+
+</Compare>
+
+</InDetail>
+
+<InDetail title="Stap voor stap: de voorgestelde keten en waar elke stap op rust">
+
+<Mechanism />
+
+### Stap 1: de ontbrekende receptor
+
+Een medicijn werkt meestal doordat het eerst aan één bepaald doelwit bindt, zoals een receptor of een enzym. Die binding maakt de effecten voorspelbaar en afhankelijk van de dosis. Voor BPC-157 is geen doelwit vastgesteld.<Cite id="fda-pcac-2026-bpc157-briefing" /> In 2026 meldde het lab in Xi'an, China, dat ook het toxicologisch onderzoek bij dieren deed, een mogelijke partner. In gekweekte menselijke endotheelcellen (de cellen aan de binnenkant van bloedvaten) <Claim level="in-vitro">bindt BPC-157 het eiwit FBXO22 en beschermt het zo de transcriptiefactor BACH1 tegen afbraak; daardoor groeiden de cellen meer en vormden ze meer buisjes</Claim>.<Cite id="zhang-2026-fbxo22" /> Het is de eerste specifieke partner die iemand voorstelt, uit één lab, en nog niet herhaald.
+
+Er is ook een raadsel over de tijd. Bij ratten en honden verdwijnt intact BPC-157 binnen een paar minuten uit het bloed, geknipt in stukjes en daarna in losse aminozuren.<Cite id="he-2022-pharmacokinetics" /> Toch melden dierstudies effecten die in de loop van dagen groter worden. Waarom dat zo is, weet niemand.
+
+### Stap 2 tot 4: signalen en het gedrag van cellen
+
+De meeste gegevens over signalen komen van één lab aan de Chang Gung University in Taiwan, dat geen band heeft met Zagreb:
+
+- In menselijke endotheelcellen <Claim level="in-vitro">verhoogde BPC-157 de hoeveelheid VEGFR2, de belangrijkste receptor voor het groeisignaal VEGF, en zette het de route VEGFR2–Akt–eNOS aan</Claim>.<Cite id="hsieh-2017-vegfr2" />
+- In losse stukken aorta van ratten <Claim level="in-vitro">ontspande het het bloedvat via stikstofmonoxide uit de cellen van de vaatwand; L-NAME, dat de aanmaak van stikstofmonoxide blokkeert, remde het effect</Claim>.<Cite id="hsieh-2020-src-cav1-enos" /> In 2026 testte een groep in Ankara, Turkije, dit in menselijk weefsel. In ringen van borstslagader die over waren na een bypassoperatie bij 12 mannen <Claim level="in-vitro">ontspande BPC-157 de slagader vooral via de vaatwand en stikstofmonoxide, en L-NAME verzwakte het effect</Claim>. De onderzoekers schrijven dat hun concentraties veel hoger waren dan de bloedwaarden die bij ratten zijn gemeten.<Cite id="yildirim-2026-mammary-artery" />
+- In peesfibroblasten van ratten <Claim level="in-vitro">zette het focal adhesion kinase (FAK) en paxilline sterker aan, eiwitten waarmee een cel zich aan de omgeving vasthoudt en kruipt; de cellen bewogen sneller en overleefden oxidatieve stress beter</Claim>. Ze deelden niet sneller.<Cite id="chang-2011-tendon-fibroblasts" />
+- In dezelfde cellen <Claim level="in-vitro">verhoogde het het aantal groeihormoonreceptoren, zodat toegevoegd groeihormoon de cellen meer liet vermenigvuldigen</Claim>.<Cite id="chang-2014-ghr" />
+
+Het lab van de ontwikkelaar meldde dat <Claim level="in-vitro">PL 14736 in een menselijke darmcellijn EGR-1 sneller aanzette dan PDGF-BB, de groeifactor in de wondgel becaplermine</Claim>. EGR-1 is een gen dat cellen binnen een paar minuten na letsel aanzetten.<Cite id="tkalcevic-2007-egr1" />
+
+De labs zijn het niet altijd eens. De Taiwanese groep zag in celkweek meer buisjes die op bloedvaten lijken; de groep in Zagreb meldde juist geen direct effect op de groei van bloedvaten in celkweek.<Cite id="hsieh-2017-vegfr2,brcic-2009-angiogenesis" /> Ook het verband met stikstofmonoxide is rommelig. De Taiwanese en Turkse labs vonden effecten die van stikstofmonoxide afhangen, al bleef een deel van de ontspanning van de slagader over toen het geblokkeerd was.<Cite id="hsieh-2020-src-cav1-enos,yildirim-2026-mammary-artery" /> In de eigen rattenproeven van de groep in Zagreb bleven de beschermende effecten daarentegen grotendeels bestaan als de aanmaak van stikstofmonoxide geblokkeerd was.<Cite id="sikiric-1997-nitric-oxide,klicek-2008-fistula" /> Deze bevindingen passen nog niet in één verhaal over oorzaak en gevolg.
+
+### Stap 5 en 6: weefsel en herstel bij dieren
+
+<Claim level="animal">Beschadigde spieren en pezen van ratten hadden meer bloedvaten en een sterkere kleuring voor VEGF</Claim>, <Claim level="animal">de bloedstroom herstelde sneller bij ratten met een afgesloten beenslagader</Claim>, en <Claim level="animal">nieuw weefsel rond sponsjes in ratten, en wonden bij muizen met diabetes, ordenden hun collageen eerder</Claim>.<Cite id="brcic-2009-angiogenesis,hsieh-2017-vegfr2,tkalcevic-2007-egr1" /> De meldingen uit Zagreb over sneller herstel van functie staan hieronder bij het onderzoek.
+
+</InDetail>
+
+<InDetail title="Drie zwakke schakels: wat de keten niet laat zien">
+
+De keten heeft 3 zwakke plekken. Geen studie mat de vroege stappen en het herstel bij dezelfde dieren, dus het verband ertussen is afgeleid. Niemand weet welke concentratie een menselijke pees bereikt, dus de concentraties in cellen zijn niet te vertalen. En verschillende dierstudies van de groep in Zagreb melden hetzelfde voordeel bij een lage en een hoge dosis die 1.000 keer verschillen.<Cite id="fda-pcac-2026-bpc157-briefing,cerovecki-2010-ligament" /> Een echt effect van een medicijn groeit meestal mee met de dosis, tot een grens. Is het effect over zo'n groot bereik even groot? Dan is het minder aannemelijk dat de stof de oorzaak is.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Bij mensen is dat onbekend. Rattenstudies laten vooral sneller herstel zien, maar komen meestal van één groep.</Lead>
+
+<KeyNumber title="De meeste lab- en dierstudies komen van één groep in Zagreb" value="ongeveer 140 van 160" label="lab- en dierstudies hebben auteurs van één groep in Zagreb" counted="Ongeveer 160 primaire studies in het lab en bij dieren in PubMed, waarvan ongeveer 20 van buiten Zagreb (onze telling, 20 oktober 2026)" source="pubmed-bpc157-count-2026-10-20" level="animal" />
+
+<KeyNumber title="Een onafhankelijke peestest vond geen duidelijk sterkere pees" value="32" unit="ratten" label="met een gehechte pees. Sterkte en totale weefselscore waren niet duidelijk beter; één meting van collageen wel." who="Biçer 2026, Turkije: 32 ratten in 4 groepen van 8 (4 per groep in elke test), 4 weken, beoordelaars wisten niet wie wat kreeg" source="bicer-2026-achilles" level="animal" />
+
+<KeyNumber title="Het enige afgeronde onderzoek met controlegroep bij patiënten vond geen duidelijk voordeel" value="3,2 tegen 1,6" label="punten daling van een score voor colitis, met het peptide en met placebo. Het verschil kan toeval zijn." who="PL 14736 fase 2: 53 mensen met lichte tot matige colitis ulcerosa, klysma, gerandomiseerd en dubbelblind; alleen een congresabstract uit 2005" source="fda-pcac-2026-bpc157-briefing" level="human-controlled" />
+
+<KeyNumber title="Vier kleine verslagen over mensen hadden geen vergelijkingsgroep" value="33" unit="mensen" label="in de 4 verslagen samen. Geen enkel verslag had een groep onbehandelde mensen om mee te vergelijken." who="Lee 2021 (16 mensen), Lee 2024 (12), Lee 2025 (2) en Froum 2026 (3); in geen enkel verslag een vergelijkingsgroep" source="lee-2021-knee,lee-2024-interstitial-cystitis,lee-2025-intravenous,froum-2026-nerve-cases" level="human-limited" />
+
+Dit onderzoek is niet waardeloos. In veel knaagdiermodellen van letsel aan pees, band, spier en darm wijst het effect steeds dezelfde kant op. Labs buiten Zagreb, onder meer Amerikaanse, Taiwanese en Turkse, meldden effecten in dezelfde richting.<Cite id="veljaca-1995-colitis,hsieh-2017-vegfr2,bicer-2026-achilles,demirtas-2025-ischaemia-reperfusion" /> Positieve resultaten bij dieren zijn een reden om een goede studie bij mensen te doen. Ze vervangen die studie niet.
+
+<InDetail title="Elke studie in één tabel, en waar het onderzoek vandaan komt">
+
+<StudyTable />
+
+<Diagram id="bpc-157-evidence-map" caption="Waar het onderzoek naar BPC-157 vandaan komt. We telden het op 20 oktober 2026.">
+
+| Niveau | Ongeveer hoeveel | Wie het deed | Belangrijkste beperking |
+|---|---|---|---|
+| Cellen en losse stukjes weefsel | Een minderheid van de ongeveer 160 primaire studies in het lab en bij dieren | Zagreb en anderen; het meeste werk over signalen uit één lab in Taiwan; één studie met menselijke slagader uit Turkije | Concentraties niet gekoppeld aan wat er echt in het lichaam komt |
+| Diermodellen van letsel | Het grootste deel van de ongeveer 160 primaire artikelen (cellen en dieren samen: ongeveer 140 van de groep in Zagreb, ongeveer 20 van elders) | Zagreb overheerst; een paar studies elk uit China, Taiwan en Turkije; losse studies uit Zuid-Korea en de VS | Vooral ratten; behandeling begint bij of vóór het letsel; weinig directe herhaling |
+| Toxicologie en farmacokinetiek | 2 artikelen | Eén lab in Xi'an, China | Hoogstens 28 dagen; alleen ingespoten |
+| Mensen, met controlegroep | 2 studies: fase 1 bij 32 gezonde mannen, fase 2 bij 53 mensen met colitis ulcerosa | De ontwikkelaar van PL 14736 | Alleen congresabstracts; de uitkomst van fase 2 was niet statistisch significant |
+| Mensen, zonder controlegroep | 4 verslagen, 33 mensen | 3 uit klinieken in Florida met dezelfde eerste auteur; één van Amerikaanse tandartsen | Geen vergelijkingsgroep; uitkomsten door de patiënten zelf gemeld; één gebruikte een mengsel van 5 middelen |
+
+</Diagram>
+
+</InDetail>
+
+<InDetail title="Cel- en dierstudies, één voor één">
+
+### Cellen en losse stukjes weefsel: vooral één onafhankelijk lab
+
+Vier van de labstudies in de tabel komen van één groep aan de Chang Gung University: onafhankelijk van Zagreb, maar niet van elkaar.<Cite id="chang-2011-tendon-fibroblasts,chang-2014-ghr,hsieh-2017-vegfr2,hsieh-2020-src-cav1-enos" /> Ze laten zien dat het molecuul in een schaaltje een route kan veranderen. Ze laten niet zien dat het een beschadigde pees bij een mens helpt.
+
+Andere groepen meldden sindsdien 2 van dezelfde effecten. Het lab in Xi'an zag meer buisjes die op bloedvaten lijken, in gekweekte menselijke endotheelcellen.<Cite id="zhang-2026-fbxo22,hsieh-2017-vegfr2" /> En in 2026 legde een team in Ankara ringen van borstslagader in een orgaanbad. Die ringen waren over na een bypassoperatie bij 12 mannen. BPC-157 ontspande de ringen meer naarmate de concentratie steeg, vooral via de vaatwand en stikstofmonoxide, zoals bij de Taiwanese rattenaorta.<Cite id="yildirim-2026-mammary-artery,hsieh-2020-src-cav1-enos" /> Het is de eerste test van deze soort in stukjes menselijke slagader, maar de beperkingen zijn duidelijk. De concentraties waren veel hoger dan de bloedwaarden die bij ratten zijn gemeten, de mannen hadden een ernstige hartziekte, en geen ringen kregen even lang alleen het oplosmiddel. De studie laat een effect op de spanning van een slagader in een schaaltje zien, niet op de bloeddruk of op herstel bij een mens.<Cite id="yildirim-2026-mammary-artery" />
+
+### De dierstudies van de oorspronkelijke groep
+
+Het grootste deel van de literatuur is dieronderzoek van Predrag Sikirić, Sven Seiwerth en collega's in Zagreb: volgens onze telling ongeveer 140 primaire experimentele artikelen.<Cite id="pubmed-bpc157-count-2026-10-20" /> De geschiedenispagina [hoe één lab de literatuur over BPC-157 opbouwde](/nl/history/the-croatian-lab/) legt de telling uit, en waarom die ertoe doet.
+
+Twee studies laten het gebruikelijke ontwerp zien. In 2003 sneed de groep bij ratten de achillespees door. De ratten kregen elke dag BPC-157 in de buikholte (intraperitoneaal), in <Q>10 µg/kg</Q>, <Q>10 ng/kg</Q> of <Q>10 pg/kg</Q>, of een zoutoplossing, vanaf 30 minuten na de operatie. <Claim level="animal">Behandelde pezen waren sterker en stijver, de ratten liepen beter, en het gat in de pees sloot in 14 dagen</Claim>.<Cite id="staresinic-2003-achilles" /> In 2008 maakte de groep bij ratten een kanaaltje tussen dikke darm en huid (een fistel), en <Claim level="animal">BPC-157 via een injectie of in het drinkwater sloot die fistels</Claim>.<Cite id="klicek-2008-fistula" /> De groep meldde vergelijkbare resultaten bij letsel aan banden, spieren, zenuwen en darmen.<Cite id="cerovecki-2010-ligament,brcic-2009-angiogenesis,fda-pcac-2026-bpc157-briefing" />
+
+De FDA keek in haar beoordeling uit 2026 nauwkeurig naar de studies van de groep over darm, lever en fistels, die van belang zijn voor colitis ulcerosa. Ze had 3 punten van kritiek.<Cite id="fda-pcac-2026-bpc157-briefing" /> Lage en hoge doses werkten even goed, dus een dosis-responsrelatie is niet aangetoond. De behandeling begon vóór, tegelijk met of kort na het letsel, dus het is onbekend of BPC-157 helpt als de schade er al is. Dat is juist het moment waarop een mens het zou gebruiken. En zonder bekend doelwit is moeilijk te beoordelen of het biologisch aannemelijk is. Ook de pees- en bandstudies hierboven begonnen 30 minuten na de operatie, en de bandstudie meldde hetzelfde voordeel bij beide doses.<Cite id="staresinic-2003-achilles,cerovecki-2010-ligament" /> In hun samenvattingen staat ook niet of de beoordelaars wisten welke behandeling elk dier kreeg. {/* residue-ok: evidence */}
+
+### Onafhankelijke dierstudies
+
+Groepen buiten Zagreb hebben BPC-157 in hun eigen knaagdiermodellen getest.<Cite id="pubmed-bpc157-count-2026-10-20" /> Al in 1995 vond een Amerikaans lab van het bedrijf Parke-Davis dat <Claim level="animal">het peptide (onder de naam BPC-15) chemische schade aan de dikke darm van ratten verminderde, en meer naarmate de dosis hoger was</Claim>. Het is een van de weinige verslagen met een dosis-responsrelatie.<Cite id="veljaca-1995-colitis" /> Net als in veel studies uit Zagreb begon de behandeling bij of vóór het letsel: hier een uur ervoor.
+
+Een studie uit 2025 uit Ankara, die één auteur gemeen heeft met de slagaderstudie, had een vergelijkbaar ontwerp. Er deden 24 ratten mee, in 4 groepen van 6. Ze kregen BPC-157 bij het begin van 45 minuten waarin de bloedtoevoer naar de poten was afgesloten. <Claim level="animal">Twee uur nadat het bloed terugkwam, hadden de lever, nieren en longen van de behandelde ratten minder schade en meer antioxidantwerking dan die van ratten met hetzelfde letsel zonder behandeling</Claim>.<Cite id="demirtas-2025-ischaemia-reperfusion" /> Behandeling op het moment van het letsel en een meting na 2 uur zeggen niets over herstel van een letsel dat er al is.
+
+De eerste onafhankelijke test van de bekendste peesclaim kwam pas in 2026. Een Turks team sneed bij 32 ratten de achillespees door, hechtte die weer, en gaf 4 weken BPC-157, TB-500, allebei, of niets. (De studies uit Zagreb lieten de doorgesneden pees ongehecht, dus dit is een verwant model, geen exacte herhaling.) <Claim level="animal">BPC-157 gaf een hogere breekkracht en betere totale weefselscores dan de controle, maar die verschillen waren niet statistisch significant</Claim>; die van TB-500 wel, en de combinatie voegde niets toe. <Claim level="animal">Eén meting van collageen, de kleuring van type I-collageen, was met BPC-157 wel significant hoger</Claim>.<Cite id="bicer-2026-achilles" /> De beoordelaars wisten niet welke behandeling elke pees had gekregen. Die voorzorg staat niet in de samenvattingen van de pees- en bandstudies uit Zagreb die hier worden genoemd. Maar de 8 pezen van elke groep werden verdeeld: 4 voor de sterktetest en 4 voor weefselonderzoek. Daardoor kon de studie een bescheiden effect missen, en één positieve uitkomst tussen veel weefselmetingen is zwak bewijs.<Cite id="bicer-2026-achilles" /> De uitkomst past bij een voordeel dat kleiner is dan het "volledige herstel" dat de studies uit Zagreb beschrijven, of bij geen voordeel.
+
+</InDetail>
+
+<InDetail title="Toxicologie, en hoe snel het lichaam het afbreekt">
+
+Het enige formele toxicologische onderzoek komt van de Fourth Military Medical University in Xi'an, China. Die ontwikkelde BPC-157 voor wonden, zwaar letsel en brandwonden.<Cite id="xu-2020-preclinical-safety,he-2022-pharmacokinetics" /> <Claim level="animal">Bij muizen, ratten, konijnen en honden gaven eenmalige en 28 dagen herhaalde doses in een spier geen ernstige giftige effecten; tests op schade aan het DNA (genotoxiciteit) waren negatief, en een embryofoetaal onderzoek bij ratten vond geen afwijkingen</Claim>.<Cite id="xu-2020-preclinical-safety" /> De FDA analyseerde dezelfde gegevens opnieuw en zag mogelijke risicosignalen (zie de risico's hieronder).<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+
+Hetzelfde lab onderzocht 366 ratten en 6 beagles. Na toediening in een ader had intact BPC-157 een halfwaardetijd van <Q>15,2 min</Q> bij ratten en <Q>5,3 min</Q> bij honden. Na een injectie in een spier kwam maar een deel in het bloed, en het peptide werd afgebroken tot stukjes en daarna tot aminozuren.<Cite id="he-2022-pharmacokinetics" /> De FDA vond geen gegevens bij dieren of mensen over wat het lichaam met BPC-157 doet na gebruik onder de huid, via de mond of via de neus. De enige metingen in menselijk bloed, na een klysma, vonden meestal geen peptide.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+
+</InDetail>
+
+<InDetail title="Studies bij mensen, en het onderzoek dat nog loopt">
+
+### Onderzoek bij mensen
+
+**Het programma voor PL 14736.** PLIVA ontwikkelde het peptide als klysma voor chronische darmontsteking. De FDA vatte de congresabstracts samen. Volgens die samenvatting verdeelde een fase 1-studie met placebo 32 gezonde mannen door loting. Hoofdpijn en winderigheid waren de meest gemelde klachten, ongeveer even vaak met het peptide als met placebo. Het peptide was meestal niet in het bloed te meten.<Cite id="fda-pcac-2026-bpc157-briefing" /> In een gerandomiseerde, dubbelblinde fase 2-studie bij 53 mensen met lichte tot matige colitis ulcerosa <Claim level="human-controlled">daalde een score voor de ziekteactiviteit met 3,2 punten met het peptide en met 1,6 met placebo, en het betrouwbaarheidsinterval voor het verschil omvatte nul</Claim>.<Cite id="fda-pcac-2026-bpc157-briefing" /> Die studie verscheen alleen als congresabstract, in 2005. De FDA vond dat abstract onvoldoende om te onderbouwen dat BPC-157 werkt en hoe groot de risico's zijn. Sindsdien is geen volledig verslag en geen latere studie gepubliceerd. {/* residue-ok: evidence */}
+
+**Vier kleine verslagen zonder controlegroep.** Drie ervan hebben dezelfde eerste auteur. Ze vonden plaats in privéklinieken in Florida, met producten die Amerikaanse apotheken zelf hadden bereid.<Cite id="fda-pcac-2026-bpc157-briefing" />
+
+- In een terugblik op dossiers van injecties in het kniegewricht (soms samen met thymosine bèta-4) <Claim level="human-limited">zeiden 14 van de 16 mensen die maanden later aan de telefoon kwamen, dat hun pijn minder was</Claim>.<Cite id="lee-2021-knee" />
+- Twaalf vrouwen met interstitiële cystitis, bij wie het bestaande medicijn pentosanpolysulfaat niet had geholpen, kregen injecties in de blaaswand. <Claim level="human-limited">Bij 10 van hen waren de klachten volgens henzelf helemaal verdwenen, en er werden geen ongewenste voorvallen gemeld</Claim>.<Cite id="lee-2024-interstitial-cystitis" />
+- Bij 2 volwassenen die op 2 dagen na elkaar een infuus in een ader kregen, <Claim level="human-limited">veranderden bloedwaarden en waarden zoals hartslag en bloeddruk niet</Claim>.<Cite id="lee-2025-intravenous" />
+
+Het vierde verslag kwam in 2026 van een groep Amerikaanse tandartsen. Drie patiënten hadden een doof gevoel in lip en kin na letsel aan een zenuw in de onderkaak. Ze kregen 4 weken lang elke week injecties in het tandvlees met een mengsel van 5 middelen: BPC-157, TB-500, een derde experimenteel peptide (ARA-290), het ontstekingsremmende middel dexamethason (een corticosteroïd) en een middel voor plaatselijke verdoving. <Claim level="human-limited">Het gevoel kwam grotendeels terug, en er werden geen ongewenste voorvallen gemeld</Claim>. De onderzoekers schrijven zelf dat lichtere letsels van deze zenuw vaak vanzelf herstellen. Ook de corticosteroïd en het verdovingsmiddel die tegelijk werden gegeven, kunnen het herstel verklaren. Met 5 middelen tegelijk kun je het herstel aan geen enkel middel apart toeschrijven.<Cite id="froum-2026-nerve-cases" /> Een van de 6 auteurs noemt de American Academy of Anti-Aging Medicine (A4M) als eigen organisatie. De auteurs meldden geen financiering en geen commerciële of financiële banden die een belangenconflict kunnen geven.<Cite id="froum-2026-nerve-cases" />
+
+Een systematische review uit 2026 zocht in de literatuur tot 1 juni 2026. De review vond de eerste 3 studies, samen 30 mensen, en beoordeelde de zekerheid van het bewijs als zeer laag.<Cite id="poolton-2026-human-sr" /> Het verslag van de tandartsen verscheen na die zoektocht.<Cite id="froum-2026-nerve-cases" />
+
+Verslagen zonder controlegroep kunnen geen voordeel laten zien, en dat ligt aan hun opzet. Knie- en blaaspijn komen en gaan vanzelf, en veel zenuwletsels genezen langzaam uit zichzelf. Mensen zoeken behandeling als hun klachten op hun ergst zijn. Daarna worden velen beter, wat er ook gebeurt (regressie naar het gemiddelde). Een injectie van een arts die er vertrouwen in heeft, geeft een echt placebo-effect. En wie mensen maanden later vraagt hoe het ging, krijgt antwoorden die door het geheugen vertekend zijn. Alleen een vergelijkingsgroep die een nepbehandeling krijgt, haalt deze effecten los van een effect van het middel.
+
+### Onderzoek in de registers
+
+Op 20 oktober 2026 noemde ClinicalTrials.gov 4 studies:
+
+- een fase 1-studie uit 2015 met tabletten in Mexico, met onbekende status en zonder resultaten;<Cite id="ctgov-nct02637284" />
+- een gerandomiseerde fase 2-studie met placebo, met BPC-157 onder de huid bij een acute hamstringblessure, bij 120 mensen in China. Die studie zoekt deelnemers; de primaire afronding wordt in februari 2027 verwacht;<Cite id="ctgov-nct07437547" />
+- een kleine gerandomiseerde pilotstudie na een operatie aan de schouderpezen (rotator cuff) aan een Amerikaanse universiteit, die nog geen deelnemers zoekt. Het record spreekt zichzelf tegen over de vergelijkingsgroep (injecties met zoutoplossing op de ene plek, geen behandeling op een andere) en over de omvang (20 of 30 deelnemers);<Cite id="ctgov-nct07803250" />
+- een afgeronde studie zonder vergelijkingsgroep van een product voor consumenten om in te nemen, uitgevoerd door de maker, zonder geplaatste resultaten.<Cite id="ctgov-nct07752381" />
+
+In Nederland vonden we op 27 oktober 2026 geen onderzoek met BPC-157: niet in ClinicalTrials.gov, niet in het Europese register CTIS en niet in Onderzoekmetmensen.nl.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" />
+
+<Callout type="uncertain" title="Wat deze pagina zou veranderen">
+Van alle studies van BPC-157 bij een blessure is de hamstringstudie de eerste die gerandomiseerd, geblindeerd en met placebo is opgezet, en al deelnemers zoekt. Een van de 2 hoofduitkomsten is een meting van het letsel met een MRI-scan, en een commissie bewaakt de gegevens.<Cite id="ctgov-nct07437547" /> Wordt de studie volledig gepubliceerd, wat de uitkomst ook is? Dan vertelt die meer dan alle gegevens bij mensen tot nu toe. We passen de beoordelingen aan als de uitkomst er is.
+</Callout>
+
+</InDetail>
+
+<InDetail title="Waar het onderzoek sterker is, en wat het gat betekent">
+
+Twee bevindingen van het Taiwanese cellab zijn sindsdien ook door andere groepen gemeld, een ervan in menselijk slagaderweefsel.<Cite id="zhang-2026-fbxo22,yildirim-2026-mammary-artery" /> Het toxicologisch onderzoek bij dieren liet tot nu toe geen schade aan het DNA zien, en geen acute giftigheid bij hoge doses.<Cite id="xu-2020-preclinical-safety" /> Onafhankelijke onderzoekers in de sportgeneeskunde noemen het lab- en dieronderzoek veelbelovend, maar benadrukken hoe weinig gegevens er bij mensen zijn.<Cite id="vasireddi-2025-systematic-review,mcguire-2025-review" /> Pees- en bandletsels genezen langzaam, en weinig medicijnen versnellen dat. Een goed geteste stof die herstel versnelt, zou daarom waardevol zijn.
+
+Dit gat heeft echte gevolgen. Volgens openbare stukken kwam het programma van de ontwikkelaar nooit verder dan een fase 2-studie die niet volledig is gepubliceerd. Er kwam 20 jaar lang geen beslissende studie. In dat gat ontstond een handel buiten de legale keten, met injecties zonder toezicht en producten waarvan niemand weet wat erin zit.
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog onbekend?">Of het bij mensen werkt, wat langer gebruik doet, en wat er in producten zit.</Lead>
+
+<TimeStrip title="De risico’s zijn hoogstens 4 weken onderzocht. Bij langer gebruik zijn ze nooit onderzocht." detail="Hoeveel weken gebruik het onderzoek naar risico’s dekt, bij dieren en bij mensen. Eén rattenstudie over herstel gaf het tot 90 dagen elke dag, maar dat was geen onderzoek naar risico’s." min={0} max={24} step={4} axis="Weken gebruik" source="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing,froum-2026-nerve-cases,cerovecki-2010-ligament" checked="2026-10-20" rows={[
+  { label: "Langste onderzoek naar giftigheid bij dieren: ratten en honden", spans: [{ from: 0, to: 4, text: "28 dagen" }] },
+  { label: "Langste gebruik in de gepubliceerde verslagen bij mensen", spans: [{ from: 0, to: 4, text: "hoogstens 4 weken" }] },
+  { label: "Langste herstelstudie bij ratten (band)", spans: [{ from: 0, to: 12.9, text: "tot 90 dagen; geen onderzoek naar risico’s" }] },
+  { label: "Risico’s van langer gebruik", spans: [{ from: 4, to: 24, text: "geen onderzoek bij dieren of mensen", unknown: true }] },
+]} />
+
+<InDetail title="Alle 11 open vragen, met hun bronnen">
+
+Dit was op 20 oktober 2026 nog onbekend:
+
+- **Of het bij mensen werkt.** Geen onderzoek bij mensen met een controlegroep is volledig gepubliceerd.<Cite id="poolton-2026-human-sr" />
+- **Hoe het werkt.** Er is geen receptor of eerste doelwit vastgesteld.<Cite id="fda-pcac-2026-bpc157-briefing" />
+- **Farmacokinetiek bij mensen.** Er zijn geen gegevens over gebruik onder de huid, via de mond, via de neus of via de huid. Na een klysma was het meestal niet in het bloed te meten.<Cite id="fda-pcac-2026-bpc157-briefing" />
+- **Dosis en effect.** In de dierstudies die de FDA beoordeelde, gaven lage en hoge doses hetzelfde effect. Eén onafhankelijke rattenstudie uit 1995 meldde wel een effect dat met de dosis meeging. Over dosis en effect bij mensen zijn er geen gegevens.<Cite id="fda-pcac-2026-bpc157-briefing,veljaca-1995-colitis" /> {/* residue-ok: evidence */}
+- **Risico's op lange termijn.** Het langste onderzoek bij dieren met herhaalde doses duurde 28 dagen. In de gepubliceerde studies bij mensen duurde het gebruik hoogstens 4 weken, en de meeste zeiden niet hoe de onderzoekers op bijwerkingen letten.<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing,froum-2026-nerve-cases" />
+- **Kans op kanker.** De FDA vond geen carcinogeniteitsonderzoek, en effecten op tumoren die er al zijn, zijn niet getest.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+- **Voortplanting.** Er is één embryofoetaal onderzoek bij ratten. Er zijn geen gegevens over vruchtbaarheid, over de ontwikkeling na de geboorte of over zwangerschap bij mensen.<Cite id="fda-pcac-2026-bpc157-briefing" />
+- **Afweerreacties.** De indieners en de FDA vonden geen studie die formeel testte of het afweersysteem erop reageert (immunogeniciteit).<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+- **Wisselwerkingen** met welk ander medicijn dan ook.
+- **Of de zoutvormen** (vrije base, acetaat, trifluoracetaat) zich hetzelfde gedragen.<Cite id="fda-pcac-2026-bpc157-briefing,pubchem-bpc-157" />
+- **Wat er in producten zit.** Een Amerikaans lab dat sporters op doping test, vond het peptide in flacons die in beslag waren genomen.<Cite id="cox-2017-doping-detection" /> Maar we vonden geen gepubliceerd onderzoek naar de inhoud, de onzuiverheden of de steriliteit van producten op de markt.
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Verkopen en invoeren zijn verboden. Het is nergens goedgekeurd en in de sport verboden.</Lead>
+
+<Compare title="In Nederland en de EU is het geen goedgekeurd medicijn. De Amerikaanse stemming van 2026 veranderde dat niet." detail="Status in Nederland en in de EU, gecontroleerd op 27 oktober 2026. De sport staat in het eerste deel hieronder.">
+
+| | Nederland | Europese Unie |
+|---|---|---|
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met BPC-157 in zijn register.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> In de gegevens van het Europees Geneesmiddelenbureau (EMA) staat geen goedkeuring en geen aanvraag, ook geen geweigerde of ingetrokken.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> |
+| Is handel of invoer legaal? | <Verdict is="no" /> De Geneesmiddelenwet verbiedt handel in een geneesmiddel zonder handelsvergunning, ook invoeren.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Een medicijn mag alleen op de markt komen met een vergunning van een lidstaat of van de EU.<Cite id="eu-directive-2001-83" /> |
+| Verandert de Amerikaanse stemming dat? | <Verdict is="no" /> Wat de FDA of haar adviseurs besluiten, verandert de Nederlandse wet niet.<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> Alleen de EU zelf kan een medicijn voor de hele EU goedkeuren.<Cite id="eu-regulation-726-2004" /> {/* residue-ok: PCAC framing */} |
+
+</Compare>
+
+Elk land en de EU beslissen zelf. Een Amerikaanse regel voor apotheken zou in Nederland en de rest van de EU niets veranderen.<Cite id="nl-gmw-art-40-handelsvergunning,eu-directive-2001-83" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De statussen voor Nederland en de EU zijn gecontroleerd op 27 oktober 2026.
+
+### Sport (WADA)
+
+BPC-157 staat sinds 1 januari 2022 met naam op de dopinglijst van het Wereld Anti-Doping Agentschap (WADA), in S0 ("Niet erkende stoffen"). Het is altijd verboden.<Cite id="wada-2022-list-modifications,wada-2026-list-en" /> De lijst van 2027, die op 1 januari 2027 ingaat, noemt het nog steeds. Die lijst noemt nu ook "peptiden" in het algemeen als voorbeeld in S0.<Cite id="wada-2027-list-en" /> (Een overzichtsartikel uit 2025 schrijft dat het niet meer op de lijst staat; dat klopt niet.<Cite id="jozwiak-2025-review" />) S0 gaat over stoffen die geen medicijnautoriteit van een overheid heeft goedgekeurd voor gebruik als medicijn bij mensen. Een Amerikaanse lijst voor apotheken is geen goedkeuring, en zou die status dus niet vanzelf veranderen.<Cite id="wada-2026-list-en" />
+
+In Nederland is de Dopingautoriteit de nationale antidopingorganisatie. Haar Nederlandse vertaling van de dopinglijst van 2026 noemt BPC-157 bij S0.<Cite id="nl-wuab-art-2-4-dopingautoriteit,dopingautoriteit-vertaling-dopinglijst-2026" /> De regels gelden voor leden van een sportbond. Bij een stof die altijd verboden is, telt ook bezit, niet alleen een positieve test.<Cite id="isr-2025-nationaal-dopingreglement,dopingautoriteit-dopingovertredingen" /> Een voorbeeld uit het buitenland: in 2025 kreeg een sporter van een Canadese universiteit 4 jaar schorsing voor het gebruik van BPC-157 en TB-500.<Cite id="ca-sic-2025-04-bpc157-tb500-sanction" /> Meer over de regels in Nederland: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de Europese Unie">
+
+### Europese Unie
+
+Geen enkel product met BPC-157 heeft een Europese handelsvergunning. De gegevens van het EMA noemen het niet, ook niet bij de geweigerde en ingetrokken aanvragen. Het heeft geen aanwijzing als weesgeneesmiddel, en het EMA beoordeelt ook geen aanvraag voor BPC-157 (lijst van oktober 2026).<Cite id="ema-medicines-search,ema-medicines-json,ema-orphan-designations-json,ema-under-evaluation-2026-10" /> De FDA vond in geen enkel land een goedgekeurd product.<Cite id="fda-pcac-2026-bpc157-briefing" /> Een goedkeuring voor de hele EU zou in elke lidstaat gelden, ook in Nederland. Die goedkeuring is er niet.<Cite id="eu-regulation-726-2004" /> {/* residue-ok: evidence */}
+
+### Nederland
+
+Het CBG heeft geen product met BPC-157 in de Geneesmiddeleninformatiebank (gezocht op 27 oktober 2026).<Cite id="cbg-gib-search-status-2026-10-27" /> Volgens de Geneesmiddelenwet is iets een geneesmiddel als het wordt gepresenteerd als middel tegen ziekte, wonden of pijn. Of als het bedoeld is om te veranderen hoe je lichaam werkt, door een farmacologisch, immunologisch of metabolisch effect (artikel 1).<Cite id="nl-gmw-art-1-geneesmiddel" /> Een geneesmiddel zonder handelsvergunning mag niemand in voorraad hebben, aanbieden, verkopen, leveren of invoeren. Er zijn smalle uitzonderingen, maar geen ervan is een weg voor iemand die het zelf regelt (artikel 40).<Cite id="nl-gmw-art-40-handelsvergunning" />
+
+Een etiket met "alleen voor onderzoek" ("research use only") verandert dat niet. De Douane schrijft dat "onderzoeksdoeleinden" dan geen rol spelen.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> Over designerdrugs schreven de Inspectie Gezondheidszorg en Jeugd (IGJ) en de Nederlandse Voedsel- en Warenautoriteit (NVWA) in 2026 dat verkopers met zulke teksten de wet proberen te omzeilen.<Cite id="igj-2026-04-nps-websites-offline" /> Meer daarover staat op de pagina [alleen voor onderzoek](/nl/legal/research-use-only/). Wat de wet betekent als je het zelf gebruikt, staat op [de pagina over Nederland](/nl/legal/nl/).
+
+**Zelf invoeren.** Een middel zonder handelsvergunning mag je niet invoeren, ook niet voor eigen gebruik. Er is een uitzondering voor reizigers die hun eigen medicijnen meenemen. Die geldt niet voor een middel zonder handelsvergunning, en ook niet voor een pakket dat je laat opsturen.<Cite id="nl-gmw-art-40-handelsvergunning,nl-gnw-art-18-licence,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane controleert post en pakketten op medicijnen, en noemt daarbij ook peptiden. Een pakket kan worden tegengehouden, gemeld bij de IGJ of in beslag genomen. Wat er met een bepaald pakket gebeurt, is niet openbaar.<Cite id="douane-2026-08-illegale-online-handel-medicijnen,douane-hvgem-geneesmiddelen-h12-fysiek-toezicht" /> Ziet de Douane het poeder als een werkzame stof (een grondstof voor medicijnen)? Dan kan een particulier het helemaal niet per post invoeren, en geldt ook de ontvanger als verdachte.<Cite id="douane-hvgem-geneesmiddelen-h13-fysiek-toezicht-werkzame-stoffen" />
+
+**Toezicht.** De IGJ houdt toezicht op websites die zich met medicijnen op Nederland richten. Ze kan optreden tegen een site die medicijnen zonder handelsvergunning aanbiedt, bijvoorbeeld met een waarschuwing of een boete.<Cite id="igj-toezicht-online-medicijnen" /> De regering schreef op 5 oktober 2026 aan de Tweede Kamer: "Import van geneesmiddelen is alleen toegestaan als een handelsvergunning is verleend."<Cite id="tk-2026-ah-249-antwoord-afslankmedicatie" />
+
+<Callout type="legal" title="De Amerikaanse stemming geldt hier niet">
+Wat de FDA of haar adviescommissie ook besluit, het verandert de wet in Nederland en in de rest van de EU niet. Hier geeft alleen het CBG of de EU een handelsvergunning.<Cite id="nl-gmw-art-40-handelsvergunning,eu-regulation-726-2004" /> {/* residue-ok: PCAC framing */}
+</Callout>
+
+</InDetail>
+
+<InDetail title="De Amerikaanse stemming van juli 2026, punt voor punt">
+
+{/* residue-ok: PCAC framing */}
+De FDA heeft BPC-157 niet goedgekeurd. Het heeft geen monografie in de Amerikaanse farmacopee (USP) en zit in geen enkel goedgekeurd medicijn. Een Amerikaanse apotheek mag er daarom pas iets mee bereiden als het via een formele regel (rulemaking) op de 503A-lijst komt.<Cite id="fda-503a-bulks-page,fda-pcac-2026-bpc157-briefing" /> Toch is het Amerikaanse ministerie van Volksgezondheid (HHS) niet van plan op te treden als een apotheek het nu al bereidt. Dat staat in een ontwerp voor tijdelijk beleid van 30 oktober 2026, met strenge voorwaarden (zie hieronder).<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> De FDA had BPC-157 eerder in categorie 2 van haar tijdelijke beleid gezet, voor stoffen die mogelijk grote veiligheidsrisico's hebben. Toen de indieners hun voorstel introkken, ging het naar een lijst van ingetrokken stoffen. Op de lijst van de FDA van 14 mei 2026 staat het in geen enkele categorie.<Cite id="fda-category-2-safety-risks,fda-503a-categories-2026-05" /> {/* residue-ok: PCAC framing */}
+
+De FDA beoordeelde BPC-157 toch op eigen initiatief, alleen voor colitis ulcerosa. De eigen medewerkers van de FDA concludeerden dat het niet op de lijst moet: de stof is niet goed beschreven, en de gegevens laten niet zien dat het werkt of dat de risico's aanvaardbaar zijn.<Cite id="fda-pcac-2026-bpc157-briefing,fda-pcac-2026-briefing-intro" /> Wat daarna gebeurde, is het feit over BPC-157 dat het vaakst verkeerd wordt weergegeven: {/* residue-ok: PCAC framing */}
+
+- Op 23 juli 2026 stemde de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) met 8 stemmen voor, 6 tegen en 1 onthouding om BPC-157 aan te bevelen voor de Amerikaanse 503A-lijst (aantallen zoals gemeld vanuit de openbare vergadering; zie hieronder).<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" /> {/* residue-ok: PCAC framing */}
+- De commissie besprak 7 peptiden, op 2 vergaderdagen.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" /> Zoals gemeld vanuit de vergadering raadde ze er 6 aan: BPC-157, KPV, TB-500, MOTS-c, Semax en epitalon. Emideltide (DSIP) raadde ze niet aan.
+- De stemming is alleen een advies, niet bindend, en tegen het advies van de eigen medewerkers van de FDA in.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" /> {/* residue-ok: PCAC framing */}
+- BPC-157 staat nog niet op de 503A-lijst. Of het erop komt, beslist de FDA pas in een formele regel (rulemaking).<Cite id="fda-503a-bulks-page" /> Tot die tijd is HHS niet van plan op te treden tegen apotheken en artsen die het bereiden. Dat geldt alleen onder strenge voorwaarden, zoals een recept voor een bepaalde patiënt en een geregistreerde fabrikant. Het beleid is een tijdelijk ontwerp en niet bindend, en in Nederland en de EU verandert het niets.<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> {/* residue-ok: PCAC framing */}
+- Geen van deze peptiden is een goedgekeurd medicijn in Nederland of de EU (Semax is volgens de FDA in Rusland als medicijn toegelaten). Een plek op de 503A-lijst, als die er ooit komt, zou in de VS bereiding door apotheken op recept toestaan. Het is geen handelsvergunning en het zegt niets over of het werkt. Een Amerikaanse lijst verandert niets buiten de VS.<Cite id="fda-pcac-2026-presentations-day1,usc-21-353a,fda-pcac-2026-bpc157-briefing,fda-pcac-2026-briefing-intro,fda-pcac-2026-semax-briefing,fda-503a-bulks-page,ema-medicines-json,cbg-gib-search-status-2026-10-27" /> {/* residue-ok: PCAC framing */}
+
+Ook een plek op de lijst zou van BPC-157 geen product maken dat de FDA controleert. De FDA herinnerde de commissie eraan dat een bereiding door een apotheek niet door de FDA is goedgekeurd en niet aan de GMP-regels hoeft te voldoen, al blijven onhygiënische omstandigheden verboden. Bereidende apotheken hoeven bijwerkingen ook niet aan de FDA te melden. Stelt de lijst geen grenzen? Dan mag de stof voor elk gebruik en via elke toedieningsweg worden bereid.<Cite id="fda-pcac-2026-presentations-day1" /> {/* residue-ok: PCAC framing */}
+
+De documenten van de FDA bevestigen de datum, de 7 peptiden, de stemvragen en het advies van de eigen medewerkers. In de stemvragen stonden de vrije base en het acetaatzout van BPC-157 apart.<Cite id="fda-pcac-2026-questions" /> De FDA had op 3 november 2026 nog geen notulen geplaatst. Daarom zijn de aantallen stemmen en de uitkomst van 6 van de 7 zoals gemeld vanuit de openbare vergadering. We controleren ze met de notulen, ook of de 2 stemmingen over BPC-157 verschilden.<Cite id="fda-pcac-2026-07-meeting" /> Op 3 november 2026 had de FDA nog geen regel voorgesteld om BPC-157 aan de lijst toe te voegen.<Cite id="federalregister-503a-search-2026-11-03,fda-503a-bulks-page" /> {/* residue-ok: PCAC framing */}
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">De risico’s bij mensen zijn onbekend. Dierproeven en producten die niemand controleert, wijzen op mogelijke schade.</Lead>
+
+<Compare title="Verschillende soorten schade zijn mogelijk. Geen ervan is goed onderzocht bij mensen." detail="Wat lab- en dieronderzoek doet vermoeden, en wat bij mensen bekend is, op 20 oktober 2026.">
+
+| Mogelijke schade | Aangetoond bij mensen? |
+|---|---|
+| Infectie door bacteriën of gifstoffen van bacteriën in het product | <Verdict is="unknown" /> In de productcertificaten die de FDA bekeek, stonden geen tests daarop.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */} |
+| Een afweerreactie, van licht tot levensbedreigend | <Verdict is="unknown" /> Volgens de FDA kan het als injectie of neusspray een groot risico geven. De FDA vond geen studie die dat testte.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */} |
+| Veranderingen in de bloedstolling | <Verdict is="unknown" /> Stoltijden veranderden in tests van 28 dagen bij ratten en bij honden, allebei uit één lab.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Veranderingen in een leverenzym en bloedvetten | <Verdict is="unknown" /> Beide stegen bij vrouwelijke ratten; bloedvetten stegen ook bij vrouwelijke honden.<Cite id="fda-pcac-2026-bpc157-briefing" /> |
+| Een verborgen tumor helpen groeien | <Verdict is="unknown" /> Een zorg op basis van bevindingen in cellen en bij ratten. Het is niet getest.<Cite id="hsieh-2017-vegfr2,chang-2011-tendon-fibroblasts,fda-pcac-2026-bpc157-briefing" /> |
+| Donkerdere huid en tandvlees | <Verdict is="unknown" /> Eén keer gemeld aan de FDA, na een product met BPC-157 en TB-500 samen. Dat laat niet zien dat BPC-157 de oorzaak was.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */} |
+
+</Compare>
+
+BPC-157 is in de sport altijd verboden,<Cite id="wada-2026-list-en" /> en er zijn methoden gepubliceerd om het in urine aan te tonen.<Cite id="cox-2017-doping-detection" />
+
+<InDetail title="Wat er bij mensen is gemeld">
+
+De gepubliceerde studies bij mensen meldden geen ernstige ongewenste voorvallen. Maar volgens de FDA waren ze kort en klein, en zeiden ze weinig over hoe de onderzoekers op bijwerkingen letten.<Cite id="fda-pcac-2026-bpc157-briefing" /> Het verslag van de tandartsen uit 2026, dat na de beoordeling van de FDA verscheen, meldde geen ongewenste voorvallen.<Cite id="froum-2026-nerve-cases" /> {/* residue-ok: evidence */}
+
+De databank van de FDA voor bijwerkingen had tot 4 december 2025 in totaal 3 meldingen, alle na injecties: {/* residue-ok: evidence */}
+
+- roodheid en zwelling op de prikplek, 9 dagen lang, bij iemand die ook thymosine spoot;
+- kortademigheid, met een bezoek aan de spoedeisende hulp;
+- een donkere verkleuring van de hele huid en het tandvlees na een week met een product van BPC-157 en TB-500 samen. Op het etiket stond "for research purposes only" (alleen voor onderzoek). Dezelfde reactie kwam terug toen de persoon het product opnieuw gebruikte. Na stoppen met alle peptiden kwamen er geen reacties meer.<Cite id="fda-pcac-2026-bpc157-briefing" />
+
+Geen van deze meldingen bewijst dat BPC-157 de oorzaak was. Amerikaanse apotheken die zelf bereiden, hoeven bijwerkingen niet aan de FDA te melden. Het kleine aantal meldingen zegt dus weinig over hoe vaak problemen voorkomen.<Cite id="fda-pcac-2026-presentations-day1,fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+
+</InDetail>
+
+<InDetail title="Wat het dieronderzoek naar giftigheid laat zien">
+
+Het Chinese artikel over giftigheid noemde BPC-157 goed verdragen. De FDA analyseerde dezelfde gegevens opnieuw en zag signalen die volgens haar klinisch relevant zijn:<Cite id="xu-2020-preclinical-safety,fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+
+- **Stolling.** Een kortere stoltijd (aPTT) bij mannelijke ratten en een langere bij mannelijke honden. Bij mensen is een kortere aPTT een bekende risicofactor voor stolsels, en een langere kan een risicofactor voor bloedingen zijn.
+- **Lever en bloedvetten.** Een stijging van een leverenzym (ALAT), van glucose en van triglyceriden bij vrouwelijke ratten nadat de behandeling was gestopt, en hogere triglyceriden bij vrouwelijke honden.
+- **Nierwaarde.** Lager creatinine bij honden.
+
+Elk signaal kwam uit één studie van 28 dagen. Langer onderzoek is nodig om te zien of de signalen echt zijn.<Cite id="fda-pcac-2026-bpc157-briefing" />
+
+</InDetail>
+
+<InDetail title="Productkwaliteit en afweerreacties">
+
+Het meest directe risico is misschien het product zelf. De analysecertificaten die de FDA bekeek, gaven de zuiverheid. Maar ze noemden geen specifieke onzuiverheden en geen klontjes peptide. Er stonden ook geen tests op endotoxine of op besmetting met bacteriën in. Volgens de FDA is een test op endotoxine essentieel voor alles wat wordt ingespoten.<Cite id="fda-pcac-2026-bpc157-briefing" /> {/* residue-ok: evidence */}
+
+Peptiden kunnen tijdens het bewaren aan elkaar klonteren, en bij het maken ontstaan bijna-kopieën van de keten. Beide geven herhaalde, onbekende patronen, en juist die merkt het afweersysteem op. De FDA concludeerde dat BPC-157 als injectie of neusspray mogelijk een groot risico op afweerreacties (immunogeniciteit) geeft, misschien groter door klontjes en onzuiverheden. De indieners en de FDA vonden geen studie die dit formeel testte. De gevolgen van een afweerreactie lopen van antistoffen zonder klachten tot ernstige, zelfs levensbedreigende reacties.<Cite id="fda-pcac-2026-bpc157-briefing" /> Zie [risico's van het product](/nl/safety/product-risk/). {/* residue-ok: evidence */}
+
+De plaat laat 6 dingen zien die mis kunnen zijn met een flacon die niet van een apotheek komt, van wat erin zit tot wat nooit is getest.
+
+<Infographic id="online-vial-risks" />
+
+</InDetail>
+
+<InDetail title="Waarom een effect op kanker wordt vermoed">
+
+De korte animatie laat zien waarom de groei van bloedvaten die herstel misschien helpt, ook de reden is voor de zorg over kanker.
+
+<Explainer id="angiogenesis-double-edge" />
+
+De redenering combineert goed vastgestelde kennis over kanker met bevindingen over BPC-157 in cellen en bij ratten:
+
+1. **Tumoren hebben bloedvaten nodig.** Boven een heel kleine omvang kan een tumor alleen groeien als er nieuwe bloedvaten naartoe groeien. Daarvoor geeft de tumor signalen af, vooral VEGF. Het aanzetten van vaatgroei (angiogenese) is een erkend kenmerk van kanker.<Cite id="hanahan-2011-hallmarks" /> VEGF werkt vooral via VEGFR2, en medicijnen die die route blokkeren, worden gebruikt om sommige vormen van kanker te remmen.<Cite id="carmeliet-2011-angiogenesis" />
+2. **BPC-157 duwt op die route.** <Claim level="in-vitro">Het verhoogde de hoeveelheid VEGFR2 en het signaal ervan in menselijke endotheelcellen</Claim> en <Claim level="animal">het verhoogde de groei van bloedvaten in rattenspieren met te weinig bloed</Claim>.<Cite id="hsieh-2017-vegfr2" />
+3. **Kankercellen kruipen met het gereedschap voor herstel.** Met FAK en paxilline kruipt een fibroblast een wond in. In veel vormen van kanker is FAK te actief en helpt het tumorcellen overleven, bewegen en binnendringen. Experimentele kankermedicijnen richten zich erop.<Cite id="sulzmaier-2014-fak-cancer" /> <Claim level="in-vitro">BPC-157 zette FAK en paxilline sterker aan in peesfibroblasten</Claim>.<Cite id="chang-2011-tendon-fibroblasts" />
+4. **Meer groeihormoonreceptoren versterken groeisignalen.** <Claim level="in-vitro">BPC-157 verhoogde het aantal groeihormoonreceptoren in peescellen</Claim>.<Cite id="chang-2014-ghr" /> Of het dat ook in andere cellen doet, zoals tumorcellen, is niet getest.
+
+De zorg is dus niet dat BPC-157 kanker veroorzaakt: in de standaardtests gaf het geen schade aan het DNA (genotoxiciteit).<Cite id="xu-2020-preclinical-safety" /> De zorg is dat iets wat bloedvaten laat uitgroeien en cellen laat bewegen, een tumor die er al is kan helpen groeien of uitzaaien. Misschien weet iemand nog niet dat die tumor er is. Tests op genotoxiciteit vinden de schade aan het DNA waarmee kanker begint. Ze vinden niet of een stof een bestaande tumor helpt. Daarvoor zijn langdurig carcinogeniteitsonderzoek en opvolging van mensen nodig. Er is geen carcinogeniteitsonderzoek naar BPC-157 gepubliceerd zoals medicijnautoriteiten dat vragen.<Cite id="fda-pcac-2026-bpc157-briefing" />
+
+Er zijn eerlijke tegenargumenten. De oorspronkelijke groep vindt dat BPC-157 de groei van bloedvaten "regelt" in plaats van die alleen aan te jagen, en meldt in sommige modellen effecten tegen tumoren.<Cite id="sikiric-2025-comment" /> Een onafhankelijk overzichtsartikel vond maar één studie over kanker: een muismodel van gewichtsverlies door kanker, waarin het tumorvolume niet significant verschilde.<Cite id="jozwiak-2025-review" /> We vonden geen gepubliceerde studie die laat zien dat het tumoren helpt groeien. Het risico is aannemelijk, maar niet getest.
+
+{/* residue-ok: world context */}
+Een voorbeeld laat zien waarom de vraag ertoe doet. Becaplermine (Regranex), een gel met een groeifactor voor diabetische voetwonden, is in de VS goedgekeurd. In de EU is de vergunning in 2012 ingetrokken. Volgens de Amerikaanse productinformatie laat het cellen delen en bloedvaten groeien.<Cite id="fda-regranex-label-2018,ema-medicines-json" /> De productinformatie van 2011 had een omkaderde waarschuwing over meer sterfte aan kanker bij mensen die 3 of meer tubes gebruikten. In november 2018 verdween die waarschuwing; de productinformatie meldde toen het signaal in 1 van de 3 studies na de goedkeuring. Maar ze waarschuwt nog steeds voor kanker en verbiedt gebruik op een bekende tumor.<Cite id="fda-regranex-label-2011,fda-regranex-label-2018" /> Zulke signalen komen pas naar boven, en worden pas opgehelderd, met grote gegevens over mensen. Voor BPC-157 zijn die er niet.
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer eerst de flacon, betrek een arts erbij, en weet wanneer je stopt.</Lead>
+
+{/* residue-ok: evidence */}
+<ProductCheck extra="Kijk welke vorm op het etiket staat. BPC-157 bestaat als vrije base en als acetaatzout. De FDA ziet die als verschillende stoffen." extraSources="fda-pcac-2026-bpc157-briefing" />
+
+### Praat eerst met een arts
+
+Een arts kan kijken of je een aandoening hebt waarbij de mogelijke risico's het zwaarst wegen: kanker, zwangerschap en problemen met de bloedstolling. Een arts kan ook zorgen dat je blessure goed wordt onderzocht. Een gescheurde pees of band heeft soms binnen een paar weken een scan of een operatie nodig. Gebruik je een peptide in plaats van je blessure te laten onderzoeken? Dan krijg je misschien te laat een behandeling die wel werkt. Vertel je arts eerlijk wat je hebt gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- de prikplek wordt heet, rood, dik of pijnlijk, of je krijgt koorts (infectie of besmetting)
+- je krijgt jeukende bulten, een dik gezicht of een dikke keel, of moeite met ademen (allergische reactie)
+- je huid of tandvlees wordt donkerder, zoals in één gemeld geval
+- je merkt een nieuwe knobbel, bloedingen of blauwe plekken zonder reden, of pijn en zwelling in één been
+
+Heb je moeite met ademen, of wordt je keel dik? Bel direct 112. Wordt de prikplek heet, rood, dik of pijnlijk, krijg je koorts, bloedingen of blauwe plekken zonder reden, of pijn en zwelling in één been? Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Wordt je huid of tandvlees donkerder, of merk je een nieuwe knobbel? Stop dan met het product en maak een afspraak met je huisarts.
+</Callout>
+
+<Cite id="fda-pcac-2026-bpc157-briefing,hsieh-2017-vegfr2,thuisarts-dikke-ogen-lippen,thuisarts-spoed-wie-bellen" />
+
+<WarningSigns />
+
+<InDetail title="Wat je niet kunt weten over het product">
+
+Een flacon met BPC-157 op het etiket kan een andere zoutvorm bevatten, of meer of minder peptide dan op het etiket staat. Er kunnen ook bijna-kopieën van de keten in zitten, of oplosmiddelen of gifstoffen van bacteriën. Geen medicijnautoriteit heeft het gecontroleerd. Lees [wat een labrapport wel en niet zegt](/nl/safety/product-risk/#wat-een-labrapport-wel-en-niet-zegt). Spuit je iets in? Volg dan de stappen voor [steriel werken](/nl/safety/sterile-technique/). Een besmet product of een vuile naald kan een infectie geven.
+
+</InDetail>
+
+<InDetail title="Zinvolle controles, en waarom">
+
+Een arts kan je helpen kiezen welke van deze controles bij jou passen:
+
+<Checklist>
+
+- **Het onderzoek naar kanker dat bij je leeftijd past, en eerst een controle van een knobbel, bloeding of gewichtsverlies zonder reden**, vanwege het mogelijke effect op de groei van bloedvaten.
+- **Leverenzymen en bloedvetten**, omdat die bij vrouwelijke ratten stegen, en de bloedvetten ook bij vrouwelijke honden.
+- **Stollingstests, vooral als je een bloedverdunner gebruikt of al eens een stolsel had**, omdat stoltijden bij ratten en honden veranderden.
+- **Nierwaarden, en vertel de arts dat je BPC-157 gebruikt**, omdat creatinine, de gewone nierwaarde, bij honden daalde. Gebeurt dat ook bij mensen? Dan kan een lage waarde de nieren gezonder laten lijken dan ze zijn.
+
+</Checklist>
+
+Je huisarts kan dit bloedonderzoek aanvragen. Voor de zorg van je huisarts zelf betaal je niets. Laat de huisarts je bloed buiten de praktijk onderzoeken, in een lab? Dan gaat dat wel van je eigen risico af.<Cite id="zin-huisarts-zvw" />
+
+</InDetail>
+
+<InDetail title="Wisselwerkingen, en wie het helemaal niet moet gebruiken">
+
+### Mogelijke wisselwerkingen (geen ervan is onderzocht)
+
+- **Bloedverdunners en middelen tegen het samenklonteren van bloedplaatjes**, vanwege de veranderingen in de stolling bij dieren.
+- **Medicijnen die de bloeddruk verlagen of via stikstofmonoxide werken** (zoals nitraten of sildenafil), omdat BPC-157 losse slagaders van ratten en mensen ontspande via stikstofmonoxide.<Cite id="hsieh-2020-src-cav1-enos,yildirim-2026-mammary-artery" />
+- **Kankermedicijnen die de groei van bloedvaten remmen**, omdat BPC-157 op dezelfde route de andere kant op duwt.
+- **Combinatieproducten met andere peptiden**, zoals mengsels met TB-500. Die voegen een tweede onbekende toe, maken het onmogelijk te zeggen wat een reactie gaf, en gaven bij ratten geen extra voordeel.<Cite id="bicer-2026-achilles,fda-pcac-2026-bpc157-briefing" />
+
+### Wie het helemaal niet moet gebruiken
+
+- **Wie zwanger is, borstvoeding geeft of zwanger wil worden**: er zijn geen gegevens bij mensen, er is maar één embryofoetaal onderzoek bij ratten, en de groei van nieuwe bloedvaten is bij een zwangerschap heel belangrijk.
+- **Wie kanker heeft of had, of een knobbel die nog niet is onderzocht**, vanwege de werking op vaatgroei en op FAK hierboven.
+- **Kinderen en tieners**, omdat hun weefsel nog groeit en er voor hen geen gegevens zijn.
+- **Wie een stollingsziekte heeft of antistollingsmiddelen gebruikt**, vanwege de signalen over de stolling bij dieren.
+- **Sporters die onder dopingregels vallen**, omdat het altijd verboden is.
+
+</InDetail>
+
+<InDetail title="Legale wegen naar een behandeling, en een bijwerking melden">
+
+### Wat de wet in Nederland toestaat
+
+BPC-157 is in Nederland en de EU geen goedgekeurd medicijn. Er is dus geen goedgekeurd product dat een arts kan voorschrijven.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> Geen medicijnautoriteit heeft het beoordeeld en goedgekeurd. De FDA keek in 2026 naar colitis ulcerosa. Ze vond dat de gegevens het gebruik niet onderbouwen, en te beperkt zijn om de risico's te beoordelen.<Cite id="fda-pcac-2026-bpc157-briefing" /> Welke legale wegen er in Nederland zijn, en wat elke weg vraagt, staat op de pagina [legale wegen naar een behandeling](/nl/legal-routes/). Elke weg heeft strenge voorwaarden, en geen enkele maakt van een niet-goedgekeurd middel een goedgekeurd medicijn: {/* residue-ok: evidence */}
+
+- [Een recept](/nl/legal-routes/#recept) is de gewone weg naar een goedgekeurd medicijn. Een goedgekeurd medicijn met BPC-157 bestaat niet.
+- [Off-label](/nl/legal-routes/#off-label) betekent: een goedgekeurd medicijn voorschrijven voor iets anders dan waarvoor het is goedgekeurd. Met BPC-157 kan dat dus niet.<Cite id="nl-gmw-art-68-off-label" />
+- [De artsenverklaring](/nl/legal-routes/#artsenverklaring) is er voor één patiënt, als goedgekeurde medicijnen om een medische reden niet helpen. Een apotheek of groothandel in Nederland vraagt de ontheffing aan bij de IGJ, niet jij. Heeft het product in het land van herkomst geen handelsvergunning? Dan vraagt de IGJ een onderzoekersdossier (IB of IMPD) en een GMP-certificaat: bewijs dat het volgens de kwaliteitsregels voor medicijnen is gemaakt. Een flacon "voor onderzoek" heeft die papieren volgens ons niet. Of de IGJ ooit een ontheffing geeft voor een stof die nergens is goedgekeurd, zegt de IGJ niet.<Cite id="igj-qa-zonder-handelsvergunning,nl-regeling-gnw-art-3-17" />
+- Bij [een bereiding door de apotheek](/nl/legal-routes/#magistrale-bereiding) (magistrale bereiding) maakt een apotheek een medicijn voor één patiënt. Een grondstof die niet in een farmacopee staat (een officieel boek met kwaliteitseisen), kan volgens de IGJ "niet zomaar worden gebruikt".<Cite id="igj-eigen-bereidingen-apotheek" />
+- Voor [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek) vonden we op 27 oktober 2026 in Nederland geen studie met BPC-157.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" />
+- Voor [compassionate use](/nl/legal-routes/#compassionate-use) (gebruik in schrijnende gevallen) is er geen programma met BPC-157.<Cite id="cbg-compassionate-use-list" />
+- [Zelf invoeren](/nl/legal-routes/#zelf-invoeren) mag niet. Een middel zonder handelsvergunning mag je niet invoeren, ook niet voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning,douane-hvgem-geneesmiddelen-h12-fysiek-toezicht" />
+
+### Een bijwerking melden
+
+Denk je dat een product je schade heeft gedaan? Vertel het je arts. Je kunt een bijwerking ook zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [de notities over België](/nl/legal/be/) en [als er iets misgaat](/nl/safety/if-something-goes-wrong/).
+
+</InDetail>
+
+</Section>

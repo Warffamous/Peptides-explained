@@ -61,7 +61,8 @@ interface Props {
 const p = Astro.props;
 const loc = getLocale(p.locale);
 const contentLang = p.fallback ? getLocale(SOURCE_LOCALE) : loc;
-const showTranslationNotice = !p.fallback && p.locale !== SOURCE_LOCALE && p.translation?.review === 'pending';
+// A page written natively in its language (no English original) is not a translation: no notice, no English link.
+const showTranslationNotice = !p.fallback && p.locale !== SOURCE_LOCALE && p.translation?.review === 'pending' && p.translation?.method !== 'native';
 const signer = p.opinion ? getPerson(p.opinion.signed_by) : null;
 // Chapters: the TL;DR first, then the page's own sections; a list of fewer than three is no help.
 const chapters = [...(p.tldr ? [{ id: 'tldr', text: t(p.locale, 'common.tldr.title') }] : []), ...(p.toc ?? [])];
