@@ -1,0 +1,22 @@
+# Sources added by the Dutch semaglutide group (src/content/compounds/nl/semaglutide.mdx), 27 October 2026.
+# Shape as in src/data/sources/legal-a.yaml (sourceSchema, src/schemas/index.ts). Every URL below was fetched and read on
+# 27 October 2026 (curl with a browser user agent, HTML converted to text) and says what its note says. Notes:
+# research/nl-notes/semaglutide.md.
+#
+# Everything else the Dutch page cites is reused by id from the other source files (the merged Dutch research in
+# nl-research-*.yaml, the 23 October sources in semaglutide.yaml, shared.yaml, guides.yaml, legal-a.yaml, safety-a.yaml,
+# safety-b.yaml, refocus-ireland-nz.yaml (ema-epar-kayshild) and the science sources of the English page).
+
+# ---------------------------------------------------------------- Netherlands: insurance (Regeling zorgverzekering)
+
+nl-regeling-zorgverzekering-2027-bijlage-2:
+  type: law
+  authors: "Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Regeling zorgverzekering, toekomstige tekst van 1 januari 2027 tot en met 31 juli 2027 (bijlage 2, onderdeel 146: dulaglutide en semaglutide)"
+  container: "wetten.overheid.nl (BWBR0018715)"
+  year: 2026
+  url: https://wetten.overheid.nl/BWBR0018715/2027-01-01
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026: 'Let op: Dit is een toekomstige tekst. Deze tekst kan voor inwerkingtreding nog wijzigen. Geraadpleegd op 27-10-2026. Toekomstige tekst van 01-01-2027 t/m 31-07-2027.' Bijlage 2, item 146 'Dulaglutide en Semaglutide' reads word for word as in the version in force from 6 October 2026 (nl-regeling-zorgverzekering-bijlage-2-glp1): type 2 diabetes only, three routes (a, b, c). A full-text search of the page finds no 'Wegovy', 'Kayshild' or 'Kyinsu' (OZEMPIC and RYBELSUS appear in bijlage 1). Supports: in the text that is to apply from 1 January 2027 Wegovy is still not named, and the semaglutide conditions are unchanged; the text can still change. Confirms the fact-check of research/nl/nl-care.md, fact 62. Doses printed in the regulation are not to be copied."

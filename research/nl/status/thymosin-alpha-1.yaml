@@ -1,0 +1,24 @@
+# EU and Dutch status of thymosin alpha-1 (thymalfasin) on 27 October 2026 (research topic eu-status).
+slug: thymosin-alpha-1
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-orphan-thymalfasin-eu-3-02-110, fda-pcac-2024-thymosin-alpha-1-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
+products: []
+national_authorisations: unchanged   # IT, IN, HK as in the data file; the Italian authorisation re-confirmed (see notes)
+compare_with_data_file:
+  - "Both rows confirmed (not-authorised). as_of 2026-10-22 -> 2026-10-27; NL: add cbg-gib-search-status-2026-10-27 and nl-gmw-art-40-handelsvergunning."
+  - "national_authorisations: keep as is. The Italian entry is not wrong: AIFA's medicines database (api.aifa.gov.it, read 27 October 2026; host not allowlisted, so not registered) lists ZADAXIN, holder SciClone Pharmaceuticals Italy S.r.l., AIC 028364026, 'AUTORIZZATA', authorisation date 1996-05-15T22:00 UTC (16 May 1996 Italian time), marketed (flagCommercio 1), not in shortage, prescription only (RR), class C, intramuscular or subcutaneous."
+  - "'investigational' does not fit the EU row: the one CTIS trial (cystic fibrosis, Italy, ctis-2024-518102-41-00) has ended, and the medicine is nationally authorised in Italy."
+regulatory_notes:
+  EU: "No EU-wide authorisation (EMA records, 27 October 2026). Authorised nationally in Italy (Zadaxin, as an add-on to flu vaccination in people with weak immune systems); the EU orphan designation for liver cancer (2002) is not an authorisation."
+  NL: "Not authorised in the Netherlands: no product in the CBG register (27 October 2026); the Italian authorisation does not apply here. Supplying a medicine without a marketing authorisation is prohibited (Geneesmiddelenwet art. 40)."
+notes: |
+  EMA medicines JSON: 0 hits for thymalfasin, 'thymosin alpha', Zadaxin, timalfasin. Orphan JSON: EU/3/02/110
+  (thymalfasin, hepatocellular carcinoma, Positive, designated 30/07/2002; sponsor SciClone Pharmaceuticals Italy S.r.l.).
+  The orphan page (re-read) still says 'In the European Union thymalfasin is authorised in Italy, where it is used to
+  enhance the immune response stimulated by the influenza virus vaccine' (a 2003 text). CTIS: 'thymosin alpha' finds
+  2024-518102-41-00 only (phase II, cystic fibrosis, Italy, Ended; product ZADAXIN 1,6 mg/ml). Geneesmiddeleninformatiebank:
+  'Geen producten gevonden' for thymalfasin, thymosine, Zadaxin. A national authorisation is valid only in the member
+  state that granted it (Directive 2001/83 art. 6(1); central authorisations: Regulation 726/2004 art. 13(1)), so the
+  Italian one is not an NL or EU row.

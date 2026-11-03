@@ -8,6 +8,12 @@
       "port": 4321
     },
     {
+      "name": "peptides-dist",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["astro", "preview", "--port", "4323"],
+      "port": 4323
+    },
+    {
       "name": "peptides-a2-mockup",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["--prefix", "C:/dev/Peptides-explained-a2", "run", "dev", "--", "--port", "4322"],

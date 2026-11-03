@@ -29,10 +29,13 @@ evidence:
   safety: partial
 regulatory:
   # Status as a MEDICINE (the vocabulary's sense). As food: NR chloride is an authorised novel food in the EU
-  # (Implementing Regulation 2020/16); NMN is not on the Union list (consolidated 10 August 2026) despite a
-  # positive EFSA opinion (May 2026).
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, eu-regulation-2020-16-nr, efsa-2026-nmn-novel-food, eu-union-list-novel-foods-2026-08-10] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  # (Implementing Regulation 2020/16); NMN is not on the Union list (consolidated 10 August 2026, still the latest on
+  # 27 October 2026) despite a positive EFSA opinion (May 2026). Food clause re-checked 27 October 2026 (final sweep):
+  # the Publications Office's SPARQL index gives 02017R2470-20260810 as the latest consolidation, and that text (CELLAR)
+  # lists nicotinamide riboside chloride and no nicotinamide mononucleotide.
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/nad-precursors.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10, eu-regulation-2020-16-nr, efsa-2026-nmn-novel-food, eu-union-list-novel-foods-2026-08-10, eu-op-novel-food-acts-search-2026-10-27] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   # Not an FDA-approved drug. NMN: not excluded from the dietary-supplement definition (FDA, 29 September 2025);
   # NR chloride: GRAS notice 635 for food use (cited through the neutral GRAS inventory search, because the GRN 635
   # record names the notifier company: seller rule, compounds-e 26 October 2026); NAD+: 503A category 1 (pharmacy

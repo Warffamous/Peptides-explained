@@ -1,0 +1,76 @@
+{
+  "$comment": "Labels for the controlled vocabularies (src/schemas/vocab.ts). Jurisdictions have three forms: jurisdiction (table rows, cards), jurisdictionInSentence (inside a sentence and in lists, with the article where English uses one: 'Approved in the US, the UK, Canada and Australia.'; src/lib/approval.ts joins them with the locale's own and / or) and jurisdictionShort (the fact sheet's Approved in row: 'US since 2010; Canada 2014–2022'). Dutch: 'Goedgekeurd in Nederland en de hele EU.' ('de hele EU', so a country of the EU with its own national approval, such as Italy for thymosin alpha-1, does not read as a contradiction); 'Nederland sinds 2018; EU sinds 2018'.",
+  "species": {
+    "human": "Mensen", "rat": "Ratten", "mouse": "Muizen", "rabbit": "Konijnen", "dog": "Honden", "pig": "Varkens",
+    "sheep": "Schapen", "horse": "Paarden", "primate": "Apen", "zebrafish": "Zebravissen", "other-animal": "Andere dieren",
+    "in-vitro": "Cellen (lab)", "in-silico": "Computermodel", "mixed": "Gemengd", "not-applicable": "—"
+  },
+  "design": {
+    "in-vitro": "Labonderzoek (cellen)", "animal": "Dieronderzoek", "case-report": "Casusbeschrijving", "case-series": "Casusreeks",
+    "open-label": "Open-labelstudie", "phase-1": "Fase 1-onderzoek", "phase-2": "Fase 2-onderzoek", "phase-3": "Fase 3-onderzoek",
+    "rct": "Gerandomiseerd gecontroleerd onderzoek", "pk": "Farmacokinetisch onderzoek", "observational": "Observationeel onderzoek",
+    "post-marketing": "Bewaking na toelating", "systematic-review": "Systematische review", "meta-analysis": "Meta-analyse",
+    "narrative-review": "Overzichtsartikel", "regulatory-assessment": "Beoordeling door een medicijnautoriteit", "analytical": "Analyse van producten"
+  },
+  "funding": {
+    "academic": "Universiteit", "government": "Overheid", "industry": "Industrie", "mixed": "Gemengd",
+    "undisclosed": "Niet vermeld", "not-applicable": "—"
+  },
+  "group": {
+    "originating": "Oorspronkelijke groep", "independent": "Onafhankelijke groep", "mixed": "Gemengd", "not-applicable": "—"
+  },
+  "schedule": {
+    "S2": "Schedule 2 (S2)", "S3": "Schedule 3 (S3)", "S4": "Schedule 4 (S4)", "S5": "Schedule 5 (S5)", "S6": "Schedule 6 (S6)",
+    "S7": "Schedule 7 (S7)", "S8": "Schedule 8 (S8)", "S9": "Schedule 9 (S9)", "S10": "Schedule 10 (S10)",
+    "PDL": "Prescription Drug List"
+  },
+  "regStatus": {
+    "authorised": "Goedgekeurd", "discontinued": "Goedgekeurd, niet meer in de handel", "not-authorised": "Niet goedgekeurd", "refused": "Geweigerd",
+    "withdrawn": "Ingetrokken", "under-review": "In beoordeling", "investigational": "Alleen in klinisch onderzoek",
+    "prohibited": "Verboden in de sport", "not-listed": "Niet op de dopinglijst", "unclear": "Onduidelijk (niet genoemd)"
+  },
+  "wadaScope": { "at-all-times": "altijd", "in-competition": "tijdens wedstrijden" },
+  "jurisdiction": {
+    "EU": "Europese Unie", "NL": "Nederland", "DE": "Duitsland", "BE": "België", "UK": "Verenigd Koninkrijk",
+    "US": "Verenigde Staten", "CA": "Canada", "AU": "Australië", "IE": "Ierland", "NZ": "Nieuw-Zeeland", "WADA": "Sport (WADA)"
+  },
+  "jurisdictionInSentence": {
+    "US": "de VS", "UK": "het VK", "CA": "Canada", "AU": "Australië", "IE": "Ierland", "NZ": "Nieuw-Zeeland",
+    "EU": "de hele EU", "NL": "Nederland", "DE": "Duitsland", "BE": "België"
+  },
+  "jurisdictionShort": {
+    "US": "VS", "UK": "VK", "CA": "Canada", "AU": "Australië", "IE": "Ierland", "NZ": "Nieuw-Zeeland",
+    "EU": "EU", "NL": "Nederland", "DE": "Duitsland", "BE": "België"
+  },
+  "category": {
+    "authorised": "Goedgekeurd medicijn",
+    "authorised-nationally": "In sommige landen goedgekeurd", "investigational": "Nog in klinisch onderzoek", "experimental": "Experimenteel", "not-a-peptide": "Geen peptide"
+  },
+  "class": {
+    "incretin": "Incretine (GLP-1-familie)", "gh-axis": "Groeihormoon-as", "melanocortin": "Melanocortine",
+    "tissue-repair": "Voorgesteld weefselherstel", "immunomodulatory": "Werkt op de afweer", "mitochondrial": "Mitochondriën",
+    "neuroactive": "Werkt op de hersenen", "dermal": "Huid en haar", "metabolic": "Stofwisseling", "longevity-claimed": "Claims over langer leven",
+    "non-peptide": "Geen peptide"
+  },
+  "bodySystem": {
+    "metabolic": "Stofwisseling", "cardiovascular": "Hart en bloedvaten", "gastrointestinal": "Maag en darmen", "musculoskeletal": "Spieren, pezen, botten",
+    "nervous": "Hersenen en zenuwen", "endocrine": "Hormonen", "immune": "Afweersysteem", "skin": "Huid", "sexual": "Seksualiteit",
+    "renal": "Nieren", "cellular": "Cellen en mitochondriën"
+  },
+  "sourceType": {
+    "article": "Onderzoeksartikel", "review": "Overzichtsartikel", "meta-analysis": "Meta-analyse", "trial": "Klinisch onderzoek",
+    "preprint": "Preprint (niet beoordeeld door vakgenoten)", "book": "Boek", "chapter": "Hoofdstuk uit een boek", "regulator": "Toezichthouder",
+    "law": "Wet", "guideline": "Richtlijn", "label": "Officiële productinformatie", "registry": "Registratie van een onderzoek",
+    "dataset": "Dataset", "report": "Rapport", "web": "Webpagina"
+  },
+  "route": {
+    "subcutaneous": "Injectie onder de huid", "oral": "Tablet", "intranasal": "Neusspray", "intravenous": "In een ader", "topical": "Op de huid"
+  },
+  "callout": {
+    "note": "Goed om te weten", "tip": "Tip", "warning": "Waarschuwing", "stop": "Stop en zoek hulp", "legal": "Wat de wet zegt", "uncertain": "Open vraag"
+  },
+  "warningAction": {
+    "urgent": "Bel direct je huisarts of de huisartsenpost",
+    "stop": "Stop en maak een afspraak met je huisarts"
+  }
+}

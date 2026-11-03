@@ -45,8 +45,9 @@ evidence:
   independence: few-groups
   safety: uncharacterised
 regulatory:
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-20, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, fda-pcac-2026-tb500-briefing] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-20, sources: [cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/tb-500.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10, fda-pcac-2026-tb500-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: DE, status: not-authorised, as_of: 2026-10-20, sources: [de-amg-21, ema-medicines-json, fda-pcac-2026-tb500-briefing] }
   - { jurisdiction: BE, status: not-authorised, as_of: 2026-10-20, sources: [be-medicines-law-1964, ema-medicines-json, fda-pcac-2026-tb500-briefing] }
   # UK re-checked on 23 October 2026 (MHRA substance index: no thymosin or TB-500 entry); CA and AU merged from

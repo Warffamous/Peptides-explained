@@ -1,0 +1,583 @@
+---
+slug: pt-141
+title: "PT-141 (bremelanotide)"
+description: "PT-141 is bremelanotide: een Amerikaans medicijn (Vyleesi) voor weinig zin in seks bij vrouwen. Niet goedgekeurd in Nederland of de EU. Studies, risico’s en status."
+tldr:
+  - q: "Wat is PT-141?"
+    a: "Bremelanotide: een Amerikaans medicijn (Vyleesi) voor vrouwen vóór de overgang met weinig zin in seks. Niet voor mannen."
+  - q: "Werkt het?"
+    a: "Een beetje. De zin in seks steeg iets meer dan met placebo. Vrouwen hadden niet vaker bevredigende seks."
+  - q: "Is online PT-141 hetzelfde?"
+    a: "Nee. Sprays en flacons met deze naam zijn geen Vyleesi. Geen medicijnautoriteit heeft ze gecontroleerd."
+  - q: "Wie moet het niet gebruiken?"
+    a: "Bij een hartziekte, slecht geregelde hoge bloeddruk of naltrexontabletten. Ook niet als je zwanger bent of wilt worden."
+lede: "Amerikaans medicijn voor vrouwen met weinig zin in seks. In Nederland niet goedgekeurd. Het verhoogt kort de bloeddruk."
+glance:
+  main_risk: "Uren hogere bloeddruk. Veel mensen worden misselijk. De huid kan donkerder worden."
+  # "Stop en zoek hulp"-strook, samengevat uit de stop-nu-lijst van deze pagina (sectie "Als iemand het toch gaat
+  # gebruiken", <Callout id="stop-now">): de Amerikaanse productinformatie (contra-indicatie bij slecht geregelde hoge
+  # bloeddruk en bij hart- en vaatziekte; de bloeddruk stijgt kort na elke dosis), Thuisarts over pijn op de borst
+  # en over de klachten bij een heel hoge bloeddruk, en de NHS en MedlinePlus over borstpijn, plotselinge hoofdpijn,
+  # wazig zien en priapisme (als medische bron, niet als hulplijn). Het hulpniveau komt uit src/i18n/nl/warning-signs.json.
+  stop_signs:
+    - icon: sign-heart
+      text: "Pijn, druk of beklemd gevoel op je borst"
+      sources: [dailymed-vyleesi-label, thuisarts-pijn-op-borst, nhs-chest-pain]
+    - icon: sign-vision
+      text: "Plotseling heel erge hoofdpijn, of wazig zien"
+      sources: [thuisarts-hoge-bloeddruk, nhs-headaches, medlineplus-malignant-hypertension, dailymed-vyleesi-label]
+    - icon: sign-clock
+      text: "Een erectie die langer dan 3 uur duurt"
+      sources: [nhs-priapism, rosen-2004-subcutaneous-pt141-men]
+  # Feitenblad naast de titel: feiten uit de Amerikaanse productinformatie van Vyleesi, nooit een dosis. Vyleesi is
+  # alleen in de VS goedgekeurd; het feitenblad zegt daarom bij elk feit dat het om dat product gaat (wereldcontext).
+  facts:
+    - label: "Hoe het wordt gebruikt"
+      value: "Vyleesi: injectie onder de huid, pen voor één dosis"
+      sources: [dailymed-vyleesi-label]
+    - label: "Wanneer het wordt gebruikt"
+      value: "Vyleesi: als het nodig is, vóór verwachte seks"
+      sources: [dailymed-vyleesi-label]
+    - label: "Tijd in het bloed"
+      value: "Halfwaardetijd ongeveer 2,7 uur"
+      sources: [dailymed-vyleesi-label]
+    - label: "Goedgekeurd voor (VS)"
+      value: "Vrouwen vóór de overgang met weinig zin in seks"
+      sources: [dailymed-vyleesi-label, fda-drugsatfda-vyleesi]
+grade_rationale:
+  human_clinical: "Goedgekeurd in de VS sinds 21 juni 2019 (Vyleesi), op basis van 2 gelijke, gerandomiseerde, dubbelblinde fase 3-studies bij 1.267 vrouwen vóór de overgang met verworven, gegeneraliseerde HSDD. Niet goedgekeurd in Nederland of de EU: er is geen product met bremelanotide, en het EMA heeft geen aanvraag." # residue-ok: world context
+  preclinical_volume: "Weinig. Een zoekopdracht in PubMed op 22 oktober 2026 vond 122 records over bremelanotide of PT-141. Daarvan waren er maar ongeveer 9 primaire studies bij dieren of in het lab: het werk van de ontwikkelaar bij ratten en apen, de studies bij vrouwtjesratten, een studie bij hamsters, een receptorstructuur, kankercellen, studies naar de opname bij honden en een studie met weefsel van konijnen. De toxicologie voor de goedkeuring kennen we alleen uit de beoordeling en de productinformatie van de FDA. Melanotan II, dat alleen aan één uiteinde verschilt, heeft meer dieronderzoek; dat telt hier niet mee." # residue-ok: FDA evidence
+  independence: "Een paar groepen. De ontwikkelaar (Palatin) of de licentiehouder (AMAG) voerde elke studie voor de goedkeuring uit en betaalde die, ook de eerdere studie om de dosis te bepalen. Onafhankelijke groepen leverden een receptorstructuur, een dierstudie die geen beloningseffect vond, een studie met hersenscans die AMAG mee betaalde, een kritische heranalyse van de fase 3-gegevens, en de enige grote studie bij mannen. Over die laatste studie publiceerde het tijdschrift een expression of concern."
+  safety: "Deels bekend. Ongeveer 3.500 mensen deden mee aan 43 afgeronde studies, en 1.247 vrouwen aan de studies van 24 weken met placebo, gevolgd door een open vervolgstudie tot 52 weken. Maar de meesten gebruikten het 2 of 3 keer per maand, vrouwen met een hartziekte of met hoge bloeddruk die niet onder controle is, deden niet mee, er is geen veiligheidsstudie na toelating gepubliceerd, en de verplichte studies naar zwangerschap lopen tot 2030."
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Past op verschillende melanocortinereceptoren"
+    detail: "Bremelanotide is een ringvormige analoog van alfa-MSH, gemaakt in het lab. Alfa-MSH is een hormoon dat het lichaam zelf maakt. Volgens de Amerikaanse productinformatie zet bremelanotide verschillende melanocortinereceptoren aan, zonder veel voorkeur: het sterkst MC1R, en daarna MC4R. Een studie met cryo-elektronenmicroscopie liet zien hoe het aan de MC4-receptor van mensen bindt."
+  - kind: cellular
+    level: animal
+    title: "Zet zenuwcellen aan in hersengebieden voor seks (ratten)"
+    detail: "Bij ratten zetten injecties zenuwcellen in de hypothalamus aan. Toen de onderzoekers het rechtstreeks in één klein hersengebied brachten, het mediaal preoptisch gebied, zochten vrouwtjesratten vaker mannetjes op. De onderzoekers vermoedden dat het daar werkt doordat er dopamine vrijkomt. Een latere, onafhankelijke studie bij hamsters vond geen teken dat het op het beloningssysteem van de hersenen werkt."
+  - kind: tissue
+    level: human
+    title: "Verandert hoe de hersenen reageren op erotische beelden"
+    detail: "In een cross-overstudie bij 31 vrouwen met HSDD lieten hersenscans na één injectie een andere activiteit zien bij erotische video’s. De auteurs koppelen deze hersengebieden aan zelfbewustzijn en aan seksuele beelden. Hoe deze veranderingen tot meer zin in seks leiden, is niet aangetoond."
+  - kind: effect
+    level: human
+    title: "De zin in seks stijgt een beetje, de last daalt een beetje"
+    detail: "In 2 fase 3-studies steeg de score voor zin in seks 0,35 punt meer dan met placebo, op een schaal van 1,2 tot 6. De last daalde 0,33 punt meer, op een schaal van 0 tot 4. Het aantal bevredigende seksuele contacten veranderde niet. Volgens de Amerikaanse productinformatie is onbekend hoe het middel HSDD verbetert."
+  - kind: effect
+    level: human
+    title: "Dezelfde receptorfamilie verhoogt de bloeddruk"
+    detail: "MC4-receptoren in de hersenen helpen het sympathisch zenuwstelsel aan te sturen. Na elke dosis steeg de bloeddruk een paar uur: volgens de Amerikaanse productinformatie met maximaal 6 mmHg (bovendruk) en 3 mmHg (onderdruk). De hartslag daalde. In één studie hadden mensen die zijn geboren met een MC4-receptor die niet goed werkt, minder vaak hoge bloeddruk."
+  - kind: tissue
+    level: human
+    title: "MC1R op pigmentcellen maakt de huid donkerder"
+    detail: "MC1R zit op pigmentcellen. Donkere plekken op het gezicht, het tandvlees of de borsten kwamen voor bij 1% van de vrouwen in de fase 3-studies, en bij 38% na 8 dagen dagelijks gebruik."
+  - kind: effect
+    level: human
+    title: "Bij mannen: erecties, ook zonder seksuele prikkel"
+    detail: "In vroege studies bij mannen gaf het erecties, bij gezonde mannen zelfs zonder erotische beelden. Het is nooit goedgekeurd voor mannen. Het programma met een neusspray tegen erectieproblemen is gestopt."
+studies:
+  zhang-2021-structure:
+    finding: "Met cryo-elektronenmicroscopie zagen de onderzoekers de MC4-receptor van mensen, gebonden aan zijn G-eiwit en aan bremelanotide, alfa-MSH, afamelanotide of een klein molecuul. De peptiden binden op dezelfde manier."
+    limitation: "Een structuur in het lab: die laat zien hoe het middel bindt, niet wat het in een lichaam doet."
+  molinoff-2003-animals:
+    finding: "Bij ratten en apen gaf PT-141 erecties. Bij ratten zette het zenuwcellen aan in de hypothalamus, in een gebied dat met de penis verbonden is."
+    limitation: "Een korte samenvatting door medewerkers van de ontwikkelaar; het aantal dieren staat niet in de samenvatting."
+  pfaus-2004-female-rats:
+    finding: "Vrouwtjesratten die PT-141 kregen, zochten vaker mannetjes op. Ander seksueel gedrag, hun activiteit en de seksuele beloning veranderden niet."
+    limitation: "Ratten; het aantal dieren en wie betaalde, staan niet in de samenvatting; 2 auteurs werkten voor de ontwikkelaar. Een mannetje opzoeken is niet hetzelfde als zin in seks bij mensen."
+  borland-2025-hamsters:
+    finding: "Bij vrouwtjes van de goudhamster veranderde bremelanotide de hoeveelheid melanocortinereceptoren in het beloningssysteem van de hersenen niet. Seks werd er ook niet meer belonend door."
+    limitation: "Hamsters; het aantal dieren staat niet in de samenvatting. De studie test één mogelijk mechanisme en vond niets; zin in seks zelf testte ze niet."
+  diamond-2004-men-nasal:
+    finding: "Bij gezonde mannen en bij mannen met lichte tot matige erectieproblemen gaf een neusspray in de hogere doses meer erecties dan placebo, na ongeveer 30 minuten. De belangrijkste bijwerkingen waren een rood en warm gezicht (flushing) en misselijkheid."
+    limitation: "Vroege, kleine studies van de ontwikkelaar; de aantallen staan niet in de samenvatting; erecties gemeten in een kliniek, niet bij echte seks."
+  rosen-2004-men-injected:
+    finding: "Onder de huid ingespoten gaf het erecties bij gezonde mannen, ook zonder erotische beelden. Bij mannen bij wie Viagra niet goed werkte, gaf het erecties als ze naar erotische video’s keken."
+    limitation: "Kleine, vroege studies met auteurs van de ontwikkelaar; de aantallen staan niet in de samenvatting; daarna geen goedkeuring voor mannen."
+  diamond-2005-with-sildenafil:
+    finding: "Bij 19 mannen met erectieproblemen gaf een lage dosis PT-141 als neusspray samen met sildenafil in de kliniek sterkere erecties dan sildenafil alleen. Er werden geen nieuwe bijwerkingen gemeld."
+    limitation: "Eén sessie per behandeling, 19 mannen, uitgevoerd door de ontwikkelaar; zegt niets over de veiligheid bij regelmatig gebruik."
+  diamond-2006-women:
+    finding: "Bij 18 vrouwen met een seksuele opwindingsstoornis meldden na één dosis via de neus meer vrouwen matig of veel zin in seks dan na placebo. De doorbloeding van de vagina bij erotische video’s veranderde niet."
+    limitation: "Heel klein, één dosis per vrouw, uitgevoerd door de ontwikkelaar; de neusspray is later niet verder ontwikkeld."
+  safarinejad-2008-men:
+    finding: "Bij 342 mannen bij wie sildenafil niet hielp tegen erectieproblemen, had 33,5% met bremelanotide als neusspray een goed resultaat, tegen 8,5% met placebo. Bijwerkingen kwamen met bremelanotide vaker voor."
+    limitation: "Het tijdschrift publiceerde in 2023 een expression of concern over dit artikel, en een studie met bremelanotide bij vrouwen van dezelfde auteur is teruggetrokken. Wees heel voorzichtig met deze resultaten."
+  clayton-2016-phase-2b:
+    finding: "Bij 397 vrouwen vóór de overgang met weinig zin in seks, problemen met opwinding of allebei, steeg het aantal bevredigende seksuele contacten in 12 weken met 0,7 per maand bij de 2 hogere doses, tegen 0,2 met placebo. Ook de scores op de vragenlijsten verbeterden. De bloeddruk steeg een beetje, ongeveer 4 uur lang."
+    limitation: "Betaald door de ontwikkelaar; 12 weken; de stijging van het aantal bevredigende contacten kwam in de fase 3-studies niet terug."
+  clayton-2017-alcohol:
+    finding: "Bij 24 gezonde mannen en vrouwen veranderde alcohol de hoeveelheid bremelanotide in het bloed niet. Bremelanotide bij alcohol maakte een daling van de bloeddruk bij het opstaan niet vaker."
+    limitation: "Losse doses via de neus, in een kliniek; klein; met auteurs van de ontwikkelaar."
+  reconnect-2019:
+    finding: "Bij 1.267 vrouwen vóór de overgang met verworven, gegeneraliseerde HSDD stegen de scores voor zin in seks na 24 weken injecties als het nodig was iets meer dan met placebo (0,35 punt op een schaal van 1,2 tot 6), en daalde de last (0,33 punt op een schaal van 0 tot 4). Het aantal bevredigende seksuele contacten steeg niet."
+    limitation: "Betaald door de ontwikkelaar; vooral witte vrouwen uit de VS; 42 tot 44% stopte vroeg met bremelanotide, tegen 16 tot 28% met placebo; alleen vragenlijsten als uitkomst." # residue-ok: study population
+  reconnect-extension-2019:
+    finding: "Van 684 vrouwen die doorgingen in een open vervolgstudie van maximaal 52 weken, maakten 272 die af. De scores voor zin in seks en last bleven beter dan aan het begin, en er werden geen nieuwe signalen over de veiligheid gemeld."
+    limitation: "Geen placebo; alleen vrouwen die de eerste fase hadden afgemaakt, konden meedoen; ongeveer 6 op de 10 stopten, vooral door bijwerkingen of omdat ze hun toestemming introkken."
+  spielmans-2021-reanalysis:
+    finding: "Een onafhankelijke heranalyse van de fase 3-gegevens uit de aanvraag bij de FDA vond ongeveer dezelfde gemiddelde resultaten. Maar stoppen door bijwerkingen kwam met bremelanotide veel vaker voor, en veel vooraf geplande uitkomsten stonden niet in het hoofdartikel." # residue-ok: FDA evidence
+    limitation: "Een heranalyse van dezelfde 2 studies, geen nieuwe gegevens; de auteurs van de studies zijn het er niet mee eens."
+  thurston-2022-brain-scans:
+    finding: "Bij 31 vrouwen met HSDD meldden meer vrouwen meer zin in seks in de 24 uur na één injectie dan na placebo. Hersenscans lieten een andere reactie zien op erotische video’s."
+    limitation: "Klein; één injectie per vrouw; deels betaald door de licentiehouder, die ook het middel leverde; een bredere vragenlijst over opwinding en zin in seks liet geen verschil zien; veranderingen op een hersenscan zijn geen uitkomst voor de gezondheid."
+  spana-2022-weight:
+    finding: "In 2 korte fase 1-studies bij vrouwen met obesitas (58 en 27 vrouwen) aten de deelnemers minder na herhaalde dagelijkse injecties. In de grotere studie aten ze ongeveer 400 kcal per dag minder, en daalde het gewicht in 16 dagen ongeveer 1,3 kg meer dan met placebo."
+    limitation: "Heel kort, betaald door de ontwikkelaar. In de grotere studie veranderde de bloeddruk met placebo ongeveer even veel. In de kleinere studie moesten 6 vrouwen stoppen volgens de regels voor de bloeddruk, 2 van hen kort na een dosis bremelanotide. Geen goedgekeurd gebruik."
+  mestria-2021-seized-products:
+    finding: "Forensische labs in Italië vonden bremelanotide en melanotan II in 8 onbekende monsters. De politie had die in beslag genomen, samen met steroïden en andere middelen voor bodybuilders."
+    limitation: "Acht monsters; alleen welke stof erin zat, niet hoeveel, hoe zuiver of hoe steriel."
+regulatory_notes:
+  NL: "Niet goedgekeurd: het CBG heeft geen product in zijn register (27 oktober 2026). Alleen de smalle weg van de artsenverklaring blijft; de IGJ kan een ontheffing weigeren."
+  EU: "Niet goedgekeurd: het EMA heeft geen dossier van bremelanotide, ook geen geweigerde of ingetrokken aanvraag. In oktober 2026 lag er geen aanvraag ter beoordeling."
+  WADA: "Onduidelijk: niet genoemd op de dopinglijst van 2026 of 2027. Omdat de FDA het heeft goedgekeurd, valt het buiten S0, maar andere groepen kunnen gelden. Geen uitspraak gevonden: vraag het de Dopingautoriteit." # residue-ok: world context
+# Geen Nederlands of EU-product: Vyleesi (VS) staat niet op de Nederlandse pagina, dus er is geen indicatieregel nodig.
+indications: {}
+translation: { method: translated, from: en, review: pending }
+---
+<Section id="what-it-is">
+
+{/* residue-ok: world context */}
+<Lead question="Wat is PT-141?">Een peptide uit het lab. In de VS een medicijn, voor vrouwen met weinig zin in seks.</Lead>
+
+<Compare title="Vyleesi, het Amerikaanse medicijn, en een spray of flacon met de naam PT-141 zijn niet hetzelfde." detail="Wat over elk bekend is, uit documenten van medicijnautoriteiten en gepubliceerde analyses, gecontroleerd op 22 en 27 oktober 2026.">
+
+| | Vyleesi (Amerikaans medicijn op recept) | Een spray of flacon met de naam “PT-141”, buiten de legale keten |
+|---|---|---|
+| Gecontroleerd door een medicijnautoriteit? | <Verdict is="yes" /> Goedgekeurd door de Amerikaanse medicijnautoriteit FDA sinds 2019; de productinformatie wordt bijgehouden<Cite id="fda-drugsatfda-vyleesi,dailymed-vyleesi-label" /> | <Verdict is="no" /> In augustus 2026 schreef de FDA aan een online verkoper dat producten met onder meer PT-141 niet-goedgekeurde nieuwe geneesmiddelen zijn<Cite id="fda-warning-letters-index" /> {/* residue-ok: world context */} |
+| Goedgekeurd in Nederland of de EU? | <Verdict is="no" /> Er is geen product met bremelanotide in de EU of in Nederland<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> Geen medicijnautoriteit heeft het beoordeeld<Cite id="fda-warning-letters-index" /> |
+| Weet je hoeveel je per keer krijgt? | <Verdict is="yes" /> Een pen voor één dosis, met een vaste hoeveelheid<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> Dat hangt af van het product en van hoe je zelf afmeet; zelfs de neusspray van de ontwikkelaar werd heel wisselend opgenomen<Cite id="white-2017-bremelanotide-abpm" /> |
+| Weet je wat erin zit? | <Verdict is="yes" /> Een steriele, heldere vloeistof waarvan bekend is wat erin zit<Cite id="dailymed-vyleesi-label" /> | <Verdict is="unknown" /> Geen medicijnautoriteit heeft het gecontroleerd; onbekende monsters die de politie in Italië in beslag nam, waren bremelanotide of het verwante melanotan II<Cite id="mestria-2021-seized-melanotan-bremelanotide" /> |
+| Officiële informatie over de risico’s? | <Verdict is="yes" /> Productinformatie met waarschuwingen, en een bijsluiter voor patiënten<Cite id="dailymed-vyleesi-label" /> | <Verdict is="no" /> Geen |
+
+</Compare>
+
+PT-141 is de codenaam die de ontwikkelaar aan bremelanotide gaf.<Cite id="pubchem-bremelanotide,molinoff-2003-pt141" /> Het is onderzocht in grote studies, voor één smal gebruik: weinig zin in seks waar vrouwen veel last van hebben, bij vrouwen die nog niet in de overgang zijn.<Cite id="dailymed-vyleesi-label" /> Het staat op deze site omdat sprays en flacons buiten de legale keten dezelfde naam dragen.<Cite id="fda-warning-letters-index,mestria-2021-seized-melanotan-bremelanotide" />
+
+{/* residue-ok: world context */}
+In de VS is bremelanotide sinds 2019 een goedgekeurd medicijn, onder de naam Vyleesi. In Nederland en de EU is het geen goedgekeurd medicijn: er is geen product, en het Europees Geneesmiddelenbureau (EMA) heeft geen aanvraag.<Cite id="fda-drugsatfda-vyleesi,ema-medicines-json,ema-under-evaluation-2026-10,cbg-gib-search-status-2026-10-27" />
+
+<InDetail title="Het Amerikaanse medicijn, en waarom deze pagina anders is">
+
+{/* residue-ok: world context */}
+De FDA keurde Vyleesi goed op 21 juni 2019.<Cite id="fda-drugsatfda-vyleesi" /> De aanvrager was toen AMAG Pharmaceuticals. Dat bedrijf had de rechten voor Noord-Amerika gekregen van de ontwikkelaar, Palatin Technologies. In de database Drugs@FDA staat nu Cosette als bedrijf.<Cite id="fda-2019-vyleesi-approval-letter,dhillon-2019-bremelanotide-first-approval,fda-drugsatfda-vyleesi" /> De aanvraag ging niet langs een adviescommissie van de FDA.<Cite id="fda-2019-vyleesi-approval-letter" /> Op dat moment was in de VS één ander medicijn goedgekeurd voor dezelfde aandoening: flibanserin (Addyi).<Cite id="fda-2019-vyleesi-multidiscipline-review,mintzes-2021-hsdd-regulatory-precedent" />
+
+<AuthorisedProducts />
+
+De productinformatie beperkt het goedgekeurde gebruik. Het gaat alleen om verworven, gegeneraliseerde HSDD (hypoactieve seksuele verlangensstoornis) bij vrouwen vóór de overgang. Dat is weinig zin in seks die begon na een tijd met normale zin, die in elke situatie en bij elke partner speelt, waar de vrouw veel last van heeft, en die niet komt door een andere ziekte, een medicijn of problemen in de relatie. Het is niet voor vrouwen na de overgang en niet voor mannen. En het is niet bedoeld om seksuele prestaties te verbeteren.<Cite id="dailymed-vyleesi-label" />
+
+<Callout type="note" title="Waarom deze pagina anders is">
+{/* residue-ok: world context */}
+De meeste stoffen op deze site zijn experimenteel. Bremelanotide is goedgekeurd in de VS, maar niet in Nederland of de EU. Dat maakt het een ongewoon geval. In de VS is het een medicijn met bekende risico’s op korte termijn, voor één gebruik. In Nederland is het volgens de wet een geneesmiddel zonder handelsvergunning.
+</Callout>
+
+</InDetail>
+
+<InDetail title="Het molecuul, en zijn naaste familielid melanotan II">
+
+Bremelanotide is een keten van 7 bouwstenen, waarvan er 6 een ring vormen: <Seq>Ac-Nle-cyclo[Asp-His-D-Phe-Arg-Trp-Lys]-OH</Seq>.<Cite id="dailymed-vyleesi-label,pubchem-bremelanotide" /> De ring is een lactambrug tussen de zijketens van asparaginezuur en lysine. De keten begint met norleucine, met een acetylgroep eraan. Ze bevat de spiegelbeeldvorm van fenylalanine (D-Phe), en eindigt in een vrij zuur. De brutoformule is C50H68N14O10 en de molecuulmassa <Q>1.025,2 Da</Q>; in het medicijn zit het als acetaatzout.<Cite id="dailymed-vyleesi-label,pubchem-bremelanotide,chembl-bremelanotide" />
+
+Het is een analoog van alfa-MSH, gemaakt in het lab. Alfa-MSH is een hormoon dat het lichaam zelf maakt.<Cite id="dhillon-2019-bremelanotide-first-approval" /> Na een injectie onder de huid komt bijna alles in het bloed, en de halfwaardetijd is ongeveer 2,7 uur.<Cite id="dailymed-vyleesi-label" />
+
+### Melanotan II: één atoomgroep verschil
+
+Melanotan II is een peptide voor een bruine huid dat online wordt aangeboden. Het heeft precies dezelfde ring en keten. Alleen het uiteinde verschilt: melanotan II eindigt in een amide (–NH2), bremelanotide in een vrij zuur (–OH).<Cite id="pubchem-bremelanotide,pubchem-melanotan-ii" /> Onderzoekers noemen PT-141 de carboxylaatvorm ("carboxylate derivative") van melanotan II.<Cite id="king-2007-melanocortin-erection" /> De twee werken op dezelfde receptorfamilie. Wat over het ene bekend is, zegt dus vaak ook iets over het andere. Maar de studies en de goedkeuring op deze pagina gaan alleen over bremelanotide. Zie [melanotan II](/nl/compounds/melanotan-ii/).
+
+</InDetail>
+
+<InDetail title="Van neusspray voor mannen naar injectie voor vrouwen">
+
+Bremelanotide werd eerst ontwikkeld als neusspray tegen erectieproblemen bij mannen. In vroege studies gaf het erecties bij mannen, ook bij mannen bij wie Viagra niet goed werkte.<Cite id="diamond-2004-intranasal-pt141-men,rosen-2004-subcutaneous-pt141-men" /> Ook de eerste studies bij vrouwen gebruikten de neusspray.<Cite id="diamond-2006-bremelanotide-women,fda-2019-vyleesi-multidiscipline-review" />
+
+{/* residue-ok: FDA evidence */}
+Daarna stopte de ontwikkelaar met de spray. Volgens de beoordelaars van de FDA stapte de ontwikkelaar over op injecties, omdat de hoeveelheid in het bloed via de neus sterk wisselde ("variable systemic exposure via the intranasal route").<Cite id="fda-2019-vyleesi-multidiscipline-review" /> De onderzoekers van de ontwikkelaar leggen uit waarom dat belangrijk was: sommige mensen namen veel meer op dan anderen. Daardoor konden ze meer bijwerkingen krijgen, zoals een hogere bloeddruk.<Cite id="white-2017-bremelanotide-abpm" /> De FDA maakte zich zorgen over de bloeddruk in de studies met de neusspray. Daarom werd de bloeddruk in de latere studies goed in de gaten gehouden.<Cite id="clayton-2016-bremelanotide-phase-2b" /> De aanvraag bij de FDA om de neusspray te mogen testen bij mannen met erectieproblemen werd in 2017 ingetrokken.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Wat doet het in het lichaam?">Het zet receptoren in hersenen en huid aan. Hoe dat de zin in seks beïnvloedt, is onbekend.</Lead>
+
+<Diagram id="pt-141-receptors" caption="Het middel zet 2 belangrijke receptoren aan. Elke receptor heeft eigen effecten.">
+
+| Receptor | Waar die zit | Wat er gebeurt | Waar het is aangetoond |
+|---|---|---|---|
+| MC4R | Zenuwcellen in de hersenen, ook in de hypothalamus | De score voor zin in seks stijgt een beetje; de eetlust daalt; erecties bij mannen | Studies bij mensen; hersengebieden bij ratten |
+| MC4R | Netwerken in de hersenen die het sympathisch zenuwstelsel sturen | De bloeddruk stijgt een paar uur; de hartslag daalt | Studies bij mensen |
+| MC1R | Pigmentcellen in de huid en het tandvlees | Er kunnen donkere plekken komen, vaker bij dagelijks gebruik | Studies bij mensen |
+| Hoe de receptor tot zin in seks leidt | Onbekend | Volgens de productinformatie is het mechanisme onbekend | Niet aangetoond |
+
+</Diagram>
+
+<Cite id="dailymed-vyleesi-label,zhang-2021-mc4r-structures,pfaus-2007-bremelanotide-preclinical,greenfield-2009-mc4r-blood-pressure,spana-2022-bremelanotide-weight,rosen-2004-subcutaneous-pt141-men" />
+
+Bremelanotide werkt waarschijnlijk vooral in de hersenen: bij vrouwen veranderde het de doorbloeding van de vagina bij erotische video’s niet. De receptoren in de hersenen helpen ook de eetlust en de bloeddruk te regelen.<Cite id="dailymed-vyleesi-label,pfaus-2007-bremelanotide-preclinical,diamond-2006-bremelanotide-women" /> Dat kan verklaren waarom het bedoelde effect samengaat met bijwerkingen, zoals misselijkheid, een hogere bloeddruk en minder honger.<Cite id="dailymed-vyleesi-label,greenfield-2009-mc4r-blood-pressure,spana-2022-bremelanotide-weight" />
+
+<InDetail title="Stap voor stap: de keten van effecten en het bewijs">
+
+<Mechanism />
+
+### Waar elke stap op rust
+
+**De receptoren.** Volgens de Amerikaanse productinformatie zet bremelanotide verschillende soorten receptoren aan, zonder voorkeur ("nonselectively"). Van sterk naar zwak: MC1R, MC4R, MC3R, MC5R, MC2R. Bij de gebruikte doses zijn MC1R en MC4R het belangrijkst.<Cite id="dailymed-vyleesi-label" /> <Claim level="in-vitro">Cryo-elektronenmicroscopie liet bremelanotide zien, gebonden aan de MC4-receptor van mensen en zijn G-eiwit, op dezelfde manier als het lichaamseigen alfa-MSH</Claim>.<Cite id="zhang-2021-mc4r-structures" />
+
+**De hersenen, bij dieren.** <Claim level="animal">Bij ratten zetten injecties zenuwcellen aan in de hypothalamus, in een gebied dat met de penis verbonden is</Claim>.<Cite id="molinoff-2003-pt141" /> <Claim level="animal">Vrouwtjesratten die PT-141 kregen, zochten vaker mannetjes op, zonder dat ander seksueel gedrag, hun activiteit of de seksuele beloning veranderde</Claim>.<Cite id="pfaus-2004-female-rat-solicitation" /> Dezelfde onderzoekers zagen het effect toen ze het middel in het mediaal preoptisch gebied van de hypothalamus gaven, maar niet in een ander gebied vlakbij. Ze vermoedden dat het daar werkt doordat er dopamine vrijkomt.<Cite id="pfaus-2007-bremelanotide-preclinical" /> <Claim level="hypothesis">Het idee van dopamine komt uit studies bij ratten en is niet getest bij mensen</Claim>.<Cite id="pfaus-2007-bremelanotide-preclinical" /> <Claim level="animal">Een onafhankelijke studie bij vrouwtjeshamsters vond geen teken dat bremelanotide op het beloningssysteem van de hersenen werkt, en seks werd er niet meer belonend door</Claim>.<Cite id="borland-2025-hamster-bremelanotide" />
+
+**De hersenen, bij mensen.** <Claim level="human-controlled">Bij 31 vrouwen met HSDD veranderde één injectie de reactie van de hersenen op erotische video’s, gemeten met een functionele MRI. In de 24 uur daarna meldden meer vrouwen meer zin in seks dan na placebo</Claim>. Imperial College London leidde de studie, en de licentiehouder betaalde mee.<Cite id="thurston-2022-mc4r-fmri" /> De studie laat zien waar iets verandert, niet hoe die verandering zin in seks geeft.
+
+**Zin in seks.** Het effect op zin in seks is gemeten bij mensen (zie het onderzoek hieronder). Maar de Amerikaanse productinformatie is duidelijk: hoe Vyleesi HSDD bij vrouwen verbetert, is onbekend.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Waarom de bloeddruk stijgt, en de eetlust daalt">
+
+MC4-receptoren in de hersenen sturen ook het sympathisch zenuwstelsel. Dat deel van het zenuwstelsel maakt bloedvaten nauwer en de bloeddruk hoger. <Claim level="human-controlled">Mensen die zijn geboren met een MC4-receptor die niet goed werkt, hadden minder vaak hoge bloeddruk dan mensen met hetzelfde overgewicht (24% tegen 53%). Een ander middel dat MC4R aanzet, verhoogde de bloeddruk in een studie bij 28 vrijwilligers met overgewicht of obesitas</Claim>.<Cite id="greenfield-2009-mc4r-blood-pressure" /> De beoordelaars van de FDA gebruikten dit bewijs bij mensen om de stijging met bremelanotide te verklaren.<Cite id="fda-2019-vyleesi-multidiscipline-review" /> {/* residue-ok: FDA evidence */}
+
+Dezelfde receptorfamilie helpt de eetlust te regelen. <Claim level="human-controlled">In 2 korte fase 1-studies bij vrouwen met obesitas aten de deelnemers minder na herhaalde dagelijkse injecties. In de grotere studie (58 vrouwen) aten ze ongeveer 400 kcal per dag minder, en daalde het gewicht in 16 dagen ongeveer 1,3 kg meer dan met placebo</Claim>.<Cite id="spana-2022-bremelanotide-weight" /> Dit is geen goedgekeurd gebruik. Het kan helpen verklaren waarom minder honger en misselijkheid vaak voorkomen.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Een beetje, bij vrouwen die nog menstrueren. Ze hadden niet vaker bevredigende seks.</Lead>
+
+<KeyNumber title="De zin in seks steeg iets meer dan met placebo" value="+0,35" label="punt meer op een score voor zin in seks van 1,2 tot 6, na 24 weken" who="RECONNECT: 1.202 vrouwen vóór de overgang met HSDD, in 2 fase 3-studies" source="kingsberg-2019-reconnect" level="established" />
+
+<KeyNumber title="Vrouwen hadden niet vaker bevredigende seks" value="0,0" label="gemiddelde verandering in de 2 studies; met placebo was het −0,1 en 0,0" who="RECONNECT: de 2 fase 3-studies, elk met ongeveer 600 vrouwen" source="dailymed-vyleesi-label" level="established" />
+
+<KeyNumber title="Met het middel zeiden meer vrouwen dat het hielp dan met placebo" value="58 op 100" label="zeiden dat het middel hen hielp, tegen 36 op 100 met placebo" who="RECONNECT-studie 301: vrouwen vóór de overgang met HSDD; een responderanalyse van de ontwikkelaar" source="kingsberg-2019-reconnect" level="human-controlled" />
+
+De verschillen waren statistisch duidelijk, maar klein, en het zijn gemiddelden. In de studies stopten veel meer vrouwen met bremelanotide dan met placebo.<Cite id="kingsberg-2019-reconnect,dailymed-vyleesi-label" /> Het is niet goedgekeurd voor mannen of voor vrouwen na de overgang. In de fase 3-studies deden alleen vrouwen vóór de overgang mee.<Cite id="dailymed-vyleesi-label,kingsberg-2019-reconnect" />
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+De tabel noemt elke gepubliceerde primaire studie bij mensen die we vonden, plus het belangrijkste werk bij dieren en in het lab, en één analyse van producten die in beslag waren genomen. Latere analyses van dezelfde studies staan er niet nog eens in; 2 daarvan noemen we in de tekst.<Cite id="white-2017-bremelanotide-abpm,clayton-2022-bremelanotide-safety" /> Eén studie bij vrouwen ontbreekt, omdat die is teruggetrokken: het tijdschrift kon de methoden en resultaten niet meer controleren.<Cite id="safarinejad-2008-retracted-women-study" />
+
+</InDetail>
+
+<InDetail title="De 2 fase 3-studies in cijfers">
+
+De goedkeuring rust op 2 gelijke, gerandomiseerde, dubbelblinde studies met placebo als vergelijking, RECONNECT genoemd. De ontwikkelaar en de licentiehouder betaalden ze. Er deden 1.267 vrouwen vóór de overgang mee met verworven, gegeneraliseerde HSDD. Van hen kwam 96,6% uit centra in de VS, en 85,6% was wit; ze waren gemiddeld 39 jaar. De vrouwen spoten 24 weken lang bremelanotide of placebo als ze het nodig vonden, vóór seks.<Cite id="kingsberg-2019-reconnect" /> De meesten gebruikten het 2 of 3 keer per maand.<Cite id="dailymed-vyleesi-label" /> {/* residue-ok: study population */}
+
+De 2 hoofduitkomsten waren vragenlijsten:
+
+- **Zin in seks.** Het deel over verlangen van de Female Sexual Function Index (2 vragen, score van 1,2 tot 6). <Claim level="established">De zin in seks steeg 0,30 en 0,42 punt meer dan met placebo in de 2 studies (beide studies samen: 0,35)</Claim>.<Cite id="kingsberg-2019-reconnect" /> De mediaan begon bij 1,8; de mediane verbetering was 0,6, tegen 0 met placebo.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+- **Last.** Vraag 13 van de FSDS-DAO: hoe vaak weinig zin in seks de vrouw dwarszat (0 nooit, 4 altijd). <Claim level="established">De last daalde 0,37 en 0,29 punt meer dan met placebo (beide studies samen: 0,33)</Claim>.<Cite id="kingsberg-2019-reconnect" />
+
+De belangrijkste secundaire uitkomst, het aantal bevredigende seksuele contacten, veranderde niet: gemiddeld 0,0 met bremelanotide, tegen −0,1 en 0,0 met placebo.<Cite id="dailymed-vyleesi-label,kingsberg-2019-reconnect" /> Vóór de studies verwachtte de ontwikkelaar, op basis van berekeningen voor het aantal deelnemers, een verschil in zin in seks van ongeveer 1,0 punt. Het resultaat was ongeveer een derde daarvan.<Cite id="kingsberg-2019-reconnect" />
+
+Meer vrouwen stopten vroeg met bremelanotide: 40% tegen 13% in de ene studie, en 39% tegen 25% in de andere.<Cite id="dailymed-vyleesi-label" /> In totaal stopte 18% door bijwerkingen, tegen 2% met placebo.<Cite id="dailymed-vyleesi-label" />
+
+### Na 24 weken
+
+Van de 856 vrouwen die de studies afmaakten, gingen er 684 door in een open vervolgstudie van maximaal 52 weken, zonder placebo. Daarvan maakten 272 die af. De scores bleven beter dan aan het begin. De auteurs noemen zelf de grootste zwakte: alleen vrouwen die de eerste 24 weken hadden afgemaakt, konden meedoen. Vrouwen die waren gestopt, vaak door bijwerkingen, vielen dus af.<Cite id="simon-2019-reconnect-extension" />
+
+</InDetail>
+
+<InDetail title="Hoe groot is het effect? Twee lezingen van dezelfde studies">
+
+De auteurs van de studies melden effectgroottes van 0,39 voor zin in seks en 0,27 voor last, vergeleken met placebo. Volgens de gangbare vuistregel is dat klein tot middelgroot (0,2 klein, 0,5 middelgroot). Ze wijzen erop dat flibanserin ongeveer dezelfde effectgroottes had. In een responderanalyse met een vast ijkpunt meldde 58% van de vrouwen met bremelanotide en 36% met placebo een belangrijk voordeel van het studiemiddel. In een latere, verkennende post-hocanalyse steeg het deel van de seksuele contacten dat vrouwen bevredigend vonden meer met bremelanotide (25,0% tegen 9,8%), al steeg het aantal bevredigende contacten niet.<Cite id="kingsberg-2019-reconnect" />
+
+{/* residue-ok: FDA evidence */}
+Onafhankelijke onderzoekers lezen dezelfde resultaten kritischer. Een heranalyse van de gegevens uit de aanvraag bij de FDA vond ongeveer dezelfde gemiddelden. Maar de onderzoekers benadrukten dat stoppen door bijwerkingen veel vaker voorkwam met bremelanotide (oddsratio 11,98). Ook maakten vrouwen met placebo de studie vaker af en gingen ze vaker door in het vervolg. En de meeste vooraf geplande uitkomsten stonden niet in het hoofdartikel.<Cite id="spielmans-2021-reconnect-reanalysis" /> De auteurs van de studies wijzen die heranalyse af.<Cite id="kingsberg-2021-reply-spielmans" /> Een overzichtsartikel in een geneesmiddelenbulletin schreef dat bremelanotide in de studies niet tot meer bevredigende seksuele contacten leidde. Het vroeg zich af of de goedkeuring rustte op eerdere besluiten, en niet op een voordeel voor de patiënt.<Cite id="mintzes-2021-hsdd-regulatory-precedent" />
+
+Beide lezingen zijn het eens over de cijfers. Ze verschillen over de vraag of een kleine stijging van een score voor zin in seks, zonder meer bevredigende seks, de bijwerkingen waard is. Die afweging kan elke vrouw met haar arts bespreken, met de cijfers erbij.
+
+</InDetail>
+
+<InDetail title="Kleinere studies bij vrouwen">
+
+- **De eerste studie.** <Claim level="human-controlled">Bij 18 vrouwen met een seksuele opwindingsstoornis meldden na één dosis via de neus meer vrouwen matig of veel zin in seks dan na placebo</Claim>; de doorbloeding van de vagina bij erotische video’s veranderde niet.<Cite id="diamond-2006-bremelanotide-women" />
+- **De studie om de dosis te bepalen.** <Claim level="human-controlled">Bij 397 vrouwen vóór de overgang steeg het aantal bevredigende seksuele contacten in 12 weken met 0,7 per maand bij de 2 hogere doses, tegen 0,2 met placebo</Claim>, met betere scores op de vragenlijsten. Die stijging van het aantal bevredigende contacten kwam in de grotere fase 3-studies niet terug.<Cite id="clayton-2016-bremelanotide-phase-2b,dailymed-vyleesi-label" />
+- **Hersenscans.** Bij 31 vrouwen nam de zin in seks in de 24 uur na één injectie vaker toe dan na placebo.<Cite id="thurston-2022-mc4r-fmri" />
+
+</InDetail>
+
+<InDetail title="Mannen: erecties, maar geen goedkeuring">
+
+Bremelanotide werd eerst getest bij mannen. <Claim level="human-controlled">Als neusspray gaf het meer erecties dan placebo bij gezonde mannen en bij mannen met lichte tot matige erectieproblemen</Claim>.<Cite id="diamond-2004-intranasal-pt141-men" /> <Claim level="human-limited">Onder de huid ingespoten gaf het erecties bij gezonde mannen zonder erotische beelden, en bij mannen bij wie Viagra niet goed werkte</Claim>.<Cite id="rosen-2004-subcutaneous-pt141-men" /> Bij 19 mannen gaf een lage dosis via de neus samen met sildenafil in de kliniek sterkere erecties dan sildenafil alleen.<Cite id="diamond-2005-pt141-sildenafil" />
+
+De enige grote studie bij mannen, bij 342 mannen bij wie sildenafil niet hielp, meldde een goed resultaat bij 33,5%, tegen 8,5% met placebo.<Cite id="safarinejad-2008-bremelanotide-men" /> In 2023 publiceerde het tijdschrift er een expression of concern over: een waarschuwing dat er ernstige twijfel is over het artikel. Een studie met bremelanotide bij vrouwen van dezelfde auteur is teruggetrokken.<Cite id="safarinejad-2023-expression-of-concern,safarinejad-2008-retracted-women-study" /> Er is nu geen studie met bremelanotide tegen erectieproblemen geregistreerd.<Cite id="ctgov-bremelanotide-search-2026-10-22" /> Volgens de Amerikaanse productinformatie is het niet voor mannen.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Wie het onderzoek betaalde">
+
+Elke studie voor de goedkeuring, en het eerdere werk om de dosis bij vrouwen te bepalen, werd opgezet, uitgevoerd en betaald door de ontwikkelaar, Palatin, of de licentiehouder, AMAG. Verschillende auteurs werkten voor het bedrijf of gaven het advies.<Cite id="kingsberg-2019-reconnect,clayton-2016-bremelanotide-phase-2b,simon-2019-reconnect-extension" /> Bij een goedgekeurd medicijn is dat normaal, en het maakt de cijfers niet onwaar. Maar de ontwikkelaar koos de uitkomsten, en hoe die werden gemeld.
+
+Er is ook onafhankelijk werk, maar weinig: een receptorstructuur van Chinese universiteiten, een studie bij hamsters van de Universiteit van Minnesota die geen beloningseffect vond, een studie met hersenscans onder leiding van Imperial College London (mee betaald door AMAG), en een kritische heranalyse.<Cite id="zhang-2021-mc4r-structures,borland-2025-hamster-bremelanotide,thurston-2022-mc4r-fmri,spielmans-2021-reconnect-reanalysis" /> Over de enige onafhankelijke studie bij mannen heeft het tijdschrift een expression of concern gepubliceerd.<Cite id="safarinejad-2023-expression-of-concern" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat weten we nog niet?">Hoe het werkt, wat jarenlang gebruik doet, en de effecten bij zwangerschap, na de overgang en bij mannen.</Lead>
+
+<TimeStrip title="Studies met placebo duurden 24 weken. Wat jarenlang gebruik doet, is onbekend." detail="Gebruik waarover onderzoek bestaat, gerekend vanaf het begin van de behandeling." min={0} max={6} step={1} axis="Jaren gebruik" source="kingsberg-2019-reconnect,simon-2019-reconnect-extension" rows={[
+  { label: "Studies met placebo (fase 3)", spans: [{ from: 0, to: 0.46, text: "24 weken" }] },
+  { label: "Open vervolgstudie, zonder placebo", spans: [{ from: 0.46, to: 1.46, text: "tot 52 weken extra; ongeveer 4 op de 10 maakten die af" }] },
+  { label: "Langer gebruik", spans: [{ from: 1.5, to: 6, text: "niet onderzocht", unknown: true }] },
+]} />
+
+<InDetail title="Alle open vragen, met hun bronnen">
+
+Op 22 oktober 2026 is dit onbekend:
+
+- **Hoe het werkt.** Volgens de productinformatie is onbekend hoe het bij HSDD werkt.<Cite id="dailymed-vyleesi-label" />
+- **Gebruik op lange termijn.** Het langste gebruik met placebo als vergelijking was 24 weken. De open vervolgstudie had geen placebo, en de meeste deelnemers vielen af.<Cite id="kingsberg-2019-reconnect,simon-2019-reconnect-extension" />
+- **Zwangerschap.** Bij dieren gaf het schade aan het ongeboren kind bij de geteste doses. In de studies werden te weinig vrouwen zwanger om het risico te beoordelen. De FDA eiste een zwangerschapsregister en een tweede studie naar zwangerschap, die in mei 2030 klaar moet zijn.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-approval-letter" /> {/* residue-ok: FDA evidence */}
+- **Borstvoeding.** Het is niet bekend of het in de moedermelk komt. De FDA eiste een studie naar moedermelk. Een studie bij 10 vrouwen die borstvoeding gaven, was in november 2025 klaar. Op 22 oktober 2026 stonden er nog geen resultaten online.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-approval-letter,ctgov-bremelanotide-search-2026-10-22" /> {/* residue-ok: FDA evidence */}
+- **Vrouwen na de overgang.** Niet goedgekeurd voor hen. Volgens de FDA is de veiligheid in deze groep niet vastgesteld, wisselde de hoeveelheid in het bloed meer, en is hun risico op hart- en vaatziekten al hoger.<Cite id="fda-2019-vyleesi-multidiscipline-review,dailymed-vyleesi-label" /> {/* residue-ok: FDA evidence */}
+- **Mannen.** Geen studie voor goedkeuring. Over de enige grote studie heeft het tijdschrift een expression of concern gepubliceerd.<Cite id="dailymed-vyleesi-label,safarinejad-2023-expression-of-concern" />
+- **Moedervlekken en melanoom.** De beoordelaars van de FDA zagen geen teken van meer afwijkende moedervlekken. Maar ze schreven dat de studies te kort waren om het zeker te weten.<Cite id="fda-2019-vyleesi-multidiscipline-review" /> {/* residue-ok: FDA evidence */}
+- **Donkere plekken.** Of ze weer verdwijnen: de FDA zag ze bij ongeveer de helft van de gevallen lichter worden in de periode van nacontrole.<Cite id="fda-2019-vyleesi-multidiscipline-review" /> {/* residue-ok: FDA evidence */}
+- **Studies zonder gepubliceerde resultaten.** Een fase 3-studie bij 193 vrouwen in Zuid-Korea was in 2023 klaar. Een studie naar obesitas, samen met tirzepatide, staat als actief maar werft geen deelnemers meer. Van geen van beide staan resultaten op ClinicalTrials.gov.<Cite id="ctgov-bremelanotide-search-2026-10-22" /> Twee studies van de Universiteit van Sydney, geregistreerd in 2015, gaven mannelijke vrijwilligers één injectie PT-141 om te onderzoeken hoe mensen anderen begrijpen (sociale cognitie). We vonden geen gepubliceerde resultaten.<Cite id="anzctr-actrn12615001033538,anzctr-actrn12615001059550" />
+- **Wat er in online producten zit.** Eén forensische analyse vond bremelanotide in monsters die in beslag waren genomen. We vonden geen gepubliceerde studie die de hoeveelheid, de zuiverheid of de steriliteit mat van producten met de naam PT-141.<Cite id="mestria-2021-seized-melanotan-bremelanotide" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+{/* residue-ok: world context */}
+<Lead question="Is het legaal in Nederland?">Niet goedgekeurd in Nederland of de EU. Wel in de VS. Onduidelijk in de sport.</Lead>
+
+<Compare title="Niet goedgekeurd in Nederland of de EU. Er is alleen een smalle uitzondering voor één patiënt." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026. Over de sport: zie hieronder.">
+
+| | Goedgekeurd als medicijn? | Mag iemand een product “alleen voor onderzoek” leveren? | Is er een legale weg? |
+|---|---|---|---|
+| Nederland | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met bremelanotide in zijn register<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> De Geneesmiddelenwet verbiedt om een geneesmiddel zonder handelsvergunning te verkopen, te leveren of in te voeren<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="yes" /> Alleen een smalle: een artsenverklaring, waarna de Inspectie Gezondheidszorg en Jeugd (IGJ) een ontheffing kan geven of weigeren<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> |
+| Europese Unie | <Verdict is="no" /> Het EMA heeft geen dossier, en er ligt geen aanvraag<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> | <Verdict is="no" /> Zonder handelsvergunning mag een geneesmiddel in geen enkel EU-land op de markt komen<Cite id="eu-directive-2001-83" /> | <Verdict is="no" /> Geen weg voor de hele EU; een uitzondering voor één patiënt regelt elk land zelf<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+<InDetail title="Status in Nederland en de EU, en in de sport">
+
+<RegulatoryTable />
+
+### Sport (WADA)
+
+Bremelanotide staat niet op de dopinglijst van 2026, en ook niet op de lijst van 2027, die op 1 januari 2027 ingaat. Het staat ook niet in de monitoringprogramma’s van 2026 en 2027.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2026-monitoring-program,wada-2027-monitoring-program" /> Groep S0 verbiedt stoffen die geen overheidsinstantie voor gezondheid heeft goedgekeurd voor gebruik bij mensen. De FDA heeft bremelanotide goedgekeurd, dus S0 geldt er niet voor.<Cite id="wada-2027-list-en" /> {/* residue-ok: world context */} Maar volgens het Wereld Anti-Doping Agentschap (WADA) kan een peptide dat niet met naam op de lijst staat, ook onder een andere groep vallen. We vonden geen uitspraak van WADA of van een nationale antidopingorganisatie over bremelanotide. De status is dus onduidelijk.<Cite id="wada-2027-list-explanatory-note" /> Ben je sporter? Vraag het dan eerst aan de Dopingautoriteit.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Als sporter ben je verantwoordelijk voor alles wat in je lichaam zit. Een product dat niet is wat het etiket zegt, kan dus toch een positieve test geven.<Cite id="wada-code-2027" /> Onbekende monsters die in Italië in beslag waren genomen, bleken bremelanotide of het verwante melanotan II. Melanotan II is volgens onze lezing altijd verboden, onder S0.<Cite id="mestria-2021-seized-melanotan-bremelanotide,wada-2027-list-en" /> Zie [sport en doping](/nl/legal/sport-and-doping/) en [melanotan II](/nl/compounds/melanotan-ii/).
+
+</InDetail>
+
+<InDetail title="Nederland en de EU">
+
+### Europese Unie
+
+Het EMA houdt een lijst bij van de medicijnen die het heeft beoordeeld, ook van aanvragen die zijn geweigerd of ingetrokken. Bremelanotide en Vyleesi staan daar niet in.<Cite id="ema-medicines-json" /> Ook op de lijst van aanvragen die het EMA in oktober 2026 beoordeelde, staat het niet.<Cite id="ema-under-evaluation-2026-10" /> Voor zover het EMA dat publiceert, heeft dus geen bedrijf een vergunning voor de EU aangevraagd. Zonder handelsvergunning mag een geneesmiddel in geen enkel EU-land op de markt komen. Een land mag wel een smalle uitzondering maken voor één patiënt, op verzoek van een arts.<Cite id="eu-directive-2001-83" /> Zie [de EU](/nl/legal/eu/).
+
+### Nederland
+
+Het CBG heeft geen product met bremelanotide of Vyleesi in zijn register (gecontroleerd op 27 oktober 2026).<Cite id="cbg-gib-search-status-2026-10-27" /> Een geneesmiddel zonder handelsvergunning mag niemand verkopen, leveren of invoeren, op een paar smalle uitzonderingen na.<Cite id="nl-gmw-art-40-handelsvergunning" />
+
+Eén uitzondering is de artsenverklaring. De arts verklaart dat de patiënt om medische redenen niet kan worden behandeld met medicijnen die in Nederland zijn goedgekeurd, en neemt de verantwoordelijkheid. Een apotheek, groothandel of fabrikant in Nederland vraagt dan de IGJ om een ontheffing. Jij kunt die niet zelf aanvragen. De IGJ heeft daar 8 weken voor, en kan nee zeggen.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17,igj-qa-zonder-handelsvergunning" /> Voor een medicijn dat in een ander land is goedgekeurd, vraagt de IGJ de officiële productinformatie uit dat land. De IGJ is terughoudend: de weg is voor één patiënt "in uiterste gevallen", en niet bedoeld om de regel van de handelsvergunning te omzeilen. Een ontheffing betekent ook niet vanzelf dat je zorgverzekeraar het vergoedt.<Cite id="igj-qa-zonder-handelsvergunning" />
+
+Voor compassionate use (in de wet: "gebruik in schrijnende gevallen") moet er een aanvraag voor een handelsvergunning liggen, of moet er nog onderzoek lopen. Alleen een fabrikant kan zo'n programma aanvragen. Op de lijst van het CBG staat geen programma met bremelanotide.<Cite id="cbg-compassionate-use-criteria,cbg-compassionate-use-list" /> Off-label voorschrijven gaat over een medicijn dat hier al is goedgekeurd, voor een ander gebruik dan in de bijsluiter staat.<Cite id="nl-gmw-art-68-off-label" />
+
+Zelf invoeren mag niet. De Geneesmiddelenwet verbiedt om een geneesmiddel zonder handelsvergunning in te voeren of op een andere manier Nederland binnen te brengen. Dat verbod noemt geen uitzondering voor eigen gebruik. De regel voor reizigers die hun eigen medicijnen meenemen, geldt ook niet voor een pakket.<Cite id="nl-gmw-art-40-handelsvergunning,nl-rbdha-2019-4817-postzending-eigen-gebruik,douane-invoer-geneesmiddelen-2026" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren) en [Nederland](/nl/legal/nl/).
+
+</InDetail>
+
+{/* residue-ok: world context */}
+<InDetail title="De goedkeuring in de VS">
+
+{/* residue-ok: world context */}
+De FDA keurde Vyleesi op 21 juni 2019 goed, zonder adviescommissie.<Cite id="fda-drugsatfda-vyleesi,fda-2019-vyleesi-approval-letter" /> Tijdens de beoordeling vroeg de FDA om een aparte studie naar de bloeddruk, met metingen de klok rond. De termijn voor de beoordeling schoof daardoor 3 maanden op.<Cite id="fda-2019-vyleesi-multidiscipline-review,fda-2019-vyleesi-approval-letter" /> Bij de goedkeuring eiste de FDA nog 3 studies: een zwangerschapsregister, een studie naar zwangerschap met gegevens van zorgverzekeraars (allebei klaar in 2030), en een studie naar moedermelk. De FDA vroeg ook 3 jaar lang om regelmatige rapporten over schade aan de lever.<Cite id="fda-2019-vyleesi-approval-letter" />
+
+{/* residue-ok: world context */}
+Op 24 augustus 2026 stuurde de FDA een waarschuwingsbrief aan een online verkoper van onder meer PT-141 (bremelanotide). De brief zegt dat zulke producten niet-goedgekeurde nieuwe geneesmiddelen zijn, ook als er “alleen voor onderzoek” (“research use only”) op staat.<Cite id="fda-warning-letters-index" />
+
+{/* residue-ok: world context */}
+Bremelanotide hoorde niet bij de 7 peptiden die de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) op 23 en 24 juli 2026 besprak. Over die vergadering lees je meer op de [pagina over BPC-157](/nl/compounds/bpc-157/).<Cite id="fda-pcac-2026-07-meeting" /> Het verwante melanotan II staat op de lijst voor de volgende vergadering, gepland vóór eind februari 2027 (zie [melanotan II](/nl/compounds/melanotan-ii/)).<Cite id="fda-pcac-2027-early-announcement" />
+
+{/* residue-ok: world context */}
+De Amerikaanse goedkeuring geldt alleen in de VS. Ze maakt van bremelanotide geen goedgekeurd medicijn in Nederland of de EU.<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" />
+
+</InDetail>
+
+<InDetail title="Twee kanten van het verschil met de VS">
+
+Het verschil heeft gevolgen voor patiënten. Een vrouw in Nederland met dezelfde diagnose kan bremelanotide niet op een gewoon recept krijgen. Sommige vrouwen zoeken dan misschien een product dat geen medicijnautoriteit heeft gecontroleerd; of dat gebeurt, en hoe vaak, is niet gemeten. De andere kant is ook echt: het voordeel is klein, door bijwerkingen stopten veel vrouwen, en op de lijsten van het EMA staat geen aanvraag om die afweging te maken.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,ema-under-evaluation-2026-10,kingsberg-2019-reconnect,dailymed-vyleesi-label" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Veel mensen worden misselijk. Na elke dosis stijgt de bloeddruk een paar uur. De huid kan donkerder worden.</Lead>
+
+<IconArray title="Misselijkheid, een rood gezicht en hoofdpijn kwamen veel vaker voor dan met placebo." detail="Mensen op de 100 met elk probleem in de 2 fase 3-studies van 24 weken (627 vrouwen met bremelanotide, 620 met placebo), uit de Amerikaanse productinformatie." a="Bremelanotide" b="Placebo" source="dailymed-vyleesi-label" level="human-controlled" rows={[
+  { label: "Misselijkheid", a: 40.0, b: 1.3 },
+  { label: "Rood en warm gezicht (flushing)", a: 20.3, b: 0.3 },
+  { label: "Reactie op de prikplek", a: 13.2, b: 8.4 },
+  { label: "Hoofdpijn", a: 11.3, b: 1.9 },
+]} />
+
+Tenzij we iets anders zeggen, komen de risico’s op deze pagina uit de Amerikaanse productinformatie. Die rust op de studies bij vrouwen vóór de overgang, die het een paar keer per maand gebruikten. Vrouwen met een hartziekte of met hoge bloeddruk die niet onder controle is, deden niet mee.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-multidiscipline-review" /> Wie het vaker gebruikt, of wie tot een andere groep hoort, heeft misschien andere risico’s.
+
+<InDetail title="Bloeddruk en hartslag">
+
+Na elke dosis gaat de bloeddruk een tijd omhoog en de hartslag omlaag. Volgens de productinformatie stijgt de bovendruk (systolisch) met maximaal 6 mmHg en de onderdruk (diastolisch) met maximaal 3 mmHg, het hoogst 2 tot 4 uur na de dosis. De hartslag daalde met maximaal 5 slagen per minuut. Meestal was alles binnen 12 uur weer normaal. Bij één dosis per dag, met 24 uur ertussen, tot 16 dagen lang, stapelde de stijging zich niet op van dag tot dag.<Cite id="dailymed-vyleesi-label" /> <Claim level="human-controlled">Bij 397 vrouwen die 24 uur werden gemeten, was de stijging het grootst in de eerste 4 uur (ongeveer 3 mmHg)</Claim>.<Cite id="white-2017-bremelanotide-abpm" />
+
+Waarom dat telt: een gemiddelde van een paar mmHg lijkt klein, maar een gemiddelde verbergt mensen bij wie de stijging groter is. In de studie om de dosis te bepalen, bleef de bovendruk na bremelanotide 5 keer langer dan 15 minuten boven 170 mmHg, en na placebo nooit. Ongeveer 7 op de 100 vrouwen moesten stoppen door hun bloeddruk, met placebo ongeveer even vaak als met bremelanotide.<Cite id="white-2017-bremelanotide-abpm" /> Daarom verbiedt de productinformatie het bij hoge bloeddruk die niet onder controle is, en bij bekende hart- en vaatziekte. Ze raadt het af bij een hoog risico op hart- en vaatziekten. En ze vraagt artsen om het risico op hart- en vaatziekten en de bloeddruk na te gaan, vóór en tijdens het gebruik.<Cite id="dailymed-vyleesi-label" /> {/* residue-ok: FDA evidence */} Voor het goedgekeurde gebruik, bij vrouwen met meestal een laag risico op hart- en vaatziekten, verwachtten de beoordelaars van de FDA niet dat deze korte stijgingen het risico op hart- en vaatziekten merkbaar verhogen.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+{/* residue-ok: FDA evidence */}
+Doses kort na elkaar kunnen bij elkaar optellen. Mede daarom staat de productinformatie maar 1 dosis per 24 uur toe. In de studies gebruikte 3,9% van de vrouwen het soms binnen 12 uur opnieuw.<Cite id="dailymed-vyleesi-label,fda-2019-vyleesi-multidiscipline-review" /> Toen de FDA daarnaar vroeg, liet een studie bij mensen met medicijnen tegen hoge bloeddruk een vergelijkbare stijging zien. De FDA noemde de resultaten niet sluitend.<Cite id="fda-2019-vyleesi-multidiscipline-review" />
+
+</InDetail>
+
+<InDetail title="Misselijkheid, een rood gezicht en hoofdpijn">
+
+**Misselijkheid** kwam voor bij 40% van de vrouwen met bremelanotide, tegen 1% met placebo. Die begon meestal binnen een uur en duurde ongeveer 2 uur. Het kwam het meest voor na de eerste dosis (21%), en veel minder na latere doses (ongeveer 3%). Van de vrouwen gebruikte 13% een middel tegen misselijkheid, en 8% stopte erdoor.<Cite id="dailymed-vyleesi-label" /> Vooraf ondansetron gebruiken (een middel tegen misselijkheid) hielp niet, in een studie bij 228 gezonde vrouwen.<Cite id="dailymed-vyleesi-label" />
+
+**Een rood en warm gezicht** (flushing) kwam voor bij 20% (minder dan 1% met placebo), en **hoofdpijn** bij 11% (2% met placebo). Eén keer was de hoofdpijn zo erg dat iemand in het ziekenhuis werd opgenomen.<Cite id="dailymed-vyleesi-label" /> Ernstige bijwerkingen werden in totaal gemeld bij 1,1%, tegen 0,5% met placebo.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Donkere plekken op de huid en het tandvlees">
+
+MC1R op pigmentcellen zorgt dat die cellen meer pigment maken.<Cite id="dailymed-vyleesi-label" /> <Claim level="established">Donkere plekken (hyperpigmentatie) op het gezicht, het tandvlees (gingiva) of de borsten kwamen in de fase 3-studies voor bij 1% van de vrouwen, en bij niemand met placebo</Claim>. <Claim level="human-limited">In een andere studie kreeg 38% donkere plekken na 8 dagen dagelijks gebruik, en nog eens 14% na 8 dagen meer</Claim>. Mensen met een donkere huid kregen ze vaker. Niet bij iedereen werd bevestigd dat de plekken na het stoppen verdwenen.<Cite id="dailymed-vyleesi-label" /> De FDA zag de plekken bij ongeveer de helft van de gevallen lichter worden in de periode van nacontrole.<Cite id="fda-2019-vyleesi-multidiscipline-review" /> {/* residue-ok: FDA evidence */}
+
+De productinformatie waarschuwt dat donkere plekken waarschijnlijker worden bij dagelijks gebruik. Dat is een van de redenen waarom ze afraadt om het vaker dan 8 keer per maand te gebruiken.<Cite id="dailymed-vyleesi-label" /> Bij melanotan II, een naast familielid dat wordt gebruikt om bruin te worden, beschrijven casusbeschrijvingen nieuwe of veranderende moedervlekken, en een paar ook melanoom. Of deze peptiden melanoom veroorzaken, is niet aangetoond.<Cite id="habbema-2017-melanotan-review,cardones-2009-eruptive-nevi" />
+
+</InDetail>
+
+<InDetail title="Lever, zwangerschap en andere risico’s">
+
+- **Lever.** Eén vrouw in de open vervolgstudie kreeg een acute leverontsteking (acute hepatitis) na 10 doses in een jaar, met leverenzymen van meer dan 40 keer de bovengrens van normaal. Vier maanden na het stoppen waren haar levertests weer normaal. Er werd geen andere oorzaak gevonden, dus een rol van bremelanotide kon niet worden uitgesloten. In de studies was er verder geen teken van schade aan de lever.<Cite id="dailymed-vyleesi-label" />
+- **Zwangerschap.** <Claim level="animal">Bij zwangere honden gingen bij alle geteste doses meer embryo’s verloren; de laagste dosis gaf ongeveer 16 keer de blootstelling bij mensen. Bij muizen groeiden de jongen langzamer</Claim>. Bij de dieren werd geen dosis gevonden zonder schade. De productinformatie raadt goede anticonceptie aan, en stoppen als je denkt dat je zwanger bent. Van 7 zwangerschappen in de studies eindigden er 5 in een voldragen geboorte en 1 in een miskraam; van 1 is de afloop niet bekend.<Cite id="dailymed-vyleesi-label" />
+- **Nier- en leverziekte.** Bij een ernstige nierziekte was de hoeveelheid in het bloed ongeveer 2 keer zo hoog, bij een matige leverziekte 1,7 keer. De productinformatie raadt voorzichtigheid aan bij een ernstige nier- of leverziekte, omdat bijwerkingen zoals misselijkheid dan sterker kunnen zijn.<Cite id="dailymed-vyleesi-label" />
+- **Kanker en genen.** Studies van 2 jaar bij ratten en muizen vonden niet meer tumoren, en labtests op schade aan genen waren negatief. Bij ratten was de blootstelling wel maar ongeveer even hoog als bij mensen.<Cite id="dailymed-vyleesi-label" />
+
+</InDetail>
+
+<InDetail title="Wisselwerkingen">
+
+- **Naltrexon als tablet** (bij afhankelijkheid van alcohol of opioïden). Bremelanotide kan de hoeveelheid naltrexon in het bloed sterk verlagen, waardoor de behandeling kan mislukken. Volgens de productinformatie moet je die combinatie vermijden.<Cite id="dailymed-vyleesi-label" />
+- **Andere tabletten.** Bremelanotide kan de maag trager maken. Daardoor kunnen andere medicijnen die je via de mond inneemt later of minder goed worden opgenomen. De productinformatie raadt het af bij medicijnen die een bepaalde hoeveelheid in het bloed nodig hebben om te werken, zoals antibiotica. Ze noemt ook een tragere opname van indometacine, een pijnstiller.<Cite id="dailymed-vyleesi-label,clayton-2022-bremelanotide-safety" />
+- **Alcohol.** Bij 24 gezonde volwassenen veranderde alcohol de hoeveelheid bremelanotide in het bloed niet. Een daling van de bloeddruk bij het opstaan kwam met de combinatie ongeveer even vaak voor als met alcohol alleen. Hoofdpijn kwam vaker voor dan met bremelanotide alleen, maar ongeveer even vaak als met alcohol alleen.<Cite id="clayton-2017-bremelanotide-alcohol,dailymed-vyleesi-label" />
+- **Medicijnen tegen erectieproblemen (PDE5-remmers zoals sildenafil).** Samen onderzocht bij maar 19 mannen, elk één sessie.<Cite id="diamond-2005-pt141-sildenafil" /> Regelmatig gebruik samen is niet onderzocht.
+
+</InDetail>
+
+<InDetail title="Risico’s voor mannen die het buiten de productinformatie gebruiken">
+
+Sommige lezers zijn mannen met een product dat PT-141 heet. Bremelanotide is niet goedgekeurd voor mannen, en bij mannen alleen kort getest.<Cite id="dailymed-vyleesi-label,diamond-2004-intranasal-pt141-men,rosen-2004-subcutaneous-pt141-men" /> Uit wat bekend is, volgen 3 risico’s:
+
+1. **Een erectie die niet weggaat (priapisme).** <Claim level="human-limited">Het kan erecties geven zonder seksuele prikkel</Claim>.<Cite id="rosen-2004-subcutaneous-pt141-men" /> <Claim level="hypothesis">Samen met een medicijn tegen erectieproblemen, of bij een grote hoeveelheid, kan een erectie te lang duren</Claim>. We vonden geen gepubliceerd geval na bremelanotide. Er zijn wel gevallen gepubliceerd na melanotan II, het naaste familielid; één man moest worden geopereerd.<Cite id="dreyer-2019-melanotan-priapism,mallory-2021-melanotan-priapism" /> Wordt priapisme niet snel behandeld? Dan kan de penis blijvend beschadigd raken. Duurt een erectie langer dan 3 uur? Bel dan direct 112.<Cite id="nhs-priapism" />
+2. **Bloeddruk.** De productinformatie verbiedt het bij een hartziekte of bij hoge bloeddruk die niet onder controle is.<Cite id="dailymed-vyleesi-label" /> De vroege studies met de neusspray wezen erop dat de bloeddruk ook bij mannen steeg. We vonden geen gepubliceerd verslag over de bloeddruk bij mannen die het vaker gebruikten.<Cite id="white-2017-bremelanotide-abpm,fda-2019-vyleesi-multidiscipline-review" /> In een studie kregen 28 vrijwilligers met overgewicht of obesitas een week lang elke dag een ander middel dat MC4R aanzet. Bij de hoogste hoeveelheid die ze verdroegen, steeg hun bloeddruk met ongeveer 9/7 mmHg.<Cite id="greenfield-2009-mc4r-blood-pressure" />
+3. **Het product zelf.** Een neusspray geeft een hoeveelheid die je niet kunt voorspellen: de ontwikkelaar stopte met zijn eigen spray, omdat de opname zo sterk wisselde.<Cite id="white-2017-bremelanotide-abpm,fda-2019-vyleesi-multidiscipline-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Ken je bloeddruk, controleer het product, weet wanneer je stopt. De legale weg heeft de minste onbekenden.</Lead>
+
+{/* residue-ok: world context */}
+Alleen in de VS is bremelanotide een goedgekeurd medicijn (Vyleesi, op recept). In Nederland en de EU is het dat niet. Hier is er alleen de smalle weg van de artsenverklaring, en de IGJ kan die weigeren.<Cite id="dailymed-vyleesi-label,cbg-gib-search-status-2026-10-27,ema-medicines-json,igj-leveren-op-artsenverklaring" /> Deze sectie noemt geen doseringen: de arts die het voorschrijft, bepaalt de dosis. Je huisarts kan wel je bloeddruk en je risico op hart- en vaatziekten nagaan. Die tellen bij dit middel het zwaarst (zie [praten met je arts](/nl/talking-to-your-doctor/)).
+
+De controles hieronder zijn voor elk ander product, zoals een neusspray of flacon met de naam "PT-141".
+
+<ProductCheck extra="Vyleesi is een pen voor één dosis, met een heldere vloeistof. Een flacon met poeder of een neusspray is niet verpakt zoals Vyleesi. Aan de verpakking alleen zie je niet of een product echt is." extraSources="dailymed-vyleesi-label" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp" id="stop-now">
+- **Pijn, druk of een beklemd gevoel op de borst, of pijn die uitstraalt naar de arm, de nek, de kaak of de rug:** misschien een hartaanval (hartinfarct). Bel direct 112.
+- **Plotseling heel erge hoofdpijn, wazig zien, verward zijn, of minder kracht aan één kant van je lichaam:** misschien een gevaarlijk hoge bloeddruk of een beroerte. Bel direct 112.
+- **Een erectie die langer dan 3 uur duurt, of een pijnlijke erectie die niet weggaat:** priapisme. Bel direct 112.
+- **Een dik gezicht, dikke lippen of een dikke keel, of moeilijk ademen:** misschien een zware allergische reactie (anafylaxie). Bel direct 112.
+- **Een gele huid of geel oogwit, of heel donkere plas:** misschien een probleem met de lever. Stop met het product. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Nieuwe donkere plekken op je gezicht, tandvlees of borsten:** stop met het product en maak een afspraak met je huisarts.
+</Callout>
+
+<Cite id="thuisarts-pijn-op-borst,thuisarts-verlamming,thuisarts-hoge-bloeddruk,thuisarts-dikke-ogen-lippen,nhs-chest-pain,nhs-stroke-symptoms,nhs-headaches,medlineplus-malignant-hypertension,nhs-priapism,nhs-anaphylaxis,nhs-jaundice,dailymed-vyleesi-label" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,neurological" />
+
+<InDetail title="Bloeddruk: de belangrijkste controle">
+
+Van een hoge bloeddruk merk je meestal niets. Je weet het dus alleen als je hem meet. Je hebt een hoge bloeddruk als je bovendruk 140 of hoger is; ben je ouder dan 70, dan als die vaak 150 of hoger is. Je huisarts of de praktijkondersteuner kan je bloeddruk meten.<Cite id="thuisarts-hoge-bloeddruk" /> Meet je thuis, op de manier die Thuisarts uitlegt? Dan is je bloeddruk goed als je gemiddelde bovendruk lager is dan 135. Ben je 70 jaar of ouder? Dan is lager dan 145 goed.<Cite id="thuisarts-bloeddruk-thuis-meten" />
+
+Waarom dat hier telt: bremelanotide verhoogt na elke dosis een paar uur de bloeddruk.<Cite id="dailymed-vyleesi-label" /> Is je bloeddruk al hoog, of heb je een hartziekte? Dan komt die stijging daar bovenop. Daarom verbiedt de productinformatie het voor die groepen.<Cite id="dailymed-vyleesi-label" /> Ken je gewone bloeddruk, en laat die vóór en tijdens het gebruik door een arts nagaan. Dat vraagt de productinformatie ook van de arts die het voorschrijft.<Cite id="dailymed-vyleesi-label" /> Zie [controles](/nl/safety/monitoring/).
+
+</InDetail>
+
+<InDetail title="De legale weg, en waarom een “onderzoeksproduct” anders is">
+
+### De legale weg
+
+In Nederland en de EU is geen product met bremelanotide goedgekeurd. Een arts kan het hier dus niet op de gewone manier voorschrijven.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" />
+
+Vindt een arts dat een patiënt het nodig heeft, en dat geen goedgekeurd medicijn kan helpen? Dan kan die een artsenverklaring tekenen. Een apotheek vraagt de IGJ dan om een ontheffing. De IGJ kan die weigeren.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> De IGJ is terughoudend: de weg is bedoeld voor één patiënt in uiterste gevallen. Jij kunt hem niet zelf aanvragen.<Cite id="igj-qa-zonder-handelsvergunning" />
+
+Onze pagina [Legale wegen naar een behandeling](/nl/legal-routes/) legt elke legale weg uit, met de voorwaarden: [een recept](/nl/legal-routes/#recept), [off-label gebruik](/nl/legal-routes/#off-label), [de artsenverklaring](/nl/legal-routes/#artsenverklaring), [een magistrale bereiding](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren). Elke weg heeft strenge voorwaarden. Geen enkele weg maakt van een product met de naam "PT-141" het goedgekeurde medicijn.
+
+### Waarom een "onderzoeksproduct" een ander product is
+
+Het onderzoek op deze pagina gaat over Vyleesi: een bekende stof, gemaakt met een vergunning, in een pen die een vaste hoeveelheid geeft, met productinformatie die wordt bijgehouden.<Cite id="dailymed-vyleesi-label" /> Een spray of flacon die online "PT-141" heet, heeft dezelfde naam, maar geen van die zekerheden. In Nederland mag niemand zo'n product verkopen of leveren.<Cite id="nl-gmw-art-40-handelsvergunning" /> Over websites met designerdrugs schrijven de IGJ en de Nederlandse Voedsel- en Warenautoriteit (NVWA) dat verkopers met teksten als "voor onderzoeksdoeleinden" de wet proberen te omzeilen.<Cite id="igj-2026-04-nps-websites-offline" /> {/* residue-ok: world context */} Ook de FDA schreef aan een verkoper dat zulke producten niet-goedgekeurde nieuwe geneesmiddelen zijn, wat er ook op het etiket staat.<Cite id="fda-warning-letters-index" /> In Italië nam de politie onbekende monsters in beslag. Die bleken bremelanotide of het verwante melanotan II te zijn. Forensische labs stelden dat vast met massaspectrometrie met hoge resolutie, een gespecialiseerde test.<Cite id="mestria-2021-seized-melanotan-bremelanotide" /> Zie [productrisico](/nl/safety/product-risk/) en ["alleen voor onderzoek"](/nl/legal/research-use-only/).
+
+Een neusspray heeft nog een onbekende: hoeveel er in het bloed komt. De ontwikkelaar stopte met zijn eigen spray, omdat de opname per persoon sterk wisselde.<Cite id="white-2017-bremelanotide-abpm,fda-2019-vyleesi-multidiscipline-review" /> Het poeder in een flacon wordt vóór het spuiten opgelost in een vloeistof. Op dat moment kunnen er bacteriën in komen; zie [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Wat er mis kan zijn met een flacon van buiten de apotheek">
+
+De plaat laat 6 dingen zien die mis kunnen zijn met een flacon van buiten de apotheek: van wat erin zit tot wat nooit is getest.
+
+<Infographic id="online-vial-risks" />
+
+</InDetail>
+
+<InDetail title="Wie het niet moet gebruiken, en zinvolle controles">
+
+### Wie het niet moet gebruiken, en waarom
+
+- **Mensen met hoge bloeddruk die niet onder controle is, of met een bekende ziekte van het hart of de bloedvaten**, omdat het na elke dosis de bloeddruk verhoogt. De productinformatie verbiedt het voor hen.<Cite id="dailymed-vyleesi-label" />
+- **Mensen met een hoog risico op hart- en vaatziekten**, om dezelfde reden; de productinformatie raadt het af.<Cite id="dailymed-vyleesi-label" />
+- **Wie zwanger is of zwanger wil worden**, door de bevindingen bij dieren; de productinformatie raadt goede anticonceptie aan.<Cite id="dailymed-vyleesi-label" />
+- **Wie naltrexon als tablet gebruikt bij afhankelijkheid van alcohol of opioïden**, omdat bremelanotide die behandeling kan laten mislukken.<Cite id="dailymed-vyleesi-label" />
+- **Sporters**: het staat niet met naam op de dopinglijst, maar of een andere groep van de lijst het verbiedt, is onduidelijk. Een product dat niet is wat het etiket zegt, kan toch een positieve test geven. Vraag het de Dopingautoriteit.<Cite id="wada-2027-list-en,wada-2027-list-explanatory-note,wada-code-2027,dopingautoriteit-geneesmiddelen-controleren" />
+
+### Controles die zinvol zijn, en waarom
+
+Je huisarts kan je helpen kiezen welke controles bij jou passen:
+
+<Checklist>
+
+- **Je bloeddruk, vóór je begint en af en toe tijdens het gebruik**, omdat die na elke dosis stijgt en de productinformatie erom vraagt.
+- **Je risico op hart- en vaatziekten**, omdat de productinformatie mensen met een hoog risico uitsluit.
+- **Een zwangerschapstest als je zwanger zou kunnen zijn**, door de bevindingen bij dieren.
+- **Je huid en tandvlees**, op nieuwe donkere plekken, omdat die misschien niet verdwijnen.
+- **Levertests als je een gele huid of geel oogwit krijgt**, door het ene geval van leverontsteking.
+
+</Checklist>
+
+<Cite id="dailymed-vyleesi-label,thuisarts-hoge-bloeddruk" />
+
+### Een bijwerking melden
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt: Lareb neemt ook meldingen aan van mensen die illegale medicijnen gebruiken. Lareb deelt je melding niet met je arts of apotheker.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> In België meld je een bijwerking bij het FAGG; zie [onze notities over België](/nl/legal/be/).<Cite id="fagg-melden-bijwerking-patient" />
+
+<JurisdictionCard code="NL" />
+
+</InDetail>
+
+</Section>

@@ -1,0 +1,20 @@
+# EU and Dutch status of melanotan II on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: melanotan-ii
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
+products: []
+compare_with_data_file:
+  - "Status unchanged. as_of 2026-10-22 -> 2026-10-27; add the EMA orphan and under-evaluation sources (EU) and cbg-gib-search-status-2026-10-27 and nl-gmw-art-40-handelsvergunning (NL)."
+  - "Afamelanotide (Scenesse) is a different molecule: it is not a product of this compound and must not go into authorised_products."
+regulatory_notes:
+  EU: "Not authorised in the EU: no record in EMA's medicines data (27 October 2026). Afamelanotide (Scenesse), a different peptide, is authorised in the EU for erythropoietic protoporphyria (since 22 December 2014)."
+  NL: "Not authorised in the Netherlands: no product in the CBG register (27 October 2026). Supplying a medicine without a marketing authorisation is prohibited (Geneesmiddelenwet art. 40)."
+notes: |
+  EMA medicines JSON: 0 hits for melanotan, MT-II, MTII in name, INN or substance; the only melanocortin hits are
+  Scenesse (afamelanotide; Authorised; marketing authorisation 22/12/2014; holder on the EMA record Clinuvel Europe
+  Limited; 'Prevention of phototoxicity in adult patients with erythropoietic protoporphyria (EPP)'; exceptional
+  circumstances; additional monitoring) and Imcivree (setmelanotide). Source for the afamelanotide clause:
+  ema-medicines-json (record) and ema-epar-scenesse (history.yaml). Orphan JSON: afamelanotide designations only.
+  CTIS: 0 for 'melanotan'. Geneesmiddeleninformatiebank: 'melanotan' returns only SCENESSE 16 mg implantaat (EU/1/14/969).

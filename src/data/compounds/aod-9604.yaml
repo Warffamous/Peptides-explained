@@ -51,8 +51,9 @@ evidence:
   # Short trials in about 900 people, reported only as a company summary without numbers per group.
   safety: partial
 regulatory:
-  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-23, sources: [ema-medicines-json, ema-medicines-search, fda-pcac-2024-aod9604-briefing] }
-  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-23, sources: [cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+  # EU and NL rows re-checked 27 October 2026 (research/nl/status/aod-9604.yaml, fact-checked; research/nl-notes/merge.md).
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10, ema-medicines-search, fda-pcac-2024-aod9604-briefing] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
   - { jurisdiction: US, status: not-authorised, as_of: 2026-10-23, sources: [fda-pcac-2024-aod9604-briefing, fda-pcac-2024-12-minutes, fda-category-2-safety-risks, openfda-drugsfda-search-stubs-b-2026-10-23] }
   # UK, CA, AU: merged from research/refocus/status/aod-9604.yaml (fact-checked 24 October 2026). For CA,
   # the Drug Product Database search of 23 October 2026 was confirmed in Health Canada's DPD data extract on

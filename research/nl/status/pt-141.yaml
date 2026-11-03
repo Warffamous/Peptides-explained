@@ -1,0 +1,18 @@
+# EU and Dutch status of PT-141 (bremelanotide) on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: pt-141
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-medicines-search, ema-orphan-designations-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring] }
+products: []
+compare_with_data_file:
+  - "Status unchanged (not-authorised). as_of 2026-10-22 -> 2026-10-27. No EU or Dutch product: authorised_products keeps only the US product Vyleesi, which the Dutch site does not show; category authorised gives the 'only in other countries' answer on Dutch pages."
+  - "Add ema-orphan-designations-json (EU) and cbg-gib-search-status-2026-10-27 (NL). igj-leveren-op-artsenverklaring (route) is a legal-routes source, re-checked by the NL-law research, not here."
+regulatory_notes:
+  EU: "Not authorised in the EU: EMA's records, which include refused and withdrawn applications, have no bremelanotide entry, and none was under evaluation in October 2026."
+  NL: "Not authorised in the Netherlands: no product in the CBG register (27 October 2026). [Route clause from the NL-law research: only through a named-patient exemption (artsenverklaring), which the IGJ can refuse.]"
+notes: |
+  EMA medicines JSON: 0 hits for bremelanotide, PT-141, PT 141, Vyleesi. Orphan JSON: 0. Under-evaluation list of
+  5 October 2026: no bremelanotide and no indication on sexual desire. CTIS: 0 for 'bremelanotide'. Geneesmiddeleninformatiebank:
+  'Geen producten gevonden' for 'bremelanotide' and 'Vyleesi'. World context: FDA-approved as Vyleesi (21 June 2019),
+  from the data file's US row (not re-checked here).

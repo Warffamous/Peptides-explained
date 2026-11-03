@@ -1,0 +1,680 @@
+{
+  "hierarchy-of-evidence": {
+    "term": "hiërarchie van bewijs",
+    "aliases": [
+      "bewijshiërarchie",
+      "bewijspiramide",
+      "piramide van bewijs"
+    ],
+    "definition": "Een rangorde van soorten studies naar hoe goed ze oorzaak en gevolg kunnen laten zien: onderzoek met cellen en dieren onderaan, gerandomiseerde studies en overzichten van zulke studies bovenin.",
+    "category": "evidence",
+    "see_also": [
+      "randomised-controlled-trial",
+      "systematic-review"
+    ]
+  },
+  "observational-study": {
+    "term": "observationeel onderzoek",
+    "aliases": [
+      "observationele studie",
+      "observationele studies",
+      "observationeel bewijs"
+    ],
+    "definition": "Een studie die kijkt wat er gebeurt met mensen die in het gewone leven een behandeling kozen of kregen. Toeval bepaalt niet wie wat krijgt, dus andere verschillen tussen de groepen kunnen de uitkomst verklaren.",
+    "category": "evidence",
+    "see_also": [
+      "confounding",
+      "cohort-study",
+      "randomised-controlled-trial"
+    ]
+  },
+  "case-control-study": {
+    "term": "patiënt-controleonderzoek",
+    "aliases": [
+      "patiënt-controlestudie",
+      "patiënt-controlestudies",
+      "case-controlstudie",
+      "case-controlstudies"
+    ],
+    "definition": "Een studie die begint bij mensen met een ziekte (de patiënten) en hen vergelijkt met vergelijkbare mensen zonder die ziekte (de controles). De onderzoekers kijken terug naar waar beide groepen aan zijn blootgesteld.",
+    "category": "evidence",
+    "see_also": [
+      "observational-study"
+    ]
+  },
+  "systematic-review": {
+    "term": "systematische review",
+    "aliases": [
+      "systematische reviews"
+    ],
+    "definition": "Een overzicht dat met een vooraf vastgelegde methode zoekt naar alle studies over één vraag. Het beoordeelt de kwaliteit van elke studie en vat al het bewijs samen.",
+    "category": "evidence",
+    "see_also": [
+      "meta-analysis",
+      "narrative-review"
+    ]
+  },
+  "meta-analysis": {
+    "term": "meta-analyse",
+    "aliases": [
+      "meta-analyses",
+      "gepoolde analyse"
+    ],
+    "definition": "Een berekening die de uitkomsten van meerdere studies samenvoegt tot één schatting. Die schatting is maar zo goed als de studies die erin gaan.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "narrative-review": {
+    "term": "overzichtsartikel",
+    "aliases": [
+      "overzichtsartikelen",
+      "narratieve review",
+      "narratieve reviews"
+    ],
+    "definition": "Een overzicht waarin de auteurs zelf kiezen welke studies ze bespreken, zonder vaste zoekmethode. Handig als overzicht, maar de keuze van de auteurs kan het beeld kleuren.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "umbrella-review": {
+    "term": "umbrella review",
+    "aliases": [
+      "umbrella reviews"
+    ],
+    "definition": "Een overzicht van systematische reviews: het verzamelt veel reviews over verwante vragen en vergelijkt wat ze vonden.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "control-group": {
+    "term": "controlegroep",
+    "aliases": [
+      "controlegroepen",
+      "vergelijkingsgroep",
+      "vergelijkingsgroepen"
+    ],
+    "definition": "De groep in een studie die de geteste behandeling niet krijgt, maar een placebo, een andere behandeling of niets. Zonder die groep weet je niet wat er ook zonder de behandeling was gebeurd.",
+    "category": "evidence",
+    "see_also": [
+      "placebo",
+      "randomisation"
+    ]
+  },
+  "randomisation": {
+    "term": "randomisatie",
+    "aliases": [
+      "randomiseren",
+      "gerandomiseerd",
+      "gerandomiseerde",
+      "door loting ingedeeld"
+    ],
+    "definition": "Het toeval laten bepalen wie de behandeling krijgt en wie niet, zoals met het opgooien van een muntje. Dan lijken de groepen meestal op elkaar in alles behalve de behandeling, ook in dingen die niemand meet. Hoe groter de groepen, hoe beter dat werkt.",
+    "category": "evidence",
+    "see_also": [
+      "control-group",
+      "allocation-concealment"
+    ]
+  },
+  "allocation-concealment": {
+    "term": "verborgen toewijzing",
+    "aliases": [
+      "allocation concealment"
+    ],
+    "definition": "De volgende indeling geheimhouden voor de onderzoekers tot een deelnemer meedoet. Zo kunnen ze bepaalde mensen of dieren niet in één groep sturen.",
+    "category": "evidence",
+    "see_also": [
+      "randomisation"
+    ]
+  },
+  "blinding": {
+    "term": "blindering",
+    "aliases": [
+      "geblindeerd",
+      "geblindeerde",
+      "dubbelblind",
+      "dubbelblinde",
+      "enkelblind",
+      "enkelblinde"
+    ],
+    "definition": "Ervoor zorgen dat deelnemers, onderzoekers of de mensen die de uitkomsten meten niet weten wie de behandeling kreeg. Dan kunnen verwachtingen niet kleuren wat er wordt gemeld of gemeten.",
+    "category": "evidence",
+    "see_also": [
+      "placebo",
+      "open-label"
+    ]
+  },
+  "sample-size": {
+    "term": "steekproefgrootte",
+    "aliases": [
+      "steekproefgroottes",
+      "aantal deelnemers"
+    ],
+    "definition": "Het aantal mensen of dieren in een studie, vaak geschreven als n. Een goede studie rekent vooraf uit hoeveel ze er nodig heeft.",
+    "category": "evidence",
+    "see_also": [
+      "statistical-power"
+    ]
+  },
+  "statistical-power": {
+    "term": "statistische power",
+    "aliases": [
+      "onderscheidend vermogen"
+    ],
+    "definition": "De kans dat een studie een effect vindt als dat effect echt bestaat. Kleine studies hebben weinig power: ze missen echte effecten, en de effecten die ze wel vinden zijn vaak te groot.",
+    "category": "evidence",
+    "see_also": [
+      "sample-size",
+      "false-positive"
+    ]
+  },
+  "false-positive": {
+    "term": "fout-positief",
+    "aliases": [
+      "fout-positieve",
+      "fout-positieve uitkomst",
+      "vals-positief",
+      "vals-positieve"
+    ],
+    "definition": "Een uitkomst die een effect lijkt te laten zien terwijl er geen is, bijvoorbeeld door toeval in een kleine studie.",
+    "category": "evidence",
+    "see_also": [
+      "p-value",
+      "statistical-power"
+    ]
+  },
+  "pre-registration": {
+    "term": "preregistratie",
+    "aliases": [
+      "vooraf geregistreerd",
+      "vooraf geregistreerde",
+      "registratie van het onderzoek",
+      "onderzoeksregister",
+      "onderzoeksregisters"
+    ],
+    "definition": "Het plan van een studie, met het belangrijkste eindpunt, vóór de start in een openbaar register zetten. Dan is later te zien of het plan is veranderd.",
+    "category": "evidence",
+    "see_also": [
+      "selective-outcome-reporting",
+      "primary-endpoint"
+    ]
+  },
+  "selective-outcome-reporting": {
+    "term": "selectief rapporteren",
+    "aliases": [
+      "selectieve rapportage",
+      "selectieve uitkomstrapportage",
+      "uitkomsten wisselen"
+    ],
+    "definition": "Alleen de uitkomsten melden die goed uitvielen, en de andere weglaten of stilletjes veranderen.",
+    "category": "evidence",
+    "see_also": [
+      "pre-registration",
+      "publication-bias"
+    ]
+  },
+  "surrogate-endpoint": {
+    "term": "surrogaateindpunt",
+    "aliases": [
+      "surrogaateindpunten",
+      "surrogaatuitkomst",
+      "surrogaatuitkomsten",
+      "surrogaatmarker",
+      "surrogaatmarkers"
+    ],
+    "definition": "Een meting die staat voor wat er echt toe doet, zoals een bloedwaarde in plaats van hartaanvallen. Die is sneller te meten, maar als die beter wordt, helpt dat de patiënt niet altijd.",
+    "category": "evidence",
+    "see_also": [
+      "clinical-endpoint"
+    ]
+  },
+  "clinical-endpoint": {
+    "term": "klinisch eindpunt",
+    "aliases": [
+      "klinische eindpunten",
+      "klinische uitkomst",
+      "klinische uitkomsten",
+      "hard eindpunt",
+      "harde eindpunten"
+    ],
+    "definition": "Een uitkomst die direct telt voor de patiënt: langer leven, geen hartaanval krijgen, weer kunnen lopen, je beter voelen.",
+    "category": "evidence",
+    "see_also": [
+      "surrogate-endpoint"
+    ]
+  },
+  "effect-size": {
+    "term": "effectgrootte",
+    "aliases": [
+      "effectgroottes",
+      "grootte van het effect"
+    ],
+    "definition": "Hoe groot het verschil is dat een behandeling maakt, bijvoorbeeld hoeveel kilo of hoeveel hartaanvallen minder. Dat is een andere vraag dan of het verschil door toeval kan komen.",
+    "category": "evidence",
+    "see_also": [
+      "p-value",
+      "confidence-interval"
+    ]
+  },
+  "p-value": {
+    "term": "p-waarde",
+    "aliases": [
+      "p-waarden",
+      "p-waardes",
+      "statistisch significant",
+      "statistisch significante",
+      "statistische significantie",
+      "niet statistisch significant"
+    ],
+    "definition": "Een getal dat zegt hoe verrassend de gegevens zouden zijn als de behandeling helemaal geen effect had en de studie goed was uitgevoerd. Een kleine p-waarde heet statistisch significant; die zegt niet hoe groot of belangrijk een effect is.",
+    "category": "evidence",
+    "see_also": [
+      "effect-size",
+      "confidence-interval",
+      "false-positive"
+    ]
+  },
+  "relative-risk": {
+    "term": "relatief risico",
+    "aliases": [
+      "relatieve risico",
+      "relatieve risico’s",
+      "relatieve risicoreductie",
+      "risicoratio"
+    ],
+    "definition": "Een vergelijking van het risico in 2 groepen, als verhouding of percentage: “20% minder”. Het zegt niet hoe vaak het probleem zonder behandeling voorkwam.",
+    "category": "evidence",
+    "see_also": [
+      "absolute-risk",
+      "hazard-ratio"
+    ]
+  },
+  "absolute-risk": {
+    "term": "absoluut risico",
+    "aliases": [
+      "absolute risico",
+      "absolute risico’s",
+      "absolute risicoreductie",
+      "absoluut verschil",
+      "absolute verschil"
+    ],
+    "definition": "Hoeveel mensen uit een groep iets krijgen, bijvoorbeeld 8 op de 100. Het absolute verschil tussen 2 groepen is het aantal mensen bij wie een behandeling echt iets verandert.",
+    "category": "evidence",
+    "see_also": [
+      "relative-risk",
+      "number-needed-to-treat",
+      "natural-frequency"
+    ]
+  },
+  "number-needed-to-treat": {
+    "term": "number needed to treat",
+    "aliases": [
+      "NNT"
+    ],
+    "definition": "Hoeveel mensen een behandeling nodig hebben zodat één van hen in een bepaalde tijd één slechte uitkomst ontloopt. Je rekent het uit als 100 gedeeld door het absolute verschil in procentpunten.",
+    "category": "evidence",
+    "see_also": [
+      "absolute-risk"
+    ]
+  },
+  "natural-frequency": {
+    "term": "natuurlijke frequentie",
+    "aliases": [
+      "natuurlijke frequenties"
+    ],
+    "definition": "Een risico geschreven als een aantal mensen, zoals “15 op de 1.000”, in plaats van als percentage of verhouding. De meeste mensen begrijpen aantallen makkelijker.",
+    "category": "evidence",
+    "see_also": [
+      "absolute-risk"
+    ]
+  },
+  "confounding": {
+    "term": "confounding",
+    "aliases": [
+      "confounder",
+      "confounders",
+      "verstorende factor",
+      "verstorende factoren"
+    ],
+    "definition": "Een derde factor beïnvloedt zowel wie een behandeling krijgt als de uitkomst, zodat het lijkt alsof de behandeling iets veroorzaakte wat ze niet deed. Een bekend voorbeeld: gezondere mensen kiezen vaker voor een pil.",
+    "category": "evidence",
+    "see_also": [
+      "observational-study",
+      "randomisation"
+    ]
+  },
+  "preprint": {
+    "term": "preprint",
+    "aliases": [
+      "preprints",
+      "preprintserver",
+      "preprintservers"
+    ],
+    "definition": "Een onderzoeksartikel dat online staat voordat vakgenoten het hebben beoordeeld. Iedereen kan het vroeg lezen, maar nog geen onafhankelijke expert heeft het gecontroleerd.",
+    "category": "evidence",
+    "see_also": [
+      "peer-review"
+    ]
+  },
+  "spin": {
+    "term": "spin",
+    "aliases": [],
+    "definition": "Woorden die een uitkomst mooier laten lijken dan de gegevens laten zien. Bijvoorbeeld een bijzaak benadrukken als de hoofduitkomst negatief was.",
+    "category": "evidence",
+    "see_also": [
+      "p-value",
+      "primary-endpoint"
+    ]
+  },
+  "risk-of-bias": {
+    "term": "risico op vertekening",
+    "aliases": [
+      "risk of bias"
+    ],
+    "definition": "Een vaste controle van hoe een studie is gedaan (loting, blindering, ontbrekende gegevens, rapportage). Zo schat je hoe groot de kans is dat de uitkomst vertekend is.",
+    "category": "evidence",
+    "see_also": [
+      "randomisation",
+      "blinding"
+    ]
+  },
+  "grade-approach": {
+    "term": "GRADE",
+    "aliases": [
+      "GRADE-methode",
+      "GRADE-systeem"
+    ],
+    "definition": "Een internationale methode om te beoordelen hoeveel vertrouwen het bewijs voor één bepaalde vraag verdient. Veel makers van richtlijnen gebruiken die methode; het oordeel loopt van hoog tot zeer laag.",
+    "category": "evidence",
+    "see_also": [
+      "systematic-review"
+    ]
+  },
+  "animal-model": {
+    "term": "diermodel",
+    "aliases": [
+      "diermodellen",
+      "ziektemodel",
+      "ziektemodellen",
+      "letselmodel",
+      "letselmodellen"
+    ],
+    "definition": "Een dier waarbij onderzoekers een aandoening veroorzaken, zoals een doorgesneden pees of een afgesloten slagader, als model voor een ziekte bij mensen. Het model is nooit precies de ziekte bij mensen.",
+    "category": "evidence",
+    "see_also": [
+      "external-validity",
+      "translational-research"
+    ]
+  },
+  "inbred-strain": {
+    "term": "ingeteelde stam",
+    "aliases": [
+      "ingeteelde stammen",
+      "ingeteelde dieren",
+      "inteeltstam",
+      "inteeltstammen"
+    ],
+    "definition": "Proefdieren die vele generaties broer met zus zijn gekruist, zodat ze genetisch bijna gelijk zijn. Dat maakt de uitkomsten netjes, maar minder vergelijkbaar met mensen, die allemaal verschillen.",
+    "category": "biology",
+    "see_also": [
+      "animal-model"
+    ]
+  },
+  "translational-research": {
+    "term": "translationeel onderzoek",
+    "aliases": [
+      "translationeel",
+      "translationele"
+    ],
+    "definition": "Het werk om een vondst uit cellen of dieren om te zetten in geteste behandelingen voor mensen, en het onderzoek naar hoe vaak dat lukt.",
+    "category": "evidence",
+    "see_also": [
+      "animal-model",
+      "first-in-human-trial"
+    ]
+  },
+  "external-validity": {
+    "term": "externe validiteit",
+    "aliases": [
+      "generaliseerbaarheid"
+    ],
+    "definition": "Of een uitkomst uit één situatie, zoals bij jonge gezonde ratten, ook geldt in een andere situatie, zoals bij oudere patiënten met andere ziekten.",
+    "category": "evidence",
+    "see_also": [
+      "internal-validity",
+      "animal-model"
+    ]
+  },
+  "internal-validity": {
+    "term": "interne validiteit",
+    "aliases": [],
+    "definition": "Of de uitkomst van een studie zelf te vertrouwen is: of het gevonden verschil echt door de behandeling komt en niet door vertekening of toeval.",
+    "category": "evidence",
+    "see_also": [
+      "external-validity",
+      "risk-of-bias"
+    ]
+  },
+  "allometric-scaling": {
+    "term": "allometrische schaling",
+    "aliases": [
+      "allometrie",
+      "allometrisch",
+      "allometrische",
+      "dosisschaling"
+    ],
+    "definition": "Een dosis omrekenen tussen diersoorten van verschillende grootte, met het lichaamsgewicht of het lichaamsoppervlak. Bij het ontwikkelen van medicijnen is dat één stap naar een voorzichtige eerste testdosis bij mensen, geen manier om een dosis te vinden die werkt.",
+    "category": "pharmacology",
+    "see_also": [
+      "first-in-human-trial",
+      "mabel"
+    ]
+  },
+  "first-in-human-trial": {
+    "term": "first-in-human-studie",
+    "aliases": [
+      "first-in-human-studies",
+      "first-in-human",
+      "eerste studie bij mensen"
+    ],
+    "definition": "De eerste keer dat een nieuw medicijn bij mensen wordt gegeven, vaak aan een paar gezonde vrijwilligers (bij sommige medicijnen aan patiënten). Dat gebeurt in kleine stappen, onder streng medisch toezicht.",
+    "category": "evidence",
+    "see_also": [
+      "clinical-trial-phases",
+      "mabel"
+    ]
+  },
+  "mabel": {
+    "term": "MABEL",
+    "aliases": [
+      "minimal anticipated biological effect level"
+    ],
+    "definition": "De laagste hoeveelheid waarvan je bij mensen al enig effect verwacht, geschat uit lab- en dieronderzoek, het liefst ook met menselijke cellen. Sommige medicijnautoriteiten vragen erom bij de keuze van de eerste dosis voor mensen.",
+    "category": "regulation",
+    "see_also": [
+      "first-in-human-trial",
+      "noael"
+    ]
+  },
+  "monoclonal-antibody": {
+    "term": "monoklonale antistof",
+    "aliases": [
+      "monoklonale antistoffen",
+      "monoklonaal antilichaam",
+      "monoklonale antilichamen"
+    ],
+    "definition": "Een antistof die in een lab is gemaakt om zich aan één bepaald doelwit in het lichaam te hechten. Veel moderne medicijnen zijn monoklonale antistoffen.",
+    "category": "biology",
+    "see_also": []
+  },
+  "t-cell": {
+    "term": "T-cel",
+    "aliases": [
+      "T-cellen",
+      "T-lymfocyt",
+      "T-lymfocyten"
+    ],
+    "definition": "Een soort witte bloedcel die afweerreacties stuurt en uitvoert.",
+    "category": "biology",
+    "see_also": [
+      "cytokine-storm"
+    ]
+  },
+  "superagonist": {
+    "term": "superagonist",
+    "aliases": [
+      "superagonisten"
+    ],
+    "definition": "Een molecuul dat een receptor sterker aanzet dan het eigen signaal van het lichaam. TGN1412 was bedoeld als superagonist voor een schakelaar op T-cellen.",
+    "category": "pharmacology",
+    "see_also": [
+      "agonist",
+      "t-cell"
+    ]
+  },
+  "cytokine-storm": {
+    "term": "cytokinestorm",
+    "aliases": [
+      "cytokinestormen",
+      "cytokine-releasesyndroom"
+    ],
+    "definition": "Een plotselinge vloed van signaalstoffen van het afweersysteem, met koorts, een lage bloeddruk en schade aan organen. Het kan levensgevaarlijk zijn.",
+    "category": "safety",
+    "see_also": [
+      "cytokine",
+      "t-cell"
+    ]
+  },
+  "post-marketing-surveillance": {
+    "term": "bewaking na toelating",
+    "aliases": [
+      "post-marketing surveillance",
+      "postmarketingonderzoek"
+    ],
+    "definition": "Het bijhouden van bijwerkingen nadat een medicijn in de handel is, als veel meer mensen het gebruiken dan in de studies. Zo komen zeldzame schadelijke effecten aan het licht.",
+    "category": "safety",
+    "see_also": [
+      "pharmacovigilance"
+    ]
+  },
+  "conflict-of-interest": {
+    "term": "belangenconflict",
+    "aliases": [
+      "belangenconflicten",
+      "belangenverstrengeling",
+      "tegenstrijdige belangen",
+      "financieel belangenconflict",
+      "financiële belangenconflicten"
+    ],
+    "definition": "Een situatie waarin een onderzoeker, auteur of adviseur iets kan winnen bij een bepaalde uitkomst, bijvoorbeeld geld of aanzien. Dat maakt de uitkomst niet onwaar, maar vraagt wel om een onafhankelijke controle.",
+    "category": "evidence",
+    "see_also": [
+      "study-sponsor",
+      "key-opinion-leader"
+    ]
+  },
+  "study-sponsor": {
+    "term": "studiesponsor",
+    "aliases": [
+      "studiesponsors",
+      "sponsor van het onderzoek",
+      "gesponsord onderzoek",
+      "door de industrie gesponsord",
+      "door de industrie gesponsorde"
+    ],
+    "definition": "De organisatie die een studie betaalt en ervoor verantwoordelijk is, zoals een bedrijf, een universiteit of een overheidsfonds.",
+    "category": "evidence",
+    "see_also": [
+      "conflict-of-interest"
+    ]
+  },
+  "ghost-writing": {
+    "term": "ghostwriting",
+    "aliases": [
+      "ghost-writing",
+      "ghostwriter",
+      "ghostwriters",
+      "spookauteur",
+      "spookauteurs"
+    ],
+    "definition": "De echte schrijver van een artikel, vaak betaald door een bedrijf, staat er niet als auteur bij.",
+    "category": "evidence",
+    "see_also": [
+      "guest-authorship",
+      "conflict-of-interest"
+    ]
+  },
+  "guest-authorship": {
+    "term": "gastauteurschap",
+    "aliases": [
+      "gastauteur",
+      "gastauteurs",
+      "ere-auteurschap",
+      "ere-auteur",
+      "ere-auteurs"
+    ],
+    "definition": "Iemand staat als auteur bij een artikel, maar deed weinig of niets van het werk. Vaak om het artikel een bekende naam te geven.",
+    "category": "evidence",
+    "see_also": [
+      "ghost-writing"
+    ]
+  },
+  "key-opinion-leader": {
+    "term": "key opinion leader",
+    "aliases": [
+      "key opinion leaders",
+      "KOL’s"
+    ],
+    "definition": "Een expert die bedrijven betalen om te spreken, te adviseren of les te geven over een product of een vakgebied, omdat andere mensen die expert vertrouwen.",
+    "category": "evidence",
+    "see_also": [
+      "conflict-of-interest"
+    ]
+  },
+  "predatory-journal": {
+    "term": "roofjournal",
+    "aliases": [
+      "roofjournals",
+      "roofuitgever",
+      "roofuitgevers",
+      "predatory journal",
+      "predatory journals",
+      "malafide tijdschrift",
+      "malafide tijdschriften"
+    ],
+    "definition": "Een tijdschrift dat auteurs laat betalen om te publiceren, maar de beoordeling door vakgenoten en de redactie overslaat. Zo komt bijna alles erin.",
+    "category": "evidence",
+    "see_also": [
+      "peer-review",
+      "impact-factor"
+    ]
+  },
+  "impact-factor": {
+    "term": "impactfactor",
+    "aliases": [
+      "impactfactoren"
+    ],
+    "definition": "Een getal dat meet hoe vaak artikelen in een tijdschrift gemiddeld worden geciteerd. Het zegt niets over de vraag of één artikel klopt, en er bestaan ook nepversies van.",
+    "category": "evidence",
+    "see_also": [
+      "predatory-journal"
+    ]
+  },
+  "citation-laundering": {
+    "term": "citatiewitwassen",
+    "aliases": [
+      "witwassen van citaties",
+      "citatievertekening",
+      "citatiebias"
+    ],
+    "definition": "Onze naam voor een bewering die gezag krijgt doordat artikelen elkaar steeds citeren, vaak het ene overzicht na het andere, zonder nieuwe gegevens. Uiteindelijk lijkt een gok dan een feit.",
+    "category": "evidence",
+    "see_also": [
+      "narrative-review",
+      "independent-replication"
+    ]
+  }
+}

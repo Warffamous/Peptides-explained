@@ -1,0 +1,182 @@
+{
+  "general": [
+    {
+      "id": "sepsis-signs",
+      "sign": "Verward zijn of onduidelijk praten, heel snel ademen, of een bleke, blauwe of vlekkerige huid, vaak met koorts of rillingen",
+      "why": "Dit kunnen tekenen zijn van sepsis (bloedvergiftiging). Je lichaam reageert dan zo sterk op een infectie dat het je eigen organen begint te beschadigen.",
+      "action": "emergency"
+    },
+    {
+      "id": "fainting-serious",
+      "sign": "Flauwvallen en niet binnen een minuut weer bijkomen, of flauwvallen met pijn op de borst, een heel snelle hartslag of een aanval met schokken",
+      "why": "Dit kan een gevaarlijk hartritme zijn, of een zware allergische reactie.",
+      "action": "emergency"
+    },
+    {
+      "id": "fever-after-injection",
+      "sign": "Koorts, rillingen of je heel ziek voelen in de dagen na een injectie",
+      "why": "Misschien zijn er bacteriën van de naald, je huid of het product in je bloed gekomen. Heb je ook een snelle hartslag of adem je snel? Bel dan 112.",
+      "action": "urgent"
+    },
+    {
+      "id": "fainted-recovered",
+      "sign": "Je viel flauw, maar kwam snel weer bij en voelt je nu goed",
+      "why": "Flauwvallen is vaak onschuldig. Toch moet een arts nagaan wat de oorzaak is.",
+      "action": "stop"
+    },
+    {
+      "id": "changing-mole",
+      "sign": "Een nieuwe moedervlek, of een moedervlek die van grootte, vorm of kleur verandert, jeukt of bloedt",
+      "why": "Een moedervlek die verandert, kan huidkanker zijn. Beschrijvingen van losse patiënten (casusbeschrijvingen) koppelen peptiden voor een bruine huid, zoals melanotan II, aan nieuwe en veranderende moedervlekken.",
+      "action": "stop"
+    }
+  ],
+  "injection": [
+    {
+      "id": "black-skin-severe-pain",
+      "sign": "Pijn op de prikplek die veel erger is dan het eruitziet, of daar donkere, paarse of grijze plekken of blaren",
+      "why": "Dit kan een zeldzame infectie zijn die zich snel uitbreidt in de diepe lagen onder de huid (necrotiserende fasciitis).",
+      "action": "emergency"
+    },
+    {
+      "id": "spreading-redness",
+      "sign": "Roodheid, warmte, zwelling of pijn rond de prikplek die steeds groter of erger wordt",
+      "why": "Dit kan een huidinfectie zijn (wondroos of cellulitis). Daarvoor heb je antibiotica nodig, voordat de infectie zich verder uitbreidt.",
+      "action": "urgent"
+    },
+    {
+      "id": "red-streaks",
+      "sign": "Rode strepen die van de prikplek naar de oksel of de lies lopen",
+      "why": "Misschien breidt de infectie zich uit via de lymfevaten. Dat zijn dunne vaatjes die vocht uit het weefsel afvoeren. Van daaruit kan de infectie in het bloed komen. Heb je ook koorts, met een snelle hartslag of snelle ademhaling? Bel dan 112.",
+      "action": "urgent"
+    },
+    {
+      "id": "pus-lump",
+      "sign": "Een pijnlijke, warme bult die zich vult met pus",
+      "why": "Dit is waarschijnlijk een bult met pus (abces). Vaak moet een arts de bult openmaken en laten leeglopen. Knijp de bult dus niet uit.",
+      "action": "urgent"
+    },
+    {
+      "id": "used-needle-stick",
+      "sign": "Je hebt je geprikt aan een naald die iemand anders had gebruikt",
+      "why": "Via bloed op een gebruikte naald kun je hiv of hepatitis B of C krijgen. Er is een behandeling die besmetting kan voorkomen. Die werkt het best als je er zo snel mogelijk mee begint: binnen een paar uur.",
+      "action": "urgent"
+    },
+    {
+      "id": "lump-not-going",
+      "sign": "Een bult op een prikplek die niet weggaat, of steeds groter wordt",
+      "why": "Een arts moet nagaan of het een abces is, een reactie op het product of iets anders.",
+      "action": "stop"
+    }
+  ],
+  "allergic": [
+    {
+      "id": "anaphylaxis",
+      "sign": "Zwelling van lippen, tong of keel, moeite met ademen of slikken, piepend ademen, een hese stem, of je flauw voelen, kort na een injectie",
+      "why": "Dit kan een zware allergische reactie zijn (anafylaxie). Die is levensgevaarlijk en wordt heel snel erger.",
+      "action": "emergency"
+    },
+    {
+      "id": "hives-swelling",
+      "sign": "Jeukende, bobbelige uitslag, of dikke ogen of lippen, terwijl je ademhaling normaal blijft",
+      "why": "Misschien reageert je lichaam op het product. Gebruik je het opnieuw? Dan kan de reactie terugkomen.",
+      "action": "stop"
+    }
+  ],
+  "cardiovascular": [
+    {
+      "id": "chest-pain",
+      "sign": "Pijn, druk of een beklemd gevoel op de borst, of pijn die uitstraalt naar de arm, de nek, de kaak of de rug",
+      "why": "Dit kan een hartaanval (hartinfarct) zijn. Dan heb je meteen behandeling in het ziekenhuis nodig.",
+      "action": "emergency"
+    },
+    {
+      "id": "severe-breathlessness",
+      "sign": "Plotseling heel erg benauwd zijn: naar adem happen, of een zin niet kunnen afmaken",
+      "why": "Dit kan een ernstig probleem zijn met het hart of de longen, of een allergische reactie.",
+      "action": "emergency"
+    },
+    {
+      "id": "palpitations-severe",
+      "sign": "Een hart dat heel snel, bonzend of onregelmatig klopt en niet tot rust komt, of dat samengaat met pijn op de borst, benauwdheid of flauwvallen",
+      "why": "Dit kan een gevaarlijk hartritme zijn.",
+      "action": "emergency"
+    },
+    {
+      "id": "very-high-blood-pressure",
+      "sign": "Plotseling heel erge hoofdpijn, met wazig zien, pijn op de borst, verwardheid of overgeven",
+      "why": "Misschien is je bloeddruk gevaarlijk hoog. Dat kan de hersenen, het hart, de nieren en de ogen beschadigen.",
+      "action": "emergency"
+    },
+    {
+      "id": "priapism",
+      "sign": "Een erectie die langer dan 3 uur duurt, of een pijnlijke erectie die niet weggaat",
+      "why": "Het bloed kan dan niet weg uit de penis. Wordt dat niet snel behandeld? Dan kan de penis blijvend beschadigd raken.",
+      "action": "emergency"
+    },
+    {
+      "id": "palpitations-recurring",
+      "sign": "Hartkloppingen die steeds terugkomen, ook als ze overgaan en je je daarna goed voelt",
+      "why": "Een arts kan nakijken of je hartritme normaal is.",
+      "action": "stop"
+    }
+  ],
+  "metabolic": [
+    {
+      "id": "very-low-blood-sugar",
+      "sign": "Trillen, zweten of plotseling honger krijgen, en daarna verward of suf worden",
+      "why": "Een heel lage bloedsuiker kan een aanval met schokken geven, of je kunt bewusteloos raken. Kun je nog veilig slikken? Neem dan iets met suiker.",
+      "action": "emergency"
+    },
+    {
+      "id": "pancreatitis",
+      "sign": "Heftige pijn boven in je buik die niet weggaat en uitstraalt naar je rug, vaak met overgeven",
+      "why": "Dit kan een ontstoken alvleesklier zijn (pancreatitis). Dat is een bekend risico van GLP-1-medicijnen zoals semaglutide en tirzepatide.",
+      "action": "emergency"
+    },
+    {
+      "id": "cannot-keep-fluids-down",
+      "sign": "Zo vaak overgeven dat je geen drinken binnen kunt houden, of heel weinig plassen",
+      "why": "Als je te veel vocht verliest (uitdroging), kan dat je nieren beschadigen.",
+      "action": "urgent"
+    },
+    {
+      "id": "yellow-skin-eyes",
+      "sign": "Een gele huid, of geel oogwit",
+      "why": "Dit kan een teken zijn van een probleem met de lever, van galstenen of van een ontstoken alvleesklier.",
+      "action": "urgent"
+    },
+    {
+      "id": "dark-urine-muscle-pain",
+      "sign": "Donkere, rode of colakleurige plas, samen met spierpijn, spieren die pijn doen als je ze aanraakt, of minder kracht in je spieren",
+      "why": "Beschadigde spieren kunnen een eiwit afgeven dat de nieren beschadigt (rabdomyolyse).",
+      "action": "urgent"
+    }
+  ],
+  "neurological": [
+    {
+      "id": "stroke-signs",
+      "sign": "Plotseling aan één kant van je lichaam minder kracht of een doof gevoel, een scheve mond, of onduidelijk of verward praten",
+      "why": "Dit zijn tekenen van een beroerte. Dan heb je meteen behandeling in het ziekenhuis nodig. Zijn de klachten snel weer helemaal weg? Bel dan toch je huisarts.",
+      "action": "emergency"
+    },
+    {
+      "id": "sudden-severe-headache",
+      "sign": "Heel erge hoofdpijn die plotseling begint, of hoofdpijn met een stijve nek, verwardheid of een aanval met schokken",
+      "why": "Dit kan een beroerte zijn, of een ander noodgeval in de hersenen.",
+      "action": "emergency"
+    },
+    {
+      "id": "sudden-vision-loss",
+      "sign": "Plotseling niet meer kunnen zien met één oog of met allebei je ogen",
+      "why": "Dit kan een beroerte zijn, of schade aan de oogzenuw. Je kunt je zicht dan voorgoed kwijtraken.",
+      "action": "emergency"
+    },
+    {
+      "id": "seizure",
+      "sign": "Een aanval (epileptische aanval): schokkende bewegingen, of plotseling nergens meer op reageren",
+      "why": "Zo’n aanval kan komen door een heel lage bloedsuiker of door een probleem in de hersenen. Een arts moet dit meteen onderzoeken.",
+      "action": "emergency"
+    }
+  ]
+}

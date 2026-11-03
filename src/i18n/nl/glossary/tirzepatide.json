@@ -1,0 +1,512 @@
+{
+  "gip": {
+    "term": "GIP",
+    "aliases": [
+      "glucoseafhankelijk insulinotroop polypeptide",
+      "gastrisch inhiberend polypeptide"
+    ],
+    "definition": "Een hormoon dat het bovenste deel van de darm na een maaltijd maakt. Net als GLP-1 laat het de alvleesklier meer insuline afgeven als de bloedsuiker hoog is.",
+    "category": "biology",
+    "see_also": [
+      "gip-receptor",
+      "incretin",
+      "glp-1"
+    ]
+  },
+  "gip-receptor": {
+    "term": "GIP-receptor",
+    "aliases": [
+      "GIP-receptoren",
+      "GIPR"
+    ],
+    "definition": "De receptor die het hormoon GIP aanzet. Die zit op cellen in de alvleesklier, in vetweefsel en in delen van de hersenen.",
+    "category": "biology",
+    "see_also": [
+      "gip"
+    ]
+  },
+  "dual-agonist": {
+    "term": "dubbele agonist",
+    "aliases": [
+      "dubbele agonisten",
+      "duale agonist",
+      "co-agonist",
+      "co-agonisten",
+      "co-agonisme"
+    ],
+    "definition": "Eén molecuul dat 2 verschillende receptoren aanzet. Tirzepatide zet zowel de GIP-receptor als de GLP-1-receptor aan.",
+    "category": "pharmacology",
+    "see_also": [
+      "gip-receptor",
+      "glp-1-receptor-agonist"
+    ]
+  },
+  "functional-antagonism": {
+    "term": "functioneel antagonisme",
+    "aliases": [
+      "functionele antagonist",
+      "functioneel GIPR-antagonisme"
+    ],
+    "definition": "Krijgt een cel lang een stof die een receptor aanzet? Dan kan de cel ophouden met reageren. Het eindresultaat lijkt dan op het blokkeren van de receptor, terwijl de stof die juist aanzet.",
+    "category": "pharmacology",
+    "see_also": [
+      "receptor-desensitisation"
+    ]
+  },
+  "receptor-desensitisation": {
+    "term": "desensitisatie",
+    "aliases": [
+      "receptordesensitisatie",
+      "desensibilisatie",
+      "gedesensitiseerd"
+    ],
+    "definition": "De reactie van een cel op een signaal wordt zwakker als het signaal maar doorgaat. Vaak haalt de cel receptoren van haar oppervlak of zet ze uit.",
+    "category": "biology",
+    "see_also": [
+      "functional-antagonism",
+      "receptor-internalisation"
+    ]
+  },
+  "biased-agonism": {
+    "term": "biased agonisme",
+    "aliases": [
+      "biased agonism",
+      "biased agonist",
+      "signaalvoorkeur"
+    ],
+    "definition": "Een receptor kan een signaal langs meer dan één route in de cel doorgeven. Een stof met biased agonisme zet sommige van die routes sterker aan dan andere.",
+    "category": "pharmacology",
+    "see_also": [
+      "beta-arrestin",
+      "camp"
+    ]
+  },
+  "beta-arrestin": {
+    "term": "β-arrestine",
+    "aliases": [
+      "bèta-arrestine",
+      "beta-arrestine",
+      "β-arrestinen",
+      "β-arrestine-1"
+    ],
+    "definition": "Een eiwit in cellen dat aan een aangezette receptor bindt. Het helpt de receptor uit te zetten en de cel in te trekken.",
+    "category": "biology",
+    "see_also": [
+      "receptor-internalisation",
+      "biased-agonism"
+    ]
+  },
+  "receptor-internalisation": {
+    "term": "receptorinternalisatie",
+    "aliases": [
+      "internalisatie",
+      "internalisering"
+    ],
+    "definition": "Een cel haalt een receptor van haar oppervlak naar binnen. Minder receptoren aan de buitenkant betekent een zwakkere reactie op het middel of het hormoon.",
+    "category": "biology",
+    "see_also": [
+      "beta-arrestin",
+      "receptor-desensitisation"
+    ]
+  },
+  "receptor-occupancy": {
+    "term": "receptorbezetting",
+    "aliases": [
+      "voorspelde receptorbezetting"
+    ],
+    "definition": "Het deel van de receptoren waaraan een middel op een bepaald moment gebonden is. Onderzoekers schatten dat vaak uit de hoeveelheid middel in het bloed, in plaats van het direct te meten.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "insulin-sensitivity": {
+    "term": "insulinegevoeligheid",
+    "aliases": [
+      "insulineresistentie",
+      "insulineongevoeligheid"
+    ],
+    "definition": "Hoe goed de weefsels van het lichaam reageren op insuline. Is de gevoeligheid laag (insulineresistentie)? Dan is er meer insuline nodig om evenveel suiker uit het bloed te halen.",
+    "category": "biology",
+    "see_also": [
+      "clamp-study"
+    ]
+  },
+  "clamp-study": {
+    "term": "clamponderzoek",
+    "aliases": [
+      "clampstudie",
+      "clampstudies",
+      "hyperglykemische clamp",
+      "euglykemische clamp",
+      "hyperinsulinemische euglykemische clamp"
+    ],
+    "definition": "Een uitgebreide test waarin een infuus de bloedsuiker op een vaste waarde houdt. Onderzoekers meten dan hoeveel insuline het lichaam maakt, of hoeveel suiker het opneemt.",
+    "category": "evidence",
+    "see_also": [
+      "insulin-sensitivity"
+    ]
+  },
+  "adipocyte": {
+    "term": "vetcel",
+    "aliases": [
+      "vetcellen",
+      "adipocyt",
+      "adipocyten",
+      "vetweefsel",
+      "wit vetweefsel"
+    ],
+    "definition": "Een cel die vet opslaat. Vetweefsel bestaat vooral uit deze cellen, en ze sturen ook hormoonsignalen naar de rest van het lichaam.",
+    "category": "biology",
+    "see_also": []
+  },
+  "c-terminal-amide": {
+    "term": "C-terminaal amide",
+    "aliases": [
+      "geamideerd",
+      "C-terminaal geamideerd",
+      "amidering"
+    ],
+    "definition": "Het einde van een peptideketen met een amidegroep (–NH2) in plaats van een zuurgroep. Veel natuurlijke peptidehormonen eindigen zo.",
+    "category": "chemistry",
+    "see_also": ["amide-end"]
+  },
+  "hypoglycaemia": {
+    "term": "hypoglykemie",
+    "aliases": [
+      "hypo",
+      "hypo’s",
+      "te lage bloedsuiker",
+      "lage bloedsuiker"
+    ],
+    "definition": "Een bloedsuiker die te laag is. Je kunt dan trillen, zweten, in de war raken en suf worden. Een ernstige hypo kan je bewusteloos maken.",
+    "category": "safety",
+    "see_also": [
+      "sulfonylurea"
+    ]
+  },
+  "prediabetes": {
+    "term": "prediabetes",
+    "aliases": [
+      "pre-diabetes"
+    ],
+    "definition": "Een bloedsuiker die hoger is dan normaal, maar nog niet hoog genoeg voor diabetes type 2. Mensen met prediabetes hebben een grotere kans om diabetes te krijgen.",
+    "category": "biology",
+    "see_also": [
+      "hba1c"
+    ]
+  },
+  "bmi": {
+    "term": "BMI",
+    "aliases": [
+      "body-mass-index",
+      "body mass index",
+      "queteletindex"
+    ],
+    "definition": "Body-mass-index: je gewicht in kilo’s gedeeld door je lengte in meters in het kwadraat. Een BMI van 30 of meer heet obesitas.",
+    "category": "biology",
+    "see_also": []
+  },
+  "obstructive-sleep-apnoea": {
+    "term": "obstructieve slaapapneu",
+    "aliases": [
+      "slaapapneu",
+      "obstructief slaapapneusyndroom",
+      "OSAS",
+      "OSA"
+    ],
+    "definition": "Een aandoening waarbij de keel tijdens de slaap steeds dichtvalt. Daardoor stopt je ademhaling vele keren per nacht, of wordt die heel oppervlakkig. Het komt vaker voor bij obesitas.",
+    "category": "biology",
+    "see_also": [
+      "apnoea-hypopnoea-index"
+    ]
+  },
+  "apnoea-hypopnoea-index": {
+    "term": "apneu-hypopneu-index",
+    "aliases": [
+      "apneu–hypopneu-index",
+      "AHI"
+    ],
+    "definition": "Het aantal keer per uur slaap dat de ademhaling stopt of heel oppervlakkig wordt. Artsen meten ermee hoe ernstig slaapapneu is.",
+    "category": "evidence",
+    "see_also": [
+      "obstructive-sleep-apnoea"
+    ]
+  },
+  "hfpef": {
+    "term": "HFpEF",
+    "aliases": [
+      "hartfalen met behouden ejectiefractie"
+    ],
+    "definition": "Een vorm van hartfalen waarbij het hart nog met normale kracht pompt, maar te stijf is om goed vol te lopen. Het geeft kortademigheid, moeheid en dikke enkels.",
+    "category": "biology",
+    "see_also": [
+      "kccq"
+    ]
+  },
+  "kccq": {
+    "term": "KCCQ",
+    "aliases": [
+      "Kansas City Cardiomyopathy Questionnaire",
+      "KCCQ-CSS"
+    ],
+    "definition": "Een vragenlijst die mensen met hartfalen invullen over hun klachten en over wat ze per dag nog kunnen. De score loopt van 0 tot 100. Een hogere score betekent minder problemen.",
+    "category": "evidence",
+    "see_also": [
+      "hfpef"
+    ]
+  },
+  "hazard-ratio": {
+    "term": "hazardratio",
+    "aliases": [
+      "hazardratio’s",
+      "hazard ratio",
+      "HR"
+    ],
+    "definition": "Een getal dat vergelijkt hoe vaak iets in de loop van de tijd gebeurt in 2 groepen. Een hazardratio van 0,80 betekent dat het in de eerste groep ongeveer 20% minder vaak gebeurde.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "non-inferiority-trial": {
+    "term": "non-inferioriteitsstudie",
+    "aliases": [
+      "non-inferioriteitsstudies",
+      "non-inferioriteit",
+      "non-inferieur",
+      "niet-inferieur"
+    ],
+    "definition": "Een studie die moet laten zien dat een nieuwe behandeling niet meer dan een vooraf gekozen marge slechter is dan een bestaande. Ze is niet bedoeld om te laten zien dat de nieuwe behandeling beter is.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "open-label": {
+    "term": "open-label",
+    "aliases": [
+      "open-labelstudie",
+      "open-labelstudies",
+      "open label",
+      "ongeblindeerd"
+    ],
+    "definition": "Een studie waarin deelnemers en artsen weten wie welke behandeling krijgt. Dat kan invloed hebben op de bijwerkingen die mensen melden, en op hun gedrag, zoals minder eten.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "randomised-withdrawal-trial": {
+    "term": "gerandomiseerde stopstudie",
+    "aliases": [
+      "gerandomiseerde stopstudies",
+      "randomised withdrawal",
+      "randomized withdrawal"
+    ],
+    "definition": "Een studie waarin eerst iedereen het middel gebruikt. Daarna stapt een deel van de mensen over op placebo. Loting bepaalt wie dat is. Zo zie je wat er gebeurt als de behandeling stopt.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "maximum-tolerated-dose": {
+    "term": "maximaal verdraagbare dosis",
+    "aliases": [
+      "maximaal verdraagbare doses",
+      "maximaal verdragen dosis",
+      "MTD"
+    ],
+    "definition": "In een studie de hoogste dosis die iemand kon gebruiken zonder bijwerkingen waardoor die moest stoppen. Die verschilt per persoon.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "dulaglutide": {
+    "term": "dulaglutide",
+    "aliases": [
+      "Trulicity"
+    ],
+    "definition": "Een GLP-1-agonist die je 1 keer per week spuit, goedgekeurd voor diabetes type 2. Het was het medicijn waarmee de SURPASS-CVOT-studie tirzepatide vergeleek.",
+    "category": "pharmacology",
+    "see_also": [
+      "glp-1-receptor-agonist"
+    ]
+  },
+  "narrow-therapeutic-index": {
+    "term": "smalle therapeutische breedte",
+    "aliases": [
+      "nauwe therapeutische breedte",
+      "smalle therapeutische index",
+      "smal therapeutisch venster"
+    ],
+    "definition": "Een medicijn waarbij de hoeveelheid die werkt dicht ligt bij de hoeveelheid die schaadt, zoals warfarine of digoxine. Kleine verschillen in hoeveel je lichaam opneemt, kunnen dan veel uitmaken.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "acute-kidney-injury": {
+    "term": "acute nierschade",
+    "aliases": [
+      "acuut nierfalen",
+      "acute nierinsufficiëntie",
+      "AKI"
+    ],
+    "definition": "De nieren werken binnen uren of dagen plotseling veel slechter. Ernstige uitdroging, bijvoorbeeld door lang overgeven of diarree, is een van de oorzaken.",
+    "category": "safety",
+    "see_also": [
+      "egfr-kidney"
+    ]
+  },
+  "falsified-medicine": {
+    "term": "vervalst geneesmiddel",
+    "aliases": [
+      "vervalste geneesmiddelen",
+      "vervalst medicijn",
+      "vervalste medicijnen",
+      "namaakmedicijn",
+      "namaakmedicijnen",
+      "nepmedicijn",
+      "nepmedicijnen",
+      "namaakpen",
+      "namaakpennen",
+      "nep-pen",
+      "nep-pennen"
+    ],
+    "definition": "Een product dat doet alsof het een echt medicijn is, bijvoorbeeld door de verpakking of het batchnummer na te maken. Wat erin zit, hoeveel en of het steriel is, weet niemand.",
+    "category": "safety",
+    "see_also": []
+  },
+  "outsourcing-facility": {
+    "term": "outsourcing facility",
+    "aliases": [
+      "outsourcing facilities",
+      "503B",
+      "503B-lijst"
+    ],
+    "definition": "In de VS een soort bereidingsbedrijf dat bij de FDA geregistreerd is onder artikel 503B van de Amerikaanse wet. Het mag een medicijn alleen uit een grondstof maken als die stof op een FDA-lijst van klinische behoefte staat. Dat mag ook als er officieel een tekort aan het medicijn is.",
+    "category": "regulation",
+    "see_also": [
+      "pharmacy-compounding",
+      "503a-bulks-list"
+    ]
+  },
+  "gastroparesis": {
+    "term": "gastroparese",
+    "aliases": [
+      "ernstige gastroparese",
+      "maagverlamming"
+    ],
+    "definition": "Een aandoening waarbij de maag heel langzaam leeg raakt, zonder dat er iets in de weg zit. Het geeft misselijkheid, overgeven en snel een vol gevoel.",
+    "category": "biology",
+    "see_also": [
+      "gastric-emptying"
+    ]
+  },
+  "anaphylaxis": {
+    "term": "anafylaxie",
+    "aliases": [
+      "anafylactische reactie",
+      "anafylactische reacties",
+      "anafylactische shock",
+      "zware allergische reactie"
+    ],
+    "definition": "Een zware allergische reactie die binnen minuten het hele lichaam treft. Die kan ademhalingsproblemen en een plotselinge daling van de bloeddruk geven: bel dan direct 112.",
+    "category": "safety",
+    "see_also": [
+      "angioedema"
+    ]
+  },
+  "angioedema": {
+    "term": "angio-oedeem",
+    "aliases": [
+      "angioedeem",
+      "Quincke-oedeem"
+    ],
+    "definition": "Zwelling diep onder de huid, vaak van het gezicht, de lippen, de tong of de keel. Zwelling in de keel kan de ademhaling blokkeren.",
+    "category": "safety",
+    "see_also": [
+      "anaphylaxis"
+    ]
+  },
+  "inr": {
+    "term": "INR",
+    "aliases": [
+      "internationale genormaliseerde ratio"
+    ],
+    "definition": "Een bloedtest die laat zien hoe lang bloed nodig heeft om te stollen. Mensen die warfarine of een vergelijkbaar antistollingsmiddel gebruiken, laten dat regelmatig controleren.",
+    "category": "pharmacology",
+    "see_also": [
+      "narrow-therapeutic-index"
+    ]
+  },
+  "sglt2-inhibitor": {
+    "term": "SGLT2-remmer",
+    "aliases": [
+      "SGLT2-remmers",
+      "SGLT-2-remmer",
+      "SGLT-2-remmers"
+    ],
+    "definition": "Een diabetestablet die ervoor zorgt dat de nieren meer suiker in de urine afgeven. Voorbeelden zijn dapagliflozine en empagliflozine.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "metformin": {
+    "term": "metformine",
+    "aliases": [],
+    "definition": "De meest gebruikte eerste tablet bij diabetes type 2. Het verlaagt de hoeveelheid suiker die de lever aan het bloed afgeeft.",
+    "category": "pharmacology",
+    "see_also": []
+  },
+  "insulin-glargine": {
+    "term": "insuline glargine",
+    "aliases": [
+      "insuline-glargine",
+      "glargine"
+    ],
+    "definition": "Een langwerkende insuline, meestal 1 keer per dag gespoten, die zorgt voor een gelijkmatige hoeveelheid insuline op de achtergrond in het bloed.",
+    "category": "pharmacology",
+    "see_also": [
+      "hypoglycaemia"
+    ]
+  },
+  "cohort-study": {
+    "term": "cohortonderzoek",
+    "aliases": [
+      "cohortonderzoeken",
+      "cohortstudie",
+      "cohortstudies"
+    ],
+    "definition": "Een studie die groepen mensen volgt die al verschillende behandelingen gebruiken, zonder dat loting bepaalt wie wat krijgt. Andere verschillen tussen de groepen kunnen het resultaat vertekenen.",
+    "category": "evidence",
+    "see_also": []
+  },
+  "gs-protein": {
+    "term": "Gs-eiwit",
+    "aliases": [
+      "Gs-eiwitten",
+      "Gs-proteïne"
+    ],
+    "definition": "Een schakeleiwit net binnen in de cel. Wordt een receptor aangezet? Dan zet het Gs-eiwit een enzym aan dat de boodschapperstof cAMP maakt.",
+    "category": "biology",
+    "see_also": [
+      "camp"
+    ]
+  },
+  "ileus": {
+    "term": "ileus",
+    "aliases": [
+      "darmstilstand"
+    ],
+    "definition": "Een toestand waarbij de darm voedsel en vocht niet meer verder duwt, zodat het zich ophoopt. Het geeft een opgezette buik, pijn en overgeven.",
+    "category": "safety",
+    "see_also": []
+  },
+  "nhg-standaard": {
+    "term": "NHG-Standaard",
+    "aliases": [
+      "NHG-Standaarden"
+    ],
+    "definition": "Een behandelrichtlijn voor huisartsen in Nederland, geschreven door het Nederlands Huisartsen Genootschap (NHG).",
+    "category": "regulation",
+    "see_also": []
+  },
+  "combined-lifestyle-intervention": {
+    "term": "gecombineerde leefstijlinterventie",
+    "aliases": [
+      "gecombineerde leefstijlinterventies",
+      "GLI"
+    ],
+    "definition": "In Nederland een programma van 2 jaar voor mensen met overgewicht of obesitas, met begeleiding bij gezond eten en bewegen. Je huisarts kijkt of je ervoor in aanmerking komt. Het basispakket vergoedt het, zonder eigen risico. Volgens de NHG-Standaard Obesitas komt eerst een GLI: medicijnen zijn pas een optie na minstens een jaar GLI.",
+    "category": "regulation",
+    "see_also": ["nhg-standaard", "eigen-risico"]
+  }
+}

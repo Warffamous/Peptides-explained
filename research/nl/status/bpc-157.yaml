@@ -1,0 +1,18 @@
+# EU and Dutch status of BPC-157 on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: bpc-157
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-search, ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-geneesmiddelenwet, nl-gmw-art-40-handelsvergunning] }
+products: []
+compare_with_data_file:
+  - "Status unchanged (not-authorised, both rows). as_of 2026-10-20 -> 2026-10-27."
+  - "Suggested extra sources: ema-orphan-designations-json and ema-under-evaluation-2026-10 (EU); cbg-gib-search-status-2026-10-27 and nl-gmw-art-40-handelsvergunning (NL; the row now cites only the whole Geneesmiddelenwet)."
+regulatory_notes:
+  EU: "Not authorised in the EU: no authorisation, application or orphan designation in EMA records (checked 27 October 2026)."
+  NL: "Not authorised in the Netherlands: no product in the CBG register (27 October 2026). Supplying a medicine without a marketing authorisation is prohibited (Geneesmiddelenwet art. 40)."
+notes: |
+  EMA medicines and orphan JSON (27 October 2026): 0 hits for BPC-157, BPC 157, PL 14736, PL-10, PLD-116, bepecin,
+  pentadecapeptide (the 'BPC' substring hits are filgrastim indications and an MYBPC3 gene therapy, unrelated).
+  Under-evaluation list of 5 October 2026: none. CTIS: 0 trials for 'BPC-157' and 'BPC 157'. Geneesmiddeleninformatiebank:
+  'Geen producten gevonden' for 'BPC-157'. The FDA PCAC vote (July 2026) is not an EU or Dutch status and changes neither row.

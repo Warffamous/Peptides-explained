@@ -1,0 +1,17 @@
+# EU and Dutch status of GHK-Cu on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: ghk-cu
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-medicines-search, ema-orphan-designations-json, cosing-copper-tripeptide-1, eu-regulation-1223-2009-cosmetics] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+products: []
+compare_with_data_file:
+  - "Status unchanged (not-authorised as a medicine). as_of 2026-10-23 -> 2026-10-27; add ema-orphan-designations-json (EU) and cbg-gib-search-status-2026-10-27 (NL)."
+  - "The cosmetics sources (cosing-copper-tripeptide-1, eu-regulation-1223-2009-cosmetics) were NOT re-read by this research (cosmetics law is outside the topic): keep them as checked on 23 October, or have the cosmetics clause re-checked before it is used."
+regulatory_notes:
+  EU: "No medicine with GHK-Cu is authorised in the EU (EMA records, 27 October 2026). [Cosmetics clause of the 23 October note, only after a re-check: allowed as a cosmetic ingredient ('copper tripeptide-1'); a product for injection is not a cosmetic.]"
+  NL: "No medicine with GHK-Cu in the CBG register (27 October 2026). Supplying a medicine without a marketing authorisation is prohibited (Geneesmiddelenwet art. 40)."
+notes: |
+  EMA medicines JSON: 0 hits for GHK, 'copper tripeptide', prezatide, 'copper peptide' (the 'copper' hits are two
+  radiopharmaceuticals, Cuprymina and the refused Deqtynet, unrelated). Orphan JSON: 0. CTIS: 0 for 'GHK'.
+  Geneesmiddeleninformatiebank: 'GHK' none; 'koper' only copper salts, trace-element infusions and homeopathic products.

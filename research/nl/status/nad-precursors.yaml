@@ -1,0 +1,22 @@
+# EU and Dutch status of NAD+ precursors (NR, NMN, NAD+) on 27 October 2026, as MEDICINES (research topic eu-status).
+slug: nad-precursors
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: not-authorised, as_of: 2026-10-27, sources: [ema-medicines-json, ema-orphan-designations-json, ema-under-evaluation-2026-10, eu-regulation-2020-16-nr, efsa-2026-nmn-novel-food, eu-union-list-novel-foods-2026-08-10] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning] }
+products: []
+compare_with_data_file:
+  - "Status unchanged (not-authorised as a medicine). as_of 2026-10-23 -> 2026-10-27; add ema-orphan-designations-json and ema-under-evaluation-2026-10 (EU) and cbg-gib-search-status-2026-10-27 (NL)."
+  - "The novel-food sources on the EU row (eu-regulation-2020-16-nr, efsa-2026-nmn-novel-food, eu-union-list-novel-foods-2026-08-10) were NOT re-checked by this research (food law is outside the topic). Whether NMN was added to the Union list after 10 August 2026 is UNRESOLVED here; a web search on 27 October 2026 found no implementing act."
+regulatory_notes:
+  EU: "No NAD+ precursor is authorised as a medicine in the EU (EMA records, 27 October 2026). NMN has an EU orphan designation for sickle cell disease (20 June 2023), which is not an authorisation. [Novel-food clause only after a re-check of the food sources.]"
+  NL: "No medicine with NR, NMN or NAD+ in the CBG register (27 October 2026). An injection is a medicine, not a food."
+notes: |
+  EMA medicines JSON: no product with nicotinamide riboside, nicotinamide mononucleotide, NMN, nadide or 'nicotinamide
+  adenine dinucleotide' in the name, INN or substance. Orphan JSON: EU/3/23/2786 'nicotinamide mononucleotide',
+  'Treatment of sickle cell disease', status Positive, designated 20/06/2023 (registered in stubs-b research via
+  ema-orphan-designations-json). CTIS: 'nicotinamide riboside' finds only two Danish senolytics trials whose product is
+  dasatinib (not NR trials as such); 'nicotinamide mononucleotide' 0. Geneesmiddeleninformatiebank: 'nicotinamide' finds
+  only multivitamin infusions and fibrin sealants that contain nicotinamide (vitamin B3), no NR, NMN or NAD+ product;
+  'nicotinamideribose' none. The NL note's second sentence ('an injection is a medicine, not a food') is the 23 October
+  wording; it rests on the food-law sources and was not re-checked here.

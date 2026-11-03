@@ -102,6 +102,15 @@
   jurisdictions: [AU]
   sources: [au-tga-mcewen-2007-history]
 
+# Dutch site (group history-a, 27 October 2026; research/nl-notes/merge.md §7, research/nl/nl-care.md fact 76): the
+# explanatory memorandum to the Geneesmiddelenwet gives the year the WOG registration duty took effect (1963), not
+# the day (UNRESOLVED), so the event has no date.
+- id: nl-wog-registration-1963
+  year: 1963
+  category: regulation
+  jurisdictions: [NL]
+  sources: [nl-mvt-2003-geneesmiddelenwet]
+
 - id: uk-yellow-card
   year: 1964
   category: safety
@@ -278,7 +287,26 @@
   compounds: [tesamorelin]
   sources: [fda-drugsatfda-egrifta, dailymed-egrifta-sv-label]
 
+# The EU events below marked "Dutch site" were added by group history-a on 27 October 2026 (research/nl-notes/merge.md
+# §7; dates re-checked against research/nl/eu-status.md and its fact-check). English shows none of them (EU or NL only).
+# Dutch site: the applicant withdrew its EU application (EMA: "Application withdrawn", 21 June 2012).
+- id: tesamorelin-withdrawal-eu
+  year: 2012
+  date: 2012-06-21
+  category: approval
+  jurisdictions: [EU]
+  compounds: [tesamorelin]
+  sources: [ema-egrifta-withdrawal]
+
 # ---------------------------------------------------------------- 2010s: new routes, new medicines, new bans
+# Dutch site: Directive 2011/62/EU applies from 2 January 2013 (art. 2).
+- id: eu-falsified-medicines-directive
+  year: 2013
+  date: 2013-01-02
+  category: regulation
+  jurisdictions: [EU]
+  sources: [eu-directive-2011-62]
+
 - id: afamelanotide-approval
   year: 2014
   date: 2014-12-22
@@ -332,6 +360,14 @@
   jurisdictions: [EU]
   compounds: [semaglutide]
   sources: [ema-epar-ozempic]
+
+# Dutch site: Delegated Regulation (EU) 2016/161 applies from 9 February 2019 (art. 50).
+- id: eu-safety-features
+  year: 2019
+  date: 2019-02-09
+  category: regulation
+  jurisdictions: [EU]
+  sources: [eu-regulation-2016-161, cbg-fmd-vervalsing-melden]
 
 - id: bremelanotide-approval
   year: 2019
@@ -389,6 +425,14 @@
   jurisdictions: [EU]
   compounds: [semaglutide]
   sources: [ema-epar-wegovy]
+
+# Dutch site: Regulation (EU) No 536/2014 in application from 31 January 2022 (EMA).
+- id: eu-clinical-trials-regulation
+  year: 2022
+  date: 2022-01-31
+  category: regulation
+  jurisdictions: [EU]
+  sources: [ema-clinical-trials-regulation, eu-regulation-536-2014]
 
 - id: glp1-shortages
   year: 2022
@@ -500,6 +544,15 @@
   compounds: [semaglutide]
   sources: [friedman-2024-lasker-glp1, knudsen-2024-lasker-glp1-obesity]
 
+# Dutch site: CBG update of 2 December 2024, "Het tekort is daarmee opgelost."
+- id: ozempic-shortage-end-nl
+  year: 2024
+  date: 2024-12-02
+  category: market
+  jurisdictions: [NL]
+  compounds: [semaglutide]
+  sources: [cbg-ozempic-shortage]
+
 - id: glp1-shortages-end
   year: 2025
   date: 2025-02-21
@@ -507,6 +560,15 @@
   jurisdictions: [US]
   compounds: [semaglutide, tirzepatide]
   sources: [fda-glp1-compounding-policy]
+
+# Dutch site: PRAC conclusion of 6 June 2025 (with the CBG's Dutch news item of the same day).
+- id: semaglutide-naion-eu
+  year: 2025
+  date: 2025-06-06
+  category: safety
+  jurisdictions: [EU]
+  compounds: [semaglutide]
+  sources: [ema-prac-2025-06-naion, cbg-2025-06-naion-semaglutide]
 
 - id: uk-illicit-factory-retatrutide
   year: 2025
@@ -516,6 +578,14 @@
   compounds: [retatrutide, tirzepatide]
   sources: [mhra-2025-retatrutide-seizure]
 
+# Dutch site: political agreement of 11 December 2025 (EMA); what the two acts repeal is in the Council texts.
+- id: eu-pharma-reform-agreement
+  year: 2025
+  date: 2025-12-11
+  category: regulation
+  jurisdictions: [EU]
+  sources: [ema-pharma-reform-page, council-st-7106-2026-rev2, council-st-7105-2026-rev2]
+
 - id: unlicensed-supply-seizures
   year: 2026
   date: 2026-01-26
@@ -523,6 +593,15 @@
   jurisdictions: [UK]
   compounds: [semaglutide, tirzepatide, retatrutide]
   sources: [mhra-2026-01-seizures-2025, mhra-2026-05-largest-seizure, belcourt-2025-research-purposes]
+
+# Dutch site: conditional marketing authorisation of 26 March 2026, decision C(2026) 2197 (semaglutide for MASH).
+- id: kayshild-approval-eu
+  year: 2026
+  date: 2026-03-26
+  category: approval
+  jurisdictions: [EU]
+  compounds: [semaglutide]
+  sources: [ema-epar-kayshild, ec-union-register-kayshild, ema-pi-kayshild-nl]
 
 - id: ca-peptides-advisory-2026
   year: 2026
@@ -538,6 +617,15 @@
   category: regulation
   jurisdictions: [AU]
   sources: [au-tga-2026-06-peptide-compliance-priority]
+
+# Dutch site: Commission decision C(2026) 5102 of 14 July 2026 added the Wegovy tablets (adults only) and a new pen.
+- id: wegovy-tablets-eu
+  year: 2026
+  date: 2026-07-14
+  category: approval
+  jurisdictions: [EU]
+  compounds: [semaglutide]
+  sources: [ema-wegovy-procedural-steps, ec-union-register-wegovy, ema-pi-wegovy-nl]
 
 - id: fda-pcac-2026-vote
   year: 2026
@@ -555,6 +643,15 @@
   jurisdictions: [AU]
   compounds: [retatrutide, semaglutide]
   sources: [au-tga-2026-09-retatrutide-counterfeit]
+
+# Dutch site: the Council adopted its first-reading position on both acts on 28 September 2026 (published 1 October);
+# Parliament's second reading is pending (OEIL), and no deadline is given (research/nl/eu-status.md, fact-check).
+- id: eu-council-pharma-position
+  year: 2026
+  date: 2026-09-28
+  category: regulation
+  jurisdictions: [EU]
+  sources: [council-st-7106-2026-rev2, council-st-7105-2026-rev2, ep-oeil-2023-0132-cod]
 
 # The raid was on 14 October 2026; the MHRA announced it on 15 October.
 - id: uk-counterfeit-pens-2026

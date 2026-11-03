@@ -1,0 +1,479 @@
+# Sources for research topic nl-help (Dutch help, reporting and harm-reduction services), research/nl/nl-help.md.
+# Every URL below was fetched on 27 October 2026 with curl (HTTP 200 unless the note says otherwise), converted
+# to text and searched for the wording the note quotes. Dates are the page's own "Laatst gewijzigd", DCTERMS.modified,
+# dateModified or publication date; where a page shows no date, the note says so and `year` is the year accessed.
+# Shape: src/schemas/index.ts (sourceSchema), as in src/data/sources/legal-a.yaml.
+#
+# Reused (already registered in src/data/sources/; NOT repeated here; each re-fetched and re-checked on 27 October 2026,
+# see research/nl/nl-help.md §3):
+#   rijksoverheid-urgent-medical-help, rijksoverheid-huisartsenpost-seh, rijksoverheid-kca, ec-112-emergency-number,
+#   thuisarts-sepsis, thuisarts-wondroos, thuisarts-dikke-ogen-lippen, thuisarts-pijn-op-borst, thuisarts-verlamming,
+#   thuisarts-hiv-pep, thuisarts-insuline-spuiten, rivm-hygiene-piercing, apotheek-medicijnafval, apotheek-nadroparine,
+#   drugsinfo-injecteren, mainline-steroids-safe-injecting, knmg-beroepsgeheim, lareb-bijwerkingen-melden, lareb-home
+#   (safety-a.yaml, shared.yaml); nvic-umcutrecht, lareb-2021-illegal-medicines, zin-huisarts-zvw, thuisarts-gezondheidstest,
+#   igj-2025-illegal-online-medicines (safety-b.yaml); igj-online-medicijnen, knmg-beroepsgeheim-doorbreken,
+#   thuisarts-naar-de-huisarts (guides.yaml).
+#
+# Hosts used below that are NOT on config/link-allowlist.json (proposed in research/nl/nl-help.md §7):
+#   lci.rivm.nl, www.113.nl, www.milieucentraal.nl, www.drugs-test.nl, www.huisartsenspoedposten.nl (added by the
+#   fact-check, optional). All others are allowed (www.thuisarts.nl, www.rijksoverheid.nl, www.zorginstituutnederland.nl,
+#   www.igj.nl, www.cbg-meb.nl, www.drugsinfo.nl, www.jellinek.nl, mainline.nl via www.mainline.nl, www.trimbos.nl,
+#   www.nhg.org, wetten.overheid.nl via the .overheid.nl suffix).
+# No title or URL below names a seller or a company.
+#
+# Fact-check (independent, 27 October 2026): every URL below and every reused id was re-fetched with curl today and
+# each quoted wording searched in the page text; three ids were added (nl-zvw-art-19-eigen-risico,
+# igj-2026-10-gestolen-medicijnen, ineen-huisartsenspoedposten) and five notes corrected (see the
+# "## Fact-check (independent, 27 October 2026)" section of research/nl/nl-help.md). 39 new ids in all.
+
+# ---------------------------------------------------------------- help levels: 112, huisarts, huisartsenpost, SEH
+
+thuisarts-spoed-wie-bellen:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Spoed: wie moet je bellen?"
+  year: 2026
+  url: https://www.thuisarts.nl/spoed-wie-bel-je
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "The page shows no date (year = year accessed). 'Bij levensgevaar: bel 112 ... Dit kan dag en nacht. De telefonist vertelt je wat je moet doen tot de ambulance er is.' No danger to life but a doctor needed soon: 'Op werkdagen overdag: bel je eigen huisarts'; 'Avond, nacht, weekend of feestdag: contact met de huisartsen-spoedpost'; 'Bij twijfel of je snel naar een arts moet: kijk op Thuisarts'. Practice open 'op werkdagen van 8 uur 's ochtends tot 5 uur 's middags'; the GP has a phone number for urgent calls, usually on the GP's website, or 'je kiest voor spoed in het keuzemenu'. The huisartsen-spoedpost's number is found 'op de website van jouw huisartsen-spoedpost', 'op de website van jouw huisarts' or 'op het bandje dat je hoort als je je huisarts belt', or by searching 'huisartsen-spoedpost' plus your town; often you can also e-mail or chat, sometimes after a questionnaire. A trained triage assistant decides: self-care advice, medicines, a call-back, an appointment, a home visit, an ambulance, home care, or the GGZ crisis service. No national number is given."
+
+thuisarts-in-case-of-emergency:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "In case of emergency"
+  year: 2025
+  url: https://www.thuisarts.nl/dutch-healthcare/in-case-of-emergency
+  accessed: 2026-10-27
+  lang: en
+  verified: url
+  note: "English page, 'Laatst gewijzigd: 9 okt 2025'. 'Life-threatening emergency? Call 112.' The GP is reachable 'between 8 o'clock in the morning and 5 o'clock in the afternoon on weekdays'; the out-of-hours service (huisartsen-spoedpost) covers 'weekdays between 5 o'clock in the afternoon and 8 o'clock in the morning and on weekend days and public holidays'; its number is on the GP practice's website or the GP's answering machine. Mental health crisis: contact the GP or out-of-hours service, who can contact the local Crisis Intervention Team (24/7); 'If you or someone you know has suicidal thoughts, you can also call 113, an anonymous helpline. This is free of charge.'"
+
+rijksoverheid-112-wanneer:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Wanneer kan ik alarmnummer 112 bellen?"
+  year: 2024
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/alarmnummer-112/wanneer-112-bellen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 19 March 2024 (DCTERMS.modified). The url is the page's canonical address (on 27 October 2026 the fact-checker's curl got HTTP 200 at this address with no redirect; the researcher saw it served under /themas/recht-veiligheid-en-defensie/...). 'U belt het alarmnummer 112 voor spoedeisende hulp. Bijvoorbeeld als u of iemand anders dringend medische hulp nodig heeft.' 'Bel 112 in levensbedreigende en heterdaad situaties.' Tell the operator what is happening, where, and which service seems needed (police, fire brigade or ambulance)."
+
+rijksoverheid-112-ambulance:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Wat gebeurt er als ik alarmnummer 112 bel om een ambulance te laten komen?"
+  year: 2023
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/alarmnummer-112/112-bellen-om-ambulance
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 26 October 2023. A 112 call for an ambulance goes to the regional ambulance control room; the operator decides whether an ambulance comes and can give instructions by phone (for example on resuscitation); in hospital the patient is taken to the Spoedeisende Hulp (SEH). If no ambulance is sent because the situation is not life-threatening: 'U moet dan contact opnemen met uw huisarts of naar de spoedeisende hulp van een ziekenhuis gaan', and you arrange your own transport."
+
+ineen-huisartsenspoedposten:
+  type: web
+  authors: "InEen (namens de huisartsenspoedposten)"
+  title: "Kan mijn klacht wachten tot de huisarts open is?"
+  year: 2026
+  url: https://www.huisartsenspoedposten.nl/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Added by the fact-check, 27 October 2026. The page shows no date ('© InEen 2024'; year = year accessed). 'Deze website is een initiatief van alle huisartsenspoedposten. Deze informatie is met zorg samengesteld door InEen'. 'Bel bij levensbedreigende situaties altijd direct 112.' A national finder, 'Vind je huisartsenspoedpost', searches by place or postcode and links each post's own website; it gives no national phone number and warns: 'de database met locaties wordt op dit moment bijgewerkt. Plaatsen en postcodes zijn mogelijk incompleet.' 'De huisartsenspoedpost is alleen open in de avond, nacht, het weekend of tijdens feestdagen.' The page also links moetiknaardedokter.nl, an online triage tool run by a private company (its footer names a B.V.; it lists 'Tarieven' for practices): never link that tool. Host www.huisartsenspoedposten.nl is not on the allowlist (proposed as optional)."
+
+# ---------------------------------------------------------------- Thuisarts: what to do for specific signs
+
+thuisarts-hypo-diabetes-type-2:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb diabetes type 2 en mijn bloedsuiker is te laag"
+  year: 2026
+  url: https://www.thuisarts.nl/diabetes-type-2/ik-heb-diabetes-type-2-en-mijn-bloedsuiker-is-te-laag
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 14 jul 2026'. Below 3.9 the blood sugar is too low; signs include hunger, sweating, shaking, dizziness, palpitations, confusion, blurred or double vision; very low sugar: others notice you no longer respond well; unconsciousness and coma, mainly in people who inject insulin. 'Wanneer bellen': '112: Iemand moet direct 112 bellen als je bewusteloos bent.' 'Spoed' (bel direct de huisarts of huisartsen-spoedpost, or someone calls for you): sugar did not bring it above 3.9; 'Je reageert niet meer goed als iemand iets tegen je zegt'; hard breathing; confusion. Helpers: call the GP or huisartsen-spoedpost straight away and rub honey or syrup inside both cheeks; glucagon if available. Cited only for the action levels and what helpers do; the page's sugar amounts are not repeated."
+
+thuisarts-buikpijn:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb buikpijn, wat kan het zijn?"
+  year: 2026
+  url: https://www.thuisarts.nl/buikpijn-bij-volwassenen/ik-heb-buikpijn
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 15 jul 2026'. The old address https://www.thuisarts.nl/buikpijn/ik-heb-buikpijn redirects here. 'Spoed: bel direct je huisarts of de huisartsen-spoedpost als je buikpijn hebt en 1 of meer van deze dingen': 'Je hebt ineens heftige buikpijn'; 'Je buikpijn wordt steeds erger'; vomiting blood; blood from the anus; sticky black stool; 'Je blijft steeds overgeven'; cannot pass urine; feeling faint; drowsy or confused; fast breathing; feeling ever sicker; pregnancy. 'Bel vandaag' with fever of 38 degrees or higher, pain at the lower right, or stomach reduction surgery in the last 6 months. The page names no 112 threshold for belly pain."
+
+thuisarts-steenpuist:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb een steenpuist"
+  year: 2026
+  url: https://www.thuisarts.nl/steenpuist/ik-heb-steenpuist
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 27 jul 2026'. 'Knijp de puist niet uit. De ontsteking kan hierdoor erger worden.' 'Bel direct de huisarts of huisartsen-spoedpost' if you get a fever or feel ill, or your immune defence is poor; make an appointment if the boil is on the face, keeps growing, is not gone after 10 days, or among other things 'Je spuit drugs'. Based on the NHG guideline on bacterial skin infections."
+
+thuisarts-voedselallergie:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik heb een voedsel-allergie"
+  year: 2026
+  url: https://www.thuisarts.nl/overgevoelig-of-allergisch-voor-bepaald-voedsel/ik-heb-voedsel-allergie
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 24 jun 2026'. 'Spoed: Bel direct 112, je huisarts of de huisartsen-spoedpost' with hard or wheezy breathing, a suddenly hoarse voice, a swelling tongue or throat, dizziness or fainting. 'Heb je een allergie-pen, gebruik die dan. Bel daarna meteen 112, je huisarts of de huisartsen-spoedpost.' 'Bel na de eerste pen altijd direct de huisarts, de huisartsen-spoedpost of 112.' Cited for the order of actions in a severe allergic reaction (use your own pen, then call), not for food allergy."
+
+thuisarts-psychische-crisis:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Iemand die ik goed ken heeft een psychische crisis. Wat moet ik doen?"
+  year: 2025
+  url: https://www.thuisarts.nl/psychische-klachten-bij-volwassenen/iemand-die-ik-goed-ken-heeft-psychische-crisis-wat-moet-ik-doen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 6 okt 2025'. '112: Bel direct 112 als iemands leven in gevaar is.' '113: Bel gratis 113 of kijk op 113.nl als je merkt dat iemand aan zelfmoord denkt. Op deze website kun je ook chatten.' If the person has no therapist, call the huisarts or huisartsen-spoedpost; 'Denkt de huisarts dat iemand een psychische crisis heeft? Dan belt de huisarts de crisisdienst van de geestelijke gezondheidszorg (ggz).'"
+
+thuisarts-prikken-bloedverdunner:
+  type: web
+  authors: "Thuisarts.nl (Nederlands Huisartsen Genootschap)"
+  title: "Ik ga mezelf prikken met een bloedverdunner"
+  year: 2023
+  url: https://www.thuisarts.nl/trombosebeen/ik-ga-mezelf-prikken-met-bloedverdunner
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 13 nov 2023'. Dutch GP advice for an injection under the skin at home: 'Van je apotheek krijg je een doos waar je de naalden in doet na het prikken (een naalden-container)'; set the box ready first; 'Was je handen met water en zeep. De plek waar je de prik gaat geven, hoef je niet te wassen.'; 'Prik niet in een wond, blauwe plek of litteken.'; 'Neem elke keer dat je prikt een andere plek.'; put needle and syringe in the naalden-container; do not rub afterwards. Also: 'Gebruik niet zomaar een medicijn dat je bij de drogist of via internet hebt gekocht. Bespreek dit eerst met je apotheek of arts.' Cited for general clean-injection steps only, not for the medicine."
+
+# ---------------------------------------------------------------- side effects and suspect products
+
+cbg-bijwerking-melden:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Bijwerking melden"
+  year: 2026
+  url: https://www.cbg-meb.nl/onderwerpen/goed-gebruik/bijwerkingen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 7 May 2026. 'Ervaar je bij het gebruik van jouw medicijn een bijwerking? Dan kun je deze melden bij Bijwerkingencentrum Lareb, via www.lareb.nl. Lareb verzamelt, registreert en analyseert individuele meldingen, in opdracht van het CBG.' 'Bespreek de bijwerking ook altijd met jouw arts of apotheker.' The CBG can then change the leaflet, make a medicine prescription-only, warn doctors and pharmacists, or take a medicine off the market."
+
+cbg-fmd-vervalsing-melden:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Falsified Medicines Directive"
+  year: 2025
+  url: https://www.cbg-meb.nl/onderwerpen/handelsvergunning-productinformatie-vereisten/hv-falsified-medicines-directive
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 22 October 2025. Since 9 February 2019 packs of prescription medicines carry safety features (Directive 2011/62/EU) so that patients do not receive falsified medicines from the pharmacy. 'Als apothekers, groothandels en fabrikanten/handelsvergunninghouders een foutmelding krijgen of een vermoeden hebben van vervalsing, moeten zij dit binnen 24 uur melden via het meldformulier van de IGJ voor vervalste geneesmiddelen.' The page gives no reporting route for patients. (The shorter address cbg-meb.nl/onderwerpen/hv-falsified-medicines-directive redirects here.)"
+
+igj-landelijk-meldpunt-zorg:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "Klacht over zorg of jeugdhulp? Het Landelijk Meldpunt Zorg"
+  year: 2026
+  url: https://www.igj.nl/onderwerpen/klachten-en-melden/klacht-of-vraag-over-zorg-of-jeugdhulpverlening
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 19 October 2026. The old address landelijkmeldpuntzorg.nl (written without the scheme so the link check does not read it as a link) answers with HTTP 302 to this page (checked 27 October 2026). 'Heeft u een vraag of klacht over de kwaliteit van zorg of jeugdhulp? Of over een medicijn of medisch hulpmiddel? Het Landelijk Meldpunt Zorg geeft u informatie en advies over wat u kunt doen met uw klacht. Daarnaast registreren wij de klacht die u bij ons meldt.'"
+
+igj-lmz-informeren:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ), Landelijk Meldpunt Zorg"
+  title: "Ik wil de inspectie informeren"
+  year: 2026
+  url: https://www.igj.nl/onderwerpen/klachten-en-melden/klacht-of-vraag-over-zorg-of-jeugdhulpverlening/ik-wil-iets-melden
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 19 October 2026. 'Het Landelijk Meldpunt Zorg is het aanspreekpunt voor cliënten, patiënten en andere betrokkenen. Wij zijn onderdeel van de Inspectie Gezondheidszorg en Jeugd.' A complaint about a care provider 'of over een medicijn of medisch hulpmiddel' can be reported by phone, contact form or letter. 'Wij lossen uw klacht niet op.' The registration shared with inspectors holds no personal data of the reporter, only the provider's; 'Wilt u anoniem blijven? Dan vragen wij u om ons te bellen.'"
+
+igj-lmz-contact:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ), Landelijk Meldpunt Zorg"
+  title: "Contact opnemen als patiënt, cliënt, naaste of betrokkene"
+  year: 2026
+  url: https://www.igj.nl/onderwerpen/klachten-en-melden/klacht-of-vraag-over-zorg-of-jeugdhulpverlening/contact
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 18 September 2026. Phone '088 - 120 50 20 (lokaal tarief)', Monday to Friday 9:00 to 14:00; contact form; post: Inspectie Gezondheidszorg en Jeugd, LMZ, Postbus 2115, 3500 GC Utrecht. Professionals use the IGJ's Informatie- en meldingencentrum instead. Warns of an 'informatieblog' that looks like the IGJ's but is not."
+
+igj-2026-10-gestolen-medicijnen:
+  type: regulator
+  authors: "Inspectie Gezondheidszorg en Jeugd (IGJ)"
+  title: "IGJ waarschuwt Europese autoriteiten voor gestolen medicijnen"
+  year: 2026
+  url: https://www.igj.nl/actueel/nieuws/2026/10/20/igj-waarschuwt-europese-autoriteiten-voor-gestolen-medicijnen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Added by the fact-check, 27 October 2026. News item of 20 October 2026 (DCTERMS.modified the same day). A batch of medicines was stolen from a Dutch wholesaler and may be offered illegally online: 'Het gaat met name om insulinepennen, die mogelijk ook worden gepresenteerd als obesitasmedicatie. Gebruik kan levensgevaarlijk zijn.' Warning for consumers: 'Geneesmiddelen die u - online - bij een niet erkende apotheek koopt, zijn niet veilig. Ze zijn mogelijk verkeerd opgeslagen, vervalst of niet goedgekeurd.' 'Hebt u medicatie online gekocht? Gebruik die niet en neem contact op met uw arts of apotheek.' The title and url name no company; the body links a news article that names the maker: do not repeat it. Cite for the warning and the advice only; the page does not say what the pens cause (do not add 'hypo' from this source)."
+
+# ---------------------------------------------------------------- mental health
+
+stichting-113-hulplijn:
+  type: web
+  authors: "113 Zelfmoordpreventie"
+  title: "Hulplijn"
+  year: 2026
+  url: https://www.113.nl/heb-je-nu-hulp-nodig/hulplijn
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "The page shows no date (year = year accessed). 'Ben je in levensgevaar? Bel meteen 112.' 'Geen levensgevaar, maar wel hulp nodig? Bel gratis 113 of start een chatgesprek.' 'Je kan ons gratis bellen via 113. We staan 24 uur per dag voor je klaar. Je hoeft alleen je (zelfverzonnen) naam te noemen'; the chat 'is dag en nacht geopend'; anonymous. In English on the same page: the crisis number 113 'is only accessible for people calling from within the Netherlands'; from abroad, use the chat. The page does not show 0800-0113. The same page says 113 uses AI to support its counsellors in chats only ('In een hulplijngesprek praat je altijd met een mens'; 'AI wordt alleen gebruikt in chatgesprekken. Als je niet wilt dat AI invloed heeft op je gesprek kun je ons dus ook bellen via het nummer 113'), processed on servers in the Netherlands (fact-check, 27 October 2026). Host www.113.nl is not on the allowlist (proposed)."
+
+stichting-113-2025-gratis-bellen:
+  type: web
+  authors: "113 Zelfmoordpreventie"
+  title: "Telefoonnummer 113 vanaf nu gratis"
+  year: 2025
+  url: https://www.113.nl/actueel/telefoonnummer-113-vanaf-nu-gratis
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "News item of 3 October 2025. 'Mensen met zelfdodingsgedachten kunnen vanaf nu gratis bellen met 113.' 'Voorheen konden mensen alleen gratis bellen via 0800-0113 en betaalden bellers de standaard belkosten als ze 113 intoetsten.' The recommended reference is now: 'Denk je aan zelfdoding? Bel dan 24/7 gratis en anoniem 113 of chat op 113.nl'."
+
+stichting-113-drie-nummers:
+  type: web
+  authors: "113 Zelfmoordpreventie"
+  title: "De 3 telefoonnummers van 113"
+  year: 2026
+  url: https://www.113.nl/de-3-telefoonnummers-van-113
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "The page shows no date (it cites 2025 call figures; year = year accessed). The helpline has three numbers: 0900-0113 (oldest, costs money), 0800-0113 (free) and 113 (free since October 2025). 'Sinds 3 oktober 2025 is bellen naar het nummer 113 ook gratis. Daarom communiceren we nu overal het korte nummer.' 'Ondanks dat 113 nu gratis is blijven de telefoonnummers 0800-0113 en 0900-0113 bestaan. In nieuwe communicatie verschijnen beide nummers niet meer maar ze blijven wel technisch beschikbaar.'"
+
+# ---------------------------------------------------------------- drugs advice and addiction care
+
+drugsinfo-drugs-infolijn:
+  type: web
+  authors: "Trimbos-instituut (DRUGSinfo)"
+  title: "De Drugs Infolijn"
+  year: 2026
+  url: https://www.drugsinfo.nl/contact/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 19 October 2026. Phone '0900-1995 €0,10/min', 'Geopend op maandag t/m vrijdag van 09:00 – 17:00'; chat free, Monday to Friday 13:00 to 17:00; e-mail free, answered within 5 working days; anonymous ('Je hoeft je naam niet te noemen'), 'Zonder oordeel'. 'De Drugs Infolijn is er voor iedereen.' Questions: 'al je vragen over drugs', for example the law, traffic, health, addiction, help, stopping or cutting down; 'we bieden geen behandeling'; can refer on. The chat is run with addiction-care institutions. The page does not mention peptides or performance and image enhancing drugs."
+
+drugsinfo-hulpkaart:
+  type: web
+  authors: "Trimbos-instituut (DRUGSinfo)"
+  title: "Zoek hulp in de buurt"
+  year: 2026
+  url: https://www.drugsinfo.nl/hulpkaart/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Published and modified 3 August 2026. A map of addiction-care institutions in the Netherlands. 'Wil je een behandeling? Ga dan eerst naar je huisarts. Je hebt een verwijzing van de huisarts nodig om hulp te krijgen bij een instelling voor verslavingszorg.' 'DRUGSinfo geeft geen informatie over de kwaliteit van de behandeling.'"
+
+rijksoverheid-verslavingszorg-drugs:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Verslavingszorg bij drugsgebruik"
+  year: 2024
+  url: https://www.rijksoverheid.nl/onderwerpen/drugs/drugsgebruik-en-verslavingszorg
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 8 April 2024; the url is served at /themas/familie-zorg-en-gezondheid/drugs/drugsgebruik-en-verslavingszorg. 'Mensen met een drugsprobleem gaan eerst naar de huisarts. Als de problemen ernstig zijn verwijst de huisarts ze door naar de Basis-GGZ of naar de specialistische verslavingszorg.' Harm-reduction provisions for people who cannot stop include 'Gratis omwisselen van gebruikte spuiten voor nieuwe steriele spuiten. Dit verkleint de kans op besmetting met hiv of hepatitis B of C.'"
+
+jellinek-anabole-steroiden:
+  type: web
+  authors: "Jellinek"
+  title: "Wat zijn anabole steroïden?"
+  year: 2026
+  url: https://www.jellinek.nl/vraag-antwoord/wat-zijn-anabole-steroiden/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "The page shows no date (year = year accessed). Jellinek (addiction care) answers questions on anabolic steroids: 'Anabolen zijn lichamelijk en geestelijk verslavend'; side effects on liver, kidneys, heart, mood. Cited only to show that Jellinek's public Q&A covers anabolic steroids and doping (also 'Wat is doping en is het legaal?'); no Jellinek page on peptides was found (site search, 27 October 2026)."
+
+# ---------------------------------------------------------------- harm reduction for injecting; drug checking
+
+trimbos-2026-harm-reduction-nederland:
+  type: report
+  authors: "Martinelli T, Koelewijn J, Van der Gouwe D"
+  title: "Harm reduction in Nederland. Een inventarisatie van gebruiksruimten, medicatiepoli en verstrekking van parafernalia"
+  container: "Trimbos-instituut, Utrecht (TRI-41-037)"
+  year: 2026
+  url: https://www.trimbos.nl/kennisbank/tri-41-037-harm-reduction-in-nederland/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Report page dated 23 June 2026 (38 pages; PDF at https://www.trimbos.nl/wp-content/uploads/2026/06/TRI-41-037_Harm-reduction-in-Nederland.pdf, downloaded and read; its colophon prints article number TRI-41-036, the report page TRI-41-037). Funded by the Ministry of VWS. Section 4.1: 'In totaal telden we 23 gebruiksruimten (14 steden), 17 MHU's (16 steden) en 29 spuitomruil locaties (19 steden)'; 'Net als in de vorige inventarisatie (2022) konden we 29 locaties in 19 steden identificeren, maar dit betreft vrijwel zeker een onderschatting'; 'naast verslavingszorginstellingen ook apotheken of GGD-locaties waar je spuiten kunt omruilen'. Section 4.4 (fact-check): spuitomruil is often done alongside other work, 'bij gebruiksruimten, apotheken, GGD'en, huisartsen, maatschappelijke opvang en andere laagdrempelige voorzieningen (zoals hostels)'. Section 4.4: at one location visitors 'leveren gebruikte spuiten in en ontvangen kosteloos nieuwe exemplaren', at others after a short intake; used material is collected in closed containers and disposed of through a channel for medical waste. The report is about people who use drugs (mainly opiates and basecoke); it does not mention people who inject performance or image enhancing drugs or peptides."
+
+mainline-2026-diensten-stoppen:
+  type: web
+  authors: "Stichting Mainline"
+  title: "Tot wanneer kun je nog rekenen op onze diensten?"
+  year: 2026
+  url: https://mainline.nl/tot-wanneer-kun-je-nog-rekenen-op-onze-diensten/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Published 17 March 2026, modified 30 April 2026 (dateModified; fact-check). Mainline's home page (read 27 October 2026) says 'Helaas stopt Mainline spoedig.' This page: 'De spuitomruil stopt per 1 mei.' Drug testing at the Mainline office on Thursdays 'blijft nog mogelijk tot 14 mei'; chemsex advice until 26 June 2026; the magazine's last issue has appeared."
+
+mainline-2026-wat-gaat-waar:
+  type: web
+  authors: "Stichting Mainline"
+  title: "Wat gaat waar naartoe?"
+  year: 2026
+  url: https://mainline.nl/wat-gaat-waar-naartoe/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Published 8 May 2026. 'Uiterlijk per 14 mei stopt Mainline met spuitomruil en drugs testen. In Amsterdam kun je nog bij vier locaties van De Regenboog terecht voor spuitomruil en bij de Jellinek voor drugs testen.' chemsex.nl will be run by SoaAidsNL; old research and magazines go to the Trimbos-instituut."
+
+mainline-info-zorg-pieds:
+  type: web
+  authors: "Stichting Mainline"
+  title: "Info en zorg anabole steroïden"
+  year: 2023
+  url: https://mainline.nl/anabole-steroiden/info-zorg/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 17 November 2023 (written before Mainline announced it would stop). 'Binnen de geestelijke gezondheidszorg en verslavingszorg in Nederland bestaat geen gespecialiseerde zorg voor personen die PIEDs gebruiken.' On drug checking: 'Een soortgelijke service bestaat in Nederland helaas niet voor het testen van anabole steroïden en/of andere PIEDs.' On needle exchange: 'Gebruikers van anabole steroïden en/of andere PIEDs maken hier in Nederland vrijwel geen gebruik van, alhoewel dit wel mogelijk is.' The GP 'kan helpen schade door het gebruik van PIEDs te beperken door bloedonderzoek', but 'De bereidheid daaraan mee te werken kan echter van huisarts tot huisarts verschillen.' The page also points to commercial test labs and home test kits and lists private clinicians: this site repeats none of that."
+
+dims-welke-drugs:
+  type: web
+  authors: "Trimbos-instituut, Drugs Informatie en Monitoring Systeem (DIMS)"
+  title: "Welke drugs kan ik laten testen?"
+  year: 2022
+  url: https://www.drugs-test.nl/welke-drugs/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 10 January 2022 (still the live page on 27 October 2026). 'Ook testen wij geen steroïden, geen medicijnen en ook geen smartshop producten.' 'Het DIMS mag alleen drugs testen die recreatief gebruikt worden ... Middelen die gebruikt worden voor medische doeleinden, dus als (on)officiële medicatie, kan het DIMS niet testen.' 'Ook steroïden of andere prestatieverhogende middelen zoals pre-workout supplementen kan het DIMS niet aannemen.' Research chemicals (new psychoactive substances) can be tested. Peptides are not named. Host www.drugs-test.nl is not on the allowlist (proposed); the site says it is 'Een website van' the Trimbos-instituut, contact dims@trimbos.nl."
+
+dims-voorwaarden:
+  type: web
+  authors: "Trimbos-instituut, Drugs Informatie en Monitoring Systeem (DIMS)"
+  title: "Wat zijn de voorwaarden voor het testen van drugs?"
+  year: 2026
+  url: https://www.drugs-test.nl/wat-zijn-de-voorwaarden/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 4 August 2026. 'Er wordt alleen getest voor mensen die van plan zijn het middel zelf in te nemen.' Found drugs are not tested; 'Er worden uitsluitend drugs uit Nederland getest.'; 'Het DIMS is niet verplicht je van een uitslag te voorzien.'; 'Aan de testuitslag kunnen geen rechten worden ontleend'. DIMS is a network of addiction-care institutions coordinated by the Trimbos-instituut (page 'Over DIMS', modified 16 November 2021: 32 institutions)."
+
+jellinek-drugstestservice:
+  type: web
+  authors: "Jellinek"
+  title: "Laat je drugs testen bij Jellinek (Utrecht, Amsterdam, Amersfoort, Hilversum)"
+  year: 2026
+  url: https://www.jellinek.nl/alcohol-drugs-gedrag/drugstestservice/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "The page shows no date (year = year accessed). Anonymous testing for consumers in Amsterdam, Amersfoort, Utrecht and Hilversum. 'Wat we niet testen': among others 'Anabolen' and 'Medicijnen (kijk voor meer informatie over medicijnen op: www.apotheek.nl)'. Cited only for what it does not test. The page also refers to outside websites and a foreign testing service; this site does not repeat them."
+
+# ---------------------------------------------------------------- needle-stick injury
+
+lci-2019-prikaccidenten:
+  type: guideline
+  authors: "Rijksinstituut voor Volksgezondheid en Milieu (RIVM), Landelijke Coördinatie Infectieziektebestrijding (LCI)"
+  title: "Prikaccidenten. Landelijke richtlijn"
+  container: "LCI-richtlijnen (RIVM)"
+  year: 2019
+  url: https://lci.rivm.nl/richtlijnen/prikaccidenten
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Version 2019, adopted by the LOI on 5 April 2019, interim changes up to February 2020; page modified 27 January 2026 (dateModified). Stap 0: 'Laat na het accident de prik-, snij- of bijtwond goed doorbloeden (niet stelpen) en laat de blootgestelde de wond met lauwwarm water uitspoelen, bij voorkeur onder een stromende kraan. Vervolgens moet de wond zo spoedig mogelijk gedesinfecteerd worden met een huiddesinfectans: 70% alcohol of 70% isopropanol of een (povidon)jodiumoplossing.' Scope includes citizens ('personen die zich aan zwerfnaalden verwonden'); 'Afhankelijk van de omstandigheden wendt de blootgestelde zich tot de bedrijfsarts, een speciaal meldpunt, de spoedeisende hulp, de huisarts of de GGD'. 'PEP dient bij voorkeur binnen 2 uur te worden gestart tot maximaal 72 uur na het accident'. Loose needles of unknown source: testing the needle is not useful; no HIV PEP 'behalve als er sprake is van een recent (uiterlijk 24 uur tevoren) gebruikte naald van een persoon behorende tot een groep met een verhoogd risico'. A guideline for professionals; host lci.rivm.nl is not on the allowlist (proposed)."
+
+# ---------------------------------------------------------------- disposing of needles
+
+milieucentraal-kca:
+  type: web
+  authors: "Milieu Centraal"
+  title: "Klein chemisch afval (kca)"
+  year: 2026
+  url: https://www.milieucentraal.nl/minder-afval/afval-scheiden/klein-chemisch-afval-kca/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "'Laatst gewijzigd: 27 juni 2026'. 'Klein chemisch afval (kca) kun je inleveren bij de milieustraat of afvalscheidingsstation van je gemeente.' 'Medicijnen en injectienaalden kun je ook inleveren bij de apotheek waar je ze gehaald hebt.' The table 'Wel bij KCA' lists 'Injectienaald' and 'Medicijnen'. kca in the residual waste can be dangerous for waste collectors. Host www.milieucentraal.nl is not on the allowlist (proposed; Milieu Centraal is the government-funded public information foundation on environment and waste)."
+
+# ---------------------------------------------------------------- blood tests, insurance and the deductible
+
+rijksoverheid-eigen-risico-2026:
+  type: regulator
+  authors: "Rijksoverheid (Government of the Netherlands)"
+  title: "Wanneer betaal ik een eigen risico voor mijn zorg?"
+  year: 2026
+  url: https://www.rijksoverheid.nl/documenten/vraag-en-antwoord/zorgverzekering/eigen-risico-zorgverzekering
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 28 July 2026. 'Het verplichte eigen risico voor 2026 is € 385.' It applies from age 18 to care from the basic package; no deductible for, among others, 'huisartsenzorg (waaronder de huisartsenpost)'; insurers may exempt certain providers, programmes, medicines and devices."
+
+zin-eigen-risico-zvw:
+  type: regulator
+  authors: "Zorginstituut Nederland"
+  title: "Eigen risico (Zvw)"
+  year: 2026
+  url: https://www.zorginstituutnederland.nl/verzekerde-zorg/e/eigen-risico-zvw
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Modified 31 March 2026. 'Voor 2026 is het verplichte eigen risico € 385.' The amount is set by the government each year and applies per calendar year to everyone aged 18 and over; GP care is exempt."
+
+rijksoverheid-2026-09-vws-begroting:
+  type: regulator
+  authors: "Rijksoverheid, Ministerie van Volksgezondheid, Welzijn en Sport"
+  title: "Kabinet zet in op gezondheid en op zorg die klaar is voor de toekomst"
+  year: 2026
+  url: https://www.rijksoverheid.nl/actueel/nieuws/2026/09/15/kabinet-zet-in-op-gezondheid-en-op-zorg-die-klaar-is-voor-de-toekomst
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "News item of 15 September 2026 (Prinsjesdag, the 2027 budget). 'Het verplicht eigen risico gaat in 2027 met de inflatie mee en stijgt van € 385 naar € 400.' The cabinet wants the deductible to move with the costs of care. A budget announcement. Fact-check (27 October 2026): the € 400 is no longer only a plan; it was fixed by ministerial regulation of 25 September 2026 (Stcrt. 2026, 34372), in force 1 January 2027: cite nl-zvw-art-19-eigen-risico for the amount, this item only for the cabinet's reason."
+
+nl-zvw-art-19-eigen-risico:
+  type: law
+  authors: "Staten-Generaal (Zorgverzekeringswet); amount for 2027 set by the Minister van Volksgezondheid, Welzijn en Sport"
+  title: "Zorgverzekeringswet, artikel 19 (verplicht eigen risico)"
+  container: "wetten.overheid.nl, BWBR0018450 (text from 1 January 2027)"
+  year: 2026
+  url: https://wetten.overheid.nl/BWBR0018450/2027-01-01#Hoofdstuk3_Paragraaf3.4_Artikel19
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Added by the fact-check, 27 October 2026. The version in force today ('Geldend van 01-01-2026 t/m heden', https://wetten.overheid.nl/BWBR0018450/) reads art. 19(1): 'Iedere verzekerde van achttien jaar of ouder heeft een verplicht eigen risico van € 385 per kalenderjaar'; art. 19(7): indexation 'blijven buiten toepassing voor de jaren 2019 tot en met 2026'. The version from 1 January 2027 (this url, marked '[Wijziging per 01-01-2027.]') reads '€ 400 per kalenderjaar'. Its source is the Regeling van de Minister van Volksgezondheid, Welzijn en Sport van 25 september 2026, kenmerk 4527716-1104927-WJZ, houdende vaststelling van het verplicht eigen risico Zvw 2027 (Staatscourant 2026, 34372, published 30 September 2026; read at zoek.officielebekendmakingen.nl/stcrt-2026-34372.html, host not allowlisted, so written without the scheme): 'Artikel 1 Het bedrag, bedoeld in artikel 19, eerste lid, van de Zorgverzekeringswet, wordt vastgesteld op € 400. Artikel 2 Deze regeling treedt in werking met ingang van 1 januari 2027.' Its explanation repeats that GP care is exempt. Cite for: € 385 in 2026, € 400 from 1 January 2027."
+
+nhg-2025-gewichtsreducerende-medicatie:
+  type: guideline
+  authors: "Nederlands Huisartsen Genootschap (NHG)"
+  title: "Praktijksituaties gewichtsreducerende medicatie"
+  year: 2025
+  url: https://www.nhg.org/praktijkvoering/praktijksituaties-gewichtsreducerende-medicatie/
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "The page shows no machine date; its text says 'Op het moment van publicatie (oktober 2025)'. Situation 6, 'Patiënt verkrijgt medicatie via andere route': a patient can obtain medication through other (commercial) routes, for example the internet; follow-up and checks belong with the prescriber. 'De huisarts draagt geen verantwoordelijkheid voor periodieke controles bij elders verkregen medicatie. De huisarts heeft wel een rol in het signaleren van bijwerkingen en complicaties van dergelijke middelen.' 'De patiënt is verantwoordelijk behandelaren te informeren over het medicatiegebruik.' Guidance for GPs about weight-loss medicines; not a rule about peptides."
+
+# ---------------------------------------------------------------- warning-signs provenance (Dutch source for a sign)
+
+cbg-2025-06-naion-semaglutide:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Oogziekte NAION is zeldzame bijwerking van semaglutide"
+  year: 2025
+  url: https://www.cbg-meb.nl/actueel/nieuws/2025/06/06/oogziekte-naion-is-zeldzame-bijwerking-van-semaglutide
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "News item of 6 June 2025. Following the EMA's PRAC, NAION is 'een zeer zeldzame bijwerking van semaglutide' (up to 1 in 10,000 users); 'Als medicijngebruikers tijdens de behandeling last krijgen van plotseling gezichtsverlies, of snel slechter gaan zien, dan moeten ze contact opnemen met hun arts. Als het om NAION gaat, moet de behandeling gestopt worden.' A Dutch-language companion to ema-prac-2025-06-naion (semaglutide.yaml) for the warning-signs page."

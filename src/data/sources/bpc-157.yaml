@@ -650,9 +650,9 @@ ema-medicines-json:
   title: "Medicines data download (JSON report of all EPARs: authorised, refused, withdrawn and suspended medicines)"
   year: 2026
   url: https://www.ema.europa.eu/en/documents/report/medicines-output-medicines_json-report_en.json
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   verified: url
-  note: "2,754 records (timestamp 2026-10-20T06:11:41Z, re-downloaded 20 October 2026); none contains BPC-157, bepecin, PL 14736, pentadecapeptide or 'body protection'. Regranex (becaplermin): status Withdrawn, authorised 29/03/1999, authorisation ended 16/07/2012."
+  note: "2,754 records (timestamp 2026-10-27T06:02:09Z; all centrally assessed medicines: authorised, refused, withdrawn, suspended, opinion stage). Searched on 20 and 27 October 2026 for every compound of the site (names, INNs, codes, brands; lists in research/nl/status/<slug>.yaml). Records found: Ozempic, Rybelsus, Wegovy, Kayshild, Kyinsu (semaglutide); Mounjaro (the only tirzepatide record); Egrifta (tesamorelin, application withdrawn); Scenesse (afamelanotide); Foundayo (orforglipron, opinion stage). No record for any other compound of the site; for BPC-157, none contains BPC-157, bepecin, PL 14736, pentadecapeptide or 'body protection'. Regranex (becaplermin): withdrawn, authorised 29/03/1999, ended 16/07/2012. The link opens the whole dataset."
 
 de-amg-21:
   type: law
@@ -693,7 +693,7 @@ wada-2026-list-en:
   title: "World Anti-Doping Code International Standard: Prohibited List 2026"
   year: 2025
   url: https://www.wada-ama.org/sites/default/files/2025-09/2026list_en_final_clean_september_2025.pdf
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   verified: url
   note: "S0 Non-approved substances, prohibited at all times, Specified Substances; names BPC-157."
 
@@ -703,6 +703,6 @@ wada-2027-list-en:
   title: "World Anti-Doping Code International Standard: Prohibited List 2027 (in effect 1 January 2027)"
   year: 2026
   url: https://www.wada-ama.org/sites/default/files/2026-09/2027list_en_final_clean_26_august_2026_2.pdf
-  accessed: 2026-10-20
+  accessed: 2026-10-27
   verified: url
   note: "S0 still names BPC-157 and now also lists 'peptides' among its examples."

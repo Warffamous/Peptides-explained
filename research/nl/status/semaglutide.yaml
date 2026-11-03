@@ -1,0 +1,67 @@
+# EU and Dutch status of semaglutide on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: semaglutide
+checked: 2026-10-27
+rows:
+  - { jurisdiction: EU, status: authorised, since: 2018-02-08, as_of: 2026-10-27, sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-epar-kayshild, ema-wegovy-procedural-steps, ec-union-register-ozempic, ema-medicines-json] }
+  - { jurisdiction: NL, status: authorised, since: 2018-02-08, as_of: 2026-10-27, sources: [ema-epar-ozempic, eu-regulation-726-2004, cbg-gib-search-semaglutide-2026-10-27, cbg-afslankmedicijnen] }
+products:
+  # EU products. holder = the EPAR's marketing authorisation holder; authorised = the Commission decision date
+  # (initial authorisation; for wegovy-tablets the extension decision C(2026) 5102). label_url = the EPAR page.
+  - { id: ozempic, name: Ozempic, holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2018-02-08, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/ozempic", label_source: ema-epar-ozempic }
+  - { id: rybelsus, name: Rybelsus, holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2020-04-03, route: oral, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/rybelsus", label_source: ema-epar-rybelsus }
+  - { id: wegovy, name: Wegovy (injection), holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2022-01-06, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy", label_source: ema-epar-wegovy }
+  - { id: wegovy-tablets, name: Wegovy (tablets), holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2026-07-14, route: oral, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/wegovy", label_source: ema-epar-wegovy }
+  # NEW (not in the data file): Kayshild, semaglutide for MASH, conditional marketing authorisation.
+  - { id: kayshild, name: Kayshild, holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2026-03-26, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/kayshild", label_source: ema-epar-kayshild }
+  # OPTIONAL (editor's choice): Kyinsu, a fixed combination of insulin icodec and semaglutide.
+  - { id: kyinsu, name: Kyinsu (with insulin icodec), holder: Novo Nordisk A/S, jurisdiction: EU, authorised: 2025-11-24, route: subcutaneous, label_url: "https://www.ema.europa.eu/en/medicines/human/EPAR/kyinsu", label_source: ema-epar-kyinsu }
+compare_with_data_file:
+  - "Rows: status and since unchanged (authorised since 2018-02-08 in both). as_of 2026-10-20 -> 2026-10-27."
+  - "EU row sources: add ema-epar-kayshild and ec-union-register-ozempic (or the other register entries); ema-wegovy-procedural-steps was re-read today and still supports the tablets and the 7.2 mg pen."
+  - "NL row sources: the data file cites ema-epar-ozempic, fk-semaglutide, zin-wegovy-reassessment and cbg-ozempic-shortage (fact-check: ema-epar-ozempic was missing from this list). The last three support reimbursement and shortage prose, not the authorisation; suggested: ema-epar-ozempic + eu-regulation-726-2004 (art. 13(1): a central authorisation 'shall be valid throughout the Union') + cbg-gib-search-semaglutide-2026-10-27 + cbg-afslankmedicijnen. Keep the FK/ZIN ids in the prose if the insurance research confirms them."
+  - "Products: the four EU products in the data file match the EPARs (names, holder Novo Nordisk A/S, dates, routes, label URLs): no correction."
+  - "MISSING product: Kayshild (EU/1/26/2019), semaglutide for non-cirrhotic MASH with fibrosis F2-F3, conditional marketing authorisation of 26 March 2026 (CHMP opinion 29 January 2026). It is a semaglutide medicine in the EU register and the CBG register, so the EU product list is incomplete without it. Needs a Dutch indications line (from ema-pi-kayshild-nl)."
+  - "Possibly missing: Kyinsu (EU/1/25/1992; insulin icodec + semaglutide; 24 November 2025). It is a combination product; the editor decides whether a semaglutide page lists it. If listed, it needs an indications line (ema-pi-kyinsu-nl), and its extension of indication recommended by the CHMP in October 2026 is pending a Commission decision."
+  - "Not a product difference, for the prose: Wegovy's five-year renewal was decided on 21 September 2026 (C(2026) 6826); Ozempic's latest Commission decision is a yearly update of 12 October 2026 (C(2026) 7309); the Wegovy product information was last updated on 26 October 2026."
+  - "Names: brands in the data file are [Ozempic, Wegovy, Rybelsus]; the EU also has Kayshild (and Kyinsu as a combination). There is no 'Ozempic tablets' product in the EU (a US product)."
+regulatory_notes:
+  EU: "Authorised EU-wide: Ozempic (8 Feb 2018), Rybelsus (3 Apr 2020), Wegovy injection (6 Jan 2022) and tablets (14 Jul 2026), Kayshild for MASH (26 Mar 2026, conditional), and Kyinsu with insulin icodec (24 Nov 2025). Prescription only."
+  NL: "Authorised in the Netherlands through these EU authorisations; all are in the CBG register. Prescription only. The EU shortage of Ozempic is over (EMA, last updated 13 Jan 2026). [Reimbursement clause from the insurance research.]"
+indications_nl_from_smpc:
+  # Dutch 4.1 text of the EU product information (EMA, Dutch), for the writers' B1 'indications' lines.
+  ozempic: "Volwassenen met onvoldoende gereguleerde diabetes mellitus type 2, als toevoeging aan dieet en lichaamsbeweging; als monotherapie wanneer metformine ongeschikt is, of naast andere diabetesmiddelen (ema-pi-ozempic-nl)."
+  rybelsus: "Volwassenen met onvoldoende gereguleerde diabetes mellitus type 2, om de glykemische controle te verbeteren, als toevoeging aan dieet en lichaamsbeweging (ema-pi-rybelsus-nl)."
+  wegovy: "Gewichtsbeheersing als aanvulling op een caloriearm dieet en meer lichaamsbeweging: volwassenen met BMI ≥ 30, of 27 tot 30 met minstens één gewichtsgerelateerde aandoening; adolescenten vanaf 12 jaar met obesitas en meer dan 60 kg (ema-pi-wegovy-nl)."
+  wegovy-tablets: "Gewichtsbeheersing bij volwassenen, dezelfde BMI-grenzen; de tabletten zijn alleen voor volwassenen (ema-pi-wegovy-nl; EPAR overview)."
+  kayshild: "Volwassenen met niet-cirrotische MASH met matige tot gevorderde leverfibrose (F2 tot F3), samen met dieet en lichaamsbeweging (ema-pi-kayshild-nl)."
+  kyinsu: "Volwassenen met diabetes type 2 die onvoldoende onder controle is met basale insuline of een GLP-1-receptoragonist, naast orale antidiabetica (ema-pi-kyinsu-nl)."
+notes: |
+  EMA medicines JSON (27 October 2026; INN semaglutide): five records, all 'Authorised', all Novo Nordisk A/S: Ozempic
+  EMEA/H/C/004174 (MA 08/02/2018; EC decision date 11/06/2026; revision 22), Rybelsus EMEA/H/C/004953 (03/04/2020;
+  26/03/2026; rev. 17), Wegovy EMEA/H/C/005422 (06/01/2022; 21/09/2026; rev. 20; last updated 26/10/2026), Kayshild
+  EMEA/H/C/006426 (26/03/2026; conditional approval Yes; additional monitoring Yes), Kyinsu EMEA/H/C/006279 (insulin
+  icodec;semaglutide; 24/11/2025; additional monitoring Yes).
+  Under evaluation (EMA list of 5 October 2026): three generic semaglutide applications, EMEA/H/C/006847 (type 2 diabetes,
+  start 21 May 2026), 006902 (type 2 diabetes, 18 June 2026) and 006910 (weight management, 18 June 2026); the CHMP
+  agenda of 12-15 October 2026 had 006902 and 006910 at the Day 120 list of questions. These do not change the row
+  (semaglutide is already authorised); they may be mentioned as 'generic versions are under EU review'.
+  Fact-check (27 October 2026): also under CHMP evaluation, an extension of indication for Rybelsus to children and
+  adolescents from 10 years with type 2 diabetes (EMA/VR/0000369826, evaluation started 12 September 2026;
+  ema-ext-indication-under-evaluation-2026-09); and the Kyinsu extension (COMBINE 4) recommended by the CHMP on
+  15 October 2026, pending a Commission decision. Neither changes the rows.
+  Union Register (27 October 2026): Ozempic, Rybelsus, Wegovy, Kayshild, Kyinsu all ACTIVE.
+  Geneesmiddeleninformatiebank (27 October 2026): 33 semaglutide product lines, all EU numbers (no national product):
+  Kayshild (5 pens), Kyinsu, Ozempic 0,25/0,5/1/2 mg pens, Rybelsus 1,5/3/4/7/9/14/25/50 mg, Wegovy pens, FlexTouch,
+  7,2 mg pen and 1,5/4/9/25 mg tablets.
+  Shortage: EMA catalogue 'Shortage resolved' for Ozempic (last updated 13 January 2026) and Rybelsus (22 January 2024);
+  no Wegovy, Kayshild or Kyinsu entry. CBG: the last shortage update on its Ozempic page is 2 December 2024 ('De
+  startdosering van Ozempic is per 2 december 2024 weer beschikbaar in Nederland. Het tekort is daarmee opgelost.');
+  fact-check: the page itself was last modified on 20 January 2025 (an update on the PRAC's NAION review). Farmanco public
+  list (27 October 2026): no semaglutide entry. The CBG/IGJ shortage report for 2025 does not mention GLP-1 medicines.
+  Safety in the EU product information (Dutch SmPCs read 27 October 2026): aspiration under general anaesthesia or deep
+  sedation (all five SmPCs with semaglutide, Kyinsu included), NAION (Ozempic, Rybelsus, Wegovy, Kayshild; not Kyinsu),
+  gastroparesis (fact-check correction: not Wegovy only; Ozempic, Rybelsus, Wegovy and Kayshild all say 'semaglutide
+  wordt niet aanbevolen bij ernstige gastroparese'; Ozempic and Rybelsus by worksharing EMA/VR/0000249026, outcome
+  23 October 2025; Wegovy by EMA/VR/0000257476, outcome 23 October 2025, Commission decision C(2026) 1195 of
+  16 February 2026). PRAC items: see eu-status.md §1 (C) and the fact-check section (volvulus concluded on
+  1 October 2026 without a label change, 'reassess in the next PSUR'; new signal of ischaemic colitis, EPITT 20309).

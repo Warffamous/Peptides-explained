@@ -23,6 +23,10 @@ investigation, or if it suggests the product is available through the Special Ac
 reviewer). The pages say this once, in the publisher line on the about pages (§1b), and never frame
 Dutch law as the reader's law.
 
+*Dutch pages* also follow the 2026 Dutch advertising case law (§1b, "The advertising test for Dutch
+pages"). Whether this paragraph's wording changes because of it is an open owner decision
+(`docs/REVIEW-2026-10-27-dutch-site.md`).
+
 Therefore, in content:
 
 - No outbound link except to hosts on `config/link-allowlist.json` (regulators, law databases,
@@ -207,7 +211,7 @@ components leave it out (`src/lib/jurisdictions.ts`).
 | Locale | Full | Notes | Emergency numbers printed |
 |---|---|---|---|
 | English (`en`, published) | US, UK, CA, AU | IE, NZ | never (§1) |
-| Dutch (`nl`, preview) | NL, EU, BE | none | yes ("Bel 112") |
+| Dutch (`nl`, published 3 November 2026) | NL, EU | BE | yes ("Bel 112") |
 
 **English is written for readers in the United States, the United Kingdom, Canada and Australia**, with
 short notes for Ireland and New Zealand (`/en/legal/ireland-and-new-zealand/`). Wherever the answer
@@ -261,6 +265,52 @@ natural). Explain each country's own terms once (DIN, ARTG, Schedule 4, "special
   a neutral official source.
 - *Unresolved points* in the research are written as unknown ("No official figures were found …") or
   left out.
+
+**Dutch is written for readers in the Netherlands** (owner, 27 October 2026). Every Dutch writer and
+checker follows the brief `research/nl-spec/content-brief.md` (its section "Added after step 1" is
+binding) and the style sheet `docs/STYLE-NL.md`; every other rule of this guide applies unchanged.
+
+- **Dutch and EU law in full**, Belgium as **short notes only**: the notes page `/nl/legal/be/` and the
+  BE card (`<JurisdictionCard code="BE" />`, `<JurisdictionCards which="notes" />`); elsewhere one short
+  line where the answer really differs ("In België meld je een bijwerking bij het FAGG.").
+- **"je", never "u"**; plain B1 Dutch on every safety and legal page and in every TL;DR, `<Lead>`
+  answer, caption, glance tile and UI string (mechanism and evidence bodies may reach B2–C1, §2); the
+  pages say "bel 112" where English says "call your local emergency number" (the strings say "Bel 112").
+- **The reader's frame is the Netherlands:** never the US, UK, Canadian, Australian, Irish or New
+  Zealand help, reporting, treatment or funding routes, and never their country pages. A US approval may
+  stay as world context, once and short, marked `{/* residue-ok: world context */}`. Side effects are
+  reported to Bijwerkingencentrum Lareb. Treatment routes have fixed anchors on `/nl/legal-routes/`:
+  `#recept`, `#off-label`, `#artsenverklaring`, `#magistrale-bereiding`, `#klinisch-onderzoek`,
+  `#compassionate-use`, `#zelf-invoeren`.
+- **Every Dutch, EU and Belgian fact** rests on the fact-checked research in `research/nl/` (`nl-law`,
+  `nl-care`, `nl-help`, `eu-status`, `be-notes`; `status/<slug>.yaml` per compound), respecting each
+  file's fact-check and its unresolved points. Each group's notes, with its independent check, are in
+  `research/nl-notes/<group>.md`.
+- **Seller words in Dutch:** the validator also warns on "betrouwbare verkoper / lab / webshop", "waar te
+  koop", "getest door derden" and "de verkoper gebruikt het zelf" (§1, §1a); Dutch idioms that only look
+  like commerce ("op de koop toe", "op prijs stellen", "tot nader order") pass the commerce check
+  (`stripNonCommerce` in `scripts/lib/load.ts`).
+
+**The advertising test for Dutch pages** (brief, "Added after step 1", item 1; `research/nl/nl-law.md`,
+fact 17a). Dutch courts ruled in 2026 that selling nothing does not by itself make a text information:
+the Raad van State upheld fines on a non-commercial information website (25 February 2026,
+`nl-rvs-2026-1072-publieksreclame-website`), and the Rechtbank Amsterdam on journalism built on personal
+weight-loss stories (10 April 2026, `nl-rbams-2026-5160-publieksreclame-journalistiek`). What decides is
+praise and one-sided positive wording ("wervende bewoordingen") and, for an authorised medicine, whether
+the text stays in line with the SmPC (the official product information). So every Dutch page:
+
+- is balanced and purely informative: an effect is never named without its evidence level, its
+  uncertainty and its risks; no success stories, no "results", no before/afters, no testimonials;
+- for an authorised medicine (and wherever an EU product is named) uses the indications of the Dutch
+  SmPC, names the main side effects and contraindications wherever it names an effect, and shows
+  off-label use (Ozempic for weight loss) as off-label, never as a benefit;
+- for a compound without a handelsvergunning (marketing authorisation) makes no positive claim beyond
+  its stated evidence level and uses no word that makes it attractive (STYLE-NL §5.6);
+- keeps §1 and §1a in full: no doses, no seller names, links or positive seller signs.
+
+On Dutch pages the publisher line is the brief's draft (STYLE-NL §5.2), not "the absence of commerce is
+what makes the content legal". Whether §1's wording for the English site changes is an open owner
+decision (`docs/REVIEW-2026-10-27-dutch-site.md`).
 
 ### The residue check
 
@@ -325,6 +375,12 @@ How to run it:
   warn hits stay warnings. (During the content rewrite of 24 October 2026 it was `false` and every hit
   was a warning.)
 
+**Dutch** has its own entry (`locales.nl`, 27 October 2026; `research/nl-notes/merge.md`): another
+country's help, reporting, treatment or funding route and "call your local emergency number" are
+`error`; another country as the reader's place is `frame`; foreign regulators and countries kept as
+evidence, the FDA PCAC framing or world context are `warn`. The marker is the same. Run
+`npx tsx scripts/check-locale-residue.ts --only nl --details`.
+
 ## 2. Voice
 
 - **First principles, cause and effect.** Explain the mechanism that makes a thing true, then the
@@ -363,12 +419,18 @@ How to run it:
 | Contact cards: regulator, reporting, anti-doping body, medicines law, help services, emergency numbers (as data) | `src/data/jurisdictions.yaml` | editors |
 | Words that belong to another locale's readers | `config/locale-residue.json` (§1b) | editor |
 | European material saved for the Dutch site | `research/for-nl-site/` (snapshot, `MANIFEST-<group>.md`, `i18n-replaced-en.json`) | writers |
+| The Dutch site: brief, style sheet, fact-checked research, group notes | `research/nl-spec/content-brief.md`, `docs/STYLE-NL.md`, `research/nl/` (`status/<slug>.yaml` per compound), `research/nl-notes/` (§1b) | writers, translators |
+| Dutch prose, strings and sources | `src/content/pages/nl/`, `src/content/compounds/nl/`, `src/i18n/nl/` (glossary in `glossary/`), `src/data/sources/nl-*.yaml` (never edit `nl-research-*.yaml`: reuse its ids) | writers, translators |
+| Heading anchors that other files link, per locale | `src/i18n/<locale>/product-check.json` (`anchors`), `common.consent.moreAnchor` in `src/i18n/<locale>/common.json` (§10) | writers, translators |
 
 Timeline events (`jurisdictions`, `[]` = global) and tracker items (`jurisdiction`) are shown only in the
 locales that cover them (WADA everywhere), so their words name only those jurisdictions. An event is one
 jurisdiction's action: the FDA approval and the EU authorisation of a medicine are two events, each with its
 own date and sources. A national body's source on a WADA tracker item goes in
-`local_sources: { NL: [<id>] }` and is listed only in a locale that covers that jurisdiction.
+`local_sources: { NL: [<id>] }` and is listed only in a locale that covers that jurisdiction. An item
+needs text only in the locales that show it: a published locale must have the text of every timeline and
+tracker item it shows, and of every corrections entry whose `locales` name it (the validator), so the Dutch
+site can add NL and EU items without English text.
 
 **Country sources in shared data** (26 October 2026). Data that every locale shows but whose words rest on
 the reader's own country (a label, a help page, a privacy law) keeps those sources per jurisdiction in the
@@ -382,7 +444,10 @@ never delete such an id to make English clean, move it under its jurisdiction.
 
 Routes come from file paths: `src/content/pages/en/safety/sterile-technique.mdx` →
 `/en/safety/sterile-technique/`. `index.mdx` is the section landing. Slugs are English in
-every locale (the route key is shared, so hreflang can pair translations).
+every locale (the route key is shared, so hreflang can pair translations). A page that exists in one
+locale only has no pair and is not built in the other: the Dutch `legal/nl`, `legal/eu` and `legal/be`
+(native Dutch pages, §13), and the English country pages, which the Dutch site neither builds nor links.
+There the language switcher links the other locale's home page.
 
 Run `npm run validate -- --only <part-of-your-path>` while writing.
 
@@ -422,7 +487,9 @@ NZ), as must every `<JurisdictionCard code>`. `<JurisdictionCards which="full|no
 the contact cards of the locale's full jurisdictions, its notes jurisdictions, or both, in the
 locale's order (§9). English country pages: `legal/us`, `legal/uk`, `legal/ca`, `legal/au` and the notes
 page `legal/ireland-and-new-zealand` (no `jurisdiction`; it uses `<JurisdictionCards which="notes" />`).
-The European pages (`legal/nl`, `eu`, `be`, `de`) left the English site in the refocus. While
+The European pages (`legal/nl`, `eu`, `be`, `de`) left the English site in the refocus. Dutch country
+pages: `legal/nl` (`jurisdiction: NL`), `legal/eu` (`EU`) and the Belgian notes page `legal/be` (`BE`),
+written from Dutch, EU and Belgian sources (`translation: { method: native }`). While
 `STRICT_PAGE_JURISDICTIONS` (`src/lib/jurisdictions.ts`) is false, a card or page `jurisdiction` outside
 the locale's set is left out of the page with a warning; after the content rewrite it fails the build.
 A card whose jurisdiction has no entry in `src/data/jurisdictions.yaml` is left out too (an error on a
@@ -788,7 +855,10 @@ SmPC on emc (UK, `www.medicines.org.uk`, allowed by the owner on 27 October 2026
 page for the substance where emc has no SmPC for the product, and as a source of the UK row), the Health
 Canada product monograph (`pdf.hres.ca`) and the ARTG entry (Australia). An EU product (EMA EPAR) is
 kept for the Dutch site and is not shown on English. Every product needs a localised `indications`
-line in each page's frontmatter, written from that label (the validator fails without it).
+line in each page's frontmatter, written from that label (the validator fails without it), in the
+locales that show it: a product whose jurisdiction is one of the locale's full jurisdictions (English:
+the US, UK, CA and AU products; Dutch: the NL and EU products, today only EU ones, written from the
+Dutch SmPC, which the EMA publishes; `research/nl/status/<slug>.yaml`, `indications_nl_from_smpc`).
 
 - Prose: put `<AuthorisedProducts />` near the top of `what-it-is`. It renders the badge ("Authorised
   medicine" when every one of the locale's jurisdictions approved it, otherwise "Authorised in the US"
@@ -938,8 +1008,10 @@ long everything takes, and the source list is folded too (its numbers still link
   genuinely needed (e.g. to a reporting form), it must be on the allowlist.
 - Never put commerce words in link text, headings, questions, titles or labels (see §1).
 - **Link only to routes that exist** (on English: the route list in
-  `research/refocus-spec/content-brief.md`, "Routes"). The European legal pages (`/en/legal/nl/`,
-  `/en/legal/eu/`, `/en/legal/be/`, `/en/legal/de/`) no longer exist on English: link the country
+  `research/refocus-spec/content-brief.md`, "Routes"; on Dutch: the list in
+  `research/nl-spec/content-brief.md`, "Routes", always with `/nl/`, never `/en/`). The European
+  legal pages (`/en/legal/nl/`, `/en/legal/eu/`, `/en/legal/be/`, `/en/legal/de/`) no longer exist on
+  English: link the country
   pages `/en/legal/us/`, `/en/legal/uk/`, `/en/legal/ca/`, `/en/legal/au/` and the notes page
   `/en/legal/ireland-and-new-zealand/` instead. (The live host redirects the old addresses; see
   README, Deployment.)
@@ -950,6 +1022,16 @@ long everything takes, and the source list is folded too (its numbers still link
   (`/en/sources/#source-<id>`) or an image credit (`/en/sources/#image-<id>`) whose target does not
   exist fails; any other missing cross-page anchor (a glossary term, another page's section) is a
   warning.
+- **Headings that other files link.** A heading's anchor is its slug in that locale, so a translated
+  heading has a new anchor. Where a component or UI string links a heading, the locale names its own:
+  the product check's `anchors` in `src/i18n/<locale>/product-check.json` (one per link, in the order
+  of the check's `links` in `src/data/product-check.yaml`, which hold the English slugs; omitted =
+  those; the validator fails a wrong count), and the cookie banner's link to the funding page's
+  privacy heading, `common.consent.moreAnchor` (omitted = `your-privacy`). Dutch:
+  `wat-een-labrapport-wel-en-niet-zegt` (`/nl/safety/product-risk/`), `wanneer-je-een-flacon-weggooit`
+  (`/nl/safety/sterile-technique/`), `je-privacy` (`/nl/about/funding/`), and the route anchors of
+  `/nl/legal-routes/` (§1b). Never rename such a heading without changing every link to it in the same
+  edit; a link from another Dutch page uses the Dutch page's own slug, never the English one.
 
 ## 11. Sources — `src/data/sources/<group>.yaml`
 
@@ -1042,4 +1124,15 @@ text has been given typographic quotes. So:
   honest "review pending" notice; it never pretends a review happened.
 - Non-English files add `translation: { method: translated, from: en, review: pending }`
   (or `method: adapted` for jurisdiction-rewritten legal content, `native` if written directly
-  in that language).
+  in that language). A `native` page is not a translation: it shows no translation notice and no
+  link to an English page (`src/layouts/DocLayout.astro`). Dutch: `native` for `legal/nl`,
+  `legal/eu` and `legal/be`; `adapted` where the country answers were rewritten for the Netherlands;
+  `translated` for the rest (brief, "Files and frontmatter").
+- **A locale goes live only with the owner's yes** (Dutch: a simple approve / don't-approve choice,
+  with the reform page's Dutch text approved by the owner and the open points of
+  `docs/REVIEW-2026-10-27-dutch-site.md` decided). Then: `status: published` in `config/locales.json`;
+  a publication entry in `src/data/corrections.yaml` (`kind: publication`, `routes: ["*"]`,
+  `locales: [<code>]`, e.g. `nl-v1-publication`) with its text in `src/i18n/<code>/corrections.json`
+  (the English entries keep `locales: [en]`); `npm run validate`, `npm run build`, `npm run check`;
+  then the steps in README, "Deployment". Until a named reviewer signs off, the pages keep saying that
+  review is pending.

@@ -1,0 +1,553 @@
+---
+slug: kpv
+title: "KPV"
+description: "KPV is een experimenteel tripeptide uit het hormoon alfa-MSH, alleen onderzocht in cellen en bij dieren. Wat het is, wat het onderzoek laat zien en wat onbekend is."
+tldr:
+  - q: "Wat is KPV?"
+    a: "Een stukje van een hormoon, uit een lab. Online aangeprezen bij darm-, wond- en huidklachten."
+  - q: "Werkt het?"
+    a: "Onbekend bij mensen. Het dempt ontsteking in cellen en bij muizen. De meeste darmstudies komen uit één lab."
+  - q: "Wat zegt de wet?"
+    a: "Zonder goedkeuring als medicijn mag niemand het verkopen, doorgeven of invoeren."
+  - q: "Verandert de Amerikaanse stemming dat?"
+    a: "Nee. Volgens berichten steunden Amerikaanse adviseurs bereiding door apotheken. Alleen een advies."
+  - q: "Gebruik je het toch?"
+    a: "Vertel het je huisarts. Vervang geen geteste behandeling door KPV."
+lede: "Een stukje hormoon uit het lab. Het dempt ontsteking in cellen en bij muizen. Nooit getest bij mensen."
+glance:
+  main_risk: "Niemand controleert flacons. Er kunnen bacteriën of een verkeerde stof in zitten."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now content (harm-reduction
+  # section: <Callout id="stop-now"> and <WarningSigns only="general,injection,allergic" />). As on English, the FDA KPV
+  # briefing supports the gap that creates the risk (no germ testing found; immune reactions never studied), but it does
+  # not describe the signs themselves. On English each sign also cites an NHS page; the Dutch page cites the Thuisarts
+  # page (the Dutch GP college's patient site) that describes the sign and gives the Dutch help level
+  # (research/nl/nl-help.md, facts 10, 11 and 17; research/nl-notes/kpv.md).
+  stop_signs:
+    - icon: sign-infection
+      text: "Prikplek warm, rood, dik of pijnlijk"
+      sources: [thuisarts-wondroos, fda-pcac-2026-kpv-briefing]
+    - icon: sign-fever
+      text: "Koorts of rillingen na het spuiten"
+      sources: [thuisarts-sepsis, thuisarts-steenpuist]
+    - icon: sign-allergic
+      text: "Dik gezicht of keel, of moeilijk ademen"
+      sources: [thuisarts-dikke-ogen-lippen, fda-pcac-2026-kpv-briefing]
+  # Fact sheet beside the title: identity and study facts from this page, never a dose.
+  facts:
+    - label: "Gemaakt van"
+      value: "3 aminozuren: lysine, proline en valine"
+      sources: [kpv-pubchem]
+    - label: "Komt van"
+      value: "Het staarteinde van het hormoon alfa-MSH"
+      sources: [cody-1984-c-terminal-tripeptide, fda-pcac-2026-kpv-briefing]
+    - label: "Online aangeprezen als"
+      value: "Injectie, via de mond, op de huid, neusspray"
+      sources: [fda-pcac-2026-kpv-briefing]
+    - label: "Belangrijkste darmonderzoek"
+      value: "Vooral één Amerikaans lab, bij muizen"
+      sources: [dalmasso-2008-pept1, laroui-2010-nanoparticles, viennois-2016-cac, xiao-2017-nanoparticles]
+grade_rationale:
+  human_clinical: "Geen. De Amerikaanse medicijnautoriteit FDA doorzocht voor haar beoordeling van 2026 de gepubliceerde literatuur, haar eigen database met meldingen van bijwerkingen en registers van klinisch onderzoek. Ze vond geen enkele studie waarin mensen KPV kregen, via welke weg ook, en geen casusbeschrijvingen. Bij mensen valt er dus niets te beoordelen." # residue-ok: FDA evidence
+  preclinical_volume: "Redelijk veel. Volgens onze telling op 20 oktober 2026 testen ongeveer 40 tot 50 primaire studies in cellen en dieren KPV zelf: als stof tegen ontsteking, of verpakt in een deeltje of een gel. Veel recent werk gaat over technieken om een stof op de juiste plek af te geven, met KPV als voorbeeld. En een deel van de oudere literatuur over “KPV” gaat eigenlijk over het hele molecuul alfa-MSH."
+  independence: "Een paar groepen. Dat het eindstuk van alfa-MSH ontsteking dempt, staat in studies sinds 1989. Het mechanisme via NF-κB beschrijven sinds 2001 verschillende groepen die los van elkaar werken. Maar het onderzoek naar darmziekten, waar de resultaten bij dieren het duidelijkst zijn, komt bijna helemaal uit één Amerikaans lab (de groep van Merlin). Geen enkel resultaat bij een ziekte is herhaald op het niveau dat een medicijn nodig heeft, want er is geen klinisch onderzoek."
+  safety: "Niet in kaart gebracht. Er zijn helemaal geen gegevens over de veiligheid bij mensen. De FDA vond geen formeel onderzoek naar giftigheid (toxicologie), geen farmacokinetiek en geen meldingen in haar systemen voor bijwerkingen. Afweerreacties kon ze niet uitsluiten." # residue-ok: FDA evidence
+mechanism:
+  - kind: binding
+    level: hypothesis
+    title: "Een stukje van een hormoon, maar het gebruikt de receptoren van dat hormoon niet"
+    detail: "KPV bestaat uit de laatste 3 aminozuren van alfa-MSH. Je zou verwachten dat het via dezelfde receptoren werkt, de melanocortinereceptoren. Dat doet het niet: in bindingsproeven hechtte KPV zich niet aan deze receptoren, en het verhoogde de boodschapperstof cAMP in de cel niet. Waar het echt op aangrijpt, is onbekend; de FDA bevestigde dat in 2026. De allereerste stap, hoe KPV vat krijgt op een cel, is dus niet aangetoond." # residue-ok: FDA evidence
+  - kind: signal
+    level: in-vitro
+    title: "Een transporteiwit, PepT1, kan het de cel in brengen"
+    detail: "PepT1 is een poorteiwit dat kleine peptiden van 2 of 3 aminozuren darmcellen en afweercellen in trekt. Eén lab liet zien dat KPV via PepT1 binnenkomt. Bij muizen die zonder PepT1 zijn gefokt, verminderde KPV de darmtumoren door een darmontsteking (colitis) niet meer. In een gezonde dikke darm is er weinig PepT1, maar waar de dikke darm ontstoken is, neemt het toe. Daardoor zou KPV zich kunnen ophopen op ontstoken plekken."
+  - kind: signal
+    level: in-vitro
+    title: "In de cel zet het de ontstekingsschakelaar NF-κB lager"
+    detail: "Eenmaal binnen verlaagt KPV de activiteit van NF-κB, een hoofdschakelaar die ontstekingsgenen aanzet. Verschillende groepen melden dit. Eén studie vond dat KPV de stap blokkeert waarin het p65-deel van NF-κB de celkern in wordt gebracht. KPV dempt ook de signalen via MAP-kinasen."
+  - kind: cellular
+    level: in-vitro
+    title: "Behandelde cellen maken minder ontstekingssignalen"
+    detail: "Met NF-κB lager geven cellen minder ontstekingsboodschappers af: minder interleukine-8 uit luchtwegcellen, minder interleukine-1β uit huidcellen, minder stikstofmonoxide uit macrofagen (opruimcellen van het afweersysteem) en minder cytokinen uit darmcellen en T-cellen. Bij behandelde muizen had ontstoken darmweefsel ook minder TNF-α. KPV lijkt ook de effecten van interleukine-1β af te zwakken."
+  - kind: tissue
+    level: animal
+    title: "Ontstoken weefsel trekt minder afweercellen aan"
+    detail: "Bij muizen met een darmontsteking die met een chemische stof was opgewekt, had de darm na KPV minder myeloperoxidase (een teken van neutrofielen, een soort witte bloedcel) en minder schade onder de microscoop. Het effect trad ook op bij muizen met een kapotte melanocortine-1-receptor. Dat past bij het idee dat KPV niet via die receptor werkt."
+  - kind: effect
+    level: animal
+    title: "Sneller herstel bij dieren met colitis of een wond"
+    detail: "Muizen met colitis die KPV kregen, verloren minder gewicht en herstelden sneller. In één model gaf KPV ook minder darmtumoren die door de ontsteking ontstaan. Hoornvliezen van konijnen genazen sneller met oogdruppels met KPV. Dit zijn de duidelijkste resultaten bij hele dieren."
+  - kind: effect
+    level: hypothesis
+    title: "Voordeel voor een mens: niet aangetoond"
+    detail: "Er is geen onderzoek met een controlegroep bij mensen gepubliceerd, en zelfs helemaal geen onderzoek bij mensen. Of een van de stappen hierboven bij een mens gebeurt, bij welke hoeveelheid, via welke weg, en of het helpt, is onbekend."
+studies:
+  hiltz-1989-ear-swelling:
+    finding: "Bij muizen verminderde alfa-MSH(11-13) de zwelling van het oor door een stof die de huid gevoelig maakt, sterker bij een hogere dosis. De onderzoekers vergeleken het met zoutoplossing en met een hoge dosis van een corticosteroïd. Dit was een van de eerste berichten dat het staartje van 3 aminozuren van alfa-MSH de ontstekingsremmende werking van het hormoon houdt."
+    limitation: "Een kort model van acute ontsteking bij muizen; het aantal dieren, de toedieningsweg en de blindering staan niet in de samenvatting; een huidreactietest, geen ziekte. De FDA telt dit in haar beoordeling van 2026 als een studie van een N-geacetyleerde vorm van KPV, niet van het vrije peptide dat ze beoordeelde, en liet het daarom buiten beschouwing." # residue-ok: FDA evidence
+  mandrika-2001-raw264:
+    finding: "In macrofagen van muizen (cellen in het lab) verlaagde KPV de aanmaak van stikstofmonoxide en hield het NF-κB tegen op weg naar de celkern. Anders dan het hele alfa-MSH bond KPV niet aan de melanocortine-1-receptor en verhoogde het cAMP niet. Dat wijst op een andere manier van werken."
+    limitation: "Cellen in een schaaltje; één lab; zegt iets over een signaalroute, niet over het behandelen van een ziekte in een lichaam."
+  getting-2003-peritonitis:
+    finding: "Bij muizen verminderde KPV het aantal ontstekingscellen dat na een prikkelende stof naar de buikholte trok. Het werkte ook bij muizen met een melanocortine-1-receptor die niet werkt, en een blokker van melanocortinereceptoren hield het niet tegen. KPV lijkt dus buiten de melanocortinereceptoren om te werken, waarschijnlijk door interleukine-1β tegen te werken."
+    limitation: "Acute ontsteking bij muizen, opgewekt met een chemische stof; geen model van een ziekte bij mensen; aantallen en blindering niet beschreven in de samenvatting."
+  land-2012-bronchial-nfkb:
+    finding: "In luchtwegcellen van mensen verlaagde KPV de activiteit van NF-κB en de afgifte van ontstekingssignalen na TNF-α of een virus. De studie herleidde dit tot een blokkade van het transport van het p65-deel van NF-κB naar de celkern."
+    limitation: "Cellen van een cellijn in een schaaltje, één lab; stelt een precies mechanisme voor, maar test geen ademhaling of longziekte bij een dier of een mens."
+  bonfiglio-2006-cornea:
+    finding: "Konijnen bij wie het hoornvlies was afgeschraapt, genazen sneller met oogdruppels met KPV: na 60 uur waren alle behandelde hoornvliezen dicht, en geen van de onbehandelde. Een blokker van de aanmaak van stikstofmonoxide (L-NAME) remde het effect."
+    limitation: "Kleine studie bij konijnen; de rol van het hele molecuul alfa-MSH is niet apart onderzocht; genezing van het oogoppervlak, geen gewone wond."
+  sung-2025-keratinocyte:
+    finding: "In huidcellen van mensen en in een 3D-huidmodel verminderde KPV de celdood en de ontsteking door fijnstof uit de lucht. Het verlaagde daarvoor reactieve zuurstofverbindingen en de signalen via NF-κB en MAP-kinasen."
+    limitation: "Cellen en een huidmodel uit het lab, geen levende huid; de eerste auteur werkt bij een onderzoeksinstituut van een bedrijf (vermeld in het artikel); de auteurs zien het gebruik als ingrediënt voor cosmetica of huidbescherming."
+  pawar-2017-skin-permeation:
+    finding: "In huid van overleden donoren kwam KPV zonder hulpmiddel nauwelijks door de buitenste huidlaag (onder de meetgrens). Een zwakke elektrische stroom of heel kleine naaldjes waren nodig om het in de diepere huidlagen te krijgen."
+    limitation: "Dode huid in een opstelling in het lab; meet hoe ver het peptide komt, niet of het iets doet; zegt niets over injecteren of gebruik via de neus."
+  dalmasso-2008-pept1:
+    finding: "In darmcellen en afweercellen van mensen remden heel kleine (nanomolaire) hoeveelheden KPV de signalen via NF-κB en MAP-kinasen, en de afgifte van ontstekingsboodschappers. KPV kwam de cellen binnen via het transporteiwit PepT1. In het drinkwater verminderde KPV een chemisch opgewekte colitis bij muizen."
+    limitation: "Het deel in een levend lichaam is een muismodel; dit lab begon het darmonderzoek naar KPV en overheerst het, dus onafhankelijke herhaling is beperkt; geen gegevens bij mensen."
+  kannengiesser-2008-colitis:
+    finding: "In 2 muismodellen van inflammatoire darmziekte herstelden muizen met KPV eerder, kwamen ze weer aan, was er minder schade onder de microscoop en was myeloperoxidase lager. Bij muizen met een kapotte melanocortine-1-receptor hielp KPV de dieren ook. Dat steunt een werking die niet via de receptor loopt."
+    limitation: "Alleen muismodellen; een andere groep dan het PepT1-werk, maar nog steeds preklinisch; de doses en de blindering staan niet in de samenvatting."
+  laroui-2010-nanoparticles:
+    finding: "KPV in nanodeeltjes, in een gel die in de dikke darm vrijkomt, verminderde colitis bij muizen. Zo afgegeven werkte KPV bij een concentratie die ongeveer 12.000 keer lager was dan die van vrij KPV. Dat wijst erop dat gerichte afgifte meer uitmaakt dan de hoeveelheid zelf."
+    limitation: "Muismodel, hetzelfde lab als het PepT1-werk; een studie naar technieken voor afgifte; de vergelijking met het vrije peptide laat zien hoe slecht gewoon KPV zijn doel bereikt."
+  viennois-2016-cac:
+    finding: "In een muismodel waarin langdurige colitis darmkanker veroorzaakt, verminderde KPV in het drinkwater het aantal en de grootte van de tumoren bij gewone muizen. Bij muizen zonder PepT1 veranderde dezelfde behandeling het aantal tumoren, de grootte, de totale tumorlast en het lichaamsgewicht niet meer dan water. Wel bleef er een neiging naar minder tumorlast, die niet statistisch significant was. De auteurs concluderen dat KPV in elk geval voor een deel via PepT1 werkt."
+    limitation: "Eén muismodel, één lab; een effect op tumoren in een model van colitis met kanker bewijst geen veiligheid of voordeel bij mensen, en andere mechanismen kunnen juist zorgen geven. In hetzelfde artikel kregen muizen met een erfelijke darmtumorziekte zonder ontsteking niet minder tumoren met KPV, hoewel hun darmontsteking afnam. Het effect op tumoren lijkt dus af te hangen van ontsteking."
+  xiao-2017-nanoparticles:
+    finding: "KPV in nanodeeltjes met een laagje dat aan ontstoken darm hecht, bereikte darmcellen en afweercellen en verminderde colitis bij muizen. TNF-α daalde, en het darmslijmvlies herstelde beter."
+    limitation: "Muismodel; een studie naar technieken voor afgifte, van de groep die het darmonderzoek overheerst en een partnerlab in China; geen gegevens bij mensen."
+regulatory_notes:
+  EU: "Niet goedgekeurd in de EU: het EMA heeft geen goedkeuring, geen aanvraag en geen aanwijzing als weesgeneesmiddel voor KPV (gecontroleerd op 27 oktober 2026)."
+  NL: "Niet goedgekeurd in Nederland: het CBG heeft geen product met KPV in zijn register (27 oktober 2026). Een geneesmiddel zonder handelsvergunning verhandelen, doorgeven of invoeren is verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Niet met naam op de lijst. Volgens de tekst van S0 (“Niet erkende stoffen”) altijd verboden, als stof die nergens is goedgekeurd. De lijst van 2027 noemt in S0 ook “peptiden” als voorbeeld. Twijfel je? Vraag het de Dopingautoriteit."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+
+<Section id="what-it-is">
+
+<Lead question="Wat is KPV?">Een keten van 3 aminozuren, gemaakt in een lab: het staarteinde van een hormoon. Het is nergens goedgekeurd.</Lead>
+
+<Compare title="KPV is een klein stukje van een hormoon, gemaakt in een lab en nergens goedgekeurd." detail="Wat bekend is over de stof met deze naam, gecontroleerd op 20 oktober 2026. De status in Nederland en de EU is gecontroleerd op 27 oktober 2026.">
+
+| | KPV |
+|---|---|
+| Gemaakt in een lab? | <Verdict is="yes" /> Met vaste-fasesynthese, een chemische manier om een peptide te bouwen. Het komt niet uit het lichaam.<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Deel van een hormoon dat het lichaam maakt? | <Verdict is="yes" /> De 3 aminozuren zijn de laatste 3 van het hormoon alfa-MSH.<Cite id="cody-1984-c-terminal-tripeptide,fda-pcac-2026-kpv-briefing" /> |
+| Verandert het de huidskleur, zoals dat hormoon? | <Verdict is="no" /> Het houdt het grootste deel van de werking van het hormoon tegen ontsteking, maar niets van het effect op de kleur.<Cite id="brzoska-2010-terminal-signal,luger-2007-review" /> |
+| Heeft het een officiële medicijnnaam? | <Verdict is="no" /> "KPV" is een gewone naam, geen officiële Amerikaanse naam (USAN). Het volgt ook geen standaard voor chemische namen.<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Eén stof onder die naam? | <Verdict is="no" /> Er zijn 2 vormen: een vrije base en een acetaatzout. De Amerikaanse medicijnautoriteit FDA ziet dat als 2 stoffen.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+| Is het een goedgekeurd medicijn? | <Verdict is="no" /> Niet in Nederland en niet in de EU. We kennen ook nergens anders een goedkeuring.<Cite id="fda-pcac-2026-kpv-briefing,cbg-gib-search-status-2026-10-27,ema-medicines-json" /> |
+
+</Compare>
+
+KPV wordt online aangeprezen bij inflammatoire darmziekten, wonden, huidproblemen, problemen met mestcellen en histamine, en voor een "gezonde darm" in het algemeen. Het wordt aangeboden als injectie, via de mond, op de huid en als neusspray, en in mengsels met andere peptiden, zoals [BPC-157](/nl/compounds/bpc-157/) en [TB-500](/nl/compounds/tb-500/).<Cite id="fda-pcac-2026-kpv-briefing" /> Een overzichtsartikel uit 2026 noemt het bij de peptiden die bij sportschoolbezoekers worden aangeprezen.<Cite id="coutinho-2026-doping-review" /> Geen van die aanprijzingen rust op resultaten bij mensen, want die zijn er niet (zie het deel over het onderzoek). Geen enkel medicijn met KPV is goedgekeurd in Nederland of de EU.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,ema-medicines-search" />
+
+<InDetail title="Het molecuul, en waar het vandaan komt">
+
+KPV is een synthetisch peptide van maar 3 aminozuren: <Seq>Lys-Pro-Val</Seq> (lysine, proline, valine), met gewone vrije uiteinden. De brutoformule is C16H30N4O4 en de molecuulmassa is <Q>342,43 Da</Q>.<Cite id="kpv-pubchem" /> Het is daarmee een van de kleinste moleculen op deze site. Een peptide dat zo kort is, zit op de vage grens tussen een peptide als medicijn en een gewoon stukje verteerd eiwit.
+
+### Waar het vandaan komt
+
+KPV is het staartje van een lichaamseigen hormoon. Het lichaam maakt een groot eiwit, <Term id="proopiomelanocortin">pro-opiomelanocortine</Term>, en knipt dat in kleinere hormonen. Eén daarvan is <Term id="alpha-msh">alfa-melanocytstimulerend hormoon</Term> (alfa-MSH). Alfa-MSH is een keten van 13 aminozuren. De laatste 3, op plaats 11, 12 en 13, zijn lysine, proline en valine. Dat is KPV.<Cite id="cody-1984-c-terminal-tripeptide,fda-pcac-2026-kpv-briefing" />
+
+Alfa-MSH doet 2 heel verschillende dingen. Eén deel ervan regelt de kleur van huid en haar. Een ander deel dempt ontsteking.<Cite id="brzoska-2008-review" /> Onderzoekers vonden dat het kleine staartje KPV het grootste deel van de werking tegen ontsteking houdt, maar niets van de werking op de kleur.<Cite id="brzoska-2010-terminal-signal,luger-2007-review" /> Daarom is KPV onderzocht: het was een poging om de helft van alfa-MSH te houden die de onderzoekers wilden, zonder de helft die de huid donkerder maakt. Het deel van een molecuul dat voor een bepaalde werking zorgt, heet de <Term id="pharmacophore">farmacofoor</Term>. Alfa-MSH heeft er één voor de kleur en één voor ontsteking.
+
+</InDetail>
+
+<InDetail title="“Natuurlijk” is niet onschadelijk, en het probleem met de naam">
+
+### "Natuurlijk" betekent niet onschadelijk
+
+Omdat KPV een stukje is van een menselijk hormoon, wordt het vaak "natuurlijk" genoemd. Dat woord zegt hier niets. De KPV in een flacon komt niet uit het lichaam. Een fabriek heeft het gebouwd met vaste-fasesynthese, dezelfde chemie als voor andere synthetische peptiden.<Cite id="fda-pcac-2026-kpv-briefing" /> Een gemaakte kopie kan kortere ketens bevatten, bijna-kopieën, resten van oplosmiddelen en besmetting met bacteriën. En je spuit of sprayt het in hoeveelheden en op manieren die het lichaam van nature nooit tegenkomt. Bij de risico's verderop lees je waarom "klein en natuurlijk" niets zegt over de risico's van een product dat je spuit.
+
+### Namen en zoutvormen
+
+"KPV" is een gewone naam, geen officiële. Het is geen United States Adopted Name (USAN), en het volgt geen van de standaarden die een werkzame stof precies benoemen (INN, IUPAC, USAN).<Cite id="fda-pcac-2026-kpv-briefing" /> Volgens de FDA is dat belangrijk voor de veiligheid: zonder standaardnaam kan een patiënt een andere stof krijgen dan de arts die het voorschrijft bedoelde. Het materiaal in de handel is een vrije base of een acetaatzout. De FDA ziet die als 2 verschillende stoffen, ook al geven de meeste openbare bronnen voor allebei hetzelfde identificatienummer.<Cite id="fda-pcac-2026-kpv-briefing,kpv-pubchem" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">In cellen en bij muizen dempt het een ontstekingsschakelaar, NF-κB. Waar het als eerste aan bindt, is onbekend.</Lead>
+
+KPV heeft een duidelijker voorgesteld mechanisme dan veel experimentele peptiden, en verschillende onafhankelijke groepen melden delen ervan. Maar de keten is nooit bij een mens aangetoond. En de allereerste schakel, hoe KPV als eerste op een cel inwerkt, ontbreekt nog.
+
+De korte animatie volgt KPV van het hormoon waar het een deel van is, tot aan het onderzoek bij mensen dat ontbreekt.
+
+<Explainer id="kpv-pept1-nfkb" />
+
+<InDetail title="De voorgestelde keten in één tabel, met de bronnen">
+
+<Compare title="Verschillende stappen zijn gezien in cellen of bij dieren. Geen enkele is aangetoond bij mensen." detail="De voorgestelde keten, stap voor stap, en waar elke stap is gezien.">
+
+| | In cellen of bij dieren | Bij mensen |
+|---|---|---|
+| Gebruikt het de eigen receptoren van het hormoon? | <Verdict is="no" /> In bindingsproeven hechtte het zich niet aan de melanocortine-1-receptor. Waar het echt op aangrijpt, is onbekend.<Cite id="mandrika-2001-nfkb-no,fda-pcac-2026-kpv-briefing" /> | <Verdict is="unknown" /> Niet onderzocht bij mensen. |
+| Brengt PepT1 het de cel in? | <Verdict is="yes" /> In darmcellen en afweercellen, in één lab. Bij muizen zonder PepT1 verminderde het darmtumoren niet meer duidelijk.<Cite id="dalmasso-2008-pept1,viennois-2016-cac" /> | <Verdict is="unknown" /> Niet onderzocht bij mensen. |
+| Zet het de schakelaar NF-κB lager? | <Verdict is="yes" /> In darmcellen, T-cellen, macrofagen en luchtwegcellen, gemeld door verschillende groepen.<Cite id="dalmasso-2008-pept1,mandrika-2001-nfkb-no,land-2012-bronchial" /> | <Verdict is="unknown" /> Niet gemeten bij mensen. |
+| Maken cellen minder signalen die ontsteking aanjagen? | <Verdict is="yes" /> Minder interleukinen en minder stikstofmonoxide, in cellen in een schaaltje.<Cite id="dalmasso-2008-pept1,mandrika-2001-nfkb-no,land-2012-bronchial" /> | <Verdict is="unknown" /> Niet gemeten bij mensen. |
+| Werden zieke of gewonde dieren sneller beter? | <Verdict is="yes" /> Bij muizen met een chemisch opgewekte colitis, en bij afgeschraapte hoornvliezen van konijnen.<Cite id="kannengiesser-2008-colitis,dalmasso-2008-pept1,bonfiglio-2006-cornea" /> | <Verdict is="unknown" /> Er is geen enkel onderzoek bij mensen.<Cite id="fda-pcac-2026-kpv-briefing" /> |
+
+</Compare>
+
+</InDetail>
+
+<InDetail title="Stap voor stap: de voorgestelde keten en waar elke stap op rust">
+
+<Mechanism />
+
+### De receptor die er niet is
+
+Een medicijn werkt meestal doordat het eerst aan één bepaald doelwit bindt. KPV komt uit alfa-MSH, dus het ligt voor de hand dat het de doelwitten van alfa-MSH gebruikt: de melanocortinereceptoren. <Claim level="in-vitro">In bindingsproeven hechtte KPV zich niet aan de melanocortine-1-receptor en verhoogde het de boodschapperstof cAMP in de cel niet, anders dan het hele alfa-MSH</Claim>.<Cite id="mandrika-2001-nfkb-no" /> <Claim level="animal">Bij muizen verminderde KPV ontsteking ook als de melanocortine-1-receptor kapot of geblokkeerd was</Claim>.<Cite id="getting-2003-dissection,kannengiesser-2008-colitis" /> De FDA concludeerde in 2026 dat melanocortinereceptoren waarschijnlijk niet het doelwit van KPV zijn, en dat het echte moleculaire doelwit onbekend is.<Cite id="fda-pcac-2026-kpv-briefing" /> Waar de effecten van KPV worden gezien, lopen ze dus via een weg die niemand heeft gevonden. {/* residue-ok: FDA evidence */}
+
+### Een achterdeur de cel in
+
+Eén lab kwam met een antwoord op de vraag hoe KPV in een cel komt. <Claim level="in-vitro">PepT1 brengt KPV in darmcellen en afweercellen. Dat transporteiwit vervoert normaal kleine peptiden van 2 of 3 aminozuren uit verteerd voedsel</Claim>.<Cite id="dalmasso-2008-pept1" /> Dat past goed bij een darmziekte: in een gezonde dikke darm is er weinig <Term id="pept1">PepT1</Term>, maar waar de dikke darm ontstoken is, neemt het toe. Zo zou het KPV direct naar het ontstoken weefsel kunnen brengen. <Claim level="animal">Bij muizen zonder PepT1 verminderde KPV de darmtumoren door colitis niet meer, al bleef er een neiging naar minder tumorlast die niet statistisch significant was</Claim>. De auteurs concluderen dat KPV in elk geval voor een deel via PepT1 werkt, en dat een ander transporteiwit een deel ervan kan vervoeren.<Cite id="dalmasso-2008-pept1,viennois-2016-cac" /> Of de colitis zelf bij die muizen nog op KPV reageert, staat niet in de studie.
+
+### De ontstekingsschakelaar lager zetten
+
+In de cel vinden onderzoekers steeds weer dat KPV <Term id="nf-kb">NF-κB</Term> rustiger maakt. NF-κB is een schakelaar die ontstekingsgenen aanzet. <Claim level="in-vitro">KPV verlaagde de activiteit van NF-κB in darmcellen, T-cellen, macrofagen en luchtwegcellen. De cellen gaven minder ontstekingsboodschappers af: minder interleukine-8 en eotaxine uit luchtwegcellen, minder interleukine-1β uit huidcellen, minder stikstofmonoxide uit macrofagen en minder cytokinen uit darmcellen en T-cellen</Claim>.<Cite id="dalmasso-2008-pept1,mandrika-2001-nfkb-no,land-2012-bronchial,sung-2025-keratinocyte" /> Eén studie wees een stap precies aan: <Claim level="in-vitro">KPV blokkeerde het transporteiwit dat het p65-deel van NF-κB normaal de celkern in trekt. Zo kon de schakelaar de genen die hij aanstuurt niet bereiken</Claim>.<Cite id="land-2012-bronchial" /> KPV lijkt ook de effecten van interleukine-1β direct af te zwakken.<Cite id="getting-2003-dissection" />
+
+### Van cellen naar dieren
+
+<Claim level="animal">Bij muizen met een chemisch opgewekte colitis had de darm na KPV minder afweercellen in het weefsel, gemeten als lager myeloperoxidase, en minder schade onder de microscoop. De dieren herstelden en kwamen sneller weer aan</Claim>.<Cite id="kannengiesser-2008-colitis,dalmasso-2008-pept1" /> <Claim level="animal">Kaal geschraapte hoornvliezen van konijnen genazen sneller met oogdruppels met KPV. Een blokker van de aanmaak van stikstofmonoxide remde dat effect</Claim>.<Cite id="bonfiglio-2006-cornea" /> Deze resultaten bij hele dieren passen bij de bevindingen in cellen, maar het zijn modellen. Een chemische colitis bij een muis is geen colitis ulcerosa bij een mens. En een afgeschraapt hoornvlies van een konijn is geen chronische wond bij een mens.
+
+</InDetail>
+
+<InDetail title="De zwakke schakels in de keten">
+
+Er zijn 3 belangrijke gaten. Ten eerste heeft geen enkele studie KPV gevolgd van de ontbrekende receptorstap tot aan genezing, in hetzelfde systeem. De keten is dus in elkaar gezet uit losse proeven. Ten tweede is het bewijs uit dieronderzoek het duidelijkst voor de darm, en dat komt vooral uit één lab. Een studie van die groep naar de afgifte vond dat gewoon KPV pas werkte bij een ongeveer <Q>12.000×</Q> hogere concentratie dan KPV in gerichte deeltjes. Dat wijst erop dat vrij KPV zijn doel slecht bereikt.<Cite id="laroui-2010-nanoparticles" /> Ten derde, en het belangrijkste: niets hiervan is bij een mens gemeten.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Onbekend bij mensen. In cellen en bij muizen dempt het ontsteking, maar er is geen onderzoek bij mensen.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<KeyNumber title="Er is geen studie met KPV bij mensen gepubliceerd" value="0" unit="studies" label="waarin mensen KPV kregen, via welke weg ook. Er zijn ook geen casusbeschrijvingen." who="Beoordeling van de FDA, 2026: zoekopdrachten in PubMed, Embase, ClinicalTrials.gov en de databases van de FDA voor bijwerkingen" source="fda-pcac-2026-kpv-briefing" />
+
+<KeyNumber title="De meeste darmstudies komen uit één lab" value="4 van 5" label="darmstudies bij muizen op deze pagina komen uit één Amerikaans lab" counted="De 5 studies naar darmziekte bij muizen in de studietabel. Vier komen van de groep van Merlin in Atlanta (VS); één komt van een universitaire groep in Münster." source="dalmasso-2008-pept1,laroui-2010-nanoparticles,viennois-2016-cac,xiao-2017-nanoparticles,kannengiesser-2008-colitis" level="animal" />
+
+<KeyNumber title="In kleine deeltjes werkte veel minder KPV even goed" value="12.000×" label="lagere hoeveelheid KPV werkte even goed in deeltjes gericht op de dikke darm" who="Laroui 2010: muizen met een chemisch opgewekte colitis; hetzelfde lab als de meeste darmstudies" source="laroui-2010-nanoparticles" level="animal" />
+
+Het zou verkeerd zijn om deze biologie weg te wuiven. Het voorgestelde mechanisme hangt logisch samen, onafhankelijke celstudies vinden het steeds weer, en het past bij een herhaald voordeel bij knaagdieren met colitis. Resultaten in cellen en bij muizen zijn een reden om goed onderzoek bij mensen te doen. Ze vervangen dat onderzoek niet. En ze zeggen niets over wat er gebeurt als iemand een flacon spuit die niemand heeft gecontroleerd.
+
+<InDetail title="Alle studies in één tabel, en waar het onderzoek vandaan komt">
+
+<StudyTable />
+
+<Diagram id="kpv-evidence-map" caption="Waar het onderzoek naar KPV vandaan komt (geteld op 20 oktober 2026)">
+
+| Niveau | Ongeveer hoeveel | Wie het deed | Grootste beperking |
+|---|---|---|---|
+| Cellen en losse weefsels | Een paar dozijn artikelen | Verschillende onafhankelijke groepen (VS, Europa, Oost-Azië) | Vaste concentraties, zonder verband met wat een mens in het echt binnenkrijgt |
+| Dieren: ontsteking en wonden | Losse studies, verspreid | De groep van Lipton in Dallas, en groepen in Londen en Catania | Korte, acute modellen; vaak naast KPV ook alfa-MSH, of een N-geacetyleerde vorm, onderzocht |
+| Dieren: darmziekte (colitis, colitis met kanker) | Hier zijn de resultaten bij dieren het duidelijkst | Vooral één lab (de groep van Merlin) | Eén groep overheerst; muismodellen; veel ervan gaat over technieken voor afgifte |
+| Menselijk weefsel (huid van overleden donoren) | Eén studie | Eén groep | Dode huid in een opstelling in het lab; KPV kwam er nauwelijks door |
+| Mensen (levend) | Geen | — | Geen enkel onderzoek, en geen casusbeschrijvingen |
+
+</Diagram>
+
+</InDetail>
+
+<InDetail title="Studies in cellen en bij dieren, een voor een">
+
+### Cellen: een signaal tegen ontsteking dat steeds terugkomt
+
+Het werk in cellen is het deel van het onderzoek naar KPV dat het vaakst is herhaald. In meer dan 20 jaar hebben groepen die niets met elkaar te maken hebben, dezelfde kernbevinding gemeld: KPV verlaagt de activiteit van NF-κB en de afgifte van ontstekingsboodschappers, zonder via melanocortinereceptoren te werken.<Cite id="mandrika-2001-nfkb-no,getting-2003-dissection,land-2012-bronchial,dalmasso-2008-pept1" /> Dat verschillende onafhankelijke labs hetzelfde zien, maakt de basale biologie geloofwaardiger. Celstudies beantwoorden de vraag: kan dit molecuul deze signaalroute in een schaaltje veranderen? Ze kunnen niet zeggen of het een mens helpt, want de dosis, de afgifte, de afbraak en het hele afweersysteem ontbreken.
+
+### Dieren: resultaten, maar beperkt en uit weinig labs
+
+Twee lijnen van dieronderzoek springen eruit. De oudere lijn, van de groep van Lipton en anderen, liet zien dat het staartje van alfa-MSH acute ontsteking bij muizen vermindert: zwelling van het oor door een stof die de huid gevoelig maakt, en ontstekingscellen die naar de buikholte trekken.<Cite id="hiltz-1989-cooh-fragment,getting-2003-dissection" /> De FDA telde de oorstudie van 1989 als een studie van een N-geacetyleerde vorm van KPV, niet van het vrije peptide, en liet die buiten beschouwing.<Cite id="fda-pcac-2026-kpv-briefing" /> De nieuwere en sterkere lijn gaat over darmziekte. <Claim level="animal">KPV, vooral in gerichte nanodeeltjes of gels, verminderde colitis bij muizen, en in één model ook darmtumoren die bij colitis horen</Claim>.<Cite id="dalmasso-2008-pept1,laroui-2010-nanoparticles,viennois-2016-cac,xiao-2017-nanoparticles" /> Het resultaat bij colitis met kanker is het noemen waard, juist omdat het de andere kant op wijst dan een bekende angst over "groei"-peptiden: in dat model verlaagde KPV het aantal tumoren in plaats van het te verhogen.<Cite id="viennois-2016-cac" /> In hetzelfde artikel kregen muizen met een erfelijke darmtumorziekte en weinig darmontsteking niet minder tumoren met KPV. Het effect lijkt dus via de ontsteking te lopen, niet direct op de tumoren.<Cite id="viennois-2016-cac" /> {/* residue-ok: FDA evidence */}
+
+Het zwakke punt is wie het onderzoek deed. Het meeste darmonderzoek komt van één lab en zijn partners. Eén onafhankelijke groep (in Münster) vond hetzelfde voordeel bij colitis in eigen muismodellen, en dat maakt het sterker.<Cite id="kannengiesser-2008-colitis" /> Maar geen enkel resultaat bij een ziekte is door veel groepen herhaald op het niveau dat een medicijn nodig heeft. En elk van deze resultaten is bij knaagdieren.
+
+### Huid en wonden
+
+<Claim level="animal">KPV versnelde de genezing van het hoornvlies bij konijnen</Claim>, en <Claim level="in-vitro">het beschermde huidcellen van mensen in een schaaltje tegen schade door luchtvervuiling</Claim>.<Cite id="bonfiglio-2006-cornea,sung-2025-keratinocyte" /> Onder de claims over de huid zit een praktisch probleem: <Claim level="in-vitro">gewoon KPV komt nauwelijks door de menselijke huid. In een labtest kwam het er alleen door met een zwakke elektrische stroom of met heel kleine naaldjes</Claim>.<Cite id="pawar-2017-iontophoresis" /> De FDA merkte op dat dit twee kanten heeft. Komt het slecht door de huid, dan is er weinig kans dat een crème giftig is voor het hele lichaam. Maar een crème bereikt dan misschien ook de levende huid onder het oppervlak niet, waar het zou moeten werken.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Studies bij mensen: die zijn er niet">
+
+Dit is het belangrijkste feit. De FDA doorzocht in 2026 PubMed, Embase, onderzoeksregisters, haar eigen database met meldingen van bijwerkingen en meer. Ze vond geen studie waarin mensen KPV kregen, via welke weg of voor welke aandoening ook, en geen casusbeschrijvingen.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+
+Op 27 oktober 2026 vonden we ook geen geregistreerd klinisch onderzoek met KPV: niet op ClinicalTrials.gov en niet in het Europese register CTIS. Ook in Nederland vonden we er geen.<Cite id="ctgov-kpv-search-2026-10-27,ctis-kpv-search-2026-10-27,ctgov-nl-peptide-search-2026-10-27" /> Alles wat over KPV bekend is, komt uit cellen en dieren. Er is geen dosis voor mensen, er zijn geen gegevens over wat het lichaam ermee doet (farmacokinetiek) en er is geen enkele systematische informatie over de veiligheid bij mensen.
+
+</InDetail>
+
+<InDetail title="Een kandidaat voor onderzoek, maar zonder onderzoek bij mensen">
+
+Overzichtsartikelen stellen, met redenen, dat KPV in aanmerking komt voor goed klinisch onderzoek bij inflammatoire darmziekte en bij wonden.<Cite id="brzoska-2008-review,bohm-2019-wound-review,gravina-2023-melanocortin-ibd" /> Daartegenover staat: dat geldt al meer dan 15 jaar, en geen bedrijf of onderzoeksgroep heeft een onderzoek bij mensen gepubliceerd.
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog niet bekend?">Of het bij mensen werkt, welke schade het kan doen, en wat er in producten zit.</Lead>
+
+<Compare title="Geen van deze vragen is bij mensen beantwoord." detail="Open vragen over KPV, op 20 oktober 2026.">
+
+| Open vraag | Onderzocht? |
+|---|---|
+| Doet het iets bij mensen? | <Verdict is="no" /> Er is geen enkel onderzoek bij mensen gepubliceerd.<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Waar bindt het als eerste aan? | <Verdict is="unknown" /> Onderzocht in cellen, maar er is geen receptor of doelwit vastgesteld.<Cite id="fda-pcac-2026-kpv-briefing,dalmasso-2008-pept1" /> |
+| Wat gebeurt er in het lichaam mee? | <Verdict is="no" /> De FDA vond hier geen onderzoek naar, niet bij dieren en niet bij mensen.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+| Is het bij dieren getest op schade? | <Verdict is="no" /> De FDA vond niets: geen studies met herhaalde doses, naar schade aan genen, in de zwangerschap of naar kanker.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+| Afweerreacties? | <Verdict is="no" /> De FDA vond hier geen onderzoek naar.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+| Wat zit er in producten met de naam KPV? | <Verdict is="no" /> De FDA vond geen gepubliceerde tests op klontering of op bacteriën.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+
+</Compare>
+
+<InDetail title="Alle negen open vragen, met hun bronnen">
+
+Wat er op 20 oktober 2026 nog niet bekend was over KPV:
+
+- **Of het iets doet bij mensen.** Er is geen enkel onderzoek bij mensen gepubliceerd.<Cite id="fda-pcac-2026-kpv-briefing" />
+- **Hoe het werkt bij de eerste stap.** Er is geen receptor of eerste moleculair doelwit vastgesteld. De route via PepT1 verklaart hoe het de cel in komt, maar niet waar KPV daarbinnen aan bindt.<Cite id="fda-pcac-2026-kpv-briefing,dalmasso-2008-pept1" />
+- **Wat er in een menselijk lichaam mee gebeurt.** Er zijn geen gegevens over farmacokinetiek bij mensen, voor geen enkele toedieningsweg. Een tripeptide ontstaat ook gewoon als je voedsel verteert. Een gespoten hoeveelheid wordt dus misschien snel afgebroken of als gewone aminozuren gebruikt. Maar dat is bij mensen niet gemeten.
+- **Of een crème, capsule, injectie of neusspray iets nuttigs afgeeft.** Gewoon KPV komt in het lab nauwelijks door de huid, en geen enkele toedieningsweg is bij een mens getest.<Cite id="pawar-2017-iontophoresis,fda-pcac-2026-kpv-briefing" />
+- **Formeel onderzoek naar giftigheid.** De FDA vond geen onderzoek naar acute giftigheid, herhaalde doses, schade aan genen (genotoxiciteit), voortplanting of kanker met KPV.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+- **Afweerreacties.** Of het afweersysteem op KPV reageert (immunogeniciteit), is nooit onderzocht. De FDA kon het niet uitsluiten.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+- **Wat lang dempen van de afweer doet.** KPV is juist bedoeld om ontsteking te dempen. Wat langdurig gebruik doet met de normale verdediging tegen infecties, of met het opsporen van afwijkende cellen, is niet getest.
+- **Wisselwerkingen** met welk ander medicijn ook.
+- **Of de vrije base en het acetaatzout zich hetzelfde gedragen**, en wat er echt in producten met de naam KPV zit. Bij de aanvraag zat geen analysecertificaat voor de vrije base. De certificaten die de FDA elders vond, meldden meestal alleen de zuiverheid. Het certificaat voor het acetaat meldde de identiteit, het gehalte en verwante stoffen, maar niets over klontering (aggregatie) of bacteriën.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is nergens goedgekeurd en volgens de dopinglijst verboden in de sport. De Amerikaanse stemming was alleen advies.</Lead>
+
+<Compare title="Het is niet goedgekeurd in Nederland of de EU. De Amerikaanse stemming van 2026 veranderde daar niets aan." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026. De sport staat in het eerste deel hieronder.">
+
+| | Goedgekeurd als medicijn? | Mag iemand het verhandelen of doorgeven? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met KPV in zijn register.<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Een geneesmiddel zonder handelsvergunning mag niemand op voorraad hebben, verkopen, doorgeven of invoeren.<Cite id="nl-gmw-art-40-handelsvergunning,nl-geneesmiddelenwet" /> |
+| Europese Unie | <Verdict is="no" /> Het Europees Geneesmiddelenbureau (EMA) heeft geen goedkeuring, geen aanvraag en geen aanwijzing als weesgeneesmiddel voor KPV.<Cite id="ema-medicines-json,ema-medicines-search,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> | <Verdict is="no" /> Een medicijn mag in een EU-land alleen in de handel komen met een goedkeuring van dat land of van de EU.<Cite id="eu-directive-2001-83,eu-regulation-726-2004" /> |
+
+</Compare>
+
+Een Amerikaanse regel voor bereidingen door apotheken, als die er ooit komt, verandert niets in Nederland of de EU. Hier telt alleen een goedkeuring van de EU of van het CBG.<Cite id="nl-gmw-art-40-handelsvergunning,eu-directive-2001-83" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De statussen in Nederland en de EU zijn gecontroleerd op 27 oktober 2026.
+
+### Sport (WADA)
+
+KPV staat **niet met naam** op de dopinglijst van het Wereld Anti-Doping Agentschap (WADA). Toch is het volgens de tekst van de lijst verboden. Groep S0 ("Niet erkende stoffen") verbiedt altijd elke farmacologische stof die niet onder een latere groep van de lijst valt, en die geen overheidsinstantie voor gezondheid heeft goedgekeurd voor gebruik bij mensen.<Cite id="wada-2026-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> KPV heeft nergens zo'n goedkeuring. Volgens de tekst van S0 valt het dus onder dat verbod. De lijst van 2027, die op 1 januari 2027 ingaat, maakt dat nog duidelijker: S0 noemt dan ook "peptiden" als voorbeeld.<Cite id="wada-2027-list-en,wada-2027-list-explanatory-note" /> Een plek op de Amerikaanse 503A-lijst zou geen goedkeuring zijn, en zou dus niets veranderen aan de status in de sport. WADA zegt niet apart iets over KPV. Twijfel je? Vraag het de Dopingautoriteit. Meer over de regels in Nederland: [sport en doping](/nl/legal/sport-and-doping/). {/* residue-ok: PCAC framing (503A) */}
+
+</InDetail>
+
+<InDetail title="De Europese Unie en Nederland">
+
+Wat we voor deze pagina controleerden, op 27 oktober 2026: de gegevens van het EMA over medicijnen die het beoordeelde (goedgekeurd, geweigerd of ingetrokken), de aanwijzingen als weesgeneesmiddel, de lijst van aanvragen die het EMA nu beoordeelt, en de Geneesmiddeleninformatiebank van het CBG. Geen ervan noemt KPV.<Cite id="ema-medicines-json,ema-orphan-designations-json,ema-under-evaluation-2026-10,cbg-gib-search-status-2026-10-27" /> De registers van andere EU-landen hebben we niet doorzocht. De beoordeling van de FDA zegt, anders dan haar beoordelingen van sommige andere peptiden, niet zelf dat geen enkel land KPV heeft goedgekeurd. Waarom we toch "nergens goedgekeurd" schrijven, staat bij het onderzoek: er is nooit een studie met KPV bij mensen gepubliceerd, en geen medicijnautoriteit geeft een handelsvergunning zonder klinische gegevens.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+
+### Europese Unie
+
+Geen enkel medicijn met KPV heeft een goedkeuring voor de hele EU. In de gegevens van het EMA staat ook geen aanvraag voor KPV, ook geen geweigerde of ingetrokken aanvraag, en geen aanwijzing als weesgeneesmiddel (een aparte status voor middelen tegen zeldzame ziekten).<Cite id="ema-medicines-json,ema-medicines-search,ema-orphan-designations-json,ema-under-evaluation-2026-10" /> In het Europese register voor klinisch onderzoek (CTIS) staat geen onderzoek met KPV.<Cite id="ctis-kpv-search-2026-10-27" /> Een medicijn mag in een EU-land alleen in de handel komen als dat land of de EU het heeft goedgekeurd.<Cite id="eu-directive-2001-83" />
+
+### Nederland
+
+Het CBG heeft geen product met KPV in de Geneesmiddeleninformatiebank (gezocht op 27 oktober 2026).<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> Volgens de Geneesmiddelenwet is een stof een geneesmiddel als die wordt gepresenteerd als middel om een ziekte bij mensen te genezen of te voorkomen. Dat geldt ook als die stof bedoeld is om functies van het lichaam te veranderen door een farmacologisch effect.<Cite id="nl-gmw-art-1-geneesmiddel" /> Een geneesmiddel zonder handelsvergunning mag niemand op voorraad hebben, aanbieden, verkopen, doorgeven of invoeren. Er zijn een paar beperkte uitzonderingen, zoals een apotheek die op kleine schaal een medicijn maakt voor haar eigen patiënten (magistrale bereiding). Geen van die uitzonderingen is een weg voor iemand die het zelf regelt.<Cite id="nl-gmw-art-40-handelsvergunning" />
+
+Het etiket "alleen voor onderzoek" ("research use only") verandert dat niet. De wet kijkt naar het product, hoe het wordt aangeboden en wat het doet. De Douane schreef in augustus 2026: valt een middel onder de wet, dan blijft het verboden. "Onderzoeksdoeleinden spelen dan geen rol." Ze schreef ook dat naast afslankmiddelen andere peptiden populair zijn: experimentele middelen die op sociale media worden aangeraden.<Cite id="douane-2026-08-illegale-online-handel-medicijnen,douane-hvgem-geneesmiddelen-h7-vaststelling-geneesmiddel" /> Zie ["alleen voor onderzoek"](/nl/legal/research-use-only/).
+
+**Zelf invoeren.** Een reiziger mag de meeste medicijnen voor eigen gebruik meenemen, in de originele verpakking. Voor een middel zonder handelsvergunning blijft het verbod gelden, en een pakket uit het buitenland valt niet onder de regel voor reizigers.<Cite id="douane-medicijnen-reizen-2026,douane-invoer-geneesmiddelen-2026,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> Een middel zonder handelsvergunning invoeren is volgens de Geneesmiddelenwet verboden, ook voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Wat wel en niet mag, en wat er met een pakket kan gebeuren, staat bij [zelf invoeren](/nl/legal-routes/#zelf-invoeren). Meer over de wet: [Nederland](/nl/legal/nl/).
+
+</InDetail>
+
+<InDetail title="De VS, en de stemming van juli 2026 punt voor punt">
+
+{/* residue-ok: PCAC framing (FDA, 503A) */}
+KPV is niet goedgekeurd door de FDA. Het heeft geen monografie in de Amerikaanse farmacopee (USP) en zit in geen enkel goedgekeurd medicijn. Volgens de Amerikaanse wet mag een apotheek er dus alleen mee bereiden als het via een formele regel (rulemaking) op de 503A-lijst komt: de Amerikaanse lijst van grondstoffen voor bereidingen door apotheken.<Cite id="usc-21-353a,fda-pcac-2026-kpv-briefing" /> Toch is het Amerikaanse ministerie van Volksgezondheid (HHS) niet van plan op te treden als een apotheek het nu al bereidt. Dat staat in een ontwerp voor tijdelijk beleid van 30 oktober 2026, met strenge voorwaarden (zie hieronder).<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> De FDA had KPV eerder al genoemd bij stoffen die mogelijk grote risico's voor de veiligheid geven. Ze vond geen gegevens over blootstelling bij mensen en kon niet beoordelen of het schade zou doen.<Cite id="fda-category-2-safety-risks" /> {/* residue-ok: FDA evidence */}
+
+De enige aanvraag om KPV op de lijst te zetten, werd later ingetrokken. De FDA beoordeelde de vrije base en het acetaatzout toch, op eigen initiatief, omdat niet duidelijk was welke van de twee de aanvrager bedoelde.<Cite id="fda-pcac-2026-kpv-briefing" /> Haar wetenschappers keken naar wondgenezing en ontstekingsziekten. Ze concludeerden dat de stoffen niet goed zijn beschreven (gekarakteriseerd), dat er geen informatie is over gebruik bij mensen, en dat ze niet op de lijst moeten komen.<Cite id="fda-pcac-2026-kpv-briefing,fda-pcac-2026-briefing-intro" /> {/* residue-ok: FDA evidence */}
+
+Wat daarna gebeurde, is het deel van dit verhaal dat het vaakst verkeerd wordt weergegeven:
+
+- Op 23 juli 2026 stemde de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) om KPV aan te bevelen voor de Amerikaanse 503A-lijst.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" /> {/* residue-ok: PCAC framing */}
+- In 2 dagen bekeek de commissie 7 peptiden.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-briefing-intro" /> Zoals gemeld vanuit de openbare vergadering raadde ze er 6 aan: BPC-157, KPV, TB-500, MOTS-c, Semax en epitalon. Emideltide (DSIP) werd niet aanbevolen.
+- De stemming is **alleen een advies, niet bindend**, en ging in tegen het advies van de eigen medewerkers van de FDA, die KPV niet op de lijst wilden.<Cite id="fda-pcac-2026-kpv-briefing,fda-pcac-2026-briefing-intro" /> {/* residue-ok: PCAC framing */}
+- KPV staat **nog niet op de 503A-lijst**. Of het erop komt, beslist de FDA pas in een formele regel, na een openbare ronde voor reacties (notice-and-comment).<Cite id="fda-pcac-2026-kpv-briefing" /> Tot die tijd is HHS niet van plan op te treden tegen apotheken en artsen die het bereiden. Dat geldt alleen onder strenge voorwaarden, zoals een recept voor een bepaalde patiënt en een geregistreerde fabrikant. Het beleid is een tijdelijk ontwerp en niet bindend, en in Nederland en de EU verandert het niets.<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> {/* residue-ok: PCAC framing */}
+- **Geen van deze peptiden is een goedgekeurd medicijn in Nederland of de EU**, ook KPV niet. Semax is wel in Rusland als medicijn toegelaten. Komt KPV ooit op de 503A-lijst? Dan mogen alleen Amerikaanse apotheken het op recept bereiden. Dat is geen handelsvergunning, en het zegt niets over de vraag of KPV werkt. Een Amerikaanse lijst verandert niets buiten de VS.<Cite id="usc-21-353a,fda-pcac-2026-presentations-day1,fda-pcac-2026-kpv-briefing,fda-pcac-2026-briefing-intro,fda-pcac-2026-semax-briefing,ema-medicines-json,cbg-gib-search-status-2026-10-27" /> {/* residue-ok: PCAC framing */}
+
+Zoals gemeld vanuit de openbare vergadering waren er voor KPV 8 stemmen voor, 6 tegen en 1 onthouding, dezelfde verdeling als gemeld voor BPC-157 en TB-500. De stemvragen van de FDA hadden voor KPV in feite 2 aparte vragen: één voor de vrije base en één voor het acetaatzout. Er waren dus 2 stemmingen.<Cite id="fda-pcac-2026-questions" /> Op 3 november 2026 had de FDA nog geen schriftelijk verslag gepubliceerd. Haar pagina over de vergadering was sinds 6 augustus 2026 niet meer bijgewerkt. De documenten van de FDA bevestigen de datum, de 7 peptiden, de stemvragen en het advies van de medewerkers. De aantallen, en of de 2 stemmingen over KPV verschilden, controleren we in het verslag zodra dat verschijnt.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" /> Op 3 november 2026 had de FDA ook nog geen regel voorgesteld om KPV op de lijst te zetten.<Cite id="federalregister-503a-search-2026-11-03" /> {/* residue-ok: PCAC framing */}
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">De risico's bij mensen zijn onbekend. Producten zonder controle en afweerreacties zijn de grootste zorgen.</Lead>
+
+{/* residue-ok: FDA evidence */}
+<Compare title="Verschillende soorten schade zijn mogelijk. Geen ervan is bij mensen onderzocht." detail="Wat de beoordeling van de FDA en de resultaten uit het lab en bij dieren doen vermoeden, op 20 oktober 2026.">
+
+| Mogelijke schade | Gezien bij mensen? |
+|---|---|
+| Infectie door bacteriën in het product | <Verdict is="unknown" /> De FDA vond geen tests op bacteriën voor KPV, niet in de analysecertificaten en niet in de literatuur.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+| Een andere stof krijgen dan je bedoelde | <Verdict is="unknown" /> KPV heeft geen vaste naam, en er zijn 2 vormen met die naam.<Cite id="fda-pcac-2026-kpv-briefing" /> |
+| Een afweerreactie, van geen klachten tot levensgevaar | <Verdict is="unknown" /> Peptiden kunnen het afweersysteem prikkelen. De FDA vond voor KPV geen onderzoek hiernaar.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */} |
+| Zwakkere afweer tegen bacteriën bij lang gebruik | <Verdict is="unknown" /> Een theorie op basis van hoe het werkt. Niet onderzocht. In één muismodel verlaagde KPV het aantal tumoren.<Cite id="viennois-2016-cac" /> |
+| Schade in de zwangerschap, of kanker | <Verdict is="unknown" /> Geen onderzoek keek naar schade in de zwangerschap, schade aan genen of kanker.<Cite id="fda-pcac-2026-kpv-briefing" /> |
+
+</Compare>
+
+Volgens de tekst van S0 is KPV altijd verboden in de sport, als niet-goedgekeurde stof, ook al staat het niet met naam op de lijst.<Cite id="wada-2026-list-en,wada-2027-list-en" />
+
+<InDetail title="Wat er bij mensen is gemeld">
+
+Niets, in geen enkele richting. Er is geen onderzoek bij mensen en geen casusbeschrijving. Er is dus geen verslag van voordeel en geen verslag van schade. De FDA doorzocht haar systeem voor meldingen van bijwerkingen en haar systeem voor klachten over voeding en supplementen tot 3 december 2025. Ze vond geen meldingen over KPV.<Cite id="fda-pcac-2026-kpv-briefing" /> Geen meldingen is geen bewijs dat het veilig is. Amerikaanse apotheken die zelf medicijnen bereiden, hoeven bijwerkingen niet te melden. En over een stof waar bijna niemand iets over meldt, komen bijna geen meldingen binnen.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Het product, en afweerreacties">
+
+### Het product is het eerste risico
+
+Voor de meeste mensen is het directe gevaar niet het molecuul, maar de flacon. Bij de aanvraag die de FDA beoordeelde, zat geen analysecertificaat voor de vrije base. De certificaten die de FDA elders vond, meldden meestal alleen de zuiverheid. Het certificaat voor het acetaat dat ze wel had, liet geen tests zien op klontering van het peptide of op bacteriën. De FDA merkte ook op dat KPV geen vaste naam heeft, zodat een flacon een andere stof kan bevatten dan bedoeld.<Cite id="fda-pcac-2026-kpv-briefing" /> {/* residue-ok: FDA evidence */}
+
+Een product dat je spuit of sprayt en dat niet steriel is, kan een infectie geven. Dat kan gaan van een huidinfectie op de plek (wondroos) tot bacteriën in het bloed. Dan kan sepsis (bloedvergiftiging) ontstaan: het lichaam reageert zo sterk op de infectie dat organen beschadigd raken.<Cite id="thuisarts-wondroos,thuisarts-sepsis,cdc-2024-safe-injection-practices" /> Bacteriën die in de vloeistof groeien voordat die wordt gefilterd, laten ook <Term id="endotoxin">endotoxine</Term> achter, een gifstof die koorts kan geven. Bacteriën tellen zegt niets over hoeveel endotoxine er is.<Cite id="fda-1993-lyophilization-guide" />
+
+De plaat laat 6 dingen zien die mis kunnen zijn met een flacon van buiten de apotheek: van wat erin zit tot wat nooit is getest.
+
+<Infographic id="online-vial-risks" />
+
+### Waarom een gespoten peptide het afweersysteem kan prikkelen
+
+Peptiden kunnen samenklonteren tot aggregaten, en bij het maken ontstaan bijna-kopieën van de bedoelde keten. Het afweersysteem is gebouwd om herhaalde, onbekende patronen in moleculen op te merken, en aggregaten en bijna-kopieën leveren die. De FDA concludeerde dat KPV een risico op <Term id="immunogenicity">immunogeniciteit</Term> kan hebben (een reactie van het afweersysteem op de stof). Klontering en onzuiverheden maken dat risico groter. De FDA vond geen onderzoek dat dit testte.<Cite id="fda-pcac-2026-kpv-briefing" /> Volgens de FDA kunnen de gevolgen van zo'n afweerreactie gaan van antistoffen zonder zichtbaar effect tot levensgevaarlijke reacties. En vaak zijn ze niet te voorspellen bij de persoon die het product krijgt.<Cite id="fda-pcac-2026-kpv-briefing" /> Op de pagina over [de risico's van het product](/nl/safety/product-risk/) lees je hoe peptiden van buiten de legale keten verschillen van goedgekeurde medicijnen. {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+<InDetail title="Waarom “klein en natuurlijk” niets geruststelt">
+
+Drie punten worden vaak gebruikt om te zeggen dat KPV wel onschuldig moet zijn: het is heel klein, het is een stukje van een menselijk hormoon, en er waren geen meldingen van bijwerkingen. Geen van die punten houdt stand. Een gemaakt peptide is niet het stukje dat je lichaam zelf maakt: er zitten onzuiverheden in, en het kan klonteren. Klein zijn houdt afweerreacties niet tegen, en peptiden van maar 2 aminozuren kunnen al klonteren.<Cite id="fda-pcac-2026-kpv-briefing" /> En "geen meldingen" komt doordat niemand het onderzoekt of erover meldt, niet doordat het is gecontroleerd.
+
+</InDetail>
+
+<InDetail title="Een risico dat volgt uit hoe het werkt, en andere gaten">
+
+### Een theoretisch risico dat volgt uit het mechanisme
+
+KPV is bedoeld om ontsteking te dempen, door NF-κB en de afgifte van cytokinen in afweercellen lager te zetten. Hetzelfde systeem verdedigt het lichaam tegen infecties en helpt het afweersysteem om afwijkende cellen op te sporen. In principe kan het dus de normale afweer verzwakken als je het breed en lang dempt. Dit is een redenering vanuit het mechanisme, geen schade die iemand heeft gezien. Het is niet getest bij mensen, en in één muismodel verminderde KPV juist tumoren die door ontsteking ontstaan, in plaats van ze te bevorderen.<Cite id="viennois-2016-cac" /> Eerlijk samengevat: een theoretisch nadeel voor de afweer is goed mogelijk, en helemaal niet onderzocht.
+
+### Zwangerschap, kanker en andere gaten
+
+Er is geen onderzoek naar voortplanting of ontwikkeling, geen onderzoek naar schade aan genen en geen onderzoek naar kanker met KPV.<Cite id="fda-pcac-2026-kpv-briefing" /> Dat betekent niet dat het in die situaties gevaarlijk is. Het betekent dat niemand het weet.
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico verkleinen?">Controleer eerst de flacon, betrek een arts erbij, en weet wanneer je stopt.</Lead>
+
+Dit deel is voor mensen die hebben besloten KPV te gebruiken, of het al gebruiken. Het is geen aanbeveling. We noemen geen hoeveelheden, geen schema's en geen verkopers.
+
+{/* residue-ok: FDA evidence */}
+<ProductCheck extra="Kijk welke vorm op het etiket staat. KPV bestaat als vrije base en als acetaatzout. De FDA ziet die als 2 stoffen." extraSources="fda-pcac-2026-kpv-briefing" />
+
+### Praat eerst met een arts, zeker bij een ziekte
+
+KPV wordt aangeprezen bij inflammatoire darmziekte, de ziekte van Crohn en chronische wonden.<Cite id="fda-pcac-2026-kpv-briefing" /> Dat zijn ernstige aandoeningen. Voor ontstekingsziekten en wonden bestaan goedgekeurde behandelingen, met controles erbij.<Cite id="fda-pcac-2026-kpv-briefing" /> Gebruik je een niet-goedgekeurd peptide in plaats van, of naast, een geteste behandeling? Dan kan een ziekte die te behandelen is ongemerkt erger worden. Een arts kan de diagnose bevestigen, een geteste behandeling starten en letten op complicaties. Vertel je arts eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Op [praten met je arts](/nl/talking-to-your-doctor/) lees je hoe je het ter sprake brengt.
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **De plek waar je spuit of smeert wordt warm, rood, dik of pijnlijk.** Dat kan wijzen op een infectie of een besmet product. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je krijgt koorts of rillingen, of je voelt je heel ziek na een injectie.** Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je krijgt jeukende bulten, een dik gezicht, dikke lippen of een dikke keel, of je kunt moeilijk ademen.** Dat kan een allergische reactie zijn. Wordt je keel dik of gaat ademen moeilijk? Bel dan direct 112. Alleen jeukende bulten, een dik gezicht of dikke lippen, en adem je normaal? Stop dan met het product en maak een afspraak met je huisarts.
+
+Is het ernstig? Bel 112.
+</Callout>
+
+<Cite id="thuisarts-wondroos,thuisarts-sepsis,thuisarts-steenpuist,thuisarts-dikke-ogen-lippen,thuisarts-spoed-wie-bellen,fda-pcac-2026-kpv-briefing" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Wat je niet kunt weten over het product">
+
+### Weet wat je niet kunt weten over het product
+
+Een flacon met KPV op het etiket kan de vrije base of het acetaatzout bevatten, meer of minder peptide dan er staat, bijna-kopieën van de keten, oplosmiddelen of gifstoffen van bacteriën. Niemand heeft de flacon gecontroleerd voordat die bij jou kwam, en KPV heeft geen vaste naam.<Cite id="fda-pcac-2026-kpv-briefing" /> De pagina over [de risico's van het product](/nl/safety/product-risk/) legt uit wat dat in de praktijk betekent, ook [wat een labrapport wel en niet zegt](/nl/safety/product-risk/#wat-een-labrapport-wel-en-niet-zegt). Spuit of spray je iets? Volg dan de stappen voor [steriel werken](/nl/safety/sterile-technique/). Injecteren geeft een risico op infectie, wat er ook in de flacon zit. Dat risico kun je verkleinen.<Cite id="thuisarts-wondroos,cdc-2024-safe-injection-practices" />
+
+</InDetail>
+
+<InDetail title="Zinvolle controles, en waarom">
+
+### Er is geen bruikbare test om het te volgen
+
+Bij de meeste medicijnen kun je een waarde in het bloed volgen om de dosis te beoordelen of schade vroeg op te merken. Voor KPV bestaat er geen getoetste meting, want het is nooit bij mensen onderzocht. De zinvolle controles gaan dus over problemen opmerken, niet over het instellen van een dosis:
+
+<Checklist>
+
+- **Let op de plek waar je spuit of smeert.** Warmte, roodheid, zwelling of pijn wijzen op een infectie of een besmet product.
+- **Let op allergische reacties.** Bij een peptide dat je spuit of sprayt, is dat de schade die op grond van het mechanisme het meest voor de hand ligt.
+- **Heb je een inflammatoire darmziekte? Ga dan door met de controles van je specialist** (klachten, ontstekingswaarden, kijkonderzoek van de darm als dat is afgesproken). Gaat het even beter? Dat bewijst niet dat de ziekte onder controle is.
+- **Vertel elke arts die je behandelt dat je het gebruikt.** Dan wordt een allergische reactie of een infectie niet voor iets anders aangezien.
+
+</Checklist>
+
+</InDetail>
+
+<InDetail title="Wie het niet moet gebruiken, en wisselwerkingen">
+
+### Wie het helemaal niet moet gebruiken
+
+- **Wie zwanger is, borstvoeding geeft of zwanger wil worden.** Er zijn geen gegevens bij mensen en helemaal geen onderzoek naar voortplanting.<Cite id="fda-pcac-2026-kpv-briefing" />
+- **Wie een actieve infectie heeft.** KPV is juist bedoeld om ontsteking te dempen, en ontsteking is ook de verdediging van het lichaam.
+- **Wie er een ernstige of erger wordende ziekte mee wil behandelen,** zoals een actieve inflammatoire darmziekte of een wond die niet geneest, in plaats van zorg die is getest.
+- **Kinderen en tieners.** Voor hen zijn er helemaal geen gegevens.
+- **Sporters die onder dopingregels vallen.** Volgens de tekst van S0 is het altijd verboden.<Cite id="wada-2026-list-en" />
+
+### Mogelijke wisselwerkingen (geen ervan is onderzocht)
+
+- **Medicijnen die het afweersysteem onderdrukken**, zoals medicijnen bij inflammatoire darmziekte of na een transplantatie. KPV dempt ook signalen van het afweersysteem, en wat ze samen doen, is onbekend.
+- **Mengproducten met andere peptiden**, zoals mengsels met BPC-157 of TB-500. Die voegen een tweede onbekende stof toe. Dan kun je een reactie aan geen van beide meer toeschrijven.
+
+</InDetail>
+
+<InDetail title="Legale wegen naar een behandeling, en een bijwerking melden">
+
+### Wat de wet in Nederland toestaat
+
+KPV is geen goedgekeurd medicijn in Nederland of de EU. Er is dus geen goedgekeurd product dat een arts kan voorschrijven.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> Geen medicijnautoriteit heeft vastgesteld dat het werkt, of dat de voordelen groter zijn dan de risico's. De FDA vond in 2026 geen informatie over gebruik bij mensen om dat te beoordelen.<Cite id="fda-pcac-2026-kpv-briefing" /> Welke legale wegen er in Nederland zijn, en wat elke weg vraagt, staat op de pagina [legale wegen naar een behandeling](/nl/legal-routes/). Elke weg heeft strenge voorwaarden. Geen enkele weg maakt van een niet-goedgekeurd product een goedgekeurd medicijn: {/* residue-ok: FDA evidence */}
+
+- [een recept voor een goedgekeurd medicijn](/nl/legal-routes/#recept)
+- [off-label gebruik van een goedgekeurd medicijn](/nl/legal-routes/#off-label)
+- [een artsenverklaring](/nl/legal-routes/#artsenverklaring)
+- [een magistrale bereiding door een apotheek](/nl/legal-routes/#magistrale-bereiding)
+- [meedoen aan klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek)
+- [compassionate use](/nl/legal-routes/#compassionate-use)
+- [zelf invoeren](/nl/legal-routes/#zelf-invoeren)
+
+### Een bijwerking melden
+
+Denk je dat een product je schade heeft gedaan? Vertel het een arts. Je kunt een bijwerking ook zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Lareb geeft geen medisch advies. Bespreek je klachten dus ook met je arts.<Cite id="lareb-bijwerkingen-melden" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [onze notities over België](/nl/legal/be/).
+
+De FDA vond tot december 2025 geen meldingen over KPV in haar databases. Elke melding voegt dus nieuwe informatie toe.<Cite id="fda-pcac-2026-kpv-briefing" /> Zie ook [als er iets misgaat](/nl/safety/if-something-goes-wrong/). {/* residue-ok: FDA evidence */}
+
+</InDetail>
+
+</Section>

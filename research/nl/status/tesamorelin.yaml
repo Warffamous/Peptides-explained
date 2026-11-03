@@ -1,0 +1,23 @@
+# EU and Dutch status of tesamorelin on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: tesamorelin
+checked: 2026-10-27
+rows:
+  # withdrawn, not refused: the applicant withdrew before a CHMP opinion was adopted (EMA status 'Application withdrawn').
+  - { jurisdiction: EU, status: withdrawn, since: 2012-06-21, as_of: 2026-10-27, sources: [ema-egrifta-withdrawal, ema-medicines-json] }
+  - { jurisdiction: NL, status: not-authorised, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, cbg-geneesmiddeleninformatiebank, nl-gmw-art-40-handelsvergunning, igj-leveren-op-artsenverklaring] }
+products: []
+compare_with_data_file:
+  - "Both rows confirmed: EU withdrawn since 2012-06-21 (not refused); NL not-authorised. as_of 2026-10-22 -> 2026-10-27; NL: add cbg-gib-search-status-2026-10-27."
+  - "No EU product. authorised_products holds the US and Canadian Egrifta products only (not shown on the Dutch site)."
+regulatory_notes:
+  EU: "Not authorised in the EU: the only application (Egrifta) was withdrawn on 21 June 2012, after the CHMP's provisional view that it could not be approved."
+  NL: "Not authorised in the Netherlands: no product in the CBG register (27 October 2026). [Route clause from the NL-law research: only through a named-patient exemption (artsenverklaring), which the IGJ can refuse.]"
+notes: |
+  EMA medicines JSON (27 October 2026): one record, Egrifta, EMEA/H/C/002427, medicine_status 'Application withdrawn',
+  active substance tesamorelin, applicant Ferrer Internacional S.A., withdrawal_of_application_date 21/06/2012, first
+  published 18/07/2012, indication 'Treatment of excess abdominal fat in HIV-infected patients with lipodystrophy'.
+  EPAR page re-read 27 October 2026: 'Withdrawal of application'; 'On 21 June 2012, Ferrer Internacional, S.A. officially
+  notified the Committee for Medicinal Products for Human Use (CHMP) that it wishes to withdraw its application for a
+  marketing authorisation'. No other tesamorelin application or orphan designation; not on the under-evaluation list.
+  CTIS: 0 for 'tesamorelin'. Geneesmiddeleninformatiebank: 'Geen producten gevonden' for tesamorelin, tesamoreline,
+  Egrifta. World context: FDA-approved (Egrifta, 2010), from the data file's US row (not re-checked here).

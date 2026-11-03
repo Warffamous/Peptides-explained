@@ -11,16 +11,18 @@
  * The inline head script (BaseHead) sets html[data-consent="ask"] before first paint when no choice is
  * stored, so the banner is laid out from the start and nothing below it moves (base/structure.css).
  */
-import { t } from '../../lib/i18n';
+import { t, has } from '../../lib/i18n';
 import { routeUrl } from '../../lib/urls';
 interface Props { locale: string }
 const { locale } = Astro.props;
+// The funding page's privacy heading anchor: the English slug unless the locale names its own heading's.
+const privacyAnchor = has(locale, 'common.consent.moreAnchor') ? t(locale, 'common.consent.moreAnchor') : 'your-privacy';
 ---
 <section class="consent" aria-labelledby="consent-title" data-consent-banner>
   <div class="consent__inner">
     <div class="consent__body">
       <h2 class="consent__title" id="consent-title" tabindex="-1">{t(locale, 'common.consent.title')}</h2>
-      <p class="consent__text">{t(locale, 'common.consent.text')} <a href={`${routeUrl(locale, 'about/funding')}#your-privacy`}>{t(locale, 'common.consent.more')}</a></p>
+      <p class="consent__text">{t(locale, 'common.consent.text')} <a href={`${routeUrl(locale, 'about/funding')}#${privacyAnchor}`}>{t(locale, 'common.consent.more')}</a></p>
     </div>
     <div class="consent__actions">
       <button type="button" class="consent__button" data-consent-choice="yes">{t(locale, 'common.consent.allow')}</button>

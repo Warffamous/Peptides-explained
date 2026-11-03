@@ -58,6 +58,11 @@ export const productCheckItemTextSchema = z.object({
   points: z.array(z.string().min(1)).default([]),
   /** Link texts, one per link in the data file, saying where each goes. */
   links: z.array(z.string().min(1)).default([]),
+  /**
+   * The heading anchors on this locale's pages, one per link, when they differ from the data file's
+   * (English heading slugs). Omitted = the data file's anchors.
+   */
+  anchors: z.array(z.string().regex(/^[a-z0-9-]+$/)).optional(),
 });
 export const productCheckTextSchema = z.object({
   title: z.string().min(1),

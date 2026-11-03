@@ -1,0 +1,245 @@
+{
+  "marketing-authorisation": {
+    "term": "handelsvergunning",
+    "aliases": [
+      "handelsvergunningen",
+      "vergunning voor het in de handel brengen"
+    ],
+    "definition": "De goedkeuring die een medicijn nodig heeft voordat het in de handel mag komen. In Nederland geeft het CBG die, of de EU voor alle lidstaten, en pas na een beoordeling van de kwaliteit, de werking en de risico’s.",
+    "category": "regulation",
+    "see_also": [
+      "medicines-regulator",
+      "prescription-only-medicine"
+    ]
+  },
+  "medicines-regulator": {
+    "term": "medicijnautoriteit",
+    "aliases": [
+      "medicijnautoriteiten",
+      "registratieautoriteit",
+      "registratieautoriteiten"
+    ],
+    "definition": "Een overheidsinstantie die medicijnen beoordeelt voordat ze in de handel mogen komen, en daarna de veiligheid blijft volgen. Voorbeelden zijn het CBG in Nederland, het EMA voor de EU en de FDA in de VS.",
+    "category": "regulation",
+    "see_also": [
+      "marketing-authorisation",
+      "fda",
+      "mhra",
+      "health-canada",
+      "tga"
+    ]
+  },
+  "fda": {
+    "term": "FDA",
+    "aliases": [
+      "Amerikaanse medicijnautoriteit",
+      "Food and Drug Administration",
+      "US Food and Drug Administration"
+    ],
+    "definition": "De Food and Drug Administration, de Amerikaanse medicijnautoriteit. Die beslist welke medicijnen in de Verenigde Staten in de handel mogen komen.",
+    "category": "regulation",
+    "see_also": [
+      "medicines-regulator"
+    ]
+  },
+  "wada": {
+    "term": "WADA",
+    "aliases": [
+      "Wereld Anti-Doping Agentschap",
+      "World Anti-Doping Agency"
+    ],
+    "definition": "Het Wereld Anti-Doping Agentschap. Het publiceert elk jaar de lijst van stoffen die in de sport verboden zijn: de dopinglijst.",
+    "category": "sport",
+    "see_also": [
+      "wada-s0",
+      "strict-liability"
+    ]
+  },
+  "anabolic-steroids": {
+    "term": "anabole steroïden",
+    "aliases": [
+      "anabole steroïde",
+      "anabole-androgene steroïden",
+      "anabolen"
+    ],
+    "definition": "Kunstmatige vormen van het mannelijke hormoon testosteron en verwante stoffen. Mensen gebruiken ze om spieren op te bouwen. Ze zijn verboden in de sport.",
+    "category": "sport",
+    "see_also": [
+      "wada"
+    ]
+  },
+  "prescription-only-medicine": {
+    "term": "alleen op recept",
+    "aliases": [
+      "UR-geneesmiddel",
+      "UR-geneesmiddelen",
+      "receptplichtig",
+      "receptplichtige"
+    ],
+    "definition": "Een medicijn dat je alleen krijgt met een recept van een arts of een andere voorschrijver. In Nederland mag de apotheek het zonder recept niet meegeven, behalve in een spoedgeval (UR-geneesmiddel).",
+    "category": "regulation",
+    "see_also": [
+      "marketing-authorisation",
+      "medicines-regulator"
+    ]
+  },
+  "off-label": {
+    "term": "off-label",
+    "aliases": [
+      "off-labelgebruik",
+      "off-label gebruik",
+      "off-label voorschrijven",
+      "offlabel"
+    ],
+    "definition": "Een goedgekeurd medicijn gebruiken voor iets anders dan waarvoor het is goedgekeurd: een andere ziekte, groep of dosis, of op een andere manier. In Nederland mag een arts het volgens de wet alleen zo voorschrijven als de beroepsgroep er een richtlijn of protocol voor heeft. Wordt daar nog aan gewerkt? Dan moeten arts en apotheker eerst overleggen.",
+    "category": "regulation",
+    "see_also": [
+      "marketing-authorisation",
+      "medicines-regulator"
+    ]
+  },
+  "named-patient-route": {
+    "term": "artsenverklaring",
+    "aliases": [
+      "artsenverklaringen"
+    ],
+    "definition": "Een uitzondering, meestal voor één patiënt, voor een medicijn zonder handelsvergunning in Nederland. De arts verklaart dat je om medische redenen niet kunt worden behandeld met medicijnen die hier wel zijn goedgekeurd. Een apotheek, groothandel of fabrikant vraagt dan een ontheffing aan bij de IGJ. Zelf aanvragen kan niet.",
+    "category": "regulation",
+    "see_also": [
+      "compassionate-use",
+      "expanded-access",
+      "marketing-authorisation"
+    ]
+  },
+  "clinical-trial": {
+    "term": "klinisch onderzoek",
+    "aliases": [
+      "klinische studie",
+      "klinische studies",
+      "klinische proef",
+      "klinische proeven"
+    ],
+    "definition": "Een vooraf geplande studie bij mensen die test of een behandeling werkt en welke schade die doet. Grote studies vergelijken de behandeling met een nepmiddel (placebo) of een ander medicijn.",
+    "category": "evidence",
+    "see_also": [
+      "randomised-controlled-trial",
+      "clinical-trial-phases",
+      "placebo"
+    ]
+  },
+  "randomised-controlled-trial": {
+    "term": "gerandomiseerd gecontroleerd onderzoek",
+    "aliases": [
+      "gerandomiseerde gecontroleerde studie",
+      "gerandomiseerde gecontroleerde studies",
+      "RCT",
+      "RCT’s"
+    ],
+    "definition": "Een studie waarin loting bepaalt wie de behandeling krijgt en wie een vergelijking, zoals een nepmiddel. Zo test je eerlijk of de behandeling zelf het effect geeft.",
+    "category": "evidence",
+    "see_also": [
+      "clinical-trial",
+      "placebo"
+    ]
+  },
+  "preclinical-research": {
+    "term": "preklinisch onderzoek",
+    "aliases": [
+      "preklinisch",
+      "preklinische",
+      "preklinische studie",
+      "preklinische studies",
+      "lab- en dieronderzoek"
+    ],
+    "definition": "Onderzoek in cellen en bij dieren, voordat een stof bij mensen wordt getest. Het kan een reden geven om iets te testen, maar het laat niet zien dat het bij mensen werkt.",
+    "category": "evidence",
+    "see_also": [
+      "in-vitro",
+      "in-vivo",
+      "clinical-trial"
+    ]
+  },
+  "evidence-profile": {
+    "term": "bewijsprofiel",
+    "aliases": [
+      "bewijsprofielen"
+    ],
+    "definition": "De 4 aparte beoordelingen die deze site voor elke stof geeft: onderzoek bij mensen, lab- en dieronderzoek, hoe onafhankelijk dat onderzoek is, en wat bekend is over schade bij mensen.",
+    "category": "evidence",
+    "see_also": [
+      "preclinical-research",
+      "independent-replication"
+    ]
+  },
+  "research-chemical": {
+    "term": "alleen voor onderzoek",
+    "aliases": [
+      "research use only",
+      "for research use only",
+      "research chemical",
+      "research chemicals",
+      "niet voor menselijk gebruik",
+      "not for human consumption"
+    ],
+    "definition": "Een tekst die verkopers op het etiket zetten, bijvoorbeeld van peptideflacons. Die tekst maakt een product geen goedgekeurd medicijn. Hij zegt ook niet dat iemand heeft gecontroleerd of het geschikt is om te injecteren.",
+    "category": "regulation",
+    "see_also": [
+      "marketing-authorisation"
+    ]
+  },
+  "harm-reduction": {
+    "term": "schadebeperking",
+    "aliases": [],
+    "definition": "Hulp aan mensen die een middel toch gebruiken, zodat ze er minder schade van hebben, zonder over hen te oordelen. Voorbeelden zijn schone naalden en duidelijke informatie over alarmsignalen.",
+    "category": "safety",
+    "see_also": []
+  },
+  "informed-consent": {
+    "term": "geïnformeerde toestemming",
+    "aliases": [
+      "informed consent"
+    ],
+    "definition": "Toestemming geven voor een behandeling nadat je arts heeft uitgelegd waarvoor die is, wat de risico’s zijn en welke andere mogelijkheden er zijn. In Nederland is je toestemming volgens de wet (de WGBO) nodig voor een behandeling. Een uitzondering is een spoedgeval waarin je zelf niet kunt beslissen en er geen tijd is om iemand anders te vragen.",
+    "category": "law",
+    "see_also": [
+      "medical-confidentiality",
+      "second-opinion"
+    ],
+    "autolink": false
+  },
+  "medical-file": {
+    "term": "medisch dossier",
+    "aliases": [
+      "medische dossiers",
+      "patiëntendossier",
+      "patiëntendossiers",
+      "patiëntdossier"
+    ],
+    "definition": "Het dossier dat je arts bijhoudt over je gezondheid en je behandeling. Het is privé, en in Nederland kun je het volgens de wet (de WGBO) meestal inzien en er een kopie van krijgen.",
+    "category": "law",
+    "see_also": [
+      "medical-confidentiality",
+      "informed-consent"
+    ]
+  },
+  "second-opinion": {
+    "term": "second opinion",
+    "aliases": [
+      "second opinions"
+    ],
+    "definition": "Een tweede, onafhankelijke arts kijkt naar je diagnose of je behandelplan. Je kunt er zelf om vragen. Volgens de artsenorganisatie KNMG mag je arts dat alleen om zwaarwegende redenen weigeren.",
+    "category": "law",
+    "see_also": [
+      "informed-consent"
+    ]
+  },
+  "enema": {
+    "term": "klysma",
+    "aliases": [
+      "klysma’s"
+    ],
+    "definition": "Een vloeistof die via de anus in het laatste deel van de darm wordt gebracht. Sommige medicijnen voor darmziekten krijg je op deze manier.",
+    "category": "pharmacology",
+    "see_also": []
+  }
+}

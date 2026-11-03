@@ -1,0 +1,612 @@
+---
+slug: tesamorelin
+title: "Tesamorelin"
+description: "Tesamorelin (Egrifta) is een Amerikaans medicijn tegen extra buikvet bij hiv, niet goedgekeurd in Nederland of de EU. Werking, studies, risico’s en wettelijke status."
+tldr:
+  - q: "Waarvoor is het?"
+    a: "In de VS: extra diep buikvet bij volwassenen met hiv. Niet om af te vallen." # residue-ok: world context
+  - q: "Werkt het?"
+    a: "In grote studies bij mensen met hiv nam diep buikvet ongeveer 15% af. Na stoppen kwam het terug."
+  - q: "Wie mag het niet gebruiken?"
+    a: "De Amerikaanse productinformatie verbiedt het bij zwangerschap, actieve kanker en meer."
+  - q: "Remt het veroudering?"
+    a: "Niet aangetoond. Geen gepubliceerde studie mat veroudering, hartaanvallen of overlijden als hoofduitkomst."
+  - q: "Zijn flacons van buiten de apotheek hetzelfde?"
+    a: "Nee, geen Egrifta. Geen medicijnautoriteit heeft ze gecontroleerd."
+lede: "Een Amerikaans medicijn tegen buikvet bij hiv. Niet goedgekeurd in Nederland. Niet aangetoond dat het veroudering remt."
+glance:
+  main_risk: "Kan je bloedsuiker en het groeisignaal IGF-1 verhogen. Lange termijn: onbekend."
+  # Strook "Stop en zoek hulp als je dit merkt", samengevat uit de stop-nu-lijst van deze pagina (deel 8,
+  # <Callout id="stop-now">) en de Amerikaanse productinformatie (overgevoeligheid: snel medische hulp; diabetische
+  # retinopathie: controle bij diabetes), plus het risico op een infectie door besmetting bij het oplossen dat de FDA in
+  # 2010 vaststelde. De Engelse pagina citeert hier twee pagina's van de NHS; de Nederlandse citeert Thuisarts
+  # (research/nl-notes/tesamorelin.md).
+  stop_signs:
+    - icon: sign-allergic
+      text: "Jeukende bulten, dik gezicht of keel, moeilijk ademen"
+      sources: [dailymed-egrifta-sv-label, thuisarts-dikke-ogen-lippen]
+    - icon: sign-infection
+      text: "Prikplek heet, rood en dik, of koorts"
+      sources: [fda-2010-egrifta-approval-letter, thuisarts-wondroos]
+    - icon: sign-vision
+      text: "Slechter zien, als je diabetes hebt"
+      sources: [dailymed-egrifta-sv-label]
+  # Feitenblad naast de titel: feiten uit de Amerikaanse productinformatie, nooit een dosis. "Goedgekeurd in" komt uit
+  # de data (hier: alleen in andere landen); deze rij geeft het goedgekeurde gebruik.
+  facts:
+    - label: "Hoe je het gebruikt"
+      value: "Injectie onder de huid van de buik"
+      sources: [dailymed-egrifta-sv-label, dailymed-egrifta-wr-label]
+    - label: "Hoe vaak"
+      value: "1 keer per dag"
+      sources: [dailymed-egrifta-sv-label, dailymed-egrifta-wr-label]
+    - label: "Tijd in het bloed"
+      value: "Halfwaardetijd ongeveer 8 tot 11 minuten"
+      sources: [dailymed-egrifta-sv-label, dailymed-egrifta-wr-label]
+    - label: "Goedgekeurd voor"
+      value: "Extra buikvet bij volwassenen met hiv, in de VS" # residue-ok: world context
+      sources: [dailymed-egrifta-sv-label, fda-drugsatfda-egrifta]
+grade_rationale:
+  human_clinical: "Goedgekeurd in de VS sinds 10 november 2010 (Egrifta), op basis van 2 gerandomiseerde, dubbelblinde fase 3-studies bij 816 volwassenen met hiv en extra buikvet, elk met een verlenging van 26 weken. In de EU is de enige aanvraag in 2012 ingetrokken; in Nederland is het niet goedgekeurd." # residue-ok: world context
+  preclinical_volume: "Weinig. Een zoekopdracht in PubMed op 22 oktober 2026 vond 128 records over tesamorelin of TH9507. Maar daaronder waren maar een paar primaire studies bij dieren of in het lab: het niet-klinische artikel van de ontwikkelaar (ratten, honden, varkens), een studie naar de opname bij honden, 2 studies bij ratten uit Kenia en methoden van antidopinglabs. Het meeste onderzoek naar giftigheid bij dieren kennen we alleen uit de Amerikaanse productinformatie."
+  independence: "Een paar groepen. De ontwikkelaar, Theratechnologies, voerde de fase 3-studies uit en betaalde ze. De meeste latere studies komen van één academische groep in het Massachusetts General Hospital. Die kreeg geld van de Amerikaanse National Institutes of Health (NIH), maar de senior auteur was ook senior auteur van de fase 3-artikelen en was adviseur van de ontwikkelaar. Die leverde het middel voor de studies van de groep en betaalde een deel van één studie. Kleinere studies komen van de universiteiten van Washington, Californië (San Diego) en Texas."
+  safety: "Deels bekend. In de studies kregen ongeveer 740 mensen het middel, tot 52 weken lang, en sinds 2010 is het in de VS in de handel. Maar de veiligheidsstudie van 10 jaar en het oogonderzoek van 3 jaar die de FDA eiste, stopten in 2018, zonder resultaten in het onderzoeksregister. De productinformatie zegt dat de veiligheid voor hart en bloedvaten op lange termijn en de gevolgen van jarenlang hoog IGF-1 niet bekend zijn." # residue-ok: world context
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Een kopie van het groeihormoonsignaal van de hersenen"
+    detail: "Tesamorelin is menselijk GHRH (1–44) met een hexenoylgroep aan het eerste aminozuur. In labtests bindt het de menselijke GHRH-receptor en zet die ongeveer even sterk aan als het natuurlijke hormoon. De extra groep vertraagde in plasmamonsters de afbraak door het enzym DPP-4. Bij mensen verdwijnt het toch binnen minuten uit het bloed (halfwaardetijd ongeveer 8–11 minuten)."
+  - kind: signal
+    level: human
+    title: "De hypofyse geeft meer groeihormoon af, nog steeds in pieken"
+    detail: "GHRH werkt op de groeihormooncellen in de voorkwab van de hypofyse. Bij 13 gezonde mannen verhoogden 2 weken dagelijks tesamorelin het groeihormoon in de nacht: zowel de pieken als het niveau ertussen. In de studies veranderden andere hormonen van de hypofyse niet op een klinisch belangrijke manier."
+  - kind: cellular
+    level: human
+    title: "De lever maakt meer IGF-1"
+    detail: "Groeihormoon laat de lever en andere weefsels IGF-1 maken. In de eerste fase 3-studie steeg IGF-1 in 26 weken met 81%. In alle studies samen had meer dan een derde van de mensen (36%) na 26 weken een IGF-1 ver boven het normale bereik (meer dan 3 SD-scores)."
+  - kind: cellular
+    level: human
+    title: "Vetcellen geven opgeslagen vet af"
+    detail: "Bij mensen is het duidelijkste effect van groeihormoon op de stofwisseling dat het meer opgeslagen vet afbreekt (lipolyse). De vetzuren die daarbij vrijkomen, maken het lichaam ook minder gevoelig voor insuline. Daardoor kan de bloedsuiker stijgen. Dit is wat groeihormoon bij mensen doet; voor tesamorelin zelf is het niet gemeten."
+  - kind: tissue
+    level: human
+    title: "Diep buikvet neemt af; vet onder de huid verandert nauwelijks"
+    detail: "Op CT-scans daalde het vet rond de organen (visceraal vet) in 26 weken ongeveer 15% meer dan met placebo. Het buikvet onder de huid en het lichaamsgewicht veranderden nauwelijks. In 2 kleinere studies daalde ook het vet in de lever. Waarom visceraal vet sterker reageert, is niet vastgesteld."
+  - kind: effect
+    level: human
+    title: "Het effect duurt alleen zolang het wordt gebruikt"
+    detail: "Kregen mensen na 26 weken placebo in plaats van tesamorelin? Dan groeide hun diepe buikvet in de 26 weken daarna weer met 16–22%."
+  - kind: effect
+    level: hypothesis
+    title: "Betere gezondheid of trager ouder worden: niet aangetoond"
+    detail: "Geen gepubliceerde studie heeft hartaanvallen, beroertes, leverfalen of overlijden als hoofduitkomst gemeten. Het geneesmiddelencomité van het Europees Geneesmiddelenbureau (EMA) oordeelde dat niet was aangetoond dat de afname van vet echte gezondheidswinst geeft."
+studies:
+  ferdinandi-2007-nonclinical:
+    finding: "De hexenoylgroep beschermde het peptide tegen het enzym DPP-4 en vertraagde de afbraak in plasma van ratten, honden en mensen. Dagelijkse injecties verhoogden groeihormoon en IGF-1 bij varkens, ratten en honden. In studies tot 4 maanden kregen honden veranderingen in lever, nieren en bloed die weer verdwenen. De onderzoekers wijten die aan lange blootstelling aan heel veel groeihormoon en IGF-1."
+    limitation: "Geschreven door de ontwikkelaar; het aantal dieren staat niet in de samenvatting; de volledige gegevens over giftigheid staan alleen samengevat in de productinformatie, niet in dit artikel."
+  jansen-2004-dog-pk:
+    finding: "Bij beagles werd tesamorelin (toen TH9507) als ingeademd poeder via de longen opgenomen. Na een injectie onder de huid was de halfwaardetijd 26 minuten. Volgens het artikel werd het ontwikkeld voor aandoeningen bij het ouder worden die komen door minder groeihormoon."
+    limitation: "Alleen honden; het aantal dieren staat niet in de samenvatting; auteurs met banden met de ontwikkelaar; de vorm om in te ademen is nooit goedgekeurd."
+  chege-2024-rats:
+    finding: "Bij 120 jonge ratten met gewoon of calorierijk voer verhoogde een combinatie van hiv-medicijnen, samen met calorierijk voer, de bloedsuiker, de bloedvetten, het levervet en het lichaamsvet. Bij de ratten die ook tesamorelin kregen, waren die stijgingen er niet."
+    limitation: "Ratten, geen mensen; 10 ratten per groep; de behandeling begon tegelijk met de hiv-medicijnen, dus het zegt niets over het behandelen van vet dat er al is; geen speciale financiering, zeggen de auteurs."
+  stanley-2011-pulsatility:
+    finding: "Bij 13 gezonde mannen verhoogden 2 weken dagelijks tesamorelin het groeihormoon in de nacht, zowel de pieken als het niveau ertussen. IGF-1 steeg met 181 µg/l. De gevoeligheid voor insuline, gemeten met een clamptest, veranderde niet."
+    limitation: "Klein, kort en zonder placebogroep; alleen gezonde mannen; zegt niets over langdurig gebruik."
+  falutz-2007-study-1:
+    finding: "Bij 412 volwassenen met hiv en extra buikvet daalde het diepe buikvet in 26 weken met 15,2% met tesamorelin, en steeg het met 5,0% met placebo. De triglyceriden en de cholesterolverhouding werden beter; IGF-1 steeg met 81%."
+    limitation: "Uitgevoerd door de ontwikkelaar; metingen op scans, geen gezondheidsuitkomsten; 26 weken; vooral mannen; mensen die voor diabetes werden behandeld, deden niet mee."
+  falutz-2008-extension:
+    finding: "Van 315 mensen in het tweede halfjaar hielden degenen die tesamorelin bleven gebruiken over 52 weken 18% minder diep buikvet. Bij wie overstapte op placebo, kwam het vet terug."
+    limitation: "Maar 26 weken extra; alleen mensen die de eerste fase hadden afgemaakt, deden mee; uitgevoerd door de ontwikkelaar."
+  falutz-2010-study-2:
+    finding: "In een tweede studie bij 404 volwassenen met hiv daalde het diepe buikvet in 6 maanden met 10,9%, tegenover 0,6% met placebo, en na een jaar doorgebruiken met ongeveer 18%. De deelnemers maakten zich minder zorgen over hoe hun buik eruitzag. Na de overstap op placebo verdween het effect snel."
+    limitation: "Uitgevoerd door de ontwikkelaar; kleiner effect dan in de eerste studie; uitkomsten op scans en vragenlijsten, geen ziekte of overlijden."
+  makimura-2012-obesity:
+    finding: "Bij 60 volwassenen met buikobesitas en weinig groeihormoon, maar zonder hiv, verlaagden 12 maanden tesamorelin het diepe buikvet (35 cm² tegenover placebo), de triglyceriden en het CRP. De wand van de halsslagader werd iets dunner. De glucose veranderde niet."
+    limitation: "Klein, één centrum; de dikte van de vaatwand en het CRP zijn tussenmetingen, geen hartaanvallen; geen goedgekeurd gebruik; de ontwikkelaar betaalde een deel van de kosten en leverde het middel."
+  baker-2012-cognition:
+    finding: "Bij 152 volwassenen van 55 tot 87 jaar, van wie 66 met lichte geheugenproblemen, verbeterden 20 weken tesamorelin elke avond een samengestelde denkscore tegenover placebo. Dat kwam vooral door tests van executieve functies (plannen, schakelen en jezelf afremmen). IGF-1 werd meer dan 2 keer zo hoog. Lichte bijwerkingen meldde 68%, tegenover 36% met placebo."
+    limitation: "20 weken; testscores, niet het dagelijks leven of dementie; de verbetering op losse tests was klein (ongeveer een kwart standaarddeviatie); 2 latere, kleinere studies in andere groepen vonden geen duidelijk voordeel; één universitaire groep, en de ontwikkelaar leverde het middel gratis."
+  stanley-2014-liver-fat:
+    finding: "Bij 50 volwassenen met hiv en extra buikvet verlaagden 6 maanden tesamorelin het diepe buikvet en het levervet, vergeleken met placebo. De nuchtere glucose steeg een beetje in de eerste 2 weken, maar niet over 6 maanden."
+    limitation: "Klein en kort; de auteurs noemen het voorlopig; levervet op scans, geen uitkomsten van leverziekte."
+  clemmons-2017-diabetes:
+    finding: "Bij 53 volwassenen met diabetes type 2 veranderden 12 weken tesamorelin de insulinereactie, de nuchtere glucose, het HbA1c en de totale regeling van de diabetes niet, vergeleken met placebo."
+    limitation: "In 2002 uitgevoerd door de ontwikkelaar en 15 jaar later gepubliceerd; klein en kort; kan effecten van langer gebruik niet uitsluiten."
+  stanley-2019-nafld:
+    finding: "Bij 61 volwassenen met hiv en een vette lever verlaagde een jaar tesamorelin het levervet met 4,1 procentpunt meer dan placebo; 35% tegenover 4% kreeg weer normaal levervet. De littekens in de lever (fibrose) werden erger bij 2 van de 19 mensen, tegenover 9 van de 24 met placebo."
+    limitation: "Klein; bestaande littekens werden niet minder; 2 mensen met tesamorelin stopten door een hoge bloedsuiker; levervet als eindpunt, geen leverfalen of overleving; de ontwikkelaar leverde het middel tegen lagere kosten."
+  ellis-2025-cognition-hiv:
+    finding: "Bij 73 mensen met hiv, buikobesitas en problemen met denken verbeterden 6 maanden tesamorelin het denken niet meer dan de gewone zorg, al nam de buikomvang wel meer af."
+    limitation: "Open-label, geen placebo, en te klein om een bescheiden effect uit te sluiten, zeggen de auteurs zelf."
+  stewart-2026-cognition-pilot:
+    finding: "In een pilotstudie met placebo bij 22 volwassenen met een normaal denkvermogen tot lichte geheugenproblemen veranderden 10 weken een lage dosis tesamorelin het denken, de lichaamssamenstelling, de slaap en de conditie niet statistisch significant."
+    limitation: "Heel kleine pilotstudie; een lage dosis die IGF-1 niet verhoogde; alleen verkennende analyses met machine learning."
+# Alleen de rijen die de Nederlandse site laat zien: NL, EU en WADA (research/nl/status/tesamorelin.yaml, 27 oktober 2026).
+regulatory_notes:
+  NL: "Niet goedgekeurd: het register van het CBG heeft geen product met tesamorelin (27 oktober 2026). Alleen mogelijk met een artsenverklaring en een ontheffing van de IGJ, die kan weigeren."
+  EU: "Niet goedgekeurd. De enige aanvraag (Egrifta) is op 21 juni 2012 ingetrokken, nadat het CHMP voorlopig had geoordeeld dat Egrifta niet kon worden goedgekeurd."
+  WADA: "Altijd verboden, onder S2 (S2.2.4, “Groeihormoon Releasing Factors”). Met naam genoemd op de lijsten van 2026 en 2027."
+# Geen EU- of NL-product: de producten in de data zijn Amerikaans en Canadees en staan niet op de Nederlandse site.
+indications: {}
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+{/* residue-ok: world context */}
+<Lead question="Wat is tesamorelin?">Een aangepaste versie van een hersenhormoon. In de VS is het een medicijn op recept: Egrifta.</Lead>
+
+<Compare title="Egrifta van een apotheek en een flacon met dezelfde naam zijn niet hetzelfde." detail="Wat bekend is over elk, uit documenten van medicijnautoriteiten en de Douane, gecontroleerd tussen 22 en 27 oktober 2026.">
+
+| | Egrifta (Amerikaans medicijn op recept) | Een flacon “tesamorelin” van buiten de legale keten |
+|---|---|---|
+| Gecontroleerd door een medicijnautoriteit? | <Verdict is="yes" /> Sinds 2010 goedgekeurd door de Amerikaanse medicijnautoriteit FDA; de productinformatie wordt bijgehouden<Cite id="fda-drugsatfda-egrifta,dailymed-egrifta-sv-label" /> | <Verdict is="no" /> Geen medicijnautoriteit heeft zo'n product beoordeeld. In Nederland is geen product met tesamorelin goedgekeurd, en voor de hele EU ook niet<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> {/* residue-ok: world context */} |
+| Goedgekeurd in Nederland of de EU? | <Verdict is="no" /> De aanvraag voor de EU is in 2012 ingetrokken. Het register van het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met tesamorelin<Cite id="ema-egrifta-withdrawal,cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> Ook niet<Cite id="cbg-gib-search-status-2026-10-27" /> |
+| Inhoud en steriliteit bekend? | <Verdict is="yes" /> Een steriel poeder met een bekende inhoud, gemaakt door de houder van de vergunning<Cite id="dailymed-egrifta-sv-label" /> | <Verdict is="unknown" /> Geen medicijnautoriteit heeft het gecontroleerd. Volgens de Douane kan de inhoud van zulke producten anders zijn dan beloofd, en voldoet het maken ervan niet aan de strenge eisen van een medicijnfabriek<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> |
+| Officiële informatie over de risico’s? | <Verdict is="yes" /> Productinformatie en een bijsluiter met waarschuwingen, in het Engels<Cite id="dailymed-egrifta-sv-label" /> | <Verdict is="no" /> Geen |
+| Mag het in Nederland worden geleverd? | <Verdict is="no" /> Alleen bij uitzondering, voor één patiënt: met een artsenverklaring en een ontheffing van de Inspectie Gezondheidszorg en Jeugd (IGJ)<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> | <Verdict is="no" /> Handel in een geneesmiddel zonder handelsvergunning is verboden. Valt een product onder de wet, dan speelt “alleen voor onderzoek” op het etiket geen rol, zegt de Douane<Cite id="nl-gmw-art-40-handelsvergunning,douane-2026-08-illegale-online-handel-medicijnen" /> |
+
+</Compare>
+
+{/* residue-ok: world context */}
+In de VS is tesamorelin een goedgekeurd medicijn. Het is in grote studies bij mensen getest, voor één smal gebruik: diep buikvet bij volwassenen met hiv. Het staat op deze site omdat flacons met dezelfde naam online worden aangeboden.<Cite id="dailymed-egrifta-sv-label,fda-warning-letters-index" /> Ook het goedgekeurde medicijn is een poeder in een flacon, dat vóór de injectie wordt opgelost. Dat een flacon op Egrifta lijkt, bewijst dus niets.<Cite id="dailymed-egrifta-sv-label" />
+
+<InDetail title="De goedgekeurde producten, en waarom deze pagina er anders uitziet">
+
+{/* residue-ok: world context */}
+De Amerikaanse medicijnautoriteit FDA keurde Egrifta op 10 november 2010 goed om extra buikvet te verminderen bij volwassenen met hiv en lipodystrofie. Dat is een verandering in het lichaamsvet die sommige mensen met hiv-medicijnen krijgen.<Cite id="fda-drugsatfda-egrifta,fda-2010-egrifta-approval-letter" /> De flacon van 2 mg heet sinds 5 juli 2019 Egrifta SV. Een nieuwere vorm, Egrifta WR, is goedgekeurd op 25 maart 2025.<Cite id="fda-2019-egrifta-sv-name-letter,fda-2025-egrifta-wr-approval-letter" /> De houder van de vergunning is Theratechnologies.<Cite id="dailymed-egrifta-wr-label" />
+
+In de EU is tesamorelin niet goedgekeurd: de enige aanvraag is in 2012 ingetrokken. Daarom is er geen Nederlandse of Europese productinformatie.<Cite id="ema-egrifta-withdrawal,ema-medicines-json" />
+
+<AuthorisedProducts />
+
+De Amerikaanse productinformatie beperkt het goedgekeurde gebruik op 3 manieren. De veiligheid voor hart en bloedvaten op lange termijn is niet vastgesteld. Het is niet bedoeld om af te vallen, want het verandert het lichaamsgewicht niet. En er zijn geen gegevens dat het mensen helpt om hun hiv-medicijnen trouw te gebruiken.<Cite id="dailymed-egrifta-sv-label" />
+
+<Callout type="note" title="Waarom deze pagina er anders uitziet">
+{/* residue-ok: world context */}
+De meeste stoffen op deze site zijn experimenteel. Tesamorelin is wel getest in grote studies bij mensen, en het is in de Verenigde Staten een goedgekeurd medicijn. In de EU is de aanvraag in 2012 ingetrokken, en in Nederland is het niet goedgekeurd.<Cite id="fda-drugsatfda-egrifta,ema-egrifta-withdrawal,cbg-gib-search-status-2026-10-27" /> Dat maakt het een ongewoon geval: in de VS een medicijn met bekende risico’s op korte termijn, voor één gebruik, en hier een product zonder goedkeuring.
+</Callout>
+
+</InDetail>
+
+<InDetail title="Het molecuul, en waar het hormoon werd gevonden">
+
+In 1982 haalde een team onder leiding van Roger Guillemin een peptide van 44 aminozuren uit een tumor van de alvleesklier. Die tumor had acromegalie veroorzaakt, een ziekte door te veel groeihormoon. Het bleek het hormoon te zijn waarmee de hersenen de afgifte van groeihormoon aansturen: groeihormoon-releasing hormoon, of GHRH.<Cite id="guillemin-1982-ghrh-tumour" />
+
+Tesamorelin is diezelfde keten van 44 aminozuren, <Seq>Tyr-Ala-Asp-Ala-Ile-Phe-…-Arg-Ala-Arg-Leu-NH2</Seq>, met één verandering: een hexenoylgroep aan het eerste aminozuur, tyrosine. Een hexenoylgroep is een keten van 6 koolstofatomen met één dubbele binding.<Cite id="dailymed-egrifta-sv-label,guillemin-1982-ghrh-tumour,chembl-tesamorelin" /> De brutoformule is C221H366N72O67S en de molecuulmassa <Q>5.135,9 Da</Q>. In het medicijn zit het als acetaatzout.<Cite id="dailymed-egrifta-sv-label,pubchem-tesamorelin" /> In Nederlandse teksten heet het soms tesamoreline.<Cite id="dopingautoriteit-vertaling-dopinglijst-2026" />
+
+### Waarom de extra groep, en wat die niet verandert
+
+Het enzym DPP-4 kan het GHRH van het lichaam zelf aan het begin knippen. Dan werkt het niet meer. In labtests van de ontwikkelaar beschermde de hexenoylgroep tesamorelin tegen DPP-4, en ging de afbraak in plasma van ratten, honden en mensen langzamer.<Cite id="ferdinandi-2007-th9507-nonclinical" /> Toch werkt het maar kort. Na een injectie onder de huid is de halfwaardetijd bij gezonde mensen ongeveer 8 tot 11 minuten, en minder dan 4% van de ingespoten hoeveelheid komt in het bloed.<Cite id="dailymed-egrifta-sv-label,dailymed-egrifta-wr-label" /> Het geeft het eigen systeem van het lichaam elke dag een korte duw.
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Wat doet het in het lichaam?">Het laat een klier onder de hersenen (de hypofyse) meer groeihormoon afgeven. Daarna neemt diep buikvet langzaam af.</Lead>
+
+<Diagram id="tesamorelin-gh-axis" caption="Hoe tesamorelin werkt, stap voor stap, en hoe goed elke stap is aangetoond.">
+
+| Stap | Wat er gebeurt | Waar het is aangetoond |
+|---|---|---|
+| 1. Het signaal | Tesamorelin past op de GHRH-receptor van de groeihormooncellen in de hypofyse, een klier onder de hersenen | In cellen in het lab |
+| 2. Groeihormoon | De hypofyse geeft meer groeihormoon af, nog steeds in pieken | Bij 13 gezonde mannen |
+| 3. IGF-1 | De lever maakt meer IGF-1, een groeisignaal | In de fase 3-studies |
+| 4. Vetafbraak | Groeihormoon laat vetcellen opgeslagen vet afgeven; de bloedsuiker kan stijgen | In onderzoek naar groeihormoon bij mensen |
+| 5. Diep buikvet | Vet rond de organen neemt af; vet onder de huid verandert nauwelijks | In de fase 3-studies |
+| 6. De rem | Groeihormoon en IGF-1 remmen de volgende piek af (terugkoppeling) | Bekend uit hoe het menselijk lichaam werkt |
+| 7. Gezondheid | Minder hartaanvallen, langer leven, trager ouder worden | Geen studie heeft dit gemeten |
+
+</Diagram>
+
+<Cite id="dailymed-egrifta-sv-label,stanley-2011-tesamorelin-gh-pulsatility,falutz-2007-nejm-tesamorelin,moller-2009-gh-metabolism,veldhuis-2001-gh-pulsatility,ema-egrifta-withdrawal" />
+
+Voor zover bekend werkt tesamorelin niet direct op vet. Het zet het eigen groeihormoonsysteem van het lichaam hoger. Daarom lijken de gewenste en de ongewenste effecten op een mildere versie van die van groeihormoon: minder diep buikvet, maar ook vocht vasthouden en een hogere bloedsuiker.<Cite id="fda-2010-egrifta-summary-review" />
+
+<InDetail title="Stap voor stap: de keten van effecten en het bewijs">
+
+<Mechanism />
+
+### Waar elke stap op rust
+
+**De receptor.** Volgens de Amerikaanse productinformatie bindt tesamorelin in labtests aan menselijke GHRH-receptoren en zet die aan, ongeveer even sterk als het eigen hormoon van het lichaam.<Cite id="dailymed-egrifta-sv-label" /> GHRH wordt gemaakt in de hypothalamus en werkt op de groeihormooncellen (somatotrofe cellen) van de hypofyse.<Cite id="dailymed-egrifta-sv-label,veldhuis-2001-gh-pulsatility" />
+
+**Groeihormoon in pieken.** Normaal komt groeihormoon in pieken vrij: GHRH zet de afgifte aan, somatostatine remt die af.<Cite id="veldhuis-2001-gh-pulsatility" /> <Claim level="human-limited">Bij 13 gezonde mannen die 2 weken elke dag tesamorelin kregen, zonder vergelijkingsgroep, steeg het groeihormoon in de nacht, zowel in de pieken als ertussen, en steeg IGF-1 met 181 µg/l</Claim>.<Cite id="stanley-2011-tesamorelin-gh-pulsatility" /> In de studies veranderden andere hormonen van de hypofyse (TSH, LH, ACTH, prolactine) niet op een klinisch belangrijke manier.<Cite id="dailymed-egrifta-sv-label" />
+
+**IGF-1.** <Claim level="established">In de eerste fase 3-studie steeg IGF-1 in 26 weken met 81,0% met tesamorelin, en daalde het met 5,0% met placebo</Claim>.<Cite id="falutz-2007-nejm-tesamorelin" /> Na 26 weken had 47% van de mensen een IGF-1 boven 2 SD-scores (SDS) en 36% boven 3 SDS. Dat is ver boven het normale bereik voor hun leeftijd.<Cite id="dailymed-egrifta-sv-label" />
+
+**Vetafbraak en bloedsuiker.** <Claim level="established">Het duidelijkste effect van groeihormoon op de stofwisseling bij mensen is dat het veel meer opgeslagen vet afbreekt (lipolyse), waarbij vrije vetzuren vrijkomen</Claim>. Diezelfde vetzuren maken lever en spieren minder gevoelig voor insuline. Groeihormoon werkt insuline dus tegen.<Cite id="moller-2009-gh-metabolism" /> Dat ene mechanisme verklaart zowel het belangrijkste effect als het belangrijkste risico voor de stofwisseling.
+
+**Diep buikvet, niet het gewicht.** <Claim level="established">Op CT-scans daalde het visceraal vet, terwijl het buikvet onder de huid en het lichaamsgewicht nauwelijks veranderden</Claim>.<Cite id="falutz-2010-tesamorelin-pooled,dailymed-egrifta-sv-label" /> Waarom visceraal vet sterker reageert dan vet onder de huid, is niet vastgesteld. Volgens de auteurs van de leverstudie moeten de mechanismen per weefsel nog verder worden onderzocht.<Cite id="stanley-2019-tesamorelin-nafld" />
+
+</InDetail>
+
+<InDetail title="Waarom een stof die groeihormoon vrijmaakt, en niet groeihormoon zelf">
+
+Groeihormoon en IGF-1 werken terug op de hersenen en de hypofyse. Een piek groeihormoon zet somatostatine aan en dempt GHRH; IGF-1 geeft een tragere rem.<Cite id="veldhuis-2001-gh-pulsatility,desousa-2025-gh-feedback" /> Tesamorelin werkt via dit systeem, niet eromheen, en het groeihormoon blijft in pieken komen.<Cite id="stanley-2011-tesamorelin-gh-pulsatility" />
+
+<Claim level="hypothesis">Onderzoekers stellen dat het minder bijwerkingen geeft dan groeihormoon zelf, omdat die terugkoppeling blijft werken</Claim>.<Cite id="stanley-2019-tesamorelin-nafld" /> We vonden geen gepubliceerde studie die dat direct heeft getest. En de rem houdt niet tegen dat IGF-1 bij meer dan een derde van de mensen ver boven normaal komt, zoals de productinformatie laat zien.<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Bij mensen met hiv neemt diep buikvet af. Na stoppen komt het terug; gezondheidswinst is niet aangetoond.</Lead>
+
+<KeyNumber title="Diep buikvet nam met ongeveer 15% af" value="−15,2%" label="verandering van diep buikvet in 26 weken, tegenover +5,0% met placebo" who="Fase 3-studie 1: 412 volwassenen met hiv en extra buikvet" source="falutz-2007-nejm-tesamorelin" level="established" />
+
+<KeyNumber title="Na stoppen groeide het vet terug" value="+22%" label="groei van diep buikvet in de 26 weken na de overstap op placebo (+16% in studie 2)" who="Verlengingen van de 2 fase 3-studies: 50 en 85 mensen die na 26 weken tesamorelin stopten" source="dailymed-egrifta-sv-label" level="human-controlled" />
+
+<KeyNumber title="Het lichaamsgewicht veranderde niet" value="−0,4 kg" label="gemiddelde verandering van het lichaamsgewicht in 26 weken, tegenover 0,0 kg met placebo" who="Fase 3-studie 1: 273 volwassenen met hiv op tesamorelin, 137 op placebo" source="dailymed-egrifta-sv-label" level="established" />
+
+<KeyNumber title="In één kleine studie kregen meer mensen weer normaal levervet" value="35 op de 100" label="had na een jaar normaal levervet, tegenover 4 op de 100 met placebo" who="61 volwassenen met hiv en een vette lever, 12 maanden, betaald door de Amerikaanse NIH" source="stanley-2019-tesamorelin-nafld" level="human-controlled" />
+
+{/* residue-ok: FDA evidence */}
+Dit zijn metingen op scans, geen ziekte of overlijden. Geen gepubliceerde studie heeft hartaanvallen, beroertes of overlijden als hoofduitkomst gemeten. De FDA keurde tesamorelin goed zonder zulke gegevens.<Cite id="fda-2010-egrifta-summary-review,dailymed-egrifta-sv-label" /> De leverstudie was klein, en leververvetting is geen goedgekeurd gebruik.<Cite id="stanley-2019-tesamorelin-nafld" /> Tegenover deze effecten staan risico’s, zoals een hogere bloedsuiker en een IGF-1 ver boven normaal (zie Risico’s).<Cite id="dailymed-egrifta-sv-label" />
+
+<InDetail title="Elke studie in één tabel">
+
+<StudyTable />
+
+De tabel noemt elke studie die op deze pagina wordt besproken: het lab- en dieronderzoek van de ontwikkelaar, één onafhankelijke studie bij ratten, en elke gepubliceerde studie met controlegroep naar tesamorelin bij mensen die we vonden. Latere analyses van dezelfde studies staan in de tekst, maar niet nog een keer in de tabel.<Cite id="falutz-2010-tesamorelin-pooled,badran-2026-tesamorelin-meta-analysis" />
+
+</InDetail>
+
+<InDetail title="De 2 fase 3-studies, en wat er gebeurde na het stoppen">
+
+### Studie 1 en studie 2
+
+De Amerikaanse goedkeuring rust op 2 gerandomiseerde, dubbelblinde studies met placebo als vergelijking, betaald door de ontwikkelaar. De deelnemers waren 18 tot 65 jaar, hadden hiv, gebruikten stabiele hiv-medicijnen en hadden een grote buikomvang. Mensen die voor diabetes werden behandeld, deden niet mee.<Cite id="dailymed-egrifta-sv-label" />
+
+- **Studie 1** verdeelde 412 volwassenen (86% mannen) door loting, voor 26 weken. <Claim level="established">Het visceraal vet daalde met 15,2% met tesamorelin en steeg met 5,0% met placebo; de triglyceriden daalden met 50 mg/dl, tegenover een stijging van 9</Claim>. Meer mensen met tesamorelin stopten door een ongewenst voorval.<Cite id="falutz-2007-nejm-tesamorelin" />
+- **Studie 2** verdeelde 404 volwassenen door loting. <Claim level="established">Het visceraal vet daalde na 6 maanden met 10,9%, tegenover 0,6%, en de deelnemers maakten zich minder zorgen over hoe hun buik eruitzag</Claim>.<Cite id="falutz-2010-tesamorelin-jaids" />
+
+Samen genomen, bij 806 mensen, was het effect op visceraal vet −15,4%. Het vet onder de huid veranderde niet statistisch significant, en de glucosewaarden veranderden na 26 of 52 weken niet op een klinisch belangrijke manier.<Cite id="falutz-2010-tesamorelin-pooled" />
+
+### Stoppen
+
+Na 26 weken verdeelde een nieuwe loting de mensen met tesamorelin in 2 groepen: doorgaan of overstappen op placebo. Ze wisten zelf niet in welke groep ze zaten. <Claim level="human-controlled">Wie doorging, had na 52 weken nog ongeveer 18% minder visceraal vet; bij wie overstapte, kwam het visceraal vet terug</Claim>.<Cite id="falutz-2008-tesamorelin-extension,falutz-2010-tesamorelin-jaids" /> De productinformatie geeft de grootte: in de 26 weken na de overstap op placebo groeide het visceraal vet met 22% en 16% in de 2 studies.<Cite id="dailymed-egrifta-sv-label" /> Het effect duurt alleen zolang het medicijn wordt gebruikt.
+
+### Wat de Amerikaanse medicijnautoriteit zelf opmerkte
+
+{/* residue-ok: FDA evidence */}
+De directeur van de afdeling bij de FDA schreef dat de duidelijke dalingen van visceraal vet niet samengingen met sterke of consistente veranderingen in hoe mensen hun lichaam zagen, of in de bloedvetten. Ze voegde toe dat er geen gegevens waren over een voordeel voor het hart op lange termijn, en over de risico’s van jarenlang hoog IGF-1.<Cite id="fda-2010-egrifta-summary-review" />
+
+</InDetail>
+
+<InDetail title="Leververvetting: nieuwer onderzoek, nog klein">
+
+Vet in de lever komt veel voor bij mensen met hiv en kan leiden tot littekens (fibrose). Eén academische groep onderzocht of tesamorelin daarbij helpt.<Cite id="stanley-2019-tesamorelin-nafld" />
+
+- In een studie van 6 maanden bij 50 volwassenen met hiv en extra buikvet <Claim level="human-controlled">daalde het levervet vergeleken met placebo (netto 2,9 procentpunt)</Claim>. De nuchtere glucose steeg een beetje in de eerste 2 weken, maar niet over 6 maanden.<Cite id="stanley-2014-tesamorelin-liver-fat" />
+- In een studie van 12 maanden bij 61 volwassenen met hiv en een vette lever <Claim level="human-controlled">daalde het levervet met 4,1 procentpunt meer dan met placebo (37% relatief), en kreeg 35% tegenover 4% weer normaal levervet</Claim>. <Claim level="human-controlled">De littekens in de lever werden erger bij 2 van de 19 mensen met tesamorelin, tegenover 9 van de 24 met placebo</Claim>. Maar bestaande littekens werden niet minder, en 2 mensen met tesamorelin stopten door een hoge bloedsuiker.<Cite id="stanley-2019-tesamorelin-nafld" />
+
+De studie had een goede opzet, met stukjes leverweefsel die onder de microscoop werden bekeken (biopten). Maar ze is klein, duurde een jaar en komt van één groep. Ze mat levervet en littekens, geen leverfalen of overleving. Leververvetting is geen goedgekeurd gebruik. De auteurs vragen zelf om langere studies.<Cite id="stanley-2019-tesamorelin-nafld" />
+
+</InDetail>
+
+<InDetail title="Buiten hiv: obesitas, diabetes en het ouder wordende brein">
+
+- **Obesitas zonder hiv.** Bij 60 volwassenen met buikobesitas en weinig groeihormoon <Claim level="human-controlled">verlaagden 12 maanden tesamorelin het visceraal vet, de triglyceriden en het CRP (een ontstekingswaarde in het bloed), en werd de wand van de halsslagader iets dunner, zonder verandering in de glucose</Claim>.<Cite id="makimura-2012-tesamorelin-obesity" /> De dikte van de vaatwand is een tussenmeting, geen hartaanval.
+- **Diabetes type 2.** In een studie van de ontwikkelaar bij 53 volwassenen <Claim level="human-controlled">veranderden 12 weken tesamorelin de insulinereactie, de nuchtere glucose en het HbA1c niet, vergeleken met placebo</Claim>.<Cite id="clemmons-2017-tesamorelin-type-2-diabetes" />
+- **Denken bij ouderen.** Bij 152 volwassenen van 55 tot 87 jaar, van wie 66 met lichte geheugenproblemen, <Claim level="human-controlled">verbeterden 20 weken tesamorelin een samengestelde denkscore tegenover placebo, vooral op tests van executieve functies (plannen, schakelen tussen taken en jezelf afremmen)</Claim>. De verbetering op losse tests was klein, ongeveer een kwart standaarddeviatie. Lichte bijwerkingen meldde 68%, tegenover 36%.<Cite id="baker-2012-ghrh-cognition" />
+- **Latere studies naar het denken.** Bij 73 mensen met hiv en problemen met denken <Claim level="human-controlled">verbeterden 6 maanden tesamorelin het denken niet meer dan de gewone zorg</Claim>.<Cite id="ellis-2025-tesamorelin-cognition" /> Een pilotstudie bij 22 mensen, met een lage dosis, vond geen statistisch significante veranderingen.<Cite id="stewart-2026-ghrh-cognition-pilot" />
+
+</InDetail>
+
+<InDetail title="Claims over veroudering en spiergroei: buiten het bewijs">
+
+Groeihormoon, IGF-1 en GHRH dalen met de leeftijd.<Cite id="baker-2012-ghrh-cognition" /> In 2004 werd tesamorelin ontwikkeld voor aandoeningen bij het ouder worden die komen door een lagere afgifte van groeihormoon.<Cite id="jansen-2004-th9507-dog" /> Al in 2003 concludeerde een overzichtsartikel van onderzoekers die zulke studies deden: de resultaten tot dan toe geven nog geen reden om GHRH standaard te gebruiken bij normaal ouder worden.<Cite id="merriam-2003-ghrh-aging" /> Wat er sindsdien bekend is:
+
+- **Geen studie mat veroudering.** De studies maten buikvet, levervet en testscores, over maanden. Geen ervan mat hoe lang mensen leven, of het ouder worden zelf.<Cite id="badran-2026-tesamorelin-meta-analysis,baker-2012-ghrh-cognition" />
+- **Geen informatie bij ouderen.** Volgens de productinformatie is er geen informatie over gebruik bij mensen boven de 65.<Cite id="dailymed-egrifta-sv-label" />
+- **Geen voordeel voor kracht aangetoond.** In de studies veranderde het lichaamsgewicht niet. De vetvrije massa (alles behalve vet, ook water) steeg een beetje, ongeveer 1,4 kg in een gepoolde analyse, en daalde weer bij wie stopte. Geen gepubliceerde studie testte kracht of sportprestaties als hoofduitkomst. Eén studie naar lichamelijk functioneren met training, bij mensen met hiv, loopt nog.<Cite id="dailymed-egrifta-sv-label,badran-2026-tesamorelin-meta-analysis,ctgov-nct06554717" />
+- **Hoger is niet aangetoond beter.** Minder groeihormoon op oudere leeftijd is gewoon, en geen studie heeft laten zien dat het verhogen ervan de gezondheid verbetert. Jarenlang IGF-1 ver boven het normale bereik heeft onbekende gevolgen, zegt de productinformatie.<Cite id="baker-2012-ghrh-cognition,dailymed-egrifta-sv-label" />
+
+De Douane schrijft over peptiden die op sociale media worden aangeraden, ook tegen veroudering: hoe ze werken, is vaak niet duidelijk, en de gevaren en de gevolgen op langere termijn zijn onbekend.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" />
+
+Een idee testen is niet hetzelfde als een antwoord hebben. Eén studie van 20 weken liet een verbetering op denktests zien, maar 2 latere, kleinere studies bevestigden dat niet. Dat is een reden voor betere studies. Het laat niet zien dat dagelijkse injecties gezonde mensen helpen.<Cite id="baker-2012-ghrh-cognition,ellis-2025-tesamorelin-cognition,stewart-2026-ghrh-cognition-pilot" />
+
+</InDetail>
+
+<InDetail title="Wie het onderzoek betaalde">
+
+De ontwikkelaar, Theratechnologies, betaalde de 2 studies voor de goedkeuring en de studie bij diabetes, en voerde ze ook uit.<Cite id="falutz-2007-nejm-tesamorelin,falutz-2010-tesamorelin-jaids,clemmons-2017-tesamorelin-type-2-diabetes" /> De meeste latere studies komen van één groep in het Massachusetts General Hospital, betaald door de Amerikaanse National Institutes of Health (NIH). Die groep is academisch, maar niet helemaal los van de ontwikkelaar. De senior auteur was ook senior auteur van de artikelen over de fase 3-studies, en was adviseur van de ontwikkelaar en lid van diens wetenschappelijke adviesraad.<Cite id="falutz-2007-nejm-tesamorelin,stanley-2019-tesamorelin-nafld" /> De ontwikkelaar leverde het middel voor deze studies en betaalde een deel van de kosten van de studie bij obesitas. In de leverstudie van 2019 leverde de ontwikkelaar het middel tegen lagere kosten en kreeg die de meldingen van ernstige ongewenste voorvallen.<Cite id="stanley-2011-tesamorelin-gh-pulsatility,stanley-2014-tesamorelin-liver-fat,makimura-2012-tesamorelin-obesity,stanley-2019-tesamorelin-nafld" /> De studies naar het denken komen van 3 andere universiteiten. Voor 2 daarvan leverde de ontwikkelaar het middel gratis.<Cite id="baker-2012-ghrh-cognition,ellis-2025-tesamorelin-cognition,stewart-2026-ghrh-cognition-pilot" />
+
+Het belangrijkste resultaat is gezien in elke studie die het mat. Een meta-analyse uit 2026 van 5 gerandomiseerde studies vond dezelfde daling van visceraal vet.<Cite id="badran-2026-tesamorelin-meta-analysis" /> De belangrijkste open vragen zijn dus niet of het visceraal vet laat afnemen. Het gaat erom of dat de gezondheid verbetert, en welke risico’s het over jaren heeft.
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog niet bekend?">Of het ziekte voorkomt, wat jarenlang hoog IGF-1 doet, en wat de risico’s zijn na vele jaren.</Lead>
+
+<TimeStrip title="Studies met placebo duurden hooguit een jaar. Ook stopten 2 lange veiligheidsstudies vroeg." detail="Jaren gebruik waar het onderzoek over gaat, geteld vanaf het begin van de behandeling." min={0} max={10} step={2} axis="Jaren gebruik" source="falutz-2008-tesamorelin-extension,stanley-2019-tesamorelin-nafld,ctgov-nct01591902,ctgov-nct01579695" checked="2026-10-22" rows={[
+  { label: "Langste gebruik met placebo als vergelijking (verlengingen van de fase 3-studies)", spans: [{ from: 0, to: 1, text: "52 weken" }] },
+  { label: "Leverstudie: een jaar met placebo, daarna iedereen tesamorelin", spans: [{ from: 0, to: 1.5, text: "12 maanden geblindeerd, daarna 6 maanden open" }] },
+  { label: "Oogstudie, verplicht bij de Amerikaanse goedkeuring (gepland 3 jaar)", spans: [{ from: 0, to: 3, text: "gestopt in 2018; geen resultaten in het register", unknown: true }] },
+  { label: "Veiligheidsstudie, verplicht bij de Amerikaanse goedkeuring (gepland 10 jaar)", spans: [{ from: 0, to: 10, text: "gestopt in 2018; geen resultaten in het register", unknown: true }] },
+]} />
+
+<InDetail title="Alle open vragen, met hun bronnen">
+
+Op 22 oktober 2026 waren deze punten nog onbekend:
+
+- **Gezondheidswinst.** Of minder visceraal vet leidt tot minder hartaanvallen, beroertes, leverfalen of sterfte. De FDA vroeg dat bewijs niet, en het geneesmiddelencomité van het EMA, het Comité voor geneesmiddelen voor menselijk gebruik (CHMP), betwijfelde of het voordeel klinisch betekenisvol was.<Cite id="fda-2010-egrifta-summary-review,ema-egrifta-withdrawal" /> {/* residue-ok: FDA evidence */}
+- **Veiligheid voor het hart op lange termijn.** Volgens de productinformatie is die niet vastgesteld.<Cite id="dailymed-egrifta-sv-label" />
+- **Jarenlang hoog IGF-1.** De productinformatie zegt dat de gevolgen van een langdurig verhoogd IGF-1 onbekend zijn.<Cite id="dailymed-egrifta-sv-label" />
+- **Kanker.** Er zijn geen levenslange kankerstudies bij knaagdieren gedaan. De veiligheidsstudie van 10 jaar, met kanker als belangrijkste uitkomst, stopte in 2018, zonder resultaten in het onderzoeksregister.<Cite id="dailymed-egrifta-wr-label,ctgov-nct01579695" />
+- **De ogen bij diabetes.** Het onderzoek van 3 jaar naar diabetische oogziekte (retinopathie) stopte in 2018, zonder resultaten in het onderzoeksregister.<Cite id="ctgov-nct01591902" />
+- **Mensen boven de 65, kinderen en zwangerschap.** Over gebruik boven de 65 is geen informatie. Veiligheid en effect bij kinderen zijn niet vastgesteld. In de zwangerschap verbiedt de productinformatie het, door bevindingen bij ratten.<Cite id="dailymed-egrifta-sv-label" />
+- **Antistoffen.** Ongeveer de helft van de mensen maakt antistoffen tegen tesamorelin; de meeste daarvan herkennen ook het eigen GHRH van het lichaam. Wat dat na jaren betekent, is niet gemeld.<Cite id="dailymed-egrifta-sv-label" />
+- **Gebruik buiten hiv.** Er zijn alleen kleine, korte studies.<Cite id="makimura-2012-tesamorelin-obesity,clemmons-2017-tesamorelin-type-2-diabetes,baker-2012-ghrh-cognition" />
+- **Wat er in flacons van buiten de apotheek zit.** We vonden geen gepubliceerd labonderzoek van producten die online als tesamorelin worden aangeboden.
+- **Studies die nog lopen.** Een studie van tesamorelin met training bij 100 mensen met hiv moet in 2028 klaar zijn.<Cite id="ctgov-nct06554717" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Niet goedgekeurd in Nederland of de EU. Een uitzondering kan alleen via een arts (artsenverklaring).</Lead>
+
+<Compare title="In Nederland en de EU is het geen goedgekeurd medicijn. De EU-aanvraag is in 2012 ingetrokken." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026.">
+
+| | Nederland | Europese Unie |
+|---|---|---|
+| Goedgekeurd als medicijn? | <Verdict is="no" /> In het register van het CBG staat geen product met tesamorelin<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> De enige aanvraag, voor Egrifta, is op 21 juni 2012 ingetrokken<Cite id="ema-egrifta-withdrawal,ema-medicines-json" /> |
+| Kan een arts het voorschrijven? | <Verdict is="no" /> Niet op een gewoon recept. Alleen bij uitzondering: met een artsenverklaring en een ontheffing van de IGJ, die kan weigeren<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> | <Verdict is="no" /> Er is geen goedgekeurd EU-product. Een uitzondering voor één patiënt regelt elke lidstaat zelf<Cite id="eu-directive-2001-83,nl-gmw-art-40-handelsvergunning" /> |
+| Is handel in een flacon “voor onderzoek” legaal? | <Verdict is="no" /> Handel in een geneesmiddel zonder handelsvergunning is verboden, en invoeren ook<Cite id="nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> In geen enkele lidstaat mag een geneesmiddel zonder handelsvergunning op de markt<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+In de sport is tesamorelin altijd verboden. Dat staat in de dopinglijst van het Wereld Anti-Doping Agentschap (WADA), groep S2.<Cite id="wada-2026-list-en" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De statussen voor Nederland en de EU zijn gecontroleerd op 27 oktober 2026.
+
+### Sport (WADA)
+
+De WADA-Dopinglijst 2026 noemt tesamorelin bij S2.2.4, "Groeihormoon Releasing Factors": altijd verboden. De lijst van 2027, die op 1 januari 2027 ingaat, noemt het ook.<Cite id="wada-2026-list-en,wada-2027-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> Antidopinglabs hebben methoden gepubliceerd om het in urine aan te tonen.<Cite id="memdouh-2021-ghrh-doping-detection" /> In Nederland is de Dopingautoriteit de nationale antidopingorganisatie.<Cite id="nl-wuab-art-2-4-dopingautoriteit" /> Meer over de regels: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de Europese Unie">
+
+### Nederland
+
+In de Geneesmiddeleninformatiebank van het CBG staat geen product met tesamorelin. Het CBG is de Nederlandse medicijnautoriteit. Het register gaf op 27 oktober 2026 geen resultaat voor tesamorelin, tesamoreline of Egrifta.<Cite id="cbg-gib-search-status-2026-10-27" /> Een geneesmiddel zonder handelsvergunning mag niemand verkopen, afleveren, ter hand stellen of invoeren, op een paar smalle uitzonderingen na.<Cite id="nl-gmw-art-40-handelsvergunning" /> Tesamorelin staat niet op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" />
+
+Eén uitzondering is de artsenverklaring. De arts verklaart dat de patiënt om medische redenen niet met in Nederland goedgekeurde medicijnen kan worden behandeld, en neemt daarvoor de verantwoordelijkheid. Daarna vraagt een apotheek, groothandel of fabrikant in Nederland de IGJ om een ontheffing. De patiënt kan dat niet zelf.<Cite id="igj-leveren-op-artsenverklaring,igj-qa-zonder-handelsvergunning" /> De IGJ heeft volgens de wet 8 weken om te beslissen; gemiddeld duurt het ongeveer 4 weken. De IGJ kan nee zeggen.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> De IGJ noemt dit een weg voor één patiënt in uiterste gevallen, en is terughoudend. Niet-medische redenen tellen niet. En een ontheffing betekent niet dat je zorgverzekeraar het medicijn vergoedt.<Cite id="igj-qa-zonder-handelsvergunning" />
+
+Op de lijst van het CBG met goedgekeurde compassionate-useprogramma's staat tesamorelin niet.<Cite id="cbg-compassionate-use-list" /> In Nederland loopt geen klinisch onderzoek met tesamorelin: ClinicalTrials.gov, het Europese register CTIS en het Nederlandse register Onderzoekmetmensen.nl tonen er geen (gezocht op 27 oktober 2026).<Cite id="ctgov-search-tesamorelin-nl-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" /> Hoe elke legale weg werkt, staat op [legale wegen naar een behandeling](/nl/legal-routes/).
+
+### Europese Unie
+
+Een centrale handelsvergunning van de EU geldt in elke lidstaat, dus ook in Nederland.<Cite id="eu-regulation-726-2004" /> Voor tesamorelin bestaat die niet. De enige aanvraag, voor Egrifta, is op 21 juni 2012 ingetrokken. Het CHMP van het EMA had toen voorlopig geoordeeld dat het niet kon worden goedgekeurd, maar gaf geen definitief advies. Daarom heet de status "ingetrokken" en niet "geweigerd".<Cite id="ema-egrifta-withdrawal,ema-medicines-json" /> Het EMA heeft geen andere aanvraag voor tesamorelin. Tesamorelin stond ook niet op de lijst van aanvragen die het EMA in oktober 2026 beoordeelde.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> Waarom het comité twijfelde, staat hieronder bij de 3 medicijnautoriteiten.
+
+Voor België: zie [onze notities over België](/nl/legal/be/).
+
+{/* residue-ok: world context */}
+<Callout type="legal" title="Amerikaanse besluiten gelden niet in Nederland of de EU">
+{/* residue-ok: world context */}
+Wat de FDA beslist, over goedkeuring of over bereiding door apotheken, verandert niets aan de wet in Nederland of de EU. Hier mag een geneesmiddel alleen op de markt met een handelsvergunning van de EU of van het CBG.<Cite id="nl-gmw-art-40-handelsvergunning" />
+</Callout>
+
+</InDetail>
+
+<InDetail title="Drie medicijnautoriteiten, dezelfde studies, verschillende antwoorden">
+
+{/* residue-ok: FDA evidence */}
+In mei 2010 stemden alle 16 stemgerechtigde leden van de adviescommissie van de FDA voor goedkeuring. Verschillende leden noemden de verhalen van patiënten, en dat er nog geen goedgekeurde behandeling was. De FDA keurde het goed, maar eiste lange studies naar kanker, diabetische oogziekte, diabetes, allergische reacties en hartproblemen.<Cite id="fda-2010-egrifta-summary-review,fda-2010-egrifta-approval-letter" />
+
+Het geneesmiddelencomité van het EMA, het CHMP, kwam in 2012 voorlopig tot het tegenovergestelde oordeel, op basis van dezelfde 2 hoofdstudies. Het betwijfelde of een kleiner oppervlak buikvet echte gezondheidswinst geeft. Het vond ook dat de patiënten in de studies niet leken op de Europese patiënten met hiv over wie het oordeelde: die hebben een lager BMI en minder buikvet. Het noemde de stijging van IGF-1 een groot veiligheidsrisico, omdat hoog IGF-1 kan samenhangen met kanker en met het erger worden van diabetische oogziekte. En het merkte op dat er geen gegevens waren over de veiligheid op lange termijn. Daarna trok de aanvrager de aanvraag in.<Cite id="ema-egrifta-withdrawal" />
+
+{/* residue-ok: Health Canada evidence (its review of the same trials) and world context */}
+Ook Health Canada, de Canadese medicijnautoriteit, worstelde met dezelfde vragen. Het eerste besluit was negatief. In maart 2013, na de reactie van het bedrijf, vond Health Canada nog steeds dat het dossier niet aan de eisen voldeed: 3 van de 4 grote bezwaren bleven. Die gingen over de balans tussen voordelen en risico’s, het gebruik waarvoor het zou worden goedgekeurd, en het verhoogde IGF-1. Op verzoek van het bedrijf keek een panel van Canadese deskundigen van buiten de dienst in augustus 2013 opnieuw naar het dossier. Daarna keurde Health Canada het op 29 april 2014 goed, met strengere voorwaarden dan in de VS: de behandeling stopt als IGF-1 na 26 weken boven 2 SD-scores ligt (de Amerikaanse productinformatie gebruikt 3). In 2022 stopte het bedrijf met de verkoop in Canada.<Cite id="ca-sbd-egrifta,ca-pm-egrifta-2015" />
+
+{/* residue-ok: FDA evidence */}
+Elk antwoord heeft gevolgen. Mensen in Nederland met dit soort vetophoping kunnen tesamorelin niet als goedgekeurd medicijn krijgen, en een goedkeuring voor de hele EU is er niet. Of dat sommigen naar ongecontroleerde producten drijft, is niet gemeten.<Cite id="ema-egrifta-withdrawal,cbg-gib-search-status-2026-10-27" /> Aan de andere kant zijn de lange studies die de FDA vroeg in 2018 gestopt, zonder resultaten in het onderzoeksregister. De vragen van het Europese comité staan dus nog open.<Cite id="ema-egrifta-withdrawal,ctgov-nct01579695,ctgov-nct01591902" />
+
+</InDetail>
+
+<InDetail title="De Amerikaanse goedkeuring, en wat daarna gebeurde">
+
+{/* residue-ok: world context */}
+Egrifta is in de VS goedgekeurd op 10 november 2010. De flacon van 2 mg heet sinds juli 2019 Egrifta SV, en Egrifta WR, een nieuwe vorm, is goedgekeurd op 25 maart 2025.<Cite id="fda-drugsatfda-egrifta,fda-2019-egrifta-sv-name-letter,fda-2025-egrifta-wr-approval-letter" />
+
+{/* residue-ok: FDA evidence */}
+Bij de goedkeuring eiste de FDA 2 lange veiligheidsstudies: een studie van 10 jaar die behandelde en onbehandelde mensen vergelijkt, en een onderzoek van 3 jaar met placebo naar diabetische oogziekte.<Cite id="fda-2010-egrifta-approval-letter" /> Op ClinicalTrials.gov staan ze allebei als gestopt in 2018, met 391 en 129 deelnemers, zonder resultaten en zonder opgegeven reden.<Cite id="ctgov-nct01579695,ctgov-nct01591902" />
+
+{/* residue-ok: world context */}
+Sinds 23 maart 2020 geldt Egrifta in de VS als biologisch product: de Amerikaanse wet telt een keten van meer dan 40 aminozuren als eiwit.<Cite id="ecfr-21-600-3-protein,fda-drugsatfda-egrifta" />
+
+{/* residue-ok: world context */}
+In 2026 stuurde de FDA waarschuwingsbrieven aan online verkopers bij wie ook tesamorelin werd aangeboden. Volgens die brieven zijn zulke producten niet-goedgekeurde nieuwe geneesmiddelen, ook al staat er "alleen voor onderzoek" ("research use only") op.<Cite id="fda-warning-letters-index" />
+
+{/* residue-ok: PCAC framing */}
+Tesamorelin hoorde niet bij de 7 peptiden die de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) op 23 en 24 juli 2026 besprak.<Cite id="fda-pcac-2026-07-meeting" /> Over die vergadering lees je meer op de [pagina over BPC-157](/nl/compounds/bpc-157/). Een Amerikaans besluit over bereiding door apotheken geldt alleen in de VS. {/* residue-ok: PCAC framing */}
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Je bloedsuiker kan stijgen. Gewrichtspijn, zwelling en een pijnlijke prikplek komen vaker voor. Op lange termijn: onbekend.</Lead>
+
+<IconArray title="Reacties op de prikplek, spierpijn en zwelling kwamen vaker voor dan met placebo." detail="Hoeveel mensen op de 100 elk probleem hadden in de eerste 26 weken van de 2 fase 3-studies (543 met tesamorelin, 263 met placebo), uit de Amerikaanse productinformatie." a="Tesamorelin" b="Placebo" source="dailymed-egrifta-sv-label" level="human-controlled" rows={[
+  { label: "Reactie op de prikplek", a: 17, b: 6 },
+  { label: "Gewrichtspijn", a: 13, b: 11 },
+  { label: "Spierpijn", a: 6, b: 2 },
+  { label: "Gezwollen benen of voeten (oedeem)", a: 6, b: 2 },
+]} />
+
+Staat er niets anders bij? Dan komen de risico’s en aantallen op deze pagina uit de Amerikaanse productinformatie. Die is gebaseerd op 740 mensen met hiv die in de studies het middel kregen.<Cite id="dailymed-egrifta-sv-label" />
+
+<InDetail title="Bloedsuiker en diabetes">
+
+Groeihormoon werkt insuline tegen, dus meer groeihormoon kan de bloedsuiker verhogen.<Cite id="moller-2009-gh-metabolism" /> In de studies was het HbA1c bij de start gemiddeld 5,3%. <Claim level="established">Het HbA1c kwam in het bereik van diabetes (6,5% of hoger) bij 5% van de mensen met tesamorelin, tegenover 1% met placebo (hazardratio 3,3)</Claim>. De productinformatie vraagt om de glucose te controleren voor de start, en regelmatig tijdens het gebruik.<Cite id="dailymed-egrifta-sv-label" />
+
+In sommige studies kwam de stijging vroeg. In één studie steeg de nuchtere glucose een beetje na 2 weken, maar niet over 6 maanden. Dezelfde groep beschrijft een lichte, vroege verslechtering van de insulineresistentie, die bij langer gebruik terugging naar het beginniveau.<Cite id="stanley-2014-tesamorelin-liver-fat,stanley-2019-tesamorelin-nafld" /> In de leverstudie van 2019 moesten 2 mensen met tesamorelin stoppen door een hoge bloedsuiker; één van hen had bij de start al diabetes.<Cite id="stanley-2019-tesamorelin-nafld" /> Mensen die voor diabetes werden behandeld, deden niet mee aan de studies voor de goedkeuring.<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+<InDetail title="IGF-1, groei en kanker: waarom de productinformatie voorzichtig is">
+
+Tesamorelin verhoogt groeihormoon, dat de productinformatie een bekende groeifactor noemt, en IGF-1, dat cellen helpt groeien en overleven.<Cite id="dailymed-egrifta-sv-label,renehan-2004-igf1-cancer" /> Daarom is er voorzichtigheid:
+
+1. **IGF-1 wordt hoog.** Na 26 weken had 36% van de mensen een IGF-1 van meer dan 3 SDS boven normaal. De productinformatie raadt aan om IGF-1 te controleren, en om te overwegen te stoppen als het hoog blijft.<Cite id="dailymed-egrifta-sv-label" />
+2. **Hoog IGF-1 hangt samen met sommige vormen van kanker.** <Claim level="human-limited">In observationeel onderzoek hadden mensen met een van nature hoger IGF-1 iets vaker prostaatkanker en borstkanker voor de overgang (premenopauzaal)</Claim>. Zulk onderzoek laat een verband zien, geen oorzaak.<Cite id="renehan-2004-igf1-cancer" />
+3. **Groeisignalen kunnen een bestaande tumor voeden.** <Claim level="hypothesis">De zorg is niet dat tesamorelin kanker veroorzaakt, maar dat een groeisignaal een bestaande, misschien nog onbekende tumor kan helpen groeien</Claim>. Daarom verbiedt de productinformatie het bij actieve kanker, en zegt die dat je stopt bij elk teken dat een kanker terugkomt.<Cite id="dailymed-egrifta-sv-label" />
+4. **Het antwoord op lange termijn ontbreekt.** Levenslange kankerstudies bij knaagdieren zijn niet gedaan, en de veiligheidsstudie van 10 jaar bij mensen is gestopt.<Cite id="dailymed-egrifta-wr-label,ctgov-nct01579695" />
+
+De productinformatie voegt toe dat mensen met hiv al een hoger risico op kanker hebben.<Cite id="dailymed-egrifta-sv-label" /> Gewone labtests op schade aan genen waren negatief.<Cite id="dailymed-egrifta-wr-label" /> <Claim level="hypothesis">Zulke tests zoeken naar schade aan genen; ze zijn niet gemaakt om te laten zien of een groeisignaal een bestaande tumor helpt groeien</Claim>.
+
+**Ogen.** Hoog IGF-1 kan diabetische oogziekte (retinopathie) erger maken. De productinformatie vraagt om regelmatige oogcontroles bij mensen met diabetes.<Cite id="dailymed-egrifta-sv-label,ema-egrifta-withdrawal" />
+
+</InDetail>
+
+<InDetail title="Vocht, gewrichten en zenuwen">
+
+{/* residue-ok: FDA evidence */}
+Groeihormoon laat het lichaam vocht vasthouden. De productinformatie beschrijft stevigere, vollere weefsels en pijnlijke spieren en gewrichten. Dat zie je als zwelling (oedeem), gewrichtspijn en het carpaletunnelsyndroom: een doof gevoel en tintelingen in de hand, doordat een zenuw bij de pols bekneld raakt. Deze klachten waren van korte duur of verdwenen na het stoppen.<Cite id="dailymed-egrifta-sv-label" /> Tintelingen of een doof gevoel in de huid (paresthesie) meldde 5%, tegenover 2% met placebo.<Cite id="dailymed-egrifta-sv-label" /> De beoordelaar van de FDA merkte op dat dit dezelfde soort bijwerkingen zijn als die van groeihormoon, alleen milder.<Cite id="fda-2010-egrifta-summary-review" />
+
+</InDetail>
+
+<InDetail title="Allergische reacties en antistoffen">
+
+Allergische reacties (overgevoeligheidsreacties), zoals jeuk, roodheid, een rood en warm gezicht (flushing), jeukende bulten (netelroos) en uitslag, kwamen voor bij 4% van de mensen met tesamorelin. De productinformatie raadt aan te stoppen en snel medische hulp te zoeken als je er een vermoedt.<Cite id="dailymed-egrifta-sv-label" />
+
+Tesamorelin is een groot peptide, en het afweersysteem merkt het op. <Claim level="established">Na 26 weken had 50% van de mensen antistoffen tegen tesamorelin; bij ongeveer 60% van hen herkenden die antistoffen ook het eigen GHRH van het lichaam</Claim>. Na 52 weken had 10% antistoffen die tesamorelin in een labtest blokkeerden (neutraliserende antistoffen). Van de mensen met antistoffen die stopten, had 18% ze 6 maanden later nog. Mensen met en zonder antistoffen verloren evenveel visceraal vet.<Cite id="dailymed-egrifta-sv-label" />
+
+De waarschuwingen in de productinformatie geven een hoger cijfer voor reacties op de prikplek (roodheid, jeuk, pijn, irritatie of een blauwe plek): 25%, tegenover 14% in de eerste 26 weken. De productinformatie raadt aan om steeds van prikplek te wisselen om dat risico te verlagen.<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+<InDetail title="Zwangerschap, kinderen, ouderen en ernstige ziekte">
+
+- **Zwangerschap.** Verboden volgens de productinformatie. Minder buikvet heeft in de zwangerschap geen voordeel, en <Claim level="animal">bij ratten kregen de jongen vocht in de hersenen (hydrocefalie) bij ongeveer 2 tot 4 keer de blootstelling bij mensen, en vormden de schedelbotten zich later bij lagere hoeveelheden</Claim>.<Cite id="dailymed-egrifta-sv-label" />
+- **Kinderen en tieners.** Niet voor hen bedoeld. Bij kinderen bij wie de botten nog groeien, kan het de groei te veel versnellen.<Cite id="dailymed-egrifta-sv-label" />
+- **Boven de 65.** Er is geen informatie.<Cite id="dailymed-egrifta-sv-label" />
+- **Ernstige ziekte.** Bij ernstig zieke mensen (na een openhartoperatie of een buikoperatie, na meerdere verwondingen, of bij plotseling falen van de ademhaling) overleden meer mensen als ze groeihormoon kregen in medische hoeveelheden. De productinformatie raadt aan om bij ernstig zieke mensen te overwegen te stoppen met tesamorelin.<Cite id="dailymed-egrifta-sv-label" />
+- **Problemen met de hypofyse.** Verboden na een operatie aan de hypofyse, bij een tumor van de hypofyse, na bestraling van het hoofd, of na een hoofdletsel dat de hypofyse raakte. Het systeem waarop tesamorelin werkt, is dan beschadigd.<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+<InDetail title="Wisselwerkingen">
+
+- **Vervanging van bijnierhormonen.** Groeihormoon zorgt dat het lichaam minder cortison omzet in actief cortisol. Gebruikt iemand corticosteroïden omdat de bijnieren niet werken? Dan is er misschien meer van nodig; de arts beslist. Cortison en prednison worden het meest beïnvloed.<Cite id="dailymed-egrifta-sv-label" />
+- **Medicijnen die door leverenzymen worden afgebroken (cytochroom P450).** Groeihormoon kan veranderen hoe snel het lichaam sommige van die medicijnen opruimt, zoals steroïden, geslachtshormonen, medicijnen tegen epilepsie en ciclosporine. In tests bij gezonde mensen verlaagde tesamorelin de spiegel van simvastatine en ritonavir maar een beetje (met 15% of minder).<Cite id="dailymed-egrifta-sv-label" />
+- **Medicijnen tegen diabetes.** De bloedsuiker kan stijgen, dus de behandeling van diabetes moet misschien worden aangepast.<Cite id="dailymed-egrifta-sv-label" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe gebruik ik het zo veilig mogelijk?">De legale weg heeft de minste onbekenden. Controleer elk ander product eerst, en weet wanneer je hulp zoekt.</Lead>
+
+{/* residue-ok: world context */}
+In Nederland en de EU is tesamorelin niet goedgekeurd. In de Verenigde Staten is het wel een medicijn op recept (Egrifta). Hier kan het alleen via de smalle weg van de artsenverklaring, en de IGJ kan die weigeren.<Cite id="dailymed-egrifta-sv-label,cbg-gib-search-status-2026-10-27,ema-egrifta-withdrawal,igj-leveren-op-artsenverklaring" /> We noemen geen doseringen: de arts die het voorschrijft, bepaalt de dosis. Een arts kan ook je bloedsuiker en je IGF-1 controleren. Die zijn belangrijk bij dit medicijn. Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+De controles hieronder zijn voor elk ander product, zoals een flacon die als "tesamorelin" wordt aangeboden.
+
+<ProductCheck extra="Egrifta zit in 2 dozen: een met de flacons en een bijsluiter, en een met het water en de spuiten. Een losse flacon is niet verpakt zoals Egrifta. Maar de verpakking alleen bewijst niet dat een product echt is." extraSources="dailymed-egrifta-sv-label,dailymed-egrifta-wr-label" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp" id="stop-now">
+- **Een gezwollen gezicht, lippen of keel, of moeite met ademen:** mogelijk een zware allergische reactie (anafylaxie). Bel direct 112.
+- **Jeukende bulten (netelroos), uitslag of een rood en warm gezicht na een injectie:** mogelijk een allergische reactie. Stop met het middel. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Een prikplek die heet, rood, dik en pijnlijker wordt, of koorts:** mogelijk een infectie. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Veel dorst, veel plassen, je slap voelen of wazig zien:** mogelijk een te hoge bloedsuiker. Stop met het middel en laat je bloedsuiker snel controleren door je huisarts. Moet je ook overgeven, adem je snel, of ben je heel suf of verward? Bel dan direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Slechter zien, als je diabetes hebt:** bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Een nieuwe bult, of tekenen dat een eerdere kanker terug is:** stop met het middel en maak een afspraak met je huisarts.
+</Callout>
+
+<Cite id="dailymed-egrifta-sv-label,thuisarts-dikke-ogen-lippen,fda-2010-egrifta-approval-letter,thuisarts-wondroos,thuisarts-steenpuist,nhs-high-blood-sugar,thuisarts-diabetes-type-2,thuisarts-spoed-wie-bellen" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="De legale weg, en waarom een flacon “voor onderzoek” geen Egrifta is">
+
+### De legale weg
+
+In Nederland en de EU is tesamorelin niet goedgekeurd. Daarom kan een arts het hier niet op een gewoon [recept](/nl/legal-routes/#recept) voorschrijven.<Cite id="cbg-gib-search-status-2026-10-27,ema-egrifta-withdrawal" /> Ook [off-label](/nl/legal-routes/#off-label) voorschrijven kan niet. Off-label gaat over een medicijn dat hier wel is goedgekeurd, maar dat een arts voorschrijft voor een ander gebruik dan in de productinformatie staat.<Cite id="nl-gmw-art-68-off-label" />
+
+De weg die overblijft, is de [artsenverklaring](/nl/legal-routes/#artsenverklaring). Vindt je arts dat goedgekeurde medicijnen je om medische redenen niet kunnen helpen? Dan kan die een verklaring tekenen. Een apotheek vraagt daarna de IGJ om een ontheffing. De IGJ is terughoudend en kan de ontheffing weigeren.<Cite id="igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17,igj-qa-zonder-handelsvergunning" /> Voor tesamorelin loopt in Nederland geen [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), en er is geen programma voor [compassionate use](/nl/legal-routes/#compassionate-use).<Cite id="ctgov-search-tesamorelin-nl-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27,cbg-compassionate-use-list" /> Een apotheek mag soms zelf een medicijn maken voor één patiënt ([magistrale bereiding](/nl/legal-routes/#magistrale-bereiding)). De IGJ stelt dan strenge eisen aan de grondstof. Die moet in een officieel boek met kwaliteitseisen voor grondstoffen staan (een farmacopee). Staat de grondstof daar niet in? Dan kan een apotheek die niet zomaar gebruiken. Of dat voor tesamorelin kan, hebben we niet gevonden.<Cite id="igj-eigen-bereidingen-apotheek" />
+
+En [zelf invoeren](/nl/legal-routes/#zelf-invoeren)? De Geneesmiddelenwet verbiedt het invoeren van een geneesmiddel zonder handelsvergunning, en noemt daarbij geen uitzondering voor eigen gebruik. Er is een regel voor reizigers die hun eigen medicijnen bij zich hebben. Die regel geldt niet voor een pakket.<Cite id="nl-gmw-art-40-handelsvergunning,nl-rbdha-2019-4817-postzending-eigen-gebruik,douane-invoer-geneesmiddelen-2026" /> Elke legale weg heeft strenge voorwaarden, en geen ervan maakt van een niet-goedgekeurd product een goedgekeurd medicijn.
+
+### Waarom een flacon "voor onderzoek" een ander product is
+
+Het onderzoek op deze pagina gaat over Egrifta: een bekende stof, gemaakt onder vergunning, met productinformatie die wordt bijgehouden.<Cite id="dailymed-egrifta-sv-label" /> Een flacon die als "tesamorelin" wordt aangeboden, heeft dezelfde naam, maar geen van die zekerheden. Valt een product onder de wet? Dan blijft het verboden, en speelt "voor onderzoek" op het etiket geen rol, zegt de Douane.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+{/* residue-ok: FDA evidence */}
+Ook het goedgekeurde medicijn is een poeder dat vóór de injectie wordt opgelost. Op dat moment kunnen bacteriën erin komen. Bij de goedkeuring noemde de FDA besmetting met bacteriën tijdens het oplossen, met mogelijk een infectie van de huid of het weefsel eronder, een mogelijk ernstig risico. De FDA eiste daarom werk aan een eenvoudiger product in één flacon.<Cite id="fda-2010-egrifta-approval-letter" /> Volgens de productinformatie gebruik je de vloeistof alleen als die helder en kleurloos is, zonder deeltjes. En deel je nooit een spuit, ook niet met een nieuwe naald.<Cite id="dailymed-egrifta-sv-label" /> Zie [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Wat er mis kan zijn met een flacon van buiten de apotheek">
+
+De plaat laat 6 dingen zien die mis kunnen zijn met een flacon van buiten de apotheek: van wat erin zit tot wat nooit is getest.
+
+<Infographic id="online-vial-risks" />
+
+</InDetail>
+
+<InDetail title="Wie het niet mag gebruiken, en zinvolle controles">
+
+### Wie het niet mag gebruiken, en waarom
+
+- **Wie zwanger is of zwanger wil worden**, door de bevindingen bij ratten, en omdat het in de zwangerschap geen voordeel heeft.<Cite id="dailymed-egrifta-sv-label" />
+- **Wie actieve kanker heeft**, of een eerdere kanker die nog niet helemaal is behandeld en tot rust is gekomen, omdat groeihormoon en IGF-1 groeisignalen zijn.<Cite id="dailymed-egrifta-sv-label" />
+- **Wie een ziekte van de hypofyse heeft**, of een operatie aan de hypofyse, bestraling van het hoofd of een hoofdletsel dat de hypofyse raakte.<Cite id="dailymed-egrifta-sv-label" />
+- **Kinderen en tieners**, bij wie de botten nog groeien.<Cite id="dailymed-egrifta-sv-label" />
+- **Sporters die onder de dopingregels vallen**, omdat het altijd verboden is. Zie [sport en doping](/nl/legal/sport-and-doping/).<Cite id="wada-2026-list-en" />
+
+### Controles die zinvol zijn, en waarom
+
+Je huisarts kan helpen met controles die bij jou passen:
+
+<Checklist>
+
+- **Bloedsuiker of HbA1c voor de start en tijdens het gebruik**, omdat groeihormoon insuline tegenwerkt en diabetes in de studies vaker voorkwam.
+- **IGF-1 tijdens het gebruik**, omdat het bij meer dan een derde van de mensen ver boven normaal kwam, en de productinformatie aanraadt om te overwegen te stoppen als het hoog blijft.
+- **Een oogcontrole als je diabetes hebt**, omdat hoog IGF-1 diabetische oogziekte erger kan maken.
+- **De controles op kanker die bij je leeftijd passen, en eerst een bult zonder verklaring laten nakijken**, door het effect als groeisignaal.
+- **Een zwangerschapstest als je zwanger kunt zijn**, door de bevindingen bij ratten.
+
+</Checklist>
+
+<Cite id="dailymed-egrifta-sv-label,moller-2009-gh-metabolism,ema-egrifta-withdrawal" />
+
+Vertel je arts eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen.
+
+### Bijwerkingen melden
+
+Niet alleen je arts kan een bijwerking melden. Je kunt het ook zelf doen, bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Twijfel je over een website die medicijnen aanbiedt? Meld die bij het Landelijk Meldpunt Zorg van de IGJ.<Cite id="igj-2025-illegal-online-medicines,igj-landelijk-meldpunt-zorg" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

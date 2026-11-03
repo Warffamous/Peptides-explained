@@ -55,7 +55,8 @@ for (const it of PRODUCT_CHECK.items) {
   }
   const links = it.links
     .map((key, i) => {
-      const [route, anchor] = key.split('#');
+      const [route, dataAnchor] = key.split('#');
+      const anchor = tx.anchors?.[i] ?? dataAnchor;
       const path = routeUrl(L, route);
       if (path === here) return anchor ? { href: `#${anchor}`, text: tx.links[i] } : null;
       return { href: anchor ? `${path}#${anchor}` : path, text: tx.links[i] };

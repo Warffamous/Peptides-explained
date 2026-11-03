@@ -93,9 +93,11 @@ export function stripLegalOrders(text: string): string {
 
 /**
  * English phrases where a commerce token is not about buying: "in order to", "the order of the amino
- * acids", "why order matters", "deal with side effects", and the legal orders above. Removed from
- * headings, figure titles and labels before they are tested (validator, check-no-commerce). Links are
- * tested with only the legal-order exception (stripLegalOrders).
+ * acids", "why order matters", "deal with side effects", and the legal orders above. Dutch idioms of the
+ * same kind: "op de koop toe" (into the bargain), "op prijs stellen" (to appreciate, also "stel … op prijs"),
+ * "tot nader order" (until further notice), "afrekenen met" (to settle with; not before a means of payment,
+ * "afrekenen met iDEAL"), "te koop lopen met" (to show off). Removed from headings, figure titles and labels before they are tested (validator,
+ * check-no-commerce). Links are tested with only the legal-order exception (stripLegalOrders).
  */
 const NON_COMMERCE_PHRASES = [
   /\bin order (?:to|that|for)\b/giu,
@@ -103,6 +105,13 @@ const NON_COMMERCE_PHRASES = [
   /\b(?:the same|same|right|correct|wrong|reverse|fixed|chronological|alphabetical|residue|amino[- ]acid|sequence|its|their|in that|in this) order\b/giu,
   /\bdeal(?:s|t)? with\b/giu,
   /\ba (?:good|great) deal\b/giu,
+  /\bop de koop toe\b/giu,
+  /\bop prijs (?:stellen|stelt|stel|stelde|stelden|gesteld)\b/giu,
+  /(?<=\b(?:stel|stelt|stellen|stelde|stelden)\b[^.!?]{0,40}?)\bop prijs\b/giu, // "stel … op prijs": only "op prijs" is removed
+  /\btot nader order\b/giu,
+  // "afrekenen met" (to do away with), but never the checkout "afrekenen met iDEAL / je creditcard": that stays a token
+  /\bafrekenen met\b(?!\s+(?:ideal|creditcard|credit card|paypal|klarna|bancontact|apple pay|google pay|pin|pinnen|pinpas|bankpas|betaalpas|contant|cash|crypto|bitcoin|(?:je|jouw|uw|een) (?:pas|kaart|pinpas|bankpas|betaalpas|creditcard))\b)/giu,
+  /\bte koop (?:lopen|loopt|liep|liepen) met\b/giu,
 ];
 export function stripNonCommerce(text: string): string {
   return NON_COMMERCE_PHRASES.reduce((t, re) => t.replace(re, ' '), stripLegalOrders(text));

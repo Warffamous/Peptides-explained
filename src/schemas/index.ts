@@ -557,6 +557,12 @@ export const localeSchema = z
     englishName: nonEmpty,
     dir: z.enum(['ltr', 'rtl']),
     status: z.enum(['published', 'preview', 'planned']),
+    /**
+     * preview only: whether a missing page, compound page or UI string falls back to the English one.
+     * false = the locale is complete: the preview builds exactly what publishing would (no English
+     * pages, e.g. another country's law page, and no English glossary terms).
+     */
+    fallback: z.boolean().default(true),
     bcp47: nonEmpty,
     hreflang: nonEmpty,
     dateLocale: nonEmpty, // dates, numbers and lists

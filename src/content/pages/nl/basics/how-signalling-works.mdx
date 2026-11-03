@@ -1,0 +1,198 @@
+---
+title: "Hoe signalen werken: receptoren, boodschappen en bijwerkingen"
+nav_title: "Hoe signalen werken"
+description: "Peptiden zetten receptoren aan of uit. Hoe een cel een signaal doorgeeft en versterkt, waarom één molecuul veel effecten heeft en waarom gericht niet onschadelijk is."
+tldr:
+  - q: "Hoe werkt een peptide?"
+    a: "Het past op een receptor op de cel en zet die aan, als een sleutel in een slot."
+  - q: "Waarom heeft het bijwerkingen?"
+    a: "Dezelfde receptor zit in veel organen. Gewenste effecten en bijwerkingen komen vaak van dezelfde receptor."
+  - q: "Kan een gericht peptide toch schaden?"
+    a: "Ja. Het kan in het verkeerde orgaan werken, bij een grote hoeveelheid andere receptoren raken, of groei aanjagen."
+  - q: "Kunnen groeipeptiden kanker veroorzaken?"
+    a: "Onbekend: lang gebruik van niet-goedgekeurde groeipeptiden is bij mensen niet onderzocht. Kanker heeft ook groeisignalen nodig."
+  - q: "Blijft het op dezelfde manier werken?"
+    a: "Vaak niet. Cellen dempen receptoren die steeds aanstaan, en hormoonsystemen remmen zichzelf. Effecten kunnen afnemen of omslaan."
+section: basics
+order: 2
+template: reference
+reading_level: B2
+last_reviewed: 2026-10-24
+reviewed_by: pending-medical-review
+related:
+  - basics/what-is-a-peptide
+  - basics/pharmacokinetics
+  - compounds/semaglutide
+  - evidence/the-translation-gap
+further_reading: []
+translation: { method: translated, from: en, review: pending }
+---
+
+Een peptide doet zelf niets. Het werkt doordat het een cel een bericht geeft, en de cel doet de rest. Deze pagina legt uit hoe dat bericht reist, en waarom een heel gericht bericht toch ongewenste effecten kan hebben.
+
+## Receptoren: sloten op het celoppervlak
+
+<Lead question="Hoe vertelt een peptide een cel wat die moet doen?">Het past op een receptor op de cel en zet die aan, als een sleutel in een slot.</Lead>
+
+<Diagram id="receptor-signalling-chain" caption="Een bericht buiten de cel wordt binnen de cel een keten van schakelaars.">
+
+1. **De sleutel komt aan.** Een hormoon of een peptide bereikt de cel via het bloed.
+2. **Hij past in het slot.** Hij bindt aan een receptor die in de buitenwand van de cel zit en tot binnen in de cel reikt.
+3. **De receptor verandert van vorm.** Aan de binnenkant zet de receptor een hulpeiwit aan, een G-eiwit.
+4. **Er ontstaat een tweede boodschapper.** Het G-eiwit zet een enzym aan dat veel moleculen maakt van een kleine boodschapper: cAMP.
+5. **Het signaal verspreidt zich.** cAMP zet enzymen aan (kinasen) die veel andere eiwitten veranderen. De cel reageert, bijvoorbeeld door insuline af te geven.
+6. **Het signaal stopt.** De receptor wordt uitgezet of naar binnen getrokken, zodat het bericht niet eindeloos doorgaat.
+
+</Diagram>
+
+<Cite id="muller-2019-glp1-review,paramonov-2015-camp,rajagopal-2018-gpcr-desensitisation" />
+
+Peptiden zijn groot en waterminnend. De meeste kunnen daardoor niet door de vettige buitenwand van een cel.<Cite id="di-2015-peptide-adme" /> Ze werken daarom op receptoren aan de buitenkant. Veel peptidehormonen gebruiken deze familie van receptoren: de G-eiwitgekoppelde receptoren (GPCR’s).<Cite id="davenport-2020-peptide-gpcr" />
+
+<InDetail title="Families van receptoren, en waarom een klein signaal veel doet">
+
+### Een grote familie van doelwitten voor medicijnen
+
+GPCR’s zijn de meest onderzochte doelwitten voor medicijnen. Eén analyse telde 475 medicijnen die werken op 108 verschillende GPCR’s: ongeveer 34% van alle medicijnen die in de VS zijn goedgekeurd.<Cite id="hauser-2017-gpcr-drugs" /> {/* residue-ok: evidence */}
+
+Veel lichaamseigen peptiden werken op GPCR’s, en bijna 50 goedgekeurde peptidemedicijnen hebben ze als doelwit. De meeste daarvan zijn kopieën of aangepaste versies van een natuurlijk peptide.<Cite id="davenport-2020-peptide-gpcr" /> Vrijwel alle cellen in het lichaam gebruiken G-eiwitten.<Cite id="wettschureck-2005-g-proteins" />
+
+Niet elk hormoon geeft zijn bericht door via cAMP. Groeihormoon werkt bijvoorbeeld op een eigen receptor, en geeft binnen in de cel een signaal door via een andere route: de STAT 5b-route.<Cite id="veldhuis-2001-gh-pulsatility" />
+
+### De GLP-1-receptor als uitgewerkt voorbeeld
+
+Bindt GLP-1 of een medicijn zoals semaglutide aan de GLP-1-receptor? Dan zet de receptor een enzym aan (adenylaatcyclase), en stijgt cAMP. In de bètacellen van de alvleesklier, die insuline maken, werkt cAMP via 2 eiwitten, PKA en Epac2. Zo verhoogt het de afgifte van insuline.<Cite id="muller-2019-glp1-review" /> <Claim level="in-vitro">Deze keten is vooral uitgezocht in cellijnen en in eilandjes van Langerhans uit dieren</Claim>.<Cite id="muller-2019-glp1-review" />
+
+### Versterking
+
+cAMP is een van de belangrijkste tweede boodschappers die GPCR’s gebruiken. Een klein signaal aan de buitenkant van de cel wordt op weg naar binnen vermenigvuldigd: het kinase dat cAMP aanzet, versterkt het signaal opnieuw, en het effect dat de celkern bereikt, is nog groter.<Cite id="paramonov-2015-camp" /> Daardoor kunnen heel kleine hoeveelheden van een hormoon grote effecten hebben. En daarom hoeft een receptor niet helemaal bezet te zijn om een volledige reactie te geven.<Cite id="berg-2018-inverse-agonism" />
+
+</InDetail>
+
+## Grip en duw: affiniteit en intrinsieke activiteit
+
+<Lead question="Betekent binden aan een receptor ook aanzetten?">Nee. Hoe stevig een molecuul bindt en hoe hard het duwt, zijn 2 verschillende dingen.</Lead>
+
+<Compare title="Drie soorten moleculen binden aan dezelfde receptor en doen toch iets anders." detail="Hoe farmacologen beschrijven wat een molecuul doet bij zijn receptor.">
+
+| | Volledige agonist | Partiële agonist | Antagonist |
+|---|---|---|---|
+| Bindt het aan de receptor? | <Verdict is="yes" /><Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /><Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /><Cite id="berg-2018-inverse-agonism" /> |
+| Zet het de receptor helemaal aan? | <Verdict is="yes" /> Geeft de grootste reactie die de cel kan geven<Cite id="santiago-2021-core-concepts" /> | <Verdict is="no" /> Alleen gedeeltelijk, ook als alle receptoren bezet zijn<Cite id="santiago-2021-core-concepts" /> | <Verdict is="no" /> Zet de receptor helemaal niet aan<Cite id="santiago-2021-core-concepts" /> |
+| Kan het een signaal van het lichaam zelf afzwakken? | <Verdict is="no" /> Niet direct: het voegt zijn eigen duw toe<Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /> Het bezet receptoren die een sterker signaal anders zou gebruiken<Cite id="berg-2018-inverse-agonism" /> | <Verdict is="yes" /> Het blokkeert de receptor<Cite id="berg-2018-inverse-agonism" /> |
+
+</Compare>
+
+Affiniteit is hoe stevig een molecuul zijn receptor vastgrijpt. Intrinsieke activiteit is hoe sterk het de receptor aanzet als het eenmaal gebonden is.<Cite id="berg-2018-inverse-agonism,santiago-2021-core-concepts" /> De meeste peptidemedicijnen die op GPCR’s werken, zijn agonisten: chemici maakten ze door een natuurlijk peptide te veranderen.<Cite id="davenport-2020-peptide-gpcr" /> Orforglipron, een middel met een klein molecuul dat op de GLP-1-receptor werkt, is een partiële agonist.<Cite id="kawai-2020-orforglipron-structure,fda-2026-foundayo-approval" />
+
+In de VS is orforglipron goedgekeurd als medicijn. In de EU nog niet: het Comité voor geneesmiddelen voor menselijk gebruik (CHMP) van het Europees Geneesmiddelenbureau (EMA) gaf op 15 oktober 2026 een positief advies, maar de Europese Commissie had op 3 november 2026 nog niet besloten.<Cite id="fda-2026-foundayo-approval,ema-epar-foundayo-opinion,ec-union-register-human-active-2026-11-03" /> {/* residue-ok: world context */}
+
+<InDetail title="Affiniteit, intrinsieke activiteit en potentie in meer detail">
+
+- **Affiniteit** is een vaste eigenschap van elk paar van medicijn en receptor. Onderzoekers drukken die vaak uit als de concentratie die nodig is om de helft van de receptoren te bezetten.<Cite id="berg-2018-inverse-agonism" />
+- **Intrinsieke activiteit** kun je niet direct meten. Je leidt die af uit de reactie. Die reactie hangt ook af van hoeveel receptoren een cel heeft, en van hoe goed de cel een actieve receptor omzet in een reactie.<Cite id="berg-2018-inverse-agonism" />
+- **Potentie** is de hoeveelheid medicijn die nodig is voor een bepaald effect. Ze hangt af van de affiniteit en van de intrinsieke activiteit.<Cite id="santiago-2021-core-concepts" />
+- **Inverse agonisten** remmen een receptor die uit zichzelf al actief is. Ze doen dus het omgekeerde van een agonist.<Cite id="santiago-2021-core-concepts,berg-2018-inverse-agonism" />
+- **Biased agonisme**: een biased agonist zet sommige signalen van een receptor sterker aan dan andere. Eén medicijn kan bij dezelfde receptor een agonist zijn voor het ene signaal en een antagonist voor het andere.<Cite id="berg-2018-inverse-agonism" /> <Claim level="in-vitro">In de labtests van de ontwikkelaars gaf orforglipron de voorkeur aan het G-eiwitsignaal van de GLP-1-receptor boven een tweede route (het aantrekken van β-arrestinen)</Claim>.<Cite id="kawai-2020-orforglipron-structure" />
+
+Grip is niet alles. In celtests bond semaglutide ongeveer 3 keer minder stevig aan de GLP-1-receptor dan liraglutide, zijn voorganger. De ontwerpers accepteerden dat in ruil voor een stevigere binding aan albumine in het bloed. Daardoor is de halfwaardetijd van semaglutide ongeveer een week.<Cite id="lau-2015-semaglutide-discovery,ema-epar-wegovy" /> Hoe lang een molecuul bij zijn doelwit blijft, telt net zo zwaar als hoe stevig het vastgrijpt; zie [farmacokinetiek](/nl/basics/pharmacokinetics/).
+
+</InDetail>
+
+## Eén molecuul, veel effecten
+
+<Lead question="Waarom heeft één medicijn zoveel effecten?">Omdat dezelfde receptor in veel organen zit. De sleutel opent elk slot waarin hij past.</Lead>
+
+De korte animatie laat stap voor stap zien waar één peptidemedicijn, semaglutide, in het lichaam werkt.
+
+<Explainer id="glp1-action" />
+
+GLP-1-receptoren zitten op de cellen in de alvleesklier die insuline maken, in de hersenen en zenuwen, in het hart en de bloedvaten, in de nieren, de longen en de wand van de darm.<Cite id="wang-2022-therapeutic-peptides" /> Een medicijn kan niet kiezen welke daarvan het bereikt. Het gewenste effect in het ene orgaan en de bijwerking in het andere komen vaak van precies dezelfde receptor.
+
+<InDetail title="Dezelfde receptor, gewenste en ongewenste effecten">
+
+| Waar de GLP-1-receptor zit | Wat daar gebeurt | Gewenst of niet? |
+|---|---|---|
+| Alvleesklier | Meer insuline als de bloedsuiker hoog is, minder glucagon | Gewenst bij diabetes type 2 |
+| Hersenen | Minder honger, sneller vol | Gewenst bij gewichtsbeheersing (afvallen en op gewicht blijven) |
+| Maag en darmen | Voedsel gaat langzamer uit de maag | Gemengd. Klachten van maag en darmen, zoals misselijkheid, zijn de meest voorkomende bijwerkingen |
+| C-cellen van de schildklier bij ratten en muizen | Na verloop van tijd tumoren in studies van 2 jaar bij knaagdieren | Ongewenst; het belang voor mensen wordt laag geschat, maar is niet uitgesloten |
+
+<Cite id="wang-2022-therapeutic-peptides,muller-2019-glp1-review,ema-epar-wegovy,knudsen-2010-thyroid-c-cells" />
+
+In de belangrijkste studies naar gewichtsverlies met Wegovy, met placebo als vergelijking (STEP 1 tot en met 4, 68 weken), meldde 43,9% van de mensen op semaglutide misselijkheid, tegen 16,1% op placebo.<Cite id="ema-epar-wegovy" /> De bevinding in de schildklier laat nog iets zien: receptoren verschillen per diersoort. <Claim level="animal">C-cellen van de schildklier van ratten en muizen hebben GLP-1-receptoren, terwijl C-cellen van mensen en apen er weinig hadden</Claim>. Dat is een van de redenen waarom een resultaat bij knaagdieren misschien niet geldt voor mensen.<Cite id="knudsen-2010-thyroid-c-cells" /> Meer hierover staat op de pagina over [de kloof tussen dier en mens](/nl/evidence/the-translation-gap/).
+
+In de EU is semaglutide een goedgekeurd medicijn, alleen op recept. Ozempic en Rybelsus zijn goedgekeurd voor volwassenen met diabetes type 2 die niet goed genoeg onder controle is, naast dieet en bewegen. Wegovy is goedgekeurd voor afvallen en op gewicht blijven (gewichtsbeheersing), naast een caloriearm dieet en meer bewegen. Dat geldt voor volwassenen met obesitas (een BMI van 30 of hoger), of met overgewicht (een BMI van 27 tot 30) en minstens één aandoening die met het gewicht samenhangt. De Wegovy-injectie is ook goedgekeurd voor jongeren vanaf 12 jaar met obesitas die meer dan 60 kg wegen. Er zijn nog 2 EU-medicijnen met semaglutide. Kyinsu (samen met insuline icodec) is voor volwassenen met diabetes type 2 bij wie basale insuline of een GLP-1-medicijn niet genoeg helpt. Kayshild is voorwaardelijk goedgekeurd, voor volwassenen met de leverziekte MASH met matige tot gevorderde fibrose (littekenweefsel in de lever), zonder cirrose.<Cite id="ema-pi-ozempic-nl,ema-pi-rybelsus-nl,ema-pi-wegovy-nl,ema-pi-kyinsu-nl,ema-pi-kayshild-nl" /> Volgens de productinformatie van Wegovy zijn klachten van maag en darmen de meest gemelde bijwerkingen, zoals misselijkheid, diarree, verstopping, buikpijn en overgeven. Wie overgevoelig is voor de werkzame stof of een van de hulpstoffen, mag Wegovy niet gebruiken.<Cite id="ema-pi-wegovy-nl" /> Gebruik voor iets anders dan in de productinformatie staat, zoals Ozempic om af te vallen, heet off-label. Meer over de risico’s staat op de pagina over [semaglutide](/nl/compounds/semaglutide/).
+
+</InDetail>
+
+## Gericht is niet hetzelfde als onschadelijk
+
+<Lead question="Kan een heel gericht peptide toch schade doen?">Ja. Het kan in het verkeerde orgaan werken, bij een grote hoeveelheid andere receptoren raken, of groei aanjagen.</Lead>
+
+<KeyNumber title="Af en toe gebruikt: donkere vlekken op de huid kwamen weinig voor" value="1 op de 100" label="kreeg donkere vlekken op de huid in de belangrijkste studies" who="Bremelanotide (Vyleesi), Amerikaanse productinformatie: fase 3-onderzoek met placebo als vergelijking bij 1.247 vrouwen vóór de overgang, die het hooguit 8 keer per maand gebruikten" source="dailymed-vyleesi-label" level="human-controlled" />
+
+<KeyNumber title="Elke dag gebruikt: donkere vlekken kwamen vaak voor" value="38 op de 100" label="kreeg donkere vlekken na 8 dagen dagelijks gebruik" who="Bremelanotide (Vyleesi), Amerikaanse productinformatie: een aparte studie met 8 dagen dagelijks gebruik" source="dailymed-vyleesi-label" level="human-limited" />
+
+Bremelanotide is in de VS goedgekeurd als medicijn, in de EU en in Nederland niet (gecontroleerd op 27 oktober 2026).<Cite id="dailymed-vyleesi-label,ema-medicines-json,cbg-gib-search-status-2026-10-27" /> {/* residue-ok: world context */}
+
+Bremelanotide zet meerdere verwante receptoren aan. Eén daarvan, MC1R, zit op pigmentcellen. Meer blootstelling gaf daardoor meer donkere vlekken.<Cite id="dailymed-vyleesi-label" /> Selectiviteit is nooit absoluut: ze neemt af als de concentratie van een medicijn stijgt.<Cite id="santiago-2021-core-concepts" />
+
+<InDetail title="Hoe een gerichte sleutel toch problemen geeft: 4 manieren">
+
+### 1. De juiste receptor in het verkeerde weefsel
+
+De receptor waarop een medicijn mikt, zit vaak ook ergens anders. GLP-1-medicijnen vertragen de maag, omdat de maag ook op GLP-1 reageert (zie de tabel hierboven).<Cite id="muller-2019-glp1-review,ema-epar-wegovy" />
+
+### 2. Andere receptoren
+
+Weinig moleculen passen op maar één receptor. De Amerikaanse productinformatie zegt dat bremelanotide zonder onderscheid (niet-selectief) meerdere subtypen van de melanocortinereceptor aanzet, met MC1R en MC4R als de belangrijkste. MC1R zit op pigmentcellen (melanocyten), en als die receptor wordt aangezet, maakt de cel meer pigment. De donkere vlekken kwamen op het gezicht, het tandvlees en de borsten. De productinformatie waarschuwt dat ze na het stoppen misschien niet helemaal verdwijnen.<Cite id="dailymed-vyleesi-label" />
+
+### 3. Meer middel, minder selectief
+
+Of een medicijn het ene doelwit verkiest boven het andere, hangt af van de concentratie. Het farmacologieonderwijs zegt het zonder omwegen: hoe hoger de dosis, hoe lager de selectiviteit en hoe groter de kans op schade.<Cite id="santiago-2021-core-concepts" /> Dat is een van de redenen waarom de hoeveelheid en de zuiverheid van een product zo belangrijk zijn. En waarom een onbekende hoeveelheid in een flacon een risico op zich is (zie [de risico’s van een product](/nl/safety/product-risk/)).
+
+### 4. Tumoren gebruiken dezelfde groeisignalen
+
+Sommige peptiden werken op groeiroutes: ze zetten cellen aan om te delen, te overleven of nieuwe bloedvaten te maken. Kanker steunt op dezelfde vermogens: aanhoudende groeisignalen en de groei van nieuwe bloedvaten zijn 2 van de erkende kenmerken van kanker.<Cite id="hanahan-2011-hallmarks" /> Een overzicht van 21 observationele studies (patiënt-controleonderzoek) bij 3.609 mensen met kanker en 7.137 zonder kanker vond dat hogere bloedwaarden van de groeifactor IGF-1 samengingen met iets meer prostaatkanker en iets meer borstkanker vóór de overgang. Zulke studies laten een verband zien, geen oorzaak en gevolg.<Cite id="renehan-2004-igf1-cancer" /> CJC-1295 is een experimenteel peptide. In de eerste van 2 gerandomiseerde studies met placebo als vergelijking bij gezonde volwassenen, met auteurs van de ontwikkelaar, verhoogde één injectie IGF-1 gedurende 9 tot 11 dagen. De samenvatting noemt het aantal deelnemers niet.<Cite id="teichman-2006-cjc1295" /> <Claim level="hypothesis">Of niet-goedgekeurde peptiden die maanden of jaren groeisignalen aanjagen het risico op kanker bij mensen veranderen, is niet onderzocht</Claim>. Overprikkelde receptoren kunnen in principe ongeremde groei aandrijven. Dat is een van de redenen waarom cellen er remmen op hebben.<Cite id="rajagopal-2018-gpcr-desensitisation" />
+
+</InDetail>
+
+## Het lichaam stuurt tegen
+
+<Lead question="Blijft een peptide op dezelfde manier werken?">Vaak niet. Cellen dempen receptoren die te veel worden gebruikt. Hormoonsystemen remmen zichzelf af.</Lead>
+
+<Diagram id="gh-axis-feedback" caption="Groeihormoon wordt geregeld door een lus die zichzelf afremt.">
+
+1. **De hersenen geven de opdracht.** De hypothalamus geeft GHRH af, een peptide, in pulsen.
+2. **De hypofyse antwoordt.** Die geeft groeihormoon af in pulsen.
+3. **Het lichaam reageert.** Groeihormoon verhoogt IGF-1, een groeifactor in het bloed.
+4. **De rem.** Groeihormoon en IGF-1 werken terug op de hersenen en de hypofyse. Meer somatostatine en minder GHRH vertragen de volgende puls.
+5. **Wat een middel verandert.** Een peptide dat stap 1 of stap 2 aanjaagt, verhoogt de productie, en de lus probeert zich aan te passen.
+
+</Diagram>
+
+<Cite id="desousa-2025-gh-feedback,veldhuis-2001-gh-pulsatility,teichman-2006-cjc1295" />
+
+Er zijn 2 soorten tegensturing die tellen. Cellen dempen receptoren die zonder pauze worden aangezet (desensitisatie).<Cite id="rajagopal-2018-gpcr-desensitisation" /> En hormoonsystemen gebruiken terugkoppelingslussen die het resultaat meten en de bron afremmen.<Cite id="desousa-2025-gh-feedback" /> Allebei kunnen ze een effect laten afnemen, of zelfs laten omslaan.
+
+<InDetail title="Desensitisatie en terugkoppeling, met medicijnen als voorbeeld">
+
+### Desensitisatie: van minuten tot dagen
+
+Wordt een GPCR steeds opnieuw aangezet? Dan reageert de cel minder. Binnen minuten zorgen eiwitten die β-arrestinen heten ervoor dat de receptor zijn G-eiwit niet meer aanzet. In de loop van uren tot dagen trekt de cel receptoren naar binnen en breekt ze af, en maakt ze er minder nieuwe.<Cite id="rajagopal-2018-gpcr-desensitisation" /> Farmacologen noemen een kleinere reactie na herhaalde of langdurige blootstelling tolerantie.<Cite id="santiago-2021-core-concepts" />
+
+Hier zijn 2 voorbeelden van goedgekeurde medicijnen:
+
+- **Een bijwerking die afneemt.** Semaglutide vertraagt de maaglediging, zoals de Europese en de Amerikaanse productinformatie zeggen.<Cite id="ema-pi-wegovy-nl,fda-label-wegovy" /> Toch meldt de Europese productinformatie bij de sterkte <Q>2,4 mg</Q> voor gewichtsbeheersing geen klinisch relevant effect op hoe snel de maag leegloopt, "waarschijnlijk als gevolg van een tolerantie-effect". Voor de hogere sterkte (<Q>7,2 mg</Q>) is dat niet onderzocht.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl" />
+- **Een effect dat omslaat.** GnRH, een hersenhormoon, zet de hypofyse aan om LH en FSH af te geven. Die houden de geslachtshormonen op gang. <Claim level="animal">In een studie bij resusapen bij wie het eigen GnRH-signaal was uitgeschakeld, startten pulsen GnRH elk uur dit systeem weer op, terwijl een continu infuus dat niet deed; overstappen van pulsen naar een continu infuus kon het systeem weer ongevoelig maken</Claim>.<Cite id="belchetz-1978-gnrh-pulses" /> Leuproreline (Amerikaanse naam: leuprolide), een langwerkende kopie van GnRH, laat hetzelfde zien bij mensen. Eerst stijgen LH, FSH en testosteron. Wordt het continu gegeven? Dan dalen ze, en testosteron zakt binnen 2 tot 4 weken tot castratieniveau.<Cite id="lupron-depot-label" />
+
+<KeyNumber title="Zonder pauze gegeven legde het de geslachtshormonen stil" value="2–4 weken" label="tot het mannelijke geslachtshormoon heel laag was, na een eerste stijging" who="Mensen die continu leuproreline kregen (Lupron Depot), Amerikaanse productinformatie" source="lupron-depot-label" level="established" />
+
+### Terugkoppeling: de thermostaat van het lichaam
+
+Hormoonsystemen werken als een thermostaat. Groeihormoon komt vrij in pulsen: GHRH jaagt de pulsen aan, somatostatine remt ze af. Een piek van groeihormoon werkt binnen korte tijd terug op de hersenen. Er komt dan meer somatostatine en minder GHRH, en IGF-1 zet daar een tragere rem bovenop.<Cite id="veldhuis-2001-gh-pulsatility" /> Deze negatieve terugkoppelingslussen werken in de hersenen en in de hypofyse.<Cite id="desousa-2025-gh-feedback" />
+
+Het patroon telt net zo goed als de hoeveelheid. Een overzichtsartikel meldt dat losse pulsen groeihormoon de botgroei sterker aandrijven, en het IGF-1-gen in spieren beter aanzetten, dan een gelijkmatige spiegel.<Cite id="veldhuis-2001-gh-pulsatility" /> Een peptide dat het patroon verandert, kan dus anders werken dan de eigen pulsen van het lichaam. <Claim level="hypothesis">Voor de meeste niet-goedgekeurde peptiden die op het groeihormoonsysteem werken, is onbekend wat langdurig gebruik met deze lussen doet bij mensen</Claim>. De 2 studies met CJC-1295 bij gezonde volwassenen lieten zien dat groeihormoon en IGF-1 na een injectie dagenlang hoger waren. Maar die studies duurden 28 en 49 dagen, geen jaren.<Cite id="teichman-2006-cjc1295" />
+
+</InDetail>

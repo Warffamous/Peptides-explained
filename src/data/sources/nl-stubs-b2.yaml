@@ -1,0 +1,17 @@
+# Sources for the Dutch compound pages /nl/compounds/ss-31/ and /nl/compounds/nad-precursors/ (group stubs-b2,
+# 27 October 2026; notes: research/nl-notes/stubs-b2.md). Every other source on these pages is reused by id from
+# src/data/sources/ (stubs-b.yaml, refocus-*.yaml, nl-research-*.yaml, legal-a.yaml, guides.yaml, safety-a.yaml,
+# nl-legal-sport-changing.yaml and others). No title or URL below names a seller or company.
+#
+# EU legal acts: EUR-Lex answers automated requests with a bot check, so the Publications Office's SPARQL endpoint
+# and its CELLAR resolver (publications.europa.eu/resource/celex/<CELEX>) were used, which serve the same records.
+
+eu-op-novel-food-acts-search-2026-10-27:
+  type: dataset
+  authors: "Publications Office of the European Union"
+  title: "EU legal acts on novel foods: searches of the Publications Office's legal data, 27 October 2026 (the link opens one of them: the consolidated versions of the Union list of novel foods)"
+  year: 2026
+  url: https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX:32017R2470
+  accessed: 2026-10-27
+  verified: registry
+  note: "Two SPARQL searches of the Publications Office's legal data, run 27 October 2026. (1) Consolidated versions of Implementing Regulation (EU) 2017/2470 (the Union list of novel foods): the latest is CELEX 02017R2470-20260810 (10 August 2026), then 20260714, 20260702, 20260316, 20251130. (2) Legal acts dated from 1 July 2026 whose English title contains 'novel food', 'mononucleotide' or 'nicotinamide': the novel-food acts 2026/1427 (2 July), 2026/1507 (3 July) and 2026/1749 (20 July 2026), and one feed-additive act on vitamin K3 (2026/2115); no act on nicotinamide mononucleotide. The same index holds 87 EU regulations dated 1 to 27 October 2026, so it was current. The consolidated text of 10 August 2026 (eu-union-list-novel-foods-2026-08-10), re-read through the CELLAR resolver on 27 October 2026, lists 'Nicotinamide riboside chloride' (authorised on 20 February 2020; food supplements for adults, with a lower maximum for pregnant and lactating women; foods for special medical purposes, total diet replacement and meal replacements for adults) and has no entry for nicotinamide mononucleotide, 'NMN', nadide or nicotinamide adenine dinucleotide."

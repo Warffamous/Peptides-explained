@@ -1,0 +1,305 @@
+---
+slug: ss-31
+title: "SS-31 (elamipretide)"
+description: "SS-31 (elamipretide) is in de VS goedgekeurd voor het syndroom van Barth, op beperkt bewijs. In Nederland en de EU niet. Studies, risico’s en online flacons." # residue-ok: world context
+tldr:
+  - q: "Waarvoor is het?"
+    a: "Het syndroom van Barth, een zeldzame erfelijke ziekte die hart en spieren kan verzwakken. In de VS: Forzinity." # residue-ok: world context
+  - q: "Weten we of het helpt?"
+    a: "Nog niet. Een nieuwe studie bij 48 patiënten begon in 2026. De hoofdresultaten zijn gepland voor eind 2029."
+  - q: "Is een online flacon hetzelfde?"
+    a: "Nee. Niemand weet wat erin zit, en of het vrij is van bacteriën."
+  - q: "Kan ik het hier krijgen?"
+    a: "Een studie bij het syndroom van Barth heeft hier toestemming, maar zoekt nog geen deelnemers. Vraag je arts."
+lede: "Een Amerikaans medicijn voor één zeldzame spierziekte. Online flacons met de naam SS-31 zijn een ander product."
+glance:
+  main_risk: "Pijnlijke, rode huid waar je spuit. Sommigen kregen een ernstige allergische reactie."
+  # Override of "Is het getest bij mensen?" (CONTENT-GUIDE §5.2), as on English: the derived words for
+  # human_clinical: authorised ("Ja. Grote studies bij veel mensen, beoordeeld door medicijnautoriteiten") overstate
+  # this case. The FDA's accelerated approval rests on TAZPOWER, 12 patients, whose randomised part met neither
+  # primary endpoint; the larger trials in other diseases (EMBRACE STEMI 300, MMPOWER-3 218, PROGRESS-HF 71) found
+  # no benefit. "Deels" and a grey ring, as for phase 2.
+  tested:
+    short: "Deels"
+    text: "Goedgekeurd na 1 studie bij 12 patiënten, die de hoofddoelen miste. Grotere studies bij andere ziekten: geen voordeel."
+    tone: partial
+    sources: [reid-thompson-2021-tazpower, fda-2025-forzinity-approval, gibson-2016-embrace-stemi, karaa-2023-mmpower-3, butler-2020-progress-hf]
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's stop-now list (harm-reduction section):
+  # the US label (section 5.2, serious hypersensitivity), the NHS pages on anaphylaxis, cellulitis and sepsis (as on
+  # English) and the Thuisarts pages for the Dutch help levels.
+  stop_signs:
+    - icon: sign-allergic
+      text: "Dik gezicht of dikke keel, of moeilijk ademen"
+      sources: [fda-label-forzinity-2025, nhs-anaphylaxis, thuisarts-dikke-ogen-lippen]
+    - icon: sign-infection
+      text: "Prikplek wordt warm, rood, dik of pijnlijk"
+      sources: [nhs-cellulitis, thuisarts-wondroos]
+    - icon: sign-fever
+      text: "Koorts of rillingen nadat je hebt gespoten"
+      sources: [nhs-sepsis, thuisarts-sepsis]
+  # Label facts from the US prescribing information (the only official product information); never a dose.
+  facts:
+    - label: "Hoe je het gebruikt"
+      value: "Injectie onder de huid, 1 keer per dag"
+      sources: [fda-label-forzinity-2025]
+    # The derived "Goedgekeurd in" row says "Alleen in andere landen"; this row gives the US approved use only.
+    - label: "Goedgekeurd voor (VS)"
+      value: "Syndroom van Barth, bij minstens 30 kg lichaamsgewicht"
+      sources: [fda-label-forzinity-2025, fda-2025-forzinity-approval-letter]
+    - label: "Soort goedkeuring (VS)"
+      value: "Versneld: het voordeel moet nog worden bevestigd"
+      sources: [fda-2025-forzinity-approval-letter]
+    - label: "Meest voorkomende bijwerking"
+      value: "Roodheid, pijn of jeuk op de prikplek"
+      sources: [fda-label-forzinity-2025]
+grade_rationale:
+  human_clinical: "Volgens onze indeling goedgekeurd: de Amerikaanse medicijnautoriteit FDA keurde het in september 2025 goed als Forzinity. Die goedkeuring rust op een cross-overstudie bij 12 patiënten die beide hoofddoelen miste, en op een open vervolgstudie bij 8 tot 10 van die patiënten. Een fase 3-studie bij 218 volwassenen met een andere mitochondriale ziekte vond geen voordeel. In Nederland en de EU is het niet goedgekeurd." # residue-ok: world context
+  preclinical_volume: "Veel. Op 23 oktober 2026 vond PubMed 258 records (geen overzichtsartikelen) over elamipretide of SS-31 waarin ratten of muizen voorkomen."
+  independence: "Bij dieren door veel groepen herhaald: maar 32 van die 258 records hebben iemand uit de oorspronkelijke groep van Szeto als auteur. Bij mensen is dat anders: elk klinisch onderzoek dat we vonden, werd betaald door de ontwikkelaar, Stealth BioTherapeutics."
+  safety: "Deels bekend. Een paar honderd mensen kregen het in studies van weken tot maanden, en 3 patiënten met het syndroom van Barth 192 weken lang. Toen het werd goedgekeurd, waren er nog geen kankerstudies bij dieren (de FDA eist die nu). De ervaring na de goedkeuring is kort." # residue-ok: world context
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Gaat cellen in en hoopt zich op in mitochondriën"
+    detail: "In celstudies van de uitvinders ging het peptide door celwanden heen. In de binnenwand van mitochondriën werd het ongeveer 1.000 keer sterker geconcentreerd dan erbuiten."
+  - kind: cellular
+    level: animal
+    title: "Bindt aan cardiolipine in de binnenwand"
+    detail: "Het bindt aan cardiolipine, een vetmolecuul dat nodig is voor de onderdelen die energie maken. Bij ratten bij wie de bloedtoevoer naar de nieren was gestopt, beschermde het de mitochondriën en de nierfunctie (oorspronkelijke groep). De Amerikaanse productinformatie noemt het een stof die aan cardiolipine bindt."
+  - kind: effect
+    level: human
+    title: "Sterkere beenspieren bij het syndroom van Barth: nog niet bevestigd"
+    detail: "De kracht van de knie nam alleen toe in het deel van de studie zonder vergelijkingsgroep. Het gerandomiseerde deel liet geen verschil zien. Studies bij hartaanval, hartfalen en mitochondriale myopathie vonden geen voordeel."
+studies:
+  zhao-2004-discovery:
+    finding: "Peptiden met dit ontwerp gingen cellen in en hoopten zich ongeveer 1.000 keer op in de binnenwand van mitochondriën. In gekweekte cellen verminderden ze schadelijke zuurstofmoleculen en celdood. In een los hart verbeterden ze het samentrekken nadat de bloedstroom terugkwam."
+    limitation: "Cellen, losse mitochondriën en losse harten uit het lab van de uitvinders; geen levende patiënt."
+  birk-2013-cardiolipin:
+    finding: "SS-31 bond aan cardiolipine. Het beschermde de mitochondriën en de nierfunctie bij ratten, nadat de bloedstroom naar de nieren was gestopt en weer op gang kwam."
+    limitation: "Een rattenmodel van de oorspronkelijke groep; een korte, plotselinge schade, geen chronische ziekte."
+  embrace-stemi-2016:
+    finding: "Bij mensen met een eerste hartaanval die een stent kregen, maakte een infuus van een uur de schade aan het hart niet kleiner. Het verbeterde geen enkele scan, hartfilmpje (ECG) of klinische uitkomst."
+    limitation: "Eén kort infuus in het ziekenhuis; het aantal van 300 deelnemers komt uit het onderzoeksregister; betaald door de ontwikkelaar."
+  progress-hf-2020:
+    finding: "Bij 71 mensen met een zwak pompend hart werden 4 weken dagelijkse injecties goed verdragen. Maar de grootte en het pompen van het hart verbeterden niet, vergeleken met placebo."
+    limitation: "Kort en klein; hartfalen is niet het goedgekeurde gebruik."
+  tazpower-2021:
+    finding: "In een studie bij 12 mannelijke patiënten met het syndroom van Barth kreeg iedereen 12 weken elamipretide en 12 weken placebo, in willekeurige volgorde. Geen van de 2 hoofddoelen (loopafstand en een score voor vermoeidheid) verbeterde."
+    limitation: "Heel klein en kort; betaald door de ontwikkelaar, die ook meehielp met de analyse. Dit is het enige gerandomiseerde bewijs voor het goedgekeurde gebruik."
+  tazpower-extension-2024:
+    finding: "Van 10 patiënten die doorgingen met elamipretide zonder placebo (open-label), haalden er 8 week 168. Loopafstand en kniekracht verbeterden, vergeleken met het begin van dit vervolg. Huidreacties op de prikplek waren de meest voorkomende bijwerking."
+    limitation: "Geen vergelijkingsgroep. Verbetering door opgroeien, oefening of natuurlijke schommelingen is dus niet uit te sluiten; betaald door de ontwikkelaar."
+  mmpower-3-2023:
+    finding: "Bij 218 volwassenen met primaire mitochondriale myopathie verbeterden 24 weken dagelijkse injecties de loopafstand (verschil −3,2 m) en de vermoeidheid niet, vergeleken met placebo. Het middel werd meestal goed verdragen."
+    limitation: "Een andere ziekte dan het syndroom van Barth; betaald door de ontwikkelaar."
+regulatory_notes:
+  EU: "Alleen in klinisch onderzoek: geen handelsvergunning voor de hele EU en geen aanvraag (oktober 2026). Aangewezen als weesgeneesmiddel (2021, 2022). Twee studies hebben toestemming in EU-landen."
+  NL: "Geen handelsvergunning: geen product in het register van het CBG (27 oktober 2026). Een studie bij het syndroom van Barth kreeg op 27 juli 2026 toestemming voor Nederland, maar was op 3 november 2026 nog niet begonnen."
+  WADA: "Onduidelijk: niet met naam op de dopinglijst van 2026 of 2027. Een medicijn dat ergens is goedgekeurd, valt buiten S0, maar andere groepen kunnen gelden. Geen uitspraak gevonden."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+{/* residue-ok: world context */}
+<Lead question="Wat is SS-31?">Een klein peptide uit het lab, gericht op mitochondriën. In de VS een medicijn voor één zeldzame ziekte.</Lead>
+
+<Compare title="Het Amerikaanse medicijn en een online flacon “SS-31” delen een naam, geen garantie." detail="Wat over elk bekend is, uit de Amerikaanse productinformatie, waarschuwingen van medicijnautoriteiten en medicijnregisters. De status in Nederland en de EU is gecontroleerd op 27 oktober 2026.">
+
+| | Forzinity (elamipretide), Amerikaans medicijn op recept | Online flacon met “SS-31” op het etiket |
+|---|---|---|
+| Beoordeeld door een medicijnautoriteit? | <Verdict is="yes" /> In 2025 goedgekeurd door de Amerikaanse medicijnautoriteit FDA, met een versnelde goedkeuring.<Cite id="fda-drugsatfda-forzinity" /> | <Verdict is="no" /> De FDA waarschuwde verkopers die SS-31 “voor onderzoek” aanbieden: volgens de FDA zijn dat niet-goedgekeurde geneesmiddelen.<Cite id="fda-warning-letters-index" /> {/* residue-ok: world context */} |
+| Staat vast wat erin zit en hoe sterk het is? | <Verdict is="yes" /> De productinformatie zegt wat er in elke flacon zit.<Cite id="fda-label-forzinity-2025" /> | <Verdict is="unknown" /> Geen medicijnautoriteit heeft het gecontroleerd.<Cite id="fda-warning-letters-index" /> |
+| Steriel gemaakt? | <Verdict is="yes" /> Een steriele vloeistof met een conserveermiddel.<Cite id="fda-label-forzinity-2025" /> | <Verdict is="unknown" /> Niet bekend. |
+| Goedgekeurd in Nederland of de EU? | <Verdict is="no" /> Een studie heeft wel toestemming in Nederland, maar zoekt hier nog geen deelnemers.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,ctis-2025-523837-25-00,omon-nl-omon61412" /> | <Verdict is="no" /> Een geneesmiddel zonder handelsvergunning mag niemand in Nederland verkopen of invoeren.<Cite id="cbg-gib-search-status-2026-10-27,nl-gmw-art-40-handelsvergunning" /> |
+
+</Compare>
+
+SS staat voor Szeto-Schiller, naar de 2 onderzoekers die deze familie van peptiden ontwierpen.<Cite id="pubchem-elamipretide,zhao-2004-ss31-mitochondria" /> Het syndroom van Barth is een zeldzame erfelijke ziekte, vooral bij jongens en mannen. Hart en spieren kunnen er zwakker door worden.<Cite id="fda-2025-forzinity-approval,reid-thompson-2021-tazpower" />
+
+<InDetail title="Het molecuul, en hoe de Amerikaanse goedkeuring ging">
+
+<AuthorisedProducts />
+
+SS-31 is <Seq>D-Arg-Dmt-Lys-Phe-NH2</Seq>: 4 bouwstenen, waarvan 2 in het lab zijn veranderd. De eerste is het spiegelbeeld van arginine (de D-vorm). De tweede, Dmt, is tyrosine met 2 extra methylgroepen. De brutoformule van het vrije peptide is C32H49N9O5, de molecuulmassa <Q>639,8 g/mol</Q>.<Cite id="fda-label-forzinity-2025,pubchem-elamipretide" /> Het ontwerp wisselt ringvormige en positief geladen bouwstenen af. Daardoor glipt het cellen in.<Cite id="zhao-2004-ss31-mitochondria" />
+
+{/* residue-ok: world context */}
+De ontwikkelaar, Stealth BioTherapeutics, vroeg de FDA in januari 2024 om goedkeuring. Op 10 oktober 2024 stemde een adviescommissie van de FDA met 10 tegen 6 stemmen dat het werkt bij het syndroom van Barth. De commissie noemde daarbij wel een “aanzienlijke onzekerheid”.<Cite id="fda-crdac-2024-10-elamipretide-minutes" />
+
+{/* residue-ok: world context */}
+De FDA keurde het eerst niet goed: op 15 mei 2025 stuurde de FDA een brief zonder goedkeuring. Het bedrijf gaf in augustus een volledig antwoord, en op 19 september 2025 kwam de versnelde goedkeuring.<Cite id="fda-2025-forzinity-approval-letter" /> Een versnelde goedkeuring rust op een meting die “redelijkerwijs waarschijnlijk” een voordeel voorspelt. Hier is dat de kracht van de spier die de knie strekt. Het is geen bewijs dat patiënten zich beter voelen of beter kunnen functioneren.<Cite id="fda-2025-forzinity-approval" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Het hecht aan cardiolipine, een vet in de binnenwand van mitochondriën. Hoe dat patiënten helpt, is onduidelijk.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+De eerste 2 stappen komen uit studies met cellen, losse organen en ratten, vooral van de uitvinders.<Cite id="zhao-2004-ss31-mitochondria,birk-2013-ss31-cardiolipin" /> Bij het syndroom van Barth verandert een fout gen het cardiolipine zelf. Daarom lag deze ziekte voor de hand als doel.<Cite id="reid-thompson-2021-tazpower" /> Maar dat een molecuul aan het juiste vet bindt, laat niet zien dat patiënten sterker worden. De studies hieronder testen dat.
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Het bewijs is zwak en komt van een paar patiënten. Grotere studies bij andere ziekten vonden geen voordeel.</Lead>
+
+<KeyNumber title="In het enige gerandomiseerde deel werden de hoofddoelen niet gehaald" value="0 van 2" label="hoofddoelen verbeterd na 12 weken met het middel, vergeleken met 12 weken placebo" who="TAZPOWER deel 1: 12 mannelijke patiënten met het syndroom van Barth, cross-overstudie" source="reid-thompson-2021-tazpower" level="human-controlled" />
+
+<KeyNumber title="De kniekracht steeg later, zonder vergelijkingsgroep" value="+63 N" label="mediane stijging van de kniekracht tot week 168, vanaf 124 N aan het begin" who="Open vervolgstudie (open-label) van TAZPOWER: 8 patiënten met het syndroom van Barth" source="fda-label-forzinity-2025" level="human-limited" />
+
+<KeyNumber title="Bij een andere spierziekte hielp het niet" value="−3,2 m" label="verschil met placebo in de afstand die mensen in 6 minuten liepen, na 24 weken" who="MMPOWER-3: 218 volwassenen met primaire mitochondriale myopathie" source="karaa-2023-mmpower-3" level="human-controlled" />
+
+{/* residue-ok: world context */}
+De FDA gebruikte haar versnelde route. Die is bedoeld voor ernstige ziekten zonder goede behandeling. De FDA accepteerde daarbij een meting die een voordeel misschien voorspelt. Een nieuwe gerandomiseerde studie bij 48 patiënten begon in 2026. Die studie kreeg op 27 juli 2026 ook toestemming voor Nederland, maar zocht hier op 3 november 2026 nog geen deelnemers.<Cite id="fda-2025-forzinity-approval,ctgov-nct07531251,ctis-2025-523837-25-00,omon-nl-omon61412" />
+
+<InDetail title="Elke studie in één tabel">
+
+<StudyTable />
+
+Studies bij andere aandoeningen waren negatief. Een infuus van een uur tijdens het plaatsen van een stent (een buisje dat een kransslagader openhoudt) bij een hartaanval maakte de schade aan het hart niet kleiner. En 4 weken bij 71 mensen met hartfalen verbeterde het pompen van het hart niet.<Cite id="gibson-2016-embrace-stemi,butler-2020-progress-hf" /> Een fase 3-studie bij droge leeftijdsgebonden maculadegeneratie, een oogziekte, loopt nog. Die studie heeft plekken in 5 EU-landen en neemt geen nieuwe deelnemers meer aan.<Cite id="ctgov-nct06373731,ctis-2024-511482-11-00" />
+
+</InDetail>
+
+<InDetail title="Wie het onderzoek betaalde">
+
+Elk klinisch onderzoek dat we vonden, werd betaald door Stealth BioTherapeutics. In de studie bij het syndroom van Barth hielp het bedrijf ook met de opzet en de analyse van de gegevens.<Cite id="reid-thompson-2021-tazpower,karaa-2023-mmpower-3,pubmed-elamipretide-count-2026-10-23" /> Het dieronderzoek is breder: het meeste komt van andere groepen dan de uitvinders.<Cite id="pubmed-elamipretide-count-2026-10-23" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het in Nederland goedgekeurd?">Nee. Nederland en de EU hebben het niet goedgekeurd. De VS wel, op recept, sinds 2025.</Lead>
+
+<Compare title="Niet goedgekeurd in Nederland of de EU. Twee studies hebben er toestemming." detail="Status in Nederland en de Europese Unie, gecontroleerd op 27 oktober 2026.">
+
+| | Goedgekeurd als medicijn? | Studie met toestemming? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> Het register van het College ter Beoordeling van Geneesmiddelen (CBG) heeft geen product met elamipretide.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="yes" /> Een studie bij het syndroom van Barth kreeg op 27 juli 2026 toestemming. Op 3 november 2026 zocht die hier nog geen deelnemers.<Cite id="ctis-2025-523837-25-00,omon-nl-omon61412" /> |
+| Europese Unie | <Verdict is="no" /> Geen handelsvergunning voor de hele EU, en geen aanvraag in behandeling bij het Europees Geneesmiddelenbureau (EMA).<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> | <Verdict is="yes" /> Dezelfde studie heeft toestemming in Frankrijk, Ierland en Italië. Een studie bij een oogziekte loopt in 5 EU-landen, maar neemt geen nieuwe deelnemers meer aan.<Cite id="ctis-2025-523837-25-00,ctis-2024-511482-11-00,ctgov-nct06373731" /> |
+
+</Compare>
+
+In de sport is de status onduidelijk. Elamipretide staat niet met naam op de dopinglijst. Ben je sporter? Vraag het dan eerst aan de Dopingautoriteit.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,dopingautoriteit-geneesmiddelen-controleren" />
+
+<InDetail title="Hoe de Amerikaanse goedkeuring ging, en wat nog moet komen">
+
+{/* residue-ok: world context */}
+<TimeStrip title="De FDA zei in mei 2025 nog nee, in september ja. Bewijs dat het helpt, moet nog komen." detail="De Amerikaanse goedkeuring van Forzinity, van de aanvraag tot de verplichte bevestigende studie, en die studie in Nederland." min={2024} max={2030} step={1} axis="Jaar" source="fda-2025-forzinity-approval-letter,fda-drugsatfda-forzinity,ctgov-nct07531251,ctgov-nl-peptide-search-2026-10-27,ctis-2025-523837-25-00,omon-nl-omon61412" checked="2026-11-03" rows={[
+  { label: "Amerikaanse beoordeling tot het eerste antwoord (nog niet goedgekeurd)", spans: [{ from: "2024-01-29", to: "2025-05-15", text: "29 januari 2024 tot 15 mei 2025" }] },
+  { label: "Goedgekeurd, met een versnelde goedkeuring", spans: [{ from: "2025-09-19", to: "2026-11-03", text: "sinds 19 september 2025" }] },
+  { label: "Bevestigende studie (48 patiënten)", spans: [{ from: "2026-07-02", to: "2026-11-03", text: "werving sinds juli 2026" }, { from: "2026-11-03", to: "2029-09-30", text: "de uitkomst; hoofdresultaten gepland voor eind 2029", unknown: true }] },
+  { label: "Dezelfde studie in Nederland", spans: [{ from: "2026-07-27", to: "2026-11-03", text: "toestemming sinds 27 juli 2026; werving nog niet begonnen" }, { from: "2026-11-03", to: "2029-09-30", text: "of en wanneer de werving hier begint", unknown: true }] },
+]} />
+
+</InDetail>
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+{/* residue-ok: world context */}
+In de sport staat elamipretide niet met naam op de dopinglijst van 2026 of 2027, en ook niet in het monitoringprogramma. De groep S0 (“Niet erkende stoffen”) geldt alleen voor stoffen die geen enkele overheidsinstantie voor gezondheid heeft goedgekeurd, en de FDA heeft het nu goedgekeurd. Maar volgens het Wereld Anti-Doping Agentschap (WADA) kan een peptide zonder naam ook onder andere groepen vallen. Geen antidopingorganisatie heeft over elamipretide beslist. Ben je sporter? Vraag het dan aan de Dopingautoriteit.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,wada-2026-monitoring-program,wada-2027-monitoring-program,dopingautoriteit-vertaling-dopinglijst-2026,dopingautoriteit-geneesmiddelen-controleren" /> Zie ook [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="De Europese Unie en Nederland">
+
+- **Europese Unie.** Het EMA heeft geen product met elamipretide, en er lag in oktober 2026 geen aanvraag.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> Elamipretide is wel aangewezen als weesgeneesmiddel: in 2021 voor het syndroom van Barth, in 2022 voor een spierziekte waarbij de mitochondriën te weinig eigen DNA hebben. Dat helpt bij de ontwikkeling, maar het is geen goedkeuring als medicijn.<Cite id="ema-orphan-elamipretide-eu-3-21-2430" /> Twee studies hebben toestemming in EU-landen. Een fase 3-studie bij droge maculadegeneratie loopt in Duitsland, Spanje, Italië, Tsjechië en Hongarije, en neemt geen nieuwe deelnemers meer aan. Een fase 3b/4-studie bij het syndroom van Barth heeft toestemming in Nederland, Frankrijk, Ierland en Italië. Op 3 november 2026 zocht ze in die landen nog geen deelnemers.<Cite id="ctis-2024-511482-11-00,ctgov-nct06373731,ctis-2025-523837-25-00" /> Of een ander EU-land het zelf goedkeurde, hebben we niet nagekeken.
+- **Nederland.** Het register van het CBG heeft geen product met elamipretide of Forzinity.<Cite id="cbg-gib-search-status-2026-10-27" /> Zonder handelsvergunning mag niemand het in Nederland verkopen, afleveren of invoeren. Er zijn smalle uitzonderingen, zoals klinisch onderzoek en de artsenverklaring.<Cite id="nl-gmw-art-40-handelsvergunning" /> De studie bij het syndroom van Barth (4TAZPower) kreeg op 27 juli 2026 toestemming voor Nederland, met één plek in Nederland en 5 geplande deelnemers hier. Op 3 november 2026 was het zoeken naar deelnemers nog niet begonnen. Of en wanneer dat hier begint, is niet bekend.<Cite id="ctis-2025-523837-25-00,omon-nl-omon61412" /> Drie eerdere studies met elamipretide hadden een plek in Nederland. Ze zijn allemaal afgerond, de laatste in december 2024.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctgov-nct05162768" /> Er is in Nederland geen compassionate-useprogramma voor elamipretide (gecontroleerd op 27 oktober 2026).<Cite id="cbg-compassionate-use-list" /> Het staat niet op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" />
+
+Meer: [de Nederlandse wet](/nl/legal/nl/), [de Europese regels](/nl/legal/eu/) en [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Een rode, pijnlijke huid op de prikplek komt heel vaak voor. Sommige mensen kregen een ernstige allergische reactie.</Lead>
+
+<IconArray title="In de studie bij het syndroom van Barth kwamen huidreacties op de prikplek heel vaak voor." detail="Van 12 patiënten die elk 12 weken het middel en 12 weken placebo kregen, weergegeven als mensen op 100. Heel kleine aantallen." a="Elamipretide" b="Placebo" source="fda-label-forzinity-2025" level="human-controlled" rows={[
+  { label: "Roodheid op de prikplek", a: 100, b: 25 },
+  { label: "Pijn op de prikplek", a: 75, b: 42 },
+  { label: "Harde huid op de prikplek", a: 67, b: 17 },
+  { label: "Jeuk op de prikplek", a: 67, b: 17 },
+]} />
+
+<InDetail title="Waar de Amerikaanse productinformatie voor waarschuwt">
+
+- **Allergische reacties.** Er zijn ernstige reacties gemeld waarvoor spoedbehandeling nodig was. Mensen kregen uitslag, bultjes, huid die op eczeem leek, of moesten hoesten. Dat kon minuten tot maanden na de start beginnen. Wie een ernstige reactie kreeg, mag het niet meer gebruiken.<Cite id="fda-label-forzinity-2025" />
+- **Witte bloedcellen.** Het aantal eosinofielen steeg vaak, met een piek rond dag 90, zonder klachten. Eosinofielen zijn witte bloedcellen die meedoen bij allergie.<Cite id="fda-label-forzinity-2025" />
+- **Nieren.** Het lichaam scheidt het middel uit via de urine. Werken de nieren slecht? Dan zit er meer van in het bloed. De productinformatie verlaagt de dosis bij een ernstige nierziekte.<Cite id="fda-label-forzinity-2025" />
+- **Pasgeboren baby’s.** Het conserveermiddel, benzylalcohol, kan schadelijk zijn voor pasgeborenen. Het medicijn is niet goedgekeurd voor hen.<Cite id="fda-label-forzinity-2025" />
+- **Wat onbekend is.** Toen het werd goedgekeurd, waren er nog geen kankerstudies bij dieren gedaan; de FDA eist die nu.<Cite id="fda-label-forzinity-2025,fda-2025-forzinity-approval-letter" /> Er zijn geen gegevens over zwangerschap. Het langste gebruik in de studies was 192 weken, bij 3 patiënten.<Cite id="fda-label-forzinity-2025" /> {/* residue-ok: world context */}
+
+Een product met “alleen voor onderzoek” op het etiket heeft risico’s die de productinformatie niet dekt. Niemand weet wat erin zit, hoe sterk het is en of het steriel is.<Cite id="fda-warning-letters-index" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe verklein ik het risico?">Het Amerikaanse medicijn heeft de minste onzekerheden. Controleer elk ander product eerst, en weet wanneer je stopt.</Lead>
+
+{/* residue-ok: world context */}
+<ProductCheck extra="Een flacon met “SS-31” en “voor onderzoek” op het etiket is niet het Amerikaanse medicijn. De FDA waarschuwde verkopers van zulke flacons." extraSources="fda-warning-letters-index,fda-label-forzinity-2025" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **Jeukende bulten (netelroos), een dik gezicht of een dikke keel, of moeite met ademen:** mogelijk een ernstige allergische reactie. Wordt je tong of keel dik, of kun je moeilijk ademen? Bel dan direct 112. Alleen jeukende bulten of uitslag? Stop met het middel en bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **De prikplek wordt warm, rood, dik of pijnlijk:** mogelijk een infectie. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Koorts of rillingen, of je voelt je heel ziek na een injectie:** misschien zijn er bacteriën in je bloed gekomen. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost. Word je suf of verward, of adem je heel snel? Dan kan het sepsis (bloedvergiftiging) zijn: je lichaam reageert zo sterk op een infectie dat organen beschadigd raken. Bel direct 112.
+
+Is het ernstig? Bel 112.
+</Callout>
+
+<Cite id="fda-label-forzinity-2025,nhs-anaphylaxis,nhs-cellulitis,nhs-sepsis,thuisarts-dikke-ogen-lippen,thuisarts-wondroos,thuisarts-sepsis,thuisarts-spoed-wie-bellen" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Zinvolle controles, en wie voorzichtig moet zijn">
+
+Een arts kan met je bekijken welke controles bij jou passen (zie [praten met je arts](/nl/talking-to-your-doctor/)). Vertel je arts eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen.
+
+- **Nierfunctie**, omdat het middel het lichaam via de nieren verlaat.<Cite id="fda-label-forzinity-2025" />
+- **Bloedbeeld**, omdat het aantal eosinofielen vaak steeg.<Cite id="fda-label-forzinity-2025" />
+- **Elke uitslag op de huid die groter wordt of niet weggaat**, omdat allergische reacties ook maanden later kunnen beginnen.<Cite id="fda-label-forzinity-2025" />
+
+Er zijn geen gegevens over zwangerschap of borstvoeding.<Cite id="fda-label-forzinity-2025" /> Over injecteren: zie [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+In Nederland en de EU is elamipretide niet goedgekeurd.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> Een arts kan het dus niet op de gewone manier voorschrijven. Er zijn een paar smalle legale wegen, allemaal via een arts:
+
+- **Klinisch onderzoek.** De studie bij het syndroom van Barth heeft toestemming in Nederland. Ze is voor jongens en mannen van 5 tot 55 jaar bij wie de diagnose met een gentest is bevestigd. Op 3 november 2026 zocht de studie hier nog geen deelnemers, en of en wanneer dat begint, is niet bekend. Je arts of specialist kan het onderzoeksteam vragen of de studie bij je past.<Cite id="ctis-2025-523837-25-00,omon-nl-omon61412,ctgov-nct07531251" /> Zie [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek).
+- **Artsenverklaring.** Voor een medicijn dat in een ander land is goedgekeurd, maar hier niet, bestaat een uitzondering voor één patiënt. Je arts verklaart dan dat goedgekeurde medicijnen je om medische redenen niet kunnen helpen. Een apotheek vraagt de Inspectie Gezondheidszorg en Jeugd (IGJ) om een ontheffing. De IGJ is terughoudend en kan nee zeggen.<Cite id="igj-qa-zonder-handelsvergunning,igj-leveren-op-artsenverklaring,nl-regeling-gnw-art-3-17" /> Of de IGJ dat ooit voor elamipretide toestond, weten we niet. Zie [artsenverklaring](/nl/legal-routes/#artsenverklaring).
+- **Compassionate use.** Op de lijst van het CBG staat geen programma voor elamipretide (gecontroleerd op 27 oktober 2026).<Cite id="cbg-compassionate-use-list" /> Zie [compassionate use](/nl/legal-routes/#compassionate-use).
+- **Zelf invoeren** mag niet. Voor een medicijn zonder Nederlandse handelsvergunning geldt geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt elke weg uit, ook [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label) en [een magistrale bereiding](/nl/legal-routes/#magistrale-bereiding).
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

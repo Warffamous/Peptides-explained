@@ -1,0 +1,134 @@
+{
+  "title": "Bewijsprofiel",
+  "subtitle": "Vier aparte vragen. Geen optelsom.",
+  "why": "We tellen deze vier nooit bij elkaar op. Een stof kan veel dieronderzoek hebben uit één lab, en helemaal geen gegevens bij mensen. Dat is een heel specifieke situatie. Eén getal zou die verbergen.",
+  "rubricLink": "Zo beoordelen we het bewijs",
+  "whyFold": "Waarom deze beoordeling: de reden voor elke stap",
+  "axisOf": "{value}: stap {step} van {max}",
+  "axes": {
+    "human_clinical": {
+      "name": "Onderzoek bij mensen",
+      "question": "Hoe ver is het getest bij mensen?",
+      "values": {
+        "none": "Niets gepubliceerd",
+        "case-reports": "Alleen casusbeschrijvingen",
+        "phase-1": "Fase 1 (veiligheid, klein)",
+        "phase-2": "Fase 2 (dosis en eerste effect)",
+        "phase-3": "Fase 3 (grote studies met controlegroep)",
+        "authorised": "Goedgekeurd door een medicijnautoriteit"
+      },
+      "explain": {
+        "none": "Geen gepubliceerde studie bij mensen.",
+        "case-reports": "Alleen losse gevallen of kleine reeksen zonder controlegroep. Die kunnen vragen oproepen, maar ze niet beantwoorden.",
+        "phase-1": "Kleine studies, meestal bij gezonde vrijwilligers. Ze gaan vooral over veiligheid en over wat het lichaam met de stof doet.",
+        "phase-2": "Studies bij patiënten om de dosis te vinden en eerste tekenen van effect te zoeken, meestal met een controlegroep.",
+        "phase-3": "Grote gerandomiseerde studies met een controlegroep (RCT’s). Ze testen of het werkt en hoe vaak het schade doet.",
+        "authorised": "Een medicijnautoriteit heeft alle gegevens beoordeeld en het goedgekeurd voor bepaald gebruik."
+      }
+    },
+    "preclinical_volume": {
+      "name": "Lab- en dieronderzoek",
+      "question": "Hoeveel onderzoek in het lab en bij dieren is er?",
+      "values": {
+        "minimal": "Weinig",
+        "moderate": "Redelijk veel",
+        "extensive": "Veel"
+      },
+      "explain": {
+        "minimal": "Minder dan ongeveer 10 gepubliceerde oorspronkelijke studies met cellen of dieren.",
+        "moderate": "Ongeveer 10 tot 50 gepubliceerde oorspronkelijke studies.",
+        "extensive": "Meer dan ongeveer 50 gepubliceerde oorspronkelijke studies."
+      }
+    },
+    "independence": {
+      "name": "Onafhankelijkheid",
+      "question": "Hoeveel onafhankelijke groepen deden het onderzoek?",
+      "values": {
+        "single-group-dominant": "Eén groep overheerst",
+        "few-groups": "Een paar groepen",
+        "broadly-replicated": "Door veel groepen herhaald"
+      },
+      "explain": {
+        "single-group-dominant": "De meeste studies komen van één onderzoeksgroep. Maakt die groep een fout? Dan komt die fout vaak terug in de volgende studies, en ontdekt niemand anders hem.",
+        "few-groups": "Het meeste werk kwam van 2 tot 4 groepen.",
+        "broadly-replicated": "Veel onafhankelijke groepen, en andere groepen hebben de belangrijkste resultaten herhaald."
+      }
+    },
+    "safety": {
+      "name": "Kennis van de risico’s",
+      "question": "Hoe goed kennen we de schade bij mensen?",
+      "values": {
+        "uncharacterised": "Niet in kaart gebracht",
+        "partial": "Deels bekend",
+        "well-characterised": "Goed bekend"
+      },
+      "explain": {
+        "uncharacterised": "Geen systematische gegevens over de veiligheid bij mensen. Dat niemand schade heeft gemeld, bewijst niet dat het veilig is.",
+        "partial": "Enkele gegevens over gebruik bij mensen, kort of in kleine groepen. Zeldzame schade en schade op lange termijn zijn onbekend.",
+        "well-characterised": "Grote studies en doorlopende bewaking na toelating. Over zeldzame schade leren we nog steeds bij."
+      }
+    }
+  },
+  "claim": {
+    "label": "Bewijs",
+    "levels": {
+      "hypothesis": {
+        "short": "Hypothese",
+        "long": "Voorgesteld, in geen enkel experiment aangetoond"
+      },
+      "in-vitro": {
+        "short": "Cellen",
+        "long": "Aangetoond in cellen of weefsel in het lab"
+      },
+      "animal": {
+        "short": "Dieren",
+        "long": "Aangetoond bij dieren"
+      },
+      "human-limited": {
+        "short": "Mensen, beperkt",
+        "long": "Gezien bij mensen in casusbeschrijvingen of kleine studies zonder vergelijking"
+      },
+      "human-controlled": {
+        "short": "Mensen, met controlegroep",
+        "long": "Aangetoond in onderzoek bij mensen met een controlegroep"
+      },
+      "established": {
+        "short": "Vastgesteld",
+        "long": "Vastgesteld in grote studies en bij gebruik als goedgekeurd medicijn"
+      }
+    }
+  },
+  "mechanismLevels": {
+    "hypothesis": {
+      "short": "Verondersteld",
+      "long": "Voorgesteld, niet aangetoond"
+    },
+    "in-vitro": {
+      "short": "In cellen",
+      "long": "Aangetoond in cellen of weefsel in het lab"
+    },
+    "animal": {
+      "short": "Bij dieren",
+      "long": "Aangetoond bij dieren"
+    },
+    "human": {
+      "short": "Bij mensen",
+      "long": "Aangetoond bij mensen"
+    }
+  },
+  "mechanismKinds": {
+    "binding": "Binding",
+    "signal": "Signaal in de cel",
+    "cellular": "Reactie van de cel",
+    "tissue": "Reactie van het weefsel",
+    "effect": "Effect op het lichaam"
+  },
+  "matrix": {
+    "caption": "Bewijsprofielen van alle stoffen op deze site",
+    "compound": "Stof",
+    "sortBy": "Sorteer op",
+    "sortName": "Naam",
+    "note": "Je sorteert de stoffen steeds op één vraag tegelijk. Dat is geen ranglijst: we combineren de vragen bewust niet."
+  },
+  "stepOf": "stap {step} van {max}"
+}

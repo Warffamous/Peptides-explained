@@ -1,0 +1,300 @@
+---
+slug: semax
+title: "Semax"
+description: "Semax is een peptide van 7 aminozuren, in Rusland toegelaten als neusdruppels, niet in Nederland of de EU. Wat het is, het onderzoek, de status en de risico’s." # residue-ok: world context
+tldr:
+  - q: "Waar wordt het voor gebruikt?"
+    a: "In de VS verkocht met claims over geheugen, angst, beroerte en meer. In Rusland een medicijn." # residue-ok: world context
+  - q: "Werkt het?"
+    a: "Onbekend. Studies bij mensen zijn klein en moeilijk te controleren. De Amerikaanse medicijnautoriteit vond te weinig bewijs."
+  - q: "Wat zegt de wet in Nederland?"
+    a: "Verkopen en invoeren mag hier niet. Een Amerikaanse stemming in juli 2026 was alleen een advies."
+  - q: "Is het riskant naast medicijnen?"
+    a: "Misschien met bloedverdunners en stimulerende middelen, zoals ADHD-medicijnen. Bij dieren stolde het bloed minder en werkte amfetamine sterker."
+lede: "Neusdruppels die in Rusland als medicijn zijn toegelaten. In Nederland en de EU niet goedgekeurd. Weinig onderzocht." # residue-ok: world context
+glance:
+  main_risk: "Weinig gegevens over veiligheid. Producten kunnen bacteriën of een verkeerde stof bevatten."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's stop-now list (harm-reduction section,
+  # <Callout id="stop-now">): the FDA review raises a bleeding question (anticoagulant effects in rats) and reports
+  # one consumer report of eye pain and burning after nasal drops. On English the allergy sign also cites the NHS
+  # anaphylaxis page; the Dutch page cites Thuisarts instead (research/nl-notes/stubs-a2.md).
+  stop_signs:
+    - icon: sign-allergic
+      text: "Opgezwollen gezicht of keel, of moeilijk ademen"
+      sources: [thuisarts-dikke-ogen-lippen, fda-pcac-2026-semax-briefing]
+    - icon: sign-bleeding
+      text: "Bloedingen of blauwe plekken zonder duidelijke reden"
+      sources: [fda-pcac-2026-semax-briefing]
+    - icon: sign-vision
+      text: "Pijn of branden in je ogen na neusdruppels"
+      sources: [fda-pcac-2026-semax-briefing]
+  facts:
+    - label: "Gemaakt van"
+      value: "7 aminozuren: een stukje ACTH plus Pro-Gly-Pro"
+      sources: [pubchem-semax, fda-pcac-2026-semax-briefing]
+    - label: "Toegelaten in"
+      value: "Rusland, als neusdruppels" # residue-ok: world context
+      sources: [fda-pcac-2026-semax-briefing, deigin-2022-russian-peptides]
+    - label: "Ontwikkeld bij"
+      value: "Instituut voor Moleculaire Genetica, Moskou"
+      sources: [deigin-2022-russian-peptides]
+    - label: "Studies bij mensen"
+      value: "Klein, vooral in het Russisch, alleen neusdruppels"
+      sources: [fda-pcac-2026-semax-briefing]
+grade_rationale:
+  human_clinical: "Fase 2 volgens onze beoordeling. Semax is in Rusland als medicijn toegelaten. Normaal zou onze beoordeling dat “goedgekeurd” noemen. Dat doen we niet, omdat de studies achter die toelating niet zo zijn gepubliceerd dat beoordelaars buiten Rusland ze kunnen controleren: de Amerikaanse medicijnautoriteit FDA kon de Russischtalige studies naar beroerte niet beoordelen. Het gepubliceerde onderzoek bij mensen bestaat uit kleine studies bij patiënten met een controlegroep, zoals 110 mensen na een beroerte, zonder duidelijke loting of blindering." # residue-ok: world context
+  preclinical_volume: "Veel. Op 22 oktober 2026 stonden in PubMed 197 publicaties over Semax die geen overzichtsartikel of commentaar zijn. De meeste zijn studies bij dieren en in cellen."
+  independence: "Een paar groepen. Bij ongeveer 115 van die 197 publicaties zijn auteurs van de ontwikkelaars betrokken: van het Instituut voor Moleculaire Genetica en de Staatsuniversiteit van Moskou. De meeste andere komen van andere instituten in Moskou. Er zijn weinig studies van buiten Rusland, vooral uit Italië, over hoe Semax koper bindt."
+  safety: "Niet in kaart gebracht. De FDA vond geen farmacokinetisch onderzoek bij mensen en geen gegevens over de veiligheid van injecties. In studies bij ongeveer 550 tot 570 mensen, onder wie 451 kinderen, meldden de onderzoekers meestal niets over bijwerkingen. Standaardonderzoek naar giftigheid bij dieren werd niet gevonden." # residue-ok: evidence
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Bindt aan plekken in hersenweefsel van ratten; de receptor is onbekend"
+    detail: "Semax dat de onderzoekers radioactief hadden gemerkt, bond specifiek aan membranen uit hersenen van ratten. Maar de receptor zelf is niet gevonden. Volgens de FDA is de werking slecht begrepen." # residue-ok: evidence
+  - kind: cellular
+    level: animal
+    title: "Meer BDNF, een groeifactor voor zenuwcellen"
+    detail: "Eén dosis in de neus verhoogde het BDNF-eiwit in de hippocampus van ratten tot 1,4 keer zoveel. De hippocampus is een deel van de hersenen voor het geheugen. Gezien door de groep van de ontwikkelaars."
+  - kind: tissue
+    level: animal
+    title: "Minder hersenschade na een opgewekte beroerte bij ratten"
+    detail: "Bij ratten was het beschadigde deel van de hersenen ongeveer 20% kleiner met Semax. Het bloed van de ratten stolde ook minder. Dat kan helpen bij een beroerte, maar het roept een vraag op over bloedingen."
+  - kind: effect
+    level: hypothesis
+    title: "Beter herstel bij mensen: niet aangetoond"
+    detail: "Kleine Russische studies bij mensen met een beroerte melden sneller herstel. Maar die studies hadden geen duidelijke loting of blindering, en de FDA vond het bewijs onvoldoende." # residue-ok: evidence
+studies:
+  dolotov-2006-bdnf:
+    finding: "Eén dosis in de neus verhoogde het BDNF-eiwit in de hippocampus van ratten tot 1,4 keer zoveel, met meer activiteit van zijn receptor. De ratten leerden ook een vermijdingstaak beter."
+    limitation: "Ratten; het instituut van de ontwikkelaars; het aantal dieren staat niet in de samenvatting."
+  gusev-1997-stroke:
+    finding: "In de eerste dagen na een beroerte kregen 30 mensen Semax naast de gewone zorg. Vergeleken met 80 vergelijkbare mensen met alleen de gewone zorg melden de auteurs iets sneller herstel van bewegen en andere functies."
+    limitation: "In het Russisch; niet beschreven hoe patiënten werden ingedeeld; geen blindering gemeld; een ontwikkelaar van Semax was auteur."
+  gusev-2018-stroke:
+    finding: "Bij 110 mensen in revalidatie na een beroerte, met of zonder Semax, steeg BDNF in het bloed met Semax. De scores voor dagelijkse bezigheden verbeterden sneller."
+    limitation: "In het Russisch; indeling en blindering staan niet in de samenvatting; de FDA beoordeelde de studie niet, omdat er geen Engelse tekst was." # residue-ok: evidence
+  koroleva-1996-pain:
+    finding: "Eén dosis in de neus bij 12 mensen met migraine en 25 met zenuwpijn in het gezicht. Bij 4 van de 12 stopte de hoofdpijn, bij de andere 8 werd die minder. Bij typische trigeminusneuralgie veranderde niets. Bij 9 mensen met zenuwpijn in het gebit stopte de pijn bij 6 en werd die minder bij 3."
+    limitation: "Geen controlegroep, geen blindering en onduidelijke meetschalen (beoordeling door de FDA); één enkele dosis." # residue-ok: evidence
+  eremin-2004-amphetamine:
+    finding: "Gegeven vóór amfetamine verhoogde Semax de piek van dopamine in de hersenen van ratten. Samen met amfetamine maakte het muizen actiever dan amfetamine alleen (261% tegen 182% van de normale activiteit)."
+    limitation: "Ratten en muizen; één lab; in het Russisch met een Engelse samenvatting; zegt niets direct over misbruik bij mensen."
+  vanhee-2020-seized:
+    finding: "Twee onbekende producten die de autoriteiten in 2017 en 2018 in beslag namen, bleken Selank en Semax te bevatten. Beide peptiden werden vrij online verkocht, als poeder voor injectie of als neusspray."
+    limitation: "Twee producten; laat zien wat er op de illegale markt is, niet wat er meestal in producten zit."
+regulatory_notes:
+  EU: "Niet goedgekeurd in de EU: geen handelsvergunning, geen aanvraag en geen aanwijzing als weesgeneesmiddel in de gegevens van het EMA (gecontroleerd op 27 oktober 2026)."
+  NL: "Niet goedgekeurd in Nederland: geen product in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Een geneesmiddel zonder handelsvergunning leveren is verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Niet met naam op de dopinglijst. Het is in Rusland als medicijn toegelaten, dus het is onduidelijk of S0 geldt. Vraag het de Dopingautoriteit." # residue-ok: world context
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+{/* residue-ok: world context */}
+<Lead question="Wat is Semax?">Een keten van 7 aminozuren, gemaakt in een lab. In Rusland is het een medicijn.</Lead>
+
+{/* residue-ok: world context */}
+<Compare title="Semax is in Rusland een medicijn. Nederland en de EU hebben het niet goedgekeurd." detail="Wat bekend is over de stof die onder deze naam in omloop is, gecontroleerd op 22 en 27 oktober 2026.">
+
+| | Semax |
+|---|---|
+| Gemaakt in een lab? | <Verdict is="yes" /> 7 aminozuren: een stukje van het hormoon ACTH plus Pro-Gly-Pro.<Cite id="pubchem-semax,fda-pcac-2026-semax-briefing" /> |
+| Ergens een toegelaten medicijn? | <Verdict is="yes" /> In Rusland, als neusdruppels.<Cite id="fda-pcac-2026-semax-briefing,deigin-2022-russian-peptides" /> {/* residue-ok: world context */} |
+| Goedgekeurd in Nederland of de EU? | <Verdict is="no" /> Het College ter Beoordeling van Geneesmiddelen (CBG) en het Europees Geneesmiddelenbureau (EMA) noemen geen product.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> |
+| Goed onderzocht op veiligheid? | <Verdict is="no" /> De Amerikaanse medicijnautoriteit FDA vond te weinig gegevens om de veiligheid te beschrijven.<Cite id="fda-pcac-2026-semax-briefing" /> {/* residue-ok: evidence */} |
+
+</Compare>
+
+{/* residue-ok: world context */}
+In de VS wordt Semax als neusspray en als injectie verkocht, door klinieken en online, voor geheugen, angst, beroerte en meer.<Cite id="fda-pcac-2026-semax-briefing" /> Een toelating in Rusland zegt niets over producten die elders onder die naam worden verkocht.
+
+<InDetail title="Het molecuul, en wat een toelating in Rusland betekent">
+
+{/* residue-ok: evidence */}
+Semax is <Seq>Met-Glu-His-Phe-Pro-Gly-Pro</Seq>, brutoformule C37H51N9O10S, molecuulmassa <Q>813,9 g/mol</Q>.<Cite id="pubchem-semax" /> De eerste 4 aminozuren zijn gelijk aan een deel van ACTH, een hormoon uit de hypofyse. Het einde Pro-Gly-Pro zou het molecuul beschermen tegen enzymen. Semax heeft niet de hormoonwerking van ACTH.<Cite id="fda-pcac-2026-semax-briefing" /> Het is gemaakt bij het Instituut voor Moleculaire Genetica van de Russische Academie van Wetenschappen.<Cite id="deigin-2022-russian-peptides" />
+
+{/* residue-ok: world context */}
+Een toelating in Rusland betekent dat het product daar verkocht mag worden. Het is geen beoordeling door het CBG of het EMA. En het maakt Semax in Nederland niet legaal om als medicijn te leveren: hier telt alleen een handelsvergunning van de EU of van het CBG.<Cite id="nl-gmw-art-40-handelsvergunning" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Dat is niet goed bekend. Bij ratten verhoogde het een groeifactor voor zenuwcellen.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+Radioactief gemerkt Semax bond aan membranen uit hersenen van ratten, en één dosis in de neus verhoogde BDNF in de hersenen van ratten. Beide resultaten komen van het instituut van de ontwikkelaars.<Cite id="dolotov-2006-semax-binding,dolotov-2006-semax-bdnf" />
+
+{/* residue-ok: evidence */}
+De FDA vat het onderzoek bij ratten met een beroerte en de effecten op de bloedstolling samen. Ze schrijft dat de meeste studies één dosis gebruikten, en dat de werking slecht begrepen is.<Cite id="fda-pcac-2026-semax-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Onbekend. Er zijn veel dierstudies. Studies bij mensen zijn klein en moeilijk te controleren.</Lead>
+
+<KeyNumber title="De grootste studie naar beroerte was klein, zonder duidelijke loting" value="110" label="mensen na een beroerte, met of zonder Semax" who="Gusev 2018: patiënten in revalidatie in Moskou, artikel in het Russisch; indeling en blindering niet vermeld" source="gusev-2018-semax-stroke" level="human-limited" />
+
+{/* residue-ok: evidence */}
+<KeyNumber title="In een studie naar migraine stopte de hoofdpijn bij de meeste mensen niet" value="4 van de 12" label="mensen met migraine bij wie de hoofdpijn na één dosis stopte; de andere 8 voelden minder pijn" who="Koroleva 1996: één dosis in de neus, geen controlegroep (beoordeling door de FDA)" source="fda-pcac-2026-semax-briefing,koroleva-1996-semax-analgesia" level="human-limited" />
+
+{/* residue-ok: evidence */}
+De FDA concludeerde dat er niet genoeg bewijs is dat Semax werkt bij een beroerte, migraine of zenuwpijn in het gezicht.<Cite id="fda-pcac-2026-semax-briefing" />
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+{/* residue-ok: evidence */}
+De meeste studies naar beroerte zijn in het Russisch. De FDA beoordeelde ze niet, omdat er geen Engelse tekst was.<Cite id="fda-pcac-2026-semax-briefing,gusev-1997-semax-stroke,gusev-2018-semax-stroke" /> Het meeste onderzoek komt van instituten in Moskou die met de ontwikkelaars verbonden zijn.<Cite id="pubmed-semax-selank-count-2026-10-22" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is niet goedgekeurd in Nederland of de EU. In de sport is de status onduidelijk.</Lead>
+
+<Compare title="In Nederland en de EU geen goedgekeurd medicijn. De Amerikaanse stemming van 2026 veranderde dat niet." detail="Status in Nederland en de Europese Unie, gecontroleerd op 27 oktober 2026.">
+
+| | Goedgekeurd als medicijn? | Legaal te leveren als medicijn? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> Het CBG noemt geen product met Semax.<Cite id="cbg-gib-search-status-2026-10-27,cbg-geneesmiddeleninformatiebank" /> | <Verdict is="no" /> Zonder handelsvergunning mag niemand het als geneesmiddel verkopen, leveren of invoeren, op een paar beperkte uitzonderingen na. Hier telt alleen een handelsvergunning van de EU of van het CBG.<Cite id="nl-gmw-art-40-handelsvergunning" /> |
+| Europese Unie | <Verdict is="no" /> In de gegevens van het EMA staat geen handelsvergunning, geen aanvraag en geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> | <Verdict is="no" /> In elk EU-land mag een medicijn alleen op de markt met een handelsvergunning van dat land of van de EU. Een toelating buiten de EU telt niet.<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+{/* residue-ok: world context */}
+In de sport is de status onduidelijk. Semax staat niet met naam op de dopinglijst. Omdat het in Rusland als medicijn is toegelaten, geldt de vangnetregel S0 misschien niet. Ben je sporter? Vraag het dan eerst aan de Dopingautoriteit.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-2027-list-explanatory-note,fda-pcac-2026-semax-briefing,dopingautoriteit-geneesmiddelen-controleren" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De statussen in Nederland en de EU zijn gecontroleerd op 27 oktober 2026, de sport op 22 oktober 2026.
+
+{/* residue-ok: world context */}
+De FDA had Semax in categorie 2 gezet, voor stoffen die mogelijk grote risico's voor de veiligheid geven. Later zijn de voordrachten voor bereiding door Amerikaanse apotheken ingetrokken.<Cite id="fda-category-2-safety-risks" />
+
+{/* residue-ok: world context */}
+In de sport verbiedt S0 ("Niet erkende stoffen") stoffen die geen overheidsinstantie voor gezondheid heeft goedgekeurd. Semax is in Rusland toegelaten, dus S0 geldt misschien niet. Volgens het Wereld Anti-Doping Agentschap (WADA) kan een peptide dat niet met naam op de lijst staat, toch onder een andere groep verboden zijn.<Cite id="wada-2026-list-en,wada-2027-list-explanatory-note,dopingautoriteit-vertaling-dopinglijst-2026" /> De rij voor de sport in de tabel is geen uitspraak. Alleen een antidopingorganisatie kan die geven; in Nederland is dat de Dopingautoriteit. Meer: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de Europese Unie">
+
+- **Nederland.** De Geneesmiddeleninformatiebank van het CBG noemt geen product met Semax.<Cite id="cbg-gib-search-status-2026-10-27" /> Zonder handelsvergunning mag niemand Semax als geneesmiddel verkopen, leveren, invoeren of op een andere manier Nederland binnenbrengen.<Cite id="nl-gmw-art-40-handelsvergunning" /> Ook een product dat als voedingssupplement wordt aangeboden, kan volgens de wet een geneesmiddel zijn: door zijn werking, of door de manier waarop het wordt gepresenteerd. Dan geldt de Geneesmiddelenwet, schrijft de Nederlandse Voedsel- en Warenautoriteit (NVWA).<Cite id="nvwa-verbod-medische-claims" /> Semax staat niet op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" />
+- **Europese Unie.** In de gegevens van het EMA staat voor Semax geen handelsvergunning, geen lopende aanvraag en geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" />
+- **Toezicht.** De Douane controleert post en pakketten op illegale medicijnen. Ze schrijft dat naast afslankmiddelen ook andere peptiden populair zijn. Volgens de Douane zijn dat experimentele middelen: hun werking is vaak onduidelijk, en de risico's en de effecten op lange termijn zijn onbekend.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" />
+
+Meer: [de wet in Nederland](/nl/legal/nl/), [wat dat voor jou betekent](/nl/legal/nl/#wat-dit-voor-jou-betekent), [de regels van de EU](/nl/legal/eu/) en [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+<InDetail title="De Amerikaanse stemming van juli 2026, punt voor punt">
+
+- Op 23 juli 2026 stemde de adviescommissie van de FDA voor bereidingen door apotheken (Pharmacy Compounding Advisory Committee, PCAC) met 8 stemmen voor, 6 tegen en 1 onthouding. Ze adviseerde om BPC-157 op de Amerikaanse 503A-lijst te zetten, de lijst van grondstoffen die Amerikaanse apotheken voor eigen bereidingen mogen gebruiken. De aantallen zijn zoals gemeld vanuit de openbare vergadering.<Cite id="fda-pcac-2026-07-meeting,fda-pcac-2026-questions" /> {/* residue-ok: PCAC framing */}
+- De commissie besprak 7 peptiden, ook Semax. De FDA beoordeelde Semax voor slechte doorbloeding van de hersenen, migraine en zenuwpijn in het gezicht.<Cite id="fda-pcac-2026-07-meeting,fr-2026-07361-pcac-notice" /> Zoals gemeld vanuit de vergadering adviseerde de commissie er 6: BPC-157, KPV, TB-500, MOTS-c, Semax en epitalon. Emideltide (ook DSIP genoemd) adviseerde ze niet. De FDA vroeg om aparte stemmingen over de vrije base en het acetaatzout van elk peptide.<Cite id="fda-pcac-2026-questions" /> Op 3 november 2026 stond er op de pagina van de FDA nog geen verslag. Daarom staan de aantallen en de uitkomst hier zoals gemeld vanuit de openbare vergadering.<Cite id="fda-pcac-2026-07-meeting" /> {/* residue-ok: PCAC framing */}
+- De stemming is alleen een advies, niet bindend, en tegen het advies van de eigen medewerkers van de FDA in. In hun stukken voor de vergadering raadden ze af om Semax op de lijst te zetten.<Cite id="fda-pcac-2026-briefing-intro" /> {/* residue-ok: PCAC framing */}
+- Semax staat nog niet op de 503A-lijst. Formeel mogen Amerikaanse apotheken het pas bereiden als de FDA het advies overneemt en een formele regel (rulemaking) afrondt. Op 3 november 2026 had de FDA nog geen regel voorgesteld.<Cite id="fda-503a-bulks-page,federalregister-503a-search-2026-11-03" /> {/* residue-ok: PCAC framing */}
+- Op 30 oktober 2026 publiceerde het Amerikaanse ministerie van Volksgezondheid (HHS) een ontwerp voor tijdelijk beleid, dat niet bindend is. HHS is niet van plan op te treden als een Amerikaanse apotheek Semax bereidt, zolang de formele regel ontbreekt. Dat geldt alleen onder strenge voorwaarden, zoals een recept voor een bepaalde patiënt en een geregistreerde fabrikant.<Cite id="fr-2026-22192-hhs-peptide-enforcement-discretion,hhs-2026-503a-peptide-policy" /> Voor Nederland en de EU verandert dit niets. {/* residue-ok: PCAC framing */}
+- Geen van deze peptiden is een goedgekeurd medicijn in Nederland of de EU. Semax is wel in Rusland als medicijn toegelaten, zoals de FDA zelf in haar stukken schrijft. Een plaats op de 503A-lijst zou Amerikaanse apotheken toestaan om het op recept te bereiden. Dat is geen handelsvergunning, en het zegt niets over de werking. Een Amerikaanse lijst verandert niets buiten de VS.<Cite id="fda-pcac-2026-semax-briefing,fda-pcac-2026-presentations-day1,cbg-gib-search-status-2026-10-27,ema-medicines-json" /> {/* residue-ok: PCAC framing */}
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Weinig getest bij mensen. Bij dieren stolde het bloed minder en werkte een stimulerend middel sterker.</Lead>
+
+{/* residue-ok: evidence */}
+<Compare title="Er zijn verschillende risico’s mogelijk. Geen ervan is goed onderzocht bij mensen." detail="Wat de beoordeling door de FDA en de dierstudies laten zien, op 22 oktober 2026.">
+
+| Mogelijk risico | Aangetoond bij mensen? |
+|---|---|
+| Bloedingen, vooral met bloedverdunners | <Verdict is="unknown" /> Bij ratten stolde het bloed minder door Semax.<Cite id="fda-pcac-2026-semax-briefing" /> |
+| Sterkere werking van stimulerende middelen, zoals amfetamine | <Verdict is="unknown" /> Gezien bij ratten en muizen.<Cite id="eremin-2004-semax-amphetamine" /> |
+| Een afweerreactie op het peptide of op onzuiverheden | <Verdict is="unknown" /> De FDA kan dat niet uitsluiten, bij injectie en bij neusspray.<Cite id="fda-pcac-2026-semax-briefing" /> {/* residue-ok: evidence */} |
+| Pijn en branden in de ogen | <Verdict is="unknown" /> Eén persoon meldde dat aan de FDA, na neusdruppels die online waren gekocht. Niemand weet of Semax de oorzaak was.<Cite id="fda-pcac-2026-semax-briefing" /> {/* residue-ok: evidence */} |
+| Een product dat niet is wat het etiket zegt | <Verdict is="unknown" /> Twee onbekende producten die in beslag waren genomen, bleken Semax te bevatten.<Cite id="vanhee-2020-nootropic-peptides" /> |
+
+</Compare>
+
+{/* residue-ok: evidence */}
+<InDetail title="Wat de FDA vond, en waarom dat ertoe doet">
+
+{/* residue-ok: evidence */}
+In de databank van de FDA voor bijwerkingen stond tot december 2025 één melding. Een vrouw kreeg pijn en een brandend gevoel in haar ogen na neusdruppels met Semax die online waren gekocht. Ze ging naar het ziekenhuis, en een jaar later was de pijn nog niet weg. Dat bewijst niet dat Semax de oorzaak was.<Cite id="fda-pcac-2026-semax-briefing" /> De gepubliceerde studies bij mensen gebruikten alleen neusdruppels, en meldden meestal niets over bijwerkingen. Voor injecties zijn er geen gegevens over de veiligheid.<Cite id="fda-pcac-2026-semax-briefing" />
+
+{/* residue-ok: evidence */}
+Twee resultaten bij dieren zijn belangrijk voor wie middelen combineert. Bij ratten stolde het bloed minder door Semax. Daarom wijst de FDA op een risico op bloedingen met bloedverdunners.<Cite id="fda-pcac-2026-semax-briefing" /> Bij ratten en muizen versterkte het de reactie van dopamine op amfetamine. De FDA noemt dat "zorgwekkend", omdat verslavende middelen dopamine in hetzelfde deel van de hersenen laten stijgen.<Cite id="eremin-2004-semax-amphetamine,fda-pcac-2026-semax-briefing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer eerst het product, betrek een arts erbij, en weet wanneer je stopt.</Lead>
+
+{/* residue-ok: evidence */}
+<ProductCheck extra="Kijk welke vorm op het etiket staat. Semax bestaat als vrije base en als acetaatzout. De FDA ziet die als 2 verschillende stoffen." extraSources="fda-pcac-2026-semax-briefing" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- je krijgt jeukende bulten (netelroos), je gezicht of keel zwelt op, of je kunt moeilijk ademen (een allergische reactie);
+- je bloedt sneller of krijgt meer blauwe plekken dan normaal, vooral als je een bloedverdunner gebruikt;
+- je ogen doen pijn of branden nadat je neusdruppels hebt gebruikt;
+- een prikplek wordt warm, rood, dik of pijnlijk, of je krijgt koorts (een infectie).
+
+Kun je moeilijk ademen, of zwelt je keel of tong op? Bel direct 112. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Stop met het product en maak een afspraak met je huisarts. Bij de andere tekenen: bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+
+Is het ernstig? Bel 112.
+</Callout>
+
+<Cite id="thuisarts-dikke-ogen-lippen,thuisarts-wondroos,thuisarts-sepsis,thuisarts-spoed-wie-bellen,fda-pcac-2026-semax-briefing" />
+
+<WarningSigns only="general,injection,allergic" />
+
+<InDetail title="Wisselwerkingen, controles en wie het beter niet gebruikt">
+
+Deze wisselwerkingen zijn aannemelijk op grond van de dierstudies. Geen ervan is getest bij mensen. Een arts kan je helpen ze af te wegen (zie [praten met je arts](/nl/talking-to-your-doctor/)):
+
+- **Bloedverdunners en plaatjesremmers**, omdat het bloed van ratten minder stolde door Semax.<Cite id="fda-pcac-2026-semax-briefing" />
+- **Stimulerende middelen, zoals ADHD-medicijnen en amfetamine**, omdat Semax het effect van amfetamine op dopamine versterkte bij ratten en muizen.<Cite id="eremin-2004-semax-amphetamine" />
+
+Mensen met een ziekte waardoor ze snel bloeden (een stollingsstoornis) en mensen die zwanger zijn, hebben de meeste reden om voorzichtig te zijn: er zijn geen gegevens over zwangerschap.<Cite id="fda-pcac-2026-semax-briefing" /> Doe je aan wedstrijdsport? Vraag het dan eerst aan de Dopingautoriteit.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Zie ook [de risico's van het product](/nl/safety/product-risk/) en [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt uit welke legale wegen er in Nederland zijn, en wat elke weg nodig heeft: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [de artsenverklaring](/nl/legal-routes/#artsenverklaring), [een magistrale bereiding](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+Voor Semax geldt dit. Er is in Nederland geen goedgekeurd medicijn met Semax, dus ook geen off-label gebruik daarvan.<Cite id="cbg-gib-search-status-2026-10-27,nl-gmw-art-68-off-label" /> De artsenverklaring is volgens de Inspectie Gezondheidszorg en Jeugd (IGJ) "bedoeld voor individuele behandeling in uiterste gevallen". De IGJ is daarin terughoudend. De route is "uitdrukkelijk niet bedoeld" om de regel van de handelsvergunning te omzeilen.<Cite id="igj-qa-zonder-handelsvergunning" /> Een middel zonder handelsvergunning mag je niet zelf invoeren, ook niet voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning,douane-invoer-geneesmiddelen-2026" />
+
+We vonden op 27 oktober 2026 geen onderzoek met Semax op een locatie in Nederland: niet in ClinicalTrials.gov, niet in het Europese register CTIS en niet op Onderzoekmetmensen.nl.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" /> Op de lijst van goedgekeurde compassionate-use-programma's van het CBG staat Semax niet.<Cite id="cbg-compassionate-use-list" />
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Bespreek de bijwerking ook met je huisarts of apotheker.<Cite id="cbg-bijwerking-melden" /> Vertel je arts eerlijk wat je hebt gebruikt. Je arts is er om je te helpen, niet om je te beoordelen. Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Zie ook [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

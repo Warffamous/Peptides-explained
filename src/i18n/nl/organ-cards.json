@@ -1,0 +1,145 @@
+{
+  "ui": {
+    "kicker": "Figuur · orgaan voor orgaan",
+    "notApproved": "Niet goedgekeurd als medicijn in {list} (status gecontroleerd op {date})",
+    "notApprovedShort": "niet goedgekeurd",
+    "cell": {
+      "title": "Hoe het werkt in een cel",
+      "outside": "Buiten de cel",
+      "surface": "Oppervlak van de cel",
+      "inside": "Binnen in de cel",
+      "camp": "Meer cAMP: een boodschapper binnen in de cel",
+      "responds": "De cel reageert. Wat de cel doet, hangt af van het soort cel: zie de kaarten hieronder.",
+      "stepsLabel": "Wat de tekening laat zien, stap voor stap",
+      "dockOne": "Een receptor is een soort schakelaar aan de buitenkant van een cel. {drug} past in {receptors}.",
+      "dockMany": "Een receptor is een soort schakelaar aan de buitenkant van een cel. {drug} past in {receptors}.",
+      "signalOne": "De receptor zet dan binnen in de cel een boodschapper aan, die cAMP heet.",
+      "signalMany": "Elke receptor zet dan binnen in de cel een boodschapper aan, die cAMP heet.",
+      "respond": "Door cAMP reageert de cel. Wat de cel doet, hangt af van het soort cel. Dat laten de kaarten zien."
+    },
+    "cardsTitle": "Orgaan voor orgaan: waar het werkt, en wat er daar gebeurt",
+    "receptors": {
+      "glp1": "GLP-1-receptor",
+      "gip": "GIP-receptor",
+      "glucagon": "Glucagonreceptor"
+    },
+    "receptorsList": {
+      "glp1": "de GLP-1-receptor",
+      "gip": "de GIP-receptor",
+      "glucagon": "de glucagonreceptor"
+    },
+    "organs": {
+      "brain": "Hersenen",
+      "pancreas": "Alvleesklier",
+      "stomach": "Maag",
+      "liver": "Lever",
+      "fat": "Vetweefsel",
+      "muscle": "Spieren"
+    },
+    "cells": {
+      "beta-cell": "Bètacel, die insuline maakt",
+      "nerve-cell": "Zenuwcel",
+      "stomach-wall": "Spier- en zenuwcellen in de maagwand",
+      "liver-cell": "Levercel",
+      "fat-cell": "Vetcel",
+      "muscle-fibre": "Spiervezel"
+    },
+    "closeUp": "Uitvergroot",
+    "noReceptor": "Geen receptor getekend: deze kaart laat zien wat er veranderde bij het afvallen",
+    "levels": {
+      "human": "Aangetoond bij mensen",
+      "animal": "Aangetoond bij dieren",
+      "in-vitro": "Aangetoond in cellen in het lab",
+      "hypothesis": "Een idee, nog niet aangetoond",
+      "unknown": "Onbekend"
+    },
+    "legend": "Lijnen:",
+    "lines": {
+      "human": "doorgetrokken = aangetoond bij mensen",
+      "lab": "lange streepjes = aangetoond bij dieren of in cellen in het lab",
+      "hypothesis": "korte streepjes = een idee, nog niet aangetoond",
+      "unknown": "korte grijze streepjes = onbekend"
+    },
+    "pictures": "Afbeeldingen:",
+    "artNote": "In de afbeeldingen staat geen tekst. De woorden en de tekeningen van de cellen voegen wij toe."
+  },
+  "semaglutide": {
+    "title": "Semaglutide werkt op één receptor. Wat er gebeurt, hangt af van het orgaan.",
+    "detail": "Hoe het werkt in één cel, dan in elk orgaan, en hoe goed elk effect is aangetoond.",
+    "drug": "Semaglutide",
+    "cards": {
+      "pancreas": {
+        "effect": "Meer insuline als de bloedsuiker hoog is, en minder glucagon."
+      },
+      "brain": {
+        "effect": "Minder honger: volwassenen met obesitas (ernstig overgewicht) aten bij een testlunch ongeveer een derde minder.",
+        "note": "welke hersencellen het bereikt."
+      },
+      "stomach": {
+        "effect": "Na een maaltijd verlaat het eten de maag iets langzamer. Dat effect wordt na verloop van tijd minder."
+      },
+      "fat": {
+        "effect": "Een lichaamsscan bij 140 volwassenen met (ernstig) overgewicht liet zien: het meeste gewichtsverlies was vet."
+      },
+      "muscle": {
+        "effect": "Bij 140 volwassenen met (ernstig) overgewicht daalde ook de vetvrije massa (waaronder spieren), maar minder dan het vet.",
+        "note": "wat dit betekent voor de kracht van oudere of kwetsbare mensen."
+      }
+    }
+  },
+  "tirzepatide": {
+    "title": "Tirzepatide werkt op 2 receptoren. Wat er gebeurt, hangt af van het orgaan.",
+    "detail": "Hoe het werkt in één cel, dan in elk orgaan, en hoe goed elk effect is aangetoond.",
+    "drug": "Tirzepatide",
+    "cards": {
+      "pancreas": {
+        "effect": "Meer insuline als de bloedsuiker hoog is, en minder glucagon."
+      },
+      "brain": {
+        "effect": "Minder honger: volwassenen met diabetes type 2 aten minder bij een testlunch.",
+        "note": "welke hersencellen het bereikt, en wat GIP daar toevoegt."
+      },
+      "stomach": {
+        "effect": "In het begin verlaat het eten de maag langzamer. Dat effect wordt na verloop van tijd minder."
+      },
+      "fat": {
+        "effect": "Een lichaamsscan bij volwassenen met (ernstig) overgewicht liet zien: het meeste gewichtsverlies was vet.",
+        "note": "via de GIP-receptor nam vetweefsel meer suiker op, zodat insuline beter werkte."
+      },
+      "muscle": {
+        "effect": "Bij volwassenen met (ernstig) overgewicht daalde ook de vetvrije massa (waaronder spieren), maar minder dan het vet.",
+        "note": "of dit gevolgen heeft voor kracht en vallen bij ouderen."
+      }
+    }
+  },
+  "retatrutide": {
+    "title": "Retatrutide werkt op 3 receptoren. Wat er gebeurt, hangt af van het orgaan.",
+    "detail": "Hoe het werkt in één cel, dan in elk orgaan, en hoe goed elk effect is aangetoond.",
+    "drug": "Retatrutide",
+    "cards": {
+      "pancreas": {
+        "effect": "In alle gepubliceerde studies bij diabetes daalde de bloedsuiker."
+      },
+      "brain": {
+        "effect": "Volwassenen met diabetes type 2 die hogere doses kregen, hadden minder honger dan wie een placebo (nepmiddel) kreeg.",
+        "note": "welke hersencellen meedoen, uit studies met verwante medicijnen."
+      },
+      "stomach": {
+        "effect": "Misselijkheid en diarree waren de meest voorkomende bijwerkingen.",
+        "note": "een kort verslag van de fabrikant zegt dat eten de maag langzamer verlaat."
+      },
+      "liver": {
+        "effect": "Bij 98 volwassenen met obesitas en leververvetting verdween tot vier vijfde van het levervet, deels door afvallen.",
+        "note": "het werkte via de glucagonreceptor op levercellen."
+      },
+      "fat": {
+        "effect": "Bij volwassenen met diabetes type 2 gaven hogere doses in 36 weken ongeveer een kwart minder lichaamsvet.",
+        "note": "muizen verbruikten meer energie. Resultaten bij mensen zijn nog niet gepubliceerd."
+      },
+      "muscle": {
+        "effect": "Volwassenen met diabetes type 2 verloren ook vetvrije massa. De fabrikant noemde dat aandeel gebruikelijk voor obesitasmedicijnen.",
+        "note": "hoeveel daarvan spier was, en wat er met de kracht gebeurt."
+      }
+    }
+  }
+}

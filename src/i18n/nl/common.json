@@ -1,8 +1,135 @@
 {
+  "brand": "Peptides Explained",
+  "tagline": "Onafhankelijke, niet-commerciële uitleg over peptiden in de geneeskunde",
+  "skipToContent": "Naar de hoofdinhoud",
+  "nav": {
+    "label": "Hoofdmenu",
+    "start": "Begin hier",
+    "basics": "De basis",
+    "compounds": "Stoffen",
+    "evidence": "Onderzoek",
+    "safety": "Veiligheid",
+    "legal": "Wet en regels",
+    "history": "Geschiedenis",
+    "news": "Onderzoeksnieuws",
+    "menu": "Menu",
+    "close": "Menu sluiten"
+  },
+  "utility": {
+    "label": "Hulpmiddelen van de site",
+    "search": "Zoeken",
+    "warningSigns": "Alarmsignalen",
+    "warningSignsLong": "Alarmsignalen: direct stoppen en hulp zoeken",
+    "language": "Taal",
+    "languageCurrent": "Taal: {name}",
+    "notTranslated": "nog niet vertaald: opent de startpagina in {name}",
+    "colourScheme": "Kleuren",
+    "schemeAuto": "Automatisch",
+    "schemeLight": "Licht",
+    "schemeDark": "Donker"
+  },
+  "breadcrumb": "Kruimelpad",
+  "home": "Home",
+  "tldr": {
+    "title": "In het kort",
+    "spoken": "In het kort",
+    "note": "De kern in één minuut."
+  },
+  "chapters": {
+    "title": "Hoofdstukken",
+    "open": "Hoofdstukken",
+    "close": "Sluit de lijst met hoofdstukken",
+    "readingTime": {
+      "one": "Je leest de hele pagina in ongeveer {minutes} minuut.",
+      "other": "Je leest de hele pagina in ongeveer {minutes} minuten."
+    },
+    "readingTimeSplit": "De korte versie lees je in ongeveer {short} minuten. Met alle details open duurt het {full} minuten."
+  },
+  "related": "Lees ook",
+  "furtherReading": "Verder lezen",
+  "sources": "Bronnen",
+  "sourcesIntro": "Elke bewering op deze pagina linkt naar een van deze bronnen. Wetenschappelijke bronnen linken naar hun DOI. Officiële bronnen linken naar de eigen pagina van de toezichthouder.",
+  "sourcesAll": "Alle {n} bronnen, genummerd zoals in de tekst",
+  "accessed": "geraadpleegd op {date}",
+  "backToTop": "Terug naar boven",
+  "external": "opent een externe site",
+  "readingLevel": "Taalniveau {level}",
+  "notice": {
+    "standing": "Alleen informatie, geen medisch advies. Ben je nu ziek? Bel bij levensgevaar 112, en anders je huisarts of de huisartsenpost.",
+    "standingShort": "Alleen informatie, geen medisch advies."
+  },
   "emergency": {
     "call": "Bel 112",
     "now": "Bel direct 112",
     "ifSevere": "Is het ernstig? Bel 112.",
     "jurisdiction": "Bel {number}"
-  }
+  },
+  "review": {
+    "lastReviewed": "Laatst gecontroleerd",
+    "reviewedBy": "Gecontroleerd door",
+    "editedBy": "Redactie",
+    "pending": "Een onafhankelijke arts heeft deze pagina nog niet gecontroleerd. Het is zorgvuldig onderbouwd redactiewerk, geen medisch advies.",
+    "pendingLegal": "Een onafhankelijke jurist heeft deze pagina nog niet gecontroleerd. We beschrijven de wet zoals wij die lezen in de genoemde bronnen. Dit is geen juridisch advies.",
+    "corrected": "Gecorrigeerd op {date}",
+    "correctionsLink": "Alle correcties"
+  },
+  "translation": {
+    "pending": "Een medisch vertaler heeft deze vertaling nog niet gecontroleerd.",
+    "readEnglish": "Lees de Engelse pagina",
+    "fallback": "Deze pagina is er nog niet in het {language}. Je leest nu de Engelse versie.",
+    "previewLocale": "De site in het {language} is nog een proefversie. Een arts en een jurist hebben de pagina’s nog niet gecontroleerd."
+  },
+  "footer": {
+    "independence": "Niet-commercieel · Geen reclame · Geen sponsors · Geen geld van de industrie",
+    "independenceLink": "Hoe we deze site betalen",
+    "privacy": "Geen reclame en geen reclamecookies. Bezoekstatistieken alleen als je dat toestaat.",
+    "cookieSettings": "Cookie-instellingen",
+    "about": "Over deze site",
+    "editorialPolicy": "Redactiebeleid",
+    "funding": "Financiering en onafhankelijkheid",
+    "corrections": "Correcties",
+    "glossary": "Woordenlijst",
+    "sources": "Alle bronnen",
+    "reform": "Ons standpunt over hervorming",
+    "sections": "Onderdelen",
+    "languages": "Talen",
+    "notice": "Alleen informatie, geen medisch advies. Stand van zaken: {date}.",
+    "doctor": "Praten met je arts",
+    "legalRoutes": "Legale wegen naar een behandeling"
+  },
+  "opinion": {
+    "label": "Opinie",
+    "notice": "Deze pagina is een betoog: hier geven we onze mening. Het is geen naslagwerk. We houden deze pagina bewust apart van de pagina’s met feiten. De pagina’s over stoffen, veiligheid en de wet hangen er niet van af.",
+    "signed": "Ondertekend door {name}",
+    "published": "Gepubliceerd op {date}",
+    "updated": "Bijgewerkt op {date}"
+  },
+  "stub": {
+    "label": "Korte pagina",
+    "notice": "Dit is een korte pagina. Een volledige pagina met het hele overzicht van het onderzoek komt in versie 1.1. De beoordelingen en de wettelijke status hieronder zijn wel compleet, met bronnen."
+  },
+  "fallbackFigure": "Schema",
+  "diagramText": "Wat dit schema laat zien",
+  "termDefinition": "Betekenis",
+  "glossaryLink": "Naar de woordenlijst",
+  "pageNotFound": {
+    "title": "Pagina niet gevonden",
+    "text": "Deze pagina bestaat niet, of is verplaatst. Probeer de zoekfunctie of begin op de startpagina."
+  },
+  "faq": "Vragen en antwoorden",
+  "pseudoRtl": "Testmodus pseudo-RTL",
+  "consent": {
+    "title": "Bezoekstatistieken",
+    "text": "Mag onze webhost (het bedrijf waar onze site op staat) je bezoek tellen? Die zet dan een cookie. En die noteert welke pagina’s je leest, welk apparaat je gebruikt en in welk land je bent. Wij zien alleen totalen. De site werkt hetzelfde, wat je ook kiest.",
+    "more": "Wat de webhost bijhoudt",
+    "moreAnchor": "je-privacy",
+    "allow": "Toestaan",
+    "deny": "Niet toestaan"
+  },
+  "cite": {
+    "label": "Bron {n}",
+    "labelWith": "Bron {n}: {ref}"
+  },
+  "claimBadge": "Bewijsniveau: {level}",
+  "backToCitation": "Terug naar bronvermelding {n} in de tekst"
 }

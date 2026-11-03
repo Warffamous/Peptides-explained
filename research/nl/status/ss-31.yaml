@@ -1,0 +1,26 @@
+# EU and Dutch status of SS-31 (elamipretide) on 27 October 2026 (research topic eu-status; research/nl/eu-status.md).
+slug: ss-31
+checked: 2026-10-27
+rows:
+  # PROPOSED CHANGE: not-authorised -> investigational, for consistency with the UK and CA rows (investigational because
+  # of open trials) and with the vocabulary ('only available within registered clinical trials'). Editorial decision;
+  # if the editor keeps not-authorised, use the same sources and say 'in trials in the EU' in the note.
+  - { jurisdiction: EU, status: investigational, as_of: 2026-10-27, sources: [ema-medicines-json, ema-under-evaluation-2026-10, ema-orphan-elamipretide-eu-3-21-2430, ctis-2024-511482-11-00, ctis-2025-523837-25-00] }
+  - { jurisdiction: NL, status: investigational, as_of: 2026-10-27, sources: [cbg-gib-search-status-2026-10-27, nl-gmw-art-40-handelsvergunning, ctis-2025-523837-25-00] }
+products: []
+compare_with_data_file:
+  - "Data file: EU not-authorised, NL not-authorised (as_of 2026-10-23). Proposed: both investigational (see the comment above). The approval answer on Dutch pages does not change: approvalFor uses the category (authorised, from the US label) when no NL or EU row is authorised, so the tile still reads 'only in other countries'; only the status table's word changes."
+  - "Facts behind the proposal: CTIS 2024-511482-11-00 (ReNEW, phase 3, dry age-related macular degeneration) is 'Ongoing, recruitment ended' in Germany, Spain, Italy, Czechia and Hungary; CTIS 2025-523837-25-00 (4TAZPower, phase 3b/4, Barth syndrome) is 'Authorised, recruitment pending' in the Netherlands (first decision 27 July 2026), Italy, France and Ireland."
+  - "Both CTIS sources need euclinicaltrials.eu on the allowlist. Without it, the EU row cannot cite the trials, and not-authorised (with ema-medicines-json, ema-under-evaluation-2026-10, ema-orphan-elamipretide-eu-3-21-2430) stays the defensible choice."
+  - "Fact-check (27 October 2026): partly corrected. The EU row CAN cite the ReNEW trial without CTIS: CTIS 2024-511482-11-00 gives NCT06373731 as its identifier, and ctgov-nct06373731 (already registered) lists sites in Italy, Spain, Germany, Hungary and Czechia. The NL row still needs ctis-2025-523837-25-00: ClinicalTrials.gov lists 4TAZPower (NCT07531251) sites only in the US, the UK and Canada."
+regulatory_notes:
+  EU: "Not authorised in the EU and no application on record (October 2026). Two orphan designations (2021, 2022) and phase 3 trials in EU countries."
+  NL: "Not authorised in the Netherlands (CBG register, 27 October 2026). A phase 3b trial in Barth syndrome was approved for the Netherlands in July 2026 but had not started recruiting on 27 October 2026."
+notes: |
+  EMA medicines JSON: 0 hits for elamipretide, MTP-131, Bendavia, SS-31, Forzinity. Orphan JSON: EU/3/21/2430 (Barth
+  syndrome, designated 20/05/2021; sponsor Atnahs Pharma Netherlands B.V., transferred from Scendea (NL) B.V.) and
+  EU/3/22/2614 (myopathic mitochondrial DNA depletion syndrome, 16/05/2022), both Positive; orphan pages re-read.
+  4TAZPower (CTIS 2025-523837-25-00) is the same trial as NCT07531251, which the UK and CA rows already cite (the
+  parallel nl-care research matched the two). Under-evaluation list of 5 October 2026: no elamipretide. Geneesmiddeleninformatiebank: 'Geen producten gevonden' for
+  elamipretide and Forzinity. World context: FDA accelerated approval as Forzinity (19 September 2025), from the data
+  file's US row (not re-checked here).

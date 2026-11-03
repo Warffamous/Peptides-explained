@@ -1,0 +1,78 @@
+{
+  "$comment": "Beginner layer: the 'At a glance' strip on compound pages, the fact sheet and the technical-details block (the TL;DR and the chapter list: common.tldr, common.chapters). Answers are keyed by data values (vocab.ts), so every compound with the same facts gets the same words. The approved answer is built from the whole sentences in glance.approved (src/lib/approval.ts): {list} is the locale's own jurisdictions (vocab.jurisdictionInSentence, joined with and / or), never a jurisdiction the locale does not cover. Keep every answer to one plain line (B1, everyday words, no jargon); short answers at most 4 words. Dutch: the locale's jurisdictions are NL and EU, so {list} is 'Nederland en de hele EU' / 'Nederland of de hele EU' (vocab.json explains 'de hele EU'); every {list} stands after a preposition, so the verb never has to agree with it.",
+  "glance": {
+    "title": "In één oogopslag",
+    "checked": "Status gecontroleerd op {date}. De details en bronnen staan verderop op deze pagina.",
+    "approved": {
+      "question": "Is het een goedgekeurd medicijn?",
+      "short": {
+        "all": "Ja",
+        "someOne": "Alleen in {jurisdiction}",
+        "someMany": "Ja, in sommige landen",
+        "former": "Niet meer",
+        "elsewhere": "Alleen in andere landen",
+        "trials": "Nee",
+        "none": "Nee"
+      },
+      "notPeptide": "Het is geen peptide.",
+      "approvedIn": "Goedgekeurd in {list}.",
+      "formerIn": "Goedgekeurd in {list}, maar daar niet meer in de handel.",
+      "notApprovedIn": "Niet goedgekeurd in {list}.",
+      "prescription": "Alleen op recept.",
+      "nationally": "Goedgekeurd in {countries}, voor bepaald gebruik.",
+      "otherCountries": "Alleen in andere landen goedgekeurd.",
+      "trials": "Niet goedgekeurd. Het is nog in klinisch onderzoek.",
+      "none": "Niet goedgekeurd als medicijn in {list}.",
+      "unchecked": "We hebben nog niet gecontroleerd of het is goedgekeurd."
+    },
+    "tested": {
+      "question": "Is het getest bij mensen?",
+      "none": { "short": "Nee", "text": "Er zijn geen studies bij mensen gepubliceerd." },
+      "case-reports": { "short": "Heel weinig", "text": "Alleen beschrijvingen van een paar patiënten, geen goed opgezet onderzoek." },
+      "phase-1": { "short": "Een beetje", "text": "Alleen kleine studies naar de veiligheid bij mensen." },
+      "phase-2": { "short": "Deels", "text": "Kleine studies bij patiënten. Nog geen grote studies gepubliceerd." },
+      "phase-3": { "short": "Ja", "text": "Er zijn grote studies bij veel mensen gepubliceerd." },
+      "authorised": { "short": "Ja", "text": "Grote studies bij veel mensen, beoordeeld door medicijnautoriteiten." }
+    },
+    "sport": {
+      "question": "Mag het in de sport?",
+      "prohibited": {
+        "short": "Nee",
+        "at-all-times": "Altijd verboden in de sport.",
+        "in-competition": "Verboden in de sport tijdens wedstrijden.",
+        "unscoped": "Verboden in de sport."
+      },
+      "not-listed": { "short": "Niet verboden", "text": "Het staat niet op de dopinglijst." },
+      "unclear": { "short": "Onduidelijk", "text": "Het staat niet met naam op de dopinglijst. Ben je sporter? Vraag het dan eerst aan de Dopingautoriteit." },
+      "unknown": { "short": "Zie hieronder", "text": "Kijk in de tabel met de wettelijke status, bij Sport (WADA)." },
+      "code": "Dopinglijst van WADA, onderdeel {section}"
+    },
+    "risk": {
+      "question": "Wat is het grootste risico?",
+      "more": "Meer over de risico’s",
+      "fallback": "Alarmsignalen: wanneer je stopt en hulp zoekt"
+    }
+  },
+  "technical": {
+    "title": "Technische details",
+    "fold": "Het molecuul: aminozuurvolgorde en technische details"
+  },
+  "stop": {
+    "title": "Stop en zoek hulp als je dit merkt",
+    "more": "Alle alarmsignalen, verderop op deze pagina",
+    "page": "Alarmsignalen bij elk peptide"
+  },
+  "facts": {
+    "title": "Feiten op een rij",
+    "class": "Soort stof",
+    "approvedIn": "Goedgekeurd in",
+    "approvedSince": "{jurisdiction} sinds {year}",
+    "approvedFormer": "{jurisdiction} {from}–{to}",
+    "approvedJoin": "; ",
+    "approvedNot": "Niet in {list}",
+    "approvedElsewhere": "Alleen in andere landen",
+    "approvedUnchecked": "Nog niet gecontroleerd",
+    "tested": "Getest bij mensen",
+    "note": "Alleen feiten. We noemen geen doseringen. De bronnen staan in de delen hieronder."
+  }
+}

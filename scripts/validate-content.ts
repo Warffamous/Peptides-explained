@@ -38,7 +38,7 @@ import {
   type CompoundData,
 } from '../src/schemas/index.ts';
 import * as V from '../src/schemas/vocab.ts';
-import { STRICT_PAGE_JURISDICTIONS, EU_MEMBER_STATES, cardCodes, visibleCodes } from '../src/lib/jurisdictions.ts';
+import { STRICT_PAGE_JURISDICTIONS, EU_MEMBER_STATES, cardCodes, isVisible, visibleCodes, visibleProducts } from '../src/lib/jurisdictions.ts';
 import { ALLOWED_COMPONENTS, COMPOUND_ONLY_COMPONENTS, SOURCED_FIGURES } from '../src/schemas/components.ts';
 import { wordCount, fleschReadingEase } from '../src/lib/readability.ts';
 import {
@@ -415,6 +415,12 @@ function SELLER_PATTERNS(): [RegExp, string, boolean?][] {
     [/\bthird[- ]party[- ]tested\b/i, '"third-party tested" is not evidence without a report you can read and check (lab-report ladder, §1a)', true],
     [/\buses it (?:himself|herself|themselves|themself)\b/i, '"the seller uses it himself" is not evidence (lab-report ladder, §1a)', true],
     [/\bvendors?\b/i, '"vendor" — the site recommends no seller; where the role must be named, write "seller" and give no help choosing one (§1)'],
+    // Dutch ("legit" is covered above)
+    // one word may stand between ("betrouwbare online verkopers", the IGJ's own phrase)
+    [/\bbetrouwba(?:re|ar)(?: \p{L}+)? (?:verkopers?|leveranciers?|webshops?|webwinkels?|aanbieders?|labs?|laborato(?:rium|ria))\b/iu, '"betrouwbare verkoper/leverancier/webshop/lab" — the site never vouches for a seller or a lab (§1a)'],
+    [/\bwaar (?:te (?:koop|bestellen)|koop je|bestel je|(?:kun|kan) (?:je|jij|ik)\b[^.?!\n]{0,40}?\b(?:kopen|bestellen))\b/i, '"waar te koop / waar koop je / waar kun je het kopen" — sourcing language, never (§1)'],
+    [/\b(?:getest door derden|onafhankelijk getest)\b/i, '"getest door derden / onafhankelijk getest" is not evidence without a report you can read and check (lab-report ladder, §1a)', true],
+    [/\bgebruikt het zelf\b/i, '"de verkoper gebruikt het zelf" is not evidence (lab-report ladder, §1a)', true],
   ];
 }
 /** Seller-judging words in one text outside the MDX body (frontmatter value, UI string): warnings. */
@@ -619,7 +625,8 @@ for (const file of walk('src/content/compounds', ['.mdx'])) {
   if (unshown.length) {
     byStatus(locale, STRICT_PAGE_JURISDICTIONS)(file, `regulatory_notes for ${unshown.join(', ')}: ${locale} shows only ${shown.join(', ')} (config/locales.json), so these notes are not rendered; the content rewrite removes them`);
   }
-  for (const p of cd.authorised_products) if (!r.data.indications[p.id]) err(file, `indications: missing localised indication for product "${p.id}"`);
+  // Only the products the locale shows (its full jurisdictions) need a localised indication.
+  for (const p of visibleProducts(cd, localeByCode.get(locale)!)) if (!r.data.indications[p.id]) err(file, `indications: missing localised indication for product "${p.id}"`);
   if (cd.status === 'complete' && r.data.mechanism.length < 3) err(file, 'complete pages need a mechanism chain of at least 3 steps');
   checkBody(file, body, locale, 'compound', titleLabels(r.data));
   checkFrontmatterSellerWords(file, data);
@@ -726,6 +733,11 @@ if (contacts) {
 for (const loc of localeCodes) checkDataFile(`src/i18n/${loc}/warning-signs.json`, warningSignsFileSchema as never);
 
 for (const loc of localeCodes) {
+  // An item needs text only in the locales that show it: timeline and tracker items by
+  // jurisdiction (src/lib/jurisdictions.ts isVisible), corrections by their locales list.
+  const scope = localeByCode.get(loc)!;
+  const shown = (ns: string, it: { id: string; jurisdictions?: string[]; jurisdiction?: string; locales?: string[] }) =>
+    ns === 'corrections' ? !it.locales || it.locales.includes(loc) : isVisible((it.jurisdictions ?? it.jurisdiction) as never, scope);
   const pairs: [string, { id: string }[] | null, typeof timelineTextSchema][] = [
     ['timeline', timeline, timelineTextSchema],
     ['tracker', tracker, trackerTextSchema as never],
@@ -741,7 +753,7 @@ for (const loc of localeCodes) {
     const r = schema.safeParse(raw);
     zodIssues(file, r);
     if (r.success && items && publishedLocales.includes(loc)) {
-      for (const it of items) if (!(it.id in r.data)) err(file, `missing text for ${ns} item "${it.id}"`);
+      for (const it of items) if (shown(ns, it) && !(it.id in r.data)) err(file, `missing text for ${ns} item "${it.id}"`);
     }
   }
 }

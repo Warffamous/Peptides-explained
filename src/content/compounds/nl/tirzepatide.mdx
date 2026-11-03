@@ -1,0 +1,610 @@
+---
+slug: tirzepatide
+title: "Tirzepatide"
+description: "Tirzepatide (Mounjaro) is een goedgekeurd medicijn dat 2 receptoren voor darmhormonen aanzet. Wat studies laten zien, de risico’s en waarom online flacons anders zijn."
+tldr:
+  - q: "Waarvoor is het goedgekeurd?"
+    a: "Diabetes type 2, vanaf 10 jaar. Afvallen bij volwassenen met obesitas, of overgewicht met bijkomende gezondheidsproblemen."
+  - q: "Hoe krijg ik het legaal?"
+    a: "Op recept, via de apotheek. Het basispakket vergoedt het niet voor afvallen."
+  - q: "Werkt het?"
+    a: "Ja, voor bloedsuiker en gewicht, in grote studies. Na stoppen kwam veel gewicht terug."
+  - q: "Slik je de pil?"
+    a: "Vraag je arts of je extra bescherming nodig hebt. De adviezen verschillen."
+  - q: "Zijn online flacons hetzelfde?"
+    a: "Nee. Geen medicijnautoriteit controleert ze. Ook nep-pennen zijn gevonden."
+lede: "Een wekelijkse injectie op recept, voor diabetes type 2, en om af te vallen en op gewicht te blijven. Online flacons zijn iets anders."
+glance:
+  main_risk: "Veel mensen zijn eerst misselijk. Alvleesklier- en galblaasproblemen komen minder vaak voor."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section, <Callout id="stop-now">) and the Dutch product information (Mounjaro SmPC 4.4 and 4.8 and the
+  # package leaflet, read 27 October 2026: pancreatitis, "hevige pijn in de maag en rug ... die niet weggaat";
+  # hypoglycaemia with a sulfonylurea or insulin, signs including "slaperigheid", "verwardheid" and "zweten";
+  # anaphylaxis and angioedema). On English the strip also cites the US label; the Dutch page cites the EU
+  # product information (research/nl-notes/tirzepatide.md).
+  stop_signs:
+    - icon: sign-belly-pain
+      text: "Hevige buikpijn, vaak tot in je rug"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro]
+    - icon: sign-low-sugar
+      text: "Zweterig, verward of suf (te lage bloedsuiker)"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro]
+    - icon: sign-allergic
+      text: "Dikke lippen of keel, of moeilijk ademen"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro]
+  # Fact sheet beside the title: label facts from the EU product information (SmPC 4.2, 5.1, 5.2), never a dose.
+  facts:
+    - label: "Hoe je het gebruikt"
+      value: "Injectie onder de huid"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro]
+    - label: "Hoe vaak"
+      value: "1 keer per week"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro]
+    - label: "Hoe lang het blijft"
+      value: "Halfwaardetijd ongeveer 5 dagen"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro]
+    - label: "Waar het op werkt"
+      value: "2 receptoren: GIP en GLP-1"
+      sources: [ema-pi-mounjaro-nl, ema-epar-mounjaro, coskun-2018-ly3298176]
+grade_rationale:
+  human_clinical: "Goedgekeurd in de EU, en dus ook in Nederland, sinds 15 september 2022 (Mounjaro, diabetes type 2; gewichtsbeheersing sinds december 2023; kinderen vanaf 10 jaar met diabetes type 2 sinds januari 2026). In de VS was het al goedgekeurd op 13 mei 2022. De goedkeuringen rusten op de fase 3-programma’s SURPASS en SURMOUNT en op een afgeronde studie naar hart- en vaatziekten bij 13.299 mensen." # residue-ok: world context
+  preclinical_volume: "Ruim meer dan 50 primaire studies in cellen en dieren: een zoekopdracht in PubMed op 20 oktober 2026 vond 147 records (geen overzichtsartikelen) met tirzepatide en muizen, ratten of knaagdieren in de titel of de samenvatting. Het dieronderzoek telt nu vooral mee in de discussie over wat de GIP-helft van het molecuul doet, en voor de schildkliertumoren bij ratten."
+  independence: "Eli Lilly betaalde alle grote studies waarop de goedkeuring rust, en voerde ze grotendeels zelf uit: een ruwe telling in PubMed op 20 oktober 2026 vond maar 13 van de 134 records van gerandomiseerde studies zonder auteur die aan Lilly verbonden is. De kerneffecten (lagere bloedsuiker en lager gewicht) zijn herhaald in onafhankelijke studies met patiëntendossiers, en 134 van de 147 dierstudies hebben geen auteur van Lilly. Onafhankelijke herhaling is dus breed, maar rust vooral op observationeel onderzoek en labwerk."
+  safety: "In kaart gebracht in 14 afgeronde fase 3-studies waarin meer dan 15.000 volwassenen tirzepatide kregen, een uitkomststudie van 4 jaar bij 13.299 mensen, en bewaking na toelating sinds 2022. Nog open: gebruik langer dan ongeveer 4 jaar, stoppen en opnieuw beginnen, effecten op spieren bij ouderen, zwangerschap, en of de schildkliertumoren bij ratten iets zeggen over mensen."
+mechanism:
+  - kind: binding
+    level: human
+    title: "Gebouwd op GIP, zo gemaakt dat het ongeveer 5 dagen blijft"
+    detail: "Tirzepatide is een peptide van 39 aminozuren, gebaseerd op de volgorde van GIP, een darmhormoon. Een vetzuurstaart (een C20-dizuur) aan lysine 20 laat het binden aan albumine in het bloed (99% gebonden). Zo gebonden verdwijnt het langzaam: de halfwaardetijd bij mensen is ongeveer 5 dagen. Daarom wordt het 1 keer per week gespoten."
+  - kind: binding
+    level: in-vitro
+    title: "Zet 2 receptoren aan, niet even sterk"
+    detail: "In celtests bindt tirzepatide de GIP-receptor ongeveer even sterk als natuurlijk GIP, en de GLP-1-receptor ongeveer 5 keer zwakker dan natuurlijk GLP-1. Op de verwante glucagonreceptor werkt het nauwelijks. Schattingen van de receptorbezetting bij klinische doses wijzen op een voorkeur voor de GIP-receptor. Deze getallen komen uit cellen, niet uit menselijk weefsel."
+  - kind: signal
+    level: in-vitro
+    title: "cAMP stijgt; het signaal via de GLP-1-receptor heeft een voorkeur"
+    detail: "Beide receptoren zetten het Gs-eiwit aan, zodat cAMP in de cel stijgt. Aan de GLP-1-receptor geeft tirzepatide de voorkeur aan cAMP boven het aantrekken van β-arrestine, en trekt het minder receptoren de cel in dan GLP-1. Proeven met losse eilandjes van Langerhans van muizen wijzen erop dat die voorkeur de insulineafgifte kan helpen. Alleen gezien in cellijnen en eilandjes van muizen."
+  - kind: cellular
+    level: human
+    title: "Meer insuline en minder glucagon bij hoge bloedsuiker; betere insulinegevoeligheid"
+    detail: "In een gerandomiseerde studie van 28 weken bij 117 mensen met diabetes type 2 verbeterde tirzepatide de insulineafgifte en de insulinegevoeligheid meer dan semaglutide in een diabetesdosis, en verlaagde het glucagon na maaltijden. cAMP versterkt een insulineafgifte die glucose al heeft gestart. Daardoor is de kans op een te lage bloedsuiker door tirzepatide zelf klein."
+  - kind: tissue
+    level: animal
+    title: "Wat de GIP-helft toevoegt: alleen bij dieren gezien"
+    detail: "Bij muizen verbeterde het aanzetten van de GIP-receptor de insulinegevoeligheid via vetweefsel, gaf het extra gewichtsverlies via GIP-receptoren in de hersenen, en verminderde het bij spitsmuizen de misselijkheid door GLP-1-agonisten. Maar lange blootstelling aan een GIP-agonist zette ook de GIP-receptoren op vetcellen uit, en antistoffen die de GIP-receptor blokkeren geven ook gewichtsverlies. Welk effect bij mensen de overhand heeft, is niet bekend."
+  - kind: tissue
+    level: human
+    title: "Minder honger, minder eten, eerst een tragere maag"
+    detail: "In dezelfde studie met 117 mensen verminderde tirzepatide de eetlust en de hoeveelheid energie die mensen aten, ongeveer evenveel als semaglutide. Het vertraagt het legen van de maag; volgens de productinformatie wordt dat effect in de loop van de tijd kleiner. Die vertraging in het begin is een mogelijke oorzaak van de misselijkheid. Het is ook de reden om op te letten bij tabletten en bij narcose."
+  - kind: effect
+    level: human
+    title: "Lager HbA1c en gewicht; hartuitkomsten niet slechter dan met dulaglutide"
+    detail: "In fase 3-studies is het gezamenlijke resultaat een lager HbA1c, en bij mensen met obesitas gemiddeld ongeveer 15 tot 21% gewichtsverlies in 72 weken. Bij 13.299 mensen met diabetes type 2 en hart- en vaatziekten kwamen ernstige hart- en vaatproblemen niet vaker voor dan met dulaglutide. Klachten van maag en darmen komen veel voor. Hoeveel van het effect GIP nodig heeft, naast GLP-1 alleen, is niet duidelijk."
+studies:
+  willard-2020-receptor-pharmacology:
+    finding: "In cellijnen werkte tirzepatide aan de GIP-receptor als natuurlijk GIP. Aan de GLP-1-receptor gaf het de voorkeur aan cAMP boven β-arrestine, en trok het minder receptoren de cel in. De geschatte receptorbezetting bij klinische doses was het hoogst voor de GIP-receptor."
+    limitation: "Cellen en losse eilandjes van Langerhans van muizen; de bezetting is een berekening, geen meting bij mensen; vooral wetenschappers van het bedrijf."
+  samms-2021-insulin-sensitivity-mice:
+    finding: "Bij muizen met obesitas zonder GLP-1-receptor, dus zonder gewichtsverlies via GLP-1, verbeterde tirzepatide toch de insulinegevoeligheid, doordat vetweefsel meer glucose opnam."
+    limitation: "Alleen muizen; alle auteurs werkten bij het bedrijf; laat niet zien dat het bij mensen zo werkt."
+  killion-2018-gipr-antibody:
+    finding: "Antistoffen die de GIP-receptor blokkeren, beschermden muizen met obesitas tegen gewichtstoename en gaven gewichtsverlies bij apen met obesitas, sterker samen met een GLP-1-agonist."
+    limitation: "Testte tirzepatide niet; een programma van een concurrent; alleen dieren. Laat zien dat ook het blokkeren van de GIP-receptor, en niet alleen het aanzetten, het gewicht kan verlagen."
+  killion-2020-desensitisation:
+    finding: "Lange blootstelling aan een GIP-receptoragonist zette de werking van de GIP-receptor in vetcellen van muizen uit. In deze cellen werkte de agonist dus als een blokker."
+    limitation: "Testte tirzepatide niet; muizen en gekweekte cellen; een programma van een concurrent."
+  zhang-2021-brain-gipr:
+    finding: "Bij muizen verlaagde een langwerkend GIP de voedselinname en het gewicht via GIP-receptoren in de hersenen. Het extra gewichtsverlies van een GIP/GLP-1-co-agonist boven GLP-1 alleen verdween bij muizen zonder GIP-receptoren in de hersenen. Toch waren muizen zonder die receptoren ook beschermd tegen gewichtstoename door hun voeding."
+    limitation: "Testte tirzepatide zelf niet (de co-agonist was een ander molecuul); alleen muizen; hersencircuits bij mensen niet onderzocht."
+  borner-2021-nausea-models:
+    finding: "Bij muizen, ratten en spitsmuizen verminderde het aanzetten van de GIP-receptor het overgeven en het misselijkheidsgedrag door een GLP-1-agonist, terwijl voedselinname en gewicht toch daalden."
+    limitation: "Diermodellen van misselijkheid; deels betaald door de fabrikant; in de studies met tirzepatide komt misselijkheid toch veel voor."
+  coskun-2018-discovery:
+    finding: "Beschrijft het molecuul, de binding aan de receptoren en de effecten bij muizen. In een fase 1-studie (142 mensen kregen tirzepatide, dulaglutide of placebo, als één dosis of 4 weken lang) was de halfwaardetijd ongeveer 5 dagen, daalden bloedsuiker en gewicht, en zaten de bijwerkingen vooral in maag en darmen."
+    limitation: "Eén dosis of 4 weken; kleine groepen; gezonde vrijwilligers plus 53 mensen met diabetes type 2; studie van de ontwikkelaar zelf."
+  frias-2018-phase-2:
+    finding: "Bij 318 mensen met diabetes type 2 daalde het HbA1c in 26 weken met maximaal 1,94 procentpunt, tegen 0,06 met placebo en 1,21 met dulaglutide; het gewicht daalde met maximaal 11,3 kg."
+    limitation: "Fase 2, 26 weken; bijwerkingen in maag en darmen namen sterk toe met de dosis (tot 66%)."
+  heise-2022-islet-clamp:
+    finding: "Bij 117 mensen met diabetes type 2 verbeterde tirzepatide in 28 weken een gecombineerde maat van insulineafgifte en insulinegevoeligheid meer dan placebo en meer dan semaglutide in een diabetesdosis, en verlaagde het glucagon."
+    limitation: "Studie naar het werkingsmechanisme, met een lagere dosis semaglutide dan in het product voor gewicht; betaald door de fabrikant en deels uitgevoerd door medewerkers van het bedrijf."
+  surpass-1:
+    finding: "Bij 478 volwassenen met diabetes type 2 die alleen dieet en beweging hadden, daalde het HbA1c in 40 weken met 1,87 tot 2,07 procentpunt, tegen een stijging van 0,04 met placebo, zonder klinisch belangrijke te lage bloedsuiker."
+    limitation: "40 weken; vroege ziekte en een laag uitgangsrisico; uitgevoerd door de fabrikant."
+  surpass-2:
+    finding: "Bij 1.879 volwassenen met diabetes type 2 die metformine gebruikten, daalde het HbA1c in 40 weken met 2,01 tot 2,30 procentpunt met tirzepatide, tegen 1,86 met semaglutide; de verschillen in gewicht waren 1,9 tot 5,5 kg."
+    limitation: "Open-label; semaglutide in een lagere dosis dan de doses die later zijn goedgekeurd; uitgevoerd door de fabrikant."
+  surpass-4:
+    finding: "Bij 2.002 volwassenen met diabetes type 2 en een hoog risico op hart- en vaatziekten daalde het HbA1c in 52 weken meer dan met insuline glargine, met minder te lage bloedsuiker (6 tot 9% tegen 19%). Ernstige hart- en vaatproblemen namen niet toe (HR 0,74; 95%-BI 0,51–1,08)."
+    limitation: "Open-label; te weinig voorvallen om een voordeel voor het hart te beoordelen; uitgevoerd door de fabrikant."
+  surpass-peds:
+    finding: "Bij 99 kinderen en jongeren van 10 tot 17 jaar met diabetes type 2 daalde het HbA1c in 30 weken met 2,23 procentpunt, tegen een stijging van 0,05 met placebo."
+    limitation: "Klein; 30 weken geblindeerd plus een open-labelverlenging; de Europese productinformatie meldt meer overgeven, buikpijn en te lage bloedsuiker dan bij volwassenen als het naast alleen metformine werd gebruikt."
+  surpass-cvot:
+    finding: "Bij 13.299 mensen met diabetes type 2 en slagaderverkalking, gevolgd gedurende een mediaan van ongeveer 4 jaar, kreeg 12,2% met tirzepatide en 13,1% met dulaglutide een hartaanval of beroerte, of overleed door hart- en vaatziekte (HR 0,92; 95,3%-BI 0,83–1,01): niet slechter, en niet aangetoond beter."
+    limitation: "Geen placebogroep; het voordeel tegenover geen behandeling is afgeleid uit een eerdere studie met dulaglutide; uitgevoerd door de fabrikant."
+  surmount-1:
+    finding: "Bij 2.539 volwassenen met obesitas of overgewicht zonder diabetes daalde het gewicht in 72 weken gemiddeld met 15,0%, 19,5% en 20,9% bij de 3 doses, tegen 3,1% met placebo."
+    limitation: "Gewicht is een tussenmaat voor gezondheid; 72 weken; bijwerkingen in maag en darmen kunnen deelnemers hebben laten merken wat ze kregen; uitgevoerd door de fabrikant."
+  surmount-1-prediabetes:
+    finding: "Bij de 1.032 deelnemers van SURMOUNT-1 met prediabetes, 176 weken behandeld, kreeg 1,3% met tirzepatide en 13,3% met placebo de diagnose diabetes type 2; 17 weken na het stoppen was dat 2,4% tegen 13,7%."
+    limitation: "Een deelgroep van één studie; afvallen zelf voorkomt al diabetes, dus dit scheidt het effect van het middel niet van dat van het gewicht; uitgevoerd door de fabrikant."
+  surmount-4:
+    finding: "Na 36 weken open-label tirzepatide (gemiddeld 20,9% gewichtsverlies) bepaalde loting voor 670 volwassenen of ze doorgingen. Wie doorging, verloor in 52 weken nog 5,5% meer; wie overstapte op placebo, kwam 14,0% aan."
+    limitation: "Alleen mensen die het middel verdroegen, deden mee aan de loting; uitgevoerd door de fabrikant."
+  surmount-maintain:
+    finding: "Na 60 weken tirzepatide bepaalde loting voor 378 volwassenen of ze doorgingen, overstapten op een lagere dosis of op placebo. In week 112 lag hun gewicht 21,9%, 16,6% en 9,9% onder het startgewicht."
+    limitation: "Alleen Amerikaanse deelnemers; na week 84 mocht een extra behandeling, wat de vergelijking moeilijker maakt; uitgevoerd door de fabrikant."
+  surmount-osa:
+    finding: "In 2 studies (469 volwassenen met obesitas en matige tot ernstige slaapapneu) daalde het aantal ademstops per uur in 52 weken met 20,0 en 23,8 meer dan met placebo."
+    limitation: "Mensen met diabetes type 2 deden niet mee; in studie 2 stopten de deelnemers een week voor de meting met hun ademhalingsapparaat (CPAP); uitgevoerd door de fabrikant."
+  summit:
+    finding: "Bij 731 volwassenen met obesitas en hartfalen met behouden ejectiefractie overleed 9,9% met tirzepatide en 15,3% met placebo door hart- en vaatziekte of kreeg erger hartfalen (HR 0,62); de scores voor klachten verbeterden."
+    limitation: "Weinig voorvallen; het voordeel kwam van hartfalen, niet van overlijden (8 tegen 5 overleden door hart- en vaatziekte); het Europees Geneesmiddelenbureau (EMA) wist niet zeker of het effect meer is dan dat van afvallen."
+  surmount-5:
+    finding: "Bij 751 volwassenen met obesitas zonder diabetes daalde het gewicht in 72 weken met 20,2% met tirzepatide en 13,7% met semaglutide, elk in de hoogste dosis die iemand verdroeg."
+    limitation: "Open-label, dus gedrag en meldingen konden beïnvloed zijn; uitgevoerd en betaald door de maker van een van de 2 middelen."
+  rodriguez-2024-cohort:
+    finding: "In Amerikaanse patiëntendossiers van 18.386 gematchte volwassenen met overgewicht of obesitas vielen mensen die met tirzepatide begonnen meer af dan mensen die met semaglutide begonnen (verschil 6,9 procentpunt na 12 maanden); bijwerkingen in maag en darmen waren vergelijkbaar."
+    limitation: "Observationeel; de vormen voor diabetes zijn binnen en buiten de indicatie (off-label) gebruikt; meer dan de helft stopte vroeg; vertekening door andere verschillen is niet uit te sluiten."
+  mccall-2026-compounded-reports:
+    finding: "Van 81.078 Amerikaanse meldingen van bijwerkingen bij GLP-1-medicijnen (2018–2024) gingen er 707 over middelen die apotheken zelf hadden bereid. Daarbij werden fouten bij het klaarmaken, besmetting en ziekenhuisopname vaker gemeld dan bij merkproducten."
+    limitation: "Vrijwillige meldingen geven geen aantallen per gebruiker en bewijzen geen oorzaak; liraglutide, semaglutide en tirzepatide zijn samen geteld."
+regulatory_notes:
+  EU: "Goedgekeurd voor de hele EU als Mounjaro (15 september 2022): diabetes type 2 bij volwassenen; gewichtsbeheersing bij volwassenen sinds 11 december 2023; kinderen vanaf 10 jaar met diabetes type 2 sinds 22 januari 2026. Pennen, flacons en KwikPen. Alleen op recept. Onder aanvullende monitoring."
+  NL: "Goedgekeurd via de EU-vergunning; staat in de Geneesmiddeleninformatiebank van het CBG. Alleen op recept. Basispakket: alleen bij diabetes type 2, vanaf 18 jaar en onder voorwaarden; niet voor gewichtsbeheersing (beoordeling door het Zorginstituut loopt nog)."
+  WADA: "Niet op de dopinglijst van 2026 of 2027. Sinds 2026 in het monitoringprogramma van WADA (binnen en buiten wedstrijden)."
+indications:
+  mounjaro: "Diabetes type 2 die niet goed onder controle is, naast dieet en beweging, bij volwassenen, jongeren en kinderen vanaf 10 jaar: als enig middel als metformine niet geschikt is, of naast andere medicijnen voor diabetes. Gewichtsbeheersing (afvallen en op gewicht blijven) bij volwassenen met een BMI bij de start van 30 of meer, of van 27 tot 30 met minstens één aandoening die met het gewicht samenhangt, naast een caloriearm dieet en meer beweging."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is tirzepatide?">Een medicijn op recept dat lijkt op 2 darmhormonen. Online flacons met deze naam zijn een ander product.</Lead>
+
+<Compare title="Een medicijn van de apotheek en een online flacon met dezelfde naam zijn niet hetzelfde." detail="Wat over elk bekend is, uit de beoordelingen en waarschuwingen van medicijnautoriteiten.">
+
+| | Goedgekeurd medicijn (Mounjaro) | Buiten de legale keten (flacons "voor onderzoek", nep-pennen) |
+|---|---|---|
+| Is bekend wat erin zit? | <Verdict is="yes" /> Beoordeeld door de medicijnautoriteit<Cite id="ema-epar-mounjaro,ec-union-register-mounjaro" /> | <Verdict is="no" /> Het is onduidelijk wat erin zit; misschien zit er helemaal geen werkzame stof in. Er zijn nep-pennen in beslag genomen<Cite id="cbg-glp1-position,ema-hma-2025-09-illegal-glp1,mhra-2026-10-counterfeit-pens" /> |
+| Is bekend hoeveel er per dosis in zit? | <Verdict is="yes" /> Vast door de pen of de flacon voor één dosis<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro" /> | <Verdict is="no" /> Dat hangt af van hoe je zelf afmeet; de Amerikaanse medicijnautoriteit FDA kreeg meldingen van fouten bij het afmeten<Cite id="fda-unapproved-glp1-concerns" /> {/* residue-ok: evidence */} |
+| Steriel gemaakt? | <Verdict is="yes" /> Gemaakt door een fabrikant die in de vergunning staat, en die elke batch vrijgeeft<Cite id="ema-epar-mounjaro" /> | <Verdict is="unknown" /> Bij nep-pennen in het Verenigd Koninkrijk kon niemand garanderen dat ze steriel waren<Cite id="mhra-2026-falsified-mounjaro" /> {/* residue-ok: evidence */} |
+| Informatie over de risico's? | <Verdict is="yes" /> Officiële productinformatie, bijgewerkt<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro" /> | <Verdict is="no" /> Geen goedgekeurde productinformatie: niemand heeft gecontroleerd hoe je het gebruikt of wat het met je gezondheid doet<Cite id="cbg-glp1-position,fda-unapproved-glp1-concerns" /> |
+| Medische begeleiding? | <Verdict is="yes" /> Een arts en een apotheker begeleiden de behandeling<Cite id="cbg-glp1-position" /> | <Verdict is="no" /> Geen |
+
+</Compare>
+
+<Callout type="note" title="Waarom deze pagina er anders uitziet">
+De meeste stoffen op deze site zijn experimenteel. Tirzepatide is een goedgekeurd medicijn met grote studies erachter. Het staat hier omdat online flacons als "tirzepatide voor onderzoek" zijn naam gebruiken. En omdat het in beide richtingen misleidt om het in één groep met experimentele peptiden te zetten.
+</Callout>
+
+<InDetail title="De goedgekeurde producten en sinds wanneer">
+
+Tirzepatide is een medicijn op recept van Eli Lilly. In de EU is het sinds 15 september 2022 goedgekeurd als Mounjaro, voor diabetes type 2 bij volwassenen. Gewichtsbeheersing bij volwassenen kwam erbij op 11 december 2023, en diabetes type 2 bij kinderen en jongeren vanaf 10 jaar op 22 januari 2026.<Cite id="ema-epar-mounjaro,ema-mounjaro-procedural-steps-archive,ema-mounjaro-procedural-steps,ec-union-register-mounjaro" /> Die goedkeuring geldt in de hele EU, dus ook in Nederland. Mounjaro staat in de Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG).<Cite id="eu-regulation-726-2004,cbg-gib-search-tirzepatide-2026-10-27" /> Eén handelsvergunning dekt alle vormen: pennen voor één dosis, flacons voor één dosis en de KwikPen voor meerdere doses.<Cite id="ema-pi-mounjaro-nl" /> In de EU is er geen ander medicijn met tirzepatide, ook geen generiek middel (een kopie van een andere fabrikant).<Cite id="ema-medicines-json,cbg-gib-search-tirzepatide-2026-10-27" />
+
+{/* residue-ok: world context */}
+In de VS was tirzepatide al eerder goedgekeurd: als Mounjaro voor diabetes type 2 op 13 mei 2022, en als Zepbound voor gewichtsbeheersing op 8 november 2023 (slaapapneu kwam er voor Zepbound bij op 20 december 2024).<Cite id="fda-drugsatfda-mounjaro,fda-drugsatfda-zepbound" /> Zepbound bestaat niet in de EU: hier heeft Mounjaro beide toepassingen.<Cite id="ema-medicines-json" />
+
+<AuthorisedProducts />
+
+</InDetail>
+
+<InDetail title="Het molecuul, en waar het vandaan komt">
+
+### Wat het molecuul is
+
+Tirzepatide is een keten van 39 aminozuren. De Amerikaanse productinformatie beschrijft het als gebaseerd op de volgorde van GIP (glucoseafhankelijk insulinotroop polypeptide), een hormoon dat het bovenste deel van de dunne darm na een maaltijd afgeeft.<Cite id="fda-label-mounjaro,coskun-2018-ly3298176" /> De keten begint met <Seq>Tyr-Aib-Glu-Gly-Thr-Phe</Seq>. Er vallen 3 veranderingen op:<Cite id="fda-label-mounjaro,coskun-2018-ly3298176,pubchem-tirzepatide" />
+
+- **Plaats 2 en 13:** Aib (2-aminoisoboterzuur), een aminozuur dat het lichaam niet gebruikt om eiwitten te bouwen.
+- **Plaats 20:** een lysine met 2 korte afstandsstukjes, een verbindingsstuk van glutaminezuur en een vetzuur met 20 koolstofatomen en 2 zuurgroepen. Die staart bindt aan albumine in het bloed.
+- **Het einde van de keten** is een amide in plaats van een zuur.
+
+Semaglutide heeft ook Aib op de tweede plaats van de keten. De ontwikkelaars wilden het volledig bestand maken tegen afbraak, en volgens de productinformatie beschermt deze verandering het tegen het enzym DPP-4.<Cite id="lau-2015-semaglutide-discovery,fda-label-wegovy,ema-epar-wegovy" /> De productinformatie van tirzepatide zegt niet waarvoor de 2 Aib-bouwstenen dienen.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> De brutoformule is C225H348N48O68 en de molecuulmassa <Q>4.813,53 Da</Q>.<Cite id="fda-label-mounjaro" /> De ontwikkelcode was LY3298176.<Cite id="chembl-tirzepatide" />
+
+### Waar het vandaan komt
+
+De darm geeft na een maaltijd 2 "incretine"-hormonen af, GIP en GLP-1. Beide laten de alvleesklier meer insuline afgeven.<Cite id="holst-2020-gip-coagonists" /> In 1993 vond een studie bij 9 mensen met diabetes type 2 en 9 vergelijkbare mensen zonder diabetes dat <Claim level="human-limited">het grootste insuline-effect van GIP bij diabetes 54% lager was, terwijl GLP-1 het grootste deel van zijn effect hield</Claim>.<Cite id="nauck-1993-gip-type2" /> Chemici van Lilly bouwden later GLP-1-werking in een keten op basis van GIP. Ze wezen op bewijs dat de reactie op GIP grotendeels terugkomt als de bloedsuiker eenmaal lager is. Het resultaat is een "dubbele agonist": één molecuul dat 2 receptoren aanzet.<Cite id="coskun-2018-ly3298176,willard-2020-imbalanced-biased" />
+
+</InDetail>
+
+<InDetail title="Pennen, flacons en waarom “tirzepatide” niet één ding is">
+
+In de EU bestaat Mounjaro als pennen voor één dosis, als flacons met kant-en-klare oplossing voor één dosis en als KwikPens voor meerdere doses. Eén handelsvergunning dekt ze alle drie.<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro" /> Het onderzoek op deze pagina hoort bij deze producten: een bekende stof en hoeveelheid, steriel, met bijgewerkte productinformatie. Een poeder in een flacon dat online als "tirzepatide voor onderzoek" wordt aangeboden, heeft geen van die garanties. Alle goedgekeurde producten met tirzepatide in Nederland zijn Mounjaro, en dat is altijd een kant-en-klare oplossing, geen poeder.<Cite id="cbg-gib-search-tirzepatide-2026-10-27,ema-pi-mounjaro-nl" />
+
+De tabel bovenaan dit deel zet de verschillen rij voor rij naast elkaar.
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Wat doet het in het lichaam?">Het zet 2 receptoren voor darmhormonen aan. Dat geeft meer insuline bij hoge bloedsuiker, en minder honger.</Lead>
+
+Tirzepatide zet dagenlang 2 receptoren voor darmhormonen aan. De meeste effecten, gewenst en ongewenst, volgen uit waar die receptoren zitten.<Cite id="ema-epar-mounjaro" />
+
+De figuur laat eerst zien hoe tirzepatide in één cel werkt, dan wat er in elk orgaan gebeurt, en hoe goed elk effect is aangetoond.
+
+<OrganCards id="tirzepatide" />
+
+<InDetail title="De 2 receptoren in één tabel: waar ze zitten en wat ze doen">
+
+<Diagram id="tirzepatide-two-receptors" caption="Eén molecuul, 2 receptoren. Wat elke receptor doet, en hoe goed dat bij mensen is aangetoond.">
+
+| Receptor | Waar hij zit | Wat aanzetten doet | Hoe goed dit is aangetoond |
+|---|---|---|---|
+| GLP-1-receptor | Alvleesklier, hersenen, darm, hart, bloedvaten, afweercellen, nieren | Meer insuline en minder glucagon bij hoge bloedsuiker; de maag raakt trager leeg; minder honger | Bij mensen (dezelfde receptor als bij semaglutide) |
+| GIP-receptor | Alvleesklier, hersenen, darm, hart, bloedvaten, afweercellen, nieren, en ook vetweefsel | Meer insuline bij hoge bloedsuiker; effecten op vetopslag en eetlust | Het insuline-effect bij mensen; de effecten op vet en hersenen bij dieren en in cellen |
+| Beide samen | | Een grotere daling van HbA1c en gewicht dan met GLP-1-medicijnen, in studies die ze direct vergeleken | Bij mensen voor het resultaat; het aandeel van GIP is niet bekend |
+
+</Diagram>
+
+In 2 open-labelstudies tegen semaglutide daalde het gewicht meer met tirzepatide: bij 1.879 volwassenen met diabetes type 2 (SURPASS-2) en bij 751 volwassenen met obesitas (SURMOUNT-5). In de diabetesstudie daalde ook het HbA1c meer.<Cite id="frias-2021-surpass-2,aronne-2025-surmount-5" /> Hoeveel het GIP-deel toevoegt, is niet bekend: we vonden geen studie bij mensen die dat test.<Cite id="coskun-2018-ly3298176,holst-2020-gip-coagonists" />
+
+In de wand van maag en darm zitten GLP-1-receptoren op spier- en zenuwcellen. <Claim level="animal">In dierstudies liep de tragere maag ook via zenuwen naar de hersenen</Claim>.<Cite id="muller-2019-glp1-review" />
+
+</InDetail>
+
+<InDetail title="Stap voor stap: de keten van effecten en het bewijs">
+
+<Mechanism />
+
+### Waar elke stap op rust
+
+**In het bloed blijven.** De productinformatie geeft een eliminatiehalfwaardetijd van ongeveer 5 dagen en 99% binding aan albumine, gemeten bij mensen. Ongeveer 80% van een ingespoten dosis komt in het bloed.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> De keten is mechanisch: de vetzuurstaart bindt aan albumine, en volgens de Amerikaanse productinformatie verlengt dat de halfwaardetijd. Albumine is te groot om door de nieren te worden gefilterd, en tirzepatide verdwijnt vooral doordat het wordt afgebroken. Het lichaam ruimt het middel dus langzaam op, en bijwerkingen houden niet op op de dag dat je stopt.<Cite id="ema-epar-mounjaro,coskun-2018-ly3298176" />
+
+**Twee receptoren, niet even sterk.** <Claim level="in-vitro">In celtests bond tirzepatide de GIP-receptor even sterk als natuurlijk GIP, en de GLP-1-receptor ongeveer 5 keer zwakker dan natuurlijk GLP-1</Claim>.<Cite id="coskun-2018-ly3298176,ema-epar-mounjaro" /> <Claim level="in-vitro">Aan de GLP-1-receptor gaf het de voorkeur aan cAMP-signalen boven het aantrekken van β-arrestine, en het trok minder receptoren de cel in dan GLP-1</Claim>. <Claim level="animal">Proeven met losse eilandjes van Langerhans van muizen wijzen erop dat deze voorkeur de insulineafgifte kan helpen</Claim>. De onderzoekers, vooral wetenschappers van het bedrijf, zien hun schattingen van de receptorbezetting vooral als basis voor nieuwe hypotheses.<Cite id="willard-2020-imbalanced-biased" />
+
+**Insuline, glucagon en gevoeligheid bij mensen.** <Claim level="human-controlled">In een dubbelblinde, gerandomiseerde studie van 28 weken bij 117 mensen met diabetes type 2 verbeterde tirzepatide de insulineafgifte en de insulinegevoeligheid meer dan placebo en meer dan semaglutide in <Q>1 mg</Q>, en verlaagde het glucagon na maaltijden</Claim>.<Cite id="heise-2022-islet-function" /> cAMP versterkt een insulineafgifte die glucose al heeft gestart. Daarom geeft tirzepatide alleen zelden een te lage bloedsuiker (zie het deel over risico's).<Cite id="ema-epar-mounjaro" />
+
+**Eetlust en de maag.** <Claim level="human-controlled">In dezelfde studie verminderden tirzepatide en semaglutide de eetlust en de hoeveelheid energie bij een testlunch ongeveer evenveel, maar met tirzepatide daalden gewicht en vetmassa meer</Claim>; de lunch verklaarde het verschil niet.<Cite id="heise-2023-appetite" /> Volgens de productinformatie is de vertraging van het legen van de maag het grootst na de eerste dosis, en wordt die daarna kleiner.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" />
+
+</InDetail>
+
+<InDetail title="De open vraag: wat doet de GIP-helft?">
+
+Hier is het bewijs het zwakst. De resultaten wijzen in 2 richtingen, en de meeste komen van dieren:
+
+- **Het aanzetten van GIP helpt.** <Claim level="animal">Bij muizen met obesitas zonder GLP-1-receptoren verbeterde tirzepatide toch de insulinegevoeligheid, doordat vetweefsel meer glucose opnam</Claim>.<Cite id="samms-2021-gipr-insulin-sensitivity" /> <Claim level="animal">Bij muizen verlaagde een GIP-agonist de voedselinname via GIP-receptoren in de hersenen, en het extra gewichtsverlies van een GIP/GLP-1-co-agonist verdween bij muizen zonder die receptoren in de hersenen</Claim>.<Cite id="zhang-2021-cns-gipr" /> <Claim level="animal">Bij muizen, ratten en spitsmuizen verminderde het aanzetten van de GIP-receptor de misselijkheid en het overgeven door een GLP-1-agonist</Claim>.<Cite id="borner-2021-gipr-emesis" />
+- **Het blokkeren van GIP helpt ook.** <Claim level="animal">Antistoffen die de GIP-receptor blokkeren, beschermden muizen met obesitas tegen gewichtstoename en gaven gewichtsverlies bij apen met obesitas</Claim>.<Cite id="killion-2018-gipr-antagonist" /> <Claim level="animal">Lange blootstelling aan een GIP-agonist zette de werking van de GIP-receptor in vetcellen van muizen uit, zodat de agonist uiteindelijk werkte als een blokker</Claim>.<Cite id="killion-2020-gipr-desensitisation" /> Bij mensen is een ander middel getest, dat een GLP-1-agonist combineert met een antistof die de GIP-receptor blokkeert. In een fase 2-studie bij 465 volwassenen met obesitas <Claim level="human-controlled">daalde het gewicht in 52 weken gemiddeld met 12,3% tot 16,2%, tegen 2,5% met placebo</Claim>.<Cite id="jastreboff-2025-maridebart" />
+
+<Callout type="uncertain" title="Agonist of functionele blokker?">
+Dat zowel het aanzetten als het blokkeren van de GIP-receptor het gewicht verlaagt, is een raadsel. Een mogelijke verklaring: een langwerkende agonist maakt de receptor op den duur ongevoelig, zodat het netto-effect lijkt op blokkeren ("functioneel antagonisme").<Cite id="holst-2020-gip-coagonists,killion-2020-gipr-desensitisation" /> <Claim level="hypothesis">Of tirzepatide bij mensen deels werkt als functionele GIP-blokker, als echte GIP-aanzetter, of vooral via GLP-1, is niet duidelijk</Claim>. We vonden geen studie bij mensen die de bijdragen van de 2 receptoren scheidt; de eerste studie met tirzepatide bij mensen zegt dat haar opzet dat niet kon.<Cite id="coskun-2018-ly3298176" />
+</Callout>
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Ja, voor bloedsuiker en gewicht, in grote studies. Na stoppen komt veel van het gewicht terug.</Lead>
+
+<KeyNumber title="Het gewicht daalde gemiddeld met ongeveer 15 tot 21%" value="15,0–20,9%" label="gemiddeld gewichtsverlies in 72 weken, afhankelijk van de dosis, tegen 3,1% met placebo" who="SURMOUNT-1: 2.539 volwassenen met obesitas of overgewicht, zonder diabetes" source="jastreboff-2022-surmount-1" level="established" />
+
+<KeyNumber title="De bloedsuiker op lange termijn (HbA1c) daalde met ongeveer 2 punten" value="1,87–2,07" label="procentpunt lager HbA1c in 40 weken, tegen een kleine stijging met placebo" who="SURPASS-1: 478 volwassenen met diabetes type 2, alleen met dieet en beweging" source="rosenstock-2021-surpass-1" level="established" />
+
+<KeyNumber title="Hartaanvallen, beroertes en overlijden door hart- en vaatziekte: niet vaker dan met een ouder medicijn" value="12,2 op de 100" label="kreeg er een in ongeveer 4 jaar, tegen 13,1 op de 100 met dulaglutide" who="SURPASS-CVOT: 13.299 mensen met diabetes type 2 en slagaderverkalking (atherosclerose) in hart of bloedvaten" source="nicholls-2025-surpass-cvot,ema-epar-mounjaro" level="human-controlled" />
+
+<KeyNumber title="Veel van het verloren gewicht kwam terug na stoppen" value="14,0%" label="gewichtstoename in 52 weken na de overstap op placebo; wie bleef gebruiken, verloor nog 5,5% meer" who="SURMOUNT-4: 670 volwassenen met obesitas of overgewicht, zonder diabetes, die eerst gemiddeld 20,9% waren afgevallen in 36 weken" source="aronne-2024-surmount-4" level="human-controlled" />
+
+Daar staan bijwerkingen tegenover. Vooral misselijkheid, diarree en overgeven komen veel voor, het meest in de periode waarin de dosis omhooggaat (zie het deel over risico's). Ben je overgevoelig (allergisch) voor tirzepatide of voor een van de andere stoffen in het middel? Dan mag je het niet gebruiken.<Cite id="ema-pi-mounjaro-nl" />
+
+Eli Lilly betaalde elke grote studie hier, met veel auteurs van het bedrijf. Een ruwe telling in PubMed op 20 oktober 2026 vond 134 records van gerandomiseerde studies met tirzepatide; daarvan hadden er maar 13 geen auteur die aan Lilly verbonden is.<Cite id="pubmed-tirzepatide-rct-count-2026-10-20" /> Dat maakt de resultaten niet onwaar. Maar de vragen, de vergelijkingsmiddelen en de doses koos vooral de fabrikant. Onafhankelijk bewijs komt vooral uit studies met patiëntendossiers en uit labwerk van andere groepen.<Cite id="rodriguez-2024-tirzepatide-semaglutide-cohort,killion-2018-gipr-antagonist,zhang-2021-cns-gipr" />
+
+<InDetail title="Alle belangrijke studies in één tabel">
+
+<StudyTable />
+
+Hieronder staat wat de belangrijkste studies testten, bij wie, en wat ze niet konden laten zien. De studies in cellen en dieren verklaren het mechanisme; ze laten niet zien dat het medicijn bij mensen werkt.
+
+</InDetail>
+
+<InDetail title="Diabetes type 2, en de hartstudie">
+
+### Diabetes type 2
+
+<Claim level="established">Tirzepatide verlaagt het HbA1c bij diabetes type 2</Claim>. In SURPASS-1, een dubbelblinde fase 3-studie bij 478 volwassenen die alleen dieet en beweging hadden, daalde het HbA1c in 40 weken met 1,87 tot 2,07 procentpunt, tegen een stijging van 0,04 met placebo, zonder klinisch belangrijke te lage bloedsuiker.<Cite id="rosenstock-2021-surpass-1" /> In de eerdere fase 2-studie (318 mensen) namen de bijwerkingen in maag en darmen toe met de dosis, van 23,1% tot 66,0%.<Cite id="frias-2018-tirzepatide-phase2" />
+
+SURPASS-2 vergeleek tirzepatide met semaglutide <Q>1 mg</Q> bij 1.879 volwassenen die metformine gebruikten, 40 weken lang. <Claim level="human-controlled">Het HbA1c daalde met 2,01 tot 2,30 procentpunt met tirzepatide en 1,86 met semaglutide; de verschillen in gewicht waren 1,9 tot 5,5 kg</Claim>.<Cite id="frias-2021-surpass-2" /> De studie was open-label, en semaglutide werd gebruikt in een lagere dosis dan de doses die later zijn goedgekeurd. Tegenover insuline glargine (SURPASS-4, 2.002 volwassenen met een hoog risico op hart- en vaatziekten) daalde het HbA1c meer, en kwam een te lage bloedsuiker minder vaak voor (6 tot 9% tegen 19%).<Cite id="delprato-2021-surpass-4" /> Bij 99 jongeren van 10 tot 17 jaar (SURPASS-PEDS) daalde het HbA1c in 30 weken met 2,23 procentpunt.<Cite id="hannon-2025-surpass-peds" />
+
+### Het hart: SURPASS-CVOT
+
+SURPASS-CVOT verdeelde 13.299 mensen met diabetes type 2 en slagaderverkalking door loting over tirzepatide en dulaglutide. Dulaglutide is een ouder GLP-1-medicijn dat in een eerdere studie zelf hart- en vaatproblemen verminderde. Over een mediaan van ongeveer 4 jaar <Claim level="human-controlled">kreeg 12,2% met tirzepatide en 13,1% met dulaglutide een hartaanval of beroerte, of overleed door hart- en vaatziekte (HR 0,92; 95,3%-BI 0,83–1,01)</Claim>. Dat haalde de toets voor "niet slechter"; het liet geen "beter" zien.<Cite id="nicholls-2025-surpass-cvot" /> Overlijden door welke oorzaak ook was 8,5% tegen 10,1% volgens de Amerikaanse productinformatie, een resultaat zonder correctie voor het testen van veel uitkomsten.<Cite id="fda-label-mounjaro" />
+
+De medicijnautoriteiten gingen verder dan de conclusie van de studie zelf. Het Europees Geneesmiddelenbureau (EMA) nam aan dat Mounjaro ernstige hart- en vaatproblemen in deze groep vermindert. Het rondde die beoordeling af in juni 2026. Er kwam geen aparte indicatie, want dit gebruik valt al onder de indicatie diabetes type 2. De resultaten staan wel in de Europese productinformatie.<Cite id="ema-2026-mounjaro-cvot-outcome,ema-mounjaro-procedural-steps,ema-pi-mounjaro-nl" />
+{/* residue-ok: world context */}
+In de VS kwam er in augustus 2026 wel een aparte indicatie bij, om dit risico te verlagen bij volwassenen met diabetes type 2 en een hoog risico.<Cite id="fda-drugsatfda-mounjaro,fda-label-mounjaro" /> Die conclusies leunen op het eerdere voordeel van dulaglutide. Zonder placebogroep is de grootte van het voordeel tegenover geen behandeling een afleiding, geen meting.
+
+</InDetail>
+
+<InDetail title="Gewichtsbeheersing, stoppen, en de vergelijking met semaglutide">
+
+### Gewichtsbeheersing, en wat er na het stoppen gebeurt
+
+SURMOUNT-1 verdeelde 2.539 volwassenen met obesitas of overgewicht, zonder diabetes, door loting over tirzepatide en placebo. <Claim level="established">Het gewicht daalde in 72 weken gemiddeld met 15,0%, 19,5% en 20,9% bij de 3 doses, tegen 3,1% met placebo</Claim>; 4,3% tot 7,1% stopte door bijwerkingen, tegen 2,6% met placebo.<Cite id="jastreboff-2022-surmount-1" /> Bij de 1.032 deelnemers met prediabetes, 176 weken behandeld, kreeg 1,3% de diagnose diabetes type 2, tegen 13,3%.<Cite id="jastreboff-2025-surmount-1-prediabetes" /> Afvallen zelf verlaagt de kans op diabetes al. Dit laat dus geen effect zien dat verder gaat dan het gewicht.
+
+<Claim level="human-controlled">Veel van het gewicht komt terug als de behandeling stopt</Claim>. In SURMOUNT-4 deden 670 volwassenen mee die in 36 weken gemiddeld 20,9% waren afgevallen. Loting bepaalde wie doorging: wie doorging, verloor nog 5,5% meer; wie overstapte op placebo, kwam in 52 weken 14,0% aan.<Cite id="aronne-2024-surmount-4" /> In SURMOUNT-MAINTAIN bepaalde loting na 60 weken voor 378 volwassenen of ze doorgingen, overstapten op een lagere dosis (<Q>5 mg</Q>) of op placebo. In week 112 lag hun gewicht 21,9%, 16,6% en 9,9% onder het startgewicht.<Cite id="horn-2026-surmount-maintain" />
+
+### Direct vergeleken met semaglutide
+
+SURMOUNT-5 verdeelde 751 volwassenen met obesitas maar zonder diabetes door loting over tirzepatide en semaglutide, elk in de hoogste dosis die iemand verdroeg, 72 weken lang. Het gewicht daalde gemiddeld met 20,2% met tirzepatide en 13,7% met semaglutide; de middelomtrek met 18,4 cm en 13,0 cm.<Cite id="aronne-2025-surmount-5" /> De studie was open-label en werd uitgevoerd door de maker van een van de 2 middelen. Een onafhankelijke Amerikaanse studie met patiëntendossiers van 18.386 gematchte volwassenen wees dezelfde kant op (6,9 procentpunt meer gewichtsverlies na 12 maanden), maar kan vertekening niet uitsluiten.<Cite id="rodriguez-2024-tirzepatide-semaglutide-cohort" /> Geen van beide laat zien welk middel bij een bepaald persoon past.
+
+</InDetail>
+
+<InDetail title="Slaapapneu, hartfalen en de lever">
+
+In 2 SURMOUNT-OSA-studies (469 volwassenen met obesitas en matige tot ernstige slaapapneu) <Claim level="human-controlled">daalde het aantal ademstops per uur in 52 weken met 20,0 en 23,8 meer dan met placebo</Claim>.<Cite id="malhotra-2024-surmount-osa,ema-2024-mounjaro-osa-outcome" /> Het EMA rondde zijn beoordeling hiervan af in december 2024. Er kwam geen aparte indicatie: slaapapneu valt onder gewichtsbeheersing, als aandoening die met het gewicht samenhangt. De resultaten staan wel in de Europese productinformatie.<Cite id="ema-2024-mounjaro-osa-outcome,ema-mounjaro-procedural-steps-archive,ema-pi-mounjaro-nl" />
+
+In SUMMIT, bij 731 volwassenen met obesitas en hartfalen met behouden ejectiefractie (HFpEF), <Claim level="human-controlled">overleed 9,9% tegen 15,3% door hart- en vaatziekte of kreeg erger hartfalen (HR 0,62)</Claim>. Dat kwam door het hartfalen; er overleden maar weinig mensen door hart- en vaatziekte, en niet minder (8 tegen 5 in het artikel).<Cite id="packer-2025-summit" /> De Europese productinformatie noemt 10 tegen 5. Het EMA wist niet zeker of het voordeel meer is dan een effect van afvallen. Het rondde die beoordeling af in januari 2026, zonder aparte indicatie; de gegevens staan wel in de productinformatie.<Cite id="ema-epar-mounjaro,ema-2026-mounjaro-hfpef-outcome,ema-pi-mounjaro-nl" />
+{/* residue-ok: world context */}
+In Canada trok de fabrikant in november 2025 een aanvraag voor deze toepassing bij hartfalen in, voordat er een besluit was; de beoordelaars daar hadden tekortkomingen gevonden.<Cite id="ca-soc-mounjaro-hfpef-2025" />
+
+In een fase 2-studie bij 190 mensen met de leverziekte MASH (een leverontsteking door vervetting) en matige of ernstige littekenvorming <Claim level="human-controlled">verdween de MASH zonder erger littekenweefsel bij 44% tot 62% met tirzepatide, tegen 10% met placebo, na 52 weken</Claim>. De onderzoekers vragen om grotere en langere studies.<Cite id="loomba-2024-synergy-nash" /> MASH is geen goedgekeurde toepassing van Mounjaro.<Cite id="ema-pi-mounjaro-nl" /> Een groot onderzoek met tirzepatide en retatrutide bij volwassenen met leververvetting en een hoog risico (SYNERGY-Outcomes) is in Nederland gestart op 22 september 2026.<Cite id="ctis-2025-522674-36-00,omon-nl-omon61112" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog niet bekend?">Wat jarenlang gebruik doet, hoe je goed stopt, en wat het doet met spieren, schildklier en zwangerschap.</Lead>
+
+<TimeStrip title="De langste studie volgde mensen ongeveer 4 jaar. Wat langer gebruik doet, is niet bekend." detail="Jaren gebruik waarover het onderzoek iets zegt, gerekend vanaf de start van de behandeling." min={0} max={10} step={2} axis="Jaren gebruik" source="nicholls-2025-surpass-cvot,ema-epar-mounjaro,jastreboff-2025-surmount-1-prediabetes" rows={[
+  { label: "Hartstudie (SURPASS-CVOT)", spans: [{ from: 0, to: 4, text: "een mediaan van ongeveer 4 jaar" }] },
+  { label: "Gewichtsstudie, mensen met prediabetes (SURMOUNT-1)", spans: [{ from: 0, to: 3.38, text: "176 weken" }] },
+  { label: "Langer gebruik", spans: [{ from: 4, to: 10, text: "niet onderzocht in de studies", unknown: true }] },
+]} />
+
+<InDetail title="Alle 7 open vragen, met hun bronnen">
+
+- **Gebruik langer dan ongeveer 4 jaar.** De langste studie, SURPASS-CVOT, volgde mensen gedurende een mediaan van ongeveer 4 jaar.<Cite id="nicholls-2025-surpass-cvot" />
+- **Hoe je stopt.** In de studies kwam veel gewicht terug na de overstap op placebo. Met een lagere dosis bleef in één studie een deel van het verlies behouden. Geen studie heeft nog laten zien hoe je helemaal stopt en het voordeel houdt.<Cite id="aronne-2024-surmount-4,horn-2026-surmount-maintain" />
+- **Wat GIP bij mensen toevoegt.** Dierstudies wijzen in 2 richtingen; we vonden geen studie bij mensen die de 2 receptoren uit elkaar haalt.<Cite id="killion-2020-gipr-desensitisation,samms-2021-gipr-insulin-sensitivity" />
+- **Schildkliertumoren.** Tirzepatide gaf bij ratten tumoren van de C-cellen in de schildklier. De productinformatie zegt dat niet bekend is of dat voor mensen geldt.<Cite id="fda-label-mounjaro,ca-pm-mounjaro-2026-06-23,ema-epar-mounjaro" />
+- **Spieren en kracht.** Volgens de productinformatie daalde in een deelstudie naar de lichaamssamenstelling de vetmassa meer dan de vetvrije massa. Of het verlies van vetvrije massa bij ouderen gevolgen heeft voor kracht en vallen, is open.<Cite id="fda-label-zepbound,ema-epar-mounjaro,neeland-2024-lean-mass" />
+- **Zwangerschap.** Dierstudies lieten schade aan het ongeboren jong zien bij doses die ook de moeder schaadden; er zijn heel weinig gegevens bij mensen.<Cite id="ema-epar-mounjaro" />
+- **Antistoffen tegen het middel.** In de studies maakte ongeveer de helft tot twee derde van de mensen die het kregen ze aan. De onderzoekers vonden geen effect op de werking. Maar allergische reacties en reacties op de prikplek kwamen vaker voor bij mensen met zulke antistoffen. Wat dat over veel jaren betekent, is niet bekend.<Cite id="ema-epar-mounjaro,fda-label-mounjaro" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Ja, op recept, in Nederland en de hele EU. Voor afvallen vergoedt het basispakket het niet.</Lead>
+
+<Compare title="In Nederland is het een medicijn op recept. Het basispakket vergoedt het alleen bij diabetes type 2." detail="Goedkeuring en vergoeding gecontroleerd op 27 oktober 2026. De delen hieronder geven de details en de voorwaarden.">
+
+| | Diabetes type 2 | Gewichtsbeheersing (afvallen) |
+|---|---|---|
+| Goedgekeurd in de EU en Nederland? | <Verdict is="yes" /> Sinds 15 september 2022 bij volwassenen; vanaf 10 jaar sinds 22 januari 2026<Cite id="ema-epar-mounjaro,ema-mounjaro-procedural-steps,cbg-gib-search-tirzepatide-2026-10-27" /> | <Verdict is="yes" /> Sinds 11 december 2023, bij volwassenen met obesitas, of met overgewicht en een aandoening die met het gewicht samenhangt<Cite id="ema-mounjaro-procedural-steps-archive,ema-pi-mounjaro-nl" /> |
+| Alleen op recept? | <Verdict is="yes" /> Een arts schrijft het voor; de apotheek geeft het je mee<Cite id="ema-pi-mounjaro-nl,nl-gmw-art-61-prescription" /> | <Verdict is="yes" /> Medicijnen voor afvallen zijn alleen op recept te krijgen, zegt het CBG<Cite id="cbg-afslankmedicijnen" /> |
+| Vergoed uit het basispakket? | <Verdict is="yes" /> Alleen vanaf 18 jaar, en alleen onder strikte voorwaarden<Cite id="nl-regeling-zorgverzekering-bijlage-2-glp1,fk-regeling-zorgverzekering-bijlage-2-tirzepatide" /> | <Verdict is="no" /> Zorginstituut Nederland beoordeelt het nog; wanneer het advies komt, is niet bekend<Cite id="zin-tirzepatide-obesity-assessment,nl-regeling-zorgverzekering-bijlage-2-glp1" /> |
+
+</Compare>
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+De status in Nederland en de EU is gecontroleerd op 27 oktober 2026, de status in de sport op 20 oktober 2026.
+
+### Sport (WADA)
+
+Tirzepatide staat niet op de dopinglijst van het Wereld Anti-Doping Agentschap (WADA) van 2026, en ook niet op de lijst van 2027, die op 1 januari 2027 ingaat. De groep S0 ("Niet erkende stoffen") geldt niet voor een goedgekeurd medicijn.<Cite id="wada-2026-list-en,wada-2027-list-en,wada-prohibited-list" /> WADA nam het in 2026 op in zijn monitoringprogramma, en het blijft daar in 2027, binnen en buiten wedstrijden. Labs zoeken ernaar om patronen van misbruik te zien, maar het is niet verboden.<Cite id="wada-2025-monitoring-program,wada-2026-monitoring-program,wada-2027-monitoring-program" /> Meer over de regels in Nederland: [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="De Europese Unie en Nederland">
+
+### Europese Unie
+
+Mounjaro is goedgekeurd via de centrale procedure. Die goedkeuring geldt in elke lidstaat. De houder van de handelsvergunning is Eli Lilly Nederland B.V.<Cite id="ema-epar-mounjaro,eu-regulation-726-2004" /> In 2026 kwam er één nieuwe indicatie bij: diabetes type 2 bij kinderen en jongeren vanaf 10 jaar (22 januari 2026). Bij slaapapneu (december 2024), hartfalen met behouden ejectiefractie (januari 2026) en het risico op hart- en vaatproblemen (juni 2026) beoordeelde het EMA nieuwe studies. Er kwam geen aparte indicatie bij, maar de resultaten staan nu in de productinformatie.<Cite id="ema-mounjaro-procedural-steps,ema-mounjaro-procedural-steps-archive,ema-2024-mounjaro-osa-outcome,ema-2026-mounjaro-hfpef-outcome,ema-2026-mounjaro-cvot-outcome,ema-pi-mounjaro-nl" />
+
+Mounjaro staat onder aanvullende monitoring: in de bijsluiter staat een zwarte driehoek. Zo kunnen nieuwe gegevens over de veiligheid snel worden opgemerkt. Volgens de bijsluiter kun je daarbij helpen door elke bijwerking te melden.<Cite id="ema-additional-monitoring-list,ema-pi-mounjaro-nl" /> Het EMA bekijkt in 2026 een wijziging van de productinformatie over de anticonceptiepil. Op 3 november 2026 was de uitkomst nog niet bekend.<Cite id="ema-chmp-2026-10-agenda" /> Op 27 oktober 2026 stond Mounjaro niet op de lijst van tekorten van het EMA, en tirzepatide niet op de Nederlandse lijst van tekorten van de apothekers (Farmanco).<Cite id="ema-shortages-json,knmp-farmanco-tekorten-2026-10-27" />
+
+### Nederland
+
+De EU-goedkeuring geldt hier direct. Mounjaro is alleen op recept: een arts schrijft het voor, en alleen een apotheek (of een apotheekhoudende huisarts) mag het je meegeven.<Cite id="ema-pi-mounjaro-nl,nl-gmw-art-61-prescription,cbg-afslankmedicijnen" /> Het komt steeds vaker voor dat websites medicijnen op recept zonder recept aanbieden. Dat mag volgens de wet niet, zegt het CBG.<Cite id="cbg-afslankmedicijnen" /> De Inspectie Gezondheidszorg en Jeugd (IGJ) houdt toezicht op wie medicijnen online aanbiedt, en grijpt in als iemand illegale medicijnen verkoopt.<Cite id="igj-online-medicijnen,cbg-glp1-position" />
+
+**Zelf invoeren.** Een reiziger mag de meeste medicijnen voor eigen gebruik meenemen, in de originele verpakking. Een pakket uit een land buiten de EU valt niet onder die regel.<Cite id="douane-medicijnen-reizen-2026,douane-invoer-geneesmiddelen-2026,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> Een flacon "voor onderzoek" is geen Mounjaro en heeft geen handelsvergunning. Zo'n middel mag je niet invoeren of naar Nederland brengen, ook niet voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning,douane-invoer-geneesmiddelen-2026" /> Wat wel en niet mag, staat bij [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+</InDetail>
+
+<InDetail title="Vergoeding uit het basispakket">
+
+Het basispakket van de zorgverzekering vergoedt alleen goedgekeurde medicijnen die in het Geneesmiddelenvergoedingssysteem (GVS) staan. Voor sommige medicijnen gelden extra voorwaarden; die staan in bijlage 2 van de Regeling zorgverzekering.<Cite id="zin-geneesmiddelen-zvw" />
+
+- **Diabetes type 2:** alleen voor verzekerden van 18 jaar en ouder, in 3 situaties. (1) Je hebt een BMI van 30 of meer en je gebruikt geen insuline. Metformine plus een sulfonylureumderivaat houdt je bloedsuiker niet genoeg onder controle, ook niet in de hoogste dosis die je verdraagt. (2) Je gebruikt metformine en basale insuline, hebt een BMI van 30 of meer, en je basale insuline is al minstens 3 maanden zo goed mogelijk ingesteld. (3) Je hebt een zeer hoog risico op hart- en vaatziekten (bewezen hart- en vaatziekte en/of chronische nierschade), en tirzepatide komt naast een SGLT2-remmer en metformine, of je mag geen SGLT2-remmer gebruiken.<Cite id="nl-regeling-zorgverzekering-bijlage-2-glp1,fk-regeling-zorgverzekering-bijlage-2-tirzepatide" />
+- **Gewichtsbeheersing:** niet vergoed. Het Zorginstituut beoordeelt of Mounjaro voor obesitas in het GVS kan komen. Het kijkt eerst naar 2 groepen: mensen met een BMI vanaf 30 met ziektes die daarmee samenhangen, en mensen met een BMI vanaf 35. Het dossier was compleet in maart 2026. De eerste bespreking in de Wetenschappelijke Adviesraad was op 5 oktober 2026; de consultatie begint naar verwachting begin november 2026. Wanneer het advies komt, is nog niet bekend. Alleen als het Zorginstituut positief adviseert en de minister dat advies overneemt, wordt het vergoed.<Cite id="zin-tirzepatide-obesity-assessment" />
+- **Andere medicijnen bij obesitas:** liraglutide en naltrexon/bupropion kunnen wel vergoed worden, maar alleen onder strikte voorwaarden. Een daarvan is dat een gecombineerde leefstijlinterventie (GLI) na 1 jaar niet genoeg hielp.<Cite id="nl-regeling-zorgverzekering-bijlage-2-glp1,fk-liraglutide" />
+
+Krijg je Mounjaro vergoed? Dan geldt het eigen risico: € 385 in 2026 en € 400 vanaf 1 januari 2027.<Cite id="zin-geneesmiddelen-zvw,rijksoverheid-eigen-risico-2026,nl-zvw-art-19-eigen-risico-2027" /> Krijg je het voor afvallen op recept? Dan vergoedt het basispakket het niet. Of een aanvullende verzekering iets betaalt, hebben we niet onderzocht.
+
+### Wat de richtlijn voor huisartsen zegt
+
+De NHG-Standaard Obesitas is de behandelrichtlijn van het Nederlands Huisartsen Genootschap (NHG), verschenen in oktober 2025 en voor het laatst aangepast in augustus 2026. Die zet eerst een GLI: een programma met begeleiding bij gezond eten en bewegen. Medicijnen zijn pas een optie voor wie minstens een jaar een GLI deed en daarmee 10% of minder afviel, en dan alleen bij een BMI van 35 tot 40 met een aandoening die met het gewicht samenhangt, of bij een BMI van 40 of meer. De standaard beveelt liraglutide en semaglutide (beide als injectie) en naltrexon/bupropion aan. De standaard raadt tirzepatide af, omdat er nog nauwelijks ervaring mee is, er nog te veel onzekerheid is over de veiligheid, en de kosten zeer hoog zijn.<Cite id="nhg-standaard-obesitas-2025" />
+
+Een huisarts hoeft medicijnen voor afvallen niet voor te schrijven: volgens de standaard is dat facultatief. Sommige huisartsen schrijven ze soms voor, andere niet. Doet je huisarts het niet? Dan kan die je verwijzen naar een obesitascentrum in een ziekenhuis, of naar een internist die gespecialiseerd is in obesitas.<Cite id="nhg-standaard-obesitas-2025,thuisarts-obesitas-medicijnen-huisarts" /> De GLI zelf is een programma van 2 jaar. Het basispakket vergoedt het, zonder eigen bijdrage en zonder eigen risico. Je huisarts kijkt of je ervoor in aanmerking komt: met een BMI van 25 tot 35 en een grote buikomvang of een ziekte die met het gewicht samenhangt, of met een BMI van 35 of meer.<Cite id="zin-gli-zvw" />
+
+Dat het basispakket Mounjaro voor gewichtsbeheersing niet vergoedt, heeft gevolgen: wie het niet zelf kan betalen, krijgt het niet.<Cite id="zin-tirzepatide-obesity-assessment" /> Of dat mensen naar producten van internet duwt, is niet gemeten. Het CBG raadt af om zulke medicijnen zonder recept of buiten hun indicatie te gebruiken.<Cite id="cbg-glp1-position" /> Daar staan de redenen van het Zorginstituut tegenover. Volgens het Zorginstituut voldoen 4,1 miljoen mensen in Nederland aan de Europese criteria voor deze medicijnen. In theorie kunnen de kosten oplopen tot € 10 miljard per jaar; in 2024 schatte het Zorginstituut voor semaglutide (Wegovy) ongeveer € 1,3 miljard per jaar. Daarom beoordeelt het nieuwe obesitasmedicijnen eerst voor de mensen met de meeste gezondheidsproblemen: naar schatting ruim 1 miljoen mensen.<Cite id="zin-2025-obesity-staged-approach,zin-2024-wegovy-not-reimbursed" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Veel mensen zijn eerst misselijk. Problemen met galblaas en alvleesklier komen minder vaak voor.</Lead>
+
+<KeyNumber title="Klachten van maag en darmen kwamen veel voor" value="55,6–60,8%" label="had klachten van maag of darmen. Met placebo was het 30,3%" who="Een studie naar gewicht met placebo als vergelijking, bij volwassenen zonder diabetes type 2; de spreiding gaat over de 3 doses" source="ema-epar-mounjaro" level="human-controlled" />
+
+<KeyNumber title="1 op de 4 tot 1 op de 3 was misselijk" value="24,6–33,3%" label="was misselijk. Met placebo was het 9,5%" who="Dezelfde studie naar gewicht" source="ema-epar-mounjaro" level="human-controlled" />
+
+<KeyNumber title="Weinig mensen stopten erdoor" value="1,9–4,4%" label="stopte voorgoed door klachten van maag of darmen, tegen 0,5% met placebo" who="Dezelfde studie naar gewicht" source="ema-epar-mounjaro" level="human-controlled" />
+
+Tenzij anders vermeld, komen de risico's en aantallen uit de Europese productinformatie van Mounjaro: de samenvatting van de productkenmerken (SmPC), de officiële informatie voor artsen. Die geeft de resultaten van de studies uitgebreid.<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl" />
+
+Het insuline-effect van tirzepatide hangt af van glucose, maar insuline en sulfonylureumderivaten werken los van glucose.<Cite id="ema-epar-mounjaro,sola-2015-sulfonylureas" /> In de diabetesstudies kwam een klinisch belangrijke te lage bloedsuiker voor bij 10 tot 14% als tirzepatide werd toegevoegd aan een sulfonylureumderivaat, en bij 14 tot 19% als het werd toegevoegd aan basale insuline. Volgens de productinformatie kan een lagere dosis van die medicijnen het risico verkleinen.<Cite id="ema-epar-mounjaro" />
+
+<InDetail title="Te lage bloedsuiker, met een korte animatie">
+
+De korte animatie laat zien hoe de combinatie de bloedsuiker te laag kan maken, en wat je dan doet.
+
+<Explainer id="glp1-class-hypo" />
+
+</InDetail>
+
+<InDetail title="Maag en darmen: de details">
+
+In de studie naar gewicht met placebo als vergelijking, bij mensen zonder diabetes, kwamen klachten van maag en darmen voor bij 55,6% tot 60,8% met tirzepatide, tegen 30,3% met placebo; misselijkheid bij 24,6% tot 33,3%, tegen 9,5%. De meeste klachten waren licht of matig en kwamen in de periode waarin de dosis omhoogging; 1,9% tot 4,4% stopte er voorgoed door.<Cite id="ema-epar-mounjaro" /> Er zijn 2 mogelijke mechanismen: de maag raakt trager leeg, en <Claim level="animal">bij dieren werken GLP-1-agonisten op delen van de hersenstam die ook signalen van misselijkheid verwerken</Claim>.<Cite id="ema-epar-mounjaro,borner-2021-gipr-emesis" /> Overgeven en diarree kunnen uitdroging (vochtverlies) geven, en dat kan leiden tot acuut nierfalen. Ouderen lopen meer risico.<Cite id="ema-epar-mounjaro" /> De Amerikaanse productinformatie noemt ook meldingen na de goedkeuring van ileus (de darm stopt met bewegen), een darmafsluiting en ernstige verstopping.<Cite id="fda-label-mounjaro" />
+
+</InDetail>
+
+<InDetail title="Galblaas en alvleesklier">
+
+Galstenen en een ontstoken galblaas komen soms voor (bij minder dan 1 op de 100 gebruikers). Een ontstoken galblaas kwam voor bij 0,6% tegen 0,2% in de samengevoegde studies naar gewicht; in de studie bij hartfalen (HFpEF) kwam acute galblaasziekte voor bij 4,4% tegen 2,7%. Volgens de productinformatie kwamen acute galblaasproblemen in de studies naar gewicht vaker voor bij mensen die meer afvielen.<Cite id="ema-epar-mounjaro" /> In 76 studies met GLP-1-medicijnen (103.371 mensen) kwamen ziekten van galblaas en galwegen vaker voor, vooral in studies naar afvallen, bij hogere doses en bij langer gebruik.<Cite id="he-2022-gallbladder" />
+
+Een acute ontstoken alvleesklier (pancreatitis) komt soms voor (bij minder dan 1 op de 100 gebruikers). Bij een vermoeden van pancreatitis moet je stoppen met tirzepatide; staat de diagnose vast, dan mag je niet opnieuw beginnen.<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl" /> De Amerikaanse productinformatie noemt meldingen na de goedkeuring van een bloedende en afstervende pancreatitis (hemorragisch en necrotiserend), soms met dodelijke afloop.<Cite id="fda-label-mounjaro" /> In de studies stegen de enzymen amylase en lipase van de alvleesklier gemiddeld met ongeveer 23% tot 42%. Alleen hogere enzymen, zonder klachten, voorspellen geen pancreatitis. De productinformatie geeft geen mechanisme voor de gevallen van pancreatitis.<Cite id="ema-epar-mounjaro" /> De Britse medicijnautoriteit heeft haar waarschuwingen over acute pancreatitis bij GLP-1-medicijnen en dubbele GLP-1/GIP-medicijnen aangescherpt, ook over afstervende en dodelijke gevallen.<Cite id="mhra-glp1-what-you-need-to-know" />
+
+</InDetail>
+
+<InDetail title="Schildkliertumoren bij ratten, en waarom die misschien niet voor mensen gelden">
+
+In een studie van 2 jaar gaf tirzepatide bij ratten tumoren van de C-cellen in de schildklier. Dat gebeurde bij alle geteste doses, bij blootstellingen die tot ongeveer even hoog waren als bij mensen. Een studie van 6 maanden bij een bepaalde muizenstam vond zulke tumoren niet. De Amerikaanse en Canadese productinformatie zeggen dat niet is vastgesteld of dit voor mensen geldt.<Cite id="ema-epar-mounjaro,fda-label-mounjaro,ca-pm-mounjaro-2026-06-23" /> Die productinformatie geeft er een zware waarschuwing (boxed warning) voor, en noemt het als reden om het niet te gebruiken (contra-indicatie) als jij of iemand in je familie medullair schildkliercarcinoom (een zeldzame vorm van schildklierkanker) of MEN 2 (een erfelijke aandoening met een grote kans daarop) heeft of had.<Cite id="fda-label-mounjaro,ca-pm-mounjaro-2026-06-23" />
+
+De Europese productinformatie heeft zo'n waarschuwing en zo'n contra-indicatie niet: de enige contra-indicatie is overgevoeligheid voor de werkzame stof of een van de hulpstoffen. Ze noemt het belang voor mensen onbekend, en meldt een verhoogd calcitonine in het bloed als vaak voorkomend in sommige studiegroepen.<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl" /> <Claim level="animal">C-cellen van knaagdieren hebben GLP-1-receptoren, en GLP-1-agonisten zetten bij ratten de afgifte van calcitonine en de groei van C-cellen aan; C-cellen van mensen en apen hadden weinig receptoren</Claim>. Die studie testte liraglutide, niet tirzepatide.<Cite id="knudsen-2010-thyroid-c-cells" />
+
+</InDetail>
+
+<InDetail title="Narcose, de anticonceptiepil en andere tabletten">
+
+Doordat de maag trager leeg raakt, kan er tijdens een narcose of diepe sedatie nog eten in de maag zitten. Dat kan in de longen komen. Vertel de arts voor elke ingreep dat je tirzepatide gebruikt.<Cite id="ema-epar-mounjaro,ema-prac-2024-07-aspiration,ema-pi-mounjaro-nl" />
+
+Dezelfde vertraging verlaagt de opname van sommige tabletten, het meest aan het begin van de behandeling. Eén dosis tirzepatide verlaagde de hoogste spiegel in het bloed van een combinatiepil met 55% tot 66%.<Cite id="fda-label-mounjaro,ema-pi-mounjaro-nl" /> Hier verschillen de medicijnautoriteiten. De Europese productinformatie vindt dit effect niet klinisch belangrijk en vraagt geen aanpassing van de pil. Ze raadt vrouwen die zwanger kunnen worden wel aan om anticonceptie te gebruiken.<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl" /> Het EMA bekijkt die tekst over de pil opnieuw; op 3 november 2026 was de uitkomst nog niet bekend.<Cite id="ema-chmp-2026-10-agenda" />
+De Amerikaanse productinformatie en de Britse medicijnautoriteit adviseren wel om over te stappen op een methode die geen pil is, of er een barrièremethode zoals condooms bij te nemen, 4 weken lang na de start en na elke dosisverhoging.<Cite id="fda-label-mounjaro,mhra-glp1-what-you-need-to-know" />
+
+Bij tabletten waarbij kleine verschillen veel uitmaken, zoals warfarine of digoxine, adviseert de productinformatie controle.<Cite id="fda-label-mounjaro,ema-epar-mounjaro" /> Bij warfarine vond de veiligheidscommissie van het EMA (PRAC) in april 2026 te weinig bewijs voor een verband met een lagere INR, de bloedtest voor de stolling; de productinformatie bleef gelijk.<Cite id="ema-prac-2026-04-minutes" />
+
+</InDetail>
+
+<InDetail title="Spieren, ogen, stemming, zwangerschap en andere effecten">
+
+### Spieren en ogen
+
+Het gewicht dat je met tirzepatide verliest, is vooral vet: in een deelstudie naar de lichaamssamenstelling daalde de vetmassa meer dan de vetvrije massa.<Cite id="ema-epar-mounjaro" /> <Claim level="human-limited">Bij GLP-1-medicijnen was het deel vetvrije massa in het verloren gewicht ongeveer 15% tot 40–60%</Claim>. Vetvrije massa omvat ook organen en water, en de bron is een overzichtsartikel.<Cite id="neeland-2024-lean-mass" /> Bij mensen met diabetische retinopathie (schade aan het netvlies door diabetes) kan een snelle daling van de bloedsuiker die tijdelijk erger maken. De productinformatie vraagt dan om nauwkeurige controle.<Cite id="ema-epar-mounjaro" />
+
+### Stemming, zwangerschap en andere effecten
+
+De Britse medicijnautoriteit concludeerde na haar eigen veiligheidsbeoordeling van GLP-1-medicijnen dat de gegevens geen oorzakelijk verband met depressie of zelfmoordgedachten ondersteunen. In februari 2026 verdween de waarschuwing over zelfmoordgedrag uit de Amerikaanse productinformatie van Zepbound.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-zepbound" /> Mounjaro zat niet in de beoordeling van het EMA uit 2024 naar zelfmoordgedachten bij GLP-1-medicijnen. Die vond geen oorzakelijk verband voor de medicijnen die het beoordeelde.<Cite id="ema-prac-2024-04-suicidal-thoughts" /> Verandert je stemming bij een medicijn? Vertel het je arts. Denk jij of iemand die je kent aan zelfdoding? Neem dan contact op met 113 Zelfmoordpreventie: bel gratis 113 of kijk op 113.nl.<Cite id="thuisarts-psychische-crisis" />
+
+Bij zwangere ratten en konijnen gaf tirzepatide misvormingen of een tragere groei bij het ongeboren jong, samen met een lager gewicht en minder eten bij de moeders.<Cite id="fda-label-mounjaro" /> De Europese productinformatie raadt het af tijdens de zwangerschap, en bij vrouwen die zwanger kunnen worden en geen anticonceptie gebruiken. Wil je zwanger worden? Volgens de productinformatie stop je dan minstens een maand voor een geplande zwangerschap, omdat het middel lang in het lichaam blijft.<Cite id="ema-pi-mounjaro-nl" />
+De Amerikaanse productinformatie zegt dat het in de zwangerschap alleen mag als het mogelijke voordeel opweegt tegen het mogelijke risico voor het ongeboren kind; de Canadese productinformatie noemt zwangerschap een contra-indicatie.<Cite id="fda-label-mounjaro,ca-pm-mounjaro-2026-06-23" />
+
+De productinformatie noemt ook een snellere hartslag (gemiddeld 2 tot 6 slagen per minuut meer in de studies), haaruitval, duizeligheid, een lage bloeddruk, moeheid, reacties op de prikplek, en zelden allergische reacties zoals anafylaxie en angio-oedeem.<Cite id="ema-epar-mounjaro" /> <Claim level="human-limited">Casusbeschrijvingen melden een lithiumvergiftiging bij mensen die lithium gebruikten en begonnen met of overstapten op GLP-1-medicijnen, ook tirzepatide</Claim>. Een overzicht uit 2026 noemt dit een nieuw signaal over de veiligheid, gebaseerd op meldingen zonder vergelijking en zonder vast mechanisme. De auteurs van een van de casusbeschrijvingen adviseren om de lithiumspiegel vaker te controleren als zo'n medicijn wordt gestart, aangepast of gewisseld.<Cite id="burson-2026-tirzepatide-lithium,cotrik-2026-lithium-glp1-review" /> Bij het EMA was een signaal over lithium bij alle GLP-1-medicijnen op 3 november 2026 nog in behandeling.<Cite id="ema-prac-2026-10-agenda,ema-prac-2026-10-highlights" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe gebruik ik het zo veilig mogelijk?">Met het medicijn van de apotheek weet je het meest. Controleer elk ander product, en ken de alarmsignalen.</Lead>
+
+Het goedgekeurde medicijn is Mounjaro van de apotheek, op recept. Een medicijnautoriteit heeft beoordeeld wat erin zit. De pen of de flacon legt de hoeveelheid per keer vast. En de fabrikant geeft elke batch vrij.<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl" /> We noemen geen doseringen: de arts die het voorschrijft, bepaalt de dosis. Vertel je arts welke andere medicijnen je gebruikt.
+
+De controles hieronder zijn voor elk ander product, zoals een online flacon "voor onderzoek" of een pen waarvan je niet weet waar die vandaan komt.
+
+<ProductCheck extra="Ook een pen kan nep zijn. Nep-pennen van Mounjaro hadden het echte batchnummer van een andere sterkte. Een batchnummer alleen bewijst dus weinig. Is de pen beschadigd, ziet die er anders uit, of komt de doseerknop los? Gebruik hem dan niet." extraSources="mhra-2026-falsified-mounjaro,mhra-2026-10-counterfeit-pens" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Zoek direct medische hulp" id="stop-now">
+- **Hevige pijn boven in je buik die niet weggaat**, vaak tot in je rug, met of zonder overgeven: mogelijk een ontstoken alvleesklier (pancreatitis). Stop met tirzepatide en bel direct 112.
+- **Zo veel overgeven dat je geen vocht binnenhoudt, of heel weinig plassen:** kans op uitdroging en nierschade. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Trillen, zweten, verward of suf zijn**, vooral als je ook insuline of een sulfonylureumderivaat gebruikt: mogelijk een te lage bloedsuiker. Neem iets met suiker als je veilig kunt slikken. Wordt iemand suf of verward? Bel dan 112.
+- **Dikke lippen, tong of keel, of moeite met ademen:** mogelijk een zware allergische reactie. Bel direct 112.
+- **Roodheid die groter wordt, warmte of pus bij de prikplek, of koorts, na een product dat niet van een apotheek komt:** mogelijk een infectie. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+</Callout>
+
+<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl,ada-2026-hypoglycaemia,mhra-2026-falsified-mounjaro,thuisarts-buikpijn,nhs-acute-pancreatitis,thuisarts-hypo-diabetes-type-2,thuisarts-dikke-ogen-lippen,thuisarts-wondroos" />
+
+<WarningSigns only="general,injection,allergic,metabolic" />
+
+<InDetail title="De legale route, en waarom een online flacon anders is">
+
+Bij een goedgekeurd medicijn heeft de legale route de minste onzekerheden.
+
+### De legale route
+
+In Nederland is tirzepatide een medicijn op recept: een arts beslist, en de apotheek geeft het je mee. Die arts kan je huisarts zijn, of een specialist zoals een internist.<Cite id="nl-gmw-art-61-prescription,nl-wet-big-art-36-voorschrijven,cbg-afslankmedicijnen" /> Een arts kan nagaan of het medicijn bij je past. Die kan kijken naar wisselwerkingen met je andere medicijnen en je volgen. Zonder arts gebeurt dat niet.<Cite id="belcourt-2025-research-purposes,cbg-glp1-position" /> Voor afvallen vergoedt het basispakket Mounjaro niet; bij diabetes type 2 soms wel, onder voorwaarden (zie "Vergoeding uit het basispakket" bij de wettelijke status). De NHG-Standaard Obesitas raadt huisartsen tirzepatide bij obesitas af, en zet een leefstijlprogramma (GLI) eerst.<Cite id="nhg-standaard-obesitas-2025" /> Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+Krijg je het van een andere arts dan je huisarts, bijvoorbeeld na een consult via internet? Voorschrijven na alleen een consult via internet mag alleen onder strenge voorwaarden.<Cite id="igj-medicijnen-voorschrijven-via-internet" /> De arts die het voorschrijft, hoort de controles te doen. Je huisarts kan wel helpen als je bijwerkingen of klachten krijgt. Vertel je huisarts daarom welke medicijnen je gebruikt.<Cite id="nhg-2025-gewichtsreducerende-medicatie" />
+
+De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt elke route uit, en wat die nodig heeft: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [zelf invoeren](/nl/legal-routes/#zelf-invoeren) en [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek). Off-label betekent: voor een andere ziekte, groep of dosis dan in de productinformatie staat. Dat mag in principe alleen als de beroepsgroep van artsen daar een richtlijn of standaard voor heeft.<Cite id="nl-gmw-art-68-off-label,igj-2026-off-label-standpunt,cbg-glp1-position" /> Gebruik je tirzepatide voor afvallen bij een lagere BMI dan de indicatie? Dan is dat off-label, en volgens het CBG is niet bekend of de voordelen dan groter zijn dan de risico's.<Cite id="cbg-glp1-position" /> De [artsenverklaring](/nl/legal-routes/#artsenverklaring) past hier niet: die route is voor een medicijn zonder handelsvergunning in Nederland, als er hier geen goed alternatief is. Tirzepatide is hier goedgekeurd.<Cite id="nl-regeling-gnw-art-3-17,igj-leveren-op-artsenverklaring" /> Ook een [magistrale bereiding](/nl/legal-routes/#magistrale-bereiding) door de apotheek ligt niet voor de hand: een apotheker kijkt eerst of een goedgekeurd medicijn de zorgvraag dekt.<Cite id="knmp-richtlijn-bereiden-2016" />
+
+### Waarom een online flacon "voor onderzoek" een ander product is
+
+{/* residue-ok: evidence */}
+De Amerikaanse medicijnautoriteit FDA waarschuwde bedrijven die tirzepatide verkochten met het valse etiket "voor onderzoek" of "niet voor menselijk gebruik". Volgens de FDA is de kwaliteit van zulke producten onbekend en kunnen ze schadelijk zijn.<Cite id="fda-unapproved-glp1-concerns" /> Het CBG zegt over zulke medicijnen van internet: het is onduidelijk wat erin zit, hoe je het moet gebruiken en wat de gevolgen voor je gezondheid zijn.<Cite id="cbg-glp1-position" /> In september 2025 waarschuwden het EMA en de hoofden van de nationale medicijnautoriteiten in Europa (HMA) voor een sterke stijging van illegale middelen die worden aangeboden als GLP-1-medicijn, zoals semaglutide, liraglutide en tirzepatide. Ze worden vaak via nepwebsites verkocht en op sociale media aangeprezen. Er zit misschien helemaal geen werkzame stof in.<Cite id="ema-hma-2025-09-illegal-glp1" /> De IGJ en het CBG waarschuwen dat illegaal aanbod van medicijnen online toeneemt, vooral bij obesitas en diabetes type 2: "Dat kan levensgevaarlijk zijn."<Cite id="igj-2025-illegal-online-medicines" />
+Ook de Canadese medicijnautoriteit waarschuwt voor niet-goedgekeurde of nagemaakte GLP-1-achtige middelen. Daar kan te veel, te weinig of geen werkzame stof in zitten, of een stof die niet op het etiket staat, of vervuiling. Spuit je zo'n middel, dan kun je er een infectie door krijgen.<Cite id="ca-hc-2026-01-glp1-advisory" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+{/* residue-ok: evidence */}
+In de VS mochten apotheken tijdens een officieel tekort zelf tirzepatide bereiden. De FDA verklaarde dat tekort in oktober 2024 voorbij, en na een nieuwe beoordeling opnieuw in december 2024.<Cite id="fda-glp1-compounding-policy" /> Tot 31 mei 2026 kreeg de FDA meer dan 730 meldingen van bijwerkingen bij tirzepatide die Amerikaanse apotheken zelf hadden bereid. Zulke meldingen zijn volgens de FDA waarschijnlijk onvolledig. De FDA vond ook producten met valse apotheeketiketten. Sommige meldingen gingen over mensen bij wie de voorgeschreven dosis hoger was, vaker werd gegeven of sneller werd verhoogd dan de goedgekeurde productinformatie toestaat.<Cite id="fda-unapproved-glp1-concerns" /> In Amerikaanse meldingen hingen bereide GLP-1-producten vaker samen met fouten bij het klaarmaken en met besmetting dan merkproducten.<Cite id="mccall-2026-compounded-faers" />
+{/* residue-ok: evidence */}
+Een flacon voor meerdere doses geeft extra risico: de FDA adviseert elke keer een nieuwe steriele naald en spuit, en een flacon 28 dagen na het eerste gebruik weg te gooien.<Cite id="fda-unapproved-glp1-concerns" /> Zie [steriel werken](/nl/safety/sterile-technique/) en [wanneer je een flacon weggooit](/nl/safety/sterile-technique/#wanneer-je-een-flacon-weggooit).
+
+</InDetail>
+
+<InDetail title="Nep-pennen, en hoe je je pen controleert">
+
+{/* residue-ok: evidence */}
+In het Verenigd Koninkrijk hadden vervalste Mounjaro KwikPens met <Q>15 mg</Q> op het etiket het batchnummer van een echte pen met <Q>7,5 mg</Q>, en hun doseerknop werkte niet goed. Niemand kon garanderen dat ze steriel waren, dus een infectie of een allergische reactie was mogelijk.<Cite id="mhra-2026-falsified-mounjaro" /> In oktober 2026 nam de Britse medicijnautoriteit meer dan 12.000 nep-pennen met retatrutide en tirzepatide in beslag.<Cite id="mhra-2026-10-counterfeit-pens" />
+{/* residue-ok: evidence */}
+In Canada nam de medicijnautoriteit in maart 2026 nep-flacons en nep-pennen van Mounjaro in beslag; het Canadese registratienummer (DIN) en het batchnummer op een pen klopten niet.<Cite id="ca-hc-recalls-database" /> In Nederland waarschuwde de IGJ op 20 oktober 2026 voor gestolen medicijnen, vooral insulinepennen, die online mogelijk ook als obesitasmedicatie worden aangeboden. Gebruik daarvan kan levensgevaarlijk zijn. De IGJ zegt: heb je medicijnen online gekocht? Gebruik ze dan niet, en neem contact op met je arts of apotheek.<Cite id="igj-2026-10-stolen-medicines" />
+
+<Checklist>
+
+- Mounjaro is alleen op recept, van een apotheek. Nep-pennen kwamen in het Verenigd Koninkrijk ook via één online apotheek, dus controleer elke pen. {/* residue-ok: evidence */}
+- Vergelijk de sterkte en het batchnummer op de pen met de verpakking en de bijsluiter.
+- Gebruik geen pen die er anders uitziet, beschadigd is of niet goed werkt. Vraag het je apotheker.
+- Meld een bijwerking bij Bijwerkingencentrum Lareb. Denk je dat een pen van de apotheek nep is? Vertel het je apotheker.
+
+</Checklist>
+
+<Cite id="mhra-glp1-what-you-need-to-know,mhra-2026-falsified-mounjaro,cbg-fmd-vervalsing-melden,lareb-home" />
+
+Je kunt een bijwerking zelf melden bij Lareb. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Twijfel je over een website die medicijnen aanbiedt? Meld die bij het Landelijk Meldpunt Zorg van de IGJ.<Cite id="igj-2025-illegal-online-medicines,igj-landelijk-meldpunt-zorg" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG. Zie ook [onze notities over België](/nl/legal/be/).
+
+Komt een pen niet van een apotheek? Dan gelden de controles bovenaan dit deel ook voor die pen.
+
+</InDetail>
+
+<InDetail title="Wie het niet mag gebruiken, wisselwerkingen en zinvolle controles">
+
+### Wie het niet mag gebruiken, en wisselwerkingen
+
+- **Zwangerschap, of zwanger willen worden:** dierstudies lieten schade aan het ongeboren jong zien.<Cite id="fda-label-mounjaro" /> De Europese productinformatie raadt het af in de zwangerschap, en zegt dat je minstens een maand voor een geplande zwangerschap stopt.<Cite id="ema-pi-mounjaro-nl" />
+- **De anticonceptiepil:** de opname kan dalen bij de start en na elke dosisverhoging. Vraag je arts of je extra bescherming nodig hebt. De Europese productinformatie vindt het effect niet klinisch belangrijk; de Britse en Amerikaanse medicijnautoriteiten adviseren elke keer 4 weken een barrièremethode, zoals condooms, of een methode die geen pil is.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-mounjaro,ema-pi-mounjaro-nl" />
+- **Medullair schildkliercarcinoom of MEN 2, bij jezelf of in je familie:** een contra-indicatie in de Amerikaanse en Canadese productinformatie, door de bevinding bij ratten. De Europese productinformatie noemt dit niet als reden om het niet te gebruiken. Bespreek het met je arts.<Cite id="fda-label-mounjaro,ca-pm-mounjaro-2026-06-23,ema-pi-mounjaro-nl" />
+- **Eerder pancreatitis:** tirzepatide hangt samen met pancreatitis, dus stop bij een vermoeden. **Ernstige gastroparese** (een maag die heel traag leeg raakt): volgens de Amerikaanse productinformatie niet aangeraden, omdat tirzepatide de maag vertraagt.<Cite id="fda-label-mounjaro" /> De Europese productinformatie zegt dat geen van beide groepen is onderzocht, en raadt voorzichtigheid aan.<Cite id="ema-epar-mounjaro,ema-pi-mounjaro-nl" />
+- **Insuline of een sulfonylureumderivaat:** meer kans op een te lage bloedsuiker, ook een ernstige; een arts kan de dosis insuline of tabletten verlagen.<Cite id="fda-label-mounjaro,ema-pi-mounjaro-nl" /> **Andere GLP-1-medicijnen:** volgens de Amerikaanse productinformatie is samen gebruiken met tirzepatide niet aan te raden.<Cite id="fda-label-zepbound" />
+- **Warfarine, digoxine, lithium:** de opname of de spiegel in het bloed kan veranderen, vooral bij de start en na een dosisverhoging. Extra controles (zoals de INR of de spiegel van het medicijn) zijn aan te raden.<Cite id="fda-label-mounjaro,ema-epar-mounjaro,burson-2026-tirzepatide-lithium" />
+
+### Controles die zinvol zijn, en waarom
+
+- **Bloedsuiker**, als je ook insuline of een sulfonylureumderivaat gebruikt, omdat de combinatie de suiker te laag kan maken.<Cite id="fda-label-mounjaro,ema-pi-mounjaro-nl" />
+- **Nierfunctie** na lang overgeven of diarree, omdat uitdroging de nieren kan beschadigen.<Cite id="fda-label-mounjaro,ema-pi-mounjaro-nl" />
+- **Ogen**, als je diabetische retinopathie hebt, omdat een snelle daling van de bloedsuiker die een tijdje erger kan maken.<Cite id="fda-label-mounjaro,ema-pi-mounjaro-nl" />
+
+</InDetail>
+
+</Section>

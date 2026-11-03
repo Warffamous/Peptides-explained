@@ -1,0 +1,634 @@
+---
+slug: retatrutide
+title: "Retatrutide"
+description: "Retatrutide is een middel van Eli Lilly dat nog in onderzoek is en nergens is goedgekeurd. Wat de studies laten zien, de risico’s en wat de wet zegt."
+tldr:
+  - q: "Wat is retatrutide?"
+    a: "Een middel dat 3 hormonen nadoet, getest bij obesitas en diabetes type 2."
+  - q: "Werkt het?"
+    a: "Het gewicht daalde gemiddeld met maximaal een kwart, in grote studies die de maker betaalde."
+  - q: "Kan ik het legaal krijgen?"
+    a: "In Nederland vrijwel alleen in een studie. Twee verwante medicijnen zijn goedgekeurd: vraag je arts."
+  - q: "En producten van internet?"
+    a: "Verkopen is verboden. Tests vonden de verkeerde hoeveelheid of een ander middel."
+  - q: "Komt er een goedkeuring?"
+    a: "Onbekend. Op 5 oktober 2026 lag er geen aanvraag bij het EMA."
+lede: "Nog in onderzoek, nergens goedgekeurd. Geteste producten met deze naam bevatten een verkeerde hoeveelheid of een ander middel."
+glance:
+  main_risk: "Misselijkheid en een snellere hartslag. Producten van internet kunnen nep zijn."
+  # "Stop en zoek hulp"-strook, samengevat uit de eigen stoplijst van deze pagina (sectie over schadebeperking,
+  # <Callout id="stop-now">): ontstoken alvleesklier (ernstige gevallen in de registerresultaten van de fase 2-studies;
+  # een bekend risico van de groep in de productinformatie van Mounjaro), het signaal over hartslag en ritme, en de
+  # allergie-achtige reacties in de samengenomen vroege studies. Thuisarts geeft per klacht wie je belt (buikpijn,
+  # pijn op de borst, dikke lippen of keel). De andere drie stoppunten (leverschade, uitdroging, ketoacidose bij
+  # diabetes type 1) hebben geen passend pictogram en staan alleen in de volledige lijst.
+  stop_signs:
+    - icon: sign-belly-pain
+      text: "Heftige buikpijn, vaak uitstralend naar je rug"
+      sources: [thuisarts-buikpijn, ctgov-nct04881760, ctgov-nct04867785, ema-pi-mounjaro-nl, ema-epar-mounjaro, fda-label-mounjaro]
+    - icon: sign-heart
+      text: "Hartkloppingen met pijn op de borst of flauwvallen"
+      sources: [thuisarts-pijn-op-borst, jastreboff-2023-retatrutide-phase-2, pasqualotto-2024-retatrutide-meta-analysis]
+    - icon: sign-allergic
+      text: "Dikke lippen of keel, of moeilijk ademen"
+      sources: [thuisarts-dikke-ogen-lippen, pasqualotto-2024-retatrutide-meta-analysis]
+  # Feiten naast de titel: uit de studieartikelen en het register, nooit een dosis. Het injectieschema van de
+  # studies staat er bewust niet in (research/retatrutide.md §8).
+  facts:
+    - label: "Hoe het wordt gebruikt"
+      value: "Injectie onder de huid (in de studies)"
+      sources: [jastreboff-2026-triumph-1, bellido-2026-triumph-2, bajaj-2026-transcend-t2d-1, ctgov-nct05929066]
+    - label: "Hoe lang het blijft"
+      value: "Halfwaardetijd ongeveer 6 dagen"
+      sources: [urva-2022-ly3437943-phase-1b]
+    - label: "Waar het op werkt"
+      value: "3 receptoren: GIP, GLP-1 en glucagon"
+      sources: [chembl-retatrutide, coskun-2022-ly3437943-discovery]
+    - label: "Ontwikkelaar"
+      value: "Eli Lilly (codenaam LY3437943)"
+      sources: [coskun-2022-ly3437943-discovery, urva-2022-ly3437943-phase-1b]
+grade_rationale:
+  human_clinical: "Fase 3. Drie fase 3-studies zijn afgerond en volledig gepubliceerd: TRANSCEND-T2D-1 (537 volwassenen met diabetes type 2, 40 weken, The Lancet, juni 2026), TRIUMPH-2 (1.152 volwassenen met obesitas en diabetes type 2, 80 weken, The Lancet, september 2026) en TRIUMPH-1 (2.339 volwassenen met obesitas, 80 weken, NEJM, september 2026). Geen medicijnautoriteit heeft het goedgekeurd, dus de beoordeling stopt bij fase 3."
+  preclinical_volume: "Redelijk veel. Volgens onze telling op 20 oktober 2026 staan er in PubMed ongeveer 20 primaire studies met cellen, weefsel of dieren waarin retatrutide is getest: ongeveer 17 dierstudies (één ervan van Lilly) en een handvol studies met cellen en weefsel. Dat valt binnen de klasse van 10 tot 50 studies. De meeste zijn recent en klein, en komen elk uit één lab."
+  independence: "Een paar groepen. Elke klinische studie bij mensen werd betaald door Eli Lilly en grotendeels door het bedrijf geschreven: alle 10 verslagen van gerandomiseerde studies in PubMed hebben een auteur die bij Lilly werkt. Het werk van Lilly is ongeveer de helft van alle primaire studies. Ongeveer 15 onafhankelijke labs publiceerden elk 1 of 2 kleine studies bij dieren of met weefsel. Die bevestigen effecten op gewicht en stofwisseling bij knaagdieren. Maar geen groep buiten Lilly heeft retatrutide getest in een klinische studie bij mensen. De belangrijkste resultaten bij mensen zijn dus niet onafhankelijk herhaald. Geen vak van de beoordelingstabel past precies; dit is een afweging, uitgelegd in onze onderzoeksnotities."
+  safety: "Deels bekend. Enkele duizenden mensen kregen retatrutide in gepubliceerde studies van maximaal 80 weken. Maar er is geen bewaking na toelating, 2 afgeronde fase 3-studies (TRIUMPH-3 en TRIUMPH-4) zijn niet gepubliceerd, de studies naar wisselwerkingen zijn niet gepubliceerd, en het onderzoek naar hart- en vaatuitkomsten is naar verwachting niet voor 2029 klaar."
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Eén molecuul, drie receptoren"
+    detail: "In celtests zet retatrutide de receptoren voor GIP, GLP-1 en glucagon aan. Vergeleken met de lichaamseigen hormonen is het ongeveer 9 keer zo actief op de GIP-receptor, en ongeveer 0,4 en 0,3 keer zo actief op de GLP-1-receptor en de glucagonreceptor. Met cryo-elektronenmicroscopie is het gebonden aan alle drie gezien. Deze getallen komen uit cellen, niet uit menselijk weefsel."
+  - kind: binding
+    level: human
+    title: "Halfwaardetijd van ongeveer 6 dagen"
+    detail: "Lysine 17 draagt een vetzuurstaart van het soort waardoor tirzepatide aan albumine in het bloed bindt en dagenlang blijft. Bij mensen is de halfwaardetijd van retatrutide ongeveer 6 dagen. Daarom gaven de studies het 1 keer per week als injectie."
+  - kind: signal
+    level: in-vitro
+    title: "cAMP stijgt in de doelcellen"
+    detail: "Alle drie de receptoren werken via het Gs-eiwit, dat de boodschapperstof cAMP in de cel laat stijgen. Structuren laten zien dat elke receptor met retatrutide eraan gekoppeld is aan Gs. In los hartweefsel hingen de effecten af van cAMP. Alleen aangetoond in cellen en weefsel."
+  - kind: tissue
+    level: human
+    title: "Minder honger, meer insuline als de bloedsuiker hoog is"
+    detail: "Het GLP-1-deel en het GIP-deel werken zoals bij tirzepatide. In een fase 2-studie bij 275 volwassenen met diabetes type 2 meldden mensen op hogere doses minder honger en minder neiging om te veel te eten dan met placebo. HbA1c daalde in elke gepubliceerde studie bij mensen met diabetes."
+  - kind: tissue
+    level: animal
+    title: "Glucagonreceptor: meer energieverbruik, levervet verbrand"
+    detail: "Bij muizen met obesitas verhoogde het glucagondeel het energieverbruik, bovenop minder eten. Bij 11 gezonde mannen verhoogde een infuus met glucagon het energieverbruik met 15%. Maar er is geen studie gepubliceerd die het effect van retatrutide op het energieverbruik bij mensen mat. In menselijke levercellen verlaagde het via de glucagonreceptor een eiwit dat de vetten in het bloed regelt."
+  - kind: effect
+    level: human
+    title: "Gewichtsverlies, minder levervet, lager HbA1c"
+    detail: "In een fase 3-studie van 80 weken bij 2.339 volwassenen met obesitas daalde het gewicht gemiddeld met maximaal 25,0%, tegen 3,9% met placebo. In een fase 2-substudie daalde het levervet bij hogere doses met ongeveer vier vijfde. Hoeveel hiervan het glucagondeel nodig heeft, en niet alleen minder eten, is niet aangetoond."
+  - kind: effect
+    level: human
+    title: "Een snellere hartslag"
+    detail: "In de fase 2-studie bij obesitas steeg de hartslag met de dosis, was die het hoogst na 24 weken en daalde daarna. In hartweefsel van muizen liep het effect op de hartslag via de glucagonreceptor; in menselijk hartweefsel liet retatrutide de spier harder samenknijpen. Of dit het hartritme bij mensen beïnvloedt, wordt nog onderzocht."
+studies:
+  li-2024-structure:
+    finding: "Structuren uit cryo-elektronenmicroscopie lieten retatrutide zien, gebonden aan de GLP-1-, GIP- en glucagonreceptor, elk gekoppeld aan het Gs-eiwit. Ze lieten ook zien hoe één peptide in 3 receptoren past."
+    limitation: "Gezuiverde receptoren buiten een cel; laat de vorm van de binding zien, geen effecten in een lichaam. Een korte onderzoeksbrief."
+  neumann-2026-human-atria:
+    finding: "In strookjes hartspier uit de rechterboezem van 29 volwassenen die een openhartoperatie kregen, liet retatrutide de spier harder samenknijpen. Remmers van elk van de 3 receptoren verzwakten dat effect."
+    limitation: "Weefsel in een orgaanbad, van mensen met ernstige ziekte van de kransslagaders; zegt niets direct over het hartritme of over uitkomsten bij levende mensen. Eén lab, geen externe financiering."
+  coskun-2022-preclinical:
+    finding: "In celtests was retatrutide even actief op de glucagon- en de GLP-1-receptor, en actiever op de GIP-receptor. Bij muizen met obesitas verlaagde het het gewicht en de glucose, en het glucagondeel voegde extra energieverbruik toe aan minder eten."
+    limitation: "Het eigen ontdekkingsartikel van de ontwikkelaar; we konden alleen de samenvatting lezen, dus aantallen dieren en methoden zijn niet gecontroleerd."
+  neumann-2025-mouse-atria:
+    finding: "In losse rechterboezems van muizen verhoogde retatrutide de hartslag. Een remmer van de glucagonreceptor en een remmer van het enzym PKA verminderden die stijging; remmers van de GLP-1- en GIP-receptor en een bètablokker deden dat niet. De kracht van de linkerboezem nam niet toe."
+    limitation: "Muizenweefsel in een bad; muizenharten hebben glucagonreceptoren die menselijke harten misschien niet hebben. Het aantal dieren staat niet in de samenvatting."
+  takahashi-2026-af-mice:
+    finding: "Muizen met obesitas die 3 weken retatrutide kregen, verloren gewicht en vet, en boezemfibrilleren was moeilijker op te wekken met elektrische prikkels."
+    limitation: "Muizen, korte behandeling, een bijexperiment in een studie over vet rond het hart; test of gewichtsverlies beschermt, niet of het middel zelf het ritme verstoort."
+  briand-2026-mash-models:
+    finding: "Bij muizen met obesitas en een vette lever verlaagde retatrutide het gewicht met 31%, en daalden het levervet en de insulineresistentie; vet en vetvrije massa daalden allebei. Bij hamsters daalden de bloedvetten, en de triglyceriden in de lever halveerden."
+    limitation: "Uitgevoerd door 2 bedrijven die onderzoek in opdracht doen, om hun eigen modellen te testen, zonder vermelding van financiering; het energieverbruik veranderde bij muizen niet statistisch significant; de weefselscores van de lever verbeterden bij hamsters niet."
+  hitaka-2026-mc4r-mice:
+    finding: "Bij muizen zonder een belangrijke eetlustreceptor (MC4R) verlaagde 21 dagen retatrutide het gewicht met 24,1%, tegen 19,7% met semaglutide en 31,6% met tirzepatide. Vet en vetvrije massa daalden allebei."
+    limitation: "Een genetisch muismodel, 3 weken; doses bij muizen zijn niet te vertalen naar mensen; financiering niet vermeld."
+  coskun-2022-phase-1-sad:
+    finding: "Bij gezonde vrijwilligers die één injectie kregen, leek de veiligheid op die van andere incretinemiddelen, paste de halfwaardetijd bij 1 keer per week geven, en was het gewicht 43 dagen na één dosis nog lager."
+    limitation: "Alleen losse doses, op één locatie in Singapore; beschreven in het ontdekkingsartikel van de ontwikkelaar, dat we alleen als samenvatting konden lezen; volgens het onderzoeksregister deden 45 mensen mee."
+  urva-2022-phase-1b:
+    finding: "Bij 72 volwassenen met diabetes type 2 die 12 weken werden behandeld, daalden glucose en HbA1c bij de 3 hoogste dosisniveaus, daalde het gewicht tot ongeveer 9 kg meer dan met placebo, en was de halfwaardetijd ongeveer 6 dagen."
+    # residue-ok: evidence (where the trial ran)
+    limitation: "Klein, kort, alleen in de VS; 29 van de 72 deelnemers stopten vroeg; vooral een studie naar veiligheid en naar de juiste dosis voor verder onderzoek."
+  jastreboff-2023-phase-2-obesity:
+    finding: "Bij 338 volwassenen met obesitas of overgewicht daalde het gewicht na 48 weken met maximaal 24,2% bij de hoogste dosis, tegen 2,1% met placebo. Bijwerkingen van maag en darmen namen toe met de dosis; de hartslag steeg met de dosis en was het hoogst na 24 weken."
+    limitation: "Studie om de dosis te kiezen, met kleine groepen per dosis; 48 weken; opgezet en betaald door de fabrikant."
+  rosenstock-2023-phase-2-t2d:
+    finding: "Bij 281 volwassenen met diabetes type 2 daalde HbA1c na 24 weken met maximaal 2,02 procentpunt, tegen 0,01 met placebo en 1,41 met dulaglutide; het gewicht daalde na 36 weken met maximaal 16,9%. Geen ernstige te lage bloedsuiker."
+    # residue-ok: evidence (where the trial ran)
+    limitation: "Alleen in de VS, 36 weken, kleine dosisgroepen; dulaglutide in maar één dosis; betaald door de fabrikant."
+  sanyal-2024-liver-fat:
+    finding: "Bij 98 volwassenen met obesitas en minstens 10% levervet daalde het levervet na 24 weken met maximaal 82%; bij de hogere doses bereikten de meesten een normaal levervetgehalte. Geen teken van leverschade."
+    limitation: "Substudie van een fase 2-studie; levervet gemeten met MRI, niet met een stukje leverweefsel (biopt); veel vergelijkingen zonder correctie; scans na 48 weken ontbreken bij 56% van de deelnemers; uitgevoerd door de fabrikant."
+  coskun-2025-body-composition:
+    finding: "In een substudie van de fase 2-studie bij diabetes daalde het lichaamsvet in 36 weken met ongeveer een kwart bij de hogere doses. De auteurs van het bedrijf vonden het aandeel verloren vetvrij weefsel vergelijkbaar met dat bij andere obesitasmiddelen."
+    limitation: "Maar 103 van de 189 deelnemers hadden DXA-scans aan het begin en het eind; vetvrije massa op een DXA-scan omvat ook water en organen, niet alleen spier; alle auteurs werkten bij het bedrijf."
+  transcend-t2d-1:
+    finding: "Bij 537 volwassenen met diabetes type 2 die alleen dieet en beweging gebruikten, daalde HbA1c in 40 weken met 1,69 tot 1,94 procentpunt, tegen 0,81 met placebo, en het gewicht met 11,5% tot 15,3%, tegen 2,6%. Geen ernstige te lage bloedsuiker."
+    limitation: "40 weken; vroege diabetes (gemiddeld 2,5 jaar na de diagnose); placebo in plaats van een actief vergelijkingsmiddel; uitgevoerd door de fabrikant."
+  triumph-2:
+    finding: "Bij 1.152 volwassenen met obesitas en diabetes type 2 daalde het gewicht in 80 weken met 11,9% tot 18,8%, tegen 5,1% met placebo. Lage bloeddruk en vreemde gevoelens in de huid kwamen vaker voor met retatrutide."
+    limitation: "We konden alleen de samenvatting lezen; 80 weken; stoppen door bijwerkingen of overlijden kwam in één dosisgroep tot 12%; uitgevoerd door de fabrikant."
+  triumph-1:
+    finding: "Bij 2.339 volwassenen met obesitas zonder diabetes daalde het gewicht in 80 weken met 17,6% tot 25,0%, tegen 3,9% met placebo. Kniepijn en ademstops tijdens de slaap verbeterden in de subgroepen met die aandoeningen."
+    limitation: "We konden alleen de samenvatting lezen. Die noemt geen cijfers over bijwerkingen, behalve dat klachten van maag en darmen het vaakst voorkwamen; uitgevoerd door de fabrikant."
+  pasqualotto-2024-meta-analysis:
+    finding: "Samen genomen verlaagde retatrutide in 3 vroege studies (640 mensen) het gewicht en HbA1c, vergeleken met placebo. Het verhoogde de kans op bijwerkingen van maag en darmen en op allergie-achtige reacties (risicoratio 3,79). Hartritmestoornissen kwamen vaker voor, maar niet statistisch significant (risicoratio 3,41, 95%-BI 0,86–13,55)."
+    limitation: "Maar 3 kleine studies, met weinig voorvallen; één samengevoegd resultaat staat met dezelfde getallen als een ander in het artikel, dus dat gebruiken we niet; geen vermelding van financiering."
+  sehgal-2026-social-media:
+    finding: "13.589 gebruikers van Reddit schreven over het gebruik van niet-goedgekeurde retatrutide. Bij de 7.823 van wie de berichten een klacht noemden, kwamen deze klachten het vaakst voor: meer eetlust, vermoeidheid, meer energie, misselijkheid, trek in eten en slecht slapen; 4,8% noemde een snellere hartslag en ongeveer 2% een pijnlijke of overgevoelige huid."
+    limitation: "Zelf geschreven berichten, ingedeeld door een taalmodel; product, dosis en andere middelen onbekend; kan niet laten zien hoe vaak iets voorkomt of wat de oorzaak is. De auteurs zeggen zelf dat het alleen ideeën oplevert voor verder onderzoek."
+  carneiro-2026-detection:
+    finding: "Een antidopinglab ontwikkelde een test. Bij 4 mensen die een product injecteerden dat ze zelf hadden geregeld, 2 keer met een week ertussen, zat 56 dagen na de eerste injectie nog retatrutide in het bloed. In de plas vond het lab niets."
+    limitation: "Vier mensen met een product dat het lab alleen controleerde op welke stof erin zat, niet op hoeveelheid of zuiverheid; geen onderzoek naar de werking."
+  buzzi-2026-case:
+    finding: "Een vrouw van midden twintig werd in het ziekenhuis opgenomen na 5 dagen misselijkheid en overgeven. Ze had 4 keer, 1 keer per week, een injectie gekregen van een product dat retatrutide zou bevatten. Die injecties gaf een “lifecoach” zonder medische opleiding. De klachten verdwenen binnen een week."
+    limitation: "Eén persoon; het product is niet getest; het verband is beoordeeld als “waarschijnlijk”, niet als zeker."
+  branine-2026-case:
+    finding: "Een man van midden dertig met diabetes type 1 kreeg na een online product dat als retatrutide werd verkocht, ernstig overgeven, hoge ketonen en nierschade. Later had hij in het ziekenhuis herhaaldelijk een te lage bloedsuiker."
+    limitation: "Eén persoon; hij had ook een darminfectie met Shigella; de auteur schrijft dat niet is vast te stellen wat de oorzaak was."
+  piatkowski-2026-product-testing:
+    # residue-ok: evidence (where the tested products came from)
+    finding: "Drie producten die in Australië werden verkocht als 10 mg retatrutide bevatten allemaal retatrutide, maar 51%, 165% en 190% van de hoeveelheid op het etiket. Er zat een spoor lood in, ruim onder de veiligheidsgrens voor medicijnen om te injecteren."
+    limitation: "Maar 3 producten, anoniem ingeleverd bij een testdienst; steriliteit en bacteriële gifstoffen zijn niet getest."
+regulatory_notes:
+  NL: "Alleen in klinisch onderzoek: geen Nederlandse handelsvergunning en geen goedgekeurd compassionate-use-programma. In Nederland lopen 2 fase 3-studies; één (over leverziekte) is hier op 22 september 2026 gestart."
+  EU: "Alleen in klinisch onderzoek: geen handelsvergunning, en niet in beoordeling bij het EMA (lijst van 5 oktober 2026). Fase 3-studies lopen in EU-landen."
+  WADA: "Niet bij naam op de dopinglijst. Volgens de tekst van S0 (“Niet erkende stoffen”) altijd verboden; geen uitspraak van WADA over retatrutide gevonden."
+translation: { method: translated, from: en, review: pending }
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is retatrutide?">Een middel in onderzoek dat 3 hormonen tegelijk nadoet. Geen enkel land heeft het goedgekeurd.</Lead>
+
+<Compare title="Een middel uit een studie en een product van internet met dezelfde naam zijn niet hetzelfde." detail="Wat over allebei bekend is, uit de onderzoeksregisters, de producttests en de wet.">
+
+| | Retatrutide in een studie | Van internet, als “retatrutide” |
+|---|---|---|
+| Is bekend wat erin zit? | <Verdict is="yes" /> Het eigen middel van de ontwikkelaar, gegeven in een studie onder toezicht<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> In geteste producten zat de helft tot bijna het dubbele van wat op het etiket stond, en in minstens één zat een ander middel<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,au-tga-2026-09-retatrutide-counterfeit" /> |
+| Gemaakt volgens de kwaliteitsregels voor medicijnen (GMP), en steriel? | <Verdict is="yes" /> Een middel voor onderzoek moet volgens GMP worden gemaakt. Dat staat in de Europese verordening over klinisch onderzoek<Cite id="eu-regulation-536-2014" /> | <Verdict is="unknown" /> Geen medicijnautoriteit heeft gecontroleerd hoe ze zijn gemaakt, en geen gepubliceerde test keek of ze steriel waren<Cite id="piatkowski-2026-retatrutide-product-testing" /> |
+| Ligt de hoeveelheid per keer vast? | <Verdict is="yes" /> Die legt de studie vast<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> Hangt af van het etiket en van hoe je zelf afmeet<Cite id="piatkowski-2026-retatrutide-product-testing" /> |
+| Gecontroleerd voordat iemand het gebruikt? | <Verdict is="yes" /> Een studie mag pas beginnen na een wetenschappelijke en een ethische beoordeling. In Nederland is een positief oordeel nodig van een medisch-ethische toetsingscommissie (METC) of de Centrale Commissie Mensgebonden Onderzoek (CCMO)<Cite id="eu-regulation-536-2014,nl-wmo-art-2-6-7" /> | <Verdict is="no" /> Geen medicijnautoriteit heeft het beoordeeld<Cite id="ema-medicines-json,cbg-gib-search-status-2026-10-27" /> |
+| Wordt de veiligheid gevolgd? | <Verdict is="yes" /> Bezoeken, bloedonderzoek, een veiligheidscommissie<Cite id="ctgov-nct05929066" /> | <Verdict is="no" /> |
+| Is leveren legaal? | <Verdict is="yes" /> Binnen een goedgekeurde studie<Cite id="eu-regulation-536-2014,nl-gmw-art-40-handelsvergunning" /> | <Verdict is="no" /> In Nederland is verkopen, leveren of invoeren zonder handelsvergunning verboden<Cite id="nl-gmw-art-40-handelsvergunning" /> |
+
+</Compare>
+
+<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news,au-tga-2026-09-retatrutide-counterfeit" />
+
+{/* residue-ok: world context (the Australian regulator's statement that no comparable regulator has approved it) */}
+Het is een middel in klinisch onderzoek. Op 27 oktober 2026 heeft het geen handelsvergunning in Nederland of de EU: de Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG) en de gegevens van het Europees Geneesmiddelenbureau (EMA) noemen geen product.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json" /> Op de lijst van aanvragen die het EMA op 5 oktober 2026 beoordeelde, stond het ook niet.<Cite id="ema-under-evaluation-2026-10" /> De Australische medicijnautoriteit schreef in september 2026 dat ook geen vergelijkbare medicijnautoriteit elders het heeft goedgekeurd.<Cite id="au-tga-2026-09-retatrutide-counterfeit" />
+
+<InDetail title="De ontwikkelaar, en waarom het alleen in een studie legaal is">
+
+Retatrutide is een peptide om te injecteren, gemaakt door Eli Lilly. In het onderzoek heet het ook LY3437943. Het zet 3 hormoonreceptoren tegelijk aan: die voor GIP, GLP-1 en glucagon.<Cite id="chembl-retatrutide,coskun-2022-ly3437943-discovery" /> Daarom heet het een drievoudige agonist.
+
+<Callout type="legal" title="In onderzoek betekent: in de praktijk alleen legaal in een studie">
+In Nederland mag een geneesmiddel alleen in de handel als de EU of het CBG er een handelsvergunning voor heeft gegeven. Zonder die vergunning mag niemand het in voorraad hebben, verkopen, aan iemand geven of invoeren.<Cite id="nl-gmw-art-40-handelsvergunning" /> Die regel komt uit het Europese recht en geldt in elke lidstaat.<Cite id="eu-directive-2001-83" /> Er zijn een paar smalle uitzonderingen, zoals geneesmiddelen voor onderzoek, goedgekeurde compassionate-use-programma's en een ontheffing van de Inspectie Gezondheidszorg en Jeugd (IGJ) op een artsenverklaring.<Cite id="nl-gmw-art-40-handelsvergunning" /> Buiten een goedgekeurde studie is dus elk product met "retatrutide" op het etiket een middel zonder handelsvergunning, wat er verder ook op staat. Zie [alleen voor onderzoek](/nl/legal/research-use-only/) en de [legale wegen naar een behandeling](/nl/legal-routes/).
+</Callout>
+
+</InDetail>
+
+<InDetail title="Het molecuul, en waar het vandaan komt">
+
+### Wat het molecuul is
+
+Retatrutide is een keten van 39 aminozuren die begint met <Seq>Tyr-Aib-Gln-Gly-Thr-Phe</Seq>.<Cite id="gsrs-retatrutide" /> Er vallen 4 dingen op:<Cite id="gsrs-retatrutide,li-2024-retatrutide-structure" />
+
+- **Plaats 2 en 20:** Aib (2-aminoisoboterzuur), een aminozuur dat het lichaam niet in eiwitten gebruikt.
+- **Plaats 13:** α-methylleucine, nog een aminozuur dat het lichaam niet in eiwitten gebruikt.
+- **Plaats 17:** een lysine met een korte verbinding, een schakel van glutaminezuur en een vetzuur met 20 koolstofatomen en 2 zuurgroepen.
+- **Het einde van de keten** is een amide in plaats van een zuur.
+
+De brutoformule is C221H342N46O68 en de molecuulmassa is ongeveer <Q>4.731 Da</Q>.<Cite id="pubchem-retatrutide" /> Tirzepatide heeft hetzelfde soort vetzuurstaart. Volgens de productinformatie van tirzepatide maakt die staart binding aan albumine in het bloed mogelijk, en verlengt die de halfwaardetijd.<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro,fda-label-mounjaro" /> <Claim level="hypothesis">De staart van retatrutide werkt waarschijnlijk op dezelfde manier</Claim>; de gemeten halfwaardetijd bij mensen is ongeveer 6 dagen.<Cite id="urva-2022-ly3437943-phase-1b" />
+
+### Waar het vandaan komt
+
+Lilly beschreef het in 2022. <Claim level="in-vitro">In celtests was het ongeveer even actief op de glucagonreceptor en de GLP-1-receptor, en actiever op de GIP-receptor</Claim>: ongeveer 0,3 keer (glucagon), 0,4 keer (GLP-1) en 8,9 keer (GIP) zo actief als de lichaamseigen hormonen.<Cite id="coskun-2022-ly3437943-discovery,sanyal-2024-retatrutide-masld" /> Het eerste onderzoek bij mensen begon in maart 2019.<Cite id="ctgov-nct03841630" /> [Semaglutide](/nl/compounds/semaglutide/) werkt op één van deze receptoren (GLP-1), en [tirzepatide](/nl/compounds/tirzepatide/), ook van Lilly, op twee (GIP en GLP-1). Retatrutide voegt glucagon toe.<Cite id="ema-epar-wegovy,ema-epar-mounjaro,chembl-retatrutide" />
+
+</InDetail>
+
+<InDetail title="Waarom zoveel mensen ervan hebben gehoord">
+
+De resultaten van de studies kregen veel aandacht (zie het onderzoek hieronder). Lang voor een goedkeuring werd het al buiten de legale keten aangeboden. Het EMA en de nationale medicijnautoriteiten waarschuwden in september 2025 voor een sterke stijging van illegale producten die als GLP-1-medicijnen worden aangeboden. Er zit misschien helemaal niet de stof in die erop staat.<Cite id="ema-hma-2025-09-illegal-glp1" />
+
+De IGJ en het CBG waarschuwden dezelfde maand voor illegaal online aanbod van medicijnen tegen obesitas en diabetes type 2.<Cite id="igj-2025-illegal-online-medicines" /> De Douane schreef in augustus 2026 dat ze steeds meer afslankmiddelen ziet, soms met experimentele middelen, en dat invoeren zonder vergunning illegaal is.<Cite id="douane-2026-08-illegale-online-handel-medicijnen" /> Het Belgische Federaal Agentschap voor Geneesmiddelen en Gezondheidsproducten (FAGG) waarschuwde op 19 oktober 2026 dat "drievoudige agonisten" zoals retatrutide al online worden aangeboden, terwijl ze nog in onderzoek zijn.<Cite id="fagg-2026-glp1-misuse-warning" />
+
+{/* residue-ok: world context (other regulators' seizures and tests as evidence that fakes exist) */}
+Ook buiten de EU grijpen medicijnautoriteiten in. De Britse MHRA haalde in oktober 2025 een illegale fabriek van pennen met retatrutide en tirzepatide uit elkaar, en nam in oktober 2026 meer dan 12.000 nep-pennen in beslag.<Cite id="mhra-2025-retatrutide-seizure,mhra-2026-10-counterfeit-pens" /> De Australische TGA testte een flacon die als retatrutide werd verkocht, en vond er semaglutide in.<Cite id="au-tga-2026-09-retatrutide-counterfeit" /> De Amerikaanse medicijnautoriteit FDA waarschuwde bedrijven die het verkochten met het valse etiket "voor onderzoeksdoeleinden".<Cite id="fda-unapproved-glp1-concerns" />
+
+Het onderzoek op deze pagina gaat over een middel waarvan bekend is wat erin zit, gegeven in een studie onder toezicht. Een flacon of pen van internet heeft dezelfde naam, maar geen van die zekerheden. De vergelijking bovenaan deze sectie laat de verschillen per rij zien.
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Wat doet het in het lichaam?">Het doet wat 3 hormonen doen. Mensen hebben minder honger. Bij muizen verbruikte het lichaam ook meer energie.</Lead>
+
+Retatrutide zet 3 receptoren aan en blijft dat dagenlang doen. De GLP-1-receptor en de GIP-receptor zijn dezelfde als bij tirzepatide. De glucagonreceptor is het nieuwe deel, en daarover gaan de meeste open vragen.
+
+De figuur laat eerst zien hoe retatrutide in één cel werkt. Daarna zie je wat er in elk orgaan gebeurt, en hoe goed elk effect is aangetoond.
+
+<OrganCards id="retatrutide" />
+
+<InDetail title="De 3 receptoren in één tabel: waar ze zitten en wat ze doen">
+
+<Diagram id="retatrutide-three-receptors" caption="Eén molecuul, drie receptoren. Wat elk doet, en hoe goed dat bij mensen is aangetoond.">
+
+| Receptor | Waar die vooral zit | Wat aanzetten doet | Hoe goed dit is aangetoond voor retatrutide |
+|---|---|---|---|
+| GLP-1-receptor | Alvleesklier, hersenen, darm, hart | Meer insuline als de bloedsuiker hoog is, minder honger, de maag loopt langzamer leeg | Minder honger en een lager HbA1c aangetoond bij mensen |
+| GIP-receptor | Alvleesklier, hersenen, vetweefsel | Meer insuline als de bloedsuiker hoog is; effecten op vetweefsel en eetlust | Effecten op vet en hersenen vooral bij dieren |
+| Glucagonreceptor | Vooral de lever | De lever geeft suiker af en verbrandt vet en aminozuren; het lichaam verbruikt meer energie | Extra energieverbruik aangetoond bij muizen; minder levervet bij mensen, deels door gewichtsverlies |
+| Alle drie samen | | In een indirecte vergelijking van aparte studies gemiddeld iets meer gewichtsverlies dan met middelen op 1 of 2 receptoren | Gewichtsverlies aangetoond bij mensen; welk deel door glucagon komt, is niet bekend |
+
+</Diagram>
+
+<Cite id="ema-epar-mounjaro,elmendorf-2026-glucagon-iuphar-review,coskun-2022-ly3437943-discovery,kanu-2025-retatrutide-appetite,sanyal-2024-retatrutide-masld,chen-2026-glp1-network-meta-analysis" />
+
+In TRIUMPH-1 kregen 2.339 volwassenen met obesitas 80 weken behandeling. Hun gewicht daalde gemiddeld met maximaal 25,0%, tegen 3,9% met placebo.<Cite id="jastreboff-2026-triumph-1" /> Hoeveel daarvan het glucagondeel nodig heeft, is niet bekend (zie de open vraag hieronder). <Claim level="animal">Welke hersengebieden meedoen, is vooral bekend uit dierstudies met verwante medicijnen, zoals semaglutide bij knaagdieren</Claim>.<Cite id="gabery-2020-semaglutide-brain" />
+
+In de wand van maag en darmen zitten GLP-1-receptoren op spiercellen en zenuwcellen.<Cite id="muller-2019-glp1-review" />
+
+</InDetail>
+
+<InDetail title="Stap voor stap: de keten van effecten en het bewijs">
+
+<Mechanism />
+
+### Waar elke stap op rust
+
+**Receptoren en halfwaardetijd.** <Claim level="in-vitro">Met cryo-elektronenmicroscopie is retatrutide gebonden aan elke receptor gezien, elk gekoppeld aan het Gs-eiwit dat cAMP laat stijgen</Claim>.<Cite id="li-2024-retatrutide-structure" /> De verhoudingen in activiteit komen uit cellijnen.<Cite id="sanyal-2024-retatrutide-masld" /> De halfwaardetijd van ongeveer 6 dagen is gemeten bij 72 mensen met diabetes type 2.<Cite id="urva-2022-ly3437943-phase-1b" /> Ongeveer de helft van een dosis zit dus 6 dagen na een injectie nog in het lichaam. Na het stoppen verlaat het middel het lichaam langzaam. Bij 4 mensen die het 2 keer injecteerden, met een week ertussen, zat het 56 dagen na de eerste injectie nog in het bloed.<Cite id="carneiro-2026-retatrutide-antidoping" />
+
+**Eetlust en insuline.** <Claim level="human-controlled">In een analyse van een fase 2-studie bij 275 volwassenen met diabetes type 2 meldden mensen op hogere doses minder honger en minder neiging om te veel te eten dan op placebo</Claim>.<Cite id="kanu-2025-retatrutide-appetite" /> HbA1c daalde in elke gepubliceerde studie bij diabetes.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2,bajaj-2026-transcend-t2d-1,bellido-2026-triumph-2" />
+
+**Het glucagondeel.** Glucagon laat de bloedsuiker normaal gesproken stijgen. Het idee is dat het GLP-1-deel en het GIP-deel de glucose laag houden, terwijl het glucagondeel werkt op de lever en op het energieverbruik.<Cite id="elmendorf-2026-glucagon-iuphar-review" /> <Claim level="animal">Bij muizen met obesitas verhoogde het glucagondeel het energieverbruik, bovenop minder eten</Claim>.<Cite id="coskun-2022-ly3437943-discovery" /> <Claim level="human-limited">Bij 11 gezonde mannen verhoogde een infuus met glucagon het energieverbruik met 15%</Claim>, maar dat was glucagon zelf, kort gegeven.<Cite id="salem-2016-glucagon-energy-expenditure" /> Een studie van Lilly die het energieverbruik mat bij 85 mensen met obesitas, eindigde in augustus 2025. Op 20 oktober 2026 waren er geen resultaten openbaar.<Cite id="ctgov-nct06313528" />
+
+**De lever.** <Claim level="in-vitro">In menselijke levercellen verlaagde retatrutide de afgifte van ANGPTL3/8, een eiwit dat de afbraak van vetten in het bloed afremt; een remmer van de glucagonreceptor hield dit tegen</Claim>.<Cite id="wen-2025-retatrutide-angptl38" /> In de substudie naar levervet daalde het levervet het meest bij mensen die het meest afvielen. Ketonen, een teken dat het lichaam vet verbrandt, stegen bij de 3 hogere dosisniveaus met ongeveer 80% tot 180%, zonder ketoacidose.<Cite id="sanyal-2024-retatrutide-masld" /> Gewichtsverlies en een direct effect op de lever spelen waarschijnlijk allebei mee; de studies kunnen ze niet uit elkaar halen.
+
+</InDetail>
+
+<InDetail title="De open vraag: wat voegt het glucagondeel toe?">
+
+<Callout type="uncertain" title="Wat voegt het glucagondeel toe bij mensen?">
+In een indirecte vergelijking van aparte studies was het gemiddelde gewichtsverlies boven placebo 22,1% met retatrutide en 19,3% met tirzepatide, en de onzekerheidsmarges van de twee overlapten.<Cite id="chen-2026-glp1-network-meta-analysis" /> <Claim level="hypothesis">Een deel van het extra verlies komt misschien door meer energieverbruik, zoals bij muizen</Claim>. Maar geen gepubliceerde studie bij mensen haalt de twee uit elkaar. In een onafhankelijke studie verloren muizen met obesitas 31% van hun gewicht, zonder statistisch significante verandering in het energieverbruik.<Cite id="briand-2026-retatrutide-mash-models" /> Een studie bij 800 volwassenen die retatrutide direct vergelijkt met tirzepatide, rondt de hoofdfase naar verwachting in november 2026 af.<Cite id="ctgov-nct06662383" />
+</Callout>
+
+Het glucagondeel kan ook nadelen hebben. Bij muizen versnelt het de natuurlijke pacemaker van het hart, en glucagon breekt aminozuren af, wat vetvrij weefsel zou kunnen kosten. Beide staan bij de risico's.<Cite id="neumann-2025-retatrutide-mouse-atria,elmendorf-2026-glucagon-iuphar-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">In grote studies daalden gewicht en bloedsuiker. Veel deelnemers kregen bijwerkingen. De maker betaalde elke klinische studie.</Lead>
+
+<KeyNumber title="Het gewicht daalde gemiddeld met maximaal een kwart" value="17,6–25,0%" label="gemiddeld gewichtsverlies in 80 weken, afhankelijk van de dosis, tegen 3,9% met placebo" who="TRIUMPH-1: 2.339 volwassenen met obesitas, of overgewicht met een aandoening die daarmee samenhangt, zonder diabetes" source="jastreboff-2026-triumph-1,ctgov-nct05929066" level="human-controlled" />
+
+<KeyNumber title="Ook bij diabetes type 2 daalde het gewicht" value="11,9–18,8%" label="gemiddeld gewichtsverlies in 80 weken, afhankelijk van de dosis, tegen 5,1% met placebo" who="TRIUMPH-2: 1.152 volwassenen met diabetes type 2 en een BMI van 27 of meer" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="De bloedsuiker op lange termijn (HbA1c) daalde meer dan met placebo" value="1,69–1,94" label="procentpunt daling van HbA1c in 40 weken, tegen 0,81 met placebo" who="TRANSCEND-T2D-1: 537 volwassenen met diabetes type 2, alleen met dieet en beweging" source="bajaj-2026-transcend-t2d-1" level="human-controlled" />
+
+Veel deelnemers kregen bijwerkingen, vooral diarree en misselijkheid. Tot 12 op de 100 stopten door bijwerkingen of overlijden (zie de risico's).<Cite id="bellido-2026-triumph-2" /> Gewicht is een surrogaateindpunt: het voorspelt minder hartaanvallen, beroertes of sterfgevallen, maar het is niet hetzelfde. Er is nog geen uitkomstonderzoek gepubliceerd.<Cite id="ctgov-nct06383390" />
+
+Alle 10 verslagen van gerandomiseerde studies over retatrutide in PubMed hebben minstens één auteur die bij Lilly werkt.<Cite id="pubmed-retatrutide-count-2026-10-20" /> Dat is normaal vóór een goedkeuring en maakt de resultaten niet onwaar. Maar het bedrijf koos de vragen, de vergelijkingen en het moment van publiceren.
+
+<InDetail title="Alle studies in één tabel, en hoe ver de studies zijn">
+
+<StudyTable />
+
+Alle klinische studies bij mensen tot nu toe zijn opgezet, betaald en grotendeels geschreven door de ontwikkelaar. Hieronder staat wat ze testten en wat ze niet konden laten zien.
+
+### Hoe ver de studies zijn (20 oktober 2026)
+
+| Studie | Wie | Mensen | Status |
+|---|---|---|---|
+| Fase 1 en 1b | Gezonde volwassenen; diabetes type 2 | 45; 72 | Gepubliceerd in 2022 |
+| Fase 2 (2 studies) | Obesitas; diabetes type 2 | 338; 281 | Gepubliceerd in 2023 |
+| TRANSCEND-T2D-1 | Diabetes type 2, alleen dieet en beweging | 537 | Gepubliceerd in juni 2026 |
+| TRIUMPH-2 | Obesitas met diabetes type 2 | 1.152 | Gepubliceerd in september 2026 |
+| TRIUMPH-1 | Obesitas zonder diabetes | 2.339 | Gepubliceerd in september 2026 |
+| TRIUMPH-3 | Ernstige obesitas met hart- of vaatziekte | 1.946 | Afgerond in mei 2026; niet gepubliceerd |
+| TRIUMPH-4 | Obesitas met artrose in de knie | 445 | Afgerond in november 2025; niet gepubliceerd |
+| TRANSCEND-T2D-2 | Diabetes type 2, vergeleken met semaglutide | 1.250 (gepland) | Hoofdfase klaar in augustus 2026; geen resultaten |
+| TRIUMPH-5 | Obesitas, vergeleken met tirzepatide | 800 (gepland) | Hoofdfase klaar in november 2026 (verwacht) |
+| TRIUMPH-Outcomes | Problemen met hart en nieren | 10.000 (gepland) | Verwacht in 2029 |
+
+<Cite id="ctgov-nct03841630,urva-2022-ly3437943-phase-1b,jastreboff-2023-retatrutide-phase-2,rosenstock-2023-retatrutide-t2d-phase-2,bajaj-2026-transcend-t2d-1,bellido-2026-triumph-2,jastreboff-2026-triumph-1,ctgov-nct05882045,ctgov-nct05931367,ctgov-nct06260722,ctgov-nct06662383,ctgov-nct06383390" />
+
+</InDetail>
+
+<InDetail title="Wat de studies vonden, en wat nog niet is gepubliceerd">
+
+### Vroege studies
+
+In een fase 1b-studie van 12 weken bij 72 volwassenen met diabetes type 2 <Claim level="human-controlled">daalden glucose en HbA1c bij de 3 hoogste dosisniveaus, en daalde het gewicht tot ongeveer 9 kg meer dan met placebo</Claim>; 29 mensen stopten vroeg.<Cite id="urva-2022-ly3437943-phase-1b" /> In een fase 2-studie van 48 weken bij 338 volwassenen met obesitas of overgewicht <Claim level="human-controlled">daalde het gemiddelde gewicht met maximaal 24,2% bij de hoogste dosis, tegen 2,1% met placebo</Claim>.<Cite id="jastreboff-2023-retatrutide-phase-2" /> In een fase 2-studie bij 281 volwassenen met diabetes type 2 <Claim level="human-controlled">daalde HbA1c na 24 weken met maximaal 2,02 procentpunt, tegen 0,01 met placebo en 1,41 met dulaglutide, een goedgekeurd GLP-1-medicijn</Claim>.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2" />
+
+### Fase 3: wat is gepubliceerd
+
+{/* residue-ok: evidence (where the trial ran) */}
+In TRANSCEND-T2D-1 bepaalde loting welke behandeling 537 volwassenen met diabetes type 2 kregen. Ze gebruikten alleen dieet en beweging. De studie liep in de VS, Mexico en India. <Claim level="human-controlled">In 40 weken daalde HbA1c met 1,69 tot 1,94 procentpunt bij 3 dosisniveaus, tegen 0,81 met placebo; het gewicht daalde met 11,5% tot 15,3%, tegen 2,6%</Claim>.<Cite id="bajaj-2026-transcend-t2d-1" />
+
+In TRIUMPH-2 bepaalde loting de behandeling van 1.152 volwassenen met obesitas en diabetes type 2, in 8 landen. <Claim level="human-controlled">In 80 weken daalde het gewicht met 11,9%, 16,8% en 18,8% bij het lage, middelste en hoge dosisniveau, tegen 5,1% met placebo</Claim>.<Cite id="bellido-2026-triumph-2" />
+
+In TRIUMPH-1 bepaalde loting de behandeling van 2.339 volwassenen met obesitas zonder diabetes. <Claim level="human-controlled">In 80 weken daalde het gemiddelde gewicht met 17,6%, 23,7% en 25,0%, tegen 3,9% met placebo</Claim>. Bij 574 mensen met artrose in de knie verbeterde de kniepijn meer dan met placebo. Bij 243 mensen met slaapapneu daalden de ademstops en de te ondiepe ademhalingen tijdens de slaap met 22,8 tot 34,3 per uur, tegen 9,6 met placebo.<Cite id="jastreboff-2026-triumph-1" /> Van TRIUMPH-1 en TRIUMPH-2 konden we alleen de samenvattingen lezen.
+
+### Door het bedrijf gemeld, nog niet gepubliceerd
+
+TRIUMPH-3 en TRIUMPH-4 zijn afgerond, maar niet gepubliceerd.<Cite id="ctgov-nct05882045,ctgov-nct05931367" /> Over TRIUMPH-4 bracht het bedrijf al eerste cijfers naar buiten; een overzichtsartikel noemt ze.<Cite id="kaczynski-2026-retatrutide-review" /> Zulke topline-resultaten van een bedrijf komen naar buiten voordat onafhankelijke deskundigen de volledige gegevens hebben gecontroleerd. We noemen de cijfers van deze studies pas als ze zijn gepubliceerd.
+
+</InDetail>
+
+<InDetail title="Substudies, en onderzoek buiten het bedrijf">
+
+### Wat de substudies toevoegen
+
+- **Levervet.** Bij 98 volwassenen met minstens 10% levervet <Claim level="human-controlled">daalde het levervet na 24 weken met maximaal 82%</Claim>, zonder tekenen van leverschade. De substudie gebruikte MRI in plaats van een biopt, maakte veel vergelijkingen zonder correctie, en miste bij 56% van de mensen de scans na 48 weken.<Cite id="sanyal-2024-retatrutide-masld" /> Een groot onderzoek naar de gevolgen voor de lever werft deelnemers. In Nederland is het op 22 september 2026 gestart; of er hier al deelnemers zijn, is niet duidelijk (zie de wettelijke status).<Cite id="ctgov-nct07165028,ctis-2025-522674-36-00,omon-nl-omon61112" />
+- **Lichaamssamenstelling.** In de studie bij diabetes daalde het lichaamsvet met ongeveer een kwart bij hogere doses. Maar 103 van de 189 mensen hadden scans aan het begin en na 36 weken. De auteurs van het bedrijf vonden het aandeel verloren vetvrij weefsel vergelijkbaar met dat bij andere obesitasmiddelen.<Cite id="coskun-2025-retatrutide-body-composition" />
+- **Nieren en bloedvetten.** Analyses achteraf (post-hocanalyses) van de 2 fase 2-studies, geschreven door of met wetenschappers van Lilly, vonden minder eiwit (albumine) in de plas, en lagere triglyceriden en LDL-cholesterol.<Cite id="heerspink-2025-retatrutide-kidney,wen-2025-retatrutide-angptl38" />
+
+### Onafhankelijk onderzoek
+
+Geen groep buiten Lilly heeft een klinische studie bij mensen gedaan. Ongeveer 16 kleine dierstudies komen van onafhankelijke groepen.<Cite id="pubmed-retatrutide-count-2026-10-20" /> In één ervan <Claim level="animal">verlaagde retatrutide het gewicht en het levervet bij muizen en hamsters met obesitas</Claim>; in een andere verlaagde het het gewicht bij muizen zonder een belangrijke eetlustreceptor. In beide daalde bij muizen de vetvrije massa mee met het vet.<Cite id="briand-2026-retatrutide-mash-models,hitaka-2026-retatrutide-mc4r" /> Onafhankelijke studies van hartweefsel, van producten en van gebruik buiten studies staan bij de risico's.
+
+</InDetail>
+
+<InDetail title="Hoe het zich verhoudt, en wat het wachten betekent">
+
+### Vergeleken met andere medicijnen
+
+Een onafhankelijke netwerkmeta-analyse van 58 studies (24.214 volwassenen zonder diabetes) schatte <Claim level="human-controlled">22,1% meer gewichtsverlies dan placebo met retatrutide, en 19,3% met tirzepatide</Claim>. Volgens bewijs met een lage zekerheid stoppen meer mensen met retatrutide.<Cite id="chen-2026-glp1-network-meta-analysis" /> Dit zijn indirecte vergelijkingen; studies die direct vergelijken met semaglutide en tirzepatide hebben nog geen resultaten.<Cite id="ctgov-nct06260722,ctgov-nct06662383" /> Tirzepatide (Mounjaro) is in de EU goedgekeurd voor diabetes type 2 (vanaf 10 jaar). Het is ook goedgekeurd voor gewichtsbeheersing bij volwassenen met een BMI van 30 of meer, of van 27 tot 30 met minstens één aandoening die met het gewicht samenhangt, naast een dieet en meer beweging. De bijwerkingen die het vaakst worden gemeld, zijn klachten van maag en darmen. Wie overgevoelig is voor het middel, mag het niet gebruiken. Zie [tirzepatide](/nl/compounds/tirzepatide/).<Cite id="ema-pi-mounjaro-nl" />
+
+### Wat het bewijs wel laat zien, en de nadelen van wachten
+
+Het bewijs is niet zwak. Drie fase 3-studies met placebo als vergelijking, bij meer dan 4.000 mensen en gepubliceerd in tijdschriften met beoordeling door vakgenoten, laten in elke studie een grote daling van het gewicht zien. Ook daalde HbA1c bij mensen met diabetes, en verbeterden kniepijn en slaapapneu.<Cite id="bajaj-2026-transcend-t2d-1,bellido-2026-triumph-2,jastreboff-2026-triumph-1" /> Voor mensen met ernstige obesitas kan dat belangrijk zijn. Tegelijk kregen veel deelnemers bijwerkingen, vooral van maag en darmen (zie de risico's).<Cite id="bellido-2026-triumph-2" /> En geen medicijnautoriteit heeft de voordelen en de risico's al tegen elkaar afgewogen.
+
+Het wachten heeft nadelen. De meeste mensen die het nieuws zien, kunnen het buiten een studie niet legaal krijgen. Buiten de legale keten worden producten aangeboden waarvan niemand weet wat erin zit.<Cite id="mhra-2026-10-counterfeit-pens,piatkowski-2026-retatrutide-product-testing" /> Het wachten heeft ook redenen: vragen over de hartslag, gevoelens in de huid, vetvrije massa en de lange termijn zijn nog open.<Cite id="ctgov-nct06383390" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog niet bekend?">Wat langer gebruik doet, of de snellere hartslag ertoe doet, en wat er in producten van internet zit.</Lead>
+
+<TimeStrip title="De langste gepubliceerde studies duurden 80 weken. Wat langer gebruik doet, is niet bekend." detail="Jaren gebruik in de gepubliceerde studies, geteld vanaf het begin van de behandeling." min={0} max={4} step={1} axis="Jaren gebruik" source="jastreboff-2026-triumph-1,bellido-2026-triumph-2" rows={[
+  { label: "Langste gepubliceerde studies (TRIUMPH-1 en TRIUMPH-2)", spans: [{ from: 0, to: 1.53, text: "80 weken, ongeveer anderhalf jaar" }] },
+  { label: "Langer gebruik", spans: [{ from: 1.53, to: 4, text: "niet onderzocht in de gepubliceerde studies", unknown: true }] },
+]} />
+
+<InDetail title="Alle tien open vragen, met hun bronnen">
+
+Op 20 oktober 2026 is dit nog onbekend:
+
+- **Veiligheid op lange termijn.** De langste gepubliceerde studies duurden 80 weken.<Cite id="jastreboff-2026-triumph-1,bellido-2026-triumph-2" />
+- **Hart en hartritme.** Of de hogere hartslag leidt tot hartritmestoornissen of hartproblemen. Het uitkomstonderzoek bij 10.000 mensen is naar verwachting in 2029 klaar.<Cite id="ctgov-nct06383390" />
+- **Wat het glucagondeel toevoegt.** Of retatrutide het energieverbruik bij mensen verhoogt; een afgeronde studie is niet gepubliceerd.<Cite id="ctgov-nct06313528" />
+- **Spieren en kracht.** Hoeveel van het verloren vetvrije weefsel spier is, en of kracht of vallen erdoor veranderen.<Cite id="coskun-2025-retatrutide-body-composition,elmendorf-2026-glucagon-iuphar-review" />
+- **Gevoelens in de huid.** Waarom ze ontstaan, en of ze altijd weggaan.<Cite id="kaczynski-2026-retatrutide-review" />
+- **Twee afgeronde fase 3-studies**, TRIUMPH-3 en TRIUMPH-4.<Cite id="ctgov-nct05882045,ctgov-nct05931367" />
+- **Wisselwerkingen.** Studies met de anticonceptiepil en met warfarine, midazolam en cafeïne eindigden in 2023 en 2024, zonder openbare resultaten.<Cite id="ctgov-nct06039826,ctgov-nct05445232" />
+- **Wat er na het stoppen gebeurt.** Bij semaglutide en tirzepatide komt een groot deel van het verloren gewicht terug; er is geen studie naar stoppen met retatrutide gepubliceerd.<Cite id="wilding-2022-step-1-extension,aronne-2024-surmount-4" />
+- **Zwangerschap en borstvoeding.** We vonden geen gepubliceerde gegevens bij mensen.
+- **Wat er in producten buiten de legale keten zit.** Maar 3 zijn getest in een gepubliceerde studie, en geen enkele op steriliteit.<Cite id="piatkowski-2026-retatrutide-product-testing" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Niet goedgekeurd in Nederland of de EU. Verkopen is verboden. Legaal kan het vrijwel alleen in een studie.</Lead>
+
+<Compare title="Geen handelsvergunning in Nederland of de EU. Leveren en invoeren zijn in Nederland verboden." detail="Status in Nederland en in de EU, gecontroleerd op 27 oktober 2026. Sport staat hieronder, onder “Status in Nederland, de EU en de sport”.">
+
+| | Goedgekeurd als medicijn? | Heeft de maker goedkeuring gevraagd? | Mag iemand het leveren? |
+|---|---|---|---|
+| Nederland | <Verdict is="no" /> Geen Nederlandse handelsvergunning. De Geneesmiddeleninformatiebank van het CBG vindt geen product<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="unknown" /> Geen Nederlandse aanvraag bekend. Een nieuwe stof tegen diabetes kan alleen via de EU worden goedgekeurd<Cite id="eu-regulation-726-2004" /> | <Verdict is="no" /> De Geneesmiddelenwet verbiedt verkopen, leveren en invoeren zonder handelsvergunning. Er is geen goedgekeurd compassionate-use-programma<Cite id="nl-gmw-art-40-handelsvergunning,cbg-compassionate-use-list" /> |
+| Europese Unie | <Verdict is="no" /> Geen handelsvergunning voor de EU. De gegevens van het EMA noemen geen product<Cite id="ema-medicines-json" /> | <Verdict is="no" /> Niet op de lijst van aanvragen die het EMA beoordeelt (5 oktober 2026)<Cite id="ema-under-evaluation-2026-10" /> | <Verdict is="no" /> Zonder handelsvergunning mag een medicijn in geen enkele lidstaat in de handel<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+### Sport (WADA)
+
+Retatrutide staat niet bij naam op de WADA-Dopinglijst 2026, en ook niet op de lijst van 2027, die op 1 januari 2027 ingaat.<Cite id="wada-2026-list-en,wada-2027-list-en" /> Volgens de tekst van groep S0 is het toch altijd verboden. S0 ("Niet erkende stoffen") gaat over elke stof die niet onder een ander deel van de lijst valt en die geen enkele overheidsgezondheidsautoriteit heeft goedgekeurd als medicijn voor mensen. Daaronder vallen ook "medicijnen in preklinische of klinische ontwikkelingsfase".<Cite id="wada-2026-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> Het Wereld Anti-Doping Agentschap (WADA) schrijft in zijn toelichting bij de lijst van 2027 dat een peptide niet bij naam genoemd hoeft te zijn om toch verboden te zijn. Daarom noemt de lijst van 2027 bij S0 nu ook peptiden als voorbeeld.<Cite id="wada-2027-list-explanatory-note,wada-2027-list-en" />
+
+{/* residue-ok: world context (another anti-doping body's reading, as evidence) */}
+Een Australische antidopingorganisatie schrijft op haar pagina over retatrutide dat het niet op de dopinglijst staat ("is not listed on the Prohibited List"). Dat klopt in de zin dat het niet bij naam wordt genoemd. Die pagina bespreekt S0 niet, en een uitspraak van WADA over retatrutide zelf vonden we niet.<Cite id="au-sia-retatrutide" /> Twijfel je als sporter? Vraag het de Dopingautoriteit.<Cite id="dopingautoriteit-geneesmiddelen-controleren" /> Een goedkeuring ergens ter wereld zou de positie onder S0 veranderen. Die moet dan opnieuw worden bekeken. Zie [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland">
+
+### Wat de wet zegt
+
+De Geneesmiddeleninformatiebank van het CBG vindt geen product met retatrutide.<Cite id="cbg-gib-search-status-2026-10-27" /> Volgens de Geneesmiddelenwet mag niemand een geneesmiddel zonder handelsvergunning in voorraad hebben, verkopen, afleveren, aan iemand geven, invoeren of op een andere manier Nederland binnenbrengen (artikel 40).<Cite id="nl-gmw-art-40-handelsvergunning" /> Er zijn een paar smalle uitzonderingen, zoals geneesmiddelen voor onderzoek, goedgekeurde compassionate-use-programma's en een ontheffing van de IGJ op een artsenverklaring.<Cite id="nl-gmw-art-40-handelsvergunning" /> Retatrutide staat niet op de lijst van het CBG met goedgekeurde compassionate-use-programma's.<Cite id="cbg-compassionate-use-list" /> Over een ontheffing voor retatrutide vonden we niets openbaars. In de praktijk krijg je het dus alleen legaal als deelnemer aan een studie. Zie [de Nederlandse wet](/nl/legal/nl/).
+
+### Zelf gebruiken en zelf invoeren
+
+Gebruiken staat niet in de lijst van verboden handelingen. Of een paar flacons thuis al "in voorraad hebben" is, zegt de wet niet duidelijk.<Cite id="nl-gmw-art-40-handelsvergunning" /> Invoeren is wel verboden, ook voor eigen gebruik: artikel 40 heeft geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Reizigers mogen de meeste medicijnen voor eigen gebruik zelf meenemen. Die uitzondering gaat alleen over de vergunning om medicijnen in te voeren (artikel 18). Het verbod van artikel 40 blijft gelden, dus een middel zonder handelsvergunning wordt daardoor niet legaal.<Cite id="douane-medicijnen-reizen-2026,nl-gnw-art-18-licence,nl-gmw-art-40-handelsvergunning" /> De uitzondering geldt ook niet voor een pakket dat je per post laat komen, oordeelde een rechter in 2019.<Cite id="nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane controleert post- en pakketzendingen. Zonder vergunning mag niemand geneesmiddelen Nederland binnenbrengen.<Cite id="douane-invoer-geneesmiddelen-2026" /> In antwoorden op Kamervragen van 5 oktober 2026 schreef de minister: "Import van geneesmiddelen is alleen toegestaan als een handelsvergunning is verleend."<Cite id="tk-2026-ah-249-antwoord-afslankmedicatie" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren) en [wat de Nederlandse wet zegt over zelf invoeren](/nl/legal/nl/#zelf-invoeren-uit-het-buitenland).
+
+### Studies in Nederland
+
+Retatrutide wordt in Nederland getest in 2 fase 3-studies, allebei voor bepaalde groepen patiënten:<Cite id="ctgov-nl-peptide-search-2026-10-27" />
+
+- **TRIUMPH-Outcomes**: volwassenen met obesitas en een hart- of vaatziekte of een chronische nierziekte. Het onderzoek kijkt naar problemen met hart en nieren. Volgens het Nederlandse onderzoeksregister is de werving gestopt.<Cite id="omon-nl-omon60031,ctgov-nct06383390" />
+- **SYNERGY-Outcomes**: volwassenen met leververvetting (MASLD) en een hoog risico. Het vergelijkt tirzepatide en retatrutide met placebo. Nederland gaf op 4 februari 2026 toestemming, en het onderzoek is hier op 22 september 2026 gestart.<Cite id="ctis-2025-522674-36-00,omon-nl-omon61112,ctgov-nct07165028" />
+
+Of er in Nederland al deelnemers in SYNERGY-Outcomes zitten, is niet duidelijk: de registers zeggen niet hetzelfde.<Cite id="ctis-2025-522674-36-00,omon-nl-omon61112" />
+
+### Toezicht
+
+De IGJ houdt toezicht op de Geneesmiddelenwet. Volgens de minister treedt de IGJ op tegen illegale handel in geneesmiddelen en tegen illegaal online aanbod, bijvoorbeeld door websites uit de lucht te laten halen en boetes op te leggen.<Cite id="tk-2026-ah-249-antwoord-afslankmedicatie" />
+
+</InDetail>
+
+<InDetail title="De Europese Unie">
+
+Geen enkel product met retatrutide heeft een handelsvergunning voor de EU. Het staat niet in de gegevens van het EMA, en niet op de lijst van aanvragen die het EMA op 5 oktober 2026 beoordeelde.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10" /> Zonder handelsvergunning mag een medicijn in geen enkele lidstaat in de handel.<Cite id="eu-directive-2001-83" /> Een middel met een nieuwe werkzame stof tegen diabetes kan alleen een handelsvergunning van de EU krijgen. Voor andere nieuwe stoffen kan die EU-route ook.<Cite id="eu-regulation-726-2004" />
+
+Het Europese register voor klinisch onderzoek (CTIS) noemt 9 studies met retatrutide. Er zijn er 6 afgelopen, en 3 lopen nog:<Cite id="ctis-2024-511450-49-00,ctis-2025-522674-36-00" />
+
+- **TRIUMPH-5**, dat retatrutide vergelijkt met tirzepatide, in Duitsland en Polen. De werving is gestopt; het einde wordt verwacht op 16 november 2026.
+- **SYNERGY-Outcomes**, in 14 EU-landen en Noorwegen, ook in Nederland.
+- **Een fase 1-studie** in Duitsland.
+
+Voor TRIUMPH-Outcomes toont CTIS geen openbare gegevens. Wat de Europese status van die studie is, kunnen we daar dus niet zien. ClinicalTrials.gov noemt wel 28 Nederlandse locaties.<Cite id="ctgov-nct06383390" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Veel mensen worden misselijk of krijgen diarree. Sommigen krijgen een snellere hartslag of vreemde gevoelens in de huid.</Lead>
+
+<KeyNumber title="Tot ongeveer 1 op de 3 had diarree" value="27–34%" label="had dunne ontlasting (diarree), afhankelijk van de dosis. Met placebo was dat 13%" who="TRIUMPH-2: 1.152 volwassenen met diabetes type 2 en een BMI van 27 of meer, 80 weken" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Veel mensen waren misselijk" value="14–28%" label="was misselijk, afhankelijk van de dosis. Met placebo was dat 8%" who="Dezelfde studie (TRIUMPH-2)" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Sommigen hadden een brandende, tintelende of pijnlijke huid" value="4–7%" label="had vreemde gevoelens in de huid, afhankelijk van de dosis. Met placebo was dat 1%" who="Dezelfde studie (TRIUMPH-2)" source="bellido-2026-triumph-2" level="human-controlled" />
+
+<KeyNumber title="Tot 12 op de 100 stopten voorgoed" value="4–12%" label="stopte door bijwerkingen of overlijden, afhankelijk van de dosis. Met placebo was dat 5%" who="Dezelfde studie (TRIUMPH-2)" source="bellido-2026-triumph-2" level="human-controlled" />
+
+**Snellere hartslag.** In de fase 2-studie bij obesitas steeg de hartslag met de dosis, was die het hoogst na 24 weken en daalde daarna. De samenvattingen die we konden lezen, zeggen niet hoeveel de hartslag steeg.<Cite id="jastreboff-2023-retatrutide-phase-2" />
+
+<InDetail title="Alles wat de studies meldden">
+
+### Wat de studies meldden
+
+- **Maag en darmen.** Misselijkheid, diarree, overgeven en verstopping waren de bijwerkingen die het vaakst voorkwamen. Ze waren meestal licht tot matig en hingen af van de dosis.<Cite id="jastreboff-2023-retatrutide-phase-2,rosenstock-2023-retatrutide-t2d-phase-2" /> In TRIUMPH-2 had 27% tot 34% diarree, tegen 13% met placebo, en was 14% tot 28% misselijk, tegen 8%.<Cite id="bellido-2026-triumph-2" />
+- **Stoppen.** In TRIUMPH-2 stopte 4% tot 12% door bijwerkingen of overlijden, tegen 5% met placebo; in TRANSCEND-T2D-1 was dat 2% tot 5%, tegen niemand.<Cite id="bellido-2026-triumph-2,bajaj-2026-transcend-t2d-1" />
+- **Lage bloeddruk.** In TRIUMPH-2 bij 1% tot 6%, tegen minder dan 1% met placebo.<Cite id="bellido-2026-triumph-2" />
+- **Vreemde gevoelens in de huid.** Een brandende, tintelende of pijnlijke huid (dysesthesie) kwam in TRIUMPH-2 voor bij 4% tot 7%, tegen 1% met placebo.<Cite id="bellido-2026-triumph-2" /> In de fase 2-studie bij obesitas hadden 4 van de 62 mensen op de hoogste dosis allodynie (pijn door een gewone aanraking), tegen niemand in de andere groepen.<Cite id="ctgov-nct04881760" /> Over het niet-gepubliceerde TRIUMPH-4 meldde het bedrijf hogere percentages, bij de hoogste dosis tot ongeveer 1 op de 5. Vakgenoten hebben dat cijfer niet beoordeeld. De meeste gemelde gevallen waren licht tot matig, en de oorzaak is onbekend.<Cite id="kaczynski-2026-retatrutide-review" /> De productinformatie van semaglutide (Wegovy) en tirzepatide (Mounjaro) noemt ook dysesthesie, dus misschien hoort het niet alleen bij retatrutide.<Cite id="ema-pi-wegovy-nl,ema-pi-mounjaro-nl,ema-epar-wegovy,ema-epar-mounjaro,fda-label-wegovy,fda-label-mounjaro,fda-label-zepbound" />
+- **Allergie-achtige reacties.** In 3 vroege studies samen kwamen ze vaker voor dan met placebo (risicoratio 3,79, 95%-BI 1,20–11,96).<Cite id="pasqualotto-2024-retatrutide-meta-analysis" />
+- **Alvleesklier en galblaas.** In de 2 fase 2-studies samen kwamen enkele ernstige gevallen voor van een ontstoken alvleesklier (pancreatitis; 3) en van een ontstoken galblaas (2).<Cite id="ctgov-nct04881760,ctgov-nct04867785" /> Beide zijn bekende, niet vaak voorkomende risico's van GLP-1-medicijnen.<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro,fda-label-mounjaro" />
+- **Overlijden.** In TRIUMPH-2 overleden 6 mensen op retatrutide en 1 op placebo. Volgens de onderzoekers hing geen van deze sterfgevallen samen met het middel.<Cite id="bellido-2026-triumph-2" />
+
+</InDetail>
+
+<InDetail title="Waarom een effect op het hartritme wordt vermoed">
+
+1. **Retatrutide verhoogt de hartslag bij mensen,** meer bij een hogere dosis.<Cite id="jastreboff-2023-retatrutide-phase-2" />
+2. **Bij muizen versnelt de glucagonreceptor de pacemaker van het hart.** <Claim level="animal">In losse boezems van muizen verhoogde retatrutide de hartslag via de glucagonreceptor en cAMP; een remmer van de glucagonreceptor verminderde die stijging</Claim>.<Cite id="neumann-2025-retatrutide-mouse-atria" />
+3. **In menselijke hartspier verhoogt het de kracht.** <Claim level="in-vitro">In boezemweefsel van 29 volwassenen met een ziekte van de kransslagaders liet retatrutide de spier harder samenknijpen, en remmers van elk van de 3 receptoren verzwakten dat effect</Claim>.<Cite id="neumann-2026-retatrutide-human-atria" /> <Claim level="hypothesis">Of deze extra prikkel het hart bij sommige mensen gevoeliger maakt voor ritmestoornissen, is de open vraag</Claim>.
+4. **Vroege cijfers wijzen dezelfde kant op, zonder bewijs.** <Claim level="human-controlled">In 3 vroege studies samen kwamen hartritmestoornissen ongeveer 3 keer zo vaak voor als met placebo, maar niet statistisch significant (risicoratio 3,41, 95%-BI 0,86–13,55)</Claim>.<Cite id="pasqualotto-2024-retatrutide-meta-analysis" /> Eén persoon in de fase 2-studie bij diabetes had een ernstige periode van boezemfibrilleren.<Cite id="ctgov-nct04867785" />
+
+Er zijn ook eerlijke tegenargumenten. Een Spaans labonderzoek vond in menselijk hartweefsel geen glucagonreceptoren en geen effect van glucagon op hartslag of kracht, anders dan bij ratten.<Cite id="aranda-domene-2023-glucagon-human-heart" /> Dat botst met de studie van menselijk weefsel hierboven, dus de 2 labs zijn het oneens over glucagonreceptoren in het menselijk hart.<Cite id="neumann-2026-retatrutide-human-atria" /> Gewichtsverlies zelf kan beschermen: <Claim level="animal">bij muizen met obesitas maakte 3 weken retatrutide boezemfibrilleren moeilijker op te wekken</Claim>.<Cite id="takahashi-2026-af-mice" /> En de stijging van de hartslag nam na 24 weken af.<Cite id="jastreboff-2023-retatrutide-phase-2" /> Het uitkomstonderzoek is opgezet om dit uit te zoeken.<Cite id="ctgov-nct06383390" />
+
+</InDetail>
+
+<InDetail title="Spieren, lage bloedsuiker, de schildklier en zwangerschap">
+
+### Spieren en vetvrije massa
+
+<Claim level="human-limited">Bij GLP-1-medicijnen bestond van ongeveer 15% tot 40 à 60% van het verloren gewicht uit vetvrije massa</Claim>. Vetvrije massa omvat ook organen en water, niet alleen spier. Studies met MRI van deze oudere middelen wijzen erop dat de verandering in spier vooral past bij het verloren gewicht. De bron is een overzichtsartikel.<Cite id="neeland-2024-lean-mass" /> Voor retatrutide zijn de enige gegevens bij mensen een substudie van het bedrijf, met volledige scans bij 103 mensen.<Cite id="coskun-2025-retatrutide-body-composition" /> <Claim level="hypothesis">Omdat glucagon de afbraak van aminozuren aanjaagt, zou een middel op de glucagonreceptor meer vetvrij weefsel kunnen kosten dan andere middelen</Claim>; een onafhankelijk overzichtsartikel noemt dit als mogelijk nadeel.<Cite id="elmendorf-2026-glucagon-iuphar-review" /> Bij muizen daalde de vetvrije massa mee met het vet.<Cite id="briand-2026-retatrutide-mash-models,hitaka-2026-retatrutide-mc4r" /> De effecten op kracht en vallen zijn onbekend.
+
+### Lage bloedsuiker, en diabetes type 1
+
+In de fase 2-studie bij diabetes en in TRANSCEND-T2D-1 werd geen ernstige te lage bloedsuiker gemeld.<Cite id="rosenstock-2023-retatrutide-t2d-phase-2,bajaj-2026-transcend-t2d-1" /> Insuline en sulfonylureumderivaten verlagen de glucose, ook als die niet hoog is. Samen met andere GLP-1-medicijnen kunnen ze de bloedsuiker te laag maken.<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro,fda-label-mounjaro" /> TRIUMPH-2 liet sulfonylureumderivaten toe, maar de samenvatting geeft geen cijfers over te lage bloedsuiker.<Cite id="bellido-2026-triumph-2" /> Geen van de 34 geregistreerde studies met retatrutide gaat over diabetes type 1.<Cite id="ctgov-retatrutide-search-2026-10-20" /> In één casusbeschrijving kreeg een man met diabetes type 1 na een online product ernstig overgeven, hoge ketonen en nierschade, en later herhaaldelijk een te lage bloedsuiker. Hij had ook een darminfectie, dus de oorzaak is onzeker.<Cite id="branine-2026-retatrutide-ketosis-case" /> Bij diabetes type 1 kunnen ketonen zich ophopen als je overgeeft en insuline mist.<Cite id="branine-2026-retatrutide-ketosis-case" /> <Claim level="hypothesis">Een middel dat ook de ketonen laat stijgen, zou dat erger kunnen maken</Claim>.<Cite id="sanyal-2024-retatrutide-masld" />
+
+### Schildklier en zwangerschap
+
+<Claim level="animal">GLP-1-receptoragonisten prikkelen de C-cellen van de schildklier bij knaagdieren</Claim>. C-cellen van mensen en apen hebben weinig GLP-1-receptoren, dus het is onzeker wat dit voor mensen betekent.<Cite id="knudsen-2010-thyroid-c-cells" /> De Amerikaanse productinformatie van goedgekeurde middelen in deze groep waarschuwt voor medullair schildkliercarcinoom, een zeldzame vorm van schildklierkanker.<Cite id="fda-label-mounjaro" /> De Europese productinformatie van tirzepatide meldt meer C-celtumoren van de schildklier bij ratten, en zegt dat niet bekend is wat dit voor mensen betekent.<Cite id="ema-pi-mounjaro-nl" /> TRIUMPH-1 liet geen mensen meedoen die zelf of in de familie medullair schildkliercarcinoom of MEN2 hadden.<Cite id="ctgov-nct05929066" /> We vonden geen gepubliceerde studies van retatrutide naar kanker of naar de voortplanting.
+
+</InDetail>
+
+<InDetail title="Wat er buiten studies gebeurt, en in de sport">
+
+### Wat er buiten studies gebeurt
+
+{/* residue-ok: evidence (where the tested products came from) */}
+- **Verkeerde hoeveelheden.** Drie producten die in Australië als <Q>10 mg</Q> werden verkocht, bevatten 51%, 165% en 190% van de hoeveelheid op het etiket. Er zat een spoor lood in, ruim onder de veiligheidsgrens, en geen enkel product is op steriliteit getest.<Cite id="piatkowski-2026-retatrutide-product-testing" />
+- **Een ander middel.** Bij Australische tests zat in één product dat als retatrutide werd verkocht "een hoge dosis semaglutide en geen retatrutide", meldde JAMA.<Cite id="rubin-2026-jama-news" />
+- **Leverschade.** Het ministerie van Volksgezondheid van de Australische deelstaat Victoria meldde 6 gevallen van acute leverschade sinds januari 2026, na gebruik van producten met retatrutide op het etiket. Het ministerie hield een vervuiling voor mogelijk; de tests liepen nog.<Cite id="vic-health-2026-retatrutide-liver,rubin-2026-jama-news" /> In de fase 2-studie bij obesitas was geen teken van leverschade te zien,<Cite id="sanyal-2024-retatrutide-masld" /> dus <Claim level="hypothesis">misschien komt het door een vervuiling</Claim>; dat is niet aangetoond.
+- **Ziekenhuisopname.** Een jonge vrouw werd in het ziekenhuis opgenomen na dagen overgeven, na injecties van een "lifecoach" zonder medische opleiding.<Cite id="buzzi-2026-retatrutide-case-report" />
+- **Berichten op sociale media.** 13.589 gebruikers van sociale media schreven over het gebruik ervan. Bij de 7.823 die een klacht noemden, kwamen deze klachten vaak voor: meer eetlust, vermoeidheid, meer energie, misselijkheid en slecht slapen. 4,8% noemde een snellere hartslag. Dit zijn berichten, geen metingen.<Cite id="sehgal-2026-retatrutide-social-media" />
+
+### Sport
+
+Volgens de tekst van de dopinglijst is retatrutide altijd verboden onder S0, ook al wordt het niet bij naam genoemd (zie de wettelijke status).<Cite id="wada-2026-list-en,au-sia-retatrutide" /> <Claim level="human-limited">Een antidopinglab vond het bij 4 gebruikers 56 dagen na de eerste van 2 injecties nog in het bloed</Claim>.<Cite id="carneiro-2026-retatrutide-antidoping" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico verkleinen?">Vraag naar een studie of een goedgekeurd medicijn. Controleer elk product eerst, en weet wanneer je stopt.</Lead>
+
+In Nederland is retatrutide in de praktijk alleen legaal binnen een studie, dus geen apotheek mag het meegeven.<Cite id="nl-gmw-art-40-handelsvergunning,cbg-gib-search-status-2026-10-27" /> Twee verwante medicijnen, [semaglutide](/nl/compounds/semaglutide/) en [tirzepatide](/nl/compounds/tirzepatide/), zijn wel goedgekeurd. Ze hebben hun eigen bijwerkingen en regels. Je arts kan met je bespreken of een van beide bij je past.
+
+{/* residue-ok: world context (fake pens exist; the UK seizure is the only official count) */}
+De controles hieronder gelden voor elk product met deze naam, ook voor pennen. De Britse medicijnautoriteit nam duizenden nep-pennen met retatrutide en tirzepatide in beslag, en de IGJ waarschuwde in oktober 2026 voor gestolen insulinepennen die misschien als obesitasmedicatie worden aangeboden.<Cite id="mhra-2026-10-counterfeit-pens,igj-2026-10-stolen-medicines" />
+
+<ProductCheck extra="Ook een volledig etiket kan fout zijn. In geteste producten zat de helft tot bijna het dubbele van wat op het etiket stond. In één zat een ander middel." extraSources="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Zoek direct medische hulp" id="stop-now">
+- **Heftige pijn boven in je buik die niet weggaat**, vaak uitstralend naar je rug, met of zonder overgeven: misschien een ontstoken alvleesklier (pancreatitis). Stop en bel direct 112.
+- **Een jagende, bonkende of onregelmatige hartslag met duizeligheid, flauwvallen, pijn op de borst of benauwdheid:** bel direct 112.
+- **Een gele huid of geel oogwit, donkere plas, of snel blauwe plekken:** misschien leverschade. Stop en bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Zo vaak overgeven dat je geen drinken binnen kunt houden, of heel weinig plassen:** kans op uitdroging en nierschade. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Een dik gezicht, dikke lippen of een dikke keel, of moeite met ademen:** misschien een allergische reactie. Bel direct 112.
+- **Met diabetes type 1: overgeven, snel ademen of hoge ketonen:** misschien ketoacidose. Bel direct 112.
+</Callout>
+
+<Cite id="ctgov-nct04881760,jastreboff-2023-retatrutide-phase-2,rubin-2026-jama-news,pasqualotto-2024-retatrutide-meta-analysis,branine-2026-retatrutide-ketosis-case,thuisarts-buikpijn,nhs-acute-pancreatitis,thuisarts-pijn-op-borst,thuisarts-dikke-ogen-lippen,thuisarts-spoed-wie-bellen" />
+
+Een brandende, tintelende of pijnlijke huid is geen noodgeval. Maar het is wel een reden om te stoppen en een afspraak te maken met je huisarts. In de studies waren de meeste gevallen licht tot matig; de oorzaak is onbekend.<Cite id="kaczynski-2026-retatrutide-review" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular,metabolic" />
+
+<InDetail title="De legale wegen: studies, compassionate use en goedgekeurde medicijnen">
+
+In Nederland is retatrutide in de praktijk alleen legaal binnen een studie. Er lopen hier 2 studies, allebei voor bepaalde groepen patiënten: TRIUMPH-Outcomes (obesitas met een hart- of vaatziekte of een nierziekte; de werving is gestopt) en SYNERGY-Outcomes (leververvetting; in Nederland gestart op 22 september 2026).<Cite id="omon-nl-omon60031,omon-nl-omon61112,ctis-2025-522674-36-00" /> Alle studies in Nederland die getoetst moeten worden, staan op Onderzoekmetmensen.nl.<Cite id="omon-overzicht-ctis-2026" /> Vraag je huisarts of specialist of je zou kunnen meedoen. Studies hebben strenge regels over wie mag meedoen. Meedoen is altijd vrijwillig, en je mag altijd stoppen.<Cite id="ccmo-achtergrond-meedoen,ccmo-ivo-meedoen" />
+
+Er is geen goedgekeurd compassionate-use-programma voor retatrutide in Nederland.<Cite id="cbg-compassionate-use-list" /> Zo'n programma kan alleen de fabrikant aanvragen.<Cite id="cbg-compassionate-use-criteria" /> Een artsenverklaring is in de wet een route voor één patiënt. Of die kan werken voor een middel dat nergens is goedgekeurd, weten we niet; we vonden geen geval. De IGJ is terughoudend, en "niet-medische redenen" tellen niet.<Cite id="igj-qa-zonder-handelsvergunning,nl-regeling-gnw-art-3-17" /> Het bedrijf heeft ook een programma geregistreerd waarbij een arts het middel kan aanvragen voor één patiënt met ernstige obesitas en ernstige complicaties (expanded access). Volgens het register hangt de beschikbaarheid af van het land en de voorraad, en het register noemt geen locaties. Het laat dus niet zien dat dit in Nederland kan.<Cite id="ctgov-nct07629401" />
+
+De pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt uit welke legale wegen er in Nederland zijn, en wat elke weg vraagt: [een recept](/nl/legal-routes/#recept), [off-label](/nl/legal-routes/#off-label), [de artsenverklaring](/nl/legal-routes/#artsenverklaring), [magistrale bereiding](/nl/legal-routes/#magistrale-bereiding), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren). Voor retatrutide is er geen goedgekeurd product om voor te schrijven, en zelf invoeren mag niet: voor een geneesmiddel zonder handelsvergunning geldt geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" />
+
+De 2 verwante goedgekeurde medicijnen hebben een bijsluiter, een bekende dosis en medische begeleiding. Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+</InDetail>
+
+<InDetail title="Wat je niet kunt weten over een product, en hoe je schade meldt">
+
+Je kunt niet zien wat er in een flacon of pen zit. In geteste producten zat van de helft tot bijna het dubbele van wat op het etiket stond, en in één zat semaglutide in plaats van retatrutide.<Cite id="piatkowski-2026-retatrutide-product-testing,rubin-2026-jama-news" /> Geen gepubliceerde studie heeft ze op steriliteit getest. Lees ook [wat je zelf wel en niet kunt controleren](/nl/safety/product-risk/). Spuit je iets? Volg dan [steriel werken](/nl/safety/sterile-technique/): een besmet product of een vuile naald kan een infectie geven.
+
+Ongeveer de helft van een geïnjecteerde dosis zit 6 dagen later nog in je lichaam.<Cite id="urva-2022-ly3437943-phase-1b" /> Krijg je een bijwerking? Dan is die dus niet de volgende dag over als je stopt.
+
+Denk je dat een product je schade heeft gedaan? Vertel het je arts. Je kunt een bijwerking ook zelf melden bij Bijwerkingencentrum Lareb, ook als je niet zeker weet of het product de oorzaak is. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines,cbg-bijwerking-melden" /> In België meld je een bijwerking bij het FAGG.<Cite id="fagg-melden-bijwerking-patient" /> Waar je in Nederland terechtkunt, staat hieronder.
+
+<JurisdictionCard code="NL" />
+
+</InDetail>
+
+<InDetail title="Controles die zinvol zijn, en waarom">
+
+Je huisarts kan met je bespreken welke van deze controles bij jou passen. Vertel eerlijk wat je gebruikt. Je arts is er om je te helpen, niet om je te beoordelen.
+
+<Checklist>
+
+- **Polsslag en hartritme** in rust, omdat retatrutide de hartslag verhoogt en een effect op het ritme niet is uitgesloten. Voel je hartkloppingen? Dan kan een arts een hartfilmpje (ECG) laten maken.
+- **Levertests**, vanwege de Australische meldingen van leverschade na producten waarvan niet bekend was wat erin zat.
+- **Bloedsuiker**, als je insuline of een sulfonylureumderivaat (een tablet tegen diabetes) gebruikt, omdat de combinatie de bloedsuiker te laag kan maken.
+- **Ketonen**, als je diabetes type 1 hebt, vooral als je overgeeft of niet kunt eten.
+- **Nierfunctie** na dagen van overgeven of diarree, omdat vochtverlies de nieren kan beschadigen.
+
+</Checklist>
+
+<Cite id="jastreboff-2023-retatrutide-phase-2,pasqualotto-2024-retatrutide-meta-analysis,rubin-2026-jama-news,branine-2026-retatrutide-ketosis-case" />
+
+</InDetail>
+
+<InDetail title="Wisselwerkingen, en wie het beter helemaal niet gebruikt">
+
+### Mogelijke wisselwerkingen (geen gepubliceerde gegevens)
+
+- **Insuline en sulfonylureumderivaten:** grotere kans op een te lage bloedsuiker, zoals bij andere GLP-1-medicijnen.<Cite id="ema-pi-mounjaro-nl,ema-epar-mounjaro,fda-label-mounjaro" />
+- **De anticonceptiepil:** een kort verslag van het bedrijf zegt dat retatrutide de maag langzamer laat leeglopen (we konden alleen de titel en de trefwoorden lezen).<Cite id="urva-2023-retatrutide-gastric-emptying" /> <Claim level="hypothesis">Als de maag langzamer leegloopt, kan dat veranderen hoe goed tabletten worden opgenomen</Claim>. Een studie met de pil eindigde in 2024, zonder openbare resultaten.<Cite id="ctgov-nct06039826" /> Voor tirzepatide verschillen de adviezen. De Europese productinformatie noemt het effect op de pil niet klinisch relevant.<Cite id="ema-pi-mounjaro-nl" /> De Amerikaanse productinformatie adviseert om 4 weken na de start, en na elke verhoging van de dosis, over te stappen op een andere methode dan de pil of er een condoom bij te gebruiken.<Cite id="fda-label-mounjaro" /> Het EMA beoordeelt een wijziging van de Europese tekst hierover; de uitkomst was op 3 november 2026 niet bekend.<Cite id="ema-chmp-2026-10-agenda" />
+- **Warfarine en andere medicijnen waarbij kleine veranderingen uitmaken:** een studie naar wisselwerkingen eindigde in 2023, zonder gepubliceerde resultaten.<Cite id="ctgov-nct05445232" />
+- **Andere GLP-1-medicijnen, of combinaties met andere peptiden:** de bijwerkingen tellen op, en een reactie is moeilijker te herleiden.
+
+### Wie het beter helemaal niet gebruikt
+
+- **Wie zwanger is, borstvoeding geeft of zwanger wil worden:** er zijn geen gegevens bij mensen, en de goedgekeurde middelen in deze groep schaadden ongeboren dieren in studies.<Cite id="ema-pi-mounjaro-nl,ema-epar-wegovy,ema-epar-mounjaro" />
+- **Wie een ontstoken alvleesklier heeft gehad**, of wie zelf of in de familie medullair schildkliercarcinoom of MEN2 heeft gehad: TRIUMPH-1 liet deze mensen niet meedoen.<Cite id="ctgov-nct05929066" />
+- **Wie een hartritmestoornis of hartfalen heeft**, vanwege de hogere hartslag en de open vraag over het ritme.<Cite id="jastreboff-2023-retatrutide-phase-2,pasqualotto-2024-retatrutide-meta-analysis" />
+- **Mensen met diabetes type 1**, vanwege het risico op ketonen dat hierboven staat.
+- **Kinderen en jongeren**: alle gepubliceerde studies waren bij volwassenen.<Cite id="jastreboff-2026-triumph-1,bajaj-2026-transcend-t2d-1" />
+- **Sporters die onder de dopingregels vallen**: volgens de tekst van S0 is het altijd verboden, en het blijft wekenlang aantoonbaar.<Cite id="wada-2026-list-en,carneiro-2026-retatrutide-antidoping" />
+
+</InDetail>
+
+</Section>

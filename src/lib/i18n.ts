@@ -1,9 +1,9 @@
 /**
  * UI strings: src/i18n/<locale>/<namespace>.json (or a <namespace>/ directory of JSON files,
- * merged). Lookup falls back to the source locale ONLY for preview/planned locales; a
+ * merged). Lookup falls back to the source locale ONLY for preview locales (not fallback: false); a
  * published locale with a missing key fails the build, so no reader ever sees a raw key.
  */
-import { LOCALES, SOURCE_LOCALE, getLocale } from './config';
+import { LOCALES, SOURCE_LOCALE, fallsBack } from './config';
 
 type Dict = { [k: string]: string | string[] | Dict };
 const files = import.meta.glob<Dict>('/src/i18n/*/**/*.json', { eager: true, import: 'default' });
@@ -42,9 +42,8 @@ export function has(locale: string, key: string): boolean {
 export function tr<T = string>(locale: string, key: string): T {
   let v = lookup(locale, key);
   if (v === undefined) {
-    const l = getLocale(locale);
-    if (l.status === 'published' && locale !== SOURCE_LOCALE) {
-      throw new Error(`[i18n] missing key "${key}" for published locale "${locale}"`);
+    if (locale !== SOURCE_LOCALE && !fallsBack(locale)) {
+      throw new Error(`[i18n] missing key "${key}" for locale "${locale}" (published, or preview with fallback: false)`);
     }
     v = lookup(SOURCE_LOCALE, key);
   }
@@ -67,8 +66,7 @@ export function isFallback(locale: string, key: string): boolean {
 export function namespace<T = Dict>(locale: string, ns: string): T {
   const own = messages[locale]?.[ns];
   const src = messages[SOURCE_LOCALE]?.[ns];
-  const l = getLocale(locale);
-  if (l.status === 'published' || !src) return (own ?? {}) as T;
+  if (!fallsBack(locale) || !src) return (own ?? {}) as T;
   return { ...(src ?? {}), ...(own ?? {}) } as T;
 }
 

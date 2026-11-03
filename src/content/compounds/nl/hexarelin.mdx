@@ -1,0 +1,282 @@
+---
+slug: hexarelin
+title: "Hexarelin"
+description: "Hexarelin is een peptide dat groeihormoon vrijmaakt. In de jaren 90 is het in kleine studies bij mensen getest. Wat het is, het onderzoek, de risico’s en de status."
+tldr:
+  - q: "Wat doet het?"
+    a: "Het laat je lichaam groeihormoon afgeven. Geen studie met controlegroep toonde een blijvend voordeel."
+  - q: "Wordt het effect zwakker?"
+    a: "Ja, met ongeveer de helft na 16 weken, bij 12 oudere mensen."
+  - q: "En het hart?"
+    a: "Na één dosis pompte het hart van 7 gezonde mannen even harder. Helpt of schaadt dat? Onbekend."
+  - q: "Gebruik je het toch?"
+    a: "Vraag je huisarts naar controles, vooral bij diabetes, hartziekte of kanker in het verleden."
+  - q: "Mag iemand het leveren?"
+    a: "Nee. In Nederland zijn leveren en invoeren zonder handelsvergunning verboden."
+lede: "Een stof die groeihormoon vrijmaakt, in de jaren 90 getest in kleine studies. Het is geen goedgekeurd medicijn."
+glance:
+  main_risk: "Niemand kent de effecten op lange termijn. Het verhoogt even een stresshormoon."
+  # Strip "Stop en zoek hulp als je dit merkt", condensed from this page's own stop-now list (harm-reduction
+  # section): the NHS pages on chest pain, palpitations, cellulitis and anaphylaxis (as on English), the Thuisarts
+  # pages for the Dutch help level (112 for chest pain; huisarts or huisartsenpost for a hot, red injection site; 112
+  # for a swelling throat or trouble breathing). Palpitations that do not settle stay at 112, the site's level for
+  # "palpitations-severe" in src/i18n/nl/warning-signs.json (Thuisarts says "bel direct je huisarts"; where the site
+  # is faster it keeps its level, research/nl/nl-help.md fact 17, as on cjc-1295); the heart sign
+  # also rests on the rat-heart finding that hexarelin can narrow the heart's arteries (Bodart 2002, a hypothesis
+  # for people).
+  stop_signs:
+    - icon: sign-heart
+      text: "Pijn op de borst, of hartkloppingen die blijven"
+      sources: [nhs-chest-pain, nhs-heart-palpitations, bodart-2002-hexarelin-cd36, thuisarts-pijn-op-borst, thuisarts-hartkloppingen]
+    - icon: sign-infection
+      text: "Rode, warme, dikke of pijnlijke prikplek"
+      sources: [nhs-cellulitis, thuisarts-wondroos]
+    - icon: sign-allergic
+      text: "Dik gezicht of dikke keel, of moeilijk ademen"
+      sources: [nhs-anaphylaxis, thuisarts-dikke-ogen-lippen]
+  facts:
+    - label: "Gemaakt van"
+      value: "6 aminozuren, waarvan 2 in het lab veranderd"
+      sources: [pubchem-hexarelin]
+    - label: "Wat het doet"
+      value: "Laat de hypofyse groeihormoon afgeven"
+      sources: [ghigo-1994-hexarelin-routes]
+    - label: "Na weken gebruik"
+      value: "Het effect wordt zwakker, en komt terug na stoppen"
+      sources: [rahim-1998-hexarelin-long-term, rahim-1998-hexarelin-desensitisation]
+    - label: "Studies bij mensen"
+      value: "Kleine studies, vooral uit de jaren 90"
+      sources: [pubmed-hexarelin-count-2026-10-23, ghigo-1994-hexarelin-routes]
+grade_rationale:
+  human_clinical: "Fase 2 volgens onze beoordeling: kleine studies bij patiënten. Bijvoorbeeld 8 kinderen met een kleine lengte die tot 8 maanden werden behandeld, 12 gezonde ouderen gedurende 16 weken, en eenmalige doses bij 13 mensen met ernstig hartfalen. Er is geen grote of lange studie met controlegroep gepubliceerd."
+  preclinical_volume: "Veel. Op 23 oktober 2026 stonden in PubMed 279 records over hexarelin die geen overzichtsartikel zijn. In 137 daarvan worden ratten, muizen, honden of varkens genoemd."
+  independence: "Een paar groepen. Ongeveer 40% van de records komt van één groep in Turijn en haar partners. Groepen in Milaan en Montreal voegen er samen ongeveer 20% aan toe."
+  safety: "Deels bekend. Gegevens over de korte termijn uit kleine studies (13 mensen of minder in de studies die we bekeken). Er zijn geen systematische gegevens, en geen gegevens over de lange termijn."
+mechanism:
+  - kind: binding
+    level: in-vitro
+    title: "Zet de ghrelinereceptor aan"
+    detail: "Peptiden die groeihormoon vrijmaken (GHRP’s), zoals hexarelin, werken via de ghrelinereceptor. Dat is dezelfde receptor die het hongerhormoon ghreline gebruikt."
+  - kind: tissue
+    level: human
+    title: "De hypofyse geeft groeihormoon af"
+    detail: "Bij 12 gezonde jonge vrijwilligers maakte hexarelin groeihormoon vrij, of het nu in een ader, onder de huid, in de neus of via de mond werd gegeven. Via de neus of de mond kwam er veel minder in het bloed."
+  - kind: tissue
+    level: animal
+    title: "Bindt CD36 in het hart"
+    detail: "In hartweefsel van ratten hechtte het aan CD36, een eiwit op cellen van het hart en de bloedvaten. In losse harten vernauwde het de kransslagaders; zonder CD36 gebeurde dat niet."
+  - kind: effect
+    level: human
+    title: "Het hart pompt tot een uur harder; voordeel op lange termijn onbekend"
+    detail: "Bij 7 gezonde mannen liet één dosis het hart tot een uur lang harder pompen. Groeihormoon zelf deed dat niet. Of herhaald gebruik het hart helpt of schaadt, is onbekend."
+studies:
+  ghigo-1994-four-routes:
+    finding: "Bij 12 gezonde jonge vrijwilligers maakte hexarelin groeihormoon vrij via alle vier de geteste toedieningswegen. In een ader maakte het ongeveer 2 keer zoveel vrij als het lichaamseigen hormoon dat groeihormoon vrijmaakt (GHRH)."
+    limitation: "Eenmalige doses; gezonde jonge mensen; van de groep die het meeste onderzoek bij mensen deed."
+  laron-1995-short-children:
+    finding: "Bij 8 kinderen met een kleine lengte die tot 8 maanden hexarelin als neusspray kregen, steeg IGF-1 en groeiden ze sneller: van 5,3 naar 8,3 cm per jaar."
+    limitation: "Geen vergelijkingsgroep; heel klein; een medeauteur was verbonden aan de ontwikkelaar."
+  rahim-1998-sixteen-weeks:
+    finding: "Bij 12 gezonde ouderen die 16 weken lang 2 keer per dag een injectie kregen, daalde de reactie van groeihormoon op een testdosis met ongeveer de helft. 4 weken na het stoppen was die terug. IGF-1, de lichaamssamenstelling en de botdichtheid veranderden niet."
+    limitation: "Geen placebogroep; klein; alleen gezonde ouderen."
+  bisi-1999-heart-healthy-men:
+    finding: "Bij 7 mannen liet één dosis hexarelin in een ader het hart tot 60 minuten harder pompen. Groeihormoon dat vergelijkbare waarden gaf, deed dat niet. Ook cortisol steeg."
+    limitation: "Eenmalige doses bij 7 gezonde mannen; metingen op korte termijn."
+  imazio-2002-heart-failure:
+    finding: "Bij 13 mensen met ernstig hartfalen verhoogde één dosis de pompkracht bij wie het hartfalen kwam door vernauwde kransslagaders. Bij wie een vergrote, zwakke hartspier had, gebeurde dat niet."
+    limitation: "Eenmalige doses; geen placebo; heel kleine groepen."
+  bodart-2002-cd36:
+    finding: "In hartweefsel van ratten bond hexarelin aan CD36. In losse harten vernauwde het de kransslagaders, een effect dat ontbrak in harten zonder CD36."
+    limitation: "Harten van ratten en muizen buiten het lichaam; het verband met mensen is een hypothese."
+regulatory_notes:
+  EU: "Geen handelsvergunning voor de hele EU: geen vergunning, aanvraag of aanwijzing als weesgeneesmiddel in de gegevens van het EMA, ook niet onder de officiële naam examorelin (gecontroleerd op 27 oktober 2026)."
+  NL: "Niet goedgekeurd in Nederland: geen product in de Geneesmiddeleninformatiebank van het CBG (27 oktober 2026). Een geneesmiddel zonder handelsvergunning leveren of invoeren is verboden (Geneesmiddelenwet, artikel 40)."
+  WADA: "Altijd verboden: bij naam genoemd in S2 als “examoreline (hexareline)”, een peptide dat groeihormoon vrijmaakt (GHRP)."
+translation:
+  method: translated
+  from: en
+  review: pending
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is hexarelin?">Een keten van 6 aminozuren uit het lab. Die laat het lichaam groeihormoon afgeven.</Lead>
+
+<Compare title="Het is lang geleden bij mensen getest, maar het is geen goedgekeurd medicijn." detail="Wat bekend is over de stof die onder deze naam in omloop is, gecontroleerd op 23 oktober 2026. De status in Nederland en de EU is gecontroleerd op 27 oktober 2026.">
+
+| | Hexarelin (examorelin) |
+|---|---|
+| Gemaakt in een lab? | <Verdict is="yes" /> 6 aminozuren, waarvan 2 in een vorm die in het lab is veranderd.<Cite id="pubchem-hexarelin" /> |
+| Maakt het bij mensen groeihormoon vrij? | <Verdict is="yes" /> Aangetoond bij gezonde vrijwilligers.<Cite id="ghigo-1994-hexarelin-routes" /> |
+| Goedgekeurd als medicijn? | <Verdict is="no" /> Niet in Nederland en niet voor de EU. Ook de Amerikaanse medicijnautoriteit FDA keurde geen product goed.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,openfda-drugsfda-search-stubs-b-2026-10-23" /> {/* residue-ok: world context */} |
+| Veiligheid op lange termijn onderzocht? | <Verdict is="no" /> De langste studies die we vonden, duurden tot 8 maanden, bij 12 mensen of minder.<Cite id="laron-1995-hexarelin-children,rahim-1998-hexarelin-long-term,rahim-1998-hexarelin-desensitisation" /> |
+
+</Compare>
+
+Het hoort bij de peptiden die groeihormoon vrijmaken (GHRP’s), zoals GHRP-2 en GHRP-6. De internationale generieke naam (INN) is examorelin.<Cite id="pubchem-hexarelin,wada-2026-list-en" /> Op ClinicalTrials.gov is geen studie met hexarelin geregistreerd.<Cite id="pubmed-hexarelin-count-2026-10-23,ctgov-search-status-b-2026-10-23" />
+
+<InDetail title="Het molecuul">
+
+Hexarelin is <Seq>His-D-2-Me-Trp-Ala-Trp-D-Phe-Lys-NH2</Seq>. De tweede bouwsteen is tryptofaan in spiegelbeeld (de D-vorm) met een extra methylgroep. De vijfde is fenylalanine in spiegelbeeld, en de keten eindigt in een amide. Brutoformule C47H58N12O6, molecuulmassa <Q>887,0 g/mol</Q>.<Cite id="pubchem-hexarelin" /> Een overzichtsartikel beschrijft het als chemisch stabieler dan ghreline.<Cite id="mao-2014-hexarelin-cardiovascular-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Hoe werkt het?">Via de receptor van het hongerhormoon komt meer groeihormoon vrij. Het bindt ook een eiwit in het hart.</Lead>
+
+<Mechanism />
+
+<InDetail title="Waar elke stap op rust">
+
+Hexarelin zet dezelfde receptor aan als ghreline, het hongerhormoon van het lichaam.<Cite id="bodart-2002-hexarelin-cd36,mao-2014-hexarelin-cardiovascular-review" /> Het effect op groeihormoon is bij mensen gemeten.<Cite id="ghigo-1994-hexarelin-routes" /> Net als ghreline verhoogt het ook even het stresshormoon cortisol.<Cite id="takaya-2000-ghrelin-humans,bisi-1999-hexarelin-heart,rahim-1999-hexarelin-adrenal" /> Anders dan ghreline verhoogde één dosis bij gezonde vrijwilligers de bloedsuiker niet.<Cite id="broglio-2001-ghrelin-glucose" /> De bevinding over CD36 in het hart komt uit harten van ratten en muizen buiten het lichaam.<Cite id="bodart-2002-hexarelin-cd36" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Het maakt groeihormoon vrij. Geen studie met controlegroep liet een blijvend voordeel zien.</Lead>
+
+<KeyNumber title="Na weken gebruik daalde het effect met bijna de helft" value="19,1 → 10,5" label="groeihormoon na een testdosis: bij de start, en na 16 weken" who="Rahim 1998: 12 gezonde ouderen, 2 keer per dag een injectie, geen placebogroep" source="rahim-1998-hexarelin-long-term,rahim-1998-hexarelin-desensitisation" level="human-limited" />
+
+<KeyNumber title="Kinderen groeiden sneller, maar er was geen vergelijkingsgroep" value="5,3 → 8,3 cm" label="groei per jaar, voor en tijdens de behandeling" who="Laron 1995: 8 kinderen met een kleine lengte, neusspray tot 8 maanden" source="laron-1995-hexarelin-children" level="human-limited" />
+
+De meeste studies bij mensen duurden uren, weken of een paar maanden, en hadden geen placebogroep. De bevindingen over het hart bij mensen zijn veranderingen op korte termijn na één dosis.<Cite id="bisi-1999-hexarelin-heart,imazio-2002-hexarelin-cardiomyopathy" />
+
+<InDetail title="Alle studies in één tabel">
+
+<StudyTable />
+
+Ongeveer 40% van alle artikelen over hexarelin komt van één groep in Turijn en haar partners. Groepen in Milaan en Montreal voegen er ongeveer 20% aan toe.<Cite id="pubmed-hexarelin-count-2026-10-23" /> Dierstudies, bijvoorbeeld bij ratten na een hartaanval, melden dat het hart beter werkte. Maar geen studie met controlegroep heeft dit bij mensen getest.<Cite id="tivesten-2000-hexarelin-rat-mi,mao-2014-hexarelin-cardiovascular-review" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Het is niet goedgekeurd in Nederland of de EU. In de sport is het altijd verboden.</Lead>
+
+<Compare title="Geen goedgekeurd medicijn in Nederland of de EU. Verboden in de sport." detail="Status in Nederland en de EU, gecontroleerd op 27 oktober 2026. De sport staat in het deel hieronder.">
+
+| | Goedgekeurd als medicijn? | Mag iemand het leveren of invoeren? |
+|---|---|---|
+| Nederland | <Verdict is="no" /> De Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG) vindt geen product met hexarelin.<Cite id="cbg-gib-search-status-2026-10-27" /> | <Verdict is="no" /> De Geneesmiddelenwet verbiedt verkopen, leveren en invoeren zonder handelsvergunning. De uitzonderingen zijn smal.<Cite id="nl-gmw-art-40-handelsvergunning" /> |
+| Europese Unie | <Verdict is="no" /> Geen handelsvergunning voor de hele EU, ook niet onder de officiële naam examorelin.<Cite id="ema-medicines-json,ema-orphan-designations-json,ema-under-evaluation-2026-10" /> | <Verdict is="no" /> Zonder handelsvergunning van een lidstaat of voor de hele EU mag een medicijn in geen enkele lidstaat in de handel.<Cite id="eu-directive-2001-83" /> |
+
+</Compare>
+
+In de sport is het altijd verboden volgens de wereldwijde antidopingregels van het Wereld Anti-Doping Agentschap (WADA, groep S2).<Cite id="wada-2026-list-en,wada-2027-list-en" />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+WADA noemt het "examorelin (hexarelin)" bij de peptiden die groeihormoon vrijmaken, in groep S2. De Nederlandse vertaling zegt "examoreline (hexareline)". Het is altijd verboden, binnen en buiten wedstrijden.<Cite id="wada-2026-list-en,wada-2027-list-en,dopingautoriteit-vertaling-dopinglijst-2026" /> Zie [sport en doping](/nl/legal/sport-and-doping/).
+
+</InDetail>
+
+<InDetail title="Nederland en de EU">
+
+### Wat de Nederlandse wet zegt
+
+De Geneesmiddeleninformatiebank van het CBG vindt geen product met hexarelin of hexareline.<Cite id="cbg-gib-search-status-2026-10-27" /> Volgens de Geneesmiddelenwet mag niemand een geneesmiddel zonder handelsvergunning in voorraad hebben, verkopen, afleveren, aan iemand geven, invoeren of op een andere manier Nederland binnenbrengen (artikel 40). De uitzonderingen zijn smal.<Cite id="nl-gmw-art-40-handelsvergunning" /> Hexarelin staat niet op de lijsten van de Opiumwet.<Cite id="nl-opiumwet-lijsten-2026-09" /> In de lijst van goedgekeurde programma's voor compassionate use van het CBG staat hexarelin niet.<Cite id="cbg-compassionate-use-list" /> Zie [de Nederlandse wet](/nl/legal/nl/).
+
+### Zelf gebruiken en zelf invoeren
+
+Gebruiken staat niet in de lijst van verboden handelingen. Of een paar flacons thuis al "in voorraad hebben" is, zegt de wet niet duidelijk.<Cite id="nl-gmw-art-40-handelsvergunning" /> Invoeren is wel verboden, ook voor eigen gebruik: artikel 40 heeft geen uitzondering voor eigen gebruik.<Cite id="nl-gmw-art-40-handelsvergunning" /> Reizigers mogen medicijnen voor eigen gebruik meenemen zonder invoervergunning. Die regel gaat alleen over die vergunning: het verbod van artikel 40 blijft gelden.<Cite id="nl-gnw-art-18-licence,nl-gmw-art-40-handelsvergunning" /> En voor een pakket dat je laat opsturen, geldt de regel voor reizigers niet. Dat oordeelde een rechter in 2019.<Cite id="nl-rbdha-2019-4817-postzending-eigen-gebruik" /> De Douane controleert post- en pakketzendingen.<Cite id="douane-invoer-geneesmiddelen-2026" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+### De Europese Unie
+
+Geen product met hexarelin heeft een handelsvergunning voor de hele EU. De gegevens van het Europees Geneesmiddelenbureau (EMA) noemen het niet, ook niet als examorelin. Er is geen aanvraag in beoordeling, en het heeft geen aanwijzing als weesgeneesmiddel.<Cite id="ema-medicines-json,ema-under-evaluation-2026-10,ema-orphan-designations-json" /> Of een ander EU-land zelf een handelsvergunning gaf, hebben we niet nagekeken.
+
+<Callout type="legal" title="Amerikaanse besluiten gelden niet in Nederland">
+{/* residue-ok: world context */}
+Wat de Amerikaanse medicijnautoriteit FDA besluit, verandert niets aan de wet in Nederland of de EU.
+</Callout>
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Effecten op lange termijn zijn onbekend. Het verhoogt hormonen. Het effect op het hart is te weinig onderzocht.</Lead>
+
+<Compare title="Sommige effecten zijn bij mensen gezien. De grote vragen zijn nooit onderzocht." detail="Wat kleine studies bij mensen en dieronderzoek laten zien, op 23 oktober 2026.">
+
+| Mogelijke schade | Gezien bij mensen? |
+|---|---|
+| Korte stijging van cortisol en andere hormonen | <Verdict is="yes" /> Na eenmalige doses.<Cite id="bisi-1999-hexarelin-heart,rahim-1999-hexarelin-adrenal" /> |
+| Vernauwing van de kransslagaders | <Verdict is="unknown" /> Gezien in harten van ratten buiten het lichaam.<Cite id="bodart-2002-hexarelin-cd36" /> |
+| Effecten van te veel groeihormoon, zoals vocht vasthouden of een hoge bloedsuiker | <Verdict is="unknown" /> Genoemd bij medicijnen met groeihormoon; niet onderzocht bij lang gebruik van hexarelin.<Cite id="fda-pcac-2024-cjc1295-briefing" /> |
+| Infectie of onzuiverheden door het product | <Verdict is="unknown" /> Niet onderzocht; een bekend risico van elke injectie die niet steriel is.<Cite id="nhs-cellulitis,thuisarts-wondroos" /> |
+
+</Compare>
+
+<InDetail title="Waarom deze risico’s worden verondersteld">
+
+Hexarelin verhoogt groeihormoon, en bij kinderen steeg IGF-1 mee.<Cite id="laron-1995-hexarelin-children" />
+{/* residue-ok: FDA evidence */}
+Bij goedgekeurde medicijnen met groeihormoon noemt de FDA risico's zoals vocht vasthouden, een hoge bloedsuiker en diabetes, een hogere druk in de schedel en een hoger risico op tumoren.<Cite id="fda-pcac-2024-cjc1295-briefing" /> In de studie van 16 weken veranderde IGF-1 niet. Of deze risico's gelden, is dus onbekend.<Cite id="rahim-1998-hexarelin-long-term" /> CD36 is bij dieren in verband gebracht met bescherming van het hart, maar in harten van ratten ook met vernauwing van de kransslagaders. De effecten op het hart kunnen dus twee kanten op gaan.<Cite id="mao-2014-hexarelin-cardiovascular-review,bodart-2002-hexarelin-cd36" /> Zie [de risico's van het product](/nl/safety/product-risk/).
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe kan iemand het risico kleiner maken?">Controleer eerst de flacon, betrek een arts erbij, en weet wanneer je stopt.</Lead>
+
+<ProductCheck />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Stop en zoek hulp als je dit merkt" id="stop-now">
+- **Je krijgt pijn of een drukkend gevoel op je borst, of je hart klopt heel snel of onregelmatig en komt niet tot rust.** Bel direct 112.
+- **De prikplek wordt rood, warm, dik of pijnlijk, of je krijgt koorts** (misschien een infectie). Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Je gezicht of keel wordt dik, je krijgt jeukende bulten (netelroos), of je ademt moeilijk** (misschien een allergische reactie). Wordt je keel of tong dik, of adem je moeilijk? Bel direct 112. Alleen jeukende bulten of een dik gezicht, en adem je normaal? Stop met het product en maak een afspraak met je huisarts.
+
+Twijfel je? Bel je huisarts of de huisartsenpost.
+</Callout>
+
+<Cite id="nhs-chest-pain,nhs-heart-palpitations,nhs-cellulitis,nhs-anaphylaxis,bodart-2002-hexarelin-cd36,thuisarts-pijn-op-borst,thuisarts-hartkloppingen,thuisarts-wondroos,thuisarts-sepsis,thuisarts-dikke-ogen-lippen" />
+
+<WarningSigns only="general,injection,allergic,cardiovascular" />
+
+<InDetail title="Controles die zinvol zijn, en wie voorzichtig moet zijn">
+
+Je huisarts kan met je bespreken welke controles bij jou passen. Zie [praten met je arts](/nl/talking-to-your-doctor/).
+
+- **Bloedsuiker**, vooral als je diabetes hebt, omdat te veel groeihormoon de bloedsuiker kan verhogen.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **Je hart**, als je een hartziekte hebt, door de effecten op het hart die in studies zijn gezien.<Cite id="bodart-2002-hexarelin-cd36,imazio-2002-hexarelin-cardiomyopathy" />
+- **Of je kanker hebt gehad**, omdat medicijnen met groeihormoon een waarschuwing over tumoren hebben.<Cite id="fda-pcac-2024-cjc1295-briefing" />
+- **De dopingregels**, als je aan wedstrijden meedoet: het is altijd verboden.<Cite id="wada-2026-list-en" />
+
+Spuit je het? Lees dan [steriel werken](/nl/safety/sterile-technique/).
+
+</InDetail>
+
+<InDetail title="Legale wegen, en een bijwerking melden">
+
+### De legale wegen in Nederland
+
+In Nederland en de EU is geen product met hexarelin goedgekeurd. Een arts kan het dus niet als goedgekeurd medicijn [voorschrijven](/nl/legal-routes/#recept), en [off-label](/nl/legal-routes/#off-label) gaat alleen over goedgekeurde medicijnen.<Cite id="cbg-gib-search-status-2026-10-27,ema-medicines-json,nl-gmw-art-68-off-label" /> Voor een [artsenverklaring](/nl/legal-routes/#artsenverklaring) vraagt de Inspectie Gezondheidszorg en Jeugd (IGJ) officiële productinformatie, of anders een onderzoekersdossier, en bewijs dat het product volgens de regels voor medicijnen (GMP) is gemaakt. Of die weg kan werken voor een stof die nergens als medicijn is goedgekeurd, weten we niet.<Cite id="igj-qa-zonder-handelsvergunning" /> Een apotheek mag op recept zelf een medicijn maken voor één patiënt: een [magistrale bereiding](/nl/legal-routes/#magistrale-bereiding). Staat een grondstof in geen enkele officiële farmacopee? Dan kan die volgens de IGJ "niet zomaar worden gebruikt". Of hexarelin in een officiële farmacopee staat, hebben we niet kunnen nagaan.<Cite id="eu-directive-2001-83,igj-eigen-bereidingen-apotheek" /> Onze pagina [legale wegen naar een behandeling](/nl/legal-routes/) legt ook [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek), [compassionate use](/nl/legal-routes/#compassionate-use) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren) uit. Elke weg heeft strenge voorwaarden, en geen enkele maakt van een niet-goedgekeurd product een goedgekeurd product.
+
+{/* residue-ok: world context (registries as evidence) */}
+Op ClinicalTrials.gov en in het register van Australië en Nieuw-Zeeland staat geen studie met hexarelin.<Cite id="ctgov-search-status-b-2026-10-23,au-anzctr-search-status-b-2026-10-23" /> In Nederland vonden we er ook geen.<Cite id="ctgov-nl-peptide-search-2026-10-27,ctis-nl-peptide-search-2026-10-27,omon-peptide-search-2026-10-27" />
+
+### Een bijwerking melden
+
+Iedereen kan een bijwerking melden bij Bijwerkingencentrum Lareb, niet alleen artsen. Dat kan ook als je product niet van een apotheek komt.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> Hier vind je de diensten in Nederland:
+
+<JurisdictionCard code="NL" />
+
+In België meld je een bijwerking bij het FAGG. Zie [onze notities over België](/nl/legal/be/).
+
+</InDetail>
+
+</Section>

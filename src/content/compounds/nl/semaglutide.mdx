@@ -1,0 +1,602 @@
+---
+slug: semaglutide
+title: "Semaglutide"
+description: "Semaglutide is een goedgekeurd GLP-1-medicijn (Ozempic, Rybelsus, Wegovy). Hoe het werkt, wat grote studies laten zien, de risico’s, en waarom online flacons anders zijn."
+tldr:
+  - q: "Voor wie is het?"
+    a: "Volwassenen met diabetes type 2 (Ozempic, Rybelsus). Wegovy: afvallen en op gewicht blijven."
+  - q: "Hoe krijg ik het legaal?"
+    a: "Op recept, van de apotheek. Wegovy wordt niet vergoed."
+  - q: "Werkt het?"
+    a: "Ja, voor bloedsuiker en gewicht. Sommige groepen kregen minder vaak ernstige hart- en nierproblemen."
+  - q: "En als ik stop?"
+    a: "In één studie kwam na een jaar ongeveer twee derde van het verloren gewicht terug."
+  - q: "Zijn online flacons hetzelfde?"
+    a: "Nee. Geen medicijnautoriteit controleert ze. Sommige nep-pennen bevatten insuline: je bloedsuiker kan te laag worden."
+lede: "Een medicijn op recept voor diabetes type 2, en om af te vallen en op gewicht te blijven. Online flacons zijn iets anders."
+glance:
+  main_risk: "Veel mensen zijn eerst misselijk. Galstenen en een ontstoken alvleesklier zijn zeldzamer."
+  # "Stop en zoek hulp"-strook, samengevat uit de stop-nu-lijst van deze pagina (sectie 8) en de productinformatie
+  # (Nederlandse SmPC van Wegovy 4.4 en 4.8, Amerikaanse productinformatie 5.2, 5.4, 5.7: pancreatitis, te lage
+  # bloedsuiker met insuline of een SU-derivaat, anafylaxie en angio-oedeem; nep-pennen met insuline; de IGJ over
+  # gestolen insulinepennen die als afslankmedicijn worden aangeboden).
+  stop_signs:
+    - icon: sign-belly-pain
+      text: "Hevige buikpijn, vaak uitstralend naar je rug"
+      sources: [ema-epar-wegovy, ema-pi-wegovy-nl, fda-label-wegovy]
+    - icon: sign-low-sugar
+      text: "Trillen, zweten of verward (te lage bloedsuiker)"
+      sources: [ema-epar-wegovy, ema-pi-wegovy-nl, fda-label-wegovy, mhra-2023-fake-weight-loss-pens, igj-2026-10-stolen-medicines]
+    - icon: sign-allergic
+      text: "Opgezwollen gezicht of keel, of moeilijk ademen"
+      sources: [ema-epar-wegovy, ema-pi-wegovy-nl, fda-label-wegovy]
+  # Feitenblad naast de titel: feiten uit de Europese productinformatie (SmPC), nooit een dosis.
+  facts:
+    - label: "Hoe je het gebruikt"
+      value: "Injectie onder de huid, of een tablet"
+      sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-pi-ozempic-nl, ema-pi-rybelsus-nl, ema-pi-wegovy-nl]
+    - label: "Hoe vaak"
+      value: "Injectie 1 keer per week; tablet 1 keer per dag"
+      sources: [ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-pi-ozempic-nl, ema-pi-rybelsus-nl, ema-pi-wegovy-nl]
+    - label: "Hoe lang het blijft"
+      value: "Halfwaardetijd ongeveer een week; nog 5–7 weken na stoppen"
+      sources: [ema-epar-wegovy, ema-epar-rybelsus, ema-pi-wegovy-nl, ema-pi-rybelsus-nl, fda-label-wegovy]
+grade_rationale:
+  human_clinical: "Goedgekeurd in de EU sinds februari 2018 (Ozempic), later ook als Rybelsus (2020), Wegovy (2022; tabletten 2026), Kyinsu (2025, samen met insuline icodec) en Kayshild (2026, voor de leverziekte MASH). De goedkeuringen rusten op fase 3-programma’s en op verschillende afgeronde uitkomstenstudies naar hart en nieren, elk met duizenden deelnemers."
+  preclinical_volume: "Ruim meer dan 50 primaire studies bij dieren en in cellen: een zoekopdracht in PubMed op 20 oktober 2026 vond 472 records (geen overzichtsartikelen) met semaglutide samen met ratten of muizen in de titel of samenvatting. Het dieronderzoek is nu vooral van belang voor de bevindingen over de C-cellen van de schildklier en over zwangerschap."
+  independence: "Elke belangrijke studie is betaald door de fabrikant, en veel auteurs werkten bij het bedrijf. Het effect op gewicht is ook gezien zonder auteurs van het bedrijf (een cohort van de Mayo Clinic). De belangrijkste signalen over veiligheid (NAION, schildklierkanker, gedachten aan zelfdoding) zijn onderzocht door onafhankelijke academische groepen en medicijnautoriteiten."
+  safety: "Beschreven in gerandomiseerde studies met tienduizenden deelnemers die tot ongeveer 4 jaar werden gevolgd, plus bewaking na toelating sinds 2017–2018. Nog niet helemaal bekend: NAION, gebruik langer dan een paar jaar, stoppen en opnieuw beginnen, effecten op spieren, gebruik in de zwangerschap en de nieuwere hoge sterkte."
+mechanism:
+  - kind: binding
+    level: human
+    title: "Gemaakt om ongeveer een week te werken"
+    detail: "Het GLP-1 van het lichaam zelf wordt binnen ongeveer 1 tot 2 minuten door het enzym DPP-4 geknipt en door de nieren weggehaald. Semaglutide heeft op positie 8 Aib in plaats van alanine; dat beschermt het tegen DPP-4. Aan lysine 26 zit een vetzuurketen die losjes aan albumine bindt. Gebonden aan albumine ontsnapt het aan de filtering door de nieren, dus de halfwaardetijd bij mensen is ongeveer een week."
+  - kind: binding
+    level: in-vitro
+    title: "Zet de GLP-1-receptor aan"
+    detail: "Semaglutide bindt aan dezelfde receptor als het lichaamseigen GLP-1. Dat is een G-eiwitgekoppelde receptor op de bètacellen van de alvleesklier, in verschillende hersengebieden, en in het hart, de bloedvaten, afweercellen en de nieren. De binding aan de receptor is gemeten in cellen. Ze is ongeveer 3 keer zwakker dan die van liraglutide: een bewuste keuze, in ruil voor een sterkere binding aan albumine."
+  - kind: signal
+    level: in-vitro
+    title: "Het Gs-eiwit zet cAMP aan"
+    detail: "De geactiveerde receptor werkt via het Gs-eiwit en het enzym adenylaatcyclase, zodat de hoeveelheid cAMP in de cel stijgt. In bètacellen versterkt cAMP via PKA en Epac2 de afgifte van insuline die glucose al in gang heeft gezet. Dit is aangetoond in cellijnen en in eilandjes van Langerhans van dieren, niet direct gemeten in de alvleesklier van mensen."
+  - kind: cellular
+    level: human
+    title: "Meer insuline en minder glucagon, vooral als de glucose hoog is"
+    detail: "Omdat cAMP de afgifte van insuline versterkt maar niet zelf start, komt de extra insuline vooral als de bloedglucose hoog is. In een gerandomiseerde studie van 12 weken bij 75 mensen met diabetes type 2 steeg de afgifte van insuline en daalde het glucagon. Volgens de productinformatie daalt de afgifte van insuline nog steeds als de bloedglucose laag is, en blijft de glucagonreactie van het lichaam werken. Daarom is de kans op een te lage bloedsuiker door semaglutide zelf klein, maar niet nul."
+  - kind: tissue
+    level: human
+    title: "Minder honger, sneller vol"
+    detail: "Bij knaagdieren bereikt semaglutide de hersenstam en de hypothalamus via gebieden waar de bloed-hersenbarrière open is; het gaat niet zelf door die barrière. In een studie van 20 weken bij 72 volwassenen met obesitas aten de deelnemers bij een lunch naar keuze 35% minder calorieën dan met placebo. Ze hadden minder honger en minder trek. Welke hersengebieden het bij mensen zijn, is afgeleid uit dieronderzoek."
+  - kind: tissue
+    level: human
+    title: "Tragere maaglediging, vooral in het begin"
+    detail: "GLP-1 maakt de maag trager. Semaglutide vertraagt de maaglediging in het eerste uur na een maaltijd. Bij verder wekelijks gebruik lijkt dat effect te verdwijnen; volgens de productinformatie komt dat door gewenning (tolerantie). In de studie naar eetlust was er in week 20 geen duidelijke vertraging. Het vroege effect draagt bij aan misselijkheid. Het is ook de reden om op te letten met tabletten die je tegelijk inneemt, en bij narcose."
+  - kind: effect
+    level: human
+    title: "Lagere HbA1c en minder gewicht; minder hart- en nierproblemen in uitkomstenstudies"
+    detail: "In studies is het samengetelde resultaat een lagere HbA1c, gewichtsverlies en, in uitkomstenstudies, minder hartaanvallen, beroertes, sterfte door hart- en vaatziekten en nierproblemen in de onderzochte groepen. Hoeveel van het voordeel voor hart en nieren via gewicht en glucose loopt, en hoeveel via andere effecten, is niet vastgesteld."
+studies:
+  kreymann-1987-incretin:
+    finding: "GLP-1 (7-36) werd gevonden in de darm van mensen en steeg in het bloed na een maaltijd. Toen 7 vrijwilligers het via een infuus kregen, in hoeveelheden zoals na een maaltijd, steeg de insuline en daalden glucose en glucagon. Het effect was sterker dan dat van GIP."
+    limitation: "Een kleine fysiologische studie naar het lichaamseigen hormoon, niet naar semaglutide; korte infusen; een handvol gezonde vrijwilligers."
+  knudsen-2010-c-cells:
+    finding: "De C-cellen van de schildklier van ratten en muizen hebben GLP-1-receptoren; GLP-1-agonisten verhoogden het calcitonine en gaven bij knaagdieren een toename van C-cellen (C-celhyperplasie). C-cellen van mensen en apen hadden weinig receptoren, en liraglutide gaf bij apen na 20 maanden geen C-celhyperplasie."
+    limitation: "Onderzocht met liraglutide, niet met semaglutide; uitgevoerd door de fabrikant; de auteurs schrijven dat de gevolgen op lange termijn bij mensen onbekend blijven."
+  lau-2015-design:
+    finding: "Beschrijft hoe semaglutide is gekozen: 2 andere aminozuren (Aib8, Arg34) en een vetzuurketen aan Lys26 voor binding aan albumine. De halfwaardetijd in het plasma was 46,1 uur na toediening in een ader bij minivarkens."
+    limitation: "Medicinale chemie en farmacokinetiek bij dieren van de ontwikkelaar; de halfwaardetijd bij mensen komt uit latere klinische studies."
+  buckley-2018-oral:
+    finding: "Bij honden en mensen werd semaglutide als tablet met SNAC opgenomen in de maag, vlak bij de tablet die oploste, door de cellen heen en niet ertussendoor."
+    limitation: "Onderzoek naar het mechanisme door de ontwikkelaar; het verklaart waarom de opname laag en wisselend is, maar meet geen klinische uitkomsten."
+  friedrichsen-2021-appetite:
+    finding: "Bij 72 volwassenen met obesitas die 20 weken werden behandeld, was de hoeveelheid energie bij een lunch naar keuze 35% lager dan met placebo; honger en trek namen af. In week 20 was er geen duidelijke vertraging van de maaglediging."
+    limitation: "Klein, kort en betaald door de fabrikant; de maaglediging is indirect gemeten (via de opname van paracetamol)."
+  sustain-6:
+    finding: "Bij 3.297 mensen met diabetes type 2 en een hoog risico op hart- en vaatziekten, 104 weken gevolgd, kregen 6,6% met semaglutide en 8,9% met placebo een hartaanval of beroerte, of overleden aan een hart- of vaatziekte (HR 0,74). Complicaties van diabetische retinopathie kwamen vaker voor (HR 1,76)."
+    limitation: "Opgezet om schade uit te sluiten (non-inferioriteit), niet om een voordeel te bewijzen; relatief weinig voorvallen; maar 2 jaar."
+  pioneer-1:
+    finding: "Bij 703 volwassenen met diabetes type 2 die alleen dieet en beweging hadden, verlaagde semaglutide als dagelijkse tablet de HbA1c vergeleken met placebo, bij alle drie de geteste sterktes, over 26 weken."
+    limitation: "26 weken; alleen glucose en gewicht als eindpunten; met de oorspronkelijke tablet. Een nieuwere tablet heeft andere sterktes: volgens de productinformatie kun je de twee niet milligram voor milligram omwisselen."
+  pioneer-6:
+    finding: "Bij 3.183 mensen met diabetes type 2 en een hoog risico op hart- en vaatziekten, gevolgd met een mediaan van 15,9 maanden, kregen 3,8% met semaglutide als tablet en 4,8% met placebo een ernstig voorval aan hart of bloedvaten (HR 0,79; 95%-BI 0,57–1,11)."
+    limitation: "Een veiligheidsstudie: die sloot een grote toename van het risico uit, maar was te kort en te klein om een daling te laten zien."
+  step-1:
+    finding: "Bij 1.961 volwassenen met obesitas of overgewicht zonder diabetes daalde het lichaamsgewicht gemiddeld met 14,9% met semaglutide 1 keer per week, tegen 2,4% met placebo, over 68 weken, met steun bij de leefstijl."
+    limitation: "Gewicht is een surrogaateindpunt; 68 weken; door de maag- en darmklachten wisten deelnemers misschien deels wat ze kregen; uitgevoerd door de fabrikant."
+  step-1-extension:
+    finding: "Van 327 deelnemers aan STEP 1 die een jaar na het stoppen werden gevolgd, kregen wie semaglutide had gebruikt ongeveer twee derde van het verloren gewicht terug (netto verlies 5,6% in week 120); de meeste verbeteringen voor hart en stofwisseling gingen terug richting het begin."
+    limitation: "Verkennende analyse van een deel van de deelnemers uit gekozen landen en centra; ook de steun bij de leefstijl stopte."
+  step-4:
+    finding: "Na een aanloopfase van 20 weken met semaglutide werden 803 volwassenen gerandomiseerd: wie doorging, verloor in 48 weken nog 7,9% van het lichaamsgewicht, en wie overging op placebo kwam 6,9% aan."
+    limitation: "Alleen mensen die het middel in de aanloopfase goed verdroegen, werden gerandomiseerd; uitgevoerd door de fabrikant."
+  select:
+    finding: "Bij 17.604 volwassenen met hart- en vaatziekte en overgewicht of obesitas, maar zonder diabetes, gevolgd met een gemiddelde van 39,8 maanden, kregen 6,5% met semaglutide en 8,0% met placebo een hartaanval of beroerte, of overleden aan een hart- of vaatziekte (HR 0,80)."
+    limitation: "Alleen mensen die al een hart- of vaatziekte hadden; 16,6% stopte met het middel door bijwerkingen (8,2% met placebo); uitgevoerd door de fabrikant."
+  flow:
+    finding: "Bij 3.533 mensen met diabetes type 2 en chronische nierziekte, gevolgd met een mediaan van 3,4 jaar, kwamen ernstige nierproblemen of overlijden door nier- of hartziekte 24% minder vaak voor met semaglutide (HR 0,76); overlijden door hart- en vaatziekte HR 0,71."
+    limitation: "Vroeg gestopt bij een vooraf geplande tussentijdse analyse, wat de grootte van het effect vaak overschat; alleen mensen met diabetes type 2."
+  soul:
+    finding: "Bij 9.650 mensen met diabetes type 2 en slagaderverkalking en/of chronische nierziekte, gevolgd met een gemiddelde van 47,5 maanden, kregen 12,0% met semaglutide als tablet en 13,8% met placebo een ernstig voorval aan hart of bloedvaten (HR 0,86)."
+    limitation: "De bevestigende secundaire uitkomsten, waaronder een samengestelde uitkomst voor de nieren, verschilden niet statistisch significant; uitgevoerd door de fabrikant."
+  evoke:
+    finding: "Bij 3.808 mensen met de ziekte van Alzheimer in een vroeg stadium vertraagde semaglutide als tablet de achteruitgang op de CDR-SB-schaal na 104 weken niet, vergeleken met placebo, in geen van beide studies."
+    limitation: "Een duidelijk negatief resultaat voor één toepassing; het test geen preventie, en het ging om semaglutide als tablet, niet als injectie."
+  hathaway-2024-naion:
+    finding: "Bij 1.689 patiënten van één oogcentrum voor neuro-oftalmologie, op kenmerken gekoppeld (propensity matching), kregen mensen met een recept voor semaglutide vaker NAION dan patiënten met andere medicijnen (HR 4,28 bij diabetes type 2; 7,64 bij overgewicht of obesitas)."
+    limitation: "Terugkijkend, één centrum, een verwezen groep waarin oogziekten vaker voorkomen; weinig voorvallen en brede betrouwbaarheidsintervallen; kan geen oorzaak aantonen."
+  bezin-2023-thyroid:
+    finding: "In gegevens van de Franse nationale zorgverzekering (2.562 mensen met schildklierkanker, 45.184 gematchte controles) hing 1 tot 3 jaar gebruik van GLP-1-agonisten samen met meer schildklierkanker (gecorrigeerde HR 1,58) en meer medullair schildkliercarcinoom (HR 1,78)."
+    limitation: "Observationeel; vooral oudere GLP-1-medicijnen, niet specifiek semaglutide; mensen die deze medicijnen gebruiken, krijgen misschien vaker een controle van de schildklier, waardoor meer kleine tumoren worden gevonden."
+  pasternak-2024-thyroid:
+    finding: "In registers uit Denemarken, Noorwegen en Zweden hing beginnen met een GLP-1-agonist (145.410 mensen) niet samen met meer schildklierkanker dan beginnen met een DPP-4-remmer (291.667 mensen), over gemiddeld 3,9 jaar (HR 0,93; 95%-BI 0,66–1,31)."
+    limitation: "Observationeel; verschillende GLP-1-medicijnen samen; een gemiddelde follow-up van minder dan 4 jaar is kort voor kanker; te weinig medullaire tumoren voor een precieze schatting (HR 1,19; 95%-BI 0,37–3,86)."
+regulatory_notes:
+  EU: "Goedgekeurd voor de hele EU: Ozempic (8 februari 2018), Rybelsus (3 april 2020), Wegovy als injectie (6 januari 2022) en als tablet (14 juli 2026), Kyinsu met insuline icodec (24 november 2025) en Kayshild voor MASH (26 maart 2026, voorwaardelijk). Alleen op recept. Bij het EMA liggen 3 aanvragen voor generieke semaglutide."
+  NL: "Goedgekeurd via de EU-handelsvergunningen; alle producten staan in de Geneesmiddeleninformatiebank van het CBG. Alleen op recept. Ozempic en Rybelsus worden alleen bij diabetes type 2 vergoed, onder voorwaarden (bijlage 2). Wegovy wordt niet vergoed; het Zorginstituut beoordeelt dat opnieuw. Tekort aan Ozempic voorbij sinds 2 december 2024."
+  WADA: "Niet op de dopinglijst van 2026. Sinds 2024 in het monitoringprogramma van WADA (binnen en buiten wedstrijden), ook in dat van 2027."
+indications:
+  # Uit rubriek 4.1 van de Nederlandse productinformatie van het EMA (ema-pi-*-nl), gelezen op 27 oktober 2026, in B1.
+  ozempic: "Volwassenen met diabetes type 2 die niet goed onder controle is, naast dieet en beweging: alleen, als metformine niet geschikt is, of naast andere diabetesmedicijnen."
+  rybelsus: "Volwassenen met diabetes type 2 die niet goed onder controle is, naast dieet en beweging: alleen, als metformine niet geschikt is, of samen met andere diabetesmedicijnen. Een tablet, 1 keer per dag."
+  wegovy: "Afvallen en op gewicht blijven (gewichtsbeheersing), naast minder calorieën en meer bewegen: volwassenen met een BMI van 30 of meer, of van 27 tot 30 met minstens één ziekte die met het gewicht samenhangt; jongeren vanaf 12 jaar met obesitas en een gewicht boven 60 kg."
+  wegovy-tablets: "Gewichtsbeheersing, alleen bij volwassenen, naast minder calorieën en meer bewegen: een BMI van 30 of meer, of van 27 tot 30 met minstens één ziekte die met het gewicht samenhangt."
+  kayshild: "Volwassenen met de leverziekte MASH zonder cirrose, met matige tot gevorderde littekens in de lever (fibrose F2 tot F3), samen met dieet en beweging. Voorwaardelijk goedgekeurd: er moet nog meer bewijs komen."
+  kyinsu: "Volwassenen met diabetes type 2 die niet genoeg onder controle is met basale insuline of een GLP-1-agonist, naast dieet, beweging en diabetestabletten. Bevat ook de insuline icodec."
+translation: { method: translated, from: en, review: pending }
+---
+<Section id="what-it-is">
+
+<Lead question="Wat is semaglutide?">Een medicijn op recept dat een darmhormoon nabootst. Online flacons met deze naam zijn een ander product.</Lead>
+
+<Compare title="Een medicijn van de apotheek en een online flacon met dezelfde naam zijn niet hetzelfde." detail="Wat over elk bekend is, uit de beoordelingen en waarschuwingen van medicijnautoriteiten.">
+
+| | Goedgekeurd medicijn (Ozempic, Rybelsus, Wegovy, Kayshild, Kyinsu) | Buiten de legale keten (online flacon “alleen voor onderzoek”, pen zonder vergunning) |
+|---|---|---|
+| Beoordeeld door een medicijnautoriteit? | <Verdict is="yes" /> Beoordeeld voor de goedkeuring<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-epar-kayshild,ema-epar-kyinsu" /> | <Verdict is="no" /> Niemand heeft de kwaliteit, werking of veiligheid nagekeken; in Nederland is geen goedgekeurd semaglutide-product een poeder in een flacon<Cite id="igj-online-medicijnen,fda-unapproved-glp1-concerns,cbg-gib-search-semaglutide-2026-10-27,ema-pi-wegovy-nl" /> |
+| Weet je wat erin zit? | <Verdict is="yes" /> Beoordeeld door de medicijnautoriteit | <Verdict is="no" /> Er kan een verkeerde stof in zitten, of te veel, te weinig of niets<Cite id="igj-2025-illegal-online-medicines,ema-hma-2025-09-illegal-glp1,fda-unapproved-glp1-concerns" />; er zijn nep-pennen met insuline gevonden<Cite id="mhra-2023-fake-weight-loss-pens,au-tga-2024-09-counterfeit-ozempic-pens" /> |
+| Weet je hoeveel je per keer krijgt? | <Verdict is="yes" /> Vast, door de pen of de tablet | <Verdict is="no" /> Hangt af van hoe je zelf afmeet<Cite id="fda-2024-compounded-semaglutide-dosing-errors" /> |
+| Steriel gemaakt? | <Verdict is="yes" /> Gemaakt door een fabrikant die in de handelsvergunning staat en die elke batch vrijgeeft<Cite id="ema-epar-wegovy" /> | <Verdict is="unknown" /> Kwaliteit onbekend<Cite id="fda-unapproved-glp1-concerns" /> |
+| Informatie over risico’s actueel? | <Verdict is="yes" /> Officiële productinformatie, steeds bijgewerkt<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl,fda-label-wegovy" /> | <Verdict is="no" /> Geen goedgekeurde productinformatie: het is onduidelijk hoe je het gebruikt en wat het met je gezondheid doet<Cite id="cbg-glp1-position,fda-unapproved-glp1-concerns" /> |
+| Iemand om te vragen, en controle door een arts? | <Verdict is="yes" /> Arts en apotheker: de controle komt vóór het recept<Cite id="igj-online-medicijnen,mhra-glp1-what-you-need-to-know,fda-unapproved-glp1-concerns" /> | <Verdict is="no" /> Niemand |
+
+</Compare>
+
+<InDetail title="De goedgekeurde producten, en waarom deze pagina anders is">
+
+Semaglutide is een medicijn op recept. Het Europees Geneesmiddelenbureau (EMA) heeft het voor de hele EU beoordeeld, en de Europese Commissie heeft het goedgekeurd. Er zijn 5 producten: Ozempic (een injectie 1 keer per week voor diabetes type 2, sinds 8 februari 2018), Rybelsus (een tablet 1 keer per dag voor diabetes type 2, sinds 3 april 2020), Wegovy (voor gewichtsbeheersing: een injectie 1 keer per week sinds 6 januari 2022, en een tablet 1 keer per dag sinds 14 juli 2026), Kyinsu (een pen met semaglutide en de langwerkende insuline icodec, voor diabetes type 2, sinds 24 november 2025) en Kayshild (een injectie voor de leverziekte MASH, voorwaardelijk goedgekeurd sinds 26 maart 2026).<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-wegovy-procedural-steps,ema-epar-kyinsu,ema-epar-kayshild,ec-union-register-kyinsu,ec-union-register-kayshild" /> De houder van de handelsvergunning is bij alle vijf Novo Nordisk A/S. Ze staan allemaal in de Geneesmiddeleninformatiebank van het College ter Beoordeling van Geneesmiddelen (CBG).<Cite id="cbg-gib-search-semaglutide-2026-10-27" /> Generieke semaglutide is in de EU nog niet goedgekeurd: 3 aanvragen liggen sinds 2026 bij het EMA (zie de status hieronder).<Cite id="ema-under-evaluation-2026-10" />
+
+<AuthorisedProducts />
+
+<Callout type="note" title="Waarom deze pagina anders is">
+De meeste stoffen op deze site zijn experimenteel. Semaglutide is een goedgekeurd medicijn met grote studies erachter. Het staat hier omdat dezelfde naam ook op flacons staat die online worden aangeboden met "alleen voor onderzoek" op het etiket. En omdat het vaak op één hoop wordt gegooid met experimentele peptiden. Dat misleidt in 2 richtingen (zie "Waarom 'semaglutide' niet één ding is" hieronder).
+</Callout>
+
+</InDetail>
+
+<InDetail title="Het molecuul, waar het vandaan komt, en de tablet">
+
+### Wat het molecuul is
+
+Semaglutide is een keten van 31 aminozuren. Daarvan zijn er 29 dezelfde als in menselijk GLP-1 (7–37), de werkzame vorm van een hormoon dat de darm na een maaltijd afgeeft. De productinformatie noemt dat 94% overeenkomst in de volgorde.<Cite id="fda-label-wegovy,ema-epar-wegovy" /> De keten begint met <Seq>His-Aib-Glu-Gly-Thr-Phe</Seq>.
+
+Drie veranderingen laten het hormoon een week meegaan. De posities volgen de nummering van GLP-1 (7–37) uit de literatuur en de Amerikaanse productinformatie: daarin is de eerste histidine positie 7.<Cite id="fda-label-ozempic,lau-2015-semaglutide-discovery,pubchem-semaglutide" />
+
+- **Positie 8:** alanine is vervangen door Aib (2-aminoisoboterzuur), dat het peptide beschermt tegen het enzym DPP-4.
+- **Positie 34:** lysine is vervangen door arginine, zodat er maar één lysine overblijft voor de zijketen.
+- **Positie 26:** aan die lysine zitten 2 korte waterminnende tussenstukken, een verbindingsstuk van glutaminezuur en een vetzuur met 18 koolstofatomen (een dizuur). Dat deel bindt aan albumine in het bloed.
+
+De brutoformule is C187H291N45O59 en de molecuulmassa <Q>4.113,58 g/mol</Q>. De peptideketen wordt gemaakt door gistcellen (Saccharomyces cerevisiae), met recombinant-DNA-techniek.<Cite id="fda-label-ozempic,ema-pi-wegovy-nl" />
+
+### Waar het vandaan komt
+
+In 1987 lieten 3 groepen zien dat een stukje proglucagon uit de darm insuline vrijmaakt: in de alvleesklier van een varken, in die van een rat en <Claim level="human-limited">bij 7 menselijke vrijwilligers, bij wie een infuus de insuline verhoogde en glucose en glucagon verlaagde</Claim>.<Cite id="holst-1987-glp1,mojsov-1987-glp1,kreymann-1987-glp1" /> In 1993 <Claim level="human-limited">bracht een infuus met GLP-1 de nuchtere glucose naar normaal bij 10 mensen met diabetes type 2, en daalde de insuline weer zodra de glucose normaal was</Claim>.<Cite id="nauck-1993-glp1-type2" /> Maar het lichaamseigen hormoon werkt maar ongeveer 1 tot 2 minuten, omdat DPP-4 het knipt en de nieren het weghalen.<Cite id="muller-2019-glp1-review" /> In een studie bij 8 mensen met diabetes type 2 en 8 gezonde vrijwilligers was 30 minuten na een injectie onder de huid het meeste GLP-1 in het bloed al de geknipte, grotendeels onwerkzame vorm.<Cite id="deacon-1995-glp1-degradation,muller-2019-glp1-review" /> Een eerdere variant, liraglutide, had ook een vetzuurketen en werd elke dag gegeven. Semaglutide is ontworpen voor een sterkere binding aan albumine en volledige bescherming tegen afbraak.<Cite id="lau-2015-semaglutide-discovery" />
+
+### Injectie en tablet
+
+Peptiden worden in de darm verteerd, dus de meeste worden gespoten. In semaglutide-tabletten zit een stof die de opname helpt, SNAC (natriumsalcaprozaat); <Claim level="human-limited">bij honden en mensen werd het opgenomen in de maag, vlak bij de tablet die oploste</Claim>.<Cite id="buckley-2018-oral-semaglutide" /> Toch wordt maar ongeveer 1 tot 2% van de dosis opgenomen, en dat verschilt sterk tussen mensen. Daarom hebben tabletten een veel hogere sterkte dan injecties.<Cite id="fda-label-wegovy,ema-epar-rybelsus" /> Volgens de Europese productinformatie is het effect van overstappen tussen tablet en injectie niet goed te voorspellen.<Cite id="ema-epar-rybelsus,ema-pi-rybelsus-nl" />
+
+</InDetail>
+
+<InDetail title="Waarom “semaglutide” niet één ding is">
+
+Het bewijs op deze pagina hoort bij gemaakte, goedgekeurde producten: een bekende stof in een pen of tablet die een vaste hoeveelheid geeft, met productinformatie die wordt bijgewerkt als er nieuwe risico's bekend worden. Een flacon die online wordt aangeboden als semaglutide "alleen voor onderzoek" heeft dezelfde naam. Maar die heeft geen van de garanties waardoor dat bewijs geldt: een bekende inhoud, een vaste dosis, steriliteit en bijgewerkte productinformatie.<Cite id="fda-unapproved-glp1-concerns,cbg-glp1-position" />
+
+Goedgekeurde GLP-1-medicijnen op één hoop gooien met peptiden van buiten de legale keten misleidt in 2 richtingen:
+
+- **Het laat de experimentele peptiden beter lijken dan ze zijn.** "Ozempic werkt en het is een peptide, dus de andere peptiden werken waarschijnlijk ook." Het bewijs voor semaglutide komt uit eigen studies bij tienduizenden mensen, niet uit het feit dat het een peptide is. De meeste peptiden die ernaast worden aangeboden, hebben geen vergelijkbare studie.
+- **Het doet het medicijn tekort, en laat de flacon beter lijken dan die is.** "Het is allemaal hetzelfde spul" kan mensen afschrikken van een medicijn dat <Claim level="human-controlled">in grote studies, in bepaalde groepen, de kans op een hartaanval, beroerte of overlijden door hart- en vaatziekte verlaagde, en ook de kans op ernstige nierproblemen</Claim>. Tegelijk nodigt het uit om een online flacon te behandelen alsof die dezelfde veiligheidsgegevens heeft. Dat is niet zo.
+
+De vergelijking bovenaan deze sectie laat de verschillen rij voor rij zien. De risico's van het goedgekeurde medicijn staan verderop op deze pagina, bij Risico's.
+
+</InDetail>
+
+</Section>
+
+<Section id="mechanism">
+
+<Lead question="Wat doet het in het lichaam?">Het geeft meer insuline als de bloedsuiker hoog is, minder honger en, in het begin, een tragere maag.</Lead>
+
+De korte animatie laat stap voor stap zien waar semaglutide in het lichaam werkt.
+
+<Explainer id="glp1-action" />
+
+<InDetail title="Orgaan voor orgaan: wat het op elke plek doet, en hoe goed dat is aangetoond">
+
+De figuur laat eerst zien hoe semaglutide in één cel werkt, en daarna wat er in elk orgaan gebeurt. In een onderzoek met lichaamsscans bij 140 deelnemers aan STEP 1 daalde het vet meer dan de vetvrije massa, en was het meeste verloren gewicht vet.<Cite id="ema-epar-wegovy,fda-label-wegovy" />
+
+<OrganCards id="semaglutide" />
+
+</InDetail>
+
+<InDetail title="Lichaamskaart: 3 plekken waar het werkt">
+
+<Infographic id="glp1-body-map" />
+
+</InDetail>
+
+<InDetail title="Stap voor stap: de keten van effecten en het bewijs">
+
+Semaglutide zet de GLP-1-receptor aan en blijft dat dagenlang doen. De meeste effecten, gewenst of ongewenst, volgen uit waar die receptor zit. De genummerde keten hieronder geeft elke stap van de animatie in meer detail, met het bewijs erachter.
+
+<Mechanism />
+
+### Waar elke stap op rust
+
+**In het bloed blijven.** De productinformatie geeft een halfwaardetijd van ongeveer een week en een binding aan albumine van meer dan 99%, gemeten bij mensen.<Cite id="fda-label-wegovy,ema-epar-wegovy" /> De keten is mechanisch: albumine is te groot om door de nieren te worden gefilterd, dus alleen het kleine vrije deel wordt weggehaald, en Aib op positie 8 beschermt tegen DPP-4. Daarom blijft semaglutide na de laatste dosis nog ongeveer 5 tot 7 weken in het bloed. Bijwerkingen stoppen dus niet op de dag dat je stopt.<Cite id="fda-label-wegovy,ema-epar-wegovy,ema-epar-rybelsus" />
+
+**Receptor en cAMP.** Semaglutide is een directe agonist van de GLP-1-receptor; de binding is gemeten in cellen.<Cite id="chembl-semaglutide,lau-2015-semaglutide-discovery" /> De geactiveerde receptor zet adenylaatcyclase aan, zodat cAMP in de cel stijgt; in bètacellen werkt cAMP via PKA en Epac2 en neemt de afgifte van insuline toe.<Cite id="muller-2019-glp1-review" /> <Claim level="in-vitro">Deze keten is aangetoond in cellijnen en in eilandjes van dieren</Claim>, maar niet stap voor stap gevolgd in de alvleesklier van mensen.
+
+**Waarom het effect op insuline van glucose afhangt.** cAMP versterkt een afgifte van insuline die glucose al in gang heeft gezet; het start die niet zelf. <Claim level="human-controlled">In een dubbelblinde studie van 12 weken met placebo als vergelijking, betaald door de fabrikant, bij 75 mensen met diabetes type 2, verhoogde semaglutide de afgifte van insuline en verlaagde het glucagon na maaltijden</Claim>.<Cite id="kapitza-2017-beta-cell" /> Volgens de productinformatie daalt de afgifte van insuline nog steeds bij een lage bloedsuiker, en blijft de glucagonreactie werken.<Cite id="fda-label-ozempic,ema-epar-wegovy" /> Daarom is de kans op een te lage bloedsuiker door semaglutide zelf klein. En daarom valt veel van die bescherming weg in combinatie met medicijnen die insuline laten afgeven, hoe hoog de glucose ook is.
+
+**Eetlust.** <Claim level="animal">In proeven bij knaagdieren door de fabrikant bereikte semaglutide de hersenstam en de hypothalamus via gebieden waar de bloed-hersenbarrière open is, en zette het gebieden aan die waarschijnlijk betrokken zijn bij het einde van een maaltijd</Claim>.<Cite id="gabery-2020-semaglutide-brain" /> <Claim level="human-controlled">In een dubbelblinde, gerandomiseerde studie bij 72 volwassenen met obesitas, betaald door de fabrikant, verlaagde 20 weken semaglutide de hoeveelheid energie bij een lunch naar keuze met 35% vergeleken met placebo, met minder honger en minder trek</Claim>.<Cite id="friedrichsen-2021-appetite" /> Het effect op eten is gemeten bij mensen; de plekken in de hersenen zijn afgeleid uit dieronderzoek.
+
+**De maag.** GLP-1 vertraagt de maaglediging.<Cite id="muller-2019-glp1-review" /> De productinformatie beschrijft een kleine vertraging vlak na een maaltijd, en geen duidelijk effect in een studie met de sterkte <Q>2,4 mg</Q>; de studie naar eetlust vond in week 20 geen duidelijke vertraging.<Cite id="fda-label-ozempic,ema-epar-wegovy,friedrichsen-2021-appetite" /> De Europese productinformatie noemt gewenning (tolerantie) als waarschijnlijke reden.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl" />
+
+### Wat het mechanisme niet verklaart
+
+Het voordeel voor hart en nieren is echt in de onderzochte groepen, maar het is nog niet helemaal verklaard. Volgens de Amerikaanse productinformatie is het precieze mechanisme van de lagere kans op hart- en vaatziekten bij volwassenen niet vastgesteld.<Cite id="fda-label-wegovy" /> De Europese productinformatie noemt het voordeel voor hart en bloedvaten waarschijnlijk het gevolg van meerdere factoren: deels het gewichtsverlies, en deels effecten op bloeddruk, vetten in het bloed, glucose en ontsteking. Ook daar staat dat het precieze mechanisme niet is vastgesteld.<Cite id="ema-epar-wegovy" />
+
+</InDetail>
+
+</Section>
+
+<Section id="evidence">
+
+<Lead question="Werkt het?">Ja, voor bloedsuiker en gewicht. Sommige groepen kregen ook minder vaak ernstige hart- en nierproblemen.</Lead>
+
+<KeyNumber title="Het gewicht daalde gemiddeld met ongeveer 15%" value="14,9%" label="gemiddeld gewichtsverlies in 68 weken, tegen 2,4% met placebo" who="STEP 1: 1.961 volwassenen met obesitas of overgewicht, zonder diabetes" source="wilding-2021-step-1" level="established" />
+
+<KeyNumber title="Minder hartaanvallen, beroertes en sterfte door hart- en vaatziekte" value="6,5 op de 100" label="kreeg zo’n voorval in ongeveer 3 jaar, tegen 8 op de 100 met placebo" who="SELECT: 17.604 volwassenen met hart- of vaatziekte en obesitas of overgewicht, zonder diabetes" source="lincoff-2023-select" level="human-controlled" />
+
+<KeyNumber title="Minder mensen kregen ernstige schade aan de nieren" value="24%" label="minder vaak: nierfalen, de nierfunctie gehalveerd, of overlijden door nier- of hartziekte" who="FLOW: 3.533 mensen met diabetes type 2 en chronische nierziekte" source="perkovic-2024-flow" level="human-controlled" />
+
+<KeyNumber title="Binnen een jaar na het stoppen kwam ongeveer twee derde van het verloren gewicht terug" value="2 op de 3" label="van de verloren kilo’s was gemiddeld terug, een jaar na het stoppen" who="STEP 1-vervolg: 327 mensen, een jaar gevolgd na het stoppen" source="wilding-2022-step-1-extension" level="human-controlled" />
+
+Deze cijfers gelden voor de groepen die meededen. Veel deelnemers kregen ook bijwerkingen, vooral misselijkheid en andere klachten van maag en darmen (zie Risico's).<Cite id="ema-epar-wegovy" />
+
+<InDetail title="Alle belangrijke studies in één tabel">
+
+<StudyTable />
+
+Grote studies maken niet elke bewering over semaglutide waar. Hieronder staat wat elke belangrijke studie testte, bij wie, en wat ze niet kon laten zien. (De fysiologische studie uit 1987 in de tabel verklaart het mechanisme; het is geen bewijs dat het medicijn werkt.<Cite id="kreymann-1987-glp1" />)
+
+</InDetail>
+
+<InDetail title="Diabetes, het hart en de nieren">
+
+### Diabetes type 2 en het hart
+
+<Claim level="established">Semaglutide verlaagt de HbA1c bij diabetes type 2</Claim> (in PIONEER 1, een dubbelblinde fase 3-studie met placebo als vergelijking bij 703 volwassenen, bij alle drie de sterktes van de tablet, over 26 weken).<Cite id="aroda-2019-pioneer-1" /> Maar een lagere glucose betekent niet vanzelf minder hartaanvallen. SUSTAIN-6 verdeelde 3.297 mensen met diabetes type 2 en een hoog risico op hart- en vaatziekten door loting over semaglutide 1 keer per week (<Q>0,5 mg</Q> of <Q>1,0 mg</Q>) of placebo, gedurende 104 weken. Overlijden door hart- en vaatziekte, een hartaanval die iemand overleefde of een beroerte die iemand overleefde, kwam voor bij 6,6% tegen 8,9% (HR 0,74; 95%-BI 0,58–0,95).<Cite id="marso-2016-sustain-6" /> De studie was opgezet om schade uit te sluiten, dus het gunstige resultaat was bemoedigend, maar geen bewijs. PIONEER 6 deed dezelfde controle voor de tablet bij 3.183 mensen over een mediaan van 15,9 maanden (3,8% tegen 4,8%; HR 0,79; 95%-BI 0,57–1,11): geen grote toename van het risico, maar ook geen bewijs voor een voordeel.<Cite id="husain-2019-pioneer-6" />
+
+SOUL testte daarna direct of er een voordeel is, bij 9.650 mensen met diabetes type 2 en slagaderverkalking, chronische nierziekte of beide, over gemiddeld 47,5 maanden: <Claim level="human-controlled">ernstige voorvallen aan hart en bloedvaten kwamen voor bij 12,0% met semaglutide als tablet en 13,8% met placebo (HR 0,86; 95%-BI 0,77–0,96)</Claim>. De bevestigende secundaire uitkomsten, waaronder een samengestelde uitkomst voor de nieren, verschilden niet statistisch significant.<Cite id="mcguire-2025-soul" />
+
+### Nieren
+
+FLOW verdeelde 3.533 mensen met diabetes type 2 en chronische nierziekte door loting over semaglutide 1 keer per week of placebo (mediane follow-up 3,4 jaar). <Claim level="human-controlled">Nierfalen, een daling van de nierfunctie met minstens de helft, of overlijden door nier- of hartziekte kwam 24% minder vaak voor met semaglutide (HR 0,76; 95%-BI 0,66–0,88)</Claim>.<Cite id="perkovic-2024-flow" /> De studie stopte vroeg bij een vooraf geplande tussentijdse analyse. Studies die vroeg stoppen omdat er een voordeel is, overschatten het effect vaak. Grote overschattingen zie je vooral bij studies met minder dan 500 voorvallen; FLOW had er 741.<Cite id="bassler-2010-truncated-trials,perkovic-2024-flow" />
+
+### Uitkomsten voor het hart zonder diabetes
+
+SELECT verdeelde 17.604 volwassenen met hart- en vaatziekte en overgewicht of obesitas, maar zonder diabetes, door loting over semaglutide of placebo, gedurende gemiddeld 39,8 maanden. <Claim level="human-controlled">Overlijden door hart- en vaatziekte, een hartaanval die iemand overleefde of een beroerte die iemand overleefde, kwam voor bij 6,5% met semaglutide en 8,0% met placebo (HR 0,80; 95%-BI 0,72–0,90)</Claim>; 16,6% stopte door bijwerkingen, tegen 8,2% met placebo.<Cite id="lincoff-2023-select" /> De studie laat niet zien dat semaglutide een eerste hartaanval voorkomt bij mensen zonder hart- of vaatziekte.
+
+</InDetail>
+
+<InDetail title="Gewichtsbeheersing, en wat er gebeurt na het stoppen">
+
+STEP 1 verdeelde 1.961 volwassenen met obesitas, of met overgewicht en een ziekte die met het gewicht samenhangt, en zonder diabetes, door loting over semaglutide 1 keer per week (<Q>2,4 mg</Q>) of placebo, gedurende 68 weken, met steun bij de leefstijl. <Claim level="established">Het gewicht daalde gemiddeld met 14,9% tegen 2,4%</Claim>. De helft van de groep met semaglutide verloor 15% of meer, en ongeveer 1 op de 7 verloor minder dan 5%.<Cite id="wilding-2021-step-1" />
+
+<Claim level="human-controlled">Een groot deel van het effect verdwijnt als de behandeling stopt</Claim>. In STEP 4, een dubbelblinde fase 3-studie, werden 803 mensen die in een aanloopfase van 20 weken met semaglutide de streefdosis hadden bereikt (gemiddeld 10,6% verlies), door loting verdeeld. Wie doorging, verloor in 48 weken nog 7,9%; wie overging op placebo, kwam 6,9% aan.<Cite id="rubino-2021-step-4" /> In het vervolg van STEP 1 werden 327 mensen een jaar na het stoppen gevolgd. Wie semaglutide had gebruikt, kreeg ongeveer twee derde van het verloren gewicht terug (er bleef netto 5,6% verlies over). De meeste waarden voor bloeddruk, vetten in het bloed en glucose gingen terug richting het begin.<Cite id="wilding-2022-step-1-extension" />
+
+De dagelijkse tablet voor gewichtsbeheersing is getest in OASIS 4, een dubbelblinde studie met placebo als vergelijking, betaald door de fabrikant, bij 307 volwassenen zonder diabetes. Het gewicht veranderde na 64 weken gemiddeld met −13,6% tegen −2,2%, en bijwerkingen in maag en darmen kwamen voor bij 74,0% tegen 42,2%.<Cite id="wharton-2025-oasis-4" /> De Amerikaanse productinformatie beschrijft dezelfde studie (als "Study 7") voor de Wegovy-tabletten.<Cite id="fda-label-wegovy" /> Het EMA noemt deze fase 3-studie in zijn positieve advies over de tabletten (mei 2026); in de EU zijn ze sinds 14 juli 2026 goedgekeurd.<Cite id="ema-2026-wegovy-tablets,ema-wegovy-procedural-steps" />
+
+</InDetail>
+
+<InDetail title="Nieuwere toepassingen, en een negatief resultaat">
+
+ESSENCE is een dubbelblinde fase 3-studie met placebo als vergelijking, betaald door de fabrikant, bij mensen met de leverziekte MASH en matige tot gevorderde littekens in de lever (fibrose). Een vooraf geplande tussentijdse analyse van de eerste 800 deelnemers na 72 weken liet in een leverbiopt zien: de ontsteking (steatohepatitis) verdween zonder dat de fibrose erger werd bij 62,9% tegen 34,3%, en de fibrose werd minder zonder dat de steatohepatitis erger werd bij 36,8% tegen 22,4%. De studie loopt door om klinische uitkomsten voor de lever te meten.<Cite id="sanyal-2025-essence" /> Bij mensen die al cirrose door MASH hadden, vond een kleinere fase 2-studie (71 volwassenen, 48 weken) geen statistisch significante verbetering van fibrose of steatohepatitis.<Cite id="loomba-2023-semaglutide-cirrhosis" />
+
+In de EU is semaglutide voor MASH goedgekeurd als Kayshild, op basis van ESSENCE. Het is een voorwaardelijke handelsvergunning (26 maart 2026): het EMA wacht nog op meer bewijs over het voordeel, en de fabrikant moet verdere resultaten van de lopende studie aanleveren. Gegevens over de veiligheid op lange termijn bij MASH zijn er nog niet. Kayshild is alleen voor volwassenen zonder cirrose.<Cite id="ema-epar-kayshild,ema-pi-kayshild-nl,ec-union-register-kayshild" /> In ESSENCE waren de meest gemelde bijwerkingen klachten van maag en darmen en vermoeidheid: misselijkheid bij 36,1% tegen 12,4% met placebo, diarree bij 26,8% tegen 12,2%, verstopping bij 22,1% tegen 7,8% en overgeven bij 18,5% tegen 5,6%.<Cite id="ema-pi-kayshild-nl" />
+
+Studies met gezondheidsgegevens hadden minder dementie gezien bij GLP-1-medicijnen. Maar in evoke en evoke+, dubbelblinde fase 3-studies met placebo als vergelijking (3.808 mensen met de ziekte van Alzheimer in een vroeg stadium), <Claim level="human-controlled">vertraagde semaglutide als tablet de achteruitgang na 104 weken niet</Claim>.<Cite id="cummings-2026-evoke" />
+
+</InDetail>
+
+<InDetail title="Wie het onderzoek betaalde">
+
+Elke belangrijke studie hier is betaald door de fabrikant, met veel auteurs van het bedrijf. Dat is gewoon bij medicijnen en maakt de resultaten niet fout, maar de vragen waren vooral die van de fabrikant. Een grove telling in PubMed op 20 oktober 2026 vond 118 records van gerandomiseerde studies naar semaglutide (van de 311) zonder auteur van Novo Nordisk; een deel daarvan kan toch door het bedrijf betaald zijn. De belangrijkste recente vragen over veiligheid (NAION, schildklierkanker en gedachten aan zelfdoding) zijn onderzocht door onafhankelijke academische groepen en medicijnautoriteiten.<Cite id="hathaway-2024-naion,bezin-2023-thyroid-cancer,pasternak-2024-thyroid-cancer,ema-prac-2024-04-suicidal-thoughts" /> Het effect op gewicht is ook gezien zonder auteurs van het bedrijf. In een cohortonderzoek van de Mayo Clinic verloren de 102 volwassenen die 6 maanden werden gevolgd gemiddeld <Q>10,9%</Q> van hun gewicht, ongeveer zoals in de studies. Het was een observationeel onderzoek zonder vergelijkingsgroep.<Cite id="ghusn-2022-mayo-cohort" />
+
+</InDetail>
+
+</Section>
+
+<Section id="unknowns">
+
+<Lead question="Wat is nog niet bekend?">Wat jarenlang gebruik doet, hoe je goed stopt, en hoe groot sommige zeldzame risico’s zijn.</Lead>
+
+<TimeStrip title="De langste studies volgden mensen gemiddeld ongeveer 4 jaar. Wat langer gebruik doet, is niet bekend." detail="Jaren gebruik die het onderzoek dekt, geteld vanaf het begin van de behandeling." min={0} max={10} step={2} axis="Jaren gebruik" source="mcguire-2025-soul,wilding-2021-step-1,wilding-2022-step-1-extension" rows={[
+  { label: "Langste uitkomstenstudie (SOUL)", spans: [{ from: 0, to: 3.96, text: "gemiddeld ongeveer 4 jaar (47,5 maanden)" }] },
+  { label: "Belangrijkste gewichtsstudie (STEP 1) en het vervolg", spans: [{ from: 0, to: 1.3, text: "68 weken met behandeling" }, { from: 1.3, to: 2.3, text: "daarna een jaar zonder behandeling" }] },
+  { label: "Langer gebruik", spans: [{ from: 4, to: 10, text: "niet onderzocht in de studies", unknown: true }] },
+]} />
+
+<InDetail title="Alle acht open vragen, met hun bronnen">
+
+- **Gebruik langer dan een paar jaar.** De langste uitkomstenstudies duurden gemiddeld ongeveer 4 jaar. De belangrijkste gewichtsstudie behandelde mensen 68 weken, en volgde een deel van hen daarna een jaar zonder behandeling.<Cite id="mcguire-2025-soul,wilding-2021-step-1,wilding-2022-step-1-extension" /> Zorginstituut Nederland schreef in 2024 dat niet bekend is of langdurig gebruik blijvend werkt.<Cite id="zin-2024-wegovy-not-reimbursed" />
+- **Hoe je stopt.** Na het stoppen komt het gewicht terug. We vonden geen gepubliceerde studie naar een manier van stoppen waarbij het voordeel blijft (zoekopdracht in PubMed, 24 oktober 2026). Ook het Zorginstituut vond in 2024 geen studies naar het verantwoord afbouwen.<Cite id="wilding-2022-step-1-extension,rubino-2021-step-4,zin-2024-wegovy-not-reimbursed" />
+- **NAION.** Hoe groot het risico is buiten diabetes type 2, wie het meeste risico loopt, en of het afhangt van de dosis of van hoe snel iemand afvalt.<Cite id="ema-prac-2025-06-naion" />
+- **Schildklierkanker.** Registerstudies spreken elkaar tegen en de follow-up is kort. Niemand heeft aangetoond dat de bevinding bij knaagdieren voor mensen geldt, maar het is ook niet helemaal uitgesloten.<Cite id="bezin-2023-thyroid-cancer,pasternak-2024-thyroid-cancer" />
+- **Spieren en kracht.** Hoeveel van de verloren vetvrije massa spier is, en of dat bij ouderen uitmaakt voor kracht en vallen.<Cite id="neeland-2024-lean-mass" />
+- **Zwangerschap.** Dieronderzoek liet schade aan het embryo zien; gegevens bij mensen zijn beperkt.<Cite id="ema-epar-wegovy" />
+- **De Wegovy-pen van <Q>7,2 mg</Q>.** Meer vreemde gevoelens in de huid (dysesthesie) dan bij lagere sterktes; de ervaring is nog kort.<Cite id="ema-epar-wegovy" />
+- **Gezondheidswinst naast gewicht.** In 2024 zag het Zorginstituut grote onduidelijkheden over wat het lagere gewicht voor de gezondheid betekent. Het kon ook niet vaststellen bij welke mensen semaglutide de meeste gezondheidswinst geeft. SELECT liet minder hartproblemen zien, maar alleen bij mensen die al een hart- of vaatziekte hadden.<Cite id="zin-2024-wegovy-not-reimbursed,lincoff-2023-select" />
+
+</InDetail>
+
+</Section>
+
+<Section id="regulatory">
+
+<Lead question="Is het legaal in Nederland?">Ja, op recept, in Nederland en de hele EU. Wegovy voor afvallen wordt niet vergoed.</Lead>
+
+<TimeStrip title="Semaglutide is sinds 2018 goedgekeurd in de EU. In 2025 en 2026 kwamen er nieuwe producten bij." detail="Elke balk loopt van de Europese goedkeuring tot de dag dat we het controleerden." min={2017} max={2027} step={2} axis="Jaar" source="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-wegovy-procedural-steps,ema-epar-kyinsu,ema-epar-kayshild" checked="2026-10-27" rows={[
+  { label: "Ozempic: injectie, diabetes type 2", spans: [{ from: "2018-02-08", to: "2026-10-27", text: "sinds 8 februari 2018" }] },
+  { label: "Rybelsus: tablet, diabetes type 2", spans: [{ from: "2020-04-03", to: "2026-10-27", text: "sinds 3 april 2020" }] },
+  { label: "Wegovy: injectie, gewichtsbeheersing", spans: [{ from: "2022-01-06", to: "2026-10-27", text: "sinds 6 januari 2022" }] },
+  { label: "Kyinsu: met insuline icodec, diabetes type 2", spans: [{ from: "2025-11-24", to: "2026-10-27", text: "sinds 24 november 2025" }] },
+  { label: "Kayshild: injectie, leverziekte MASH (voorwaardelijk)", spans: [{ from: "2026-03-26", to: "2026-10-27", text: "sinds 26 maart 2026" }] },
+  { label: "Wegovy: tablet, gewichtsbeheersing", spans: [{ from: "2026-07-14", to: "2026-10-27", text: "sinds 14 juli 2026" }] },
+]} />
+
+<InDetail title="Status in Nederland, de EU en de sport">
+
+<RegulatoryTable />
+
+### Sport (WADA)
+
+Semaglutide staat niet op de dopinglijst van het Wereld Anti-Doping Agentschap (WADA) voor 2026, en de groep S0 (“Niet erkende stoffen”) geldt niet voor een goedgekeurd medicijn.<Cite id="wada-prohibited-list" /> Sinds 2024 staat het wel in het monitoringprogramma van WADA: laboratoria zoeken ernaar om te zien of sporters het misbruiken, maar het is niet verboden.<Cite id="wada-2026-monitoring-program" /> Ook in het programma voor 2027 staat het, samen met tirzepatide.<Cite id="wada-2027-monitoring-program" />
+
+</InDetail>
+
+<InDetail title="De Europese Unie">
+
+Alle producten met semaglutide zijn goedgekeurd via de centrale procedure van de EU. Zo'n handelsvergunning geldt in elke lidstaat.<Cite id="eu-regulation-726-2004" /> Ozempic is goedgekeurd sinds 8 februari 2018, Rybelsus sinds 3 april 2020 en Wegovy sinds 6 januari 2022. Op 14 juli 2026 keurde de Europese Commissie ook Wegovy-tabletten goed, en een Wegovy-pen met de hogere sterkte <Q>7,2 mg</Q>. De handelsvergunning van Wegovy is op 21 september 2026 verlengd.<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy,ema-wegovy-procedural-steps,ema-pi-wegovy-nl" />
+
+Ook 2 nieuwere producten bevatten semaglutide. Kyinsu (sinds 24 november 2025) is een pen met 2 werkzame stoffen: de langwerkende insuline icodec en semaglutide, voor diabetes type 2.<Cite id="ema-epar-kyinsu,ema-pi-kyinsu-nl,ec-union-register-kyinsu" /> Kayshild (sinds 26 maart 2026) is semaglutide voor de leverziekte MASH, met een voorwaardelijke handelsvergunning: het EMA beoordeelt elk jaar de nieuwe informatie.<Cite id="ema-epar-kayshild,ema-pi-kayshild-nl,ec-union-register-kayshild" /> Beide staan onder aanvullende monitoring: het EMA volgt ze extra nauwkeurig.<Cite id="ema-epar-kayshild,ema-epar-kyinsu" />
+
+Bij het EMA liggen 3 aanvragen voor generieke semaglutide: 2 voor diabetes type 2 en 1 voor gewichtsbeheersing. De beoordeling begon in mei en juni 2026.<Cite id="ema-under-evaluation-2026-10" /> Sinds 12 september 2026 beoordeelt het EMA ook of Rybelsus gebruikt mag worden door kinderen en jongeren vanaf 10 jaar met diabetes type 2.<Cite id="ema-ext-indication-under-evaluation-2026-09" /> Voor een uitbreiding van de indicatie van Kyinsu gaf het Comité voor geneesmiddelen voor menselijk gebruik (CHMP) van het EMA in oktober 2026 een positief advies; de Europese Commissie had op 27 oktober 2026 nog niet besloten.<Cite id="ema-chmp-2026-10-highlights" />
+
+De productinformatie verschilt tussen landen. De Europese noemt maar één contra-indicatie: overgevoeligheid voor semaglutide of voor een van de hulpstoffen.<Cite id="ema-pi-wegovy-nl,ema-pi-ozempic-nl" /> Daar staan de tumoren bij knaagdieren bij de gegevens uit dieronderzoek; het belang voor mensen is volgens die tekst klein, maar niet uitgesloten.<Cite id="ema-epar-wegovy" /> De Amerikaanse en Canadese productinformatie hebben voor die tumoren een zware waarschuwing (boxed warning). Ze noemen medullair schildkliercarcinoom of MEN2, bij jezelf of in je familie, een contra-indicatie.<Cite id="fda-label-ozempic,ca-pm-ozempic-2026-07-13,ca-pm-wegovy-2026-10-02" /> De veiligheidscommissie van het EMA (PRAC) concludeerde in juni 2025 dat NAION een zeer zeldzame bijwerking is, en de Europese productinformatie noemt het nu. De Amerikaanse productinformatie die we lazen (mei en juni 2026) noemt het niet.<Cite id="ema-prac-2025-06-naion,ema-pi-wegovy-nl,fda-label-wegovy,fda-label-ozempic" />
+
+</InDetail>
+
+<InDetail title="Nederland">
+
+In Nederland gelden de Europese handelsvergunningen direct.<Cite id="eu-regulation-726-2004" /> Alle 33 productregels met semaglutide in de Geneesmiddeleninformatiebank hebben een EU-nummer; er is geen apart Nederlands product. Het register laat zien wat is goedgekeurd, niet of elk product ook echt bij de apotheek te krijgen is.<Cite id="cbg-gib-search-semaglutide-2026-10-27" /> Semaglutide is een medicijn dat je alleen op recept krijgt. Alleen een apotheker in een apotheek, of een huisarts met een eigen apotheek, mag het je meegeven.<Cite id="nl-gmw-art-61-prescription,ema-pi-wegovy-nl" /> Het recept komt van een arts, meestal je huisarts of een specialist. Een paar andere zorgverleners mogen binnen hun vak ook voorschrijven; een diabetesverpleegkundige bijvoorbeeld alleen medicijnen die de bloedsuiker regelen, en pas na de diagnose van een arts.<Cite id="nl-wet-big-art-36-voorschrijven,knmg-wie-mogen-voorschrijven" />
+
+Ozempic en Rybelsus zijn goedgekeurd voor diabetes type 2. Wie Ozempic gebruikt om af te vallen, gebruikt het off-label: buiten de goedgekeurde indicatie. Het onderzoek naar Ozempic is gedaan bij mensen met diabetes. Of de voordelen bij ander gebruik groter zijn dan de risico’s, is volgens het CBG niet altijd bekend.<Cite id="cbg-afslankmedicijnen" /> Het CBG schrijft dat deze medicijnen steeds vaker als afslankmiddel worden gebruikt, zonder recept en buiten de goedgekeurde indicatie, en raadt dat af. Off-label voorschrijven mag in principe alleen als een richtlijn van artsen het toestaat.<Cite id="cbg-glp1-position,nl-gmw-art-68-off-label" /> Receptmedicijnen online aanbieden zonder recept mag volgens de wet niet.<Cite id="cbg-afslankmedicijnen" />
+
+Op 5 oktober 2026 schreef de minister dat generieke semaglutide nu niet legaal in Nederland op de markt mag komen, omdat het octrooi of de bescherming van de markt en de gegevens nog niet is afgelopen. De Inspectie Gezondheidszorg en Jeugd (IGJ) treedt op tegen illegale handel, bijvoorbeeld door websites uit de lucht te laten halen en boetes op te leggen. In hetzelfde antwoord staat hoeveel meldingen van vermoedelijke bijwerkingen van obesitasmedicijnen (GLP-1-agonisten en tirzepatide) Bijwerkingencentrum Lareb kreeg: 295 in 2023, 374 in 2024, 741 in 2025 en 1.398 in 2026 tot augustus, samen 2.802. Het gaat om gebruik bij diabetes en om afvallen, ook om off-label gebruik en online aankopen. De cijfers zijn niet naar die groepen te splitsen.<Cite id="tk-2026-ah-249-antwoord-afslankmedicatie" />
+
+Het tekort aan Ozempic in Nederland is sinds 2 december 2024 voorbij. In maart 2023 had het CBG gewaarschuwd dat het tekort lang zou duren, en dat je Ozempic niet zonder toezicht van een arts moet gebruiken.<Cite id="cbg-ozempic-shortage" /> Ook het EMA meldt het tekort in de EU als opgelost (laatst bijgewerkt op 13 januari 2026).<Cite id="ema-shortage-ozempic" />
+
+**Zelf invoeren.** Medicijnen invoeren mag alleen met een vergunning, en de Douane controleert ook post-, pakket- en koerierszendingen.<Cite id="douane-invoer-geneesmiddelen-2026" /> Op reis mag je de meeste medicijnen voor eigen gebruik meenemen, in de originele verpakking.<Cite id="douane-medicijnen-reizen-2026" /> Die uitzondering geldt alleen voor wat je zelf als reiziger meeneemt, niet voor een pakket dat iemand anders vervoert.<Cite id="douane-hvgem-geneesmiddelen-h5-fabrikantenvergunning,nl-rbdha-2019-4817-postzending-eigen-gebruik" /> Zie [zelf invoeren](/nl/legal-routes/#zelf-invoeren).
+
+</InDetail>
+
+<InDetail title="Vergoeding uit het basispakket">
+
+Het basispakket vergoedt alleen goedgekeurde medicijnen die in het Geneesmiddelenvergoedingssysteem (GVS) staan. Voor sommige medicijnen gelden extra voorwaarden; die staan in bijlage 2 van de Regeling zorgverzekering.<Cite id="zin-geneesmiddelen-zvw,nl-regeling-zorgverzekering-bijlage-2-glp1" />
+
+- **Ozempic en Rybelsus** worden alleen vergoed bij diabetes type 2, en alleen in een van deze 3 situaties: (a) je BMI is 30 of hoger, metformine samen met een SU-derivaat helpt niet genoeg, ook in de hoogste dosis die je verdraagt, en je gebruikt geen insuline; (b) je BMI is 30 of hoger en je bloedsuiker is na minstens 3 maanden basale insuline met metformine nog niet goed; of (c) je hebt een zeer hoog risico op hart- en vaatziekten (je hebt al een hart- of vaatziekte, of chronische nierschade), en semaglutide komt bij een SGLT2-remmer en metformine, of je mag geen SGLT2-remmer gebruiken.<Cite id="nl-regeling-zorgverzekering-bijlage-2-glp1,fk-semaglutide" />
+- **Wegovy** wordt niet vergoed: het staat niet in het GVS.<Cite id="fk-semaglutide,nl-regeling-zorgverzekering-bijlage-2-glp1" />
+- **Kayshild en Kyinsu:** of en hoe die worden vergoed, hebben we niet uitgezocht.
+- **Voor obesitas** kan een ander GLP-1-medicijn, liraglutide, soms wel worden vergoed, onder strenge voorwaarden. Zo moet je eerst een jaar een gecombineerde leefstijlinterventie (GLI) hebben gevolgd die niet genoeg hielp, en moet je BMI 35 of hoger zijn met een ziekte erbij (hart- en vaatziekte, slaapapneu of artrose), of 40 of hoger. Ook naltrexon met bupropion kan onder voorwaarden worden vergoed.<Cite id="nl-regeling-zorgverzekering-bijlage-2-glp1,fk-liraglutide" />
+
+Wordt een medicijn vergoed? Dan telt het mee voor je eigen risico: € 385 in 2026, en € 400 vanaf 1 januari 2027.<Cite id="zin-geneesmiddelen-zvw,rijksoverheid-eigen-risico-2026,nl-zvw-art-19-eigen-risico-2027" />
+
+In juli 2024 adviseerde het Zorginstituut de minister om Wegovy niet te vergoeden. Het Zorginstituut vond dat Wegovy het gewicht verlaagt, maar zag grote onduidelijkheden over de gevolgen voor de gezondheid. Opname in het basispakket was volgens het Zorginstituut op dat moment "maatschappelijk niet te verantwoorden". De kosten konden oplopen tot 1,3 miljard euro per jaar.<Cite id="zin-2024-wegovy-not-reimbursed" />
+
+Nu beoordeelt het Zorginstituut Wegovy opnieuw, in stappen. Eerst gaat het om 2 groepen: mensen met een BMI vanaf 30 met ziektes die daarmee samenhangen, en mensen met een BMI vanaf 35. Het dossier was in juli 2026 compleet. De Wetenschappelijke Adviesraad besprak het voor het eerst op 5 oktober 2026, en een technische consultatie volgt naar verwachting begin november 2026. Wanneer het advies komt, is nog niet bekend. Alleen als het Zorginstituut positief adviseert en de minister dat advies overneemt, komt Wegovy in het GVS.<Cite id="zin-wegovy-reassessment,zin-2025-obesity-staged-approach" /> In de tekst van de regeling die vanaf 1 januari 2027 moet gelden, staat Wegovy ook niet, en zijn de voorwaarden voor semaglutide hetzelfde. Die tekst kan nog veranderen. Een besluit over vergoeding van Wegovy in 2027 vonden we niet.<Cite id="nl-regeling-zorgverzekering-2027-bijlage-2" /> Betaal je Wegovy zelf? Dan vraagt het Nederlands Huisartsen Genootschap (NHG) huisartsen om je te vertellen dat niet zeker is dat je later vergoeding krijgt.<Cite id="nhg-2025-gewichtsreducerende-medicatie" />
+
+Dat Wegovy niet wordt vergoed, heeft gevolgen. Maar de redenen ervoor zijn ook echt. In SELECT kregen mensen die al een hart- of vaatziekte hadden met semaglutide minder vaak hartproblemen dan met placebo; 16,6% stopte wel door bijwerkingen, tegen 8,2% met placebo. Voor veel mensen die het niet zelf kunnen betalen, is het buiten bereik.<Cite id="lincoff-2023-select" /> Of dat mensen naar producten van buiten de apotheek drijft, is niet gemeten. De minister schreef in oktober 2026 dat niet goed te schatten is hoeveel mensen het buiten de gewone zorg gebruiken.<Cite id="tk-2026-ah-249-antwoord-afslankmedicatie" /> De zorgen van het Zorginstituut gaan over het bewijs op lange termijn, over stoppen, en over kosten die een groot deel van het zorgbudget kunnen vragen.<Cite id="zin-2024-wegovy-not-reimbursed" />
+
+</InDetail>
+
+</Section>
+
+<Section id="risks">
+
+<Lead question="Wat zijn de risico’s?">Veel mensen zijn eerst misselijk. Galstenen, een ontstoken alvleesklier en een zeldzame oogziekte komen minder vaak voor.</Lead>
+
+<IconArray title="Klachten van maag en darmen kwamen veel voor, vooral in de periode waarin de dosis werd verhoogd." detail="Mensen op de 100 met elke klacht in de gewichtsstudies van Wegovy (STEP 1 tot 4, 68 weken)." a="Semaglutide" b="Placebo" source="ema-epar-wegovy" level="human-controlled" rows={[
+  { label: "Misselijk zijn (misselijkheid)", a: 43.9, b: 16.1 },
+  { label: "Diarree", a: 29.7, b: 15.9 },
+  { label: "Overgeven", a: 24.5, b: 6.3 },
+  { label: "Verstopping (obstipatie)", a: 24.2, b: 11.1 },
+]} />
+
+Als er niets anders staat, komen de cijfers uit de genoemde studies en uit de productinformatie van Wegovy die het EMA heeft beoordeeld. Die geeft de resultaten van de studies in detail.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl" />
+
+<InDetail title="Maag en darmen: de precieze cijfers">
+
+In de gewichtsstudies van Wegovy (STEP 1 tot 4, 68 weken) kwam misselijkheid voor bij 43,9% met semaglutide tegen 16,1% met placebo, diarree bij 29,7% tegen 15,9%, overgeven bij 24,5% tegen 6,3% en verstopping bij 24,2% tegen 11,1%. De meeste klachten waren licht tot matig en kwamen in de periode waarin de dosis werd verhoogd; 4,3% stopte er definitief mee door deze klachten. Uitdroging (vochtverlies) door overgeven of diarree heeft in zeldzame gevallen de nierfunctie verslechterd. Na de goedkeuring zijn ook gevallen van darmafsluiting gemeld.<Cite id="ema-epar-wegovy" />
+
+</InDetail>
+
+<InDetail title="Galblaas en alvleesklier">
+
+Galstenen werden gemeld bij 1,6% tegen 1,1%, en een ontstoken galblaas bij 0,6% tegen 0,3%.<Cite id="ema-epar-wegovy" /> <Claim level="human-controlled">Een meta-analyse van 76 gerandomiseerde studies met GLP-1-medicijnen (103.371 deelnemers) vond meer ziekten van de galblaas en de galwegen (relatief risico 1,37), vooral in studies naar afvallen, bij hogere doses en bij langer gebruik</Claim>.<Cite id="he-2022-gallbladder" /> Een acute pancreatitis, beoordeeld door een onafhankelijke commissie, kwam voor bij 0,2% tegen minder dan 0,1% in de gewichtsstudies, en bij 0,2% tegen 0,3% in SELECT. Bij een vermoeden van pancreatitis moet je stoppen met semaglutide; is het bevestigd, dan mag je niet opnieuw beginnen.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl" />
+
+</InDetail>
+
+<InDetail title="Ogen: diabetische retinopathie en NAION">
+
+### Ogen: diabetische retinopathie
+
+In SUSTAIN-6 kwamen complicaties van diabetische retinopathie (bloeding in het oog, blindheid, of een behandeling met laser of injecties in het oog nodig) voor bij 3,0% tegen 1,8% (HR 1,76), vooral bij mensen die insuline gebruikten en al retinopathie hadden.<Cite id="marso-2016-sustain-6,ema-epar-wegovy" /> <Claim level="human-limited">Een achteraf gedane analyse van SUSTAIN-6, betaald door de fabrikant, wees erop dat het grootste deel van de extra gevallen misschien kwam door hoe sterk en snel de HbA1c in de eerste 16 weken daalde</Claim>. Zo'n "vroege verslechtering" zie je ook bij insuline.<Cite id="vilsboll-2018-retinopathy" /> De productinformatie zegt dat andere mechanismen niet zijn uit te sluiten.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl" />
+
+### Ogen: NAION
+
+De veiligheidscommissie van het EMA rekent NAION tot de zeer zeldzame bijwerkingen (bij maximaal 1 op de 10.000 mensen): <Claim level="human-limited">grote epidemiologische studies bij diabetes type 2 wijzen op ongeveer een verdubbeling van het risico, ongeveer één extra geval per 10.000 persoonsjaren</Claim>.<Cite id="ema-prac-2025-06-naion" /> Het CBG meldde dit in juni 2025 ook: ga je plotseling slechter zien, neem dan contact op met je arts.<Cite id="cbg-2025-06-naion-semaglutide" /> Een eerdere, terugkijkende studie in één centrum, bij 1.689 gekoppelde patiënten, vond veel hogere hazardratio's (4,28 en 7,64), met weinig voorvallen en brede betrouwbaarheidsintervallen, bij patiënten die naar een gespecialiseerd oogcentrum waren verwezen.<Cite id="hathaway-2024-naion" /> Noch de aankondiging van de veiligheidscommissie, noch de Europese productinformatie noemt een mechanisme.<Cite id="ema-prac-2025-06-naion,ema-epar-wegovy" /> De Amerikaanse productinformatie die we lazen noemt NAION niet.<Cite id="fda-label-wegovy,fda-label-ozempic" />
+
+</InDetail>
+
+<InDetail title="Te lage bloedsuiker, met een korte animatie">
+
+Door semaglutide zelf is de kans op een te lage bloedsuiker (hypo) klein, omdat het effect op insuline van de glucose afhangt. Maar de kans is niet nul. In STEP 2, een gewichtsstudie bij mensen met diabetes type 2, kwam een klinisch belangrijke te lage bloedsuiker voor bij 6,2% met semaglutide tegen 2,5% met placebo, met en zonder SU-derivaat. Insuline en SU-derivaten werken los van de glucose. Samen met semaglutide kan de bloedsuiker dan te laag worden. Volgens de productinformatie kan een arts die kans verkleinen door de dosis van die medicijnen te verlagen.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl,fda-label-wegovy" />
+
+De animatie laat zien hoe de combinatie de bloedsuiker te laag maakt, en wat je dan doet.
+
+<Explainer id="insulin-glp1-hypo" />
+
+</InDetail>
+
+<InDetail title="Schildkliertumoren bij knaagdieren, en waarom die misschien niet voor mensen gelden">
+
+In studies van 2 jaar gaf semaglutide bij ratten en muizen tumoren van de C-cellen van de schildklier, bij een blootstelling zoals bij behandeling.<Cite id="ema-epar-wegovy,fda-label-ozempic" /> <Claim level="animal">C-cellen van knaagdieren hebben GLP-1-receptoren, en GLP-1-agonisten lieten ze calcitonine afgeven en gaven na verloop van tijd een toename van C-cellen (C-celhyperplasie), bij ratten meer dan bij muizen</Claim>. <Claim level="animal">C-cellen van mensen en apen hadden weinig receptoren, de agonisten zetten bij primaten adenylaatcyclase en de afgifte van calcitonine niet aan, en 20 maanden liraglutide gaf bij apen geen C-celhyperplasie</Claim>.<Cite id="knudsen-2010-thyroid-c-cells" /> Volgens de Amerikaanse en Canadese productinformatie is niet vastgesteld of dit voor mensen geldt.<Cite id="fda-label-wegovy,ca-pm-wegovy-2026-10-02" /> De Europese productinformatie noemt het belang voor mensen klein, maar niet uitgesloten.<Cite id="ema-epar-wegovy" />
+
+De gegevens bij mensen spreken elkaar tegen. Een Franse patiënt-controlestudie vond dat 1 tot 3 jaar GLP-1-medicijnen samenhing met meer schildklierkanker, ook medullaire. Een groter cohort uit Scandinavië vond over gemiddeld 3,9 jaar geen duidelijke toename, maar kon een kleine toename niet uitsluiten. Beide onderzochten GLP-1-medicijnen als groep, niet semaglutide alleen; in de Scandinavische studie was semaglutide ongeveer een derde van het gebruik.<Cite id="bezin-2023-thyroid-cancer,pasternak-2024-thyroid-cancer" /> <Claim level="hypothesis">Mensen die deze medicijnen gebruiken, krijgen misschien vaker een controle van de schildklier; dan worden er meer kleine tumoren gevonden en lijkt het risico groter</Claim>. De Amerikaanse en Canadese productinformatie noemen medullair schildkliercarcinoom of MEN2, bij jezelf of in je familie, een contra-indicatie; daarbij is het risico al vanaf het begin hoog.<Cite id="fda-label-ozempic,ca-pm-ozempic-2026-07-13" /> De Europese productinformatie noemt dit geen contra-indicatie.<Cite id="ema-pi-wegovy-nl" />
+
+</InDetail>
+
+<InDetail title="Narcose, spieren, gewicht dat terugkomt, stemming en zwangerschap">
+
+### Narcose, spieren en gewicht dat terugkomt
+
+Omdat de maag zich trager leegt, kan er tijdens narcose of diepe sedatie nog eten in de maag zitten, dat in de longen kan komen (aspiratie). Dat is gemeld. Vertel je arts daarom vóór een ingreep dat je semaglutide gebruikt.<Cite id="ema-prac-2024-07-aspiration,ema-epar-wegovy,ema-pi-wegovy-nl,fda-label-wegovy,mhra-glp1-what-you-need-to-know" /> De veiligheidscommissie van het EMA kon in juli 2024 niet vaststellen dat GLP-1-medicijnen dit veroorzaken, maar vroeg wel om de waarschuwing in de productinformatie.<Cite id="ema-prac-2024-07-aspiration" />
+
+<Claim level="human-limited">In studies met medicijnen op basis van GLP-1 was ongeveer 15% tot 40–60% van het verloren gewicht vetvrije massa</Claim>. Vetvrije massa is ook organen, bot en water. MRI-onderzoek wijst erop dat de afname van spier past bij het gewicht dat iemand verliest, maar oudere of kwetsbare mensen kunnen kracht verliezen. De bron is een overzichtsartikel en de vraag is nog open.<Cite id="neeland-2024-lean-mass" />
+
+In het vervolg van STEP 1 kwam binnen een jaar na het stoppen ongeveer twee derde van het verloren gewicht terug, en verdwenen de meeste verbeteringen in bloeddruk, vetten in het bloed en glucose. De onderzoekers van STEP 1 zien dat als bevestiging dat obesitas een chronische ziekte is.<Cite id="wilding-2022-step-1-extension,rubino-2021-step-4" />
+
+### Stemming, zwangerschap en andere effecten
+
+De veiligheidscommissie van het EMA concludeerde in 2024 dat het bewijs geen oorzakelijk verband ondersteunt tussen GLP-1-medicijnen en gedachten aan zelfdoding of zelfbeschadiging.<Cite id="ema-prac-2024-04-suicidal-thoughts" />
+{/* residue-ok: evidence (other regulators' safety conclusions) */}
+De Britse medicijnautoriteit MHRA kwam na een volledige beoordeling tot dezelfde conclusie, en de Amerikaanse productinformatie van Wegovy liet begin 2026 de waarschuwing over suïcidaal gedrag vallen.<Cite id="mhra-glp1-what-you-need-to-know,fda-label-wegovy" /> Verandert je stemming bij een medicijn? Vertel het je arts. Denk jij of iemand die je kent aan zelfdoding? Neem dan contact op met 113 Zelfmoordpreventie: bel gratis 113 of kijk op 113.nl.<Cite id="thuisarts-psychische-crisis" />
+
+Bij ratten gaf semaglutide schade aan embryo's, deels via een mechanisme met de dooierzak dat bij mensen waarschijnlijk niet speelt. Bij konijnen en apen gingen meer zwangerschappen verloren, met een sterk gewichtsverlies van de moeder. De productinformatie zegt: niet gebruiken tijdens de zwangerschap of borstvoeding, en minstens 2 maanden voor een geplande zwangerschap stoppen.<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl,fda-label-wegovy" /> Afvallen kan de vruchtbaarheid verbeteren, en daardoor de kans op een onverwachte zwangerschap vergroten. Een Amerikaans overzichtsartikel beschrijft zulke zwangerschappen en raadt een voorbehoedsmiddel aan zolang iemand deze medicijnen gebruikt.<Cite id="drummond-2024-glp1-pregnancy-review" /> Volgens de Europese productinformatie van Wegovy moeten vrouwen die zwanger kunnen worden een goed voorbehoedsmiddel gebruiken.<Cite id="ema-pi-wegovy-nl" />
+
+De productinformatie noemt ook een snellere hartslag (gemiddeld ongeveer 3 slagen per minuut), haaruitval (2,5% tegen 1,0%), hoofdpijn, duizeligheid, vermoeidheid, zeldzame allergische reacties zoals anafylaxie en angio-oedeem, en, vooral bij <Q>7,2 mg</Q>, vreemde gevoelens in de huid (21,6% tegen 0,3% in STEP UP).<Cite id="ema-epar-wegovy" />
+
+</InDetail>
+
+</Section>
+
+<Section id="harm-reduction">
+
+<Lead question="Hoe gebruik ik het veilig?">Het medicijn van de apotheek heeft de minste onbekenden. Controleer andere producten eerst. Weet wanneer je hulp zoekt.</Lead>
+
+Het goedgekeurde medicijn is een pen of tablet van de apotheek, op recept. Een medicijnautoriteit heeft beoordeeld wat erin zit, de pen of tablet bepaalt hoeveel je krijgt, en de fabrikant geeft elke batch vrij.<Cite id="ema-epar-ozempic,ema-epar-rybelsus,ema-epar-wegovy" /> Deze sectie noemt geen doseringen: de arts die het voorschrijft, bepaalt de dosis. Vertel je arts en apotheker welke andere medicijnen je gebruikt.
+
+De controles hieronder zijn voor elk ander product, zoals een online flacon met "alleen voor onderzoek" op het etiket, of een pen waarvan je niet weet waar die vandaan komt.
+
+<ProductCheck extra="Ook een pen kan nep zijn, en nep-pennen kunnen erg op echte lijken. Bekijk de verpakking, het etiket en de uiterste gebruiksdatum. Ziet iets er anders of beschadigd uit? Gebruik de pen dan niet. Sommige nep-pennen bevatten insuline. Dan kan je bloedsuiker te laag worden." extraSources="who-2024-falsified-semaglutide,ema-2023-falsified-ozempic,igj-2023-falsified-ozempic,mhra-2023-fake-weight-loss-pens,mhra-glp1-what-you-need-to-know,au-tga-2024-09-counterfeit-ozempic-pens" />
+
+### Wanneer je stopt en hulp zoekt
+
+<Callout type="stop" title="Zoek direct medische hulp" id="stop-now">
+- **Hevige, aanhoudende pijn boven in je buik**, vaak uitstralend naar je rug, met of zonder overgeven: misschien een ontstoken alvleesklier (pancreatitis). Stop met semaglutide en bel direct 112.
+- **Plotseling niet meer zien, of veel slechter zien, vaak met één oog:** misschien NAION. Zie je plotseling niets meer met één oog of met allebei je ogen? Bel direct 112. Gaat je zien snel achteruit? Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+- **Trillen, zweten, verward of suf na het spuiten van een product dat niet van een apotheek komt:** misschien zat er insuline in een nep-pen. Neem iets met suiker als je nog goed kunt slikken. Bel direct 112 als de klachten ernstig zijn, of als iemand suf of verward wordt.
+- **Een dik gezicht, dikke lippen of een dikke keel, of moeilijk ademen:** misschien een allergische reactie. Bel direct 112.
+- **Zo vaak overgeven dat je niets binnenhoudt, of heel weinig plassen:** kans op uitdroging en schade aan de nieren. Bel direct je huisarts. Is de praktijk dicht? Bel dan de huisartsenpost.
+</Callout>
+
+<Cite id="ema-epar-wegovy,ema-pi-wegovy-nl,fda-label-wegovy,ema-prac-2025-06-naion,cbg-2025-06-naion-semaglutide,mhra-2023-fake-weight-loss-pens,thuisarts-buikpijn,nhs-acute-pancreatitis,nhs-vision-loss,thuisarts-hypo-diabetes-type-2,thuisarts-dikke-ogen-lippen" />
+
+<WarningSigns />
+
+<InDetail title="De legale weg, en waarom een online flacon anders is">
+
+Voor een goedgekeurd medicijn heeft de legale weg de minste onbekenden.
+
+### De legale weg
+
+In Nederland krijg je semaglutide alleen op recept. Een arts beslist, meestal je huisarts of een specialist, en de apotheek geeft het je mee.<Cite id="nl-gmw-art-61-prescription,nl-wet-big-art-36-voorschrijven,cbg-afslankmedicijnen" /> Krijg je een medicijn via je arts of apotheker? Dan wordt er gecontroleerd. Bij een medicijn van internet zonder recept gebeurt dat niet, schrijft de IGJ.<Cite id="igj-online-medicijnen" /> Wie betaalt, staat bij "Vergoeding uit het basispakket" in de status hierboven. Zie ook [praten met je arts](/nl/talking-to-your-doctor/).
+
+Denk je aan een medicijn om af te vallen? Bespreek het met je huisarts. Er zijn huisartsen die deze medicijnen niet voorschrijven, en huisartsen die het soms wel doen.<Cite id="thuisarts-obesitas-medicijnen-huisarts" /> Schrijft je huisarts het niet zelf voor? Dan kan die je verwijzen naar het ziekenhuis, bij voorkeur naar een obesitascentrum. Volgens de NHG-Standaard Obesitas komt een medicijn pas in beeld als iemand minstens een jaar een leefstijlprogramma zoals de GLI heeft gevolgd, bij een BMI van 35 tot 40 met een ziekte die met het gewicht samenhangt, of een BMI van 40 of meer.<Cite id="nhg-standaard-obesitas-2025" />
+
+De pagina [Legale wegen naar een behandeling](/nl/legal-routes/) legt elke legale weg uit, en wat die vraagt: [een recept](/nl/legal-routes/#recept), [off-label gebruik](/nl/legal-routes/#off-label), [klinisch onderzoek](/nl/legal-routes/#klinisch-onderzoek) en [zelf invoeren](/nl/legal-routes/#zelf-invoeren).<Cite id="nl-gmw-art-68-off-label,cbg-glp1-position" /> De wegen voor medicijnen die in Nederland niet goedgekeurd zijn, zoals de [artsenverklaring](/nl/legal-routes/#artsenverklaring) en [compassionate use](/nl/legal-routes/#compassionate-use), passen hier niet: semaglutide is goedgekeurd.<Cite id="igj-leveren-op-artsenverklaring,cbg-compassionate-use-criteria" /> Ook een [magistrale bereiding](/nl/legal-routes/#magistrale-bereiding) door de apotheek ligt niet voor de hand: een apotheker kijkt eerst of een goedgekeurd product kan helpen.<Cite id="knmp-richtlijn-bereiden-2016" />
+
+### Waarom een online flacon met “alleen voor onderzoek” een ander product is
+
+Volgens het CBG weet je bij zo'n product niet wat erin zit, hoe je het moet gebruiken en wat het met je gezondheid doet.<Cite id="cbg-glp1-position" /> Het EMA en de nationale medicijnautoriteiten waarschuwden in september 2025 voor een sterke stijging van illegale producten die worden aangeboden als GLP-1-medicijn, zoals semaglutide. Soms zit de stof die erop staat er helemaal niet in.<Cite id="ema-hma-2025-09-illegal-glp1" /> De IGJ en het CBG waarschuwen dat de hoeveelheid werkzame stof te hoog of te laag kan zijn, of dat die er niet in zit. Dat kan levensgevaarlijk zijn.<Cite id="igj-2025-illegal-online-medicines" /> Is het product besmet? Dan kan dat volgens de IGJ je organen beschadigen.<Cite id="igj-online-medicijnen" />
+{/* residue-ok: FDA evidence (warnings about unapproved semaglutide products) */}
+De Amerikaanse medicijnautoriteit FDA waarschuwde bedrijven die semaglutide met de valse tekst "for research purposes" of "not for human consumption" aan consumenten verkochten. Ze noemt zulke producten van onbekende kwaliteit. Ze waarschuwt ook dat sommige bereide producten een zoutvorm gebruiken (semaglutidenatrium of -acetaat): dat is een andere werkzame stof dan in de goedgekeurde medicijnen.<Cite id="fda-unapproved-glp1-concerns" />
+{/* residue-ok: TGA evidence (product testing) */}
+In Australië bleek in 2023 dat 2 ingevoerde flaconproducten met semaglutide op het etiket geen semaglutide bevatten.<Cite id="au-tga-2023-05-counterfeit-semaglutide-vials" /> Zie [productrisico’s](/nl/safety/product-risk/).
+
+{/* residue-ok: FDA evidence (dosing errors with vials) */}
+Flacons geven ook doseerfouten die een pen voorkomt. De FDA kreeg meldingen van mensen die 5 tot 20 keer de bedoelde hoeveelheid namen uit flacons voor meerdere doses met semaglutide die Amerikaanse apotheken zelf hadden gemaakt. Vaak haalden ze milligram, milliliter en "eenheden" op de spuit door elkaar. Sommigen moesten naar het ziekenhuis; door de halfwaardetijd van een week kan een overdosis lange observatie en behandeling nodig maken.<Cite id="fda-2024-compounded-semaglutide-dosing-errors" />
+{/* residue-ok: FDA evidence (adverse-event reports) */}
+Tot 31 mei 2026 kreeg de FDA 990 meldingen van bijwerkingen bij zulke semaglutide van Amerikaanse apotheken. Waarschijnlijk zijn het er meer, want de meeste van die apotheken hoeven bijwerkingen niet aan de FDA te melden.<Cite id="fda-unapproved-glp1-concerns" />
+{/* residue-ok: FDA evidence (multi-dose vial advice) */}
+Voor flacons voor meerdere doses met zulke GLP-1-medicijnen adviseert de FDA: elke keer een nieuwe steriele naald en spuit, een flacon 28 dagen na het eerste gebruik weggooien omdat de kans op besmetting daarna stijgt, en een product dat warm aankwam niet gebruiken.<Cite id="fda-unapproved-glp1-concerns" /> Zie [steriel werken](/nl/safety/sterile-technique/) en [wanneer je een flacon weggooit](/nl/safety/sterile-technique/#wanneer-je-een-flacon-weggooit).
+
+</InDetail>
+
+<InDetail title="Nep-pennen, en hoe je je pen controleert">
+
+Sinds 2023 zijn er in verschillende landen nep-pennen van Ozempic gevonden. In 2023 doken bij groothandels in de EU nep-pennen met Duitse etiketten op: bij het scannen bleek het serienummer niet actief. Het EMA had in oktober 2023 geen aanwijzing dat ze via legale apotheken bij patiënten waren gekomen. De IGJ had toen ook geen aanwijzing dat Nederlandse apotheken zulke pennen hadden meegegeven.<Cite id="ema-2023-falsified-ozempic,igj-2023-falsified-ozempic" /> Sommige nep-pennen bevatten insuline, en dat kan een gevaarlijk lage bloedsuiker geven.<Cite id="who-2024-falsified-semaglutide,mhra-2023-fake-weight-loss-pens,au-tga-2024-09-counterfeit-ozempic-pens" /> Nep-pennen kunnen erg op echte lijken.<Cite id="mhra-glp1-what-you-need-to-know" /> In oktober 2026 waarschuwde de IGJ ook voor gestolen medicijnen, vooral insulinepennen, die online worden aangeboden en misschien als obesitasmedicijn worden gepresenteerd. Gebruik kan levensgevaarlijk zijn. Komt je pen niet van een apotheek? Gebruik hem dan niet en neem contact op met je arts of apotheek.<Cite id="igj-2026-10-stolen-medicines" />
+
+Sinds 9 februari 2019 hebben verpakkingen van receptmedicijnen in Nederland een unieke code en een verzegeling. Die moeten voorkomen dat je bij de apotheek een vervalst medicijn krijgt.<Cite id="cbg-fmd-vervalsing-melden,eu-regulation-2016-161" />
+
+<Checklist>
+
+- Pennen en tabletten krijg je alleen op recept. De IGJ raadt aan receptmedicijnen alleen via je arts en de apotheek te gebruiken.
+- Bekijk de verpakking, de verzegeling en de uiterste gebruiksdatum.
+- Twijfel je over een pen? Gebruik hem niet en vraag het je apotheker.
+- Meld een bijwerking bij Lareb. Meld een website waar je aan twijfelt bij het Landelijk Meldpunt Zorg van de IGJ.
+
+</Checklist>
+
+<Cite id="igj-2023-falsified-ozempic,igj-online-medicijnen,igj-2025-illegal-online-medicines,igj-landelijk-meldpunt-zorg,who-2024-falsified-semaglutide" />
+
+Je kunt een bijwerking zelf melden bij Bijwerkingencentrum Lareb. Dat kan ook als je product niet van een apotheek komt: Lareb neemt ook meldingen aan van mensen die illegale medicijnen gebruiken. Lareb deelt je melding niet met je arts of apotheker.<Cite id="lareb-bijwerkingen-melden,lareb-2021-illegal-medicines" /> In België meld je een bijwerking bij het FAGG; zie [onze notities over België](/nl/legal/be/).
+
+<JurisdictionCard code="NL" />
+
+Komt een pen niet van een apotheek? Dan gelden de controles bovenaan deze sectie ook voor die pen.
+
+</InDetail>
+
+<InDetail title="Wie het niet moet gebruiken, wisselwerkingen en zinvolle controles">
+
+### Wie het niet moet gebruiken, en wisselwerkingen
+
+- **Zwanger, zwanger willen worden of borstvoeding:** bij dieren schade aan het embryo. Stop minstens 2 maanden voor een geplande zwangerschap. Kun je zwanger worden? Dan moet je volgens de Europese productinformatie een goed voorbehoedsmiddel gebruiken.<Cite id="ema-pi-wegovy-nl,fda-label-wegovy" />
+- **Medullair schildkliercarcinoom of MEN2, bij jezelf of in je familie:** in de Europese productinformatie geen contra-indicatie. De Amerikaanse en Canadese productinformatie noemen het wel een contra-indicatie, vanwege de bevinding bij knaagdieren. Bespreek het met de arts die het voorschrijft.<Cite id="ema-pi-wegovy-nl,fda-label-ozempic,ca-pm-ozempic-2026-07-13" />
+- **Eerder een ontstoken alvleesklier (pancreatitis):** voorzichtig zijn, want GLP-1-medicijnen zijn in verband gebracht met acute pancreatitis; stop bij een vermoeden ervan. **Ernstige gastroparese** (een maag die zich heel traag leegt): niet aanbevolen, want semaglutide maakt de maag nog trager. **Diabetische retinopathie:** een snelle daling van de glucose kan die tijdelijk erger maken, dus wie dit heeft, moet goed worden gevolgd; bij retinopathie die niet onder controle of niet stabiel is, raadt de productinformatie Wegovy af, omdat er geen ervaring mee is. **Diabetes type 1:** niet onderzocht; semaglutide vervangt nooit insuline.<Cite id="ema-pi-wegovy-nl,ema-epar-wegovy,fda-label-wegovy" />
+- **Insuline of een SU-derivaat (sulfonylureumderivaat):** grotere kans op een te lage bloedsuiker, ook een ernstige; een arts kan de dosis van de insuline of de tablet verlagen. **Andere GLP-1-medicijnen:** niet samen gebruiken.<Cite id="ema-pi-wegovy-nl,fda-label-wegovy" />
+- **Tabletten die snel of precies moeten worden opgenomen:** de tragere maaglediging kan de opname veranderen; met semaglutide-tabletten steeg de blootstelling aan levothyroxine met 33%.<Cite id="fda-label-wegovy,ema-pi-rybelsus-nl" />
+- **Warfarine of andere cumarinederivaten, zoals acenocoumarol:** bij acenocoumarol is een lagere INR gemeld. De Europese productinformatie raadt aan de INR vaak te controleren als je met semaglutide begint.<Cite id="ema-pi-wegovy-nl,ca-pm-wegovy-2026-10-02" />
+
+### Controles die zinvol zijn, en waarom
+
+- **Ogen**, als je diabetische retinopathie hebt: een snelle daling van de glucose kan die tijdelijk erger maken, en de productinformatie vraagt om goede controle.<Cite id="vilsboll-2018-retinopathy,ema-pi-wegovy-nl,fda-label-wegovy" />
+- **Bloedglucose**, als je ook insuline of een SU-derivaat gebruikt; **INR** bij cumarinederivaten; **schildkliertests** bij levothyroxine (zie hierboven).
+- **Nierfunctie** na lang overgeven of diarree, want uitdroging kan de nieren beschadigen.<Cite id="ema-pi-wegovy-nl,fda-label-wegovy" />
+
+</InDetail>
+
+</Section>

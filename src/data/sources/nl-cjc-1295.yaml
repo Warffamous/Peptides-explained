@@ -1,0 +1,21 @@
+# Sources added for the Dutch CJC-1295 page (src/content/compounds/nl/cjc-1295.mdx), group cjc-1295, 27 October 2026.
+# Shape as in src/data/sources/legal-a.yaml (sourceSchema, src/schemas/index.ts). The search below was run on
+# 27 October 2026 with curl against the register's own public API and read in full (research/nl-notes/cjc-1295.md).
+# It replaces, on the Dutch page, the English page's search of the Australian and New Zealand registry
+# (au-anzctr-search-status-b-2026-10-23), next to the Dutch searches of the nl-care research.
+#
+# Reused, not repeated here: ctgov-nl-peptide-search-2026-10-27, ctis-nl-peptide-search-2026-10-27 and
+# omon-peptide-search-2026-10-27 (nl-research-nl-care.yaml; Dutch sites only), cbg-gib-search-status-2026-10-27
+# (nl-research-eu-status.yaml), ctgov-search-status-b-2026-10-23 (refocus-status-b.yaml; re-run on 27 October 2026
+# through the ClinicalTrials.gov API v2 with the same result: "CJC-1295", "CJC 1295" and "CJC1295" each return one
+# record, NCT00267527, TERMINATED; "DAC:GRF" returns none).
+
+ctis-cjc-1295-search-2026-10-27:
+  type: registry
+  authors: "European Medicines Agency, Clinical Trials Information System (CTIS)"
+  title: "CTIS public searches of 27 October 2026: trials of CJC-1295 in every EU member state"
+  year: 2026
+  url: https://euclinicaltrials.eu/search-for-clinical-trials/?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "CTIS public API (POST ctis-public-api/search, full-text 'containAll', no member-state filter). 'CJC-1295', 'CJC 1295', 'CJC1295', 'DAC:GRF', 'drug affinity complex', 'Mod GRF' and 'modified GRF': 0 records each. Control: 'retatrutide' returned 9 records, the same count as research/nl/eu-status.md (fact-check of 27 October 2026). CTIS holds the trials applied for under Regulation (EU) 536/2014 since 31 January 2022, and trials still running under the old Directive had to move to it by 31 January 2025 (ema-clinical-trials-regulation); the developer's 2005 phase 2 trial, ended early, is only in the older EU register (euctr-2005-003797-25). The link opens the public search page; the API result is not a page of its own."

@@ -1,0 +1,519 @@
+# Sources for research topic eu-status (research/nl/eu-status.md): the EU and Dutch regulatory status of the 21
+# compounds, the EU products, EU safety actions and shortages, and EU medicines law changes, on 27 October 2026.
+# Every URL below was fetched on 27 October 2026 (curl, or the built-in browser where the page needs scripts) and
+# says what the note cites it for; see research/nl/eu-status.md, section 3 (verification log).
+# Fact-checked independently on 27 October 2026 (research/nl/eu-status.md, "Fact-check" section): every entry
+# re-opened; notes corrected in place where marked "Fact-check:"; three entries added at the end (45 new entries in all).
+#
+# Reused (already registered in src/data/sources/; cite these ids, do not copy them):
+#   ema-medicines-json, ema-medicines-search, ema-orphan-designations-json (re-downloaded 27 October 2026:
+#   2,754 and 3,310 records, timestamps 2026-10-27T06:02:09Z and 2026-10-27T06:05:14Z),
+#   ema-under-evaluation-2026-10 (same URL as ema-2026-10-under-evaluation: two ids for one document, see the
+#   research file, section 7), ema-epar-ozempic, ema-epar-rybelsus, ema-epar-wegovy, ema-epar-kayshild,
+#   ema-epar-mounjaro, ema-wegovy-procedural-steps, ema-mounjaro-procedural-steps, ema-mounjaro-procedural-steps-archive,
+#   ema-2026-wegovy-tablets, ema-2026-mounjaro-hfpef-outcome, ema-2026-mounjaro-cvot-outcome, ema-epar-scenesse,
+#   ema-egrifta-withdrawal, ema-orphan-elamipretide-eu-3-21-2430, ema-orphan-thymalfasin-eu-3-02-110,
+#   ema-epar-foundayo-opinion, ema-prac-2025-06-naion, ema-prac-2024-07-aspiration,
+#   ema-prac-2024-04-suicidal-thoughts, ema-2023-falsified-ozempic, ema-pharma-reform-page, ep-oeil-2023-0132-cod,
+#   ep-oeil-2023-0131-cod, ema-clinical-trials-regulation, eu-regulation-536-2014, eu-regulation-726-2004,
+#   eu-directive-2001-83, eu-directive-2011-62, eu-regulation-699-2014, eu-regulation-2016-161,
+#   cbg-geneesmiddeleninformatiebank, cbg-ozempic-shortage, cbg-glp1-position, cbg-compassionate-use-list,
+#   nl-gmw-art-40-handelsvergunning, nl-geneesmiddelenwet, ctgov-nct06383390, ctgov-nct07165028, ctgov-nct06662383.
+#
+# Hosts: everything below is on config/link-allowlist.json (suffix .europa.eu covers ema, ec, data.consilium,
+# oeil.secure.europarl and publications; www.cbg-meb.nl and www.geneesmiddeleninformatiebank.nl are listed),
+# EXCEPT euclinicaltrials.eu (the EU's CTIS public portal: the five ctis-* entries) and farmanco.knmp.nl
+# (knmp-farmanco-tekorten-2026-10-27). Add both hosts before these ids are merged, or drop those entries
+# (research file, section 7).
+#
+# EUR-Lex answers scripts with HTTP 202 and an empty page, so EU acts were read through the Publications Office's
+# CELLAR resolver for the same CELEX number (publications.europa.eu/resource/celex/<CELEX>, Accept:
+# application/xhtml+xml), as group legal-a did; the url is the EUR-Lex page a reader can open.
+# The Council's press release of 28 September 2026 (consilium.europa.eu/en/press/...) returned a Cloudflare bot check
+# (HTTP 403) to curl and WebFetch and is NOT registered; the Council's own documents on data.consilium.europa.eu were
+# read instead.
+
+# ---------------------------------------------------------------- EMA: products, product information (Dutch)
+
+ema-epar-kyinsu:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Kyinsu (insulin icodec / semaglutide): EPAR — overview and product information"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/EPAR/kyinsu
+  accessed: 2026-10-27
+  verified: url
+  note: "Status 'Authorised'. 'Kyinsu is a medicine used for the treatment of type 2 diabetes. It is used in adults whose diabetes is not sufficiently controlled with basal insulin (a slow-acting type of insulin) or a GLP-1 receptor agonist ... Kyinsu contains the active substances insulin icodec and semaglutide.' EMA product number EMEA/H/C/006279; marketing authorisation holder Novo Nordisk A/S; opinion adopted 18/09/2025; marketing authorisation issued 24/11/2025; under additional monitoring. Product information first published 12/02/2026. The CHMP meeting highlights of 16 October 2026 list Kyinsu among five medicines recommended for an extension of indication ('Kyinsu: pending EC decision')."
+
+ema-pi-ozempic-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Ozempic — Bijlage I: Samenvatting van de productkenmerken (EPAR-productinformatie, Nederlands)"
+  year: 2026
+  url: https://www.ema.europa.eu/nl/documents/product-information/ozempic-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Downloaded and read with pdftotext on 27 October 2026 (English version last updated 25/08/2026 on the EPAR page). 4.1: 'Ozempic is geïndiceerd voor de behandeling van volwassenen met onvoldoende gereguleerde diabetes mellitus type 2 als toevoeging aan dieet en lichaamsbeweging • als monotherapie wanneer metformine ongeschikt wordt geacht als gevolg van intolerantie of contra-indicaties • in aanvulling op andere geneesmiddelen voor de behandeling van diabetes'; 5.1 cross-reference names 'cardiovasculaire ziekte en renale events'. 4.4 has 'Aspiratie in verband met algemene anesthesie of diepe sedatie' and 'Niet-arteritische anterieure ischemische opticusneuropathie (NAION)'. Fact-check (27 October 2026): 4.4 also has 'Patiënten met gastroparese': 'semaglutide wordt niet aanbevolen bij ernstige gastroparese' (worksharing EMA/VR/0000249026 for Ozempic and Rybelsus, outcome 23 October 2025; Ozempic procedural steps and Union Register). Section 9: 'Datum van eerste verlening van de vergunning: 08 februari 2018; Datum van laatste verlenging: 21 september 2022'. 'Aan medisch voorschrift onderworpen geneesmiddel.'"
+
+ema-pi-rybelsus-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Rybelsus — Bijlage I: Samenvatting van de productkenmerken (EPAR-productinformatie, Nederlands)"
+  year: 2026
+  url: https://www.ema.europa.eu/nl/documents/product-information/rybelsus-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 (English version last updated 22/04/2026). 4.1: 'Rybelsus is geïndiceerd voor de behandeling van volwassenen met onvoldoende gereguleerde diabetes mellitus type 2 om glykemische controle te verbeteren als toevoeging aan dieet en lichaamsbeweging • als monotherapie wanneer metformine ongeschikt wordt geacht • in combinatie met andere geneesmiddelen voor de behandeling van diabetes.' 4.4: aspiration and NAION wording as for Ozempic; fact-check (27 October 2026): also the gastroparesis warning ('semaglutide wordt niet aanbevolen bij ernstige gastroparese'). Section 9: first authorisation 03 april 2020, last renewal 22 november 2024."
+
+ema-pi-wegovy-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Wegovy — Bijlage I: Samenvatting van de productkenmerken (EPAR-productinformatie, Nederlands)"
+  year: 2026
+  url: https://www.ema.europa.eu/nl/documents/product-information/wegovy-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 (the EPAR page gives the English product information as last updated 26/10/2026). Section 1 lists single-dose pens 0,25 to 2,4 mg and a 7,2 mg pen, FlexTouch pens 0,25 to 2,4 mg, prefilled syringes ('voorgevulde injectiespuit') 0,25 to 2,4 mg, and a separate SmPC for 'Wegovy 1,5 mg / 4 mg / 9 mg / 25 mg tabletten'. 4.1 (injection): adults with BMI ≥ 30 kg/m2, or 27 to < 30 kg/m2 with at least one weight-related comorbidity; adolescents from 12 years with obesity and body weight above 60 kg; 'Voor onderzoeksresultaten met betrekking tot cardiovasculaire risicoreductie, aan obesitas gerelateerd hartfalen en de onderzochte populatie, zie rubriek 5.1.' 4.1 (tablets): adults only, same BMI criteria. 4.4: aspiration; 'Patiënten met gastroparese die worden behandeld met semaglutide kunnen ernstigere of hevigere ...', 'semaglutide wordt niet aanbevolen bij ernstige gastroparese'; NAION: 'Gegevens uit epidemiologische studies laten een verhoogd risico zien op niet-arteritische anterieure ischemische opticusneuropathie (NAION) tijdens de behandeling met semaglutide ... Bij plotseling verlies van het gezichtsvermogen moet een oftalmologisch onderzoek worden uitgevoerd en moet de behandeling met semaglutide worden gestaakt indien NAION wordt bevestigd'; about a two-fold relative risk, about 1 extra case per 10.000 patiëntjaren (type 2 diabetes). Section 9 (pens and tablets): 'Datum van eerste verlening van de vergunning: 06 januari 2022; Datum van laatste verlenging: 21 september 2026'."
+
+ema-pi-mounjaro-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Mounjaro — Bijlage I: Samenvatting van de productkenmerken (EPAR-productinformatie, Nederlands)"
+  year: 2026
+  url: https://www.ema.europa.eu/nl/documents/product-information/mounjaro-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 (English product information last updated 21/09/2026). First line: 'Dit geneesmiddel is onderworpen aan aanvullende monitoring.' Section 1: single-dose prefilled pens 2,5 to 15 mg, single-dose vials ('injectieflacon') 2,5 to 15 mg and 'Mounjaro 2,5 mg/dosis KwikPen' to 15 mg/dosis (multi-dose pens). 4.1: type 2 diabetes in 'volwassenen, adolescenten en kinderen van 10 jaar en ouder'; 'Gewichtsbeheersing' in adults with BMI ≥ 30 kg/m2, or ≥ 27 to < 30 kg/m2 with at least one weight-related comorbid condition; 5.1 has OSA and HFpEF results. 4.4: aspiration; caution in gastroparesis. No NAION section. Section 9: 'Datum van eerste verlening van de vergunning: 15 september 2022'. 'Aan medisch voorschrift onderworpen geneesmiddel.'"
+
+ema-pi-kayshild-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Kayshild — Bijlage I: Samenvatting van de productkenmerken (EPAR-productinformatie, Nederlands)"
+  year: 2026
+  url: https://www.ema.europa.eu/nl/documents/product-information/kayshild-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026 (product information first published 09/04/2026). 4.1: 'Kayshild is geïndiceerd in combinatie met dieet en lichaamsbeweging voor de behandeling van volwassenen met niet-cirrotische metabole dysfunctie-geassocieerde steatohepatitis (MASH) met matige tot gevorderde leverfibrose (fibrosestadia F2 tot F3).' 5.1: 'Dit geneesmiddel is geregistreerd in het kader van een zogeheten ‘voorwaardelijke toelating’.' Pens 0,25 to 2,4 mg. 4.4: aspiration and NAION wording; fact-check (27 October 2026): also the gastroparesis warning ('semaglutide wordt niet aanbevolen bij ernstige gastroparese'). First line: 'Dit geneesmiddel is onderworpen aan aanvullende monitoring.' 'Aan medisch voorschrift onderworpen geneesmiddel.'"
+
+ema-pi-kyinsu-nl:
+  type: label
+  authors: "European Medicines Agency"
+  title: "Kyinsu — Bijlage I: Samenvatting van de productkenmerken (EPAR-productinformatie, Nederlands)"
+  year: 2026
+  url: https://www.ema.europa.eu/nl/documents/product-information/kyinsu-epar-product-information_nl.pdf
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Read 27 October 2026. 'Kyinsu (700 eenheden + 2 mg)/ml oplossing voor injectie in een voorgevulde pen'. 4.1: 'Kyinsu is geïndiceerd voor de behandeling van volwassenen met diabetes mellitus type 2 die onvoldoende onder controle is met basale insuline of glucagonachtige peptide-1 (GLP-1)-receptoragonisten als toevoeging aan dieet en lichaamsbeweging in aanvulling op orale antidiabetica.' 4.4: aspiration wording."
+
+# ---------------------------------------------------------------- EMA: committees, under review, safety
+
+ema-chmp-2026-10-highlights:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Meeting highlights from the Committee for Medicinal Products for Human Use (CHMP) 12-15 October 2026"
+  year: 2026
+  url: https://www.ema.europa.eu/en/news/meeting-highlights-committee-medicinal-products-human-use-chmp-12-15-october-2026
+  accessed: 2026-10-27
+  verified: url
+  note: "Published 16 October 2026: 'Six new medicines recommended for approval; another five medicines recommended for extension of their therapeutic indications'. Foundayo (orforglipron), 'an oral GLP-1 receptor agonist', recommended for weight management and type 2 diabetes; extensions of indication recommended for, among others, Kyinsu (insulin icodec / semaglutide; 'Kyinsu: pending EC decision'). No other item on semaglutide, tirzepatide or any other compound of this site."
+
+ema-chmp-2026-10-agenda:
+  type: regulator
+  authors: "European Medicines Agency, CHMP"
+  title: "CHMP draft agenda for the meeting on 12-15 October 2026 (EMA/CHMP/211366/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/agenda/agenda-chmp-meeting-12-15-october-2026_en.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Section 3.1 (initial applications; opinions), item 3.1.1: orforglipron EMEA/H/C/006632 (fact-check: the research had 'Section 3.2'; 3.2 is the Day 180 list of outstanding issues). Section 3.3 (Day 120 list of questions, 'For adoption'): Semaglutide EMEA/H/C/006902 ('treatment of type 2 diabetes in adults') and Semaglutide EMEA/H/C/006910 ('weight management including weight loss and weight maintenance in adults') — generic applications still at an early stage. Kyinsu EMA/VR/0000322527: extension of indication based on COMBINE 4. Mounjaro EMA/VR/0000340438: 'Update of sections 4.5, and 4.6 of the SmPC pertaining to the interaction of obesity and overweight and of the gastric emptying delay due to tirzepatide on oral contraceptive exposure following PRAC request in PSUSA/00011019/202505', 'For adoption' (outcome not published by 27 October 2026)."
+
+ema-prac-2026-01-minutes:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "Minutes of the PRAC meeting on 12-15 January 2026 (EMA/PRAC/46601/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/minutes/minutes-prac-meeting-12-15-january-2026_en.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "PSUSA/00010671/202505 (Ozempic, Rybelsus, Wegovy): 'the benefit-risk balance of Ozempic, Rybelsus and Wegovy ... in the approved indication(s) remains unchanged'; 'The current terms of the marketing authorisation(s) should be maintained'; in the next PSUR the holder 'should continue to closely monitor medication errors and to discuss information from literature related among others to semaglutide-induced Wernicke encephalopathy, liver damage, chronic cough, and ophthalmic issues'; a pooled analysis of all CVOTs requested within 2 months; PSUR frequency changed from yearly to two-yearly."
+
+ema-prac-2026-04-minutes:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "Minutes of the PRAC meeting on 7-10 April 2026 (EMA/PRAC/117688/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/minutes/minutes-prac-meeting-7-10-april-2026_en.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Signal EPITT 20198 (tirzepatide; Mounjaro, Mounjaro KwikPen): drug interaction with warfarin and other coumarins leading to INR decreased. PRAC 'concluded that the current evidence is insufficient to establish a causal relationship between tirzepatide and drug interaction with warfarin and acenocoumarol leading to INR decreased to further warrant an update to the product information (PI) and/or risk management plan (RMP)'; to be monitored in the next PSUR; warfarin and acenocoumarol holders to review all cases with all GLP-1 RAs."
+
+ema-prac-2026-05-minutes:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "Minutes of the PRAC meeting on 4-7 May 2026 (EMA/PRAC/128532/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/minutes/minutes-prac-meeting-4-7-may-2026_en.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "New signals: EPITT 20270, peripheral neuropathies (exenatide; semaglutide: Kayshild, Ozempic, Rybelsus, Wegovy, Kyinsu), from 18 literature cases with dulaglutide, tirzepatide and semaglutide; 'PRAC agreed that further evaluation on the signal is warranted'; the holder to review the semaglutide RCTs (SUSTAIN 6, PIONEER 6, SELECT, SOUL, FLOW, STRIDE) and observational studies; 90-day timetable. EPITT 20260, gastrointestinal volvulus (semaglutide products), new signal. The signal recommendations of this meeting (EMA/PRAC/98634/2026, 22 June 2026) asked Novo Nordisk for supplementary information on neuropathies by 22 July 2026 and on volvulus by 29 July 2026. Fact-check (27 October 2026): the volvulus signal was concluded at the PRAC of 28 September-1 October 2026 ('Reassess in the next PSUR', see ema-prac-signals-2026-09-28); no outcome on peripheral neuropathies was found in the June, July or August-September minutes, the September-October and October agendas, or the signal recommendations published up to 26 October 2026."
+
+ema-prac-2026-10-agenda:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "PRAC agenda of the meeting on 26-29 October 2026 (EMA/PRAC/227255/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/agenda/agenda-prac-meeting-26-29-october-2026_en.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Meeting in progress on 27 October 2026. Items 6.4.2-6.4.4 (Ozempic, Rybelsus, Wegovy): 'To assess the potential association between semaglutide exposure and cardioembolic stroke as part of a post-authorisation measure (LEG) - EMEA/H/C/PSUSA/00010671/202505', 'For adoption'. Item 4.2.2, lithium (nationally authorised): 'Signal of drug interaction between lithium and GLP-1 agonists leading to increased lithium levels', 'EPITT 20275 – Follow-up to June 2026', 'For adoption'. (Fact-check, 27 October 2026: the research had EPITT 20280, which is the cefpodoxime-PPI signal listed just before it; the June 2026 minutes and signal recommendations confirm lithium = EPITT 20275, new signal in June 2026, supplementary information requested by 26 August 2026.) Outcomes not public on 27 October 2026."
+
+ema-shortages-json:
+  type: dataset
+  authors: "European Medicines Agency"
+  title: "Medicine shortages data download (JSON report of the EMA shortages catalogue)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/report/shortages-output-json-report_en.json
+  accessed: 2026-10-27
+  verified: url
+  note: "85 records, timestamp 2026-10-27T18:32:12Z. Ozempic (semaglutide, pre-filled pen 0.25/0.5/1 mg): 'Shortage resolved', first published 19/10/2022, last updated 13/01/2026. Rybelsus: 'Shortage resolved', last updated 22/01/2024. No entry for Wegovy, Mounjaro, Kayshild or Kyinsu. (Victoza, liraglutide: 'Shortage ongoing', last updated 05/09/2025; Saxenda and Trulicity resolved.)"
+
+ema-shortage-ozempic:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Ozempic (semaglutide): supply shortage — shortages catalogue entry"
+  year: 2026
+  url: https://www.ema.europa.eu/en/medicines/human/shortages/ozempic
+  accessed: 2026-10-27
+  verified: url
+  note: "Status 'Shortage resolved': 'The shortage affecting Ozempic has been resolved and the information and recommendations which were issued during the shortage no longer apply.' Pre-filled pen, strengths 1 mg, 0.5 mg, 0.25 mg; first published 19/10/2022; last updated 13/01/2026."
+
+ema-additional-monitoring-list:
+  type: dataset
+  authors: "European Medicines Agency"
+  title: "List of medicinal products under additional monitoring (EMA/245297/2013 Rev. 147, 25 September 2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/additional-monitoring/list-medicinal-products-under-additional-monitoring_en.xlsx
+  accessed: 2026-10-27
+  verified: url
+  note: "Read 27 October 2026 (openpyxl, with cell formatting). Listed: Kayshild ('New biological and Conditional marketing authorisation', included 2026-04-01), Kyinsu ('New active substance, new biological', 2025-12-01), Mounjaro ('New active substance', 2022-09-01). Wegovy ('New biological', January 2022) is shown struck through, which the list explains as removed ('All products removed from the list are shown with a strikethrough for the period of one month'). Ozempic and Rybelsus are not listed."
+
+# ---------------------------------------------------------------- Union Register of medicinal products (European Commission)
+
+ec-union-register-ozempic:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products: Ozempic (EU/1/17/1251)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/h1251.htm
+  accessed: 2026-10-27
+  verified: registry
+  note: "Status ACTIVE; active substance semaglutide; holder Novo Nordisk A/S; authorised 2018-02-08. Latest Commission decision: 'Centralised - Yearly update' EMA/YU/0000378054, decision C(2026) 7309 of 12 October 2026. Fact-check (27 October 2026): that decision also covers (as 'updated by') the variations EMA/VR/0000287437 (NAION worksharing, closed 25 September 2025) and EMA/VR/0000249026 (gastroparesis worksharing, closed 23 October 2025), among others."
+
+ec-union-register-rybelsus:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products: Rybelsus (EU/1/20/1430)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/h1430.htm
+  accessed: 2026-10-27
+  verified: registry
+  note: "Status ACTIVE; semaglutide; Novo Nordisk A/S; authorised 2020-04-03."
+
+ec-union-register-wegovy:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products: Wegovy (EU/1/21/1608)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/h1608.htm
+  accessed: 2026-10-27
+  verified: registry
+  note: "Status ACTIVE; semaglutide; Novo Nordisk A/S; authorised 2022-01-06. Extension EMA/X/0000296344 and 0000304416 (tablets 1.5/4/9/25 mg and the 7.2 mg pen): decision C(2026) 5102 of 14 July 2026. Five-year renewal EMA/R/0000336288: decision C(2026) 6826 of 21 September 2026. Fact-check (27 October 2026): the NAION worksharing EMA/VR/0000287437 (closed 25 September 2025) and the gastroparesis variation EMA/VR/0000257476 (closed 23 October 2025) were implemented by decision C(2026) 1195 of 16 February 2026."
+
+ec-union-register-mounjaro:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products: Mounjaro (EU/1/22/1685)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/h1685.htm
+  accessed: 2026-10-27
+  verified: registry
+  note: "Status ACTIVE; tirzepatide; holder Eli Lilly Nederland B.V. (Utrecht); authorised 2022-09-15. Latest Commission decision C(2026) 527 of 22 January 2026 (EMA/VR/0000281937, extension to children and adolescents from 10 years with type 2 diabetes); later procedures (EMA/VR/0000310637 SURPASS-CVOT, closed 2026-06-25; EMA/VR/0000369537, 2026-09-21) show no decision yet in the register."
+
+ec-union-register-kayshild:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products: Kayshild (EU/1/26/2019)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/h2019.htm
+  accessed: 2026-10-27
+  verified: registry
+  note: "Status ACTIVE; semaglutide; Novo Nordisk A/S; 'Centralised - Authorisation' EMEA/H/C/006426/0000, decision C(2026) 2197 of 26 March 2026; indication MASH with fibrosis F2-F3."
+
+ec-union-register-kyinsu:
+  type: registry
+  authors: "European Commission"
+  title: "Union Register of medicinal products: Kyinsu (EU/1/25/1992)"
+  year: 2026
+  url: https://ec.europa.eu/health/documents/community-register/html/h1992.htm
+  accessed: 2026-10-27
+  verified: registry
+  note: "Status ACTIVE; 'insulin icodec / semaglutide'; Novo Nordisk A/S; 'Centralised - Authorisation' EMEA/H/C/006279/0000, decision C(2025) 8233 of 24 November 2025."
+
+# ---------------------------------------------------------------- Netherlands: CBG
+
+cbg-gib-search-semaglutide-2026-10-27:
+  type: registry
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Geneesmiddeleninformatiebank: zoekresultaat 'semaglutide' (27 oktober 2026)"
+  year: 2026
+  url: "https://www.geneesmiddeleninformatiebank.nl/ords/f?p=111:2::SEARCH::2:P0_DOMAIN,P0_LANG,P2_QS,P2_AS_PROD,P2_AS_RVGNR,P2_AS_EU1,P2_AS_EU2,P2_AS_ACTSUB,P2_AS_INACTSUB,P2_AS_NOTINACT,P2_AS_ADDM,P2_AS_ARMM,P2_AS_APPDATE,P2_AS_APPDATS,P2_AS_ATC,P2_AS_PHARM,P2_AS_MAH,P2_AS_ROUTE,P2_AS_AUTHS,P2_AS_TGTSP,P2_AS_INDIC,P2_AS_TXTF,P2_AS_TXTI,P2_AS_TXTC,P2_RESPAGE,P2_SORT,P2_RESPPG,P2_OPTIONS,P2_AS_REGSTAT,P2_AS_TYPE_DIERGM:H,NL,%5Csemaglutide%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,N,N,N,,,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,1,PRODA,100,N,%5C%5C,%5C%5C"
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Quick search (human medicines), all results. 33 product lines, all central EU authorisations, no national RVG number: Kayshild EU/1/26/2019 (5 pens), Kyinsu EU/1/25/1992, Ozempic EU/1/17/1251 (0,25 / 0,5 / 1 / 2 mg pens), Rybelsus EU/1/20/1430 (1,5 / 3 / 4 / 7 / 9 / 14 / 25 / 50 mg tablets), Wegovy EU/1/21/1608 (pens, FlexTouch pens, 7,2 mg pen, 1,5 / 4 / 9 / 25 mg tablets). The register shows authorisation, not whether a pack is on the Dutch market. Search URL is the CBG's own template (copied from the link on cbg-meb.nl/onderwerpen/medicijnen/afslankmedicijnen)."
+
+cbg-gib-search-tirzepatide-2026-10-27:
+  type: registry
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Geneesmiddeleninformatiebank: zoekresultaat 'tirzepatide' (27 oktober 2026)"
+  year: 2026
+  url: "https://www.geneesmiddeleninformatiebank.nl/ords/f?p=111:2::SEARCH::2:P0_DOMAIN,P0_LANG,P2_QS,P2_AS_PROD,P2_AS_RVGNR,P2_AS_EU1,P2_AS_EU2,P2_AS_ACTSUB,P2_AS_INACTSUB,P2_AS_NOTINACT,P2_AS_ADDM,P2_AS_ARMM,P2_AS_APPDATE,P2_AS_APPDATS,P2_AS_ATC,P2_AS_PHARM,P2_AS_MAH,P2_AS_ROUTE,P2_AS_AUTHS,P2_AS_TGTSP,P2_AS_INDIC,P2_AS_TXTF,P2_AS_TXTI,P2_AS_TXTC,P2_RESPAGE,P2_SORT,P2_RESPPG,P2_OPTIONS,P2_AS_REGSTAT,P2_AS_TYPE_DIERGM:H,NL,%5Ctirzepatide%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,N,N,N,,,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,1,PRODA,100,N,%5C%5C,%5C%5C"
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "18 product lines, all Mounjaro EU/1/22/1685 (ATC A10BX16): 'oplossing voor injectie in voorgevulde pen', 'in injectieflacon' and '/dosis KwikPen' in 2,5 / 5 / 7,5 / 10 / 12,5 / 15 mg. No national RVG product, no other brand."
+
+cbg-gib-search-status-2026-10-27:
+  type: registry
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Geneesmiddeleninformatiebank: searches of 27 October 2026 for the compounds without a Dutch authorisation (the link opens one of them, 'tesamorelin')"
+  year: 2026
+  url: "https://www.geneesmiddeleninformatiebank.nl/ords/f?p=111:2::SEARCH::2:P0_DOMAIN,P0_LANG,P2_QS,P2_AS_PROD,P2_AS_RVGNR,P2_AS_EU1,P2_AS_EU2,P2_AS_ACTSUB,P2_AS_INACTSUB,P2_AS_NOTINACT,P2_AS_ADDM,P2_AS_ARMM,P2_AS_APPDATE,P2_AS_APPDATS,P2_AS_ATC,P2_AS_PHARM,P2_AS_MAH,P2_AS_ROUTE,P2_AS_AUTHS,P2_AS_TGTSP,P2_AS_INDIC,P2_AS_TXTF,P2_AS_TXTI,P2_AS_TXTC,P2_RESPAGE,P2_SORT,P2_RESPPG,P2_OPTIONS,P2_AS_REGSTAT,P2_AS_TYPE_DIERGM:H,NL,%5Ctesamorelin%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,N,N,N,,,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,%5C%5C,1,PRODA,100,N,%5C%5C,%5C%5C"
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Each search returned 'Geen producten gevonden die voldoen aan uw zoekopdracht': tesamorelin, tesamoreline, Egrifta, bremelanotide, Vyleesi, elamipretide, Forzinity, retatrutide, thymalfasin, thymosine, Zadaxin, BPC-157, AOD-9604, hexarelin, hexareline, ipamorelin, CJC-1295, epitalon, GHK, MOTS-c, selank, semax, KPV, TB-500, timbetasin, sermoreline, nicotinamideribose. Searches with hits but no product of this site: 'melanotan' and 'afamelanotide' (only SCENESSE 16 mg implantaat, EU/1/14/969, afamelanotide, a different molecule); 'koper' (copper salts, trace-element infusions, homeopathic products; no GHK-Cu); 'nicotinamide' (multivitamin and fibrin-sealant products containing nicotinamide; no NR, NMN or NAD+ product)."
+
+cbg-afslankmedicijnen:
+  type: regulator
+  authors: "College ter Beoordeling van Geneesmiddelen (CBG-MEB)"
+  title: "Afslankmedicijnen"
+  year: 2026
+  url: https://www.cbg-meb.nl/onderwerpen/medicijnen/afslankmedicijnen
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Page published 3 March 2026, sort date 4 August 2026. 'Er zijn in Nederland verschillende soorten afslankmedicijnen geregistreerd.' The table links Wegovy (semaglutide), Mounjaro (tirzepatide), Saxenda and Mysimba to their Geneesmiddeleninformatiebank entries. 'Afslankmedicijnen zijn alleen op recept verkrijgbaar.' 'Het komt steeds meer voor dat receptplichtige medicijnen, online zonder recept te koop zijn. Dit mag volgens de wet niet.' On Ozempic used to lose weight: off-label use, outside the registered indication (diabetes)."
+
+cbg-meldpunt-tekorten-2025:
+  type: report
+  authors: "CBG-MEB en Inspectie Gezondheidszorg en Jeugd, Meldpunt Geneesmiddelentekorten en -defecten"
+  title: "Rapportage Meldpunt Geneesmiddelentekorten en -defecten 2025"
+  year: 2026
+  url: https://www.cbg-meb.nl/documenten/2026/03/19/rapportage-meldpunt-geneesmiddelentekorten-en--defecten-2025
+  accessed: 2026-10-27
+  lang: nl
+  verified: url
+  note: "Published 19 March 2026; the PDF was read in full with pdftotext. It reports a slight rise in reports of expected supply problems in 2025. It does not mention semaglutide, tirzepatide, Ozempic, Wegovy, Mounjaro or GLP-1 medicines."
+
+knmp-farmanco-tekorten-2026-10-27:
+  type: dataset
+  authors: "Koninklijke Nederlandse Maatschappij ter bevordering der Pharmacie (KNMP), Farmanco"
+  title: "Farmanco: tekorten overzicht (public list of medicine shortages in the Netherlands), read 27 October 2026"
+  year: 2026
+  url: https://farmanco.knmp.nl/
+  accessed: 2026-10-27
+  lang: nl
+  verified: registry
+  note: "Read in the built-in browser (the list is loaded by script). The public 'Tekorten overzicht' showed 271 dated entries (revision dates up to 27-10-2026); liraglutide appears, semaglutide and tirzepatide do not. KNMP Farmanco 'is een initiatief van de Koninklijke Nederlandse Maatschappij ter bevordering der Pharmacie'; pharmacists see more after logging in. Host farmanco.knmp.nl is NOT on the allowlist (www.knmp.nl is). Fact-check (27 October 2026): re-read with curl; the public list is in the page's HTML (271 dated entries, latest 27-10-2026; 'Liraglutide' present, no semaglutide, tirzepatide, Ozempic, Wegovy or Mounjaro)."
+
+# ---------------------------------------------------------------- EU pharmaceutical package (Council documents)
+
+council-st-7105-2026-rev2:
+  type: report
+  authors: "Council of the European Union"
+  title: "Position of the Council at first reading with a view to the adoption of a Regulation laying down Union procedures for the authorisation and supervision of medicinal products for human use and establishing rules governing the European Medicines Agency, amending Regulations (EC) No 1394/2007 and (EU) No 536/2014 and repealing Regulations (EC) No 141/2000, (EC) No 726/2004 and (EC) No 1901/2006 (7105/2/26 REV 2)"
+  year: 2026
+  url: https://data.consilium.europa.eu/doc/document/ST-7105-2026-REV-2/en/pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Dated Brussels, 28 September 2026; 'Adopted by the Council on 28 September 2026'. Footnote 2: 'position of the Council at first reading of 28 September 2026 (not yet published in the Official Journal). Position of the European Parliament of ... (not yet published in the Official Journal).' Art. 185: Regulations 141/2000, 726/2004 and 1901/2006 are repealed. Art. 187: 'This Regulation shall enter into force on the twentieth day following that of its publication in the Official Journal of the European Union. It shall apply from ... [24 months from the date of entry into force of this Regulation ...]', with exceptions (Articles 41-45, 116-119, 133-140, 147 and 161(5) from entry into force; Articles 120-132 from six months after entry into force; Article 69 six months after the date of application). Art. 27(2): compassionate use means making such a medicine available 'to a single patient or group of patients with a chronically or seriously debilitating disease, or whose disease is considered to be life-threatening, or is impacting their mental health ...' who cannot be treated satisfactorily by an authorised medicine. Annex I point 3: the central (EU) route is required for medicines 'containing a new active substance which on ... [date of application of this Regulation] was not authorised in the Union', excluding allergen and herbal medicines."
+
+council-st-7106-2026-rev2:
+  type: report
+  authors: "Council of the European Union"
+  title: "Position of the Council at first reading with a view to the adoption of a Directive on the Union code relating to medicinal products for human use, and repealing Directives 2001/83/EC and 2009/35/EC (7106/2/26 REV 2)"
+  year: 2026
+  url: https://data.consilium.europa.eu/doc/document/ST-7106-2026-REV-2/en/pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "'Adopted by the Council on 28 September 2026'. Art. 220(1): 'Directive 2001/83/EC is repealed with effect from ... [24 months from the date of entry into force of this Directive].' Art. 222(1): Member States bring the national measures into force by, and apply them from, 24 months after entry into force. Art. 223: entry into force on the twentieth day after publication in the Official Journal. Art. 5(1)(1): the two-limb definition of a medicinal product (presented as treating or preventing disease; or able to restore, correct or modify physiological functions by a pharmacological, immunological or metabolic action, or to make a diagnosis), unchanged in substance from Directive 2001/83 art. 1(2). Art. 1(4): where a product is also covered by another Union act and the rules conflict, 'the rules set out in this Directive shall prevail'. Art. 1(5): magistral and officinal formulas are outside the Directive, but 'shall not include medicinal products listed in points 1 and 2 of Annex I to Regulation (EU) 2026/...' (biotechnology products and advanced therapies). Art. 2(2): magistral formulas may be prepared in advance for up to seven days, or three weeks when justified. Art. 4(1): the named-patient ('special needs') exemption, as old art. 5(1), with a duty to encourage safety reporting. Art. 6(1): a medicine may be placed on the market of a Member State only with a national or a centralised marketing authorisation. Art. 175-177: sale at a distance and the common logo (old art. 85c-85d), including (c) 'the medicinal products comply with the national legislation of the Member State of destination'. Art. 179(1): 'Member States shall prohibit any advertising of a medicinal product in respect of which a marketing authorisation has not been granted.' Art. 180(1)(a): ban on advertising prescription medicines to the general public. Art. 83: eight years of regulatory data protection plus one year of market protection, extendable under Art. 84. Annex VIII: correlation table with Directive 2001/83."
+
+council-st-13737-2026-vote:
+  type: report
+  authors: "Council of the European Union, General Secretariat"
+  title: "Voting result: Position of the Council at first reading with a view to the adoption of a Regulation laying down Union procedures for the authorisation and supervision of medicinal products for human use ... (13737/26)"
+  year: 2026
+  url: https://data.consilium.europa.eu/doc/document/ST-13737-2026-INIT/en/pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Interinstitutional file 2023/0131 (COD); '4196th meeting of the COUNCIL OF THE EUROPEAN UNION (Agriculture and Fisheries), 28 September 2026, Brussels'; reference document 7105/26 + ADD 1 + ADD 1 COR 1 'approved by the Coreper, Part 1, on 23.09.2026'. Fact-check (27 October 2026): the annex (an embedded image) was extracted and read: voting rule 'qualified majority'; Yes 26 member states (99.87% of the population), No 0, Abstain 1 (Malta, 0.13%), not participating 0; 'Final result' adopted; the Netherlands and Belgium voted yes."
+
+council-st-13739-2026-vote:
+  type: report
+  authors: "Council of the European Union, General Secretariat"
+  title: "Voting result: Position of the Council at first reading with a view to the adoption of a Directive on the Union code relating to medicinal products for human use, and repealing Directives 2001/83/EC and 2009/35/EC (13739/26)"
+  year: 2026
+  url: https://data.consilium.europa.eu/doc/document/ST-13739-2026-INIT/en/pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Interinstitutional file 2023/0132 (COD); 'Adoption of the Council's position at first reading and of the statement of the Council's reasons'; 4196th Council meeting, 28 September 2026; reference document 7106/26 + ADD 1 + ADD 1 COR 1 approved by Coreper, Part 1, on 23.09.2026. Fact-check (27 October 2026): annex image read: qualified majority; Yes 26 (99.87%), No 0, Abstain 1 (Malta, 0.13%); the Netherlands and Belgium voted yes."
+
+eu-tfeu-art-294:
+  type: law
+  authors: "European Union"
+  title: "Treaty on the Functioning of the European Union, Article 294 (ordinary legislative procedure; consolidated version 2016)"
+  container: "Official Journal of the European Union, C 202, 7 June 2016"
+  year: 2016
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12016E294
+  accessed: 2026-10-27
+  verified: url
+  note: "Art. 294(7): 'If, within three months of such communication, the European Parliament: (a) approves the Council's position at first reading or has not taken a decision, the act concerned shall be deemed to have been adopted in the wording which corresponds to the position of the Council'. Art. 294(14): the three-month period may be extended by a maximum of one month."
+
+# ---------------------------------------------------------------- Other EU legislation
+
+ep-oeil-2025-0102-cod:
+  type: registry
+  authors: "European Parliament, Legislative Observatory"
+  title: "Procedure file 2025/0102(COD): Critical Medicines Act"
+  year: 2026
+  url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0102(COD)
+  accessed: 2026-10-27
+  verified: registry
+  note: "Regulation, amending Regulation 2024/795. Status 'Awaiting Parliament's position in 1st reading'. Key events: proposal COM(2025)0102 published 11/03/2025; vote in committee 15/12/2025; 'Decision by Parliament, 1st reading' T10-0001/2026 and 'Matter referred back to the committee responsible for interinstitutional negotiations' 20/01/2026; 'Approval in committee of the text agreed at 1st reading interinstitutional negotiations' 14/07/2026. Forecast: 23/11/2026 'Indicative plenary sitting date, 1st reading'."
+
+ec-2026-ip-26-1017-cma:
+  type: regulator
+  authors: "European Commission"
+  title: "Commission welcomes political agreement on Critical Medicines Act (press release IP/26/1017)"
+  year: 2026
+  url: https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_26_1017/IP_26_1017_EN.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Brussels, 12 May 2026: 'The European Commission welcomes the landmark political agreement on the Critical Medicines Act (CMA), last night by the Council and the European Parliament.' Elements: resilience criteria in public procurement of critical medicines, Strategic Projects for EU manufacturing, rules on contingency stocks, collaborative procurement. 'The political agreement is now subject to formal approval by the European Parliament and the Council.' (The release calls the pharmaceutical reform 'recently adopted'; it was agreed, not adopted: see council-st-7106-2026-rev2.)"
+
+eu-regulation-2021-2282-hta:
+  type: law
+  authors: "European Parliament and Council of the European Union"
+  title: "Regulation (EU) 2021/2282 of 15 December 2021 on health technology assessment and amending Directive 2011/24/EU"
+  container: "Official Journal of the European Union, L 458, 22 December 2021"
+  year: 2021
+  url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2282
+  accessed: 2026-10-27
+  verified: url
+  note: "Read through CELLAR. Art. 36: entry into force on the twentieth day after publication; 'It shall apply from 12 January 2025.' Art. 7(2): joint clinical assessments from '(a) 12 January 2025, for medicinal products with new active substances for which the applicant declares ... the treatment of cancer and medicinal products which are regulated as advanced therapy medicinal products'; '(b) 13 January 2028, for medicinal products which are designated as orphan medicinal products'; '(c) 13 January 2030, for medicinal products referred to in paragraph 1 other than those referred to in points (a) and (b)'."
+
+ep-oeil-2025-0406-cod:
+  type: registry
+  authors: "European Parliament, Legislative Observatory"
+  title: "Procedure file 2025/0406(COD): European Biotech Act"
+  year: 2026
+  url: https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0406(COD)
+  accessed: 2026-10-27
+  verified: registry
+  note: "Regulation amending, among others, Regulation (EU) No 536/2014 (clinical trials), Regulation 1394/2007, 2019/6, 2024/1938 and 2024/795. Status 'Awaiting committee decision'. Key events: proposal COM(2025)1022 published 16/12/2025; committee referral announced 18/05/2026 (joint committee SANT and ITRE). Forecast: 14/12/2026 'Indicative plenary sitting date, 1st reading'."
+
+# ---------------------------------------------------------------- CTIS (EU Clinical Trials Information System, public portal)
+# Read 27 October 2026 through the public portal's own API (euclinicaltrials.eu/ctis-public-api/retrieve/<number>) and,
+# for the per-country statuses, in the built-in browser. Public status codes per member state: 2 'Authorised,
+# recruitment pending', 3 'Authorised, recruiting', 4 'Ongoing, recruiting', 5 'Ongoing, recruitment ended',
+# 8 'Ended' (mapping confirmed against the portal's displayed labels for two trials). Host euclinicaltrials.eu is
+# NOT on the allowlist.
+
+ctis-2025-522674-36-00:
+  type: registry
+  authors: "EU Clinical Trials Information System (CTIS)"
+  title: "2025-522674-36-00 — A Master Protocol of Multiple Agents in Adults With Metabolic Dysfunction-Associated Steatotic Liver Disease (SYNERGY-Outcomes)"
+  year: 2026
+  url: https://euclinicaltrials.eu/ctis-public/view/2025-522674-36-00?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "Phase III; products tirzepatide, retatrutide and placebo; 15 member states concerned; overall decision 27/01/2026; start of trial 24/03/2026. Netherlands: 'Authorised, recruiting', decision 04/02/2026, start date 22/09/2026. Belgium 'Ongoing, recruiting'. Estimated end of trial in EU/EEA 11/10/2029. Same trial as NCT07165028. Fact-check (27 October 2026, API record): the title above is now the record's public title exactly (the research had added '; tirzepatide and retatrutide'); for the Netherlands the record has a START_OF_TRIAL notification dated 2026-09-22 and no START_OF_RECRUITMENT (first-visit) notification yet (public code 3; the 11 countries with both notifications have code 4). The '15 member states concerned' are 14 EU member states and Norway (EEA). Under Regulation 536/2014 art. 2(2)(25) the 'start of a clinical trial' is the first act of recruitment."
+
+ctis-2024-511450-49-00:
+  type: registry
+  authors: "EU Clinical Trials Information System (CTIS)"
+  title: "2024-511450-49-00 — A Phase 3, Randomized, Double-Blind Study to Evaluate the Efficacy and Safety of Retatrutide Compared to Tirzepatide in Adults Who Have Obesity"
+  year: 2026
+  url: https://euclinicaltrials.eu/ctis-public/view/2024-511450-49-00?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "Germany and Poland: 'Ongoing, recruitment ended' (recruitment 1/4 November 2024 to 7 April 2025); estimated end of trial 16/11/2026. Same trial as NCT06662383 (TRIUMPH-5). CTIS lists eight more retatrutide trials (search 'retatrutide' and 'LY3437943'), all with status 'Ended' except one phase 1 trial in Germany (2024-518470-13-00, 'Ongoing, recruitment ended') and the trial above; none other with a Dutch site."
+
+ctis-2025-523837-25-00:
+  type: registry
+  authors: "EU Clinical Trials Information System (CTIS)"
+  title: "2025-523837-25-00 — 4TAZPower: A Phase 3b/4, Randomized, Double-Blind, Parallel-Group, Placebo-Controlled, Trial to Evaluate the Efficacy and Safety of Daily Subcutaneous Injections of Elamipretide in Patients with Genetically Confirmed Barth Syndrome"
+  year: 2026
+  url: https://euclinicaltrials.eu/ctis-public/view/2025-523837-25-00?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "Overall status 'Authorised' (public code 2: authorised, recruitment pending). Member states concerned: Netherlands (first decision 27/07/2026), Italy (28/07/2026), France (29/07/2026), Ireland (04/08/2026); all 'Authorised, recruitment pending' on 27 October 2026."
+
+ctis-2024-511482-11-00:
+  type: registry
+  authors: "EU Clinical Trials Information System (CTIS)"
+  title: "2024-511482-11-00 — ReNEW: A Phase 3, Randomized, Double-Masked, Placebo-Controlled Clinical Trial to Evaluate the Efficacy, Safety, and Pharmacokinetics of Subcutaneous Injections of Elamipretide in Subjects who have Dry Age-Related Macular Degeneration (Dry AMD)"
+  year: 2026
+  url: https://euclinicaltrials.eu/ctis-public/view/2024-511482-11-00?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "Start in the EU 20/11/2024; Germany, Spain, Italy, Czechia and Hungary all 'Ongoing, recruitment ended' (code 5) on 27 October 2026. No Dutch site. Fact-check (27 October 2026): the record's secondary identifier is NCT06373731 (already registered as ctgov-nct06373731, which lists sites in Italy, Spain, Germany, Hungary and Czechia), so the EU trial fact can be cited without this CTIS id if euclinicaltrials.eu is not allowlisted."
+
+ctis-2024-518102-41-00:
+  type: registry
+  authors: "EU Clinical Trials Information System (CTIS)"
+  title: "2024-518102-41-00 — A phase II trial to assess the activity and tolerability of Thymosin alpha 1 in Cystic Fibrosis Patients"
+  year: 2026
+  url: https://euclinicaltrials.eu/ctis-public/view/2024-518102-41-00?lang=en
+  accessed: 2026-10-27
+  verified: registry
+  note: "Italy only; status 'Ended' on 27 October 2026; product 'ZADAXIN 1,6 mg/ml'. The only CTIS trial found for thymosin alpha 1 or thymalfasin."
+
+# ---------------------------------------------------------------- Added by the fact-check (27 October 2026)
+
+ema-prac-signals-2026-09-28:
+  type: regulator
+  authors: "European Medicines Agency, PRAC"
+  title: "PRAC recommendations on signals adopted at the 28 September-1 October 2026 PRAC meeting (EMA/PRAC/206892/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/prac-recommendation/prac-recommendations-signals-adopted-28-september-1-october-2026-prac-meeting_en.pdf
+  accessed: 2026-10-27
+  verified: url
+  note: "Dated 26 October 2026; read with pdftotext on 27 October 2026. Section 2 (supplementary information): semaglutide and insulin icodec / semaglutide, 'Gastrointestinal volvulus (20260)', PRAC Rapporteur Karin Bolin (SE), action 'Reassess in the next PSUR (submission by 29 August 2027)' (no product-information change at this stage); semaglutide, 'Ischaemic colitis (20309)', a new signal, action 'Supplementary information requested (submission by 1 December 2026)'. The meeting's agenda (EMA/PRAC/204838/2026) lists both, the colitis signal as 'New signal' for Ozempic, Kayshild, Rybelsus and Wegovy. No other semaglutide or tirzepatide signal in this document."
+
+ema-ext-indication-under-evaluation-2026-09:
+  type: regulator
+  authors: "European Medicines Agency"
+  title: "Start of procedure: Type II variation - Extension of indication under evaluation by the CHMP, 21 August 2026 to 17 September 2026 (EMA/212029/2026)"
+  year: 2026
+  url: https://www.ema.europa.eu/en/documents/report/start-procedure-type-ii-variation-extension-indication-under-evaluation-chmp-21-august-2026-17-september-2026_en.xlsx
+  accessed: 2026-10-27
+  verified: url
+  note: "Excel list dated 21 September 2026, linked from EMA's page 'Medicines for human use under evaluation'; read with openpyxl on 27 October 2026. Row EMA/VR/0000369826, Rybelsus (semaglutide): 'Extension of indication to include treatment of adolescents and children aged 10 years and above with insufficiently controlled type 2 diabetes mellitus for Rybelsus, based on final results from study NN9924-4437', start date 12 September 2026. The lists from September 2025 to this one were searched: the only other entries for this site's compounds are Kyinsu EMA/VR/0000322527 (recommended by the CHMP on 15 October 2026) and Mounjaro EMA/VR/0000310637 (SURPASS-CVOT; concluded 25 June 2026 without a separate indication). No list for 18 September-15 October 2026 was published on 27 October 2026."
+
+ema-hma-2025-09-illegal-glp1:
+  type: regulator
+  authors: "European Medicines Agency and Heads of Medicines Agencies"
+  title: "Warning about sharp rise in illegal medicines sold in the EU"
+  year: 2025
+  url: https://www.ema.europa.eu/en/news/warning-about-sharp-rise-illegal-medicines-sold-eu
+  accessed: 2026-10-27
+  verified: url
+  note: "Published 3 September 2025: 'In recent months there has been a sharp rise in the number of illegal medicines marketed as GLP-1 receptor agonists such as semaglutide, liraglutide and tirzepatide for weight loss and diabetes. These products, often sold via fraudulent websites and promoted on social media, are not authorised ...'; they 'may not contain the claimed active substance at all'. Explains the EU common logo for online sellers ('Clicking on the logo takes buyers to a national register of authorised retailers') and that 'The online sale of prescription only medicines is not allowed in all Member States.' A public warning, not a PRAC label action. The page names no seller."
