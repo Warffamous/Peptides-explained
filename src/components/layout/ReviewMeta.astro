@@ -37,4 +37,6 @@ const corrections = CORRECTIONS.filter((c) => c.kind !== 'publication' && c.rout
     )}
   </dl>
   {pending && !compact && <p class="review-meta__notice">{t(locale, legal ? 'common.review.pendingLegal' : 'common.review.pending')}</p>}
+  {/* Optional extra status line from the page (DocLayout: the translation status). */}
+  <slot />
 </div>

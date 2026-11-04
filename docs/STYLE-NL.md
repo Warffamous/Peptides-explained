@@ -621,7 +621,7 @@ convert or "improve" a figure.
 - **Standing notice:** "Alleen informatie, geen medisch advies. Ben je nu ziek? Bel bij levensgevaar
   112, en anders je huisarts of de huisartsenpost."
 - **Translation pending** (`common.translation.pending`): "Een medisch vertaler heeft deze vertaling
-  nog niet gecontroleerd." Leave out the English "the English page is the reference": on adapted and
+  nog niet gecontroleerd." One quiet line in the page foot, under the review line (owner, 4 November 2026). Leave out the English "the English page is the reference": on adapted and
   native pages (law, routes, help, status) the English page answers for other countries.
 
 ### 5.3 Never assume, never lecture

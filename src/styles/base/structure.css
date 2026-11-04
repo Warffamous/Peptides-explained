@@ -106,7 +106,7 @@ html[data-pseudo="rtl"] .banner--pseudo { display: block; }
   /* Placement order: header, then the photo (beside it), the review line and the fact sheet (under
      the header), then everything else in DOM order. */
   .doc > * { order: 4; }
-  .doc > :is(.notice--fallback, .notice--translation, .opinion-flag, .doc-header) { order: 0; }
+  .doc > :is(.notice--fallback, .opinion-flag, .doc-header) { order: 0; }
   .doc > .hero { order: 1; align-self: start; }
   .doc > .doc-review { order: 2; }
   .doc > .fact-sheet { order: 3; }

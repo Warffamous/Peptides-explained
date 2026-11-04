@@ -1133,7 +1133,8 @@ text has been given typographic quotes. So:
 - Non-English files add `translation: { method: translated, from: en, review: pending }`
   (or `method: adapted` for jurisdiction-rewritten legal content, `native` if written directly
   in that language). A `native` page is not a translation: it shows no translation notice and no
-  link to an English page (`src/layouts/DocLayout.astro`). Dutch: `native` for `legal/nl`,
+  link to an English page (`src/layouts/DocLayout.astro`). The notice is one quiet line in the page
+  foot's review box, under the review-pending line, never at the top of the page (owner, 4 November 2026). Dutch: `native` for `legal/nl`,
   `legal/eu` and `legal/be`; `adapted` where the country answers were rewritten for the Netherlands;
   `translated` for the rest (brief, "Files and frontmatter").
 - **A locale goes live only with the owner's yes** (Dutch: a simple approve / don't-approve choice,

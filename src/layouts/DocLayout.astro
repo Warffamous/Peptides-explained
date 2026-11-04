@@ -76,12 +76,6 @@ const hasChapters = chapters.length >= 3;
     {p.fallback && (
       <p class="notice notice--fallback" lang={loc.bcp47} dir={loc.dir}>{t(p.locale, 'common.translation.fallback', { language: loc.name })}</p>
     )}
-    {showTranslationNotice && (
-      <p class="notice notice--translation">
-        {t(p.locale, 'common.translation.pending')}{' '}
-        <a href={routeUrl(SOURCE_LOCALE, p.routeKey)} hreflang={SOURCE_LOCALE} lang={getLocale(SOURCE_LOCALE).bcp47}>{t(p.locale, 'common.translation.readEnglish')}</a>
-      </p>
-    )}
     {p.template === 'opinion' && (
       <aside class="opinion-flag" aria-label={t(p.locale, 'common.opinion.label')}>
         <p class="opinion-flag__label">{t(p.locale, 'common.opinion.label')}</p>
@@ -133,7 +127,15 @@ const hasChapters = chapters.length >= 3;
     <SourceList locale={p.locale} ids={p.citations ?? []} inline={p.inlineCitations} further={p.furtherReading ?? []} fold={p.foldSources} />
     <footer class="doc-footer">
       {p.related && p.related.length > 0 && <RelatedList locale={p.locale} keys={p.related} />}
-      <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} legal={p.legal} />
+      {/* Translation status: one quiet line in the page foot's review box, under the review line (owner, 4 November 2026). */}
+      <ReviewMeta locale={p.locale} lastReviewed={p.lastReviewed} reviewedBy={p.reviewedBy} editedBy={p.editedBy} routeKey={p.routeKey} legal={p.legal}>
+        {showTranslationNotice && (
+          <p class="review-meta__notice">
+            {t(p.locale, 'common.translation.pending')}{' '}
+            <a href={routeUrl(SOURCE_LOCALE, p.routeKey)} hreflang={SOURCE_LOCALE} lang={getLocale(SOURCE_LOCALE).bcp47}>{t(p.locale, 'common.translation.readEnglish')}</a>
+          </p>
+        )}
+      </ReviewMeta>
       <p class="standing-notice"><Icon name="info" />{t(p.locale, 'common.notice.standing')}</p>
     </footer>
   </article>
