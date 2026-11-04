@@ -10,6 +10,18 @@
 # routes: route keys affected ("compounds/bpc-157"); "*" = the whole site.
 # Never invent an entry. Every substantive entry says what was wrong, what it says now, and the source.
 
+- id: en-o17-corrections-2026-11-04
+  date: 2026-11-04
+  kind: substantive
+  routes: ["compounds/kpv", "compounds/pt-141", "compounds/retatrutide", "compounds/semaglutide", "legal/sport-and-doping", "safety/product-risk", "basics/what-is-a-peptide"]
+  locales: [en]
+
+- id: en-advertising-review-2026-11-04
+  date: 2026-11-04
+  kind: clarification
+  routes: ["about", "about/editorial-policy", "about/funding", "start-here", "the-case-for-reform", "basics/how-signalling-works", "basics/pharmacokinetics", "basics/why-not-a-pill", "evidence/how-to-read-a-study", "evidence/the-translation-gap", "history/the-croatian-lab", "safety/before-you-consider", "safety/monitoring", "compounds/bpc-157", "compounds/cjc-1295", "compounds/ghk-cu", "compounds/hexarelin", "compounds/ipamorelin", "compounds/kpv", "compounds/melanotan-ii", "compounds/nad-precursors", "compounds/pt-141", "compounds/retatrutide", "compounds/semaglutide", "compounds/semax", "compounds/ss-31", "compounds/tb-500", "compounds/tesamorelin", "compounds/thymosin-alpha-1", "compounds/tirzepatide"]
+  locales: [en]
+
 - id: us-hhs-2026-peptide-policy
   date: 2026-11-03
   kind: regulatory-update

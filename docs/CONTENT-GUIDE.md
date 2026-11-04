@@ -28,8 +28,9 @@ reviewer). The pages say this once, in the publisher line on the about pages (§
 Dutch law as the reader's law.
 
 *Dutch pages* also follow the 2026 Dutch advertising case law in detail (§1b, "The advertising test
-for Dutch pages"). The owner approved the rule above on 4 November 2026 (O3); the live English pages
-are to be checked against it in a separate review.
+for Dutch pages"). The owner approved the rule above on 4 November 2026 (O3). The English pages were
+checked against it the same day (`docs/REVIEW-2026-11-04-en-advertising.md`): English applies the same
+test, with the official labels of the US, UK, Canada and Australia as the product information.
 
 Therefore, in content:
 
@@ -74,8 +75,8 @@ Therefore, in content:
 
 - Every study claim with **species, n and design** attached ("in a study of 12 rats …",
   "a randomised, placebo-controlled trial in 1,961 adults with obesity …").
-- Uncertainty explicitly, **in both directions**. Where evidence is genuinely promising, say so
-  plainly. Where the regulatory lag imposes real costs, say so. This site is not anti-peptide.
+- Uncertainty explicitly, **in both directions**. Where the evidence is stronger, say so plainly, with
+  its level (never "promising" in the site's own voice, §1). Where the regulatory lag imposes real costs, say so. This site is not anti-peptide.
 - Regulatory status with the date it was accurate ("as of 20 October 2026").
 - The distinction between **authorised**, **under regulatory review** and **unapproved**, and, where
   it applies, **approved but no longer sold** (`discontinued`: tesamorelin in Canada, approved 29 April
@@ -239,8 +240,9 @@ pages (`legal/nl`, `legal/eu`, `legal/be`, `legal/de`) no longer exist on Englis
 **What may stay** (keep it small):
 
 1. **The publisher line**, on the about pages only: the site is published from the Netherlands, so
-   Dutch law governs what it may say; that is why it sells nothing, links to no seller and gives no
-   doses. Readers' countries have similar advertising rules (§1).
+   Dutch law governs what it may say; a text can be advertising even when its writer sells nothing, if
+   it praises a medicine; that is why it sells nothing, links to no seller, gives no doses and praises
+   no product. Readers' countries have similar advertising rules (§1).
 2. **European regulators as scientific evidence**: an EMA assessment report's trial data, or a
    committee's doubts about a benefit (tesamorelin: the EMA committee doubted the benefit was
    clinically meaningful; the applicant withdrew in 2012). Cite it as evidence, never as the reader's
@@ -312,9 +314,8 @@ the text stays in line with the SmPC (the official product information). So ever
   its stated evidence level and uses no word that makes it attractive (STYLE-NL §5.6);
 - keeps §1 and §1a in full: no doses, no seller names, links or positive seller signs.
 
-On Dutch pages the publisher line is the brief's draft (STYLE-NL §5.2), not "the absence of commerce is
-what makes the content legal". Whether §1's wording for the English site changes is an open owner
-decision (`docs/REVIEW-2026-10-27-dutch-site.md`).
+On Dutch pages the publisher line is the brief's draft (STYLE-NL §5.2). The English publisher line says
+the same in English (§1b, "What may stay", item 1; `docs/REVIEW-2026-11-04-en-advertising.md`).
 
 ### The residue check
 

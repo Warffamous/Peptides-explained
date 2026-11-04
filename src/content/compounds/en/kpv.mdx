@@ -50,7 +50,7 @@ glance:
 grade_rationale:
   human_clinical: "None. In its 2026 review the FDA searched the published literature, its adverse-event database and trial registries and found no study of KPV given to people by any route, and no case reports. There is nothing in humans to grade."
   preclinical_volume: "Moderate. By our count on 20 October 2026, roughly 40 to 50 primary cell and animal studies test KPV itself (as the anti-inflammatory agent, or carried in a particle or gel). Much of the recent volume is drug-delivery engineering that uses KPV as a model cargo, and some older 'KPV' literature is really about the whole alpha-MSH molecule."
-  independence: "Few groups. That the C-terminal fragment of alpha-MSH calms inflammation has been reported since 1989, and the NF-κB mechanism by several unrelated groups since 2001. But the gut-disease evidence, which is the strongest therapeutic signal, comes almost entirely from one laboratory (the Merlin group in the United States). No disease result has been reproduced to a clinical standard, because there are no clinical studies."
+  independence: "Few groups. That the C-terminal fragment of alpha-MSH calms inflammation has been reported since 1989, and the NF-κB mechanism by several unrelated groups since 2001. But the gut-disease evidence, where the results in animals are clearest, comes almost entirely from one laboratory (the Merlin group in the United States). No disease result has been reproduced to a clinical standard, because there are no clinical studies."
   safety: "Uncharacterised. There is no human safety data at all. The FDA found no formal toxicology, no pharmacokinetics, and no reports in its adverse-event systems, and could not rule out immune reactions."
 mechanism:
   - kind: binding
@@ -75,7 +75,7 @@ mechanism:
     detail: "In mice with chemically induced colitis, KPV-treated gut had lower myeloperoxidase (a marker of neutrophils) and less damage under the microscope. The effect still happened in mice with a broken melanocortin-1 receptor, which fits the idea that KPV does not work through that receptor."
   - kind: effect
     level: animal
-    title: "Faster recovery in rodent colitis and wounds"
+    title: "Faster recovery in mice with colitis and in scraped rabbit corneas"
     detail: "Mice with colitis given KPV lost less weight and recovered sooner; in one model KPV also reduced the number of inflammation-driven bowel tumours. Rabbit corneas healed faster with KPV eye drops. These are the clearest whole-animal results."
   - kind: effect
     level: hypothesis
@@ -153,7 +153,7 @@ KPV is a synthetic peptide made of just three amino acids: <Seq>Lys-Pro-Val</Seq
 
 KPV is the tail of a natural hormone. The body makes a large protein called <Term id="proopiomelanocortin">proopiomelanocortin</Term> and cuts it into smaller hormones, one of which is <Term id="alpha-msh">alpha-melanocyte-stimulating hormone</Term> (alpha-MSH). Alpha-MSH is a 13-amino-acid chain. Its last three amino acids, positions 11, 12 and 13, are lysine, proline and valine. That is KPV.<Cite id="cody-1984-c-terminal-tripeptide,fda-pcac-2026-kpv-briefing" />
 
-Alpha-MSH does two very different jobs. One part of it controls skin and hair colour. A different part calms inflammation.<Cite id="brzoska-2008-review" /> Researchers found that the small KPV tail keeps most of the anti-inflammatory action but has none of the colour-changing action.<Cite id="brzoska-2010-terminal-signal,luger-2007-review" /> That is the whole reason KPV was studied: it was an attempt to keep the useful half of alpha-MSH and drop the half that darkens the skin. The part of a molecule responsible for a given action is called its <Term id="pharmacophore">pharmacophore</Term>, and alpha-MSH has separate ones for colour and for inflammation.
+Alpha-MSH does two very different jobs. One part of it controls skin and hair colour. A different part calms inflammation.<Cite id="brzoska-2008-review" /> Researchers found that the small KPV tail keeps most of the anti-inflammatory action but has none of the colour-changing action.<Cite id="brzoska-2010-terminal-signal,luger-2007-review" /> That is the whole reason KPV was studied: it was an attempt to keep the half of alpha-MSH that researchers wanted and drop the half that darkens the skin. The part of a molecule responsible for a given action is called its <Term id="pharmacophore">pharmacophore</Term>, and alpha-MSH has separate ones for colour and for inflammation.
 
 </InDetail>
 
@@ -237,7 +237,7 @@ Three gaps matter. First, no study has followed KPV from the missing receptor st
 
 <KeyNumber title="Packed in tiny particles, much less KPV worked as well" value="12,000×" label="lower amount of KPV worked as well when packed in particles aimed at the colon" who="Laroui 2010: mice with chemically induced colitis; the same laboratory as most gut studies" source="laroui-2010-nanoparticles" level="animal" />
 
-It would be wrong to dismiss this biology. The anti-inflammatory mechanism is coherent, reproduced across independent cell studies, and matched by consistent benefit in rodent colitis. Promising cell and mouse data are a reason to run a good trial, not a substitute for one, and they say nothing about what happens when a person injects an unverified vial.
+It would be wrong to dismiss this biology. The proposed anti-inflammatory mechanism is coherent, reproduced across independent cell studies, and matched by a repeated benefit in rodent colitis. Results in cells and mice are a reason to run a good trial in people, not a substitute for one, and they say nothing about what happens when a person injects an unverified vial.
 
 <InDetail title="Every study in one table, and where the evidence comes from">
 
@@ -249,7 +249,7 @@ It would be wrong to dismiss this biology. The anti-inflammatory mechanism is co
 |---|---|---|---|
 | Cells and isolated tissue | A few dozen papers | Several independent groups (US, Europe, east Asia) | Set concentrations with no link to any real-life human exposure {/* residue-ok: where the research groups work (evidence) */} |
 | Animal anti-inflammation and wounds | Scattered single studies | The Lipton group in Dallas, and groups in London and Catania | Short, acute models; often alpha-MSH, or an N-acetylated form, studied alongside KPV |
-| Animal gut disease (colitis, colitis-cancer) | The clearest therapeutic signal | Mostly one laboratory (the Merlin group) | One dominant group; mouse models; much of it is delivery engineering |
+| Animal gut disease (colitis, colitis-cancer) | The clearest results in animals | Mostly one laboratory (the Merlin group) | One dominant group; mouse models; much of it is delivery engineering |
 | Human-tissue (cadaver skin) | One study | One group | Dead skin in a lab rig; KPV barely crossed it |
 | Humans (living) | None | — | No study of any kind, and no case reports |
 
@@ -261,9 +261,9 @@ It would be wrong to dismiss this biology. The anti-inflammatory mechanism is co
 
 ### Cells: a reproducible anti-inflammatory signal
 
-The cell evidence is KPV's strongest suit. Over more than two decades, unrelated groups have reported the same core finding: KPV lowers NF-κB activity and inflammatory-messenger output without acting through melanocortin receptors.<Cite id="mandrika-2001-nfkb-no,getting-2003-dissection,land-2012-bronchial,dalmasso-2008-pept1" /> That several independent laboratories see the same thing is genuinely reassuring about the basic biology. Cell studies answer "can this molecule change this pathway in a dish?" They cannot answer "does it help a person?", because dosing, delivery, breakdown and the whole immune system are missing.
+The cell work is the part of the KPV research that has been repeated most often. Over more than two decades, unrelated groups have reported the same core finding: KPV lowers NF-κB activity and inflammatory-messenger output without acting through melanocortin receptors.<Cite id="mandrika-2001-nfkb-no,getting-2003-dissection,land-2012-bronchial,dalmasso-2008-pept1" /> That several independent laboratories see the same thing makes the basic biology more credible. Cell studies answer "can this molecule change this pathway in a dish?" They cannot answer "does it help a person?", because dosing, delivery, breakdown and the whole immune system are missing.
 
-### Animals: promising, but shallow and clustered
+### Animals: some results, but limited and from few laboratories
 
 Two lines of animal work stand out. The older line, from the Lipton group and others, showed that the alpha-MSH tail reduces acute inflammation in mice: ear swelling from a skin-sensitising chemical, and inflammatory cells drawn into the abdomen.<Cite id="hiltz-1989-cooh-fragment,getting-2003-dissection" /> The FDA counted the 1989 ear-swelling study as a study of an N-acetylated form of KPV rather than the free peptide, and set it aside.<Cite id="fda-pcac-2026-kpv-briefing" /> The newer and stronger line is gut disease. <Claim level="animal">KPV, especially when delivered in targeted nanoparticles or gels, reduced colitis in mice and reduced colitis-associated bowel tumours in one model</Claim>.<Cite id="dalmasso-2008-pept1,laroui-2010-nanoparticles,viennois-2016-cac,xiao-2017-nanoparticles" /> The colitis-cancer result is worth noting precisely because it points the opposite way to a common fear about "growth" peptides: in that model KPV lowered tumour numbers rather than raising them.<Cite id="viennois-2016-cac" /> In the same paper, mice with a genetic bowel-tumour disease and little gut inflammation got no fewer tumours with KPV, so the effect appears to work through inflammation rather than on tumours directly.<Cite id="viennois-2016-cac" />
 
@@ -283,7 +283,7 @@ As of 20 October 2026 we found no registered clinical trial of KPV on ClinicalTr
 
 </InDetail>
 
-<InDetail title="Where the evidence is promising, and where it is not">
+<InDetail title="A candidate for trials, but never tested in people">
 
 Reviewers have argued, reasonably, that KPV is a fair candidate for proper clinical testing in inflammatory bowel disease and in wounds.<Cite id="brzoska-2008-review,bohm-2019-wound-review,gravina-2023-melanocortin-ibd" /> The honest counterpoint is that this has been true for over fifteen years and no company or group has run a published human trial.
 
