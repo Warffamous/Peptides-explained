@@ -12,7 +12,10 @@ pages were written and swept against this test). Each indication line of the fiv
 against the current official label (US prescribing information, UK SmPC, Canadian monograph, Australian ARTG summary),
 all read on 4 November 2026. Each O17 point was checked at its source before it was fixed.
 
-**Nothing is live.** Nothing is deployed. The only Dutch change is the shared glossary entry `deletion-sequence`
+**Your answer (4 November 2026): approve all.** Live the same day: Lovable commit a42e468, built from source commit
+56480ef, published by you; the changed pages and the redirects were checked on the live site.
+
+The only Dutch change is the shared glossary entry `deletion-sequence`
 (line B9), which you approved in O17.
 
 **How to answer.** Reply "approve all", or "approve all except A3, D12" (the numbers below). The reform page is your
