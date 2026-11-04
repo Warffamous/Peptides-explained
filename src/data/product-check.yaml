@@ -61,9 +61,19 @@ items:
     sources: [who-2010-injection-toolkit, cdc-2024-preventing-unsafe-injection, fda-unapproved-glp1-concerns]
     links: [safety/sterile-technique]
 
+  # The NHS poisoning page gives UK help routes (111) that the Dutch words do not use, so it is cited only where the UK
+  # is shown; Dutch pages cite the KNMP's apotheek.nl page on poisoning instead ("Bewaar zo mogelijk restanten van het
+  # middel of de verpakking"; src/data/sources/nl-review-product-check.yaml), read 4 November 2026
+  # (docs/REVIEW-2026-10-27-dutch-site.md O15, owner approved). The NVIC (nvic.umcutrecht.nl) sends the public to the
+  # GP and says nothing about packaging; Thuisarts has no poisoning page. The case report is listed under both UK and
+  # NL, after the country's own page, because `sources` would put it first: English keeps exactly its old list and
+  # order (nhs-poisoning, antonacci-2026-falsified-semaglutide-coma).
   - id: keep
     icon: check-keep
-    sources: [nhs-poisoning, antonacci-2026-falsified-semaglutide-coma]
+    sources: []
+    local_sources:
+      UK: [nhs-poisoning, antonacci-2026-falsified-semaglutide-coma]
+      NL: [apotheek-vergiftiging, antonacci-2026-falsified-semaglutide-coma]
     links: [safety/if-something-goes-wrong]
 
   - id: doctor
@@ -77,10 +87,15 @@ items:
       NL: [thuisarts-naar-de-huisarts, knmg-beroepsgeheim]
     links: [safety/monitoring, talking-to-your-doctor]
 
+  # The NHS pages give UK help routes (111, 999) that the Dutch words do not use, so they are cited only where the UK
+  # is shown (docs/REVIEW-2026-10-27-dutch-site.md O15, owner approved, 4 November 2026). `sources` stays empty on
+  # purpose: English shows no other local list for this check, so it cites exactly these three, in this order, as it
+  # did when they were under `sources`.
   - id: stop
     icon: action-stop
-    sources: [nhs-cellulitis, nhs-sepsis, nhs-anaphylaxis]
+    sources: []
     local_sources:
+      UK: [nhs-cellulitis, nhs-sepsis, nhs-anaphylaxis]
       NL: [thuisarts-wondroos, thuisarts-sepsis, thuisarts-dikke-ogen-lippen] # the Dutch help levels (research/nl/nl-help.md §7.4, fact 17)
     links: [safety/warning-signs]
     emergency: true

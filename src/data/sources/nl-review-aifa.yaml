@@ -1,0 +1,15 @@
+# Source of review answer O11 (docs/REVIEW-2026-10-27-dutch-site.md section 1.1, approach A, owner decision of
+# 4 November 2026): AIFA's current record of Zadaxin (thymalfasin), cited on /nl/compounds/thymosin-alpha-1/.
+# Host medicinali.aifa.gov.it was added to config/link-allowlist.json for it. The page was read on 4 November 2026
+# on AIFA's own site; the note says what it showed.
+
+aifa-zadaxin-2026-11-04:
+  type: registry
+  authors: "Agenzia Italiana del Farmaco (AIFA)"
+  title: "AIFA Medicinali: ZADAXIN 1.6 mg/ml polvere e solvente per soluzione iniettabile (timosina alfa 1)"
+  year: 2026
+  url: https://medicinali.aifa.gov.it/it/#/it/dettaglio/0000022315
+  accessed: 2026-11-04
+  lang: it
+  verified: registry
+  note: "Read 4 November 2026 in a browser (the page loads its record from AIFA's medicines data service, which was also read with curl the same day). AIFA describes AIFA Medicinali as its information service on medicines for human use authorised in Italy. The page showed: 'ZADAXIN 1.6 mg/ml POLVERE E SOLVENTE PER SOLUZIONE INIETTABILE'; 'Azienda titolare: SCICLONE PHARMACEUTICALS ITALY S.R.L.'; active substance 'TIMOSINA ALFA 1'; routes 'INTRAMUSCOLARE', 'SOTTOCUTANEA'; ATC 'L03AX - ALTRE CITOCHINE E IMMUNOMODULATORI'; one package, '1 FLACONCINO POLVERE + 1 FIALA SOLVENTE 1 ML', AIC 028364026, 'Data autorizzazione 16/05/1996', reimbursement class C ('A Totale Carico Dell'assistito'), supply 'RR' ('Soggetto a Prescrizione Medica'), and 'IN COMMERCIO'. The data service gives the package's administrative status as 'AUTORIZZATA', not withdrawn ('revocato' 0) or suspended ('sospeso' 0), and no shortage. The page links the Italian SmPC and patient leaflet behind a terms-of-use screen; those were not opened, so the indication is not taken from this source (it rests on fda-pcac-2024-thymosin-alpha-1-briefing). Cited for: Zadaxin (thymalfasin) is authorised in Italy and on the market there on 4 November 2026, authorised on 16 May 1996."

@@ -13,8 +13,12 @@ Netherlands, so Dutch law is the publisher's law**: it governs what the site may
 reader lives. Under the Geneesmiddelenwet (art. 84–85, implementing Directive 2001/83/EC) public
 advertising for a medicine without marketing authorisation is prohibited, and courts read
 "advertising" broadly: even objective information can be advertising if it carries a promotional
-purpose. A commercial link is what supplies that purpose. **The absence of commerce is what makes
-the content legal.** The readers' countries (§1b) have similar rules on advertising medicines. Health
+purpose. A commercial link supplies that purpose, and so can praising, one-sided wording (Raad van
+State, 25 February 2026, ECLI:NL:RVS:2026:1072). **Selling nothing is necessary but not enough: a text
+is advertising if it praises a medicine. Every page stays balanced (each effect with its evidence
+level, uncertainty and risks), uses the official product-information wording for authorised
+medicines, shows off-label use as off-label, names no dose and praises no product.** (Owner,
+4 November 2026, `docs/REVIEW-2026-10-27-dutch-site.md` O3.) The readers' countries (§1b) have similar rules on advertising medicines. Health
 Canada's advertising guidance (2023), for example, says that a message about an unauthorised health
 product, even in an educational setting, may be considered promotional if it does not caution that
 Health Canada has not authorised the product and that its safety and effectiveness are still under
@@ -23,9 +27,9 @@ investigation, or if it suggests the product is available through the Special Ac
 reviewer). The pages say this once, in the publisher line on the about pages (§1b), and never frame
 Dutch law as the reader's law.
 
-*Dutch pages* also follow the 2026 Dutch advertising case law (§1b, "The advertising test for Dutch
-pages"). Whether this paragraph's wording changes because of it is an open owner decision
-(`docs/REVIEW-2026-10-27-dutch-site.md`).
+*Dutch pages* also follow the 2026 Dutch advertising case law in detail (§1b, "The advertising test
+for Dutch pages"). The owner approved the rule above on 4 November 2026 (O3); the live English pages
+are to be checked against it in a separate review.
 
 Therefore, in content:
 
@@ -1074,6 +1078,9 @@ the claim.
 - **No source that names a business.** Never cite or quote a document whose title or URL names a
   seller or a company (regulators' enforcement releases often do): describe the enforcement in
   general terms, with a neutral official source (§1b, "Country cautions").
+- **A developer's own filing** (for example an SEC filing by the company developing a compound) may be cited only
+  when it is the only public source of a trial result, and only for that result, with a neutral reader-facing title;
+  never a seller's document (owner, 4 November 2026, `docs/REVIEW-2026-10-27-dutch-site.md` O10).
 - **The reader's frame is their own regulator.** On English, status, law and routes rest on the FDA,
   the MHRA and UK legislation, Health Canada and Canadian law, the TGA and Australian law (and the HPRA
   and Medsafe for the notes). An EMA document (EPAR, a committee's assessment) may be cited as

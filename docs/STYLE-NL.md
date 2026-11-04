@@ -604,8 +604,8 @@ convert or "improve" a figure.
 
 - **Publisher line** (brief, "Added after step 1", item 1, word for word; cite
   `nl-gnw-art-84-85-advertising` and `nl-rvs-2026-1072-publieksreclame-website`): "We maken deze site
-  in Nederland. De Nederlandse wet verbiedt reclame voor medicijnen zonder handelsvergunning en
-  publieksreclame voor medicijnen op recept. Ook wie niets verkoopt, kan reclame maken: de rechter kijkt
+  in Nederland. De Nederlandse wet verbiedt reclame voor medicijnen zonder handelsvergunning
+  (goedkeuring als medicijn) en publieksreclame voor medicijnen op recept. Ook wie niets verkoopt, kan reclame maken: de rechter kijkt
   of een tekst een middel aanprijst. Daarom verkopen we niets, linken we naar geen enkele verkoper,
   noemen we geen doseringen en prijzen we geen middel aan. We beschrijven wat onderzoek laat zien, met
   de risico's en met wat niemand weet." (owner decision pending on wording and placement) (In MDX body

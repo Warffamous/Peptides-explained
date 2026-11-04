@@ -11,6 +11,26 @@ sentence) and O16 (the publication entry `nl-v1-publication`, and the re-checks 
 Every other decision below, and the reform page (R0–R27), still waits for your answer; an answer now changes the
 live pages in the next upload.
 
+**Your answers (4 November 2026): every recommended choice approved** ("Approve all recommended"). Applied and
+uploaded the same day (corrections entry `nl-owner-review-2026-11-04`):
+- No change needed: O1 A, O4 A, O7 (all five), O9 A (fix later), O12 A, O14 A, O18 A; R0 approve all, R24 A, R25 A, R27.
+- O2: "(goedkeuring als medicijn)" after "handelsvergunning" on /nl/about/, /nl/about/editorial-policy/, /nl/legal/nl/
+  and in STYLE-NL §5.2.
+- O3: CONTENT-GUIDE §1 now has the 2026 rule. The check of the live English pages against it is still to do (a
+  separate English task, with your yes before anything changes).
+- O5 A: the five foreign-route passages are one or two sentences each (pt-141, cjc-1295, ghk-cu, ipamorelin,
+  melanotan-ii); safety evidence and every NL/EU line kept (the FDA safety-risk sentences on cjc-1295 kept).
+- O6 A: `last_reviewed: 2026-10-27` on all 40 Dutch pages.
+- O10 A: neutral titles for `cjeu-2009-hecht-pharma`, `cjeu-2015-abcur`, `ema-epar-ghryvelin`; the filings rule is in
+  CONTENT-GUIDE §11.
+- O11 A: medicinali.aifa.gov.it (AIFA's public medicines database) allowlisted; /nl/compounds/thymosin-alpha-1/ cites AIFA's
+  current Zadaxin record (`src/data/sources/nl-review-aifa.yaml`).
+- O15: "stop" cites only the Thuisarts pages on Dutch; "keep" cites apotheek.nl (KNMP) instead of the NHS page
+  (`src/data/sources/nl-review-product-check.yaml`). English unchanged. The NHS ids in the body of
+  /nl/safety/if-something-goes-wrong/ were not part of O15 and stay.
+- O17: approved; the English fixes are a separate English task (your yes before they go live).
+- R26 A: "Stoffen die het onderzoeken waard zijn, wachten soms jaren op een sponsor"; `opinion.updated` 4 November 2026.
+
 **How to answer.** Tick one box per line, or reply with the numbers, for example "O1 A, O2 approve, R0 approve all".
 The recommended choice comes first. Sections 2 to 4 are for a lawyer, a doctor and a medical translator later; they
 do not block publishing, because every Dutch page says "review pending", as on English.
